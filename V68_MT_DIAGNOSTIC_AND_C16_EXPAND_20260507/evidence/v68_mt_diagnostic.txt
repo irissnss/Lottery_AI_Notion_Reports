@@ -1,0 +1,41 @@
+﻿=== RANDOM BASELINE (k=1 BT pick) ===
+  MN: 43.4%   MT: 35.1%   MB: 23.8%
+
+=== V67 MT ΓÇö per-day diagnostic ===
+  2026-05-01: V67=99 MISS  off=16(LOSE)MISS
+    contributions sources: {'per_model_lag1': 1}
+      tail=99 score=1.060 from ['M:gemini-2.5-pro=╬ö6.0']
+  2026-05-02: V67=16 MISS  off=88(WIN)HIT
+    contributions sources: {'per_model_lag1': 4, 'same_region_lag1_final_bundle': 1, 'cross_region_nextday': 1}
+      tail=16 score=2.251 from ['M:random-forest=╬ö16.0', 'S:╬ö9.1']
+      tail=46 score=2.118 from ['M:smart-ensemble=╬ö5.4', 'M:smart-ml=╬ö6.4']
+      tail=51 score=1.267 from ['X:MN=╬ö26.7']
+  2026-05-03: V67=71 HIT  off=29(LOSE)MISS
+    contributions sources: {'per_model_lag1': 1}
+      tail=71 score=1.093 from ['M:gemini-2.5-pro=╬ö9.3']
+  2026-05-04: V67=29 HIT  off=29(WIN)HIT
+    contributions sources: {'per_model_lag1': 5, 'same_region_lag1_final_bundle': 1}
+      tail=29 score=4.432 from ['M:combo-no-token=╬ö8.2', 'M:random-forest=╬ö16.9', 'M:smart-ml=╬ö7.6', 'S:╬ö10.5']
+      tail=17 score=1.081 from ['M:gpt-5.4=╬ö8.1']
+      tail=33 score=1.080 from ['M:gemini-2.5-pro=╬ö8.0']
+  2026-05-05: V67=65 MISS  off=44(WIN)HIT
+    contributions sources: {'cross_region_nextday': 1, 'per_model_lag1': 3}
+      tail=65 score=1.248 from ['X:MN=╬ö24.8']
+      tail=28 score=1.069 from ['M:gemini-2.5-pro=╬ö6.9']
+      tail=58 score=1.067 from ['M:gpt-5.4=╬ö6.7']
+  2026-05-06: V67=15 MISS  off=11(WIN)HIT
+    contributions sources: {'cross_region_nextday': 1, 'per_model_lag1': 1}
+      tail=15 score=1.231 from ['X:MN=╬ö23.1']
+      tail=37 score=1.085 from ['M:gpt-5.4=╬ö8.6']
+
+=== V67 MT vs random/official (sample n=6) ===
+  V67 MT BT hit:        33.3%
+  Official MT BT hit:   66.7%
+  Random MT baseline:   35.1%
+   ≡ƒö┤ V67 MT BELOW random baseline (worse than coin flip)
+   ≡ƒö┤ V67 MT WORSE than official by >10pp
+
+=== V67 cross-region context ===
+  MN n=5: V67=100.0% Official=40.0% Random=43.4%   ╬ö_V67_vs_random=+56.6pp  ╬ö_V67_vs_official=+60.0pp
+  MT n=6: V67=33.3% Official=66.7% Random=35.1%   ╬ö_V67_vs_random=-1.7pp  ╬ö_V67_vs_official=-33.3pp
+  MB n=6: V67=50.0% Official=16.7% Random=23.8%   ╬ö_V67_vs_random=+26.2pp  ╬ö_V67_vs_official=+33.3pp

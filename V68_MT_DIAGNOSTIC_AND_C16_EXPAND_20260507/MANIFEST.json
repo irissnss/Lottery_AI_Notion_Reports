@@ -1,0 +1,26 @@
+{
+  "version": "V68",
+  "title": "V68 MT diagnostic + C-16 budget expansion 15-20 voters",
+  "published_at": "2026-05-07T01:45:00+07:00",
+  "main_report": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V68_MT_DIAGNOSTIC_AND_C16_EXPAND_20260507/V68_REPORT.md",
+  "files": [
+    {
+      "src": "V68_REPORT.md",
+      "dst_rel": "V68_REPORT.md",
+      "sha256": "5648bf6aae42f00fd828483930d98bd97152bcf74ce929d57655c7a4f0b01f94",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V68_MT_DIAGNOSTIC_AND_C16_EXPAND_20260507/V68_REPORT.md"
+    },
+    {
+      "src": "v68_mt_diagnostic.txt",
+      "dst_rel": "evidence/v68_mt_diagnostic.txt",
+      "sha256": "f70d324c1b85896f41b54456d06ce497af6359f0c21df2bfd53f06795d827d77",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V68_MT_DIAGNOSTIC_AND_C16_EXPAND_20260507/evidence/v68_mt_diagnostic.txt"
+    },
+    {
+      "src": "v67_after_strict_eval.txt",
+      "dst_rel": "evidence/v67_after_strict_eval.txt",
+      "sha256": "12ca6b5392f1ecf2e963efc5c7dbc5764d52dda7e8938ba276497dde5c9cf969",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V68_MT_DIAGNOSTIC_AND_C16_EXPAND_20260507/evidence/v67_after_strict_eval.txt"
+    }
+  ]
+}

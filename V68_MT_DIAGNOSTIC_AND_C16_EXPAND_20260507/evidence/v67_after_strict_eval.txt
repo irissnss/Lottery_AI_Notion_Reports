@@ -1,0 +1,52 @@
+﻿=== V67 ADAPTIVE_EXPLOIT_V1 ΓÇö backfill evaluation 14 dates ===
+rows: 10
+
+=== MN (n=2 closed days with V67 row) ===
+  V67 candidate_bt hit rate         :  2/2 = 100.0%
+  Official baseline BT WIN rate     :  0/2 = 0.0%
+  V67 LO2 (k=2) WIN                 : 1
+  V67 same as official BT           : 0
+  Would_save (V67 wins where official lost) : 2
+  Would_break (V67 misses where official won): 0
+  Net (save - break)                : 2
+
+=== MT (n=2 closed days with V67 row) ===
+  V67 candidate_bt hit rate         :  1/2 = 50.0%
+  Official baseline BT WIN rate     :  2/2 = 100.0%
+  V67 LO2 (k=2) WIN                 : 1
+  V67 same as official BT           : 1
+  Would_save (V67 wins where official lost) : 0
+  Would_break (V67 misses where official won): 1
+  Net (save - break)                : -1
+
+=== MB (n=6 closed days with V67 row) ===
+  V67 candidate_bt hit rate         :  3/6 = 50.0%
+  Official baseline BT WIN rate     :  1/6 = 16.7%
+  V67 LO2 (k=2) WIN                 : 1
+  V67 same as official BT           : 0
+  Would_save (V67 wins where official lost) : 3
+  Would_break (V67 misses where official won): 1
+  Net (save - break)                : 2
+
+=== DETAIL TABLE per region ===
+
+MN:
+  2026-05-01 V67_bt=56 (hit?HIT)  official_bt=51 (LOSE)
+  2026-05-05 V67_bt=65 (hit?HIT)  official_bt=15 (LOSE)
+
+MT:
+  2026-05-02 V67_bt=16 (hit?MISS)  official_bt=88 (WIN)
+  2026-05-04 V67_bt=29 (hit?HIT)  official_bt=29 (WIN)
+
+MB:
+  2026-05-01 V67_bt=62 (hit?HIT)  official_bt=94 (LOSE)
+  2026-05-02 V67_bt=94 (hit?MISS)  official_bt=43 (LOSE)
+  2026-05-03 V67_bt=43 (hit?MISS)  official_bt=48 (WIN)
+  2026-05-04 V67_bt=85 (hit?HIT)  official_bt=09 (LOSE)
+  2026-05-05 V67_bt=09 (hit?MISS)  official_bt=83 (LOSE)
+  2026-05-06 V67_bt=41 (hit?HIT)  official_bt=79 (LOSE)
+
+=== V67 vs ADAPTIVE_BUDGET_SELECTOR_V1 control ===
+  MN n=2: both_hit=1 v67_only=1 c16_only=0 neither=0 same_pick=0
+  MT n=2: both_hit=0 v67_only=1 c16_only=0 neither=1 same_pick=0
+  MB n=6: both_hit=0 v67_only=3 c16_only=0 neither=3 same_pick=0

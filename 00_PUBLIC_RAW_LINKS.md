@@ -1,6 +1,6 @@
-# Public Raw Links — Full Package
+﻿# Public Raw Links â€” Full Package
 
-## V67 — ADAPTIVE_EXPLOIT_V1 selector deployed test-lane (NEW 2026-05-07 01:30)
+## V67 â€” ADAPTIVE_EXPLOIT_V1 selector deployed test-lane (NEW 2026-05-07 01:30)
 
 - [V67 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/V67_REPORT.md)
 - [V67 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/00_READING_INDEX.md)
@@ -8,13 +8,13 @@
 - [V67 discovery 8 anti-model](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/evidence/v67_discovery8_recommit.txt)
 - [V67 active roadmap (updated)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/governance/ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT.md)
 
-## V66.1 — Coverage expansion + 7 discoveries (NEW 2026-05-07 01:10)
+## V66.1 â€” Coverage expansion + 7 discoveries (NEW 2026-05-07 01:10)
 
 - [V66.1 findings report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_1_FINDINGS_REPORT.md)
 - [V66.1 coverage matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v66_coverage_matrix.txt)
 - [V66.1 findings dump](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v661_findings.txt)
 
-## V66 — Lag-1 + Cross-region adaptive exploit signal (measurement-only) (NEW 2026-05-07)
+## V66 â€” Lag-1 + Cross-region adaptive exploit signal (measurement-only) (NEW 2026-05-07)
 
 - [V66 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_REPORT.md)
 - [V66 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/00_READING_INDEX.md)
@@ -22,7 +22,7 @@
 - [V66 active roadmap](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/governance/ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT.md)
 - [V66 signal review (raw)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v66_signal_review.txt)
 
-## V65 — Lag-1 leakage + strength priority + test-lane weighting (NEW 2026-05-07)
+## V65 â€” Lag-1 leakage + strength priority + test-lane weighting (NEW 2026-05-07)
 
 - [V65 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/V65_AUDIT_REPORT.md)
 - [V65 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/00_READING_INDEX.md)
@@ -82,3 +82,4 @@
 - [READ_ORDER_LINKS.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/BY_CATEGORY/READ_ORDER_LINKS.md)
 - [SCHEDULER_LOG_LINKS.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/BY_CATEGORY/SCHEDULER_LOG_LINKS.md)
 - [UI_API_PROOF_LINKS.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/BY_CATEGORY/UI_API_PROOF_LINKS.md)
+
