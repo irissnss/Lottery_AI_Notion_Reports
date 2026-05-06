@@ -1,0 +1,1556 @@
+{
+  "output_dir": "artifacts\\notion_ai_full_read\\V52_TO_CURRENT_FULL_CHAIN_20260506",
+  "generated_from": "E:\\Lottery_AI_Test",
+  "max_lines_per_part": 2500,
+  "source_files_found": 141,
+  "source_files_missing": 9,
+  "total_source_lines": 41789,
+  "source_split_parts": 7,
+  "raw_combined_parts": 17,
+  "records": [
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_001_TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.m",
+      "line_count": 248,
+      "sha256": "98300a5eecb8b955e29fcbcbdcbc2d88e995e1069b6b7f6403e7ca12634c3f53",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_002_V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md",
+      "line_count": 88,
+      "sha256": "b91155af5181592d5eaf6ae11a271a47e94c3591126e5f7eb02c3c02cf810a1f",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_003_V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md",
+      "line_count": 80,
+      "sha256": "d6373cebf4ecff12e706a9bfed2e341129354611b2dea680b5e5960320a200ce",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_004_V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md",
+      "line_count": 54,
+      "sha256": "4dbc2dbe1906760f503fb736cab3441d31f6fde3dfccd29e3765b3b4b18ac933",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_005_V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md",
+      "line_count": 81,
+      "sha256": "99c9c83aa0c34329184aa5b99ad2770237336e67769299ba2002f3dfcf4a8e30",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_006_V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md",
+      "line_count": 43,
+      "sha256": "2763110d0c06b6f4569e7fa370b7f98fa527b6c06ecf8e5eb747e5bc376b7d18",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_007_V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md",
+      "line_count": 111,
+      "sha256": "98a7d26e698040fdad1fb193d28dcffc4488a472dd17dc7d50fe0c1ba4d3c1a2",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_008_V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md",
+      "line_count": 101,
+      "sha256": "032c5d5951dd1dd5c73c4950dfc53b99580b68c4b40bcbde9814298686324230",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_2_measurement_rollup_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_009__v52_2_measurement_rollup_20260503.json",
+      "line_count": 377,
+      "sha256": "841bc2d86ef79b7c012cf9263697e32e0cb558e55cf91f9cb267b37fff3dd804",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_2_measurement_rollup_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_010__v52_2_measurement_rollup_20260503.md",
+      "line_count": 103,
+      "sha256": "d926fb3323c6a4e28b7cbb90bee0c34f94b2cffabdc2207653ffa564fddf4c6d",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_2_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_011__v52_2_post_hash_20260503.txt",
+      "line_count": 9,
+      "sha256": "169fb0c67f840d964ed2b51d744fb660d667a3a3afb3c916ba5a745527db858f",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_2_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_012__v52_2_pre_hash_20260503.txt",
+      "line_count": 11,
+      "sha256": "28dfe0f2a4998c8fade7a37e0edec4b94e8600b7803748c73ba01b86294b03b8",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_3_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_013__v52_3_post_hash_20260503.txt",
+      "line_count": 9,
+      "sha256": "17854295cf67a28e90e2faaad00a91eb42aec65d3856cd2a1f390e51703e8182",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_3_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_014__v52_3_pre_hash_20260503.txt",
+      "line_count": 11,
+      "sha256": "10c2fc060a7537ce4e1b34acf4611416e786b44d6b284113cd8ab51779465ad6",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_4_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_015__v52_4_post_hash_20260503.txt",
+      "line_count": 12,
+      "sha256": "b77849478573e2518da2b3ecb182c1c220d739d36868923e336d16715b27296f",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_4_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_016__v52_4_pre_hash_20260503.txt",
+      "line_count": 14,
+      "sha256": "02d8b25e05ceb811ff54558282b3c98be5a17e425c93634c0bad9aa580de9dc4",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_1_inspect_strength.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_017__v52_5_1_inspect_strength.py",
+      "line_count": 40,
+      "sha256": "16bc0f018a44194e2634dad93d4c08b82c81d396789b402e7364212214e55c33",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_1_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_018__v52_5_1_post_hash_20260503.txt",
+      "line_count": 10,
+      "sha256": "601d14cfc0f12ec8c721b48d36c0019ad1242dca9431e33c984e00d6f3272d14",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_1_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_019__v52_5_1_pre_hash_20260503.txt",
+      "line_count": 13,
+      "sha256": "1285ab20ce8dab818d25f77871a394e2fb9c6d0ce23f153afdd853b0c1e79b28",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_2_inspect_preview.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_020__v52_5_2_inspect_preview.py",
+      "line_count": 36,
+      "sha256": "3c00c37968700dbe60c50785cd3e3398badfefefeac5ca7abd8a5c316eb3eb98",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_2_inspect_vps.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_021__v52_5_2_inspect_vps.py",
+      "line_count": 43,
+      "sha256": "25533c9c257e109b57d22134d318556a166e709b3b64aa98016be41358922f97",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_2_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_022__v52_5_2_post_hash_20260503.txt",
+      "line_count": 12,
+      "sha256": "52d49532733c6eef40d20dab11430c26b36dd1937b7fdffebc1f27fe50fe6e16",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_2_run_backfill.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_023__v52_5_2_run_backfill.sh",
+      "line_count": 16,
+      "sha256": "03aaf0e77e22081ade13151400c9569b76abeb49374c5fac2784cb5cb623cc9b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_3_inspect_engine.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_024__v52_5_3_inspect_engine.py",
+      "line_count": 52,
+      "sha256": "d44768bd034a599434d29fbf900c85ca7bc092ca391d8f2c920986ab136823b8",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_3_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_025__v52_5_3_post_hash_20260503.txt",
+      "line_count": 15,
+      "sha256": "3d640127e1734e8d2e17a7abf4705e1d1c9bffafae6eec32c5325661fa1f6e30",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_3_run_engine.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_026__v52_5_3_run_engine.sh",
+      "line_count": 19,
+      "sha256": "ac016221871ecf4d527833dadf08dc3954ba99e74c98dca2e98030f677ef3865",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_7_diff.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_027__v52_5_7_diff.py",
+      "line_count": 53,
+      "sha256": "0f734b208f16e24ca4211471b987f5a6d5bfebc9e8824fc807025e4902413bc9",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_5_7_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_028__v52_5_7_post_hash_20260503.txt",
+      "line_count": 19,
+      "sha256": "5c0b6de6e13b12bdf792c5742e3ea472c96a406ca2d13bf37109f7897883a579",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_code_readiness_matrix_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_029__v52_code_readiness_matrix_20260503.md",
+      "line_count": 11,
+      "sha256": "f74a92c6eac133865c460c9f945c518f56d72dc01b105f7bfb6d72c128ff02cb",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_du_doan_test_force_fit_leakage_audit_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_030__v52_du_doan_test_force_fit_leakage_audit_20260503.json",
+      "line_count": 249,
+      "sha256": "c230238a3dd51d0e9a6e1cbce5ca06f747948d6fff40b056da1d13b8ce1de880",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_du_doan_test_reality_check_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_031__v52_du_doan_test_reality_check_20260503.json",
+      "line_count": 589,
+      "sha256": "8c05a58ee189f3176a8e0577a689fa8d39b419d783de05eee7bc57b56ce74ed7",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_full_report_claim_reconciliation_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_032__v52_full_report_claim_reconciliation_20260503.md",
+      "line_count": 17,
+      "sha256": "0ec7bafe0be3cfb852cbc22eb083382916373d0d1cdb751cc4e55df563aa587a",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_impl_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_033__v52_impl_post_hash_20260503.txt",
+      "line_count": 9,
+      "sha256": "4b5e54de0de018c7d4b610db07a63b2dc8c9520b217f0e9317b2b0faad5ca602",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_impl_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_034__v52_impl_pre_hash_20260503.txt",
+      "line_count": 11,
+      "sha256": "512ba6cc71a50146421152102b049129783a21fe577f63b384363bc40f936790",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_loz_control_audit_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_035__v52_loz_control_audit_20260503.json",
+      "line_count": 1687,
+      "sha256": "8568bb657679915226e0f4c6b1610f0ff9c66787154d6fc039adc35163aed12d",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_mb_ai_signal_audit_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_036__v52_mb_ai_signal_audit_20260503.json",
+      "line_count": 2377,
+      "sha256": "5c073112d489b1699107cb92065166de8217a685ab9d1e22174ad8588ac90332",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_measurement_completeness_matrix_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_037__v52_measurement_completeness_matrix_20260503.md",
+      "line_count": 20,
+      "sha256": "653cc63a8b9610594a8577a94f29e6e6a12607ac1fcd4951e20f8c4216046c95",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_model_tensor_pruning_readiness_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_038__v52_model_tensor_pruning_readiness_20260503.json",
+      "line_count": 52,
+      "sha256": "1584e1d2d1c460d3d4401ee9c8be24252260acfb956b729c5bf45e57d5070707",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_mt_model_correct_output_wrong_audit_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_039__v52_mt_model_correct_output_wrong_audit_20260503.json",
+      "line_count": 1349,
+      "sha256": "e6bd46cbadf5dce9700f63a71ebb67d0460f6e539933a5041cc19ff739afae83",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_official_post_live_20260503_forensic.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_040__v52_official_post_live_20260503_forensic.json",
+      "line_count": 3936,
+      "sha256": "04e8e9c3b5e3daf3d7b91d9567141d90eb0612b3d33ebe6609caebb7192596c2",
+      "parts": [
+        {
+          "path": "02_BY_VERSION\\V52\\src_040__v52_official_post_live_20260503_forensic.json_part_001_lines_000001_002500.txt",
+          "start_line": 1,
+          "end_line": 2500,
+          "line_count": 2500
+        },
+        {
+          "path": "02_BY_VERSION\\V52\\src_040__v52_official_post_live_20260503_forensic.json_part_002_lines_002501_003936.txt",
+          "start_line": 2501,
+          "end_line": 3936,
+          "line_count": 1436
+        }
+      ],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_041__v52_post_hash_20260503.txt",
+      "line_count": 24,
+      "sha256": "24e5767df8004cb18bb44af4c90471098c95ac0b04ef9dc7c3c3ffb239d5c1ee",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/_v52_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_042__v52_pre_hash_20260503.txt",
+      "line_count": 24,
+      "sha256": "80095c31d6e2fbc4ecd8afdaf2067284e08b58d3c3099fbfefca5a45423547a8",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/phase_checkpoints/TOTAL_FORCE_V53_FULL_REPORT_CHAIN_DU_DOAN_TEST_REALITY_AND_SAFE_NEXT_ACTION_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_043_TOTAL_FORCE_V53_FULL_REPORT_CHAIN_DU_DOAN_TEST_REALITY_AND_SAFE_NEXT_ACT",
+      "line_count": 387,
+      "sha256": "ef0522c77266ada758981507a3a3903e02844089eea6619e6a2dd700b20cd01b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_code_readiness_matrix_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_044__v53_code_readiness_matrix_20260503.md",
+      "line_count": 25,
+      "sha256": "374caca4905dd613cf8659428d3be2bd0ed0a98a60426e06a7103b96393d8828",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_du_doan_test_reality_ui_api_db_audit_20260503.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_045__v53_du_doan_test_reality_ui_api_db_audit_20260503.json",
+      "line_count": 104,
+      "sha256": "bf9ac376461efb381ce561fc0e73a39fdfa164c2899880e4640e64087d885741",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_official_post_live_20260503_forensic.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_046__v53_official_post_live_20260503_forensic.json",
+      "line_count": 46,
+      "sha256": "718ff4169a5cd8e5f1bf6c8b4aff0edfe3c31b9f06cb57474c4de4c7ab808c1a",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_official_rolling.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_047__v53_official_rolling.py",
+      "line_count": 93,
+      "sha256": "149aa7c026e41bdd4d6db054989adbd464f54bf0b8dcc7cc06f560c630eb567c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_official_rolling_out.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_048__v53_official_rolling_out.txt",
+      "line_count": 149,
+      "sha256": "02d3a5705591eb273959df8b98a3be1646aa5c336678b68a87001c392d1615bd",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_post_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_049__v53_post_hash_20260503.txt",
+      "line_count": 19,
+      "sha256": "a6030fd6c828801ef241f4c54c66fb3678bbf6e4e868e1c70b4b1de15d6f6316",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_pre_hash_20260503.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_050__v53_pre_hash_20260503.txt",
+      "line_count": 28,
+      "sha256": "51431bc197330b696b5390e6a8996e996dda6a9668032598dfb411ab21d5da7c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_test_lane_reality.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_051__v53_test_lane_reality.py",
+      "line_count": 94,
+      "sha256": "3cba35e4b4dda67dfb81421919b66fa153b090351c37a2a0ff11e607726ccb7c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "artifacts/_v53_test_lane_reality_out.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_052__v53_test_lane_reality_out.txt",
+      "line_count": 445,
+      "sha256": "bae9650168886ec221faf749e586450587c169f309b06370436dae1e9c304805",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "docs/EXPERIMENTAL_LANE_ROADMAP_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_053_EXPERIMENTAL_LANE_ROADMAP_20260504.md",
+      "line_count": 329,
+      "sha256": "42a6160253689ce95eed40e9513bfd9257090ee4c3b4300009555c7ceb850099",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V53",
+      "source_path": "docs/OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V53\\src_054_OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md",
+      "line_count": 215,
+      "sha256": "9be662be7cc38448bdb6fd6629537383c8ec9412b6cfa526063a19df7a79ace7",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/phase_checkpoints/TOTAL_FORCE_V54_NATURAL_LIVE_CLOSEOUT_MEASUREMENT_AND_TEST_LANE_CONTROL_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_055_TOTAL_FORCE_V54_NATURAL_LIVE_CLOSEOUT_MEASUREMENT_AND_TEST_LANE_CONTROL_",
+      "line_count": 242,
+      "sha256": "a4be9a1a78ec564d37617fe631bb025f370c5c6c46a36ba9bfe81266cb917442",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/phase_checkpoints/_v54_state_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_056__v54_state_20260504.json",
+      "line_count": 45,
+      "sha256": "c7ac676a830d09d5b16224128daf7b5539b00a7bd186afbf5eb2cbb871e4d72e",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/live_watch/LIVE_WATCH_20260504_V54.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_057_LIVE_WATCH_20260504_V54.md",
+      "line_count": 40,
+      "sha256": "032c7ae9c2d7bc0c34e1fb1247c7e3e8bd0b8884e1fb2dd07102828060c42ad2",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_api_source_labels_audit_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_058__v54_api_source_labels_audit_20260504.json",
+      "line_count": 62,
+      "sha256": "e3f7fb8575a3630835874f48e52b929f8fbdb1c9535df023fecead1820b3276b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_code_readiness_matrix_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_059__v54_code_readiness_matrix_20260504.md",
+      "line_count": 20,
+      "sha256": "545c86cda2dbffe437dcf81a75d35386c71fa86bb57b931818185b4c78a9bdc3",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_du_doan_test_source_proof_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_060__v54_du_doan_test_source_proof_20260504.json",
+      "line_count": 33,
+      "sha256": "c6861ddb1be57697b41e4eb7cc872f0750537ffdc09f3b4ff0b44b45e464f6c7",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_inspect_recent_final_bundles.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_061__v54_inspect_recent_final_bundles.py",
+      "line_count": 17,
+      "sha256": "e9a761fbf8563e2e8486a4a7a7966bbd5ea4cde3df1ccb660a20feba385a13a3",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_latency_instrumentation_plan_or_result_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_062__v54_latency_instrumentation_plan_or_result_20260504.md",
+      "line_count": 75,
+      "sha256": "56a8afe1ce77f9a50834eabb3d92db9dcb590cde242c9e388450e66e6583a907",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_live_state_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_063__v54_live_state_20260504.json",
+      "line_count": 135,
+      "sha256": "856ad3ce86b6472d38b4659765f4d12dd78dcd65a8d8470a3e676ed5e23de5b8",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_loz_stage_trace_backfill_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_064__v54_loz_stage_trace_backfill_20260504.json",
+      "line_count": 1086,
+      "sha256": "744c244c2235a5802f48e3d030e2d04a90187facf5810e3845c1ab0e5a75884d",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_loz_stage_trace_plan_or_result_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_065__v54_loz_stage_trace_plan_or_result_20260504.md",
+      "line_count": 50,
+      "sha256": "bce40567bac39ce61680578a5d1dd188e179832abcee09a49bb25277746da864",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_mb_blackspot_alert_plan_or_result_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_066__v54_mb_blackspot_alert_plan_or_result_20260504.md",
+      "line_count": 31,
+      "sha256": "36cd90cd5c5610ffaf1170894f514e3ecf10af78388c8be74cca64ffd1748047",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_model_strength_ui_plan_or_result_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_067__v54_model_strength_ui_plan_or_result_20260504.md",
+      "line_count": 41,
+      "sha256": "3c4724cd32c40ae04c2faa200c4633f1d77d690bf873c033f0b0c096859a1277",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_mt_correct_but_dropped_panel_plan_or_result_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_068__v54_mt_correct_but_dropped_panel_plan_or_result_20260504.md",
+      "line_count": 39,
+      "sha256": "501668b5416c186c4135eca4cd02a3f0824a756d039f262ac50387c743f58a68",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_official_vs_test_closeout_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_069__v54_official_vs_test_closeout_20260504.json",
+      "line_count": 35,
+      "sha256": "ad2d99d68c9a665c71fd3d6bee8b8b1560449baf79bdb9feed270fb57fb5f1c5",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_owner_next_action_plan_20260504.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_070__v54_owner_next_action_plan_20260504.md",
+      "line_count": 37,
+      "sha256": "96eb1a014ffafb78a8553dbb6af0970f7ba19c3c64b9d68d6b8a8aaa554832e6",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_post_hash_20260504.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_071__v54_post_hash_20260504.txt",
+      "line_count": 20,
+      "sha256": "3d25d0cf0f44d73f503c98c6fc05b6bee9e2dc74b2fe99834165687be129626c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_pre_hash_20260504.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_072__v54_pre_hash_20260504.txt",
+      "line_count": 20,
+      "sha256": "f13ae234982d98549bd96ca05adb8c4ac59f2483ab97019d0f7d776667988cee",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_run_loz_stage_trace.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_073__v54_run_loz_stage_trace.sh",
+      "line_count": 26,
+      "sha256": "732c71c6c37f425c76b448ac56340da0e8ed62bd9edeb410d3dc89cd5adb0d39",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_run_weekday_blackspot.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_074__v54_run_weekday_blackspot.sh",
+      "line_count": 23,
+      "sha256": "92c7c9348fdd330f4ccb9c42f3184bada8d937b7cb7f1f88438295279abdd76c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V54",
+      "source_path": "artifacts/_v54_weekday_blackspot_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V54\\src_075__v54_weekday_blackspot_20260504.json",
+      "line_count": 5,
+      "sha256": "1c3cb0584398dda83ad0176b22d39aee842b85856fc3e0d6fec3231633d7e7b5",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/phase_checkpoints/TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_076_TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md",
+      "line_count": 502,
+      "sha256": "57efba765770ff10610b657c0e0294a38a32decb5236cd4269a0efe7e43f1f04",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/phase_checkpoints/SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_077_SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md",
+      "line_count": 165,
+      "sha256": "9d4cd290219a427debf62cf6f9f5283513a2c9c22e30bcc5081c8e015a2dae93",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/live_watch/LIVE_WATCH_20260505_V55.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_078_LIVE_WATCH_20260505_V55.md",
+      "line_count": 48,
+      "sha256": "384fb59a8213a10bbd803ccaa8c6cfd25f44d3abc8747a49bb4c67600fa79a82",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_actual_tails_verify.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_079__v55_actual_tails_verify.py",
+      "line_count": 23,
+      "sha256": "49b47458e25fac71ad04cb68aef64732f6391bc68fa1282f81551c71d31b570b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_aggregate.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_080__v55_aggregate.py",
+      "line_count": 273,
+      "sha256": "166f218ec16071aa14a265338931e2f265f9f62b3256e1d355a0d10833b3121c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_api_smoke.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_081__v55_api_smoke.py",
+      "line_count": 82,
+      "sha256": "9deb9eb188ed4ce5a5ef5e48267fe7bd2f49c983fe04b92b9f7fca31afce34af",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_check_new_shadow_rows.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_082__v55_check_new_shadow_rows.py",
+      "line_count": 24,
+      "sha256": "794f2d492d9c266cd28b1199f5e6fe0a3de4f477128297d580e70d10a898083c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_direct_vps_audit.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_083__v55_direct_vps_audit.py",
+      "line_count": 49,
+      "sha256": "359fe3818912e7d5d54bf17d255210e74c9af6aa024744d87f9b5e6d526dc2fd",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_du_doan_test_closeout_20260504_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_084__v55_du_doan_test_closeout_20260504_20260505.json",
+      "line_count": 698,
+      "sha256": "58ff90cf27c81f5bccfd455fff7e7d63b0c63e1e6b02bb272aef4d0ed8e9710d",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_du_doan_test_runner_20260504.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_085__v55_du_doan_test_runner_20260504.json",
+      "line_count": 717,
+      "sha256": "bb815b2b8ea4f15600e55207e4011d9d508bb34c8ae2c0b327c62e60ca3f8d80",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_du_doan_test_ui_api_source_audit_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_086__v55_du_doan_test_ui_api_source_audit_20260505.json",
+      "line_count": 43,
+      "sha256": "e0068284dffdefb09525b54effe6bf742c85c9c71868932af4b8402ab93f7770",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_envload_check.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_087__v55_envload_check.py",
+      "line_count": 28,
+      "sha256": "cfec0b230a0cb05330fd72096af5ff370aac50bee36c26761e5a1ffd0668e484",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_fix_envpath.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_088__v55_fix_envpath.sh",
+      "line_count": 37,
+      "sha256": "59a2cc21a5322e7bf37ce01ad551ffbb7f614f7aa5787d954945ff6c47589b29",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_forensic_query.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_089__v55_forensic_query.py",
+      "line_count": 580,
+      "sha256": "a2daebff6b2bb29aa15f0d597a5d7738a65bee15d32f607c48057709da0d6f6b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_gemma_debug_and_picks.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_090__v55_gemma_debug_and_picks.py",
+      "line_count": 40,
+      "sha256": "222145a771ea0a59d37d6c1280a15201720855cc9806427d17b3eb15e774fc93",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_gemma_route_verify.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_091__v55_gemma_route_verify.py",
+      "line_count": 21,
+      "sha256": "6dd31c890dad634a7d705c0faad271ca1b59b4ab0de4d78e699856631bd788e4",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_list_models.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_092__v55_list_models.py",
+      "line_count": 17,
+      "sha256": "9cecd0e36cad319633977787f93f38268c2111fce2f26bf6fbe255618b31031c",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_loz_control_audit_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_093__v55_loz_control_audit_20260505.json",
+      "line_count": 151,
+      "sha256": "124b26e66aba7d040fe3412fe9a55e4428a77315c7aaf21b1af56e9387258fe1",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_materialize_2day.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_094__v55_materialize_2day.sh",
+      "line_count": 29,
+      "sha256": "333f71e923cb912ed9565ddffea24ec0189c77536251eb6c17e0306ab5b3b617",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_materialize_2day_v2.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_095__v55_materialize_2day_v2.sh",
+      "line_count": 21,
+      "sha256": "d51a3065a38e0b1a224566ca3e96e32d70d91dca76e4c38679529d5716a8c3e7",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_mb_ai_notoken_specialist_forensic_20260504_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_096__v55_mb_ai_notoken_specialist_forensic_20260504_20260505.json",
+      "line_count": 630,
+      "sha256": "665d0edd1a16b0cbca5b79c6113491aa25e103168b4930ac5e42379a4a173992",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_method_multilane_status_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_097__v55_method_multilane_status_20260505.json",
+      "line_count": 135,
+      "sha256": "1b37ed7bce69d4dd36608f86151196f7aa82ac50ed9f63d196821536da924e21",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_model_tensor_latency_pruning_readiness_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_098__v55_model_tensor_latency_pruning_readiness_20260505.json",
+      "line_count": 274,
+      "sha256": "799de48160b4f26d6c71cbbd1c8306238a56fa2737e73634a2d09a5583747f91",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_mt_correct_but_dropped_20260504_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_099__v55_mt_correct_but_dropped_20260504_20260505.json",
+      "line_count": 65,
+      "sha256": "e1062186c65f7ba0c5801610528cc109cecfe58ba3fc615aee758c922d790cec",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_mt_correct_but_dropped_extra_20260504_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_100__v55_mt_correct_but_dropped_extra_20260504_20260505.json",
+      "line_count": 414,
+      "sha256": "f3bccffb24a1c03663b41805d6b1d9285746cdd3576a5dccd2b8bfbeacfbbe41",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_official_closeout_20260504_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_101__v55_official_closeout_20260504_20260505.json",
+      "line_count": 2225,
+      "sha256": "4fd075b5be342d820f807236bc1ea80f64c2fac57d678e4e258cc83e2bfa5896",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_post_hash_20260505.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_102__v55_post_hash_20260505.txt",
+      "line_count": 20,
+      "sha256": "6f120971b908b33c73f0d18cd6078d4d2867d1db458503954cba3f6b2992320e",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_post_restart_check.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_103__v55_post_restart_check.py",
+      "line_count": 60,
+      "sha256": "8469fc45ce7b36e2df93fa8ea6bbf158c80434f62b900bd9c592d631c8e66779",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_pre_hash_20260505.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_104__v55_pre_hash_20260505.txt",
+      "line_count": 20,
+      "sha256": "c24adcfa1193da27c747ac8da1550f799564000fdf0edf7cf0ea969ac3e96671",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_pre_runner_hash_20260505.txt",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_105__v55_pre_runner_hash_20260505.txt",
+      "line_count": 14,
+      "sha256": "131128f22d12417852b7484c641bec068284fd592b47e9adb7cdf9e8eb8d1d07",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_rolling_metrics_after_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_106__v55_rolling_metrics_after_20260505.json",
+      "line_count": 298,
+      "sha256": "1e1f940f679d6e8c19ad554c5a710abf05c40cda1571f27178366a2adb837559",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_schema_check.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_107__v55_schema_check.py",
+      "line_count": 19,
+      "sha256": "1622731860b23ea395df99d159cecd75e40c62fe5efa6243164e24491717a368",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_state_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_108__v55_state_20260505.json",
+      "line_count": 57,
+      "sha256": "12346239861efc0c9dad98d7c39bd93b9afc66aa91b589a422146cfd6ecd05e6",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_status_recon.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_109__v55_status_recon.py",
+      "line_count": 64,
+      "sha256": "8a26e6b440dda36051555dd64d20611e151532629f6cc483ea69b7cc8befa283",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_system_audit.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_110__v55_system_audit.py",
+      "line_count": 109,
+      "sha256": "4f899c8114f060e4e6b566d9bf28f71f4728e55a8bea70fedf6ae55bc723d027",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_system_audit_20260505.json",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_111__v55_system_audit_20260505.json",
+      "line_count": 1489,
+      "sha256": "31495018dd6744b4d088d6c451ca0ba07332e38a53406ca9ee038e8e6bdd1102",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_test_preview_check.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_112__v55_test_preview_check.py",
+      "line_count": 84,
+      "sha256": "cbd516fdd4c5170f8a058655b86f4df9793553e6aaa23e831ba88cc0caedadba",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_vps_apply.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_113__v55_vps_apply.sh",
+      "line_count": 32,
+      "sha256": "8b38c8cda470ba8b30284bf24072cbcdc1b777cecd9170db59fbc60840e2e126",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_vps_backup_and_envcheck.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_114__v55_vps_backup_and_envcheck.sh",
+      "line_count": 26,
+      "sha256": "509d6336bc291786276d4a66cf2ab78df3de13276709fdfb07bd2407631f19ba",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_vps_verify.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V55\\src_115__v55_vps_verify.py",
+      "line_count": 72,
+      "sha256": "1a6eb9044a709be98e8d1ac204b50b44a7fc0f0a79941a69f1fea3a465bbf19d",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V56",
+      "source_path": "artifacts/phase_checkpoints/V56_DU_DOAN_TEST_EXPERIENCE_LANE_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V56\\src_116_V56_DU_DOAN_TEST_EXPERIENCE_LANE_20260505.md",
+      "line_count": 130,
+      "sha256": "16bf747aee84ee033d8a93cfcdeecdb22680da4c081ae04a1de746be46952821",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V57_C16",
+      "source_path": "artifacts/phase_checkpoints/V57_C16_ADAPTIVE_MODEL_BUDGET_SELECTOR_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V57_C16\\src_117_V57_C16_ADAPTIVE_MODEL_BUDGET_SELECTOR_20260505.md",
+      "line_count": 257,
+      "sha256": "6bbc83d5b1cc5a0e0c29db329056975f95a2051d42b0b26fff2e9d8e55739a67",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V57_C16",
+      "source_path": "artifacts/_c16_verify_budget.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V57_C16\\src_118__c16_verify_budget.py",
+      "line_count": 39,
+      "sha256": "cdc665c0a3f062174a0d971bdd5928e3bd90e0cfa55ed5a6034ae18ab46bc619",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V57_C16",
+      "source_path": "artifacts/_c16_verify_output.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V57_C16\\src_119__c16_verify_output.sh",
+      "line_count": 16,
+      "sha256": "c8df7cfb675d336026143edcc322fae961ab2c43860851ccf1879a2ac63bcc1b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V57_C16",
+      "source_path": "artifacts/_c16_vps_backup.sh",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V57_C16\\src_120__c16_vps_backup.sh",
+      "line_count": 12,
+      "sha256": "4961ba3db051d208fcea870c7350fa1a2a9e005a4c857a2e5564dde0c3f1acc8",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V58",
+      "source_path": "artifacts/phase_checkpoints/V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V58\\src_121_V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md",
+      "line_count": 65,
+      "sha256": "48d151f63dc7a28ff40258c472767cf49a8965255e0d33585f02b51ef403f8bf",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V59",
+      "source_path": "artifacts/phase_checkpoints/V59_LO3_XIEN_STRICT_VERIFICATION_FIX_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V59\\src_122_V59_LO3_XIEN_STRICT_VERIFICATION_FIX_20260505.md",
+      "line_count": 125,
+      "sha256": "f14f5eb96e40a72e51c0c97b93cf2bc0be023c232250f54dc821a077c280a354",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V59",
+      "source_path": "artifacts/_v59_verify_api_bundle.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V59\\src_123__v59_verify_api_bundle.py",
+      "line_count": 33,
+      "sha256": "bdc288e3098608ca88629e0285402a1a7b7b985b868b44094492e5b25074ed67",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V59",
+      "source_path": "artifacts/_v59_verify_lo3.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V59\\src_124__v59_verify_lo3.py",
+      "line_count": 16,
+      "sha256": "6a6937f8d6d04ac5efa07d1fd2635edafb3b8e59c95c92314f5a7a28a24043f0",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V60",
+      "source_path": "artifacts/phase_checkpoints/V60_MOBILE_AND_MODEL_PRIORITY_ORDER_20260505.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V60\\src_125_V60_MOBILE_AND_MODEL_PRIORITY_ORDER_20260505.md",
+      "line_count": 94,
+      "sha256": "1fe06ea77f1a5c15088358309b72b5f311b7be4a27dd5fb5133406ef52c843a6",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V60",
+      "source_path": "artifacts/_v60_verify_order.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V60\\src_126__v60_verify_order.py",
+      "line_count": 9,
+      "sha256": "3772532236d860ac7b73dc45bd18b8e52d4c3e556ddea8eec6e2887d941c0e14",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V61",
+      "source_path": "artifacts/phase_checkpoints/V61_DYNAMIC_DU_DOAN_TEST_TRIGGER_20260506.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V61\\src_127_V61_DYNAMIC_DU_DOAN_TEST_TRIGGER_20260506.md",
+      "line_count": 149,
+      "sha256": "f5499b6d5ab8260141cd77ad8cd109a82dfc72a1d1fc9950ec07d59a33f295d4",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V61",
+      "source_path": "artifacts/_v61_investigate_20260506.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V61\\src_128__v61_investigate_20260506.py",
+      "line_count": 48,
+      "sha256": "6075e6687372ced1bda47174172f3871e5f1611c1f5945fe7f2dec6bc048f37f",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V61",
+      "source_path": "artifacts/_v61_mn_output_check.py",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V61\\src_129__v61_mn_output_check.py",
+      "line_count": 34,
+      "sha256": "ea0d913467837653ed9aa8ce00c4af9ea5c1a5e6cb7a00b6014e87919bfd6477",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "CHANGELOG.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md",
+      "line_count": 10253,
+      "sha256": "285c1d5bc6e596f4f77e20ef0306065ab93e92c415f0b87a7dabc43009777e00",
+      "parts": [
+        {
+          "path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md_part_001_lines_000001_002500.txt",
+          "start_line": 1,
+          "end_line": 2500,
+          "line_count": 2500
+        },
+        {
+          "path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md_part_002_lines_002501_005000.txt",
+          "start_line": 2501,
+          "end_line": 5000,
+          "line_count": 2500
+        },
+        {
+          "path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md_part_003_lines_005001_007500.txt",
+          "start_line": 5001,
+          "end_line": 7500,
+          "line_count": 2500
+        },
+        {
+          "path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md_part_004_lines_007501_010000.txt",
+          "start_line": 7501,
+          "end_line": 10000,
+          "line_count": 2500
+        },
+        {
+          "path": "02_BY_VERSION\\V52\\src_130_CHANGELOG.md_part_005_lines_010001_010253.txt",
+          "start_line": 10001,
+          "end_line": 10253,
+          "line_count": 253
+        }
+      ],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "docs/CURRENT_TRUTH_SSOT.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_131_CURRENT_TRUTH_SSOT.md",
+      "line_count": 212,
+      "sha256": "fb970b0c4c4e06c3abfd82874e3f4f9a2a7bae65bca9866e1ad57322b9374d86",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "docs/FOLLOW_UP_TRACKER.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_132_FOLLOW_UP_TRACKER.md",
+      "line_count": 2328,
+      "sha256": "3eb7e24e3740e23cd20df7613d9d11d23dcd4ef4f7d7f91e3905cac4cffb7200",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_133_ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md",
+      "line_count": 256,
+      "sha256": "f5236f8a1f47f2cc4498fe8d08f8c3692cf853855e52870e90c79ffaef958c70",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "docs/CHANGELOG_GOVERNANCE_LEDGER.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_134_CHANGELOG_GOVERNANCE_LEDGER.md",
+      "line_count": 180,
+      "sha256": "e120067f206d4542d021062c6f098975b40c839f8c5f396bda817d47f555f91f",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "docs/DAY_GOVERNANCE_CRITERIA.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_135_DAY_GOVERNANCE_CRITERIA.md",
+      "line_count": 82,
+      "sha256": "dc237605b1473410c17f2bc78fac4470fee993862cac0d9759d56734e5ab4a5b",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/DU_DOAN_TEST_V47_LIVE_PARALLEL_VERIFICATION_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_136_DU_DOAN_TEST_V47_LIVE_PARALLEL_VERIFICATION_20260503.md",
+      "line_count": 178,
+      "sha256": "041057fa6b0cac6c044ca6c0e2cacb73ab0967ef25835e255cf0b338f9b588b2",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/DU_DOAN_TEST_V48_START_LIVE_PARALLEL_COMPLETION_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_137_DU_DOAN_TEST_V48_START_LIVE_PARALLEL_COMPLETION_20260503.md",
+      "line_count": 706,
+      "sha256": "f02d57bec9dac98233b7526be160fa4e4dfa72dcdd1460f1e195f63f6ee86679",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/DU_DOAN_TEST_V49_FULL_REPORT_REREAD_AND_LIVE_PARALLEL_CONTROL_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_138_DU_DOAN_TEST_V49_FULL_REPORT_REREAD_AND_LIVE_PARALLEL_CONTROL_20260503.m",
+      "line_count": 452,
+      "sha256": "c9e8be29ff64d95e09ef9ad704fe51f8d638ec057dd4a30dc704cd031987c3a9",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_139_DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md",
+      "line_count": 131,
+      "sha256": "8ef245f089a7846579cd5d2c2c0fad650e65d6a5a2842e4cc6e568059134c265",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52",
+      "source_path": "artifacts/phase_checkpoints/TOTAL_FORCE_V51_POST_LIVE_20260503_MEASUREMENT_TEST_LANE_OUTPUT_QUALITY_AUDIT.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52\\src_140_TOTAL_FORCE_V51_POST_LIVE_20260503_MEASUREMENT_TEST_LANE_OUTPUT_QUALITY_",
+      "line_count": 221,
+      "sha256": "9ad086063957d0c3bba4adc8172be5cfadf221f669b5f30f059f86f860b38251",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52_4",
+      "source_path": "artifacts/phase_checkpoints/V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md",
+      "exists": true,
+      "out_path": "02_BY_VERSION\\V52_4\\src_141_V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md",
+      "line_count": 57,
+      "sha256": "2924f9ec8bf9f0d5e48c5fe6cd4a4e44f2c30964f0dc4766cab3c446e6253121",
+      "parts": [],
+      "missing_reason": null
+    },
+    {
+      "version": "V52_5",
+      "source_path": "artifacts/phase_checkpoints/V52_5_6_MULTI_REGION_RUNNER_20260503.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V52_5",
+      "source_path": "artifacts/phase_checkpoints/V52_5_7_LATEST_FULL_REPORT_20260503.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V52_5",
+      "source_path": "artifacts/phase_checkpoints/V52_5_8_FULL_CHAIN_CONTROL_AUDIT_20260503.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/phase_checkpoints/_v55_state_20260505.json",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_report_chain_reconciliation_20260505.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_rolling_metrics_after_20260505.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_method_multilane_status_20260505.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_code_readiness_matrix_20260505.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    },
+    {
+      "version": "V55",
+      "source_path": "artifacts/_v55_owner_next_action_plan_20260505.md",
+      "exists": false,
+      "out_path": null,
+      "line_count": 0,
+      "sha256": null,
+      "parts": null,
+      "missing_reason": "MISSING_ARTIFACT_EXACT_REQUESTED_PATH"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "latest_anchor": "2026-05-05",
+  "top_by_region_family_30d": {
+    "MN_AI": [],
+    "MN_NO_TOKEN": [],
+    "MN_ENSEMBLE": [],
+    "MN_SHADOW": [],
+    "MT_AI": [],
+    "MT_NO_TOKEN": [],
+    "MT_ENSEMBLE": [],
+    "MT_SHADOW": [],
+    "MB_AI": [],
+    "MB_NO_TOKEN": [],
+    "MB_ENSEMBLE": [],
+    "MB_SHADOW": []
+  },
+  "weekday_blackspot_anchor_2026-05-05": [
+    {
+      "region": "MB",
+      "weekday_name": "Mon",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.2
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Tue",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.2
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Thu",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Sat",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "region": "MB",
+      "weekday_name": "Sun",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Mon",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 4,
+      "bt_rate": 0.8,
+      "lo2_full_rate": 0.6,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Tue",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 3,
+      "bt_rate": 0.6,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.6
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Thu",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 3,
+      "bt_rate": 0.75,
+      "lo2_full_rate": 0.75,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Sat",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MN",
+      "weekday_name": "Sun",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 3,
+      "bt_rate": 0.75,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Mon",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.2,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Tue",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 2,
+      "bt_rate": 0.4,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.8
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Thu",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 4,
+      "bt_rate": 1.0,
+      "lo2_full_rate": 0.75,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Sat",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "region": "MT",
+      "weekday_name": "Sun",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.5
+    }
+  ],
+  "latency_2day": [
+    [
+      "2026-05-04",
+      "MB",
+      25,
+      0,
+      0
+    ],
+    [
+      "2026-05-04",
+      "MN",
+      25,
+      0,
+      0
+    ],
+    [
+      "2026-05-04",
+      "MT",
+      25,
+      0,
+      0
+    ],
+    [
+      "2026-05-05",
+      "MB",
+      27,
+      0,
+      0
+    ],
+    [
+      "2026-05-05",
+      "MN",
+      27,
+      0,
+      0
+    ],
+    [
+      "2026-05-05",
+      "MT",
+      27,
+      0,
+      0
+    ]
+  ],
+  "latency_pruning_label": "PRUNING_NOT_ALLOWED_NO_LATENCY"
+}

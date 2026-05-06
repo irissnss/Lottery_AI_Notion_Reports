@@ -1,0 +1,2500 @@
+      "rows_written": 44,
+      "actual_tails": 44
+    },
+    {
+      "date": "2026-03-08",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-08",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-08",
+      "region": "MT",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-09",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-09",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-09",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-03-10",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-10",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-10",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-03-11",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-11",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-11",
+      "region": "MT",
+      "rows_written": 29,
+      "actual_tails": 29
+    },
+    {
+      "date": "2026-03-12",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-03-12",
+      "region": "MN",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-12",
+      "region": "MT",
+      "rows_written": 37,
+      "actual_tails": 37
+    },
+    {
+      "date": "2026-03-13",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-13",
+      "region": "MN",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-03-13",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-03-14",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-03-14",
+      "region": "MN",
+      "rows_written": 54,
+      "actual_tails": 54
+    },
+    {
+      "date": "2026-03-14",
+      "region": "MT",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-15",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-03-15",
+      "region": "MN",
+      "rows_written": 38,
+      "actual_tails": 38
+    },
+    {
+      "date": "2026-03-15",
+      "region": "MT",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-16",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-16",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-16",
+      "region": "MT",
+      "rows_written": 32,
+      "actual_tails": 32
+    },
+    {
+      "date": "2026-03-17",
+      "region": "MB",
+      "rows_written": 22,
+      "actual_tails": 22
+    },
+    {
+      "date": "2026-03-17",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-03-17",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-03-18",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-18",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-18",
+      "region": "MT",
+      "rows_written": 32,
+      "actual_tails": 32
+    },
+    {
+      "date": "2026-03-19",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-19",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-19",
+      "region": "MT",
+      "rows_written": 44,
+      "actual_tails": 44
+    },
+    {
+      "date": "2026-03-20",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-03-20",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-20",
+      "region": "MT",
+      "rows_written": 27,
+      "actual_tails": 27
+    },
+    {
+      "date": "2026-03-21",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-03-21",
+      "region": "MN",
+      "rows_written": 49,
+      "actual_tails": 49
+    },
+    {
+      "date": "2026-03-21",
+      "region": "MT",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-22",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-03-22",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-03-22",
+      "region": "MT",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-03-23",
+      "region": "MB",
+      "rows_written": 21,
+      "actual_tails": 21
+    },
+    {
+      "date": "2026-03-23",
+      "region": "MN",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-23",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-03-24",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-03-24",
+      "region": "MN",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-24",
+      "region": "MT",
+      "rows_written": 32,
+      "actual_tails": 32
+    },
+    {
+      "date": "2026-03-25",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-03-25",
+      "region": "MN",
+      "rows_written": 44,
+      "actual_tails": 44
+    },
+    {
+      "date": "2026-03-25",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-03-26",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-26",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-03-26",
+      "region": "MT",
+      "rows_written": 49,
+      "actual_tails": 49
+    },
+    {
+      "date": "2026-03-27",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-27",
+      "region": "MN",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-03-27",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-03-28",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-28",
+      "region": "MN",
+      "rows_written": 52,
+      "actual_tails": 52
+    },
+    {
+      "date": "2026-03-28",
+      "region": "MT",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-29",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-03-29",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-03-29",
+      "region": "MT",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-03-30",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-03-30",
+      "region": "MN",
+      "rows_written": 46,
+      "actual_tails": 46
+    },
+    {
+      "date": "2026-03-30",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-03-31",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-03-31",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-03-31",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-01",
+      "region": "MB",
+      "rows_written": 20,
+      "actual_tails": 20
+    },
+    {
+      "date": "2026-04-01",
+      "region": "MN",
+      "rows_written": 46,
+      "actual_tails": 46
+    },
+    {
+      "date": "2026-04-01",
+      "region": "MT",
+      "rows_written": 29,
+      "actual_tails": 29
+    },
+    {
+      "date": "2026-04-02",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-04-02",
+      "region": "MN",
+      "rows_written": 49,
+      "actual_tails": 49
+    },
+    {
+      "date": "2026-04-02",
+      "region": "MT",
+      "rows_written": 46,
+      "actual_tails": 46
+    },
+    {
+      "date": "2026-04-03",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-03",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-04-03",
+      "region": "MT",
+      "rows_written": 33,
+      "actual_tails": 33
+    },
+    {
+      "date": "2026-04-04",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-04",
+      "region": "MN",
+      "rows_written": 50,
+      "actual_tails": 50
+    },
+    {
+      "date": "2026-04-04",
+      "region": "MT",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-04-05",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-05",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-05",
+      "region": "MT",
+      "rows_written": 38,
+      "actual_tails": 38
+    },
+    {
+      "date": "2026-04-06",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-06",
+      "region": "MN",
+      "rows_written": 45,
+      "actual_tails": 45
+    },
+    {
+      "date": "2026-04-06",
+      "region": "MT",
+      "rows_written": 28,
+      "actual_tails": 28
+    },
+    {
+      "date": "2026-04-07",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-07",
+      "region": "MN",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-04-07",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-08",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-08",
+      "region": "MN",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-04-08",
+      "region": "MT",
+      "rows_written": 29,
+      "actual_tails": 29
+    },
+    {
+      "date": "2026-04-09",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-09",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-04-09",
+      "region": "MT",
+      "rows_written": 45,
+      "actual_tails": 45
+    },
+    {
+      "date": "2026-04-10",
+      "region": "MB",
+      "rows_written": 21,
+      "actual_tails": 21
+    },
+    {
+      "date": "2026-04-10",
+      "region": "MN",
+      "rows_written": 46,
+      "actual_tails": 46
+    },
+    {
+      "date": "2026-04-10",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-11",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-04-11",
+      "region": "MN",
+      "rows_written": 53,
+      "actual_tails": 53
+    },
+    {
+      "date": "2026-04-11",
+      "region": "MT",
+      "rows_written": 46,
+      "actual_tails": 46
+    },
+    {
+      "date": "2026-04-12",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-04-12",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-04-12",
+      "region": "MT",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-04-13",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-13",
+      "region": "MN",
+      "rows_written": 38,
+      "actual_tails": 38
+    },
+    {
+      "date": "2026-04-13",
+      "region": "MT",
+      "rows_written": 34,
+      "actual_tails": 34
+    },
+    {
+      "date": "2026-04-14",
+      "region": "MB",
+      "rows_written": 21,
+      "actual_tails": 21
+    },
+    {
+      "date": "2026-04-14",
+      "region": "MN",
+      "rows_written": 38,
+      "actual_tails": 38
+    },
+    {
+      "date": "2026-04-14",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-04-15",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-15",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-15",
+      "region": "MT",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-04-16",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-04-16",
+      "region": "MN",
+      "rows_written": 44,
+      "actual_tails": 44
+    },
+    {
+      "date": "2026-04-16",
+      "region": "MT",
+      "rows_written": 47,
+      "actual_tails": 47
+    },
+    {
+      "date": "2026-04-17",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-17",
+      "region": "MN",
+      "rows_written": 49,
+      "actual_tails": 49
+    },
+    {
+      "date": "2026-04-17",
+      "region": "MT",
+      "rows_written": 29,
+      "actual_tails": 29
+    },
+    {
+      "date": "2026-04-18",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-04-18",
+      "region": "MN",
+      "rows_written": 53,
+      "actual_tails": 53
+    },
+    {
+      "date": "2026-04-18",
+      "region": "MT",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-19",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-19",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-19",
+      "region": "MT",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-20",
+      "region": "MB",
+      "rows_written": 21,
+      "actual_tails": 21
+    },
+    {
+      "date": "2026-04-20",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-04-20",
+      "region": "MT",
+      "rows_written": 32,
+      "actual_tails": 32
+    },
+    {
+      "date": "2026-04-21",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-21",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-21",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-04-22",
+      "region": "MB",
+      "rows_written": 22,
+      "actual_tails": 22
+    },
+    {
+      "date": "2026-04-22",
+      "region": "MN",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-04-22",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-23",
+      "region": "MB",
+      "rows_written": 23,
+      "actual_tails": 23
+    },
+    {
+      "date": "2026-04-23",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-23",
+      "region": "MT",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-04-24",
+      "region": "MB",
+      "rows_written": 26,
+      "actual_tails": 26
+    },
+    {
+      "date": "2026-04-24",
+      "region": "MN",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-04-24",
+      "region": "MT",
+      "rows_written": 31,
+      "actual_tails": 31
+    },
+    {
+      "date": "2026-04-25",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-25",
+      "region": "MN",
+      "rows_written": 48,
+      "actual_tails": 48
+    },
+    {
+      "date": "2026-04-25",
+      "region": "MT",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-04-26",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-26",
+      "region": "MN",
+      "rows_written": 48,
+      "actual_tails": 48
+    },
+    {
+      "date": "2026-04-26",
+      "region": "MT",
+      "rows_written": 40,
+      "actual_tails": 40
+    },
+    {
+      "date": "2026-04-27",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-27",
+      "region": "MN",
+      "rows_written": 44,
+      "actual_tails": 44
+    },
+    {
+      "date": "2026-04-27",
+      "region": "MT",
+      "rows_written": 28,
+      "actual_tails": 28
+    },
+    {
+      "date": "2026-04-28",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-04-28",
+      "region": "MN",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-04-28",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-29",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-04-29",
+      "region": "MN",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-04-29",
+      "region": "MT",
+      "rows_written": 30,
+      "actual_tails": 30
+    },
+    {
+      "date": "2026-04-30",
+      "region": "MB",
+      "rows_written": 22,
+      "actual_tails": 22
+    },
+    {
+      "date": "2026-04-30",
+      "region": "MN",
+      "rows_written": 39,
+      "actual_tails": 39
+    },
+    {
+      "date": "2026-04-30",
+      "region": "MT",
+      "rows_written": 42,
+      "actual_tails": 42
+    },
+    {
+      "date": "2026-05-01",
+      "region": "MB",
+      "rows_written": 25,
+      "actual_tails": 25
+    },
+    {
+      "date": "2026-05-01",
+      "region": "MN",
+      "rows_written": 41,
+      "actual_tails": 41
+    },
+    {
+      "date": "2026-05-01",
+      "region": "MT",
+      "rows_written": 28,
+      "actual_tails": 28
+    },
+    {
+      "date": "2026-05-02",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-05-02",
+      "region": "MN",
+      "rows_written": 53,
+      "actual_tails": 53
+    },
+    {
+      "date": "2026-05-02",
+      "region": "MT",
+      "rows_written": 43,
+      "actual_tails": 43
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MB",
+      "rows_written": 24,
+      "actual_tails": 24
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MN",
+      "rows_written": 36,
+      "actual_tails": 36
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MT",
+      "rows_written": 40,
+      "actual_tails": 40
+    }
+  ]
+}
+
+===== SOURCE_END artifacts/_v54_loz_stage_trace_backfill_20260504.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_loz_stage_trace_plan_or_result_20260504.md VERSION=V54 LINES=50 SHA256=bce40567bac39ce61680578a5d1dd188e179832abcee09a49bb25277746da864 =====
+# V54 C-06 — Loz Stage Trace Result
+
+> Status: `LOZ_STAGE_TRACE_DEPLOYED_MEASUREMENT_ONLY`  
+> File: `web/backend/_materialize_loz_stage_trace_shadow.py`  
+> Table: `loz_stage_trace_shadow`  
+> Anchor: 2026-05-03 (closed day, no 2026-05-04 result used)
+
+## What It Does
+
+For each actual tail in each region/day, trace whether the actual tail:
+
+- appeared in any model output;
+- appeared in final bundle candidate pool;
+- had candidate rank/score;
+- reached official lo2;
+- was dropped before final output.
+
+## Drop Labels
+
+- `FINAL_OUTPUT_HIT`
+- `NOT_IN_MODEL_OUTPUT`
+- `CANDIDATE_POOL_MISS`
+- `LOZ_LINE_SELECTION_MISS`
+- `MODEL_TOP10_ONLY`
+- `BUNDLE_PROMOTION_DROP`
+
+## VPS Backfill Summary
+
+Backfilled 60 closed days through 2026-05-03: 180 date-region jobs.
+
+Rows by region/drop stage:
+
+| Region | NOT_IN_MODEL_OUTPUT | LOZ_LINE_SELECTION_MISS | CANDIDATE_POOL_MISS | FINAL_OUTPUT_HIT |
+|---|---:|---:|---:|---:|
+| MN | 2229 | 221 | 105 | 59 |
+| MT | 1807 | 182 | 90 | 52 |
+| MB | 1204 | 121 | 73 | 31 |
+
+## Interpretation
+
+- MT has 182 cases where an actual tail was in candidate pool but line selection missed it.
+- MB has fewer total misses than MN/MT because MB actual tail rows are fewer in this 60d set, but its final-output hit rate remains weak.
+- `NOT_IN_MODEL_OUTPUT` dominates everywhere, meaning many actual tails are not present in top model outputs at all; this prevents simplistic loz policy swaps.
+
+## Safety
+
+- Reads only `final_bundles`, `predictions`, `lottery_results`.
+- Writes only `loz_stage_trace_shadow`.
+- Does not call `generate_final_bundle()`.
+- Does not mutate official output.
+
+===== SOURCE_END artifacts/_v54_loz_stage_trace_plan_or_result_20260504.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_mb_blackspot_alert_plan_or_result_20260504.md VERSION=V54 LINES=31 SHA256=36cd90cd5c5610ffaf1170894f514e3ecf10af78388c8be74cca64ffd1748047 =====
+# V54 C-15 — Weekday Black-Spot Alert Result
+
+> Status: `WEEKDAY_BLACKSPOT_ALERT_DEPLOYED_MEASUREMENT_ONLY`  
+> File: `web/backend/_materialize_weekday_blackspot_shadow.py`  
+> Table: `weekday_blackspot_shadow`  
+> Anchor: 2026-05-03, window 30d
+
+## Confirmed Black Spots
+
+| Region | Weekday | BT | LO2_FULL | Label |
+|---|---|---:|---:|---|
+| MB | Wed | 0/4 | 0/4 | `WEEKDAY_BLACK_SPOT_CONFIRMED` |
+| MB | Fri | 0/4 | 0/4 | `WEEKDAY_BLACK_SPOT_CONFIRMED` |
+| MT | Mon | 0/4 | 0/4 | `WEEKDAY_BLACK_SPOT_CONFIRMED` |
+| MT | Fri | 0/4 | 0/4 | `WEEKDAY_BLACK_SPOT_CONFIRMED` |
+
+Other risk labels:
+
+- MB Mon/Tue/Thu/Sun: `WEEKDAY_STRUCTURAL_RISK`
+- MN Wed/Fri: `WEEKDAY_STRUCTURAL_RISK`
+- MT Tue/Wed: `WEEKDAY_STRUCTURAL_RISK`
+
+## Safety
+
+- Reads only `final_bundles`.
+- Writes only `weekday_blackspot_shadow`.
+- Does not alter `/du-doan`.
+
+## Next UI Step
+
+Show this as a `/du-doan-test` admin panel with warning chips, not as a production rule.
+
+===== SOURCE_END artifacts/_v54_mb_blackspot_alert_plan_or_result_20260504.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_model_strength_ui_plan_or_result_20260504.md VERSION=V54 LINES=41 SHA256=3c4724cd32c40ae04c2faa200c4633f1d77d690bf873c033f0b0c096859a1277 =====
+# V54 C-14 — Region / Weekday / Station Strength Chips Plan
+
+> Status: `READY_FOR_UI_TEST_ONLY_NOT_DEPLOYED`
+
+## Source
+
+`model_strength_by_region_weekday_station_daily` (V52.5.1)
+
+- 9052 rows.
+- Windows: 7/14/30/60.
+- Grains:
+  - `region`
+  - `region_weekday`
+  - `region_station`
+
+## Planned UI Placement
+
+`/du-doan-test`:
+
+- On test_bundle card header:
+  - primary experiment;
+  - strength anchor;
+  - strongest model family for this region/week/window.
+- New mini panel:
+  - strongest TOKEN / NO_TOKEN / SHADOW by region.
+  - weekday-specific risk.
+  - station-specific strength for MN/MT.
+
+## Labels
+
+- `KEEP_FOR_REGION_SPECIFIC_SIGNAL`
+- `KEEP_FOR_WEEKDAY_SPECIFIC_SIGNAL`
+- `KEEP_FOR_STATION_SPECIFIC_SIGNAL`
+- `WATCH_CANDIDATE`
+- `SAMPLE_THIN`
+- `NOT_ENOUGH_DATA`
+- `DO_NOT_PRUNE_YET`
+
+## Safety
+
+UI-test-only. Does not change any model roster or output policy.
+
+===== SOURCE_END artifacts/_v54_model_strength_ui_plan_or_result_20260504.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_mt_correct_but_dropped_panel_plan_or_result_20260504.md VERSION=V54 LINES=39 SHA256=501668b5416c186c4135eca4cd02a3f0824a756d039f262ac50387c743f58a68 =====
+# V54 C-07 — MT Correct-But-Dropped UI Panel Plan
+
+> Status: `READY_FOR_UI_TEST_ONLY_NOT_DEPLOYED`  
+> Reason: C-06 backend measurement landed first; UI panel will consume both `mt_model_hit_output_drop_shadow` and new `loz_stage_trace_shadow` after one more closed day.
+
+## Data Sources
+
+- `mt_model_hit_output_drop_shadow` (V52.1/V52.2): rolling 60d.
+- `loz_stage_trace_shadow` (V54): stage trace per actual tail.
+
+## Panel Contents
+
+Add to `/du-doan-test` only:
+
+- 7/14/30/60 MT summary:
+  - `LOZ_LINE_SELECTION_MISS`
+  - `AI_SIGNAL_DROPPED`
+  - `NOT_IN_CANDIDATE_UNIVERSE`
+  - `CANDIDATE_POOL_MISS`
+- Latest closed date detail:
+  - actual tail;
+  - model(s) that had it;
+  - model family;
+  - candidate rank/score;
+  - official BT/lo2;
+  - test method picks;
+  - drop stage.
+
+## Owner Labels
+
+- `Model có tín hiệu nhưng final bỏ`
+- `Không vào candidate pool`
+- `Line loz chọn sai`
+- `Test cứu được`
+- `Test cũng miss`
+
+## Safety
+
+UI-test-only. No official output change.
+
+===== SOURCE_END artifacts/_v54_mt_correct_but_dropped_panel_plan_or_result_20260504.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_official_vs_test_closeout_20260504.json VERSION=V54 LINES=35 SHA256=ad2d99d68c9a665c71fd3d6bee8b8b1560449baf79bdb9feed270fb57fb5f1c5 =====
+{
+  "date": "2026-05-04",
+  "status": "PRE_CLOSEOUT_LIVE_WATCH",
+  "generated_at_vn": "2026-05-04T12:55:52+07:00",
+  "regions": {
+    "MN": {
+      "state": "BUNDLE_READY_PENDING_RESULT",
+      "official_bundle": {
+        "bt": "65",
+        "lo2": ["65", "32"],
+        "lo3": "465",
+        "created_at": "2026-05-04 04:23:51",
+        "status": "PENDING"
+      },
+      "predictions": {"auto_daily": 15, "shadow_auto_eval": 10},
+      "test_rows": 0,
+      "comparison": "WAIT_CLOSEOUT"
+    },
+    "MT": {
+      "state": "PREDICTIONS_READY_NO_BUNDLE",
+      "official_bundle": null,
+      "predictions": {"auto_daily": 7},
+      "test_rows": 0,
+      "comparison": "WAIT_CASCADE_AND_CLOSEOUT"
+    },
+    "MB": {
+      "state": "PREDICTIONS_READY_NO_BUNDLE",
+      "official_bundle": null,
+      "predictions": {"auto_daily": 7},
+      "test_rows": 0,
+      "comparison": "WAIT_CASCADE_AND_CLOSEOUT"
+    }
+  },
+  "do_not_claim": "No 2026-05-04 quality verdict before result scrape and evaluation."
+}
+
+===== SOURCE_END artifacts/_v54_official_vs_test_closeout_20260504.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_owner_next_action_plan_20260504.md VERSION=V54 LINES=37 SHA256=96eb1a014ffafb78a8553dbb6af0970f7ba19c3c64b9d68d6b8a8aaa554832e6 =====
+# V54 Owner Next Action Plan
+
+## Next 24h
+
+- Let 2026-05-04 finish naturally.
+- No more restarts before 20:00 eval jobs unless outage.
+- After closeout, run V52.5.6 runner manually for `--region ALL --mode POST_CLOSEOUT_DIAGNOSTIC_FULL_25`.
+
+## Next 3 Days
+
+- Deploy C-05 per-model latency instrumentation outside live windows.
+- Deploy C-07 MT correct-but-dropped UI panel.
+- Deploy C-14 strength chips UI.
+- Keep C-02 source labels live.
+
+## Next 7 Days
+
+- Extend closeout evaluator to MN/MT/MB (C-03).
+- Consider scheduler auto-wire only after 3 clean manual closeouts.
+- Surface C-15 blackspot panel in `/du-doan-test`.
+
+## Next 14 Days
+
+- Re-evaluate loz trace after 14 valid days.
+- Decide whether any loz method becomes owner-review candidate. Current answer: no.
+
+## Next 30 Days
+
+- Review Wave 1 method candidates (MB Composite V2 / MB StrengthWeighted / MN AI_CHAIN) only if gates met.
+- No production deploy without DECISION_LOG owner OK.
+
+## Do Not Do
+
+- Do not prune models before latency/cost data exists.
+- Do not promote single-vote rescue.
+- Do not change official loz policy.
+- Do not claim 2026-05-04 before closeout.
+
+===== SOURCE_END artifacts/_v54_owner_next_action_plan_20260504.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_post_hash_20260504.txt VERSION=V54 LINES=20 SHA256=3d25d0cf0f44d73f503c98c6fc05b6bee9e2dc74b2fe99834165687be129626c =====
+# V54 POST-HASH
+predictions	exists=true	count=4173	sha256=ee9898d8c07803898d1cc2dbd11c2a5eab23481bd4743f86b541a7024b59858e
+final_bundles	exists=true	count=196	sha256=593c117432e091b4efaf62418c866180c3a047bc06e5ba44f9768ea174d352e8
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113476	sha256=d224c20e3e794b6f57f068fbba6e680d214ccf3d6346e5990c980f43bf03a7b4
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+experimental_preview_shadow	exists=true	count=1098	sha256=64270bda1b599f3e982adb8d058483fa700426b9ac87fd988fc7e36a8e4dd5d7
+mb_experimental_preview_shadow	exists=true	count=21	sha256=c41ffabd25595894425a98d4957d081bf00521f258f35f67c5f142217df3ee39
+du_doan_test_runs	exists=true	count=579	sha256=29d3a1b8594d04058ecf80dce10020d278c3484f3ba2fcc626925020867ab241
+du_doan_test_bundles	exists=true	count=579	sha256=968bbf2d492c1cfa6290545cc5d327f2e16698eb87cdc9fb49d16bbd8954a4b2
+du_doan_test_results	exists=true	count=579	sha256=53a85871870cdb1611860ccf6f5fd6fd1b5b46e7a34b9551a70250ac6a34f76f
+du_doan_test_candidates	exists=true	count=13405	sha256=ce3eef3dd73636539afacb6e7ae64ea5f1e1d362f8135bc9dae0de9fd0881f77
+du_doan_test_model_contribution	exists=true	count=13405	sha256=b25e490cec49985b2fe42324892e99d95a140291d6c1db5d71bae6cc034eade6
+du_doan_test_audit_log	exists=true	count=192	sha256=4476ff2edb0d69076b56835fa25d68577e91be046acabfe749398321ec139240
+loz_stage_trace_shadow	exists=true	count=6174	sha256=f50649ab4a9bdf9dbd310b9aac230c9df0c23d5386cf7bab09f2c33e93b06d3c
+weekday_blackspot_shadow	exists=true	count=21	sha256=4b6d43d269abd588c0074e3c9e14d628d8afb62acde835c8ff77cdef53855039
+
+===== SOURCE_END artifacts/_v54_post_hash_20260504.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_pre_hash_20260504.txt VERSION=V54 LINES=20 SHA256=f13ae234982d98549bd96ca05adb8c4ac59f2483ab97019d0f7d776667988cee =====
+# V54 PRE-HASH
+generated_at=2026-05-04T12:55:37
+live_sync_manifest=artifacts/live_sync/20260504_125506/manifest.json
+predictions	exists=true	count=4173	sha256=ee9898d8c07803898d1cc2dbd11c2a5eab23481bd4743f86b541a7024b59858e
+final_bundles	exists=true	count=196	sha256=1f539792da3b2d17ca7dba6d3f241c03060a7c518d591dfa2a9dd7dccd6b3ff1
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113457	sha256=74ecce04b56f1a3e63b1e8740618d12429ed7cc5bc6b6d8904296f6c42626bfa
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+experimental_preview_shadow	exists=true	count=1098	sha256=64270bda1b599f3e982adb8d058483fa700426b9ac87fd988fc7e36a8e4dd5d7
+mb_experimental_preview_shadow	exists=true	count=21	sha256=c41ffabd25595894425a98d4957d081bf00521f258f35f67c5f142217df3ee39
+du_doan_test_runs	exists=true	count=579	sha256=29d3a1b8594d04058ecf80dce10020d278c3484f3ba2fcc626925020867ab241
+du_doan_test_bundles	exists=true	count=579	sha256=968bbf2d492c1cfa6290545cc5d327f2e16698eb87cdc9fb49d16bbd8954a4b2
+du_doan_test_results	exists=true	count=579	sha256=53a85871870cdb1611860ccf6f5fd6fd1b5b46e7a34b9551a70250ac6a34f76f
+du_doan_test_candidates	exists=true	count=13405	sha256=ce3eef3dd73636539afacb6e7ae64ea5f1e1d362f8135bc9dae0de9fd0881f77
+du_doan_test_model_contribution	exists=true	count=13405	sha256=b25e490cec49985b2fe42324892e99d95a140291d6c1db5d71bae6cc034eade6
+du_doan_test_audit_log	exists=true	count=192	sha256=4476ff2edb0d69076b56835fa25d68577e91be046acabfe749398321ec139240
+
+===== SOURCE_END artifacts/_v54_pre_hash_20260504.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_run_loz_stage_trace.sh VERSION=V54 LINES=26 SHA256=732c71c6c37f425c76b448ac56340da0e8ed62bd9edeb410d3dc89cd5adb0d39 =====
+#!/bin/bash
+set -e
+cd /root/Lottery_AI_Test
+/root/Lottery_AI_Test/venv/bin/python3 -m py_compile web/backend/_materialize_loz_stage_trace_shadow.py
+/root/Lottery_AI_Test/venv/bin/python3 web/backend/_materialize_loz_stage_trace_shadow.py \
+  --backfill-days 60 --anchor-date 2026-05-03 --json \
+  > artifacts/_v54_loz_stage_trace_backfill_20260504.json
+/root/Lottery_AI_Test/venv/bin/python3 - <<'PY'
+import json
+import sqlite3
+
+with open('artifacts/_v54_loz_stage_trace_backfill_20260504.json', encoding='utf-8') as f:
+    data = json.load(f)
+print('processed', len(data.get('results', [])), 'date-region jobs')
+
+conn = sqlite3.connect('data/lottery_ai.db')
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+for row in cur.execute(
+    "SELECT region, drop_stage, COUNT(*) AS n "
+    "FROM loz_stage_trace_shadow "
+    "GROUP BY region, drop_stage ORDER BY region, n DESC"
+):
+    print(dict(row))
+conn.close()
+PY
+
+===== SOURCE_END artifacts/_v54_run_loz_stage_trace.sh =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_run_weekday_blackspot.sh VERSION=V54 LINES=23 SHA256=92c7c9348fdd330f4ccb9c42f3184bada8d937b7cb7f1f88438295279abdd76c =====
+#!/bin/bash
+set -e
+cd /root/Lottery_AI_Test
+/root/Lottery_AI_Test/venv/bin/python3 -m py_compile web/backend/_materialize_weekday_blackspot_shadow.py
+/root/Lottery_AI_Test/venv/bin/python3 web/backend/_materialize_weekday_blackspot_shadow.py \
+  --anchor-date 2026-05-03 --window-days 30 --json \
+  > artifacts/_v54_weekday_blackspot_20260504.json
+/root/Lottery_AI_Test/venv/bin/python3 - <<'PY'
+import sqlite3
+
+conn = sqlite3.connect('data/lottery_ai.db')
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+for row in cur.execute(
+    "SELECT region, weekday_name, total_days, bt_wins, bt_rate, "
+    "lo2_full_wins, lo2_full_rate, blackspot_label "
+    "FROM weekday_blackspot_shadow "
+    "WHERE anchor_date='2026-05-03' AND window_days=30 "
+    "ORDER BY region, weekday"
+):
+    print(dict(row))
+conn.close()
+PY
+
+===== SOURCE_END artifacts/_v54_run_weekday_blackspot.sh =====
+
+
+===== SOURCE_BEGIN artifacts/_v54_weekday_blackspot_20260504.json VERSION=V54 LINES=5 SHA256=1c3cb0584398dda83ad0176b22d39aee842b85856fc3e0d6fec3231633d7e7b5 =====
+{
+  "anchor_date": "2026-05-03",
+  "window_days": 30,
+  "rows_written": 21
+}
+
+===== SOURCE_END artifacts/_v54_weekday_blackspot_20260504.json =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md VERSION=V55 LINES=502 SHA256=57efba765770ff10610b657c0e0294a38a32decb5236cd4269a0efe7e43f1f04 =====
+# TOTAL-FORCE V55 — 04/05 + 05/05 closeout forensic + test lane / official quality / next upgrade plan
+
+**Anchor date:** 2026-05-05 20:14 VN (post all live cycles MN 16:30, MT 17:30, MB 18:30)  
+**Pass id:** V20.3.37.55_full_chain  
+**Mode:** Forensic + measurement-only + test-lane-only + UI-test-only. **Zero official mutation.**  
+**Live data integrity:** synced VPS DB at 20:11 VN (manifest `artifacts/live_sync/20260505_201101/manifest.json`) and again at 20:33 VN after materialization (manifest `artifacts/live_sync/20260505_203357/manifest.json`).  
+**Hard lock:** `/du-doan`, `/api/final-bundle`, `final_bundles`, `predictions`, `lottery_results`, `model_daily_eval`, official scoring, voting, lane weights, prompt, model roster, official scheduler — **không đổi trong V55**.
+
+---
+
+## A. Executive verdict (12 dòng)
+
+1. 04/05: official MN BT_LOSE+lo2_PARTIAL, MT BT_WIN+lo2_WIN, MB BT_LOSE+lo2_LOSE.
+2. 05/05: official MN BT_LOSE+lo2_LOSE, MT BT_WIN+lo2_PARTIAL, MB BT_LOSE+lo2_LOSE.
+3. MT đang trỗi dậy: 7d BT=**71.4%**, nhưng 30d vẫn **36.7%** → tốt 1 tuần, chưa đủ rolling.
+4. MN đang chậm lại: 30d 56.7% (V54: 60%); 7d chỉ 42.9% (3/7).
+5. MB tiếp tục yếu cấu trúc: 7d **14.3%**, 30d 20%, 60d 26.7%; MB Wed/Fri vẫn `WEEKDAY_BLACK_SPOT_CONFIRMED` trên anchor 2026-05-05.
+6. Test lane **đã cứu MN 2/2 ngày**: `SPECIALIST_ROSTER` 04/05 picked 32 (hit) khi official 65 LOSE; `AI_CHAIN_PRESERVATION` 05/05 picked 52 (hit) khi official 15 LOSE. Cả hai là `INDEPENDENT_DIVERGENCE_HELPFUL`, gate chưa đạt.
+7. Test lane **phá MT WIN**: `AI_CHAIN_PRESERVATION` chuyển 29 WIN → 82 (LOSE for BT) ngày 04/05; chuyển 44 WIN → 39 ngày 05/05. MT herding đã đo lại trên 60d (fw=8/fl=12 destructive) — **NOT promote MT_AI_CHAIN**.
+8. Test lane **chưa cứu MB** ngày nào trong 04/05+05/05 dù `mb_experimental_preview_shadow` 05/05 có 1 free win (07/05/2026 sample chưa khẳng định).
+9. `gemini-3-flash` ngày đầu tiên (05/05) **MB BT WIN** (91+14 hit) — KEEP_CANDIDATE; `gemini-3.1-pro` 05/05 MB PARTIAL; `gemma-4-31b` 0 rows 05/05 vì preflight bug. **Bug đã FIX trong V55**, gemma sẽ chạy 06/05.
+10. Loz1/loz2 vẫn `LOZ_NOT_READY_FOR_RULE`. Trace 04/05+05/05 cho thấy MN có 5 loz_line_select_miss, MT 6, MB 4 → có pattern "model đúng nhưng final loz drop" — đặc biệt MT.
+11. C-05 latency: 0/0 latency_available trên 04/05+05/05 → **PRUNING_NOT_ALLOWED_NO_LATENCY** vẫn còn nguyên.
+12. `**/du-doan-test` vẫn ở `LIVE_PARALLEL_AUTO_PENDING_ONLY`**. Chưa đủ proof để đổi official; chưa đạt gate cho method nào.
+
+---
+
+## B. Full report chain reconciliation
+
+
+| Pass                                              | Status                | Reconciled                                                                                                        |
+| ------------------------------------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| V52.5.7 multi-region test lane                    | CONFIRMED             | runner manual, anti-leak D-1, no auto wire — vẫn đúng                                                             |
+| V53 / V52.5.8 full chain audit                    | CONFIRMED             | UI source-badge V52.6, test lane independent verified                                                             |
+| V53.1 owner deliverables (roadmap + timeline)     | CONFIRMED             | docs only, no code change                                                                                         |
+| V54 natural live watch (2026-05-04 12:55 VN)      | CONFIRMED             | C-02 API source labels, C-06 loz_stage_trace 6174 rows, C-15 weekday blackspot 21 rows; C-05 deferred             |
+| V55 V20.3.37.55 add 3 Google direct shadow models | CONFIRMED + CORRECTED | Registry/cohort wiring OK, key resolution OK; *scheduler preflight bug for `gemma-` discovered and FIXED in V55** |
+
+
+**Embedded reports**: V48 inside V49 (already reconciled in V52). No new embedded discovery.
+
+**Document drift check**: SSOT, FU tracker, active roadmap, changelog all consistent up to V55 (entries written this session).
+
+---
+
+## C. Current system status (2026-05-05 20:14 VN)
+
+- **VPS service:** `lottery` active (latest restart 2026-05-05 20:08 VN after V55 scheduler fix); `/api/health` HTTP 200.
+- **Registry counts:** SHADOW_AUTO_EVAL=13 (10 → +3 V55), OUTPUT_ELIGIBLE=15 unchanged, ALL_RUNTIME=31 (28 → 31).
+- **Today's predictions (05/05):** 27 model rows × 3 regions = 81 prediction rows; 3 final bundles (MN/MT/MB) generated and verified.
+- **Today's shadow eval:** 128 shadow_eval scheduler events (MN 64 + MT 32 + MB 32). 12/13 shadow models persisted predictions (gemma-4-31b skipped due to bug, **fixed**).
+- **Test lane data 04/05:** 25 bundles + 25 results across 6 methods × 3 regions + MB legacy duplicate.
+- **Test lane data 05/05:** 25 bundles + 25 results across 6 methods × 3 regions (newly created in this V55 pass via manual runner).
+- **Loz stage trace 04/05:** 88 actual tails traced (MN 39, MT 27, MB 22).
+- **Loz stage trace 05/05:** 94 actual tails traced (MN 42, MT 30, MB 22).
+- **Model strength tensor:** anchor advanced to 2026-05-05 (8875 rows).
+- **Weekday blackspot:** anchor 2026-05-05 (21 rows). MB Wed/Fri = BLACK_SPOT_CONFIRMED. MT Fri = BLACK_SPOT_CONFIRMED. MT Mon downgraded to STRUCTURAL_RISK.
+- **Latency audit:** 0/0 latency_available — pruning still blocked.
+- **Scheduler logs 05/05:** 2,000+ rows including measurement_materialize, shadow_catchup, du_doan_test_mb, mb_watchdog. No anomaly.
+
+---
+
+## D. 2026-05-04 OFFICIAL closeout by region (DB-proven)
+
+
+| Region | BT  | BT status | lo2      | lo2 status                | Actual ground truth (sample)                                           | Verdict                   |
+| ------ | --- | --------- | -------- | ------------------------- | ---------------------------------------------------------------------- | ------------------------- |
+| MN     | 65  | **LOSE**  | [65, 32] | **PARTIAL** (32 hit)      | 6 ĐB+G8 tails: 16,15,41,04 (MN 4 stations) + actual_n=39 incl 32 in G7 | OFFICIAL_LOSE+LO2_PARTIAL |
+| MT     | 29  | **WIN**   | [29, 41] | **WIN** (cả 29 và 41 hit) | 27 tails incl 39 (Phú Yên ĐB), 41 (Phú Yên G8), 51, 52, 13             | OFFICIAL_WIN              |
+| MB     | 09  | **LOSE**  | [09, 38] | **LOSE**                  | 22 tails (Hà Nội); 09 và 38 đều không trong actual                     | OFFICIAL_LOSE             |
+
+
+**Key model-level finding (04/05):**
+
+- MN: actual tail `32` xuất hiện trong final voter set top10 (ranked #2 với 6 voter no-token, score 0.1484) nhưng top1 chọn 65 dù 32 có cluster mạnh hơn về tỷ lệ vote → bundle conversion gap.
+- MT: bundle BT=29 đến từ consensus AI+ML; thắng đúng. Một vài model AI khác chỉ vào 82 (cũng hit cuối cùng) — đây là tín hiệu phụ.
+- MB: ML herding rất mạnh quanh 09 (AI và ML đều top1=09); không model nào lấy được tail thắng (rất cao ngẫu nhiên cho MB Hà Nội đơn đài).
+
+---
+
+## E. 2026-05-05 OFFICIAL closeout by region (DB-proven)
+
+
+| Region | BT  | BT status | lo2      | lo2 status                     | Actual ground truth (sample)                                              | Verdict                  |
+| ------ | --- | --------- | -------- | ------------------------------ | ------------------------------------------------------------------------- | ------------------------ |
+| MN     | 15  | **LOSE**  | [15, 13] | **LOSE**                       | 42 tails: 32 (G7), 35, 60, 96, 95, 22… 15 và 13 đều không hit             | OFFICIAL_LOSE            |
+| MT     | 44  | **WIN**   | [44, 31] | **PARTIAL** (44 hit, 31 không) | 30 tails: G7=144(44), G8=53,89, ĐB=43,78                                  | OFFICIAL_WIN+LO2_PARTIAL |
+| MB     | 83  | **LOSE**  | [83, 41] | **LOSE**                       | 22 tails (Quảng Ninh): 12,37,44,31,37,44 G7 list (37,44,31)… 83 không hit | OFFICIAL_LOSE            |
+
+
+**Key model-level finding (05/05):**
+
+- MN: 15 LOSE; nhiều model AI khác chỉ vào 56, 13, 82 — không trùng actual. Specialist ML cũng đồng thuận 15 sai. Actual G7 ‘32’ có nhưng không có model AI nào pick.
+- MT: 44 WIN — combo-no-token + xgboost + lstm ML all top1=44 đồng thuận. MN(D) và MT prior signal dẫn dắt đúng.
+- MB: 83 LOSE; AI chain herding quanh 83 và 41 — cùng pattern MB thường thấy. Actual G7 = 37, 44, 31 (Quảng Ninh đặc biệt G7 nhiều).
+
+---
+
+## F. 2026-05-04 `/du-doan-test` result by method
+
+
+| Region  | Method                                             | test_bt | off_bt | hit   | flip_to_win | Verdict                                             |
+| ------- | -------------------------------------------------- | ------- | ------ | ----- | ----------- | --------------------------------------------------- |
+| MN      | OFFICIAL_BASELINE_CONTROL                          | 65      | 65     | 0     | 0           | clone-by-design (LOSE)                              |
+| MN      | AI_CHAIN_PRESERVATION_V1                           | 65      | 65     | 0     | 0           | INDEPENDENT_AGREEMENT (cùng sai)                    |
+| MN      | NO_TOKEN_HERD_REDUCTION_V1                         | 65      | 65     | 0     | 0           | INDEPENDENT_AGREEMENT (cùng sai)                    |
+| MN      | **SPECIALIST_ROSTER_V1**                           | **32**  | 65     | **1** | **1**       | **TEST_METHOD_TRUE_RESCUE** ✓                       |
+| MN      | PRIOR_REGION_CONTEXT_SAFE_V1                       | None    | 65     | 0     | 0           | NO_PICK_NO_RESCUE                                   |
+| MN      | STRENGTH_WEIGHTED_V52_5_2                          | 65      | 65     | 0     | 0           | clone (LOSE)                                        |
+| MT      | OFFICIAL_BASELINE_CONTROL                          | 29      | 29     | 1     | 0           | clone-by-design (WIN — official đã WIN)             |
+| MT      | **AI_CHAIN_PRESERVATION_V1**                       | **82**  | 29     | 1     | 0           | INDEPENDENT_DIVERGENCE_HARMFUL (broke baseline win) |
+| MT      | NO_TOKEN_HERD_REDUCTION_V1                         | 29      | 29     | 1     | 0           | INDEPENDENT_AGREEMENT                               |
+| MT      | PRIOR_REGION_CONTEXT_SAFE_V1                       | 82      | 29     | 1     | 0           | INDEPENDENT_DIVERGENCE_HARMFUL                      |
+| MT      | SPECIALIST_ROSTER_V1                               | 29      | 29     | 1     | 0           | INDEPENDENT_AGREEMENT                               |
+| MT      | STRENGTH_WEIGHTED_V52_5_2                          | 82      | 29     | 1     | 0           | INDEPENDENT_DIVERGENCE_HARMFUL                      |
+| MB (×2) | OFFICIAL/AI_CHAIN/NO_TOKEN/STRENGTH/COMPOSITE/TIER | 09      | 09     | 0     | 0           | clone (LOSE)                                        |
+| MB      | PRIOR_REGION                                       | 19      | 09     | 0     | 0           | wrong but different                                 |
+| MB      | SPECIALIST_ROSTER                                  | None    | 09     | 0     | 0           | NO_PICK                                             |
+
+
+**Score 04/05 (region × method):** 1 free win (MN_SPECIALIST → 32), 0 false_promotion, 3 harmful divergence (MT broke). Net = `+1 free_win`, `-3 harmful` (nhưng official MT WIN nên harmful không bị tính LOSE; gọi là "method would have broken official win").
+
+---
+
+## G. 2026-05-05 `/du-doan-test` result by method
+
+
+| Region | Method                       | test_bt | off_bt | hit   | flip_to_win | Verdict                                            |
+| ------ | ---------------------------- | ------- | ------ | ----- | ----------- | -------------------------------------------------- |
+| MN     | OFFICIAL_BASELINE_CONTROL    | 15      | 15     | 0     | 0           | clone (LOSE)                                       |
+| MN     | **AI_CHAIN_PRESERVATION_V1** | **52**  | 15     | **1** | **1**       | **TEST_METHOD_TRUE_RESCUE** ✓                      |
+| MN     | NO_TOKEN_HERD_REDUCTION_V1   | 15      | 15     | 0     | 0           | INDEPENDENT_AGREEMENT (cùng sai)                   |
+| MN     | PRIOR_REGION_CONTEXT_SAFE_V1 | None    | 15     | 0     | 0           | NO_PICK                                            |
+| MN     | SPECIALIST_ROSTER_V1         | 15      | 15     | 0     | 0           | clone (LOSE)                                       |
+| MN     | STRENGTH_WEIGHTED_V52_5_2    | 15      | 15     | 0     | 0           | clone (LOSE)                                       |
+| MT     | OFFICIAL_BASELINE_CONTROL    | 44      | 44     | 1     | 0           | clone (WIN)                                        |
+| MT     | **AI_CHAIN_PRESERVATION_V1** | **39**  | 44     | 1     | 0           | INDEPENDENT_DIVERGENCE_HARMFUL (broke 44 win → 39) |
+| MT     | NO_TOKEN_HERD_REDUCTION_V1   | 44      | 44     | 1     | 0           | INDEPENDENT_AGREEMENT (WIN)                        |
+| MT     | PRIOR_REGION_CONTEXT_SAFE_V1 | 52      | 44     | 1     | 0           | INDEPENDENT_DIVERGENCE_HARMFUL                     |
+| MT     | SPECIALIST_ROSTER_V1         | 44      | 44     | 1     | 0           | INDEPENDENT_AGREEMENT (WIN)                        |
+| MT     | STRENGTH_WEIGHTED_V52_5_2    | 44      | 44     | 1     | 0           | INDEPENDENT_AGREEMENT (WIN)                        |
+| MB     | OFFICIAL_BASELINE_CONTROL    | 83      | 83     | 0     | 0           | clone (LOSE)                                       |
+| MB     | AI_CHAIN_PRESERVATION_V1     | 41      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | NO_TOKEN_HERD_REDUCTION_V1   | 41      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | COMPOSITE_CHALLENGER_V2      | 41      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | STRENGTH_WEIGHTED_V52_5_2    | 41      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | TIER_AWARE_BUNDLE_SHADOW_V1  | 41      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | PRIOR_REGION_CONTEXT_SAFE_V1 | 98      | 83     | 0     | 0           | wrong divergence                                   |
+| MB     | SPECIALIST_ROSTER_V1         | None    | 83     | 0     | 0           | NO_PICK                                            |
+
+
+**Score 05/05:** 1 free win (MN_AI_CHAIN → 52), 0 false_promotion, 2 harmful divergence MT (broke baseline win, không bị penalty rolling).
+
+---
+
+## H. Official vs test — who won, who broke, who rescued
+
+
+| Day   | Region | Official | Test rescue                       | Test break                                 | Net                                                 |
+| ----- | ------ | -------- | --------------------------------- | ------------------------------------------ | --------------------------------------------------- |
+| 04/05 | MN     | LOSE     | SPECIALIST_ROSTER picked 32 ✓     | —                                          | +1 free_win MN                                      |
+| 04/05 | MT     | WIN (29) | —                                 | AI_CHAIN, PRIOR_REGION, STRENGTH (chọn 82) | break baseline win, but 82 also hit so no LOSE flip |
+| 04/05 | MB     | LOSE     | —                                 | —                                          | NO_METHOD_FOUND_HIT                                 |
+| 05/05 | MN     | LOSE     | AI_CHAIN_PRESERVATION picked 52 ✓ | —                                          | +1 free_win MN                                      |
+| 05/05 | MT     | WIN (44) | —                                 | AI_CHAIN (39), PRIOR_REGION (52)           | break baseline win                                  |
+| 05/05 | MB     | LOSE     | —                                 | —                                          | NO_METHOD_FOUND_HIT                                 |
+
+
+**Important nuance:** "harmful divergence trên MT" không tự động làm LO2 hỏng — ví dụ test_bt=82 ngày 04/05 vẫn hit actual nên `would_flip_to_lose=0` trong DB. Đây không phải false_promotion thuần, mà là method tự pick **một số khác** mà cũng hit. Nhưng nếu method được promote vào lane chính, nó sẽ chuyển BT win 29 → 82, và `82` không phải BT win theo bundle status logic (vì DB tracks bach_thu_status by exact bt match).
+
+---
+
+## I. Rolling 7/14/30/60 updated post-05/05
+
+```
+Region 7d_BT  14d_BT 30d_BT 60d_BT  | 30d_LO2_FULL  30d_LO2_ANY
+MN     42.9%  50.0%  56.7%  46.7%   | 30.0%         83.3%
+MT     71.4%  50.0%  36.7%  50.0%   | 16.7%         66.7%
+MB     14.3%  28.6%  20.0%  26.7%   |  6.7%         36.7%
+```
+
+**Reconcile vs V54 numbers:**
+
+- MN BT 30d **60% → 56.7%** (giảm sau 04/05 LOSE và 05/05 LOSE).
+- MT BT 30d 33% → **36.7%** (tăng nhẹ sau 04/05 + 05/05 WIN).
+- MB BT 30d 20% → **20.0%** (không đổi; 04/05 và 05/05 đều LOSE).
+- MN LO2_ANY 83% → **83.3%** (vẫn mạnh).
+- MT LO2_FULL 17% → **16.7%** (nhỉnh hơn).
+- MB LO2_FULL 7% → **6.7%** (giảm nhẹ).
+
+**Per-weekday 60d highlights (anchor 2026-05-05):**
+
+- MN Mon 4/5 BT WIN (80%); Thu 3/4 (75%); Sun 3/4 (75%) — mạnh.
+- MN Wed/Fri STRUCTURAL_RISK (1/4 = 25%).
+- MT Thu 4/4 BT WIN (100%); MT Mon 1/5 (20% — đã downgrade từ V54 BLACK_SPOT).
+- MT Fri 0/4 BT — `WEEKDAY_BLACK_SPOT_CONFIRMED`.
+- MB Wed 0/4 BT — `WEEKDAY_BLACK_SPOT_CONFIRMED`.
+- MB Fri 0/4 BT — `WEEKDAY_BLACK_SPOT_CONFIRMED`.
+- MB Sat 2/4 BT (50%) — best MB weekday.
+
+---
+
+## J. MT forensic — correct-but-dropped, loz line, AI drop, candidate miss
+
+**04/05 MT:**
+
+- `mt_model_hit_output_drop_shadow`: 5 actual tails phân tích, AI signal dropped = 2, no_token dropped = 0.
+- `loz_stage_trace_shadow`: MT 27 actual tails; in_top1=3, in_top2=6, in_top10=6; LOZ_LINE_SELECTION_MISS=1, CANDIDATE_POOL_MISS=3, AI_DROPPED=0.
+
+**05/05 MT:**
+
+- `mt_model_hit_output_drop_shadow`: 5 actual tails, AI signal dropped = 4 (cao!), no_token dropped = 3.
+- `loz_stage_trace_shadow`: MT 30 actual tails; in_top1=6, in_top2=6, in_top10=6; LOZ_LINE_SELECTION_MISS=5 (cao!), CANDIDATE_POOL_MISS=0, AI_DROPPED=0.
+
+**Diễn giải:** Ngày 05/05 MT có **6 actual tails đã có model nào đó đặt top1**, nhưng **5 trong số đó bị final loz_line drop** (final chỉ chọn 44 và 31). Tức là model có signal mạnh nhưng converter bundle chỉ giữ top2. Đây là dấu hiệu cải thiện được nếu C-07 panel + lo2 policy mở rộng. **Gate vẫn chưa đạt** vì sample 30d MT BT chỉ 36.7%.
+
+C-07 UI panel **chưa implement**. Plan: build read-only admin panel `/du-doan-test/mt-correct-but-dropped` consuming `mt_model_hit_output_drop_shadow` + `loz_stage_trace_shadow`. Đề xuất V55.x trong vòng 7 ngày.
+
+---
+
+## K. MB forensic — AI weakness, no-token herd, specialist, weekday blackspot
+
+**04/05 MB (Hà Nội, Mon):**
+
+- BT=09 LOSE (cluster AI+NO_TOKEN herding quanh 09 mạnh, 5+ voter cùng top1).
+- Actual không có 09 hay 38; actual G7 list = 15, 69, 63 (Hà Nội thường hot 7 numbers G7).
+- Family summary:
+  - AI top1_hit_pct ~14% (1 hit / 7 model) — yếu.
+  - NO_TOKEN top1_hit_pct ~25% — better but still low.
+  - SHADOW_AUTO ~14%.
+
+**05/05 MB (Quảng Ninh, Tue):**
+
+- BT=83 LOSE; actual G7 = 37, 44, 31; có 91, 14 (đặc biệt). 
+- `gemini-3-flash` ngày đầu tiên → MB BT WIN (91+14, hit cả 2)!
+- AI/ML cluster sai (41, 83 dominate).
+- Specialist roster không có pick (None) — vẫn thin sample.
+
+**Weekday blackspot anchor 2026-05-05:**
+
+- MB Wed/Fri vẫn BLACK_SPOT_CONFIRMED.
+- MB Sat best (50% BT, 75% LO2_ANY).
+- MN Mon mạnh 80% BT.
+- MT Thu top 100% BT (n=4).
+
+**Plan MB:**
+
+- Không loại model nào (sample thin, latency vắng).
+- Continue measure SPECIALIST_ROSTER 30-60 ngày trước owner review.
+- Continue watch 3 Google direct shadow models 14 ngày, đặc biệt `gemini-3-flash` MB sau ngày đầu thắng.
+
+---
+
+## L. Loz1/loz2 status + stage trace
+
+- `loz_stage_trace_shadow` đã materialized cho 04/05 + 05/05 (88 + 94 = 182 actual tails traced).
+- Drop_stages 04/05: MN 2 LOZ_LINE_SELECTION_MISS, MT 1, MB 2.
+- Drop_stages 05/05: MN 3, MT 5, MB 2.
+- AI signal dropped (qua loz lane) = 0 trên 04/05 và 05/05.
+- LO2 region/weekday-conditional pattern không thay đổi.
+
+**Verdict labels:**
+
+- `LOZ_DIAGNOSTIC_ONLY` ✓
+- `LOZ_REGION_CONDITIONAL` ✓
+- `LOZ_WEEKDAY_CONDITIONAL` ✓ (xem MN Sun 100% LO2_ANY vs MB Wed 25%)
+- `LOZ_STAGE_TRACE_AVAILABLE` ✓ (V54 deploy + V55 backfill 04/05+05/05)
+- `LOZ_NOT_READY_FOR_RULE` ✓
+- `LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED` ✓
+
+---
+
+## M. Model tensor — strong/weak by region/weekday/station + latency/pruning
+
+**Tensor latest_anchor=2026-05-05** (V55 cập nhật từ 2026-05-02). 8875 rows × 4 windows × 3 grains.
+
+**Region 30d top by family** (helpful_signal_strength):
+
+- **MN AI top:** `combo-super` (auto_daily) — 0.59 hữu ích cao nhất.
+- **MN ENSEMBLE top:** `combo-super` cùng top1.
+- **MN NO_TOKEN top:** `meta-learning` ~0.56.
+- **MT AI top:** `gemini-2.5-pro` ~0.53; theo sau là `claude-sonnet-4-6`.
+- **MT NO_TOKEN top:** `xgboost` ~0.50.
+- **MB AI top:** `claude-sonnet-4-6` ~0.28 — vẫn yếu.
+- **MB NO_TOKEN top:** `random-forest rerun_post_mt` ~0.34.
+- **MB SHADOW top:** chưa có sample đủ cho 3 model mới (mới 1 ngày).
+
+**Latency/pruning:**
+
+- 04/05+05/05: 50/50 + 81/81 rows trong `model_latency_cost_audit_daily` đều `latency_available=0`, missing_reason còn `NO_PER_MODEL_DURATION` 100%.
+- **C-05 BLOCKED** — chưa instrument `gpt_analyzer.py` per-model timing.
+- `PRUNING_NOT_ALLOWED_NO_LATENCY` vẫn nguyên.
+
+---
+
+## N. Method/multi-lane/shadow status
+
+
+| Method                              | Phase                | Sample 60d                                | Free win              | False promotion   | Next gate                  | ETA earliest     |
+| ----------------------------------- | -------------------- | ----------------------------------------- | --------------------- | ----------------- | -------------------------- | ---------------- |
+| OFFICIAL_BASELINE_CONTROL           | TEST_LANE_PARALLEL   | 60d                                       | n/a                   | 0                 | n/a                        | always-on        |
+| **AI_CHAIN_PRESERVATION_V1**        | TEST_LANE_PARALLEL   | MN fw=4/fl=1                              | **+1 day 05/05 MN**   | 0                 | NEED_14D_MN_ONLY           | 2026-05-19       |
+| AI_CHAIN_PRESERVATION_V1 (MT/MB)    | TEST_LANE_PARALLEL   | MT fw=8/fl=12 destructive, MB destructive | n/a                   | n/a               | DROP_FROM_MT_MB            | DROP_AS_DESIGNED |
+| **SPECIALIST_ROSTER_V1**            | TEST_LANE_PARALLEL   | MB fw=5/fl=0; MN fw=3/fl=0; +1 04/05 MN   | **+1 04/05 MN**       | 0                 | WAIT_30_60D_MORE_MB        | 2026-06-15       |
+| STRENGTH_WEIGHTED_V52_5_2           | TEST_LANE_PARALLEL   | MB fw=8/fl=7                              | 0 04/05+05/05         | 0                 | NEED_30D                   | 2026-06-04       |
+| PRIOR_REGION_CONTEXT_SAFE_V1        | TEST_LANE_PARALLEL   | thin                                      | 0                     | 0                 | NEED_30D                   | 2026-06-04       |
+| NO_TOKEN_HERD_REDUCTION_V1          | TEST_LANE_PARALLEL   | thin                                      | 0                     | 0                 | NEED_30D                   | 2026-06-04       |
+| COMPOSITE_CHALLENGER_V2 (MB)        | TEST_LANE_PARALLEL   | MB only                                   | 0                     | 0                 | NEED_30D                   | 2026-06-04       |
+| TIER_AWARE_BUNDLE_SHADOW_V1 (MB)    | SHADOW_BACKFILL      | thin                                      | n/a                   | n/a               | OWNER_LOCK_TIER_3          | OWNER_DECIDE     |
+| corrected_rescue_replay             | SHADOW_BACKFILL      | 13 VALID days                             | n/a                   | leakage-corrected | NEED_14_VALID + ≥+5 net pp | OPEN             |
+| single_vote_rescue_replay           | DROP_AS_DESIGNED     | leaky                                     | n/a                   | LEAKY             | n/a                        | DROPPED          |
+| tier2_replay_shadow V1/V2           | DROP_AS_DESIGNED     | -9.5..-19.4 pp                            | n/a                   | n/a               | n/a                        | DROPPED          |
+| cohere_rerank_effectiveness_v1      | SHADOW_BACKFILL      | 39 rows                                   | n/a                   | unproven_lift     | NEED_30D                   | 2026-06-04       |
+| mt_model_hit_output_drop_shadow     | TEST_LANE_PARALLEL   | measurement                               | n/a                   | n/a               | feeds C-07 panel           | UI_TEST_ONLY     |
+| loz_stage_trace_shadow              | TEST_LANE_PARALLEL   | 6174+182 rows                             | n/a                   | n/a               | feeds C-09 (deferred)      | OWNER_DECIDE     |
+| weekday_blackspot_shadow            | TEST_LANE_PARALLEL   | 21 rows                                   | n/a                   | n/a               | feeds C-15 alert UI        | UI_TEST_ONLY     |
+| cross_region_spillover_shadow       | TEST_LANE_PARALLEL   | 9577 rows                                 | n/a                   | n/a               | informational              | always-on        |
+| model_strength tensor               | TEST_LANE_PARALLEL   | 8875 rows anchor 05/05                    | n/a                   | n/a               | feeds C-14 chip            | UI_TEST_ONLY     |
+| model_latency_cost_audit_daily      | **BROKEN_NEEDS_FIX** | 0/0                                       | n/a                   | n/a               | C-05 instrumentation       | OPEN             |
+| **V55_GOOGLE_DIRECT_SHADOW_COHORT** | TEST_LANE_PARALLEL   | day 1                                     | 1 (gemini-3-flash MB) | 0                 | NEED_14D                   | 2026-05-19       |
+
+
+`/du-doan-test` overall: `**LIVE_PARALLEL_AUTO_PENDING_ONLY`** — chưa đổi.
+
+---
+
+## O. What improved after 04/05 + 05/05
+
+1. **MT 7d** vọt lên 71.4% — best MT trong dài hạn nhiều tuần. Cần xem có duy trì không.
+2. **Test lane đã chứng minh có ngày cứu được MN** (2/2 ngày qua); SPECIALIST_ROSTER + AI_CHAIN_PRESERVATION trên MN đáng theo dõi tiếp.
+3. **gemini-3-flash MB BT WIN ngày đầu** (91+14 cả 2 hit) — tín hiệu thú vị, cần theo dõi 14 ngày.
+4. **V55 fix bug scheduler preflight** cho `gemma-`* → từ 06/05 cohort 3 model Google đầy đủ.
+5. **Weekday blackspot rolling 30d cập nhật** (MT Mon downgrade từ BLACK_SPOT → STRUCTURAL_RISK; MB Wed/Fri vẫn BLACK_SPOT).
+
+## P. What did NOT improve
+
+1. **MN 30d BT giảm** từ 60% → 56.7%; 7d chỉ 42.9%.
+2. **MB structural BT yếu** không thay đổi (60d 26.7%, 7d 14.3%).
+3. **C-05 latency** vẫn 0/0 — pruning blocked vô thời hạn.
+4. **MT herding tiếp tục** (AI_CHAIN_PRESERVATION còn destructive trên MT 60d fw=8/fl=12).
+5. **MB Wed/Fri** vẫn BLACK_SPOT_CONFIRMED.
+6. **Single-vote rescue, tier2 V1/V2** vẫn DROPPED.
+7. **Composite V2 chưa đạt gate**.
+8. **Loz output policy chưa đủ proof** — `LOZ_NOT_READY_FOR_RULE` vẫn còn.
+
+---
+
+## Q. Safe implementation plan
+
+### Q.1 — Đã làm ngay trong V55 pass này (24h, đã DONE)
+
+- ✓ V55 add 3 Google direct shadow models (Gemini 3.1 Pro, Gemini 3 Flash, Gemma 4 31B) — already ran 06/05 morning.
+- ✓ V55 fix scheduler preflight bug for `gemma-`* — sẽ chạy 06/05.
+- ✓ Materialize 04/05+05/05 surfaces: loz_stage_trace, mt_drop, v52, weekday_blackspot, model_strength tensor, experimental_preview_shadow, V52.5.6 multi-region runner.
+- ✓ Tensor anchor advanced 2026-05-02 → **2026-05-05**.
+- ✓ Governance docs synced: CHANGELOG, SSOT, FOLLOW_UP_TRACKER, active roadmap.
+
+### Q.2 — Trong 3 ngày (06-08/05)
+
+- C-02 API source labels reconfirm trong UI sau V52.6.
+- Daily 1-day mini-report (`artifacts/_v55_daily_*.md`) cho 06/05 + 07/05 + 08/05.
+- Method rescue/break table cập nhật mỗi ngày.
+
+### Q.3 — Sau 3-5 clean closeouts (~10/05)
+
+- **C-03 multi-region closeout evaluator** — extend `_du_doan_test_closeout_evaluator.py` từ MB-only sang MN+MT+MB.
+- **C-04 scheduler auto-wire** test lane only — chỉ wire khi C-03 sạch ≥3 ngày.
+- **NEVER auto-wire** nếu source fields còn drift.
+
+### Q.4 — Sau 14 VALID_LIVE_DAY (~19/05)
+
+- Owner evidence pack: MN_AI_CHAIN_PRESERVATION (chỉ MN), MN_SPECIALIST_ROSTER, MB_SPECIALIST_ROSTER, MB_STRENGTH_WEIGHTED, V55 cohort.
+- **Không production deploy**.
+
+### Q.5 — Sau 30 ngày (~04/06)
+
+- C-05 per-model latency instrumentation deploy ngoài live window.
+- 30d latency review cho cả 16 model (13 shadow + 3 mới + ML/AI active).
+- Model pruning proposal **test-lane first**.
+- Composite V2, NO_TOKEN_HERD, PRIOR_REGION đủ samples để gate.
+
+### Q.6 — Sau 60 ngày (~04/07)
+
+- Family/region-weekday/station-aware aggregation proposal.
+- Shadow → voter promotion candidate review.
+- Wave 1 official output improvement (single-region single-method swap) chỉ nếu evidence pack ≥+5 pp BT_lift + false_promo <3% theo OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md.
+
+---
+
+## R. Code readiness matrix
+
+
+| Item                                            | Bucket                                                                        |
+| ----------------------------------------------- | ----------------------------------------------------------------------------- |
+| C-01 UI source-badge V52.6                      | DONE                                                                          |
+| C-02 API source labels                          | DONE (V54)                                                                    |
+| C-05 per-model latency instrumentation          | IMPLEMENT_NOW_MEASUREMENT_ONLY (chưa làm; ưu tiên tuần này ngoài live window) |
+| C-06 loz_stage_trace materializer               | DONE (V54 + V55 backfill 04/05+05/05)                                         |
+| C-07 MT correct-but-dropped UI panel            | IMPLEMENT_NOW_UI_TEST_ONLY                                                    |
+| C-14 per-station/weekday/model strength chip UI | IMPLEMENT_NOW_UI_TEST_ONLY                                                    |
+| C-15 MB blackspot alert                         | DONE (V54) — UI panel surface PENDING `IMPLEMENT_NOW_UI_TEST_ONLY`            |
+| C-03 multi-region closeout evaluator            | WAIT_3_5_CLEAN_CLOSEOUTS                                                      |
+| C-04 scheduler auto-wire test lane              | WAIT_3_5_CLEAN_CLOSEOUTS                                                      |
+| C-08 model pruning                              | WAIT_30D_LATENCY_AND_SIGNAL                                                   |
+| C-09 loz output policy change                   | WAIT_30D + OWNER_DECIDE                                                       |
+| C-10 Composite V2 promote                       | WAIT_14_VALID_LIVE_DAYS + GATE_NOT_MET                                        |
+| C-11 single-vote rescue                         | DROP_AS_DESIGNED + LEAKY_REFERENCE_ONLY                                       |
+| C-12 Sunday retrain enabling new shadow         | WAIT_30D                                                                      |
+| **V55 add 3 Google models**                     | DONE (V20.3.37.55)                                                            |
+| **V55 scheduler preflight gemma fix**           | DONE (V20.3.37.55)                                                            |
+
+
+---
+
+## S. Post-hash / no-official-mutation proof
+
+- Pre-hash: `artifacts/_v55_pre_hash_20260505.txt`.
+- Post-hash: `artifacts/_v55_post_hash_20260505.txt`.
+- 4 forensic tables (`predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`): hash growth chỉ do **NATURAL_LIVE_GROWTH** (predictions +81 hôm nay, final_bundles +3 hôm nay, lottery_results 04/05 và 05/05 đầy đủ, model_daily_eval +3 hôm nay).
+- Test/diagnostic tables tăng do V55 manual run (du_doan_test_runs +25, bundles +25, candidates +396, model_contribution +396, audit_log +5).
+- Measurement tables tăng do materializer (loz_stage_trace +182, mt_drop +10, weekday_blackspot anchor 2026-05-05 +21, model_strength_by_region_weekday_station_daily +8875).
+- **Không có mutation không giải thích được**. Service restart 1 lần lúc 20:08 VN sau scheduler fix → scheduler_logs growth tự nhiên.
+
+---
+
+## T. What NOT to do next
+
+1. **Không** auto-wire scheduler test lane (C-04) trước khi có ≥3 clean closeouts với evaluator C-03.
+2. **Không** promote MT_AI_CHAIN_PRESERVATION_V1 — destructive trên MT (60d fw=8/fl=12; 04/05+05/05 broke baseline win).
+3. **Không** prune model nào (C-08) khi C-05 latency vẫn 0/0.
+4. **Không** đổi `final_bundles` BT/lo2 selection logic.
+5. **Không** đổi roster output (vẫn 15 model).
+6. **Không** sử dụng single_vote_rescue, tier2 V1/V2 (DROPPED).
+7. **Không** dựa 04/05+05/05 alone để promote method nào — `TWO_DAY_FORENSIC_ONLY`.
+8. **Không** đổi loz output policy (`LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED`).
+9. **Không** dùng MN_SPECIALIST_ROSTER hoặc MN_AI_CHAIN làm output trong tuần này — chỉ test lane.
+
+---
+
+## OWNER-FACING ANSWERS (Tiếng Việt)
+
+1. **04/05 official**:
+  - MN BT 65 = **TRẬT** (PARTIAL lo2 vì 32 hit).
+  - MT BT 29 = **TRÚNG** + lo2 đầy đủ.
+  - MB BT 09 = **TRẬT**.
+2. **05/05 official**:
+  - MN BT 15 = **TRẬT** (cả lo2 trật).
+  - MT BT 44 = **TRÚNG** (lo2 phần 1).
+  - MB BT 83 = **TRẬT**.
+3. `**/du-doan-test` 04/05 và 05/05** có hơn official không?
+  - **Có**, ở **MN**: ngày 04/05 SPECIALIST_ROSTER chọn 32 (trúng), ngày 05/05 AI_CHAIN_PRESERVATION chọn 52 (trúng). Đây là 2 free wins → đáng theo dõi.
+  - **Không**, ở **MT**: official đã trúng cả 2 ngày, AI_CHAIN_PRESERVATION lại đổi sang số khác → **không nên promote** trên MT.
+  - **Không**, ở **MB**: không method nào trúng 2 ngày qua.
+4. Test giống official thì là **clone hay agreement**? Báo cáo phân loại rõ:
+  - `OFFICIAL_BASELINE_CONTROL` luôn là **clone-by-design**.
+  - Khi method khác chọn cùng số official → `INDEPENDENT_AGREEMENT_WITH_OFFICIAL` (không phải clone).
+  - V52.6 UI đã sửa label `🟰 đồng thuận` thay vì `= chính` → owner sẽ không bị nhầm.
+5. **MT còn lỗi "model đúng nhưng final sai"?** — **Còn**. 05/05 MT có 6 actual tails đã được model nào đó top1, nhưng 5 trong số đó bị final loz drop. Pattern này lặp lại nhiều ngày. C-07 panel cần build để owner thấy rõ.
+6. **MB AI còn yếu?** — **Còn rất yếu**. 60d MB BT 26.7%; AI top model `claude-sonnet-4-6` chỉ helpful 0.28 trên MB. MB Wed/Fri vẫn BLACK_SPOT_CONFIRMED. **Chưa đủ proof để loại model nào** vì sample thin + latency không có.
+7. **Loz1/loz2 kiểm soát tốt hơn chưa?** — **Chưa**. Vẫn `LOZ_NOT_READY_FOR_RULE`. Stage trace đã có data 60d + 04/05+05/05 nhưng tín hiệu mixed/region-conditional.
+8. **Model nào mạnh/yếu?**
+  - **Mạnh chung**: `combo-super` MN, `gemini-2.5-pro` MN/MT, `claude-opus-4` MN, `claude-sonnet-4-6` MN/MT.
+  - **Yếu MB**: hầu hết. Best MB AI là `claude-sonnet-4-6 ai_chain` nhưng helpful chỉ 0.28.
+  - **NO_TOKEN**: `meta-learning` MN tốt; `random-forest rerun_post_mt` cứu một phần MB.
+  - **Mới**: `gemini-3-flash` MB ngày đầu WIN BT — KEEP_CANDIDATE 14 ngày; `gemini-3.1-pro` chậm hơn (PARTIAL MB ngày đầu); `gemma-4-31b` 0 rows do bug — fix V55, sẽ chạy 06/05.
+9. **Đã đủ cơ sở giảm model/cost?** — **Chưa**. C-05 latency vẫn 0/0; pruning blocked tới khi instrument xong + thêm 30 ngày samples.
+10. **Đã đủ cơ sở đổi official?** — **Chưa, tuyệt đối chưa**. `NOT_READY_FOR_OFFICIAL_CHANGE`. Cần ≥14 VALID_LIVE_DAY rolling proof + owner approval trước Wave 1 (sớm nhất 2026-06-15 theo OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE).
+11. **Kế hoạch nâng cấp tiếp theo (chính xác)**:
+  - **Trong 24h (đã DONE V55 pass này)**: 3 Google models live, scheduler preflight fix, 2-day materialize, governance sync.
+    - **3 ngày**: daily mini-report 06-08/05, theo dõi 3 model mới, tiếp tục manual V52.5.6 runner.
+    - **5-7 ngày (10-12/05)**: C-03 multi-region closeout evaluator (test lane only); C-07 MT panel; C-14 chip UI; C-15 MB blackspot alert UI surface; C-05 latency instrumentation chuẩn bị deploy ngoài live window.
+    - **14 ngày (19/05)**: Evidence pack cho method MN-only (AI_CHAIN_PRESERVATION, SPECIALIST_ROSTER) + V55 cohort (gemini-3-flash MB).
+    - **30 ngày (04/06)**: C-05 chính thức + composite V2 review + pruning proposal test lane.
+    - **60-105 ngày**: Wave 1 official output improvement (chỉ nếu evidence pack đạt gate + owner OK).
+12. **Cái gì làm ngay** (đã làm trong V55 pass này): add 3 Google models + fix scheduler preflight + materialize 2 ngày + sync docs.
+  **Cái gì TUYỆT ĐỐI CHƯA làm**: đổi `/du-doan`, đổi `final_bundles`, prune model, scheduler auto-wire test lane, promote method nào ra production, đổi loz output policy.
+
+---
+
+## Required artifacts (V55)
+
+- `artifacts/phase_checkpoints/TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md` (file này)
+- `artifacts/phase_checkpoints/_v55_state_20260505.json`
+- `artifacts/_v55_pre_hash_20260505.txt`
+- `artifacts/_v55_post_hash_20260505.txt`
+- `artifacts/_v55_official_closeout_20260504_20260505.json`
+- `artifacts/_v55_du_doan_test_closeout_20260504_20260505.json`
+- `artifacts/_v55_du_doan_test_ui_api_source_audit_20260505.json`
+- `artifacts/_v55_rolling_metrics_after_20260505.json`
+- `artifacts/_v55_mt_correct_but_dropped_20260504_20260505.json`
+- `artifacts/_v55_mt_correct_but_dropped_extra_20260504_20260505.json`
+- `artifacts/_v55_mb_ai_notoken_specialist_forensic_20260504_20260505.json`
+- `artifacts/_v55_loz_control_audit_20260505.json`
+- `artifacts/_v55_model_tensor_latency_pruning_readiness_20260505.json`
+- `artifacts/_v55_method_multilane_status_20260505.json`
+- `artifacts/_v55_forensic_query.py`, `_v55_aggregate.py`, `_v55_test_preview_check.py`, `_v55_status_recon.py`, `_v55_check_new_shadow_rows.py`, `_v55_gemma_debug_and_picks.py`, `_v55_gemma_route_verify.py`, `_v55_envload_check.py`, `_v55_actual_tails_verify.py`
+- VPS deploy artifacts: `artifacts/_v55_vps_apply.sh`, `_v55_fix_envpath.sh`, `_v55_materialize_2day.sh`, `_v55_materialize_2day_v2.sh`
+- `artifacts/live_watch/LIVE_WATCH_20260505_V55.md` (next phase write)
+
+---
+
+**Câu chốt:** Hôm nay live cycle hoàn tất bình thường. **Official quality V55 verdict = `OFFICIAL_QUALITY_NOT_PROVEN / MIXED_SIGNAL / REGION_CONDITIONAL` (không đổi vs V54 mặc dù MN giảm nhẹ và MT 7d cao).** Test lane đã chứng minh có ngày cứu MN. **Không đủ proof cho official change**. Em đã thực hiện toàn bộ items trong nhóm "an toàn tuyệt đối" cho phép trong V55, không chạm output, không promote method, không prune model.
+===== SOURCE_END artifacts/phase_checkpoints/TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md VERSION=V55 LINES=165 SHA256=9d4cd290219a427debf62cf6f9f5283513a2c9c22e30bcc5081c8e015a2dae93 =====
+# V20.3.37.55 — Shadow lane add: Gemini 3.1 Pro, Gemini 3 Flash, Gemma 4 31B
+
+**Owner:** anh
+**Date:** 2026-05-05 (Asia/Saigon)
+**Trigger:** Owner-supplied Google AI Studio key (project sxkt, Tier 2) and explicit instruction to add 3 new shadow models, "đầy đủ thông thiếu sót luồng nào mà showdow đang hoạt động".
+**Risk class:** ADDITIVE / MEASUREMENT-ONLY (no `/du-doan` impact)
+**Live timing:** Deployed 07:55 VN; live windows are 16:30/16:42/17:42; ~9h buffer.
+
+---
+
+## 1. Scope
+
+Add three new generative models into the `SHADOW_AUTO` lane only:
+
+| registry_id | display | provider | output_eligible | API model name (2026-05-05) |
+|---|---|---|---|---|
+| `gemini-3.1-pro` | Gemini 3.1 Pro | google | False | `gemini-3.1-pro-preview` |
+| `gemini-3-flash` | Gemini 3 Flash | google | False | `gemini-3-flash-preview` |
+| `gemma-4-31b` | Gemma 4 31B | google | False | `gemma-4-31b-it` |
+
+Same plumbing pattern as the V20.3.32 owner-added cohort (gpt-5.5 / deepseek-v4-pro / deepseek-v4-flash / qwen3.6-plus + V17.19.4 gpt-oss-120b), so the shadow batch already in production knows how to consume them via registry-derived sets.
+
+---
+
+## 2. Files changed (local + VPS)
+
+### `web/backend/model_registry.py`
+- Three new `MODEL_REGISTRY` entries with `status='SHADOW_AUTO'`, `provider='google'`, `output_eligible=False`, `allowed_regions=['MN','MT','MB']`, `schedule_slots=['completion_triggered_shadow','shadow_eval_post_verify']`.
+- Self-test counters bumped: SHADOW_AUTO 10 → 13, ALL_RUNTIME 28 → 31. OUTPUT_ELIGIBLE stays 15.
+
+### `web/backend/gpt_analyzer.py`
+- New module-level constants:
+  - `GOOGLE_MODEL_KEYS` (per-model key lookup; reads `GEMINI_KEY_SHADOW_NEW`).
+  - `GOOGLE_MODEL_API_MAP` (registry id → current Google API name).
+  - `GOOGLE_DIRECT_SHADOW_MODELS = set(GOOGLE_MODEL_KEYS.keys())`.
+- `is_gemini` extended to also match `selected_model.startswith("gemma")` so Gemma 4 31B routes through `_call_gemini`.
+- `MODEL_DISTRIBUTION_POLICY`: 3 new entries set to `FULL_CONTEXT` (system prompt + dynamic prompt + context pack + REASONING_RULEBOOK + PHASE-FIRST GATE).
+- `SHADOW_GATE_MODELS`: union of prior 5 plus 3 new (8 total). `PHASE_FIRST_CONTRACT_MODELS = set(SHADOW_GATE_MODELS)` automatically follows.
+- `PHASE_FIRST_GATE_HISTORY`: closed cohort `PFG-20260428-D` at `2026-05-05 07:44:59`, opened new cohort `PFG-20260505-E` at `2026-05-05 07:45:00` containing the 8 models.
+- Gemini-lane key resolution updated: `api_key → GOOGLE_MODEL_KEYS.get(...) → DB ai_keys.gemini_key_shadow_new → GEMINI_API_KEY` (legacy fallback). Output models `gemini-2.5-flash`/`gemini-2.5-pro` keep using `GEMINI_API_KEY` because they are not in `GOOGLE_MODEL_KEYS`.
+- Dispatch to `_call_gemini` now resolves API model id via `GOOGLE_MODEL_API_MAP.get(selected_model, selected_model)`.
+
+### `/root/Lottery_AI_Test/.env` (project-root, the file `env_loader.PROJECT_ENV_PATH` actually reads)
+- Appended `GEMINI_KEY_SHADOW_NEW=AIzaSy…` (Google AI Studio Tier-2 project `sxkt`).
+- All 14 prior keys preserved verbatim. Legacy `GEMINI_API_KEY` UNCHANGED.
+
+### Backups (VPS)
+- `/root/Lottery_AI_Test/backups/v55_shadow_add_20260505_0750/`:
+  - `model_registry.py.bak`
+  - `gpt_analyzer.py.bak`
+  - `env.bak` (backend/.env)
+  - `project_root_env.bak` (project-root .env, the real one)
+
+---
+
+## 3. VPS verification chain (ALL PASSED)
+
+### 3.1 Static / structural
+```
+=== model_registry counts ===
+SHADOW_AUTO=13, OUTPUT_ELIGIBLE=15, ALL_RUNTIME=31
+
+=== new entries ===
+gemini-3.1-pro  status=SHADOW_AUTO provider=google output_eligible=False slots=[completion_triggered_shadow, shadow_eval_post_verify]
+gemini-3-flash  status=SHADOW_AUTO provider=google output_eligible=False slots=[completion_triggered_shadow, shadow_eval_post_verify]
+gemma-4-31b     status=SHADOW_AUTO provider=google output_eligible=False slots=[completion_triggered_shadow, shadow_eval_post_verify]
+
+=== gpt_analyzer plumbing ===
+SHADOW_GATE_MODELS = 8 [deepseek-v4-flash, deepseek-v4-pro, gemini-3-flash, gemini-3.1-pro, gemma-4-31b, gpt-5.5, gpt-oss-120b, qwen3.6-plus]
+GOOGLE_DIRECT_SHADOW_MODELS = [gemini-3-flash, gemini-3.1-pro, gemma-4-31b]
+GOOGLE_MODEL_API_MAP = {gemma-4-31b: gemma-4-31b-it, gemini-3.1-pro: gemini-3.1-pro-preview, gemini-3-flash: gemini-3-flash-preview}
+Latest cohort = PFG-20260505-E (8 models, contract_required=True)
+MODEL_DISTRIBUTION_POLICY[3 new] = FULL_CONTEXT
+```
+
+### 3.2 Env loader integrity
+```
+GEMINI_KEY_SHADOW_NEW len=39 prefix=<REDACTED_GOOGLE_API_KEY>
+GEMINI_API_KEY        len=39 prefix=<REDACTED_GOOGLE_API_KEY>
+DISTINCT_KEYS=True
+GOOGLE_MODEL_KEYS resolves all 3 to the new shadow key
+```
+
+### 3.3 Phase-first runtime gate
+For each new model `get_phase_first_gate_runtime_state(...)` returns `cohort=PFG-20260505-E gate_applied=True contract_required=True status=CURRENT`.
+
+### 3.4 Shadow batch composition (`get_models_for_slot('completion_triggered_shadow', region)`)
+- MN: n=13, all 3 new present.
+- MT: n=13, all 3 new present.
+- MB: n=13, all 3 new present.
+
+### 3.5 Service health (post `systemctl restart lottery` at 07:55:55)
+```
+systemctl is-active lottery → active
+MainPID=712542
+/api/health → HTTP 200
+version=V20.3.36, runtime_model_count=28, registry_visible_model_count=31, active_rerank_measurement_model_count=1
+```
+(Note: `version` field in /api/health remains `V20.3.36`; this is the pattern used by all V20.3.37.x entries — changelog version differs from health endpoint version.)
+
+### 3.6 Real Google API smoke (3/3 PASSED)
+| registry_id | api_id | latency | tokens | reply | finish_reason |
+|---|---|---|---|---|---|
+| `gemini-3.1-pro` | `gemini-3.1-pro-preview` | 2.54s | total 151 (in 9, out 2, ~140 thinking) | `PONG` | STOP |
+| `gemini-3-flash` | `gemini-3-flash-preview` | 1.40s | total 57 (in 9, out 2) | `PONG` | STOP |
+| `gemma-4-31b` | `gemma-4-31b-it` | 2.56s | total 65 (in 9, out 2) | `PONG` | STOP |
+
+Verdict: `ALL_API_SMOKE_OK`.
+
+---
+
+## 4. Hash guard
+
+| Table | Pre-V55 hash | Post-V55 expected | Note |
+|---|---|---|---|
+| `predictions` | unchanged | unchanged | no scoring/voting code path touched |
+| `final_bundles` | unchanged | may shift only via natural startup catch-up `updated_at/verified_at`; BT/lo2/status content unchanged |
+| `lottery_results` | unchanged | unchanged |
+| `model_daily_eval` | unchanged | unchanged |
+| `scheduler_logs` | grew by ~30-50 rows | natural restart logging |
+
+(Code-file hashes BEFORE → AFTER on VPS:
+- `model_registry.py`: `f062…363c` → `0dec…627d8`
+- `gpt_analyzer.py`: `8a09…b813` → `16cf…2ec8` then re-deployed once after `GOOGLE_MODEL_API_MAP` correction
+- `.env` (project-root): `c799…400d` (backend stays) + new `f1824…32df` for project-root after key append)
+
+---
+
+## 5. Risk and rollback
+
+### Risk
+- Gemini 3.1 Pro is a thinking model. Production `_call_gemini` already uses `max_output_tokens=65536`, well above thinking budget needed (~140-200 tokens), so it will not hit `MAX_TOKENS` like the 64-token smoke probe initially did.
+- New shadow batch increases per-cycle Google API calls by 3 per region (≤9 calls/day extra). Shadow lane has its own retry/circuit logic.
+- `*-preview` API names are current as of 2026-05-05 ListModels. If Google graduates them, only `GOOGLE_MODEL_API_MAP` needs updating.
+- Output roster is unchanged; `/du-doan` cannot be affected.
+
+### Rollback (if needed)
+1. SSH VPS, restore from backup:
+   ```bash
+   BK=/root/Lottery_AI_Test/backups/v55_shadow_add_20260505_0750
+   cp $BK/model_registry.py.bak  /root/Lottery_AI_Test/web/backend/model_registry.py
+   cp $BK/gpt_analyzer.py.bak    /root/Lottery_AI_Test/web/backend/gpt_analyzer.py
+   cp $BK/project_root_env.bak   /root/Lottery_AI_Test/.env
+   systemctl restart lottery
+   ```
+2. Confirm `/api/health` HTTP 200 and `registry_visible_model_count=28`.
+
+---
+
+## 6. Next steps (not in this pass)
+
+- Watch first natural shadow cascade for the 3 new IDs (today's `ai_chain_post_verify` + `shadow_eval_post_verify` after MN/MT/MB results).
+- After 3-5 clean closeouts, evaluate WR/BT and PHASE-FIRST contract field population vs. cohort `PFG-20260505-E`.
+- After 14+ valid days, owner-decide whether any of the three should graduate (would require explicit `output_eligible=True` change — not part of V55).
+
+---
+
+## 7. Cross-references
+
+- Workspace rules followed: `live-data-integrity.mdc`, `governance-traceability-automation.mdc`, `active-roadmap-precedence.mdc`.
+- CHANGELOG: `V20.3.37.55`.
+- SSOT row: `V55 add 3 Google direct shadow models`.
+- Tracker item: `FU-125`.
+- Active roadmap history row: `2026-05-05`.
+- Verification scripts: `artifacts/_v55_vps_backup_and_envcheck.sh`, `_v55_vps_apply.sh`, `_v55_fix_envpath.sh`, `_v55_vps_verify.py`, `_v55_envload_check.py`, `_v55_post_restart_check.py`, `_v55_api_smoke.py`, `_v55_list_models.py`.
+
+===== SOURCE_END artifacts/phase_checkpoints/SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md =====
+
+
+===== SOURCE_BEGIN artifacts/live_watch/LIVE_WATCH_20260505_V55.md VERSION=V55 LINES=48 SHA256=384fb59a8213a10bbd803ccaa8c6cfd25f44d3abc8747a49bb4c67600fa79a82 =====
+# LIVE WATCH 2026-05-05 — V55
+
+**Snapshot time:** 2026-05-05 20:14 VN (post-cycle)
+**Service:** active, /api/health 200
+**Live windows:** MN 16:30 ✓, MT 17:30 ✓, MB 18:30 ✓ — all closed.
+
+
+| Region | BT  | BT_status | lo2     | lo2_status | Actual sample                                    | Created          |
+| ------ | --- | --------- | ------- | ---------- | ------------------------------------------------ | ---------------- |
+| MN     | 15  | LOSE      | [15,13] | LOSE       | 42 tails (3 đài Bạc Liêu/Bến Tre/Vũng Tàu)       | 2026-05-05 04:23 |
+| MT     | 44  | WIN       | [44,31] | PARTIAL    | 30 tails (Quảng Nam G7 144 → 44; Đắk Lắk G7 759) | 2026-05-05 16:30 |
+| MB     | 83  | LOSE      | [83,41] | LOSE       | 22 tails (Quảng Ninh G7=37,44,31)                | 2026-05-05 17:39 |
+
+
+## Per-region notes
+
+- **MN**: 4 model AI top1=15 (consensus); 32 không ai pick dù là G7. AI_CHAIN_PRESERVATION_V1 trên test lane chọn 52 → trúng (FREE_WIN trên test lane). Bài học: MN AI tuần này có dấu hiệu rời consensus.
+- **MT**: combo-no-token + xgboost + lstm đồng thuận top1=44 → bundle WIN. AI_CHAIN_PRESERVATION_V1 chọn 39 → broke baseline win nếu được promote. Test lane MT vẫn confirm `MT_AI_CHAIN_DESTRUCTIVE`.
+- **MB**: 41 dominant trên test lane (5 method) nhưng cũng sai. `gemini-3-flash` shadow chọn [91, 14] → cả 2 hit, status WIN trên prediction. Đây là tín hiệu MB tích cực ngày đầu. `gemini-3.1-pro` chọn [90, 14] → chỉ 14 hit, PARTIAL. `gemma-4-31b` không có row do bug đã fix.
+
+## V55 actions taken today
+
+- Add 3 Google direct shadow models to registry/cohort/PFG-20260505-E (sáng).
+- Append `GEMINI_KEY_SHADOW_NEW` vào project-root `.env`.
+- Live API smoke test 3/3 PASS lúc 07:58 VN.
+- Discover scheduler preflight bug: `gemma-`* mis-routed to OpenRouter prefix → key_missing → skip. Fixed in `scheduler.py` (`_get_api_key_for_model` + `_preflight_check_provider_runtime`).
+- Restart service 20:08 VN sau live cycle (an toàn).
+- V55 verify post-fix: 3 Google direct shadow models all resolve key correctly.
+- Materialize 04/05+05/05: loz_stage_trace, mt_drop, v52, weekday_blackspot, model_strength tensor (anchor 2026-05-05), experimental_preview_shadow, V52.5.6 multi-region runner.
+- Sync governance docs.
+
+## Sanity check
+
+- predictions: 27 model rows × 3 region = 81 ✓
+- final_bundles 05/05: 3 ✓
+- lottery_results 05/05: 8 stations ✓
+- model_daily_eval 05/05: 1 row generated 20:20 ✓
+- shadow_eval scheduler events: 128 ✓
+- du_doan_test_runs 05/05: 25 created via manual V52.5.6 ✓
+- model_strength tensor anchor advanced 2026-05-02 → 2026-05-05 ✓
+
+## Open items for 2026-05-06
+
+- Watch first natural shadow run 06/05 with all 13 SHADOW_AUTO models including `gemma-4-31b` (after V55 preflight fix).
+- Check `gemini-3-flash` ngày 2 MB: thắng tiếp hay không.
+- Continue 2-day forensic 05+06/05.
+- Begin C-07 MT panel + C-14 chips + C-15 alert UI plan.
+
+
+===== SOURCE_END artifacts/live_watch/LIVE_WATCH_20260505_V55.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_actual_tails_verify.py VERSION=V55 LINES=23 SHA256=49b47458e25fac71ad04cb68aef64732f6391bc68fa1282f81551c71d31b570b =====
+import sqlite3, json, sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+c = sqlite3.connect('data/lottery_ai.db')
+c.row_factory = sqlite3.Row
+cu = c.cursor()
+for date in ['2026-05-04', '2026-05-05']:
+    print(f"\n=== {date} ===")
+    cu.execute("SELECT date, region, station, tail_db, tail_g8, prizes_json FROM lottery_results WHERE date=? ORDER BY region, station", (date,))
+    rows = cu.fetchall()
+    for r in rows:
+        try:
+            pj = json.loads(r['prizes_json']) if r['prizes_json'] else None
+        except Exception:
+            pj = None
+        keys = sorted((pj or {}).keys()) if isinstance(pj, dict) else []
+        sample_vals = []
+        if isinstance(pj, dict):
+            for k in keys[:6]:
+                v = pj[k]
+                if isinstance(v, list):
+                    v = v[:3]
+                sample_vals.append(f"{k}={v}")
+        print(f"  {r['region']:3s} {r['station']:20s} tail_db={r['tail_db']} tail_g8={r['tail_g8']} prize_keys={keys[:6]} sample={sample_vals[:3]}")
+
+===== SOURCE_END artifacts/_v55_actual_tails_verify.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_aggregate.py VERSION=V55 LINES=273 SHA256=166f218ec16071aa14a265338931e2f265f9f62b3256e1d355a0d10833b3121c =====
+"""V55 — aggregate all forensic JSON into the artifacts the prompt requires."""
+import sqlite3, json, sys, io
+from collections import defaultdict, Counter
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
+DB = 'data/lottery_ai.db'
+con = sqlite3.connect(DB)
+con.row_factory = sqlite3.Row
+cur = con.cursor()
+DATES = ['2026-05-04', '2026-05-05']
+REGIONS = ['MN', 'MT', 'MB']
+
+def tail2(x):
+    s = ''.join(c for c in str(x) if c.isdigit())
+    return s[-2:].zfill(2) if s else ''
+
+
+# 1. /du-doan-test test bundles + results
+test_data = {}
+for date in DATES:
+    test_data[date] = {}
+    for region in REGIONS:
+        cur.execute("SELECT b.experiment_name, b.test_bt, b.official_bt, b.test_lo2_json, b.official_lo2_json, b.diff_from_official_json, r.test_bt_status, r.test_lo2_status, r.would_save, r.would_break, r.false_promotion, r.net_effect, r.correct_but_dropped, r.delta_bt, r.delta_lo2 FROM du_doan_test_bundles b LEFT JOIN du_doan_test_results r ON r.run_id=b.run_id WHERE b.run_date=? AND b.region=? AND b.mode='POST_CLOSEOUT_DIAGNOSTIC_FULL_25' GROUP BY b.experiment_name", (date, region))
+        rows = [dict(r) for r in cur.fetchall()]
+        test_data[date][region] = rows
+with open('artifacts/_v55_du_doan_test_closeout_20260504_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(test_data, f, ensure_ascii=False, indent=2, default=str)
+
+# 2. UI/API source audit
+cur.execute("SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'du_doan_test_%' ORDER BY name")
+test_tables = [r[0] for r in cur.fetchall()]
+ui_audit = {
+    'date': '2026-05-05',
+    'admin_only': True,
+    'output_eligible': False,
+    'frontend_route': '/du-doan-test',
+    'api_routes_admin_only': ['/api/du-doan-test/mn', '/api/du-doan-test/mt', '/api/du-doan-test/mb', '/api/du-doan-test/mb (legacy)'],
+    'tables_present': test_tables,
+    'tables_count': len(test_tables),
+    'ui_v52_6_features_expected': ['source_banner', 'picks_per_experiment', 'chip_label_dong_thuan_khac_chinh'],
+    'ui_label_confusion_status': 'UI_LABEL_CONFUSION_RESOLVED',  # V52.6 deployed
+    'live_parallel_classification': 'LIVE_PARALLEL_AUTO_PENDING_ONLY',
+    'reason_not_full_auto': [
+        'V52.5.6 multi-region runner is manual; not wired into scheduler',
+        'C-03 multi-region closeout evaluator not deployed',
+        'Cần ≥3-5 clean closeouts để promote (currently 2 days closed under V52.5.6)',
+    ],
+    'note': 'API source labels (C-02) deployed since V54; test_bundle response includes is_clone_of_official, is_independent_agreement_with_official, source_proof, etc.',
+}
+with open('artifacts/_v55_du_doan_test_ui_api_source_audit_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(ui_audit, f, ensure_ascii=False, indent=2)
+
+# 3. MT correct-but-dropped 04/05 + 05/05 — augment with mt_model_hit_output_drop_shadow rows
+mt_drop_extra = {}
+for date in DATES:
+    cur.execute("SELECT * FROM mt_model_hit_output_drop_shadow WHERE date=? AND region='MT'", (date,))
+    rows = [dict(r) for r in cur.fetchall()]
+    cur.execute("SELECT * FROM loz_stage_trace_shadow WHERE date=? AND region='MT'", (date,))
+    loz_rows = [dict(r) for r in cur.fetchall()]
+    mt_drop_extra[date] = {
+        'mt_drop_rows_count': len(rows),
+        'mt_drop_classifications': Counter(r['drop_stage'] for r in rows),
+        'mt_drop_rows_sample': rows[:10],
+        'loz_stage_trace_count': len(loz_rows),
+        'loz_drop_stages': Counter(r['drop_stage'] for r in loz_rows),
+    }
+with open('artifacts/_v55_mt_correct_but_dropped_extra_20260504_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(mt_drop_extra, f, ensure_ascii=False, indent=2, default=str)
+
+# 4. Loz control audit — full from loz_stage_trace + lo2 status
+loz_audit = {}
+for date in DATES:
+    loz_audit[date] = {}
+    for region in REGIONS:
+        cur.execute("SELECT * FROM loz_stage_trace_shadow WHERE date=? AND region=?", (date, region))
+        rows = [dict(r) for r in cur.fetchall()]
+        cur.execute("SELECT bach_thu_status, lo2_status, lo2 FROM final_bundles WHERE date=? AND region=?", (date, region))
+        b = cur.fetchone()
+        bt_status = b['bach_thu_status'] if b else None
+        lo2_status = b['lo2_status'] if b else None
+        loz_audit[date][region] = {
+            'official_bt_status': bt_status,
+            'official_lo2_status': lo2_status,
+            'official_lo2': b['lo2'] if b else None,
+            'loz_trace_count': len(rows),
+            'in_top1': sum(r['in_top1'] for r in rows),
+            'in_top2': sum(r['in_top2'] for r in rows),
+            'in_top10': sum(r['in_top10'] for r in rows),
+            'final_loz1_selected_count': sum(1 for r in rows if r.get('final_loz1_selected')),
+            'final_loz2_selected_count': sum(1 for r in rows if r.get('final_loz2_selected')),
+            'drop_stages': Counter(r['drop_stage'] for r in rows),
+            'verdict_labels': [
+                'LOZ_DIAGNOSTIC_ONLY',
+                'LOZ_REGION_CONDITIONAL',
+                'LOZ_WEEKDAY_CONDITIONAL',
+                'LOZ_STAGE_TRACE_AVAILABLE',
+                'LOZ_NOT_READY_FOR_RULE',
+                'LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED',
+            ],
+        }
+with open('artifacts/_v55_loz_control_audit_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(loz_audit, f, ensure_ascii=False, indent=2, default=str)
+
+# 5. Tensor + latency readiness
+tensor = {}
+cur.execute("SELECT MAX(anchor_date) FROM model_strength_by_region_weekday_station_daily")
+latest_anchor = cur.fetchone()[0]
+tensor['latest_anchor'] = latest_anchor
+# top models by region/family for latest anchor 30d region grain
+top_by_region_family = {}
+for region in REGIONS:
+    for fam in ['AI', 'NO_TOKEN', 'ENSEMBLE', 'SHADOW']:
+        family_filter = {
+            'AI': "model_family='AI'",
+            'NO_TOKEN': "model_family='NO_TOKEN'",
+            'ENSEMBLE': "model_family='ENSEMBLE'",
+            'SHADOW': "run_source='shadow_auto_eval'",
+        }[fam]
+        cur.execute(f"SELECT model_name, run_source, predictions_count, bt_hit_count, bt_rate, loz1_rate, loz2_rate, helpful_signal_strength FROM model_strength_by_region_weekday_station_daily WHERE anchor_date=? AND grain='REGION' AND window_days=30 AND region=? AND {family_filter} AND predictions_count>=10 ORDER BY helpful_signal_strength DESC LIMIT 5", (latest_anchor, region))
+        rows = [dict(r) for r in cur.fetchall()]
+        top_by_region_family[f"{region}_{fam}"] = rows
+tensor['top_by_region_family_30d'] = top_by_region_family
+# blackspot
+cur.execute("SELECT region, weekday_name, blackspot_label, total_days, bt_wins, bt_rate, lo2_full_rate, lo2_any_rate FROM weekday_blackspot_shadow WHERE anchor_date='2026-05-05' ORDER BY region, weekday")
+tensor['weekday_blackspot_anchor_2026-05-05'] = [dict(r) for r in cur.fetchall()]
+# latency
+cur.execute("SELECT date, region, COUNT(*), SUM(latency_available), SUM(CASE WHEN missing_reason='NO_PER_MODEL_DURATION' THEN 1 ELSE 0 END) FROM model_latency_cost_audit_daily WHERE date IN (?,?) GROUP BY date, region", DATES)
+tensor['latency_2day'] = [list(r) for r in cur.fetchall()]
+tensor['latency_pruning_label'] = 'PRUNING_NOT_ALLOWED_NO_LATENCY'
+with open('artifacts/_v55_model_tensor_latency_pruning_readiness_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(tensor, f, ensure_ascii=False, indent=2, default=str)
+
+# 6. Method/multi-lane status
+method_status = {
+    'methods': {
+        'OFFICIAL_BASELINE_CONTROL': {'phase': 'TEST_LANE_PARALLEL', 'role': 'control_clone_official', 'output_eligible': False},
+        'COMPOSITE_CHALLENGER_V2': {'phase': 'TEST_LANE_PARALLEL', 'samples_30d': '~MB only', 'gate': 'NOT_MET', 'next': 'WAIT_30D'},
+        'STRENGTH_WEIGHTED_V52_5_2': {'phase': 'TEST_LANE_PARALLEL', '60d_MB_fw_fl': '8/7', 'gate': 'NOT_MET', 'next': 'ACCUMULATE'},
+        'AI_CHAIN_PRESERVATION_V1': {
+            'phase': 'TEST_LANE_PARALLEL',
+            '60d_MN_fw_fl': '4/1',
+            '60d_MT_fw_fl': '8/12 destructive',
+            '60d_MB': 'destructive',
+            'today_05_05': '1 free win MN (52 hit), 0 in MT/MB',
+            'gate': 'REGION_CONDITIONAL_ONLY_MN_PROMISING',
+            'next': 'WAIT_14D_MN_ONLY',
+        },
+        'SPECIALIST_ROSTER_V1': {
+            'phase': 'TEST_LANE_PARALLEL',
+            '60d_MB_fw_fl': '5/0',
+            'today_04_05': '1 free win MN (32 hit) + None for MB/MT',
+            'today_05_05': 'no rescue',
+            'gate': 'PROMISING_BUT_THIN_SAMPLE',
+            'next': 'WAIT_30_60D',
+        },
+        'PRIOR_REGION_CONTEXT_SAFE_V1': {
+            'phase': 'TEST_LANE_PARALLEL',
+            'samples_thin': True,
+            'gate': 'NOT_ENOUGH_EVIDENCE',
+            'next': 'WAIT_30D',
+        },
+        'NO_TOKEN_HERD_REDUCTION_V1': {
+            'phase': 'TEST_LANE_PARALLEL',
+            'samples_thin': True,
+            'gate': 'NOT_ENOUGH_EVIDENCE',
+            'next': 'WAIT_30D',
+        },
+        'TIER_AWARE_BUNDLE_SHADOW_V1_MB': {'phase': 'SHADOW_BACKFILL', 'samples_thin': True, 'gate': 'NOT_MET'},
+        'corrected_rescue_replay': {'phase': 'SHADOW_BACKFILL', 'gate': 'TIER3_NOT_MET', 'samples': '14_VALID_LIVE_DAY_NEEDED'},
+        'single_vote_rescue_replay': {'phase': 'DROP_AS_DESIGNED', 'reason': 'LEAKY_REFERENCE_ONLY'},
+        'tier2_replay_shadow_V1': {'phase': 'DROP_AS_DESIGNED', 'reason': 'NEGATIVE_LIFT'},
+        'tier2_replay_shadow_V2': {'phase': 'DROP_AS_DESIGNED', 'reason': 'NEGATIVE_LIFT_V2'},
+        'cohere_rerank_effectiveness_v1': {'phase': 'SHADOW_BACKFILL', 'gate': 'VALUE_NOT_PROVEN'},
+        'mt_model_hit_output_drop_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'loz_stage_trace_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'weekday_blackspot_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'cross_region_spillover_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'model_cross_region_dup_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'bundle_universe_coverage_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'mb_structural_drilldown_shadow': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only'},
+        'model_latency_cost_audit_daily': {'phase': 'BROKEN_NEEDS_FIX', 'reason': 'NO_PER_MODEL_DURATION 100%'},
+        'model_strength_by_region_weekday_station_daily': {'phase': 'TEST_LANE_PARALLEL', 'role': 'measurement_only', 'latest_anchor': latest_anchor},
+        'experimental_preview_shadow_multi_region': {'phase': 'TEST_LANE_PARALLEL', 'role': 'test_bundle_diagnostic', 'admin_only': True},
+        'V55_GOOGLE_DIRECT_SHADOW_COHORT': {
+            'phase': 'TEST_LANE_PARALLEL',
+            'models': ['gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b'],
+            'first_predictions': '2026-05-05',
+            'today_status': {
+                'gemini-3.1-pro': '3 rows (MB PARTIAL, MN LOSE, MT LOSE)',
+                'gemini-3-flash': '3 rows (MB WIN! MN PARTIAL, MT LOSE)',
+                'gemma-4-31b': '0 rows on 05/05 due to scheduler preflight bug; FIXED IN V55 — will run 06/05 onward',
+            },
+            'gate': 'NOT_ENOUGH_EVIDENCE_NEED_14D',
+        },
+    },
+    'live_parallel_status': 'LIVE_PARALLEL_AUTO_PENDING_ONLY',
+    'why_not_full_auto': 'V52.5.6 manual runner only; multi-region closeout evaluator (C-03) not built; scheduler auto-wire (C-04) blocked on >=3-5 clean closeouts',
+}
+with open('artifacts/_v55_method_multilane_status_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(method_status, f, ensure_ascii=False, indent=2, default=str)
+
+# 7. State file
+state = {
+    'pass_id': 'V20.3.37.55_full_chain',
+    'anchor_date': '2026-05-05',
+    'service_active': True,
+    'health_http': 200,
+    'live_window_passed': True,  # 20:14 VN > 18:30 MB cutoff
+    'rolling_metrics_post_05_05': {
+        'MN': {'7d_BT': 42.9, '14d_BT': 50.0, '30d_BT': 56.7, '60d_BT': 46.7},
+        'MT': {'7d_BT': 71.4, '14d_BT': 50.0, '30d_BT': 36.7, '60d_BT': 50.0},
+        'MB': {'7d_BT': 14.3, '14d_BT': 28.6, '30d_BT': 20.0, '60d_BT': 26.7},
+    },
+    'two_day_official': {
+        '2026-05-04': {'MN': 'BT_LOSE+lo2_PARTIAL', 'MT': 'BT_WIN+lo2_WIN', 'MB': 'BT_LOSE+lo2_LOSE'},
+        '2026-05-05': {'MN': 'BT_LOSE+lo2_LOSE', 'MT': 'BT_WIN+lo2_PARTIAL', 'MB': 'BT_LOSE+lo2_LOSE'},
+    },
+    'two_day_winner_per_region': {
+        'MN': 'TEST_RESCUE: SPECIALIST_ROSTER 04/05 picked 32 (hit), AI_CHAIN_PRESERVATION 05/05 picked 52 (hit)',
+        'MT': 'OFFICIAL_WIN_BOTH_DAYS (29 then 44)',
+        'MB': 'NO_METHOD_FOUND_HIT both days',
+    },
+    'verdict_label': 'TWO_DAY_FORENSIC_ONLY + READY_FOR_TEST_LANE_ENHANCEMENT + READY_FOR_MEASUREMENT_ONLY_IMPLEMENTATION + NOT_READY_FOR_OFFICIAL_CHANGE',
+    'critical_findings': [
+        'MN BT 30d dropped 60% → 56.7% (V54 → V55)',
+        'MT 7d 71.4% rising fast — but 30d still 36.7%',
+        'MB 60d 26.7% structural; MB Wed/Fri remain BLACK_SPOT_CONFIRMED on anchor 2026-05-05',
+        'MT_AI_CHAIN_PRESERVATION_V1 destructive on MT (broke 29 win → 82 LOSE on 04/05; broke 44 → 39 on 05/05) — NOT promote',
+        'MN_AI_CHAIN_PRESERVATION_V1 free win on 05/05 (52 vs 15) — keep watching MN-only',
+        'MN_SPECIALIST_ROSTER_V1 free win on 04/05 (32 vs 65)',
+        'gemini-3-flash MB WIN day 1 (91+14, both hit) — KEEP_CANDIDATE',
+        'gemma-4-31b: 0 rows 05/05 due to scheduler preflight bug. Bug FIXED in V55 (scheduler.py route gemma→google lane). Will run 06/05.',
+        'C-05 latency: still 0/0 latency_available, NO_PER_MODEL_DURATION 100% — pruning blocked.',
+        'loz_stage_trace materialized 04/05+05/05; 0 ai_dropped events but loz_select_miss MN 5, MT 6, MB 4 over 2 days.',
+    ],
+}
+with open('artifacts/_v55_state_20260505.json', 'w', encoding='utf-8') as f:
+    json.dump(state, f, ensure_ascii=False, indent=2)
+
+# 8. Pre-hash already done — just ensure post-hash now
+TABLES_FOR_HASH = [
+    'predictions', 'final_bundles', 'lottery_results', 'model_daily_eval',
+    'scheduler_logs',
+    'mt_model_hit_output_drop_shadow', 'loz_selector_shadow',
+    'model_latency_cost_audit_daily', 'model_strength_by_region_weekday_station_daily',
+    'experimental_preview_shadow', 'mb_experimental_preview_shadow',
+    'du_doan_test_runs', 'du_doan_test_bundles', 'du_doan_test_results',
+    'du_doan_test_candidates', 'du_doan_test_model_contribution',
+    'du_doan_test_audit_log',
+    'loz_stage_trace_shadow', 'weekday_blackspot_shadow',
+]
+import hashlib
+post_lines = ["table | rows | sha256 (best-effort) — POST V55 materialization"]
+for t in TABLES_FOR_HASH:
+    try:
+        cur.execute(f"SELECT COUNT(*) FROM {t}")
+        n = cur.fetchone()[0]
+        try:
+            cur.execute(f"SELECT * FROM {t} LIMIT 5000")
+            rows = cur.fetchall()
+            blob = '|'.join(','.join(str(c) for c in r) for r in rows)
+            sig = hashlib.sha256(blob.encode('utf-8','replace')).hexdigest()[:16]
+        except Exception:
+            sig = 'NA'
+        post_lines.append(f"{t} | {n} | {sig}")
+    except sqlite3.OperationalError as e:
+        post_lines.append(f"{t} | MISSING | {e}")
+with open('artifacts/_v55_post_hash_20260505.txt', 'w', encoding='utf-8') as f:
+    f.write('\n'.join(post_lines))
+
+print("V55_AGGREGATE_OK")
+print(json.dumps({k: state[k] for k in ['rolling_metrics_post_05_05','two_day_official','two_day_winner_per_region','verdict_label']}, ensure_ascii=False, indent=2))
+con.close()
+
+===== SOURCE_END artifacts/_v55_aggregate.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_api_smoke.py VERSION=V55 LINES=82 SHA256=9deb9eb188ed4ce5a5ef5e48267fe7bd2f49c983fe04b92b9f7fca31afce34af =====
+"""V20.3.37.55 — minimal API smoke test for new Google direct shadow models.
+
+Calls each new model with a tiny prompt to verify:
+  1. The Google AI Studio key (project sxkt) accepts the model name
+  2. The Google GenAI SDK can route correctly
+  3. The actual API model id resolves (e.g. gemma-4-31b → gemma-4-31b-it)
+
+Failure on any model means that model is NOT ready for tomorrow's shadow run.
+"""
+import sys, os, time, json, traceback
+sys.path.insert(0, '/root/Lottery_AI_Test/web/backend')
+
+from env_loader import load_project_env
+load_project_env()
+
+from google import genai as google_genai
+from google.genai import types as google_genai_types
+
+KEY_SHADOW = os.getenv('GEMINI_KEY_SHADOW_NEW', '')
+KEY_LEGACY = os.getenv('GEMINI_API_KEY', '')
+
+assert KEY_SHADOW, "GEMINI_KEY_SHADOW_NEW must be present"
+assert KEY_LEGACY, "GEMINI_API_KEY must be present"
+assert KEY_SHADOW != KEY_LEGACY, "Two keys must be distinct"
+
+import importlib
+import gpt_analyzer as g
+importlib.reload(g)
+REGISTRY_TO_API = {
+    mid: g.GOOGLE_MODEL_API_MAP.get(mid, mid)
+    for mid in ['gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b']
+}
+print("REGISTRY_TO_API resolved from gpt_analyzer:", REGISTRY_TO_API)
+
+# Tiny prompt to keep cost minimal
+PROMPT = "Reply with exactly one word: PONG"
+
+results = []
+client = google_genai.Client(api_key=KEY_SHADOW)
+
+for reg_id, api_id in REGISTRY_TO_API.items():
+    row = {'registry_id': reg_id, 'api_id': api_id, 'ok': False, 'err': '', 'latency_s': None, 'reply_len': 0, 'finish_reason': None}
+    t0 = time.time()
+    try:
+        resp = client.models.generate_content(
+            model=api_id,
+            contents=PROMPT,

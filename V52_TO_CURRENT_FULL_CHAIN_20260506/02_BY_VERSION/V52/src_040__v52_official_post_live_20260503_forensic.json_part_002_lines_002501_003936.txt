@@ -1,0 +1,1436 @@
+                "90"
+              ],
+              "hits": [
+                "90"
+              ],
+              "strength": 4.3,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Thái Bình",
+              "number": "490"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "rolling_summary": {
+    "MN": {
+      "3": {
+        "n": 3,
+        "bt_wins": 2,
+        "bt_losses": 1,
+        "loz1_hits": 2,
+        "loz2_hits": 2,
+        "lo2_full": 2,
+        "lo2_partial": 0,
+        "lo2_miss": 1,
+        "region": "MN",
+        "window": 3,
+        "bt_win_rate": 0.6667,
+        "loz1_hit_rate": 0.6667,
+        "loz2_hit_rate": 0.6667,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 18
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 18
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 18
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 18
+          },
+          "Long An": {
+            "actual_tail_hits": 18
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 18
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 18
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 18
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 4,
+        "bt_losses": 3,
+        "loz1_hits": 4,
+        "loz2_hits": 4,
+        "lo2_full": 4,
+        "lo2_partial": 0,
+        "lo2_miss": 3,
+        "region": "MN",
+        "window": 7,
+        "bt_win_rate": 0.5714,
+        "loz1_hit_rate": 0.5714,
+        "loz2_hit_rate": 0.5714,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 18
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 18
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 18
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 18
+          },
+          "Long An": {
+            "actual_tail_hits": 18
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 36
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 18
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 18
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 18
+          },
+          "An Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 18
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 18
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 18
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 18
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 18
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 18
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 18
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 18
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 18
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 9,
+        "bt_losses": 5,
+        "loz1_hits": 9,
+        "loz2_hits": 8,
+        "lo2_full": 6,
+        "lo2_partial": 5,
+        "lo2_miss": 3,
+        "region": "MN",
+        "window": 14,
+        "bt_win_rate": 0.6429,
+        "loz1_hit_rate": 0.6429,
+        "loz2_hit_rate": 0.5714,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 2
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 36
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 36
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 36
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 36
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 36
+          },
+          "Long An": {
+            "actual_tail_hits": 36
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 72
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 36
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 36
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 36
+          },
+          "An Giang": {
+            "actual_tail_hits": 36
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 36
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 36
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 36
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 36
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 36
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 36
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 36
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 36
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 36
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 36
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 18,
+        "bt_losses": 12,
+        "loz1_hits": 18,
+        "loz2_hits": 17,
+        "lo2_full": 10,
+        "lo2_partial": 15,
+        "lo2_miss": 5,
+        "region": "MN",
+        "window": 30,
+        "bt_win_rate": 0.6,
+        "loz1_hit_rate": 0.6,
+        "loz2_hit_rate": 0.5667,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 90
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 90
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 90
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 90
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 90
+          },
+          "Long An": {
+            "actual_tail_hits": 90
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 162
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 72
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 72
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 72
+          },
+          "An Giang": {
+            "actual_tail_hits": 72
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 72
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 72
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 72
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 72
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 72
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 72
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 72
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 72
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 72
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 72
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 29,
+        "bt_losses": 31,
+        "loz1_hits": 29,
+        "loz2_hits": 30,
+        "lo2_full": 17,
+        "lo2_partial": 25,
+        "lo2_miss": 18,
+        "region": "MN",
+        "window": 60,
+        "bt_win_rate": 0.4833,
+        "loz1_hit_rate": 0.4833,
+        "loz2_hit_rate": 0.5,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 6,
+            "loz1_hits": 6,
+            "loz2_hits": 5
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 1
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 7
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 6
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 6,
+            "loz1_hits": 6,
+            "loz2_hits": 4
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 162
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 162
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 162
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 162
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 162
+          },
+          "Long An": {
+            "actual_tail_hits": 162
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 306
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 162
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 162
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 162
+          },
+          "An Giang": {
+            "actual_tail_hits": 162
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 162
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 162
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 144
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 144
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 144
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 144
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 144
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 144
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 144
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 144
+          }
+        }
+      }
+    },
+    "MT": {
+      "3": {
+        "n": 3,
+        "bt_wins": 1,
+        "bt_losses": 2,
+        "loz1_hits": 1,
+        "loz2_hits": 0,
+        "lo2_full": 0,
+        "lo2_partial": 1,
+        "lo2_miss": 2,
+        "region": "MT",
+        "window": 3,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.0,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 18
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 18
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 18
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 18
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 18
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 4,
+        "bt_losses": 3,
+        "loz1_hits": 4,
+        "loz2_hits": 2,
+        "lo2_full": 1,
+        "lo2_partial": 4,
+        "lo2_miss": 2,
+        "region": "MT",
+        "window": 7,
+        "bt_win_rate": 0.5714,
+        "loz1_hit_rate": 0.5714,
+        "loz2_hit_rate": 0.2857,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 36
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 36
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 18
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 36
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 18
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 18
+          },
+          "Bình Định": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 18
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 5,
+        "bt_losses": 9,
+        "loz1_hits": 5,
+        "loz2_hits": 3,
+        "lo2_full": 1,
+        "lo2_partial": 6,
+        "lo2_miss": 7,
+        "region": "MT",
+        "window": 14,
+        "bt_win_rate": 0.3571,
+        "loz1_hit_rate": 0.3571,
+        "loz2_hit_rate": 0.2143,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 2
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 72
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 54
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 36
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 36
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 72
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 36
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 36
+          },
+          "Bình Định": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 36
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 36
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 36
+          },
+          "Huế": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 10,
+        "bt_losses": 20,
+        "loz1_hits": 10,
+        "loz2_hits": 15,
+        "lo2_full": 5,
+        "lo2_partial": 15,
+        "lo2_miss": 10,
+        "region": "MT",
+        "window": 30,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.5,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 4
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 2
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 162
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 90
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 90
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 90
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 90
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 162
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 72
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 72
+          },
+          "Bình Định": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 72
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 72
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 72
+          },
+          "Huế": {
+            "actual_tail_hits": 72
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 28,
+        "bt_losses": 32,
+        "loz1_hits": 28,
+        "loz2_hits": 24,
+        "lo2_full": 11,
+        "lo2_partial": 30,
+        "lo2_miss": 19,
+        "region": "MT",
+        "window": 60,
+        "bt_win_rate": 0.4667,
+        "loz1_hit_rate": 0.4667,
+        "loz2_hit_rate": 0.4,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 6
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 8,
+            "loz1_hits": 8,
+            "loz2_hits": 4
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 5
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 306
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 198
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 162
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 162
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 306
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 162
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 162
+          },
+          "Bình Định": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 144
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 144
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 144
+          },
+          "Huế": {
+            "actual_tail_hits": 108
+          }
+        }
+      }
+    },
+    "MB": {
+      "3": {
+        "n": 3,
+        "bt_wins": 1,
+        "bt_losses": 2,
+        "loz1_hits": 1,
+        "loz2_hits": 1,
+        "lo2_full": 0,
+        "lo2_partial": 2,
+        "lo2_miss": 1,
+        "region": "MB",
+        "window": 3,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.3333,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 27
+          },
+          "Nam Định": {
+            "actual_tail_hits": 27
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 27
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 2,
+        "bt_losses": 5,
+        "loz1_hits": 2,
+        "loz2_hits": 2,
+        "lo2_full": 0,
+        "lo2_partial": 4,
+        "lo2_miss": 3,
+        "region": "MB",
+        "window": 7,
+        "bt_win_rate": 0.2857,
+        "loz1_hit_rate": 0.2857,
+        "loz2_hit_rate": 0.2857,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 27
+          },
+          "Nam Định": {
+            "actual_tail_hits": 27
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 27
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 54
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 27
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 27
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 5,
+        "bt_losses": 9,
+        "loz1_hits": 5,
+        "loz2_hits": 5,
+        "lo2_full": 1,
+        "lo2_partial": 8,
+        "lo2_miss": 5,
+        "region": "MB",
+        "window": 14,
+        "bt_win_rate": 0.3571,
+        "loz1_hit_rate": 0.3571,
+        "loz2_hit_rate": 0.3571,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 54
+          },
+          "Nam Định": {
+            "actual_tail_hits": 54
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 54
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 108
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 54
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 54
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 6,
+        "bt_losses": 24,
+        "loz1_hits": 6,
+        "loz2_hits": 9,
+        "lo2_full": 2,
+        "lo2_partial": 11,
+        "lo2_miss": 17,
+        "region": "MB",
+        "window": 30,
+        "bt_win_rate": 0.2,
+        "loz1_hit_rate": 0.2,
+        "loz2_hit_rate": 0.3,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 135
+          },
+          "Nam Định": {
+            "actual_tail_hits": 135
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 108
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 216
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 108
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 108
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 18,
+        "bt_losses": 42,
+        "loz1_hits": 18,
+        "loz2_hits": 13,
+        "lo2_full": 2,
+        "lo2_partial": 27,
+        "lo2_miss": 31,
+        "region": "MB",
+        "window": 60,
+        "bt_win_rate": 0.3,
+        "loz1_hit_rate": 0.3,
+        "loz2_hit_rate": 0.2167,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 2
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 243
+          },
+          "Nam Định": {
+            "actual_tail_hits": 243
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 243
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 459
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 216
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 216
+          }
+        }
+      }
+    }
+  }
+}

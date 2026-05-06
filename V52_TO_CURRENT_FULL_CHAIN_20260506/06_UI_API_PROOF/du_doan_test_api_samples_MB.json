@@ -1,0 +1,5 @@
+{
+  "region": "MB",
+  "note": "API sample should be taken from admin-authenticated /api/du-doan-test route. This export includes DB/API-helper proof artifacts and route smoke; unauth route is intentionally 401.",
+  "admin_only": true
+}

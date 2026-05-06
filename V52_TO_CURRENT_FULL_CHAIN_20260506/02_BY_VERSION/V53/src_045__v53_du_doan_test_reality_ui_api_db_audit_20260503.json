@@ -1,0 +1,104 @@
+{
+  "audit_pass": "V53 / V52.5.8",
+  "owner_concern": "luồng thực nghiệm vẫn hiển thị các số dự đoán do luồng official",
+  "verdict": "UI_LABEL_CONFUSION_INDEPENDENT_AGREEMENT_LOOKS_LIKE_CLONE",
+  "ui_audit": {
+    "frontend_file": "web/frontend/du-doan-test.html",
+    "version_after_fix": "v52.6",
+    "blocks": [
+      {"block": "compare-grid Official column", "field": "data.baseline.bach_thu / lo2 / lo3 / xien2 / xien3", "source_table": "final_bundles (read-only)", "label": "OFFICIAL_BASELINE_CONTROL_DISPLAY"},
+      {"block": "compare-grid Test column", "field": "data.test_bundle.*", "source_table": "experimental_preview_shadow OR mb_experimental_preview_shadow (primary picked from registry priority)", "label": "TEST_ENGINE_OUTPUT_INDEPENDENT"},
+      {"block": "Picks per experiment (V52.6 NEW)", "field": "data.experiments[*].candidate_bt", "source_table": "experimental_preview_shadow OR mb_experimental_preview_shadow", "label": "TEST_ENGINE_PER_METHOD"},
+      {"block": "Test History", "field": "data.test_history", "source_table": "du_doan_test_bundles + du_doan_test_results", "label": "TEST_HISTORY_PERSISTED"},
+      {"block": "30-day Backtest Snapshot", "field": "data.backtest_summary", "source_table": "mb_experimental_preview_shadow (MB only)", "label": "POST_CLOSEOUT_DIAGNOSTIC"},
+      {"block": "V52.2 Measurement Surfaces", "field": "data.v52_measurements", "source_table": "mt_model_hit_output_drop_shadow + loz_selector_shadow + model_latency_cost_audit_daily", "label": "MEASUREMENT_ONLY"}
+    ],
+    "no_call_to_official_api": "UI does NOT call /api/final-bundle directly; it consumes /api/du-doan-test/{region}",
+    "fix_shipped_v52_6": [
+      "renderSourceBanner with explicit source contract per column",
+      "renderExperimentSummary with table of all method picks vs official",
+      "diffChip shows 🟰 đồng thuận (independent agreement) or 🆚 khác chính (independent divergence)",
+      "footer-note expanded to mention experimental_preview_shadow + multi-region scope"
+    ]
+  },
+  "api_audit": {
+    "endpoint_legacy_mb": {"path": "/api/du-doan-test/mb", "reads": ["mb_experimental_preview_shadow", "final_bundles (baseline only via get_final_bundle)"], "writes": []},
+    "endpoint_multi_region": {"path": "/api/du-doan-test/{MN|MT|MB}", "reads": ["experimental_preview_shadow", "final_bundles (baseline only via get_final_bundle)"], "writes": []},
+    "official_endpoint": {"path": "/api/final-bundle", "reads": ["final_bundles"], "writes": [], "production": true},
+    "alias_or_fallback": "NONE; endpoints are SELECT-only and clearly named"
+  },
+  "db_reality_check": {
+    "date_2026_05_02": {
+      "MN_official": {"bt": "73", "status": "WIN"},
+      "MN_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "73 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "54 (independent, hit_lo2)",
+        "AI_CHAIN_PRESERVATION_V1": "54 (independent, hit_lo2)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "73 (independent agreement)",
+        "SPECIALIST_ROSTER_V1": "73 (independent agreement)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "null (no prior_region for MN by anti-leak)"
+      },
+      "MT_official": {"bt": "88", "status": "WIN"},
+      "MT_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "88 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "71 (independent, false_promotion=1)",
+        "AI_CHAIN_PRESERVATION_V1": "71 (independent, false_promotion=1)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "88 (independent agreement)",
+        "SPECIALIST_ROSTER_V1": "88 (independent agreement)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "71 (independent, false_promotion=1)"
+      },
+      "MB_official": {"bt": "43", "status": "LOSE"},
+      "MB_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "43 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "91 (independent WIN, would_flip_to_win=1)",
+        "AI_CHAIN_PRESERVATION_V1": "91 (independent WIN, would_flip_to_win=1)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "91 (independent WIN, would_flip_to_win=1)",
+        "SPECIALIST_ROSTER_V1": "null (no specialist vote)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "91 (independent WIN, would_flip_to_win=1)"
+      }
+    },
+    "date_2026_05_03": {
+      "MN_official": {"bt": "79", "status": "WIN"},
+      "MN_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "79 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "79 (INDEPENDENT_AGREEMENT consensus rank=1 voters=7)",
+        "AI_CHAIN_PRESERVATION_V1": "79 (INDEPENDENT_AGREEMENT)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "79 (INDEPENDENT_AGREEMENT)",
+        "SPECIALIST_ROSTER_V1": "79 (INDEPENDENT_AGREEMENT)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "null (anti-leak: MN has no prior region)"
+      },
+      "MT_official": {"bt": "29", "status": "LOSE"},
+      "MT_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "29 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "29 (INDEPENDENT_AGREEMENT — also LOSE)",
+        "AI_CHAIN_PRESERVATION_V1": "33 (INDEPENDENT_DIVERGENCE — also LOSE)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "29 (INDEPENDENT_AGREEMENT)",
+        "SPECIALIST_ROSTER_V1": "29 (INDEPENDENT_AGREEMENT)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "17 (INDEPENDENT_DIVERGENCE — also LOSE)"
+      },
+      "MB_official": {"bt": "48", "status": "WIN"},
+      "MB_test_methods": {
+        "OFFICIAL_BASELINE_CONTROL": "48 (clone-by-design)",
+        "STRENGTH_WEIGHTED_V52_5_2": "48 (INDEPENDENT_AGREEMENT)",
+        "AI_CHAIN_PRESERVATION_V1": "85 (INDEPENDENT_DIVERGENCE — false_promotion=1)",
+        "NO_TOKEN_HERD_REDUCTION_V1": "48 (INDEPENDENT_AGREEMENT)",
+        "SPECIALIST_ROSTER_V1": "null (no specialist vote)",
+        "PRIOR_REGION_CONTEXT_SAFE_V1": "85 (INDEPENDENT_DIVERGENCE — false_promotion=1)"
+      }
+    }
+  },
+  "code_path_proof": {
+    "_materialize_experimental_preview_shadow_py": "reads final_bundles.source_predictions_json + model_daily_eval; writes only experimental_preview_shadow",
+    "_du_doan_test_engine_py": "reads experimental_preview_shadow; writes only du_doan_test_*",
+    "main_py_api_du_doan_test_region": "two SELECT calls: experimental_preview_shadow + final_bundles (baseline only)"
+  },
+  "log_proof": "journalctl shows 23:51 admin sessions hit /api/du-doan-test/{mn,mt,mb} returning 200 with [LO3-FREQ] derivation lines — confirms the API is producing test_bundles with derived lo3 (not cloning official lo3)",
+  "leakage_audit": {
+    "anchor_strict_d_minus_1": true,
+    "prior_regions_used_per_region": {"MN": [], "MT": ["MN"], "MB": ["MN", "MT"]},
+    "target_region_actual_used_for_selection": false,
+    "target_region_actual_used_for_evaluation": "post-closeout only (POST_CLOSEOUT_DIAGNOSTIC_FULL_25 mode flag)"
+  },
+  "official_unchanged": true,
+  "test_only_writes_only": true
+}

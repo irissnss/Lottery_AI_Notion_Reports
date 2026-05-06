@@ -1,0 +1,33 @@
+{
+  "status": "TEST_LANE_REAL_DB_SEPARATION_CONFIRMED",
+  "v54_api_source_labels": "DEPLOYED",
+  "ui_v52_6_source_banner": "PRESENT",
+  "db_sources": {
+    "official_baseline": "final_bundles",
+    "test_preview_multi_region": "experimental_preview_shadow",
+    "test_preview_mb_legacy": "mb_experimental_preview_shadow",
+    "test_persisted_runs": "du_doan_test_*"
+  },
+  "code_sources": {
+    "api_region": "web/backend/main.py::api_du_doan_test_region",
+    "api_mb_legacy": "web/backend/main.py::api_du_doan_test_mb",
+    "engine": "web/backend/_du_doan_test_engine.py",
+    "materializer": "web/backend/_materialize_experimental_preview_shadow.py",
+    "runner": "web/backend/_du_doan_test_daily_runner.py"
+  },
+  "labels": [
+    "TEST_LANE_OUTPUT_INDEPENDENT_FROM_OFFICIAL_WRITE_PATH",
+    "TEST_LANE_CANDIDATE_POOL_SHARED_WITH_OFFICIAL_SOURCE_PREDICTIONS",
+    "OFFICIAL_BASELINE_CLONE_BY_DESIGN",
+    "UI_LABEL_CONFUSION_RESOLVED",
+    "API_SOURCE_FIELDS_PRESENT",
+    "TEST_LANE_MANUAL_CONTROLLED",
+    "LIVE_PARALLEL_AUTO_PENDING_ONLY"
+  ],
+  "latest_live_day_2026_05_04": {
+    "MN": "official bundle pending result, no test rows yet",
+    "MT": "predictions only, no final bundle yet",
+    "MB": "predictions only, no final bundle yet"
+  },
+  "official_mutation_by_test_lane": false
+}

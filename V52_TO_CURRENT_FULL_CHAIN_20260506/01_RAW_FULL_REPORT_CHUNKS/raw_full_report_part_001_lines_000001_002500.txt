@@ -1,0 +1,2500 @@
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md VERSION=V52 LINES=248 SHA256=98300a5eecb8b955e29fcbcbdcbc2d88e995e1069b6b7f6403e7ca12634c3f53 =====
+# TOTAL-FORCE V52 - Full-Chain Report Forensic + Safe Next Step
+
+> Date: 2026-05-03  
+> Mode: VPS-first / full-report-chain-first / anti-overclaim / measurement-first  
+> Final: no official mutation, `/du-doan-test = MANUAL_STAGE_0_CONFIRMED`
+
+## 1. Executive Summary
+
+- Official quality is **not proven improved**. 2026-05-03 was good for MN/MB but MT failed; rolling windows remain mixed by region and task.
+- MT owner observation is supported for 2026-05-03: top official `29` was dominated by rerun_post_mn/no-token voters, while hit tails such as `08` and `18` had model/top10 evidence but were dropped from loz1/loz2.
+- MB AI is **not proven weak enough to prune**. V50 diagnostic AI-chain/prior-region would break official today, but tensor lacks per-model duration/cost.
+- `/du-doan-test` is a real MB lab, not full live-parallel auto. V50 rows are post-closeout diagnostic, not realtime unlock proof.
+- Safe next direction: implement measurement-only/test-lane-only/UI-test-only surfaces for MT drop tracing, loz selector shadow, and latency/cost instrumentation. No official change.
+
+## 2. Reports / Files / Embedded Sections Read
+
+- Roadmap/docs: `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md`, `docs/CURRENT_TRUTH_SSOT.md`, `docs/FOLLOW_UP_TRACKER.md`, `docs/CHANGELOG_GOVERNANCE_LEDGER.md`, `CHANGELOG.md`.
+- Full chain: V39/V41 stability and corrected replay, V46 `/du-doan-test` foundation, V48/V49 embedded-report control, V50 test lab, V51 post-live audit.
+- Embedded V48 is present via `TOTAL-FORCE V48 - KET QUA DAY DU`; it is not missing. If standalone is absent in any context, correct label is `STANDALONE_ARTIFACT_MISSING_BUT_EMBEDDED_REPORT_PRESENT`.
+- Required report-name search was run over `artifacts/phase_checkpoints` and docs/code search was run for V48/V50/V51/test-lane/leakage/tensor/loz strings.
+
+## 3. VPS Sync / Health / Hash Guard
+
+- Sync manifest: `artifacts/live_sync/20260503_210802/manifest.json`.
+- Service: active/running, PID `652160`, health OK, app version `V20.3.36`.
+- Pre-hash: `artifacts/_v52_pre_hash_20260503.txt`.
+- Post-hash: `artifacts/_v52_post_hash_20260503.txt`.
+- Source/test tables were hashed; V52 itself is read-only and does not mutate DB source tables.
+
+## 4. Full-Chain Timeline Reconciliation
+
+- V39/V41: corrected non-leaky replay framework exists, but TIER 3 gate not met; Option A remains stopped.
+- V46: separate `du_doan_test_*` schema/engine proved manually for MB.
+- V48/V49: embedded V48 present; status corrected to manual stage, not auto; 25-model and AI prompt overclaims corrected.
+- V50: MB experiment lab has registry/runner/evaluator/scoreboards/leakage audit, still manual.
+- V51: post-live 03/05 read-only audit found MT one-day no-token/rerun dominance, tensor not prune-ready, loz mixed.
+
+## 5. Report Claim Reconciliation Table
+
+| Claim | Report/source section | Evidence type | Current proof path | Contradiction with newer report? | Current verdict |
+|---|---|---|---|---|---|
+| /du-doan-test is a separate lane | V46/V50 reports | CODE_PROVEN+DB_PROVEN+API_PROVEN+UI_PROVEN | du_doan_test_* tables, admin route/API/UI, V50 report | No | CONFIRMED |
+| /du-doan-test is live-parallel auto full | Owner target / older wording risk | REPORT_ONLY if claimed | scheduler.py unwired, no natural scheduler proof | V49/V50/V51 contradict full-auto claim | OVERCLAIM |
+| V48 report exists | V49 embedded extraction | EMBEDDED_REPORT_ONLY+REPORT_PROVEN | V49 marker TOTAL-FORCE V48 - KET QUA DAY DU | No | CONFIRMED |
+| Full 25-model test lane active realtime | V48/V49 corrections | DB_PROVEN partial | 25 predictions but 14 voter models in test contribution historically; V50 still shared-source | V49/V50 say not full 25 | PARTIAL |
+| AI test prompt executing | FU-102/V49/V50 | DB_PROVEN | du_doan_test_ai_predictions exists but 0 rows | No | NOT_PROVEN |
+| NO_PER_MODEL_DURATION blocks pruning | V44/V49/V51 | ARTIFACT_ONLY+DB/TRACE_AUDIT | tensor 3216 rows all NO_PER_MODEL_DURATION; trace lacks latency/cost | No | CONFIRMED |
+| Option A stopped cleanly | V38/V39/V41 | CODE_PROVEN+REPORT_PROVEN | no rescue in generate_final_bundle, corrected replay gate not met | No | CONFIRMED |
+| V37 single_vote_rescue replay usable for unlock | V38 correction | REPORT_PROVEN | classified LEAKY_REFERENCE_ONLY | Contradicted by V38+ | CONTRADICTED |
+| V46 repeated 91 experiments are independent | V49/V50 audits | DB_PROVEN | shared candidate pool / same source payload | Yes | OVERCLAIM |
+| Loz1/loz2 stable enough for rule | V51/V52 loz audit | DB_PROVEN | rolling mixed by region/window | No | NOT_PROVEN |
+| Corrected replay gate met | V39/V41 roadmap | DB_PROVEN partial | gate needs >=14 valid + lift; latest narrative says not met | No | NOT_PROVEN |
+| /search rollover is output bug | V41 rollover UX | REPORT_PROVEN | classified UX confusion/banner plan; not output mutation | No | SUPERSEDED |
+| CP-1.2 deployed and persistent | Roadmap/V36+ | VPS_PROVEN | roadmap CP-1.2/1.3 done | Old section 6 stale | CONFIRMED |
+
+## 6. Official 2026-05-03 Post-Live Forensic
+
+| Region | BT | loz1 | loz2 | BT | loz1 | loz2 | lo2 | rows | run_source split |
+|---|---:|---:|---:|---|---|---|---|---:|---|
+| MN | `79` | `79` | `96` | WIN | WIN | WIN | WIN | 25 | `{'auto_daily': 15, 'shadow_auto_eval': 10}` |
+| MT | `29` | `29` | `03` | LOSE | LOSE | LOSE | LOSE | 25 | `{'ai_chain': 8, 'rerun_post_mn': 7, 'shadow_auto_eval': 10}` |
+| MB | `48` | `48` | `89` | WIN | WIN | LOSE | PARTIAL | 25 | `{'ai_chain': 8, 'rerun_post_mt': 7, 'shadow_auto_eval': 10}` |
+
+## 7. Rolling Quality 3/7/14/30/60
+
+| Region | Window | BT win | loz1 hit | loz2 hit | lo2 full | lo2 partial | lo2 miss |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| MN | 3 | 66.7% | 66.7% | 66.7% | 2 | 0 | 1 |
+| MN | 7 | 57.1% | 57.1% | 57.1% | 4 | 0 | 3 |
+| MN | 14 | 64.3% | 64.3% | 57.1% | 6 | 5 | 3 |
+| MN | 30 | 60.0% | 60.0% | 56.7% | 10 | 15 | 5 |
+| MN | 60 | 48.3% | 48.3% | 50.0% | 17 | 25 | 18 |
+| MT | 3 | 33.3% | 33.3% | 0.0% | 0 | 1 | 2 |
+| MT | 7 | 57.1% | 57.1% | 28.6% | 1 | 4 | 2 |
+| MT | 14 | 35.7% | 35.7% | 21.4% | 1 | 6 | 7 |
+| MT | 30 | 33.3% | 33.3% | 50.0% | 5 | 15 | 10 |
+| MT | 60 | 46.7% | 46.7% | 40.0% | 11 | 30 | 19 |
+| MB | 3 | 33.3% | 33.3% | 33.3% | 0 | 2 | 1 |
+| MB | 7 | 28.6% | 28.6% | 28.6% | 0 | 4 | 3 |
+| MB | 14 | 35.7% | 35.7% | 35.7% | 1 | 8 | 5 |
+| MB | 30 | 20.0% | 20.0% | 30.0% | 2 | 11 | 17 |
+| MB | 60 | 30.0% | 30.0% | 21.7% | 2 | 27 | 31 |
+
+## 8. Official `/du-doan` Mechanism Map
+
+`predictions -> candidate extraction -> scoring/vote/rank -> BT/loz1/loz2 -> final_bundles -> /api/final-bundle -> /du-doan UI`
+
+- Frontend: `web/frontend/du-doan.html`.
+- API: `GET /api/final-bundle` reads `final_bundles`.
+- Generation path: `generate_final_bundle()` writes via official bundle path; V52 did not edit it.
+- Candidate extraction: sanitized top two `main_numbers` from output-eligible model rows.
+- Score/rank: per-model BT/WR weight, strength, verdict, position, lane weights; then ranked numbers.
+- loz1/loz2: current top1/top2 from ranked official bundle, not separate business selector.
+- PP-1 is on; PP-5/family bonus is off; Option A/rescue is not in production path.
+- Official has some region/run_source awareness; it does not use model tensor or latency/cost for live scoring.
+
+## 9. MT Forensic: Model Correct But Output Wrong
+
+- 2026-05-03 MT official `29 / 29 / 03` all missed.
+- `29` top1: 7 voters = 1 TOKEN + 6 NO_TOKEN/rerun_post_mn. Label: `NO_TOKEN_HERD_OVERRODE` for this day.
+- Actual `08`: top10 rank 10, hit by TOKEN/shadow rows including `gemini-2.5-pro`, `gpt-5-mini`, `deepseek-v4-flash`, `gpt-5.5`, `grok-4.20-multi-agent`. Label: `AI_SIGNAL_DROPPED` + `LOZ_LINE_SELECTION_MISS`.
+- Actual `18`: top10 rank 3, NO_TOKEN support (`random-forest`, `smart-ml`) but dropped below loz lines. Label: `SCORE_TOO_LOW` / `LOZ_LINE_SELECTION_MISS`.
+- Current proof is one-day plus rolling context, so no official change. Next safe action is measurement-only MT conversion/drop matrix.
+
+## 10. MB Forensic: AI Weak vs Dropped vs No-Token Dominated
+
+- 2026-05-03 MB official `48` won; loz1 hit, loz2 missed.
+- V50 diagnostic: AI-chain/prior-region test selected `85`, which would break official. This is negative for that diagnostic day but not enough to prune AI.
+- MB model performance needs rolling + latency/cost + unique-signal proof. Labels: `AI_MB_NOT_PROVEN_WEAK`, `AI_MB_SAMPLE_TOO_THIN`, `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+
+## 11. Loz1 / Loz2 Control Audit
+
+- Loz1/loz2 is not stable enough for a fixed official rule. 30d: MN loz1 60.0% / loz2 56.7%; MT loz1 33.3% / loz2 50.0%; MB loz1 20.0% / loz2 30.0%.
+- This is `LOZ_SIGNAL_MIXED`, likely region/window conditional.
+- Safe next action: measurement-only loz selector shadow and UI/test-lane comparison. No official loz rule.
+
+## 12. `/du-doan-test` Reality Status
+
+- Final status: `MANUAL_STAGE_0_CONFIRMED`.
+- MB only. Tables exist through V50: runs/bundles/results/candidates/model contribution/audit, registry, daily summary, experiment/model/method scoreboards, leakage audit, conversion trace, AI predictions table (0 rows).
+- No scheduler auto-wire, no natural realtime proof, no MN/MT test-lane engine.
+
+## 13. `/du-doan-test` Anti-Force-Fit / Leakage Audit
+
+- V50 2026-05-03 rows are `POST_CLOSEOUT_DIAGNOSTIC_FULL_25`, therefore `NOT_REALTIME_PROOF` for unlock.
+- Runs carry test flags and no official output impact. Leakage audit labels shared pool / official-loz promotion rather than counting them as independent proof.
+- No current evidence that test-lane rows changed official output. Force-fit risk is controlled by labels, but realtime pre-actual proof is still missing.
+
+## 14. `/du-doan-test` UI Comparison Gap
+
+- UI shows official vs test and scoreboards/leakage for MB.
+- Missing for owner target: explicit loz1/loz2 line-by-line comparison, total hit official vs test, correct_but_dropped/wrong_boosted detail, TOKEN/NO_TOKEN/SHADOW split, region/weekday/station filters, latency/cost when available.
+
+## 15. MN/MT/MB Test-Lane Expansion Readiness
+
+- Current engine is MB-specific.
+- MN safe sources: D-1 only, no same-day actual.
+- MT safe sources: D-1 + MN(D) after MN result, never MT(D) actual.
+- MB safe sources: D-1 + MN(D)+MT(D), never MB(D) actual.
+- Status: `DESIGN_ONLY` until cutoff contract is implemented in test-lane only.
+
+## 16. Model Tensor / Cost / Latency / Pruning Readiness
+
+- Tensor rows: 3216; `NO_PER_MODEL_DURATION` count: 3216. Trace parsed: 852 JSON rows; latency/cost fields detected: {}.
+- Labels: `TENSOR_OK_FOR_DIAGNOSTIC`, `TENSOR_NOT_OK_FOR_PRUNING`, `TENSOR_NOT_OK_FOR_REALTIME_SELECTION`, `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+- No model prune or cost reduction decision is allowed yet.
+
+## 17. Shadow / Multi-Lane / ML Pipeline Status
+
+- P0/shadow measurement surfaces are broadly VPS-persistent.
+- `single_vote_rescue_replay_shadow`: `LEAKY_REFERENCE_ONLY`.
+- `tier2_replay_shadow` / `tier2_replay_v2_shadow`: `DROP_AS_DESIGNED`.
+- `corrected_rescue_replay_shadow`: `WAIT_DATA`, gate not met.
+- Test-lane runner/evaluator: `STABLE_MANUAL`.
+
+## 18. Measurement Completeness Matrix
+
+| Measurement area | Existing table/file | Auto/manual | Latest date | Region coverage | Rolling window | Data quality | Missing fields | Owner usefulness | Ready for code/fix? | Verdict |
+|---|---|---|---|---|---|---|---|---|---|---|
+| official output quality | final_bundles + model_daily_eval | AUTO | 2026-05-03 | MN/MT/MB | 3/7/14/30/60 | good for diagnostic | degraded-day formal split | high | diagnostic only | MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC |
+| model-level quality | model_daily_eval + tensor CSV | AUTO/artifact | 2026-05-03 | MN/MT/MB | 7/14/30/60 | partial | latency/cost/unique risk | high | no pruning | MISSING_LATENCY |
+| model contribution | final_bundles.source_predictions_json + du_doan_test_model_scoreboard | MANUAL/test for MB | 2026-05-03 | official all, test MB only | limited | partial | station-level + loz line contribution | high | measurement/test only | MEASUREMENT_NOT_SUFFICIENT_FOR_OFFICIAL_CHANGE |
+| correct_but_dropped | V51 forensic JSON | MANUAL audit | 2026-05-03 | MN/MT/MB | one-day + rolling needed | thin | canonical table | high | measurement now | MISSING_TRACE |
+| wrong_boosted | du_doan_test_results/model_scoreboard | MANUAL test | 2026-05-03 | MB only | 2 dates | thin | MN/MT, realtime proof | medium | test only | MISSING_AUTO_EVALUATOR |
+| source-prize conversion | source_predictions_json / shadow tables | partial | 2026-05-03 | MN/MT/MB | limited | partial | daily conversion table | high | measurement only | MISSING_TRACE |
+| rule injection conversion | rule_phase_evidence_shadow | AUTO/post-MDE | 2026-05-01/varies | MN/MT/MB | limited | partial | latest freshness reconciliation | medium | measurement only | MISSING_TRACE |
+| no-token drift | no_token_drift_shadow + V51 MT forensic | AUTO/shadow | varies | MN/MT/MB | rolling | partial | official drop-stage table | high | measurement only | MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC |
+| AI vs no-token split | predictions/final bundle score_breakdown | AUTO | 2026-05-03 | MN/MT/MB | rolling possible | partial | canonical family-score daily table | high | measurement only | MISSING_TRACE |
+| shadow vs official | shadow_results + scoreboards | AUTO | varies | MN/MT/MB | rolling | good diagnostic | UI consolidation | medium | measurement/UI | MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC |
+| loz1/loz2 | final_bundles + predictions | AUTO/manual audit | 2026-05-03 | MN/MT/MB | 3/7/14/30/60 | mixed | loz selector shadow | high | measurement/test only | LOZ_SIGNAL_MIXED |
+| cost/latency | tensor/trace | artifact | 2026-05-03 | all | diagnostic | insufficient | duration/cost/token | very high | no prune | MISSING_LATENCY + MISSING_COST |
+| runtime reliability | scheduler_logs/health | AUTO | 2026-05-03 | system | daily | good | none critical | medium | watch | MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC |
+| test lane comparison | du_doan_test_* | MANUAL | 2026-05-03 | MB only | 2 dates | manual only | MN/MT + realtime natural proof | high | test only | MISSING_AUTO_EVALUATOR |
+| leakage audit | du_doan_test_leakage_audit + corrected replay audit | MANUAL/test | 2026-05-03 | MB test + replay | limited | partial | source timestamp rows for all regions | high | test/measurement | MEASUREMENT_SUFFICIENT_FOR_TEST_LANE |
+| UI visibility | du-doan-test.html | MANUAL UI | 2026-05-03 | MB | current | partial | explicit loz1/loz2/region filters | medium | UI-test only | MISSING_UI_COMPARISON |
+
+## 19. Code Readiness Matrix
+
+| ID | Issue | Evidence | Sample size | Rolling window | Region affected | Current status | Risk if code now | Can implement measurement-only now? | Can implement test-lane-only now? | Can implement UI-test-only now? | Needs more data? | Needs owner decision? | Drop? | Bucket | Next command |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V52-MT-DROP | MT model correct but output/loz wrong | V51/V52 MT forensic | 1 day + rolling context | needs 7/14/30 focused | MT | MEASURED_ONE_DAY | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Build MT model-hit-to-output-drop matrix |
+| V52-LOZ-SHADOW | loz1/loz2 unstable and not modeled separately | loz audit | 60d official/predictions | 3/7/14/30/60 | all | LOZ_SIGNAL_MIXED | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Design loz selector shadow |
+| V52-LATENCY | per-model duration/cost missing | tensor/trace audit | 3216 tensor rows | diagnostic | all | TENSOR_NOT_OK_FOR_PRUNING | HIGH for prune | YES | YES | YES | YES | YES for prune | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Instrument duration/cost/token |
+| V52-TEST-MNMT | /du-doan-test MB-only manual stage | test reality | 2 MB dates | not enough | MN/MT missing | MANUAL_STAGE_0_CONFIRMED | LOW test / HIGH scheduler | YES | YES | YES | YES | YES scheduler | NO | DESIGN_ONLY | Write MN/MT realtime cutoff spec before code |
+| V52-AI-PROMPT | AI test prompt not executing | du_doan_test_ai_predictions rows=0 | 0 rows | none | MB planned | NOT_PROVEN | MEDIUM cost risk | YES schema exists | YES with owner OK | YES | YES | YES | NO | OWNER_DECIDE | Owner approve 1-2 model test prompt experiment |
+| V52-CORR-REPLAY | Corrected rescue gate not met | corrected_rescue_replay_shadow | 13-ish valid before; needs refresh | 14+ valid | all | WAIT_DATA | HIGH official | YES refresh measurement | NO | YES | YES | YES unlock | NO | WAIT_DATA | Refresh corrected replay only, no unlock |
+| V52-TIER2 | tier2 replay policies underperform | V33/V37 reports | 14/30d replay | historical | all | DROP_AS_DESIGNED | HIGH | NO unless redesign | NO | NO | NO | YES for redesign | YES | DROP_AS_DESIGNED | Do not implement as designed |
+
+## 20. Safe Implementation Performed
+
+- None. V52 is report/forensic/docs-only. No code was changed and no DB write was performed by V52 beyond artifacts/docs.
+
+## 21. Items Deliberately Not Implemented
+
+- No official scoring/bundle/prompt/model/route changes.
+- No scheduler auto-wire for test lane.
+- No model pruning.
+- No loz production rule.
+- No rescue/Option A/TIER 3 unlock.
+- No actual-known selection.
+
+## 22. WAIT_DATA / WAIT_LIVE / OWNER_DECIDE / DROP List
+
+- `IMPLEMENT_NOW_MEASUREMENT_ONLY`: MT model-hit drop matrix, loz selector shadow, latency/cost instrumentation.
+- `IMPLEMENT_NOW_TEST_LANE_ONLY`: MN/MT test-lane design after cutoff spec, raw 25-model ingestion design.
+- `IMPLEMENT_NOW_UI_TEST_ONLY`: explicit BT/loz1/loz2 official-vs-test comparison and family split labels.
+- `WAIT_DATA`: MB AI value, loz stability, corrected replay gate, test-lane sample maturity.
+- `OWNER_DECIDE`: scheduler auto-wire, AI test prompt execution cost, production pruning, any official unlock.
+- `DROP_AS_DESIGNED`: existing tier2 V1/V2 policies as designed.
+- `LEAKY_REFERENCE_ONLY`: old single-vote rescue replay.
+
+## 23. Next Safest Action Plan
+
+- 24h: build measurement-only specs/artifacts for MT drop tracing, loz selector shadow, latency/cost fields; keep official untouched.
+- 3 days: run `/du-doan-test` manual MB realtime-before-result and post-closeout evaluator consistently; gather 3 clean manual closeouts.
+- 7 days: review region/weekday loz + MT drop matrix; consider UI-test-only expansion to show loz1/loz2 explicitly.
+- 14 days: revisit corrected replay/test-lane evidence; only then discuss owner-decision gates.
+
+## 24. Technical No-Drop Self-Audit
+
+- VPS sync first: PASS.
+- Pre-hash source/test tables: PASS.
+- Report chain and embedded V48 checked: PASS.
+- Official path mapped: PASS.
+- Test lane mapped: PASS.
+- Matrices created before any implementation: PASS.
+- Post-hash captured: PASS.
+
+## 25. Governance No-Overclaim Self-Audit
+
+- Did not call one-day result improvement: PASS.
+- Did not call diagnostic rows realtime proof: PASS.
+- Did not use leaky replay for unlock: PASS.
+- Did not call tensor pruning-ready: PASS.
+- Did not hide MT/MB/loz blockers: PASS.
+- Did not touch official output: PASS.
+
+## 26. Final Owner-Facing Answer
+
+- Huong xu ly tiep theo an toan nhat: measurement-only/test-lane-only/UI-test-only, bat dau bang MT drop matrix + loz selector shadow + latency/cost instrumentation.
+- Official quality chua chung minh cai thien that: ngay 03/05 MN/MB tot, MT fail; rolling mixed.
+- He do luong da tien bo nhieu, nhung chua du cho official change/prune.
+- `/du-doan-test` hien la `MANUAL_STAGE_0_CONFIRMED`, MB-only, chua live-parallel auto full.
+- Test lane khong duoc dung lam realtime proof khi row la post-closeout diagnostic.
+- MT sai ngay 03/05 co bang chung no-token/rerun dominance + AI/model hit bi drop.
+- MB AI yeu chua du proof; pruning bi chan boi missing latency/cost.
+- Loz1/loz2 chua on dinh; chi nen do shadow/test/UI truoc.
+- Khong cham official: KHONG.
+
+===== SOURCE_END artifacts/phase_checkpoints/TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md VERSION=V52 LINES=88 SHA256=b91155af5181592d5eaf6ae11a271a47e94c3591126e5f7eb02c3c02cf810a1f =====
+# V52 Measurement-Only Implementation
+
+> Date: 2026-05-03  
+> Mode: VPS-first / measurement-only / no official mutation  
+> Live sync after run: `artifacts/live_sync/20260503_213854/manifest.json`
+
+## Scope
+
+Implemented one standalone materializer:
+
+- `web/backend/_materialize_v52_measurement_surfaces.py`
+
+It writes only:
+
+- `mt_model_hit_output_drop_shadow`
+- `loz_selector_shadow`
+- `model_latency_cost_audit_daily`
+
+It does not call `generate_final_bundle()` and does not write `final_bundles` or production `predictions`.
+
+## VPS Run Result
+
+Command:
+
+```bash
+python web/backend/_materialize_v52_measurement_surfaces.py --date 2026-05-03 --json
+```
+
+Result:
+
+```json
+{
+  "date": "2026-05-03",
+  "run_label": "v52_measurement_2026-05-03",
+  "mt_model_hit_output_drop_rows": 5,
+  "loz_selector_rows": 75,
+  "model_latency_cost_rows": 75,
+  "official_output": false,
+  "output_impact": false,
+  "output_eligible": false
+}
+```
+
+## Hash Guard
+
+Pre: `artifacts/_v52_impl_pre_hash_20260503.txt`  
+Post: `artifacts/_v52_impl_post_hash_20260503.txt`
+
+Official/source tables unchanged:
+
+- `predictions`: 4134 -> 4134, hash unchanged
+- `final_bundles`: 195 -> 195, hash unchanged
+- `lottery_results`: 14603 -> 14603, hash unchanged
+- `model_daily_eval`: 4089 -> 4089, hash unchanged
+- `scheduler_logs`: 113122 -> 113122, hash unchanged
+
+Measurement tables changed as expected:
+
+- `mt_model_hit_output_drop_shadow`: 0 -> 5
+- `loz_selector_shadow`: 0 -> 75
+- `model_latency_cost_audit_daily`: 0 -> 75
+
+## Immediate Findings
+
+MT dropped actual-hit tails on 2026-05-03:
+
+| Tail | Drop stage | Model hits | Token | No-token | Shadow | Candidate rank |
+|---|---|---:|---:|---:|---:|---:|
+| `08` | `AI_SIGNAL_DROPPED` | 5 | 2 | 0 | 3 | 10 |
+| `18` | `LOZ_LINE_SELECTION_MISS` | 2 | 0 | 2 | 0 | 3 |
+| `43` | `LOZ_LINE_SELECTION_MISS` | 1 | 0 | 1 | 0 | 6 |
+| `63` | `LOZ_LINE_SELECTION_MISS` | 1 | 0 | 1 | 0 | 9 |
+| `65` | `AI_SIGNAL_DROPPED` | 7 | 1 | 0 | 6 | null |
+
+Loz selector shadow:
+
+- MN: model-top2 better than official `0/25`; official better `8/25`
+- MT: model-top2 better than official `15/25`; official better `0/25`
+- MB: model-top2 better than official `1/25`; official better `16/25`
+
+Latency/cost audit:
+
+- `75/75` rows still missing duration, cost, and token count.
+- Current pruning label remains `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+
+## Final Verdict
+
+This is a real measurement-only implementation. It gives actionable MT/loz/model-cost evidence without any official output mutation.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md VERSION=V52 LINES=80 SHA256=d6373cebf4ecff12e706a9bfed2e341129354611b2dea680b5e5960320a200ce =====
+# V52.2 Measurement Backfill Rollup
+
+> Date: 2026-05-03  
+> Mode: VPS-first / measurement-only / 60 closed-day backfill / no official mutation  
+> Live sync after run: `artifacts/live_sync/20260503_214559/manifest.json`
+
+## What Ran
+
+Updated `web/backend/_materialize_v52_measurement_surfaces.py` with `--backfill-days`.
+
+VPS command:
+
+```bash
+python web/backend/_materialize_v52_measurement_surfaces.py --date 2026-05-03 --backfill-days 60 --json
+```
+
+## Row Counts
+
+- `mt_model_hit_output_drop_shadow`: `301`
+- `loz_selector_shadow`: `3273`
+- `model_latency_cost_audit_daily`: `3273`
+
+## Hash Guard
+
+Pre: `artifacts/_v52_2_pre_hash_20260503.txt`  
+Post: `artifacts/_v52_2_post_hash_20260503.txt`
+
+Official/source unchanged:
+
+- `predictions`: `4134 -> 4134`, hash unchanged
+- `final_bundles`: `195 -> 195`, hash unchanged
+- `lottery_results`: `14603 -> 14603`, hash unchanged
+- `model_daily_eval`: `4089 -> 4089`, hash unchanged
+- `scheduler_logs`: `113122 -> 113122`, hash unchanged
+
+## Key Rolling Findings
+
+### MT Drop Matrix
+
+60d:
+
+- `LOZ_LINE_SELECTION_MISS`: 115 rows, 184 model hits, mostly no-token (177).
+- `AI_SIGNAL_DROPPED`: 112 rows, 282 model hits, 195 token + 73 shadow.
+- `NOT_IN_CANDIDATE_UNIVERSE`: 50 rows.
+- `OFFICIAL_LO2_INCLUDED`: 24 rows.
+
+30d:
+
+- `LOZ_LINE_SELECTION_MISS`: 61 rows.
+- `AI_SIGNAL_DROPPED`: 55 rows.
+- `NOT_IN_CANDIDATE_UNIVERSE`: 35 rows.
+- `OFFICIAL_LO2_INCLUDED`: 15 rows.
+
+This is now more than a one-day observation. It is enough for deeper measurement/UI/test-lane work, not enough for official scoring changes by itself.
+
+### Loz Selector Shadow
+
+30d model-top2 vs official:
+
+- MB: model better `122`, official better `156`, rows `652`.
+- MN: model better `113`, official better `211`, rows `650`.
+- MT: model better `140`, official better `198`, rows `646`.
+
+14d:
+
+- MT model better `107`, official better `81`, rows `366`.
+
+Interpretation: loz signal is strongly window/region conditional. It is not ready for a fixed official loz rule, but it is ready for UI/test-lane surfacing and continued shadow scoring.
+
+### Latency / Cost
+
+All 3273 rows still have:
+
+`NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT`
+
+Model pruning remains blocked.
+
+## Final Verdict
+
+V52.2 exhausted the immediately available historical data for the new measurement surfaces. The next safe work is UI/test-lane surfacing and latency instrumentation; official output remains locked.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md VERSION=V52 LINES=54 SHA256=4dbc2dbe1906760f503fb736cab3441d31f6fde3dfccd29e3765b3b4b18ac933 =====
+# V52.3 `/du-doan-test` Measurement Surfacing
+
+> Date: 2026-05-03  
+> Mode: test-lane UI/API only / no official output mutation  
+> Live sync after deploy: `artifacts/live_sync/20260503_221017/manifest.json`
+
+## What Changed
+
+Surfaced the V52.2 measurement tables in the admin-only `/du-doan-test` API/UI.
+
+API `/api/du-doan-test/mb` now includes:
+
+- `v52_measurements.mt_drop_rollup`
+- `v52_measurements.mt_drop_recent`
+- `v52_measurements.loz_selector_rollup`
+- `v52_measurements.latency_cost_rollup`
+
+UI `web/frontend/du-doan-test.html` now renders:
+
+- MT dropped actual tails for the selected date.
+- MT drop rollups for 7d / 30d / 60d.
+- Loz selector rollups for 14d / 30d / 60d.
+- Latency/cost availability rollup for 60d.
+
+## Smoke
+
+- `/du-doan`: `200`
+- `/du-doan-test` unauth: `401`
+- `/api/du-doan-test/mb` unauth: `401`
+- `/api/health`: `200`
+- Admin API direct smoke: `has_v52=true`, `mt_drop_60=4`, `loz_60=3`, `latency_60=1`.
+
+## Hash Guard
+
+Pre: `artifacts/_v52_3_pre_hash_20260503.txt`  
+Post: `artifacts/_v52_3_post_hash_20260503.txt`
+
+Official/source:
+
+- `predictions`: unchanged
+- `final_bundles`: unchanged
+- `lottery_results`: unchanged
+- `model_daily_eval`: unchanged
+- `scheduler_logs`: changed only from service restart (`113122 -> 113134`)
+
+Measurement tables:
+
+- `mt_model_hit_output_drop_shadow`: unchanged (`301`)
+- `loz_selector_shadow`: unchanged (`3273`)
+- `model_latency_cost_audit_daily`: unchanged (`3273`)
+
+## Verdict
+
+This is UI/API surfacing only. It makes the rolling measurement evidence visible on the test lane without changing official output.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md VERSION=V52 LINES=81 SHA256=99c9c83aa0c34329184aa5b99ad2770237336e67769299ba2002f3dfcf4a8e30 =====
+# V52.4 Multi-Region `/du-doan-test` UI Readiness
+
+> Date: 2026-05-03  
+> Mode: test-lane UI/API only / MN-MT design-only / no official mutation  
+> Live sync after deploy: `artifacts/live_sync/20260503_222141/manifest.json`
+
+## What Changed
+
+`/du-doan-test` now has region tabs and window filters:
+
+- MN test/readiness
+- MT test/readiness
+- MB test
+- Window filters: 7d / 14d / 30d / 60d
+
+API:
+
+- Existing MB endpoint remains: `/api/du-doan-test/mb`
+- New read-only multi-region endpoint: `/api/du-doan-test/{region}`
+  - `/api/du-doan-test/mn`
+  - `/api/du-doan-test/mt`
+  - `/api/du-doan-test/mb`
+
+MN/MT are intentionally `DESIGN_ONLY` for test-output generation. They show official baseline + V52 measurement/readiness panels, not fake test predictions.
+
+## Cutoff Spec
+
+Spec artifact:
+
+- `artifacts/phase_checkpoints/V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md`
+
+Rules:
+
+- MN: D-1 only; no MN(D) actual.
+- MT: D-1 + MN(D) after MN result; no MT(D) actual.
+- MB: D-1 + MN(D)+MT(D); no MB(D) actual.
+
+## Smoke
+
+Unauth:
+
+- `/du-doan`: 200
+- `/du-doan-test`: 401
+- `/api/du-doan-test/mn`: 401
+- `/api/du-doan-test/mt`: 401
+- `/api/du-doan-test/mb`: 401
+- `/api/health`: 200
+
+Admin direct API:
+
+```json
+{
+  "mn": {"success": true, "mode": "MN_MT_TEST_LANE_DESIGN_ONLY", "has_v52": true, "test_bundle": false, "cutoff": "DESIGN_ONLY"},
+  "mt": {"success": true, "mode": "MN_MT_TEST_LANE_DESIGN_ONLY", "has_v52": true, "test_bundle": false, "cutoff": "DESIGN_ONLY"},
+  "mb": {"success": true, "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25", "has_v52": true, "test_bundle": true}
+}
+```
+
+## Hash Guard
+
+Pre: `artifacts/_v52_4_pre_hash_20260503.txt`  
+Post: `artifacts/_v52_4_post_hash_20260503.txt`
+
+Official/source:
+
+- `predictions`: unchanged
+- `final_bundles`: unchanged
+- `lottery_results`: unchanged
+- `model_daily_eval`: unchanged
+- `scheduler_logs`: changed only from service restart
+
+Measurement/test tables:
+
+- `mt_model_hit_output_drop_shadow`: unchanged
+- `loz_selector_shadow`: unchanged
+- `model_latency_cost_audit_daily`: unchanged
+- `du_doan_test_runs/bundles/results`: unchanged
+
+## Verdict
+
+V52.4 makes `/du-doan-test` multi-region visible without pretending MN/MT are live experiment-output lanes. This is the correct anti-leakage step before any MN/MT test runner.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md VERSION=V52 LINES=43 SHA256=2763110d0c06b6f4569e7fa370b7f98fa527b6c06ecf8e5eb747e5bc376b7d18 =====
+# V52.4.1 `/du-doan-test` UI Loading Fix
+
+> Date: 2026-05-03  
+> Mode: test-lane UI only / no official mutation
+
+## Symptom
+
+Owner reported `/du-doan-test` stuck at "Đang tải dự đoán test..." after V52.4 deploy.
+
+## Root Cause
+
+V52.4 introduced `renderRegionControls(data)` which generated window-filter buttons with inline `onclick="setWindowDays(\\'7\\')"`. After string concatenation, the resulting HTML attribute contained literal backslashes, which would throw `SyntaxError` when clicked. More critically, the V52.4 `render(data)` function had no try/catch, so any single panel exception left the whole page stuck on the loading state because `app.innerHTML` was never reassigned.
+
+## Fix
+
+- Replaced inline `onclick` strings with `data-window` attributes plus `addEventListener` after `innerHTML` write.
+- Wrapped each render section with a `safeRender(fn, label, data)` helper so a single broken panel renders an in-place error chip instead of breaking the page.
+- Added a fatal try/catch around the whole `render(data)` body that surfaces JS errors to the user.
+- Bumped cache buster on `/du-doan` admin link to `?v=20260503-v52-4-multi`.
+- Added live region title that updates per tab (`MN`, `MT`, `MB`).
+
+## Smoke
+
+After deploy:
+
+- `/du-doan` HTTP `200`
+- `/du-doan-test` HTTP `401` unauth
+- `/api/du-doan-test/mn` HTTP `401` unauth
+- `/api/du-doan-test/mt` HTTP `401` unauth
+- `/api/du-doan-test/mb` HTTP `401` unauth
+
+Direct admin API payloads match the expected shape:
+
+- MN/MT: `success=true`, `mode=MN_MT_TEST_LANE_DESIGN_ONLY`, `test_bundle=null`, no scoreboards/leakage rows.
+- MB: `success=true`, `mode=POST_CLOSEOUT_DIAGNOSTIC_FULL_25`, `test_bundle=true`, 7 experiments, 7 leakage rows, 7/14/30 scoreboards, V52 measurements.
+
+## Owner Action
+
+Hard refresh the page (Ctrl+Shift+R or open in private window) so the new HTML/JS replaces the cached `?v=20260503-v48-1-row` version.
+
+## Hash Guard
+
+V52.4.1 only edits `web/frontend/du-doan-test.html` and `web/frontend/du-doan.html`. No DB writes. Source tables `predictions`, `final_bundles`, `lottery_results`, and `model_daily_eval` remain untouched.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md VERSION=V52 LINES=111 SHA256=98a7d26e698040fdad1fb193d28dcffc4488a472dd17dc7d50fe0c1ba4d3c1a2 =====
+# V52.5 Multi-Region Parallel Test Lane
+
+> Date: 2026-05-03 (built and verified between 22:58 and 23:55 VN)
+> Mode: VPS-deployed / measurement + test-lane only / no official mutation
+> Live sync: `artifacts/live_sync/20260503_225849/manifest.json`
+> VPS backup: `/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/` (code + 61 MB DB)
+
+## Goal
+
+Owner asked for a real parallel experimental lane mirroring `/du-doan` for MN/MT/MB, applying measurement-driven improvements (region/run_source/weekday-aware strength) without ever mutating official `/du-doan` output. V52.5 delivers that lane end-to-end, strictly admin-only.
+
+## Sub-steps and what landed
+
+### V52.5.1 — Model strength tensor
+
+- File: `web/backend/_compute_model_strength_tensor.py`.
+- Table: `model_strength_by_region_weekday_station_daily`.
+- Anchor `2026-05-02` (D-1 of 2026-05-03 cycle), 4 windows (7/14/30/60) × 3 grains (region, region+weekday, region+station).
+- Rows on VPS: 9052.
+- Anti-leakage: anchor strictly D-1 from the requested target date.
+- Evidence: `artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md`.
+
+### V52.5.2 — Multi-region experimental preview materializer
+
+- File: `web/backend/_materialize_experimental_preview_shadow.py`.
+- Table: `experimental_preview_shadow` with region in {MN, MT, MB}.
+- 6 experiments per region: OFFICIAL_BASELINE_CONTROL, STRENGTH_WEIGHTED_V52_5_2, AI_CHAIN_PRESERVATION_V1, SPECIALIST_ROSTER_V1, PRIOR_REGION_CONTEXT_SAFE_V1, NO_TOKEN_HERD_REDUCTION_V1.
+- Rows on VPS: 1080 across 3 regions × 60 days × 6 experiments.
+- Anti-leakage:
+  - MN selection inputs: D-1 only.
+  - MT selection inputs: D-1 + MN(D) actuals (allowed because MN closes before MT).
+  - MB selection inputs: D-1 + MN(D) + MT(D) (allowed because both close before MB).
+  - Strength tensor anchor enforced strictly < target date.
+- Flip stats (60d, vs official baseline):
+  - **MB SPECIALIST_ROSTER**: fw=5, fl=0 (5 free wins).
+  - **MN AI_CHAIN_PRESERVATION**: fw=4, fl=1, hits 32 vs official 29.
+  - **MN SPECIALIST_ROSTER**: fw=3, fl=0.
+  - **MB STRENGTH_WEIGHTED V52.5.2**: fw=8, fl=7, hits 19 vs official 18.
+  - **MT AI_CHAIN_PRESERVATION**: fw=8, fl=12 (destructive, matches owner's MT herding observation).
+
+### V52.5.3 — Multi-region test engine
+
+- File: `web/backend/_du_doan_test_engine.py`.
+- Reads from `experimental_preview_shadow`, writes to `du_doan_test_*`.
+- 30-day backfill on VPS for 3 regions: 540 runs/bundles/results, 12800 candidates, 12800 contributions.
+- All `official_output=false`, `output_impact=false`, `test_only=1`.
+
+### V52.5.4 — Experiment registry extended to MN/MT/MB
+
+- File: `web/backend/_du_doan_test_schema.py` (`EXPERIMENTS` list extended).
+- 20 experiments registered (7 MB legacy + 6 MN + 6 MT + STRENGTH_WEIGHTED_V52_5_2 for each of 3 regions; MN/MT receive 6 each, MB has 7 since `MB_TIER_AWARE_BUNDLE_SHADOW_V1` and `MB_COMPOSITE_CHALLENGER_V2` remain).
+
+### V52.5.5 — UI/API render `test_bundle` for MN/MT
+
+- File: `web/backend/main.py` `api_du_doan_test_region` extended.
+- File: `web/frontend/du-doan-test.html` version label `v52.5`.
+- File: `web/frontend/du-doan.html` cache buster `?v=20260503-v52-5-live-parallel`.
+- Mode flips from `MN_MT_TEST_LANE_DESIGN_ONLY` to `MN_MT_TEST_LANE_LIVE_PARALLEL_V52_5` when a primary challenger exists.
+- In-process API smoke confirms full axes for 2026-05-03:
+  - MN: STRENGTH_WEIGHTED test_bt 79 WIN, lo3 579 WIN, xien3 WIN.
+  - MT: STRENGTH_WEIGHTED test_bt 29 LOSE, xien3 PARTIAL via 18.
+  - MB: COMPOSITE_CHALLENGER_V2 test_bt 48 WIN, lo3 148 WIN.
+
+### V52.5.6 — Multi-region daily runner
+
+- File: `web/backend/_du_doan_test_daily_runner.py`.
+- Supports `--region MN | MT | MB | ALL` and `--mode REALTIME_AVAILABLE_ONLY | POST_CLOSEOUT_DIAGNOSTIC_FULL_25`.
+- VPS POST_CLOSEOUT smoke for 2026-05-03 ALL: 6 runs/bundles per region, official_tables_touched=False everywhere.
+- For MB the runner writes to both `mb_experimental_preview_shadow` (legacy) and `experimental_preview_shadow` (multi-region) so the legacy MB UI/API keeps working.
+
+### V52.5.7 — Final hash guard
+
+Pre (V52.5.1 start of session): `artifacts/_v52_5_1_pre_hash_20260503.txt`
+Post (V52.5.7 end of session): `artifacts/_v52_5_7_post_hash_20260503.txt`
+
+| Table | Pre | Post | Hash same |
+|---|---:|---:|---|
+| predictions | 4134 | 4134 | YES |
+| final_bundles | 195 | 195 | YES |
+| lottery_results | 14603 | 14603 | YES |
+| model_daily_eval | 4089 | 4089 | YES |
+| scheduler_logs | 113162 | 113208 | NO (+46 from `lottery` restart + `[DU-DOAN-TEST-*]` markers) |
+| mt_model_hit_output_drop_shadow | 301 | 301 | YES |
+| loz_selector_shadow | 3273 | 3273 | YES |
+| model_latency_cost_audit_daily | 3273 | 3273 | YES |
+
+scheduler_logs growth is expected from 1 service restart + multi-region V52.5.6 test markers; no production scheduler run was triggered.
+
+| Test-lane table | Pre | Post |
+|---|---:|---:|
+| model_strength_by_region_weekday_station_daily | 0 | 9052 |
+| experimental_preview_shadow | new | 1098 |
+| mb_experimental_preview_shadow | new (pre-existing 14) | 21 |
+| du_doan_test_runs | new | 579 |
+| du_doan_test_bundles | new | 579 |
+| du_doan_test_results | new | 579 |
+| du_doan_test_candidates | new | 13405 |
+| du_doan_test_model_contribution | new | 13405 |
+| du_doan_test_experiments | new | 20 |
+| du_doan_test_audit_log | new | 192 |
+
+## Hard-lock guarantees still in force
+
+- `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`: hash UNCHANGED.
+- No call to `generate_final_bundle()`.
+- No write to production prompts, model roster, scoring, bundle voting, lane weights, or scheduler.
+- All test-lane rows carry `official_output=false`, `output_impact=false`, `test_only=1`, `output_eligible=0`, `diagnostic_only=1` (or 0 only for the OFFICIAL_BASELINE_CONTROL row, which is a read-only mirror with `output_eligible=0` retained).
+
+## Verdict
+
+V52.5 delivers a real multi-region parallel experimental lane. Owner can now compare official `/du-doan` against `/du-doan-test` for MN/MT/MB on the same axes (BT, lo2, lo3, xien2, xien3) using strength-weighted, AI-chain-preservation, prior-region-safe, specialist-roster, no-token-herd-reduction methods. None of these touch official output. Promising challengers (MB SPECIALIST_ROSTER, MN AI_CHAIN_PRESERVATION) accumulate measurement-only evidence; owner-unlock for production remains gated by FU-073 / FU-114 thresholds.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md VERSION=V52 LINES=101 SHA256=032c5d5951dd1dd5c73c4950dfc53b99580b68c4b40bcbde9814298686324230 =====
+# V52.5.1 Model Strength Tensor
+
+> Date: 2026-05-03  
+> Mode: measurement-only / no official mutation  
+> Anchor date: 2026-05-02 (yesterday relative to test target 2026-05-03)  
+> Live sync after run: `artifacts/live_sync/20260503_225849/manifest.json`  
+> VPS backup: `/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/` (code + 61 MB DB)
+
+## Goal
+
+Provide a runtime-usable model strength snapshot keyed by `model × region × weekday × station × run_source` so V52.5.x test-lane methods can apply strength-weighted aggregation without leakage.
+
+## Files
+
+- `web/backend/_compute_model_strength_tensor.py` — standalone materializer.
+
+## Schema
+
+```sql
+CREATE TABLE model_strength_by_region_weekday_station_daily (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  computed_at TEXT NOT NULL,
+  anchor_date TEXT NOT NULL,
+  window_days INTEGER NOT NULL,        -- 7, 14, 30, 60
+  grain TEXT NOT NULL,                 -- region | region_weekday | region_station
+  model_name TEXT NOT NULL,
+  model_family TEXT,                   -- TOKEN | NO_TOKEN | SHADOW
+  region TEXT NOT NULL,
+  weekday INTEGER NOT NULL DEFAULT -1, -- -1 means "all weekdays"
+  station TEXT NOT NULL DEFAULT '',    -- '' means "region-level"
+  run_source TEXT NOT NULL DEFAULT '', -- '' means "all run_sources"
+  total_days INTEGER, predictions_count INTEGER,
+  bt_hit_count INTEGER, loz1_hit_count INTEGER,
+  loz2_hit_count INTEGER, any_hit_count INTEGER,
+  bt_rate REAL, loz1_rate REAL, loz2_rate REAL, any_rate REAL,
+  helpful_signal_strength REAL,        -- 0.6*bt_rate + 0.4*loz2_rate
+  test_only INTEGER DEFAULT 1,
+  output_eligible INTEGER DEFAULT 0,
+  diagnostic_only INTEGER DEFAULT 1,
+  run_label TEXT NOT NULL,
+  UNIQUE(anchor_date, window_days, grain, model_name, region,
+         weekday, station, run_source, run_label)
+);
+```
+
+## Run
+
+VPS command:
+
+```bash
+python web/backend/_compute_model_strength_tensor.py --target-date 2026-05-03 --json
+```
+
+Result: `9052` rows for anchor `2026-05-02` across 4 windows × 3 grains.
+
+Counts by grain × window:
+
+| Grain | 7d | 14d | 30d | 60d |
+|---|---:|---:|---:|---:|
+| region | 81 | 101 | 151 | 197 |
+| region_weekday | 523 | 589 | 697 | 1104 |
+| region_station | 1047 | 1180 | 1380 | 2002 |
+
+## Sample Findings (window=30d, grain=region)
+
+TOKEN family:
+- MN top: `combo-super auto_daily` BT `17/30`, helpful `0.5933`; `claude-sonnet-4-6 auto_daily` BT `16/27`, helpful `0.563`.
+- MT top from auto_daily: `combo-super` BT `4/10` (rolling sample is thinner because of MT cascade behavior).
+- MB top from `ai_chain`: `claude-sonnet-4-6` helpful `0.2815`, BT `8/27`. AI MB is structurally weaker than MN here.
+
+NO_TOKEN family:
+- MN top: `smart-ensemble auto_daily` BT `18/30`, `meta-learning auto_daily` BT `18/29`, `combo-no-token auto_daily` BT `19/29`.
+- MT top from `rerun_post_mn`: `smart-ml` BT `15/28`, helpful `0.4929`.
+- MB top from `rerun_post_mt`: `random-forest` BT `9/28`, helpful `0.3357`.
+
+SHADOW family:
+- MN: `glm-5.1 shadow_auto_eval` BT `11/18`, helpful `0.5889`.
+- MB: `llama-4-maverick`/`mistral-large-3` shadow_auto_eval BT `3/4` each (sample thin).
+
+## Hash Guard
+
+Pre: `artifacts/_v52_5_1_pre_hash_20260503.txt`  
+Post: `artifacts/_v52_5_1_post_hash_20260503.txt`
+
+| Table | Pre | Post | Hash same |
+|---|---:|---:|---|
+| predictions | 4134 | 4134 | YES |
+| final_bundles | 195 | 195 | YES |
+| lottery_results | 14603 | 14603 | YES |
+| model_daily_eval | 4089 | 4089 | YES |
+| scheduler_logs | 113162 | 113162 | YES |
+| mt_model_hit_output_drop_shadow | 301 | 301 | YES |
+| loz_selector_shadow | 3273 | 3273 | YES |
+| model_latency_cost_audit_daily | 3273 | 3273 | YES |
+| model_strength_by_region_weekday_station_daily | 0 | 9052 | new |
+
+Official + V52 measurement tables unchanged.
+
+## Verdict
+
+V52.5.1 produces a clean, leakage-safe runtime tensor anchored at `D-1`. V52.5.2 will generalize the experimental preview materializer to multi-region using this tensor.
+
+===== SOURCE_END artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_2_measurement_rollup_20260503.json VERSION=V52 LINES=377 SHA256=841bc2d86ef79b7c012cf9263697e32e0cb558e55cf91f9cb267b37fff3dd804 =====
+{
+  "generated_from": "V52.2 backfill 60 closed days",
+  "tables": {
+    "mt_model_hit_output_drop_shadow": 301,
+    "loz_selector_shadow": 3273,
+    "model_latency_cost_audit_daily": 3273
+  },
+  "rolling": {
+    "7": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 17,
+          "hits": 25,
+          "token": 0,
+          "no_token": 23,
+          "shadow": 2
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 13,
+          "hits": 52,
+          "token": 21,
+          "no_token": 2,
+          "shadow": 29
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 6,
+          "hits": 6,
+          "token": 0,
+          "no_token": 1,
+          "shadow": 5
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 2,
+          "hits": 6,
+          "token": 0,
+          "no_token": 6,
+          "shadow": 0
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 26,
+          "official_better": 63,
+          "n": 202
+        },
+        {
+          "region": "MN",
+          "better": 41,
+          "official_better": 58,
+          "n": 201
+        },
+        {
+          "region": "MT",
+          "better": 45,
+          "official_better": 70,
+          "n": 201
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 604
+        }
+      ]
+    },
+    "14": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 35,
+          "hits": 49,
+          "token": 0,
+          "no_token": 45,
+          "shadow": 4
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 26,
+          "hits": 98,
+          "token": 48,
+          "no_token": 3,
+          "shadow": 47
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 22,
+          "hits": 28,
+          "token": 0,
+          "no_token": 3,
+          "shadow": 25
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 3,
+          "hits": 9,
+          "token": 0,
+          "no_token": 9,
+          "shadow": 0
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 43,
+          "official_better": 127,
+          "n": 371
+        },
+        {
+          "region": "MN",
+          "better": 65,
+          "official_better": 128,
+          "n": 368
+        },
+        {
+          "region": "MT",
+          "better": 107,
+          "official_better": 81,
+          "n": 366
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 1105
+        }
+      ]
+    },
+    "30": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20",
+        "2026-04-19",
+        "2026-04-18",
+        "2026-04-17",
+        "2026-04-16",
+        "2026-04-15",
+        "2026-04-14",
+        "2026-04-13",
+        "2026-04-12",
+        "2026-04-11",
+        "2026-04-10",
+        "2026-04-09",
+        "2026-04-08",
+        "2026-04-07",
+        "2026-04-06",
+        "2026-04-05",
+        "2026-04-04"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 61,
+          "hits": 88,
+          "token": 0,
+          "no_token": 83,
+          "shadow": 5
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 55,
+          "hits": 176,
+          "token": 104,
+          "no_token": 5,
+          "shadow": 67
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 35,
+          "hits": 43,
+          "token": 0,
+          "no_token": 7,
+          "shadow": 36
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 15,
+          "hits": 58,
+          "token": 14,
+          "no_token": 42,
+          "shadow": 2
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 122,
+          "official_better": 156,
+          "n": 652
+        },
+        {
+          "region": "MN",
+          "better": 113,
+          "official_better": 211,
+          "n": 650
+        },
+        {
+          "region": "MT",
+          "better": 140,
+          "official_better": 198,
+          "n": 646
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 1948
+        }
+      ]
+    },
+    "60": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20",
+        "2026-04-19",
+        "2026-04-18",
+        "2026-04-17",
+        "2026-04-16",
+        "2026-04-15",
+        "2026-04-14",
+        "2026-04-13",
+        "2026-04-12",
+        "2026-04-11",
+        "2026-04-10",
+        "2026-04-09",
+        "2026-04-08",
+        "2026-04-07",
+        "2026-04-06",
+        "2026-04-05",
+        "2026-04-04",
+        "2026-04-03",
+        "2026-04-02",
+        "2026-04-01",
+        "2026-03-31",
+        "2026-03-30",
+        "2026-03-29",
+        "2026-03-28",
+        "2026-03-27",
+        "2026-03-26",
+        "2026-03-25",
+        "2026-03-24",
+        "2026-03-23",
+        "2026-03-22",
+        "2026-03-21",
+        "2026-03-20",
+        "2026-03-19",
+        "2026-03-18",
+        "2026-03-17",
+        "2026-03-16",
+        "2026-03-15",
+        "2026-03-14",
+        "2026-03-13",
+        "2026-03-12",
+        "2026-03-11",
+        "2026-03-10",
+        "2026-03-09",
+        "2026-03-08",
+        "2026-03-07",
+        "2026-03-06",
+        "2026-03-05"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 115,
+          "hits": 184,
+          "token": 0,
+          "no_token": 177,
+          "shadow": 7
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 112,
+          "hits": 282,
+          "token": 195,
+          "no_token": 14,
+          "shadow": 73
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 50,
+          "hits": 60,
+          "token": 0,
+          "no_token": 21,
+          "shadow": 39
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 24,
+          "hits": 91,
+          "token": 35,
+          "no_token": 53,
+          "shadow": 3
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 195,
+          "official_better": 256,
+          "n": 1093
+        },
+        {
+          "region": "MN",
+          "better": 231,
+          "official_better": 321,
+          "n": 1091
+        },
+        {
+          "region": "MT",
+          "better": 229,
+          "official_better": 332,
+          "n": 1089
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 3273
+        }
+      ]
+    }
+  }
+}
+===== SOURCE_END artifacts/_v52_2_measurement_rollup_20260503.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_2_measurement_rollup_20260503.md VERSION=V52 LINES=103 SHA256=d926fb3323c6a4e28b7cbb90bee0c34f94b2cffabdc2207653ffa564fddf4c6d =====
+# V52.2 Measurement Backfill Rollup
+
+- Tables: {"mt_model_hit_output_drop_shadow": 301, "loz_selector_shadow": 3273, "model_latency_cost_audit_daily": 3273}
+
+## Window 7 days
+
+### MT Drop By Stage
+
+| Stage | Rows | Model hits | Token | No-token | Shadow |
+|---|---:|---:|---:|---:|---:|
+| LOZ_LINE_SELECTION_MISS | 17 | 25 | 0 | 23 | 2 |
+| AI_SIGNAL_DROPPED | 13 | 52 | 21 | 2 | 29 |
+| NOT_IN_CANDIDATE_UNIVERSE | 6 | 6 | 0 | 1 | 5 |
+| OFFICIAL_LO2_INCLUDED | 2 | 6 | 0 | 6 | 0 |
+
+### Loz model-top2 vs official
+
+| Region | Model better | Official better | Rows |
+|---|---:|---:|---:|
+| MB | 26 | 63 | 202 |
+| MN | 41 | 58 | 201 |
+| MT | 45 | 70 | 201 |
+
+### Latency/cost availability
+
+| Missing reason | Rows |
+|---|---:|
+| NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT | 604 |
+
+## Window 14 days
+
+### MT Drop By Stage
+
+| Stage | Rows | Model hits | Token | No-token | Shadow |
+|---|---:|---:|---:|---:|---:|
+| LOZ_LINE_SELECTION_MISS | 35 | 49 | 0 | 45 | 4 |
+| AI_SIGNAL_DROPPED | 26 | 98 | 48 | 3 | 47 |
+| NOT_IN_CANDIDATE_UNIVERSE | 22 | 28 | 0 | 3 | 25 |
+| OFFICIAL_LO2_INCLUDED | 3 | 9 | 0 | 9 | 0 |
+
+### Loz model-top2 vs official
+
+| Region | Model better | Official better | Rows |
+|---|---:|---:|---:|
+| MB | 43 | 127 | 371 |
+| MN | 65 | 128 | 368 |
+| MT | 107 | 81 | 366 |
+
+### Latency/cost availability
+
+| Missing reason | Rows |
+|---|---:|
+| NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT | 1105 |
+
+## Window 30 days
+
+### MT Drop By Stage
+
+| Stage | Rows | Model hits | Token | No-token | Shadow |
+|---|---:|---:|---:|---:|---:|
+| LOZ_LINE_SELECTION_MISS | 61 | 88 | 0 | 83 | 5 |
+| AI_SIGNAL_DROPPED | 55 | 176 | 104 | 5 | 67 |
+| NOT_IN_CANDIDATE_UNIVERSE | 35 | 43 | 0 | 7 | 36 |
+| OFFICIAL_LO2_INCLUDED | 15 | 58 | 14 | 42 | 2 |
+
+### Loz model-top2 vs official
+
+| Region | Model better | Official better | Rows |
+|---|---:|---:|---:|
+| MB | 122 | 156 | 652 |
+| MN | 113 | 211 | 650 |
+| MT | 140 | 198 | 646 |
+
+### Latency/cost availability
+
+| Missing reason | Rows |
+|---|---:|
+| NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT | 1948 |
+
+## Window 60 days
+
+### MT Drop By Stage
+
+| Stage | Rows | Model hits | Token | No-token | Shadow |
+|---|---:|---:|---:|---:|---:|
+| LOZ_LINE_SELECTION_MISS | 115 | 184 | 0 | 177 | 7 |
+| AI_SIGNAL_DROPPED | 112 | 282 | 195 | 14 | 73 |
+| NOT_IN_CANDIDATE_UNIVERSE | 50 | 60 | 0 | 21 | 39 |
+| OFFICIAL_LO2_INCLUDED | 24 | 91 | 35 | 53 | 3 |
+
+### Loz model-top2 vs official
+
+| Region | Model better | Official better | Rows |
+|---|---:|---:|---:|
+| MB | 195 | 256 | 1093 |
+| MN | 231 | 321 | 1091 |
+| MT | 229 | 332 | 1089 |
+
+### Latency/cost availability
+
+| Missing reason | Rows |
+|---|---:|
+| NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT | 3273 |
+
+===== SOURCE_END artifacts/_v52_2_measurement_rollup_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_2_post_hash_20260503.txt VERSION=V52 LINES=9 SHA256=169fb0c67f840d964ed2b51d744fb660d667a3a3afb3c916ba5a745527db858f =====
+# V52.2 POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+
+===== SOURCE_END artifacts/_v52_2_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_2_pre_hash_20260503.txt VERSION=V52 LINES=11 SHA256=28dfe0f2a4998c8fade7a37e0edec4b94e8600b7803748c73ba01b86294b03b8 =====
+# V52.2 PRE-HASH
+generated_at=2026-05-03T21:44:25
+live_sync_manifest=artifacts/live_sync/20260503_214409/manifest.json
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11
+mt_model_hit_output_drop_shadow	exists=true	count=5	sha256=0acc30cf6400e4939b5347a3965ba99937f5420f00ad648e7b74f65aa9c5bb53
+loz_selector_shadow	exists=true	count=75	sha256=a041017b00fce12eee723b055361fb2309378c4444ffd2d0fba0e6cf632bfe22
+model_latency_cost_audit_daily	exists=true	count=75	sha256=1e83a3381e921434b9fc0dffb5831c26b54cfe2ee25f43592bbf10fa4f260569
+
+===== SOURCE_END artifacts/_v52_2_pre_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_3_post_hash_20260503.txt VERSION=V52 LINES=9 SHA256=17854295cf67a28e90e2faaad00a91eb42aec65d3856cd2a1f390e51703e8182 =====
+# V52.3 POST-HASH UI/API SURFACING
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113134	sha256=b88f4cfd19c1c0cefc7a1e53f2749362b52284f8a53aa8eba0dac46cf3eb1cba
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+
+===== SOURCE_END artifacts/_v52_3_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_3_pre_hash_20260503.txt VERSION=V52 LINES=11 SHA256=10c2fc060a7537ce4e1b34acf4611416e786b44d6b284113cd8ab51779465ad6 =====
+# V52.3 PRE-HASH UI/API SURFACING
+generated_at=2026-05-03T22:06:59
+live_sync_manifest=artifacts/live_sync/20260503_220649/manifest.json
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+
+===== SOURCE_END artifacts/_v52_3_pre_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_4_post_hash_20260503.txt VERSION=V52 LINES=12 SHA256=b77849478573e2518da2b3ecb182c1c220d739d36868923e336d16715b27296f =====
+# V52.4 POST-HASH MULTI-REGION TEST UI
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113154	sha256=0bd1f7e28e3d8a0196793091beed237eaefc59840ac5801412c9134664f788c7
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+du_doan_test_runs	exists=true	count=14	sha256=f26919b4053855ca868e83357c7c02b061d0d1593fcabdabd7c5e5dfb367623e
+du_doan_test_bundles	exists=true	count=14	sha256=3dd5954dada84864da5e4df1483f1deceb23a9dcc5e3ccd27ddc55c48df467d1
+du_doan_test_results	exists=true	count=14	sha256=cf3c5c93af5029c549771be36dc185bc2f6935b9abc0f5a23a1c64bddfb08c9a
+
+===== SOURCE_END artifacts/_v52_4_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_4_pre_hash_20260503.txt VERSION=V52 LINES=14 SHA256=02d8b25e05ceb811ff54558282b3c98be5a17e425c93634c0bad9aa580de9dc4 =====
+# V52.4 PRE-HASH MULTI-REGION TEST UI
+generated_at=2026-05-03T22:16:35
+live_sync_manifest=artifacts/live_sync/20260503_221626/manifest.json
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113142	sha256=9fe7ad899e5ac3636fde0b372cdf47615155dfd9ec9dc49197864c5b311e2a13
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+du_doan_test_runs	exists=true	count=14	sha256=f26919b4053855ca868e83357c7c02b061d0d1593fcabdabd7c5e5dfb367623e
+du_doan_test_bundles	exists=true	count=14	sha256=3dd5954dada84864da5e4df1483f1deceb23a9dcc5e3ccd27ddc55c48df467d1
+du_doan_test_results	exists=true	count=14	sha256=cf3c5c93af5029c549771be36dc185bc2f6935b9abc0f5a23a1c64bddfb08c9a
+
+===== SOURCE_END artifacts/_v52_4_pre_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_1_inspect_strength.py VERSION=V52 LINES=40 SHA256=16bc0f018a44194e2634dad93d4c08b82c81d396789b402e7364212214e55c33 =====
+"""V52.5.1 strength tensor inspection helper (read-only)."""
+import sqlite3
+from pathlib import Path
+
+DB = Path('data/lottery_ai.db')
+conn = sqlite3.connect(DB)
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+
+def show(family: str) -> None:
+    print(f'--- {family} top-5 helpful_signal_strength per region (window=30, grain=region) ---')
+    for region in ('MN', 'MT', 'MB'):
+        print(f'region {region}')
+        rows = cur.execute(
+            """
+            SELECT model_name, run_source, predictions_count, bt_hit_count,
+                   loz1_rate, loz2_rate, helpful_signal_strength
+            FROM model_strength_by_region_weekday_station_daily
+            WHERE grain='region' AND model_family=? AND window_days=30 AND region=?
+            ORDER BY helpful_signal_strength DESC NULLS LAST
+            LIMIT 5
+            """,
+            (family, region),
+        ).fetchall()
+        for r in rows:
+            print(' ', dict(r))
+
+
+show('TOKEN')
+show('NO_TOKEN')
+show('SHADOW')
+
+print('--- Counts by grain/window ---')
+for r in cur.execute(
+    "SELECT grain, window_days, COUNT(*) AS n FROM model_strength_by_region_weekday_station_daily "
+    "GROUP BY grain, window_days ORDER BY grain, window_days"
+):
+    print(dict(r))
+
+conn.close()
+
+===== SOURCE_END artifacts/_v52_5_1_inspect_strength.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_1_post_hash_20260503.txt VERSION=V52 LINES=10 SHA256=601d14cfc0f12ec8c721b48d36c0019ad1242dca9431e33c984e00d6f3272d14 =====
+# V52.5.1 POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113162	sha256=7d60d18500629493290544af7f94ff03ad98b1e893c0e8330bdb7f83331d105e
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+
+===== SOURCE_END artifacts/_v52_5_1_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_1_pre_hash_20260503.txt VERSION=V52 LINES=13 SHA256=1285ab20ce8dab818d25f77871a394e2fb9c6d0ce23f153afdd853b0c1e79b28 =====
+# V52.5.1 PRE-HASH
+generated_at=2026-05-03T22:59:08
+live_sync_manifest=artifacts/live_sync/20260503_225849/manifest.json
+vps_backup=/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113162	sha256=7d60d18500629493290544af7f94ff03ad98b1e893c0e8330bdb7f83331d105e
+model_strength_by_region_weekday_station_daily	exists=false	count=0	sha256=NA
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+
+===== SOURCE_END artifacts/_v52_5_1_pre_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_2_inspect_preview.py VERSION=V52 LINES=36 SHA256=3c00c37968700dbe60c50785cd3e3398badfefefeac5ca7abd8a5c316eb3eb98 =====
+"""V52.5.2 inspection: show MN/MT/MB experimental_preview rows for 2026-05-03."""
+import sqlite3
+import json
+from pathlib import Path
+
+conn = sqlite3.connect(Path('data/lottery_ai.db'))
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+
+for region in ('MN', 'MT', 'MB'):
+    print(f'=== {region} 2026-05-03 ===')
+    rows = cur.execute(
+        """
+        SELECT experiment_name, candidate_bt, baseline_bt, baseline_bt_status,
+               actual_known, candidate_bt_hit, candidate_lo2_status,
+               would_flip_baseline_to_win, would_flip_baseline_to_lose,
+               selection_basis
+        FROM experimental_preview_shadow
+        WHERE date='2026-05-03' AND region=?
+        ORDER BY id
+        """,
+        (region,),
+    ).fetchall()
+    for r in rows:
+        d = dict(r)
+        d['selection_basis'] = (d['selection_basis'] or '')[:120]
+        print(' ', d)
+    print()
+
+print('Counts by region/date:')
+for r in cur.execute(
+    "SELECT date, region, COUNT(*) AS n FROM experimental_preview_shadow "
+    "GROUP BY date, region ORDER BY date, region"
+):
+    print(' ', dict(r))
+conn.close()
+
+===== SOURCE_END artifacts/_v52_5_2_inspect_preview.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_2_inspect_vps.py VERSION=V52 LINES=43 SHA256=25533c9c257e109b57d22134d318556a166e709b3b64aa98016be41358922f97 =====
+"""V52.5.2 VPS inspection: counts and flip stats."""
+import sqlite3
+from pathlib import Path
+
+conn = sqlite3.connect(Path('data/lottery_ai.db'))
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+
+print('=== Total rows by region ===')
+for r in cur.execute(
+    "SELECT region, COUNT(*) AS n, COUNT(DISTINCT date) AS d FROM experimental_preview_shadow GROUP BY region"
+):
+    print(' ', dict(r))
+
+print()
+print('=== Last 5 dates per region ===')
+for region in ('MN', 'MT', 'MB'):
+    rows = cur.execute(
+        "SELECT date, COUNT(*) AS n FROM experimental_preview_shadow WHERE region=? GROUP BY date ORDER BY date DESC LIMIT 5",
+        (region,),
+    ).fetchall()
+    for r in rows:
+        print(' ', region, dict(r))
+
+print()
+print('=== Flip stats (actual_known=1 only) ===')
+for r in cur.execute(
+    """
+    SELECT region, experiment_name,
+           SUM(would_flip_baseline_to_win) AS fw,
+           SUM(would_flip_baseline_to_lose) AS fl,
+           SUM(false_promotion) AS fp,
+           SUM(actual_known) AS ak,
+           SUM(CASE WHEN candidate_bt_hit=1 THEN 1 ELSE 0 END) AS hits,
+           COUNT(*) AS n
+    FROM experimental_preview_shadow
+    GROUP BY region, experiment_name
+    ORDER BY region, fw DESC, hits DESC
+    """
+):
+    print(' ', dict(r))
+
+conn.close()
+
+===== SOURCE_END artifacts/_v52_5_2_inspect_vps.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_2_post_hash_20260503.txt VERSION=V52 LINES=12 SHA256=52d49532733c6eef40d20dab11430c26b36dd1937b7fdffebc1f27fe50fe6e16 =====
+# V52.5.2 POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113162	sha256=7d60d18500629493290544af7f94ff03ad98b1e893c0e8330bdb7f83331d105e
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+experimental_preview_shadow	exists=true	count=1080	sha256=283368529bb8ed3bec0c3a22bfb002947291b68c08be7726af795b293fc327b9
+mb_experimental_preview_shadow	exists=true	count=14	sha256=f83e4a2d05d70ee15ee69e1a6fee5152c7e30ee6b41b4a7a6fed542027e10f85
+
+===== SOURCE_END artifacts/_v52_5_2_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_2_run_backfill.sh VERSION=V52 LINES=16 SHA256=03aaf0e77e22081ade13151400c9569b76abeb49374c5fac2784cb5cb623cc9b =====
+#!/bin/bash
+set -e
+cd /root/Lottery_AI_Test
+/root/Lottery_AI_Test/venv/bin/python3 web/backend/_materialize_experimental_preview_shadow.py \
+  --region ALL --backfill-days 60 > artifacts/_v52_5_2_backfill_60d.json
+/root/Lottery_AI_Test/venv/bin/python3 - <<'PY'
+import json
+with open('artifacts/_v52_5_2_backfill_60d.json') as f:
+    data = json.load(f)
+for region, payload in data.items():
+    days = len(payload.get('results', []))
+    rows = sum(int(r.get('rows_written') or 0) for r in payload.get('results', []))
+    skipped = sum(1 for r in payload.get('results', []) if r.get('skipped'))
+    errors = [r for r in payload.get('results', []) if r.get('error')]
+    print(f'{region}\tdays_processed={days}\trows_written={rows}\tdays_skipped={skipped}\terrors={len(errors)}')
+PY
+
+===== SOURCE_END artifacts/_v52_5_2_run_backfill.sh =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_3_inspect_engine.py VERSION=V52 LINES=52 SHA256=d44768bd034a599434d29fbf900c85ca7bc092ca391d8f2c920986ab136823b8 =====
+"""V52.5.3 multi-region engine inspection."""
+import sqlite3
+from pathlib import Path
+
+conn = sqlite3.connect(Path('data/lottery_ai.db'))
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+
+print('=== Test runs by region (run_label LIKE V52.5.3 only) ===')
+for r in cur.execute(
+    """
+    SELECT region, COUNT(*) AS n, COUNT(DISTINCT run_date) AS days
+    FROM du_doan_test_runs
+    WHERE run_label LIKE 'du_doan_test_engine_v52_5_3%'
+    GROUP BY region
+    """
+):
+    print(' ', dict(r))
+
+print()
+print('=== Test results flip stats (V52.5.3 runs, actual_known) ===')
+for r in cur.execute(
+    """
+    SELECT b.region, b.experiment_name,
+           COUNT(*) AS n,
+           SUM(rs.would_save) AS save,
+           SUM(rs.would_break) AS brk,
+           SUM(rs.false_promotion) AS fp,
+           SUM(CASE WHEN rs.test_bt_status='WIN' THEN 1 ELSE 0 END) AS test_wins,
+           SUM(CASE WHEN rs.official_bt_status='WIN' THEN 1 ELSE 0 END) AS official_wins
+    FROM du_doan_test_results rs
+    JOIN du_doan_test_runs b ON rs.run_id=b.id
+    WHERE b.run_label LIKE 'du_doan_test_engine_v52_5_3%'
+    GROUP BY b.region, b.experiment_name
+    ORDER BY b.region, save DESC
+    """
+):
+    print(' ', dict(r))
+
+print()
+print('=== Test bundle examples for 2026-05-03 ===')
+for r in cur.execute(
+    """
+    SELECT region, experiment_name, test_bt, official_bt, test_lo2_json
+    FROM du_doan_test_bundles
+    WHERE run_date='2026-05-03'
+    ORDER BY region, experiment_name
+    """
+):
+    print(' ', dict(r))
+
+conn.close()
+
+===== SOURCE_END artifacts/_v52_5_3_inspect_engine.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_3_post_hash_20260503.txt VERSION=V52 LINES=15 SHA256=3d640127e1734e8d2e17a7abf4705e1d1c9bffafae6eec32c5325661fa1f6e30 =====
+# V52.5.3 POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113162	sha256=7d60d18500629493290544af7f94ff03ad98b1e893c0e8330bdb7f83331d105e
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+experimental_preview_shadow	exists=true	count=1080	sha256=283368529bb8ed3bec0c3a22bfb002947291b68c08be7726af795b293fc327b9
+mb_experimental_preview_shadow	exists=true	count=14	sha256=f83e4a2d05d70ee15ee69e1a6fee5152c7e30ee6b41b4a7a6fed542027e10f85
+du_doan_test_runs	exists=true	count=554	sha256=f0e421f7aec5183daa87c8c7037830e99f5cefeee6854d5e070ea457558537da
+du_doan_test_bundles	exists=true	count=554	sha256=a69f160a628c0879cff976d70489bde12370ac79ba4ba5111731cf04bea43f1e
+du_doan_test_results	exists=true	count=554	sha256=34588a5deb7c53be2728df7dcea1b612f99649b4536086cdecbbf01076e597c2
+du_doan_test_candidates	exists=true	count=12800	sha256=26de53b79a201d771a6e3637c8cf31edbc25a263bd8e2b340cd999d94db03a50
+du_doan_test_model_contribution	exists=true	count=12800	sha256=bf606b25f462f1a5bf5e97af06aa1bb2dd2322ca17cc4b48eb1272a14c7562c4
+du_doan_test_experiments	exists=true	count=20	sha256=3693d220defd8da00ccf9db8a62af8a1f9c850cdb385ccd5a3d75c8ce3bb3919
+
+===== SOURCE_END artifacts/_v52_5_3_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_3_run_engine.sh VERSION=V52 LINES=19 SHA256=ac016221871ecf4d527833dadf08dc3954ba99e74c98dca2e98030f677ef3865 =====
+#!/bin/bash
+set -e
+cd /root/Lottery_AI_Test
+/root/Lottery_AI_Test/venv/bin/python3 -m py_compile web/backend/_du_doan_test_schema.py web/backend/_du_doan_test_engine.py
+cd web/backend
+/root/Lottery_AI_Test/venv/bin/python3 _du_doan_test_engine.py --region ALL --backfill-days 30 --json > /root/Lottery_AI_Test/artifacts/_v52_5_3_engine_backfill_30d.json
+cd /root/Lottery_AI_Test
+/root/Lottery_AI_Test/venv/bin/python3 - <<'PY'
+import json
+with open('artifacts/_v52_5_3_engine_backfill_30d.json') as f:
+    data = json.load(f)
+for region, payload in data.items():
+    days = len(payload.get('results', []))
+    runs = sum(int(r.get('runs_written') or 0) for r in payload.get('results', []))
+    cands = sum(int(r.get('candidates_written') or 0) for r in payload.get('results', []))
+    contribs = sum(int(r.get('model_contrib_written') or 0) for r in payload.get('results', []))
+    errs = [r for r in payload.get('results', []) if r.get('error')]
+    print(f'{region}\tdays={days}\truns={runs}\tcands={cands}\tcontribs={contribs}\terrors={len(errs)}')
+PY
+
+===== SOURCE_END artifacts/_v52_5_3_run_engine.sh =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_7_diff.py VERSION=V52 LINES=53 SHA256=0f734b208f16e24ca4211471b987f5a6d5bfebc9e8824fc807025e4902413bc9 =====
+"""V52.5.7 final hash diff: pre-V52.5.1 vs post-V52.5.7."""
+from pathlib import Path
+
+def parse(path: str) -> dict:
+    d = {}
+    for line in Path(path).read_text().splitlines():
+        if not line or line.startswith('#') or '\t' not in line:
+            continue
+        parts = line.split('\t')
+        vals = {}
+        for piece in parts[1:]:
+            if '=' in piece:
+                k, v = piece.split('=', 1)
+                vals[k] = v
+        d[parts[0]] = vals
+    return d
+
+
+pre = parse('artifacts/_v52_5_1_pre_hash_20260503.txt')
+post = parse('artifacts/_v52_5_7_post_hash_20260503.txt')
+
+official = ['predictions', 'final_bundles', 'lottery_results', 'model_daily_eval', 'scheduler_logs']
+v52_measurement = ['mt_model_hit_output_drop_shadow', 'loz_selector_shadow', 'model_latency_cost_audit_daily']
+v52_5_test = ['model_strength_by_region_weekday_station_daily', 'experimental_preview_shadow',
+              'mb_experimental_preview_shadow', 'du_doan_test_runs', 'du_doan_test_bundles',
+              'du_doan_test_results', 'du_doan_test_candidates',
+              'du_doan_test_model_contribution', 'du_doan_test_experiments',
+              'du_doan_test_audit_log']
+
+print('=== Official source tables (must be unchanged) ===')
+for t in official:
+    a = pre.get(t, {})
+    b = post.get(t, {})
+    same = a.get('sha256') == b.get('sha256')
+    diff = '' if same else ' MISMATCH'
+    print(f"  {t:30}  {a.get('count','-'):>8} -> {b.get('count','-'):>8}  same={same}{diff}")
+
+print()
+print('=== V52 measurement tables (must be unchanged after V52.2) ===')
+for t in v52_measurement:
+    a = pre.get(t, {})
+    b = post.get(t, {})
+    same = a.get('sha256') == b.get('sha256')
+    print(f"  {t:30}  {a.get('count','-'):>8} -> {b.get('count','-'):>8}  same={same}")
+
+print()
+print('=== V52.5.x test-lane tables (created/grown this session) ===')
+for t in v52_5_test:
+    a = pre.get(t, {})
+    b = post.get(t, {})
+    pre_c = a.get('count', '-')
+    post_c = b.get('count', '-')
+    print(f"  {t:50}  {pre_c:>8} -> {post_c:>8}")
+
+===== SOURCE_END artifacts/_v52_5_7_diff.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_5_7_post_hash_20260503.txt VERSION=V52 LINES=19 SHA256=5c0b6de6e13b12bdf792c5742e3ea472c96a406ca2d13bf37109f7897883a579 =====
+# V52.5.7 POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113208	sha256=ac8c4f6c8614558ff5f8fb11402cc7ab04d2abadfc40c120c06e77002bc58b8c
+model_strength_by_region_weekday_station_daily	exists=true	count=9052	sha256=a30d3d833eaab77d0f2fef6337537a185a6d0430faf76dd8fedd4a695e0094d2
+mt_model_hit_output_drop_shadow	exists=true	count=301	sha256=617f3627e529750125c957e816854f326a058cbd48da3256721980b07dd12aac
+loz_selector_shadow	exists=true	count=3273	sha256=533547dd0708836ca484205dce9ff2f646af97b8c71466bee43b45e81103bab8
+model_latency_cost_audit_daily	exists=true	count=3273	sha256=5cf6cf8b156d2ddfec64b1c7201f40cb7645cd9debc92743f4979d84175a015a
+experimental_preview_shadow	exists=true	count=1098	sha256=64270bda1b599f3e982adb8d058483fa700426b9ac87fd988fc7e36a8e4dd5d7
+mb_experimental_preview_shadow	exists=true	count=21	sha256=c41ffabd25595894425a98d4957d081bf00521f258f35f67c5f142217df3ee39
+du_doan_test_runs	exists=true	count=579	sha256=29d3a1b8594d04058ecf80dce10020d278c3484f3ba2fcc626925020867ab241
+du_doan_test_bundles	exists=true	count=579	sha256=968bbf2d492c1cfa6290545cc5d327f2e16698eb87cdc9fb49d16bbd8954a4b2
+du_doan_test_results	exists=true	count=579	sha256=53a85871870cdb1611860ccf6f5fd6fd1b5b46e7a34b9551a70250ac6a34f76f
+du_doan_test_candidates	exists=true	count=13405	sha256=ce3eef3dd73636539afacb6e7ae64ea5f1e1d362f8135bc9dae0de9fd0881f77
+du_doan_test_model_contribution	exists=true	count=13405	sha256=b25e490cec49985b2fe42324892e99d95a140291d6c1db5d71bae6cc034eade6
+du_doan_test_experiments	exists=true	count=20	sha256=7bfd30664ce6ddffd967af05c66fe9b5b5eda1775d9e4026446ff7d8bcb14d8e
+du_doan_test_audit_log	exists=true	count=192	sha256=4476ff2edb0d69076b56835fa25d68577e91be046acabfe749398321ec139240
+
+===== SOURCE_END artifacts/_v52_5_7_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_code_readiness_matrix_20260503.md VERSION=V52 LINES=11 SHA256=f74a92c6eac133865c460c9f945c518f56d72dc01b105f7bfb6d72c128ff02cb =====
+# V52 Code Readiness Matrix
+
+| ID | Issue | Evidence | Sample size | Rolling window | Region affected | Current status | Risk if code now | Can implement measurement-only now? | Can implement test-lane-only now? | Can implement UI-test-only now? | Needs more data? | Needs owner decision? | Drop? | Bucket | Next command |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V52-MT-DROP | MT model correct but output/loz wrong | V51/V52 MT forensic | 1 day + rolling context | needs 7/14/30 focused | MT | MEASURED_ONE_DAY | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Build MT model-hit-to-output-drop matrix |
+| V52-LOZ-SHADOW | loz1/loz2 unstable and not modeled separately | loz audit | 60d official/predictions | 3/7/14/30/60 | all | LOZ_SIGNAL_MIXED | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Design loz selector shadow |
+| V52-LATENCY | per-model duration/cost missing | tensor/trace audit | 3216 tensor rows | diagnostic | all | TENSOR_NOT_OK_FOR_PRUNING | HIGH for prune | YES | YES | YES | YES | YES for prune | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Instrument duration/cost/token |
+| V52-TEST-MNMT | /du-doan-test MB-only manual stage | test reality | 2 MB dates | not enough | MN/MT missing | MANUAL_STAGE_0_CONFIRMED | LOW test / HIGH scheduler | YES | YES | YES | YES | YES scheduler | NO | DESIGN_ONLY | Write MN/MT realtime cutoff spec before code |
+| V52-AI-PROMPT | AI test prompt not executing | du_doan_test_ai_predictions rows=0 | 0 rows | none | MB planned | NOT_PROVEN | MEDIUM cost risk | YES schema exists | YES with owner OK | YES | YES | YES | NO | OWNER_DECIDE | Owner approve 1-2 model test prompt experiment |
+| V52-CORR-REPLAY | Corrected rescue gate not met | corrected_rescue_replay_shadow | 13-ish valid before; needs refresh | 14+ valid | all | WAIT_DATA | HIGH official | YES refresh measurement | NO | YES | YES | YES unlock | NO | WAIT_DATA | Refresh corrected replay only, no unlock |
+| V52-TIER2 | tier2 replay policies underperform | V33/V37 reports | 14/30d replay | historical | all | DROP_AS_DESIGNED | HIGH | NO unless redesign | NO | NO | NO | YES for redesign | YES | DROP_AS_DESIGNED | Do not implement as designed |
+
+===== SOURCE_END artifacts/_v52_code_readiness_matrix_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_du_doan_test_force_fit_leakage_audit_20260503.json VERSION=V52 LINES=249 SHA256=c230238a3dd51d0e9a6e1cbce5ca06f747948d6fff40b056da1d13b8ce1de880 =====
+{
+  "runs": [
+    {
+      "run_id": 1,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_OFFICIAL_BASELINE_CONTROL",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.232063+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 2,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_COMPOSITE_CHALLENGER_V2",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.236896+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 3,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_TIER_AWARE_BUNDLE_SHADOW_V1",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.240693+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 4,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_AI_CHAIN_PRESERVATION_V1",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.244434+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 5,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_SPECIALIST_ROSTER_V1",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.248265+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 6,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.251413+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 7,
+      "date": "2026-05-02",
+      "region": "MB",
+      "experiment": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+      "mode": "REALTIME_AVAILABLE_ONLY",
+      "run_label": "du_doan_test_mb_engine_v1_2026-05-02",
+      "started_at": "2026-05-02T17:56:22.206715+00:00",
+      "finished_at": "2026-05-02T17:56:22.254856+00:00",
+      "label": "REALTIME_AVAILABLE_ONLY",
+      "proof_verdict": "NEEDS_SOURCE_TRACE",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "Earlier V46/V50 rows require timestamp context."
+    },
+    {
+      "run_id": 8,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_OFFICIAL_BASELINE_CONTROL",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.818020+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 9,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_COMPOSITE_CHALLENGER_V2",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.820864+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 10,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_TIER_AWARE_BUNDLE_SHADOW_V1",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.822889+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 11,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_AI_CHAIN_PRESERVATION_V1",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.824888+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 12,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_SPECIALIST_ROSTER_V1",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.827050+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 13,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.829048+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    },
+    {
+      "run_id": 14,
+      "date": "2026-05-03",
+      "region": "MB",
+      "experiment": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v50_post_closeout_diagnostic_full_25_2026-05-03",
+      "started_at": "2026-05-03T13:16:41.071202+00:00",
+      "finished_at": "2026-05-03T13:16:41.831026+00:00",
+      "label": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "proof_verdict": "NOT_REALTIME_PROOF",
+      "selection_basis_clean": "PARTIAL",
+      "target_actual_used_for_unlock": "NO",
+      "notes": "V50 2026-05-03 rows are diagnostic after closeout; do not use for live unlock."
+    }
+  ],
+  "final_verdict": "NOT_REALTIME_PROOF_FOR_UNLOCK",
+  "force_fit_risk": "CONTROLLED_BY_LABELS",
+  "leakage_audit_rows": {
+    "exists": true,
+    "row_count": 7,
+    "columns": [
+      "id",
+      "run_id",
+      "run_date",
+      "region",
+      "experiment_name",
+      "test_bt",
+      "source_models",
+      "source_families",
+      "source_tables",
+      "source_ranks",
+      "source_scores",
+      "in_official_lo2",
+      "shared_candidate_pool",
+      "shared_selection_reason",
+      "independent_signal",
+      "leakage_status",
+      "verdict",
+      "created_at"
+    ],
+    "latest": {
+      "run_date": "2026-05-03",
+      "created_at": "2026-05-03T20:19:33.960878+07:00"
+    },
+    "regions": [
+      "MB"
+    ],
+    "modes": [],
+    "classification": "STABLE_MANUAL"
+  }
+}
+===== SOURCE_END artifacts/_v52_du_doan_test_force_fit_leakage_audit_20260503.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_du_doan_test_reality_check_20260503.json VERSION=V52 LINES=589 SHA256=8c05a58ee189f3176a8e0577a689fa8d39b419d783de05eee7bc57b56ce74ed7 =====
+{
+  "final_status": "MANUAL_STAGE_0_CONFIRMED",
+  "tables": {
+    "du_doan_test_runs": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "run_label",
+        "mode",
+        "run_status",
+        "started_at",
+        "finished_at",
+        "duration_sec",
+        "model_count",
+        "shadow_count",
+        "no_token_count",
+        "ai_count",
+        "prompt_variant",
+        "config_hash",
+        "code_version",
+        "test_only",
+        "admin_only",
+        "official_output",
+        "output_impact",
+        "owner_approved",
+        "notes",
+        "source_hash_ref",
+        "source_timestamps_json",
+        "output_eligible",
+        "diagnostic_only"
+      ],
+      "latest": {
+        "run_date": "2026-05-03"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [
+        "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "REALTIME_AVAILABLE_ONLY"
+      ],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_bundles": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "mode",
+        "test_bt",
+        "test_lo2_json",
+        "official_bt",
+        "official_lo2_json",
+        "diff_from_official_json",
+        "aggregation_method",
+        "candidate_count",
+        "model_count",
+        "confidence_score",
+        "risk_flags_json",
+        "official_output",
+        "output_impact",
+        "admin_only",
+        "test_only",
+        "owner_approved",
+        "created_at",
+        "diagnostic_only",
+        "output_eligible"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.831130+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [
+        "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "REALTIME_AVAILABLE_ONLY"
+      ],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_results": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "actual_results_json",
+        "official_bt_status",
+        "official_lo2_status",
+        "test_bt_status",
+        "test_lo2_status",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "net_effect",
+        "evaluated_at",
+        "official_bt",
+        "official_lo2_json",
+        "test_bt",
+        "test_lo2_json",
+        "delta_bt",
+        "delta_lo2",
+        "correct_but_dropped",
+        "wrong_boosted",
+        "lo2_to_bt_promotion",
+        "official_lo2_already_had_test_bt"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "evaluated_at": "2026-05-03T20:19:33.953299+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_candidates": {
+      "exists": true,
+      "row_count": 308,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "model_name",
+        "model_family",
+        "run_source",
+        "source_table",
+        "candidate_tail",
+        "candidate_rank",
+        "output_task",
+        "strength",
+        "strength_bin",
+        "verdict",
+        "weekday",
+        "station",
+        "source_prize_tier",
+        "rule_support",
+        "prompt_variant",
+        "is_cloned_from_production",
+        "is_test_prompt",
+        "is_shadow_model",
+        "is_realtime_available",
+        "is_late_diagnostic",
+        "selection_basis",
+        "latency_sec",
+        "cost_estimate",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.832851+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_model_contribution": {
+      "exists": true,
+      "row_count": 308,
+      "columns": [
+        "id",
+        "run_id",
+        "model_name",
+        "model_family",
+        "region",
+        "weekday",
+        "station",
+        "run_source",
+        "output_task",
+        "candidate_tail",
+        "helped_test",
+        "hurt_test",
+        "helped_vs_official",
+        "hurt_vs_official",
+        "unique_signal",
+        "duplicate_signal",
+        "herd_signal",
+        "dropped_hit",
+        "wrong_boost",
+        "latency_sec",
+        "value_score",
+        "cost_estimate",
+        "timeout_count"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_audit_log": {
+      "exists": true,
+      "row_count": 5,
+      "columns": [
+        "id",
+        "timestamp",
+        "action",
+        "source_hash_before",
+        "source_hash_after",
+        "changed_files_json",
+        "changed_tables_json",
+        "official_tables_touched",
+        "output_impact",
+        "rollback_ref",
+        "notes"
+      ],
+      "latest": {},
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_experiments": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "experiment_name",
+        "region",
+        "status",
+        "method_family",
+        "description",
+        "input_sources",
+        "allowed_live_sources",
+        "forbidden_sources",
+        "uses_ai_prompt",
+        "uses_no_token",
+        "uses_prior_region",
+        "uses_shadow",
+        "uses_replay",
+        "uses_tensor",
+        "realtime_eligible",
+        "diagnostic_only",
+        "official_output",
+        "output_impact",
+        "test_only",
+        "admin_only",
+        "owner_approved",
+        "output_eligible",
+        "created_at",
+        "updated_at",
+        "version",
+        "notes"
+      ],
+      "latest": {
+        "created_at": "2026-05-03T20:16:40.270048+07:00",
+        "updated_at": "2026-05-03T20:19:34.708036+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_daily_summary": {
+      "exists": true,
+      "row_count": 1,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "official_bt",
+        "official_lo2",
+        "best_test_experiment",
+        "best_test_bt",
+        "best_test_lo2",
+        "official_bt_status",
+        "best_test_bt_status",
+        "delta_vs_official",
+        "would_save_count",
+        "would_break_count",
+        "false_promotion_count",
+        "leakage_risk_count",
+        "status",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.961099+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_experiment_scoreboard": {
+      "exists": true,
+      "row_count": 21,
+      "columns": [
+        "id",
+        "experiment_name",
+        "region",
+        "window_days",
+        "total_runs",
+        "bt_wins",
+        "bt_losses",
+        "lo2_wins",
+        "lo2_partial",
+        "delta_bt_vs_official",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "lo2_to_bt_promotion",
+        "net_lift",
+        "leakage_clean_count",
+        "leakage_risk_count",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_model_scoreboard": {
+      "exists": true,
+      "row_count": 132,
+      "columns": [
+        "id",
+        "model_name",
+        "model_family",
+        "provider",
+        "region",
+        "weekday",
+        "run_source",
+        "window_days",
+        "candidate_count",
+        "selected_count",
+        "bt_hit_count",
+        "lo2_hit_count",
+        "helped_test",
+        "hurt_test",
+        "correct_but_dropped",
+        "wrong_boosted",
+        "unique_useful_signal",
+        "avg_latency_seconds",
+        "p95_latency_seconds",
+        "timeout_count",
+        "cost_estimate",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_method_scoreboard": {
+      "exists": true,
+      "row_count": 21,
+      "columns": [
+        "id",
+        "method_name",
+        "experiment_name",
+        "region",
+        "window_days",
+        "candidate_count",
+        "selected_bt_count",
+        "selected_lo2_count",
+        "bt_win_count",
+        "lo2_hit_count",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "leakage_clean",
+        "leakage_risk",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_latency_daily": {
+      "exists": true,
+      "row_count": 0,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "model_name",
+        "provider",
+        "latency_seconds",
+        "token_count",
+        "cost_estimate",
+        "finish_reason",

@@ -1,0 +1,2266 @@
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "09",
+          "top2": "19",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "19",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "19",
+          "top2": "24",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "59",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "24",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "48",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "59",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "24",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "64",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "09": [
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "38": [
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml"
+        ],
+        "92": [
+          "random-forest",
+          "smart-ml"
+        ],
+        "64": [
+          "deepseek-reasoner",
+          "gpt-5-mini"
+        ],
+        "60": [
+          "random-forest",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "19": [
+          "combo-super",
+          "gpt-5.4",
+          "gemini-2.5-pro"
+        ],
+        "46": [
+          "gpt-5-mini"
+        ],
+        "52": [
+          "lstm",
+          "smart-ensemble"
+        ],
+        "08": [
+          "claude-sonnet-4-6"
+        ],
+        "39": [
+          "lstm"
+        ]
+      }
+    }
+  },
+  "2026-05-05": {
+    "MN": {
+      "final_bundle_exists": true,
+      "bt": "15",
+      "lo2": [
+        "15",
+        "13"
+      ],
+      "lo3": "015",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "LOSE",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 04:22:20",
+      "updated_at": "2026-05-05 16:36:37",
+      "verified_at": "2026-05-05 16:36:37",
+      "actual_tails_count": 6,
+      "actual_db_tails": [
+        "09",
+        "46",
+        "93"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "32",
+        "77",
+        "95"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "09",
+        "32",
+        "46",
+        "77",
+        "93",
+        "95"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "auto_daily": 15,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 2,
+      "actual_missing_from_candidates_count": 4,
+      "actual_missing_from_candidates_sample": [
+        "09",
+        "46",
+        "77",
+        "93"
+      ],
+      "actual_in_bundle_top10_count": 1,
+      "actual_in_bundle_top10": [
+        "95"
+      ],
+      "actual_missed_by_bundle_but_in_candidates_count": 1,
+      "actual_missed_by_bundle_but_in_candidates_sample": [
+        "32"
+      ],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 2,
+        "top1_or_top2_hit_actual": 2,
+        "top1_eq_official_bt": 4
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "auto_daily",
+          "top1": "94",
+          "top2": "15",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "auto_daily",
+          "top1": "03",
+          "top2": "15",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "auto_daily",
+          "top1": "18",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "auto_daily",
+          "top1": "41",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "auto_daily",
+          "top1": "24",
+          "top2": "95",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "auto_daily",
+          "top1": "13",
+          "top2": "69",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "25",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "auto_daily",
+          "top1": "13",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "auto_daily",
+          "top1": "24",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "69",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "26",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "24",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "63",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "15": [
+          "combo-no-token",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "13": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ],
+        "88": [
+          "random-forest",
+          "xgboost",
+          "smart-ensemble"
+        ],
+        "52": [
+          "combo-super",
+          "gpt-5.4",
+          "claude-opus-4-20250514",
+          "gpt-5-mini"
+        ],
+        "03": [
+          "combo-no-token",
+          "meta-learning"
+        ],
+        "24": [
+          "gemini-2.5-pro",
+          "claude-sonnet-4-6"
+        ],
+        "41": [
+          "gpt-5.4",
+          "gpt-5-mini"
+        ],
+        "95": [
+          "claude-sonnet-4-6"
+        ],
+        "69": [
+          "combo-super",
+          "gemini-2.5-flash"
+        ],
+        "94": [
+          "smart-ml"
+        ]
+      }
+    },
+    "MT": {
+      "final_bundle_exists": true,
+      "bt": "44",
+      "lo2": [
+        "44",
+        "31"
+      ],
+      "lo3": "044",
+      "bt_status_recorded": "WIN",
+      "lo2_status_recorded": "PARTIAL",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 16:42:00",
+      "updated_at": "2026-05-05 17:31:01",
+      "verified_at": "2026-05-05 17:31:01",
+      "actual_tails_count": 4,
+      "actual_db_tails": [
+        "43",
+        "78"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "53",
+        "89"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "43",
+        "53",
+        "78",
+        "89"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "rerun_post_mn": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 4,
+      "actual_missing_from_candidates_sample": [
+        "43",
+        "53",
+        "78",
+        "89"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 3
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "31",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mn",
+          "top1": "08",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "31",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mn",
+          "top1": "31",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mn",
+          "top1": "46",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "12",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mn",
+          "top1": "30",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "52",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "73",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "39",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "39",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "30",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "37",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "79",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "37",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "79",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "67",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "44": [
+          "combo-super",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "31": [
+          "meta-learning",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "46": [
+          "claude-opus-4-20250514",
+          "lstm"
+        ],
+        "39": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ],
+        "08": [
+          "smart-ml"
+        ],
+        "30": [
+          "combo-super",
+          "random-forest"
+        ],
+        "52": [
+          "claude-opus-4-20250514",
+          "gpt-5-mini"
+        ],
+        "12": [
+          "xgboost"
+        ],
+        "03": [
+          "gpt-5.4",
+          "gemini-2.5-flash"
+        ],
+        "09": [
+          "lstm"
+        ]
+      }
+    },
+    "MB": {
+      "final_bundle_exists": true,
+      "bt": "83",
+      "lo2": [
+        "83",
+        "41"
+      ],
+      "lo3": "083",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "LOSE",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 17:39:20",
+      "updated_at": "2026-05-05 18:31:33",
+      "verified_at": "2026-05-05 18:31:33",
+      "actual_tails_count": 2,
+      "actual_db_tails": [
+        "12"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "37"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "12",
+        "37"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "rerun_post_mt": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 2,
+      "actual_missing_from_candidates_sample": [
+        "12",
+        "37"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 3
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mt",
+          "top1": "19",
+          "top2": "78",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mt",
+          "top1": "60",
+          "top2": "83",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "19",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "58",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mt",
+          "top1": "78",
+          "top2": "43",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "60",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mt",
+          "top1": "19",
+          "top2": "60",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "71",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "98",
+          "top2": "67",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "09",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "36",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "91",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "66",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "91",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "91",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "90",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "91",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "83": [
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml"
+        ],
+        "41": [
+          "combo-super",
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "gemini-2.5-flash",
+          "claude-sonnet-4-6"
+        ],
+        "60": [
+          "random-forest",
+          "xgboost",
+          "smart-ml"
+        ],
+        "98": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "claude-opus-4-20250514",
+          "gemini-2.5-flash"
+        ],
+        "19": [
+          "random-forest",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "09": [
+          "gpt-5.4",
+          "gpt-5-mini"
+        ],
+        "78": [
+          "lstm",
+          "smart-ensemble"
+        ],
+        "71": [
+          "gpt-5-mini"
+        ],
+        "43": [
+          "lstm"
+        ],
+        "58": [
+          "meta-learning"
+        ]
+      }
+    }
+  }
+}
+===== SOURCE_END artifacts/_v55_official_closeout_20260504_20260505.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_post_hash_20260505.txt VERSION=V55 LINES=20 SHA256=6f120971b908b33c73f0d18cd6078d4d2867d1db458503954cba3f6b2992320e =====
+table | rows | sha256 (best-effort) — POST V55 materialization
+predictions | 4290 | a835076601d59001
+final_bundles | 201 | 72109fb3564f2718
+lottery_results | 14615 | 2a3d71c4a0ce5550
+model_daily_eval | 4245 | b9ea45b604c4a59d
+scheduler_logs | 114795 | 9955f691f1984abc
+mt_model_hit_output_drop_shadow | 311 | e35f8df5b28d20e2
+loz_selector_shadow | 3429 | 03d30bb7530980ee
+model_latency_cost_audit_daily | 3429 | ef55484a6e0eca75
+model_strength_by_region_weekday_station_daily | 17927 | b690d308577a8497
+experimental_preview_shadow | 1170 | debabfa52b8dfa90
+mb_experimental_preview_shadow | 35 | 239d04dc61d3ce99
+du_doan_test_runs | 629 | 7c9b13ee3ce92820
+du_doan_test_bundles | 629 | 893de2730ffadb93
+du_doan_test_results | 629 | 6cba560d00e81a99
+du_doan_test_candidates | 14555 | b0d9217049cf5028
+du_doan_test_model_contribution | 14555 | 23b0af66d7ca335b
+du_doan_test_audit_log | 213 | 3b5f5eafa87ce041
+loz_stage_trace_shadow | 6356 | 03eab0008d563dc8
+weekday_blackspot_shadow | 42 | 1f2ad462e439f592
+===== SOURCE_END artifacts/_v55_post_hash_20260505.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_post_restart_check.py VERSION=V55 LINES=60 SHA256=8469fc45ce7b36e2df93fa8ea6bbf158c80434f62b900bd9c592d631c8e66779 =====
+"""V20.3.37.55 — post-restart health and roster verification."""
+import sys, json, urllib.request
+
+# 1) Health check
+url = 'http://127.0.0.1:8000/api/health'
+try:
+    with urllib.request.urlopen(url, timeout=10) as r:
+        data = json.load(r)
+    print("=== /api/health ===")
+    for k in [
+        'version','runtime_model_count','output_model_count',
+        'output_eligible_model_count','shadow_auto_eval_model_count',
+        'registry_visible_model_count','active_rerank_measurement_model_count',
+        'active_measured_component_count'
+    ]:
+        if k in data:
+            print(f"  {k}={data[k]}")
+except Exception as e:
+    print(f"HEALTH_ERR={e}")
+
+# 2) Roster confirm via direct registry import
+sys.path.insert(0, '/root/Lottery_AI_Test/web/backend')
+from model_registry import (
+    SHADOW_AUTO_EVAL_MODELS, OUTPUT_ELIGIBLE_MODELS, ALL_RUNTIME_MODELS,
+    get_models_for_slot
+)
+print("\n=== registry counts ===")
+print(f"  SHADOW_AUTO={len(SHADOW_AUTO_EVAL_MODELS)}")
+print(f"  OUTPUT_ELIGIBLE={len(OUTPUT_ELIGIBLE_MODELS)}")
+print(f"  ALL_RUNTIME={len(ALL_RUNTIME_MODELS)}")
+
+new_models = ['gemini-3.1-pro','gemini-3-flash','gemma-4-31b']
+print("\n=== new model presence in shadow_auto ===")
+for m in new_models:
+    print(f"  {m}: in_SHADOW_AUTO={m in SHADOW_AUTO_EVAL_MODELS}, in_OUTPUT_ELIGIBLE={m in OUTPUT_ELIGIBLE_MODELS} (must be False)")
+
+print("\n=== shadow batch composition (completion_triggered_shadow) ===")
+for region in ['MN','MT','MB']:
+    models = get_models_for_slot('completion_triggered_shadow', region)
+    has_all_new = all(m in models for m in new_models)
+    print(f"  {region}: n={len(models)} new_models_present={has_all_new}")
+
+# 3) Phase-first runtime gate
+import gpt_analyzer as g
+print("\n=== phase-first gate runtime state ===")
+for m in new_models:
+    s = g.get_phase_first_gate_runtime_state(m)
+    print(f"  {m}: cohort={s.get('cohort_id')} gate_applied={s.get('gate_applied')} contract_required={s.get('contract_required')}")
+
+# 4) Key resolution at runtime (now env loaded by service)
+import os
+shadow_key = os.getenv('GEMINI_KEY_SHADOW_NEW', '')
+legacy_key = os.getenv('GEMINI_API_KEY', '')
+# env_loader was loaded by gpt_analyzer imports
+print("\n=== env state at this verify run ===")
+print(f"  GEMINI_KEY_SHADOW_NEW present? {bool(shadow_key)} len={len(shadow_key)}")
+print(f"  GEMINI_API_KEY present? {bool(legacy_key)} len={len(legacy_key)}")
+print(f"  distinct? {bool(shadow_key) and bool(legacy_key) and shadow_key != legacy_key}")
+
+print("\nPOST_RESTART_OK")
+
+===== SOURCE_END artifacts/_v55_post_restart_check.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_pre_hash_20260505.txt VERSION=V55 LINES=20 SHA256=c24adcfa1193da27c747ac8da1550f799564000fdf0edf7cf0ea969ac3e96671 =====
+table | rows | sha256(rowids+date+region) (best-effort)
+predictions | 4290 | a835076601d59001
+final_bundles | 201 | 72109fb3564f2718
+lottery_results | 14615 | 2a3d71c4a0ce5550
+model_daily_eval | 4164 | 06c262da5c53c9d7
+scheduler_logs | 114751 | 9955f691f1984abc
+mt_model_hit_output_drop_shadow | 301 | 44065877146a54ef
+loz_selector_shadow | 3273 | 03b7b89c97d365c0
+model_latency_cost_audit_daily | 3273 | 46823589782c222b
+model_strength_by_region_weekday_station_daily | 9052 | b690d308577a8497
+experimental_preview_shadow | 1116 | 0db12e8f1c1b36f1
+mb_experimental_preview_shadow | 28 | 9d99c62313cef015
+du_doan_test_runs | 604 | 55ee883f8027042c
+du_doan_test_bundles | 604 | 9879cd9f90270830
+du_doan_test_results | 604 | d02eb38ad9074573
+du_doan_test_candidates | 13960 | b0d9217049cf5028
+du_doan_test_model_contribution | 13960 | 23b0af66d7ca335b
+du_doan_test_audit_log | 199 | cc6815669dbdc47a
+loz_stage_trace_shadow | 6174 | 03eab0008d563dc8
+weekday_blackspot_shadow | 21 | b211593584049073
+===== SOURCE_END artifacts/_v55_pre_hash_20260505.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_pre_runner_hash_20260505.txt VERSION=V55 LINES=14 SHA256=131128f22d12417852b7484c641bec068284fd592b47e9adb7cdf9e8eb8d1d07 =====
+# V55 PRE-RUNNER HASH
+predictions	exists=true	count=4209	sha256=b23e015bff782f48d4cef3b764b8d41999f67ff6158bfe2673f6e68e995f894d
+final_bundles	exists=true	count=198	sha256=e52e49873ad0e0a7dccba23ff22e8f2b9fd899cd395095a39c72c7f001b390a0
+lottery_results	exists=true	count=14609	sha256=8042eb094d5b11731a1e153389594b389816b76c5391c8862146c7ee5ce430f9
+model_daily_eval	exists=true	count=4164	sha256=1f2d5f23efc67da9894525d8b1011cce0fe074f351cf82e61298bd6c780b3caa
+scheduler_logs	exists=true	count=113957	sha256=d7cf8cb19505634098e38c52db004cea68535941e7d16b6dfa5336bd080d649d
+experimental_preview_shadow	exists=true	count=1098	sha256=64270bda1b599f3e982adb8d058483fa700426b9ac87fd988fc7e36a8e4dd5d7
+mb_experimental_preview_shadow	exists=true	count=21	sha256=c41ffabd25595894425a98d4957d081bf00521f258f35f67c5f142217df3ee39
+du_doan_test_runs	exists=true	count=579	sha256=29d3a1b8594d04058ecf80dce10020d278c3484f3ba2fcc626925020867ab241
+du_doan_test_bundles	exists=true	count=579	sha256=968bbf2d492c1cfa6290545cc5d327f2e16698eb87cdc9fb49d16bbd8954a4b2
+du_doan_test_results	exists=true	count=579	sha256=53a85871870cdb1611860ccf6f5fd6fd1b5b46e7a34b9551a70250ac6a34f76f
+du_doan_test_candidates	exists=true	count=13405	sha256=ce3eef3dd73636539afacb6e7ae64ea5f1e1d362f8135bc9dae0de9fd0881f77
+du_doan_test_model_contribution	exists=true	count=13405	sha256=b25e490cec49985b2fe42324892e99d95a140291d6c1db5d71bae6cc034eade6
+du_doan_test_audit_log	exists=true	count=192	sha256=4476ff2edb0d69076b56835fa25d68577e91be046acabfe749398321ec139240
+
+===== SOURCE_END artifacts/_v55_pre_runner_hash_20260505.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_rolling_metrics_after_20260505.json VERSION=V55 LINES=298 SHA256=1e1f940f679d6e8c19ad554c5a710abf05c40cda1571f27178366a2adb837559 =====
+{
+  "anchor_date": "2026-05-05",
+  "rolling": {
+    "MN": {
+      "7d": {
+        "n": 7,
+        "bt_win": 3,
+        "bt_lose": 4,
+        "bt_win_pct": 42.9,
+        "lo2_win": 3,
+        "lo2_partial": 1,
+        "lo2_lose": 3,
+        "lo2_full_pct": 42.9,
+        "lo2_any_pct": 57.1
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 7,
+        "bt_lose": 7,
+        "bt_win_pct": 50.0,
+        "lo2_win": 5,
+        "lo2_partial": 5,
+        "lo2_lose": 4,
+        "lo2_full_pct": 35.7,
+        "lo2_any_pct": 71.4
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 17,
+        "bt_lose": 13,
+        "bt_win_pct": 56.7,
+        "lo2_win": 9,
+        "lo2_partial": 16,
+        "lo2_lose": 5,
+        "lo2_full_pct": 30.0,
+        "lo2_any_pct": 83.3
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 28,
+        "bt_lose": 32,
+        "bt_win_pct": 46.7,
+        "lo2_win": 17,
+        "lo2_partial": 24,
+        "lo2_lose": 19,
+        "lo2_full_pct": 28.3,
+        "lo2_any_pct": 68.3
+      }
+    },
+    "MT": {
+      "7d": {
+        "n": 7,
+        "bt_win": 5,
+        "bt_lose": 2,
+        "bt_win_pct": 71.4,
+        "lo2_win": 2,
+        "lo2_partial": 3,
+        "lo2_lose": 2,
+        "lo2_full_pct": 28.6,
+        "lo2_any_pct": 71.4
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 7,
+        "bt_lose": 7,
+        "bt_win_pct": 50.0,
+        "lo2_win": 2,
+        "lo2_partial": 6,
+        "lo2_lose": 6,
+        "lo2_full_pct": 14.3,
+        "lo2_any_pct": 57.1
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 11,
+        "bt_lose": 19,
+        "bt_win_pct": 36.7,
+        "lo2_win": 5,
+        "lo2_partial": 15,
+        "lo2_lose": 10,
+        "lo2_full_pct": 16.7,
+        "lo2_any_pct": 66.7
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 30,
+        "bt_lose": 30,
+        "bt_win_pct": 50.0,
+        "lo2_win": 12,
+        "lo2_partial": 31,
+        "lo2_lose": 17,
+        "lo2_full_pct": 20.0,
+        "lo2_any_pct": 71.7
+      }
+    },
+    "MB": {
+      "7d": {
+        "n": 7,
+        "bt_win": 1,
+        "bt_lose": 6,
+        "bt_win_pct": 14.3,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "lo2_lose": 4,
+        "lo2_full_pct": 0.0,
+        "lo2_any_pct": 42.9
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 4,
+        "bt_lose": 10,
+        "bt_win_pct": 28.6,
+        "lo2_win": 1,
+        "lo2_partial": 7,
+        "lo2_lose": 6,
+        "lo2_full_pct": 7.1,
+        "lo2_any_pct": 57.1
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 6,
+        "bt_lose": 24,
+        "bt_win_pct": 20.0,
+        "lo2_win": 2,
+        "lo2_partial": 9,
+        "lo2_lose": 19,
+        "lo2_full_pct": 6.7,
+        "lo2_any_pct": 36.7
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 16,
+        "bt_lose": 44,
+        "bt_win_pct": 26.7,
+        "lo2_win": 2,
+        "lo2_partial": 25,
+        "lo2_lose": 33,
+        "lo2_full_pct": 3.3,
+        "lo2_any_pct": 45.0
+      }
+    }
+  },
+  "weekday_60d": {
+    "MN": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 1,
+        "lo2_partial": 4,
+        "bt_win_pct": 55.6
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 6,
+        "lo2_win": 5,
+        "lo2_partial": 2,
+        "bt_win_pct": 66.7
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 6,
+        "lo2_win": 3,
+        "lo2_partial": 4,
+        "bt_win_pct": 66.7
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 2,
+        "lo2_partial": 5,
+        "bt_win_pct": 33.3
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 2,
+        "lo2_partial": 2,
+        "bt_win_pct": 25.0
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 5,
+        "lo2_win": 4,
+        "lo2_partial": 3,
+        "bt_win_pct": 62.5
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 1,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 12.5
+      }
+    },
+    "MT": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 1,
+        "lo2_partial": 6,
+        "bt_win_pct": 55.6
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 4,
+        "lo2_win": 3,
+        "lo2_partial": 5,
+        "bt_win_pct": 44.4
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 4,
+        "lo2_win": 2,
+        "lo2_partial": 5,
+        "bt_win_pct": 44.4
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 2,
+        "lo2_partial": 4,
+        "bt_win_pct": 55.6
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 25.0
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 8,
+        "lo2_win": 4,
+        "lo2_partial": 4,
+        "bt_win_pct": 100.0
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 25.0
+      }
+    },
+    "MB": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 22.2
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 33.3
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 0,
+        "lo2_partial": 7,
+        "bt_win_pct": 33.3
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 1,
+        "lo2_partial": 4,
+        "bt_win_pct": 33.3
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 1,
+        "lo2_win": 0,
+        "lo2_partial": 2,
+        "bt_win_pct": 12.5
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 1,
+        "lo2_partial": 2,
+        "bt_win_pct": 25.0
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 25.0
+      }
+    }
+  }
+}
+===== SOURCE_END artifacts/_v55_rolling_metrics_after_20260505.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_schema_check.py VERSION=V55 LINES=19 SHA256=1622731860b23ea395df99d159cecd75e40c62fe5efa6243164e24491717a368 =====
+import sqlite3
+c = sqlite3.connect('data/lottery_ai.db')
+cu = c.cursor()
+target = ['predictions', 'lottery_results', 'final_bundles',
+          'du_doan_test_runs', 'du_doan_test_bundles', 'du_doan_test_results',
+          'du_doan_test_candidates', 'du_doan_test_model_contribution',
+          'du_doan_test_audit_log',
+          'experimental_preview_shadow', 'mb_experimental_preview_shadow',
+          'loz_stage_trace_shadow', 'weekday_blackspot_shadow',
+          'mt_model_hit_output_drop_shadow',
+          'model_strength_by_region_weekday_station_daily',
+          'model_latency_cost_audit_daily',
+          'scheduler_logs']
+for t in target:
+    try:
+        cols = [r[1] for r in cu.execute(f"PRAGMA table_info({t})").fetchall()]
+        print(f"{t}: {cols}")
+    except Exception as e:
+        print(f"{t}: ERR {e}")
+
+===== SOURCE_END artifacts/_v55_schema_check.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_state_20260505.json VERSION=V55 LINES=57 SHA256=12346239861efc0c9dad98d7c39bd93b9afc66aa91b589a422146cfd6ecd05e6 =====
+{
+  "pass_id": "V20.3.37.55_full_chain",
+  "anchor_date": "2026-05-05",
+  "service_active": true,
+  "health_http": 200,
+  "live_window_passed": true,
+  "rolling_metrics_post_05_05": {
+    "MN": {
+      "7d_BT": 42.9,
+      "14d_BT": 50.0,
+      "30d_BT": 56.7,
+      "60d_BT": 46.7
+    },
+    "MT": {
+      "7d_BT": 71.4,
+      "14d_BT": 50.0,
+      "30d_BT": 36.7,
+      "60d_BT": 50.0
+    },
+    "MB": {
+      "7d_BT": 14.3,
+      "14d_BT": 28.6,
+      "30d_BT": 20.0,
+      "60d_BT": 26.7
+    }
+  },
+  "two_day_official": {
+    "2026-05-04": {
+      "MN": "BT_LOSE+lo2_PARTIAL",
+      "MT": "BT_WIN+lo2_WIN",
+      "MB": "BT_LOSE+lo2_LOSE"
+    },
+    "2026-05-05": {
+      "MN": "BT_LOSE+lo2_LOSE",
+      "MT": "BT_WIN+lo2_PARTIAL",
+      "MB": "BT_LOSE+lo2_LOSE"
+    }
+  },
+  "two_day_winner_per_region": {
+    "MN": "TEST_RESCUE: SPECIALIST_ROSTER 04/05 picked 32 (hit), AI_CHAIN_PRESERVATION 05/05 picked 52 (hit)",
+    "MT": "OFFICIAL_WIN_BOTH_DAYS (29 then 44)",
+    "MB": "NO_METHOD_FOUND_HIT both days"
+  },
+  "verdict_label": "TWO_DAY_FORENSIC_ONLY + READY_FOR_TEST_LANE_ENHANCEMENT + READY_FOR_MEASUREMENT_ONLY_IMPLEMENTATION + NOT_READY_FOR_OFFICIAL_CHANGE",
+  "critical_findings": [
+    "MN BT 30d dropped 60% → 56.7% (V54 → V55)",
+    "MT 7d 71.4% rising fast — but 30d still 36.7%",
+    "MB 60d 26.7% structural; MB Wed/Fri remain BLACK_SPOT_CONFIRMED on anchor 2026-05-05",
+    "MT_AI_CHAIN_PRESERVATION_V1 destructive on MT (broke 29 win → 82 LOSE on 04/05; broke 44 → 39 on 05/05) — NOT promote",
+    "MN_AI_CHAIN_PRESERVATION_V1 free win on 05/05 (52 vs 15) — keep watching MN-only",
+    "MN_SPECIALIST_ROSTER_V1 free win on 04/05 (32 vs 65)",
+    "gemini-3-flash MB WIN day 1 (91+14, both hit) — KEEP_CANDIDATE",
+    "gemma-4-31b: 0 rows 05/05 due to scheduler preflight bug. Bug FIXED in V55 (scheduler.py route gemma→google lane). Will run 06/05.",
+    "C-05 latency: still 0/0 latency_available, NO_PER_MODEL_DURATION 100% — pruning blocked.",
+    "loz_stage_trace materialized 04/05+05/05; 0 ai_dropped events but loz_select_miss MN 5, MT 6, MB 4 over 2 days."
+  ]
+}
+===== SOURCE_END artifacts/_v55_state_20260505.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_status_recon.py VERSION=V55 LINES=64 SHA256=8a26e6b440dda36051555dd64d20611e151532629f6cc483ea69b7cc8befa283 =====
+"""Reconcile bundle status with extracted actual tails."""
+import sqlite3, json, sys, io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+c = sqlite3.connect('data/lottery_ai.db')
+c.row_factory = sqlite3.Row
+cu = c.cursor()
+
+
+def tail2(x):
+    s = ''.join(ch for ch in str(x) if ch.isdigit())
+    return s[-2:].zfill(2) if s else ''
+
+
+def all_tails(date, region):
+    cu.execute("SELECT tail_db, tail_g8, prizes_json FROM lottery_results WHERE date=? AND region=?", (date, region))
+    rows = cu.fetchall()
+    by_prize = {}
+    s = set()
+    for r in rows:
+        if r['tail_db']:
+            t = tail2(r['tail_db']);
+            s.add(t)
+            by_prize.setdefault('DB', set()).add(t)
+        if r['tail_g8']:
+            t = tail2(r['tail_g8']);
+            s.add(t)
+            by_prize.setdefault('G8', set()).add(t)
+        if r['prizes_json']:
+            try:
+                pj = json.loads(r['prizes_json'])
+            except Exception:
+                pj = {}
+            for prize_name, vals in (pj or {}).items():
+                if not isinstance(vals, list):
+                    vals = [vals]
+                key = prize_name
+                for v in vals:
+                    t = tail2(v)
+                    if t:
+                        s.add(t)
+                        by_prize.setdefault(key, set()).add(t)
+    return s, by_prize
+
+
+for date in ['2026-05-04', '2026-05-05']:
+    print(f"\n=================== {date} ===================")
+    for region in ['MN', 'MT', 'MB']:
+        cu.execute("SELECT bach_thu, lo2, bach_thu_status, lo2_status FROM final_bundles WHERE date=? AND region=?", (date, region))
+        b = cu.fetchone()
+        if not b:
+            print(f"  {region}: NO BUNDLE")
+            continue
+        bt = tail2(b['bach_thu'])
+        try:
+            lo2 = [tail2(x) for x in (json.loads(b['lo2']) if b['lo2'] else [])]
+        except Exception:
+            lo2 = []
+        all_t, by_prize = all_tails(date, region)
+        print(f"  {region}: BT={bt} status={b['bach_thu_status']} | lo2={lo2} status={b['lo2_status']}")
+        print(f"     all_actual_tails (n={len(all_t)}) = {sorted(all_t)}")
+        print(f"     BT_in_actual = {bt in all_t}, lo2[0]_in = {lo2[0] in all_t if lo2 else None}, lo2[1]_in = {lo2[1] in all_t if len(lo2)>1 else None}")
+        # check by prize
+        per_prize_match = {k: bt in v for k, v in by_prize.items() if bt in v}
+        print(f"     BT match by prize: {per_prize_match}")
+
+===== SOURCE_END artifacts/_v55_status_recon.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_system_audit.py VERSION=V55 LINES=109 SHA256=4f899c8114f060e4e6b566d9bf28f71f4728e55a8bea70fedf6ae55bc723d027 =====
+import json
+import sqlite3
+from pathlib import Path
+
+DB = Path("data/lottery_ai.db")
+ANCHOR = "2026-05-04"
+conn = sqlite3.connect(DB)
+conn.row_factory = sqlite3.Row
+cur = conn.cursor()
+
+def q(sql, params=()):
+    return [dict(r) for r in cur.execute(sql, params).fetchall()]
+
+out = {
+    "date": ANCHOR,
+    "official": {},
+    "test_methods": {},
+    "rolling": {},
+    "measurement_counts": {},
+    "loz_trace": {},
+    "blackspots": [],
+    "latency": {},
+}
+
+for region in ("MN", "MT", "MB"):
+    fb = cur.execute(
+        "SELECT date,region,bach_thu,bach_thu_status,lo2,lo2_status,created_at,updated_at,verified_at,notes FROM final_bundles WHERE date=? AND region=? ORDER BY id DESC LIMIT 1",
+        (ANCHOR, region),
+    ).fetchone()
+    out["official"][region] = dict(fb) if fb else None
+    out["test_methods"][region] = q(
+        """
+        SELECT b.experiment_name, b.test_bt, b.official_bt,
+               r.test_bt_status, r.official_bt_status, r.would_save,
+               r.would_break, r.false_promotion, b.mode
+        FROM du_doan_test_bundles b
+        LEFT JOIN du_doan_test_results r ON r.run_id=b.run_id
+        WHERE b.run_date=? AND b.region=?
+        ORDER BY b.experiment_name, b.id DESC
+        """,
+        (ANCHOR, region),
+    )
+    out["rolling"][region] = {}
+    for days in (7, 14, 30, 60):
+        rows = q(
+            """
+            SELECT bach_thu_status, lo2_status, COUNT(*) n
+            FROM final_bundles
+            WHERE region=? AND date >= date(?, ?) AND date <= ?
+              AND bach_thu_status IN ('WIN','LOSE','PARTIAL')
+            GROUP BY bach_thu_status, lo2_status
+            """,
+            (region, ANCHOR, f"-{days-1} days", ANCHOR),
+        )
+        bt_total = sum(r["n"] for r in rows)
+        bt_win = sum(r["n"] for r in rows if r["bach_thu_status"] == "WIN")
+        lo2_total = sum(r["n"] for r in rows if r["lo2_status"] in ("WIN", "PARTIAL", "LOSE"))
+        lo2_full = sum(r["n"] for r in rows if r["lo2_status"] == "WIN")
+        lo2_any = sum(r["n"] for r in rows if r["lo2_status"] in ("WIN", "PARTIAL"))
+        out["rolling"][region][str(days)] = {
+            "bt": [bt_win, bt_total],
+            "bt_rate": round(bt_win / bt_total, 4) if bt_total else None,
+            "lo2_full": [lo2_full, lo2_total],
+            "lo2_full_rate": round(lo2_full / lo2_total, 4) if lo2_total else None,
+            "lo2_any": [lo2_any, lo2_total],
+            "lo2_any_rate": round(lo2_any / lo2_total, 4) if lo2_total else None,
+        }
+
+for table in [
+    "mt_model_hit_output_drop_shadow",
+    "loz_selector_shadow",
+    "model_latency_cost_audit_daily",
+    "model_strength_by_region_weekday_station_daily",
+    "experimental_preview_shadow",
+    "du_doan_test_runs",
+    "du_doan_test_bundles",
+    "du_doan_test_results",
+    "loz_stage_trace_shadow",
+    "weekday_blackspot_shadow",
+]:
+    exists = cur.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)).fetchone()
+    out["measurement_counts"][table] = cur.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0] if exists else 0
+
+out["loz_trace"]["by_region_stage"] = q(
+    "SELECT region, drop_stage, COUNT(*) n FROM loz_stage_trace_shadow GROUP BY region, drop_stage ORDER BY region, n DESC"
+)
+out["blackspots"] = q(
+    """
+    SELECT region, weekday_name, total_days, bt_wins, bt_rate,
+           lo2_full_wins, lo2_full_rate, blackspot_label
+    FROM weekday_blackspot_shadow
+    WHERE anchor_date='2026-05-03' AND window_days=30
+      AND blackspot_label IN ('WEEKDAY_BLACK_SPOT_CONFIRMED','WEEKDAY_STRUCTURAL_RISK')
+    ORDER BY region, weekday
+    """
+)
+out["latency"]["rollup"] = q(
+    """
+    SELECT missing_reason, COUNT(*) rows_count,
+           SUM(latency_available) latency_available_rows,
+           SUM(CASE WHEN cost_estimate IS NOT NULL THEN 1 ELSE 0 END) cost_available_rows
+    FROM model_latency_cost_audit_daily
+    GROUP BY missing_reason
+    ORDER BY rows_count DESC
+    """
+)
+
+print(json.dumps(out, ensure_ascii=False, indent=2, default=str))
+conn.close()
+
+===== SOURCE_END artifacts/_v55_system_audit.py =====
+
+
+===== SOURCE_BEGIN artifacts/_v55_system_audit_20260505.json VERSION=V55 LINES=1489 SHA256=31495018dd6744b4d088d6c451ca0ba07332e38a53406ca9ee038e8e6bdd1102 =====
+��{  
+     " d a t e " :   " 2 0 2 6 - 0 5 - 0 4 " ,  
+     " o f f i c i a l " :   {  
+         " M N " :   {  
+             " d a t e " :   " 2 0 2 6 - 0 5 - 0 4 " ,  
+             " r e g i o n " :   " M N " ,  
+             " b a c h _ t h u " :   " 6 5 " ,  
+             " b a c h _ t h u _ s t a t u s " :   " L O S E " ,  
+             " l o 2 " :   " [ \ " 6 5 \ " ,   \ " 3 2 \ " ] " ,  
+             " l o 2 _ s t a t u s " :   " P A R T I A L " ,  
+             " c r e a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   0 4 : 2 3 : 5 1 " ,  
+             " u p d a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 6 : 3 8 : 3 8 " ,  
+             " v e r i f i e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 6 : 3 8 : 3 8 " ,  
+             " n o t e s " :   " a u t o _ a u t o _ d a i l y "  
+         } ,  
+         " M T " :   {  
+             " d a t e " :   " 2 0 2 6 - 0 5 - 0 4 " ,  
+             " r e g i o n " :   " M T " ,  
+             " b a c h _ t h u " :   " 2 9 " ,  
+             " b a c h _ t h u _ s t a t u s " :   " W I N " ,  
+             " l o 2 " :   " [ \ " 2 9 \ " ,   \ " 4 1 \ " ] " ,  
+             " l o 2 _ s t a t u s " :   " W I N " ,  
+             " c r e a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 6 : 4 2 : 0 0 " ,  
+             " u p d a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 7 : 3 0 : 0 0 " ,  
+             " v e r i f i e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 7 : 3 0 : 0 0 " ,  
+             " n o t e s " :   " a u t o _ a i _ c h a i n "  
+         } ,  
+         " M B " :   {  
+             " d a t e " :   " 2 0 2 6 - 0 5 - 0 4 " ,  
+             " r e g i o n " :   " M B " ,  
+             " b a c h _ t h u " :   " 0 9 " ,  
+             " b a c h _ t h u _ s t a t u s " :   " L O S E " ,  
+             " l o 2 " :   " [ \ " 0 9 \ " ,   \ " 3 8 \ " ] " ,  
+             " l o 2 _ s t a t u s " :   " L O S E " ,  
+             " c r e a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 7 : 4 0 : 0 9 " ,  
+             " u p d a t e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 8 : 3 1 : 0 1 " ,  
+             " v e r i f i e d _ a t " :   " 2 0 2 6 - 0 5 - 0 4   1 8 : 3 1 : 0 1 " ,  
+             " n o t e s " :   " a u t o _ f a l l b a c k "  
+         }  
+     } ,  
+     " t e s t _ m e t h o d s " :   {  
+         " M N " :   [  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ A I _ C H A I N _ P R E S E R V A T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 6 5 " ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ N O _ T O K E N _ H E R D _ R E D U C T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 6 5 " ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ O F F I C I A L _ B A S E L I N E _ C O N T R O L " ,  
+                 " t e s t _ b t " :   " 6 5 " ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ P R I O R _ R E G I O N _ C O N T E X T _ S A F E _ V 1 " ,  
+                 " t e s t _ b t " :   n u l l ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ S P E C I A L I S T _ R O S T E R _ V 1 " ,  
+                 " t e s t _ b t " :   " 3 2 " ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   1 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M N _ S T R E N G T H _ W E I G H T E D _ V 5 2 _ 5 _ 2 " ,  
+                 " t e s t _ b t " :   " 6 5 " ,  
+                 " o f f i c i a l _ b t " :   " 6 5 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             }  
+         ] ,  
+         " M T " :   [  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ A I _ C H A I N _ P R E S E R V A T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 8 2 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ N O _ T O K E N _ H E R D _ R E D U C T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 2 9 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ O F F I C I A L _ B A S E L I N E _ C O N T R O L " ,  
+                 " t e s t _ b t " :   " 2 9 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ P R I O R _ R E G I O N _ C O N T E X T _ S A F E _ V 1 " ,  
+                 " t e s t _ b t " :   " 8 2 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ S P E C I A L I S T _ R O S T E R _ V 1 " ,  
+                 " t e s t _ b t " :   " 2 9 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M T _ S T R E N G T H _ W E I G H T E D _ V 5 2 _ 5 _ 2 " ,  
+                 " t e s t _ b t " :   " 8 2 " ,  
+                 " o f f i c i a l _ b t " :   " 2 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " W I N " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " W I N " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             }  
+         ] ,  
+         " M B " :   [  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ A I _ C H A I N _ P R E S E R V A T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 0 9 " ,  
+                 " o f f i c i a l _ b t " :   " 0 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ A I _ C H A I N _ P R E S E R V A T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 0 9 " ,  
+                 " o f f i c i a l _ b t " :   " 0 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ C O M P O S I T E _ C H A L L E N G E R _ V 2 " ,  
+                 " t e s t _ b t " :   " 0 9 " ,  
+                 " o f f i c i a l _ b t " :   " 0 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ N O _ T O K E N _ H E R D _ R E D U C T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 0 9 " ,  
+                 " o f f i c i a l _ b t " :   " 0 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ N O _ T O K E N _ H E R D _ R E D U C T I O N _ V 1 " ,  
+                 " t e s t _ b t " :   " 0 9 " ,  
+                 " o f f i c i a l _ b t " :   " 0 9 " ,  
+                 " t e s t _ b t _ s t a t u s " :   " L O S E " ,  
+                 " o f f i c i a l _ b t _ s t a t u s " :   " L O S E " ,  
+                 " w o u l d _ s a v e " :   0 ,  
+                 " w o u l d _ b r e a k " :   0 ,  
+                 " f a l s e _ p r o m o t i o n " :   0 ,  
+                 " m o d e " :   " P O S T _ C L O S E O U T _ D I A G N O S T I C _ F U L L _ 2 5 "  
+             } ,  
+             {  
+                 " e x p e r i m e n t _ n a m e " :   " M B _ O F F I C I A L _ B A S E L I N E _ C O N T R O L " , 

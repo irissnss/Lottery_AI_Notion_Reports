@@ -1,0 +1,24 @@
+# V52 POST-HASH SOURCE + TEST TABLES
+generated_at=2026-05-03T21:11:06
+live_sync_manifest=artifacts/live_sync/20260503_210802/manifest.json
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b	latest=date:2026-05-03,created_at:2026-05-03T17:53:30.346816+07:00,verified_at:2026-05-03T18:31:01.994853+07:00
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795	latest=date:2026-05-03,created_at:2026-05-03 17:40:51,updated_at:2026-05-03 18:31:02,verified_at:2026-05-03 18:31:02
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d	latest=date:2026-05-03,created_at:2026-05-03T18:31:01.833751+07:00
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd	latest=date:2026-05-03,created_at:2026-05-03 20:20:00
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11	latest=log_time:2026-05-03 13:20:00
+du_doan_test_runs	exists=true	count=14	sha256=f26919b4053855ca868e83357c7c02b061d0d1593fcabdabd7c5e5dfb367623e	latest=run_date:2026-05-03
+du_doan_test_bundles	exists=true	count=14	sha256=3dd5954dada84864da5e4df1483f1deceb23a9dcc5e3ccd27ddc55c48df467d1	latest=run_date:2026-05-03,created_at:2026-05-03T20:16:41.831130+07:00
+du_doan_test_results	exists=true	count=14	sha256=cf3c5c93af5029c549771be36dc185bc2f6935b9abc0f5a23a1c64bddfb08c9a	latest=run_date:2026-05-03,evaluated_at:2026-05-03T20:19:33.953299+07:00
+du_doan_test_candidates	exists=true	count=308	sha256=106fdc5b520eadac5e9be20b9b7894b9525944b6cae9869d53f02a630e07231a	latest=run_date:2026-05-03,created_at:2026-05-03T20:16:41.832851+07:00
+du_doan_test_model_contribution	exists=true	count=308	sha256=c0a2894f414a2af21d2520d026baea48cd9b32745cd26f3cad03960be93a7128	latest=NA
+du_doan_test_audit_log	exists=true	count=5	sha256=beb393aec0edc41758a4ee392b0d784da62eb1547360bb17ec2a3018c68e276a	latest=NA
+du_doan_test_experiments	exists=true	count=7	sha256=96948bcaa054c09d410fdaf774e60dced3b6a53f8d9b058d546ff180293ba4ce	latest=created_at:2026-05-03T20:16:40.270048+07:00,updated_at:2026-05-03T20:19:34.708036+07:00
+du_doan_test_daily_summary	exists=true	count=1	sha256=af13d7218e06644c02f1cad6b7d570872ccdac3886473a8315eddf70ac348061	latest=run_date:2026-05-03,created_at:2026-05-03T20:19:33.961099+07:00
+du_doan_test_experiment_scoreboard	exists=true	count=21	sha256=b88e5b42f2d9b9d88f74a321eea6e2986185d928c417533fd9bac8d3ee9760d7	latest=NA
+du_doan_test_model_scoreboard	exists=true	count=132	sha256=3adebf67721ffa9f1a4235e2682a9a8810a00bba2cb685e793465258f28e54b5	latest=NA
+du_doan_test_method_scoreboard	exists=true	count=21	sha256=d7d9d6e1aff9e4ab5e2ae94ea187a8ae3f2a1344ea9d4f686015b3b285acba4a	latest=NA
+du_doan_test_latency_daily	exists=true	count=0	sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855	latest=run_date:None,created_at:None
+du_doan_test_leakage_audit	exists=true	count=7	sha256=4351997743ee2e6ac25d716659b0e30bc6cac0a46001dcf2e01ccce4a778ae45	latest=run_date:2026-05-03,created_at:2026-05-03T20:19:33.960878+07:00
+du_doan_test_conversion_trace	exists=true	count=7	sha256=23f3e8e287c6ed93199b4ec6a145dc9f27697ce58b2b95402cd149b16b5100f5	latest=run_date:2026-05-03,created_at:2026-05-03T20:19:33.960915+07:00
+du_doan_test_ai_predictions	exists=true	count=0	sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855	latest=run_date:None,created_at:None
+mb_experimental_preview_shadow	exists=true	count=14	sha256=f83e4a2d05d70ee15ee69e1a6fee5152c7e30ee6b41b4a7a6fed542027e10f85	latest=date:2026-05-03,created_at:2026-05-03T20:16:41.067975+07:00

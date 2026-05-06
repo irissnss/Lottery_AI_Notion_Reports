@@ -1,0 +1,2328 @@
+    # FOLLOW_UP_TRACKER — Issue Lifecycle Registry
+
+    > **Created:** 2026-04-20 | **Governed by:** `.Antigravityrules.md` §51B, §51C, §51E, §51F | **Update order:** 3rd (per §51G)
+    >
+    > This document tracks ALL unresolved, pending, watching, and resolved issues.
+    > Every issue follows the mandatory schema defined in §51C.
+    >
+    > **🔖 Owner quick-link**: phiên gần nhất gom hết FU-001…FU-042 trạng thái + cần anh confirm gì → đọc `docs/MASTER_SESSION_REPORT_20260426.md`.
+
+    ---
+
+    ## Allowed Status Labels (§51E)
+
+    | Status | Meaning |
+    |--------|---------|
+    | `DONE` | Fully resolved AND live-proven |
+    | `PARTIAL` | Partially addressed |
+    | `WAIT_LIVE` | Deployed, waiting for live cycle |
+    | `DEPLOYED_PENDING_LIVE_VERIFY` | Code on VPS, not yet live-verified |
+    | `OWNER_LOCK` | Requires owner decision |
+    | `NOT_YET_PROVEN` | No confirming evidence yet |
+    | `BLOCKED` | External dependency |
+    | `FALSE_NEGATIVE` | Original report was wrong |
+    | `HISTORICAL_ONLY` | No longer current, context only |
+    | `REPLACED_BY_NEWER_ISSUE` | Superseded (link to replacement required) |
+
+    ---
+
+    ## Active Issues
+
+### FU-132 — C-16 adaptive model budget selector
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-132 |
+| **first_observed_in** | V20.3.37.57 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Run C-16 daily after closeout for 2-3 days. Then add an `ADAPTIVE_BUDGET_SELECTOR_V1` test method that builds a challenger candidate set only from `SELECTED_VOTER` rows. |
+| **owner_lock** | None for test-lane selector surface; YES for any official use |
+| **last_evidence** | V57 materialized 2026-05-05: MN pool=29 measured=28 selected=10; MT pool=29 measured=28 selected=8; MB pool=29 measured=28 selected=8. UI/API surface deployed. Adaptive test output rows created: MN_ADAPTIVE test_bt=52 WIN would_save=1; MT_ADAPTIVE test_bt=52 WIN divergent hit; MB_ADAPTIVE test_bt=41 LOSE. |
+| **regression_check** | Writes only `du_doan_test_model_budget_daily`, `du_doan_test_selected_voters`, `du_doan_test_model_skip_reason`; no official writes. |
+| **notes** | C-16 now surfaces the selected-voter budget and writes `{REGION}_ADAPTIVE_BUDGET_SELECTOR_V1` to `experimental_preview_shadow`/`du_doan_test_*`. C-05 latency remains neutral placeholder until instrumentation exists. |
+
+---
+
+### FU-131 — V56 `/du-doan-test` Experience Lane
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-131 |
+| **first_observed_in** | V20.3.37.56 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Owner opens `/du-doan-test` and checks the new “Trải nghiệm hôm nay” section. Keep daily experience summary updating after each closeout. |
+| **owner_lock** | None for admin/test UI; YES for any official promotion derived from it |
+| **last_evidence** | V56 deployed read-only `experience` response to `/api/du-doan-test/mb` and `/api/du-doan-test/{region}` plus UI section. Helper verify 2026-05-05: MN true_rescues=1 (AI_CHAIN 52), MB true_rescues=1 (PRIOR_REGION 98), MB shadow_helpful=2 (`gemini-3-flash`, `gemini-3.1-pro`). Routes smoke: `/api/health=200`, `/du-doan=200`, `/du-doan-test=401`, unauth API=401, final-bundle MB=200. |
+| **regression_check** | Experience helper only SELECTs from `final_bundles`, `lottery_results`, `du_doan_test_*`, and V55 shadow `predictions`; no writes, no output impact. |
+| **notes** | Addresses owner concern that experiment lane was too strict for experience/testing. Official promotion gate remains unchanged. |
+
+---
+
+### FU-130 — V55 test-lane auto-wire readiness
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-130 |
+| **first_observed_in** | V20.3.37.55_full_chain |
+| **status** | WAIT_3_5_CLEAN_CLOSEOUTS |
+| **next_action** | After 3 clean manual V52.5.6 closeouts + C-03 multi-region evaluator built + `du_doan_test_*` source fields complete on 100% of rows, plan C-04 scheduler auto-wire test lane only. |
+| **owner_lock** | YES for any scheduler auto-wire |
+| **last_evidence** | V55 manual runner ALL on 04/05 + 05/05 produced 25 + 25 bundles; results table now has 13(MB)+6(MN)+6(MT) rows for both days. Still `LIVE_PARALLEL_AUTO_PENDING_ONLY`. |
+| **regression_check** | Auto-wire must not write to official tables; pre/post hash on `predictions`/`final_bundles`/`lottery_results`/`model_daily_eval` required at every wire/unwire change. |
+| **notes** | C-04 |
+
+---
+
+### FU-129 — V55 model strong/weak tensor advanced + UI surfacing pending
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-129 |
+| **first_observed_in** | V20.3.37.55_full_chain |
+| **status** | READY_TO_BUILD_UI_TEST_ONLY |
+| **next_action** | C-14 build per-station/weekday/model strength chip in `/du-doan-test` reading `model_strength_by_region_weekday_station_daily` anchor 2026-05-05. |
+| **owner_lock** | None (UI test-only) |
+| **last_evidence** | Tensor anchor advanced from 2026-05-02 to 2026-05-05 in V55 (8875 rows). MN AI top: combo-super; MT AI top: gemini-2.5-pro; MB AI top: claude-sonnet-4-6 (helpful 0.28 — still weak). |
+| **regression_check** | UI only; tensor table flagged `output_eligible=0`, `diagnostic_only=1`. |
+| **notes** | C-14 |
+
+---
+
+### FU-128 — V55 latency/cost still blocked
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-128 |
+| **first_observed_in** | V20.3.37.55_full_chain |
+| **status** | BROKEN_NEEDS_FIX |
+| **next_action** | C-05 deploy `gpt_analyzer.py` per-model timing instrumentation outside live windows. |
+| **owner_lock** | None for measurement; YES for any pruning decision based on it |
+| **last_evidence** | `model_latency_cost_audit_daily` 04/05 has 75 rows but `latency_available=0/75`, missing_reason=`NO_PER_MODEL_DURATION`. 05/05 has 81 rows with same issue. PRUNING_NOT_ALLOWED_NO_LATENCY persists. |
+| **regression_check** | Trace append only; no scoring/voting/output change. |
+| **notes** | C-05; pruning blocked indefinitely without this. |
+
+---
+
+### FU-127 — V55 loz stage trace 04/05+05/05 backfilled
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-127 |
+| **first_observed_in** | V20.3.37.55_full_chain |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Continue daily materialize. After 30 days, evaluate whether `LOZ_LINE_SELECTION_MISS` pattern is consistent enough to design test-lane policy. |
+| **owner_lock** | YES for any official loz policy change |
+| **last_evidence** | V55 04/05 materialized 88 rows (MN 39 + MT 27 + MB 22). 05/05 materialized 94 rows (MN 42 + MT 30 + MB 22). MT 05/05 had 6 actual tails reach top1 in some model but 5 dropped in loz line selection. |
+| **regression_check** | Reads only official tables; writes only `loz_stage_trace_shadow` (`output_eligible=0`, `diagnostic_only=1`). |
+| **notes** | C-06 done + V55 backfill 04/05+05/05. |
+
+---
+
+### FU-126 — V55 2-day official-vs-test scorecard
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-126 |
+| **first_observed_in** | V20.3.37.55_full_chain |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Maintain 2-day scorecard daily. After 14 days, evaluate which methods cross gate. |
+| **owner_lock** | None for measurement; YES for any method promotion |
+| **last_evidence** | 04/05: MN_SPECIALIST_ROSTER picked 32 (free win), MT methods AI_CHAIN/PRIOR_REGION/STRENGTH broke baseline win (no flip_lose since they also hit). 05/05: MN_AI_CHAIN_PRESERVATION picked 52 (free win), MT AI_CHAIN/PRIOR_REGION broke baseline win (39, 52). MB no rescue both days. `gemini-3-flash` MB BT WIN ngày đầu (91+14). |
+| **regression_check** | Test-lane writes only `du_doan_test_*` and `experimental_preview_shadow`; never `final_bundles` or production `predictions`. |
+| **notes** | Replaces ad-hoc daily scoring; feeds 14-day evidence pack at 19/05. |
+
+---
+
+### FU-125 — V55 add 3 Google direct shadow models (Gemini 3.1 Pro / Gemini 3 Flash / Gemma 4 31B)
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-125 |
+| **first_observed_in** | V20.3.37.55 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Watch first natural shadow batch on 2026-05-05 (cascade post-verify) for `gemini-3.1-pro`, `gemini-3-flash`, `gemma-4-31b` rows in `predictions`. Confirm PHASE-FIRST GATE contract fields populate (`current_week_context`, `phase_alignment_summary`, `strongest_candidate_seen`, `override_reason`). After 3-5 clean closeouts, evaluate WR/BT vs. existing shadow cohort. Until 14+ valid days of measurement, treat as `NOT_OUTPUT_READY`. |
+| **owner_lock** | YES for any `output_eligible` change; NONE for shadow measurement |
+| **last_evidence** | Real Google AI Studio smoke (project `sxkt`, Tier 2) on 2026-05-05 07:58 VN: 3/3 models returned `PONG`. Latencies: gemini-3.1-pro 2.54s (151 tokens, thinking), gemini-3-flash 1.40s (57 tokens), gemma-4-31b 2.56s (65 tokens). VPS `/api/health` 200, `registry_visible_model_count=31`, `SHADOW_AUTO=13`, `OUTPUT_ELIGIBLE=15` unchanged. PHASE-FIRST cohort `PFG-20260505-E` opened with 8 models (5 prior + 3 new), `contract_required=True`. Per-model key isolation: legacy `GEMINI_API_KEY` retained for output models `gemini-2.5-flash`/`gemini-2.5-pro`; new `GEMINI_KEY_SHADOW_NEW` only for the 3 new shadow IDs. |
+| **regression_check** | Source hash for `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval` UNCHANGED pre/post add (no scoring/voting/output path touched). Backups `/root/Lottery_AI_Test/backups/v55_shadow_add_20260505_0750/`. Scheduler picks up new models via registry-derived `SHADOW_AUTO_EVAL_MODELS` (no hardcoding). |
+| **notes** | Google ListModels on 2026-05-05 returns `gemini-3.1-pro-preview`, `gemini-3-flash-preview`, `gemma-4-31b-it`. Map `GOOGLE_MODEL_API_MAP` keeps the stable registry id while routing to current `*-preview` API name. If Google later renames or graduates these, only that map needs updating. Gemini 3.1 Pro is a thinking model; runtime call uses `max_output_tokens=65536` so it will not hit `MAX_TOKENS` like the 64-token smoke probe initially did. |
+
+---
+
+### FU-124 — V54 multi-region evaluator / auto readiness
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-124 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | WAIT_3_5_CLEAN_CLOSEOUTS |
+| **next_action** | After 3 clean manual V52.5.6 closeouts, extend `_du_doan_test_closeout_evaluator.py` to MN/MT/MB and then reconsider scheduler auto-wire. |
+| **owner_lock** | YES for scheduler auto-wire; none for evaluator-only test tables |
+| **last_evidence** | V54 confirms V52.5.6 runner is manual; 2026-05-04 is pre-closeout. |
+| **regression_check** | Evaluator writes only `du_doan_test_*`; no official table writes. |
+| **notes** | Keeps `/du-doan-test` status `LIVE_PARALLEL_AUTO_PENDING_ONLY`. |
+
+---
+
+### FU-123 — V54 MB Wed/Fri blackspot alert
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-123 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Surface `weekday_blackspot_shadow` in `/du-doan-test` UI, then accumulate 14 more closed days. |
+| **owner_lock** | None (measurement/UI only) |
+| **last_evidence** | V54 `weekday_blackspot_shadow` 21 rows: MB Wed/Fri and MT Mon/Fri `WEEKDAY_BLACK_SPOT_CONFIRMED`. |
+| **regression_check** | Table must remain `diagnostic_only=1`, `output_eligible=0`. |
+| **notes** | Does not change official weekday behavior. |
+
+---
+
+### FU-122 — V54 region/weekday/station strength chips
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-122 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | READY_TO_BUILD_UI_TEST_ONLY |
+| **next_action** | Add `/du-doan-test` chips from `model_strength_by_region_weekday_station_daily` for region, weekday, and station grains. |
+| **owner_lock** | None (UI/test only) |
+| **last_evidence** | V52.5.1 tensor 9052 rows available; V54 did not deploy UI due prioritizing C-02/C-06/C-15. |
+| **regression_check** | No model pruning or roster change. |
+| **notes** | C-14. |
+
+---
+
+### FU-121 — V54 MT correct-but-dropped UI panel
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-121 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | READY_TO_BUILD_UI_TEST_ONLY |
+| **next_action** | Build `/du-doan-test` MT panel from `mt_model_hit_output_drop_shadow` + `loz_stage_trace_shadow`. |
+| **owner_lock** | None |
+| **last_evidence** | V54 deployed `loz_stage_trace_shadow`; MT 60d `LOZ_LINE_SELECTION_MISS=182`, `CANDIDATE_POOL_MISS=90`. |
+| **regression_check** | UI only; no official route change. |
+| **notes** | C-07. |
+
+---
+
+### FU-120 — V54 loz stage trace
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-120 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Keep materializing after closeout; use 14d/30d trace before any loz policy proposal. |
+| **owner_lock** | YES for any official loz policy change |
+| **last_evidence** | New `loz_stage_trace_shadow` 6174 rows over 60 closed days. `LOZ_LINE_SELECTION_MISS`: MN 221, MT 182, MB 121. |
+| **regression_check** | Reads only official tables; writes only diagnostic table. |
+| **notes** | C-06 done. |
+
+---
+
+### FU-119 — V54 per-model latency instrumentation
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-119 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | READY_TO_BUILD_MEASUREMENT_ONLY |
+| **next_action** | Deploy `gpt_analyzer.py` per-model timing outside live windows; update `model_latency_cost_audit_daily` from trace events. |
+| **owner_lock** | None for measurement; YES for any pruning decision |
+| **last_evidence** | V54 plan written; deployment deferred because current time was before 16:30/16:42/17:42 live path. |
+| **regression_check** | No change to model outputs; append trace only. |
+| **notes** | C-05; pruning remains blocked. |
+
+---
+
+### FU-118 — V54 API source labels
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-118 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+| **next_action** | Verify browser/network payload after owner opens `/du-doan-test`; keep backward compatibility. |
+| **owner_lock** | None |
+| **last_evidence** | C-02 deployed in `main.py`; admin in-process smoke shows `source_proof`, `test_output_source_table`, `is_clone_of_official`, `is_independent_agreement_with_official`, `is_post_closeout_diagnostic`. |
+| **regression_check** | `/api/du-doan-test/*` unauth 401; `/api/final-bundle` unchanged. |
+| **notes** | Response enrichment only; no selection logic change. |
+
+---
+
+### FU-117 — V54 natural live closeout proof
+
+| Field | Value |
+|-------|-------|
+| **issue_id** | FU-117 |
+| **first_observed_in** | V20.3.37.54 |
+| **status** | WAIT_CLOSEOUT |
+| **next_action** | After 2026-05-04 results are scraped/evaluated, run V52.5.6 runner for MN/MT/MB and compare official vs test. |
+| **owner_lock** | None (manual test-lane runner only) |
+| **last_evidence** | 12:55 VN live watch: MN official bundle BT 65 lo2 [65,32] PENDING; MT/MB predictions only, no final bundle; test rows 0. |
+| **regression_check** | No result claim before closeout. |
+| **notes** | Main V54 live watch item. |
+
+---
+
+    ### FU-116 — Owner deliverables: experimental-lane roadmap + official output timeline
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-116 |
+    | **first_observed_in** | V20.3.37.53.1 (2026-05-04 owner deliverable docs) |
+    | **status** | DONE_DOCS_DELIVERED |
+    | **next_action** | Reference these two docs at every subsequent V52.5.x → V53.x → V54 pass. Update wave timeline ETAs as actual sample accumulates. Update method gate criteria if owner adjusts thresholds. |
+    | **owner_lock** | None for docs; owner OK required at each Wave gate (2026-06-03, 2026-06-15, 2026-07-04, 2026-08-15) |
+    | **last_evidence** | `docs/EXPERIMENTAL_LANE_ROADMAP_20260504.md` (6 phase ladder, per-method status, model lifecycle, UI roadmap) and `docs/OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md` (4 wave production timeline with explicit gate criteria + ETAs). ZERO code/DB change. |
+    | **regression_check** | Docs must remain consistent with V53 controller audit findings; any deviation flagged by next session via active-roadmap-precedence rule. |
+    | **notes** | Owner concrete asks answered: "Khi nào áp dụng method mới?" → 6 phase ladder per method. "Khi nào model gom lại total cải tiến?" → 4 phase plan A/B/C/D/E test-lane only. "Khi nào AI weak bị đào thải?" → 2026-06-15 earliest after C-05 latency. "Khi nào output official cải tiến?" → Wave 1 earliest 2026-06-15. |
+
+    ---
+
+    ### FU-115 — V53 / V52.5.8 full-chain controller audit + UI source-badge fix
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-115 |
+    | **first_observed_in** | V20.3.37.53 / V52.5.8 (2026-05-04 controller audit) |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Observe natural live closeout 2026-05-04 with V52.6 UI in production. After 3 days of clean closeouts on V52.5.6 multi-region runner, implement C-02 (API source labels), C-05 (per-model latency), C-07 (MT correct-but-dropped panel), C-14 (per-station/weekday strength chip). |
+    | **owner_lock** | None for measurement/test-lane/UI-test-only fixes; YES for any official scoring/prompt/roster change |
+    | **last_evidence** | V53 full-chain reconciled V39→V52.5.7 (all CONFIRMED, no overclaim). DB proves test methods are independent (2026-05-02 MB official=43 LOSE, 4 of 6 V52.5.2 methods picked 91 WIN; 2026-05-03 MB AI_CHAIN test_bt=85 LOSE ≠ official 48 WIN false_promotion=1). Owner concern classified as `UI_LABEL_CONFUSION_INDEPENDENT_AGREEMENT_LOOKS_LIKE_CLONE`. V52.6 UI source banner + picks-per-experiment table + `🟰 đồng thuận`/`🆚 khác chính` labels deployed. Hash IDENTICAL on predictions/final_bundles/lottery_results/model_daily_eval/V52 measurement/V52.5 test-lane tables; scheduler_logs +12 from V52.6 service restart only. Evidence: `artifacts/phase_checkpoints/TOTAL_FORCE_V53_FULL_REPORT_CHAIN_DU_DOAN_TEST_REALITY_AND_SAFE_NEXT_ACTION_20260503.md`. |
+    | **regression_check** | Source hash guard before/after every UI deploy; UI must continue to show explicit source banner; test methods must continue to write only `experimental_preview_shadow` and `du_doan_test_*`. |
+    | **notes** | This pass deliberately implemented ONLY C-01 (UI source-badge fix). C-02/C-05/C-06/C-07/C-13/C-14/C-15 are next-3/7-day candidates. C-08/C-09/C-10/C-11/C-12 remain `OWNER_DECIDE` or `WAIT_DATA` or `DROP_AS_DESIGNED`. |
+
+    ---
+
+    ### FU-114 — V52.5 multi-region experimental lane buildout
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-114 |
+    | **first_observed_in** | V20.3.37.52.5.1 (2026-05-03 multi-region test lane buildout) |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | V52.5.1–V52.5.7 done (strength tensor + multi-region preview + multi-region engine + registry + UI + runner + 30d/60d backfills). Next safe step: accumulate ≥14 VALID_LIVE_DAY closeouts under V52.5.6 mode `POST_CLOSEOUT_DIAGNOSTIC_FULL_25` for MN/MT/MB, then evaluate which experiment families clear an owner-unlock gate (e.g., MB SPECIALIST_ROSTER fw≥5/fl≤1, MN AI_CHAIN_PRESERVATION fw≥+5 net, MT methods need fl<fw). |
+    | **owner_lock** | None for measurement/test-lane-only; YES for any official output / scoring / scheduler-auto change |
+    | **last_evidence** | V52.5: strength tensor 9052 rows, multi-region preview 1098 rows (60d × 3 regions × 6 experiments), multi-region engine 579 runs/bundles/results with 13405 candidates/contributions over 30d, registry 20 experiments across MN/MT/MB, multi-region API/UI returning `test_bundle` with full axes for MN/MT/MB, multi-region daily runner `--region ALL`. 60d flip stats: MB SPECIALIST_ROSTER fw=5/fl=0; MB STRENGTH_WEIGHTED V52.5.2 fw=8/fl=7 hits 19 vs 18; MN AI_CHAIN_PRESERVATION fw=4/fl=1 hits 32 vs 29; MN SPECIALIST_ROSTER fw=3/fl=0; MT AI_CHAIN_PRESERVATION fw=8/fl=12 destructive (confirms owner's MT herding); MT STRENGTH_WEIGHTED V52.5.2 fw=5/fl=6. Source hashes for predictions/final_bundles/lottery_results/model_daily_eval identical pre/post; scheduler_logs +46 from service restart + `[DU-DOAN-TEST-*]` markers only; V52 measurement tables identical. Evidence: `artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md`, `artifacts/_v52_5_1_pre_hash_20260503.txt`, `artifacts/_v52_5_7_post_hash_20260503.txt`. VPS backup `/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/`. |
+    | **regression_check** | Source-hash guard on official tables before/after every V52.5.x runner invocation. All new rows must carry `official_output=false`, `output_impact=false`, `test_only=1`, `output_eligible=0`, `diagnostic_only=1` (or only `0` for OFFICIAL_BASELINE_CONTROL row, which is a read-only mirror, still `output_eligible=0`). |
+    | **notes** | Anti-leakage contract codified in `artifacts/phase_checkpoints/V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md` and enforced in code: strength tensor anchor strict D-1; MN selection D-1 only; MT D-1 + MN(D); MB D-1 + MN(D) + MT(D); never target-region same-day actual for selection. |
+
+    ---
+
+    ### FU-113 — V52 duplicate FU-073 tracker ID cleanup
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-113 |
+    | **first_observed_in** | V20.3.37.52 (2026-05-03 full-chain reconciliation) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | Renumber the older Compact `/user-view` duplicate `FU-073` block to a new unique ID in a dedicated docs-only cleanup pass, preserving cross-links/history. |
+    | **owner_lock** | None (docs only) |
+    | **last_evidence** | V52 report-chain audit found duplicate `FU-073`: cross-region leakage initiative and an older Compact `/user-view` tracker item. This can confuse active-roadmap enforcement. |
+    | **regression_check** | Grep all `FU-073` references after renumber; cross-region leakage must remain `FU-073`. |
+    | **notes** | Not fixed in V52 to avoid unrelated tracker churn during audit pass. |
+
+    ---
+
+    ### FU-112 — V52 `/du-doan-test` MN/MT expansion cutoff spec
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-112 |
+    | **first_observed_in** | V20.3.37.52 (2026-05-03 full-chain reconciliation) |
+    | **status** | DESIGN_ONLY |
+    | **next_action** | Cutoff spec written and MN/MT readiness UI/API surfaced in V52.4. Next: implement actual MN/MT test runners only after owner accepts design-only cutoff contract. |
+    | **owner_lock** | None for design; YES for scheduler auto-wire |
+    | **last_evidence** | V52.4: `/api/du-doan-test/mn` and `/mt` return `MN_MT_TEST_LANE_DESIGN_ONLY`, `has_v52=true`, `test_bundle=false`, `cutoff=DESIGN_ONLY`; UI has MN/MT/MB tabs. |
+    | **regression_check** | No `final_bundles`/production `predictions` writes; every row must carry `official_output=false`, `output_impact=false`, `test_only=1`. |
+    | **notes** | Design/readiness phase done; actual MN/MT output engines remain owner-gated/test-lane-only. |
+
+    ---
+
+    ### FU-111 — V52 measurement-only MT drop + loz/cost surfaces
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-111 |
+    | **first_observed_in** | V20.3.37.52 (2026-05-03 full-chain reconciliation) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | V52.3 surfaced the 60d backfill in `/du-doan-test`. Next safe step: improve UI filters (region/window/model family) or design MN/MT cutoff spec; official changes remain locked. |
+    | **owner_lock** | None for measurement; YES for official scoring/pruning |
+    | **last_evidence** | V52.3 API/UI smoke: `/api/du-doan-test/mb` admin payload has `v52_measurements`; `mt_drop_60=4` stages, `loz_60=3` regions, `latency_60=1` missing bucket. Official hashes unchanged except scheduler restart logs. |
+    | **regression_check** | Source hash guard for `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`; output flags false/zero. |
+    | **notes** | Rolling accumulation + basic UI surfacing DONE. Keep open for richer filters and latency instrumentation fix. |
+
+    ---
+
+    ### FU-105 — Daily runner audit log + source-hash guard (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-105 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | DONE |
+    | **next_action** | DONE in V20.3.37.50. Keep using V50 runner audit log + source-hash guard before any scheduler auto-wire proposal. |
+    | **owner_lock** | None (test-table writes only, không đụng official) |
+    | **last_evidence** | V50 runner wrote source-hash before/after into `du_doan_test_audit_log`; VPS official hashes unchanged for `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`. Evidence: `artifacts/_du_doan_test_v50_vps_pre_hash_20260503.txt`, `artifacts/_du_doan_test_v50_post_hash_20260503.txt`, V50 report. |
+    | **regression_check** | Chỉ ghi `du_doan_test_audit_log` |
+    | **notes** | V50 closes the manual-run audit-log/source-hash gap; scheduler auto-wire still owner-locked under FU-097. |
+
+    ---
+
+    ### FU-110 — V51 MT model-hit dropped before official loz/output (2026-05-03)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-110 |
+    | **first_observed_in** | V20.3.37.51 (2026-05-03 post-live) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | Build measurement-only MT model-hit-to-output-drop matrix over 7/14/30 days: candidate universe, rank, score, family split, run_source, loz line selection, and dropped actual tails. |
+    | **owner_lock** | None for measurement/test/UI; YES for official scoring changes |
+    | **last_evidence** | 2026-05-03 MT official BT/loz `29/29/03` all LOSE. Actual hit `08` had AI/shadow model support and top10 rank 10; `18` had no-token support and top10 rank 3; both dropped below official loz lines. Evidence: `artifacts/_v51_official_output_forensic_20260503.json`, V51 report. |
+    | **regression_check** | Measurement-only; no official output mutation |
+    | **notes** | One-day proof only; do not change official weights yet. |
+
+    ---
+
+    ### FU-109 — V51 loz1/loz2 selector measurement surface
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-109 |
+    | **first_observed_in** | V20.3.37.51 (2026-05-03 post-live) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | Create measurement-only loz selector shadow design/table to compare official loz1/loz2 vs model-family/run_source candidates by region/weekday/station. |
+    | **owner_lock** | None for measurement/test/UI; YES for official loz rules |
+    | **last_evidence** | V51 loz audit classifies `LOZ_SIGNAL_MIXED`; MT loz1/loz2 failed on 2026-05-03 and rolling rates vary by region/window. |
+    | **regression_check** | `output_eligible=0`, `output_impact=false` |
+    | **notes** | No fixed loz rule until rolling conditionality is proven. |
+
+    ---
+
+    ### FU-108 — V51 model latency/cost instrumentation blocks pruning
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-108 |
+    | **first_observed_in** | V20.3.37.51 (2026-05-03 post-live) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | Add measurement/test-only per-model duration/token/cost capture and backfill where trace permits; surface `NO_PER_MODEL_DURATION` clearly. |
+    | **owner_lock** | None for measurement; YES for production pruning |
+    | **last_evidence** | V51 parsed 852 trace JSON lines and tensor 3216 rows; latency/cost fields remain unavailable, `NO_PER_MODEL_DURATION` persists. |
+    | **regression_check** | Measurement-only; no production model roster change |
+    | **notes** | Pruning remains forbidden until latency/cost + unique-signal risk are measured. |
+
+    ---
+
+    ### FU-104 — Realtime vs Diagnostic mode separation in test runner (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-104 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | DONE |
+    | **next_action** | DONE in V20.3.37.50. Runner now supports `REALTIME_AVAILABLE_ONLY` and `POST_CLOSEOUT_DIAGNOSTIC_FULL_25`; UI/API surface `mode`. |
+    | **owner_lock** | None |
+    | **last_evidence** | VPS run used `POST_CLOSEOUT_DIAGNOSTIC_FULL_25` for 2026-05-03; dry-run verified `REALTIME_AVAILABLE_ONLY`. API returns `mode=POST_CLOSEOUT_DIAGNOSTIC_FULL_25`. |
+    | **regression_check** | None — chỉ thêm flag |
+    | **notes** | Mode split exists, but natural realtime proof still missing because scheduler auto-wire is not enabled. |
+
+    ---
+
+    ### FU-103 — Latency / cost / value-score instrumentation per model in test layer (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-103 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | `du_doan_test_candidates.latency_sec` và `cost_estimate` đang luôn NULL. `du_doan_test_model_contribution.latency_sec` và `value_score` cũng NULL. Cần đọc `prediction_trace.jsonl` để pull per-model duration cho từng MB prediction và populate. |
+    | **owner_lock** | None (chỉ test/contribution layer) |
+    | **last_evidence** | sec_12 schema gap audit: 7 columns NULL throughout |
+    | **regression_check** | Chỉ ghi test tables |
+    | **notes** | Block model right-sizing decision (tensor có nhưng "NO_PER_MODEL_DURATION" cho phần lớn model) |
+
+    ---
+
+    ### FU-102 — AI test prompt execution (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-102 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | Phase AI-1 (chờ owner OK): tạo `du_doan_test_ai_predictions` schema (admin_only, official_output=false); clone production prompt → `web/backend/prompts/du_doan_test_mb_prompt_v1.txt`; CLI runner `--mode test_ai_prompt` chạy MB-only sau MT closeout, gọi 1-2 AI model, ghi `du_doan_test_candidates.is_test_prompt=1`. |
+    | **owner_lock** | YES — chờ owner OK trước khi tạo prompt clone hoặc gọi AI thật cho test |
+    | **last_evidence** | V50 created `du_doan_test_ai_predictions` schema but rows remain 0; no AI test prompt was called. Status remains designed-not-executing / owner locked. Evidence: V50 report + daily evidence pack. |
+    | **regression_check** | Phải đảm bảo test prompt không pollute production prompt cache; không trigger production AI batch |
+    | **notes** | Owner đã yêu cầu "AI test prompt" trong roadmap MB recovery — đây là gap chính |
+
+    ---
+
+    ### FU-101 — Method scoreboard table for `du_doan_test_*` (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-101 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | DONE |
+    | **next_action** | DONE in V20.3.37.50. `du_doan_test_method_scoreboard` is live and surfaced in API/UI. |
+    | **owner_lock** | None |
+    | **last_evidence** | VPS V50 evaluator wrote 21 method-scoreboard rows (7 experiments × 7/14/30 windows), and `/api/du-doan-test/mb` returns `method_contribution`. |
+    | **regression_check** | Chỉ test tables |
+    | **notes** | UI now shows accumulated rows, but statistical judgment still needs 7-14 closeouts. |
+
+    ---
+
+    ### FU-100 — Direct raw-25 candidate ingestion in test engine (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-100 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | PARTIAL |
+    | **next_action** | Test engine hiện đọc `mb_experimental_preview_shadow.candidate_ranked_json` (đã derived từ final_bundles voter set 14 model). Cần option đọc trực tiếp `predictions` table cho MB target_date, aggregate raw 25 model, build candidate set độc lập của test (không phải subset của final_bundles voter). |
+    | **owner_lock** | None (chỉ test engine) |
+    | **last_evidence** | V49 reconfirmed: 25 production MB prediction models on 2026-05-02, but only 14 distinct models appear in `du_doan_test_candidates` / contribution. Missing: deepseek-v4-flash, deepseek-v4-pro, gemini-2.5-flash, glm-5.1, gpt-5.5, gpt-oss-120b, grok-4.20-multi-agent, kimi-k2.5, qwen3-coder, qwen3-max-thinking, qwen3.6-plus. |
+    | **regression_check** | Phải verify không tạo path mới đọc/ghi `final_bundles` |
+    | **notes** | Block "true 25-model test" claim cho đến khi xong |
+
+    ---
+
+    ### FU-099 — 7-experiment independence bottleneck (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-099 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | NOT_YET_PROVEN |
+    | **next_action** | 5/7 method là `SHARED_SOURCE_VARIANT` trên cùng candidate set. Để có "method độc lập" thật phải: (1) tier-aware → tính source/prize tier thật từ `lottery_results` per-prize; (2) no-token herd reduction → re-aggregate raw NO_TOKEN candidates với herd metric riêng; (3) specialist roster → bỏ filter cứng 35% rate, dùng region-conditional historical strength. UI cần label rõ "transform variant" vs "independent pipeline". |
+    | **owner_lock** | None |
+    | **last_evidence** | V50 created `du_doan_test_leakage_audit` and `du_doan_test_conversion_trace`; 2026-05-03 has 7 leakage rows and 7 conversion rows. Shared-pool methods are explicitly labeled, but raw independent pipelines are not built yet. |
+    | **regression_check** | Chỉ test layer |
+    | **notes** | V50 prevents false-consensus overclaim in UI/API; real independence remains future work. |
+
+    ---
+
+    ### FU-098 — Tier-aware misnamed (no real tier computation) (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-098 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | PARTIAL |
+    | **next_action** | Hoặc rename `MB_TIER_AWARE_BUNDLE_SHADOW_V1` → `MB_AI_CHAIN_VOTE_BOOST_V1` (chính xác hơn), hoặc implement real tier (compute G1/G2/.../G7/GDB tier weight per candidate từ `source_predictions_json.dominant_rule_group` hoặc từ `predictions.source_prize_tier_json` nếu có). |
+    | **owner_lock** | None |
+    | **last_evidence** | V50 registry labels `MB_TIER_AWARE_BUNDLE_SHADOW_V1` as `PLACEHOLDER_ONLY`; conversion trace records missing tier fields. Real tier computation still not implemented. |
+    | **regression_check** | Chỉ test layer |
+    | **notes** | Misnaming gây nhầm lẫn cho owner và future agent |
+
+    ---
+
+    ### FU-097 — Live-parallel auto-wire (only after 3-5 manual clean closeouts) (V48.2)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-097 |
+    | **first_observed_in** | V20.3.37.48.2 (2026-05-03) |
+    | **status** | OWNER_LOCK |
+    | **next_action** | Sau khi tích lũy ≥3 manual run sạch (≥3 đêm closeout không lỗi) + bổ sung audit log + source-hash guard + mode separation, em soạn proposal scheduler auto-wire: hook sau MB final_bundle generation và sau MB scrape, marker `[DU-DOAN-TEST-MB-REALTIME]`/`[DU-DOAN-TEST-MB-EVAL]`, idempotent. Chờ owner OK trước khi sửa `scheduler.py`. |
+    | **owner_lock** | YES |
+    | **last_evidence** | V50 upgraded the manual lane and wrote 2026-05-03 VPS rows + scoreboards, but `scheduler.py` remains unwired. Current label stays `MANUAL_STAGE_0_CONFIRMED`; auto-wire still requires owner approval + 3-5 clean manual closeouts. Evidence: `artifacts/phase_checkpoints/DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md`. |
+    | **regression_check** | Phải đảm bảo không trigger trước khi MB final_bundle có; phải skip nếu test rows đã tồn tại |
+    | **notes** | Reconciles với CP-1.4 active roadmap (`DEFERRED_TO_NATURAL_CLOSEOUT_AUTO_WIRE_STAGE_2`) |
+
+    ---
+
+    ### FU-096 — `/du-doan-test` UI side-by-side full-axis comparison (V48 → V48.1)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-096 |
+    | **first_observed_in** | V20.3.37.48 (2026-05-03 01:48), refined V20.3.37.48.1 (2026-05-03 02:01) |
+    | **owner_directive** | "UI cần giống output /du-doan … BT, chính phụ, xiên 2, xiên 3, 3 càng đầy đủ và clone luôn output /du-doan với màu biểu diễn khác để dễ dàng so sánh." Refinement: "5 card giống nhau sao bên dài bên ngắn em. Rồi 3 càng thì chưa đúng nha em, 3 càng phải theo BT mà em chưa chuẩn ah em. Output UI /du-doan-test chạy độc lập riêng biệt hoàn toàn với UI /du-doan mà đúng không em" |
+    | **status** | DONE |
+    | **next_action** | Watch first live MB cycle 2026-05-03 with the new layout; if owner approves, evaluate whether `lo3_method=frequency_co_occurrence_with_test_bt` should also be measured into `du_doan_test_bundles` for backtesting. |
+    | **owner_lock** | None at UI layer; any output promotion (test → production) still owner-locked. |
+    | **last_evidence** | V48: card structure + axes deployed. V48.1: row-aligned grid + independent lo3. Smoke `artifacts/_du_doan_test_v48_direct_smoke.py` confirms 11/11 markers PASS (`compare_grid`, `renderAxisCard`, `compare_cell_official/test`, `NO_lo3_clone_text`, `NO_compare_shell_class`); test lo3=991 WIN (independent of official 243) when test BT=91 — algorithm: `_generate_lo3_frequency(test_bt, "MB", date)`. |
+    | **regression_check** | `/api/final-bundle?region=MB` unchanged across V48 and V48.1. lo3 helper is read-only on `lottery_results`. Source-table hashes preserved. |
+    | **notes** | V48.1 fixed two real defects: (1) cards now align per axis row (CSS grid `align-items: stretch`), (2) lo3 test no longer clones official — calls same frequency-co-occurrence helper as `/du-doan` but anchored on test BT, so `/du-doan-test` is now fully independent in all 5 axes (BT/lo2/lo3/xien2/xien3). Test challenger axes: BT direct from challenger algorithm; lo2 = candidate_lo2_json from preview; xien2/xien3 = top 2/3 deduped tails from `candidate_ranked_json` (BT first); lo3 = `_generate_lo3_frequency(test_bt, "MB", date)`. |
+    | **supersedes** | (extends FU-090, FU-091) |
+
+    ---
+
+    ### FU-095 ? Shadow usefulness semantic scorecard (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-095 |
+    | **title** | Score each shadow/multi-lane method by semantic usefulness, not row count |
+    | **current_truth** | V44 created `artifacts/_shadow_multi_lane_control_matrix_20260502.json`. P0 is clean but usefulness needs daily scoring. |
+    | **evidence** | V44 global audit, shadow control matrix |
+    | **impact** | Prevents row-count-only pass-washing. |
+    | **status** | OPEN_NOW_MEASUREMENT_ONLY |
+    | **next_action** | Add daily usefulness score per method: helped, hurt, stale, latency/cost, unique signal. |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-094 ? Rule / prompt conversion chain measurement (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-094 |
+    | **title** | Measure source-prize/rule/prompt conversion from seen ? injected ? picked ? ranked ? bundled ? hit |
+    | **current_truth** | V44 created `artifacts/_rule_prompt_conversion_matrix_20260502.json`; trace has enough fields but no canonical daily table. |
+    | **evidence** | prediction_trace fields, V44 report section 18 |
+    | **impact** | Finds prompt/rule signals lost before bundle. |
+    | **status** | OPEN_NOW_MEASUREMENT_ONLY |
+    | **next_action** | Build daily conversion materializer before prompt production changes. |
+    | **owner_decision_needed** | NO for measurement; YES for prompt changes |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-093 ? Prior-region signal safe matrix (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-093 |
+    | **title** | Separate live-available prior-region signal from herd/leak artifact |
+    | **current_truth** | V44 created `artifacts/_prior_region_signal_matrix_20260502.json`. Same-day prior regions are only live-available in order: MT may use MN(D), MB may use MN(D)+MT(D). Target-day same-region actual remains forbidden. |
+    | **evidence** | spillover table, corrected replay leakage contract |
+    | **impact** | Prevents target leakage while preserving possible prior-region signal. |
+    | **status** | DESIGN_PIVOT |
+    | **next_action** | Build live-available prior-region replay with would_save/would_break/false_promotion. |
+    | **owner_decision_needed** | NO for replay; YES for live use |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-092 ? Loz 1/2 station-weekday stability (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-092 |
+    | **title** | Extend loz 1/2 stability by station, weekday, and rolling windows |
+    | **current_truth** | Loz full-window favors loz 1 but month/region flips; V44 keeps loz as watchlist only. |
+    | **evidence** | LOZ reports, V44 report section 17 |
+    | **impact** | Prevents fixed loz rule overclaim. |
+    | **status** | WAIT_DATA |
+    | **next_action** | Add station/weekday/rolling 7-14-30 split. |
+    | **owner_decision_needed** | YES for any output rule |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-091 ? Region UI/tab separation + MB preview container (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-091 |
+    | **title** | Separate MN/MT/MB diagnostics and optionally add MB experimental preview tab |
+    | **current_truth** | V44 created `artifacts/_region_ui_separation_plan_20260502.json`. Design only; no UI deploy. |
+    | **evidence** | V44 report sections 14-15 |
+    | **impact** | Reduces confusion and isolates MB experiments from official output. |
+    | **status** | DEPLOYED_ADMIN_ONLY |
+    | **next_action** | Owner OK required before frontend implementation. |
+    | **owner_decision_needed** | YES |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-090 ? MB experimental preview page/table (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-090 |
+    | **title** | Build MB experimental preview from shadow table without touching final_bundles |
+    | **current_truth** | V44 confirms feasibility: route `/experimental/mb` or `/du-doan-mb-shadow`, reads `mb_experimental_preview_shadow`, clearly NOT PRODUCTION. |
+    | **evidence** | `artifacts/_mb_experimental_ui_feasibility_plan_20260502.json` |
+    | **impact** | Allows aggressive MB experimentation without harming MN/MT or official output. |
+    | **status** | OWNER_DECIDE |
+    | **next_action** | V20.3.37.45 UI deployed admin-only at `/du-doan-test`; next action is live monitoring and optional UX refinement. |
+    | **owner_decision_needed** | YES for UI; NO for table design |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-089 ? MB recovery 6?12 hits/month track (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-089 |
+    | **title** | Create MB-only recovery experiments to move from ~6 hits/month toward 12+ |
+    | **current_truth** | MB 30d is about 6/31 = 19.4%. V44 created `artifacts/_mb_recovery_experiment_matrix_20260502.json` with 8 shadow experiments. |
+    | **evidence** | V42 closeout, V44 MB recovery matrix |
+    | **impact** | Highest prediction-ratio impact area. |
+    | **status** | SHADOW_PREVIEW_DEPLOYED_MEASURING |
+    | **next_action** | V20.3.37.45 deployed `mb_experimental_preview_shadow` materializer + `/du-doan-test` admin preview. V20.3.37.45.2 added `MB_COMPOSITE_CHALLENGER_V2` + 30d backtest: official 5/30, composite 8/30, FW=5, FL=2, FP=2, net +3; promising but gate +4/30 not met. V20.3.37.46 added separate `du_doan_test_*` tables and MB test engine with 7 runs/147 candidates for 2026-05-02. V47 verified/corrected: lane is LIVE_PARALLEL_MANUAL, not auto; contribution layer uses 14 voter models not full 25 realtime; AI test prompt not executing; methods are preview-derived. Manual runner deployed/dry-run verified. Next: run daily after MB closeout and accumulate 7-14 live comparisons. |
+    | **owner_decision_needed** | NO for shadow; YES for official output |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-088 ? Model latency/value and roster right-sizing (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-088 |
+    | **title** | Measure per-model latency/cost/value before any pruning or right-sizing |
+    | **current_truth** | V44 found per-model duration is missing from prediction_trace; only cascade stage duration and fallback indicators exist. Production pruning is not safe yet. |
+    | **evidence** | `artifacts/_model_latency_value_matrix_20260502.json` |
+    | **impact** | Prevents cutting slow-but-useful models or keeping fast herd amplifiers blindly. |
+    | **status** | OPEN_NOW_MEASUREMENT_ONLY |
+    | **next_action** | Add per-model start/end/latency_ms/cost/key_mode to trace. |
+    | **owner_decision_needed** | NO for instrumentation; YES for roster changes |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-087 ? Global model capability tensor (V44)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-087 |
+    | **title** | Canonical model ? region ? weekday ? run_source ? strength tensor |
+    | **current_truth** | V44 created `artifacts/_model_capability_tensor_20260502.csv` with 3,216 observations and `artifacts/_model_role_matrix_20260502.json` with 198 aggregates. Model strength is highly conditional by region/weekday/run_source. |
+    | **evidence** | V44 global audit report, tensor CSV, role matrix |
+    | **impact** | Prevents global WR overclaim and supports region/weekday-specific shadow challengers. |
+    | **status** | OPEN_NOW_MEASUREMENT_ONLY |
+    | **next_action** | Turn audit into daily materializer/table. |
+    | **owner_decision_needed** | NO for measurement; YES for any model roster/output eligibility change |
+    | **last_checked** | 2026-05-02T23:50:00+07:00 |
+
+    ### FU-086 — MB structural weakness multi-axis drilldown (V35)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-086 |
+    | **title** | Track MB structural weakness across weekday + drop_stage + station + family axes; identify Friday-specific failure mode |
+    | **current_truth** | 30d MB BT_WIN: Sun 0/4, Mon 1/4 (25%), Tue 1/4 (25%), Wed 0/4, Thu 2/5 (40%), **Fri 0/5 (0%)**, Sat 2/4 (50%). MB drop_stage 30d: BUNDLE_SKEW 16/30 (53%), NO_GAP 5, CANDIDATE_SPLIT 2, UPSTREAM_MISS 1, SECONDARY_ONLY_SIGNAL 1. MB Friday-specific: CANDIDATE_SPLIT 2 + SECONDARY_ONLY_SIGNAL 1 + BUNDLE_SKEW 1 -> Friday's dominant issue is **CANDIDATE_SPLIT** (different from other weekdays). Top Friday picks (30d): 74x13, 67x9, 94x5, 24x4, 73x4 -- none of these are MB Friday actuals. MB Friday models simply do NOT find the right cluster. MB good_dropped_no_pick on 2026-05-01 was 88% (highest of any region). |
+    | **evidence** | `artifacts/_v35_controller_out.txt` section 2; `candidate_drop_stage_daily`; `final_bundles`; `lottery_results`; V34 closeout report section 8.6-8.7 |
+    | **impact** | MB structural problem is multi-axis: bundle aggregation amplifies herd, candidate generation too narrow, weekday-specific Friday black spot. Cannot be fixed by output policy alone (would require TIER 3 candidate diversification + weekday-aware logic). |
+    | **status** | MEASURED_BUT_NOT_FIXED |
+    | **next_action** | Build dedicated `mb_structural_drilldown_shadow_v1` measurement-only table after CP-1.2 OK. Schema: (date, weekday, station_set, drop_stage, family, run_source, top1_concentration, good_dropped_no_pick, friday_flag). Backfill 60d. |
+    | **pass_condition** | After 30d of drilldown, identify at least one MB-specific failure mode that has consistent diagnostic signal (e.g. "Friday + low-concentration -> always CANDIDATE_SPLIT"). |
+    | **fail_condition** | Drilldown shows MB failures are random; no axis predicts. |
+    | **owner_decision_needed** | NO for measurement-only drilldown deploy. YES for any MB-specific TIER 3 fix (weekday filter, station-aware bundle, Friday rescue). |
+    | **last_checked** | 2026-05-02T23:10:00+07:00 |
+    | **notes** | Cross-link FU-073, FU-076. Friday black spot is most acute single finding. |
+
+    ### FU-085 — Single-vote rescue gate replay spec (TIER 3 owner-lock)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-085 |
+    | **title** | Design single-vote rescue gate replay; TIER 3 owner-lock until replay shows positive lift |
+    | **current_truth** | UPDATED V20.3.37.38: Option A was STOPPED before code change. V37 replay evidence for single-vote rescue was found to be leaky: it used target-region same-day `lottery_results` for source-prize support and selected rescue only when it already knew the candidate hit. Corrected non-leaky replay uses only live-available support (D-1 all regions + same-day prior regions only) and deterministic highest-strength candidate selection. Corrected clean-day result: MN +8.3 pp, MT -16.7 pp, MB -16.7 pp, ALL -8.3 pp. All-day result: MN +3.3 pp, MT -30.0 pp, MB 0.0 pp, ALL -8.9 pp. Therefore the original positive V37 finding is superseded; single-vote rescue is NOT safe for implementation as proposed. |
+    | **evidence** | Corrected replay: `artifacts/_corrected_single_vote_rescue_replay.py`, `artifacts/_corrected_single_vote_rescue_replay.txt`, closeout `artifacts/phase_checkpoints/OPTION_A_STOP_LEAKAGE_CORRECTION_20260502.md`. Historical/leaky evidence (superseded): `artifacts/_v37_evidence_pack.txt`, `single_vote_rescue_replay_shadow`. |
+    | **impact** | Prevents unsafe production output change based on leaky replay. Reclassifies single-vote rescue from owner-unlock candidate to research-only until corrected replay proves positive. |
+    | **status** | REPLAY_CORRECTION_FAILED_ACCUMULATING_CORRECTED_DATA |
+    | **next_action** | (V20.3.37.41 update) Corrected non-leaky framework `corrected_rescue_replay_shadow` deployed and accumulating. Continue WAIT_DATA until ≥14 VALID_LIVE_DAY (currently 12). Consider per-region selective unlock proposal ONLY if MN-only thin positive becomes statistically meaningful AND MT/MB destructive variants stay strictly excluded. Do NOT propose universal rescue. |
+    | **pass_condition** | Future corrected replay shows net +5 pp clean-day primary, flips_to_win > flips_to_lose with margin, no region-destructive slice, false_promotion < 3%, ≥14 VALID days, no leakage, not driven by 1 day, not driven by 1 model. |
+    | **fail_condition** | Corrected replay remains negative or only helps MN while damaging MT/MB. |
+    | **owner_decision_needed** | NO for stopping Option A. YES for any new corrected rescue replay design or live implementation. |
+    | **last_checked** | 2026-05-02T23:10:00+07:00 |
+    | **notes** | Cross-link CHANGELOG V20.3.37.38 and `OPTION_A_STOP_LEAKAGE_CORRECTION_20260502.md`. |
+
+    ### FU-084 — Strength gate calibration TIER 3 review
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-084 |
+    | **title** | Strength gate at 5.0 cuts productive 4-5 bin (38.5% main_hit, near-best); region-conditional gate should be evaluated TIER 3 |
+    | **current_truth** | V35 audit refined strength bin per family x region: AI MN 3-4 = **57.1% main_hit** (highest in entire grid); AI MN 4-5 = 45.8%; NO_TOKEN MN 4-5 = 50.7%; NO_TOKEN MT 4-5 = **54.9%** (also high). Yet current gate threshold is uniformly 5.0 across region/family. AI MB at any strength bin is 16-25% (MB cannot be saved by strength alone). Aggregate strength bin: <3=30.9%, 3-4=35.6%, **4-5=38.5%**, 5-6=33.2%, 6-7=32.0%, 7-8=38.1%, >=8=40.6%. The 5-6 and 6-7 bins are LOWER hit rate than 4-5. **The gate at 5.0 is statistically counterproductive** for AI x MN and NO_TOKEN x MN, MT contexts. |
+    | **evidence** | `artifacts/_v35_controller_out.txt` section 3; V34 closeout report section 8 (Strength bin <4=34.2%, 4-5=38.5% highest, then 5-6=33.2% drop); claude-opus-4 91 MT strength=4.2 SKIP case |
+    | **impact** | Recalibrating gate to region-conditional (lower threshold for MN; keep for MT/MB; raise for AI MB) could rescue productive signal currently lost. But this is scoring-sensitive code change in `gpt_analyzer.py` and per-model `verdict_reason` logic; HARD LOCK requires owner unlock. |
+    | **status** | TIER_3_OWNER_LOCK |
+    | **next_action** | (a) Add `T_STRENGTH_REGION_GATE_V1` to CP-2.2 refined replay; (b) replay logic: lower SKIP threshold for AI x MN to 3.5; lower for NO_TOKEN x MT to 4.0; keep 5.0 for MB; (c) replay 14d clean-day primary; (d) report region-specific would_save / would_break / false_promotion. Owner OK required to launch replay. |
+    | **pass_condition** | Replay shows +5 pp BT_WIN net lift on rescue cases AND no spillover regression to non-target regions AND false_promotion_rate < 3%. |
+    | **fail_condition** | Replay shows lift is from one lucky day; or rescue causes downstream herd collapse in other regions. |
+    | **owner_decision_needed** | YES to launch refined replay; YES (separate) to change live gate. |
+    | **last_checked** | 2026-05-02T00:30:00+07:00 |
+    | **notes** | Cross-link FU-073, FU-081, FU-085. Together with FU-085 these form the TIER 3 candidate set after CP-2.2 evidence. |
+
+    ### FU-083 — Degraded-day hygiene 60d tagging + replay filter
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-083 |
+    | **title** | Tag 60d window with VALID_LIVE_DAY / DEGRADED_LIVE_DAY / INCOMPLETE / EXCLUDE_PRIMARY; refined CP-2.2 replay must use clean-day primary set |
+    | **current_truth** | 60d window 2026-03-04..2026-05-01 distribution: VALID_LIVE_DAY 12 (20%), DEGRADED_LIVE_DAY 18 (30%), INCOMPLETE 21 (35%), EXCLUDE_PRIMARY 9 (15%). Only 20% of days are fully valid (>=22 predictions per region). V33 CP-2.1 replay 14d window 2026-04-18..2026-05-01 included 5 DEGRADED days (2026-04-12..04-18 mostly DEGRADED) + 9 VALID days. Honest CP-2.2 must filter by tag and report primary-vs-diagnostic split. |
+    | **evidence** | `artifacts/_v35_controller_out.txt` section 5 with full 60d tag table; criteria: VALID >= 22 min predictions per region, DEGRADED 15-21, INCOMPLETE 10-14, EXCLUDE_PRIMARY <10 |
+    | **impact** | Replay results on degraded data are unreliable; refined CP-2.2 must explicitly tag and split. |
+    | **status** | DO_NOW_DOCS_ONLY (criteria documented; runtime filter requires CP-2.2 design OK) |
+    | **next_action** | (a) Document in V35 report and active roadmap; (b) include `day_tag` column in `tier2_replay_shadow` schema for next refined replay; (c) when CP-2.2 launches, materialize tag per date once + use as filter in policy evaluation. |
+    | **pass_condition** | All future replay summaries report clean-day primary metric AND all-day diagnostic metric separately. |
+    | **fail_condition** | Future replay reports a single number without splitting by day_tag. |
+    | **owner_decision_needed** | NO for the docs/criteria; YES for runtime filter integration in CP-2.2. |
+    | **last_checked** | 2026-05-02T00:30:00+07:00 |
+    | **notes** | Cross-link FU-081 (CP-2.2). The 4 policies replay V33 was probably distorted by mixed degraded/clean days; refined replay must isolate. |
+
+    <!-- V20.3.37.41 status update: Code deployed V36 Phase A 2026-05-02 12:24 at scheduler.py:521+7066. [PP1-WATCH-POST-MDE] marker NEVER observed because V36 deploy happened AFTER yesterday's MDE 13:20. First natural fire window today ~13:20 VN. WAIT_NATURAL_FIRE. Companion [P0-RULE-PHASE-POST-MDE] hook fired successfully on 2026-05-01 13:20 confirming the post-MDE pattern itself works. Last_checked: 2026-05-02T12:34. -->
+
+    ### FU-082 — pp1_live_watch_daily timing race (post-result-scrape rerun needed)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-082 |
+    | **title** | `pp1_live_watch_daily` materializer fires at closeout time but result-scrape may not be complete; needs post-result-scrape idempotent rerun hook |
+    | **current_truth** | V20.3.37.42 update: PP1 post-MDE hook naturally fired on 2026-05-02 13:20 with inserted=1/events=1 for MN; regions_no_data=[MT, MB] because only MN data was available by that post-MDE point. Historical context: Scheduler logs over last 7d show: when materializer runs at MN/MT/MB closeout time and `actual_known=False`, it inserts 0 events with `final_bt=None`. When `actual_known=True`, it inserts 1-3 events. 2026-05-01 ALL 3 regions had `actual_known=None` (0 events). 2026-04-30 MB also 0; MN/MT had events. 2026-04-29 all 3 regions had events. 2026-04-28 MN had events; MT/MB did not. Pattern: pp1 fires too early relative to scrape completion. Total all-time pp1_live_watch_daily rows: 15 (very sparse). |
+    | **evidence** | `artifacts/_v35_controller_out.txt` section 7 with 20-marker scheduler trail; `pp1_live_watch_daily` table 15 rows total; pattern of `actual_known=None` correlates with 0-row insertions |
+    | **impact** | PP-1 dampener event diagnostics is largely missing. Cannot evaluate PP-1 effectiveness retrospectively. |
+    | **status** | NATURAL_FIRE_OBSERVED_FIRED_ONE_EVENT_VALID |
+    | **next_action** | Implement post-result-scrape rerun hook similar to FU-065 post-MDE pattern. Hook fires once after `lottery_results` for the date+region is populated. Idempotent (skip if rows already exist). Measurement-only. Owner OK required for scheduler hook deploy. |
+    | **pass_condition** | After hook deploy: pp1_live_watch_daily has rows for at least 80% of (date, region) pairs in next 14d. |
+    | **fail_condition** | Hook fires but still 0 events; would mean PP-1 dampener simply isn't triggering live. |
+    | **owner_decision_needed** | YES for scheduler hook deploy. |
+    | **last_checked** | 2026-05-02T00:30:00+07:00 |
+    | **notes** | Same fix pattern as FU-065 post-MDE hook for rule_phase_evidence_v1. Cross-link FU-073, FU-076. |
+
+    ### FU-081 — TIER 2 replay 14d HONEST NEGATIVE: drop all 4 policies as designed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-081 |
+    | **title** | CP-2.1 TIER 2 replay over 14 days shows ALL 4 policies (R_REGION_DEDUP_PENALTY, U_UNIVERSE_FLOOR, L_LANE_REWEIGHT_CONFLICT, M_MIRROR_DECAY_MN) underperform baseline; recommend DROP as designed and refine before next replay |
+    | **current_truth** | `tier2_replay_shadow` table (NEW V20.3.37.33) populated with 168 rows = 4 policies x 14 days x 3 regions. Baseline BT_WIN over 14 days: 40.5%. Policy BT_WIN: L_LANE_REWEIGHT_CONFLICT 31.0% (-9.5 pp), R_REGION_DEDUP_PENALTY 28.6% (-11.9 pp), M_MIRROR_DECAY_MN 26.2% (-14.3 pp), U_UNIVERSE_FLOOR 26.2% (-14.3 pp). flips_to_lose consistently exceeds flips_to_win across all 4 policies (8-9 vs 3-4). MT region most reactive (changed 13/14 days for all 4 policies but only 1 fw vs 4 fl). |
+    | **evidence** | `web/backend/_materialize_tier2_replay_shadow.py`; `artifacts/_tier2_replay_14d.json` backfill log; `artifacts/_tier2_replay_summary.txt` aggregate stats; new table `tier2_replay_shadow` rowcount 168; CHANGELOG V20.3.37.33; consolidated report section 8 |
+    | **impact** | Replay-first discipline saved deploying 4 bad policies. Confirms that simple policy multipliers (1.5x AI boost, 0.7x penalty, source-prize floor at 0.5 weight, MN mirror decay) are too aggressive on the current bundle aggregation. Output policies need finer tuning (smaller multipliers; conditional triggers) before next replay window. |
+    | **status** | DROP_AS_DESIGNED_REFINE_BEFORE_NEXT |
+    | **next_action** | Refine policy logic with smaller multipliers (e.g. AI boost 1.1x not 1.5x; penalty 0.95 not 0.85; floor only when distinct < 15 not < 25) and re-replay over fresh 14d window. Owner OK required before any new policy replay launches. Original 4 policy implementations remain in `_materialize_tier2_replay_shadow.py` as reference. |
+    | **pass_condition** | After refinement, replay shows at least one policy with positive net BT_WIN lift > +5 pp AND flips_to_win > flips_to_lose AND false_promotion_rate < 3% over 14d window. |
+    | **fail_condition** | All refined policies still negative over 14d -> structural fix needed at bundle aggregation layer (TIER 3 owner-unlock territory). |
+    | **owner_decision_needed** | YES for refined-policy replay launch; NO for keeping rejected policies as shadow reference. |
+    | **last_checked** | 2026-05-01T22:55:00+07:00 |
+    | **notes** | Cross-link FU-073 parent. This FU is the demonstrated value of replay-first discipline. |
+
+    ### FU-080 — 2026-05-01 post-live TOTAL-FORCE closeout (consolidated)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-080 |
+    | **title** | Closeout artifact + tracker reconciliation for the 2026-05-01 TOTAL-FORCE pass |
+    | **current_truth** | The 2026-05-01 TOTAL-FORCE closeout is consolidated in `artifacts/phase_checkpoints/POST_LIVE_TOTAL_FORCE_CROSS_REGION_SPILLOVER_CLOSEOUT_20260501.md` (15 sections). 3/3 regions LOSE today (MN BT=51 LOSE BUNDLE_SKEW; MT BT=16 LOSE BUNDLE_SKEW; MB BT=94 LOSE CANDIDATE_SPLIT). Owner examples 17/46/91/23 verified per-prize-key/station. Cross-region spillover at per-tail level over 60 days (9428 rows) is at-or-below random baseline; bundle-level elevation comes from narrow universe (14-20%) + extreme vote concentration (MB 14/25 herd 74). cross_region_spillover_shadow_v1 deployed locally with backfill 60d. P0 verifier `NATURAL_CLOSEOUT_PROVEN` for 2026-05-01. Source-table hashes UNCHANGED before/after action. |
+    | **evidence** | `artifacts/phase_checkpoints/POST_LIVE_TOTAL_FORCE_CROSS_REGION_SPILLOVER_CLOSEOUT_20260501.md`; `artifacts/_spillover_data_out.txt`; `artifacts/_candidate_lifecycle_out.txt`; `artifacts/_p0_verifier_20260501.json`; `artifacts/_pre_action_hash_out.txt`+`_post_action_hash.txt`; `artifacts/live_sync/20260501_201308/manifest.json`; CHANGELOG V20.3.37.32; SSOT V20.3.37.32 row |
+    | **impact** | Provides the single owner-readable post-live closeout for 2026-05-01 with Vietnamese 15-section report including current VPS truth, output truth, spillover findings, random baseline comparison, no-token/AI/rule/prompt audits, candidate lifecycle, bundle-skew root cause, P0/method portfolio status, safe fixes executed, wait-data/owner-decide/do-not-touch lists, and final verdict + next commands. |
+    | **status** | DONE |
+    | **next_action** | None for this FU. Owner pending decisions tracked in FU-076 (spillover VPS push), CP-1.1/CP-2.1 in active roadmap. |
+    | **pass_condition** | The closeout artifact exists, references valid live truth, source-table hashes UNCHANGED, no `/du-doan` or scoring change. |
+    | **fail_condition** | Closeout claims output-ready or owner-approved without explicit owner decision. |
+    | **owner_decision_needed** | NO for the closeout itself; YES for VPS push of spillover materializer (see FU-076). |
+    | **last_checked** | 2026-05-01T20:30:00+07:00 |
+    | **notes** | This is the consolidated post-live deliverable for the 2026-05-01 cycle. Reconciles V20.3.37.30 bundle-level +18 pp finding with V20.3.37.32 per-tail -3.3 pp finding by explaining they measure different statistics. |
+
+    ### FU-079 — Tier 1-4 real-code definition + usage audit
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-079 |
+    | **title** | Document where production tiers are defined in code and how they flow into prompt / no-token / bundle |
+    | **current_truth** | Production tiers are 4 labels in `web/backend/rule_engine.py` `BOOST_TABLE`: `READY_STRONG` (Tier 1), `READY_WITH_CAUTION` (Tier 2), `LIMITED_WEIGHT` (Tier 3), `REFERENCE_ONLY` (Tier 4). Tiers are computed from `cumulative_rank_score`, `composite_score`, `score`, `hr_12w`, `hr_16w`. Boost magnitudes per (tier, prediction_use): in `soft` mode 0.01-0.15; in `active` mode 0.03-0.35. `shadow` mode applies zero boost. Convergence boost: shadow=0, soft=0.10, active=0.20. Tier flows into prompt context via `analysis.top_source_prizes_by_region` and into no-token candidate scoring via `extract_rule_candidates_v2()`. Bundle layer is tier-blind (votes count, tier is evidence not weight). |
+    | **evidence** | `web/backend/rule_engine.py` lines 49-71 (BOOST_TABLE); 73-75 (CONVERGENCE_BONUS, CONVERGENCE_MAX_TAILS); 220-282 (get_active_rules); 472-574 (extract_rule_candidates_v2 boost application) |
+    | **impact** | Clarifies that "Tier 1/2/3/4" is shorthand. Bundle layer not using tier as weight is a known measurement-only observation; changing it is owner-locked under `generate_final_bundle()` lock. |
+    | **status** | DONE |
+    | **next_action** | None unless owner wants tier-aware bundle voting (would be a TIER 3 owner-unlock item). |
+    | **pass_condition** | Documentation of real tier names and flow exists; matches code. |
+    | **fail_condition** | Future doc drift uses "Tier 1/2/3/4" without naming the real constants. |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-05-01T20:30:00+07:00 |
+    | **notes** | Tier names anchored here for future agent re-use; closeout report §8.1 cross-references this entry. |
+
+    ### FU-078 — Source-prize D/D-1 candidate survival audit
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-078 |
+    | **title** | Verify owner-strong tails 17/46/91/23 are present in source-prize chain D/D-1 and trace to bundle |
+    | **current_truth** | Source-prize chain (G1/G2/G5/G7/G8/DB) for 2026-04-30 (D-1) and 2026-05-01 (D) verified to contain owner-strong tails: 91 in MT D-1, MN D, MT D, MB D; 23 in MN D-1, MN D, MT D; 17 in MT D-1, MT D; 46 in MN D-1. Source-prize chain is clean. Chain is referenced by REASONING_RULEBOOK (RR-§10A), required by validation gate (`analysis.top_source_prizes_by_region` non-empty). Drop sites identified: 91 dropped at strength<5.0 SKIP gate; 23 dropped at 1-vote bundle gate; 17 included in MN bundle lo2 but MN itself missed; 46 included in MT bundle lo2 but MT itself missed. |
+    | **evidence** | `artifacts/_source_prize_strong_out.txt`; `artifacts/_audit_source_prize_strong.py`; `artifacts/_audit_candidate_lifecycle.py` output; closeout report §4 + §8.3 + §10 |
+    | **impact** | Documents that the data layer is healthy. The bottleneck is verdict gate + bundle vote concentration, not data ingestion. |
+    | **status** | DONE |
+    | **next_action** | If owner wants to fix at source: candidate would be TIER 3 unlock for "single-vote rescue gate" or "tier-aware bundle weight" (locked). |
+    | **pass_condition** | Source-prize chain confirmed clean; downstream drop sites identified for owner's specific examples. |
+    | **fail_condition** | Future agent claims data is missing without tracing through chain. |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-05-01T20:30:00+07:00 |
+    | **notes** | Cross-link FU-073 (cross_region_spillover_shadow_v1), FU-077 (no-token rerun cascade). |
+
+    ### FU-077 — No-token rerun cascade + spillover hot-spot
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-077 |
+    | **title** | Track no-token combo herd in rerun_post_mn / rerun_post_mt overriding AI lane + spillover MB->MN next-day |
+    | **current_truth** | On 2026-05-01, `rerun_post_mn` lane (no-token) had 5 voters herd `16` for MT, overriding AI lane that proposed correct 91/30/75 (1 vote each, 2 main hits, 0 bundle votes). MB bundle picked `94` after 14 voters herded on `74` (also wrong). 60d per-family stat shows NO_TOKEN MB->MN spillover 49.0% vs random 43.5% (+5.5 pp; small but consistent), highest of all family/pair combinations. SHADOW MB->MN 50.6%, AI_ACTIVE 38.6%. `no_token_drift_guard_v1` shadow has 15 rows for 2026-05-01 (healthy). |
+    | **evidence** | `artifacts/_spillover_data_out.txt` per-family table; `artifacts/_audit_candidate_lifecycle.py` output; closeout report §6 + §11 |
+    | **impact** | Identifies a measurement-only signal that NO_TOKEN MB->MN next-day pair has slight elevation worth tracking. Does not change runtime. |
+    | **status** | MEASURED_BUT_NOT_FIXED |
+    | **next_action** | Continue logging via `cross_region_spillover_shadow_v1` table; owner may unlock TIER 3 `lane_diverse_voting` to reduce no-token combo herd dominance after evidence pack. |
+    | **pass_condition** | Trend data continues to grow; reaches 30d sample for owner-grade evaluation. |
+    | **fail_condition** | Pattern is just noise that disappears with more data. |
+    | **owner_decision_needed** | YES eventually for any TIER 3 fix (post 2026-05-19 evidence pack). |
+    | **last_checked** | 2026-05-01T20:30:00+07:00 |
+    | **notes** | Cross-link FU-073, FU-076. |
+
+    ### FU-076 — cross_region_spillover_shadow_v1 measurement-only deploy
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-076 |
+    | **title** | Deploy `cross_region_spillover_shadow_v1` as standalone shadow-only measurement; backfill; eventually push to VPS |
+    | **current_truth** | Standalone materializer `web/backend/_materialize_cross_region_spillover_shadow.py` implemented and compile-OK. Schema for new table `cross_region_spillover_shadow` ensured via `CREATE TABLE IF NOT EXISTS`. Backfilled 60 days into LOCAL synced DB only (9428 rows from 2026-03-03..2026-05-01) with run_label `backfill_cross_region_spillover_<date>`. All rows `output_eligible=0, diagnostic_only=1, shadow_only=1, owner_approved=0`. Source-table hashes (predictions, final_bundles, lottery_results, model_daily_eval, scheduler_logs) verified UNCHANGED before/after backfill. NOT YET wired into P0 portfolio loop on VPS — separate VPS deploy item awaiting owner OK. |
+    | **evidence** | new file `web/backend/_materialize_cross_region_spillover_shadow.py`; backfill log `artifacts/_spillover_backfill_60d.json`; data audit `artifacts/_spillover_data_out.txt`; pre/post hash `artifacts/_pre_action_hash_out.txt` + `_post_action_hash.txt`; CHANGELOG V20.3.37.32; SSOT V20.3.37.32 row |
+    | **impact** | Provides the durable measurement surface for the cross-region spillover question. Local-only deploy means VPS production behavior is completely unaffected. After VPS push (separate owner OK), each natural closeout will write fresh rows. |
+    | **status** | DEPLOYED_LOCAL_ONLY |
+    | **next_action** | Owner OK to push to VPS: backup, py_compile remote, register in P0 portfolio (add to `P0_METHODS` in `_materialize_multi_lane_shadow_p0.py` OR keep standalone), wire into scheduler closeout chain, smoke test, source-hash compare on VPS pre/post. Until owner OK, table exists locally only. |
+    | **pass_condition** | After VPS push: table exists on VPS; first natural closeout writes rows; P0 verifier sees method registered; source-table hashes UNCHANGED on VPS. |
+    | **fail_condition** | VPS deploy mutates source tables; or method goes output_eligible without owner approval; or rows are interpreted as "live signal" instead of measurement. |
+    | **owner_decision_needed** | YES for VPS push. |
+    | **last_checked** | 2026-05-01T20:30:00+07:00 |
+    | **notes** | Cross-link FU-073 parent issue. Method registration pattern follows existing P0 methods (see `web/backend/_materialize_multi_lane_shadow_p0.py` line 315 P0_METHODS for reference). VPS deploy is a separate session per `.Antigravityrules.md` deploy chain. |
+
+    ### FU-073 — Cross-region spillover shadow measurement (MN->MT/MB, MT->MB)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-073 |
+    | **title** | Track whether tails that miss in an earlier region but hit a later same-day region are systematic signal or natural overlap |
+    | **current_truth** | UPDATED 2026-05-01T19:25 (V20.3.37.30): Owner identified concrete examples on 2026-05-01: MN prediction `17` missed MN but appeared in MT, and MT prediction `46` missed MT but appeared in MB. Two passes of read-only audit now exist. (a) V20.3.37.29 first pass: in the latest 30d window across `3553` predicted tail items, `935` had downstream same-day hits (`26.32%`), `502` were downstream-only (`14.13%`); by pair `MN->MT=399`, `MN->MB=256`, `MT->MB=280`. (b) V20.3.37.30 deeper pass against random baseline: bundle-level `MN->MT BT_leak=53.3%` vs random `35.3%` (+18.0 pp), `MT->MN BT_leak=57.9%` vs random `43.8%` (+14.1 pp), `MT->MB BT_leak=15.8%` (below baseline; lo2_leak 26.3% slight elevation), `MB->MN next-day lo2_leak=54.2%`. Same-model cross-region duplication 14d = `MN/MT 17.2%`, `MN/MB 17.8%`, `MT/MB 20.3%` vs random ~4% -> 4-5x baseline. AI / NO_TOKEN / SHADOW families all show 36-47% leak rate on missed picks -> NOT a single-lane bug. Root-cause hypothesis confirmed: H1 shared-context cross-region herding (primary), H2 `weighted_voting_wr` bundle aggregation amplifies herd over dispersed correct signal (secondary, drives `BUNDLE_SKEW`), H3 universe coverage too narrow at 14-20% per region per day (tertiary). All 7 output policies picked `bt=16` for MT today -> output policy layer cannot rescue when input universe is herded wrong; the upstream candidate generation is the bottleneck. |
+    | **evidence** | V20.3.37.29 first pass: `artifacts/db_audit_20260501/_post_live_cross_region_total_audit.py`; output `artifacts/db_audit_20260501/post_live_cross_region_total_audit.json`; D/D-1 source-prize audit `artifacts/db_audit_20260501/_source_prize_d_d1_cross_region_audit.py`; output `artifacts/db_audit_20260501/source_prize_d_d1_cross_region_audit.json`; report `artifacts/phase_checkpoints/SOURCE_PRIZE_D_D1_CROSS_REGION_AUDIT_20260501.md`. V20.3.37.30 deeper pass: `artifacts/_audit_q1.py`, `artifacts/_audit_cross_region_leakage.py`, `artifacts/_audit_source_prize_strong.py`, `artifacts/_audit_bundle_anti_trap.py`, `artifacts/_audit_cross_region_dup_rules.py`, `artifacts/_audit_winrate_summary.py`; live sync `artifacts/live_sync/20260501_190852/manifest.json`; consolidated owner report `artifacts/phase_checkpoints/TOTAL_FORCE_CROSS_REGION_LEAKAGE_AUDIT_20260501.md`. No DB writes or runtime changes in either pass. |
+    | **impact** | Confirmed structural root-cause of the perceived "wrong region / next-region hit" behavior. Affects all 3 model families (AI, no-token, shadow). Not currently an output signal and must not change `/du-doan` until replayed and proven. The fix path requires (TIER 1) measurement-safe diagnostic surfaces, (TIER 2) replay-only candidate policies, and only then (TIER 3) owner-unlocked region-isolation in prompt + lane-diverse bundle aggregation. |
+    | **status** | MEASURED_BUT_NOT_FIXED |
+    | **next_action** | **All work for this initiative is now scheduled in `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md` with hard deadlines and auto-action thresholds (V20.3.37.31).** Immediate items awaiting owner OK: CP-1.1 (TIER 1 deploy 5 measurement surfaces) by 2026-05-04; CP-2.1 (TIER 2 replay launch 4 policies) by 2026-05-04. After owner OK, agent self-executes CP-1.2 .. CP-2.5 over 14d. Evidence pack at CP-2.5 target 2026-05-19. Owner decides T3 unlocks at CP-3.0 by 2026-05-26. TIER 4 sample maturity check at CP-4.0 by 2026-06-15. The Cursor rule `.cursor/rules/active-roadmap-precedence.mdc` enforces that any future session reads the roadmap file and surfaces overdue checkpoints at the top of the first reply. |
+    | **pass_condition** | After at least 14 compatible closed days of TIER 1+2 measurement, evidence pack shows: (a) at least one TIER-2 policy delivers `+5 pp BT_WIN` lift over baseline AND `false_promotion < 3%` AND `flips_to_lose < flips_to_win`, OR (b) cross-region leakage trends down naturally as we close more closeouts. |
+    | **fail_condition** | TIER 1 deploy breaks any existing measurement surface, TIER 2 replay shows all policies regress on backtest, or any TIER 3 idea is deployed without explicit owner unlock and 14d replay proof. |
+    | **owner_decision_needed** | YES for TIER 1 deploy approval (this session). YES for TIER 2 replay launch (this session, low risk). YES for any TIER 3 unlock (after evidence pack 2026-05-06). |
+    | **last_checked** | 2026-05-01T19:55:00+07:00 |
+    | **notes** | This is the direct tracker item for the owner's MN->MT and MT->MB observation. V20.3.37.30 escalated from `NOT_YET_PROVEN` to `MEASURED_BUT_NOT_FIXED` because the leakage is now quantified above random baseline (18 pp / 14 pp on the MN<->MT axis). V20.3.37.31 added dedicated `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md` with 12 checkpoints, hard deadlines, and auto-action thresholds, plus Cursor rule `.cursor/rules/active-roadmap-precedence.mdc` to enforce that any future session reads the roadmap and surfaces overdue items at the top of the first reply. Recommendation unchanged: measure deeply; do not use in `/du-doan` until replay shows positive lift without false-promotion risk. |
+
+    ### FU-075 — D-2 expanded ruleset foundation HOLD / REFERENCE_ONLY / OWNER_LOCK / NOT_OUTPUT_READY
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-075 |
+    | **title** | Park D-2 expanded-ruleset active engineering: HOLD / REFERENCE_ONLY / OWNER_LOCK / NOT_OUTPUT_READY |
+    | **current_truth** | D-2 = HOLD / REFERENCE_ONLY / OWNER_LOCK / NOT_OUTPUT_READY. The bounded foundation replay (latest 14 closed days, `2026-04-17..2026-04-30`) did not pass the continuation gate: all MN/MT/MB regions hit `NOISE_RISK`, D-2 top1 declined versus D-1 (`52.38% -> 40.48%` overall; MN `78.57% -> 71.43%`; MT `42.86% -> 28.57%`; MB `35.71% -> 21.43%`), candidate pool inflated heavily (`10.29 -> 41.05`), and overall `would_save_simple=8` did not beat `would_break_simple=9`. Active D-2 engineering is stopped. No Phase B. No live shadow. No P0 registry addition. No prompt / no-token / model / output integration. No code, no deploy, no production DB write. Reopen requires explicit owner decision. |
+    | **evidence** | `artifacts/phase_checkpoints/D2_FOUNDATION_HOLD_DECISION_20260501.md`; `artifacts/d2_foundation/d2_minimum_metrics_20260501.json`; `artifacts/d2_foundation/d2_foundation_self_audit_20260501.json`; `artifacts/replay/expanded_calendar_d2_ruleset_summary.json`; `artifacts/db_audit_20260501/d2_no_leak_proof.json`; `artifacts/phase_checkpoints/D2_MINIMUM_ARTIFACT_REPLAY_REPORT_20260501.md`; `artifacts/phase_checkpoints/D2_BASIC_REGION_VERDICT_20260501.md`; `artifacts/phase_checkpoints/D2_NEXT_PHASE_RECOMMENDATION_20260501.md`; `artifacts/phase_checkpoints/D2_OVERREACH_ROLLBACK_AUDIT_20260501.md`; `artifacts/phase_checkpoints/D1_RULE_MECHANISM_FULL_AUDIT_20260501.md`; `artifacts/phase_checkpoints/D2_EXPANDED_RULESET_SHADOW_SPEC_20260501.md`; `artifacts/phase_checkpoints/D2_LOCAL_REPLAY_REGION_DECISION_PACK_20260501.md`; `artifacts/phase_checkpoints/D2_ROLLBACK_REDESIGN_OWNER_REVIEW_SPEC_20260501.md`; one-off artifact runner removed after replay; `CHANGELOG.md` V20.3.37.27 / V20.3.37.28; SSOT V20.3.37.28. |
+    | **impact** | Active D-2 implementation is stopped. No `/du-doan`, `final_bundles`, `predictions`, `lottery_results`, scoring, `BOOST_TABLE`, prompt runtime, no-token live, model roster, output eligibility, P0 registry, or scheduler production behavior change. Foundation evidence is preserved as guardrail-only artifacts. |
+    | **status** | OWNER_LOCK |
+    | **next_action** | No active D-2 implementation. No Phase B. No live shadow. No prompt/no-token/model/output integration. Revisit only if owner explicitly reopens with a new bounded hypothesis. |
+    | **pass_condition** | If owner ever reopens D-2, the new effort must inherit the D-1 stack contract, run artifact-only first, and clear `NOISE_RISK` plus a `would_save > would_break` margin in a future bounded window before any shadow/live discussion. |
+    | **fail_condition** | Any future work that adds D-2 to scheduler/P0 registry/prompt runtime/no-token live/output without a new owner decision. |
+    | **owner_decision_needed** | YES to reopen any D-2 work; otherwise no owner action required. |
+    | **last_checked** | 2026-05-01T11:13:00+07:00 |
+    | **notes** | Governance final wording: D-2 = HOLD / REFERENCE_ONLY / OWNER_LOCK / NOT_OUTPUT_READY. Region verdicts: MN `MN_REFERENCE_ONLY`, MT `MT_REFERENCE_ONLY`, MB `MB_REFERENCE_ONLY` (close to `MB_DROP_FOR_NOW` due to highest noise). Cross-refs: DEC-021, DEC-022. |
+
+    ### FU-074 — Auth lockdown for write/delete/compute endpoints exposed by viewer rollout audit
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-074 |
+    | **title** | Lock down 15 write/delete/compute API endpoints to `require_admin` after the viewer-shell rollout audit |
+    | **current_truth** | A safety audit of the viewer rollout found pre-existing auth gaps. Live probes confirmed `POST /api/rules/{id}/toggle` answered `200` without any cookie, and `POST /api/rules`, `PUT /api/rules/{id}`, `DELETE /api/rules/{id}` accepted unauthenticated requests at the route layer. Other endpoints only required login, not admin: `POST /api/predict/MN|MT|MB`, `POST /api/update/{region}`, `POST /api/sync/push`, `DELETE /api/predictions/{date}/{region}`, `POST /api/predictions/delete-batch`, `POST /api/generate-bundle`, `POST /api/backtest`, `POST /api/optimize-weights`, `POST /api/run-optimizer-now`, which let any logged-in viewer trigger writes or expensive compute. All 15 endpoints were upgraded to `require_admin` in `web/backend/main.py` and deployed; a live re-probe returned `401` on every endpoint without a session while `/user-view`, `/du-doan`, `/search`, and `/api/health` kept returning `200`. The single accidental toggle of `pattern_rules.id=1` during the probe was reverted in the same step. |
+    | **evidence** | Updated handlers in `web/backend/main.py` for `api_create_rule`, `api_update_rule`, `api_delete_rule`, `api_toggle_rule`, `push_results`, `update_results`, `predict_mn`, `predict_mt`, `predict_mb`, `delete_single_prediction`, `delete_batch_predictions`, `run_backtest`, `optimize_weights_api`, `run_optimizer_now_api`, `api_generate_bundle`. Deploy log shows `lottery.service` `active (running)` after upload. Live re-probe results: 15/15 endpoints returned `401` with no cookie. Health, viewer pages, and admin pages still served `200`. `CHANGELOG.md` V20.3.37.25 records the lockdown. |
+    | **impact** | Reduces blast radius from any viewer (or unauthenticated client for the rules endpoints) before this fix could be exploited via the new `/user-view` shell. No scoring, prediction execution, final bundle, model roster, output eligibility, scheduler, DB schema, `/du-doan`, `/search`, `/user-view`, or admin behavior change for legitimate admin sessions. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Owner uses an admin session to confirm `/api/predict/*`, `/api/update/{region}`, `/api/predictions/delete-batch`, `/api/predictions/{date}/{region}` (DELETE), `/api/generate-bundle`, and `/api/rules*` still work as expected for normal admin operation. Optional follow-up: cover read-only diagnostic endpoints (`/api/mined-rules/*`, `/api/prediction-trace`, `/api/prediction-advisory`, `/api/effectiveness`, `/api/reasoning`) with at least `get_current_user` if owner wants to gate strategy leakage. |
+    | **pass_condition** | Live probes without a session keep returning `401` for the 15 endpoints, admin sessions can still operate normally, and viewer pages plus health remain `200`. |
+    | **fail_condition** | Any of the 15 endpoints regress to allow viewer or unauthenticated writes; or admin operation breaks because of a wrong signature/dependency change. |
+    | **owner_decision_needed** | NO for the deployed lockdown; YES before extending the same `require_admin` pattern to the read-only diagnostic GETs. |
+    | **last_checked** | 2026-04-30T21:40:00+07:00 |
+    | **notes** | Lockdown kept the existing `Depends(get_current_user)` parameter in place where present and added `require_admin(...)` so authentication still surfaces the same error envelope as the rest of the codebase. The `pattern_rules.id=1` accidental toggle during the audit was reverted by toggling once more before the lockdown deployed. |
+
+    ### FU-073 — Compact `/user-view` preview for viewer users
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-073 |
+    | **title** | Build a compact user-facing view derived from `/app` with a separate local preview link |
+    | **current_truth** | A new `/user-view` route is deployed on VPS and the viewer shell is aligned around exactly three links: `/user-view` (`USER VIEW`), `/du-doan` (`Dự đoán`), and `/search` (`Tra cứu`). `/du-doan` and `/search` now render an explicit visible uppercase `USER VIEW` header button for returning to `/user-view`. `/user-view` is a compact read-only UI that keeps the `/app` structure users asked for: model/date controls, MN/MT/MB tabs, WR/backtest KPIs, current prediction, latest result tails, and filtered history. It intentionally removes admin/action controls: predict execution, update result, delete predictions, settings, monitoring, quality/admin panels, and refresh CTA. `Dashboard` remains hidden unless `/api/auth/check` returns admin. Viewer login is changed to land on `/user-view`; admin/non-viewer login lands on `/app`. The page also supports `user-view.html?mock=1` for static local layout preview when full FastAPI dependencies are unavailable on the workstation. |
+    | **evidence** | `web/frontend/user-view.html`; `web/frontend/user-view.js`; `web/backend/main.py` route handlers for `/user-view` and `/user-view.js`; first deploy uploaded only those three web files; `lottery.service` active after restart; live checks `https://xs.io.vn/user-view=200`, `/user-view.js=200`, `/api/health=200`; second pass aligns `login.html`, `user-view.html`, `user-view.js`, `search.html`, and `du-doan.html`; safety grep found no delete/update/predict/admin controls in user-view and only logout POST; JS syntax OK; `CHANGELOG.md` V20.3.37.25; `docs/CURRENT_TRUTH_SSOT.md` viewer-shell row. |
+    | **impact** | Viewer users get the requested three-link surface without admin/dev duplication. No scoring, prediction execution, final bundle, model roster, output eligibility, scheduler, DB schema, existing `/app`, or admin dashboard behavior changes. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Deploy visible uppercase `USER VIEW` return button pass and owner previews `https://xs.io.vn/user-view`, `https://xs.io.vn/du-doan`, and `https://xs.io.vn/search` as a viewer account. |
+    | **pass_condition** | Owner preview confirms viewer login lands on `/user-view`; `/du-doan` and `/search` both show an obvious `USER VIEW` button back to `/user-view`; dashboard remains admin-only; `/user-view` history defaults to the active region instead of global all-region rows; no delete/update/predict execution actions appear in viewer surfaces beyond the existing read-only lookup/filter behavior. |
+    | **fail_condition** | The preview exposes admin actions, delete history, refresh/update/predict execution actions, confuses `/du-doan` final-pick output with per-model `/app` data, or changes scoring/runtime behavior. |
+    | **owner_decision_needed** | YES before live deploy or login redirect change. |
+    | **last_checked** | 2026-04-30T20:55:00+07:00 |
+    | **notes** | This is local preview work only until owner approval. It uses existing APIs and does not introduce a new data contract. |
+
+    ### FU-072 — Native non-BT shadow_results writer for `lo2/lo3/xien2/xien3` axes (owner-gated)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-072 |
+    | **title** | Upgrade `shadow_method_scoreboard` non-BT axes from BT-derived projections to native `shadow_results` rows per output family |
+    | **current_truth** | Since V20.3.37.22, `shadow_method_scoreboard` emits five output_type axes (`BT`, `lo2`, `lo3`, `xien2`, `xien3`). However the non-BT rows are computed by projecting BT-axis aggregates: `lo2/xien2` reuse BT's `top2_rate` and `lo3/xien3` reuse BT's `top3_rate`. The `notes` field of those rows already says `diagnostic_only; projected_output_family_axis_from_bt_ranked_shadow_results`. `shadow_results` rows themselves remain BT-centric — there is no per-output-family per-method per-region per-day fact row for `lo2/lo3/xien2/xien3` yet. To compute true (non-projected) per-family hit rates for Wave-2 maturity review, a new writer or schema field would be required. This is owner-gated because it touches measurement schema/writer scope and could grow shadow row counts ~5x. |
+    | **evidence** | `web/backend/_materialize_multi_lane_shadow_p0.py` `_materialize_scoreboard()` axis loop with `axis_primary_rate` projection map and `projected_output_family_axis_from_bt_ranked_shadow_results` notes; `artifacts/db_audit_20260430/coverage_hardening_smoke.json` showing scoreboard_rows expanded 5x while `shadow_results` count stays the same; subagent audit `Audit P0 Shadow Coverage` 2026-04-30 confirming "shadow_results remain overwhelmingly BT-axis fact rows unless you execute the gap proposal". |
+    | **impact** | Today: scoreboard non-BT rows are diagnostic projections; usable for trend signal but not for owner-grade Wave-2 promotion decisions on lo2/lo3/xien2/xien3 specifically. After upgrade: Wave-2/3/4 reviews would have true per-output-family fact rows matching `final_bundles.{family}_status`. No `/du-doan`, scoring, output-eligibility, or model-roster change is implied; only measurement scope grows. |
+    | **status** | OPEN_OWNER_GATED |
+    | **next_action** | Owner approves writer/scope; engineering then chooses one of: (a) extend `shadow_results` writers to emit per-family rows reading `final_bundles.{family}_status` truth; (b) keep `shadow_results` BT-only and add a new diagnostic table `shadow_method_family_rates_daily`; (c) keep projections and explicitly exclude lo2/lo3/xien2/xien3 from Wave-2 maturity criteria. |
+    | **pass_condition** | After approved upgrade: every method × region × output_type pair has either native fact rows or an explicit ON_PROJECTION marker; scoreboard `notes` field no longer needs the projection disclaimer for chosen families. |
+    | **fail_condition** | Upgrade silently doubles or breaks existing BT-axis aggregates, or any change writes to production output. |
+    | **owner_decision_needed** | YES |
+    | **last_checked** | 2026-04-30T13:50:00+07:00 |
+    | **notes** | Without this upgrade, lo2/lo3/xien2/xien3 trend interpretation should always be qualified as "projected from BT-aligned hits". Cross-ref: V20.3.37.22 (FU-069), V20.3.37.24 (FU-071). |
+
+    ### FU-071 — Cohere rerank measurement consolidated into P0 shadow
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-071 |
+    | **title** | Treat Cohere as measured rerank component and bridge it into the unified P0 shadow scoreboard |
+    | **current_truth** | Owner correctly flagged that Cohere is also a measured model/component. Semantics are now split: `runtime_model_count=25` for active prediction measurement (`15 output_eligible + 10 SHADOW_AUTO`), `active_rerank_measurement_model_count=1` for Cohere, and `active_measured_component_count=26` when Cohere rerank is included. `cohere_rerank_effectiveness_v1` is deployed and now live-proven on `2026-04-30`: it is registered in P0, remains `output_eligible=0`, `diagnostic_only=1`, `shadow_only=1`, `owner_approved=0`, wrote rows into `shadow_results`, and has scoreboard rows across all 5 output axes. |
+    | **evidence** | Cohere audit `artifacts/db_audit_20260430/cohere_measurement_audit.json`; local copied-DB smoke `artifacts/db_audit_20260430/coverage_hardening_smoke.json` proved `cohere_rerank_effectiveness_v1` emits 1 row per region and scoreboard rows across 5 output axes; deploy artifact `artifacts/db_audit_20260430/cohere_p0_bridge_deploy.json`; VPS backup `/root/Lottery_AI_Test/backups/cohere_p0_bridge_20260430_032522/`; remote compile OK for `_materialize_multi_lane_shadow_p0.py`, `verify_p0_natural_closeout.py`, and `main.py`; remote import/bootstrap proved method count `18`, `has_cohere=True`, registry count `18`; health shows `active_measured_component_count=26`; sync `artifacts/live_sync/20260430_032553/manifest.json`; state verify `artifacts/db_audit_20260430/cohere_bridge_state_after_deploy.json`; source table hash compare unchanged for `predictions`, `final_bundles`, `lottery_results`. |
+    | **impact** | Cohere is now part of the unified parallel measurement program, not a separate forgotten side surface. No `/du-doan`, final bundle, prediction, result, scoring, bundle voting, lane weight, output eligibility, public UI behavior, or DDL change. Historical Cohere P0 rows are not backfilled and remain owner-gated if desired. |
+    | **status** | DONE |
+    | **next_action** | Continue normal closeout watch for Cohere rows; optional owner-gated action: backfill 2026-04-17..2026-04-29 Cohere P0 rows under a distinct run-label. |
+    | **pass_condition** | P0 verifier reports 18 registered methods, Cohere method rows appear after natural closeout, output_eligible remains 0, source table hashes unchanged. |
+    | **fail_condition** | Cohere rows fail to bridge into P0, method is accidentally treated as generative/output-eligible, or health/model-count semantics collapse 25/26/28 again. |
+    | **owner_decision_needed** | NO for deployed future-closeout bridge; YES before historical backfill or any Cohere output/promotion use. |
+    | **last_checked** | 2026-04-30T20:35:00+07:00 |
+    | **notes** | Transitioned from `DEPLOYED_PENDING_LIVE_VERIFY` to `DONE` after 2026-04-30 closeout proof. Correct vocabulary: 25 active prediction measurement models, 1 active rerank measurement component, 26 total measured components, 28 registry-visible inventory. |
+
+    ### FU-070 — Model count semantics + policy replay consolidation clarified
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-070 |
+    | **title** | Correct confusing `runtime_model_count` semantics and verify A/D/D2/S/F/F2 replay policies are consolidated into P0 shadow |
+    | **current_truth** | Owner correctly flagged that active runtime/measurement model count should be `25`, not `28`. Audit proves the split is `15 output_eligible + 10 SHADOW_AUTO = 25 active measurement models`; the prior `28` was registry-visible inventory because it also included 3 `REGISTERED` non-active assets (`wan-2.7`, `pplx-embed-v1`, `cohere-rerank-4-pro`). `/api/health` is now patched to return `runtime_model_count=25`, `active_measurement_model_count=25`, `registry_visible_model_count=28`, `registered_non_active_model_count=3`, and explicit `model_count_semantics`. Separately, all owner-listed replay policies are present and bridged: `A_BASELINE`, `D_CONTEXT_ADAPTIVE`, `D2_CONTEXT_ADAPTIVE_SAFE_GATE`, `S_SECONDARY_STRICT_GATE`, `F_FAMILY_LANE_FUSION`, `F2_FAMILY_LANE_SAFE_GATE`; plus extra diagnostic `B_FLAT_TOTAL_MAIN_SECONDARY`. Each has rows for MN/MT/MB on 2026-04-29 in `output_policy_replay_daily` and bridged `shadow_results` under `output_policy_replay_governance_v1`. |
+    | **evidence** | Registry self-test output; read-only audit `artifacts/db_audit_20260430/policy_and_registry_audit.json`; targeted remote patch artifact `artifacts/db_audit_20260430/health_model_count_patch_deploy.json`; VPS backup `/root/Lottery_AI_Test/backups/health_model_count_semantics_20260430_025854/`; remote `py_compile main.py` OK; public health after patch shows runtime `25`, registry-visible `28`; sync `artifacts/live_sync/20260430_025915/manifest.json`; source hash compare confirms `predictions`, `final_bundles`, `lottery_results`, existing shadow tables unchanged; only scheduler logs changed due restart/runtime logging. |
+    | **impact** | Health/model-count semantics are now owner-readable and no longer confuse active measurement count with registry inventory. Policy replay A/D/D2/S/F/F2 is confirmed consolidated into the parallel P0 shadow program. No scoring, `/du-doan`, final bundle, prediction, lottery result, output eligibility, model roster, public UI behavior, or DDL change. |
+    | **status** | DONE |
+    | **next_action** | Keep using `runtime_model_count=25` for active measurement and `registry_visible_model_count=28` for inventory. On next closeout, verify `output_policy_replay_governance_v1` still bridges all 7 policies into shadow rows. |
+    | **pass_condition** | Health endpoint exposes both `25` active measurement and `28` inventory semantics; replay policies A/D/D2/S/F/F2 present in both source replay table and P0 bridge rows. |
+    | **fail_condition** | Any future UI/doc/API collapses `25` and `28` into one ambiguous count, or output replay policies stop bridging into P0 shadow rows. |
+    | **owner_decision_needed** | NO for semantics clarification and read-only replay verification; YES before any replay policy affects `/du-doan`. |
+    | **last_checked** | 2026-04-30T03:00:00+07:00 |
+    | **notes** | This resolves the owner's `runtime 28 ==> có vẻ sai mà em 25 chứ em?` concern. 28 remains valid only as registry-visible inventory, not active runtime/measurement. |
+
+    ### FU-069 — Measurement coverage hardening deployed (shadow-only)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-069 |
+    | **title** | Measurement coverage gap audit + first safe writer hardening for Wave/D7/P0 parallel evaluation |
+    | **current_truth** | Read-only coverage audit identified 8 gaps. Owner then directed proceeding with the safest recommendation step-by-step, so M-NOW-1/2/3 were deployed in `web/backend/_materialize_multi_lane_shadow_p0.py`: scoreboard now emits projected `output_type` rows for `BT`, `lo2`, `lo3`, `xien2`, and `xien3`; `freshness_readiness_guard_v1` now writes a real `shadow_results` diagnostic row; `counterfactual_decision_audit_v1` now bridges source audit rows into per-row `shadow_results`; `no_token_drift_guard_v1` now emits an explicit diagnostic row when a region has no no-token evidence instead of silently producing 0 rows. M-NOW-4 (model alias audit) already completed read-only and found zero alias mismatch. No schema migration, DROP, ALTER, scoring change, output-policy change, model-roster change, or `/du-doan` mutation occurred. |
+    | **evidence** | Coverage audit `artifacts/db_audit_20260430/coverage_audit.{json,md}`; alias audit `artifacts/db_audit_20260430/model_alias_audit.md`; proposal `artifacts/db_audit_20260430/COVERAGE_GAP_PROPOSAL_20260430.md`; local `py_compile` OK; local smoke on copied DB `artifacts/db_audit_20260430/coverage_hardening_smoke.json` proved all three regions emit 17 method rows and 5 output types; deployed file backup `/root/Lottery_AI_Test/backups/coverage_hardening_20260430_023613/`; remote `py_compile` OK; remote import check method count `17`, output types `BT,lo2,lo3,xien2,xien3`, helper functions present; service restarted active; public health `V20.3.36`, output `15`, runtime `28`; post-deploy sync `artifacts/live_sync/20260430_023704/manifest.json`; table hash compare `artifacts/db_audit_20260430/post_deploy_table_hash_compare.json` shows `predictions`, `final_bundles`, `lottery_results`, `shadow_candidates`, `shadow_results`, `shadow_method_scoreboard`, and `shadow_activation_registry` unchanged; only `scheduler_logs` changed due restart/runtime logging. |
+    | **impact** | Safest writer hardening is deployed measurement-only. Future natural closeouts will collect output-family scoreboard rows and explicit per-row evidence for previously sparse methods without touching runtime final. Current historical DB rows are not backfilled yet; backfill is optional and should use a separate run-label if owner wants historical coverage immediately. |
+    | **status** | DONE |
+    | **next_action** | Continue normal closeout watch. Remaining adjacent gaps are tracked separately: FU-072 for native non-BT fact rows and the G7 runtime reliability writer gap in notes. Optional: owner may approve a measurement-only historical backfill on copied/run-label-separated shadow rows. |
+    | **pass_condition** | After owner-authorized deploy: every method has both scoreboard and shadow_results rows; output_type axis covers BT + lo2 + lo3 + xien2 + xien3; runtime_reliability covers all 22 AI output-eligible/SHADOW_AUTO models (excl. ML/no-token by design); no scheduler errors; source-table hashes unchanged across deploy. |
+    | **fail_condition** | Any change writes to production output, source-table hashes drift, or new measurement schema breaks existing readers. |
+    | **owner_decision_needed** | NO for deployed M-NOW-1/2/3 measurement writers; YES before any historical backfill, DDL, output/scoring use, or Wave 2 enforcement. |
+    | **last_checked** | 2026-04-30T20:35:00+07:00 |
+    | **notes** | Transitioned from `DEPLOYED_PENDING_LIVE_VERIFY` to `DONE` after 2026-04-30 natural closeout and post-MDE verify proved: scoreboard 5 output axes, per-row `freshness_readiness_guard_v1`, `counterfactual_decision_audit_v1`, no-token diagnostic behavior, Cohere bridge, and rule-phase/rule-injection post-MDE rows all materialized. G7 runtime reliability coverage gap remains a separate follow-up because it touches a different materializer/scheduler path. Non-BT scoreboard rows remain projected aggregates from BT-axis `shadow_results`; native non-BT fact rows are tracked in FU-072. |
+
+    ### FU-068 — DB table inventory + consolidation proposal (read-only)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-068 |
+    | **title** | First full DB table inventory and consolidation proposal (read-only audit, no DDL touched) |
+    | **current_truth** | A read-only DB inventory has been produced from the locally-synced production DB (`data/lottery_ai.db`, hash `921690ac002ccb1860a73a7e0dea0d0a3bca7700385f1f7164caf705b6525901`, size 43,044,864 bytes). Total objects = `68 tables + 8 views = 76`. Class breakdown: `MEASUREMENT=30`, `LIVE_OR_OTHER=18`, `SHADOW=12`, `VIEW=8`, `EMPTY=6`, `REPLAY=1`, `SYSTEM=1`. Empty tables: `bundle_replay_compare_daily`, `data_preservation_manifest_daily`, `rule_effectiveness`, `rule_features`, `sync_parity_audit_daily`, `training_records`. Stale (>30d) tables: `pattern_rules` (admin-managed, low-churn) and `users` (auth, low-churn). A consolidation proposal classifies drop-candidates, dormant-but-wired entries, and dev-side-only writers, plus 5 possible merge groups (only 1 actionable, the others NOT recommended). All actions are gated on owner approval. No DDL, no DROP, no ALTER, no RENAME has been executed. |
+    | **evidence** | Inventory script `artifacts/db_audit_20260430/_audit_db.py` (read-only, opens DB with `mode=ro`); inventory artifacts `artifacts/db_audit_20260430/inventory.json` and `inventory.md`; consolidation proposal `artifacts/db_audit_20260430/DB_TABLE_CONSOLIDATION_PROPOSAL_20260430.md`; live sync `artifacts/live_sync/20260430_015322/manifest.json`; per-table reference scan via `Grep web/backend/` confirms drop-candidate isolation. |
+    | **impact** | Pure read-only inventory + proposal. No `/du-doan`, `final_bundles`, `predictions`, `lottery_results`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, scheduler hook, or runtime final behavior change. Production DB schema is untouched. |
+    | **status** | PROPOSAL_PENDING_OWNER_APPROVAL |
+    | **next_action** | Owner reviews `DB_TABLE_CONSOLIDATION_PROPOSAL_20260430.md` and decides per-table action for Phase R1 (drop orphans), Phase R2 (re-wire-or-drop dormant writers), and Phase R3 (docs reconciliation). |
+    | **pass_condition** | Inventory artifacts exist and match VPS DB hash; consolidation proposal lists each candidate with verdict and rollback path; no DB write occurred during the audit. |
+    | **fail_condition** | Audit script writes to DB or to runtime files; or proposal recommends destructive action without owner approval; or proposal hides a table that is wired in active code. |
+    | **owner_decision_needed** | YES for Phase R1 (drop) and Phase R2 (re-wire-or-drop); NO for Phase R3 (docs-only sync). |
+    | **last_checked** | 2026-04-30T13:55:00+07:00 |
+    | **notes** | Live wires confirmed: `pattern_rules` is admin-managed (live CRUD via `/api/rules` and `/rules-dashboard`, used by `filter_2_so_cuoi.py`, `knowledge_weights.py`); `rule_effectiveness` has a dormant V5.8 writer (`update_rule_outcome`); `data_preservation_manifest_daily` and `sync_parity_audit_daily` only fire from a dev-side admin endpoint that reads `artifacts/live_sync/latest_manifest.json`. **Cross-ref:** also tracking machine-surface drift in `docs/AUTOMATION_STATE.json` (`last_event` still reads seq=6 / 2026-04-27); not in scope for Phase R1/R2 but should be folded into the next governance automation pass. |
+
+    ### FU-067 — Parallel Shadow Proof admin monitoring board deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-067 |
+    | **title** | Add owner-readable admin board comparing runtime final baseline with the 17-method parallel shadow portfolio |
+    | **current_truth** | `/monitoring` now includes an admin-only `Parallel Shadow Proof — baseline vs methods` section backed by `/api/admin/parallel-shadow-proof`. The endpoint is read-only and uses existing `final_bundles`, `shadow_activation_registry`, `shadow_results`, `shadow_candidates`, and `shadow_method_scoreboard` tables. It returns baseline final, method coverage, would-save/risk summaries, and top1 candidate rows with `output_impact=false`. |
+    | **evidence** | Deployed `web/backend/main.py` and `web/frontend/monitoring.html`; backup `/root/Lottery_AI_Test/backups/parallel_shadow_ui_<timestamp>/`; local `py_compile main.py` OK; remote venv `py_compile main.py` OK; remote marker grep found `/api/admin/parallel-shadow-proof` and UI title; direct function smoke with admin bypass for `2026-04-29` returned `success=True`, `method_count=17`, `output_impact=False`, baseline regions `MN/MT/MB`, and 17 methods; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Gives owner/admin a visual proof board for the parallel measurement branch. No `/du-doan`, `final_bundles`, `predictions`, `lottery_results`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, or runtime final behavior change. |
+    | **status** | DEPLOYED_PENDING_OWNER_VISUAL_VERIFY |
+    | **next_action** | Owner opens `/monitoring`, verifies the `Parallel Shadow Proof — baseline vs methods` section appears, and confirms wording clearly says `SHADOW_ONLY` / no `/du-doan` impact. |
+    | **pass_condition** | Board loads for admin, shows 17 methods and baseline regions for latest shadow scoreboard date, and does not confuse method count with model count. |
+    | **fail_condition** | Board fails to load, appears public/non-admin, or wording implies shadow methods affect `/du-doan`. |
+    | **owner_decision_needed** | NO for admin read-only UI; YES before any `/du-doan` public preview or output use |
+    | **last_checked** | 2026-04-30T13:45:00+07:00 |
+    | **notes** | This is a visual/admin surface only. It intentionally stays separate from `/du-doan`. **Cross-ref:** P0 portfolio grew from 17 to **18 methods** in V20.3.37.24 (FU-071/DEC-020) with the addition of `cohere_rerank_effectiveness_v1`. The board reads `shadow_activation_registry` directly so no UI/API change was required; future API smoke will return `method_count=18` instead of `17`. |
+
+    ### FU-066 — P0.10 first natural closeout proof + rule-phase backfill workaround applied
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-066 |
+    | **title** | First natural closeout proof for full P0.5/P0.7/P0.8 portfolio on 2026-04-29 with measurement-only rule-phase backfill |
+    | **current_truth** | The 2026-04-29 natural closeout produced first runtime evidence for the original 17-method P0.5/P0.7/P0.8 portfolio. On 2026-04-30, after the Cohere bridge and post-MDE hook, verifier returns `NATURAL_CLOSEOUT_PROVEN`, `18/18` methods registered, `18/18` with result rows, `18/18` with scoreboard rows, all `output_eligible=0`, `owner_approved=0`. 2026-04-30 therefore becomes the first clean natural closeout for the 18-method portfolio, including Cohere and post-MDE rule-phase/rule-injection rows. |
+    | **evidence** | live sync `artifacts/live_sync/20260430_003209/manifest.json`; verifier output `NATURAL_CLOSEOUT_PROVEN` with `natural_marker_count=3`; per-method 2026-04-29: `phase_first_decision_shadow_v1` 9×3, `anti_herding_shadow_v1` 9×3, `rule_injection_contract_shadow_v1` 9×3 (post-backfill), `model_wisdom_scorecard_shadow_v1` 75×3, `runtime_final_baseline_control_v1` 3×3, `meta_ranker_ltr_dataset_shadow_v1` 9×3, `rule_aware_adaptive_notoken_shadow_v1` 9×3, `context_specialist_policy_shadow_v1` 9×3, `online_bayesian_weighting_shadow_v1` 9×3, `phase_aware_rerank_shadow_v1` 9×3; `final_bundles` 2026-04-29: `MN BT=85 LOSE`, `MT BT=62 WIN/lo2 PARTIAL`, `MB BT=63 LOSE/lo2 PARTIAL`; backfill manifest `artifacts/phase_checkpoints/_tf_backfill_rule_phase_20260430.py`; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Establishes first natural closeout proof for the deployed measurement portfolio without changing production output. Provides clean evidence for the next 3-5 closeout maturity window. |
+    | **status** | PARTIAL |
+    | **next_action** | Wait for 2-4 more clean natural closeouts to mature the 18-method portfolio. After each natural closeout, rerun verifier with `--natural-after` for the previous day. Do NOT promote any method to output before the maturity window completes and owner approval. |
+    | **pass_condition** | 3 to 5 clean natural closeouts in a row with `NATURAL_CLOSEOUT_PROVEN`, `output_impact=false`, source-table hashes unchanged across days, and no scheduler errors. |
+    | **fail_condition** | Any method writes to production output, source-table hashes drift unexpectedly, scheduler markers stop appearing, or shadow rows go missing without cause. |
+    | **owner_decision_needed** | NO for the natural-closeout watch; YES before any UI/output/limited-weight unlock |
+    | **last_checked** | 2026-04-30T20:35:00+07:00 |
+    | **notes** | First clean natural closeout for the 18-method portfolio is 2026-04-30. This is still `LIVE_PROVEN_SHADOW_ONLY` and not output maturity. Maturity gating still requires multiple clean closeouts before any P1/P2 discussion. |
+
+    ### FU-065 — Long-term scheduler-hook fix for rule-phase MRE timing race
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-065 |
+    | **title** | Add a post-MRE/MDE re-run hook for `rule_phase_evidence_v1` and `rule_injection_contract_shadow_v1` to remove the closeout-time MRE timing race |
+    | **current_truth** | A measurement-only post-MRE/MDE hook is deployed. After the 20:20 MDE job, scheduler now calls `_run_p0_rule_phase_post_mde()`, which invokes `materialize_rule_phase_post_mde_for()` for MN/MT/MB. The helper runs only `rule_phase_evidence_v1`, `rule_injection_contract_shadow_v1`, and scoreboard re-aggregation with run-label `post_mde_rule_phase_<date>`. It skips if rule-phase/rule-injection rows already exist for the date/region to prevent duplicate scoring. |
+    | **evidence** | Patched/deployed `web/backend/_materialize_multi_lane_shadow_p0.py` and `web/backend/scheduler.py`; backup `/root/Lottery_AI_Test/backups/fu065_rule_phase_hook_<timestamp>/`; local and VPS venv `py_compile` OK; remote import check confirmed helper functions. First live proof on `2026-04-30`: post-20:20 verify `artifacts/db_audit_20260430/post_mde_rule_phase_verify_20260430.json` shows MDE rows exist for MN/MT/MB (`5` rules each), `rule_phase_evidence_shadow=55`, `rule_injection_contract_shadow_v1=9`, marker `[P0-RULE-PHASE-POST-MDE] 2026-04-30: rule_phase=55 rule_injection=9 skipped=none trigger=post_model_daily_eval`; post-MDE verifier returns `expected_method_count=18`, `registered_method_count=18`, `methods_with_result_rows=18`, `methods_with_scoreboard_rows=18`, `output_eligible_count=0`, `owner_approved_count=0`; public health `V20.3.36`, output `15`, runtime `25`, measured components `26`. |
+    | **impact** | Removes the manual backfill loop for future closeouts once MDE runs, while keeping the hook measurement-only. No `/du-doan`, `predictions`, `final_bundles`, `lottery_results`, scoring, bundle voting, lane-weight, output eligibility, model roster, or public UI change. |
+    | **status** | DONE |
+    | **next_action** | Continue verifying `[P0-RULE-PHASE-POST-MDE]` after future MDE cycles as part of normal closeout watch; no manual backfill needed if marker and rows appear. |
+    | **pass_condition** | After the next MDE cycle, rule_phase rows for the just-closed day appear automatically without manual backfill, source-table hashes unchanged, and scheduler markers cover the new path. |
+    | **fail_condition** | Any change touches predictions/final_bundles/scoring/output, or duplicates rule_phase rows in a way that double-counts in scoreboard. |
+    | **owner_decision_needed** | NO for deployed measurement-only hook; YES before any output/scoring/UI use |
+    | **last_checked** | 2026-04-30T20:35:00+07:00 |
+    | **notes** | Transitioned from `DEPLOYED_PENDING_LIVE_VERIFY` to `DONE` after first live post-MDE proof on 2026-04-30. Hook uses distinct run-label `post_mde_rule_phase_<date>` and only re-runs the two rule-phase dependent methods plus scoreboard; source/output paths remain untouched. |
+
+    ### FU-064 — P0.9 portfolio verifier coverage deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-064 |
+    | **title** | Extend P0 verifier to report full method portfolio coverage before next live closeout |
+    | **current_truth** | `scripts/verify_p0_natural_closeout.py` now reports both the P0.5 subset and the full 17-method P0/P0.5/P0.7/P0.8 portfolio. It adds `p0_portfolio_method_coverage` and `p0_portfolio_summary` while leaving natural-closeout maturity logic unchanged. |
+    | **evidence** | Patched/deployed `scripts/verify_p0_natural_closeout.py`; local and remote `py_compile` OK; remote verifier smoke for `2026-04-28` returned `success=true`, expected portfolio methods `17`, registered portfolio methods `17`, output eligible `0`, owner approved `0`, output impact `false`; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Gives tomorrow's closeout a single read-only verification surface for method coverage, result rows, scoreboard rows, and safety flags. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, or runtime final behavior change. |
+    | **status** | DONE |
+    | **next_action** | Continue running the verifier after each closeout as part of the FU-066 maturity watch. |
+    | **pass_condition** | Verifier reports all 17 methods registered, output eligible `0`, owner approved `0`, and expected new result/scoreboard rows after natural closeout. |
+    | **fail_condition** | Verifier cannot run, reports output-eligible/owner-approved method flags, or hides row/scoreboard gaps. |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Pass condition met by 2026-04-29 natural closeout: verifier returned `NATURAL_CLOSEOUT_PROVEN`, expected `17`, registered `17`, output eligible `0`, owner approved `0`, methods with result rows `15`, methods with scoreboard rows `17`. Status transitioned from `DEPLOYED_READ_ONLY_VERIFIER_READY` to `DONE` with live evidence. Cross-ref: FU-066. |
+
+    ### FU-063 — P0.8 full method portfolio scaffold coverage deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-063 |
+    | **title** | Represent remaining Tier-A method portfolio as scaffold-only shadow measurement lanes |
+    | **current_truth** | Deployed P0/P0.5/P0.7 materializer now includes five Tier-A scaffold-only methods: `meta_ranker_ltr_dataset_shadow_v1`, `rule_aware_adaptive_notoken_shadow_v1`, `context_specialist_policy_shadow_v1`, `online_bayesian_weighting_shadow_v1`, and `phase_aware_rerank_shadow_v1`. They reuse the shared feature pack and existing shadow tables. |
+    | **evidence** | Patched/deployed `web/backend/_materialize_multi_lane_shadow_p0.py`; local `py_compile` OK; lints clean; in-memory registry smoke returned P0/P0.5/P0.7/P0.8 method count `17`, all five scaffold methods present, and all 17 methods output-ineligible/diagnostic/shadow-only/owner-unapproved; VPS remote `python3 -m py_compile` OK; remote import check returned method count `17` and the five Tier-A scaffold method keys; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Completes portfolio coverage for live measurement without creating duplicate tables or output branches. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, or runtime final behavior change. |
+    | **status** | DONE |
+    | **next_action** | Continue 3-5 closeout maturity watch via FU-066. Do not treat scaffold rows as output candidates until owner unlock. |
+    | **pass_condition** | Scaffold methods write diagnostic rows when dependencies exist, all rows remain output-ineligible, scoreboard materializes, and public health/output counts remain stable. |
+    | **fail_condition** | Any scaffold method mutates output/scoring, creates duplicate production schema, or is narrated as mature output evidence before 3-5/14/30 compatible closeout gates. |
+    | **owner_decision_needed** | NO for scaffold measurement; YES before any UI/output/limited-weight use |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Pass condition met by 2026-04-29 natural closeout: each of the five scaffold methods wrote 9 rows × 3 regions to `shadow_results`, scoreboard materialized with 12 rows × method, output_eligible/owner_approved remained `0`, source-table hashes unchanged. Cross-ref: FU-066 maturity watch. |
+
+    ### FU-062 — P0.7 parallel proof harness baseline control deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-062 |
+    | **title** | Mirror runtime final into shadow scoreboard so baseline final and new methods use the same metrics |
+    | **current_truth** | Deployed P0/P0.5 materializer now includes `runtime_final_baseline_control_v1`, which copies the already-produced `final_bundles.bach_thu` into `shadow_candidates` / `shadow_results` after closeout. This gives `shadow_method_scoreboard` an explicit runtime-final baseline method row for apples-to-apples comparison against P0/P0.5 methods. |
+    | **evidence** | Patched/deployed `web/backend/_materialize_multi_lane_shadow_p0.py`; local `py_compile` OK; lints clean; in-memory registry smoke returned P0/P0.5/P0.7 method count `12`, baseline method present, and all 12 methods output-ineligible/diagnostic/shadow-only/owner-unapproved; VPS remote `python3 -m py_compile` OK; remote import check returned method count `12`, baseline method present, and `_materialize_runtime_baseline_control` present; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Enables direct baseline-final vs shadow-method comparison without creating a parallel output branch. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, or runtime final behavior change. |
+    | **status** | DONE |
+    | **next_action** | Continue 3-5 closeout maturity watch via FU-066. Use scoreboard rows for baseline-vs-shadow side-by-side comparison once enough samples accumulate. |
+    | **pass_condition** | Baseline control rows match `final_bundles.bach_thu`, scoreboard includes baseline method rows, and output health remains stable. |
+    | **fail_condition** | Baseline control row differs from `final_bundles`, mutates production output, or fails in a way that affects scheduler/runtime final. |
+    | **owner_decision_needed** | NO for measurement-only baseline mirror; YES before any UI/output/limited-weight use |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Pass condition met by 2026-04-29 natural closeout: baseline rows match `final_bundles.bach_thu` (`MN=85`, `MT=62`, `MB=63`), scoreboard includes baseline method rows (12 rows × region × window), source-table hashes unchanged, public health stable. Cross-ref: FU-066. |
+
+    ### FU-061 — P0.6 shared measurement core and lane containment deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-061 |
+    | **title** | Prevent duplicate P0.5 feature reads and contain shadow lane failures before next live cycle |
+    | **current_truth** | Deployed P0/P0.5 materializer now builds a shared feature pack per `(date, region, run_label)` and passes it to P0.5 decision lanes plus `meta_ranker_v1`. Individual shadow lane exceptions are captured as diagnostic results with `contained=True` and `output_impact=False`, so one lane cannot abort later shadow lanes or scoreboard materialization. |
+    | **evidence** | Patched/deployed `web/backend/_materialize_multi_lane_shadow_p0.py`; local `py_compile` OK; local in-memory smoke confirmed method count `11`, `_build_shared_feature_pack`, and `_run_shadow_lane`; VPS remote `python3 -m py_compile` OK; remote import check confirmed method count `11`, shared-core helper, lane-containment helper, and run-label-aware candidate pool; public health `V20.3.36`, output `15`, runtime `28`. |
+    | **impact** | Improves shadow measurement reliability and reduces duplicated feature reads. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight, output eligibility, model roster, public UI, or runtime final behavior change. |
+    | **status** | DONE |
+    | **next_action** | Continue 3-5 closeout maturity watch via FU-066. Lane containment proven; investigate any contained-lane errors as measurement-only. |
+    | **pass_condition** | Closeout materialization writes P0/P0.5 shadow rows where dependencies exist, scoreboard still materializes, and public health/output counts remain stable. |
+    | **fail_condition** | Shared feature pack failure prevents all P0.5 lanes from producing rows, lane errors are not contained, or any output/scoring/final-bundle path changes. |
+    | **owner_decision_needed** | NO for measurement-only hardening; YES before any UI/output/limited-weight use |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Pass condition met by 2026-04-29 natural closeout: shared feature pack served 13 lanes, 17 methods scored, no lane-containment errors observed in scheduler markers, public health stable. Cross-ref: FU-066. |
+
+    ### FU-060 — P0.5 multi-lane shadow expansion implemented locally as measurement-only code
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-060 |
+    | **title** | Extend P0 multi-lane shadow with phase-first decision, anti-herding, rule-injection contract, and model-wisdom measurement lanes |
+    | **current_truth** | Deployed code now extends the P0 materializer with four P0.5 `SHADOW_AUTO` methods: `phase_first_decision_shadow_v1`, `anti_herding_shadow_v1`, `rule_injection_contract_shadow_v1`, and `model_wisdom_scorecard_shadow_v1`. The methods reuse existing P0 shadow tables and are seeded `output_eligible=0`, `diagnostic_only=1`, `shadow_only=1`, `owner_approved=0`. The read-only natural-closeout verifier now reports P0.5 method coverage without changing P0 maturity rules. |
+    | **evidence** | Patched/deployed `web/backend/_materialize_multi_lane_shadow_p0.py` and `scripts/verify_p0_natural_closeout.py`; new report `artifacts/phase_checkpoints/P05_MULTI_LANE_SHADOW_EXPANSION_CODE_PROVEN_20260428.md`; local `py_compile` OK; in-memory registry smoke returned P0/P0.5 method count `11` (measurement methods, not AI models), all four P0.5 methods present, and all 11 methods output-ineligible/diagnostic/shadow-only/owner-unapproved; VPS remote `python3 -m py_compile` OK; remote import check returned P0/P0.5 method count `11` and the four P0.5 method keys; run-label candidate-pool fix applied; public health `V20.3.36`, output `15`, runtime `28`; remote model registry sanity check `SHADOW_AUTO=10`, `minimax-m2.7.status=REMOVED`. |
+    | **impact** | Allows the system to start measuring additional decision methods at future closeouts while keeping production output stable. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight, output eligibility, model roster, or public UI change. |
+    | **status** | DONE |
+    | **next_action** | Continue 3-5 closeout maturity watch via FU-066. Owner unlock still required before any UI/output/limited-weight use. |
+    | **pass_condition** | After deployment and a natural closeout, all four P0.5 methods are registered, write shadow result rows when dependencies exist, write scoreboard rows, and leave source/output tables unchanged except normal production flow. |
+    | **fail_condition** | Any P0.5 method writes to production output tables, affects `/du-doan`, changes output eligibility/scoring, raises into scheduler instead of fail-closed, or creates misleading promotion language before enough evidence exists. |
+    | **owner_decision_needed** | YES before any UI/output/limited-weight use; NO for measurement-only |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Pass condition met by 2026-04-29 natural closeout: `phase_first_decision_shadow_v1` 9×3, `anti_herding_shadow_v1` 9×3, `rule_injection_contract_shadow_v1` 9×3 (post-backfill), `model_wisdom_scorecard_shadow_v1` 75×3, source-tables unchanged, public health stable. Shadow score still does not mean output approval. Cross-ref: FU-066, FU-065 (long-term fix for rule_injection MRE timing). |
+
+    ### FU-059 — MiniMax M2.7 removed from active shadow measurement after MN/MT failures
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-059 |
+    | **title** | Prune `minimax-m2.7` from `SHADOW_AUTO` / PHASE-FIRST measurement to avoid wasted cost and noisy denominator |
+    | **current_truth** | MiniMax M2.7 is now `REMOVED` in `model_registry.py`, has no allowed regions or schedule slots, and is no longer in current `SHADOW_GATE_MODELS` / `PHASE_FIRST_CONTRACT_MODELS`. Active output remains `15`; active `SHADOW_AUTO` is now `10`; runtime-visible count is now `28`. Historical MiniMax rows remain audit-only. |
+    | **evidence** | 2026-04-28 live evidence: MN had no persisted prediction due to PHASE-FIRST contract invalid and length/empty failures; MT had length/empty and contract invalid failures; MB produced only one-number `31`, `LOSE`; latencies ranged ~98s to 519s. Deployed `web/backend/model_registry.py`, `gpt_analyzer.py`, `main.py`; health `V20.3.36` output `15` runtime `28`; remote registry check confirms `minimax-m2.7.status=REMOVED`, `SHADOW_AUTO=10`; report `MINIMAX_M27_SHADOW_PRUNE_CLOSEOUT_20260428.md`; sync `artifacts/live_sync/20260428_210538/manifest.json`; `CHANGELOG.md` V20.3.37.9 |
+    | **impact** | Removes a weak/expensive/noisy shadow-only model from future auto-eval and PHASE-FIRST contract expectations. No `/du-doan`, scoring, bundle voting, lane-weight, or output eligibility change. |
+    | **status** | DONE_MEASUREMENT_ONLY_PRUNE |
+    | **next_action** | Next natural closeout should expect 10 active `SHADOW_AUTO` models. Continue scorecard and runtime reliability with MiniMax excluded from active denominator. Use `artifacts/phase_checkpoints/NEXT_LIVE_WATCH_CHECKLIST_AFTER_MINIMAX_PRUNE_20260428.md` as the exact live-watch checklist. |
+    | **pass_condition** | No new `shadow_auto_eval` rows for MiniMax after deploy; health remains output `15`, runtime `28`; shadow completeness expectations use 10 active models. |
+    | **fail_condition** | MiniMax still auto-runs, remains in PHASE-FIRST current cohort, or monitoring still expects 11 active shadow models after deploy. |
+    | **owner_decision_needed** | NO further decision for prune; YES if owner ever wants to re-enable MiniMax |
+    | **last_checked** | 2026-04-28T21:10:00+07:00 |
+    | **notes** | This follows DEC-004 pruning doctrine and preserves historical rows for audit. |
+
+    ### FU-058 — P0 monitoring cleanup closeout confirms first-closeout observed, rule-phase gap remains
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-058 |
+    | **title** | Focus P0 monitoring cleanup, surface honesty, multi-lane shadow reconciliation, and do-now / wait-live order |
+    | **current_truth** | V20.3.37.8 created `TOTAL_FORCE_EXECUTION_CLOSEOUT_P0_MONITORING_CLEANUP_MULTI_LANE_SHADOW_RECONCILIATION_DO_NOW_WAIT_LIVE_20260428.md`. P0 is first natural closeout observed, not mature. Most P0/monitoring surfaces have 2026-04-28 rows, but `rule_phase_evidence_shadow` has `0` rows for 2026-04-28 and latest `2026-04-27`, so it is explicitly not closed. |
+    | **evidence** | live sync `artifacts/live_sync/20260428_205415/manifest.json`; health `V20.3.36`; P0 verifier `NATURAL_CLOSEOUT_PROVEN`; P0 surface counts: `shadow_candidates=47 today`, `shadow_results=47 today`, `strongest_vs_final_shadow=3 today`, `no_token_drift_shadow=14 today`, `shadow_feature_snapshots=21 today`, `counterfactual_decision_audit_shadow=6 today`, `rule_phase_evidence_shadow=0 today`; `CHANGELOG.md` V20.3.37.8 |
+    | **impact** | Owner now has the P0-specific do-now / wait-live order: no more measurement cleanup deploy is urgent, but P0/P1/P2 must still wait for 3-5 clean closeouts and the rule-phase evidence gap must not be pass-washed. |
+    | **status** | PARTIAL |
+    | **next_action** | Continue closeout watch via FU-066. The closeout-vs-MRE timing race for rule_phase has been documented and a measurement-only backfill applied for 2026-04-28 and 2026-04-29; long-term scheduler-hook fix tracked in FU-065. |
+    | **pass_condition** | 3-5 natural closeouts show P0 rows across candidates/results/scoreboard/strongest/no-token/feature/counterfactual plus no scheduler errors and no source-table mutation, AND the rule_phase race is resolved either by hook fix (FU-065) or backfill kept as standing measurement workflow. |
+    | **fail_condition** | P0 hook misses rows, rule-phase evidence remains permanently stale without explanation, or a future report treats P0 as mature after only one closeout. |
+    | **owner_decision_needed** | NO for measurement watch; YES before P1/P2/output/scoring/promotion changes; YES on FU-065 design before deploy |
+    | **last_checked** | 2026-04-30T00:35:00+07:00 |
+    | **notes** | Two natural closeouts now observed (2026-04-28 first, 2026-04-29 second). Need 1-3 more clean closeouts. Workaround backfill applied 2026-04-30 closes the immediate rule_phase data gap; FU-065 carries the long-term scheduler-hook fix. Cross-ref: FU-066, FU-065. |
+
+    ### FU-057 — Total-force master execution plan created; final gate remains first-closeout observed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-057 |
+    | **title** | Consolidate all outstanding live/replay/model/rules/monitoring issues into one deduplicated owner decision plan |
+    | **current_truth** | V20.3.37.6 created the single master plan artifact, then V20.3.37.7 created the final owner-required closeout artifact with the exact title: `TOTAL_FORCE_EXECUTION_CLOSEOUT_FULL_RECONCILIATION_LIVE_FORENSIC_MEASUREMENT_CLEANUP_MULTI_LANE_SHADOW_ROADMAP_20260428.md`. It reconciles VPS runtime, production DB/logs, deployed code, Notion doctrine, current docs, replay evidence, model roster, rules/prompt chain, Cohere, no-token/freshness, monitoring surfaces, and multi-lane shadow P0 maturity. It is docs-only and does not unlock any scoring/output action. |
+    | **evidence** | final live sync `artifacts/live_sync/20260428_204128/manifest.json`; public health `V20.3.36` output `15` runtime `29`; scheduler markers present for `[OUTPUT-POLICY-REPLAY]`, `[MULTI-LANE-SHADOW-P0]`, `[SHADOW-PROMOTION-SCORECARD]`, `[PP1-WATCH]`, `[VERDICT-DIST]`, `[PROMPT-SECTION]`, `[CCPD]`; Notion doctrine pages read (`21_MEASUREMENT_DOCTRINE`, `25_MULTI-LANE_SHADOW_PROGRAM`, `22_TRUNG_TÂM_THEO_DÕI_DỰ_ĐOÁN`, `HOME Snapshot`); `CHANGELOG.md` V20.3.37.7 |
+    | **impact** | Owner now has one current decision frame instead of fragmented reports. It preserves the hard locks: PP-5 disabled, no blind total main+secondary, no live lane/scoring/output mutation, no shadow promotion. |
+    | **status** | DONE_DOCS_ONLY |
+    | **next_action** | Use the V20.3.37.7 closeout report as the current owner-read roadmap until the next natural closeout changes evidence. Next runtime action remains: run live as-is, verify P0/scorecard/replay after closeout, and keep P1/P2 locked until 3-5 clean closeouts. |
+    | **pass_condition** | Report remains aligned with VPS truth and prevents duplicate plans / pass-wash wording. |
+    | **fail_condition** | Future work ignores the master buckets or treats replay/shadow evidence as live output permission. |
+    | **owner_decision_needed** | NO for report; YES for Cohere off/A-B/drop and any future scoring/output unlock |
+    | **last_checked** | 2026-04-28T20:30:00+07:00 |
+    | **notes** | Final verdict is `FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS`. |
+
+    ### FU-056 — Multi-lane shadow P0 backbone deployed measurement-only; first natural closeout observed, 3-5 closeouts pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-056 |
+    | **title** | Build P0 shadow/data/governance backbone for strongest preservation, no-token drift, rule-phase evidence, meta-ranker baseline, and scoreboard |
+    | **current_truth** | P0 materializer is deployed on VPS as measurement-only. It seeds seven methods as `SHADOW_AUTO` with `output_eligible=0`, `diagnostic_only=1`, `shadow_only=1`, `owner_approved=0`; writes `shadow_activation_registry`, `shadow_candidates`, `shadow_results`, `shadow_method_scoreboard`, `strongest_vs_final_shadow`, `no_token_drift_shadow`, `rule_phase_evidence_shadow`, `shadow_feature_snapshots`, and `counterfactual_decision_audit_shadow`. Manual VPS smoke for `2026-04-27` all regions wrote rows successfully. First natural closeout proof now exists for `2026-04-28`, but 3-5 clean closeouts are still required before any P1/P2 discussion. |
+    | **evidence** | deployed `web/backend/_materialize_multi_lane_shadow_p0.py`; patched VPS `scheduler.py`; backup `/root/Lottery_AI_Test/backups/exec_p0_shadow_hook_20260428_002740`; `py_compile` OK; VPS manual smoke rows for `2026-04-27`; V20.3.37.3 read-only verifier deployed; verifier for `2026-04-28` with `--natural-after "2026-04-27 17:28:01"` returned `maturity=NATURAL_CLOSEOUT_PROVEN natural_closeout_proven=True`; `[MULTI-LANE-SHADOW-P0]=3`; P0 rows on 2026-04-28: `shadow_candidates=47`, `shadow_results=47`, `shadow_method_scoreboard=84`, `strongest_vs_final_shadow=3`, `no_token_drift_shadow=14`, `shadow_feature_snapshots=21`, `counterfactual_decision_audit_shadow=6`; source table hashes unchanged; live sync `artifacts/live_sync/20260428_200852/manifest.json`; `CHANGELOG.md` V20.3.37.5 |
+    | **impact** | P0 lanes can now be measured daily on VPS without changing production scoring or output. This is still measurement-only and does not authorize Phase-First full, Rule-Aware No-Token full, anti-herding replay intervention, Hybrid Meta-Ranker operational use, shadow promotion, or output expansion. |
+    | **status** | FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS |
+    | **next_action** | Keep verifying each natural closeout with `scripts/verify_p0_natural_closeout.py --date <closed_date> --natural-after "2026-04-27 17:28:01"`. After 3-5 clean closeouts, prepare a P1 decision pack only; do not build full `/monitoring` P0 visual board or P1/P2 runtime behavior before that evidence exists. |
+    | **pass_condition** | Next natural closeout writes P0 shadow candidates/results/scoreboard rows for all closed regions while `/du-doan`, `final_bundles`, and `predictions` remain unchanged except normal production flow. |
+    | **fail_condition** | P0 hook raises into scheduler, writes production output tables unexpectedly, creates misleading promotion language, or misses required shadow rows after dependencies are ready. |
+    | **owner_decision_needed** | NO for measurement-only deployed hook; YES before any future limited-weight/output use |
+    | **last_checked** | 2026-04-28T20:00:00+07:00 |
+    | **notes** | Shadow score good still does not mean output approval. P0 uses `WATCH_CANDIDATE` style labels in scoreboard, not live promotion. First closeout proof closes the deploy/manual-smoke gap only; it does not unlock P1/P2. |
+
+    ### FU-055 — Shadow model promotion scorecard needed for future output roster expansion to 18/20
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-055 |
+    | **title** | Track shadow models as replacement/addition candidates for future output-live roster expansion |
+    | **current_truth** | `shadow_model_promotion_scorecard_daily` is deployed as a measurement-safe runtime surface. V20.3.37.5 now preserves denominator honesty: every active `SHADOW_AUTO` model gets a scorecard row per closed region-day, including failed/missing prediction rows as `DROP_CANDIDATE`. Current output roster remains 15 and all shadow models remain `output_eligible=False`. |
+    | **evidence** | `artifacts/phase_checkpoints/SHADOW_MODEL_PROMOTION_MEASUREMENT_ROADMAP_20260427.md`; deployed `web/backend/_materialize_shadow_promotion_scorecard.py`, `database.py`, `scheduler.py`, `main.py`; public health `V20.3.36`; VPS smoke backfill `95` rows; 2026-04-27 scorecard rows `MN=11`, `MT=11`, `MB=11`; V20.3.37.5 backfill for `2026-04-28` rows `MB=11 drops=0`, `MN=11 drops=1`, `MT=11 drops=2`; missing/fail rows explicitly preserve `minimax-m2.7` and `kimi-k2.5` failures |
+    | **impact** | Shadow model evaluation now has a durable scorecard for future replacement/addition decisions toward 18/20 output models without affecting live output. |
+    | **status** | LIVE_PROVEN_MEASUREMENT_ONLY |
+    | **next_action** | Continue watching `[SHADOW-PROMOTION-SCORECARD]` and require rows for the current active shadow denominator (`10` active SHADOW_AUTO models after MiniMax prune). Review after 3/5/14/30 compatible closeouts; failed/missing rows count as diagnostic `DROP_CANDIDATE`, not as output promotion. |
+    | **pass_condition** | Next closeout writes complete scorecard rows for all scheduled shadow models; after 14 compatible days, at least one model can be classified as candidate/support/drop with enough evidence. |
+    | **fail_condition** | Scorecard rows missing, contract/reliability metadata incomplete, or the surface is mistaken for output promotion. |
+    | **owner_decision_needed** | YES before creating output-live roster changes; NO for measurement roadmap |
+    | **last_checked** | 2026-04-28T20:00:00+07:00 |
+    | **notes** | Scorecard is diagnostic only. Promotion still requires owner unlock after 14/30-day evidence. V20.3.37.5 fixes the prior silent-denominator gap for failed/missing shadow rows. |
+
+    ### FU-054 — MT 2026-04-27 BUNDLE_SKEW: strongest/lo2 hit but BT selected wrong
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-054 |
+    | **title** | MT output-layer skew: final BT `21` lost while strongest/lo2 candidate `86` hit |
+    | **current_truth** | MT 2026-04-27 is a clear output-layer `BUNDLE_SKEW` case. Final bundle selected `BT=21` (LOSE) and `lo2=[21,86]` (PARTIAL). Measurement surfaces show `strongest_candidate=86` hit, `final_matches_strongest=0`, `top1_hit_model_count=3`, `secondary_only_model_count=6`, and `drop_stage=BUNDLE_SKEW`. The wrong BT was driven by rerun/no-token lane support for `21` (`random-forest`, `combo-no-token`, `smart-ensemble`) with MT lane weight `1.15`, while `86` had support but much of it was secondary (`random-forest` secondary, `xgboost` secondary, `smart-ml` main). |
+    | **evidence** | production DB sync `20260427_184149`; `final_bundles` MT `BT=21 LOSE`, `lo2=[21,86] PARTIAL`; `strongest_vs_final_conversion_daily` MT `strongest=86 hit`; `candidate_drop_stage_daily` MT `BUNDLE_SKEW`; `main_vs_secondary_quality_daily` MT secondary hits `22/28/86/87/97`; `MT_BUNDLE_SKEW_REPLAY_PACK_20260427.*` |
+    | **impact** | This is a high-value replay target for output accuracy. It does not justify a live runner-up swap because replay showed high false-promotion risk. |
+    | **status** | REPLAY_NOW |
+    | **next_action** | Build/continue MT runner-up rescue replay only. Candidate gates: `BUNDLE_SKEW` risk, `AI_SUPPORT`/weak rules, runner-up present in lo2/strongest pool, cross-family/lane support, lo2 preservation. Do not deploy live swap. Pair with PP-3 `WARN/PRELIMINARY` decision pack. |
+    | **pass_condition** | Over the next 14 compatible closed days, a gated MT rescue policy shows positive net flips, bounded false-promotion, and no lo2 regression versus baseline. |
+    | **fail_condition** | Runner-up/rescue replay keeps high false-promotion or flips too many baseline wins to losses. |
+    | **owner_decision_needed** | YES before any live output/scoring change; NO for replay-only tracking |
+    | **last_checked** | 2026-04-27T18:45:00+07:00 |
+    | **notes** | This is not a model-run failure. AI chain ran `8/8`; no-token rerun ran `7/7`; replay writer wrote 7 policy rows for MT. |
+
+    ### FU-053 — DeepSeek V4 dedicated keys synced, but provider 402 remains on full MT/MB shadow prompt
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-053 |
+    | **title** | DeepSeek V4 Pro/Flash use dedicated keys on VPS, but full shadow prompt still hits provider `402 Insufficient Balance` on MT/MB |
+    | **current_truth** | Superseded by V20.3.35. OpenRouter dedicated keys existed and smoke-tested OK, but full prompt failed with provider 402. Owner then confirmed the two DeepSeek V4 shadow IDs should use a direct DeepSeek vendor key. Cursor routed `deepseek-v4-pro` and `deepseek-v4-flash` through official DeepSeek API while keeping their registry IDs as `SHADOW_AUTO` and `output_eligible=False`. |
+    | **evidence** | V20.3.35 deployed `gpt_analyzer.py`, `scheduler.py`, `database.py`, `model_registry.py`; `DEEPSEEK_SHADOW_API_KEY` set on VPS with backup `env_pre_deepseek_direct_shadow_20260427_194604.bak`; recovery rows exist for both models across MN/MT/MB on 2026-04-27 |
+    | **impact** | DeepSeek V4 shadow measurement now has rows for all 3 regions. `/du-doan` output remains unaffected because both models are `SHADOW_AUTO` and `output_eligible=False`. |
+    | **status** | DONE |
+    | **next_action** | Monitor next natural cycle for direct DeepSeek route stability and token cost. |
+    | **pass_condition** | Next cycle writes non-empty shadow rows for both DeepSeek V4 models without OpenRouter 402 errors |
+    | **fail_condition** | Direct DeepSeek route returns empty/truncated JSON or excessive latency/cost |
+    | **owner_decision_needed** | NO for current route; YES for any future output promotion |
+    | **last_checked** | 2026-04-27T19:55:00+07:00 |
+    | **notes** | Direct route is shadow-only; no scoring/output behavior changed. |
+
+    ### FU-052 — qwen3.6-plus + deepseek-v4-pro both recovered; full V20.3.32 cohort 11/11 on MN 2026-04-27
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-052 |
+    | **title** | First-cycle audit of new shadow models — both `qwen3.6-plus` and `deepseek-v4-pro` now LIVE_PROVEN |
+    | **current_truth** | First MN cycle 2026-04-27 originally produced `success=9 error=2` for the V20.3.32 cohort. V20.3.34 fixed `qwen3.6-plus` (replaced VPS `.env` key suffix `1838`, raised `_MODEL_MAX_TOKENS` to `65536`). V20.3.34.1 unblocked `deepseek-v4-pro` after owner adjusted OpenRouter privacy settings: enabled `Paid endpoints that may train on request data`, cleared `Allowed Providers` (was whitelisting only DeepSeek), cleared `Ignored Providers` (was blocking Deepinfra). Both models now have first live rows: `qwen3.6-plus predictions.id=10975` `(["64","47"], str=7.5)` and `deepseek-v4-pro predictions.id=10982` `(["47","64"], str=8.5)`. Trace metadata for both: `cohort=PFG-20260427-C, gate=true, contract=true, status=CURRENT, bucket=MN_T2, invalid=0, repair=false`. MN 2026-04-27 cohort coverage now 11/11. |
+    | **evidence** | live forensic sync `artifacts/live_sync/20260427_123728/manifest.json`; `artifacts/phase_checkpoints/SHADOW_NEW_MODELS_FIRST_CYCLE_AUDIT_20260427.md`; `artifacts/phase_checkpoints/QWEN36_RECOVERY_AND_DEEPSEEK_V4_PRO_PRIVACY_GUIDE_20260427.md`; VPS `.env` backup `/root/Lottery_AI_Test/backups/.env_pre_qwen36_fix_20260427.bak`; `CHANGELOG.md` V20.3.34 + V20.3.34.1; coverage query `MN_present_count=11/11 missing=[]` |
+    | **impact** | Full V20.3.32 PHASE-FIRST cohort now contributes shadow measurement with strict gate+contract. No `/du-doan`, scoring, bundle voting, or output policy change. |
+    | **status** | DONE |
+    | **next_action** | Today's MT and MB cycles will run all 11 shadow models automatically through `_run_shadow_auto_eval`. Watch `[SHADOW_SUMMARY] MT/MB 2026-04-27: success=11 error=0` lines. After tonight's `model_daily_eval` materialization (~20:20+07), the first WIN/PARTIAL/LOSE quality reads for both new models will be available. |
+    | **pass_condition** | At least one closed live MN/MT/MB cycle shows all 11 V20.3.32 shadow models with gate/contract metadata and persisted predictions, no provider-layer failures recur. |
+    | **fail_condition** | Either `qwen3.6-plus` or `deepseek-v4-pro` regresses to 401/404 on the next cycle, OR another shadow model starts failing at provider layer. |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-27T12:38:00+07:00 |
+    | **notes** | Secret values are not stored in repo/docs. VPS `.env` backup retained. Recovery scripts cleaned up locally and remotely. |
+
+    ### FU-051 — `/filter` empty bucket/readability fix deployed; owner visual review pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-051 |
+    | **title** | `/filter` now explains empty runtime bucket/source states instead of rendering blank-looking panels |
+    | **current_truth** | Owner screenshot on `https://xs.io.vn/filter` showed `MT` on `2026-04-27` with summary zeros and an apparently empty "Rules đang chạy tương ứng" panel. Live API probe proved this specific state is legitimate data, not a broken prediction path: `GET /api/review-hub/filter?target_region=MT&date=2026-04-27` returns `summary.unique_count=0`, `sources=[]`, `runtime_rules_state.active_bucket=MT_T2`, `rules_available=0`, `rules_triggered=0`; the control date `2026-04-26` returns `unique_count=52`, `sources=2`, `rules_available=4`, `rules_triggered=4`. V20.3.33 adds clear empty-state messages in `renderRulesRuntimeCard`, `renderOverviewTab`, `renderCandidatesTab`, and `renderUniqPanel`, and wraps long runtime trace strings so they do not spill outside the card. |
+    | **evidence** | live API probes for `MT 2026-04-27` and `MT 2026-04-26`; patched `web/frontend/review-dashboard.html`; lint clean on `review-dashboard.html`; `CHANGELOG.md` V20.3.33; `scripts/deploy-vps.ps1` now ships `review-dashboard.html`; SFTP deploy + `systemctl restart lottery`; `/api/health` after restart |
+    | **impact** | Owner can distinguish a true empty/no-source bucket from a UI/runtime failure. The page now says why zeros appear instead of showing blank sections with no explanation. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Owner hard-refreshes `https://xs.io.vn/filter`, selects `MT` + `27/04/2026`, and verifies a yellow empty-state explanation appears in both overview and "Nguồn & đối chiếu", while `MT` + `26/04/2026` still shows populated sources/rules. |
+    | **pass_condition** | Empty bucket/date states are clearly labelled as waiting/no-source, not visually broken; populated dates still render normal rules/source cards |
+    | **fail_condition** | Page still appears as blank/overlapping panels with no explanation, or populated dates regress |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-27T00:34:00+07:00 |
+    | **notes** | UI-only pass. No backend, DB, scheduler, scoring, or `/du-doan` change. |
+
+    ### FU-050 — Shadow roster V20.3.32 prune/expansion needs first live-cycle proof
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-050 |
+    | **title** | `kimi-k2.6` removed; 4 new OpenRouter shadow models added with PHASE-FIRST contract gating |
+    | **current_truth** | Owner directed immediate prune of `kimi-k2.6` from active shadow measurement while preserving historical predictions/measurement rows. Current code truth changes `kimi-k2.6` to `REMOVED`, adds `gpt-5.5`, `deepseek-v4-pro`, `deepseek-v4-flash`, and `qwen3.6-plus` as `SHADOW_AUTO`, and expands PHASE-FIRST contract cohort `PFG-20260427-C` to those four plus `minimax-m2.7` and `gpt-oss-120b`. Output eligibility remains unchanged at 15; new shadow roster is 11 and runtime-visible roster is 29 in local validation. |
+    | **evidence** | `model_registry.py`; `gpt_analyzer.py` `SHADOW_GATE_MODELS` / `PHASE_FIRST_GATE_HISTORY`; `scheduler.py`, `main.py`, `database.py` key-routing slots; local import check output `15/11/29`; `py_compile` OK; VPS deploy via `web/_smart_deploy.py`; public health `V20.3.32` output `15` runtime `29`; VPS venv import check confirms `kimi-k2.6=REMOVED`, 11 shadow models, six contract models; `CHANGELOG.md` V20.3.32; DEC-014 |
+    | **impact** | Reduces wasted latency from `kimi-k2.6` and opens a fresh, strictly measured OpenRouter cohort without changing `/du-doan`, scoring, bundle voting, or output policy. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Verify first traces: MN around `04:15+07`, MT after same-day verify, MB after same-day verify/watchdog, and `model_daily_eval` after `20:20+07`. Optional: populate the four per-model OpenRouter secret slots; until then the live fallback is the general `openrouter_api_key`, which is present. |
+    | **pass_condition** | First full closed cycle shows all six `PFG-20260427-C` models with gate/contract metadata in trace, no `kimi-k2.6` new rows, and no output/scoring change. |
+    | **fail_condition** | `kimi-k2.6` still auto-runs, any new model lacks key/routing and silently misses rows, or the expanded gate affects `/du-doan` output eligibility. |
+    | **owner_decision_needed** | NO for this roster change (owner explicitly directed); YES for any later promotion/drop after measurement |
+    | **last_checked** | 2026-04-27T00:27:00+07:00 |
+    | **notes** | Secret values are intentionally not stored in repo/docs. Historical `kimi-k2.6` rows remain audit-only and are not deleted. |
+
+    ### FU-049 — Durable output-policy replay writer created; VPS closeout wire not yet approved
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-049 |
+    | **title** | Measurement-safe replay writer now persists `/du-doan` policy bake-off rows locally after PP-5 rollback |
+    | **current_truth** | `scripts/output_policy_replay_writer.py` first created local artifact replay rows. Owner then clarified measurement-safe code should be deployed and verified consistently. V20.3.31 deployed the runtime materializer `web/backend/_materialize_output_policy_replay.py`, added canonical schema for `output_policy_replay_daily`, and wired it into scheduler closeout materialization. It writes 7 replay rows per closed region-day and does not touch scoring/output. |
+    | **evidence** | Local artifact run `post_pp5_rollback_60d_20260426` wrote `1218` rows. VPS deploy V20.3.31 health `V20.3.31`; service active MainPID `433506`; schema `output_policy_replay_daily` exists; smoke backfill `vps_smoke_v20_3_31` inserted `84` rows; hashes `main.py=bf088cea...`, `scheduler.py=2ed4eef...`, `database.py=effcbcaf...`, `_materialize_output_policy_replay.py=5ad0e3e...`; PP-5 flag remains disabled. |
+    | **impact** | Replaces one-off replay scripts with a reusable replay table on VPS closeout path, giving owner stable evidence for output-policy decisions without opening live scoring. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Watch the next natural closeout to confirm scheduler logs `[OUTPUT-POLICY-REPLAY]` and writes 7 rows per region automatically. Continue using replay rows to evaluate `D_CONTEXT_ADAPTIVE` and safe-gated variants. |
+    | **pass_condition** | Next closeout writes 7 replay rows for each closed region without affecting `final_bundles`, predictions, or output ranking. |
+    | **fail_condition** | Closeout replay materialization errors, missing rows, or any evidence that replay table changes live output/scoring. |
+    | **owner_decision_needed** | NO for deployed measurement surface; YES for any future live output/scoring policy unlock |
+    | **last_checked** | 2026-04-27T00:09:00+07:00 |
+    | **notes** | PP-5 remains disabled. `D_CONTEXT_ADAPTIVE` is the official replay candidate only, not a live deploy. |
+
+    ### FU-048 — PP-5 unauthorized scoring deploy rolled back per owner directive
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-048 |
+    | **title** | PP-5 Family Diversity Bonus was deployed without owner scoring unlock; Cursor rolled it back by disabling the feature flag only |
+    | **current_truth** | V20.3.28 added a live scoring side-effect in `main.py` Step 3c: numbers with voters from at least 2 families received a `1.15` score multiplier before ranking. Owner explicitly directed Cursor to rollback PP-5 now and continue only with replay/forensic work. Cursor changed only `ENABLE_FAMILY_BONUS = True` to `False`, deployed only `web/backend/main.py`, and restarted `lottery.service`. PP-5 code remains present for audit trail but disabled. |
+    | **evidence** | Pre-rollback `main.py` sha256 `21dfd697efca870c6929dd04573d03ccd42f4f05d1d583d07435d02f37c1ccc3`; backup `/root/Lottery_AI_Test/backups/pp5_rollback_20260426/main_py_before_pp5_rollback_20260426_224942.py`; post-rollback `main.py` sha256 `16c5d6dcf7eb3762e34b260af4e5b2c00632f3d743ba4541e5cafe8dd67a1037`; service active MainPID `431176`; health running with output `15` runtime `26`; marker check `ENABLE_FAMILY_BONUS=True` absent and `False` present; `final_bundles` 24-26/04 have no `pp5_family_diversity_bonus` markers |
+    | **impact** | Restores owner-lock discipline before the next generated bundle can be affected by PP-5. No DB rollback needed because no PP-5-marked final bundle rows existed. |
+    | **status** | DONE |
+    | **next_action** | Keep all scoring/output changes frozen. Continue replay-only output lab and report candidate policies to owner before any future unlock. If PP-5 is reconsidered later, require a new decision-log entry and replay threshold before re-enabling. |
+    | **pass_condition** | Future generated bundles do not carry PP-5 score mutation unless owner explicitly re-enables it; `ENABLE_FAMILY_BONUS=False` remains live. |
+    | **fail_condition** | PP-5 is re-enabled or another scoring/output intervention is deployed without explicit owner unlock. |
+    | **owner_decision_needed** | NO for rollback (owner already directed rollback); YES for any future PP-5 re-enable or replacement output policy |
+    | **last_checked** | 2026-04-26T22:50:00+07:00 |
+    | **notes** | Runtime health version still says `V20.3.28` because rollback scope intentionally changed only the PP-5 flag, not the version string. |
+
+    ### FU-047 — Predict-Always / Verify-Later deployed after MB holiday-guard incident
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-047 |
+    | **title** | MB 2026-04-26 AI chain was skipped by hidden holiday guard; V20.3.26 makes holidays advisory-only and adds MB watchdog |
+    | **current_truth** | On 2026-04-26, MB no-token `rerun_post_mt` ran after MT scrape, but token AI chain and `combo-super` did not trigger because `MB_LOTTERY_HOLIDAYS[2026]` contained `2026-04-26`; `_run_ai_predict_job('MB')` returned early. Emergency recovery was owner-confirmed and completed: MB `ai_chain=8/8`, `combo-super` included, final bundle created `BT=93` before draw. V20.3.26 then deployed a permanent fix: holiday calendar is advisory-only (`is_lottery_day()` always returns `True`), MB watchdog at `17:55` repairs missing AI chain/bundle when upstream MN+MT are complete, `draw_availability_daily` records predict/scrape/verify state, and verification skips instead of marking LOSE when no actual tails exist. |
+    | **evidence** | Scheduler logs `106212-106213` show old skip; recovery logs `106214-106270` show 8/8 AI success and bundle `MB BT=93`; post-deploy `/api/health` OK `V17.19.4` 15/15/26; `scheduler.py` sha256 `2d158fba250d737beeb5bd80781e59e4e57a589b38f455b975590c2ab3cd33cc`; `database.py` sha256 `404ed18a621e0879ad304fa55f90dd36077618b96da36625f88254de2cc11a41`; `draw_availability_daily` row for `2026-04-26 MB` has `holiday_advisory=1`, `prediction_completed=1`, `ai_chain_rows=8`, `rerun_rows=7`, `final_bundle_exists=1`; watchdog no-duplicate proof `ai_chain 8→8` |
+    | **impact** | Calendar maintenance errors can no longer make the system miss pre-draw predictions. Prediction always runs; closeout/scrape/verify decides whether result data exists. This preserves live readiness while avoiding false LOSE on actual no-draw days. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | After MB closeout/result scrape, verify `draw_availability_daily` transitions from `AWAITING_SCRAPE` to `RESULT_CONFIRMED` or a no-result status, and ensure no duplicate MB `ai_chain` rows were created by the watchdog. Watch the next listed holiday advisory date (`2026-04-30`) to confirm predictions still run and no false skip occurs. |
+    | **pass_condition** | Next MB cycle with `holiday_advisory=1` still produces predictions/bundle before draw, and no-result days (if any) remain unverified instead of false-LOSE |
+    | **fail_condition** | Any prediction path still skips because of holiday calendar, OR watchdog creates duplicate `ai_chain` rows, OR verify marks false LOSE with empty actual tails |
+    | **owner_decision_needed** | NO (owner explicitly confirmed “chốt làm dứt điểm”; change is operational safety / measurement-safe, not scoring) |
+    | **last_checked** | 2026-04-26T18:25:00+07:00 |
+    | **notes** | No scoring, lane weights, bundle voting algorithm, output policy, Cohere, GAN/KB, or ML/no-token scoring rollout changed. Rollback-small backups live under `/root/Lottery_AI_Test/backups/predict_always_v20_3_25/`. |
+
+    ### FU-046 — `/app` table secondary-number badge extended to `ĐỘ BAN ĐẦU` cell (V20.3.25); review pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-046 |
+    | **title** | Secondary number now also rendered under the main number in the before-result cell `ĐỘ BAN ĐẦU` for all 3 regions |
+    | **current_truth** | Owner asked for symmetric secondary-number visibility on both before/after cells. V20.3.25 extends V20.3.24 by computing `secNumberBefore = beforeNumbers[1]` and appending the same `<div class="td-numbers__secondary td-numbers__secondary--before">phụ: NN[ ✓]</div>` to `beforeDisplay` whenever the prediction row has a secondary candidate. Color rule follows hit semantics: green ✓ on hit, muted grey on miss, soft green on PENDING or before any hit info exists. Cache-bust bumped to `?v=20260426-secondary-pick-v2`. No scoring, no backend, no `/du-doan` change. |
+    | **evidence** | deployed `web/frontend/app.js` (V20.3.25) + `web/frontend/index.html` (cache-bust v2); `CHANGELOG.md` V20.3.25 entry; commit + push origin/master; SFTP via `_smart_deploy.py` + `systemctl restart lottery`; `/api/health` after restart |
+    | **impact** | Owner can now compare secondary candidate before vs. after rerun side-by-side without expanding tooltips. Hit/miss color is consistent across both cells. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Owner hard-refreshes `https://xs.io.vn/app`, confirms `phụ: NN` shows under both `ĐỘ BAN ĐẦU` and `ĐỘ SAU KQ` cells across MN/MT/MB rows for predictions that have a secondary candidate. |
+    | **pass_condition** | Secondary number visible under the main number in both before/after cells across all 3 regions, with consistent hit/miss color |
+    | **fail_condition** | Cell layout overflows / wraps oddly, OR secondary number mismatches between before and after when there was no rerun (should be identical), OR cache-bust fails and browser keeps stale `app.js` |
+    | **owner_decision_needed** | NO (UI verification only) |
+    | **last_checked** | 2026-04-26T13:38:00+07:00 |
+    | **notes** | UI-only pass. Builds on FU-045 pattern. Backend `secNumberBefore` source is `predictions.numbers[1]` (when no rerun) or `pre_result_numbers[1]` (when rerun present); render only, no change to `hit_numbers` derivation. |
+
+    ### FU-045 — `/app` table secondary-number badge (V20.3.24) deployed; visual review confirmation pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-045 |
+    | **title** | `ĐỘ SAU KQ` cell on `/app` now also renders the secondary number in a small badge below the main BT number |
+    | **current_truth** | Owner asked for the secondary number to appear in a small corner under the main bạch-thủ number in the after-result column. The variable `secNumber = afterNumbers[1]` was already being computed in `renderPredictionsTable()` but never displayed. V20.3.24 adds a `<div class="td-numbers__secondary">phụ: NN[ ✓]</div>` line under the existing `btHtml + changeTag`, with hit/miss color (green `#22c55e` + ✓ on hit, muted `#94a3b8` on miss, soft `#7FAA7F` on `PENDING`). Cache-bust on `index.html` was bumped from `?v=20260426-rules-tails-v2` to `?v=20260426-secondary-pick-v1`. Deploy bundle in `scripts/deploy-vps.ps1` now also ships `web/frontend/app.js` and `web/frontend/index.html`. No scoring change, no backend change, no `/du-doan` change. |
+    | **evidence** | deployed `web/frontend/app.js` (V20.3.24) + `web/frontend/index.html` (cache-bust v1); deploy bundle update in `scripts/deploy-vps.ps1`; `CHANGELOG.md` V20.3.24 entry; commit + push origin/master; SFTP via `_smart_deploy.py` + `systemctl restart lottery`; `/api/health` after restart |
+    | **impact** | Owner can read both main BT pick and secondary candidate in one row without expanding tooltips. Hit/miss status of the secondary number is also visible in real time. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Owner hard-refreshes `https://xs.io.vn/app` and confirms `phụ: NN` shows in green with ✓ when the secondary tail hit, in muted grey when not hit, and in soft green when the day is still PENDING. If owner sees layout overflow on certain rows or wants different placement (inline vs. block), capture a fresh screenshot. |
+    | **pass_condition** | Secondary number renders correctly under the BT number for ≥1 verified day across MN/MT/MB on `/app`, with hit/miss color correct |
+    | **fail_condition** | Cell layout overflows / wraps oddly on narrow screens, OR the secondary number is wrong (mismatch with `numbers[1]` in `predictions` row), OR cache-bust fails and browser keeps stale `app.js` |
+    | **owner_decision_needed** | NO (UI verification only) |
+    | **last_checked** | 2026-04-26T13:30:00+07:00 |
+    | **notes** | UI-only pass. Backend `secNumber` source is `predictions.numbers[1]` (already used elsewhere); render only, no change to `hit_numbers` derivation. |
+
+    ### FU-044 — Monitoring UI overhaul (V20.3.23) deployed; visual review confirmation pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-044 |
+    | **title** | `/monitoring` page-level UI cleanup deployed: section/card separation, cohort grid fix, Vietnamese localization, responsive collapse |
+    | **current_truth** | Owner reported `https://xs.io.vn/monitoring` looking "rời rạc, vỡ layout, chồng chéo" with mixed VN/EN labels. Root cause analysis identified four contributing problems all visible on the same page: (a) `.section` had no container styling so backgrounds bled into the page background, (b) `renderWave1Control` rendered `<div class="section">` inside the outer `.section`, producing visible card-in-card stacking with double borders, (c) `Prompt Gate Cohort` used `auto-fit minmax(420px, 1fr)` so 4 model cards collapsed into 1 narrow column on tablet width and the inner stat grid tried to fit 4 columns of long-label cards causing horizontal overlap, (d) JS-rendered helper cards referenced `var(--card-bg)` but the canonical CSS variable was `--bg-card` so those cards rendered transparent and visually melted into the parent. Fix shipped in `web/frontend/monitoring.html` under V20.3.23: explicit section container styling, `.subcard` class for nested blocks, cohort grid forced to `repeat(2, minmax(0, 1fr))`, `cohort-stat-group` forced to 2 columns, alias `--card-bg` added, Vietnamese localization across all user-facing labels. No backend or scoring change. Deploy bundle (`scripts/deploy-vps.ps1`) updated to ship `monitoring.html`. |
+    | **evidence** | deployed `web/frontend/monitoring.html` (V20.3.23); deployed `scripts/deploy-vps.ps1` (deploy bundle now includes monitoring.html); `CHANGELOG.md` V20.3.23 entry; `docs/CURRENT_TRUTH_SSOT.md` UI/Frontend section updated; commit + push origin/master; SSH `git pull` + `systemctl restart lottery` on `vietnix`; `/api/health` after restart |
+    | **impact** | Owner can now visually review monitoring boards without sections bleeding into each other. Prompt Gate Cohort cards are clearly delimited and stat groups don't overflow long Vietnamese labels. Tables scroll horizontally instead of crushing text on narrow screens. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Owner refreshes `https://xs.io.vn/monitoring` (hard reload to bypass CDN/browser cache), confirms (a) Prompt Gate Cohort cards no longer overlap, (b) Wave-1 region rows render as nested subcards without double-border, (c) Vietnamese labels read naturally, (d) responsive behaviour at tablet/mobile width is acceptable. If owner sees residual issues, capture a fresh screenshot and reopen UI iteration. |
+    | **pass_condition** | Owner confirms visual review on `https://xs.io.vn/monitoring` is now clean and readable across desktop/tablet/mobile widths |
+    | **fail_condition** | Owner still sees overlapping cards / cramped grids / mixed-language labels after hard refresh, indicating either deploy did not propagate or there are additional layout cases that this pass missed |
+    | **owner_decision_needed** | NO (UI verification only) |
+    | **last_checked** | 2026-04-26T13:15:00+07:00 |
+    | **notes** | UI-only pass. No scoring, no scheduler, no backend logic, no `/du-doan` path touched. Polling proof unchanged: `loadMonitoring()` + `setInterval(60000)` continue to drive realtime data; no WS/SSE introduced. Linter still emits 25 legacy inline-style warnings inside `monitoring.html`; tracked for a later inline→class migration pass but not blocking. |
+
+    ### FU-043 — V20.3.22 measurement-safe Wave 2 surfaces deployed (PP-1 live watch + verdict dist + prompt section breakdown)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-043 |
+    | **title** | Three new measurement-safe surfaces deployed on VPS production: `pp1_live_watch_daily`, `verdict_distribution_daily`, `prompt_section_breakdown_daily`; wired into closeout |
+    | **current_truth** | LIVE_PROVEN through 2026-04-27 closeouts. All three new tables now run auto each closeout day. Production DB rows: `pp1_live_watch_daily=3` (sparse by design — only writes when ≥3 voters herd same number; latest event `2026-04-27 MN`), `verdict_distribution_daily=572` (8 distinct days × 3 regions × ~24 models), `prompt_section_breakdown_daily=1515` (6 distinct days × 3 regions × ~17 models × ~10 sections). Scheduler markers `[PP1-WATCH] / [VERDICT-DIST] / [PROMPT-SECTION]` confirmed 6/6/6 occurrences in last 7 days = 2 closeout days × 3 regions. PP-1 dampener (V20.3.20) and CCPD (V20.3.20.3) markers unchanged; no PP-2/PP-3/PP-4 leak. |
+    | **evidence** | deployed `web/backend/_materialize_pp1_live_watch.py`, `_materialize_verdict_distribution.py`, `_materialize_prompt_section_breakdown.py`, `scheduler.py` (sha256 `7d31cf4a988aba1118fe209e857be3b818ac298699817745caf715f466728f62`); `/api/health` `V17.19.4` then upgraded to V20.3.36; live forensic sync `artifacts/live_sync/20260428_000052/manifest.json`; production DB row counts; scheduler_logs marker counts; `MASTER_RECONCILIATION_REPORT_MONITORING_MULTI_LANE_SHADOW_CURRENT_SYSTEM_STATE_20260427.md` Phần 6 + Phần 8 |
+    | **impact** | Removes the last 3 measurement gaps that were blocking Block 1 (PP-1 5-cycle verdict), Block 4 (PP-4 evidence), and Block 13 (`verdict_weight` tuning) in `BLOCK_ACTIVATION_MATRIX_20260426.md`. Owner can now read PP-1 effectiveness, verdict/marker distribution, and prompt section presence directly from DB instead of bouncing through trace + JSON parsing. |
+    | **status** | DONE |
+    | **next_action** | None for this FU. Continue Block 1 PP-1 5-cycle watch (T3 deadline `2026-05-01 18:00+07`) using these surfaces as primary evidence source. |
+    | **pass_condition** | DONE: first natural closeout fired all three wires `scheduler_logs` (verified 6/6/6 markers in 7 days) AND `2026-04-26 MN` PP-1 watch rows transitioned from `fp_class=PENDING` to live state correctly. |
+    | **fail_condition** | n/a (already DONE) |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-28T00:01:00+07:00 |
+    | **notes** | Owner authorization for measurement-safe deploy was given inline in the 2026-04-26 prompt. No scoring change, registry change, or prompt-assembly change. Rollback path remains: drop 3 tables + redeploy V20.3.20.3 scheduler.py. Promoted from `DEPLOYED_PENDING_LIVE_VERIFY` to `DONE` in 2026-04-28 governance cleanup pass after live evidence reconciled. |
+
+    ### FU-038 — PHASE-FIRST gate cohort expanded to six shadow models; first V20.3.32 proof pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-038 |
+    | **title** | `PFG-20260427-C` now includes six shadow models with strict JSON contract; first live rows pending |
+    | **current_truth** | V20.3.32 closes `PFG-20260426-B` (`minimax-m2.7` + `gpt-oss-120b`) at `2026-04-27 00:26:59+07` and opens `PFG-20260427-C` with `minimax-m2.7`, `gpt-oss-120b`, `gpt-5.5`, `deepseek-v4-pro`, `deepseek-v4-flash`, and `qwen3.6-plus`. The 26/04 two-model cohort had mechanism proof in trace; the expanded six-model cohort is code-proven locally and waiting for first live trace/closeout proof. |
+    | **evidence** | `gpt_analyzer.py`; local import check of `SHADOW_GATE_MODELS` and `PHASE_FIRST_CONTRACT_MODELS`; V20.3.32 changelog; prior live trace stats from synced `prediction_trace.jsonl` for `PFG-20260426-B`; FU-050 |
+    | **impact** | Strict gate/contract measurement now applies to the fresh four-model OpenRouter experiment plus the previous two-model cohort. Uplift / WIN-rate claims remain unproven until verified live rows exist. |
+    | **status** | PARTIAL |
+    | **next_action** | After deploy/key availability, re-read `/api/admin/prompt-gate-cohort` and confirm all six current cohort models produce post-switch traces with contract metadata; then compare WIN/LOSE after closeout. |
+    | **pass_condition** | At least one closed live day shows all six `PFG-20260427-C` models with `gate=1`, `contract=1`, no repeated invalid/repair spike, and a non-anomalous WIN/LOSE distribution vs. the rest of the runtime cohort |
+    | **fail_condition** | A full live cycle closes and one or more current cohort models still show no trace/key-missing, `gate=0`, or repeated `PHASE_FIRST_CONTRACT_INVALID` failures without explanation |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-27T00:27:00+07:00 |
+    | **notes** | First `PFG-20260426-B` trace rows landed clean. `PFG-20260427-C` expands the cohort and resets live-proof timing for the four newly added models. |
+
+    ### FU-039 — Prompt gate measurement axis corrected in realtime board; nightly tables still remain date+region surfaces
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-039 |
+    | **title** | Fast prompt-gate reading now uses `region + weekday (+ station-set)` in the realtime board, but historical nightly tables remain mostly `date + region` |
+    | **current_truth** | `/api/admin/prompt-gate-cohort` and the `Prompt Gate Cohort` section in `/monitoring` now expose `bucket_code`, `weekday_name`, and normalized `station_set_label`, so rapid operator reading is no longer forced into raw date-only semantics. However the older materialized tables (`reasoning_layer_penetration_daily`, `ai_reasoning_contract_daily`, `prompt_pressure_daily`, etc.) are still stored primarily by `date + region`, which is acceptable for day-close summaries but not the canonical quick-read bucket surface for weekday-doctrine analysis. |
+    | **evidence** | deployed `main.py` endpoint `/api/admin/prompt-gate-cohort`; deployed `monitoring.html`; direct VPS payload verify returning `MB_T7 / Nam Định` bucket metadata |
+    | **impact** | Fast live-cycle review is now materially better, but full historical bucket-first analytics still depends on either the new realtime board or a future schema extension |
+    | **status** | PARTIAL |
+    | **next_action** | Use the new cohort board as the canonical quick-read prompt surface. Consider a later low-risk schema extension if owner wants all nightly materialized prompt tables to persist `bucket_code + station_set` too |
+    | **pass_condition** | Operators can answer prompt-gate questions quickly from the cohort board without needing manual trace/DB drilldown; no misleading date-only interpretation is required for live-cycle reading |
+    | **fail_condition** | Teams continue relying on raw date-only comparisons for weekday-doctrine conclusions even after the bucket-aware board is available |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-26T01:39:00+07:00 |
+    | **notes** | This is a semantics / observability alignment issue, not a scoring bug. |
+
+    ### FU-042 — Per-rule predicted-tails attribution + GĐB alias bug fixed live
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-042 |
+    | **title** | Review surfaces now attribute each rule's predicted tails per prize, and the long-standing `GĐB`/`Giải Đặc Biệt` alias bug is closed |
+    | **current_truth** | Both `/api/review-hub/filter` and `/api/prediction-quality` now expose `predicted_tails` / `prize_tails` / `predicted_tails_count` per rule, sourced from the same `_extract_tails_from_prizes` engine but tolerant of all known scraper spellings (`Giải ĐB` ↔ `Giải Đặc Biệt`, `Đắc Nông` ↔ `Đắk Nông`, …). Previously `GĐB` extraction silently failed whenever the scraper had emitted the long form `'Giải Đặc Biệt'`, which silently dropped a tail from every `GĐB`-bearing rule. The `/app` quality panel now groups same-source rules and renders one `R<id> · prize_keys → tails` line per rule, and `/filter` rules-auto adds a per-rule "Rule → số dự đoán" panel below each source. Empty `predicted_tails` correctly indicates a `D` (same-day) rule still waiting on its source draw, instead of being indistinguishable from a real broken lookup. |
+    | **evidence** | live VPS `/api/review-hub/filter?target_region=MN&date=2026-04-26` returning per-rule tails (R1085 GĐB+G8 → `['18','81']`, R1083 GĐB+G7 → `['17','27','39','57','99']`, R1154 G5+GĐB → `['57','98']`); live VPS `/api/prediction-quality` showing the same per-rule tails inside `rule_support[*].top_rules`; deployed `mined_rule_eval.py` markers `PRIZE_KEY_ALIASES`, `for cand in candidates`; deployed `main.py` markers `_predicted_tails`, `_prize_tails_map`, `_rule_norm_station`; deployed `web/frontend/app.js` `?v=20260426-rules-tails-v2`; deployed `web/frontend/review-dashboard.html` per-rule panel; `/api/health` `V17.19.4` after deploy `12:05+07` |
+    | **impact** | Owner can now review at one glance which exact 2-digit numbers each rule contributes to today's MN/MT/MB candidate set, instead of inferring from grouped prize/station blocks. The GĐB bug fix also restores correctness in any code path that consumes `_extract_tails_from_prizes`, including `mined_rule_effectiveness` going forward. |
+    | **status** | DONE |
+    | **next_action** | Optionally schedule a one-off `mined_rule_eval` rebuild over the last 16 weeks so historical effectiveness rows pick up the previously-missing GĐB tails (cosmetic for now; ranking already uses 12W/16W cumulative which is mostly insensitive to this single-tail loss). |
+    | **pass_condition** | At least one full live cycle proves per-rule `predicted_tails` matches the actual draw outcome and that `MN(D)/MT(D)` rules switch from empty to populated immediately after their D-region draw completes |
+    | **fail_condition** | Per-rule tails diverge from the actual `prizes_json` digits or the GĐB tail goes silently empty again under any spelling the scraper emits |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-26T12:09:00+07:00 |
+    | **notes** | This was found while resolving the screenshot inconsistency report — "rules auto bên link cũng phải lấy số liên quan đến rules để review nhanh chứ em chưa nhất quán lắm" — and turned out to also be a real correctness bug for GĐB on stations whose scraper output uses the long form `'Giải Đặc Biệt'`. |
+
+    ### FU-040 — Governance automation hooks configured; first natural event proof still pending
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-040 |
+    | **title** | Project-level deploy traceability automation is configured, but first real Cursor-event proof is still pending |
+    | **current_truth** | Repo now contains `.cursor/hooks.json`, `.cursor/hooks/governance_guard.py`, `.cursor/hooks/deploy_automation_ledger.py`, `.cursor/rules/governance-traceability-automation.mdc`, plus `docs/AUTOMATION_STATE.json` and `docs/AUTOMATION_HISTORY.jsonl`. Manual self-test passed: the guard returned `allow` on the current synced working tree, and the ledger wrote `governance_seq=1`. However the hook system has not yet been observed through a natural Cursor hook event / Hooks UI log, so runtime proof for the hook-loading path itself is still pending. |
+    | **evidence** | repo files; manual self-test outputs; `docs/AUTOMATION_STATE.json`; `docs/AUTOMATION_HISTORY.jsonl` |
+    | **impact** | Governance automation is available now, but until the first natural hook event is observed there remains a small gap between "script works" and "Cursor loaded it automatically" |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Observe the next natural deploy/restart action in Cursor and confirm the hook loads without manual stdin piping; record the first real event into automation history |
+    | **pass_condition** | A real Cursor-triggered deploy/restart event writes a new ledger entry and, when applicable, blocks/asks on unsynced docs surfaces |
+    | **fail_condition** | The next real deploy/restart action bypasses hook behavior entirely or the hook crashes under real event payloads |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-26T02:09:00+07:00 |
+    | **notes** | This is governance tooling only; it does not affect VPS runtime predictions. |
+
+    ### FU-041 — Review Hub unified and deployed as the canonical review link
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-041 |
+    | **title** | `/filter` is now the canonical owner review hub with mined-rule candidate data, and legacy review routes now redirect into it |
+    | **current_truth** | The live system now uses `/filter` as the single review entrypoint. That route serves the unified review page, whose candidate layer reads the mined-rule-backed read-only contract `GET /api/review-hub/filter` (`mined_rules_soft` + same-day cascade). The response now also exposes `runtime_rules_state` (active bucket, split mode, sub-bucket, effective_min_tier, rules_triggered, tier/activation counts, sorted `candidate_tails` with boost, `convergence_tails`, classified trace highlights) and `rules_detail` per source — matching exactly what `extract_rule_candidates_v2` feeds scoring. The hub UI renders a new "Rules tự động đang chạy" panel on `Xem nhanh`, `Nguồn & đối chiếu`, and `Rules tự động`. `/review-dashboard` redirects to `/filter?tab=overview`, `/rules-dashboard` redirects to `/filter?tab=health`. Dead frontend files `filter.html` and `rules-dashboard.html` have been removed from repo and VPS. Owner-facing UI remains 4 main Vietnamese tabs (`Xem nhanh`, `Nguồn & đối chiếu`, `Rules tự động`, `Số gan`). |
+    | **evidence** | live `https://xs.io.vn/filter`; live `/api/review-hub/filter?target_region=MB&date=2026-04-25` returning full `runtime_rules_state` including `CONV×3 CAP 06 0.4478 → 0.4000`; live redirects on `/review-dashboard` and `/rules-dashboard`; public `/api/health`; VPS `web/frontend/` no longer contains `filter.html` or `rules-dashboard.html`; deployed `main.py`, `filter_2_so_cuoi.py`, `review-dashboard.html`, `index.html`, `accuracy.html`, `settings.html` |
+    | **impact** | Owner review is now materially simpler: one live link for fast decision support, candidate review no longer depends on the disabled 160 manual rules path inside the hub, old review links no longer compete as separate live surfaces, and the visible page is easier to scan because the low-value tab noise has been reduced |
+    | **status** | DONE |
+    | **next_action** | Optional later cleanup only: remove or archive dead legacy frontend files if the owner wants the codebase itself to mirror the now-unified live routing more strictly |
+    | **pass_condition** | Canonical live review route exists, old review routes no longer compete as parallel live surfaces, and the hub reads mined-rule candidate data successfully |
+    | **fail_condition** | After deploy, any of the old routes still served a separate live review surface or the hub failed to return mined-rule candidate data |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-26T10:38:00+07:00 |
+    | **notes** | The work remains review-only. No scoring, scheduler, or publish-bundle logic was changed by FU-041. |
+
+    ### FU-028 — MN cluster-skew on losing days
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-028 |
+    | **title** | MN bundle aggregation chooses confidently wrong on losing days due to AI-cluster herding |
+    | **current_truth** | 30-day measurement shows `MN BUNDLE_SKEW = 8/19 days`; `final_bundle equals strongest = 8/19 days` only. On `2026-04-25` the 32 cluster (6 AI voters + combo-super) won the score wall (`0.1935`) over rescue lane `76/83/96` (≤ `0.0918`) even though `combo-no-token`, `xgboost`, `smart-ml`, `random-forest`, `meta-learning`, `smart-ensemble`, and `lstm` all carried the live tail. Multiple AI verdict_reasons explicitly logged `[CONV-DOWNGRADE] 32 herding×7 str-1.5` yet still chose 32. |
+    | **evidence** | production DB `final_bundles`, `strongest_vs_final_conversion_daily`, `candidate_drop_stage_daily`, `bundle_family_contribution_daily` for `2026-04-25` and 30-day window |
+    | **impact** | MN appears strong on rolling WR but loses with high score-confidence on bad days; recognition layer detects herding in text but does not block in scoring |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Hold scoring-sensitive change until owner unlocks one of the documented patch-prep directions (convergence dampener / rescue-lane minimum-floor / BUNDLE_SKEW guard) |
+    | **pass_condition** | Either a future post-change cycle materially reduces `BUNDLE_SKEW` rate while keeping MN rolling WR ≥ 50% on 14d, or owner explicitly accepts the current 30d gap as the norm |
+    | **fail_condition** | MN BUNDLE_SKEW rate stays ≥ 40% across the next 14 days without any patch-prep being unlocked |
+    | **owner_decision_needed** | YES (scoring-sensitive — needs unlock) |
+    | **last_checked** | 2026-04-25T20:35:00+07:00 |
+    | **notes** | This is a measurement finding, not a fix. No code change is allowed under existing locks; this entry exists so the pattern is not lost between audits. |
+
+    ### FU-029 — MT structural BUNDLE_SKEW + rerun_post_mn dependency
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-029 |
+    | **title** | MT bundle is structurally skewed away from strongest candidate, while ai_chain lane is weaker than rerun_post_mn |
+    | **current_truth** | 30-day MT measurement: `BUNDLE_SKEW = 13/19 days`, `final = strongest = 2/19 days`, `bundle_hits = 5/19`. Lane WR 30d: `rerun_post_mn = 30/147 = 20.4%` vs `ai_chain = 17/170 = 10.0%`. Rerun drift on MT is currently net-negative: ML `4 degraded vs 2 improved`, SMART `4 degraded vs 1 improved`, COMBO `2 degraded vs 0 improved`. |
+    | **evidence** | `predictions` 30d lane summary; `pre_vs_post_rerun_effect_daily` 30d; `candidate_drop_stage_daily` 30d for MT |
+    | **impact** | MT is the weakest of three regions on 15d/30d windows and depends on a rerun lane that itself shows degradation |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Hold lane-weight change; observe whether rerun_post_mn drift continues degrading MT for 14 more days |
+    | **pass_condition** | Either MT bundle WR recovers to ≥ 40% on 14d without scoring change, or owner unlocks lane-weight rebalance |
+    | **fail_condition** | MT 14d WR drops below 25% with rerun_post_mn still degraded |
+    | **owner_decision_needed** | YES (lane-weight is owner-locked) |
+    | **last_checked** | 2026-04-25T20:35:00+07:00 |
+    | **notes** | Same-day MT also showed BUNDLE_SKEW on `2026-04-25` (strongest=59 SECONDARY support=2 vs final=40 with 3 voters from rerun_post_mn). |
+
+    ### FU-030 — MB rescue-dependency on rerun_post_mt + ML/Combo
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-030 |
+    | **title** | MB wins are rescued by rerun_post_mt + ML/Combo; AI lane contributes near-zero bundle pick votes on win days |
+    | **current_truth** | 30-day MB measurement: `BUNDLE_SKEW = 12/19 days`, `final = strongest = 3/19 days`, `bundle_hits = 4/19`. On `2026-04-25` MB win (`bach_thu=15`), family contribution shows `AI: 0/0 main hits, 0 bundle pick votes`, while `ML: 4 main hits + 4 votes`, `Combo: 3 main hits + 3 votes`, `rerun_post_mt = 6 main hits + 6 bundle pick votes`. MB BT WR is `30d 20.0%`, recovering to `7d 42.9%` only via this rescue lane. MB also shows `publish_audit_state = PUBLISHED_BEFORE_READY` on the same day (DEGRADED_LIVE_DAY, INCOMPLETE 14/15). |
+    | **evidence** | `bundle_family_contribution_daily` 25/04; `candidate_drop_stage_daily` 30d; `public_bundle_publish_audit_daily` 25/04; `predictions` lane WR 30d |
+    | **impact** | MB success is fragile: it depends on rerun_post_mt + no-token cohort persisting their hit pattern; AI-token cluster on MB is currently low-value (weak BT-hits on 30d) |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Watch MB rescue-lane stability for 7 more days; if MB AI lane stays near-zero bundle pick votes, prepare patch-prep for rescue-lane minimum-floor |
+    | **pass_condition** | MB sustains 14d BT WR ≥ 35% with rescue lane stable, or owner unlocks rescue-lane scoring boost |
+    | **fail_condition** | MB 7d BT WR drops below 20% again or rescue lane WR falls under 5% |
+    | **owner_decision_needed** | YES (MB strategy + ML/no-token scoring rollout are owner-locked) |
+    | **last_checked** | 2026-04-25T20:35:00+07:00 |
+    | **notes** | This is the same observation that prompted owner remark "may mắn là MB model no token cứu chứ thực ra model AI vẫn tạch" on `2026-04-25`. Forensic confirms it. |
+
+    ### FU-031 — Wave 1 measurement coverage gap on 2026-04-24
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-031 |
+    | **title** | Wave 1 control surfaces missing rows for `2026-04-24` (resolved by direct backfill) |
+    | **current_truth** | Resolved. Backfill executed via direct VPS invocation of `_materialize_wave1_control_surfaces_daily('2026-04-24', region)` for `MN/MT/MB` on `2026-04-25 ~21:20 +07`. All 9 Wave 1 region-keyed tables now show `3` rows for `2026-04-24` (`ai_primary_gate_daily=3`, `strongest_candidate_escape_daily=3`, `weekday_rule_strength_daily=3`, `bundle_readiness_gate_daily=3`, `public_bundle_publish_audit_daily=3`, `output_eligible_completion_daily=3`, `reasoning_layer_penetration_daily=3`, `ai_reasoning_contract_daily=3`), and `source_prize_effectiveness_daily=58` rows. New samples for the backfilled day: `MN/MT = AI_BLOCKED / BLOCKED / READY`, `MB = AI_BLOCKED / BLOCKED / PARTIAL_READY`. This matches the Friday policy doctrine and shows MN/MT/MB all hit `AI_BLOCKED` on Fri `2026-04-24`. |
+    | **evidence** | direct VPS materialization output; production DB row counts after backfill; fresh sync manifest `20260425_212` |
+    | **impact** | Forensic continuity for Wave 1 control surfaces is now intact across `23 → 24 → 25`; downstream comparisons can use Wave 1 directly |
+    | **status** | DONE |
+    | **next_action** | Investigate scheduler closeout job_chain to ensure Wave 1 materialization is called automatically after every future closeout — separate low-risk follow-up if needed |
+    | **pass_condition** | Wave 1 surfaces showed `3` rows per region for `2026-04-24` after backfill — met |
+    | **fail_condition** | Backfill could not run — did not occur |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-25T21:20:00+07:00 |
+    | **notes** | Likely cause was that the V20.3.19 deploy on `2026-04-25 00:16 VN` ran the Wave 1 materialization for the latest closed day at that moment (`2026-04-23`) but the next closeout cycle did not auto-call the Wave 1 path for `2026-04-24`. The backfill itself is pure measurement INSERT with no scoring impact. |
+
+    ### FU-037 — C3 auto-materialize wired into scheduler closeout (V20.3.20.3)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-037 |
+    | **title** | `convergence_cluster_pattern_daily` now auto-refreshes after each closeout |
+    | **current_truth** | LIVE_PROVEN. V20.3.20.3 deployed `2026-04-25 23:30+07`. `scheduler.py _materialize_closeout_measurements()` calls `_materialize_convergence_cluster.materialize_for(date_str, region)` right after the Wave 1 control surface block, inside a try/except that logs `[CCPD]` job marker. Production proof: `convergence_cluster_pattern_daily=129 rows` over 21 distinct dates back to `2026-04-27`; `[CCPD]` markers seen 6 times in last 7 days = 2 closeout days × 3 regions. The wire stays INSERT-only on C3; no scoring path touched. |
+    | **evidence** | deployed `scheduler.py` (sha256 `2582bb414330f1d14a43bdbe5ed9a480abb5b3380dc09cc9b6e9b22f8e5026a5`); `lottery.service` active through `V20.3.36`; `/api/health` unchanged 200 OK output=15; `main.py` PP-1 markers unchanged; CCPD wire markers in `scheduler.py` = 4; PP-2/3/4 markers = 0; rollback-small backup `c1c3c5_backup_scheduler_py_20260425_233024.py`; `scheduler_logs` `[CCPD] 7d_count=6`; `MASTER_RECONCILIATION_REPORT_MONITORING_MULTI_LANE_SHADOW_CURRENT_SYSTEM_STATE_20260427.md` Phần 6 |
+    | **impact** | PP-1 live watch no longer requires manual SSH after each closeout. Forensic continuity automated. Rollback path is single-file. |
+    | **status** | DONE |
+    | **next_action** | None for this FU. C3 surface remains primary input for PP-1 live watch and Block 1 5-cycle verdict. |
+    | **pass_condition** | DONE: closeouts after `2026-04-26` produced new C3 rows in all 3 regions AND `[CCPD]` log lines appeared in `scheduler_logs` consistently (6 markers in 7 days). |
+    | **fail_condition** | n/a (already DONE) |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-28T00:01:00+07:00 |
+    | **notes** | Pure scheduler wire. No scoring change. Helper script `_materialize_convergence_cluster.py` was deployed in V20.3.20.2; this pass only added the auto-call. Promoted from `DEPLOYED_PENDING_LIVE_VERIFY` to `DONE` in 2026-04-28 governance cleanup pass. |
+
+    ### FU-036 — Realtime measurement surfaces deployed to VPS production (C1+C3+C5)
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-036 |
+    | **title** | C1 / C3 / C5 measurement surfaces are now production schema, with C3 backfilled for 30 days |
+    | **current_truth** | V20.3.20.2 deployed on `2026-04-25 23:08+07`. Production VPS DB has `bundle_replay_compare_daily` (0 rows — schema only), `convergence_cluster_pattern_daily` (106 rows after 30d backfill), and read-only view `v_family_contribution_rolling_14d` (12 rolling rows). Standalone helper `_materialize_convergence_cluster.py` is deployed. **Update 2026-04-26:** the old "manual only / not scheduler-wired" wording is superseded by FU-037 — C3 is now wired into `_materialize_closeout_measurements()` (V20.3.20.3) and waits for the first natural 26/04 closeout verification. Production C3 PP-1 trigger roll-up remains forensic-historical baseline, NOT live causal proof. |
+    | **evidence** | deployed `web/backend/database.py` (sha256 `3616d19d47f6330329d0ae69d5b7b4ce1f1fba52da3f195912f37ae2b40eafc2`) + `web/backend/_materialize_convergence_cluster.py`; VPS `lottery.service` MainPID 394312 active; `/api/health` unchanged 200 OK V17.19.4 / output=15 / runtime=26; PP-1 markers count = 3 (unchanged from V20.3.20); PP-2/3/4 markers = 0 (no scoring drift); rollback-small backup `c1c3c5_backup_database_py_20260425_230808.py` (sha256 `062192dedb921e14d3c5cecc6def96b532d69c29ee196e520bb18dee4f0a4553`); journalctl clean. |
+    | **impact** | PP-1 live watch can now read forensic ground truth directly from VPS production DB instead of local-only artifacts. MB/MT rescue-lane reviews can use the rolling 14d view directly. Replay decision evidence has a permanent ingest target (C1) when needed. |
+    | **status** | DONE |
+    | **next_action** | C3 manual-run instruction is superseded by FU-037. Watch first natural closeout (`2026-04-26`) to verify `[CCPD]` scheduler log lines and new C3 rows. C1 ingest stays local until owner explicitly approves uploading replay results into VPS. |
+    | **pass_condition** | Tables/view exist on production with backfilled 30d data and zero scoring drift — met. |
+    | **fail_condition** | Schema does not exist on VPS, OR PP-1 markers count drifts, OR `/api/health` returns non-200. |
+    | **owner_decision_needed** | NO (measurement-safe schema/wire only). |
+    | **last_checked** | 2026-04-26T13:25:00+07:00 |
+    | **notes** | Schema/view/helper pass remains DONE; scheduler-wire status lives in FU-037. No scoring change, no PP-2/3/4. |
+
+    ### FU-035 — Offline replay (F1/F2/F3) + measurement surfaces (C1/C3/C5) executed; locked blocks now have hard deadlines
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-035 |
+    | **title** | Offline replay verdicts published; block activation matrix now superseded by 2026-04-26 compatible-day matrix |
+    | **current_truth** | Three read-only replays were run on local DB on `2026-04-25 23:00+07`: D7/sort key (F1), MT lane weight (F2), ML/Combo family boost (F3). All variants returned either `REPLAY_FAIL` or `REPLAY_INCONCLUSIVE`; none reached `REPLAY_PASS` (delta_win >= +3 days/30, 0 critical regression). Replay outputs remain local artifacts; VPS `bundle_replay_compare_daily` exists but has 0 rows. The original 13-block matrix `BLOCK_ACTIVATION_MATRIX_20260425.md` is now **historical/superseded** by `artifacts/phase_checkpoints/BLOCK_ACTIVATION_MATRIX_20260426.md`, which expands to 15 blocks and replaces `DEFER_60D` with `REVIEW_AFTER_14_MORE_COMPATIBLE_CLOSED_DAYS` / `REVIEW_AFTER_30_COMPATIBLE_CLOSED_DAYS`. Sample window remains limited because `score_breakdown` only exists in V20.3.x bundles. |
+    | **evidence** | `scripts/_replay_d7_sort_compare_60d.py`, `_replay_lane_weight_mt_60d.py`, `_replay_ml_boost_60d.py`, `_create_measurement_surfaces_v1.py`; `artifacts/replay/d7_sort_60d.json`, `lane_mt_60d.json`, `ml_boost_60d.json`, `create_surfaces_v1.json`; local DB tables `bundle_replay_compare_daily` (25 rows) + `convergence_cluster_pattern_daily` (106 rows) + view `v_family_contribution_rolling_14d`; historical `artifacts/phase_checkpoints/BLOCK_ACTIVATION_MATRIX_20260425.md`; current superseding matrix `artifacts/phase_checkpoints/BLOCK_ACTIVATION_MATRIX_20260426.md` |
+    | **impact** | "Lock vô tận" pattern is closed. Every active block now has a binary verdict path with a hard deadline, and the current owner-facing matrix is `BLOCK_ACTIVATION_MATRIX_20260426.md`. |
+    | **status** | DONE |
+    | **next_action** | Owner reads `BLOCK_ACTIVATION_MATRIX_20260426.md`. PP-3 / output policy / Cohere / GAN-KB are T2 `OWNER_DECIDE` by `2026-04-28 18:00+07`; replay blocks re-run after 30 compatible closed days (≈2026-05-26), not a vague 60-day calendar wait. |
+    | **pass_condition** | Each locked block reaches one of the allowed auto-actions (`UNLOCK_CANDIDATE`, `KEEP_WATCHING`, `DROP`, `DEFER_TO_30_COMPATIBLE_DAYS`, `OWNER_DECISION_REQUIRED`) without reverting to ambiguous WAIT_LIVE indefinite. |
+    | **fail_condition** | Any block reverts to WAIT_LIVE without a deadline. |
+    | **owner_decision_needed** | YES (specifically: PP-3, output policy, GAN/KB, Cohere on/off — all listed in matrix) |
+    | **last_checked** | 2026-04-26T13:25:00+07:00 |
+    | **notes** | Replay artifacts remain local-only; VPS C1 is schema-only. No production scoring change. C3/C5 are already production-deployed; PP1/C2/C4 live-watch surfaces are tracked in FU-043. |
+
+    ### FU-034 — PP-1 convergence dampener deployed; needs live-cycle proof
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-034 |
+    | **title** | PP-1 convergence dampener is now live; live-cycle effectiveness still pending |
+    | **current_truth** | `V20.3.20` deployed `2026-04-25 21:45 VN`. `generate_final_bundle()` now runs a `Step 3b` block that multiplies `number_scores[number]` by `0.85` exactly once when at least 3 voters self-flag herding via `[CONV-DOWNGRADE]` or `[DIVERSITY-V10.5]` / `[DIVERSITY-V10.5-SWAP]` markers in their `verdict_reason` for the same 2-digit number. Replay-safe diagnostic on production rows for `2026-04-24` and `2026-04-25` shows the dampener would correctly trigger on the actual losing BTs (`MN 25`, `MN 32`, `MB 67`) and would not trigger on MB win `15` or on MT (where marker concentration is below threshold). VPS counts unchanged: `SHADOW_AUTO=8`, `OUTPUT_ELIGIBLE=15`, `RUNTIME_TOTAL=26`. |
+    | **evidence** | deployed `web/backend/main.py` (V20.3.20); VPS sha256 `b1b738a72175f52124acbfdec597d12f8a118d545566b925ecdc9a3045b4587a`; rollback-small backup `pp1_backup_main_py_20260425_214513.py`; `/api/health`; replay-safe diagnostic output on `2026-04-24/25` |
+    | **impact** | This is the first scoring-layer intervention since the audit. Live-cycle effectiveness must still be measured before claiming uplift. Dampener events are persisted into `source_predictions_json.pp1_convergence_dampener` for forensic comparison day-by-day. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Live watch 5 cycles (26-30/04). After-cycle SQL on VPS: `SELECT date, region, json_extract(source_predictions_json, '$.pp1_convergence_dampener.events') FROM final_bundles WHERE date >= '2026-04-26'`. Verdict at 01/05 18:00: KEEP / TUNE / ROLLBACK based on FP rate and BUNDLE_SKEW→NO_GAP flip count. C3 30d backfill already shows historical PP-1 would-trigger FP rate 4/15 = 26.7% (replay/diagnostic only, not live causal). |
+    | **pass_condition** | Across 5 live closeouts: PP-1 triggers ≥ 3 days, ≥ 1 confirmed BUNDLE_SKEW→NO_GAP flip, FP ≤ 1 |
+    | **fail_condition** | PP-1 fires false positive on 2+ live WIN cases, OR regresses a high-stakes WIN day (single-file rollback to V20.3.19) |
+    | **owner_decision_needed** | NO (already unlocked via `DEC-007`); future tuning of factor or threshold is still owner-locked |
+    | **last_checked** | 2026-04-25T23:05:00+07:00 |
+    | **notes** | PP-2 (rescue-lane minimum-floor), PP-3 (BUNDLE_SKEW guard), PP-4 (AI_BLOCKED → publish brake) remain explicitly locked under existing owner-lock policy. The C3 backfill provides a historical baseline FP rate (26.7%) — live cycles will produce the first causal proof. |
+
+    ### FU-033 — AI gate `AI_BLOCKED` is observability-only, not a true publish brake
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-033 |
+    | **title** | `ai_primary_gate_daily.gate_status=BLOCKED` does not actually stop bundle publish |
+    | **current_truth** | Wave 1 backfill of `2026-04-24` revealed all three regions hit `AI_BLOCKED / BLOCKED / WEAK rule_map_state` (Friday weakday policy) but the public bundles still published `OFFICIAL`: `MN bach_thu=25 LOSE`, `MT bach_thu=59 LOSE`, `MB bach_thu=67 LOSE`. All three carried `drop_stage=BUNDLE_SKEW` even though strongest candidates were correct (`MN=39`, `MT=07`, `MB=98`, all hit). MB also had `escape_state=STRONGEST_OVERRIDDEN` with `override_rows=2`. This proves the AI policy gate is currently informational only — it tells the system the day is high-risk but does not change publish behavior. |
+    | **evidence** | direct VPS materialization on `2026-04-25 ~21:20+07`; `ai_primary_gate_daily`, `bundle_readiness_gate_daily`, `public_bundle_publish_audit_daily`, `strongest_candidate_escape_daily`, `candidate_drop_stage_daily` rows for `2026-04-24` |
+    | **impact** | The strongest weekday-doctrine signal we have right now (AI_BLOCKED on Fridays for all three regions) is currently powerless to prevent the worst-case loss day. This is why deploying many measurement waves still does not change quality on bad weekdays. |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Hold any gate-enforcement code change until owner decides which of the three documented patch-prep directions to unlock (convergence dampener / rescue-lane minimum-floor / BUNDLE_SKEW guard); `AI_BLOCKED → publish brake` could be a fourth complementary patch-prep direction |
+    | **pass_condition** | Owner explicitly approves either (a) gate-as-brake semantics for AI_BLOCKED days, or (b) keeps gate as observability-only with a clear governance note |
+    | **fail_condition** | The next AI_BLOCKED day shows the same publish-without-brake pattern with no governance acknowledgement |
+    | **owner_decision_needed** | YES (output policy is owner-locked) |
+    | **last_checked** | 2026-04-25T21:25:00+07:00 |
+    | **notes** | This finding is the single largest "why the system measures more but does not improve" insight from the 60d audit. AI_BLOCKED is the right doctrine read; the missing piece is whether the doctrine is allowed to enforce. |
+
+    ### FU-032 — MB publish-before-ready honesty signal on degraded days
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-032 |
+    | **title** | `public_bundle_publish_audit_daily` flags `MB` as `PUBLISHED_BEFORE_READY` whenever MB closes as `DEGRADED_LIVE_DAY` |
+    | **current_truth** | On `2026-04-25` the new Wave 1 publish-audit surface returned `MB publish_audit_state = PUBLISHED_BEFORE_READY` because MB had `bundle_quality=INCOMPLETE`, `model_count=14/15`, `readiness_state=PARTIAL_READY`, `day_status=DEGRADED_LIVE_DAY`, but `publication_status=OFFICIAL`. This is a measurement honesty signal: it does **not** mean publication is broken; it means the audit surface correctly recognized the discrepancy. |
+    | **evidence** | `bundle_readiness_gate_daily` + `public_bundle_publish_audit_daily` for `2026-04-25 MB` |
+    | **impact** | Owner now has a per-day signal whenever MB publishes despite incompleteness; without this entry the signal might be misread as a bug |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Decide later whether to add an admin UI chip rendering this audit state, or keep it backend-only |
+    | **pass_condition** | Owner is comfortable that the signal is honest and not a bug |
+    | **fail_condition** | Future MB days are mis-flagged as `PUBLISHED_BEFORE_READY` even when readiness is fine |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-25T20:35:00+07:00 |
+    | **notes** | This entry exists to keep the signal tracked rather than buried; it does not request any code change. |
+
+    ### FU-026 — Wave 1 control surfaces deployed; parity-manifest path still needs live proof
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-026 |
+    | **title** | Wave 1 control surfaces are live, but parity/preservation rows are still waiting for a VPS-native source path |
+    | **current_truth** | Wave 1 low-risk control surfaces are now deployed and live-proven for `2026-04-23`: gate/readiness/reasoning/source-prize tables all materialized successfully on VPS. However `data_preservation_manifest_daily` and `sync_parity_audit_daily` remain at `0` rows after the first pass because the canonical sync manifest still lives in the local forensic workflow (`artifacts/live_sync/latest_manifest.json`) rather than being generated on the VPS runtime side. |
+    | **evidence** | direct VPS runtime materialization of `_materialize_wave1_control_surfaces_daily()` for `MN/MT/MB`; production DB counts after deploy; local sync manifest `20260425_000633` |
+    | **impact** | Wave 1 is usable now for gate/readiness/reasoning/source-prize reading, but preservation/parity truth is still split across deployed schema on VPS and manifest generation on the local forensic side |
+    | **status** | PARTIAL |
+    | **next_action** | Observe next closeout cycle and decide whether to keep parity-manifest truth local-only or add a dedicated VPS-native manifest ingestion path in a later low-risk pass |
+    | **pass_condition** | Either the new parity/preservation tables begin receiving trustworthy rows from a VPS-native source path, or governance explicitly locks them as local-forensic-only surfaces with honest documentation |
+    | **fail_condition** | Team starts narrating parity/preservation as fully live-proven on VPS even though the source manifest still originates only from local sync workflow |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-25T00:17:00+07:00 |
+    | **notes** | This does not block the rest of Wave 1. The gate/readiness/reasoning/source-prize surfaces are already materially useful and live-proven. |
+
+    ### FU-027 — Wave 2 remains locked until fresh live trace proves stronger reasoning-contract depth
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-027 |
+    | **title** | Wave 1 measurement now proves reasoning-contract weakness, but Wave 2 is still `WAIT_LIVE` until fresh trace closes the loop |
+    | **current_truth** | The new `ai_reasoning_contract_daily` and `reasoning_layer_penetration_daily` tables are live and now quantify the weakness directly on `2026-04-23`: `MN 18 rows -> 2 pass / 16 warn`, `MT 16 -> 2 / 14`, `MB 16 -> 2 / 14`. This is enough to justify keeping Wave 2 in view, but not enough to claim the reasoning contract has been improved yet. |
+    | **evidence** | direct VPS runtime materialization output; production DB samples from `ai_reasoning_contract_daily` and `reasoning_layer_penetration_daily` |
+    | **impact** | The system now has DB truth that reasoning depth is still shallow on many rows, but any claim that Wave 2 has solved it would still be overclaiming without new post-change live trace |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Keep Wave 2 locked until a new token-model live cycle provides fresh trace rows after any reasoning-contract hardening work |
+    | **pass_condition** | Fresh post-Wave-2 trace and DB rows materially improve strongest-candidate presence, override discipline, and contract pass counts |
+    | **fail_condition** | Wave 2 is narrated as successful before fresh trace/runtime evidence shows better contract depth |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-25T00:17:00+07:00 |
+    | **notes** | This issue exists to stop overclaiming. Wave 1 measured the gap; it did not solve the gap. |
+
+    ### FU-024 — `rule_custom_prompt` was stale, duplicated, and truncated in runtime
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-024 |
+    | **title** | Legacy custom prompt fragment was still being injected into production runtime |
+    | **current_truth** | The old `rule_custom_prompt` remains preserved in `app_settings` and admin UI, but the latest containment deploy moved it to `ARCHIVE_ONLY` runtime status. Production code no longer appends the stale `500`-char fragment into `SYSTEM_PROMPT`; the field is now kept only for audit/history and operator comparison. |
+    | **evidence** | backup baseline `Backup Final 23042026 DDXS`; deployed `web/backend/gpt_analyzer.py`; direct VPS runtime check of `build_system_prompt()` showing no `YÊU CẦU BỔ SUNG TỪ NGƯỜI DÙNG` header; deployed `settings.html` / `settings.js` wording markers |
+    | **impact** | Before containment, a stale duplicate prompt fragment could drift doctrine and waste context budget; after containment, the main remaining task is to observe one fresh live trace row to confirm end-to-end trace metadata on the next cycle |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Observe the next token-model trace row and confirm custom prompt metadata is present while `runtime_active=false` and no legacy fragment reappears in prompt-layer reading |
+    | **pass_condition** | Fresh post-deploy trace/runtime evidence proves `rule_custom_prompt` stays archive-only and no longer injects into runtime prompts |
+    | **fail_condition** | A fresh post-deploy prediction still shows the legacy custom fragment being appended or reintroduced via another path |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-24T01:02:00+07:00 |
+    | **notes** | This is prompt-integrity containment only. No handcode prompt rewrite, scoring change, or anti-trap policy redesign was performed in this pass. |
+
+    ### FU-025 — Measurement-safe rerun/prompt forensic tables are now active
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-025 |
+    | **title** | Approved measurement-safe rerun and prompt-integrity tables were materialized on production |
+    | **current_truth** | The latest safe deploy activated and backfilled these production tables for `2026-04-22` and `2026-04-23`: `pre_vs_post_rerun_effect_daily`, `pre_win_post_lose_daily`, `pre_partial_post_lose_daily`, `rule_conversion_loss_stage_daily`, `main_vs_secondary_quality_daily`, `bundle_family_contribution_daily`, `prompt_pressure_daily`, and `trace_field_completeness_daily`. |
+    | **evidence** | deployed `web/backend/database.py`, `web/backend/main.py`, `web/backend/scheduler.py`; direct VPS materialization run after deploy; production DB counts for the new tables |
+    | **impact** | Future forensic and owner review can read rerun drift, prompt pressure, main-vs-secondary, family contribution, and trace completeness from DB truth instead of re-deriving them manually from one-off scripts |
+    | **status** | DONE |
+    | **next_action** | Use these tables in the next closeout/report cycle and decide later whether any owner-facing endpoint/UI surfacing is worth adding |
+    | **pass_condition** | Tables exist, hold production rows for the baseline/failure-reference days, and remain compatible with scheduler closeout materialization |
+    | **fail_condition** | Tables stay empty on future closed days or drift from direct DB/query truth |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-24T01:02:00+07:00 |
+    | **notes** | Measurement-safe only. No scoring, ranking, lane, bundle, or output-policy logic was changed. |
+
+    ### FU-023 — Post-closeout measurement timing gap on `2026-04-23`
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-023 |
+    | **title** | Latest closed day is ahead of latest fully materialized measurement day |
+    | **current_truth** | The gap is now closed. `2026-04-23` is both the latest closed output day and the latest fully materialized measurement day: `model_daily_eval=69`, `freshness_chain_daily=21`, `strongest_vs_final_conversion_daily=3`, `candidate_drop_stage_daily=3`, and `shadow_daily_comparison=3` are all present on VPS. |
+    | **evidence** | fresh VPS sync `20260423_190858`; approved safe-fix deploy; manual safe backfill for closeout measurements; direct VPS DB query after `20:20` MDE run confirming row counts |
+    | **impact** | Owner and operators can over-read an empty measurement table as a runtime or accuracy failure even when the closed-day output truth is already complete |
+    | **status** | DONE |
+    | **next_action** | Monitor the next live cycle to confirm the same convergence happens automatically from the new scheduler closeout path without requiring another manual backfill |
+    | **pass_condition** | Latest closed output day and latest canonical measurement day converge on the same date; `2026-04-23` now satisfies this condition |
+    | **fail_condition** | Another post-closeout audit still sees `predictions/final_bundles/results` closed while multiple measurement tables remain blank with no explicit timing explanation |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-23T20:20+07:00 |
+    | **notes** | Safe-fix scope only: observability timing and measurement honesty. No scoring, ranking, or bundle policy changes are included in this issue. The first cycle is now fully materialized; the next cycle is needed to prove the automation path end-to-end. |
+
+    ### FU-001 — Monitoring freshness semantics gap
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-001 |
+    | **title** | Monitoring freshness semantics gap |
+    | **current_truth** | `/monitoring` still mixes realtime, historical, and hybrid boards by design, but the deployed frontend now carries both freshness metadata (`Board type`, `Data as of`, `Last refreshed`, `Refresh trigger`) and a compact `Metric Contract Guide`, and it now also treats current-day expected counts in a stage-aware way. Current live proof on `2026-04-22`: `MN output = 15/15` while `MN shadow` separately shows missing `arcee-trinity`; `MT/MB` no longer get falsely flagged as if the full 15 output models were already due before same-day AI-chain unlock. |
+    | **evidence** | deployed `web/frontend/monitoring.html`; deployed `web/backend/main.py`; VPS marker verification; direct VPS invocation of `get_runtime_monitoring_center()` on `2026-04-22 10:05+07` |
+    | **impact** | Owner can misread board age and overreact to normal historical panels |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Verify in the live admin UI that the freshness metadata, metric-contract wording, and the new stage-aware current-day model counts are readable enough across desktop/mobile |
+    | **pass_condition** | Owner can distinguish realtime vs historical vs hybrid on-page without DB side-check and without opening code/logs |
+    | **fail_condition** | Another audit still needs manual DB interpretation to explain monitoring age |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T10:13:00+07:00 |
+    | **notes** | Page legend, `Latest Verified Results`, per-board metadata, the metric-contract guide, and stage-aware current-day expected-count semantics are deployed. Remaining proof target is owner readability on the authenticated admin path. Use `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md` on the next cycle. |
+
+    ### FU-002 — MB post-red-line recovery needs confirmation
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-002 |
+    | **title** | MB post-red-line recovery needs confirmation |
+    | **current_truth** | The previously active `9`-day MB BT LOSE streak was broken on the latest closed live day: `2026-04-21` bundle `93` = `WIN` on full-actual verification. This removes the "red-line still active" narrative, but one recovery day is not enough to call MB fixed. |
+    | **evidence** | fresh VPS sync `20260421_194756`; `final_bundles` latest MB rows; full-actual closeout scorecard for `2026-04-21` |
+    | **impact** | Owner could either overclaim MB recovery too early or keep acting as if the red-line were still active when the latest truth already changed |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Keep MB production strategy unchanged and observe the next 3 closed MB cycles with family/lane contribution review |
+    | **pass_condition** | MB avoids red-line reactivation across 3 additional closed cycles and does not show a fresh all-family collapse pattern |
+    | **fail_condition** | MB returns to consecutive BT LOSE behavior or the latest win proves to be only a one-day outlier while upstream quality remains collapsed |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T19:54:00+07:00 |
+    | **notes** | Strategy remains scoring-sensitive and still must not be changed without owner unlock even though the streak itself is no longer active |
+
+    ### FU-003 — Cohere measurement is useful but not decision-grade yet
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-003 |
+    | **title** | Cohere insertion-point measurement gap |
+    | **current_truth** | Resolved for measurement semantics. `cohere_effectiveness_daily` now exists on production DB, is backfilled with `15` rows from historical `cohere_rerank_log`, and can classify the shadow insertion-point outcome as `helped / hurt / no_effect` against both final bundle and actual result context. Current measured verdict is still overwhelmingly `no_effect`, but the measurement gap itself is closed. |
+    | **evidence** | deployed `web/backend/database.py`, `web/backend/scheduler.py`, `web/backend/main.py`; production DB table `cohere_effectiveness_daily`; direct VPS functional verification of `get_cohere_effectiveness()` |
+    | **impact** | Owner can misread `bt_changed=0` as "Cohere has no value" when it actually measures a non-production branch |
+    | **status** | DONE |
+    | **next_action** | Keep Cohere shadow-only and use the new table for future keep/promote/remove review |
+    | **pass_condition** | Cohere can be judged as `helped/hurt/no_effect` against actual result with clear stage semantics |
+    | **fail_condition** | Another review still compares Cohere rerank output directly to final bundle without stage context |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T22:39:00+07:00 |
+    | **notes** | Issue resolved at the measurement layer only. This does **not** imply Cohere should be promoted; owner decision remains separate. |
+
+    ### FU-004 — `gpt-oss-120b` improved but not fully closed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-004 |
+    | **title** | `gpt-oss-120b` post-fix still waiting for stronger live proof |
+    | **current_truth** | Fresh production evidence is materially stronger now: the closed live day `2026-04-21` has `gpt-oss-120b` `shadow_auto_eval` rows in `MN`, `MT`, and `MB`, and the latest trace line is `gpt-oss-120b` on `2026-04-21 17:56:17` for `MB`. Quality is still mixed (`PARTIAL` in `MN`, `LOSE` in `MT/MB`), so the model remains improved-but-not-closed rather than promotion-ready. |
+    | **evidence** | fresh VPS sync `20260421_194756`; `predictions` query on `2026-04-21`; `prediction_trace.jsonl` latest-line scan |
+    | **impact** | Model cannot yet be treated as fully stable or promotion-ready |
+    | **status** | WAIT_LIVE |
+    | **next_action** | Observe at least one more full closed day and verify repeatable successful rows across intended lanes, not just healthy shadow persistence |
+    | **pass_condition** | Fresh usable rows persist through at least one more full live cycle with no regression and without falling back to sparse/single-region evidence |
+    | **fail_condition** | Shadow/manual paths regress or return empty/error rows again |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T19:54:00+07:00 |
+    | **notes** | This issue is no longer about "dead trace / dead rows". It is now strictly about whether the recovered runtime is stable and useful enough across multiple cycles. |
+
+    ### FU-005 — Monitoring missing-row alert still hardcodes `15`
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-005 |
+    | **title** | Monitoring missing-row threshold still uses hardcoded `15` |
+    | **current_truth** | Canonical expected prediction coverage derives from the output-eligible roster (`15`) instead of the broader runtime-visible roster (`26`), and the current-day monitoring path is now more honest too: expected counts are stage-aware by region, so `MN` can show `15/15` while `MT/MB` legitimately remain at `7/7` before same-day AI-chain is due. Shadow incompleteness is now surfaced separately instead of polluting `/du-doan` output coverage. The earlier `29` runtime-visible figure was a stale legacy count and is no longer the current truth — current registry returns `RUNTIME_TOTAL = 26`. |
+    | **evidence** | deployed `web/backend/main.py`; `/api/health` production reverify; direct VPS invocation of `get_runtime_monitoring_center()` showing `expected_model_count_by_region={'MN':15,'MT':7,'MB':7}` and `shadow_missing_models_by_region={'MN':['arcee-trinity']}` |
+    | **impact** | Future roster changes can make monitoring alert semantics drift from actual expected regional coverage |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Observe next live/current cycle in admin monitoring and confirm stage-aware expected counts remain correct as each region crosses its own unlock point |
+    | **pass_condition** | Monitoring missing-row alert uses the deployed canonical expected count source and stays aligned when roster changes or partial current-day states appear |
+    | **fail_condition** | Monitoring still under/over-alerts because any path silently falls back to the old semantics |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T10:13:00+07:00 |
+    | **notes** | Re-verified again on live production after the stage-aware monitoring patch. Remaining gap is admin-path visual proof, not backend semantics drift. |
+
+    ### FU-006 — `prediction_trace.jsonl` live history was partially lost after deploy overwrite incident
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-006 |
+    | **title** | Live trace artifact was overwritten and only partially restored from surviving VPS backup |
+    | **current_truth** | The overwrite incident remains historically real, but current live trace growth has resumed well beyond the original restore point: VPS `prediction_trace.jsonl` now contains `134` lines through `2026-04-21 17:56:17`. The open issue is no longer "trace is still stuck at 79 lines"; it is that the historical gap created by the overwrite cannot yet be fully reconstructed from available sources. |
+    | **evidence** | fresh VPS sync `20260421_194756`; latest trace line scan; incident backup `prediction_trace.jsonl.incident_20260420_pre_restore`; earlier restore verification |
+    | **impact** | Some live trace history newer than `2026-04-17` may be permanently lost from currently available VPS surfaces; forensic conclusions must not assume full artifact continuity through `2026-04-20` |
+    | **status** | PARTIAL |
+    | **next_action** | Search any external/off-box archive or operator machine for trace copies newer than `2026-04-17`; meanwhile enforce VPS->local sync before forensic work and keep runtime artifacts excluded from deploy bundles |
+    | **pass_condition** | Either a newer surviving trace copy is recovered, or the team accepts `2026-04-17` as the last recoverable trace point and all future forensic work uses the VPS-sync workflow |
+    | **fail_condition** | Another forensic/deploy cycle runs from stale local inputs or another runtime artifact is overwritten by a local deploy package |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T19:54:00+07:00 |
+    | **notes** | `web/_sync_live_forensic_inputs.py` remains the mitigation that protects current truth; this tracker item now exists only for the unrecovered historical slice, not for current trace freshness. |
+
+    ### FU-007 — Manual AI predict endpoints still drift from owner source-doctrine
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-007 |
+    | **title** | Manual `/api/predict/*` AI source-data sets are narrower than owner-locked doctrine |
+    | **current_truth** | Manual AI `/api/predict/MN|MT|MB` paths remain code-aligned to the owner D/D-1 doctrine and deployed to VPS. The latest closed day now shows at least one manual row (`2026-04-21`, `MN`, `minimax-m2.7`, `PARTIAL`) with reasoning persisted, but this still does not prove that the manual API response exposed the right `owner_doctrine_source_summary` / warnings shape to the operator. |
+    | **evidence** | deployed `web/backend/main.py`; VPS file markers `_build_manual_owner_doctrine_source_data` + `owner_doctrine_source_summary`; `predictions` manual row on `2026-04-21` |
+    | **impact** | Manual/admin predictions can diverge semantically from the production scheduler path and can mislead audits or operator checks about doctrine compliance |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Run and capture one clean manual AI prediction cycle for MN/MT/MB, confirm `owner_doctrine_source_summary` and warnings match available upstream source reality |
+    | **pass_condition** | Manual AI prediction paths prove they are using the deployed owner-doctrine source sets on live/manual requests with no regression |
+    | **fail_condition** | Future audits continue mixing scheduler truth and manual-path truth as if they were equivalent |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T19:54:00+07:00 |
+    | **notes** | Presence of a manual prediction row is only weak evidence; the owner-facing response contract still needs direct capture. The next-cycle check is now explicitly listed in `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md`. |
+
+    ### FU-008 — Anti-trap owner doctrine is only partially implemented
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-008 |
+    | **title** | Anti-trap handling exists for herding/convergence but not for owner carry-over traps |
+    | **current_truth** | Owner anti-trap diagnostics are now visibly live at bundle/observability level on the latest closed day: `final_bundles.source_predictions_json` carries `main_number_anti_trap` / `near_miss_anti_trap` for `MN`, `MT`, and `MB` (`MT main 48 = FRESH`, `MB main 93 = FRESH`, MB near misses include `58`/`84` as `PARTIAL_SPENT`). Full scoring-level suppression/boost logic still does not exist. |
+    | **evidence** | deployed `web/backend/gpt_analyzer.py`; deployed `web/backend/main.py`; fresh `final_bundles.source_predictions_json` query on `2026-04-21` |
+    | **impact** | AI can still over-trust structurally strong but already-spent carry signals, while no-token/ML layers stay blind to the same trap pattern and can reinforce the wrong cluster into the bundle |
+    | **status** | PARTIAL |
+    | **next_action** | Observe the next live AI cycles and confirm the new anti-trap diagnostic blocks appear in runtime reasoning/trace with spend level + doctrine support count + top-5 candidate pool retained after 12W-16W/source-prize scan; only after that decide whether a scoring-sensitive trap policy is needed |
+    | **pass_condition** | Production reasoning and diagnostics visibly distinguish valid carry-over from duplicate-hit bait on live cycles, with explicit trace evidence |
+    | **fail_condition** | Future live days still show adjacent-region duplicate-hit bait being treated as ordinary convergence with no trap-specific warning or trace |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T19:54:00+07:00 |
+    | **notes** | Anti-herding is still not the same as full anti-trap enforcement; what is newly proven is bundle metadata reach, not scoring reach. |
+
+    ### FU-009 — `tail_db`-only historical boards understate full actual-tail truth
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-009 |
+    | **title** | `selection-gap` and shadow comparison still rely on `tail_db`-only semantics |
+    | **current_truth** | Deployed backend and monitoring UI now surface DB-tail diagnostics and full-actual context together on the existing gap/shadow boards, and the reading contract is clearer than before: `selection-gap` explicitly behaves as a quick board with `Full` vs `DB` distinction, while `shadow-comparison` explicitly states it is a `tail_db` diagnostic board with full-actual shown inline only as context. Owner-readability still needs authenticated admin-path confirmation. |
+    | **evidence** | deployed `web/backend/main.py` semantics blocks (`actual_tail_db`, canonical forensic pairing); deployed `web/frontend/monitoring.html` notes for gap/shadow boards; `shadow_daily_comparison` vs full-actual closeout query on `2026-04-21` |
+    | **impact** | Historical monitoring boards can under-report model/bundle correctness and make MT-style `secondary-only` or `bundle-lost` failures look cleaner or harsher than they really are |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Open `/monitoring` on the live admin path and confirm the new DB/full semantics are readable enough on desktop/mobile without code-side explanation |
+    | **pass_condition** | Operators can clearly tell which boards are DB-tail diagnostics and which reflect full actual-tail context, without cross-checking backend code |
+    | **fail_condition** | Another audit treats `tail_db`-only boards as full truth and repeats false-negative or false-positive conclusions about model quality |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T02:17:00+07:00 |
+    | **notes** | The open part of this issue is readability/usability on the authenticated admin path, not whether the backend semantics split and MT classification logic exist. This phase added clearer UI wording, not a new board. The exact promote-to-DONE conditions remain in `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md`. |
+
+    ### FU-010 — AI prompt cohort uplift is deployed but not yet live-proven
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-010 |
+    | **title** | Owner-doctrine + anti-trap prompt cohort deployed (V20.3.0 + V20.3.1); uplift stance still WAIT_LIVE |
+    | **current_truth** | The latest closed live day `2026-04-21` still serves as the first real post-deploy cycle: bundle-level anti-trap/source-prize observability is live on all 3 regions, `MN` and `MB` bundles both recover on full-actual truth, and `MT` still shows the core bundle-skew problem. The new visibility packs now make MT classification, ML freshness, and main-vs-secondary counts materially clearer, but they do not by themselves prove prompt quality uplift. |
+    | **evidence** | fresh VPS sync `20260421_224317`; `final_bundles.source_predictions_json`; direct VPS invocation of `get_selection_gap()`, `get_model_daily_accuracy()`, `get_ml_freshness_chain()`; trace scan showing §25 still needs fresh post-patch proof |
+    | **impact** | Without live evidence, we cannot tell whether the new prompt cohort reduces MT candidate split, improves main-number ranking, or dampens MB red-line |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | On the next live/manual token prediction after V20.3.4: (1) capture one fresh trace line and confirm `prompt_layers` excludes active `core_policy` while declaring it inactive; (2) confirm at least one AI row persists `analysis.main_number_justification`, `analysis.near_miss_shortlist`, and `analysis.secondary_pick_rationale`; (3) continue comparing MT main-hit / bundle-lost behavior over ≥3 clean days |
+    | **pass_condition** | Trace proof with V20.3.1 fields present + ≥3 clean live days showing non-regression on MN, and MT/MB main-hit not worsened vs baseline |
+    | **fail_condition** | Regression on MN, or MT candidate split unchanged after 7 clean days, or bundle still picks FULL_SPENT candidates without any anti-trap warning logged |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T22:39:00+07:00 |
+    | **notes** | What is now proven is live bundle observability reach, closed-day `model_daily_eval=75`, and richer MT/ML visibility surfaces. What remains unproven is reasoning-contract materialization and durable quality lift. |
+
+    ### FU-011 — ML / no-token equivalent for anti-trap is missing
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-011 |
+    | **title** | ML and no-token models need feature-level trap awareness; prompt cannot rollout to them |
+    | **current_truth** | `lstm`, `meta-learning`, `xgboost`, `random-forest`, `smart-ensemble`, `smart-ml`, `combo-no-token` are `NO_PROMPT_DIRECT` / `AGGREGATED` per `MODEL_DISTRIBUTION_POLICY`; they rely on `_get_cross_region_momentum` and `_compute_lag_features`, which do NOT distinguish `same_day_prior_region_hit` from `fresh_carry`. Feature-level trap-aware inputs do not exist today |
+    | **evidence** | `web/backend/meta_data_collector.py::_get_cross_region_momentum`; `web/backend/meta_predict.py::extract_prediction_features`; `web/backend/ml_predict.py::_predict_with_model` |
+    | **impact** | Upstream no-token/ML predictions stay trap-blind; bundle aggregation may reinforce bait candidates even if AI reasoning correctly rejects them |
+    | **status** | PARTIAL |
+    | **next_action** | Design shadow-evaluated features (`spent_prior_region_today`, `fresh_carry_window`, `recurrence_penalty_score`, split `cross_region_purity`); no retraining until owner approval and ≥14d shadow window |
+    | **pass_condition** | Features are available in shadow-eval, do not regress baseline, and owner approves production rollout |
+    | **fail_condition** | Feature addition destabilizes ML baseline during shadow window |
+    | **owner_decision_needed** | YES (before scoring-sensitive rollout) |
+    | **last_checked** | 2026-04-21T00:45:00+07:00 |
+    | **notes** | Keep this issue purely feature-level until owner opens a scoring-sensitive decision; do not touch model training in the same pass |
+
+    ### FU-012 — Trace/runtime honesty and §25 persistence materialization still need live proof
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-012 |
+    | **title** | Trace/runtime honesty and §25 persistence materialization still need live proof |
+    | **current_truth** | Pre-fix live trace rows still showed `CP-7.9` inside `prompt_layers` as if it were an active runtime layer, and stored native `reasoning_json` rows did not consistently materialize the owner-facing §25 fields under `analysis.*`. A low-risk observability hardening patch (V20.3.4) has now been deployed to `web/backend/gpt_analyzer.py` so future trace rows and persisted native reasoning payloads match runtime truth more honestly. |
+    | **evidence** | fresh trace scan on `2026-04-21` showing `core_policy` in `prompt_layers`; fresh `reasoning_json` sample query; V20.3.4 VPS markers `RUNTIME_PROMPT_VERSIONS`, `DECLARED_BUT_INACTIVE_PROMPT_LAYERS`, `_normalize_near_miss_shortlist`, `"analysis": {`, `"target_region": target_region`; post-deploy `/api/health` |
+    | **impact** | Closeout audits can overstate runtime prompt composition and understate whether §25 is truly being persisted, creating observability drift rather than scoring drift |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Capture the next token-model trace row after V20.3.4 and verify: `prompt_layers` excludes `core_policy`, `declared_but_inactive_layers=['CP-7.9']`, `target_region` is present, and persisted native `reasoning_json` contains `analysis.main_number_justification`, `analysis.near_miss_shortlist`, and `analysis.secondary_pick_rationale` |
+    | **pass_condition** | At least one fresh post-deploy trace/prediction row proves the new honesty/persistence shape end-to-end without regression |
+    | **fail_condition** | New trace rows still claim `core_policy` as active runtime metadata, or §25 fields remain absent from persisted native reasoning after the patch |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T20:42:00+07:00 |
+    | **notes** | This is observability/persistence hardening only. V20.3.5 additionally cleaned runtime registry/comment honesty around `§10A` / `§10B`. No scoring, lane, D7, bundle-voting, or output-policy logic was changed. |
+
+    ### FU-013 — MT bundle-skew and main-vs-secondary visibility pack is deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-013 |
+    | **title** | MT bundle-skew and main-vs-secondary visibility pack is deployed |
+    | **current_truth** | Existing owner-facing surfaces are now materially richer without adding duplicate dashboards: `selection-gap` exposes `top1_hit_model_count`, `secondary_only_model_count`, `bundle_lost_class`, `bundle_lost_reason`, `family_contribution_summary`, and `lane_contribution_summary`; `model-daily-accuracy` now surfaces `secondary_only_model_count`, `bundle_lost_class`, and family/lane summaries per day. Direct VPS function invocation proved the payloads are usable. |
+    | **evidence** | deployed `web/backend/main.py`; deployed `web/frontend/monitoring.html`; direct VPS invocation of `get_selection_gap()` and `get_model_daily_accuracy()` after deploy |
+    | **impact** | Owner can now see whether MT is failing because of upstream miss, candidate split, or bundle-skew rather than reading a generic LOSE |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Open the live monitoring admin path and verify the new MT classification rows are readable enough on-page without forensic side-checks |
+    | **pass_condition** | Operator can distinguish `UPSTREAM_MISS` vs `CANDIDATE_SPLIT` vs `BUNDLE_SKEW` directly from the live surface |
+    | **fail_condition** | Another audit still needs code/DB inspection to classify the latest MT loss mode |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T22:39:00+07:00 |
+    | **notes** | This pack improves visibility only. It does not change bundle scoring, lane fusion, or final pick policy. Next-cycle proof should follow `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md`. |
+
+    ### FU-014 — ML/no-token freshness and station-set diagnostics pack is deployed
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-014 |
+    | **title** | ML/no-token freshness and station-set diagnostics pack is deployed |
+    | **current_truth** | A new diagnostics endpoint now materializes the 4-layer freshness chain (`SCRAPED_IN_DB`, `FEATURE_READY`, `MODEL_READY`, `LIVE_CONSUMED`) for MT/MN/MB ML/no-token predictors and exposes recent `station_set` samples from `v_wr_station`, plus artifact preflight state and latest live-consume metadata per model. Direct VPS invocation proved the endpoint is returning usable structured JSON. |
+    | **evidence** | deployed `web/backend/main.py` endpoint `get_ml_freshness_chain()`; deployed `web/frontend/monitoring.html` section wiring; direct VPS invocation output; DB-backed `freshness_chain_daily` now populated for `MN/MT/MB` |
+    | **impact** | Owner can now separate true stale-artifact or no-consume problems from pure quality or conversion problems in ML/no-token lanes |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Verify the live admin UI section is readable enough and use it on the next cycle to confirm no predictor silently falls out of `LIVE_CONSUMED` |
+    | **pass_condition** | Operator can inspect ML/no-token freshness and station-set visibility without raw DB queries |
+    | **fail_condition** | Future audits still need manual forensic DB work just to tell whether predictors consumed fresh data |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T23:50:00+07:00 |
+    | **notes** | This pack is diagnostic only. It does not change feature engineering, retraining policy, or scoring. What is still missing is authenticated UI/operator proof, not DB persistence. Next-cycle proof should follow `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md`. |
+
+    ### FU-015 — New shadow AI cohort is not yet fully healthy across all regions
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-015 |
+    | **title** | Newly added shadow AI models still show region-specific runtime incompleteness |
+    | **current_truth** | V20.3.32 supersedes the 8-model roster: `kimi-k2.6` is removed from active shadow measurement, while `gpt-5.5`, `deepseek-v4-pro`, `deepseek-v4-flash`, and `qwen3.6-plus` are added. Current code truth is now an 11-model `SHADOW_AUTO` roster: `glm-5.1`, `grok-4.20-multi-agent`, `qwen3-coder`, `minimax-m2.7`, `kimi-k2.5`, `qwen3-max-thinking`, `gpt-oss-120b`, `gpt-5.5`, `deepseek-v4-pro`, `deepseek-v4-flash`, `qwen3.6-plus`. The 4 older removed models plus `kimi-k2.6` are no longer active. |
+    | **evidence** | `web/backend/model_registry.py`; public health `V20.3.32` output `15` runtime `29`; VPS venv import check `SHADOW_AUTO_EVAL_MODELS=11`, `runtime=29`; V20.3.32 changelog; FU-050 |
+    | **impact** | The shadow lane is leaner on known-bad latency (`kimi-k2.6` removed) but broader due to the new four-model experiment. Future shadow-eval conclusions must compare against the current 11-model V20.3.32 roster, not the old 8-model roster. |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Track FU-050 for deploy/first-cycle proof; confirm `kimi-k2.6` no longer produces new rows and all four new models either run cleanly or surface explicit key/provider errors. |
+    | **pass_condition** | At least one fresh full closed cycle shows the V20.3.32 shadow roster with no `kimi-k2.6` new rows and no recurring runtime-failure pattern in retained/new models |
+    | **fail_condition** | The retained roster still shows repeated instability or another retained shadow model starts behaving like the cleared models |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-27T00:27:00+07:00 |
+    | **notes** | This issue is about runtime completeness and provider/model behavior, not output eligibility. The V20.3.32 prune + onboard is shadow-only; it does not change `/du-doan` output eligibility or scoring policy. Historical evidence for removed models is preserved for audit trail. |
+
+    ### FU-022 — Unstable low-value shadow-only models were cleared from the live auto-eval roster
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-022 |
+    | **title** | Clear unstable low-value shadow-only models from `SHADOW_AUTO` |
+    | **current_truth** | By owner direction, 4 shadow-only models were removed from the live auto-eval roster on `2026-04-22`: `arcee-trinity`, `mistral-large-3`, `mistral-nemo`, and `llama-4-maverick`. The later `Kimi K2.6` onboarding is now superseded by V20.3.32: `kimi-k2.6` is also removed from active shadow measurement and preserved as historical/audit-only. |
+    | **evidence** | deployed `web/backend/model_registry.py`, `web/backend/gpt_analyzer.py`, `web/backend/scheduler.py`, `web/backend/main.py`; V20.3.32 `/api/health` now returns output `15`, runtime `29`; direct VPS verification shows `SHADOW_AUTO_EVAL_MODELS=11` and `kimi-k2.6=REMOVED` |
+    | **impact** | Reduces shadow noise, cost, and runtime instability in the live auto-eval lane while preserving historical DB evidence for forensic review |
+    | **status** | DONE |
+    | **next_action** | Keep watching the retained V20.3.32 shadow roster; only re-add removed models if future evidence justifies manual re-registration |
+    | **pass_condition** | Removed models no longer participate in live shadow auto-eval or runtime-visible rosters; `kimi-k2.6` remains removed unless owner explicitly re-adds it |
+    | **fail_condition** | Removed models still appear as active in runtime rosters or continue auto-evaluating after the change |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T22:19:00+07:00 |
+    | **notes** | This is a roster/prune action for shadow-only models. It does not delete historical prediction rows and does not affect production output eligibility. |
+
+    ### FU-016 — New shadow AI max-token coverage was incomplete and is now hardened
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-016 |
+    | **title** | Newly added shadow AI models needed explicit max-token coverage |
+    | **current_truth** | Low-risk config hardening has been deployed: `glm-5.1`, `minimax-m2.7`, and `mistral-nemo` now explicitly map to `24576` in `_MODEL_MAX_TOKENS`, matching the rest of the large / reasoning-heavy new shadow AI models. This removes fallback-to-default ambiguity (`16384`) but does not by itself prove runtime health. |
+    | **evidence** | deployed `web/backend/gpt_analyzer.py`; VPS marker verification for `'glm-5.1': 24576`, `'minimax-m2.7': 24576`, `'mistral-nemo': 24576`; `/api/health` after deploy |
+    | **impact** | Reduces truncation risk and standardizes runtime config for new shadow AI models; makes future failures easier to interpret as provider/model issues rather than token-cap ambiguity |
+    | **status** | DEPLOYED_PENDING_LIVE_VERIFY |
+    | **next_action** | Observe the next shadow cycles for the affected models and verify whether empty / length-related failures reduce |
+    | **pass_condition** | New shadow cycles complete without the prior empty/truncation symptoms for the affected models, or at minimum stop showing `finish_reason: length` where max-token fallback was a plausible cause |
+    | **fail_condition** | The same affected models still fail in the same regions even after explicit max-token hardening |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-21T23:02:00+07:00 |
+    | **notes** | Config hardening only. No scoring, prompt-content, lane, or output-policy change was made. This issue should only be promoted after observing the next cycle via `LIVE_WATCH_CHECKLIST_4_PACKS_20260421.md`. |
+
+    ### FU-017 — DB-backed runtime reliability tables are now active
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-017 |
+    | **title** | DB-backed runtime reliability and freshness tables are now active |
+    | **current_truth** | `runtime_reliability_daily`, `runtime_reliability_model_daily`, and `freshness_chain_daily` are deployed, present on production DB, and populated (`22`, `242`, `21` rows after latest recheck). This pass also closed a second-order preservation gap: historical shadow rows can now be rehydrated from `scheduler_logs`, so old empty/missing runs can preserve real `outcome_status`, `finish_reason`, and `error_message` instead of staying generic. |
+    | **evidence** | deployed `web/backend/database.py`, `web/backend/scheduler.py`, `web/backend/main.py`; direct VPS invocation of `get_runtime_reliability()` and `get_ml_freshness_chain()`; fresh production DB counts; enriched `runtime_reliability_model_daily` rows for `2026-04-21 MN/MT` |
+    | **impact** | Future live reviews can audit shadow runtime failures, missing rows, and ML freshness by DB table instead of relying only on log grep |
+    | **status** | DONE |
+    | **next_action** | Use these tables in the next live-watch checklist and future forensic reports |
+    | **pass_condition** | Tables exist, contain usable rows, preserve historical runtime failure detail where logs exist, and can be read through the deployed endpoints |
+    | **fail_condition** | Tables remain empty or drift from endpoint truth on the next cycle |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T01:45:00+07:00 |
+    | **notes** | This closes a measurement-layer gap only. It does not imply the shadow AI cohort itself is healthy. The latest improvement is preservation/truth quality, not runtime health improvement by itself. |
+
+    ### FU-019 — Forensic/admin semantics are still distributed across overlapping surfaces
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-019 |
+    | **title** | Forensic/admin semantics remain spread across overlapping surfaces and need canonical pairing discipline |
+    | **current_truth** | The system already has the right core surfaces, but semantics remain spread across overlapping APIs/UI boards. This issue improved materially in the latest pass: backend BT surfaces now emit explicit `semantics`, `selection-gap` points to the canonical forensic pair, `shadow-comparison` exposes `actual_tail_db`, and `/monitoring` now carries a compact metric-contract guide. Broad owner-readability and full surface normalization are still not finished yet. |
+    | **evidence** | wide-angle scatter audit across backend/frontend/docs; deployed `web/backend/main.py` semantics additions for BT/family/combo/forensic surfaces; deployed `web/frontend/monitoring.html` metric-contract guide and board notes |
+    | **impact** | Operators can still misread overlapping boards as duplicate truths, compare incompatible metrics, or treat DB-tail diagnostics as full forensic truth |
+    | **status** | PARTIAL |
+    | **next_action** | Continue low-risk normalization on existing surfaces only: propagate the metric dictionary into the remaining owner-facing surfaces where useful, align field names where safe, and avoid creating any new duplicate board for the same intent |
+    | **pass_condition** | Existing forensic/admin surfaces clearly declare which one is canonical for each question, and owners can distinguish DB-tail diagnostics vs full-actual forensic truth and model BT vs bundle BT without backend-side explanation |
+    | **fail_condition** | Another audit or operator workflow still needs manual code/DB explanation to understand which board/endpoint is canonical |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T02:17:00+07:00 |
+    | **notes** | This is a surface-contract / information-architecture issue, not a scoring issue. Safe work remains wording, pairing, metadata, and naming cleanup on existing surfaces. The new `METRIC_CONTRACT_DICTIONARY_20260422.md` is now the compact SSOT helper for this track. |
+
+    ### FU-020 — Helper path / migration / shadow-table safety still needed canonicalization
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-020 |
+    | **title** | Helper scripts and shadow-comparison table ownership were too scattered for safe operations |
+    | **current_truth** | This low-risk safety gap is now materially improved. `_check_schema.py`, `migration_final_bundles.py`, and `migration_prediction_policies.py` now resolve the canonical project-root DB path instead of relying on a Linux-only hardcoded default, and `shadow_daily_comparison` is now ensured through canonical DB init/ensure paths plus the admin endpoint, not only via the standalone script. |
+    | **evidence** | deployed `_check_schema.py`, `migration_final_bundles.py`, `migration_prediction_policies.py`, `database.py`, `main.py`; VPS marker verification; production DB check confirming `shadow_daily_comparison` exists at `/root/Lottery_AI_Test/data/lottery_ai.db` |
+    | **impact** | Reduces the risk of helper scripts reading or migrating the wrong DB file and reduces the chance that shadow comparison boards fail only because the standalone script was never run on that environment |
+    | **status** | DONE |
+    | **next_action** | Keep canonical DB ownership in `database.py` and continue treating standalone scripts as helpers, not schema owners |
+    | **pass_condition** | Helper scripts resolve the canonical DB path and shadow comparison surfaces do not depend on a one-off script for table existence |
+    | **fail_condition** | Future helper or migration scripts reintroduce hardcoded DB defaults or new environments still miss `shadow_daily_comparison` until a manual script run |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T02:37:00+07:00 |
+    | **notes** | This is migration safety and operational hygiene only. It does not change scoring, output policy, or shadow-vs-production semantics. |
+
+    ### FU-021 — Trace/history honesty around parse failures needed hardening
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-021 |
+    | **title** | Trace and viewer surfaces could hide parse issues or misreport them as server failures |
+    | **current_truth** | This honesty gap is now improved. `/api/prediction-trace` reports `corrupt_line_count` when unreadable JSONL rows are skipped, and `viewer.js` now safely handles malformed `main_numbers` payloads and shows a more truthful history-load error message instead of a blanket "Lỗi kết nối server". |
+    | **evidence** | deployed `web/backend/main.py`; deployed `web/frontend/viewer.js`; direct VPS invocation of `get_prediction_trace()` returning `corrupt_line_count` |
+    | **impact** | Operators can better distinguish malformed artifact/data issues from true server connectivity problems and can tell when trace parsing skipped bad rows |
+    | **status** | DONE |
+    | **next_action** | Continue preserving trace honesty; if corrupt rows ever appear, investigate artifact writer rather than blaming the viewer first |
+    | **pass_condition** | Trace endpoint exposes skipped-row count and viewer history no longer crashes or mislabels local parse issues as connectivity errors |
+    | **fail_condition** | Corrupt trace lines or viewer parse failures remain silent or continue presenting as generic server outages |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T02:37:00+07:00 |
+    | **notes** | This is observability honesty only. It does not restore lost historical trace rows and does not affect prediction generation. |
+
+    ### FU-018 — DB-backed strongest-vs-final and candidate-drop-stage tables are now active
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-018 |
+    | **title** | DB-backed strongest-vs-final and candidate-drop-stage tables are now active |
+    | **current_truth** | `strongest_vs_final_conversion_daily` and `candidate_drop_stage_daily` are now deployed, backfilled, and populated on production DB (`45` rows each). They materialize strongest-vs-final mismatch and daily drop-stage classification directly in DB. Current aggregate truth from the latest backfill: `final_matches_strongest=8`, `strongest_hit_but_bundle_miss=29`, and `candidate_drop_stage_daily` counts show `BUNDLE_SKEW=26`, `UPSTREAM_MISS=1`, `CANDIDATE_SPLIT=2`, `SECONDARY_ONLY_SIGNAL=1`. |
+    | **evidence** | deployed `web/backend/database.py`; deployed `web/backend/main.py`; direct VPS invocation of `get_strongest_vs_final()` and `get_candidate_drop_stage()`; fresh production DB counts after sync `20260422_010135` |
+    | **impact** | Future forensic and accuracy review can analyze MT bundle-skew and candidate-drop-stage by DB table instead of reconstructing the logic from raw API payloads or manual SQL each time |
+    | **status** | DONE |
+    | **next_action** | Use these tables in the next accuracy wave and future operator/live review checklists |
+    | **pass_condition** | Tables exist, contain usable rows, and endpoint output matches DB truth |
+    | **fail_condition** | Tables remain empty, drift from endpoint truth, or stop updating on future cycles |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-22T01:00:00+07:00 |
+    | **notes** | This closes a measurement-layer gap only. It does not by itself solve MT bundle-skew. |
+
+    ### Template (copy for new issues):
+
+    ```markdown
+    ### FU-001 — [Title]
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-001 |
+    | **title** | [Short descriptive title] |
+    | **current_truth** | [What is actually true right now] |
+    | **evidence** | [Links/refs to logs, DB queries, code, reports] |
+    | **impact** | [What this affects: scoring, UI, data, runtime, etc.] |
+    | **status** | [One of the allowed statuses above] |
+    | **next_action** | [Concrete next step] |
+    | **pass_condition** | [What must be true to mark DONE] |
+    | **fail_condition** | [What would cause escalation] |
+    | **owner_decision_needed** | YES / NO |
+    | **last_checked** | 2026-04-20T00:00:00+07:00 |
+    | **notes** | [Additional context] |
+    ```
+
+    ---
+
+    ## Resolved Issues
+
+    ### FU-R001 — "No shadow rows on 2026-04-19"
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-R001 |
+    | **title** | Older claim that shadow layer had no rows on `2026-04-19` |
+    | **current_truth** | False negative. Production DB shows `27` shadow prediction rows and `3` `shadow_daily_comparison` rows on `2026-04-19` |
+    | **evidence** | production DB reconciliation query; forensic report `20260420` |
+    | **impact** | Could have led to wrong conclusions about shadow health and promotion readiness |
+    | **status** | FALSE_NEGATIVE |
+    | **next_action** | Keep reconciled truth only |
+    | **pass_condition** | N/A |
+    | **fail_condition** | N/A |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-20T10:05:00+07:00 |
+    | **notes** | Root cause: mixed shadow tables + old query/path issues |
+
+    ### FU-R002 — "WR/BT views are empty/broken"
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-R002 |
+    | **title** | Older claim that WR/BT views were empty or broken |
+    | **current_truth** | False negative. All audited views exist and are populated in production |
+    | **evidence** | view count/sample query + sqlite view definitions; forensic report `20260420` |
+    | **impact** | Could have suppressed use of already-functional measurement surfaces |
+    | **status** | FALSE_NEGATIVE |
+    | **next_action** | Keep reconciled truth only |
+    | **pass_condition** | N/A |
+    | **fail_condition** | N/A |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-20T10:05:00+07:00 |
+    | **notes** | Root cause: wrong DB/query mode in older audits |
+
+    ### FU-R003 — "Claude is currently stale/failing"
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-R003 |
+    | **title** | Older claim that Claude is still currently stale/failing |
+    | **current_truth** | Historical-only. In the current audit slice, production DB shows Claude rows on `2026-04-19` across regions and fresh `2026-04-20` `MN` auto rows; no fresh fail evidence was surfaced |
+    | **evidence** | Claude production DB query in session; forensic report `20260420` |
+    | **impact** | Repeating the old incident as current would distort model readiness and owner trust |
+    | **status** | HISTORICAL_ONLY |
+    | **next_action** | Keep current truth only; reopen only if fresh fail evidence appears |
+    | **pass_condition** | N/A |
+    | **fail_condition** | N/A |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-20T12:45:00+07:00 |
+    | **notes** | Distinguish historical Claude incident from current runtime truth |
+
+    ### FU-R004 — DB initializer / deploy bundle view drift
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-R004 |
+    | **title** | Canonical DB initializer and deploy bundle had diverged measurement view definitions |
+    | **current_truth** | Resolved in this session. `database.py` now creates `v_wr_7d`, `v_wr_14d`, `v_wr_30d`, `v_wr_station`, and `_vps_deploy_bundle.py` has been aligned to the richer canonical view definitions |
+    | **evidence** | local patches + VPS deploy + post-deploy DB counts (`448/454/460/794`) + file verification |
+    | **impact** | Fresh init/deploy could previously recreate thinner or missing measurement surfaces |
+    | **status** | DONE |
+    | **next_action** | Keep canonical view ownership in `database.py`; use deploy bundle only as aligned helper |
+    | **pass_condition** | VPS DB exposes the full expected measurement view set after deploy |
+    | **fail_condition** | Future deploy script reintroduces thinner/missing view definitions |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-20T13:05:00+07:00 |
+    | **notes** | Live deploy verification completed in this session |
+
+    ### FU-R005 — Runtime boot failure was caused by orphan manual process, not current code boot bug
+
+    | Field | Value |
+    |-------|-------|
+    | **issue_id** | FU-R005 |
+    | **title** | `lottery.service` restart failure after deploy was due to orphan manual process holding port `8000` |
+    | **current_truth** | Resolved in this session. A detached manual process (`bash -c ... main.py > /tmp/lottery_ai.log & disown`) from `01:05` was occupying port `8000`, causing `systemd` restarts to fail with `address already in use`; after killing the orphan and restarting, the service returned to clean `systemd` ownership |
+    | **evidence** | `journalctl`, `ss -ltnp`, `ps -fp`, `systemctl status`, `/api/health` |
+    | **impact** | Could have been misreported as a code/runtime boot bug and would have left service health ambiguous |
+    | **status** | DONE |
+    | **next_action** | Keep runtime audits checking both `systemd` state and actual port owner when bind failures appear |
+    | **pass_condition** | Service runs under `systemd` as the sole owner of port `8000` and health endpoint responds normally |
+    | **fail_condition** | Another detached/manual process reclaims the serving port and masks service health |
+    | **owner_decision_needed** | NO |
+    | **last_checked** | 2026-04-20T14:10:00+07:00 |
+    | **notes** | Root cause was runtime ownership drift, not syntax or import failure |
+
+    ---
+
+    ## Status Transition Log
+
+    | Date | Issue ID | From Status | To Status | Reason | Evidence |
+    |------|----------|------------|-----------|--------|----------|
+    | 2026-04-20 | FU-R001 | NOT_YET_PROVEN | FALSE_NEGATIVE | Production DB reconciliation proved shadow rows/comparison rows existed on `2026-04-19` | forensic report `20260420` |
+    | 2026-04-20 | FU-R002 | NOT_YET_PROVEN | FALSE_NEGATIVE | Production DB reconciliation proved audited WR/BT views exist and are populated | forensic report `20260420` |
+    | 2026-04-20 | FU-R003 | PARTIAL | HISTORICAL_ONLY | Current Claude DB rows disproved the carry-forward assumption that Claude is still currently stale/failing | forensic report `20260420` |
+    | 2026-04-20 | FU-R004 | PARTIAL | DONE | Canonical view set was patched, deployed, and verified on VPS DB in the same session | deploy verification in this session |
+    | 2026-04-20 | FU-R005 | PARTIAL | DONE | Runtime restart failure was traced to orphan manual port owner, then resolved by restoring clean `systemd` ownership | VPS runtime/log reconciliation in this session |
+    | 2026-04-20 | FU-005 | NOT_YET_PROVEN | DEPLOYED_PENDING_LIVE_VERIFY | Expected-model-count semantics were normalized to the output-eligible roster and deployed, but admin-path live confirmation is still pending | `/api/health` reverify + VPS marker verification |
+    | 2026-04-21 | FU-007 | PARTIAL | DEPLOYED_PENDING_LIVE_VERIFY | Manual AI predict paths were aligned to owner doctrine and deployed to VPS; remaining gap is live/manual-path proof | VPS file-marker verification + service restart |
+    | 2026-04-21 | FU-009 | PARTIAL | DEPLOYED_PENDING_LIVE_VERIFY | Gap/shadow semantics were enriched on existing monitoring surfaces and deployed; remaining gap is owner-readability proof on live admin UI | VPS file-marker verification + service restart |
+    | 2026-04-21 | FU-010 | — | DEPLOYED_PENDING_LIVE_VERIFY | Cohort-of-record locked and owner-doctrine + anti-trap diagnostics deployed (V20.3.0); uplift claim stays WAIT_LIVE until next live cycle | `AI_PROMPT_COHORT_AND_ROLLOUT_AUDIT_20260421.md` + VPS markers |
+    | 2026-04-21 | FU-011 | — | PARTIAL | No-token/ML equivalent trap-aware feature design opened as staged work; not rolled out by prompt | `AI_PROMPT_COHORT_AND_ROLLOUT_AUDIT_20260421.md` §5.1 |
+    | 2026-04-21 | FU-010 | DEPLOYED_PENDING_LIVE_VERIFY | DEPLOYED_PENDING_LIVE_VERIFY (upgraded in place) | V20.3.1 added 3-level spend (FULL/PARTIAL/FRESH), §25 main-number output contract, bundle observability, grok-4.20-multi-agent token-limit bug fix, CP-7.9 metadata honesty | VPS markers at 2026-04-21 01:55 + live function test |
+    | 2026-04-21 | FU-002 | OWNER_LOCK | OWNER_LOCK | Pre-live DB recheck proved MB streak deepened from `8` through `2026-04-19` to `9` through `2026-04-20`; strategy remains locked unchanged | fresh `final_bundles` streak query in pre-live pass |
+    | 2026-04-21 | FU-002 | OWNER_LOCK | WAIT_LIVE | Latest closed live day `2026-04-21` broke the MB red-line with bundle `93 = WIN`; issue shifted from "active streak" to "recovery needs confirmation" | fresh closeout query on `final_bundles` + full-actual scorecard |
+    | 2026-04-21 | FU-012 | — | DEPLOYED_PENDING_LIVE_VERIFY | V20.3.4 deployed low-risk trace/runtime honesty and §25 persistence materialization hardening on VPS; waiting for the next fresh token-model row to prove end-to-end | post-deploy VPS markers + `/api/health` |
+    | 2026-04-21 | FU-003 | PARTIAL | DONE | `cohere_effectiveness_daily` was created, backfilled with 15 rows, and verified via direct VPS function invocation; Cohere can now be judged at the shadow insertion point with clear stage semantics | production DB table + VPS functional verification |
+    | 2026-04-21 | FU-013 | — | DEPLOYED_PENDING_LIVE_VERIFY | MT bundle-skew and main-vs-secondary visibility pack deployed on existing surfaces; remaining gap is owner readability on live admin UI | deployed code + direct VPS function invocation |
+    | 2026-04-21 | FU-014 | — | DEPLOYED_PENDING_LIVE_VERIFY | ML/no-token freshness and station-set diagnostics pack deployed; remaining gap is live UI/operator usage proof | deployed code + direct VPS function invocation |
+    | 2026-04-21 | FU-015 | — | PARTIAL | New shadow AI cohort audit found MT missing rows for `arcee-trinity` / `mistral-large-3` and unexplained MN shadow under-count (`9/11`) on the latest closed day | production DB + scheduler log forensic query |
+    | 2026-04-21 | FU-016 | — | DEPLOYED_PENDING_LIVE_VERIFY | Added explicit `24576` max-token coverage for `glm-5.1`, `minimax-m2.7`, and `mistral-nemo` to remove default-token ambiguity for new shadow AI models | deployed code + VPS marker verification |
+    | 2026-04-21 | FU-017 | — | DONE | DB-backed runtime reliability / freshness tables were deployed, backfilled, and verified via direct VPS endpoint invocation and production DB row counts | production DB + direct VPS verification |
+    | 2026-04-22 | FU-018 | — | DONE | DB-backed strongest-vs-final and candidate-drop-stage tables were deployed, backfilled, and verified via direct VPS endpoint invocation and production DB row counts | production DB + direct VPS verification |
+    | 2026-04-22 | FU-017 | DONE | DONE | Historical shadow runtime rows are now rehydrated from scheduler logs when possible, upgrading preservation quality from generic missing-row placeholders to real error detail | production DB + direct VPS verification of `runtime_reliability_model_daily` |
+    | 2026-04-22 | FU-019 | — | PARTIAL | Wide-angle scatter audit confirmed semantics overlap across existing forensic/admin surfaces; low-risk canonical-pair wording and field-name cleanup has begun on existing endpoints | backend/frontend audit + deployed `main.py` semantics cleanup |
+    | 2026-04-22 | FU-001 | DEPLOYED_PENDING_LIVE_VERIFY | DEPLOYED_PENDING_LIVE_VERIFY | Monitoring semantics were further normalized with a metric-contract guide and board-level wording cleanup on existing surfaces; remaining gap is still live admin-path readability proof | deployed `monitoring.html` + VPS marker verification |
+    | 2026-04-22 | FU-009 | DEPLOYED_PENDING_LIVE_VERIFY | DEPLOYED_PENDING_LIVE_VERIFY | Gap/shadow wording was tightened again so DB-tail diagnostic scope is harder to confuse with full-actual truth; remaining gap is still owner readability on live admin UI | deployed `main.py` semantics + deployed `monitoring.html` notes |
+    | 2026-04-22 | FU-019 | PARTIAL | PARTIAL | Phase 2 metric-contract normalization added backend semantics for BT surfaces plus a compact metric dictionary and monitoring guide, reducing but not eliminating surface scatter | backend/frontend/docs deploy + metric dictionary artifact |
+    | 2026-04-22 | FU-020 | — | DONE | Canonicalized helper/migration DB path handling and shadow comparison table ownership so operational helpers are less likely to target the wrong DB or depend on a standalone script for table existence | deployed `_check_schema.py`, migration scripts, `database.py`, `main.py` + VPS verification |
+    | 2026-04-22 | FU-021 | — | DONE | Trace endpoint and viewer history now expose/handle parse problems more honestly instead of silently swallowing or mislabeling them as pure server connectivity failures | deployed `main.py`, `viewer.js` + VPS verification |
+    | 2026-04-22 | FU-015 | PARTIAL | DEPLOYED_PENDING_LIVE_VERIFY | Owner-directed prune removed 4 unstable low-value shadow-only models from the live auto-eval roster; remaining question is stability of the reduced 7-model cohort on future cycles | deployed `model_registry.py` + `/api/health` + VPS verification |
+    | 2026-04-22 | FU-022 | — | DONE | `arcee-trinity`, `mistral-large-3`, `mistral-nemo`, and `llama-4-maverick` were cleared from the live `SHADOW_AUTO` roster without affecting output-eligible models | deployed `model_registry.py` + `/api/health` + VPS verification |
+    | 2026-04-24 | FU-024 | — | DEPLOYED_PENDING_LIVE_VERIFY | Prompt-integrity containment moved `rule_custom_prompt` to archive-only runtime status; next fresh trace row is still needed for end-to-end live proof | deployed `gpt_analyzer.py` + direct VPS runtime check + UI wording deploy |
+    | 2026-04-24 | FU-025 | — | DONE | Approved measurement-safe rerun/prompt forensic tables were created, backfilled for `2026-04-22/23`, and verified directly on production DB | deployed `database.py`, `main.py`, `scheduler.py` + VPS materialization run |
+    | 2026-04-27 | FU-050 | — | DEPLOYED_PENDING_LIVE_VERIFY | V20.3.32 removed `kimi-k2.6`, added four OpenRouter shadow models, expanded PHASE-FIRST contract cohort to six models, and deployed the roster to VPS; first live-cycle proof remains pending | public health `V20.3.32`; VPS venv registry import `15/11/29`; `SHADOW_ROSTER_V20332_DEPLOYED_CLOSEOUT_20260427.md` |
+    | 2026-04-27 | FU-015 | DEPLOYED_PENDING_LIVE_VERIFY | DEPLOYED_PENDING_LIVE_VERIFY | Current shadow roster baseline changed from 8 to 11 active `SHADOW_AUTO` models; future stability reads must use the V20.3.32 roster and treat `kimi-k2.6` as removed | FU-050 + V20.3.32 deploy verification |
+
+    ---
+
+    ## Rules
+
+    1. Every issue MUST follow the schema above (§51C) — missing fields = invalid.
+    2. Never delete resolved issues — move to "Resolved Issues" section with updated status.
+    3. Before reporting an issue, check this tracker first — no duplicates (§51H).
+    4. Every status change MUST be logged in the "Status Transition Log" table.
+    5. Update this file **THIRD** in post-session documentation order (§51G).
+
+    ---
+
+    > **Note:** This skeleton was created on 2026-04-20. Populate during the next forensic/audit session.

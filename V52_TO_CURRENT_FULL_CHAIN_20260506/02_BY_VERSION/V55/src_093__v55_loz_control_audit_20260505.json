@@ -1,0 +1,151 @@
+{
+  "2026-05-04": {
+    "MN": {
+      "official_bt_status": "LOSE",
+      "official_lo2_status": "PARTIAL",
+      "official_lo2": "[\"65\", \"32\"]",
+      "loz_trace_count": 39,
+      "in_top1": 2,
+      "in_top2": 3,
+      "in_top10": 3,
+      "final_loz1_selected_count": 39,
+      "final_loz2_selected_count": 39,
+      "drop_stages": {
+        "NOT_IN_MODEL_OUTPUT": 36,
+        "LOZ_LINE_SELECTION_MISS": 2,
+        "FINAL_OUTPUT_HIT": 1
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    },
+    "MT": {
+      "official_bt_status": "WIN",
+      "official_lo2_status": "WIN",
+      "official_lo2": "[\"29\", \"41\"]",
+      "loz_trace_count": 27,
+      "in_top1": 3,
+      "in_top2": 6,
+      "in_top10": 6,
+      "final_loz1_selected_count": 27,
+      "final_loz2_selected_count": 27,
+      "drop_stages": {
+        "NOT_IN_MODEL_OUTPUT": 21,
+        "CANDIDATE_POOL_MISS": 3,
+        "FINAL_OUTPUT_HIT": 2,
+        "LOZ_LINE_SELECTION_MISS": 1
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    },
+    "MB": {
+      "official_bt_status": "LOSE",
+      "official_lo2_status": "LOSE",
+      "official_lo2": "[\"09\", \"38\"]",
+      "loz_trace_count": 22,
+      "in_top1": 3,
+      "in_top2": 3,
+      "in_top10": 3,
+      "final_loz1_selected_count": 22,
+      "final_loz2_selected_count": 22,
+      "drop_stages": {
+        "NOT_IN_MODEL_OUTPUT": 19,
+        "LOZ_LINE_SELECTION_MISS": 2,
+        "CANDIDATE_POOL_MISS": 1
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    }
+  },
+  "2026-05-05": {
+    "MN": {
+      "official_bt_status": "LOSE",
+      "official_lo2_status": "LOSE",
+      "official_lo2": "[\"15\", \"13\"]",
+      "loz_trace_count": 42,
+      "in_top1": 3,
+      "in_top2": 5,
+      "in_top10": 5,
+      "final_loz1_selected_count": 42,
+      "final_loz2_selected_count": 42,
+      "drop_stages": {
+        "NOT_IN_MODEL_OUTPUT": 37,
+        "LOZ_LINE_SELECTION_MISS": 3,
+        "CANDIDATE_POOL_MISS": 2
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    },
+    "MT": {
+      "official_bt_status": "WIN",
+      "official_lo2_status": "PARTIAL",
+      "official_lo2": "[\"44\", \"31\"]",
+      "loz_trace_count": 30,
+      "in_top1": 6,
+      "in_top2": 6,
+      "in_top10": 6,
+      "final_loz1_selected_count": 30,
+      "final_loz2_selected_count": 30,
+      "drop_stages": {
+        "LOZ_LINE_SELECTION_MISS": 5,
+        "NOT_IN_MODEL_OUTPUT": 24,
+        "FINAL_OUTPUT_HIT": 1
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    },
+    "MB": {
+      "official_bt_status": "LOSE",
+      "official_lo2_status": "LOSE",
+      "official_lo2": "[\"83\", \"41\"]",
+      "loz_trace_count": 22,
+      "in_top1": 5,
+      "in_top2": 5,
+      "in_top10": 5,
+      "final_loz1_selected_count": 22,
+      "final_loz2_selected_count": 22,
+      "drop_stages": {
+        "NOT_IN_MODEL_OUTPUT": 17,
+        "CANDIDATE_POOL_MISS": 3,
+        "LOZ_LINE_SELECTION_MISS": 2
+      },
+      "verdict_labels": [
+        "LOZ_DIAGNOSTIC_ONLY",
+        "LOZ_REGION_CONDITIONAL",
+        "LOZ_WEEKDAY_CONDITIONAL",
+        "LOZ_STAGE_TRACE_AVAILABLE",
+        "LOZ_NOT_READY_FOR_RULE",
+        "LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED"
+      ]
+    }
+  }
+}

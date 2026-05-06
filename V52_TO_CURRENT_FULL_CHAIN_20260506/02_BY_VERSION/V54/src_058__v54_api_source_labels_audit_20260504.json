@@ -1,0 +1,62 @@
+{
+  "audit": "C-02 API source labels",
+  "status": "DEPLOYED",
+  "deployed_file": "web/backend/main.py",
+  "deployment_time_vn": "2026-05-04T12:59:56+07:00",
+  "smoke": {
+    "du_doan": 200,
+    "du_doan_test_unauth": 401,
+    "api_du_doan_test_mn_unauth": 401,
+    "api_final_bundle_mn": 200,
+    "admin_in_process": "PASS"
+  },
+  "fields_added": [
+    "source_proof",
+    "official_baseline_source_table",
+    "test_output_source_table",
+    "source_lane",
+    "candidate_pool_source",
+    "method_pick_source",
+    "is_clone_of_official",
+    "is_independent_agreement_with_official",
+    "selection_time",
+    "result_known_at_selection",
+    "is_realtime_prediction",
+    "is_post_closeout_diagnostic",
+    "run_id",
+    "experiment_id",
+    "official_output",
+    "output_impact",
+    "test_only",
+    "output_eligible"
+  ],
+  "admin_in_process_samples": {
+    "MN_2026_05_03": {
+      "mode": "MN_MT_TEST_LANE_LIVE_PARALLEL_V52_5",
+      "test_output_source_table": "experimental_preview_shadow",
+      "is_clone_of_official": false,
+      "is_independent_agreement_with_official": true,
+      "is_post_closeout_diagnostic": true,
+      "result_known_at_selection": false
+    },
+    "MT_2026_05_03": {
+      "mode": "MN_MT_TEST_LANE_LIVE_PARALLEL_V52_5",
+      "test_output_source_table": "experimental_preview_shadow",
+      "is_clone_of_official": false,
+      "is_independent_agreement_with_official": true,
+      "is_post_closeout_diagnostic": true,
+      "result_known_at_selection": false
+    },
+    "MB_2026_05_03": {
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "test_output_source_table": "mb_experimental_preview_shadow",
+      "is_clone_of_official": false,
+      "is_independent_agreement_with_official": true,
+      "is_post_closeout_diagnostic": true,
+      "result_known_at_selection": false
+    }
+  },
+  "selection_logic_changed_by_v54": false,
+  "official_tables_written_by_c02": false,
+  "note": "C-02 is response enrichment only. It makes source/clone/agreement/realtime flags explicit without changing pick logic."
+}

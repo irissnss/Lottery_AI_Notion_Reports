@@ -1,0 +1,377 @@
+{
+  "generated_from": "V52.2 backfill 60 closed days",
+  "tables": {
+    "mt_model_hit_output_drop_shadow": 301,
+    "loz_selector_shadow": 3273,
+    "model_latency_cost_audit_daily": 3273
+  },
+  "rolling": {
+    "7": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 17,
+          "hits": 25,
+          "token": 0,
+          "no_token": 23,
+          "shadow": 2
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 13,
+          "hits": 52,
+          "token": 21,
+          "no_token": 2,
+          "shadow": 29
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 6,
+          "hits": 6,
+          "token": 0,
+          "no_token": 1,
+          "shadow": 5
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 2,
+          "hits": 6,
+          "token": 0,
+          "no_token": 6,
+          "shadow": 0
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 26,
+          "official_better": 63,
+          "n": 202
+        },
+        {
+          "region": "MN",
+          "better": 41,
+          "official_better": 58,
+          "n": 201
+        },
+        {
+          "region": "MT",
+          "better": 45,
+          "official_better": 70,
+          "n": 201
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 604
+        }
+      ]
+    },
+    "14": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 35,
+          "hits": 49,
+          "token": 0,
+          "no_token": 45,
+          "shadow": 4
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 26,
+          "hits": 98,
+          "token": 48,
+          "no_token": 3,
+          "shadow": 47
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 22,
+          "hits": 28,
+          "token": 0,
+          "no_token": 3,
+          "shadow": 25
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 3,
+          "hits": 9,
+          "token": 0,
+          "no_token": 9,
+          "shadow": 0
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 43,
+          "official_better": 127,
+          "n": 371
+        },
+        {
+          "region": "MN",
+          "better": 65,
+          "official_better": 128,
+          "n": 368
+        },
+        {
+          "region": "MT",
+          "better": 107,
+          "official_better": 81,
+          "n": 366
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 1105
+        }
+      ]
+    },
+    "30": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20",
+        "2026-04-19",
+        "2026-04-18",
+        "2026-04-17",
+        "2026-04-16",
+        "2026-04-15",
+        "2026-04-14",
+        "2026-04-13",
+        "2026-04-12",
+        "2026-04-11",
+        "2026-04-10",
+        "2026-04-09",
+        "2026-04-08",
+        "2026-04-07",
+        "2026-04-06",
+        "2026-04-05",
+        "2026-04-04"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 61,
+          "hits": 88,
+          "token": 0,
+          "no_token": 83,
+          "shadow": 5
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 55,
+          "hits": 176,
+          "token": 104,
+          "no_token": 5,
+          "shadow": 67
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 35,
+          "hits": 43,
+          "token": 0,
+          "no_token": 7,
+          "shadow": 36
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 15,
+          "hits": 58,
+          "token": 14,
+          "no_token": 42,
+          "shadow": 2
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 122,
+          "official_better": 156,
+          "n": 652
+        },
+        {
+          "region": "MN",
+          "better": 113,
+          "official_better": 211,
+          "n": 650
+        },
+        {
+          "region": "MT",
+          "better": 140,
+          "official_better": 198,
+          "n": 646
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 1948
+        }
+      ]
+    },
+    "60": {
+      "dates": [
+        "2026-05-03",
+        "2026-05-02",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-26",
+        "2026-04-25",
+        "2026-04-24",
+        "2026-04-23",
+        "2026-04-22",
+        "2026-04-21",
+        "2026-04-20",
+        "2026-04-19",
+        "2026-04-18",
+        "2026-04-17",
+        "2026-04-16",
+        "2026-04-15",
+        "2026-04-14",
+        "2026-04-13",
+        "2026-04-12",
+        "2026-04-11",
+        "2026-04-10",
+        "2026-04-09",
+        "2026-04-08",
+        "2026-04-07",
+        "2026-04-06",
+        "2026-04-05",
+        "2026-04-04",
+        "2026-04-03",
+        "2026-04-02",
+        "2026-04-01",
+        "2026-03-31",
+        "2026-03-30",
+        "2026-03-29",
+        "2026-03-28",
+        "2026-03-27",
+        "2026-03-26",
+        "2026-03-25",
+        "2026-03-24",
+        "2026-03-23",
+        "2026-03-22",
+        "2026-03-21",
+        "2026-03-20",
+        "2026-03-19",
+        "2026-03-18",
+        "2026-03-17",
+        "2026-03-16",
+        "2026-03-15",
+        "2026-03-14",
+        "2026-03-13",
+        "2026-03-12",
+        "2026-03-11",
+        "2026-03-10",
+        "2026-03-09",
+        "2026-03-08",
+        "2026-03-07",
+        "2026-03-06",
+        "2026-03-05"
+      ],
+      "mt_drop_by_stage": [
+        {
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "n": 115,
+          "hits": 184,
+          "token": 0,
+          "no_token": 177,
+          "shadow": 7
+        },
+        {
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "n": 112,
+          "hits": 282,
+          "token": 195,
+          "no_token": 14,
+          "shadow": 73
+        },
+        {
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "n": 50,
+          "hits": 60,
+          "token": 0,
+          "no_token": 21,
+          "shadow": 39
+        },
+        {
+          "drop_stage": "OFFICIAL_LO2_INCLUDED",
+          "n": 24,
+          "hits": 91,
+          "token": 35,
+          "no_token": 53,
+          "shadow": 3
+        }
+      ],
+      "loz_better_by_region": [
+        {
+          "region": "MB",
+          "better": 195,
+          "official_better": 256,
+          "n": 1093
+        },
+        {
+          "region": "MN",
+          "better": 231,
+          "official_better": 321,
+          "n": 1091
+        },
+        {
+          "region": "MT",
+          "better": 229,
+          "official_better": 332,
+          "n": 1089
+        }
+      ],
+      "latency_missing": [
+        {
+          "missing_reason": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT",
+          "n": 3273
+        }
+      ]
+    }
+  }
+}

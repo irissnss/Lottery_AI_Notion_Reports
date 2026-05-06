@@ -1,21 +1,24 @@
-# READ THIS FIRST — Logical Synthesis V52→Current
+# READ THIS FIRST — Lottery AI Notion Reports
 
-This folder is the human/Notion entrypoint. It does not replace the raw export.
+This public repository contains the redacted report package only.
 
-Read in this order:
+## Start here
 
-1. `MASTER_LOGICAL_SYNTHESIS_V52_TO_V61.md`
-2. `01_TIMELINE_V52_TO_V61.md`
-3. `02_CURRENT_SYSTEM_STATE.md`
-4. `03_ISSUES_DECISIONS_GATES.md`
-5. `04_EVIDENCE_MAP_TO_RAW_EXPORT.md`
-6. `05_NEXT_ACTION_PLAN.md`
-7. `99_LINKS_TO_RAW_EXPORT.md`
+1. [Logical synthesis](./V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506/READ_THIS_FIRST.md)
+2. [Master logical synthesis](./V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506/MASTER_LOGICAL_SYNTHESIS_V52_TO_V61.md)
+3. [Full raw chain manifest](./V52_TO_CURRENT_FULL_CHAIN_20260506/00_MANIFEST/FULL_CHAIN_MANIFEST.md)
+4. [Direct links for raw chunks](./V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/READ_THIS_FIRST_LINKS.md)
+5. [Public raw links index](./00_PUBLIC_RAW_LINKS.md)
 
-Raw full-chain source remains in:
+## Raw links
 
-`../V52_TO_CURRENT_FULL_CHAIN_20260506/`
+- Logical synthesis raw: https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506/READ_THIS_FIRST.md
+- Full raw chain direct links raw: https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/READ_THIS_FIRST_LINKS.md
 
-Direct link index:
+## Safety
 
-`../V52_TO_CURRENT_FULL_CHAIN_20260506/11_DIRECT_LINKS/READ_THIS_FIRST_LINKS.md`
+- No live `.db` files.
+- No `.env`.
+- No runtime `.jsonl`.
+- API keys/secrets were redacted before publishing.
+- Code/runtime remains in private project repo; this repo is reports only.

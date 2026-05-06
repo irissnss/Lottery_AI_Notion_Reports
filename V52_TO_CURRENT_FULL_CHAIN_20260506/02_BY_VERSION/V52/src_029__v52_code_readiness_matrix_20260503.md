@@ -1,0 +1,11 @@
+# V52 Code Readiness Matrix
+
+| ID | Issue | Evidence | Sample size | Rolling window | Region affected | Current status | Risk if code now | Can implement measurement-only now? | Can implement test-lane-only now? | Can implement UI-test-only now? | Needs more data? | Needs owner decision? | Drop? | Bucket | Next command |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V52-MT-DROP | MT model correct but output/loz wrong | V51/V52 MT forensic | 1 day + rolling context | needs 7/14/30 focused | MT | MEASURED_ONE_DAY | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Build MT model-hit-to-output-drop matrix |
+| V52-LOZ-SHADOW | loz1/loz2 unstable and not modeled separately | loz audit | 60d official/predictions | 3/7/14/30/60 | all | LOZ_SIGNAL_MIXED | HIGH official / LOW measurement | YES | YES | YES | YES | NO for measurement | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Design loz selector shadow |
+| V52-LATENCY | per-model duration/cost missing | tensor/trace audit | 3216 tensor rows | diagnostic | all | TENSOR_NOT_OK_FOR_PRUNING | HIGH for prune | YES | YES | YES | YES | YES for prune | NO | IMPLEMENT_NOW_MEASUREMENT_ONLY | Instrument duration/cost/token |
+| V52-TEST-MNMT | /du-doan-test MB-only manual stage | test reality | 2 MB dates | not enough | MN/MT missing | MANUAL_STAGE_0_CONFIRMED | LOW test / HIGH scheduler | YES | YES | YES | YES | YES scheduler | NO | DESIGN_ONLY | Write MN/MT realtime cutoff spec before code |
+| V52-AI-PROMPT | AI test prompt not executing | du_doan_test_ai_predictions rows=0 | 0 rows | none | MB planned | NOT_PROVEN | MEDIUM cost risk | YES schema exists | YES with owner OK | YES | YES | YES | NO | OWNER_DECIDE | Owner approve 1-2 model test prompt experiment |
+| V52-CORR-REPLAY | Corrected rescue gate not met | corrected_rescue_replay_shadow | 13-ish valid before; needs refresh | 14+ valid | all | WAIT_DATA | HIGH official | YES refresh measurement | NO | YES | YES | YES unlock | NO | WAIT_DATA | Refresh corrected replay only, no unlock |
+| V52-TIER2 | tier2 replay policies underperform | V33/V37 reports | 14/30d replay | historical | all | DROP_AS_DESIGNED | HIGH | NO unless redesign | NO | NO | NO | YES for redesign | YES | DROP_AS_DESIGNED | Do not implement as designed |

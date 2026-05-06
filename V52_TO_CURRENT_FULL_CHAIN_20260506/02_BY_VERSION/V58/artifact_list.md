@@ -1,0 +1,3 @@
+# Artifact list
+
+- `artifacts/phase_checkpoints/V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md` -> `02_BY_VERSION\V58\src_121_V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md` (65 lines)

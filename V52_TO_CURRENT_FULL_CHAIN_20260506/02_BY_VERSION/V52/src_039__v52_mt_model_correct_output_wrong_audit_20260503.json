@@ -1,0 +1,1349 @@
+{
+  "scope": "MT 2026-05-03 + rolling context",
+  "official": {
+    "date": "2026-05-03",
+    "official_bt": "29",
+    "official_loz1": "29",
+    "official_loz2": "03",
+    "official_lo2": [
+      "29",
+      "03"
+    ],
+    "actual_tail_count": 40,
+    "bt_status": "LOSE",
+    "loz1_status": "LOSE",
+    "loz2_status": "LOSE",
+    "lo2_status": "LOSE",
+    "final_bundle_timestamp": "2026-05-03 16:42:00",
+    "evaluation_timestamp": "2026-05-03 17:30:00",
+    "result_scrape_timestamp": "2026-05-03T17:30:00.651541+07:00",
+    "prediction_rows_count": 25,
+    "ai_rows_count": 8,
+    "no_token_rows_count": 7,
+    "shadow_rows_count": 10,
+    "run_source_split": {
+      "ai_chain": 8,
+      "rerun_post_mn": 7,
+      "shadow_auto_eval": 10
+    },
+    "model_count_expected": 25,
+    "model_count_actual": 25,
+    "top10_candidates": [
+      {
+        "rank": 1,
+        "number": "29",
+        "score": 0.3027,
+        "voters": [
+          "combo-super",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "TOKEN": 1,
+          "NO_TOKEN": 6
+        }
+      },
+      {
+        "rank": 2,
+        "number": "03",
+        "score": 0.09,
+        "voters": [
+          "gemini-2.5-flash",
+          "lstm",
+          "combo-no-token"
+        ],
+        "family_split": {
+          "TOKEN": 1,
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 3,
+        "number": "18",
+        "score": 0.0852,
+        "voters": [
+          "random-forest",
+          "smart-ml"
+        ],
+        "family_split": {
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 4,
+        "number": "36",
+        "score": 0.0769,
+        "voters": [
+          "meta-learning",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 5,
+        "number": "33",
+        "score": 0.0619,
+        "voters": [
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "gpt-5-mini"
+        ],
+        "family_split": {
+          "TOKEN": 5
+        }
+      },
+      {
+        "rank": 6,
+        "number": "43",
+        "score": 0.0462,
+        "voters": [
+          "xgboost"
+        ],
+        "family_split": {
+          "NO_TOKEN": 1
+        }
+      },
+      {
+        "rank": 7,
+        "number": "83",
+        "score": 0.035,
+        "voters": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 8,
+        "number": "17",
+        "score": 0.0322,
+        "voters": [
+          "gpt-5.4",
+          "gemini-2.5-flash"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 9,
+        "number": "63",
+        "score": 0.027,
+        "voters": [
+          "lstm"
+        ],
+        "family_split": {
+          "NO_TOKEN": 1
+        }
+      },
+      {
+        "rank": 10,
+        "number": "08",
+        "score": 0.0119,
+        "voters": [
+          "gemini-2.5-pro",
+          "gpt-5-mini"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      }
+    ],
+    "source_flags": {
+      "pp1_convergence_dampener": {
+        "enabled": true,
+        "factor": 0.85,
+        "voters_threshold": 3,
+        "events": [
+          {
+            "number": "33",
+            "herd_voter_count": 3,
+            "herd_voters": [
+              "claude-sonnet-4-6",
+              "gemini-2.5-pro",
+              "gpt-5-mini"
+            ],
+            "threshold": 3,
+            "dampener_factor": 0.85,
+            "score_before": 0.0728,
+            "score_after": 0.0619,
+            "note": "PP-1 convergence dampener applied because verdict_reason markers ([CONV-DOWNGRADE] / [DIVERSITY-V10.5]) flagged herding/convergence on this exact number from >= 3 voters"
+          }
+        ]
+      },
+      "pp5_family_diversity_bonus": {
+        "enabled": false,
+        "factor": 1.15,
+        "min_families": 2,
+        "events": []
+      },
+      "wr_gate_filtered": [],
+      "dropped_main_candidate_reason": [
+        {
+          "number": "03",
+          "score": 0.09,
+          "voters": [
+            "gemini-2.5-flash",
+            "lstm",
+            "combo-no-token"
+          ],
+          "lane_votes": {
+            "ai_chain": 1,
+            "rerun_post_mn": 2
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "18",
+          "score": 0.0852,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "lane_votes": {
+            "rerun_post_mn": 2
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "36",
+          "score": 0.0769,
+          "voters": [
+            "meta-learning",
+            "smart-ensemble"
+          ],
+          "lane_votes": {
+            "rerun_post_mn": 2
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        }
+      ],
+      "source_prizes_status": "RESOLVED",
+      "dominant_rule_group": "consensus_top1_cluster",
+      "lane_fusion_policy": {
+        "mt_rerun_post_mn_boost": 1.15,
+        "mt_ai_chain_downweight": 0.95,
+        "mb_all_sources": 1.0
+      },
+      "bt_gate_threshold": 14,
+      "wr_gate_threshold": 28,
+      "model_exclusion_reasons": []
+    },
+    "model_hits": [
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "24",
+          "65"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 4.5,
+        "verdict": "SKIP",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "08",
+          "17"
+        ],
+        "hits": [
+          "08"
+        ],
+        "strength": 7.9,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "33",
+          "08"
+        ],
+        "hits": [
+          "08"
+        ],
+        "strength": 3.3,
+        "verdict": "SKIP",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "65",
+          "83"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 8.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "08",
+          "33"
+        ],
+        "hits": [
+          "08"
+        ],
+        "strength": 3.4000000000000004,
+        "verdict": "SKIP",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "08",
+          "67"
+        ],
+        "hits": [
+          "08"
+        ],
+        "strength": 7.6,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "65",
+          "24"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 0.0,
+        "verdict": "UNKNOWN",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "65",
+          "08"
+        ],
+        "hits": [
+          "65",
+          "08"
+        ],
+        "strength": 7.2,
+        "verdict": "CHOT_HA",
+        "status": "WIN"
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mn",
+        "numbers": [
+          "03",
+          "63"
+        ],
+        "hits": [
+          "63"
+        ],
+        "strength": 5.3,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "65",
+          "79"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 7.5,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "17",
+          "65"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 7.2,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "numbers": [
+          "65",
+          "17"
+        ],
+        "hits": [
+          "65"
+        ],
+        "strength": 7.8,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mn",
+        "numbers": [
+          "29",
+          "18"
+        ],
+        "hits": [
+          "18"
+        ],
+        "strength": 5.2,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mn",
+        "numbers": [
+          "29",
+          "18"
+        ],
+        "hits": [
+          "18"
+        ],
+        "strength": 7.5,
+        "verdict": "CHOT",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mn",
+        "numbers": [
+          "29",
+          "43"
+        ],
+        "hits": [
+          "43"
+        ],
+        "strength": 7.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      }
+    ],
+    "dropped_actual_candidates": [
+      {
+        "tail": "08",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 10,
+          "number": "08",
+          "score": 0.0119,
+          "voters": [
+            "gemini-2.5-pro",
+            "gpt-5-mini"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        "model_hit_count": 5,
+        "models": [
+          {
+            "model": "deepseek-v4-flash",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "08",
+              "17"
+            ],
+            "hits": [
+              "08"
+            ],
+            "strength": 7.9,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "gemini-2.5-pro",
+            "family": "TOKEN",
+            "run_source": "ai_chain",
+            "numbers": [
+              "33",
+              "08"
+            ],
+            "hits": [
+              "08"
+            ],
+            "strength": 3.3,
+            "verdict": "SKIP",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "gpt-5-mini",
+            "family": "TOKEN",
+            "run_source": "ai_chain",
+            "numbers": [
+              "08",
+              "33"
+            ],
+            "hits": [
+              "08"
+            ],
+            "strength": 3.4000000000000004,
+            "verdict": "SKIP",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "gpt-5.5",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "08",
+              "67"
+            ],
+            "hits": [
+              "08"
+            ],
+            "strength": 7.6,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "grok-4.20-multi-agent",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "08"
+            ],
+            "hits": [
+              "65",
+              "08"
+            ],
+            "strength": 7.2,
+            "verdict": "CHOT_HA",
+            "status": "WIN"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Khánh Hòa",
+            "number": "08508"
+          },
+          {
+            "station": "Thừa Thiên Huế",
+            "number": "08"
+          }
+        ]
+      },
+      {
+        "tail": "18",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 3,
+          "number": "18",
+          "score": 0.0852,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        "model_hit_count": 2,
+        "models": [
+          {
+            "model": "random-forest",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mn",
+            "numbers": [
+              "29",
+              "18"
+            ],
+            "hits": [
+              "18"
+            ],
+            "strength": 5.2,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "smart-ml",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mn",
+            "numbers": [
+              "29",
+              "18"
+            ],
+            "hits": [
+              "18"
+            ],
+            "strength": 7.5,
+            "verdict": "CHOT",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thừa Thiên Huế",
+            "number": "05518"
+          }
+        ]
+      },
+      {
+        "tail": "43",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 6,
+          "number": "43",
+          "score": 0.0462,
+          "voters": [
+            "xgboost"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        "model_hit_count": 1,
+        "models": [
+          {
+            "model": "xgboost",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mn",
+            "numbers": [
+              "29",
+              "43"
+            ],
+            "hits": [
+              "43"
+            ],
+            "strength": 7.0,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Kon Tum",
+            "number": "90443"
+          }
+        ]
+      },
+      {
+        "tail": "63",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 9,
+          "number": "63",
+          "score": 0.027,
+          "voters": [
+            "lstm"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        "model_hit_count": 1,
+        "models": [
+          {
+            "model": "lstm",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mn",
+            "numbers": [
+              "03",
+              "63"
+            ],
+            "hits": [
+              "63"
+            ],
+            "strength": 5.3,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Khánh Hòa",
+            "number": "57963"
+          }
+        ]
+      },
+      {
+        "tail": "65",
+        "drop_stage": "AI_SIGNAL_DROPPED",
+        "in_top10": false,
+        "rank_info": null,
+        "model_hit_count": 7,
+        "models": [
+          {
+            "model": "deepseek-reasoner",
+            "family": "TOKEN",
+            "run_source": "ai_chain",
+            "numbers": [
+              "24",
+              "65"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 4.5,
+            "verdict": "SKIP",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "glm-5.1",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "83"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 8.0,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "gpt-oss-120b",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "24"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 0.0,
+            "verdict": "UNKNOWN",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "grok-4.20-multi-agent",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "08"
+            ],
+            "hits": [
+              "65",
+              "08"
+            ],
+            "strength": 7.2,
+            "verdict": "CHOT_HA",
+            "status": "WIN"
+          },
+          {
+            "model": "qwen3-coder",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "79"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 7.5,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "qwen3-max-thinking",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "17",
+              "65"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 7.2,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "qwen3.6-plus",
+            "family": "SHADOW",
+            "run_source": "shadow_auto_eval",
+            "numbers": [
+              "65",
+              "17"
+            ],
+            "hits": [
+              "65"
+            ],
+            "strength": 7.8,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Kon Tum",
+            "number": "465"
+          },
+          {
+            "station": "Thừa Thiên Huế",
+            "number": "58265"
+          }
+        ]
+      }
+    ]
+  },
+  "top1_dominance": {
+    "rank": 1,
+    "number": "29",
+    "score": 0.3027,
+    "voters": [
+      "combo-super",
+      "random-forest",
+      "xgboost",
+      "meta-learning",
+      "combo-no-token",
+      "smart-ml",
+      "smart-ensemble"
+    ],
+    "family_split": {
+      "TOKEN": 1,
+      "NO_TOKEN": 6
+    }
+  },
+  "answer_labels": [
+    "NO_TOKEN_HERD_OVERRODE",
+    "AI_SIGNAL_DROPPED",
+    "LOZ_LINE_SELECTION_MISS",
+    "MEASURED_ONE_DAY",
+    "MT_TRACE_INCOMPLETE_NEEDS_CONVERSION_TRACE"
+  ],
+  "rolling": {
+    "3": {
+      "n": 3,
+      "bt_wins": 1,
+      "bt_losses": 2,
+      "loz1_hits": 1,
+      "loz2_hits": 0,
+      "lo2_full": 0,
+      "lo2_partial": 1,
+      "lo2_miss": 2,
+      "region": "MT",
+      "window": 3,
+      "bt_win_rate": 0.3333,
+      "loz1_hit_rate": 0.3333,
+      "loz2_hit_rate": 0.0,
+      "weekday_split": {
+        "4": {
+          "n": 1,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        },
+        "5": {
+          "n": 1,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "6": {
+          "n": 1,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        }
+      },
+      "station_actual_tail_observed": {
+        "Khánh Hòa": {
+          "actual_tail_hits": 18
+        },
+        "Thừa Thiên Huế": {
+          "actual_tail_hits": 18
+        },
+        "Kon Tum": {
+          "actual_tail_hits": 18
+        },
+        "Quảng Ngãi": {
+          "actual_tail_hits": 18
+        },
+        "Đắk Nông": {
+          "actual_tail_hits": 18
+        },
+        "Đà Nẵng": {
+          "actual_tail_hits": 18
+        },
+        "Gia Lai": {
+          "actual_tail_hits": 18
+        },
+        "Ninh Thuận": {
+          "actual_tail_hits": 18
+        }
+      }
+    },
+    "7": {
+      "n": 7,
+      "bt_wins": 4,
+      "bt_losses": 3,
+      "loz1_hits": 4,
+      "loz2_hits": 2,
+      "lo2_full": 1,
+      "lo2_partial": 4,
+      "lo2_miss": 2,
+      "region": "MT",
+      "window": 7,
+      "bt_win_rate": 0.5714,
+      "loz1_hit_rate": 0.5714,
+      "loz2_hit_rate": 0.2857,
+      "weekday_split": {
+        "0": {
+          "n": 1,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 1
+        },
+        "1": {
+          "n": 1,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "2": {
+          "n": 1,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "3": {
+          "n": 1,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 1
+        },
+        "4": {
+          "n": 1,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        },
+        "5": {
+          "n": 1,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "6": {
+          "n": 1,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        }
+      },
+      "station_actual_tail_observed": {
+        "Khánh Hòa": {
+          "actual_tail_hits": 36
+        },
+        "Thừa Thiên Huế": {
+          "actual_tail_hits": 36
+        },
+        "Kon Tum": {
+          "actual_tail_hits": 18
+        },
+        "Quảng Ngãi": {
+          "actual_tail_hits": 18
+        },
+        "Đắk Nông": {
+          "actual_tail_hits": 18
+        },
+        "Đà Nẵng": {
+          "actual_tail_hits": 36
+        },
+        "Gia Lai": {
+          "actual_tail_hits": 18
+        },
+        "Ninh Thuận": {
+          "actual_tail_hits": 18
+        },
+        "Bình Định": {
+          "actual_tail_hits": 18
+        },
+        "Quảng Bình": {
+          "actual_tail_hits": 18
+        },
+        "Quảng Trị": {
+          "actual_tail_hits": 18
+        },
+        "Quảng Nam": {
+          "actual_tail_hits": 18
+        },
+        "Đắk Lắk": {
+          "actual_tail_hits": 18
+        },
+        "Phú Yên": {
+          "actual_tail_hits": 18
+        }
+      }
+    },
+    "14": {
+      "n": 14,
+      "bt_wins": 5,
+      "bt_losses": 9,
+      "loz1_hits": 5,
+      "loz2_hits": 3,
+      "lo2_full": 1,
+      "lo2_partial": 6,
+      "lo2_miss": 7,
+      "region": "MT",
+      "window": 14,
+      "bt_win_rate": 0.3571,
+      "loz1_hit_rate": 0.3571,
+      "loz2_hit_rate": 0.2143,
+      "weekday_split": {
+        "0": {
+          "n": 2,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 2
+        },
+        "1": {
+          "n": 2,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "2": {
+          "n": 2,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "3": {
+          "n": 2,
+          "bt_wins": 2,
+          "loz1_hits": 2,
+          "loz2_hits": 1
+        },
+        "4": {
+          "n": 2,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        },
+        "5": {
+          "n": 2,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 0
+        },
+        "6": {
+          "n": 2,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 0
+        }
+      },
+      "station_actual_tail_observed": {
+        "Khánh Hòa": {
+          "actual_tail_hits": 72
+        },
+        "Thừa Thiên Huế": {
+          "actual_tail_hits": 54
+        },
+        "Kon Tum": {
+          "actual_tail_hits": 36
+        },
+        "Quảng Ngãi": {
+          "actual_tail_hits": 36
+        },
+        "Đắk Nông": {
+          "actual_tail_hits": 36
+        },
+        "Đà Nẵng": {
+          "actual_tail_hits": 72
+        },
+        "Gia Lai": {
+          "actual_tail_hits": 36
+        },
+        "Ninh Thuận": {
+          "actual_tail_hits": 36
+        },
+        "Bình Định": {
+          "actual_tail_hits": 36
+        },
+        "Quảng Bình": {
+          "actual_tail_hits": 36
+        },
+        "Quảng Trị": {
+          "actual_tail_hits": 36
+        },
+        "Quảng Nam": {
+          "actual_tail_hits": 36
+        },
+        "Đắk Lắk": {
+          "actual_tail_hits": 36
+        },
+        "Phú Yên": {
+          "actual_tail_hits": 36
+        },
+        "Huế": {
+          "actual_tail_hits": 18
+        }
+      }
+    },
+    "30": {
+      "n": 30,
+      "bt_wins": 10,
+      "bt_losses": 20,
+      "loz1_hits": 10,
+      "loz2_hits": 15,
+      "lo2_full": 5,
+      "lo2_partial": 15,
+      "lo2_miss": 10,
+      "region": "MT",
+      "window": 30,
+      "bt_win_rate": 0.3333,
+      "loz1_hit_rate": 0.3333,
+      "loz2_hit_rate": 0.5,
+      "weekday_split": {
+        "0": {
+          "n": 4,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 4
+        },
+        "1": {
+          "n": 4,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 2
+        },
+        "2": {
+          "n": 4,
+          "bt_wins": 1,
+          "loz1_hits": 1,
+          "loz2_hits": 1
+        },
+        "3": {
+          "n": 4,
+          "bt_wins": 4,
+          "loz1_hits": 4,
+          "loz2_hits": 3
+        },
+        "4": {
+          "n": 4,
+          "bt_wins": 0,
+          "loz1_hits": 0,
+          "loz2_hits": 1
+        },
+        "5": {
+          "n": 5,
+          "bt_wins": 2,
+          "loz1_hits": 2,
+          "loz2_hits": 2
+        },
+        "6": {
+          "n": 5,
+          "bt_wins": 2,
+          "loz1_hits": 2,
+          "loz2_hits": 2
+        }
+      },
+      "station_actual_tail_observed": {
+        "Khánh Hòa": {
+          "actual_tail_hits": 162
+        },
+        "Thừa Thiên Huế": {
+          "actual_tail_hits": 90
+        },
+        "Kon Tum": {
+          "actual_tail_hits": 90
+        },
+        "Quảng Ngãi": {
+          "actual_tail_hits": 90
+        },
+        "Đắk Nông": {
+          "actual_tail_hits": 90
+        },
+        "Đà Nẵng": {
+          "actual_tail_hits": 162
+        },
+        "Gia Lai": {
+          "actual_tail_hits": 72
+        },
+        "Ninh Thuận": {
+          "actual_tail_hits": 72
+        },
+        "Bình Định": {
+          "actual_tail_hits": 72
+        },
+        "Quảng Bình": {
+          "actual_tail_hits": 72
+        },
+        "Quảng Trị": {
+          "actual_tail_hits": 72
+        },
+        "Quảng Nam": {
+          "actual_tail_hits": 72
+        },
+        "Đắk Lắk": {
+          "actual_tail_hits": 72
+        },
+        "Phú Yên": {
+          "actual_tail_hits": 72
+        },
+        "Huế": {
+          "actual_tail_hits": 72
+        }
+      }
+    },
+    "60": {
+      "n": 60,
+      "bt_wins": 28,
+      "bt_losses": 32,
+      "loz1_hits": 28,
+      "loz2_hits": 24,
+      "lo2_full": 11,
+      "lo2_partial": 30,
+      "lo2_miss": 19,
+      "region": "MT",
+      "window": 60,
+      "bt_win_rate": 0.4667,
+      "loz1_hit_rate": 0.4667,
+      "loz2_hit_rate": 0.4,
+      "weekday_split": {
+        "0": {
+          "n": 8,
+          "bt_wins": 3,
+          "loz1_hits": 3,
+          "loz2_hits": 6
+        },
+        "1": {
+          "n": 8,
+          "bt_wins": 4,
+          "loz1_hits": 4,
+          "loz2_hits": 3
+        },
+        "2": {
+          "n": 8,
+          "bt_wins": 2,
+          "loz1_hits": 2,
+          "loz2_hits": 2
+        },
+        "3": {
+          "n": 9,
+          "bt_wins": 8,
+          "loz1_hits": 8,
+          "loz2_hits": 4
+        },
+        "4": {
+          "n": 9,
+          "bt_wins": 2,
+          "loz1_hits": 2,
+          "loz2_hits": 1
+        },
+        "5": {
+          "n": 9,
+          "bt_wins": 5,
+          "loz1_hits": 5,
+          "loz2_hits": 3
+        },
+        "6": {
+          "n": 9,
+          "bt_wins": 4,
+          "loz1_hits": 4,
+          "loz2_hits": 5
+        }
+      },
+      "station_actual_tail_observed": {
+        "Khánh Hòa": {
+          "actual_tail_hits": 306
+        },
+        "Thừa Thiên Huế": {
+          "actual_tail_hits": 198
+        },
+        "Kon Tum": {
+          "actual_tail_hits": 162
+        },
+        "Quảng Ngãi": {
+          "actual_tail_hits": 162
+        },
+        "Đắk Nông": {
+          "actual_tail_hits": 162
+        },
+        "Đà Nẵng": {
+          "actual_tail_hits": 306
+        },
+        "Gia Lai": {
+          "actual_tail_hits": 162
+        },
+        "Ninh Thuận": {
+          "actual_tail_hits": 162
+        },
+        "Bình Định": {
+          "actual_tail_hits": 162
+        },
+        "Quảng Bình": {
+          "actual_tail_hits": 162
+        },
+        "Quảng Trị": {
+          "actual_tail_hits": 162
+        },
+        "Quảng Nam": {
+          "actual_tail_hits": 144
+        },
+        "Đắk Lắk": {
+          "actual_tail_hits": 144
+        },
+        "Phú Yên": {
+          "actual_tail_hits": 144
+        },
+        "Huế": {
+          "actual_tail_hits": 108
+        }
+      }
+    }
+  }
+}

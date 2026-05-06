@@ -1,0 +1,15 @@
+{
+  "folder": "artifacts\\notion_ai_full_read\\V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506",
+  "purpose": "Logical synthesis entrypoint for Notion AI",
+  "raw_export": "artifacts\\notion_ai_full_read\\V52_TO_CURRENT_FULL_CHAIN_20260506",
+  "files": [
+    "01_TIMELINE_V52_TO_V61.md",
+    "02_CURRENT_SYSTEM_STATE.md",
+    "03_ISSUES_DECISIONS_GATES.md",
+    "04_EVIDENCE_MAP_TO_RAW_EXPORT.md",
+    "05_NEXT_ACTION_PLAN.md",
+    "99_LINKS_TO_RAW_EXPORT.md",
+    "MASTER_LOGICAL_SYNTHESIS_V52_TO_V61.md",
+    "READ_THIS_FIRST.md"
+  ]
+}

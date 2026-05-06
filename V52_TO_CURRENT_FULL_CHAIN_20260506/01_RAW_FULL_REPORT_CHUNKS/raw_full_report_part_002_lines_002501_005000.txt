@@ -1,0 +1,2500 @@
+        "timeout_or_fallback",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": null,
+        "created_at": null
+      },
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_leakage_audit": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "test_bt",
+        "source_models",
+        "source_families",
+        "source_tables",
+        "source_ranks",
+        "source_scores",
+        "in_official_lo2",
+        "shared_candidate_pool",
+        "shared_selection_reason",
+        "independent_signal",
+        "leakage_status",
+        "verdict",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.960878+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_conversion_trace": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "method_name",
+        "source_no_token_models",
+        "original_rank",
+        "original_score",
+        "test_rank",
+        "test_score",
+        "herd_cluster_size",
+        "herd_penalty_applied",
+        "candidate_changed",
+        "selected_bt_changed",
+        "source_available_at",
+        "target_cutoff_time",
+        "selection_basis",
+        "leakage_audit",
+        "rule_tier",
+        "source_prize_tier",
+        "candidate_tier",
+        "tier_boost",
+        "tier_penalty",
+        "tier_reason",
+        "verdict",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.960915+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_ai_predictions": {
+      "exists": true,
+      "row_count": 0,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "model_name",
+        "prompt_variant",
+        "prompt_version",
+        "input_context_hash",
+        "output_json",
+        "candidate_bt",
+        "candidate_lo2",
+        "strength",
+        "verdict",
+        "latency_seconds",
+        "token_count",
+        "cost_estimate",
+        "finish_reason",
+        "timeout_or_fallback",
+        "official_output",
+        "output_impact",
+        "test_only",
+        "admin_only",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": null,
+        "created_at": null
+      },
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "mb_experimental_preview_shadow": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "date",
+        "region",
+        "experiment_name",
+        "method_version",
+        "run_label",
+        "candidate_bt",
+        "candidate_lo2_json",
+        "candidate_ranked_json",
+        "baseline_bt",
+        "baseline_lo2_json",
+        "baseline_bt_status",
+        "baseline_lo2_status",
+        "source_models_json",
+        "source_rules_json",
+        "source_prizes_json",
+        "prior_region_context_json",
+        "selection_basis",
+        "latency_class",
+        "model_count",
+        "shadow_model_count",
+        "actual_known",
+        "candidate_bt_hit",
+        "candidate_lo2_status",
+        "would_flip_baseline_to_win",
+        "would_flip_baseline_to_lose",
+        "false_promotion",
+        "diagnostic_only",
+        "shadow_only",
+        "output_eligible",
+        "owner_approved",
+        "output_impact",
+        "created_at"
+      ],
+      "latest": {
+        "date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.067975+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    }
+  },
+  "route_api_ui": {
+    "route": "/du-doan-test admin-only",
+    "api": "/api/du-doan-test/mb admin-only",
+    "ui": "web/frontend/du-doan-test.html",
+    "mn_support": false,
+    "mt_support": false,
+    "mb_support": true,
+    "scheduler_auto_wire": false
+  }
+}
+===== SOURCE_END artifacts/_v52_du_doan_test_reality_check_20260503.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_full_report_claim_reconciliation_20260503.md VERSION=V52 LINES=17 SHA256=0ec7bafe0be3cfb852cbc22eb083382916373d0d1cdb751cc4e55df563aa587a =====
+# V52 Full Report Claim Reconciliation
+
+| Claim | Report/source section | Evidence type | Current proof path | Contradiction with newer report? | Current verdict |
+|---|---|---|---|---|---|
+| /du-doan-test is a separate lane | V46/V50 reports | CODE_PROVEN+DB_PROVEN+API_PROVEN+UI_PROVEN | du_doan_test_* tables, admin route/API/UI, V50 report | No | CONFIRMED |
+| /du-doan-test is live-parallel auto full | Owner target / older wording risk | REPORT_ONLY if claimed | scheduler.py unwired, no natural scheduler proof | V49/V50/V51 contradict full-auto claim | OVERCLAIM |
+| V48 report exists | V49 embedded extraction | EMBEDDED_REPORT_ONLY+REPORT_PROVEN | V49 marker TOTAL-FORCE V48 - KET QUA DAY DU | No | CONFIRMED |
+| Full 25-model test lane active realtime | V48/V49 corrections | DB_PROVEN partial | 25 predictions but 14 voter models in test contribution historically; V50 still shared-source | V49/V50 say not full 25 | PARTIAL |
+| AI test prompt executing | FU-102/V49/V50 | DB_PROVEN | du_doan_test_ai_predictions exists but 0 rows | No | NOT_PROVEN |
+| NO_PER_MODEL_DURATION blocks pruning | V44/V49/V51 | ARTIFACT_ONLY+DB/TRACE_AUDIT | tensor 3216 rows all NO_PER_MODEL_DURATION; trace lacks latency/cost | No | CONFIRMED |
+| Option A stopped cleanly | V38/V39/V41 | CODE_PROVEN+REPORT_PROVEN | no rescue in generate_final_bundle, corrected replay gate not met | No | CONFIRMED |
+| V37 single_vote_rescue replay usable for unlock | V38 correction | REPORT_PROVEN | classified LEAKY_REFERENCE_ONLY | Contradicted by V38+ | CONTRADICTED |
+| V46 repeated 91 experiments are independent | V49/V50 audits | DB_PROVEN | shared candidate pool / same source payload | Yes | OVERCLAIM |
+| Loz1/loz2 stable enough for rule | V51/V52 loz audit | DB_PROVEN | rolling mixed by region/window | No | NOT_PROVEN |
+| Corrected replay gate met | V39/V41 roadmap | DB_PROVEN partial | gate needs >=14 valid + lift; latest narrative says not met | No | NOT_PROVEN |
+| /search rollover is output bug | V41 rollover UX | REPORT_PROVEN | classified UX confusion/banner plan; not output mutation | No | SUPERSEDED |
+| CP-1.2 deployed and persistent | Roadmap/V36+ | VPS_PROVEN | roadmap CP-1.2/1.3 done | Old ?6 stale | CONFIRMED |
+
+===== SOURCE_END artifacts/_v52_full_report_claim_reconciliation_20260503.md =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_impl_post_hash_20260503.txt VERSION=V52 LINES=9 SHA256=4b5e54de0de018c7d4b610db07a63b2dc8c9520b217f0e9317b2b0faad5ca602 =====
+# V52 IMPLEMENTATION POST-HASH
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11
+mt_model_hit_output_drop_shadow	exists=true	count=5	sha256=0acc30cf6400e4939b5347a3965ba99937f5420f00ad648e7b74f65aa9c5bb53
+loz_selector_shadow	exists=true	count=75	sha256=a041017b00fce12eee723b055361fb2309378c4444ffd2d0fba0e6cf632bfe22
+model_latency_cost_audit_daily	exists=true	count=75	sha256=1e83a3381e921434b9fc0dffb5831c26b54cfe2ee25f43592bbf10fa4f260569
+
+===== SOURCE_END artifacts/_v52_impl_post_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_impl_pre_hash_20260503.txt VERSION=V52 LINES=11 SHA256=512ba6cc71a50146421152102b049129783a21fe577f63b384363bc40f936790 =====
+# V52 IMPLEMENTATION PRE-HASH
+generated_at=2026-05-03T21:33:58
+live_sync_manifest=artifacts/live_sync/20260503_213348/manifest.json
+predictions	exists=true	count=4134	sha256=9c6309a359c8bc966285c282b4abef1575bcfae77547569a0b2e3a4ebbc8372b
+final_bundles	exists=true	count=195	sha256=920515774f87215114f6987268b87317c495adf69b91223b8d9d5632c0f88795
+lottery_results	exists=true	count=14603	sha256=a21a219bb27054659d6cc8e10821433a9ca398a6dd40250b01c4024c05ee4d7d
+model_daily_eval	exists=true	count=4089	sha256=774e73cbb162917dee6ccfb5d1465daa36ea26d9cd95fbbd1fd32c65db6c0ccd
+scheduler_logs	exists=true	count=113122	sha256=e2ff998d4dfc62442dc686d356a6e7c20821181fbfeb527d8cc0daa745945e11
+mt_model_hit_output_drop_shadow	exists=false	count=0	sha256=NA
+loz_selector_shadow	exists=false	count=0	sha256=NA
+model_latency_cost_audit_daily	exists=false	count=0	sha256=NA
+
+===== SOURCE_END artifacts/_v52_impl_pre_hash_20260503.txt =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_loz_control_audit_20260503.json VERSION=V52 LINES=1687 SHA256=8568bb657679915226e0f4c6b1610f0ff9c66787154d6fc039adc35163aed12d =====
+{
+  "classification": [
+    "LOZ_DIAGNOSTIC_ONLY",
+    "LOZ_SIGNAL_MIXED",
+    "LOZ_REGION_CONDITIONAL",
+    "LOZ_WEEKDAY_CONDITIONAL",
+    "LOZ_NOT_READY_FOR_RULE",
+    "LOZ_TEST_LANE_CANDIDATE_ONLY"
+  ],
+  "official_rolling": {
+    "MN": {
+      "3": {
+        "n": 3,
+        "bt_wins": 2,
+        "bt_losses": 1,
+        "loz1_hits": 2,
+        "loz2_hits": 2,
+        "lo2_full": 2,
+        "lo2_partial": 0,
+        "lo2_miss": 1,
+        "region": "MN",
+        "window": 3,
+        "bt_win_rate": 0.6667,
+        "loz1_hit_rate": 0.6667,
+        "loz2_hit_rate": 0.6667,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 18
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 18
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 18
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 18
+          },
+          "Long An": {
+            "actual_tail_hits": 18
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 18
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 18
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 18
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 4,
+        "bt_losses": 3,
+        "loz1_hits": 4,
+        "loz2_hits": 4,
+        "lo2_full": 4,
+        "lo2_partial": 0,
+        "lo2_miss": 3,
+        "region": "MN",
+        "window": 7,
+        "bt_win_rate": 0.5714,
+        "loz1_hit_rate": 0.5714,
+        "loz2_hit_rate": 0.5714,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 18
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 18
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 18
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 18
+          },
+          "Long An": {
+            "actual_tail_hits": 18
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 36
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 18
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 18
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 18
+          },
+          "An Giang": {
+            "actual_tail_hits": 18
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 18
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 18
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 18
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 18
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 18
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 18
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 18
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 18
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 18
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 9,
+        "bt_losses": 5,
+        "loz1_hits": 9,
+        "loz2_hits": 8,
+        "lo2_full": 6,
+        "lo2_partial": 5,
+        "lo2_miss": 3,
+        "region": "MN",
+        "window": 14,
+        "bt_win_rate": 0.6429,
+        "loz1_hit_rate": 0.6429,
+        "loz2_hit_rate": 0.5714,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 2
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 36
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 36
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 36
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 36
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 36
+          },
+          "Long An": {
+            "actual_tail_hits": 36
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 72
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 36
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 36
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 36
+          },
+          "An Giang": {
+            "actual_tail_hits": 36
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 36
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 36
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 36
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 36
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 36
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 36
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 36
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 36
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 36
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 36
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 18,
+        "bt_losses": 12,
+        "loz1_hits": 18,
+        "loz2_hits": 17,
+        "lo2_full": 10,
+        "lo2_partial": 15,
+        "lo2_miss": 5,
+        "region": "MN",
+        "window": 30,
+        "bt_win_rate": 0.6,
+        "loz1_hit_rate": 0.6,
+        "loz2_hit_rate": 0.5667,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 90
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 90
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 90
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 90
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 90
+          },
+          "Long An": {
+            "actual_tail_hits": 90
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 162
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 72
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 72
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 72
+          },
+          "An Giang": {
+            "actual_tail_hits": 72
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 72
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 72
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 72
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 72
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 72
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 72
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 72
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 72
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 72
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 72
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 29,
+        "bt_losses": 31,
+        "loz1_hits": 29,
+        "loz2_hits": 30,
+        "lo2_full": 17,
+        "lo2_partial": 25,
+        "lo2_miss": 18,
+        "region": "MN",
+        "window": 60,
+        "bt_win_rate": 0.4833,
+        "loz1_hit_rate": 0.4833,
+        "loz2_hit_rate": 0.5,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 6,
+            "loz1_hits": 6,
+            "loz2_hits": 5
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 1
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 7
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 6
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 6,
+            "loz1_hits": 6,
+            "loz2_hits": 4
+          }
+        },
+        "station_actual_tail_observed": {
+          "Kiên Giang": {
+            "actual_tail_hits": 162
+          },
+          "Tiền Giang": {
+            "actual_tail_hits": 162
+          },
+          "Đà Lạt": {
+            "actual_tail_hits": 162
+          },
+          "Bình Phước": {
+            "actual_tail_hits": 162
+          },
+          "Hậu Giang": {
+            "actual_tail_hits": 162
+          },
+          "Long An": {
+            "actual_tail_hits": 162
+          },
+          "TP. HCM": {
+            "actual_tail_hits": 306
+          },
+          "Bình Dương": {
+            "actual_tail_hits": 162
+          },
+          "Vĩnh Long": {
+            "actual_tail_hits": 162
+          },
+          "Trà Vinh": {
+            "actual_tail_hits": 162
+          },
+          "An Giang": {
+            "actual_tail_hits": 162
+          },
+          "Tây Ninh": {
+            "actual_tail_hits": 162
+          },
+          "Bình Thuận": {
+            "actual_tail_hits": 162
+          },
+          "Cần Thơ": {
+            "actual_tail_hits": 144
+          },
+          "Sóc Trăng": {
+            "actual_tail_hits": 144
+          },
+          "Đồng Nai": {
+            "actual_tail_hits": 144
+          },
+          "Bạc Liêu": {
+            "actual_tail_hits": 144
+          },
+          "Bến Tre": {
+            "actual_tail_hits": 144
+          },
+          "Vũng Tàu": {
+            "actual_tail_hits": 144
+          },
+          "Cà Mau": {
+            "actual_tail_hits": 144
+          },
+          "Đồng Tháp": {
+            "actual_tail_hits": 144
+          }
+        }
+      }
+    },
+    "MT": {
+      "3": {
+        "n": 3,
+        "bt_wins": 1,
+        "bt_losses": 2,
+        "loz1_hits": 1,
+        "loz2_hits": 0,
+        "lo2_full": 0,
+        "lo2_partial": 1,
+        "lo2_miss": 2,
+        "region": "MT",
+        "window": 3,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.0,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 18
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 18
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 18
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 18
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 18
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 4,
+        "bt_losses": 3,
+        "loz1_hits": 4,
+        "loz2_hits": 2,
+        "lo2_full": 1,
+        "lo2_partial": 4,
+        "lo2_miss": 2,
+        "region": "MT",
+        "window": 7,
+        "bt_win_rate": 0.5714,
+        "loz1_hit_rate": 0.5714,
+        "loz2_hit_rate": 0.2857,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 36
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 36
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 18
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 36
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 18
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 18
+          },
+          "Bình Định": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 18
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 18
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 18
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 5,
+        "bt_losses": 9,
+        "loz1_hits": 5,
+        "loz2_hits": 3,
+        "lo2_full": 1,
+        "lo2_partial": 6,
+        "lo2_miss": 7,
+        "region": "MT",
+        "window": 14,
+        "bt_win_rate": 0.3571,
+        "loz1_hit_rate": 0.3571,
+        "loz2_hit_rate": 0.2143,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 2
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 72
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 54
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 36
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 36
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 72
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 36
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 36
+          },
+          "Bình Định": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 36
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 36
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 36
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 36
+          },
+          "Huế": {
+            "actual_tail_hits": 18
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 10,
+        "bt_losses": 20,
+        "loz1_hits": 10,
+        "loz2_hits": 15,
+        "lo2_full": 5,
+        "lo2_partial": 15,
+        "lo2_miss": 10,
+        "region": "MT",
+        "window": 30,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.5,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 4
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 2
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 162
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 90
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 90
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 90
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 90
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 162
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 72
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 72
+          },
+          "Bình Định": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 72
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 72
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 72
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 72
+          },
+          "Huế": {
+            "actual_tail_hits": 72
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 28,
+        "bt_losses": 32,
+        "loz1_hits": 28,
+        "loz2_hits": 24,
+        "lo2_full": 11,
+        "lo2_partial": 30,
+        "lo2_miss": 19,
+        "region": "MT",
+        "window": 60,
+        "bt_win_rate": 0.4667,
+        "loz1_hit_rate": 0.4667,
+        "loz2_hit_rate": 0.4,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 6
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 3
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 8,
+            "loz1_hits": 8,
+            "loz2_hits": 4
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 5,
+            "loz1_hits": 5,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 4,
+            "loz1_hits": 4,
+            "loz2_hits": 5
+          }
+        },
+        "station_actual_tail_observed": {
+          "Khánh Hòa": {
+            "actual_tail_hits": 306
+          },
+          "Thừa Thiên Huế": {
+            "actual_tail_hits": 198
+          },
+          "Kon Tum": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Ngãi": {
+            "actual_tail_hits": 162
+          },
+          "Đắk Nông": {
+            "actual_tail_hits": 162
+          },
+          "Đà Nẵng": {
+            "actual_tail_hits": 306
+          },
+          "Gia Lai": {
+            "actual_tail_hits": 162
+          },
+          "Ninh Thuận": {
+            "actual_tail_hits": 162
+          },
+          "Bình Định": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Bình": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Trị": {
+            "actual_tail_hits": 162
+          },
+          "Quảng Nam": {
+            "actual_tail_hits": 144
+          },
+          "Đắk Lắk": {
+            "actual_tail_hits": 144
+          },
+          "Phú Yên": {
+            "actual_tail_hits": 144
+          },
+          "Huế": {
+            "actual_tail_hits": 108
+          }
+        }
+      }
+    },
+    "MB": {
+      "3": {
+        "n": 3,
+        "bt_wins": 1,
+        "bt_losses": 2,
+        "loz1_hits": 1,
+        "loz2_hits": 1,
+        "lo2_full": 0,
+        "lo2_partial": 2,
+        "lo2_miss": 1,
+        "region": "MB",
+        "window": 3,
+        "bt_win_rate": 0.3333,
+        "loz1_hit_rate": 0.3333,
+        "loz2_hit_rate": 0.3333,
+        "weekday_split": {
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 27
+          },
+          "Nam Định": {
+            "actual_tail_hits": 27
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 27
+          }
+        }
+      },
+      "7": {
+        "n": 7,
+        "bt_wins": 2,
+        "bt_losses": 5,
+        "loz1_hits": 2,
+        "loz2_hits": 2,
+        "lo2_full": 0,
+        "lo2_partial": 4,
+        "lo2_miss": 3,
+        "region": "MB",
+        "window": 7,
+        "bt_win_rate": 0.2857,
+        "loz1_hit_rate": 0.2857,
+        "loz2_hit_rate": 0.2857,
+        "weekday_split": {
+          "0": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "4": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 0
+          },
+          "5": {
+            "n": 1,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 1,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 27
+          },
+          "Nam Định": {
+            "actual_tail_hits": 27
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 27
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 54
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 27
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 27
+          }
+        }
+      },
+      "14": {
+        "n": 14,
+        "bt_wins": 5,
+        "bt_losses": 9,
+        "loz1_hits": 5,
+        "loz2_hits": 5,
+        "lo2_full": 1,
+        "lo2_partial": 8,
+        "lo2_miss": 5,
+        "region": "MB",
+        "window": 14,
+        "bt_win_rate": 0.3571,
+        "loz1_hit_rate": 0.3571,
+        "loz2_hit_rate": 0.3571,
+        "weekday_split": {
+          "0": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 2,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "6": {
+            "n": 2,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 54
+          },
+          "Nam Định": {
+            "actual_tail_hits": 54
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 54
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 108
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 54
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 54
+          }
+        }
+      },
+      "30": {
+        "n": 30,
+        "bt_wins": 6,
+        "bt_losses": 24,
+        "loz1_hits": 6,
+        "loz2_hits": 9,
+        "lo2_full": 2,
+        "lo2_partial": 11,
+        "lo2_miss": 17,
+        "region": "MB",
+        "window": 30,
+        "bt_win_rate": 0.2,
+        "loz1_hit_rate": 0.2,
+        "loz2_hit_rate": 0.3,
+        "weekday_split": {
+          "0": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 0
+          },
+          "2": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 4,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 1
+          },
+          "4": {
+            "n": 4,
+            "bt_wins": 0,
+            "loz1_hits": 0,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 5,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 5,
+            "bt_wins": 1,
+            "loz1_hits": 1,
+            "loz2_hits": 3
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 135
+          },
+          "Nam Định": {
+            "actual_tail_hits": 135
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 108
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 216
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 108
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 108
+          }
+        }
+      },
+      "60": {
+        "n": 60,
+        "bt_wins": 18,
+        "bt_losses": 42,
+        "loz1_hits": 18,
+        "loz2_hits": 13,
+        "lo2_full": 2,
+        "lo2_partial": 27,
+        "lo2_miss": 31,
+        "region": "MB",
+        "window": 60,
+        "bt_win_rate": 0.3,
+        "loz1_hit_rate": 0.3,
+        "loz2_hit_rate": 0.2167,
+        "weekday_split": {
+          "0": {
+            "n": 8,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 0
+          },
+          "1": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 2
+          },
+          "2": {
+            "n": 8,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "3": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 2
+          },
+          "4": {
+            "n": 9,
+            "bt_wins": 2,
+            "loz1_hits": 2,
+            "loz2_hits": 1
+          },
+          "5": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 3
+          },
+          "6": {
+            "n": 9,
+            "bt_wins": 3,
+            "loz1_hits": 3,
+            "loz2_hits": 4
+          }
+        },
+        "station_actual_tail_observed": {
+          "Thái Bình": {
+            "actual_tail_hits": 243
+          },
+          "Nam Định": {
+            "actual_tail_hits": 243
+          },
+          "Hải Phòng": {
+            "actual_tail_hits": 243
+          },
+          "Hà Nội": {
+            "actual_tail_hits": 459
+          },
+          "Bắc Ninh": {
+            "actual_tail_hits": 216
+          },
+          "Quảng Ninh": {
+            "actual_tail_hits": 216
+          }
+        }
+      }
+    }
+  },
+  "run_source_family_split": [
+    {
+      "region": "MN",
+      "run_source": "auto_daily",
+      "family": "TOKEN",
+      "n": 433,
+      "loz1_hits": 205,
+      "loz2_hits": 213,
+      "loz1_rate": 0.4734,
+      "loz2_rate": 0.4919
+    },
+    {
+      "region": "MN",
+      "run_source": "auto_daily",
+      "family": "NO_TOKEN",
+      "n": 409,
+      "loz1_hits": 191,
+      "loz2_hits": 179,
+      "loz1_rate": 0.467,
+      "loz2_rate": 0.4377
+    },
+    {
+      "region": "MN",
+      "run_source": "shadow_auto_eval",
+      "family": "SHADOW",
+      "n": 164,
+      "loz1_hits": 85,
+      "loz2_hits": 72,
+      "loz1_rate": 0.5183,
+      "loz2_rate": 0.439
+    },
+    {
+      "region": "MN",
+      "run_source": "manual",
+      "family": "SHADOW",
+      "n": 16,
+      "loz1_hits": 6,
+      "loz2_hits": 8,
+      "loz1_rate": 0.375,
+      "loz2_rate": 0.5
+    },
+    {
+      "region": "MN",
+      "run_source": "manual",
+      "family": "TOKEN",
+      "n": 6,
+      "loz1_hits": 5,
+      "loz2_hits": 3,
+      "loz1_rate": 0.8333,
+      "loz2_rate": 0.5
+    },
+    {
+      "region": "MN",
+      "run_source": "hotfix_rerun",
+      "family": "NO_TOKEN",
+      "n": 2,
+      "loz1_hits": 1,
+      "loz2_hits": 1,
+      "loz1_rate": 0.5,
+      "loz2_rate": 0.5
+    },
+    {
+      "region": "MN",
+      "run_source": "manual",
+      "family": "NO_TOKEN",
+      "n": 8,
+      "loz1_hits": 2,
+      "loz2_hits": 3,
+      "loz1_rate": 0.25,
+      "loz2_rate": 0.375
+    },
+    {
+      "region": "MN",
+      "run_source": "auto_daily",
+      "family": "SHADOW",
+      "n": 28,
+      "loz1_hits": 13,
+      "loz2_hits": 9,
+      "loz1_rate": 0.4643,
+      "loz2_rate": 0.3214
+    },
+    {
+      "region": "MT",
+      "run_source": "ai_chain",
+      "family": "TOKEN",
+      "n": 234,
+      "loz1_hits": 63,
+      "loz2_hits": 68,
+      "loz1_rate": 0.2692,
+      "loz2_rate": 0.2906
+    },
+    {
+      "region": "MT",
+      "run_source": "rerun_post_mn",
+      "family": "NO_TOKEN",
+      "n": 203,
+      "loz1_hits": 91,
+      "loz2_hits": 82,
+      "loz1_rate": 0.4483,
+      "loz2_rate": 0.4039
+    },
+    {
+      "region": "MT",
+      "run_source": "shadow_auto_eval",
+      "family": "SHADOW",
+      "n": 166,
+      "loz1_hits": 45,
+      "loz2_hits": 59,
+      "loz1_rate": 0.2711,
+      "loz2_rate": 0.3554
+    },
+    {
+      "region": "MT",
+      "run_source": "manual",
+      "family": "SHADOW",
+      "n": 7,
+      "loz1_hits": 1,
+      "loz2_hits": 4,
+      "loz1_rate": 0.1429,
+      "loz2_rate": 0.5714
+    },
+    {
+      "region": "MT",
+      "run_source": "fallback",
+      "family": "TOKEN",
+      "n": 43,
+      "loz1_hits": 20,
+      "loz2_hits": 11,
+      "loz1_rate": 0.4651,
+      "loz2_rate": 0.2558
+    },
+    {
+      "region": "MT",
+      "run_source": "auto_daily",
+      "family": "TOKEN",
+      "n": 165,
+      "loz1_hits": 69,
+      "loz2_hits": 52,
+      "loz1_rate": 0.4182,
+      "loz2_rate": 0.3152
+    },
+    {
+      "region": "MT",
+      "run_source": "rerun_after_verify",
+      "family": "NO_TOKEN",
+      "n": 56,
+      "loz1_hits": 37,
+      "loz2_hits": 25,
+      "loz1_rate": 0.6607,
+      "loz2_rate": 0.4464
+    },
+    {
+      "region": "MT",
+      "run_source": "auto_daily",
+      "family": "NO_TOKEN",
+      "n": 161,
+      "loz1_hits": 67,
+      "loz2_hits": 61,
+      "loz1_rate": 0.4161,
+      "loz2_rate": 0.3789
+    },
+    {
+      "region": "MT",
+      "run_source": "auto_daily",
+      "family": "SHADOW",
+      "n": 29,
+      "loz1_hits": 12,
+      "loz2_hits": 5,
+      "loz1_rate": 0.4138,
+      "loz2_rate": 0.1724
+    },
+    {
+      "region": "MB",
+      "run_source": "ai_chain",
+      "family": "TOKEN",
+      "n": 222,
+      "loz1_hits": 51,
+      "loz2_hits": 46,
+      "loz1_rate": 0.2297,
+      "loz2_rate": 0.2072
+    },
+    {
+      "region": "MB",
+      "run_source": "rerun_post_mt",
+      "family": "NO_TOKEN",
+      "n": 203,
+      "loz1_hits": 51,
+      "loz2_hits": 68,
+      "loz1_rate": 0.2512,
+      "loz2_rate": 0.335
+    },
+    {
+      "region": "MB",
+      "run_source": "shadow_auto_eval",
+      "family": "SHADOW",
+      "n": 170,
+      "loz1_hits": 35,
+      "loz2_hits": 35,
+      "loz1_rate": 0.2059,
+      "loz2_rate": 0.2059
+    },
+    {
+      "region": "MB",
+      "run_source": "manual",
+      "family": "SHADOW",
+      "n": 9,
+      "loz1_hits": 2,
+      "loz2_hits": 0,
+      "loz1_rate": 0.2222,
+      "loz2_rate": 0.0
+    },
+    {
+      "region": "MB",
+      "run_source": "auto_daily",
+      "family": "TOKEN",
+      "n": 156,
+      "loz1_hits": 36,
+      "loz2_hits": 37,
+      "loz1_rate": 0.2308,
+      "loz2_rate": 0.2372
+    },
+    {
+      "region": "MB",
+      "run_source": "fallback",
+      "family": "TOKEN",
+      "n": 63,
+      "loz1_hits": 22,
+      "loz2_hits": 15,
+      "loz1_rate": 0.3492,
+      "loz2_rate": 0.2381
+    },
+    {
+      "region": "MB",
+      "run_source": "rerun_after_verify",
+      "family": "NO_TOKEN",
+      "n": 56,
+      "loz1_hits": 8,
+      "loz2_hits": 20,
+      "loz1_rate": 0.1429,
+      "loz2_rate": 0.3571
+    },
+    {
+      "region": "MB",
+      "run_source": "auto_daily",
+      "family": "NO_TOKEN",
+      "n": 161,
+      "loz1_hits": 38,
+      "loz2_hits": 41,
+      "loz1_rate": 0.236,
+      "loz2_rate": 0.2547
+    },
+    {
+      "region": "MB",
+      "run_source": "auto_daily",
+      "family": "SHADOW",
+      "n": 28,
+      "loz1_hits": 10,
+      "loz2_hits": 6,
+      "loz1_rate": 0.3571,
+      "loz2_rate": 0.2143
+    }
+  ]
+}
+===== SOURCE_END artifacts/_v52_loz_control_audit_20260503.json =====
+
+
+===== SOURCE_BEGIN artifacts/_v52_mb_ai_signal_audit_20260503.json VERSION=V52 LINES=2377 SHA256=5c073112d489b1699107cb92065166de8217a685ab9d1e22174ad8588ac90332 =====
+{
+  "scope": "MB 2026-05-03 + rolling model eval",
+  "official": {
+    "date": "2026-05-03",
+    "official_bt": "48",
+    "official_loz1": "48",
+    "official_loz2": "89",
+    "official_lo2": [
+      "48",
+      "89"
+    ],
+    "actual_tail_count": 24,
+    "bt_status": "WIN",
+    "loz1_status": "WIN",
+    "loz2_status": "LOSE",
+    "lo2_status": "PARTIAL",
+    "final_bundle_timestamp": "2026-05-03 17:40:51",
+    "evaluation_timestamp": "2026-05-03 18:31:02",
+    "result_scrape_timestamp": "2026-05-03T18:31:01.833751+07:00",
+    "prediction_rows_count": 25,
+    "ai_rows_count": 8,
+    "no_token_rows_count": 7,
+    "shadow_rows_count": 10,
+    "run_source_split": {
+      "ai_chain": 8,
+      "rerun_post_mt": 7,
+      "shadow_auto_eval": 10
+    },
+    "model_count_expected": 25,
+    "model_count_actual": 25,
+    "top10_candidates": [
+      {
+        "rank": 1,
+        "number": "48",
+        "score": 0.0956,
+        "voters": [
+          "gpt-5.4",
+          "gpt-5-mini",
+          "lstm",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "TOKEN": 2,
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 2,
+        "number": "89",
+        "score": 0.078,
+        "voters": [
+          "random-forest",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "NO_TOKEN": 4
+        }
+      },
+      {
+        "rank": 3,
+        "number": "90",
+        "score": 0.064,
+        "voters": [
+          "xgboost",
+          "meta-learning",
+          "smart-ml"
+        ],
+        "family_split": {
+          "NO_TOKEN": 3
+        }
+      },
+      {
+        "rank": 4,
+        "number": "85",
+        "score": 0.0633,
+        "voters": [
+          "combo-super",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "family_split": {
+          "TOKEN": 3
+        }
+      },
+      {
+        "rank": 5,
+        "number": "08",
+        "score": 0.0585,
+        "voters": [
+          "gpt-5.4",
+          "xgboost",
+          "combo-no-token"
+        ],
+        "family_split": {
+          "TOKEN": 1,
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 6,
+        "number": "28",
+        "score": 0.0539,
+        "voters": [
+          "random-forest",
+          "smart-ml"
+        ],
+        "family_split": {
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 7,
+        "number": "30",
+        "score": 0.0468,
+        "voters": [
+          "deepseek-reasoner",
+          "gpt-5-mini"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 8,
+        "number": "53",
+        "score": 0.0315,
+        "voters": [
+          "combo-super",
+          "claude-opus-4-20250514"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 9,
+        "number": "82",
+        "score": 0.027,
+        "voters": [
+          "lstm"
+        ],
+        "family_split": {
+          "NO_TOKEN": 1
+        }
+      },
+      {
+        "rank": 10,
+        "number": "14",
+        "score": 0.0234,
+        "voters": [
+          "gemini-2.5-pro"
+        ],
+        "family_split": {
+          "TOKEN": 1
+        }
+      }
+    ],
+    "source_flags": {
+      "pp1_convergence_dampener": {
+        "enabled": true,
+        "factor": 0.85,
+        "voters_threshold": 3,
+        "events": []
+      },
+      "pp5_family_diversity_bonus": {
+        "enabled": false,
+        "factor": 1.15,
+        "min_families": 2,
+        "events": []
+      },
+      "wr_gate_filtered": [
+        "gemini-2.5-flash"
+      ],
+      "dropped_main_candidate_reason": [
+        {
+          "number": "89",
+          "score": 0.078,
+          "voters": [
+            "random-forest",
+            "meta-learning",
+            "combo-no-token",
+            "smart-ensemble"
+          ],
+          "lane_votes": {
+            "rerun_post_mt": 4
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "90",
+          "score": 0.064,
+          "voters": [
+            "xgboost",
+            "meta-learning",
+            "smart-ml"
+          ],
+          "lane_votes": {
+            "rerun_post_mt": 3
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "85",
+          "score": 0.0633,
+          "voters": [
+            "combo-super",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6"
+          ],
+          "lane_votes": {
+            "ai_chain": 3
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        }
+      ],
+      "source_prizes_status": "RESOLVED",
+      "dominant_rule_group": "consensus_top1_cluster",
+      "lane_fusion_policy": {
+        "mt_rerun_post_mn_boost": 1.15,
+        "mt_ai_chain_downweight": 0.95,
+        "mb_all_sources": 1.0
+      },
+      "bt_gate_threshold": 12,
+      "wr_gate_threshold": 26,
+      "model_exclusion_reasons": [
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "reason": "bt_gate",
+          "detail": "bt<12",
+          "active": true
+        }
+      ]
+    },
+    "model_hits": [
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "57",
+          "30"
+        ],
+        "hits": [
+          "57"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "48",
+          "30"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "48",
+          "08"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "48",
+          "82"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 5.3,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "90"
+        ],
+        "hits": [
+          "90"
+        ],
+        "strength": 5.4,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "28"
+        ],
+        "hits": [
+          "28"
+        ],
+        "strength": 4.6,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "48"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 4.5,
+        "verdict": "SKIP",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "90",
+          "28"
+        ],
+        "hits": [
+          "90",
+          "28"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT",
+        "status": "WIN"
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "08",
+          "90"
+        ],
+        "hits": [
+          "90"
+        ],
+        "strength": 4.3,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      }
+    ],
+    "dropped_actual_candidates": [
+      {
+        "tail": "28",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 6,
+          "number": "28",
+          "score": 0.0539,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        "model_hit_count": 2,
+        "models": [
+          {
+            "model": "random-forest",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "89",
+              "28"
+            ],
+            "hits": [
+              "28"
+            ],
+            "strength": 4.6,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "smart-ml",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "90",
+              "28"
+            ],
+            "hits": [
+              "90",
+              "28"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT",
+            "status": "WIN"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "32428"
+          }
+        ]
+      },
+      {
+        "tail": "57",
+        "drop_stage": "AI_SIGNAL_DROPPED",
+        "in_top10": false,
+        "rank_info": null,
+        "model_hit_count": 1,
+        "models": [
+          {
+            "model": "deepseek-reasoner",
+            "family": "TOKEN",
+            "run_source": "ai_chain",
+            "numbers": [
+              "57",
+              "30"
+            ],
+            "hits": [
+              "57"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "30357"
+          },
+          {
+            "station": "Thái Bình",
+            "number": "2957"
+          }
+        ]
+      },
+      {
+        "tail": "90",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 3,
+          "number": "90",
+          "score": 0.064,
+          "voters": [
+            "xgboost",
+            "meta-learning",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 3
+          }
+        },
+        "model_hit_count": 3,
+        "models": [
+          {
+            "model": "meta-learning",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "89",
+              "90"
+            ],
+            "hits": [
+              "90"
+            ],
+            "strength": 5.4,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "smart-ml",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "90",
+              "28"
+            ],
+            "hits": [
+              "90",
+              "28"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT",
+            "status": "WIN"
+          },
+          {
+            "model": "xgboost",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "08",
+              "90"
+            ],
+            "hits": [
+              "90"
+            ],
+            "strength": 4.3,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "490"
+          }
+        ]
+      }
+    ]
+  },
+  "model_perf": {
+    "3": [
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",

@@ -1,0 +1,2500 @@
+{
+  "official_day": {
+    "MN": {
+      "date": "2026-05-03",
+      "official_bt": "79",
+      "official_loz1": "79",
+      "official_loz2": "96",
+      "official_lo2": [
+        "79",
+        "96"
+      ],
+      "actual_tail_count": 36,
+      "bt_status": "WIN",
+      "loz1_status": "WIN",
+      "loz2_status": "WIN",
+      "lo2_status": "WIN",
+      "final_bundle_timestamp": "2026-05-03 04:24:14",
+      "evaluation_timestamp": "2026-05-03 16:34:35",
+      "result_scrape_timestamp": "2026-05-03T16:34:35.577309+07:00",
+      "prediction_rows_count": 25,
+      "ai_rows_count": 8,
+      "no_token_rows_count": 7,
+      "shadow_rows_count": 10,
+      "run_source_split": {
+        "auto_daily": 15,
+        "shadow_auto_eval": 10
+      },
+      "model_count_expected": 25,
+      "model_count_actual": 25,
+      "top10_candidates": [
+        {
+          "rank": 1,
+          "number": "79",
+          "score": 0.1576,
+          "voters": [
+            "combo-super",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "deepseek-reasoner",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6",
+            "gpt-5-mini"
+          ],
+          "family_split": {
+            "TOKEN": 7
+          }
+        },
+        {
+          "rank": 2,
+          "number": "96",
+          "score": 0.119,
+          "voters": [
+            "combo-no-token",
+            "random-forest",
+            "xgboost",
+            "meta-learning",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "NO_TOKEN": 5
+          }
+        },
+        {
+          "rank": 3,
+          "number": "15",
+          "score": 0.0939,
+          "voters": [
+            "gpt-5.4",
+            "gemini-2.5-flash",
+            "gpt-5-mini",
+            "random-forest",
+            "xgboost"
+          ],
+          "family_split": {
+            "TOKEN": 3,
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 4,
+          "number": "24",
+          "score": 0.0731,
+          "voters": [
+            "combo-super",
+            "gemini-2.5-pro",
+            "claude-sonnet-4-6"
+          ],
+          "family_split": {
+            "TOKEN": 3
+          }
+        },
+        {
+          "rank": 5,
+          "number": "14",
+          "score": 0.0688,
+          "voters": [
+            "deepseek-reasoner",
+            "gemini-2.5-flash"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        {
+          "rank": 6,
+          "number": "18",
+          "score": 0.0654,
+          "voters": [
+            "combo-no-token",
+            "lstm",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "NO_TOKEN": 3
+          }
+        },
+        {
+          "rank": 7,
+          "number": "05",
+          "score": 0.0286,
+          "voters": [
+            "claude-opus-4-20250514"
+          ],
+          "family_split": {
+            "TOKEN": 1
+          }
+        },
+        {
+          "rank": 8,
+          "number": "23",
+          "score": 0.0265,
+          "voters": [
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        {
+          "rank": 9,
+          "number": "98",
+          "score": 0.0216,
+          "voters": [
+            "meta-learning"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        {
+          "rank": 10,
+          "number": "51",
+          "score": 0.0212,
+          "voters": [
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        }
+      ],
+      "source_flags": {
+        "pp1_convergence_dampener": {
+          "enabled": true,
+          "factor": 0.85,
+          "voters_threshold": 3,
+          "events": [
+            {
+              "number": "79",
+              "herd_voter_count": 3,
+              "herd_voters": [
+                "gemini-2.5-pro",
+                "gpt-5-mini",
+                "gpt-5.4"
+              ],
+              "threshold": 3,
+              "dampener_factor": 0.85,
+              "score_before": 0.1854,
+              "score_after": 0.1576,
+              "note": "PP-1 convergence dampener applied because verdict_reason markers ([CONV-DOWNGRADE] / [DIVERSITY-V10.5]) flagged herding/convergence on this exact number from >= 3 voters"
+            }
+          ]
+        },
+        "pp5_family_diversity_bonus": {
+          "enabled": false,
+          "factor": 1.15,
+          "min_families": 2,
+          "events": []
+        },
+        "wr_gate_filtered": [],
+        "dropped_main_candidate_reason": [
+          {
+            "number": "96",
+            "score": 0.119,
+            "voters": [
+              "combo-no-token",
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "smart-ensemble"
+            ],
+            "lane_votes": {
+              "auto_daily": 5
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "15",
+            "score": 0.0939,
+            "voters": [
+              "gpt-5.4",
+              "gemini-2.5-flash",
+              "gpt-5-mini",
+              "random-forest",
+              "xgboost"
+            ],
+            "lane_votes": {
+              "auto_daily": 5
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "24",
+            "score": 0.0731,
+            "voters": [
+              "combo-super",
+              "gemini-2.5-pro",
+              "claude-sonnet-4-6"
+            ],
+            "lane_votes": {
+              "auto_daily": 3
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          }
+        ],
+        "source_prizes_status": "RESOLVED",
+        "dominant_rule_group": "consensus_top1_cluster",
+        "lane_fusion_policy": {
+          "mt_rerun_post_mn_boost": 1.15,
+          "mt_ai_chain_downweight": 0.95,
+          "mb_all_sources": 1.0
+        },
+        "bt_gate_threshold": 15,
+        "wr_gate_threshold": 30,
+        "model_exclusion_reasons": []
+      },
+      "model_hits": [
+        {
+          "model": "claude-opus-4-20250514",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "79",
+            "05"
+          ],
+          "hits": [
+            "79",
+            "05"
+          ],
+          "strength": 6.8,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "79",
+            "24"
+          ],
+          "hits": [
+            "79",
+            "24"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "combo-no-token",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "96",
+            "18"
+          ],
+          "hits": [
+            "96"
+          ],
+          "strength": 7.1,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "combo-super",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "79",
+            "24"
+          ],
+          "hits": [
+            "79",
+            "24"
+          ],
+          "strength": 3.0,
+          "verdict": "SKIP",
+          "status": "WIN"
+        },
+        {
+          "model": "deepseek-reasoner",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "14",
+            "79"
+          ],
+          "hits": [
+            "79"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "14",
+            "79"
+          ],
+          "hits": [
+            "79"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "24",
+            "79"
+          ],
+          "hits": [
+            "24",
+            "79"
+          ],
+          "strength": 7.2,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "15",
+            "14"
+          ],
+          "hits": [
+            "15"
+          ],
+          "strength": 7.7,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "79",
+            "24"
+          ],
+          "hits": [
+            "79",
+            "24"
+          ],
+          "strength": 6.5,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "glm-5.1",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "79",
+            "24"
+          ],
+          "hits": [
+            "79",
+            "24"
+          ],
+          "strength": 7.0,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "gpt-5-mini",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "15",
+            "79"
+          ],
+          "hits": [
+            "15",
+            "79"
+          ],
+          "strength": 6.799999999999999,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "gpt-5.4",
+          "family": "TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "79",
+            "15"
+          ],
+          "hits": [
+            "79",
+            "15"
+          ],
+          "strength": 1.2999999999999998,
+          "verdict": "SKIP",
+          "status": "WIN"
+        },
+        {
+          "model": "gpt-5.5",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "79",
+            "24"
+          ],
+          "hits": [
+            "79",
+            "24"
+          ],
+          "strength": 7.2,
+          "verdict": "CHOT_HA_THAM_KHAO",
+          "status": "WIN"
+        },
+        {
+          "model": "gpt-oss-120b",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "79",
+            "05"
+          ],
+          "hits": [
+            "79",
+            "05"
+          ],
+          "strength": 0.0,
+          "verdict": "UNKNOWN",
+          "status": "WIN"
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "79",
+            "15"
+          ],
+          "hits": [
+            "79",
+            "15"
+          ],
+          "strength": 7.5,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "kimi-k2.5",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "24",
+            "37"
+          ],
+          "hits": [
+            "24",
+            "37"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "lstm",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "18",
+            "32"
+          ],
+          "hits": [
+            "32"
+          ],
+          "strength": 5.2,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "meta-learning",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "96",
+            "98"
+          ],
+          "hits": [
+            "96"
+          ],
+          "strength": 4.5,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "qwen3-coder",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "14",
+            "79"
+          ],
+          "hits": [
+            "79"
+          ],
+          "strength": 8.5,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "24",
+            "79"
+          ],
+          "hits": [
+            "24",
+            "79"
+          ],
+          "strength": 7.5,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "qwen3.6-plus",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "79",
+            "15"
+          ],
+          "hits": [
+            "79",
+            "15"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "random-forest",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "96",
+            "15"
+          ],
+          "hits": [
+            "96",
+            "15"
+          ],
+          "strength": 4.4,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "smart-ensemble",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "96",
+            "18"
+          ],
+          "hits": [
+            "96"
+          ],
+          "strength": 4.1,
+          "verdict": "SKIP",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "smart-ml",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "23",
+            "51"
+          ],
+          "hits": [
+            "23",
+            "51"
+          ],
+          "strength": 6.1,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "xgboost",
+          "family": "NO_TOKEN",
+          "run_source": "auto_daily",
+          "numbers": [
+            "96",
+            "15"
+          ],
+          "hits": [
+            "96",
+            "15"
+          ],
+          "strength": 5.1,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        }
+      ],
+      "dropped_actual_candidates": [
+        {
+          "tail": "05",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 7,
+            "number": "05",
+            "score": 0.0286,
+            "voters": [
+              "claude-opus-4-20250514"
+            ],
+            "family_split": {
+              "TOKEN": 1
+            }
+          },
+          "model_hit_count": 2,
+          "models": [
+            {
+              "model": "claude-opus-4-20250514",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "79",
+                "05"
+              ],
+              "hits": [
+                "79",
+                "05"
+              ],
+              "strength": 6.8,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "gpt-oss-120b",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "79",
+                "05"
+              ],
+              "hits": [
+                "79",
+                "05"
+              ],
+              "strength": 0.0,
+              "verdict": "UNKNOWN",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Tiền Giang",
+              "number": "84605"
+            }
+          ]
+        },
+        {
+          "tail": "15",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 3,
+            "number": "15",
+            "score": 0.0939,
+            "voters": [
+              "gpt-5.4",
+              "gemini-2.5-flash",
+              "gpt-5-mini",
+              "random-forest",
+              "xgboost"
+            ],
+            "family_split": {
+              "TOKEN": 3,
+              "NO_TOKEN": 2
+            }
+          },
+          "model_hit_count": 7,
+          "models": [
+            {
+              "model": "gemini-2.5-flash",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "15",
+                "14"
+              ],
+              "hits": [
+                "15"
+              ],
+              "strength": 7.7,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "gpt-5-mini",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "15",
+                "79"
+              ],
+              "hits": [
+                "15",
+                "79"
+              ],
+              "strength": 6.799999999999999,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "gpt-5.4",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "79",
+                "15"
+              ],
+              "hits": [
+                "79",
+                "15"
+              ],
+              "strength": 1.2999999999999998,
+              "verdict": "SKIP",
+              "status": "WIN"
+            },
+            {
+              "model": "grok-4.20-multi-agent",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "79",
+                "15"
+              ],
+              "hits": [
+                "79",
+                "15"
+              ],
+              "strength": 7.5,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "qwen3.6-plus",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "79",
+                "15"
+              ],
+              "hits": [
+                "79",
+                "15"
+              ],
+              "strength": 8.0,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "random-forest",
+              "family": "NO_TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "96",
+                "15"
+              ],
+              "hits": [
+                "96",
+                "15"
+              ],
+              "strength": 4.4,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "xgboost",
+              "family": "NO_TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "96",
+                "15"
+              ],
+              "hits": [
+                "96",
+                "15"
+              ],
+              "strength": 5.1,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kiên Giang",
+              "number": "22815"
+            }
+          ]
+        },
+        {
+          "tail": "23",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 8,
+            "number": "23",
+            "score": 0.0265,
+            "voters": [
+              "smart-ml"
+            ],
+            "family_split": {
+              "NO_TOKEN": 1
+            }
+          },
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "smart-ml",
+              "family": "NO_TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "23",
+                "51"
+              ],
+              "hits": [
+                "23",
+                "51"
+              ],
+              "strength": 6.1,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kiên Giang",
+              "number": "21823"
+            }
+          ]
+        },
+        {
+          "tail": "24",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 4,
+            "number": "24",
+            "score": 0.0731,
+            "voters": [
+              "combo-super",
+              "gemini-2.5-pro",
+              "claude-sonnet-4-6"
+            ],
+            "family_split": {
+              "TOKEN": 3
+            }
+          },
+          "model_hit_count": 8,
+          "models": [
+            {
+              "model": "claude-sonnet-4-6",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "79",
+                "24"
+              ],
+              "hits": [
+                "79",
+                "24"
+              ],
+              "strength": 8.0,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "combo-super",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "79",
+                "24"
+              ],
+              "hits": [
+                "79",
+                "24"
+              ],
+              "strength": 3.0,
+              "verdict": "SKIP",
+              "status": "WIN"
+            },
+            {
+              "model": "deepseek-v4-pro",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "24",
+                "79"
+              ],
+              "hits": [
+                "24",
+                "79"
+              ],
+              "strength": 7.2,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "gemini-2.5-pro",
+              "family": "TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "79",
+                "24"
+              ],
+              "hits": [
+                "79",
+                "24"
+              ],
+              "strength": 6.5,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "glm-5.1",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "79",
+                "24"
+              ],
+              "hits": [
+                "79",
+                "24"
+              ],
+              "strength": 7.0,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "gpt-5.5",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "79",
+                "24"
+              ],
+              "hits": [
+                "79",
+                "24"
+              ],
+              "strength": 7.2,
+              "verdict": "CHOT_HA_THAM_KHAO",
+              "status": "WIN"
+            },
+            {
+              "model": "kimi-k2.5",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "24",
+                "37"
+              ],
+              "hits": [
+                "24",
+                "37"
+              ],
+              "strength": 8.0,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "qwen3-max-thinking",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "24",
+                "79"
+              ],
+              "hits": [
+                "24",
+                "79"
+              ],
+              "strength": 7.5,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kiên Giang",
+              "number": "7824"
+            }
+          ]
+        },
+        {
+          "tail": "32",
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "in_top10": false,
+          "rank_info": null,
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "lstm",
+              "family": "NO_TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "18",
+                "32"
+              ],
+              "hits": [
+                "32"
+              ],
+              "strength": 5.2,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kiên Giang",
+              "number": "48432"
+            },
+            {
+              "station": "Tiền Giang",
+              "number": "7332"
+            }
+          ]
+        },
+        {
+          "tail": "37",
+          "drop_stage": "NOT_IN_CANDIDATE_UNIVERSE",
+          "in_top10": false,
+          "rank_info": null,
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "kimi-k2.5",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "24",
+                "37"
+              ],
+              "hits": [
+                "24",
+                "37"
+              ],
+              "strength": 8.0,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Đà Lạt",
+              "number": "64637"
+            }
+          ]
+        },
+        {
+          "tail": "51",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 10,
+            "number": "51",
+            "score": 0.0212,
+            "voters": [
+              "smart-ml"
+            ],
+            "family_split": {
+              "NO_TOKEN": 1
+            }
+          },
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "smart-ml",
+              "family": "NO_TOKEN",
+              "run_source": "auto_daily",
+              "numbers": [
+                "23",
+                "51"
+              ],
+              "hits": [
+                "23",
+                "51"
+              ],
+              "strength": 6.1,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Đà Lạt",
+              "number": "08651"
+            }
+          ]
+        }
+      ]
+    },
+    "MT": {
+      "date": "2026-05-03",
+      "official_bt": "29",
+      "official_loz1": "29",
+      "official_loz2": "03",
+      "official_lo2": [
+        "29",
+        "03"
+      ],
+      "actual_tail_count": 40,
+      "bt_status": "LOSE",
+      "loz1_status": "LOSE",
+      "loz2_status": "LOSE",
+      "lo2_status": "LOSE",
+      "final_bundle_timestamp": "2026-05-03 16:42:00",
+      "evaluation_timestamp": "2026-05-03 17:30:00",
+      "result_scrape_timestamp": "2026-05-03T17:30:00.651541+07:00",
+      "prediction_rows_count": 25,
+      "ai_rows_count": 8,
+      "no_token_rows_count": 7,
+      "shadow_rows_count": 10,
+      "run_source_split": {
+        "ai_chain": 8,
+        "rerun_post_mn": 7,
+        "shadow_auto_eval": 10
+      },
+      "model_count_expected": 25,
+      "model_count_actual": 25,
+      "top10_candidates": [
+        {
+          "rank": 1,
+          "number": "29",
+          "score": 0.3027,
+          "voters": [
+            "combo-super",
+            "random-forest",
+            "xgboost",
+            "meta-learning",
+            "combo-no-token",
+            "smart-ml",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "TOKEN": 1,
+            "NO_TOKEN": 6
+          }
+        },
+        {
+          "rank": 2,
+          "number": "03",
+          "score": 0.09,
+          "voters": [
+            "gemini-2.5-flash",
+            "lstm",
+            "combo-no-token"
+          ],
+          "family_split": {
+            "TOKEN": 1,
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 3,
+          "number": "18",
+          "score": 0.0852,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 4,
+          "number": "36",
+          "score": 0.0769,
+          "voters": [
+            "meta-learning",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 5,
+          "number": "33",
+          "score": 0.0619,
+          "voters": [
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6",
+            "gpt-5-mini"
+          ],
+          "family_split": {
+            "TOKEN": 5
+          }
+        },
+        {
+          "rank": 6,
+          "number": "43",
+          "score": 0.0462,
+          "voters": [
+            "xgboost"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        {
+          "rank": 7,
+          "number": "83",
+          "score": 0.035,
+          "voters": [
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        {
+          "rank": 8,
+          "number": "17",
+          "score": 0.0322,
+          "voters": [
+            "gpt-5.4",
+            "gemini-2.5-flash"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        {
+          "rank": 9,
+          "number": "63",
+          "score": 0.027,
+          "voters": [
+            "lstm"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        {
+          "rank": 10,
+          "number": "08",
+          "score": 0.0119,
+          "voters": [
+            "gemini-2.5-pro",
+            "gpt-5-mini"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        }
+      ],
+      "source_flags": {
+        "pp1_convergence_dampener": {
+          "enabled": true,
+          "factor": 0.85,
+          "voters_threshold": 3,
+          "events": [
+            {
+              "number": "33",
+              "herd_voter_count": 3,
+              "herd_voters": [
+                "claude-sonnet-4-6",
+                "gemini-2.5-pro",
+                "gpt-5-mini"
+              ],
+              "threshold": 3,
+              "dampener_factor": 0.85,
+              "score_before": 0.0728,
+              "score_after": 0.0619,
+              "note": "PP-1 convergence dampener applied because verdict_reason markers ([CONV-DOWNGRADE] / [DIVERSITY-V10.5]) flagged herding/convergence on this exact number from >= 3 voters"
+            }
+          ]
+        },
+        "pp5_family_diversity_bonus": {
+          "enabled": false,
+          "factor": 1.15,
+          "min_families": 2,
+          "events": []
+        },
+        "wr_gate_filtered": [],
+        "dropped_main_candidate_reason": [
+          {
+            "number": "03",
+            "score": 0.09,
+            "voters": [
+              "gemini-2.5-flash",
+              "lstm",
+              "combo-no-token"
+            ],
+            "lane_votes": {
+              "ai_chain": 1,
+              "rerun_post_mn": 2
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "18",
+            "score": 0.0852,
+            "voters": [
+              "random-forest",
+              "smart-ml"
+            ],
+            "lane_votes": {
+              "rerun_post_mn": 2
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "36",
+            "score": 0.0769,
+            "voters": [
+              "meta-learning",
+              "smart-ensemble"
+            ],
+            "lane_votes": {
+              "rerun_post_mn": 2
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          }
+        ],
+        "source_prizes_status": "RESOLVED",
+        "dominant_rule_group": "consensus_top1_cluster",
+        "lane_fusion_policy": {
+          "mt_rerun_post_mn_boost": 1.15,
+          "mt_ai_chain_downweight": 0.95,
+          "mb_all_sources": 1.0
+        },
+        "bt_gate_threshold": 14,
+        "wr_gate_threshold": 28,
+        "model_exclusion_reasons": []
+      },
+      "model_hits": [
+        {
+          "model": "deepseek-reasoner",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "24",
+            "65"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 4.5,
+          "verdict": "SKIP",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "08",
+            "17"
+          ],
+          "hits": [
+            "08"
+          ],
+          "strength": 7.9,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "33",
+            "08"
+          ],
+          "hits": [
+            "08"
+          ],
+          "strength": 3.3,
+          "verdict": "SKIP",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "glm-5.1",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "65",
+            "83"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 8.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gpt-5-mini",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "08",
+            "33"
+          ],
+          "hits": [
+            "08"
+          ],
+          "strength": 3.4000000000000004,
+          "verdict": "SKIP",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gpt-5.5",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "08",
+            "67"
+          ],
+          "hits": [
+            "08"
+          ],
+          "strength": 7.6,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gpt-oss-120b",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "65",
+            "24"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 0.0,
+          "verdict": "UNKNOWN",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "65",
+            "08"
+          ],
+          "hits": [
+            "65",
+            "08"
+          ],
+          "strength": 7.2,
+          "verdict": "CHOT_HA",
+          "status": "WIN"
+        },
+        {
+          "model": "lstm",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mn",
+          "numbers": [
+            "03",
+            "63"
+          ],
+          "hits": [
+            "63"
+          ],
+          "strength": 5.3,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "qwen3-coder",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "65",
+            "79"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 7.5,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "17",
+            "65"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 7.2,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "qwen3.6-plus",
+          "family": "SHADOW",
+          "run_source": "shadow_auto_eval",
+          "numbers": [
+            "65",
+            "17"
+          ],
+          "hits": [
+            "65"
+          ],
+          "strength": 7.8,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "random-forest",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mn",
+          "numbers": [
+            "29",
+            "18"
+          ],
+          "hits": [
+            "18"
+          ],
+          "strength": 5.2,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "smart-ml",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mn",
+          "numbers": [
+            "29",
+            "18"
+          ],
+          "hits": [
+            "18"
+          ],
+          "strength": 7.5,
+          "verdict": "CHOT",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "xgboost",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mn",
+          "numbers": [
+            "29",
+            "43"
+          ],
+          "hits": [
+            "43"
+          ],
+          "strength": 7.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        }
+      ],
+      "dropped_actual_candidates": [
+        {
+          "tail": "08",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 10,
+            "number": "08",
+            "score": 0.0119,
+            "voters": [
+              "gemini-2.5-pro",
+              "gpt-5-mini"
+            ],
+            "family_split": {
+              "TOKEN": 2
+            }
+          },
+          "model_hit_count": 5,
+          "models": [
+            {
+              "model": "deepseek-v4-flash",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "08",
+                "17"
+              ],
+              "hits": [
+                "08"
+              ],
+              "strength": 7.9,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "gemini-2.5-pro",
+              "family": "TOKEN",
+              "run_source": "ai_chain",
+              "numbers": [
+                "33",
+                "08"
+              ],
+              "hits": [
+                "08"
+              ],
+              "strength": 3.3,
+              "verdict": "SKIP",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "gpt-5-mini",
+              "family": "TOKEN",
+              "run_source": "ai_chain",
+              "numbers": [
+                "08",
+                "33"
+              ],
+              "hits": [
+                "08"
+              ],
+              "strength": 3.4000000000000004,
+              "verdict": "SKIP",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "gpt-5.5",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "08",
+                "67"
+              ],
+              "hits": [
+                "08"
+              ],
+              "strength": 7.6,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "grok-4.20-multi-agent",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "08"
+              ],
+              "hits": [
+                "65",
+                "08"
+              ],
+              "strength": 7.2,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Khánh Hòa",
+              "number": "08508"
+            },
+            {
+              "station": "Thừa Thiên Huế",
+              "number": "08"
+            }
+          ]
+        },
+        {
+          "tail": "18",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 3,
+            "number": "18",
+            "score": 0.0852,
+            "voters": [
+              "random-forest",
+              "smart-ml"
+            ],
+            "family_split": {
+              "NO_TOKEN": 2
+            }
+          },
+          "model_hit_count": 2,
+          "models": [
+            {
+              "model": "random-forest",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mn",
+              "numbers": [
+                "29",
+                "18"
+              ],
+              "hits": [
+                "18"
+              ],
+              "strength": 5.2,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "smart-ml",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mn",
+              "numbers": [
+                "29",
+                "18"
+              ],
+              "hits": [
+                "18"
+              ],
+              "strength": 7.5,
+              "verdict": "CHOT",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Thừa Thiên Huế",
+              "number": "05518"
+            }
+          ]
+        },
+        {
+          "tail": "43",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 6,
+            "number": "43",
+            "score": 0.0462,
+            "voters": [
+              "xgboost"
+            ],
+            "family_split": {
+              "NO_TOKEN": 1
+            }
+          },
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "xgboost",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mn",
+              "numbers": [
+                "29",
+                "43"
+              ],
+              "hits": [
+                "43"
+              ],
+              "strength": 7.0,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kon Tum",
+              "number": "90443"
+            }
+          ]
+        },
+        {
+          "tail": "63",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 9,
+            "number": "63",
+            "score": 0.027,
+            "voters": [
+              "lstm"
+            ],
+            "family_split": {
+              "NO_TOKEN": 1
+            }
+          },
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "lstm",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mn",
+              "numbers": [
+                "03",
+                "63"
+              ],
+              "hits": [
+                "63"
+              ],
+              "strength": 5.3,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Khánh Hòa",
+              "number": "57963"
+            }
+          ]
+        },
+        {
+          "tail": "65",
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "in_top10": false,
+          "rank_info": null,
+          "model_hit_count": 7,
+          "models": [
+            {
+              "model": "deepseek-reasoner",
+              "family": "TOKEN",
+              "run_source": "ai_chain",
+              "numbers": [
+                "24",
+                "65"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 4.5,
+              "verdict": "SKIP",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "glm-5.1",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "83"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 8.0,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "gpt-oss-120b",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "24"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 0.0,
+              "verdict": "UNKNOWN",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "grok-4.20-multi-agent",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "08"
+              ],
+              "hits": [
+                "65",
+                "08"
+              ],
+              "strength": 7.2,
+              "verdict": "CHOT_HA",
+              "status": "WIN"
+            },
+            {
+              "model": "qwen3-coder",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "79"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 7.5,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "qwen3-max-thinking",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "17",
+                "65"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 7.2,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "qwen3.6-plus",
+              "family": "SHADOW",
+              "run_source": "shadow_auto_eval",
+              "numbers": [
+                "65",
+                "17"
+              ],
+              "hits": [
+                "65"
+              ],
+              "strength": 7.8,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Kon Tum",
+              "number": "465"
+            },
+            {
+              "station": "Thừa Thiên Huế",
+              "number": "58265"
+            }
+          ]
+        }
+      ]
+    },
+    "MB": {
+      "date": "2026-05-03",
+      "official_bt": "48",
+      "official_loz1": "48",
+      "official_loz2": "89",
+      "official_lo2": [
+        "48",
+        "89"
+      ],
+      "actual_tail_count": 24,
+      "bt_status": "WIN",
+      "loz1_status": "WIN",
+      "loz2_status": "LOSE",
+      "lo2_status": "PARTIAL",
+      "final_bundle_timestamp": "2026-05-03 17:40:51",
+      "evaluation_timestamp": "2026-05-03 18:31:02",
+      "result_scrape_timestamp": "2026-05-03T18:31:01.833751+07:00",
+      "prediction_rows_count": 25,
+      "ai_rows_count": 8,
+      "no_token_rows_count": 7,
+      "shadow_rows_count": 10,
+      "run_source_split": {
+        "ai_chain": 8,
+        "rerun_post_mt": 7,
+        "shadow_auto_eval": 10
+      },
+      "model_count_expected": 25,
+      "model_count_actual": 25,
+      "top10_candidates": [
+        {
+          "rank": 1,
+          "number": "48",
+          "score": 0.0956,
+          "voters": [
+            "gpt-5.4",
+            "gpt-5-mini",
+            "lstm",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "TOKEN": 2,
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 2,
+          "number": "89",
+          "score": 0.078,
+          "voters": [
+            "random-forest",
+            "meta-learning",
+            "combo-no-token",
+            "smart-ensemble"
+          ],
+          "family_split": {
+            "NO_TOKEN": 4
+          }
+        },
+        {
+          "rank": 3,
+          "number": "90",
+          "score": 0.064,
+          "voters": [
+            "xgboost",
+            "meta-learning",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 3
+          }
+        },
+        {
+          "rank": 4,
+          "number": "85",
+          "score": 0.0633,
+          "voters": [
+            "combo-super",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6"
+          ],
+          "family_split": {
+            "TOKEN": 3
+          }
+        },
+        {
+          "rank": 5,
+          "number": "08",
+          "score": 0.0585,
+          "voters": [
+            "gpt-5.4",
+            "xgboost",
+            "combo-no-token"
+          ],
+          "family_split": {
+            "TOKEN": 1,
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 6,
+          "number": "28",
+          "score": 0.0539,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        {
+          "rank": 7,
+          "number": "30",
+          "score": 0.0468,
+          "voters": [
+            "deepseek-reasoner",
+            "gpt-5-mini"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        {
+          "rank": 8,
+          "number": "53",
+          "score": 0.0315,
+          "voters": [
+            "combo-super",
+            "claude-opus-4-20250514"
+          ],
+          "family_split": {
+            "TOKEN": 2
+          }
+        },
+        {
+          "rank": 9,
+          "number": "82",
+          "score": 0.027,
+          "voters": [
+            "lstm"
+          ],
+          "family_split": {
+            "NO_TOKEN": 1
+          }
+        },
+        {
+          "rank": 10,
+          "number": "14",
+          "score": 0.0234,
+          "voters": [
+            "gemini-2.5-pro"
+          ],
+          "family_split": {
+            "TOKEN": 1
+          }
+        }
+      ],
+      "source_flags": {
+        "pp1_convergence_dampener": {
+          "enabled": true,
+          "factor": 0.85,
+          "voters_threshold": 3,
+          "events": []
+        },
+        "pp5_family_diversity_bonus": {
+          "enabled": false,
+          "factor": 1.15,
+          "min_families": 2,
+          "events": []
+        },
+        "wr_gate_filtered": [
+          "gemini-2.5-flash"
+        ],
+        "dropped_main_candidate_reason": [
+          {
+            "number": "89",
+            "score": 0.078,
+            "voters": [
+              "random-forest",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ensemble"
+            ],
+            "lane_votes": {
+              "rerun_post_mt": 4
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "90",
+            "score": 0.064,
+            "voters": [
+              "xgboost",
+              "meta-learning",
+              "smart-ml"
+            ],
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          },
+          {
+            "number": "85",
+            "score": 0.0633,
+            "voters": [
+              "combo-super",
+              "claude-opus-4-20250514",
+              "claude-sonnet-4-6"
+            ],
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+          }
+        ],
+        "source_prizes_status": "RESOLVED",
+        "dominant_rule_group": "consensus_top1_cluster",
+        "lane_fusion_policy": {
+          "mt_rerun_post_mn_boost": 1.15,
+          "mt_ai_chain_downweight": 0.95,
+          "mb_all_sources": 1.0
+        },
+        "bt_gate_threshold": 12,
+        "wr_gate_threshold": 26,
+        "model_exclusion_reasons": [
+          {
+            "model": "gemini-2.5-flash",
+            "run_source": "ai_chain",
+            "reason": "bt_gate",
+            "detail": "bt<12",
+            "active": true
+          }
+        ]
+      },
+      "model_hits": [
+        {
+          "model": "deepseek-reasoner",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "57",
+            "30"
+          ],
+          "hits": [
+            "57"
+          ],
+          "strength": 6.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gpt-5-mini",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "48",
+            "30"
+          ],
+          "hits": [
+            "48"
+          ],
+          "strength": 6.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "gpt-5.4",
+          "family": "TOKEN",
+          "run_source": "ai_chain",
+          "numbers": [
+            "48",
+            "08"
+          ],
+          "hits": [
+            "48"
+          ],
+          "strength": 6.0,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "lstm",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "48",
+            "82"
+          ],
+          "hits": [
+            "48"
+          ],
+          "strength": 5.3,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "meta-learning",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "89",
+            "90"
+          ],
+          "hits": [
+            "90"
+          ],
+          "strength": 5.4,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "random-forest",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "89",
+            "28"
+          ],
+          "hits": [
+            "28"
+          ],
+          "strength": 4.6,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "smart-ensemble",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "89",
+            "48"
+          ],
+          "hits": [
+            "48"
+          ],
+          "strength": 4.5,
+          "verdict": "SKIP",
+          "status": "PARTIAL"
+        },
+        {
+          "model": "smart-ml",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "90",
+            "28"
+          ],
+          "hits": [
+            "90",
+            "28"
+          ],
+          "strength": 6.0,
+          "verdict": "CHOT",
+          "status": "WIN"
+        },
+        {
+          "model": "xgboost",
+          "family": "NO_TOKEN",
+          "run_source": "rerun_post_mt",
+          "numbers": [
+            "08",
+            "90"
+          ],
+          "hits": [
+            "90"
+          ],
+          "strength": 4.3,
+          "verdict": "CHOT_HA",
+          "status": "PARTIAL"
+        }
+      ],
+      "dropped_actual_candidates": [
+        {
+          "tail": "28",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 6,
+            "number": "28",
+            "score": 0.0539,
+            "voters": [
+              "random-forest",
+              "smart-ml"
+            ],
+            "family_split": {
+              "NO_TOKEN": 2
+            }
+          },
+          "model_hit_count": 2,
+          "models": [
+            {
+              "model": "random-forest",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mt",
+              "numbers": [
+                "89",
+                "28"
+              ],
+              "hits": [
+                "28"
+              ],
+              "strength": 4.6,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "smart-ml",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mt",
+              "numbers": [
+                "90",
+                "28"
+              ],
+              "hits": [
+                "90",
+                "28"
+              ],
+              "strength": 6.0,
+              "verdict": "CHOT",
+              "status": "WIN"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Thái Bình",
+              "number": "32428"
+            }
+          ]
+        },
+        {
+          "tail": "57",
+          "drop_stage": "AI_SIGNAL_DROPPED",
+          "in_top10": false,
+          "rank_info": null,
+          "model_hit_count": 1,
+          "models": [
+            {
+              "model": "deepseek-reasoner",
+              "family": "TOKEN",
+              "run_source": "ai_chain",
+              "numbers": [
+                "57",
+                "30"
+              ],
+              "hits": [
+                "57"
+              ],
+              "strength": 6.0,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            }
+          ],
+          "stations": [
+            {
+              "station": "Thái Bình",
+              "number": "30357"
+            },
+            {
+              "station": "Thái Bình",
+              "number": "2957"
+            }
+          ]
+        },
+        {
+          "tail": "90",
+          "drop_stage": "LOZ_LINE_SELECTION_MISS",
+          "in_top10": true,
+          "rank_info": {
+            "rank": 3,
+            "number": "90",
+            "score": 0.064,
+            "voters": [
+              "xgboost",
+              "meta-learning",
+              "smart-ml"
+            ],
+            "family_split": {
+              "NO_TOKEN": 3
+            }
+          },
+          "model_hit_count": 3,
+          "models": [
+            {
+              "model": "meta-learning",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mt",
+              "numbers": [
+                "89",
+                "90"
+              ],
+              "hits": [
+                "90"
+              ],
+              "strength": 5.4,
+              "verdict": "CHOT_HA",
+              "status": "PARTIAL"
+            },
+            {
+              "model": "smart-ml",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mt",
+              "numbers": [
+                "90",
+                "28"
+              ],
+              "hits": [
+                "90",
+                "28"
+              ],
+              "strength": 6.0,
+              "verdict": "CHOT",
+              "status": "WIN"
+            },
+            {
+              "model": "xgboost",
+              "family": "NO_TOKEN",
+              "run_source": "rerun_post_mt",
+              "numbers": [
+                "08",

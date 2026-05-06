@@ -1,0 +1,22 @@
+# Reading order for Notion AI
+
+1. `00_MANIFEST/FULL_CHAIN_MANIFEST.md`
+2. `00_MANIFEST/VERSION_INDEX.md`
+3. V52 report parts
+4. V52.5 / V52.5.7 / V52.5.8 parts
+5. V53 parts
+6. V54 parts
+7. V55 parts
+8. V56 parts
+9. V57 / C-16 parts
+10. V58 parts
+11. V59 parts
+12. V60 parts
+13. V61 parts
+14. `04_DB_PROOF/`
+15. `03_CODE_DIFFS/`
+16. `05_SCHEDULER_LOGS/`
+17. `06_UI_API_PROOF/`
+18. `07_GOVERNANCE_DOCS/`
+19. `09_MISSING_ARTIFACTS/`
+20. `08_EMBEDDED_REPORTS/`

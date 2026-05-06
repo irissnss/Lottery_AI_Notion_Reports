@@ -1,0 +1,57 @@
+# V52 navigation only
+
+This file is an index only. It does not replace source reports.
+
+- `artifacts/phase_checkpoints/TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md`
+- `artifacts/phase_checkpoints/V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md`
+- `artifacts/phase_checkpoints/V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md`
+- `artifacts/phase_checkpoints/V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md`
+- `artifacts/phase_checkpoints/V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md`
+- `artifacts/phase_checkpoints/V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md`
+- `artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md`
+- `artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md`
+- `artifacts/_v52_2_measurement_rollup_20260503.json`
+- `artifacts/_v52_2_measurement_rollup_20260503.md`
+- `artifacts/_v52_2_post_hash_20260503.txt`
+- `artifacts/_v52_2_pre_hash_20260503.txt`
+- `artifacts/_v52_3_post_hash_20260503.txt`
+- `artifacts/_v52_3_pre_hash_20260503.txt`
+- `artifacts/_v52_4_post_hash_20260503.txt`
+- `artifacts/_v52_4_pre_hash_20260503.txt`
+- `artifacts/_v52_5_1_inspect_strength.py`
+- `artifacts/_v52_5_1_post_hash_20260503.txt`
+- `artifacts/_v52_5_1_pre_hash_20260503.txt`
+- `artifacts/_v52_5_2_inspect_preview.py`
+- `artifacts/_v52_5_2_inspect_vps.py`
+- `artifacts/_v52_5_2_post_hash_20260503.txt`
+- `artifacts/_v52_5_2_run_backfill.sh`
+- `artifacts/_v52_5_3_inspect_engine.py`
+- `artifacts/_v52_5_3_post_hash_20260503.txt`
+- `artifacts/_v52_5_3_run_engine.sh`
+- `artifacts/_v52_5_7_diff.py`
+- `artifacts/_v52_5_7_post_hash_20260503.txt`
+- `artifacts/_v52_code_readiness_matrix_20260503.md`
+- `artifacts/_v52_du_doan_test_force_fit_leakage_audit_20260503.json`
+- `artifacts/_v52_du_doan_test_reality_check_20260503.json`
+- `artifacts/_v52_full_report_claim_reconciliation_20260503.md`
+- `artifacts/_v52_impl_post_hash_20260503.txt`
+- `artifacts/_v52_impl_pre_hash_20260503.txt`
+- `artifacts/_v52_loz_control_audit_20260503.json`
+- `artifacts/_v52_mb_ai_signal_audit_20260503.json`
+- `artifacts/_v52_measurement_completeness_matrix_20260503.md`
+- `artifacts/_v52_model_tensor_pruning_readiness_20260503.json`
+- `artifacts/_v52_mt_model_correct_output_wrong_audit_20260503.json`
+- `artifacts/_v52_official_post_live_20260503_forensic.json`
+- `artifacts/_v52_post_hash_20260503.txt`
+- `artifacts/_v52_pre_hash_20260503.txt`
+- `CHANGELOG.md`
+- `docs/CURRENT_TRUTH_SSOT.md`
+- `docs/FOLLOW_UP_TRACKER.md`
+- `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md`
+- `docs/CHANGELOG_GOVERNANCE_LEDGER.md`
+- `docs/DAY_GOVERNANCE_CRITERIA.md`
+- `artifacts/phase_checkpoints/DU_DOAN_TEST_V47_LIVE_PARALLEL_VERIFICATION_20260503.md`
+- `artifacts/phase_checkpoints/DU_DOAN_TEST_V48_START_LIVE_PARALLEL_COMPLETION_20260503.md`
+- `artifacts/phase_checkpoints/DU_DOAN_TEST_V49_FULL_REPORT_REREAD_AND_LIVE_PARALLEL_CONTROL_20260503.md`
+- `artifacts/phase_checkpoints/DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md`
+- `artifacts/phase_checkpoints/TOTAL_FORCE_V51_POST_LIVE_20260503_MEASUREMENT_TEST_LANE_OUTPUT_QUALITY_AUDIT.md`

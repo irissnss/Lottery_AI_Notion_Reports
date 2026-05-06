@@ -1,0 +1,20 @@
+table | rows | sha256 (best-effort) — POST V55 materialization
+predictions | 4290 | a835076601d59001
+final_bundles | 201 | 72109fb3564f2718
+lottery_results | 14615 | 2a3d71c4a0ce5550
+model_daily_eval | 4245 | b9ea45b604c4a59d
+scheduler_logs | 114795 | 9955f691f1984abc
+mt_model_hit_output_drop_shadow | 311 | e35f8df5b28d20e2
+loz_selector_shadow | 3429 | 03d30bb7530980ee
+model_latency_cost_audit_daily | 3429 | ef55484a6e0eca75
+model_strength_by_region_weekday_station_daily | 17927 | b690d308577a8497
+experimental_preview_shadow | 1170 | debabfa52b8dfa90
+mb_experimental_preview_shadow | 35 | 239d04dc61d3ce99
+du_doan_test_runs | 629 | 7c9b13ee3ce92820
+du_doan_test_bundles | 629 | 893de2730ffadb93
+du_doan_test_results | 629 | 6cba560d00e81a99
+du_doan_test_candidates | 14555 | b0d9217049cf5028
+du_doan_test_model_contribution | 14555 | 23b0af66d7ca335b
+du_doan_test_audit_log | 213 | 3b5f5eafa87ce041
+loz_stage_trace_shadow | 6356 | 03eab0008d563dc8
+weekday_blackspot_shadow | 42 | 1f2ad462e439f592

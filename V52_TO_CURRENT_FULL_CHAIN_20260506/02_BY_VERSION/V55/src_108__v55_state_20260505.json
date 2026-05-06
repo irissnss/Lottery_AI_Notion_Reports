@@ -1,0 +1,57 @@
+{
+  "pass_id": "V20.3.37.55_full_chain",
+  "anchor_date": "2026-05-05",
+  "service_active": true,
+  "health_http": 200,
+  "live_window_passed": true,
+  "rolling_metrics_post_05_05": {
+    "MN": {
+      "7d_BT": 42.9,
+      "14d_BT": 50.0,
+      "30d_BT": 56.7,
+      "60d_BT": 46.7
+    },
+    "MT": {
+      "7d_BT": 71.4,
+      "14d_BT": 50.0,
+      "30d_BT": 36.7,
+      "60d_BT": 50.0
+    },
+    "MB": {
+      "7d_BT": 14.3,
+      "14d_BT": 28.6,
+      "30d_BT": 20.0,
+      "60d_BT": 26.7
+    }
+  },
+  "two_day_official": {
+    "2026-05-04": {
+      "MN": "BT_LOSE+lo2_PARTIAL",
+      "MT": "BT_WIN+lo2_WIN",
+      "MB": "BT_LOSE+lo2_LOSE"
+    },
+    "2026-05-05": {
+      "MN": "BT_LOSE+lo2_LOSE",
+      "MT": "BT_WIN+lo2_PARTIAL",
+      "MB": "BT_LOSE+lo2_LOSE"
+    }
+  },
+  "two_day_winner_per_region": {
+    "MN": "TEST_RESCUE: SPECIALIST_ROSTER 04/05 picked 32 (hit), AI_CHAIN_PRESERVATION 05/05 picked 52 (hit)",
+    "MT": "OFFICIAL_WIN_BOTH_DAYS (29 then 44)",
+    "MB": "NO_METHOD_FOUND_HIT both days"
+  },
+  "verdict_label": "TWO_DAY_FORENSIC_ONLY + READY_FOR_TEST_LANE_ENHANCEMENT + READY_FOR_MEASUREMENT_ONLY_IMPLEMENTATION + NOT_READY_FOR_OFFICIAL_CHANGE",
+  "critical_findings": [
+    "MN BT 30d dropped 60% → 56.7% (V54 → V55)",
+    "MT 7d 71.4% rising fast — but 30d still 36.7%",
+    "MB 60d 26.7% structural; MB Wed/Fri remain BLACK_SPOT_CONFIRMED on anchor 2026-05-05",
+    "MT_AI_CHAIN_PRESERVATION_V1 destructive on MT (broke 29 win → 82 LOSE on 04/05; broke 44 → 39 on 05/05) — NOT promote",
+    "MN_AI_CHAIN_PRESERVATION_V1 free win on 05/05 (52 vs 15) — keep watching MN-only",
+    "MN_SPECIALIST_ROSTER_V1 free win on 04/05 (32 vs 65)",
+    "gemini-3-flash MB WIN day 1 (91+14, both hit) — KEEP_CANDIDATE",
+    "gemma-4-31b: 0 rows 05/05 due to scheduler preflight bug. Bug FIXED in V55 (scheduler.py route gemma→google lane). Will run 06/05.",
+    "C-05 latency: still 0/0 latency_available, NO_PER_MODEL_DURATION 100% — pruning blocked.",
+    "loz_stage_trace materialized 04/05+05/05; 0 ai_dropped events but loz_select_miss MN 5, MT 6, MB 4 over 2 days."
+  ]
+}

@@ -1,0 +1,2500 @@
+- source display and tracking must separate `region + D/D-1 + weekday + station`
+- `gemini-2.5-flash` and `gpt-5.4` must exit the PHASE-FIRST gate experiment
+- the gate must move to the weakest newly-added SHADOW_AUTO models instead
+- the replacement cohort must be measurable from a more direct live board without digging through trace/DB by hand
+- bucket reading must align to `region + weekday (+ station-set)` rather than raw calendar dates
+
+### Changes
+
+- `web/backend/_seed_rules.py`
+  - promoted cumulative `12W/16W` ranking to the actual top-5 selector (`cumulative_rank_score`)
+  - added `source_weekday` + `source_station_slot`
+  - shifted `composite_score` weighting toward `12W/16W`
+- `web/backend/database.py`
+  - added schema/migrations for new `mined_rules` and `mined_rule_effectiveness` slot-aware columns
+- `web/backend/mined_rule_eval.py`
+  - now persists `source_region`, `source_offset`, `source_station_slot`
+  - recent 112d MRE window rebuilt live to prevent stale rule-id continuity loss
+- `web/backend/main.py`
+  - `prediction-quality` now returns slot-aware rule context and ranks top rules by cumulative `12W/16W`
+  - added `/api/admin/prompt-gate-cohort` near-realtime cohort board
+  - new board emits bucket-oriented metadata (`bucket_code`, `weekday_name`, `station_set_label`)
+  - startup logs no longer print API key previews
+- `web/backend/gpt_analyzer.py`
+  - manual/scheduler/shadow prompt source sections now carry `_priority_meta` and render in owner-doctrine order
+  - fixed GAN warning and restored `_knowledge_base.json` generation path
+  - PHASE-FIRST gate cohort switched from `gemini-2.5-flash` / `gpt-5.4` to `minimax-m2.7` / `gpt-oss-120b`
+  - added `PHASE_FIRST_JSON_CONTRACT` + repair retry + hard failure `PHASE_FIRST_CONTRACT_INVALID`
+- `web/backend/weekly_rule_miner.py`
+  - weekly mining now rebuilds recent `112d` MRE window automatically after new rule ids are created
+- `web/backend/scheduler.py`
+  - weekly mining logs now include MRE rebuild summary
+  - scheduler/shadow paths attach prompt priority metadata
+- `web/backend/metrics_calculator.py`
+- `web/backend/advanced_modes.py`
+  - both now ignore `_priority_meta` safely
+- `web/frontend/app.js`
+  - rule support card now renders slot-aware source strings
+- `web/frontend/index.html`
+  - cache-busted to `app.js?v=20260426-rules-slot-v1`
+- `web/frontend/monitoring.html`
+  - added `Prompt Gate Cohort` board with near-realtime trace + verified WR view
+
+### Live Operations Performed
+
+- deployed targeted backend/frontend files in small batches via `web/_smart_deploy.py --files ...`
+- restarted `lottery.service` after each batch
+- backed up live DB + trace to `/root/Lottery_AI_Test/artifacts/rules_fix_20260426_003352`
+- remine live `mined_rules` on VPS with new ranking logic
+- deleted and backfilled `112d` of `mined_rule_effectiveness`
+- generated `_knowledge_base.json` on VPS
+- synced post-rollout forensic inputs back to local via `web/_sync_live_forensic_inputs.py`
+
+### Verify
+
+- `lottery.service` active after all deploy waves
+- public `/api/health` remains `200 OK` and unchanged in runtime counts semantics
+- public frontend serves `app.js?v=20260426-rules-slot-v1`
+- live `prediction-quality` now reports cumulative rules note:
+  - `refresh_note = "Rules Top 5 xếp hạng tích lũy theo 12W/16W của bucket hiện tại"`
+- live `MB/CN` top-5 changed from Khánh Hòa-heavy legacy ranking to slot-aware cumulative ranking:
+  - `MB(D-1/T7) · Nam Định`
+  - `MT(D-1/T7) · Đắc Nông`
+  - `MT(D/CN) · Khánh Hòa`
+- `recent_null_slot_rows = 0` on the rebuilt recent MRE window
+- gate cohort on VPS now verifies as:
+  - `current_gate_models = ['gpt-oss-120b', 'minimax-m2.7']`
+  - `contract_models = ['gpt-oss-120b', 'minimax-m2.7']`
+- new `/api/admin/prompt-gate-cohort` payload verified on VPS and now emits bucket-oriented rows
+
+### Safety / Scope
+
+- no owner-locked scoring formula unlocks beyond the already-approved rule/ranking hardening in this session
+- no output-eligible model roster change
+- no lane-weight change
+- no bundle-voting rewrite
+- no manual rule reactivation
+- gate cohort change applies only to SHADOW_AUTO measurement lanes
+
+### Remaining Live-Proof Gap
+
+- replacement gate cohort (`minimax-m2.7`, `gpt-oss-120b`) is live and contract-enabled, but still `WAIT_LIVE` for post-switch efficacy proof because no new trace rows exist yet after the switch timestamp.
+- daily materialized prompt/reasoning tables remain primarily `date + region` oriented; the new cohort board is the near-realtime bucket-first reading surface until a later schema expansion is approved.
+
+### Rollback
+
+- gate cohort / contract rollback: revert `web/backend/gpt_analyzer.py` to pre-switch version and redeploy
+- monitoring rollback: revert `web/frontend/monitoring.html` + `web/backend/main.py`
+- rules ranking rollback: restore DB backup from `/root/Lottery_AI_Test/artifacts/rules_fix_20260426_003352` and revert `_seed_rules.py` / `database.py` / `mined_rule_eval.py` / `weekly_rule_miner.py`
+
+## V20.3.20.3 — C3 AUTO-MATERIALIZE WIRED INTO CLOSEOUT (2026-04-25 23:30 VN)
+
+### Context
+
+After V20.3.20.2 deployed C3 schema + manual helper, owner approved one small additional wire to make C3 auto-materialize after each closeout instead of needing manual SSH every cycle.
+
+### Changes
+
+- `web/backend/scheduler.py` — added `~25 lines` after the existing Wave 1 control surface materialization block in `_materialize_closeout_measurements()`. The new block calls `_materialize_convergence_cluster.materialize_for(date_str, region)` inside a try/except and logs as `[CCPD]` job marker. Skips silently if helper module is unavailable (rollback safety).
+
+### Safety
+
+- No PP-2 / PP-3 / PP-4 changes
+- No scoring formula changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- `main.py` sha256 unchanged (PP-1 V20.3.20 nguyên)
+- `database.py` sha256 unchanged (V20.3.20.2 nguyên)
+- New wire is INSERT-only on the C3 table; identical to manual helper logic
+
+### Backup
+
+- VPS rollback-small: `/root/Lottery_AI_Test/.wave_backups/c1c3c5_backup_scheduler_py_20260425_233024.py`
+- Pre-deploy `scheduler.py` sha256: `14d0f905dcc629c669d256d7ba5c84e5cc4075cf52aa710c1c89c8999c1d8365`
+- Post-deploy `scheduler.py` sha256: `2582bb414330f1d14a43bdbe5ed9a480abb5b3380dc09cc9b6e9b22f8e5026a5`
+
+### Deploy
+
+- `python web/_smart_deploy.py --files web/backend/scheduler.py`
+- `lottery.service` restarted, MainPID 395050 active
+
+### Verify
+
+- `/api/health`: `200 OK V17.19.4 / output=15 / runtime=26` (unchanged)
+- `lottery.service` active
+- PP-1 markers count = 3 (unchanged)
+- PP-2/3/4 / rescue / brake markers = 0 (no scoring drift)
+- CCPD wire markers in scheduler.py = 4 (new)
+- Scheduler startup log clean: `MN=16:30, MT=17:30, MB=18:30` schedule active
+
+### Rollback
+
+- Restore `scheduler.py` from `c1c3c5_backup_scheduler_py_20260425_233024.py`, restart `lottery.service`
+- Or simply remove the helper file `_materialize_convergence_cluster.py` — the try/except will catch ImportError and log a single warning per closeout, without breaking the rest of the closeout
+
+## V20.3.20.2 — REALTIME MEASUREMENT SURFACES DEPLOYED ON VPS (2026-04-25 23:10 VN)
+
+### Context
+
+Owner instructed: deploy the measurement-safe surfaces (`C1`, `C3`, `C5`) to VPS production so live PP-1 watch and MB/MT rescue-lane review can read directly from production DB instead of local artifacts. No new scoring patch.
+
+### Changes
+
+- `web/backend/database.py` — added 3 new objects to `ensure_runtime_measurement_tables()`:
+  - `bundle_replay_compare_daily` (table) — replay-ingest / decision-support surface, NOT live causal proof
+  - `convergence_cluster_pattern_daily` (table) — production C3 forensic surface for PP-1 watch
+  - `v_family_contribution_rolling_14d` (view) — rolling 14d MB/MT/MN family contribution
+- `web/backend/_materialize_convergence_cluster.py` (new) — standalone on-demand materialization helper for C3 on production. Not wired into scheduler in this pass.
+
+### Safety
+
+- No PP-2 / PP-3 / PP-4 changes
+- No scoring formula changes (`WR × strength × verdict × position` untouched)
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No MB strategy / Cohere / GAN/KB changes
+- `main.py` sha256 unchanged (PP-1 V20.3.20 stays as-is)
+- `_materialize_convergence_cluster.py` is INSERT-only on the C3 table
+- Schema is created `IF NOT EXISTS` so multiple deploys are idempotent
+
+### Backup
+
+- VPS rollback-small: `/root/Lottery_AI_Test/.wave_backups/c1c3c5_backup_database_py_20260425_230808.py`
+- Pre-deploy `database.py` sha256: `062192dedb921e14d3c5cecc6def96b532d69c29ee196e520bb18dee4f0a4553`
+- Post-deploy `database.py` sha256: `3616d19d47f6330329d0ae69d5b7b4ce1f1fba52da3f195912f37ae2b40eafc2`
+
+### Deploy
+
+- `python web/_smart_deploy.py --files web/backend/database.py web/backend/_materialize_convergence_cluster.py`
+- `lottery.service` restarted, MainPID 394312 active
+- Schema ensured via `python -c "from database import ensure_runtime_measurement_tables; ensure_runtime_measurement_tables()"` on VPS
+- C3 30-day backfill executed: `python _materialize_convergence_cluster.py --backfill 30`
+
+### Verify
+
+- `/api/health` returns `200 OK V17.19.4 / output=15 / runtime=26` (unchanged)
+- `lottery.service` active
+- PP-1 markers count = 3 (unchanged from V20.3.20)
+- PP-2/3/4 / rescue / brake markers = 0 (no scoring drift)
+- C1 production: schema exists, 0 rows (replay results not yet ingested into VPS — local-only by doctrine)
+- C3 production: 106 rows after 30-day backfill
+  - MB: 24 cluster rows, 4 pp1_triggered, 0 actual_hit on triggered (FP 0%)
+  - MN: 36 cluster rows, 6 pp1_triggered, 2 actual_hit on triggered (FP 33%)
+  - MT: 46 cluster rows, 5 pp1_triggered, 2 actual_hit on triggered (FP 40%)
+  - Total: 15 pp1_triggered, 4 actual_hit, FP rate 26.7%
+  - Recent 3-day breakdown matches local replay exactly
+- C5 production: view exists, 12 rolling rows
+- Journalctl: clean startup preflight + GET routine, no errors
+
+### Rollback
+
+- Schema is additive and `IF NOT EXISTS`-guarded; rollback can be either:
+  - Restore `database.py` from rollback-small backup and `DROP TABLE bundle_replay_compare_daily; DROP TABLE convergence_cluster_pattern_daily; DROP VIEW v_family_contribution_rolling_14d;`
+  - OR leave the schema and only revert the `database.py` source (the C3 helper script becomes inert without the table; the table itself is read-only impact)
+
+## V20.3.20.1 — FIX_NOW REPLAY + CREATE_NOW MEASUREMENT SURFACES + DOCTRINE HONESTY CORRECTION (2026-04-25 23:05 VN)
+
+### Context
+
+Owner instructed a strict "no extra production scoring change" execution pass after V20.3.20:
+
+- finalize stale wording cleanup
+- create offline replay evidence to break the "lock vô tận" pattern
+- create measurement-safe surfaces still missing
+- watch PP-1 in the next live cycle
+- correct any over-claimed wording (PP-1 was narrated as `LIVE_PROVEN` before any post-deploy live cycle had closed)
+
+### Changes (no production code)
+
+- `scripts/_replay_core.py` — read-only replay helper (load bundles, re-aggregate scores under variant configs)
+- `scripts/_replay_d7_sort_compare_60d.py` — F1 sort key replay (3 variants)
+- `scripts/_replay_lane_weight_mt_60d.py` — F2 MT lane weight replay (4 configs)
+- `scripts/_replay_ml_boost_60d.py` — F3 ML/Combo family boost replay (5 factors)
+- `scripts/_create_measurement_surfaces_v1.py` — local schema + backfill for C1 + C3 + C5
+
+### Outputs (artifacts only, not deployed)
+
+- `artifacts/replay/d7_sort_60d.json`
+- `artifacts/replay/lane_mt_60d.json`
+- `artifacts/replay/ml_boost_60d.json`
+- `artifacts/replay/create_surfaces_v1.json`
+- `artifacts/phase_checkpoints/BLOCK_ACTIVATION_MATRIX_20260425.md`
+
+### Local DB schema added (NOT deployed to VPS)
+
+- `bundle_replay_compare_daily` (25 rows after this pass)
+- `convergence_cluster_pattern_daily` (106 rows over 30d)
+- `v_family_contribution_rolling_14d` (read-only view, 12 rolling rows)
+
+### Replay verdicts (threshold-driven, no human discretion)
+
+- F1 D7/sort: MN delta=0 (DROP), MT delta=+1 (DEFER_60D), MB delta=0 (DROP)
+- F2 MT lane weight: best `v_stronger_1.25_0.85` delta=+1 (DEFER_60D)
+- F3 ML/Combo boost: all 4 factors `INCONCLUSIVE`, best `v_1.10` total_delta=+1 (DEFER_60D)
+- No `REPLAY_PASS` produced; threshold rule (delta_win >= +3 AND flips_to_lose <= 1) preserved
+
+### C3 30d backfill key finding (replay/diagnostic only)
+
+- PP-1 would-trigger days × actual hits: MB 4/4 FP=0 (0%), MN 6/6 FP=2 (33%), MT 5/5 FP=2 (40%)
+- Overall FP rate `4/15 = 26.7%` — historical only, not live causal proof
+
+### Doctrine honesty correction
+
+- `docs/CURRENT_TRUTH_SSOT.md` PP-1 row: `LIVE_PROVEN` → `DEPLOYED + HEALTH_PROVEN + LOG_PROVEN + REPLAY_SAFE_OK + LIVE_CAUSAL_PROOF_PENDING`
+- New row added: `Replay-based decision evidence`
+- New row added: `Convergence cluster forensic surface`
+
+### Safety
+
+- No deploy to VPS in this pass
+- No production scoring change
+- No PP-2 / PP-3 / PP-4 unlock
+- No lane weight / output policy / MB strategy / Cohere / GAN/KB / ML rollout change
+- Replay artifacts and surfaces are local-only
+
+### Verify (read-only)
+
+- `/api/health`: `200 OK V17.19.4 / output=15 / runtime=26` (unchanged)
+- VPS sha256 `main.py`: `b1b738a72175f52124acbfdec597d12f8a118d545566b925ecdc9a3045b4587a` (unchanged from V20.3.20)
+- VPS PP-1 markers count: 3 (unchanged)
+- VPS PP-2/3/4 / rescue / brake markers: 0 (unchanged)
+- `lottery.service`: active, MainPID 392349 (unchanged)
+
+### Rollback
+
+- No rollback needed — local-only artifacts + measurement surfaces. To remove: delete `scripts/_replay_*.py`, `scripts/_create_measurement_surfaces_v1.py`, `artifacts/replay/`, and drop local tables `bundle_replay_compare_daily` + `convergence_cluster_pattern_daily` + view `v_family_contribution_rolling_14d`.
+- PP-1 rollback path (V20.3.20) remains: `pp1_backup_main_py_20260425_214513.py` on VPS.
+
+## V20.3.20 — PP-1 CONVERGENCE DAMPENER (2026-04-25 21:45 VN)
+
+### Context
+
+Owner explicitly unlocked a single targeted intervention after the broad-measurement audit on `2026-04-25`:
+
+- 30/57 days across all three regions still see `final_bundle != strongest` even when strongest is correctly identified
+- Multiple AI models already self-flag herding pressure in their own `verdict_reason` (`[CONV-DOWNGRADE]`, `[DIVERSITY-V10.5]`, `[DIVERSITY-V10.5-SWAP]`) but the bundle scoring layer ignored those flags
+- 4 patch-prep directions were documented after the audit; only **PP-1 (convergence dampener)** is unlocked in this version
+- PP-2 (rescue-lane minimum-floor), PP-3 (BUNDLE_SKEW guard), PP-4 (AI_BLOCKED → publish brake) remain `OWNER_LOCK_REQUIRED`
+
+### Changes
+
+- `web/backend/main.py`
+  - added a new step `Step 3b — V20.3.20 PP-1 — CONVERGENCE DAMPENER` inside `generate_final_bundle()`, placed AFTER the per-(model, num) score loop and `if not number_scores: return None`, BEFORE the ranking sort
+  - block uses an isolated re-scan of `raw_predictions` to count voters whose `verdict_reason` contains `[CONV-DOWNGRADE]` or `[DIVERSITY-V10.5]` / `[DIVERSITY-V10.5-SWAP]` markers per number
+  - if a number has `>= 3` voters with these explicit markers, its `number_scores[number]` is multiplied by `0.85` exactly once (no double-penalty)
+  - dampener events are persisted into `source_predictions_json` under a new key `pp1_convergence_dampener` for full forensic transparency
+
+### Safety
+
+- No scoring formula change (`WR × strength × verdict × position` untouched)
+- No lane-weight change
+- No bundle-voting algorithm change
+- No output-policy change
+- No MB strategy change
+- No prompt rewrite
+- No Cohere insertion-point change
+- No GAN/KB restoration
+- Dampener is deterministic, single-application, scoped per number, and easily reversible
+
+### Backup
+
+- VPS rollback-small backup: `/root/Lottery_AI_Test/.wave_backups/pp1_backup_main_py_20260425_214513.py`
+- Pre-deploy SHA256: `0c857ec8895dc7116ca0e8746461d8118e3a0d89243df88736a0ae311effaf0b`
+- Post-deploy SHA256: `b1b738a72175f52124acbfdec597d12f8a118d545566b925ecdc9a3045b4587a`
+
+### Deploy
+
+- `python web/_smart_deploy.py --files web/backend/main.py`
+- `lottery.service` restarted automatically with `MainPID=392349`
+
+### Verify
+
+- `lottery.service` active immediately after deploy
+- `/api/health` returns `version=V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=26`
+- Roster registry direct check still returns `SHADOW_AUTO_EVAL_MODELS=8`, `OUTPUT_ELIGIBLE_MODELS=15`, `ALL_RUNTIME_MODELS=26`
+- `grep` on the deployed file returns `4` matches for PP-1 markers and `0` matches for any of `PP-2`, `PP-3`, `PP-4`, `rescue_lane_min_floor`, `BUNDLE_SKEW_GUARD`, `AI_BLOCKED publish brake`
+- Replay-safe diagnostic on `2026-04-24` and `2026-04-25` confirms the dampener would correctly trigger on the actual losing BTs (`MN 25 / MN 32 / MB 67`) without triggering on MB win `15` or on MT (where herd marker concentration is below threshold)
+
+### Rollback
+
+- Small rollback (single file): restore `/root/Lottery_AI_Test/.wave_backups/pp1_backup_main_py_20260425_214513.py` over `/root/Lottery_AI_Test/web/backend/main.py` and restart `lottery.service`
+- Large rollback: full snapshot baseline `Backup Final 23042026 DDXS`
+
+## V20.3.19 — WAVE 1 CONTROL SURFACES + MONITORING VISIBILITY (2026-04-25 00:16 VN)
+
+### Context
+Owner approved sequential rollout `Wave 1 -> 2 -> 3 -> 4` with one hard rule:
+
+- only low-risk observability / control work may move first
+- every stronger claim must be backed by runtime evidence
+- anything not proven yet must stay explicitly `WAIT_LIVE`
+
+Wave 1 therefore stayed inside measurement, gating, readiness, reasoning-contract observability, and monitoring visibility.
+
+### Changes
+- `web/backend/database.py`
+  - added Wave 1 tables:
+    - `ai_primary_gate_daily`
+    - `strongest_candidate_escape_daily`
+    - `source_prize_effectiveness_daily`
+    - `weekday_rule_strength_daily`
+    - `bundle_readiness_gate_daily`
+    - `public_bundle_publish_audit_daily`
+    - `output_eligible_completion_daily`
+    - `reasoning_layer_penetration_daily`
+    - `ai_reasoning_contract_daily`
+    - `data_preservation_manifest_daily`
+    - `sync_parity_audit_daily`
+- `web/backend/main.py`
+  - extended `_get_latest_measurement_dates()` to include the new Wave 1 surfaces
+  - added `_materialize_wave1_control_surfaces_daily()`
+  - exposed `wave1_control_summary` and `sync_parity_summary` in runtime monitoring payload
+- `web/backend/scheduler.py`
+  - closeout measurement materialization now also runs Wave 1 control-surface persistence
+- `web/frontend/monitoring.html`
+  - added a Wave 1 control panel for:
+    - AI policy gate
+    - readiness state
+    - strongest-candidate escape
+    - reasoning-layer penetration
+    - reasoning-contract pass/warn
+    - sync parity snapshot
+
+### Safety
+- No scoring changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No MB strategy changes
+- No prompt rewrite / reorder
+- No Cohere insertion-point changes
+- No GAN/KB restoration
+
+### Backup
+- Full backup script was attempted first, but did not complete with usable artifact/progress in acceptable time
+- Created targeted rollback-small VPS backup instead:
+  - `/root/Lottery_AI_Test/.wave_backups/wave1_20260425_001607/`
+  - files:
+    - `database.py`
+    - `main.py`
+    - `scheduler.py`
+    - `monitoring.html`
+  - SHA256 hashes were recorded at backup time
+- Large rollback baseline remains:
+  - `Backup Final 23042026 DDXS`
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/main.py web/backend/scheduler.py web/frontend/monitoring.html`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with new `MainPID=367329`
+- `/api/health` returns `200 OK`
+- Direct VPS runtime materialization for `2026-04-23` succeeded:
+  - `MN`: `AI_PRIMARY`, `PRIMARY_ALLOWED`, `READY`, `trace_rows=18`, `source_prize_rows=15`
+  - `MT`: `AI_PRIMARY`, `PRIMARY_ALLOWED`, `READY`, `trace_rows=16`, `source_prize_rows=18`
+  - `MB`: `AI_BLOCKED`, `BLOCKED`, `PARTIAL_READY`, `trace_rows=16`, `source_prize_rows=14`
+- Direct VPS DB counts after materialization:
+  - `ai_primary_gate_daily = 3`
+  - `strongest_candidate_escape_daily = 3`
+  - `source_prize_effectiveness_daily = 47`
+  - `weekday_rule_strength_daily = 3`
+  - `bundle_readiness_gate_daily = 3`
+  - `public_bundle_publish_audit_daily = 3`
+  - `output_eligible_completion_daily = 3`
+  - `reasoning_layer_penetration_daily = 3`
+  - `ai_reasoning_contract_daily = 3`
+- Current `2026-04-23` sample readings:
+  - `MB` gate = `AI_BLOCKED`, `BLOCKED`, rule-state `WEAK`
+  - `MN` gate = `AI_PRIMARY`, `PRIMARY_ALLOWED`, rule-state `SUPPORT`
+  - `MT` gate = `AI_PRIMARY`, `PRIMARY_ALLOWED`, rule-state `SUPPORT`
+  - readiness:
+    - `MN = READY / COMPLETE / OFFICIAL`
+    - `MT = READY / COMPLETE / OFFICIAL`
+    - `MB = PARTIAL_READY / INCOMPLETE / OFFICIAL`
+- Current reasoning-contract samples:
+  - `MN`: `18` trace rows, `2` pass rows, `16` warn rows
+  - `MT`: `16` trace rows, `2` pass rows, `14` warn rows
+  - `MB`: `16` trace rows, `2` pass rows, `14` warn rows
+- `data_preservation_manifest_daily` and `sync_parity_audit_daily` remain `0` rows on VPS after this pass
+  - this is currently treated as `WAIT_LIVE / WAIT_SYNC_SOURCE`, not as runtime failure
+  - current canonical `live_sync` manifest is still generated on the local forensic side, not yet on VPS runtime
+
+### Rollback
+- Small rollback:
+  - restore from `/root/Lottery_AI_Test/.wave_backups/wave1_20260425_001607/`
+    - `database.py`
+    - `main.py`
+    - `scheduler.py`
+    - `monitoring.html`
+- Large rollback:
+  - restore from baseline snapshot `Backup Final 23042026 DDXS`
+
+## V20.3.18 — PROMPT INTEGRITY CONTAINMENT + MEASUREMENT-SAFE DRIFT/PRESSURE TABLES (2026-04-24 01:01 VN)
+
+### Context
+Owner approved 4 low-risk actions after the monolithic audit:
+
+- contain the stale duplicated `rule_custom_prompt` safely without rewriting the handcoded prompt stack
+- activate approved measurement-safe forensic tables for rerun drift / prompt pressure / trace completeness / main-vs-secondary reading
+- sync repo docs/history
+- preserve a compact rollback-small path alongside the full backup baseline
+
+The current evidence lock before implementation was:
+
+- `rule_custom_prompt` in DB/UI = `2700` chars, but runtime only appended the first `500`
+- that fragment duplicated older manual-rule doctrine and was weaker/staler than the current PB-18.0 handcode stack
+- `160` manual `pattern_rules` rows were already fully disabled (`0 active`)
+- `MT` remained `uplift-but-bundle-lost`, while `MB` remained the noisiest rerun region
+
+### Changes
+- `web/backend/gpt_analyzer.py`
+  - added prompt-integrity containment:
+    - `rule_custom_prompt` stays preserved in DB/UI but no longer injects into runtime prompts
+    - added custom-prompt diagnostics metadata for future trace rows:
+      - mode
+      - runtime_active
+      - original/applied chars
+      - truncated flag
+      - sha256
+- `web/backend/database.py`
+  - added new measurement-safe tables:
+    - `pre_vs_post_rerun_effect_daily`
+    - `pre_win_post_lose_daily`
+    - `pre_partial_post_lose_daily`
+    - `rule_conversion_loss_stage_daily`
+    - `main_vs_secondary_quality_daily`
+    - `bundle_family_contribution_daily`
+    - `prompt_pressure_daily`
+    - `trace_field_completeness_daily`
+- `web/backend/main.py`
+  - added `_materialize_extended_measurements_daily()`
+  - extended `_get_latest_measurement_dates()` to include the new tables
+- `web/backend/scheduler.py`
+  - closeout measurement materialization now also persists the new approved measurement-safe tables
+- `web/frontend/settings.html`
+  - updated wording so the custom prompt field is described honestly as archive/operator-note only, not runtime injection
+- `web/frontend/settings.js`
+  - updated import/restore alerts to match archive-only semantics
+- `docs/PROMPT_INTEGRITY_ARCHIVE_20260423.md`
+  - archived the full legacy custom prompt, exact old runtime fragment, and small rollback notes
+
+### Safety
+- No scoring changes
+- No bundle-voting changes
+- No output-policy changes
+- No lane-weight changes
+- No MB strategy changes
+- No Cohere insertion-point changes
+- No GAN/KB restore
+- No prompt production rewrite of the handcoded stack
+- Containment only: archive legacy custom prompt, remove runtime injection, keep rollback path
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/gpt_analyzer.py web/backend/database.py web/backend/main.py web/backend/scheduler.py web/frontend/settings.html web/frontend/settings.js docs/PROMPT_INTEGRITY_ARCHIVE_20260423.md`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with new `MainPID=338648`
+- `/api/health` still returns:
+  - `version=V17.19.4`
+  - `expected_output_model_count=15`
+  - `runtime_model_count=26`
+- Direct VPS runtime check proved:
+  - `build_system_prompt()` no longer contains `YÊU CẦU BỔ SUNG TỪ NGƯỜI DÙNG`
+  - `rule_custom_prompt` is now `ARCHIVE_ONLY`
+  - runtime reports `original_chars=2700`, `applied_chars=500`, `runtime_active=false`
+- Direct VPS materialization run populated the new tables for `2026-04-22` and `2026-04-23`
+- Latest `2026-04-23` row counts:
+  - `pre_vs_post_rerun_effect_daily = 9`
+  - `pre_win_post_lose_daily = 21`
+  - `pre_partial_post_lose_daily = 21`
+  - `rule_conversion_loss_stage_daily = 3`
+  - `main_vs_secondary_quality_daily = 3`
+  - `bundle_family_contribution_daily = 3`
+  - `prompt_pressure_daily = 45`
+  - `trace_field_completeness_daily = 3`
+- Deployed settings UI markers now describe the field as archive-only
+
+### Rollback
+- Small rollback:
+  - restore previous versions of:
+    - `web/backend/gpt_analyzer.py`
+    - `web/backend/database.py`
+    - `web/backend/main.py`
+    - `web/backend/scheduler.py`
+    - `web/frontend/settings.html`
+    - `web/frontend/settings.js`
+- Large rollback:
+  - restore from baseline snapshot `Backup Final 23042026 DDXS`
+
+## V20.3.17 — PUBLIC DU-DOAN PROVENANCE + SHADOW-ONLY HIDEOUT (2026-04-22 23:40 VN)
+
+### Context
+Owner asked for two live-readability improvements:
+
+- shadow-only models should not remain visible on the public `/du-doan` surface
+- owner should be able to see where a winning or supporting number came from: AI vs no-token, and if no-token then before or after rerun
+
+The goal was to improve interpretability and avoid accidental slow manual calls without touching scoring.
+
+### Changes
+- `web/backend/main.py`
+  - added public bundle provenance helpers:
+    - `_classify_public_support_origin()`
+    - `_build_number_provenance()`
+    - `_build_public_bundle_provenance()`
+  - `/api/final-bundle` now returns `bundle.provenance_summary`
+  - `/api/final-bundle/history` now returns history rows with `provenance_summary`
+  - `/api/settings/{category}` now whitelists `ai_keys` output so dedicated shadow-only secrets like `openrouter_key_kimi_k26` do not leak through the settings payload
+- `web/backend/database.py`
+  - `get_bundle_history()` now loads and parses `source_predictions_json` for provenance use
+- `web/frontend/du-doan.html`
+  - current bundle cards now show provenance lines for:
+    - `Bạch Thủ`
+    - `Lô 2`
+    - `Xiên 2`
+    - `Xiên 3`
+  - history rows now carry provenance hints on the BT cell
+- `web/frontend/index.html`
+  - removed shadow-only models from public `/du-doan` filters and active prediction UI
+- `web/frontend/app.js`
+  - repeat-click predict actions now explain that an existing prediction is being reused instead of implying a fresh prompt run
+
+### Safety
+- No scoring changes
+- No output-policy changes
+- No bundle-voting changes
+- No lane-weight changes
+- Public readability / secret exposure / shadow-only UI cleanup only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/main.py web/backend/database.py web/frontend/du-doan.html`
+  - `python web/_smart_deploy.py --files web/backend/main.py web/frontend/index.html web/frontend/app.js`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=297853`
+- direct VPS verification of `/api/final-bundle?region=MT` now returns `provenance_summary`
+- example production truth for `MT 2026-04-22`:
+  - `85` → `Hybrid 1 | NT-sau 2 | main 2 | phụ 1`
+  - `92` → `NT-sau 2 | main 1 | phụ 1`
+  - `31` → `NT-sau 2 | main 1 | phụ 1`
+- `/api/final-bundle/history?region=MT&limit=2` now returns `history_hint`
+- `index.html` no longer exposes shadow-only models such as `glm-5.1`, `grok-4.20-multi-agent`, `qwen3-coder`, `minimax-m2.7`, `kimi-k2.5`, `kimi-k2.6`, `qwen3-max-thinking`, `gpt-oss-120b`
+- `/api/settings/ai_keys` no longer exposes `openrouter_key_kimi_k26`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/main.py`
+  - `web/backend/database.py`
+  - `web/frontend/du-doan.html`
+  - `web/frontend/index.html`
+  - `web/frontend/app.js`
+- Redeploy and restart `lottery`
+
+## V20.3.16 — KIMI K2.6 SHADOW ONBOARDING + REMOVED-MODEL UI CLEANUP (2026-04-22 22:19 VN)
+
+### Context
+After pruning unstable shadow-only models, owner requested two follow-up actions:
+
+- remove cleared shadow-only model names from active UI surfaces and avoid unnecessary API-key exposure concerns
+- onboard `MoonshotAI: Kimi K2.6` into the shadow-only measurement lane with safe key routing and explicit config completeness
+
+### Changes
+- `web/backend/model_registry.py`
+  - added `kimi-k2.6` as `SHADOW_AUTO`
+  - `output_eligible = False`
+  - schedule slots:
+    - `completion_triggered_shadow`
+    - `shadow_eval_post_verify`
+- `web/backend/gpt_analyzer.py`
+  - added dedicated per-model key env hook:
+    - `OPENROUTER_KEY_KIMI_K26`
+  - added:
+    - `kimi-k2.6` to `OPENROUTER_MODELS_SET`
+    - `kimi-k2.6` to `MODEL_DISTRIBUTION_POLICY`
+    - `kimi-k2.6` to `_MODEL_MAX_TOKENS = 24576`
+    - `kimi-k2.6` to `OPENROUTER_MODEL_MAP` as `moonshotai/kimi-k2.6`
+    - `kimi-k2.6` to cost estimation map
+  - manual/analyzer OpenRouter path can now read DB-specific secret key `openrouter_key_kimi_k26`
+- `web/backend/main.py`
+  - added `kimi-k2.6` to active OpenRouter model detection paths
+  - added DB-specific OpenRouter secret resolution for `openrouter_key_kimi_k26`
+  - continued runtime-roster SSOT alignment after prior shadow prune
+- `web/backend/scheduler.py`
+  - `_get_api_key_for_model()` now supports DB-dedicated key lookup for `kimi-k2.6`
+- `web/frontend/index.html`
+  - removed active UI options for:
+    - `arcee-trinity`
+    - `mistral-large-3`
+    - `mistral-nemo`
+    - `llama-4-maverick`
+  - added active shadow/manual option for `kimi-k2.6`
+- `web/frontend/app.js`
+  - removed active display-name / AI-tag treatment for the removed shadow-only models
+  - added `kimi-k2.6` active display labels
+  - removed models now fall back to generic historical rendering
+- `web/frontend/viewer.js`
+  - historical rows for removed shadow-only models now show `shadow-removed` label instead of presenting the models as active
+
+### Safety
+- No scoring changes
+- No output-policy changes
+- No output-eligible roster changes
+- No lane-weight changes
+- No bundle-voting changes
+- Shadow-only onboarding + active-UI cleanup only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/model_registry.py web/backend/gpt_analyzer.py web/backend/main.py web/backend/scheduler.py web/frontend/app.js web/frontend/index.html web/frontend/viewer.js`
+- Restarted `lottery` under `systemd`
+- Stored dedicated DB secret:
+  - `ai_keys.openrouter_key_kimi_k26`
+
+### Verify
+- `lottery.service` active with `MainPID=295359`
+- `/api/health` now returns:
+  - `expected_output_model_count = 15`
+  - `runtime_model_count = 26`
+- direct VPS verification proved:
+  - `SHADOW_AUTO_EVAL_MODELS` now includes `kimi-k2.6`
+  - retained shadow roster count = `8`
+  - removed models remain absent from active runtime roster
+  - `kimi-k2.6`:
+    - slug = `moonshotai/kimi-k2.6`
+    - `max_tokens = 24576`
+    - DB secret path resolves successfully
+- frontend file verification proved:
+  - `kimi-k2.6` visible in active shadow/manual UI
+  - removed model names absent from active prediction dropdowns
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/model_registry.py`
+  - `web/backend/gpt_analyzer.py`
+  - `web/backend/main.py`
+  - `web/backend/scheduler.py`
+  - `web/frontend/app.js`
+  - `web/frontend/index.html`
+  - `web/frontend/viewer.js`
+- Remove `openrouter_key_kimi_k26` only if owner explicitly requests rollback of the model
+- Redeploy and restart `lottery`
+
+## V20.3.15 — PRUNE UNSTABLE SHADOW-ONLY MODELS + REGISTRY-DRIVEN HEALTH ROSTER (2026-04-22 21:32 VN)
+
+### Context
+Owner clarified that newly added AI models such as `arcee-trinity` are shadow/evaluation-only and should be cleared from the live system if they are unstable and not proving enough keep value. Production evidence supported a safe prune pass:
+
+- `arcee-trinity` showed repeated `EMPTY_RESPONSE (finish_reason: length)` failures
+- `mistral-large-3` showed region-specific runtime instability in `MT`
+- `mistral-nemo` and `llama-4-maverick` showed poor runtime stability / weak keep value relative to shadow cost/noise
+- these models are not output-eligible, so pruning them from `SHADOW_AUTO` does not affect `/du-doan`
+
+The pass also fixed a final SSOT drift: `main.py` still held a hardcoded runtime roster, so `/api/health` and some monitoring payloads could disagree with the actual registry after the prune.
+
+### Changes
+- `web/backend/model_registry.py`
+  - moved these models from `SHADOW_AUTO` to `REMOVED`:
+    - `arcee-trinity`
+    - `mistral-large-3`
+    - `mistral-nemo`
+    - `llama-4-maverick`
+  - removed their `allowed_regions` and `schedule_slots`
+  - preserved audit trail in `wr_note`
+- `web/backend/main.py`
+  - `RUNTIME_MODELS` now follows `model_registry.ALL_RUNTIME_MODELS` instead of a local hardcoded copy
+  - `SHADOW_MODEL_SET` now follows `model_registry.SHADOW_AUTO_EVAL_MODELS`
+  - this keeps health/monitoring/ranking surfaces aligned with the registry after roster changes
+
+### Safety
+- No scoring changes
+- No output-policy changes
+- No output-eligible roster changes
+- No lane-weight changes
+- No bundle-voting changes
+- Shadow-only roster pruning + SSOT/runtime-roster alignment only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/model_registry.py`
+  - `python web/_smart_deploy.py --files web/backend/main.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=294282`
+- direct VPS verification proved:
+  - `SHADOW_AUTO_EVAL_MODELS = 7`
+  - retained models:
+    - `glm-5.1`
+    - `grok-4.20-multi-agent`
+    - `qwen3-coder`
+    - `minimax-m2.7`
+    - `kimi-k2.5`
+    - `qwen3-max-thinking`
+    - `gpt-oss-120b`
+  - removed models are absent from both `SHADOW_AUTO_EVAL_MODELS` and `ALL_RUNTIME_MODELS`
+- `/api/health` now returns:
+  - `expected_output_model_count = 15`
+  - `runtime_model_count = 25`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/model_registry.py`
+  - `web/backend/main.py`
+- Redeploy and restart `lottery`
+
+## V20.3.14 — STAGE-AWARE LIVE-DAY MONITORING + SHADOW MISSING VISIBILITY (2026-04-22 10:13 VN)
+
+### Context
+Live-day inspection on `2026-04-22` showed an important semantics bug in monitoring:
+
+- `MN` already had full output coverage (`15/15`)
+- `MT` and `MB` only had their free-model lanes so far (`7/7`), which is expected before same-day verify unlocks the full AI chain
+- but `runtime-monitoring-center` still compared all regions against a flat `15`, so it could falsely look like a production missing-row problem
+
+At the same time, the real current-day issue was different:
+
+- `MN shadow_auto_eval` was `10/11`
+- `arcee-trinity` was missing in shadow due to `EMPTY_RESPONSE (finish_reason: length)`
+
+The safe fix was to make monitoring stage-aware and separate output coverage from shadow incompleteness.
+
+### Changes
+- `web/backend/main.py`
+  - `get_runtime_monitoring_center()` now computes:
+    - `expected_model_count_by_region`
+    - `model_stage_by_region`
+    - `missing_output_models_by_region`
+    - `shadow_present_count_by_region`
+    - `shadow_expected_count_by_region`
+    - `shadow_missing_models_by_region`
+  - current-day expected counts are now stage-aware by region:
+    - `MN`: full output expected after 04:15
+    - `MT`: free-model-only until same-day `MN` verify unlocks AI chain
+    - `MB`: free-model-only until same-day `MT` verify unlocks AI chain
+  - shadow incompleteness can now surface as `kieu_bao_dong='shadow_partial'` instead of being mixed into `/du-doan` output missing-row alarms
+- `web/frontend/monitoring.html`
+  - region-card metadata now explains stage-aware output coverage
+  - region cards display stage-aware expected counts
+  - shadow missing-model names are shown separately in the bundle/status area
+  - a dedicated `⚠️ Shadow` badge can appear without falsely marking output coverage incomplete
+
+### Safety
+- No scoring changes
+- No schedule changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Monitoring honesty / current-day semantics only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/main.py web/frontend/monitoring.html`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=278404`
+- direct VPS invocation of `get_runtime_monitoring_center()` now shows:
+  - `MN output = 15/15`
+  - `MT = 7/7` with stage `free_models_only_until_MN_verify`
+  - `MB = 7/7` with stage `free_models_only_until_MT_verify`
+  - `shadow_missing_models_by_region = {'MN': ['arcee-trinity']}`
+  - `status_chinh = "Cần chú ý: Shadow thiếu model ở MN"`
+- this confirms the current live-day issue is a shadow-runtime incompleteness, not missing production output coverage
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/main.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`
+
+## V20.3.13 — FINAL SAFE-FIX-NOW HARDENING BEFORE NEXT LIVE CYCLE (2026-04-22 02:37 VN)
+
+### Context
+Before the next live cycle, a final low-risk hardening pass was executed to remove remaining operational footguns that could distort audits or make measurement surfaces less trustworthy:
+
+- helper scripts could resolve the wrong DB path
+- `shadow_daily_comparison` table ownership still leaned too much on the standalone script
+- scheduler startup swallowed `init_eval_table()` failures silently
+- `/api/prediction-trace` silently skipped unreadable JSONL rows without reporting that fact
+- `viewer.js` could mislabel history parse issues as generic server connectivity failures
+
+### Changes
+- `web/backend/_check_schema.py`
+  - now uses canonical `database.DB_PATH`
+- `web/backend/migration_final_bundles.py`
+  - default DB path now resolves from project-root `data/lottery_ai.db`
+- `web/backend/migration_prediction_policies.py`
+  - default DB path now resolves from project-root `data/lottery_ai.db`
+- `web/backend/database.py`
+  - added canonical `ensure_shadow_daily_comparison_table()`
+  - `init_db()` now also creates `shadow_daily_comparison`
+- `web/backend/main.py`
+  - `/api/admin/shadow-comparison` now ensures the table exists through the canonical DB helper
+  - `/api/prediction-trace` now returns `corrupt_line_count` and a note when unreadable rows are skipped
+- `web/backend/scheduler.py`
+  - startup `init_eval_table()` failure is now logged instead of silently swallowed
+- `web/frontend/viewer.js`
+  - safely parses `main_numbers`
+  - history-load failures now show a more truthful message than generic server-connectivity wording
+
+### Safety
+- No scoring changes
+- No WR/BT formula changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Operational safety / migration safety / observability honesty only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/main.py web/backend/database.py web/backend/scheduler.py web/backend/_check_schema.py web/backend/migration_final_bundles.py web/backend/migration_prediction_policies.py web/frontend/viewer.js`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=268150`
+- `/api/health` returned:
+  - `version=V17.19.4`
+  - `expected_model_count=15`
+  - `expected_output_model_count=15`
+  - `runtime_model_count=29`
+- direct VPS verification proved:
+  - `/api/prediction-trace` now returns `corrupt_line_count`
+  - `shadow_daily_comparison` exists on canonical production DB path `/root/Lottery_AI_Test/data/lottery_ai.db`
+  - deployed helper scripts now use canonical project-root DB path logic
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/main.py`
+  - `web/backend/database.py`
+  - `web/backend/scheduler.py`
+  - `web/backend/_check_schema.py`
+  - `web/backend/migration_final_bundles.py`
+  - `web/backend/migration_prediction_policies.py`
+  - `web/frontend/viewer.js`
+- Redeploy and restart `lottery`
+
+## V20.3.12 — METRIC CONTRACT NORMALIZATION ON EXISTING SURFACES (2026-04-22 02:17 VN)
+
+### Context
+After the wide-angle scatter audit and the shadow-failure rehydration pass, the next safest cleanup was not adding new boards or changing formulas. The highest-value move was to normalize wording and semantics on the existing BT / forensic / monitoring surfaces so operators are less likely to compare incompatible truths.
+
+### Changes
+- `web/backend/main.py`
+  - added explicit `semantics` blocks to:
+    - `/api/admin/bt-trail`
+    - `/api/admin/combo-vs-single`
+    - `/api/admin/model-bt-by-region`
+    - `/api/admin/model-family-bt`
+  - each surface now declares whether it is:
+    - `final_bundle_bt_only`
+    - `per_model_top1_vs_tail_db`
+    - family hit-rate only
+    - not a full-actual forensic surface
+- `web/frontend/monitoring.html`
+  - added a compact `Metric Contract Guide`
+  - added board-level notes clarifying:
+    - `BT Trail` = final bundle BT vs `tail_db`
+    - `Selection Gap` = quick board, prefer `Full`, not only `DB`
+    - `Combo vs Single`, `Per-Region Model BT`, `Family BT` = model-top1 BT boards
+    - `Cohere`, `ML Freshness`, `Shadow Comparison` = measurement/diagnostic surfaces
+  - existing board metadata loaders now prefer backend `data.semantics.note` when available
+- added `METRIC_CONTRACT_DICTIONARY_20260422.md`
+  - compact SSOT helper for:
+    - `tail_db`
+    - `full actual`
+    - final bundle BT
+    - model top1 BT
+    - WR variants
+    - canonical forensic pair
+    - measurement-only surfaces
+
+### Safety
+- No scoring changes
+- No WR formula changes
+- No BT formula changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Semantics / readability / SSOT support only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/main.py web/frontend/monitoring.html`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=267636`
+- direct VPS invocation verified new backend semantics for:
+  - `get_bt_trail()`
+  - `get_combo_vs_single()`
+  - `get_model_bt_by_region()`
+  - `get_model_family_bt()`
+- VPS frontend file verification confirmed:
+  - `Metric Contract Guide`
+  - selection-gap quick-board note
+  - BT trail note
+  - shadow-comparison diagnostic note
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/main.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`
+
+## V20.3.11 — SHADOW FAILURE REHYDRATION + FORENSIC SURFACE CANONICAL PAIRING (2026-04-22 01:45 VN)
+
+### Context
+After activating the new DB-backed measurement tables, two low-risk gaps still remained:
+
+- older `runtime_reliability_model_daily` rows could stay stuck at generic `MISSING_ROW_DB_BACKFILL` even when `scheduler_logs` already contained the real failure detail
+- the forensic/admin surface map was still too easy to misread because `selection-gap`, `strongest-vs-final`, `candidate-drop-stage`, and `shadow-comparison` overlapped in story but not yet in explicit contract wording
+
+This pass was chosen because it improves truth preservation and operator clarity without touching scoring-sensitive logic.
+
+### Changes
+- `web/backend/main.py`
+  - added shadow-log parsing helpers so `get_runtime_reliability()` can enrich historical `runtime_reliability_model_daily` rows from `scheduler_logs`
+  - historical shadow rows now preserve real `outcome_status`, `finish_reason`, and `error_message` where matching log evidence exists
+  - added explicit forensic semantics blocks:
+    - `selection-gap` now points to `/api/admin/strongest-vs-final` + `/api/admin/candidate-drop-stage` as the DB-backed canonical forensic pair
+    - `strongest-vs-final` now declares its strongest-candidate weighting rule and canonical pairing
+    - `candidate-drop-stage` now declares its stage meanings and canonical pairing
+    - `shadow-comparison` now exposes `actual_tail_db` explicitly alongside full-actual context
+  - clarified the empty-table message for `shadow-comparison` so scheduler-owned population and manual replay are not conflated
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No model-promotion changes
+- Measurement preservation and semantics clarity only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/main.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=266817`
+- direct VPS invocation verified:
+  - `get_runtime_reliability()` now rehydrates historical shadow failures, including:
+    - `MN arcee-trinity -> EMPTY_RESPONSE (finish_reason: length)`
+    - `MN minimax-m2.7 -> EMPTY_RESPONSE (finish_reason: None)`
+    - `MT arcee-trinity -> EMPTY_RESPONSE (finish_reason: length)`
+    - `MT mistral-large-3 -> EMPTY_RESPONSE (finish_reason: None)`
+  - `get_selection_gap()` exposes canonical forensic pairing semantics
+  - `get_strongest_vs_final()` exposes strongest-candidate weighting semantics
+  - `get_candidate_drop_stage()` exposes explicit stage meanings
+  - `get_shadow_comparison()` exposes `actual_tail_db` alongside full actual context
+- production DB counts remain healthy:
+  - `runtime_reliability_daily = 22`
+  - `runtime_reliability_model_daily = 242`
+  - `freshness_chain_daily = 21`
+  - `strongest_vs_final_conversion_daily = 45`
+  - `candidate_drop_stage_daily = 45`
+
+### Rollback
+- Restore previous `web/backend/main.py`
+- Redeploy and restart `lottery`
+
+## V20.3.10 — SHADOW LOG METADATA HYGIENE (2026-04-22 01:19 VN)
+
+### Context
+Forensic tracing of `MN shadow_auto_eval = 9/11` showed that the shadow path had in fact been triggered, but many of the detailed shadow log lines were missing structured metadata (`job_name`, `region`, `date_str`). This made production log queries far harder than necessary and risked false readings about whether a region had even triggered.
+
+### Changes
+- `web/backend/scheduler.py`
+  - shadow start log now persists `job_name='shadow_eval'`, `region`, and `date_str`
+  - shadow context logs now persist structured metadata
+  - per-model shadow start / success / warning / exception logs now persist structured metadata
+  - final shadow-done log now persists structured metadata
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Log/forensic hygiene only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/scheduler.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=265596`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- future shadow cycles will now be much easier to grep/audit by `job_name`, `region`, and `date_str`
+
+### Rollback
+- Restore previous `web/backend/scheduler.py`
+- Redeploy and restart `lottery`
+
+## V20.3.9 — STRONGEST-VS-FINAL + CANDIDATE-DROP-STAGE DB MATERIALIZATION (2026-04-22 01:00 VN)
+
+### Context
+After the shadow-runtime and freshness measurement tables were activated, the next safest accuracy-oriented step was to materialize two already-agreed forensic semantics into DB-backed daily tables:
+
+- `strongest_vs_final_conversion_daily`
+- `candidate_drop_stage_daily`
+
+This was chosen over any scoring change because the current system still needs sharper evidence about where MT loses: upstream miss, candidate split, suppression, or final bundle skew.
+
+### Changes
+- `web/backend/database.py`
+  - added:
+    - `strongest_vs_final_conversion_daily`
+    - `candidate_drop_stage_daily`
+  - extended `ensure_runtime_measurement_tables()` to create both tables safely on existing DBs
+- `web/backend/main.py`
+  - added helpers:
+    - `_compute_output_forensic_snapshot()`
+    - `_materialize_output_forensics_daily()`
+  - wired materialization after `verify_final_bundle()` in the main closeout paths
+  - added:
+    - `/api/admin/strongest-vs-final`
+    - `/api/admin/candidate-drop-stage`
+  - both endpoints backfill from historical closed-day data if the tables are empty
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Forensic/measurement materialization only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/main.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=264890`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- direct VPS invocation verified:
+  - `get_strongest_vs_final()` returns usable payload
+  - `get_candidate_drop_stage()` returns usable payload
+- production DB now contains:
+  - `strongest_vs_final_conversion_daily = 45`
+  - `candidate_drop_stage_daily = 45`
+- current aggregate truth from the backfill:
+  - `final_matches_strongest = 8`
+  - `strongest_hit_but_bundle_miss = 29`
+  - drop-stage counts:
+    - `BUNDLE_SKEW = 26`
+    - `UPSTREAM_MISS = 1`
+    - `CANDIDATE_SPLIT = 2`
+    - `SECONDARY_ONLY_SIGNAL = 1`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/database.py`
+  - `web/backend/main.py`
+- Redeploy and restart `lottery`
+- If absolutely needed, drop the 2 new tables only after explicit owner approval
+
+## V20.3.8 — SHADOW RUNTIME RELIABILITY + FRESHNESS DB TABLES (2026-04-21 23:50 VN)
+
+### Context
+The next FIX NOW priority after the new shadow AI cohort audit was to stop relying on ad-hoc log grep for runtime completeness and freshness diagnosis.
+
+Until this pass:
+- `MT`/`MN` shadow incompleteness had to be reconstructed from `scheduler_logs`
+- ML freshness could be queried through an API, but not persisted as daily DB measurement
+
+### Changes
+- `web/backend/database.py`
+  - added:
+    - `runtime_reliability_daily`
+    - `runtime_reliability_model_daily`
+    - `freshness_chain_daily`
+  - added `ensure_runtime_measurement_tables()`
+- `web/backend/scheduler.py`
+  - `_log_shadow_eval_summary()` now returns structured summary data
+  - added helpers:
+    - `_extract_finish_reason_from_error()`
+    - `_persist_runtime_reliability_daily()`
+    - `_persist_runtime_reliability_model_daily()`
+  - `shadow_auto_eval` now persists per-region and per-model runtime outcomes
+  - shadow trigger path now records `shadow_trigger` operational events
+- `web/backend/main.py`
+  - added `/api/admin/runtime-reliability`
+  - `get_ml_freshness_chain()` now persists snapshots into `freshness_chain_daily`
+  - `get_runtime_reliability()` now backfills reliability tables from historical `predictions` when tables are empty
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No model promotion changes
+- Measurement / operational visibility only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/scheduler.py web/backend/main.py`
+- Follow-up deploy after backfill-on-read hardening:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/scheduler.py web/backend/main.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=263221`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- direct VPS invocation verified:
+  - `get_runtime_reliability()` returns usable payload
+  - `get_ml_freshness_chain()` returns usable payload
+- production DB now contains:
+  - `runtime_reliability_daily = 22`
+  - `runtime_reliability_model_daily = 242`
+  - `freshness_chain_daily = 21`
+- this now preserves:
+  - `MN shadow_auto_eval = 9/11`
+  - `MT shadow_auto_eval = 9/11`
+  - `MB shadow_auto_eval = 11/11`
+  as DB-backed operational truth instead of log-only truth
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/database.py`
+  - `web/backend/scheduler.py`
+  - `web/backend/main.py`
+- Redeploy and restart `lottery`
+- If absolutely needed, drop the 3 measurement tables only after explicit owner approval
+
+## V20.3.7 — NEW SHADOW AI COHORT MAX-TOKEN HARDENING + HEALTH TRUTH SPLIT (2026-04-21 23:02 VN)
+
+### Context
+Follow-up forensic review of newly added shadow AI models found that the cohort could not yet be called fully healthy across all regions:
+
+- `MT` shadow auto-eval on `2026-04-21` logged `missing_rows=['arcee-trinity', 'mistral-large-3']`
+- `arcee-trinity` failed with empty output and `finish_reason: length`
+- `mistral-large-3` failed with empty output and `finish_reason: None`
+- `MN` same-day shadow completeness was only `9/11` rows, with no matching MN shadow-start/summary log visible in `scheduler_logs`
+
+At the same time, `_MODEL_MAX_TOKENS` still lacked explicit `24576` overrides for some newly added shadow models, leaving them on fallback `16384`.
+
+### Changes
+- `web/backend/gpt_analyzer.py`
+  - added explicit `_MODEL_MAX_TOKENS` overrides for:
+    - `glm-5.1`
+    - `minimax-m2.7`
+    - `mistral-nemo`
+  - all three now map to `24576`, aligning with the rest of the large/reasoning-heavy new shadow AI cohort
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No promotion/output-eligibility changes
+- Config hardening only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/gpt_analyzer.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=261463`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- VPS marker verification confirmed:
+  - `'glm-5.1': 24576`
+  - `'minimax-m2.7': 24576`
+  - `'mistral-nemo': 24576`
+- Forensic recheck still shows:
+  - `MT` missing rows for `arcee-trinity` and `mistral-large-3`
+  - `MN shadow_auto_eval = 9/11`
+- Therefore this patch removes one config ambiguity but does **not** close runtime-health issues for the new shadow cohort
+
+### Rollback
+- Restore previous `web/backend/gpt_analyzer.py`
+- Redeploy and restart `lottery`
+
+## V20.3.6 — MT BUNDLE-SKEW VISIBILITY + COHERE EFFECTIVENESS + ML FRESHNESS CHAIN + MAIN-VS-SECONDARY ENRICH (2026-04-21 22:39 VN)
+
+### Context
+After the closeout and deep forensic passes, 4 low-risk packages were approved for execution:
+
+- MT bundle-skew visibility pack
+- Cohere effectiveness measurement pack
+- ML/no-token freshness + station-set diagnostics pack
+- main-vs-secondary enrichment on existing surfaces
+
+The goal was to make current quality problems materially visible without touching scoring-sensitive logic.
+
+### Changes
+- `web/backend/database.py`
+  - added `cohere_effectiveness_daily` table for decision-grade shadow rerank measurement
+  - added `ensure_cohere_effectiveness_daily_table()` migration-safe helper
+- `web/backend/scheduler.py`
+  - persisted insertion-point-aware Cohere daily measurement when shadow rerank runs
+- `web/backend/main.py`
+  - added helpers:
+    - `_safe_json_loads`
+    - `_normalize_tail_list`
+    - `_classify_bundle_gap`
+    - `_compute_cohere_effectiveness_row`
+    - `_get_model_family`
+  - enriched `/api/admin/selection-gap` with:
+    - `top1_hit_model_count`
+    - `secondary_only_model_count`
+    - `top1_hit_models`
+    - `secondary_only_models`
+    - `family_contribution_summary`
+    - `lane_contribution_summary`
+    - `bundle_lost_class`
+    - `bundle_lost_reason`
+    - `bundle_lost_detail`
+  - enriched `/api/admin/model-daily-accuracy` with:
+    - `actual_full_tails`
+    - `top1_hit_model_count`
+    - `secondary_only_model_count`
+    - `bundle_lost_class`
+    - `bundle_lost_reason`
+    - `family_summary`
+    - `lane_summary`
+  - added `/api/admin/cohere-effectiveness`
+  - added `/api/admin/ml-freshness-chain`
+  - enriched `/api/prediction-quality` with `bundle_skew_today`
+  - fixed low-risk bug in `_make_prediction()`:
+    - `get_smart_default_model(region)` → `get_smart_default_model(target_region)`
+- `web/frontend/monitoring.html`
+  - enriched selection-gap table with MT bundle-skew classification and top1/secondary counts
+  - enriched model daily accuracy section with main-vs-secondary and family/lane summaries
+  - added `Cohere Effectiveness` section
+  - added `ML / No-Token Freshness + Station-Set Chain` section
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No MB strategy changes
+- No Cohere promotion
+- No ML feature rollout into production scoring
+- All packages are measurement / visibility / migration-safe only
+
+### Deploy
+- Deployed with:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/scheduler.py web/backend/main.py web/frontend/monitoring.html`
+- Follow-up migration safety patch:
+  - `python web/_smart_deploy.py --files web/backend/database.py web/backend/main.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=260627`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- direct VPS function invocation verified:
+  - `get_selection_gap()` returns new MT visibility keys
+  - `get_model_daily_accuracy()` returns new main-vs-secondary / family / lane keys
+  - `get_cohere_effectiveness()` returns usable summary payload
+  - `get_ml_freshness_chain()` returns tracked-model freshness chain payload
+- `cohere_effectiveness_daily` created and backfilled with `15` historical rows on production DB
+- deployed frontend markers verified for:
+  - `sectionCohereEffectiveness`
+  - `sectionMlFreshness`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/database.py`
+  - `web/backend/scheduler.py`
+  - `web/backend/main.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`
+- If needed, drop `cohere_effectiveness_daily` only after explicit owner approval
+
+## V20.3.5 — REASONING RULEBOOK NUMBERING HONESTY + CLOSED-DAY TRUTH REFRESH (2026-04-21 20:42 VN)
+
+### Context
+The measurement-exploitation forensic pass found two low-risk drifts:
+
+- `prompt_registry.py` still described owner anti-trap as `§10A` even though the live rulebook is now split into:
+  - `§10A` = source-prize / 12W-16W first
+  - `§10B` = owner anti-trap doctrine
+- same-day closeout docs had become stale after the later `model_daily_eval` scheduler lane completed for `2026-04-21`
+
+### Changes
+- `web/backend/prompt_registry.py`
+  - corrected `RR-16.4` description to reference both `§10A` and `§10B`
+  - corrected changelog wording to match the actual rulebook split
+- `web/backend/gpt_analyzer.py`
+  - corrected the runtime composite comment to match the real split:
+    - `§10A source-prize first`
+    - `§10B owner anti-trap`
+    - `§25 main-number contract`
+- docs refreshed to current closed-day truth after MDE completion:
+  - `docs/CURRENT_TRUTH_SSOT.md`
+  - `POST_LIVE_CLOSEOUT_AUDIT_20260421.md`
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Runtime effect is wording/metadata honesty only
+
+### Deploy
+- Deployed with `python web/_smart_deploy.py --files web/backend/gpt_analyzer.py web/backend/prompt_registry.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=258114`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- VPS `prompt_registry.py` verification showed:
+  - `§10A SOURCE-PRIZE / 12W-16W FIRST`
+  - `§10B OWNER ANTI-TRAP DOCTRINE`
+  - updated changelog wording
+- VPS `gpt_analyzer.py` verification showed updated comment fragments:
+  - `source-prize first`
+  - `owner anti-trap`
+  - `main-number contract`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/gpt_analyzer.py`
+  - `web/backend/prompt_registry.py`
+- Redeploy and restart `lottery`
+
+## V20.3.4 — TRACE RUNTIME-HONESTY + §25 PERSISTENCE MATERIALIZATION HARDENING (2026-04-21 19:54 VN)
+
+### Context
+The first fully closed post-deploy live day (`2026-04-21`) proved that bundle-level anti-trap observability was active, but also exposed two observability drifts:
+
+- `prediction_trace.jsonl` still wrote `prompt_layers.core_policy=CP-7.9` as if it were an active runtime layer
+- persisted native `reasoning_json` rows were still not materializing the owner-facing §25 fields in a stable `analysis.*` shape
+
+This was an observability/persistence honesty gap, not a scoring gap.
+
+### Changes
+- `web/backend/gpt_analyzer.py`
+  - added `RUNTIME_PROMPT_VERSIONS` so future trace rows report only runtime-injected layers
+  - added `DECLARED_BUT_INACTIVE_PROMPT_LAYERS = ['CP-7.9']` so trace rows explicitly disclose inactive metadata instead of implying active injection
+  - added `_normalize_near_miss_shortlist()` to keep near-miss persistence stable and compact
+  - extended `_extract_trace_fields()` to extract:
+    - `main_number_justification`
+    - `near_miss_shortlist`
+    - `secondary_pick_rationale`
+  - extended `_build_native_reasoning_payload()` to persist those fields under both:
+    - top-level compatibility keys
+    - `analysis.*` owner-facing structure
+  - extended `log_prediction_trace()` to emit:
+    - `target_region`
+    - runtime-only `prompt_layers`
+    - `declared_but_inactive_layers`
+    - `analysis.main_number_justification`
+    - `analysis.near_miss_shortlist`
+    - `analysis.secondary_pick_rationale`
+  - wired the new fields through the existing trace call path in `analyze_and_predict()`
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No model roster changes
+- Patch is observability / persistence honesty only
+
+### Deploy
+- Deployed with `python web/_smart_deploy.py --files web/backend/gpt_analyzer.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active after deploy with `MainPID=256955`
+- `/api/health` returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`
+- VPS marker verification confirmed:
+  - `RUNTIME_PROMPT_VERSIONS`
+  - `DECLARED_BUT_INACTIVE_PROMPT_LAYERS`
+  - `_normalize_near_miss_shortlist`
+  - `"analysis": {`
+  - `"target_region": target_region`
+- No fresh post-deploy prediction row was generated in this session, so end-to-end live artifact proof remains pending for the next token-model call
+
+### Rollback
+- Restore previous `web/backend/gpt_analyzer.py`
+- Redeploy and restart `lottery`
+
+## V20.3.2 — SOFT ANTI-TRAP DOCTRINE SUPPORT COUNT REFINEMENT (2026-04-21 02:12 VN)
+
+### Context
+After V20.3.1, owner clarified the anti-trap intent more precisely:
+
+- prior same-day spend should lower priority, not force probability to zero
+- the system should also count how strongly a tail is supported across the full owner-doctrine source set
+- therefore anti-trap must combine:
+  - `spent_count` across prior same-day regions (negative prior)
+  - `support_count` across all owner sources D-1 + same-day applicable (positive prior)
+
+### Changes
+- `web/backend/gpt_analyzer.py`
+  - added `_get_owner_doctrine_source_specs_for_antitrap()` mirroring owner doctrine source sets:
+    - `MN(D-1) + MT(D-1) + MB(D-1)`
+    - `MN(D-1) + MT(D-1) + MB(D-1) + MN(D)`
+    - `MN(D-1) + MT(D-1) + MB(D-1) + MN(D) + MT(D)`
+  - added `_compute_owner_doctrine_support_map()` to count support sources for each tail
+  - refined `_compute_prior_region_spend_map()` to focus only on prior same-day spend
+  - rewrote `_build_owner_antitrap_block()` to surface:
+    - `spend=FULL_SPENT / PARTIAL_SPENT / FRESH`
+    - `support=count/total_sources`
+    - `owner_doctrine_sources`
+    - soft-prior language: \"de-prioritize, not hard-zero\"
+  - guidance now explicitly says:
+    - spend count = negative prior
+    - doctrine support count = positive prior
+    - main pick should prefer lower-spend tails when support is close
+    - `FULL_SPENT` may still survive only with clear override
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- Refinement is prompt/context diagnostics only
+
+### Deploy
+- Deployed via `web/_update_vps.py`
+- Restarted `lottery` under `systemd`
+
+### Verify
+- `lottery.service` active with `MainPID=233621`
+- VPS markers confirmed:
+  - `_compute_owner_doctrine_support_map`
+  - `owner_doctrine_sources`
+  - `spend count is a SOFT negative prior`
+  - `support count is a POSITIVE prior`
+  - `This is de-prioritize, not hard-zero`
+- Live runtime test on production DB:
+  - `MB 54` → `FULL_SPENT`, support `4/5`
+  - `MB 91` → `PARTIAL_SPENT`, support `3/5`
+  - `MB 97` → `FRESH`, support `0/5`
+  - `MT 54` → `FULL_SPENT`, support `3/4`
+  - `MT 66` → `FRESH`, support `0/4`
+- These outputs match owner intent exactly: spent is a soft de-prioritization layer, not a hard ban.
+
+### Rollback
+- Restore previous `web/backend/gpt_analyzer.py`
+- Redeploy and restart `lottery`
+
+## V20.3.1 — OWNER ANTI-TRAP SPEND LEVELS + MAIN-NUMBER OUTPUT CONTRACT + PROMPT METADATA HONESTY + GROK TOKEN-LIMIT BUG FIX (2026-04-21 01:54 VN)
+
+### Context
+Owner reconfirmed the anti-trap intuition:
+- More prior same-day regions already emitted a tail today → the next region has LOWER probability of repeating it.
+- Conversely, a tail that has NOT yet appeared in any prior same-day region but still carries structural support is a valid carry candidate for main pick.
+
+The V20.3.0 anti-trap block was binary (spent vs fresh). V20.3.1 upgrades it to 3 levels and adds explicit main-number output contract + observability on existing surfaces. No scoring, D7, lane-weight, or bundle-voting changes.
+
+### Changes
+- `web/backend/gpt_analyzer.py`
+  - `_build_owner_antitrap_block` upgraded to 3 levels: `FULL_SPENT` / `PARTIAL_SPENT` / `FRESH`; main-number focus added (do NOT pick FULL_SPENT as main unless override_reason).
+  - New helper `_compute_prior_region_spend_map(cursor, target_region, date_str)` for reuse.
+  - `REASONING_RULEBOOK §10A OWNER ANTI-TRAP DOCTRINE` rewritten to match the spend levels and owner doctrine.
+  - New `REASONING_RULEBOOK §25 MAIN-NUMBER OUTPUT CONTRACT` adding required fields in AI JSON output: `analysis.main_number_justification`, `analysis.near_miss_shortlist`, `analysis.secondary_pick_rationale`. Backward-compatible.
+  - `_MODEL_MAX_TOKENS` bug fix: added `'grok-4.20-multi-agent': 24576` so the registry id actually matches (previous key `'grok-4.20'` never matched the real id → grok silently fell back to DEFAULT 16384).
+  - `MODEL_DISTRIBUTION_POLICY` header comment rewritten to reflect true runtime composite; `CORE_POLICY` noted as defined-but-not-injected.
+- `web/backend/main.py`
+  - New helper `compute_prior_region_spend_for_tail(tail, target_region, date_str)` for reuse by bundle + API.
+  - `generate_final_bundle` now writes observability fields into `final_bundles.source_predictions_json`:
+    - `main_number_anti_trap` (level + hit_in_regions + count)
+    - `near_miss_anti_trap` (per dropped candidate)
+    - `main_number_anti_trap_warning` (string when bundle picked FULL_SPENT)
+    - Pure observability — does NOT change voting or ranking.
+  - `/api/admin/selection-gap` now returns `bundle_anti_trap_level`, `bundle_anti_trap_hit_in_regions`, and `semantics.anti_trap_level` explanation.
+- `web/backend/prompt_registry.py`
+  - `CP-7.9`: `active: False`, `active_at_runtime: False` + changelog note — stops metadata drift because the layer is defined but not injected.
+  - `RR-16.4` description updated to mention §10A + §25.
+  - `PB-18.0`: description rewritten to actual runtime composite; added explicit `runtime_layers` and `declared_but_inactive_layers` fields.
+- `web/frontend/monitoring.html`
+  - Selection-gap board now renders a small TRAP / PARTIAL / FRESH chip next to the bundle BT for each verified day. Enriches the existing board, no new surface created.
+
+### Safety
+- No scoring / D7 / lane-weight / bundle-voting changes.
+- No changes to `position_weight`, `verdict_weight`, `lane_weight`, `EXPECTED_MODEL_COUNT`.
+- Anti-trap fields are observability only; bundle voting logic unchanged.
+- `CP-7.9` metadata is honest now; actual prompt content not changed.
+
+### Deploy
+- Deployed via `web/_update_vps.py` at `2026-04-21 01:54:39 +07`.
+- `lottery.service` active under `systemd`; `MainPID=233100`.
+
+### Verify
+- VPS file-marker verification confirmed the following strings on deployed code:
+  - `compute_prior_region_spend_for_tail`, `main_number_anti_trap`, `main_number_anti_trap_warning`, `near_miss_anti_trap`, `bundle_anti_trap_level`
+  - `FULL_SPENT`, `PARTIAL_SPENT`, `_compute_prior_region_spend_map`, `MAIN-NUMBER OUTPUT CONTRACT`, `grok-4.20-multi-agent`
+  - `'active': False`, `declared_but_inactive_layers`, `runtime_layers`
+  - `bundle_anti_trap_level`, `owner anti-trap flag` in `monitoring.html`
+- Public and local `/api/health` both returned `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=29`.
+- Live anti-trap function test against `2026-04-20` production data on VPS runtime:
+  - `MT tail=54` → `FULL_SPENT (MN)` ← matches owner intuition (actual MT had 50+54)
+  - `MB tail=54` (bundle BT that LOSE) → `FULL_SPENT (MN+MT)` ← explicit warning now available
+  - `MB tail=97` (actual hit) → `FRESH`
+  - `MB tail=91` → `PARTIAL_SPENT (MN)`
+  - `MN tail=37` → `NOT_APPLICABLE` (no prior same-day region)
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/gpt_analyzer.py`
+  - `web/backend/main.py`
+  - `web/backend/prompt_registry.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`.
+
+## V20.3.0 — OWNER DOCTRINE MANUAL-PATH ALIGNMENT + ANTI-TRAP DIAGNOSTICS + MEASUREMENT SEMANTICS ENRICH (2026-04-21 00:16 VN)
+
+### Context
+Root-to-leaf forensic reverify found three low-risk but high-value gaps that could be fixed without touching scoring-sensitive logic:
+
+- manual AI `/api/predict/*` paths did not follow the same owner source doctrine as scheduler truth
+- anti-trap owner doctrine existed in audit language but not in runtime prompt/context diagnostics
+- monitoring `selection-gap` and `shadow-comparison` boards could still be misread because they used DB-tail semantics without full-actual context on-page
+
+### Fix — LOW-RISK DOCTRINE / DIAGNOSTIC / OBSERVABILITY HARDENING
+- `web/backend/main.py`
+  - added owner-doctrine source builders for manual AI predict paths:
+    - `MN(D-1) + MT(D-1) + MB(D-1)`
+    - `MN(D-1) + MT(D-1) + MB(D-1) + MN(D)`
+    - `MN(D-1) + MT(D-1) + MB(D-1) + MN(D) + MT(D)`
+  - manual `/api/predict/MN|MT|MB` AI paths now use these doctrine sets while remaining non-blocking if upstream data is missing
+  - added `owner_doctrine_source_summary` to manual AI responses for traceability
+  - enriched `/api/admin/selection-gap` with:
+    - `selection_gap_full_actual`
+    - `actual_db_tails`
+    - `actual_full_tails`
+    - explicit `semantics` payload
+  - enriched `/api/admin/shadow-comparison` daily log with `actual_full` context while keeping scoreboard DB-tail semantics
+- `web/backend/gpt_analyzer.py`
+  - added explicit `OWNER ANTI-TRAP DOCTRINE` block into `REASONING_RULEBOOK`
+  - added dynamic owner anti-trap context block:
+    - same-day prior-region spend test
+    - duplicate-hit bait candidates
+    - fresher carry candidates
+    - override discipline for spent candidates
+  - no scoring/voting changes; diagnostics only
+- `web/frontend/monitoring.html`
+  - existing gap board now shows full-actual selection-gap summary while preserving DB-tail diagnostics inline
+  - existing shadow comparison board now shows DB-tail truth and full-actual context together
+  - no new board added; existing surfaces enriched only
+
+### Safety
+- No scoring changes
+- No D7 changes
+- No lane-weight changes
+- No bundle-voting changes
+- No output-policy changes
+- No new endpoint families or duplicate dashboards
+
+### Deploy
+- Deployed via `web/_update_vps.py`
+- Restarted `lottery` service successfully under `systemd`
+
+### Verify
+- `lottery.service` active after deploy with fresh `MainPID=230379`
+- public `https://xs.io.vn/api/health` and local VPS `/api/health` both return `V17.19.4`
+- VPS marker verification confirmed deployed code contains:
+  - `_build_manual_owner_doctrine_source_data`
+  - `selection_gap_full_actual`
+  - `owner_doctrine_source_summary`
+  - `OWNER ANTI-TRAP DOCTRINE`
+  - `_build_owner_antitrap_block`
+  - monitoring markers for `full-actual selection gap` and `actual_full_tails`
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/main.py`
+  - `web/backend/gpt_analyzer.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`
+
+## V20.2.9 — LIVE DATA PRESERVATION RULE HARDLOCK + CURSOR ENFORCEMENT SURFACES (2026-04-20 23:15 VN)
+
+### Context
+After the `prediction_trace.jsonl` overwrite incident, data-preservation discipline had to move from ad-hoc operator memory into enforced repo rules.
+
+### Changes
+- `.Antigravityrules.md`
+  - upgraded stale-DB discipline to require canonical VPS-first forensic sync via `web/_sync_live_forensic_inputs.py`
+  - locked `data/lottery_ai.db` + `web/backend/prediction_trace.jsonl` as paired forensic inputs
+  - added `LIVE DATA PRESERVATION & ARTIFACT SAFETY RULE`
+  - required sync-manifest citation for local synced forensic claims
+- `.AGENT.md`
+  - added `Live Data Preservation Obligation`
+  - expanded end-of-session checklist to include VPS-sync and artifact-exclusion checks
+- `.cursor/rules/live-data-integrity.mdc`
+  - added always-apply Cursor rule enforcing VPS-first forensic sync and no-artifact deploy behavior
+- `.cursorrules`
+  - added canonical owner-facing Cursor rule surface and locked it into three-way sync with `.Antigravityrules.md` and `.AGENT.md`
+
+### Safety
+- no scoring logic changes
+- no runtime prediction logic changes
+- rule hardening only
+
+## V20.2.8 — VPS-FIRST FORENSIC SYNC + TRACE INCIDENT HARDENING (2026-04-20 22:45 VN)
+
+### Context
+A deploy package had overwritten live `web/backend/prediction_trace.jsonl` on VPS with an older local copy.
+
+- live trace on VPS fell back to `40` lines ending at `2026-04-06`
+- newest surviving on-server backup-backed copy still contained `79` lines through `2026-04-17`
+- local forensic workflow was still too manual, so live truth was not being pulled into local as a locked pre-flight step
+
+### Fix — LIVE DATA PRESERVATION / FORENSIC DISCIPLINE
+- `web/_update_vps.py`
+  - now excludes runtime artifacts from zip deploys:
+    - `.jsonl`
+    - `.local_backup_*`
+    - other existing transient/runtime file classes
+- `web/_smart_deploy.py`
+  - now excludes `.jsonl` and `.local_backup_*` in both selective deploy and full-zip deploy paths
+- `web/_sync_live_forensic_inputs.py`
+  - added canonical VPS-first sync workflow for forensic inputs
+  - snapshots current local copies first
+  - pulls fresh VPS:
+    - `data/lottery_ai.db`
+    - `web/backend/prediction_trace.jsonl`
+  - verifies size/hash parity
+  - replaces working local copies only after parity passes
+  - writes a manifest under `artifacts/live_sync/`
+- incident recovery helpers added:
+  - `_inspect_vps_backups.py`
+  - `_inspect_trace_in_backups.py`
+  - `_compare_trace_current_vs_backup.py`
+  - `_restore_prediction_trace_from_backup.py`
+  - `_scan_vps_trace_copies.py`
+
+### Recovery
+- restored VPS `prediction_trace.jsonl` from the newest surviving on-server backup-backed copy
+- preserved the overwritten VPS file as:
+  - `prediction_trace.jsonl.incident_20260420_pre_restore`
+- pulled the restored trace back to local and re-synced local forensic inputs from VPS
+
+### Verify
+- VPS `prediction_trace.jsonl` restored to `79` lines through `2026-04-17 17:54:20`
+- current VPS scan found no surviving trace copy newer than the restored `2026-04-17` file
+- latest forensic sync manifest proves parity:
+  - DB local_after sha256 = VPS sha256
+  - trace local_after sha256 = VPS sha256
+
+### Safety
+- no scoring logic changed
+- no prompt/rule/bundle ranking behavior changed
+- changes are limited to deploy safety, trace recovery, and forensic-input synchronization
+
+## V20.2.7 — EXPECTED-MODEL-COUNT SSOT + PER-BOARD MONITORING FRESHNESS METADATA (2026-04-20 16:20 VN)
+
+### Context
+Low-risk post-audit remediation found one remaining observability drift:
+
+- production `/api/health` exposed `expected_model_count` from the broad runtime-visible roster (`29`) instead of the output-eligible bundle roster
+- `runtime-monitoring-center` still carried hardcoded `15` semantics in alert logic
+- `/monitoring` had a page-level freshness guide, but existing boards still lacked explicit per-board metadata
+
+### Fix — OBSERVABILITY / MEASUREMENT DISCIPLINE
+- `web/backend/database.py`
+  - standardized `EXPECTED_MODEL_COUNT` to the canonical output-eligible registry lane via `get_output_eligible_ids()`
+- `web/backend/main.py`
+  - added `get_expected_output_model_count()` so runtime health and monitoring use one SSOT
+  - `/api/health` now exposes:
+    - `expected_model_count=15`
+    - `expected_output_model_count=15`
+    - `runtime_model_count=29`
+  - `runtime-monitoring-center` now uses canonical expected count instead of a magic threshold
+- `web/frontend/monitoring.html`
+  - added per-board freshness metadata renderers on existing boards:
+    - `Board type`
+    - `Data as of`
+    - `Last refreshed`
+    - `Refresh trigger`
+  - region cards now render model coverage against canonical expected output count instead of hardcoded `15`
+  - added Safari `-webkit-backdrop-filter` compatibility and `title` labels for key selects
+
+### Safety
+- No scoring changes
+- No D7 / sort key / lane weight / bundle voting / consensus policy changes
+- No new table/API/dashboard created
+- Existing monitoring surfaces were enriched instead of duplicated
+
+### Deploy
+- Deployed via `web/_update_vps.py`
+- Restarted `lottery` service successfully under `systemd`
+
+### Verify
+- `/api/health` on VPS now returns `expected_model_count=15`, `expected_output_model_count=15`, `runtime_model_count=29`
+- Production DB path remains `/root/Lottery_AI_Test/data/lottery_ai.db`
+- Production DB truth reverified unchanged for closed-day core counts and populated WR/BT views
+- VPS file-marker check confirms deployed backend and monitoring metadata code exists on server
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/database.py`
+  - `web/backend/main.py`
+  - `web/frontend/monitoring.html`
+- Redeploy and restart `lottery`
+
+## V20.2.6 — NON-DUPLICATION SURFACE HARDENING + MONITORING SEMANTICS CLEANUP (2026-04-20 13:05 VN)
+
+### Context
+Before adding any new monitoring/measurement surfaces, a full semantic-duplication audit found:
+
+- `database.py` did not recreate several production measurement views already used in live audits (`v_wr_7d`, `v_wr_14d`, `v_wr_30d`, `v_wr_station`)
+- `_vps_deploy_bundle.py` still contained thinner view definitions than the canonical runtime DB initializer
+- `smart-ml` family classification drifted between monitoring-related code paths
+- `/monitoring` still made historical/hybrid boards look more realtime than they really were
+
+### Fix — NON-DUPLICATION / SEMANTIC ALIGNMENT
+- `web/backend/database.py`
+  - added canonical creation for:
+    - `v_wr_7d`
+    - `v_wr_14d`
+    - `v_wr_30d`
+    - `v_wr_station`
+- `_vps_deploy_bundle.py`
+  - aligned `v_bt_rate` with canonical richer definition (`top1_hits`, `top1_hit_rate`)
+  - aligned `v_wr_weekday` with canonical richer definition (`full_wins`, `partial_wins`, `losses`)
+  - added missing creation for:
+    - `v_wr_7d`
+    - `v_wr_14d`
+    - `v_wr_30d`
+    - `v_wr_station`
+- `web/backend/main.py`
+  - aligned `smart-ml` to the ML family in monitoring-related family classifications
+  - clarified monitoring API semantics:
+    - `latest_verified_results` is now the canonical name
+    - deprecated alias `yesterday_results` kept for compatibility
+  - clarified selection-gap semantics with explicit `bundle_matches_any_model_bt`
+- `web/frontend/monitoring.html`
+  - added monitoring freshness guide so owner can distinguish realtime / hybrid / historical meaning on-page
+  - relabeled “yesterday” strip to “Latest Verified Results”
+  - clarified verified-date text in result cards
+
+### Safety
+- No scoring changes
+- No D7 / bundle-voting / lane-weight / prompt-policy changes
+- Only measurement, deploy-consistency, classification semantics, and monitoring UX clarification
+
+### Verify Plan
+- Python syntax compile for modified backend files
+- Deploy to VPS
+- Restart service
+- Verify health endpoint
+- Verify measurement views exist on VPS DB after restart
+
+### Rollback
+- Restore previous versions of:
+  - `web/backend/database.py`
+  - `web/backend/main.py`
+  - `web/frontend/monitoring.html`
+  - `_vps_deploy_bundle.py`
+- Restart `lottery`
+
+## V20.2.5 — CANONICAL ROOT `.env` LOADER HARDENING (2026-04-19 23:30 VN)
+
+### Context
+Post-live key audit confirmed production was currently working because startup loads root `.env`,
+but several backend modules still used implicit `load_dotenv()` / `load_dotenv(override=True)`
+without a canonical path. This left a dual-env drift risk between:
+
+- `/root/Lottery_AI_Test/.env`
+- `/root/Lottery_AI_Test/web/backend/.env`
+
+### Fix — CANONICAL ENV LOADER
+- Added `web/backend/env_loader.py`
+- Canonical root `.env` path is now centralized in `PROJECT_ENV_PATH`
+- Updated runtime-critical modules to use `load_project_env(...)`:
+  - `main.py`
+  - `gpt_analyzer.py`
+  - `database.py` (`seed_defaults`)
+  - `ensemble_voting.py`
+  - `advanced_modes.py`
+
+### Safety
+- No scoring, prompt, bundle, lane, or scheduler policy changes
+- Only configuration source selection was hardened
+- Fallback to default search still exists if root `.env` is missing
+
+### Deploy
+- Copied updated backend files to VPS
+- Restarted `lottery` service
+
+### Verify
+- Service restarted successfully
+- `gpt_analyzer` can now resolve new-model keys from canonical root `.env` without manual pre-load workaround
+
+### Rollback
+- Restore previous backend files
+- Restart service: `systemctl restart lottery`
+
+---
+
+## V20.2.4 — GLM-5.1 MANUAL/API KEY MAP FIX + NEW-MODEL KEY AUDIT (2026-04-19 23:10 VN)
+
+### Context
+New-model key audit found the OpenRouter onboarding set was fully present in VPS root `.env`,
+but `glm-5.1` was missing from the manual/API `_or_key_map` in `main.py`.
+
+### Fix — MANUAL/API OPENROUTER KEY MAP (main.py)
+- **Root cause:** `main.py` manual/API OpenRouter map included the newer onboarded models
+  but omitted `glm-5.1`.
+- **Impact:** `glm-5.1` manual/API path could not use `OPENROUTER_KEY_GLM51` explicitly and
+  would fall back to DB/general OpenRouter key if available.
+- **Fix:** added `'glm-5.1': 'OPENROUTER_KEY_GLM51'` to `_or_key_map`.
+- **Scope:** manual/API key routing only. No scoring, voting, bundle, prompt, or scheduler logic changed.
+
+### Audit Truth — New Models
+- 12/12 owner-provided new-model keys are present in VPS root `.env`
+- 12/12 scheduler/service-like runtime resolutions return `DEDICATED`
+- `web/backend/.env` still lacks several newer keys → dual-env drift risk remains
+- No owner-provided new model is missing from runtime key inventory
+
+### Deploy
+- `web/backend/main.py` copied to VPS
+- `lottery` service restarted
+
+### Verify
+- `systemctl is-active lottery` → `active`
+- VPS file check confirms `glm-5.1` is now in manual/API `_or_key_map`
+
+### Rollback
+- Restore previous `web/backend/main.py`
+- Restart service: `systemctl restart lottery`
+
+---
+
+## V20.2.3 — GPT-OSS SHADOW KEY-PATH FIX + POST-LIVE ROOT-TO-LEAF AUDIT (2026-04-19 23:02 VN)
+
+### Context
+Post-live forensic audit on production (`V17.19.4`) found a manual-vs-shadow mismatch for `gpt-oss-120b`:
+- manual MN produced a row in `predictions`
+- shadow MT/MB failed with `401 Missing Authentication header`
+
+### Fix 1 — SHADOW OPENROUTER ROUTING ORDER (scheduler.py)
+- **Root cause:** `scheduler._get_api_key_for_model()` checked generic `model.startswith("gpt")`
+  before registry-based OpenRouter detection.
+- **Impact:** `gpt-oss-120b` was misrouted to the OpenAI key chain on shadow/scheduler path,
+  while manual/API path in `main.py` correctly treated it as an OpenRouter model.
+- **Fix:** moved OpenRouter set-based detection ahead of generic `gpt*` routing.
+- **Deploy:** `web/backend/scheduler.py` copied to VPS, `systemctl restart lottery`.
+- **Verify:** service active after restart; runtime check in service-like startup order shows
+  `gpt-oss-120b` resolves `DEDICATED (per-model env var)`.
+
+### Fix 2 — IMPORT HARDENING (scheduler.py)
+- Added missing top-level `import os` for `_run_ai_models_predict()` run-id lookup.
+- This is non-scoring, non-runtime-behavioral except removing a latent NameError path.
+
+### Post-Live Truth Lock
+- Production DB truth: `/root/Lottery_AI_Test/data/lottery_ai.db`
+- Live day 2026-04-19: `PARTIAL_LIVE_DAY`
+- `predictions`: 76 rows
+- `final_bundles`: 3 rows
+- `reasoning_json`: 31 non-empty rows
+- `prediction_trace.jsonl`: alive (80 lines)
+- `shadow_daily_comparison`: 0 rows today
+- `model_daily_eval`: 76 rows today
+
+### Governance
+- §45: CHANGELOG entry added
+- §47: zero scoring / weights / bundle logic changes
+- D7 / lane weights / bundle voting remain OWNER LOCK
+
+### Rollback
+- Restore previous `web/backend/scheduler.py` from git / backup
+- Restart service: `systemctl restart lottery`
+
+---
+
+## V20.2.2 — COHERE_RERANK_LOG DB WRITE + KEY ROUTING FIX (2026-04-17 00:20 VN)
+
+### Context
+Self-audit Pass 2 (R1-R4 packages) found 2 production gaps not caught in Pass 1.
+
+### Fix 1 — KEY ROUTING ROOT CAUSE (CRITICAL)
+- **Root cause:** `web/backend/.env` only had 3 OpenRouter keys (GROK/COHERE/QWEN3_CODER).
+  7 newer keys only existed in `/root/Lottery_AI_Test/.env` (project root).
+  `gpt_analyzer.py` calls `load_dotenv()` with no path → reads from CWD (`web/backend/`).
+  At import time, 7 model keys resolved to empty string → fell to DB_GENERAL.
+- **Models affected (Apr 16 = DIRTY):** glm-5.1, minimax-m2.7, nemotron-3-super,
+  kimi-k2.5, arcee-trinity, qwen3-max-thinking, gemma-4-26b
+- **Fix:** Appended 7 missing keys to `web/backend/.env`. Runtime verified: ALL 10 DEDICATED (73c each).
+- **From Apr 17:** ALL 10 OpenRouter keys = DEDICATED. Cost attribution CLEAN.
+- **Impact:** Zero scoring change — API keys determine billing account only, not model behavior.
+
+### Fix 2 — COHERE_RERANK_LOG DB WRITE (scheduler.py L3046+)
+- **Root cause:** Cohere shadow rerank results were logged to text (`_add_log`) only.
+  `cohere_rerank_log` table was created in DB (by Pkg-D) but pipeline never wrote to it.
+  210-sample promotion gate was impossible to track.
+- **Fix:** Added `INSERT OR IGNORE INTO cohere_rerank_log` after SHADOW_RERANK success block.
+  Persists: date, region, cycle, original_order, reranked_order, scores, bt_changed, latency_ms.
+- **Safety:** Wrapped in try/except — DB write failure does NOT affect production. Shadow-only.
+- **Impact:** From next run, cohere sample count will accumulate toward 210-sample gate.
+
+### Service Unit Truth
+- Unit name is `lottery` (NOT `lottery-ai`) — corrected in all future checks.
+- All previous checks using `systemctl lottery-ai` were silently checking wrong unit.
+
+### CHANGELOG Gap
+- CHANGELOG was at V17.18.8 (Apr 15) — missing V20.0-V20.2.1 entries.
+- V20.2.2 added now. V20.0-V20.2.1 historical entries to be backfilled separately.
+
+### Deploy
+- `web/backend/.env` — VPS only (not in git — secrets policy correct)
+- `scheduler.py` — git commit (this commit), VPS deploy via git pull + restart
+- Service restart: required to load new scheduler.py cohere_rerank_log write
+
+### GOVERNANCE
+- §45: CHANGELOG entry ✅
+- §47: Zero scoring/weights/prompt changes
+- Shadow path only for Fix 2 — production AI path UNCHANGED
+- Key fix (Fix 1) = billing routing only, no prediction behavior change
+- G1-G4: OFF
+
+---
+
+## V20.2.1 — MONOLITHIC AUDIT CANON LOCK (2026-04-16 17:00 VN)
+
+### Summary
+4-package monolithic audit (Pkg-A/B/C/D) completed. System state locked for clean live measurement.
+
+### Key Actions
+- Verified 105 rules (21×5), all hr_12w/hr_16w/hr_4w populated ✅
+- Verified PB-17.0 prompt bundle with 3-layer reasoning mandate ✅
+- Created `cohere_rerank_log` table in DB ✅
+- Deployed `_deploy_check.py`, `_mono_a/b/c/d.py` canonical verification suite ✅
+- V20 day-1 measurement: MN +22.6pp, MT +54.9pp vs pre-V20 baseline ✅
+
+### Canonical Truth Locks
+- Execution window: 12W (84 days)
+- Stability window: 16W (112 days)
+- Sort key: `score DESC` (OWNER LOCK)
+- Prompt bundle: PB-17.0
+
+### GOVERNANCE
+- §45: CHANGELOG entry ✅
+- §47: Zero overclaim
+
+---
+
+## V20.2 — ADDENDUM D: 3-LAYER REASONING MANDATE + 12W/16W EXECUTION (2026-04-16 VN)
+
+### Changes
+- `gpt_analyzer.py`: SQL extended for hr_12w/hr_16w/hr_4w/composite_score/window_verdict
+- `gpt_analyzer.py`: Prompt context includes structured 3-layer mandate (L1=12W/L2=16W/L3=4W)
+- `gpt_analyzer.py`: PB-17.0 bundle version
+- `rule_engine.py`: livingness_scan window → 12W (84 days); 16W stability anti-spike
+
+---
+
+## V17.18.8 — HB31 DOUBLE SHADOW TRIGGER FIX (2026-04-15 19:22 VN)
+
+### Context
+Live-day forensic audit 2026-04-15 discovered double shadow trigger: when MB fallback
+cron fires but main AI predict is skipped (because ai_chain already has predictions),
+the shadow auto-eval still fires a second time. First trigger from fallback path,
+second trigger from ai_chain path ~1 minute later.
+
+### Root Cause
+`_run_ai_predict_job()` with `run_source='fallback'` enters `_run_ai_models_predict()`,
+which detects existing ai_chain predictions and returns early (L2462-2464: "đã có N AI
+chain predictions → skip AI predict"). But `_run_ai_predict_job()` still proceeds to
+L3253+ (shadow trigger section) because the fallback return is invisible to the caller.
+
+### Impact (Pre-Fix)
+- Shadow models ran twice for MB on 04-15 (logs at 10:42:00 and 10:43:13)
+- Token waste: ~4 extra API calls per affected region per day
+- NO data corruption: anti-dup guard in shadow trigger prevents duplicate DB insertions
+- Second shadow round produces identical predictions (overwritten by INSERT OR REPLACE)
+
+### Fix (scheduler.py L3255-3280)
+- **Before:** Shadow trigger fired unconditionally for all `_shadow_eligible_sources`
+  including `'fallback'`.
+- **After:** When `run_source='fallback'`, check if `ai_chain` predictions already exist.
+  If so, set `_skip_shadow_for_fallback=True` and log `[SHADOW_SKIP_FALLBACK]`.
+  Shadow trigger is deferred to the ai_chain path (which WILL trigger shadow on its own).
+- **Safety:** Only skips shadow for fallback when ai_chain already has rows.
+  If fallback is the FIRST predictor (no ai_chain rows), shadow still fires normally.
+
+### Deploy Status
+- Code: ✅ LOCAL_READY — needs VPS deploy
+- Risk: LOW — only prevents redundant shadow runs, no bundle impact
+- Verification: grep `SHADOW_SKIP_FALLBACK` in scheduler_logs after deploy
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt changes
+- Shadow path only — production AI path UNCHANGED
+- G1-G4: OFF
+
+---
+
+## V17.18.7 — TRACEBACK LOGGING + HB2 SCHEMA FIX (2026-04-15 02:35 VN)
+
+
+### Context
+Ultra Master Final Audit V17.18.7 — P2B root cause analysis confirmed all 11
+`unhashable type: 'slice'` errors were from pre-fix process (04-14 10:02-10:44).
+P2 fix at L4696 (`str(_raw_analysis)[:500]`) deployed at 17:33 is correct and sufficient.
+Shadow pipeline = FIX_DEPLOYED_AWAITING_RUNTIME_PROOF (no triggers since fix).
+
+### Fix 1 — Enhanced Traceback Logging (scheduler.py L4733-4739)
+- **Before:** Shadow exception handler logged only `str(e)` to scheduler_logs.
+  Full traceback went to stdout (lost on restart).
+- **After:** Captures `traceback.format_exc()` and logs first 800 chars to
+  scheduler_logs DB table via `_add_log()`.
+- **Impact:** Future shadow crashes will have full traceback persisted in DB,
+  surviving process restarts. Zero performance impact — only fires on exceptions.
+
+### Fix 2 — HB2: `mn_predicted` Column (daily_stats schema)
+- **Before:** `daily_stats` had `mt_predicted`, `mb_predicted` but NOT `mn_predicted`.
+  MN prediction tracking was missing.
+- **After:** `ALTER TABLE daily_stats ADD COLUMN mn_predicted INTEGER DEFAULT 0`
+  executed on VPS production DB.
+- **Impact:** Complete prediction tracking for all 3 regions.
+
+### P2B Root Cause Closure
+- **Conclusion:** P2B ≠ new bug. Same P2 bug from pre-fix process.
+- **Evidence:** All 11 crash logs (10:02-10:44 on 04-14) predated P2 fix commit
+  `8492790` (17:33 on 04-14). Process at the time was running OLD code.
+- **Current status:** Fix deployed, zero post-fix crashes. Awaiting first shadow
+  trigger (today's scrape events at 16:30+).
+- **Previous claims retracted:**
+  - "P2B is a new different bug" → WRONG (same P2)
+  - "Shadow completely broken" → WRONG (untested since fix)
+
+### Deploy Status
+- Code: ✅ DEPLOYED to VPS (git commit `7a30e41`)
+- Git: ✅ CLEAN (HEAD=VPS, zero diff)
+- Schema: ✅ `mn_predicted` column exists in production DB
+- Runtime proof: ⏳ PENDING — shadow triggers at 16:30+ today
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt changes
+- All changes are logging/schema — zero bundle behavior change
+- G1-G4: OFF
+
+---
+
+## V17.18.6 — HB16 HOTFIX + PARSER HARDENING (2026-04-15 00:42 VN)
+
+### Context
+Ultra Master Pass 3 audit (75 questions + 20 verdicts) identified HB16 as the #1 blocker
+for shadow promotion pipeline and parser contract gap as #2. Both fixed and deployed
+before 04:15 batch checkpoint.
+
+### Fix 1 — HB16: UNIQUE Constraint Shadow Retry Block (scheduler.py `_run_shadow_auto_eval`)
+- **Root cause:** `UNIQUE(date, target_region, ai_model)` means once an empty `[]` prediction
+  row is saved, NO retry can succeed for that (date, region, model) triple. First failure
+  = permanent loss of that measurement slot for the day.
+- **Fix:** Before `save_prediction()`, DELETE any existing shadow_auto_eval row where
+  `main_numbers IN ('[]', '', NULL)`. Only deletes useless empty rows — non-empty rows
+  are never touched.
+- **Impact:** Shadow retry now works: if model fails and returns empty, next trigger
+  can overwrite with a real prediction. Zero production impact (only affects shadow rows).
+
+### Fix 2 — Parser Hardening: Multi-Key Extraction (scheduler.py L4646-4662)
+- **Root cause (glm-5.1 empty `[]`):** Parser only checked `prediction.main_number` +
+  `prediction.secondary_number` + `prediction.numbers`. OpenRouter models may return
+  different keys (`picks`, `predicted_numbers`) or flat-level `result.numbers`.
+- **Fix:** Added 5 fallback extraction paths:
+  1. `prediction.numbers` (existing)
+  2. `prediction.picks` (new)
+  3. `prediction.predicted_numbers` (new)
+  4. `result.main_number` / `result.secondary_number` (new — flat structure)
+  5. `result.numbers` (new — flat structure)
+- Added `zfill(2)` normalization on all extracted numbers.
+- **Impact:** Models returning non-standard keys will now have numbers extracted correctly.
+
+### Fix 3 — Shadow Dup Check Excludes Empty Rows (scheduler.py L3270)
+- **Root cause:** Shadow trigger dup check counted ALL shadow_auto_eval rows including empty `[]`.
+  Empty row from failed first run → dup check says "already ran" → skips retry entirely.
+  This pre-empted HB16 fix (which runs inside `_run_shadow_auto_eval` AFTER dup check).
+- **Fix:** Added `AND main_numbers NOT IN ('[]', '') AND main_numbers IS NOT NULL`
+  to dup check query. Only non-empty shadow predictions count as "already ran".
+- **Impact:** Complete HB16 chain: dup check allows retry → function enters → DELETE empty → INSERT new.
+
+### Deploy Status
+- Code: ✅ DEPLOYED to VPS (service restarted)
+- All 3 fixes verified on VPS: HB16_FIX ✅, PARSER HARDENING ✅, dup check fix ✅
+- Service: ✅ active
+- Runtime proof: ⏳ PENDING next shadow batch (04:15 MN completion)
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt changes — shadow path only
+- Production AI path UNCHANGED
+- HB16 DELETE only targets empty shadow_auto_eval rows — never touches production predictions
+- G1-G4: OFF
+
+---
+
+## V17.18.5 — COHERE RERANK SHADOW INTEGRATION (2026-04-14 23:15 VN)
+
+### V17.18.5+ ADDENDUM — ULTRA MASTER RUNTIME RECONCILE EXECUTION (2026-04-15 00:10 VN)
+
+**Report**: ULTRA_MASTER_TOTALFORCE_V17_18_5.md (540 lines, 16 hidden bugs, 65 Q&A)
+
+**Quick Win Execution Results**:
+1. ✅ HB1 system_alert resolved (00:05:58 on 04-15)
+2. ✅ scheduler_logs verified: 32 shadow-related entries found (HB8 corrected)
+3. ✅ VPS temp scripts cleaned
+4. ✅ Production DB confirmed: `/root/Lottery_AI_Test/data/lottery_ai.db` (23MB)
+
+**Critical Discovery — HB16**:
+Shadow auto-eval triggered 7 times on 04-14. First run at 10:02 (pre-key-fix) saved
+glm-5.1 MT with `[]` → UNIQUE constraint blocks MT shadow re-runs for that date.
+3 other models failed without saving (no API keys yet). Auto-resolves at date rollover.
+
+**Runtime Label Update**: V17.18.4 = `DEPLOYED + CONTEXT_VERIFIED + KEYS_VERIFIED`
+(NOT runtime-proven — 0 successful shadow predictions post-fix)
+
+**Next checkpoint**: Batch 04-15 04:15 (MN) → expect first valid shadow predictions
+
+### Context
+Ultra Master Total-Force Audit Phase 4: Implement Cohere Rerank 4 Pro as shadow
+reranker for combo_super candidate numbers. Per SSOT §28 Experiment Governance,
+this is `EXP-BT-RR-012` in SHADOW-ONLY mode.
+
+### Changes
+
+**NEW FILE: `web/backend/cohere_rerank.py` (293 lines)**
+- `rerank_candidates()`: calls OpenRouter `/api/v1/rerank` with `cohere/rerank-4-pro`
+- Reorders combo_super candidate numbers by Cohere relevance scoring
+- Full fail-safe chain: no API key → return original order, timeout → return original order
+- API key fallback: `OPENROUTER_KEY_COHERE` → `OPENROUTER_API_KEY` → DB `app_settings`
+- Returns: `original_order`, `reranked_order`, `scores`, `position_changes`, `bt_changed`, `latency_ms`
+
+**EDITED: `web/backend/scheduler.py` (2 changes)**
+1. `_run_combo_super_wrapper()` return dict: added `all_candidates`, `consensus`, `verdict_reason`
+   passthrough from combo_super (previously stripped — rerank context was empty)
+2. Shadow rerank hook at L3007-3065: runs `rerank_candidates()` post combo_super, logs
+   `[SHADOW_RERANK]` with original vs reranked order + position changes + latency.
+   Wrapped in `try/except ImportError` — silently skips if module not deployed.
+
+**UNCHANGED: `web/backend/model_registry.py` (L217-228)**
+- `cohere-rerank-4-pro` already registered as `status: REGISTERED`, `output_eligible: False`
+- Schedule slot: `shadow_rerank_post_combo_super` (matches hook)
+
+### Bugs Found & Fixed in Re-Audit
+1. **BUG**: `'cs_result' in dir()` → `dir()` returns module-level names, not function locals.
+   **FIX**: Replaced with `try/except NameError` pattern.
+2. **BUG**: Scheduler wrapper stripped `analysis_text`/`reasoning` from combo_super return.
+   Rerank context was always empty string.
+   **FIX**: Added `all_candidates`, `consensus`, `verdict_reason` to wrapper return + built
+   context from these fields.
+3. **BUG**: `COHERE_RERANK_MODEL = "cohere/rerank-v3.5"` did not match registry entry
+   `cohere-rerank-4-pro`.
+   **FIX**: Changed to `"cohere/rerank-4-pro"` (verified on OpenRouter API catalog).
+4. **BUG**: `import json` unused in `cohere_rerank.py`.
+   **FIX**: Removed unused import.
+
+### Safety Guarantees
+- `output_eligible: False` → BLOCKED from /du-doan output (verified guard at main.py L5779-5784)
+- Shadow-only logging to `scheduler_logs` table (job_name='shadow_rerank')
+- ImportError safety → no breakage if module not deployed on VPS
+- 0 generative tokens → scoring-only endpoint (no cost impact)
+- Zero scoring/weights/prompt changes (§47 compliant)
+
+### Deploy Status
+- Code: ✅ SYNTAX_VERIFIED (py_compile PASS — both cohere_rerank.py + scheduler.py)
+- Edge cases: ✅ TESTED (no-key, single-candidate, empty — all pass)
+- Deploy: ⏳ PENDING VPS SCP + restart
+- Runtime proof: ⏳ PENDING — first `[SHADOW_RERANK]` log entry after deployment
+
+### Experiment Card
+- ID: `EXP-BT-RR-012`
+- State: `LOCAL_ONLY`
+- Pass criteria: reranked BT rate ≥ original BT rate + 5% over 14 days
+- Fail criteria: reranked BT rate < original BT rate over 14 days
+- Rollback: delete `cohere_rerank.py` + revert scheduler.py hook (lines 3007-3065)
+- SSOT: §28 Experiment Governance + §47 No-Overclaim
+
+### GOVERNANCE
+- §45: CHANGELOG entry ✅
+- §47: Zero scoring/weights/prompt changes — shadow observation only
+- §28: Experiment card EXP-BT-RR-012 created in experiment_registry.md
+- §41: No stale scripts (test file archived to archive/debug_scripts/)
+- G1-G4: OFF
+
+---
+
+## V17.18.4 — P0 SHADOW AUTO-EVAL CONTEXT FIX (2026-04-14 22:50 VN)
+
+### Context
+Ultra Master Total-Force Audit V17.18.4 found that ALL 4 shadow auto-eval models
+(glm-5.1, grok-4.20-multi-agent, qwen3-coder, qwen3.6-plus) produced zero usable
+auto predictions. Root cause: `_run_shadow_auto_eval()` passed empty context
+(`source_data={}`, `rules={}`, `learned_intelligence={}`) to `analyze_and_predict()`.
+
+### Root Causes Identified
+1. **glm-5.1**: Returned EMPTY `[]` — model received zero lottery data → nothing to analyze
+2. **grok-4.20, qwen3-coder, qwen3.6-plus**: Crashed with `TypeError: unhashable type: 'slice'`
+   at analysis result extraction — empty context produced non-standard response format
+
+### P0 Fix (scheduler.py `_run_shadow_auto_eval`)
+- **Before:** `source_data={}`, `rules={}`, `learned_intelligence={}` (empty context)
+- **After:** Builds full rich context per region, matching production `_run_ai_models_predict`:
+  - `source_data`: Lottery results (D-1 all, same-day inter-region per §INTER-REGION rule)
+  - `rules`: Analysis rules from `app_settings.rules` category
+  - `learned_intelligence`: Pattern effectiveness, learned weights, ML win rates
+  - `prediction_mode`: From DB setting (not hardcoded 'HYBRID')
+  - `statistical_depth`: From DB setting (not hardcoded 30)
+- **Impact:** Shadow models now receive identical context to production models → should produce
+  real predictions with actual numbers, strength, and verdict.
+
+### VPS Evidence (Pre-Fix)
+```
+17:02:01 SHADOW_COMPLETION_TRIGGER MT → starting shadow auto-eval
+17:13:00   ✅ [MT] glm-5.1: [] (str=0.0, 658.1s) ← EMPTY, useless
+17:13:06   ❌ [MT] grok-4.20: TypeError: unhashable type: 'slice'
+17:13:14   ❌ [MT] qwen3-coder: TypeError: unhashable type: 'slice'
+17:14:56   ❌ [MT] qwen3.6-plus: TypeError: unhashable type: 'slice'
+17:14:56 ALERT: SHADOW_EVAL_FAIL: 4 errors, 0 success
+```
+
+### Deploy Status
+- Code: ✅ SYNTAX_VERIFIED (py_compile PASS)
+- Deploy: ✅ DEPLOYED (PID 118218)
+- API Keys: ✅ ALL 5 OpenRouter keys configured in .env
+  - OPENROUTER_API_KEY (general, used by glm-5.1)
+  - OPENROUTER_KEY_GROK (grok-4.20-multi-agent)
+  - OPENROUTER_KEY_COHERE (cohere-rerank-4-pro)
+  - OPENROUTER_KEY_QWEN3_CODER (qwen3-coder)
+  - OPENROUTER_KEY_QWEN36_PLUS (qwen3.6-plus)
+- Runtime proof: ⏳ PENDING next shadow_auto_eval trigger (next AI chain completion)
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt changes
+- Shadow models remain NOT output-eligible (output_eligible=False in registry)
+- Production AI path UNCHANGED — only shadow path receives context upgrade
+- G1-G4: OFF
+
+## V17.18.3 — P0 CRASH FIX + SHADOW HARDENING + OBSERVABILITY (2026-04-14 VN)
+
+### Context
+Live-day 2026-04-14 P0 incident: MN 16:30 cron crashed with `UnboundLocalError: target_date`.
+Post-incident forensic audit identified additional latent bugs and observability gaps.
+
+### CRITICAL Fix — P0 (scheduler.py L466-471)
+- **Root cause:** `_run_auto_update()` first-scrape branch (no existing data) used `target_date`
+  and `do_scrape()` without defining them. Only the `if existing:` branch defined these variables.
+- **Fix:** Added `target_date = today` and initial `do_scrape(region, target_date)` call in
+  the `else:` branch BEFORE the retry loop.
+- **Impact:** Eliminates crash on any fresh-scrape scenario (new day, post-deploy, data gap).
+- **Evidence:** RUNTIME_PROVEN — 3-region recovery on PID 104475+107864 (16:52-18:34 VN).
+
+### CRITICAL Fix — P2 (scheduler.py L4516-4517)
+- **Root cause:** `result['analysis'][:500]` in shadow auto-eval save path throws `TypeError`
+  when `analysis` is a dict (not str).
+- **Fix:** `str(result['analysis'])[:500]` — safe cast before slice.
+- **Evidence:** FIXED_AND_DEPLOYED. NOT_RUNTIME_PROVEN (shadow still failed on fixed PID —
+  possible multiple TypeError paths; awaiting next shadow cycle for proof).
+
+### Observability — I1: Crash Alert (scheduler.py L896-913)
+- Added `_create_alert('SCHEDULER_CRASH', ...)` in `_run_auto_update` exception handler.
+- Ensures critical scheduler crashes write to `system_alerts` DB table immediately.
+- Previously: crashes were only visible in `journalctl` (22-min detection delay for P0).
+
+### Observability — I5: Herding Marker (main.py L6083-6103)
+- Added `HIGH_CONVERGENCE` log marker in `generate_final_bundle()`.
+- Fires when: top-1 model concentration ≥50% OR diversity_score <40.
+- Logs: concentration %, diversity score, model count.
+- Zero scoring impact — LOG ONLY marker for forensic audit.
+
+### Bug Fix — HB2: Empty Prediction Guard (scheduler.py L4537-4551)
+- Shadow auto-eval `success_count` was incremented even when prediction is empty `[]`.
+- Fix: if `numbers` is empty, log `[EMPTY_PREDICTION]` warning instead of counting as success.
+- Prevents false positive shadow eval metrics (e.g., glm-5.1 MT saved `[]` but counted as 1 success).
+
+### Deploy Status
+- P0: ✅ DEPLOYED + RUNTIME_PROVEN on VPS
+- P2: ✅ DEPLOYED, NOT_RUNTIME_PROVEN
+- I1, I5, HB2: ⏳ LOCAL_ONLY — pending VPS deploy
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt/pool changes
+- All fixes are structural/observability — no bundle behavior change
+- G1-G4: OFF
+- combo-super: TOKEN class (Owner Truth #1) — unchanged
+
+### Forensic Report
+- Master report: `ULTRA_MASTER_TOTALFORCE_2026-04-14_V3.md` (supersedes all prior day reports)
+
+### A1: Fix Cohere Context Mapping (gpt_analyzer.py L559)
+- **Issue (HB13):** `cohere-rerank-4-pro` mapped to `FULL_CONTEXT` in `MODEL_DISTRIBUTION_POLICY` despite
+  using `/rerank` endpoint (NOT `/chat/completions`).
+- **Fix:** Changed to `RERANKER_ONLY` with inline comment explaining the distinction.
+- **Risk:** LOW — Cohere is `REGISTERED` with 0 prediction rows, never called through predict flow.
+
+### A2: Per-Model Daily Evaluation Table (database.py + scheduler.py)
+- **Issue (HB8):** `daily_eval_log` only tracked `combo-super` — no per-model BT/WR tracking existed,
+  blocking OD2-OD5 (4-model promotion pipeline).
+- **Fix:**
+  1. NEW TABLE `model_daily_eval` — per-model, per-date, per-region evaluation with BT-specific tracking:
+     - `bt_number`: main_numbers[0] (Bạch Thủ candidate)
+     - `bt_hit`: 1 if bt_number appeared in lottery tails, 0 otherwise
+     - `status`, `hit_numbers`, `hit_count`, `run_source`, `context_integrity`, `strength`
+     - UNIQUE(date, region, ai_model)
+  2. NEW VIEW `v_model_bt_rate_30d` — rolling 30-day BT rate per model per region
+  3. NEW JOB `auto_model_daily_eval` at **20:20** (after daily eval 20:00 + MRE 20:15)
+     - Syncs all verified predictions for today into `model_daily_eval` with BT hit detection
+- **Impact:** Foundation for model promotion state machine (§28), enables per-model ranking and demotion.
+
+### Investigation Findings
+- **HB12 (Rule effectiveness staleness): FALSE ALARM** — initial VPS query was malformed.
+  Production `mined_rule_effectiveness` data is current through 2026-04-14 (12 rules, 7 hits).
+  MRE job ran at 20:15 successfully.
+- **HB11 (MN bundle 8/15 gap): ROOT CAUSE IDENTIFIED** — service restart between 04:00-09:38
+  caused free-model batch to run as startup catch-up at 09:38 instead of scheduled 04:00.
+  MN bundle was generated at ~04:26 with only 8 token models.
+
+---
+
+## V17.15.4c — SCOPE FIX: _model_call_start NameError PREVENTION (2026-04-13 21:39 VN)
+
+### Context
+Re-audit of V17.15.4b discovered a latent NameError risk: `_model_call_start` was initialized
+inside the retry loop (L2636), but the `except Exception` handler at L2786 referenced it.
+If `_get_api_key_for_model()` threw before L2636, `_model_call_start` would be undefined → crash.
+
+### Fix (scheduler.py L2621)
+- Moved `_model_call_start = _stage_time.time()` BEFORE `try` block (one line up)
+- Ensures timing variable exists regardless of where exception occurs
+
+### Deploy
+- PID: 89225 (supersedes 88497 from V17.15.4b)
+- Started: 2026-04-13 21:39:08 VN
+- py_compile: PASS
+- All previous V17.15.4 fixes retained
+
+### GOVERNANCE
+- §47: Zero scoring/weights/prompt changes
+- Structural fix only — prevents crash, does not alter pipeline behavior
+
+---
+
+## V17.15.4 — FORENSIC STABILIZATION: RUN_ID + PERFORMANCE + MEASUREMENT (2026-04-13 VN)
+
+### Context
+Post-live 2026-04-13 forensic audit identified critical run_id race condition, NameError scope bug,
+and performance bottlenecks. All fixes are additive/structural — zero scoring/weights/prompt changes (§47).
+
+### CRITICAL Fixes (scheduler.py)
+
+- **F1 — NameError SCOPE FIX (P0):** `_ai_run_id` was used in `_run_ai_models_predict()` but defined
+  only in `_run_ai_predict_job()` (different scope). Added `run_id: str = None` parameter to
+  `_run_ai_models_predict` with env var fallback. Without this fix, entire AI chain would crash
+  at runtime with NameError. Lines: L2386-2389 (signature), L3108 (call site).
+
+- **F2 — run_id EXPLICIT PARAM (P0):** Replaced process-wide `os.environ['CURRENT_RUN_ID']` with
+  explicit `run_id` parameter passing through `_run_ai_predict_job` → `_run_ai_models_predict` →
+  `save_prediction`. Eliminates race condition where fallback cron overwrites cascade's run_id.
+  Lines: L2763 (save), L2931 (combo forward), L3108 (call site).
+
+- **F3 — MB RERUN run_id (P2):** `_rerun_mb_ai_after_mt_verify()` now generates explicit
+  `_mb_rerun_run_id` and passes it to both `save_prediction()` and `_run_combo_super_wrapper()`.
+  Previously MB ai_chain rows would have `run_id = NULL`. Lines: L3149-3151, L3383, L3405.
+
+- **F4 — ADAPTIVE BACKOFF:** Scrape retry loop changed from fixed 60s to adaptive:
+  30s fast phase (first 5 retries) → 60s safe phase (thereafter). Lines: L488-496.
+
+- **F5 — CASCADE_STAGE MARKERS:** Added `[CASCADE_STAGE_START/END]` log markers with
+  `time.time()` timing for precise stage latency measurement. Lines: L2610-2616, L2946-2953.
+
+- **F6 — MODEL_CALL MARKERS:** Added `[MODEL_CALL_START/END]` per-model timing markers.
+  Lines: L2636-2640, L2774-2778.
+
+- **F7 — FILE CORRUPTION REPAIR:** Fixed partial write corruption at L461, L488-498
+  using binary-level repair script.
+
+### combo_super.py Fix
+
+- **F8 — run_id FORWARD:** Added explicit `run_id` parameter to `run_combo_super()` and
+  forwarded to `save_prediction()` call. Lines: L1044 (signature), L2528 (save call).
+
+### scraper.py Fix
+
+- **F9 — CONCURRENT SCRAPE:** Converted sequential multi-source scraping in `scrape_region()`
+  to use `ThreadPoolExecutor` for concurrent "first-success-wins" fetching. Estimated improvement:
+  8m → 2-3m for multi-retry scenarios. Lines: L915-1015.
+
+### Evidence
+- All 3 files: `py_compile` PASS ✅
+- 2026-04-13 live day: pipeline correctness LIVE_PROVEN (57/57 predictions)
+- V17.15.4 fixes: CODE_PROVEN only (pending deploy)
+
+### DEPLOY FILES
+```
+scheduler.py   — F1-F7 (9 changes)
+combo_super.py — F8 (1 change)
+scraper.py     — F9 (1 change)
+```
+
+### GOVERNANCE
+- §47: CODE_PROVEN ≠ LIVE_PROVEN — fixes await first live deployment
+- No scoring/weights/prompt changes
+- AUTO/COMBO pools unchanged (7 proven models)
+- G1–G4 OFF
+
+### SUPERSEDES
+- Pre-V17.15.4 run_id via env var (race condition)
+- Fixed 60s scrape backoff
+- No-marker pipeline (unmeasurable stage latency)
+
+---
+
+## V17.11.1 — EMERGENCY SETTINGS/RUNTIME FIX (2026-04-12 15:00 VN)
+
+### Context
+Pre-draw audit caught legacy hardcoded values in backend + frontend that would override V17.11 anchors.
+
+### Backend Fixes
+- **database.py**: `seed_defaults()` 16:35→16:30, 17:35→17:30, 18:38→18:30
+- **database.py**: `scrape_cutoff_map` fallback 16:35→16:30, 17:35→17:30
+- **scheduler.py**: `get_scheduler_status()` fallback values, `canonical_slots` dict, `expected` drift dict — all → V17.11 anchors
+- **main.py**: `ai_predict_mt_time` + `ai_predict_mb_time` REMOVED from `RUNTIME_SYSTEM_EDITABLE_KEYS`
+
+### Backend Fixes (continued — total-force sweep)
+- **scheduler.py**: `_window` SLA guard L530: 16:35→16:30, 17:35→17:30 (retry window start)
+
+### Frontend Fixes
+- **settings.js**: `DEFAULT_RUNTIME_SETTINGS` 16:35/17:35/18:38 → 16:30/17:30/18:30
+- **settings.js**: `SYSTEM_TIME_KEYS` — removed fallback time keys
+- **settings.js**: `saveSystemSettings()` — removed fallback keys from save payload (prevents rejected POST)
+- **settings.html**: Labels "(16:35)" / "(17:35)" / "(18:38)" → "(16:30)" / "(17:30)" / "(18:30)"
+- **settings.html**: Default input values 16:35/17:35/18:38 → 16:30/17:30/18:30
+- **settings.html**: Fallback time inputs (ai_predict_mt_time, ai_predict_mb_time) → `disabled` + "P1-gated, read-only" label
+
+### DOC CONFLICT NOTED
+- **`.Antigravityrules.md` §36H** still locks 16:35/17:35/18:38 — CONFLICTS with V17.11 L3 (16:30/17:30/18:30)
+- Owner resolution required before updating §36H. Code is ahead of doc.
+
+### CRITICAL DEPLOY NOTE
+After deploy, MUST update VPS DB directly (table=`app_settings`, cols=`setting_key`/`setting_value`):
+```sql
+UPDATE app_settings SET setting_value='16:30' WHERE category='system' AND setting_key='schedule_mn';
+UPDATE app_settings SET setting_value='17:30' WHERE category='system' AND setting_key='schedule_mt';
+UPDATE app_settings SET setting_value='18:30' WHERE category='system' AND setting_key='schedule_mb';
+```
+Then reload scheduler via UI or `/api/scheduler/reload`. Seed defaults only apply to fresh installs.
+
+---
+
+## V17.11 — OWNER-LOCK OPERATIONAL ENFORCEMENT (2026-04-12 VN)
+
+### Context
+Owner-Lock Forensic Audit → implementation of 6 mandatory locks (L1-L6).

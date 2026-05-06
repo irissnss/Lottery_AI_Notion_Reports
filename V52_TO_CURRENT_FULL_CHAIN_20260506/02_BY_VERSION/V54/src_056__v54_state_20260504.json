@@ -1,0 +1,45 @@
+{
+  "pass": "TOTAL_FORCE_V54",
+  "generated_at_vn": "2026-05-04T13:20:00+07:00",
+  "live_sync_manifest": "artifacts/live_sync/20260504_125506/manifest.json",
+  "live_window": "after MN bundle, before MN scrape / MT-MB cascade",
+  "service": {
+    "name": "lottery.service",
+    "pid_after_v54_restart": 676364,
+    "route_smoke": {
+      "/du-doan": 200,
+      "/du-doan-test_unauth": 401,
+      "/api/du-doan-test/mn_unauth": 401,
+      "/api/final-bundle?region=MN": 200
+    }
+  },
+  "implemented": {
+    "C-02_api_source_labels": "DEPLOYED",
+    "C-06_loz_stage_trace": "DEPLOYED_MEASUREMENT_ONLY",
+    "C-15_weekday_blackspot_alert": "DEPLOYED_MEASUREMENT_ONLY"
+  },
+  "not_deployed": {
+    "C-05_latency_instrumentation": "PLAN_ONLY_LIVE_WINDOW_SAFETY",
+    "C-07_MT_correct_but_dropped_UI": "PLAN_ONLY",
+    "C-14_strength_chips_UI": "PLAN_ONLY"
+  },
+  "new_tables": {
+    "loz_stage_trace_shadow": 6174,
+    "weekday_blackspot_shadow": 21
+  },
+  "official_hash_guard": {
+    "predictions": "UNCHANGED",
+    "lottery_results": "UNCHANGED",
+    "model_daily_eval": "UNCHANGED",
+    "final_bundles": "CONTENT_SAME_TIMESTAMP_REFRESHED_BY_STARTUP_CATCHUP",
+    "scheduler_logs": "+19 service restart / route smoke"
+  },
+  "v54_live_state": {
+    "MN": "BUNDLE_READY_PENDING_RESULT bt=65 lo2=[65,32]",
+    "MT": "PREDICTIONS_READY_NO_BUNDLE auto_daily=7",
+    "MB": "PREDICTIONS_READY_NO_BUNDLE auto_daily=7"
+  },
+  "test_lane_status": "LIVE_PARALLEL_AUTO_PENDING_ONLY",
+  "official_output_mutation": false,
+  "official_output_behavior_change": false
+}

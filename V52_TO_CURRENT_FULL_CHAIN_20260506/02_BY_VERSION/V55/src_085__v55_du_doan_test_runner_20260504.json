@@ -1,0 +1,717 @@
+{
+  "date": "2026-05-04",
+  "region": "ALL",
+  "results": {
+    "MN": {
+      "date": "2026-05-04",
+      "region": "MN",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v52_5_6_MN_post_closeout_diagnostic_full_25_2026-05-04",
+      "dry_run": false,
+      "steps": [
+        "ensure_du_doan_test_schema",
+        "seed_experiment_registry",
+        "materialize_experimental_preview_shadow_multi_region",
+        "materialize_du_doan_test_engine_multi_region",
+        "write_signal_leakage_audit",
+        "append_runner_audit_log",
+        "write_scheduler_test_marker"
+      ],
+      "source_timestamps": {
+        "predictions": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T17:53:49.199780+07:00",
+          "verified_at": "2026-05-04T18:31:01.924747+07:00"
+        },
+        "final_bundles": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 17:40:09",
+          "updated_at": "2026-05-04 18:31:01",
+          "verified_at": "2026-05-04 18:31:01"
+        },
+        "lottery_results": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T18:31:01.727554+07:00"
+        },
+        "model_daily_eval": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 20:20:00"
+        }
+      },
+      "before": {
+        "date": "2026-05-04",
+        "region": "MN",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 192
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "official_tables_touched": false,
+      "official_tables_touched_expected": false,
+      "output_impact": false,
+      "official_output": false,
+      "test_only": true,
+      "admin_only": true,
+      "owner_approved": false,
+      "output_eligible": false,
+      "preview_result": {
+        "date": "2026-05-04",
+        "region": "MN",
+        "skipped": false,
+        "rows_written": 6,
+        "run_label": "du_doan_test_v52_5_6_MN_post_closeout_diagnostic_full_25_2026-05-04",
+        "strength_anchor": "2026-05-02"
+      },
+      "test_result": {
+        "date": "2026-05-04",
+        "region": "MN",
+        "run_label": "du_doan_test_v52_5_6_MN_post_closeout_diagnostic_full_25_2026-05-04",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "runs_written": 6,
+        "bundles_written": 6,
+        "results_written": 6,
+        "candidates_written": 138,
+        "model_contrib_written": 138,
+        "skipped_existing": 0,
+        "signal_audit": {
+          "date": "2026-05-04",
+          "region": "MN",
+          "rows": 6,
+          "conversion_rows": 6,
+          "shared_candidate_pool": true
+        },
+        "official_tables_touched": 0,
+        "output_impact": false
+      },
+      "preview_result_legacy": null,
+      "test_result_legacy": null,
+      "after": {
+        "date": "2026-05-04",
+        "region": "MN",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 138
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 138
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 193
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "delta": {
+        "mb_experimental_preview_shadow": 0,
+        "du_doan_test_runs": 6,
+        "du_doan_test_bundles": 6,
+        "du_doan_test_results": 6,
+        "du_doan_test_candidates": 138,
+        "du_doan_test_model_contribution": 138,
+        "du_doan_test_audit_log": 1,
+        "du_doan_test_experiments": 0,
+        "du_doan_test_daily_summary": 0,
+        "du_doan_test_experiment_scoreboard": 0,
+        "du_doan_test_model_scoreboard": 0,
+        "du_doan_test_method_scoreboard": 0,
+        "du_doan_test_leakage_audit": 6,
+        "du_doan_test_conversion_trace": 6,
+        "du_doan_test_ai_predictions": 0
+      },
+      "created_runs": 6,
+      "created_bundles": 6,
+      "created_candidates": 138,
+      "created_model_contributions": 138,
+      "skipped_existing": 0,
+      "official_tables_touched_bool": false
+    },
+    "MT": {
+      "date": "2026-05-04",
+      "region": "MT",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v52_5_6_MT_post_closeout_diagnostic_full_25_2026-05-04",
+      "dry_run": false,
+      "steps": [
+        "ensure_du_doan_test_schema",
+        "seed_experiment_registry",
+        "materialize_experimental_preview_shadow_multi_region",
+        "materialize_du_doan_test_engine_multi_region",
+        "write_signal_leakage_audit",
+        "append_runner_audit_log",
+        "write_scheduler_test_marker"
+      ],
+      "source_timestamps": {
+        "predictions": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T17:53:49.199780+07:00",
+          "verified_at": "2026-05-04T18:31:01.924747+07:00"
+        },
+        "final_bundles": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 17:40:09",
+          "updated_at": "2026-05-04 18:31:01",
+          "verified_at": "2026-05-04 18:31:01"
+        },
+        "lottery_results": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T18:31:01.727554+07:00"
+        },
+        "model_daily_eval": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 20:20:00"
+        }
+      },
+      "before": {
+        "date": "2026-05-04",
+        "region": "MT",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 194
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "official_tables_touched": false,
+      "official_tables_touched_expected": false,
+      "output_impact": false,
+      "official_output": false,
+      "test_only": true,
+      "admin_only": true,
+      "owner_approved": false,
+      "output_eligible": false,
+      "preview_result": {
+        "date": "2026-05-04",
+        "region": "MT",
+        "skipped": false,
+        "rows_written": 6,
+        "run_label": "du_doan_test_v52_5_6_MT_post_closeout_diagnostic_full_25_2026-05-04",
+        "strength_anchor": "2026-05-02"
+      },
+      "test_result": {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_label": "du_doan_test_v52_5_6_MT_post_closeout_diagnostic_full_25_2026-05-04",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "runs_written": 6,
+        "bundles_written": 6,
+        "results_written": 6,
+        "candidates_written": 144,
+        "model_contrib_written": 144,
+        "skipped_existing": 0,
+        "signal_audit": {
+          "date": "2026-05-04",
+          "region": "MT",
+          "rows": 6,
+          "conversion_rows": 6,
+          "shared_candidate_pool": true
+        },
+        "official_tables_touched": 0,
+        "output_impact": false
+      },
+      "preview_result_legacy": null,
+      "test_result_legacy": null,
+      "after": {
+        "date": "2026-05-04",
+        "region": "MT",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 144
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 144
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 195
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 6
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "delta": {
+        "mb_experimental_preview_shadow": 0,
+        "du_doan_test_runs": 6,
+        "du_doan_test_bundles": 6,
+        "du_doan_test_results": 6,
+        "du_doan_test_candidates": 144,
+        "du_doan_test_model_contribution": 144,
+        "du_doan_test_audit_log": 1,
+        "du_doan_test_experiments": 0,
+        "du_doan_test_daily_summary": 0,
+        "du_doan_test_experiment_scoreboard": 0,
+        "du_doan_test_model_scoreboard": 0,
+        "du_doan_test_method_scoreboard": 0,
+        "du_doan_test_leakage_audit": 6,
+        "du_doan_test_conversion_trace": 6,
+        "du_doan_test_ai_predictions": 0
+      },
+      "created_runs": 6,
+      "created_bundles": 6,
+      "created_candidates": 144,
+      "created_model_contributions": 144,
+      "skipped_existing": 0,
+      "official_tables_touched_bool": false
+    },
+    "MB": {
+      "date": "2026-05-04",
+      "region": "MB",
+      "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+      "run_label": "du_doan_test_v52_5_6_MB_post_closeout_diagnostic_full_25_2026-05-04",
+      "dry_run": false,
+      "steps": [
+        "ensure_du_doan_test_schema",
+        "seed_experiment_registry",
+        "materialize_mb_experimental_preview_shadow_legacy",
+        "materialize_experimental_preview_shadow_multi_region",
+        "materialize_du_doan_test_mb_engine_legacy",
+        "materialize_du_doan_test_engine_multi_region",
+        "write_signal_leakage_audit",
+        "append_runner_audit_log",
+        "write_scheduler_test_marker"
+      ],
+      "source_timestamps": {
+        "predictions": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T17:53:49.199780+07:00",
+          "verified_at": "2026-05-04T18:31:01.924747+07:00"
+        },
+        "final_bundles": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 17:40:09",
+          "updated_at": "2026-05-04 18:31:01",
+          "verified_at": "2026-05-04 18:31:01"
+        },
+        "lottery_results": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04T18:31:01.727554+07:00"
+        },
+        "model_daily_eval": {
+          "date": "2026-05-04",
+          "created_at": "2026-05-04 20:20:00"
+        }
+      },
+      "before": {
+        "date": "2026-05-04",
+        "region": "MB",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 196
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 8
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 21
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 132
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 21
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "official_tables_touched": false,
+      "official_tables_touched_expected": false,
+      "output_impact": false,
+      "official_output": false,
+      "test_only": true,
+      "admin_only": true,
+      "owner_approved": false,
+      "output_eligible": false,
+      "preview_result": {
+        "date": "2026-05-04",
+        "region": "MB",
+        "skipped": false,
+        "rows_written": 6,
+        "run_label": "du_doan_test_v52_5_6_MB_post_closeout_diagnostic_full_25_2026-05-04",
+        "strength_anchor": "2026-05-02"
+      },
+      "test_result": {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_label": "du_doan_test_v52_5_6_MB_post_closeout_diagnostic_full_25_2026-05-04",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "runs_written": 6,
+        "bundles_written": 6,
+        "results_written": 6,
+        "candidates_written": 126,
+        "model_contrib_written": 126,
+        "skipped_existing": 0,
+        "signal_audit": {
+          "date": "2026-05-04",
+          "region": "MB",
+          "rows": 13,
+          "conversion_rows": 13,
+          "shared_candidate_pool": true
+        },
+        "official_tables_touched": 0,
+        "output_impact": false
+      },
+      "preview_result_legacy": {
+        "date": "2026-05-04",
+        "skipped": false,
+        "rows_written": 7,
+        "run_label": "du_doan_test_v52_5_6_MB_post_closeout_diagnostic_full_25_2026-05-04_legacy"
+      },
+      "test_result_legacy": {
+        "date": "2026-05-04",
+        "run_label": "du_doan_test_v52_5_6_MB_post_closeout_diagnostic_full_25_2026-05-04_legacy",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "runs_written": 7,
+        "bundles_written": 7,
+        "results_written": 7,
+        "candidates_written": 147,
+        "model_contrib_written": 147,
+        "created_runs": 7,
+        "created_bundles": 7,
+        "created_candidates": 147,
+        "created_model_contributions": 147,
+        "skipped_existing": 0,
+        "signal_audit": {
+          "date": "2026-05-04",
+          "region": "MB",
+          "rows": 7,
+          "conversion_rows": 7,
+          "shared_candidate_pool": true
+        },
+        "official_tables_touched": 0,
+        "output_impact": false
+      },
+      "after": {
+        "date": "2026-05-04",
+        "region": "MB",
+        "mb_experimental_preview_shadow": {
+          "exists": true,
+          "count": 7
+        },
+        "du_doan_test_runs": {
+          "exists": true,
+          "count": 13
+        },
+        "du_doan_test_bundles": {
+          "exists": true,
+          "count": 13
+        },
+        "du_doan_test_results": {
+          "exists": true,
+          "count": 13
+        },
+        "du_doan_test_candidates": {
+          "exists": true,
+          "count": 273
+        },
+        "du_doan_test_model_contribution": {
+          "exists": true,
+          "count": 273
+        },
+        "du_doan_test_audit_log": {
+          "exists": true,
+          "count": 198
+        },
+        "du_doan_test_experiments": {
+          "exists": true,
+          "count": 8
+        },
+        "du_doan_test_daily_summary": {
+          "exists": true,
+          "count": 0
+        },
+        "du_doan_test_experiment_scoreboard": {
+          "exists": true,
+          "count": 21
+        },
+        "du_doan_test_model_scoreboard": {
+          "exists": true,
+          "count": 132
+        },
+        "du_doan_test_method_scoreboard": {
+          "exists": true,
+          "count": 21
+        },
+        "du_doan_test_leakage_audit": {
+          "exists": true,
+          "count": 13
+        },
+        "du_doan_test_conversion_trace": {
+          "exists": true,
+          "count": 13
+        },
+        "du_doan_test_ai_predictions": {
+          "exists": true,
+          "count": 0
+        }
+      },
+      "delta": {
+        "mb_experimental_preview_shadow": 7,
+        "du_doan_test_runs": 13,
+        "du_doan_test_bundles": 13,
+        "du_doan_test_results": 13,
+        "du_doan_test_candidates": 273,
+        "du_doan_test_model_contribution": 273,
+        "du_doan_test_audit_log": 2,
+        "du_doan_test_experiments": 0,
+        "du_doan_test_daily_summary": 0,
+        "du_doan_test_experiment_scoreboard": 0,
+        "du_doan_test_model_scoreboard": 0,
+        "du_doan_test_method_scoreboard": 0,
+        "du_doan_test_leakage_audit": 13,
+        "du_doan_test_conversion_trace": 13,
+        "du_doan_test_ai_predictions": 0
+      },
+      "created_runs": 6,
+      "created_bundles": 6,
+      "created_candidates": 126,
+      "created_model_contributions": 126,
+      "skipped_existing": 0,
+      "official_tables_touched_bool": false
+    }
+  }
+}

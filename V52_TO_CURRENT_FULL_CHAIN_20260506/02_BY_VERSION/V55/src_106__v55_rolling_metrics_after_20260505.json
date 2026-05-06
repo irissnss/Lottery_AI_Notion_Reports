@@ -1,0 +1,298 @@
+{
+  "anchor_date": "2026-05-05",
+  "rolling": {
+    "MN": {
+      "7d": {
+        "n": 7,
+        "bt_win": 3,
+        "bt_lose": 4,
+        "bt_win_pct": 42.9,
+        "lo2_win": 3,
+        "lo2_partial": 1,
+        "lo2_lose": 3,
+        "lo2_full_pct": 42.9,
+        "lo2_any_pct": 57.1
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 7,
+        "bt_lose": 7,
+        "bt_win_pct": 50.0,
+        "lo2_win": 5,
+        "lo2_partial": 5,
+        "lo2_lose": 4,
+        "lo2_full_pct": 35.7,
+        "lo2_any_pct": 71.4
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 17,
+        "bt_lose": 13,
+        "bt_win_pct": 56.7,
+        "lo2_win": 9,
+        "lo2_partial": 16,
+        "lo2_lose": 5,
+        "lo2_full_pct": 30.0,
+        "lo2_any_pct": 83.3
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 28,
+        "bt_lose": 32,
+        "bt_win_pct": 46.7,
+        "lo2_win": 17,
+        "lo2_partial": 24,
+        "lo2_lose": 19,
+        "lo2_full_pct": 28.3,
+        "lo2_any_pct": 68.3
+      }
+    },
+    "MT": {
+      "7d": {
+        "n": 7,
+        "bt_win": 5,
+        "bt_lose": 2,
+        "bt_win_pct": 71.4,
+        "lo2_win": 2,
+        "lo2_partial": 3,
+        "lo2_lose": 2,
+        "lo2_full_pct": 28.6,
+        "lo2_any_pct": 71.4
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 7,
+        "bt_lose": 7,
+        "bt_win_pct": 50.0,
+        "lo2_win": 2,
+        "lo2_partial": 6,
+        "lo2_lose": 6,
+        "lo2_full_pct": 14.3,
+        "lo2_any_pct": 57.1
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 11,
+        "bt_lose": 19,
+        "bt_win_pct": 36.7,
+        "lo2_win": 5,
+        "lo2_partial": 15,
+        "lo2_lose": 10,
+        "lo2_full_pct": 16.7,
+        "lo2_any_pct": 66.7
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 30,
+        "bt_lose": 30,
+        "bt_win_pct": 50.0,
+        "lo2_win": 12,
+        "lo2_partial": 31,
+        "lo2_lose": 17,
+        "lo2_full_pct": 20.0,
+        "lo2_any_pct": 71.7
+      }
+    },
+    "MB": {
+      "7d": {
+        "n": 7,
+        "bt_win": 1,
+        "bt_lose": 6,
+        "bt_win_pct": 14.3,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "lo2_lose": 4,
+        "lo2_full_pct": 0.0,
+        "lo2_any_pct": 42.9
+      },
+      "14d": {
+        "n": 14,
+        "bt_win": 4,
+        "bt_lose": 10,
+        "bt_win_pct": 28.6,
+        "lo2_win": 1,
+        "lo2_partial": 7,
+        "lo2_lose": 6,
+        "lo2_full_pct": 7.1,
+        "lo2_any_pct": 57.1
+      },
+      "30d": {
+        "n": 30,
+        "bt_win": 6,
+        "bt_lose": 24,
+        "bt_win_pct": 20.0,
+        "lo2_win": 2,
+        "lo2_partial": 9,
+        "lo2_lose": 19,
+        "lo2_full_pct": 6.7,
+        "lo2_any_pct": 36.7
+      },
+      "60d": {
+        "n": 60,
+        "bt_win": 16,
+        "bt_lose": 44,
+        "bt_win_pct": 26.7,
+        "lo2_win": 2,
+        "lo2_partial": 25,
+        "lo2_lose": 33,
+        "lo2_full_pct": 3.3,
+        "lo2_any_pct": 45.0
+      }
+    }
+  },
+  "weekday_60d": {
+    "MN": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 1,
+        "lo2_partial": 4,
+        "bt_win_pct": 55.6
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 6,
+        "lo2_win": 5,
+        "lo2_partial": 2,
+        "bt_win_pct": 66.7
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 6,
+        "lo2_win": 3,
+        "lo2_partial": 4,
+        "bt_win_pct": 66.7
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 2,
+        "lo2_partial": 5,
+        "bt_win_pct": 33.3
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 2,
+        "lo2_partial": 2,
+        "bt_win_pct": 25.0
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 5,
+        "lo2_win": 4,
+        "lo2_partial": 3,
+        "bt_win_pct": 62.5
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 1,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 12.5
+      }
+    },
+    "MT": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 1,
+        "lo2_partial": 6,
+        "bt_win_pct": 55.6
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 4,
+        "lo2_win": 3,
+        "lo2_partial": 5,
+        "bt_win_pct": 44.4
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 4,
+        "lo2_win": 2,
+        "lo2_partial": 5,
+        "bt_win_pct": 44.4
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 5,
+        "lo2_win": 2,
+        "lo2_partial": 4,
+        "bt_win_pct": 55.6
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 25.0
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 8,
+        "lo2_win": 4,
+        "lo2_partial": 4,
+        "bt_win_pct": 100.0
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 25.0
+      }
+    },
+    "MB": {
+      "Tue": {
+        "n": 9,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 4,
+        "bt_win_pct": 22.2
+      },
+      "Mon": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 33.3
+      },
+      "Sun": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 0,
+        "lo2_partial": 7,
+        "bt_win_pct": 33.3
+      },
+      "Sat": {
+        "n": 9,
+        "bt_win": 3,
+        "lo2_win": 1,
+        "lo2_partial": 4,
+        "bt_win_pct": 33.3
+      },
+      "Fri": {
+        "n": 8,
+        "bt_win": 1,
+        "lo2_win": 0,
+        "lo2_partial": 2,
+        "bt_win_pct": 12.5
+      },
+      "Thu": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 1,
+        "lo2_partial": 2,
+        "bt_win_pct": 25.0
+      },
+      "Wed": {
+        "n": 8,
+        "bt_win": 2,
+        "lo2_win": 0,
+        "lo2_partial": 3,
+        "bt_win_pct": 25.0
+      }
+    }
+  }
+}

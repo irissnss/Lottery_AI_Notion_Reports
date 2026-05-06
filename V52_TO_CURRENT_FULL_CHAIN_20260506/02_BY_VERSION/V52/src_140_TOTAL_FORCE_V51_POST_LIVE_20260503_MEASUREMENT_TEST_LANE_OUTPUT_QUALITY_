@@ -1,0 +1,221 @@
+# TOTAL-FORCE V51 ? Post-Live 2026-05-03 Measurement / Test Lane / Output Quality Audit
+
+> Mode: VPS-first / read-only forensic + docs/report sync / no official mutation  
+> Final labels: `/du-doan-test = MANUAL_STAGE_0_CONFIRMED`, tensor = `TENSOR_NOT_OK_FOR_PRUNING`, loz = `LOZ_SIGNAL_MIXED`
+
+## 1. Executive Summary - No Overclaim
+
+- Chua chung minh official prediction quality da cai thien ben vung. Ngay 03/05 tot o MN/MB nhung MT van fail; rolling windows van mixed theo mien.
+- Official 03/05: MN BT/loz1/loz2 ??u WIN; MT BT/loz1/loz2 ??u LOSE; MB BT WIN, loz1 WIN, loz2 MISS/lo2 PARTIAL.
+- MT dung nhu owner quan sat: nhieu model co tail actual, nhung official top output bi `29` chi phoi boi rerun_post_mn/no-token family; cac tail hit nhu `08`, `18`, `43`, `63` nam trong top10 hoac model rows nhung khong vao loz1/loz2 official.
+- MB khong du co so noi AI yeu chi tu 1 ngay. Rolling/tensor cho thay MB model value conditional, nhung latency/cost van thieu hoan toan nen khong duoc prune.
+- `/du-doan-test` da tien trien so voi V49/V50: co registry/runner/evaluator/scoreboards/leakage audit, nhung van MB-only manual stage; chua scheduler auto-wire, chua MN/MT support.
+- Khong co safe implementation duoc thuc hien trong V51 vi matrix uu tien measurement/test/UI-only thiet ke tiep theo, con official hard-lock giu nguyen.
+
+## 2. Files / Docs / Reports Read
+
+- `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md`, `docs/CURRENT_TRUTH_SSOT.md`, `docs/FOLLOW_UP_TRACKER.md`, `docs/CHANGELOG_GOVERNANCE_LEDGER.md`, `CHANGELOG.md`.
+- V39/V41/V46/V48/V49/V50 artifacts covering corrected replay, live stability, full tensor, `/du-doan-test`, embedded V48, and V50 lab lane.
+- Required string search was run over repo/artifacts/docs and found current hits for `TOTAL-FORCE V48`, `KET QUA DAY DU`, V48/V50, `/du-doan-test`, `MANUAL_STAGE_0`, `LIVE_PARALLEL`, `AI test prompt`, `25-model`, `corrected_rescue_replay_shadow`, `NO_PER_MODEL_DURATION`, `loz`, `lo2`, `official_output`, `output_impact`, `leakage_audit`.
+
+## 3. VPS Sync + Health + Hash Guard
+
+- Sync manifest: `artifacts/live_sync/20260503_204208/manifest.json`.
+- VPS service: active/running, PID `652160`, app version `V20.3.36`, health endpoint OK.
+- Pre-hash: `artifacts/_v51_pre_hash_20260503.txt`.
+- V51 did not mutate source DB tables. Post-hash artifact confirms source hashes unchanged (see section 21).
+
+## 4. 2026-05-03 Official Closeout Summary
+
+| Region | BT | loz1 | loz2 | BT status | loz1 hit | loz2 hit | lo2 status | model rows | run sources |
+|---|---:|---:|---:|---|---|---|---|---:|---|
+| MN | `79` | `79` | `96` | WIN | True | True | WIN | 25 | `{'auto_daily': 15, 'shadow_auto_eval': 10}` |
+| MT | `29` | `29` | `03` | LOSE | False | False | LOSE | 25 | `{'ai_chain': 8, 'rerun_post_mn': 7, 'shadow_auto_eval': 10}` |
+| MB | `48` | `48` | `89` | WIN | True | False | PARTIAL | 25 | `{'ai_chain': 8, 'rerun_post_mt': 7, 'shadow_auto_eval': 10}` |
+
+## 5. Rolling 7/14/30/60 Quality Summary
+
+| Region | Window | BT win | loz1 hit | loz2 hit | lo2 full | lo2 partial | lo2 miss |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| MN | 7 | 57.1% | 57.1% | 57.1% | 4 | 0 | 3 |
+| MN | 14 | 64.3% | 64.3% | 57.1% | 6 | 5 | 3 |
+| MN | 30 | 60.0% | 60.0% | 56.7% | 10 | 15 | 5 |
+| MN | 60 | 48.3% | 48.3% | 50.0% | 17 | 25 | 18 |
+| MT | 7 | 57.1% | 57.1% | 28.6% | 1 | 4 | 2 |
+| MT | 14 | 35.7% | 35.7% | 21.4% | 1 | 6 | 7 |
+| MT | 30 | 33.3% | 33.3% | 50.0% | 5 | 15 | 10 |
+| MT | 60 | 46.7% | 46.7% | 40.0% | 11 | 30 | 19 |
+| MB | 7 | 28.6% | 28.6% | 28.6% | 0 | 4 | 3 |
+| MB | 14 | 35.7% | 35.7% | 35.7% | 1 | 8 | 5 |
+| MB | 30 | 20.0% | 20.0% | 30.0% | 2 | 11 | 17 |
+| MB | 60 | 30.0% | 30.0% | 21.7% | 2 | 27 | 31 |
+
+## 6. Official `/du-doan` Mechanism Map
+
+`predictions -> candidate extraction (main_numbers/top1-top2 + run_source/model/verdict/strength) -> score_breakdown/ranked_numbers in generate_final_bundle() -> final_bundles -> /api/final-bundle -> /du-doan UI`
+
+- Official API reads `final_bundles`; it does not read `du_doan_test_*`.
+- `generate_final_bundle()` is the official write path into `final_bundles`; V51 did not touch it.
+- Model participation is bounded by output-eligible roster; shadow models are measured but not official-output eligible.
+- PP-1 convergence dampener is active and recorded in `source_predictions_json.pp1_convergence_dampener`.
+- PP-5 family diversity bonus remains disabled (`enabled=false`).
+- Option A / single-vote rescue remains stopped; no live rescue residue was used for official output.
+
+## 7. MT Forensic: Model Dung Nhung Output Sai
+
+- MT official 03/05: BT `29`, loz1 `29`, loz2 `03`, all LOSE.
+- Top1 `29` had 7 voters: 1 AI (`combo-super`) + 6 NO_TOKEN/rerun_post_mn voters. This is strong proof of no-token/rerun_post_mn dominance for this day, not yet a rolling production-change proof.
+- Actual hit tail `08` was in official top10 rank 10 and had model hits from AI/shadow models (`gemini-2.5-pro`, `gpt-5-mini`, `deepseek-v4-flash`, `gpt-5.5`, `grok-4.20-multi-agent`). It was dropped from loz1/loz2 due low score/rank.
+- Actual hit `18` was top10 rank 3 with NO_TOKEN voters (`random-forest`, `smart-ml`) but also dropped because score below top2.
+- This supports `MEASURED_ONE_DAY`: enough to build measurement/test-lane diagnostics, not enough to change official weights.
+
+## 8. MB Forensic: AI Weak vs Dropped vs No-Token Herd
+
+- MB official 03/05: BT `48` WIN; loz1 `48` HIT; loz2 `89` MISS; lo2 PARTIAL.
+- V50 test-lane found no improvement today: composite/tier/no-token matched official `48`; AI-chain/prior-region chose `85` and would break official.
+- Rolling MB model rows exist, but model value remains conditional. Tensor rows exist (3216), yet all rows still carry no per-model duration (`NO_PER_MODEL_DURATION`), blocking cost/time pruning.
+- Verdict: `WAIT_DATA` for MB AI judgment; `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+
+## 9. Loz1 / Loz2 Control Audit
+
+- Loz metrics are mixed by region/window. Example 30d: MN loz1 60.0%, loz2 56.7%; MT loz1 33.3%, loz2 50.0%; MB loz1 20.0%, loz2 30.0%.
+- MT 7d loz2 is weak (28.6%) while 30d loz2 is stronger than loz1, indicating weekday/window instability.
+- Classification: `LOZ_SIGNAL_MIXED`, `LOZ_NOT_READY_FOR_RULE`, `LOZ_TEST_LANE_CANDIDATE_ONLY`.
+- Safe next step is measurement-only loz selector shadow; no fixed official loz rule.
+
+## 10. `/du-doan-test` Reality Status
+
+- Current label: `MANUAL_STAGE_0_CONFIRMED`.
+- Tables exist and latest date is 2026-05-03 for MB only: runs/bundles/results 14 lifetime rows each, candidates/model contribution 308 rows, experiment/model/method scoreboards live.
+- API/UI are admin-only and expose governance/mode/scoreboard/leakage labels.
+- Missing: scheduler auto-wire, MN/MT support, natural realtime proof, actual pre-closeout realtime run evidence.
+
+## 11. `/du-doan-test` Anti-Force-Fit / Leakage Audit
+
+- V50 2026-05-03 rows are `POST_CLOSEOUT_DIAGNOSTIC_FULL_25`, so they are diagnostic after closeout and **not realtime unlock proof**.
+- The lane records `official_output=false`, `output_impact=false`, `test_only=1`, `admin_only=1`, `owner_approved=0`, `output_eligible=0`.
+- `du_doan_test_leakage_audit` has 7 rows for 03/05. Shared-pool methods are labeled rather than counted as independent proof.
+- Verdict: `NOT_REALTIME_PROOF_FOR_UNLOCK`; do not use today test row as production evidence.
+
+## 12. `/du-doan-test` UI Comparison Gap
+
+- UI now compares official vs test axes and shows scoreboards/model/method/leakage for MB.
+- Gap: wording still centered on lo2/BT; it does not yet explicitly present `loz1` and `loz2` as separate first/second-line comparison for all regions.
+- Safe bucket: `IMPLEMENT_NOW_UI_TEST_ONLY` after matrix, but V51 did not implement further UI changes.
+
+## 13. MN/MT/MB Expansion Readiness For Test Lane
+
+- Current support: MB only.
+- MN/MT expansion needs realtime cutoff rules: MN cannot use MN(D) actual; MT may use MN(D) after MN closeout but not MT(D); MB may use MN(D)+MT(D), not MB(D).
+- Classification: `DESIGN_ONLY` until cutoff contract and anti-leak proof are written.
+
+## 14. Model Tensor By Region / Weekday / Station / Output Task
+
+- Tensor artifact has 3216 rows and dimensions including model, family, provider, region, weekday, station_set, run_source, output_type, verdict, strength, source-prize/rule/prompt context, contribution flags.
+- Tensor is OK for diagnostics, not pruning or realtime selection.
+- Station/province exists mostly as station_set, not full station-level model attribution.
+
+## 15. Cost / Latency / Pruning Readiness
+
+- `prediction_trace.jsonl` parsed 852 JSON rows in this pass, but no latency/cost/token fields were detected by V51 audit.
+- Tensor `latency_available/latency_seconds/timeout_or_fallback` columns exist, but `NO_PER_MODEL_DURATION` is present across 3216 rows.
+- Labels: `TENSOR_NOT_OK_FOR_PRUNING`, `TENSOR_NOT_OK_FOR_REALTIME_SELECTION`, `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+
+## 16. Shadow / Multi-Lane / New Methods Progress
+
+- Shadow/multi-lane surfaces are broadly persistent on VPS; some are auto, some manual/backfill.
+- `single_vote_rescue_replay_shadow` remains `LEAKY_REFERENCE_ONLY`.
+- `tier2_replay_shadow` and `tier2_replay_v2_shadow` remain `DROP_AS_DESIGNED` based on prior negative replay.
+- `corrected_rescue_replay_shadow` remains `WAIT_DATA`; do not unlock TIER 3.
+
+## 17. ML / Retrain / MRE / MDE / Post-Closeout Pipeline
+
+- Health shows active measurement roster 25 plus Cohere rerank component.
+- Scheduler is running normal official jobs; no V51 official scheduler change.
+- Test lane runner/evaluator remain manual; scheduler auto-wire remains owner-locked.
+
+## 18. Measurement Table Completeness
+
+- `/du-doan-test` V50 tables are now present, but latency/cost fields are not populated.
+- Scoreboards exist for MB, but only 2 MB dates. Statistical judgment requires more closeouts.
+- `du_doan_test_ai_predictions` exists but row count is 0; AI test prompt is designed-not-executing.
+
+## 19. Data Sufficiency And Missing Data
+
+- Missing: per-model latency/cost/token, station-level model attribution, separate loz1/loz2 contribution, MN/MT test lane, raw 25-model direct test ingestion, natural realtime test-run proof.
+- Enough now for measurement/test/UI next steps; not enough for official changes or model pruning.
+
+## 20. Code Readiness Matrix
+
+| ID | Issue | Evidence source | Latest status | Sample size | Regions affected | Rolling window | Risk if code now | Can fix measurement-only now? | Can fix test-lane only now? | Can fix UI-only now? | Needs more live data? | Needs owner decision? | Drop? | Next command | Expected artifact/report |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| V51-MT-01 | MT model hits dropped while official loz miss | official_day.MT model_hits/dropped_actual_candidates | MEASURED_ONE_DAY | 1 day + rolling windows | MT | needs 7/14/30 focused extraction | HIGH | YES | YES | YES | YES | NO for measurement | NO | Build MT candidate drop measurement table/test-lane view only | MT model-hit-to-output-drop matrix |
+| V51-MB-01 | MB AI value unclear | MB model_daily_eval rolling + tensor | WAIT_DATA | rolling 7/14/30/60 available but latency/cost incomplete | MB | 7/14/30/60 | MEDIUM for measurement, HIGH for prune | YES | YES | YES | YES | YES for prune | NO | Populate latency/cost + unique signal audit | model value/cost matrix |
+| V51-TEST-01 | /du-doan-test still MB-only manual stage | du_doan_test tables/API/UI | MANUAL_STAGE_0_CONFIRMED | 2 MB dates | MB only | not enough | LOW for UI/test, HIGH for scheduler | YES | YES | YES | YES | YES for scheduler | NO | Add MN/MT test-lane design only after realtime cutoff spec | test-lane MN/MT expansion spec |
+| V51-LOZ-01 | loz1/loz2 selection uncontrolled by region/weekday/source | loz rolling audit | LOZ_SIGNAL_MIXED | 60d official + predictions | MN/MT/MB | 7/14/30/60 | HIGH official, LOW measurement | YES | YES | YES | YES | NO for measurement | NO | Create loz selector shadow diagnostic only | loz selector shadow design |
+| V51-TENSOR-01 | Per-model latency/cost missing blocks pruning | tensor + trace audit | TENSOR_NOT_OK_FOR_PRUNING | 3216 | all | diagnostic | HIGH prune | YES | YES | YES | YES | YES for prune | NO | Instrument per-model duration/cost in measurement/test only | latency/cost instrumentation plan |
+| V51-CORRECTED-REPLAY-01 | Corrected rescue replay gate not met | corrected_rescue_replay_shadow | WAIT_DATA | ~13 valid days prior; V51 needs updated closeout | all | 14+ valid days | HIGH | YES | NO | YES | YES | YES for unlock | NO | Refresh corrected replay closeout rows after 2026-05-03 if materializer supports it | corrected replay delta |
+
+## 21. Safe Implementation Performed
+
+- None in V51. This pass generated read-only audit artifacts and docs. No official runtime or test-lane code change was made after the matrix.
+
+## 22. Items Deliberately Not Implemented
+
+- No official output change.
+- No production prompt/model roster/scoring/lane/bundle-voting change.
+- No scheduler auto-wire for `/du-doan-test`.
+- No model pruning.
+- No loz rule.
+- No rescue/Option A/TIER 3 unlock.
+
+## 23. Wait-Data / Wait-Live / Owner-Decide / Drop List
+
+- `IMPLEMENT_NOW_MEASUREMENT_ONLY`: MT model-hit-to-output-drop matrix, loz selector shadow, latency/cost instrumentation.
+- `IMPLEMENT_NOW_TEST_LANE_ONLY`: MN/MT expansion design + raw 25-model ingestion design, after cutoff contract.
+- `WAIT_DATA`: MB AI value, corrected rescue replay, loz conditionality, test-lane sample maturity.
+- `OWNER_DECIDE`: scheduler auto-wire, production pruning, any official unlock.
+- `DROP_AS_DESIGNED`: tier2 replay V1/V2 policies as previously measured.
+- `LEAKY_REFERENCE_ONLY`: old single-vote rescue replay table.
+
+## 24. Next Commands
+
+```bash
+python web/_sync_live_forensic_inputs.py
+python web/backend/_du_doan_test_daily_runner.py --date YYYY-MM-DD --region MB --mode realtime_available_only --dry-run --json
+python web/backend/_du_doan_test_daily_runner.py --date YYYY-MM-DD --region MB --mode realtime_available_only --json
+python web/backend/_du_doan_test_closeout_evaluator.py --date YYYY-MM-DD --region MB --json
+```
+
+## 25. Technical Self-Audit
+
+- VPS sync first: PASS.
+- Pre-hash captured: PASS.
+- Official path mapped: PASS.
+- Test path mapped: PASS.
+- No official mutation: PASS.
+- Matrix before implementation: PASS.
+- No implementation after matrix in V51: PASS.
+- UI/API/test lane reviewed: PASS.
+- Post-hash captured: PASS.
+
+## 26. Governance No-Overclaim Self-Audit
+
+- Did not call one good day improvement proof: PASS.
+- Did not call V50 diagnostic rows realtime proof: PASS.
+- Did not call repeated/shared signals independent without proof: PASS.
+- Did not call AI test prompt active: PASS.
+- Did not call tensor pruning-ready: PASS.
+- Did not change official output: PASS.
+- Did not use actual for official/test promotion: PASS.
+- Did not hide blockers: PASS.
+
+## 27. Final Owner-Facing Answer
+
+- Cai thien official chua? Chua chung minh ben vung; MN/MB tot ngay 03/05, MT van fail, rolling mixed.
+- MT vi sao sai? Mot ngay 03/05 cho thay top1 official bi no-token/rerun_post_mn chi phoi manh; nhieu hit model/tail bi drop theo rank/score.
+- MB AI yeu khong? Chua ket luan; hom nay AI-chain test would break, nhung can rolling + latency/cost.
+- Model prune duoc chua? Khong, `NO_PER_MODEL_DURATION` van block.
+- `/du-doan-test` status? `MANUAL_STAGE_0_CONFIRMED`, MB-only, ch?a full live-parallel auto.
+- Co force-fit actual khong? V50 today rows la post-closeout diagnostic, khong dung cho unlock realtime.
+- Tiep theo: measurement/test/UI-only; khong doi official.

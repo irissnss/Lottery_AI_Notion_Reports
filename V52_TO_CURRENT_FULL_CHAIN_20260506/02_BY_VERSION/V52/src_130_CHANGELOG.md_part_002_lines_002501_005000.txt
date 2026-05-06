@@ -1,0 +1,2500 @@
+  - Promoted the prediction lifecycle write paths from `Depends(get_current_user)`
+    to `require_admin`: `POST /api/predict/MN|MT|MB`, `POST /api/update/{region}`,
+    `POST /api/sync/push`, `DELETE /api/predictions/{date}/{region}`,
+    `POST /api/predictions/delete-batch`, `POST /api/generate-bundle`.
+  - Same `require_admin` upgrade for the compute-heavy admin paths
+    `POST /api/backtest`, `POST /api/optimize-weights`, and
+    `POST /api/run-optimizer-now`.
+  - Live re-probe after deploy returned `401` for all 15 endpoints when called
+    without a session, while `/user-view`, `/du-doan`, `/search`, and
+    `/api/health` kept returning `200`.
+- **`web/frontend/login.html`**
+  - Viewer login now lands on `/user-view`; admin/non-viewer login continues to
+    land on `/app`.
+- **`web/frontend/user-view.js`**
+  - Reads existing `/api/status` and `/api/predictions` data.
+  - Supports model switching, date preview, region tabs, hit highlighting, and
+    history filters.
+  - Added `?mock=1` preview mode so the UI can be reviewed locally even when the
+    full FastAPI dependency stack is not installed on the workstation.
+- **`web/backend/main.py`**
+  - Added local routes `/user-view` and `/user-view.js`.
+
+### Verification
+
+- IDE lint check for the new user-view page passed after adding accessible names
+  to the new form controls.
+- Local static preview can run from `web/frontend` via Python's built-in server
+  using `user-view.html?mock=1`; full backend route remains `/user-view`.
+- VPS deploy:
+  - first pass uploaded only `web/backend/main.py`, `web/frontend/user-view.html`,
+    and `web/frontend/user-view.js`;
+  - `lottery.service` restarted and was `active (running)`;
+  - live checks returned `200` for `https://xs.io.vn/user-view`,
+    `https://xs.io.vn/user-view.js`, and `https://xs.io.vn/api/health`.
+- Safety grep for User view found no delete/update/predict/admin controls; the
+  only POST in `user-view.js` is logout.
+- Second VPS deploy uploaded only `web/frontend/login.html`,
+  `web/frontend/user-view.html`, `web/frontend/user-view.js`,
+  `web/frontend/search.html`, and `web/frontend/du-doan.html`.
+  `lottery.service` restarted and was `active (running)`.
+- Live checks returned `200` for `https://xs.io.vn/user-view`,
+  `https://xs.io.vn/du-doan`, `https://xs.io.vn/search`,
+  `https://xs.io.vn/login`, `https://xs.io.vn/user-view.js`, and
+  `https://xs.io.vn/api/health`.
+- Live HTML marker check confirms:
+  - `/user-view` exposes `/user-view`, `/du-doan`, `/search`;
+  - `/du-doan` and `/search` expose the same three viewer links plus hidden
+    `/app` dashboard link for admin role;
+  - `/login` contains viewer `/user-view` and admin `/app` redirects.
+- Lint warnings are only inline-style warnings in existing HTML; no JS syntax
+  error.
+
+### Impact
+
+No scoring, prediction execution, final bundle, model roster, output eligibility,
+scheduler, database schema, delete capability, or admin/dev dashboard behavior
+change. This is a viewer-shell routing/navigation change only.
+
+---
+
+## V20.3.37.24 — Cohere rerank bridge into P0 shadow + measured-component count 26 (2026-04-30 03:30 VN)
+
+### Context
+
+Owner correctly pointed out that Cohere is also a measured model/component, even
+though it is a reranker rather than a prediction generator. Therefore the right
+semantics are: `25` active prediction-measurement models plus `1` active rerank
+measurement component = `26` measured components.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added `cohere_rerank_effectiveness_v1` to `P0_METHODS`.
+  - Added `_materialize_cohere_rerank_effectiveness()`, reading
+    `cohere_effectiveness_daily` and writing Cohere rerank evidence into the
+    unified P0 shadow tables.
+  - The method remains `output_eligible=0`, `diagnostic_only=1`,
+    `shadow_only=1`, `owner_approved=0`.
+- **`scripts/verify_p0_natural_closeout.py`**
+  - Added `cohere_rerank_effectiveness_v1` to the expected portfolio list.
+  - Expected P0 portfolio method count is now `18`.
+- **`web/backend/main.py`** (targeted remote patch)
+  - Added `active_rerank_measurement_model_count=1`.
+  - Added `active_measured_component_count=26`.
+  - Kept `runtime_model_count=25` for active prediction measurement and
+    `registry_visible_model_count=28` for inventory.
+- **Artifacts**
+  - Added read-only Cohere audit and deploy verification artifacts under
+    `artifacts/db_audit_20260430/`.
+- **Docs**
+  - Added `FU-071`.
+
+### Verification
+
+- Read-only Cohere audit:
+  - `cohere_rerank_log`: 39 rows, 2026-04-17..2026-04-29
+  - `cohere_effectiveness_daily`: 39 rows, 2026-04-17..2026-04-29
+  - before this change, P0 had no Cohere method rows.
+- Local copied-DB smoke:
+  - `cohere_rerank_effectiveness_v1` emits 1 row per region.
+  - P0 smoke method count becomes 18.
+  - Scoreboard rows become 360 per region (`18 methods × 5 output types × 4 windows`).
+- VPS:
+  - backup: `/root/Lottery_AI_Test/backups/cohere_p0_bridge_20260430_032522/`
+  - remote compile OK for `_materialize_multi_lane_shadow_p0.py`,
+    `verify_p0_natural_closeout.py`, and `main.py`.
+  - remote import/bootstrap: method count `18`, `has_cohere=True`,
+    registry count `18`.
+  - health: `runtime_model_count=25`, `active_rerank_measurement_model_count=1`,
+    `active_measured_component_count=26`, `registry_visible_model_count=28`.
+- Post-deploy sync:
+  - `artifacts/live_sync/20260430_032553/manifest.json`
+  - source tables `predictions`, `final_bundles`, `lottery_results` unchanged.
+  - `shadow_activation_registry` changed intentionally from 17 to 18 rows.
+
+### Impact
+
+No `/du-doan`, final bundle, prediction, lottery result, scoring, bundle voting,
+lane weight, output eligibility, model roster, public UI behavior, or DDL
+change. Historical Cohere P0 rows were not backfilled; future closeouts will
+write them automatically.
+
+---
+
+## V20.3.37.23 — Model-count semantics + policy replay consolidation proof (2026-04-30 03:00 VN)
+
+### Context
+
+Owner flagged `runtime_model_count=28` as suspicious and expected `25`, and
+asked whether the replay policies `A_BASELINE`, `D_CONTEXT_ADAPTIVE`,
+`D2_CONTEXT_ADAPTIVE_SAFE_GATE`, `S_SECONDARY_STRICT_GATE`,
+`F_FAMILY_LANE_FUSION`, and `F2_FAMILY_LANE_SAFE_GATE` were fully consolidated
+into the parallel measurement program.
+
+### Changes
+
+- **`web/backend/main.py`**
+  - Corrected `/api/health` semantics:
+    - `runtime_model_count=25` = active measurement roster
+      (`15 output_eligible + 10 SHADOW_AUTO`)
+    - `registry_visible_model_count=28` = active/shadow/registered inventory
+      including 3 non-active registered assets
+    - `registered_non_active_model_count=3`
+    - added `model_count_semantics`
+  - Updated Parallel Shadow Proof semantics so model counts no longer imply
+    the 3 registered non-active assets are active measurement models.
+- **`artifacts/db_audit_20260430/_policy_and_registry_audit.py`** (NEW)
+  - Read-only proof for model count buckets and replay policy consolidation.
+- **`docs/FOLLOW_UP_TRACKER.md`**
+  - Added `FU-070` as DONE.
+
+### Verification
+
+- Registry self-test:
+  - output eligible: `15`
+  - SHADOW_AUTO: `10`
+  - active measurement: `25`
+  - registered non-active: `3`
+  - registry-visible inventory: `28`
+- Replay proof:
+  - owner-listed policies `A/D/D2/S/F/F2` are present in
+    `output_policy_replay_daily` for MN/MT/MB on 2026-04-29.
+  - all are bridged into P0 `shadow_results` via
+    `output_policy_replay_governance_v1`.
+  - extra diagnostic policy `B_FLAT_TOTAL_MAIN_SECONDARY` is also present.
+- VPS:
+  - targeted remote patch only; no whole-file upload of local `main.py`.
+  - backup:
+    `/root/Lottery_AI_Test/backups/health_model_count_semantics_20260430_025854/`
+  - remote `py_compile main.py` OK.
+  - public health now returns `runtime_model_count=25`,
+    `registry_visible_model_count=28`.
+- Post-patch sync:
+  - `artifacts/live_sync/20260430_025915/manifest.json`
+  - source tables and existing shadow rows unchanged by table hash; only
+    `scheduler_logs` changed due restart/runtime logging.
+
+### Impact
+
+No `/du-doan`, `final_bundles`, `predictions`, `lottery_results`, scoring,
+bundle voting, lane weights, output eligibility, model roster, public UI
+behavior, or DDL change.
+
+---
+
+## V20.3.37.22 — Coverage hardening deployed (shadow-only) (2026-04-30 02:40 VN)
+
+### Context
+
+Owner directed proceeding with the safest recommendation step-by-step, from
+simple to complex, to stop measurement work from becoming fragmented and to
+avoid future "missing data, wait more days" blockers. Scope stayed strictly
+measurement-first / shadow-only / no production mutation.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added `SCOREBOARD_OUTPUT_TYPES = (BT, lo2, lo3, xien2, xien3)`.
+  - Extended `shadow_method_scoreboard` writer to emit projected output-family
+    rows for all five output axes, not only BT. Non-BT rows are clearly marked
+    as projected shadow-family axes, not output approval.
+  - Added `_materialize_freshness_readiness_guard()` so
+    `freshness_readiness_guard_v1` now has concrete `shadow_results` rows.
+  - Added `_materialize_counterfactual_decision_audit_rows()` so
+    `counterfactual_decision_audit_v1` now bridges source audit rows into
+    per-row `shadow_results`.
+  - Hardened `_materialize_no_token_drift()` so no-token regions with no
+    prediction rows emit an explicit diagnostic row instead of silently
+    producing 0 rows.
+  - Wired the new lanes into `materialize_for()` before scoreboard aggregation.
+
+### Verification
+
+- Local:
+  - `python -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py`
+  - IDE diagnostics: no linter errors for the touched file.
+  - Smoke on copied DB only:
+    `artifacts/db_audit_20260430/coverage_hardening_smoke.json`
+    proved MN/MT/MB emit 17 method rows and output types
+    `BT/lo2/lo3/xien2/xien3`; MN no-token no-sample state now emits one
+    diagnostic row; `counterfactual_decision_audit_v1` and
+    `freshness_readiness_guard_v1` have `shadow_results` rows.
+  - Main forensic DB hash before/after smoke unchanged.
+- VPS:
+  - Backup:
+    `/root/Lottery_AI_Test/backups/coverage_hardening_20260430_023613/`
+  - Deployed only `web/backend/_materialize_multi_lane_shadow_p0.py`.
+  - Remote `py_compile` OK.
+  - Remote import check: method count `17`, output types
+    `BT,lo2,lo3,xien2,xien3`, helper functions present.
+  - `lottery.service` restarted and is active.
+  - Public health: `V20.3.36`, output `15`, runtime `28`.
+- Post-deploy forensic sync:
+  - `artifacts/live_sync/20260430_023704/manifest.json`
+  - Critical table hash compare:
+    `artifacts/db_audit_20260430/post_deploy_table_hash_compare.json`
+    shows `predictions`, `final_bundles`, `lottery_results`,
+    `shadow_candidates`, `shadow_results`, `shadow_method_scoreboard`, and
+    `shadow_activation_registry` unchanged. Only `scheduler_logs` changed due
+    restart/runtime logging.
+
+### Impact
+
+- No `/du-doan`, `final_bundles`, `predictions`, `lottery_results`, scoring,
+  bundle voting, lane weights, output eligibility, model roster, public UI, or
+  runtime final behavior change.
+- Historical rows were not backfilled. Next natural closeout will prove the new
+  writer behavior live.
+
+---
+
+## V20.3.37.21 — Coverage gap audit + Wave-readiness proposal (read-only) (2026-04-30 02:05 VN)
+
+> **Supersession note (added during V20.3.37.25 reconciliation):** This section
+> describes the proposal phase of FU-069. The M-NOW-1/2/3 measurement writers
+> were subsequently deployed in **V20.3.37.22** (DEC-018), Cohere bridged in
+> **V20.3.37.24** (FU-071/DEC-020). Treat the wording below as historical
+> proposal-phase context, not as the current portfolio state.
+
+### Context
+
+Owner asked whether measurement coverage is complete enough to avoid being
+data-starved when Wave 2 / Wave 3 / Wave 4 hit their review windows: per
+model, per method, per technique, per metric, all the way from basic to
+advanced. Doctrine: measurement-first / shadow-only / no production
+mutation. No DDL or scheduler change without owner approval.
+
+### Changes (artifacts only — pure read-only audits)
+
+- **`artifacts/db_audit_20260430/_coverage_audit.py`** (NEW)
+  - Read-only audit script. Opens `data/lottery_ai.db` with `mode=ro`,
+    classifies coverage across per-model / per-method / per-region /
+    per-weekday / per-output_type / per-metric axes for the last 7d / 14d
+    / 30d windows, plus Wave 1 surface freshness, Wave 2 reasoning
+    contract status, trace field completeness, per-method × region grid
+    for the latest closed day.
+- **`artifacts/db_audit_20260430/coverage_audit.json`** (NEW)
+- **`artifacts/db_audit_20260430/coverage_audit.md`** (NEW)
+- **`artifacts/db_audit_20260430/_model_alias_audit.py`** (NEW)
+  - Read-only alias audit. Confirms zero alias mismatch — every model name
+    in measurement tables exists in master roster.
+- **`artifacts/db_audit_20260430/model_alias_audit.md`** (NEW)
+- **`artifacts/db_audit_20260430/COVERAGE_GAP_PROPOSAL_20260430.md`** (NEW)
+  - Identifies 8 gaps (G1–G8) and 4 proposed measurement-only writer
+    changes (M-NOW-1 to M-NOW-4). Lists basic / mid / advanced / expert
+    metric tiers. Ranks Wave 1/2/3/4 deploy timing against current state.
+- **`docs/CURRENT_TRUTH_SSOT.md`** — added Timeline & Scheduler row for
+  `Coverage gap audit + Wave-readiness proposal (V20.3.37.21)`.
+- **`docs/FOLLOW_UP_TRACKER.md`** — added FU-069 with status
+  `PROPOSAL_PENDING_OWNER_APPROVAL` and full schema (8 gaps, 5 metrics,
+  Wave map).
+
+### Coverage findings
+
+- 27 active models in last 7d / 32 in last 14d. No alias mismatch.
+- 17 registered shadow methods, 100% scoreboard coverage 14d, 0% NULL
+  on 23/23 critical scoreboard columns.
+- 21 region × weekday cells in 30d, every cell has ≥ 4 days (sufficient).
+- All 9/11 Wave 1 surfaces fresh to 2026-04-29.
+  - 2/11 (`data_preservation_manifest_daily`, `sync_parity_audit_daily`)
+    empty — overlap with FU-068.
+- Wave 2 reasoning contract proves 13/18 trace rows miss
+  `strongest_candidate_seen` per region (by-design measurement of
+  contract weakness; enforcement is the Wave-2 plan deliverable).
+- 8 AI models missing in `runtime_reliability_model_daily`.
+- Output_type axis on scoreboard is BT-only (lo2/lo3/xien2/xien3 absent).
+
+### Verification
+
+- Local sync: `python web/_sync_live_forensic_inputs.py` returned
+  `status=ok`, manifest `artifacts/live_sync/20260430_015322/manifest.json`.
+- All three audits: `mode=ro`, no DB writes.
+- DB hash before/after audits:
+  `921690ac002ccb1860a73a7e0dea0d0a3bca7700385f1f7164caf705b6525901` —
+  unchanged.
+- No `/du-doan`, scoring, bundle voting, lane weights, output eligibility,
+  scheduler hook, model roster, public UI, or runtime final behavior
+  change.
+- Public health unchanged: `V20.3.36`, output `15`, runtime `28`.
+
+### Owner gates
+
+- M-NOW-1 (output_type axis expansion in scoreboard writer) — pending owner
+  approval. Highest leverage to avoid Wave-2 review starvation.
+- M-NOW-2 (per-row sink for two methods) — pending owner approval.
+- M-NOW-3 (no_token_drift always-emit-1-row diagnostic) — pending owner
+  approval.
+- M-NOW-4 (model alias audit) — already executed read-only.
+- Wave 2 / 3 / 4 — gated on portfolio maturity (3-5 / 14 / 30 compatible
+  closeouts) per `docs/AI_MECHANISM_IMPLEMENTATION_PLAN_20260424.md`.
+
+---
+
+## V20.3.37.20 — DB inventory + consolidation proposal (read-only audit) (2026-04-30 01:55 VN)
+
+### Context
+
+Owner asked the agent to keep working until eligible work is exhausted, and
+specifically to inventory the database — count tables, find redundancy/waste,
+and decide whether tables can be dropped, shared, or merged for consistency.
+Doctrine: measurement-first / shadow-only / no production mutation. No DDL is
+permitted without owner approval.
+
+### Changes
+
+- **`artifacts/db_audit_20260430/_audit_db.py`** (NEW)
+  - Read-only inventory script. Opens `data/lottery_ai.db` with `mode=ro`,
+    walks `sqlite_master`, classifies each table/view by name + row count,
+    reports min/max date for the best-candidate date column, and writes
+    `inventory.json` / `inventory.md`.
+  - Pure read; no DB writes; no runtime file writes.
+- **`artifacts/db_audit_20260430/inventory.json`** (NEW)
+- **`artifacts/db_audit_20260430/inventory.md`** (NEW)
+- **`artifacts/db_audit_20260430/DB_TABLE_CONSOLIDATION_PROPOSAL_20260430.md`** (NEW)
+  - Phase R1 drop-candidates: `rule_features`, `bundle_replay_compare_daily`,
+    `training_records`.
+  - Phase R2 re-wire-or-drop: `rule_effectiveness` (V5.8 `update_rule_outcome`
+    wire dormant), `data_preservation_manifest_daily` and
+    `sync_parity_audit_daily` (writers fire only from a dev-side admin
+    endpoint that reads `artifacts/live_sync/latest_manifest.json`).
+  - Phase R3 docs-only reconciliation (this CHANGELOG + SSOT + tracker).
+  - Explains why no merge is recommended for Wave1 surfaces, pre/post-effect
+    tables, Cohere split, rule-storage chain, or shadow tables.
+- **`docs/CURRENT_TRUTH_SSOT.md`** — added Timeline & Scheduler row for
+  `DB inventory + consolidation proposal (V20.3.37.20)` with object counts,
+  hash, and link to artifacts.
+- **`docs/FOLLOW_UP_TRACKER.md`** — added `FU-068` with full schema and
+  status `PROPOSAL_PENDING_OWNER_APPROVAL`.
+
+### Verification
+
+- Local sync: `python web/_sync_live_forensic_inputs.py` returned `status=ok`
+  with manifest `artifacts/live_sync/20260430_015322/manifest.json`. Local DB
+  hash now `921690ac002ccb1860a73a7e0dea0d0a3bca7700385f1f7164caf705b6525901`,
+  size `43,044,864`, matching VPS.
+- Audit script: `python artifacts/db_audit_20260430/_audit_db.py` reported
+  `tables=68 views=8 empty=6 stale30=2`. No DB writes performed (`mode=ro`).
+- Reference scan via `Grep` on `web/backend/` confirmed:
+  - `pattern_rules` is live (admin CRUD `/api/rules`, `/rules-dashboard`,
+    `filter_2_so_cuoi.py`, `knowledge_weights.py`).
+  - `rule_features` has no live references.
+  - `training_records` has DDL only; `training_history` is the live writer.
+  - `bundle_replay_compare_daily` has DDL only; `output_policy_replay_daily`
+    is the live REPLAY surface.
+  - `rule_effectiveness` has a wired but dormant `update_rule_outcome` path.
+  - `data_preservation_manifest_daily` and `sync_parity_audit_daily` only
+    fire when the dev-side `latest_manifest.json` is present.
+- No `/du-doan`, scoring, bundle voting, lane weights, output eligibility,
+  scheduler hook, model roster, or runtime final behavior change.
+- Public health unchanged: `V20.3.36`, output `15`, runtime `28`.
+
+### Owner gates
+
+- Phase R1 / R2 (any DROP / ALTER / RENAME): **NOT executed**, awaiting owner
+  decision per FU-068.
+- Phase R3 (docs-only sync): performed in this session.
+
+---
+
+## V20.3.37.19 — Parallel Shadow Proof monitoring board (admin-only) (2026-04-30 01:45 VN)
+
+### Context
+
+Owner requested a visual UI to track the parallel shadow branch: runtime final
+baseline versus all shadow/scaffold methods, using shared measurement tables,
+without exposing or changing `/du-doan`.
+
+### Changes
+
+- **`web/backend/main.py`**
+  - Added read-only admin endpoint `/api/admin/parallel-shadow-proof`.
+  - Reads existing tables only:
+    - `final_bundles`
+    - `shadow_activation_registry`
+    - `shadow_results`
+    - `shadow_candidates`
+    - `shadow_method_scoreboard`
+  - Returns baseline final by region, method coverage, top-saver/risk summaries,
+    and top1 candidate rows.
+  - Explicit response flags: `board_type=SHADOW_ONLY_ADMIN`, `output_impact=false`,
+    `public_output_changed=false`.
+- **`web/frontend/monitoring.html`**
+  - Added admin-only `Parallel Shadow Proof — baseline vs methods` section.
+  - Shows runtime final baseline, method count/model count semantics, would-save,
+    risk watch, method coverage table, and top1 candidate table.
+  - Labels the board as `SHADOW_ONLY` and states it does not affect `/du-doan`.
+- **`docs/DECISION_LOG.md`**
+  - Added `DEC-017` for the admin-only visual monitoring scope.
+
+### Verification
+
+- Local:
+  - `python -m py_compile "web/backend/main.py"`
+  - IDE diagnostics: only existing inline-style warnings in `monitoring.html`; no backend lint errors.
+- VPS:
+  - backup: `/root/Lottery_AI_Test/backups/parallel_shadow_ui_<timestamp>/`
+  - deployed only:
+    - `web/backend/main.py`
+    - `web/frontend/monitoring.html`
+  - service restarted and stayed active, MainPID `529893`
+  - remote venv `py_compile web/backend/main.py` OK
+  - marker grep confirmed endpoint and frontend section deployed
+  - direct function smoke with admin bypass for 2026-04-29 returned:
+    - `success=True`
+    - `method_count=17`
+    - `output_impact=False`
+    - baseline regions `MN/MT/MB`
+    - 17 methods
+  - public health: `status=running`, version `V20.3.36`, output `15`, runtime `28`
+
+### Runtime Impact
+
+Admin/read-only UI and API only. No `/du-doan`, `final_bundles`, `predictions`,
+`lottery_results`, scoring, bundle voting, lane weights, output eligibility,
+model roster, or runtime final behavior changed.
+
+---
+
+## V20.3.37.18 — FU-065 post-MRE/MDE rule-phase hook deployed (2026-04-30 01:30 VN)
+
+### Context
+
+The 2026-04-30 total-force pass proved that `rule_phase_evidence_v1` and
+`rule_injection_contract_shadow_v1` were sparse because the closeout chain ran
+before `mined_rule_effectiveness` was populated. Owner authorized proceeding
+with safe, measurement-only items that have enough evidence and do not touch
+runtime final.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added `materialize_rule_phase_post_mde_for(date_str, region, run_label=None)`.
+  - The helper runs only `rule_phase_evidence_v1`,
+    `rule_injection_contract_shadow_v1`, and scoreboard re-aggregation.
+  - It uses a distinct `post_mde_rule_phase_<date>` run-label and skips if
+    rule-phase/rule-injection rows already exist for the date/region.
+  - It does not write `predictions`, `final_bundles`, `lottery_results`, scoring,
+    output eligibility, or `/du-doan`.
+- **`web/backend/scheduler.py`**
+  - Added `_run_p0_rule_phase_post_mde(end_date, trigger='post_model_daily_eval')`.
+  - Wired the helper after the existing 20:20 MDE job and after
+    `_run_shadow_rule_d1_recent(...)`.
+  - Adds marker `[P0-RULE-PHASE-POST-MDE]`.
+
+### Verification
+
+- Local `py_compile` OK and IDE lints clean for both changed Python files.
+- VPS backup created under `/root/Lottery_AI_Test/backups/fu065_rule_phase_hook_<timestamp>/`.
+- Deployed only:
+  - `web/backend/_materialize_multi_lane_shadow_p0.py`
+  - `web/backend/scheduler.py`
+- Service restarted and stayed active, MainPID `529299`.
+- Remote venv `py_compile` OK.
+- Remote import check confirmed both new helpers and method count `17`.
+- Smoke on 2026-04-29 returned skip `rule_phase_already_materialized` for MN/MT/MB, proving duplicate guard.
+- Public health after deploy/smoke: `status=running`, version `V20.3.36`, output `15`, runtime `28`.
+
+### Runtime Impact
+
+Measurement-only scheduler hook. No `/du-doan`, `final_bundles`, `predictions`,
+`lottery_results`, scoring, bundle voting, lane weights, output eligibility,
+model roster, public UI, or runtime final behavior changed.
+
+---
+
+## V20.3.37.17 — Post-live total-force report for 2026-04-29 cycle (docs-only) (2026-04-30 01:05 VN)
+
+### Context
+
+Owner requested a full no-drop post-live audit after the 2026-04-29 live cycle
+completed, with a Markdown report covering output, runtime, P0, replay,
+scorecard, no-token, rules, Cohere, PP-1, and next-step buckets.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/POST_LIVE_TOTAL_FORCE_CLOSEOUT_20260429.md`** (new)
+  - Uses live sync `artifacts/live_sync/20260430_005600/manifest.json`.
+  - Confirms MN/MB remain `BUNDLE_SKEW` while MT is `NO_GAP`.
+  - Confirms post-MiniMax shadow denominator is `10` active models per region.
+  - Confirms P0 is natural-closeout proven for 2026-04-29 but still waits for
+    3-5 clean closeouts before P1/P2.
+  - Final verdict remains `FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS`.
+
+### Runtime Impact
+
+Docs/report only. No code deploy, no scoring, no `/du-doan`, no bundle voting,
+no lane weights, no output eligibility change, no PP-5, no shadow promotion, and
+no live output policy change.
+
+---
+
+## V20.3.37.16 — P0.10 first natural closeout proof + rule-phase backfill workaround (2026-04-30 00:40 VN)
+
+### Context
+
+The 2026-04-29 natural closeout was the first runtime proof point for the
+deployed P0.5/P0.7/P0.8/P0.9 portfolio (registered on 2026-04-28). This pass
+reconciled VPS truth with docs, applied a measurement-only rule-phase
+backfill to close a closeout-vs-MRE timing race, and verified that source
+tables were not mutated.
+
+This is a measurement-and-docs pass. There is no runtime code change. There
+is no `/du-doan`, `final_bundles`, scoring, bundle voting, lane-weight,
+output-eligibility, model-roster, or public-UI change.
+
+### VPS Forensic Sync
+
+- `python web/_sync_live_forensic_inputs.py`
+- Manifest: `artifacts/live_sync/20260430_003209/manifest.json`
+- VPS DB: `9d6632cd83d936e4d0c665ba2cf809514ab454fdac2b27578ecb6150c17ca4a7`
+- VPS prediction_trace: `2a274f17125595af0848d8666213a59a2aa4b9ff143863f52deccf7ae4de4e60`
+
+### Live Truth Reconciled
+
+- Service active 1d+, MainPID `492932`.
+- Public health unchanged: `V20.3.36`, output `15`, runtime `28`.
+- 2026-04-29 final bundles: `MN BT=85 LOSE`, `MT BT=62 WIN/lo2 PARTIAL`, `MB BT=63 LOSE/lo2 PARTIAL`.
+- predictions 2026-04-29: 75 rows, 25 models per region.
+- model_daily_eval 2026-04-29: 75 rows.
+- shadow_method_scoreboard 2026-04-29: 17 methods × 12 rows = 204 rows.
+- shadow_candidates 2026-04-29 (post-backfill): 247 rows / 13 active write methods.
+- shadow_results 2026-04-29 (post-backfill): 247 rows.
+- counterfactual_decision_audit_shadow 2026-04-29: 30 rows.
+- shadow_feature_snapshots 2026-04-29: 51 rows.
+
+### Per-method Coverage on 2026-04-29
+
+- `runtime_final_baseline_control_v1`: 3 × 3 regions
+- `strongest_to_final_preservation_v1`: 3 × 3
+- `no_token_drift_guard_v1`: 14 × 2
+- `rule_phase_evidence_v1`: 50 (post-backfill, was 0)
+- `meta_ranker_v1`: 9 × 3
+- `output_policy_replay_governance_v1`: 21 × 3
+- `phase_first_decision_shadow_v1`: 9 × 3
+- `anti_herding_shadow_v1`: 9 × 3
+- `rule_injection_contract_shadow_v1`: 9 × 3 (post-backfill, was 0)
+- `model_wisdom_scorecard_shadow_v1`: 75 × 3
+- `meta_ranker_ltr_dataset_shadow_v1`: 9 × 3
+- `rule_aware_adaptive_notoken_shadow_v1`: 9 × 3
+- `context_specialist_policy_shadow_v1`: 9 × 3
+- `online_bayesian_weighting_shadow_v1`: 9 × 3
+- `phase_aware_rerank_shadow_v1`: 9 × 3
+
+### Verifier Output
+
+- Command: `python3 scripts/verify_p0_natural_closeout.py --date 2026-04-29 --json --natural-after "2026-04-28 17:28:01"`
+- Result:
+  - `maturity = NATURAL_CLOSEOUT_PROVEN`
+  - `natural_closeout_proven = true`
+  - `expected_method_count = 17`
+  - `registered_method_count = 17`
+  - `methods_with_result_rows = 15`
+  - `methods_with_scoreboard_rows = 17`
+  - `output_eligible_count = 0`
+  - `owner_approved_count = 0`
+  - `output_impact = false`
+
+### Rule-phase Timing Race + Backfill Workaround
+
+- Diagnosis: `rule_phase_evidence_v1` materializer reads `mined_rule_effectiveness`
+  in the closeout chain (~09:35–11:32 VN), but MRE is populated by the nightly
+  MDE materializer (~20:20+). 2026-04-28 and 2026-04-29 had 0 rows because of
+  this timing.
+- Diagnostic confirmed weekday matches between Python `_weekday()` and
+  `mre.weekday`: 04-29=2, 04-28=1, 04-27=0, 04-26=6.
+- Backfill: `artifacts/phase_checkpoints/_tf_backfill_rule_phase_20260430.py`
+  ran on VPS for MN/MT/MB on 2026-04-28 and 2026-04-29 under run-label
+  `backfill_rule_phase_20260430_<date>`. Targeted only `rule_phase_evidence_v1`,
+  `rule_injection_contract_shadow_v1`, and the scoreboard re-aggregation.
+- Source-table integrity: pre/post-backfill hashes identical for `predictions`
+  (`2977684ab2df...`), `final_bundles` (`aab044ca...`), `lottery_results`
+  (`0390c43452b0...`).
+- Long-term fix queued in FU-065 (post-MRE/MDE re-run hook).
+
+### Files / Changes (no runtime code change)
+
+- **`docs/CURRENT_TRUTH_SSOT.md`** — added two rows for V20.3.37.16
+- **`docs/FOLLOW_UP_TRACKER.md`** — added FU-066 (maturity watch), FU-065 (long-term hook); transitioned FU-064/FU-063/FU-062/FU-061/FU-060 to `DONE`; updated FU-058 to `PARTIAL` with workaround applied
+- **`docs/CHANGELOG_GOVERNANCE_LEDGER.md`** — added 2026-04-30 entry
+- **`CHANGELOG.md`** — this entry
+- **`artifacts/phase_checkpoints/_tf_db_audit_20260430.py`** — read-only DB audit helper
+- **`artifacts/phase_checkpoints/_tf_method_coverage_20260430.py`** — per-method coverage helper
+- **`artifacts/phase_checkpoints/_tf_rule_phase_gap_20260430.py`** — diagnostic for MRE timing race
+- **`artifacts/phase_checkpoints/_tf_pre_backfill_check.py`** — pre-backfill source-hash snapshot
+- **`artifacts/phase_checkpoints/_tf_post_backfill_verify.py`** — post-backfill source integrity
+- **`artifacts/phase_checkpoints/_tf_backfill_rule_phase_20260430.py`** — targeted backfill script (executed on VPS)
+- **`artifacts/phase_checkpoints/TOTAL_FORCE_MONOLITHIC_EXECUTION_CLOSEOUT_20260430.md`** — final monolithic closeout report
+
+### Verification
+
+- VPS-first forensic sync OK; manifest persisted.
+- VPS service active, MainPID `492932`, since 2026-04-28 22:33:28 +07.
+- Public health: `status=running`, `V20.3.36`, output `15`, runtime `28`.
+- Verifier `NATURAL_CLOSEOUT_PROVEN` with `output_impact=false`.
+- Source-table hashes pre/post backfill identical for predictions, final_bundles, lottery_results.
+- Backfill backup directory created on VPS under `/root/Lottery_AI_Test/backups/p10_rule_phase_backfill_<ts>/`.
+
+### Runtime Impact
+
+Measurement and docs only. No `/du-doan`, `final_bundles`, scoring, bundle
+voting, lane weights, output eligibility, model roster, public UI, or runtime
+final behavior changed.
+
+---
+
+## V20.3.37.15 — P0.9 portfolio verifier coverage (2026-04-28 22:40 VN)
+
+### Context
+
+After P0.8 completed scaffold coverage, the next safety need was a single
+read-only verifier that reports the full P0/P0.5/P0.7/P0.8 method portfolio.
+This prevents tomorrow's live review from confusing method count, model count,
+registry coverage, result rows, and scoreboard rows.
+
+### Changes
+
+- **`scripts/verify_p0_natural_closeout.py`**
+  - Added `P0_PORTFOLIO_METHOD_KEYS` covering all 17 measurement methods.
+  - Added generic `method_coverage()` and `coverage_summary()` helpers.
+  - JSON output now includes:
+    - `p05_method_coverage`
+    - `p0_portfolio_method_coverage`
+    - `p0_portfolio_summary`
+  - Existing natural-closeout maturity logic is unchanged.
+
+### Verification
+
+- Local:
+  - `python -m py_compile "scripts/verify_p0_natural_closeout.py"`
+  - IDE lints: no diagnostics
+- VPS:
+  - Uploaded only `scripts/verify_p0_natural_closeout.py` after remote backup.
+  - Remote `python3 -m py_compile scripts/verify_p0_natural_closeout.py` OK.
+  - Remote verifier smoke for `2026-04-28` returned:
+    - `success=true`
+    - expected portfolio methods `17`
+    - registered portfolio methods `17`
+    - `output_eligible_count=0`
+    - `owner_approved_count=0`
+    - `output_impact=false`
+  - Public health after verifier/bootstrap: `status=running`, version
+    `V20.3.36`, output `15`, runtime `28`.
+
+### Runtime Impact
+
+Read-only verifier plus registry-only bootstrap for shadow activation coverage.
+No `/du-doan`, `final_bundles`, scoring, bundle voting, lane weights, output
+eligibility, model roster, public UI, or runtime final behavior changed.
+
+---
+
+## V20.3.37.14 — P0.8 full method portfolio scaffold coverage (2026-04-28 22:35 VN)
+
+### Context
+
+Owner asked whether all final methods can be planned and built in one pass while
+protecting runtime final. The safe answer is: complete the method portfolio as
+shadow scaffold/dataset lanes now, but do not promote them into output or create
+a duplicate `/du-doan` branch.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added five Tier-A scaffold-only measurement methods:
+    - `meta_ranker_ltr_dataset_shadow_v1`
+    - `rule_aware_adaptive_notoken_shadow_v1`
+    - `context_specialist_policy_shadow_v1`
+    - `online_bayesian_weighting_shadow_v1`
+    - `phase_aware_rerank_shadow_v1`
+  - All five reuse the P0.6 shared feature pack and existing shadow tables.
+  - No new production schema and no output branch were added.
+  - These methods collect comparable shadow rows/features for later evaluation;
+    they are not mature decision/output methods.
+
+### Verification
+
+- Local:
+  - `python -m py_compile "web/backend/_materialize_multi_lane_shadow_p0.py"`
+  - IDE lints: no diagnostics
+  - in-memory registry smoke:
+    - P0/P0.5/P0.7/P0.8 method count `17` measurement methods, not AI models
+    - all five Tier-A scaffold methods present
+    - all 17 methods output-ineligible/diagnostic/shadow-only/owner-unapproved
+- VPS:
+  - `python web/_smart_deploy.py --files web/backend/_materialize_multi_lane_shadow_p0.py`
+  - service restarted and stayed active, MainPID `492932`
+  - remote `python3 -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py` OK
+  - remote import check returned method count `17` and the five Tier-A scaffold method keys
+  - public health: `status=running`, version `V20.3.36`, output `15`, runtime `28`
+
+### Runtime Impact
+
+Measurement-only scaffold coverage. No `/du-doan`, `final_bundles`, scoring,
+bundle voting, lane weights, output eligibility, model roster, public UI, or
+runtime final behavior changed.
+
+---
+
+## V20.3.37.13 — P0.7 parallel proof harness baseline control (2026-04-28 22:30 VN)
+
+### Context
+
+Owner clarified the desired parallel branch should measure both the existing
+runtime final and new method/model candidates with the same metrics, while
+still not affecting `/du-doan` output. P0.7 adds a runtime-final baseline
+control method inside the existing shadow scoreboard instead of creating a
+duplicate output branch.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added `runtime_final_baseline_control_v1` to `P0_METHODS`.
+  - Added `_materialize_runtime_baseline_control()` to mirror the existing
+    `final_bundles.bach_thu` into `shadow_candidates` / `shadow_results`.
+  - The baseline control uses the same metrics and scoreboard as shadow
+    methods, enabling apples-to-apples comparison:
+    baseline final vs phase-first vs anti-herding vs rule-injection vs
+    model-wisdom vs meta-ranker.
+  - No new production table and no duplicate output branch were added.
+
+### Verification
+
+- Local:
+  - `python -m py_compile "web/backend/_materialize_multi_lane_shadow_p0.py"`
+  - IDE lints: no diagnostics
+  - in-memory registry smoke:
+    - P0/P0.5/P0.7 method count `12` measurement methods, not AI models
+    - `runtime_final_baseline_control_v1` present
+    - all 12 methods output-ineligible/diagnostic/shadow-only/owner-unapproved
+- VPS:
+  - `python web/_smart_deploy.py --files web/backend/_materialize_multi_lane_shadow_p0.py`
+  - service restarted and stayed active, MainPID `492676`
+  - remote `python3 -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py` OK
+  - remote import check returned method count `12`, baseline method present,
+    and `_materialize_runtime_baseline_control` present
+  - public health: `status=running`, version `V20.3.36`, output `15`, runtime `28`
+
+### Runtime Impact
+
+Measurement-only. No `/du-doan`, `final_bundles`, scoring, bundle voting, lane
+weights, output eligibility, model roster, public UI, or runtime final behavior
+changed. The baseline method only mirrors current final output into the shadow
+scoreboard for comparison after closeout.
+
+---
+
+## V20.3.37.12 — P0.6 shared measurement core + lane containment (2026-04-28 22:25 VN)
+
+### Context
+
+Owner emphasized that runtime final must remain fully stable for the next live
+cycle while new methods continue running in parallel. The correct next step is
+not to add duplicate lanes, but to harden the shared measurement core so P0.5
+methods reuse the same candidate/rule/model inputs and individual shadow lane
+failures stay contained.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added `_build_shared_feature_pack()` as the shared P0.6 measurement core.
+    It builds one reusable pack per `(date, region, run_label)` containing:
+    candidate pool, prediction rows, rule-tail summary, strongest candidate,
+    and model denominator.
+  - Updated P0.5 lanes and `meta_ranker_v1` to consume the shared feature pack
+    instead of each lane rebuilding candidate/rule/model inputs independently.
+  - Added `_run_shadow_lane()` containment wrapper so an individual shadow lane
+    exception is recorded as a contained diagnostic result and does not prevent
+    other shadow lanes or scoreboard materialization from continuing.
+  - Wrapped scoreboard materialization in containment metadata as well.
+  - No output/scoring path changed.
+
+### Verification
+
+- Local:
+  - `python -m py_compile "web/backend/_materialize_multi_lane_shadow_p0.py"`
+  - in-memory smoke confirmed method count `11`, `_build_shared_feature_pack`
+    exists, and `_run_shadow_lane` exists.
+  - IDE lints: no diagnostics for the materializer.
+- VPS:
+  - `python web/_smart_deploy.py --files web/backend/_materialize_multi_lane_shadow_p0.py`
+  - service restarted and stayed active, MainPID `492440`
+  - remote `python3 -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py` OK
+  - remote import check confirmed method count `11`, shared-core helper,
+    lane-containment helper, and run-label-aware candidate pool
+  - public health: `status=running`, version `V20.3.36`, output `15`, runtime `28`
+
+### Runtime Impact
+
+Measurement-only hardening. No `/du-doan`, `final_bundles`, scoring, bundle
+voting, lane weights, output eligibility, model roster, public UI, or final
+runtime behavior changed.
+
+---
+
+## V20.3.37.11 — P0.5 multi-lane shadow expansion deployed measurement-only (2026-04-28 22:05 VN)
+
+### Context
+
+Owner approved implementing the P0.5 multi-lane shadow expansion immediately as
+measurement-only work so live closeouts can be used to evaluate stronger
+methods without affecting `/du-doan` final output.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Added four P0.5 `SHADOW_AUTO` methods to the existing activation registry:
+    - `phase_first_decision_shadow_v1`
+    - `anti_herding_shadow_v1`
+    - `rule_injection_contract_shadow_v1`
+    - `model_wisdom_scorecard_shadow_v1`
+  - Reused existing P0 tables instead of adding new production schema:
+    `shadow_candidates`, `shadow_results`, `shadow_method_scoreboard`,
+    `shadow_feature_snapshots`, and `counterfactual_decision_audit_shadow`.
+  - Each method writes only diagnostic/shadow rows with `output_eligible=0`,
+    `diagnostic_only=1`, `shadow_only=1`, and `owner_approved=0`.
+  - Fixed the candidate-pool rule join to use the active `run_label` instead
+    of a hard-coded default label, so custom smoke/backfill labels remain
+    internally consistent.
+  - No scoring, bundle voting, lane weights, output eligibility, model roster,
+    `final_bundles`, or `/du-doan` path was changed.
+- **`scripts/verify_p0_natural_closeout.py`**
+  - Added read-only `p05_method_coverage` diagnostics for the four new methods.
+  - This does not change the existing P0 natural-closeout maturity rules.
+- **`artifacts/phase_checkpoints/P05_MULTI_LANE_SHADOW_EXPANSION_CODE_PROVEN_20260428.md`** (new)
+  - Records scope, method list, guardrails, verification, and next-live checks.
+- **`artifacts/phase_checkpoints/P05_MULTI_LANE_SHADOW_METHOD_PORTFOLIO_FULL_REPORT_20260428.md`** (new)
+  - Provides the full owner-facing method portfolio: implemented P0/P0.5 lanes,
+    future dataset-only lanes, replay/owner-lock lanes, run contracts,
+    promotion gates, and contradiction/risk review.
+
+### Verification
+
+- `python -m py_compile "web/backend/_materialize_multi_lane_shadow_p0.py" "scripts/verify_p0_natural_closeout.py"`
+- In-memory registry smoke:
+  - P0/P0.5 method count: `11` measurement methods, not AI models
+  - all four P0.5 methods present: `True`
+  - all 11 methods seeded `output_eligible=0`, `diagnostic_only=1`,
+    `shadow_only=1`, `owner_approved=0`
+- IDE lints: no diagnostics for `web/backend/_materialize_multi_lane_shadow_p0.py`
+- Targeted VPS activation:
+  - `python web/_smart_deploy.py --files web/backend/_materialize_multi_lane_shadow_p0.py`
+  - uploaded only `web/backend/_materialize_multi_lane_shadow_p0.py`
+  - restarted `lottery.service`; service active, MainPID `491537`
+  - copied `scripts/verify_p0_natural_closeout.py` to VPS after backup
+  - remote compile OK with `python3 -m py_compile`
+  - remote import check returned P0/P0.5 method count `11` and the four P0.5 method keys
+- Public health after activation:
+  - `status=running`, version `V20.3.36`, output `15`, runtime `28`
+- Follow-up remote registry sanity check:
+  - active `SHADOW_AUTO_EVAL_MODELS=10`
+  - `minimax-m2.7.status=REMOVED`
+
+### Runtime Impact
+
+Deployed measurement-only code. Output remains unaffected: no `/du-doan`,
+`final_bundles`, scoring, bundle voting, lane weight, model roster, public UI,
+or output eligibility change. First P0.5 shadow rows are `WAIT_NEXT_CLOSEOUT`;
+no P0.5 DB-row claim is made in this entry.
+
+---
+
+## V20.3.37.10 — Next-live watch checklist after MiniMax prune (docs-only) (2026-04-28 21:20 VN)
+
+### Context
+
+After MiniMax M2.7 was removed from active shadow measurement, owner asked what
+remains before waiting for live. Scope is live-watch discipline only.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/NEXT_LIVE_WATCH_CHECKLIST_AFTER_MINIMAX_PRUNE_20260428.md`** (new)
+  - Locks the post-prune baseline: output `15`, shadow `10`, runtime `28`.
+  - Defines exact checks after the next closeout:
+    P0 verifier, scorecard denominator, no new MiniMax rows, replay rows,
+    strongest/drop-stage rows, P0 surfaces, and PP-1 update.
+  - Keeps all scoring/output locks intact.
+
+### Runtime Impact
+
+Docs/checklist only. No code deploy and no runtime behavior change.
+
+---
+
+## V20.3.37.9 — MiniMax M2.7 shadow-only prune (2026-04-28 21:10 VN)
+
+### Context
+
+Owner asked to clear MiniMax M2.7 if it is weak in runtime/quality and wasting
+resources. Live forensic evidence on 2026-04-28 showed repeated MN/MT failures
+and weak MB quality.
+
+### Changes
+
+- **`web/backend/model_registry.py`**
+  - Changed `minimax-m2.7` from `SHADOW_AUTO` to `REMOVED`.
+  - Cleared `allowed_regions` and `schedule_slots`.
+  - Output eligibility remains `False`; historical rows are preserved.
+- **`web/backend/gpt_analyzer.py`**
+  - Removed `minimax-m2.7` from the current `SHADOW_GATE_MODELS` and
+    `PHASE_FIRST_CONTRACT_MODELS`.
+  - Closed `PFG-20260427-C` at `2026-04-28 21:04:59`.
+  - Opened `PFG-20260428-D` for the remaining gated shadow models:
+    `gpt-oss-120b`, `gpt-5.5`, `deepseek-v4-pro`,
+    `deepseek-v4-flash`, `qwen3.6-plus`.
+- **`web/backend/main.py`**
+  - Updated the admin experiment description so the prompt-gate board no longer
+    describes MiniMax as a current gated member.
+- **`artifacts/phase_checkpoints/MINIMAX_M27_SHADOW_PRUNE_CLOSEOUT_20260428.md`** (new)
+  - Records evidence, deployment scope, current counts, and rollback path.
+
+### Evidence
+
+MiniMax M2.7 on 2026-04-28:
+
+- MN: no persisted prediction; PHASE-FIRST contract invalid and later
+  `finish_reason=length`; latency `207s` / `380s`.
+- MT: no persisted prediction; `finish_reason=length` and contract invalid;
+  latency `375s` / `519s`.
+- MB: one persisted row, one-number output `31`, `LOSE`, latency `98s`.
+
+### Deploy / Verify
+
+- Remote backup:
+  - `/root/Lottery_AI_Test/backups/minimax_prune_v203379_20260428_2105`
+- Deployed files:
+  - `web/backend/model_registry.py`
+  - `web/backend/gpt_analyzer.py`
+  - `web/backend/main.py`
+- Service restarted successfully.
+- Public health after deploy:
+  - `V20.3.36`, output `15`, runtime `28`.
+- Remote registry/gate verification:
+  - output `15`
+  - `SHADOW_AUTO=10`
+  - runtime-visible `28`
+  - `minimax-m2.7.status=REMOVED`
+  - current contract models exclude MiniMax.
+- Final sync:
+  - `artifacts/live_sync/20260428_210538/manifest.json`
+
+### Runtime Impact
+
+Shadow-measurement roster cleanup only. No scoring, no `/du-doan`, no bundle
+voting, no lane weights, no output eligibility change, no PP-5, no shadow
+promotion, and no live output policy change.
+
+---
+
+## V20.3.37.8 — P0 monitoring cleanup + wait-live closeout (docs-only) (2026-04-28 21:00 VN)
+
+### Context
+
+Owner requested a focused P0 monitoring cleanup and multi-lane shadow closeout:
+measurement-first, shadow-only, no production mutation, no scoring/output
+changes, and no P1/P2 opening before enough natural closeouts.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/TOTAL_FORCE_EXECUTION_CLOSEOUT_P0_MONITORING_CLEANUP_MULTI_LANE_SHADOW_RECONCILIATION_DO_NOW_WAIT_LIVE_20260428.md`** (new)
+  - Uses final live sync `artifacts/live_sync/20260428_205415/manifest.json`.
+  - Reconciles P0 tables, monitoring labels, measurement-safe cleanup,
+    replay/method buckets, and do-now vs wait-live order.
+  - Explicitly marks `rule_phase_evidence_shadow` as not closed for
+    `2026-04-28` (`0` rows today, latest `2026-04-27`).
+  - Final verdict remains `FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS`.
+
+### Runtime Impact
+
+Docs/report only. No code deploy, no scoring, no `/du-doan`, no bundle voting,
+no lane weights, no output eligibility change, no PP-5, no shadow promotion, and
+no live output policy change.
+
+---
+
+## V20.3.37.7 — Total-force monolithic execution closeout (docs-only) (2026-04-28 20:45 VN)
+
+### Context
+
+Owner requested the final monolithic execution closeout with the exact title
+`TOTAL-FORCE EXECUTION CLOSEOUT — FULL RECONCILIATION + LIVE FORENSIC +
+MEASUREMENT CLEANUP + MULTI-LANE SHADOW ROADMAP`, preserving all hard locks and
+avoiding fragmented/pass-washed follow-up plans.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/TOTAL_FORCE_EXECUTION_CLOSEOUT_FULL_RECONCILIATION_LIVE_FORENSIC_MEASUREMENT_CLEANUP_MULTI_LANE_SHADOW_ROADMAP_20260428.md`** (new)
+  - Uses final live sync `artifacts/live_sync/20260428_204128/manifest.json`.
+  - Re-states the 12 required sections plus a dry-run self-audit.
+  - Final verdict remains `FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS`.
+
+### Verify
+
+- Public health still OK: `V20.3.36`, output `15`, runtime `29`.
+- Measurement modules compile cleanly.
+- P0 verifier still reports `NATURAL_CLOSEOUT_PROVEN` for first closeout only.
+
+### Runtime Impact
+
+Docs/report only. No code deploy, no scoring, no `/du-doan`, no bundle voting,
+no lane weights, no PP-5, no shadow promotion, no Cohere promotion, and no live
+output policy change.
+
+---
+
+## V20.3.37.6 — Total-force execution plan closeout report (docs-only) (2026-04-28 20:30 VN)
+
+### Context
+
+Owner requested one non-fragmented master closeout that reconciles VPS runtime,
+production DB/log/code truth, Notion doctrine, historical reports, replay
+findings, multi-lane shadow maturity, monitoring surfaces, model roster, rules,
+Cohere, no-token, and docs state into a single decision artifact.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/TOTAL_FORCE_EXECUTION_PLAN_FULL_RECONCILIATION_LIVE_FORENSIC_MULTI_LANE_SHADOW_DO_NOW_WAIT_LIVE_ROADMAP_20260428.md`** (new)
+  - Adds the required 12-part master report:
+    executive summary, current-truth reconciliation, today live forensic,
+    root-cause tree, master issue matrix, method/replay/policy matrix,
+    model/family/shadow matrix, monitoring/surface/doc-honesty matrix,
+    one-shot execution roadmap, deployment/verify/rollback plan,
+    docs/changelog/tracker sync plan, and final owner verdict.
+  - Uses live sync `artifacts/live_sync/20260428_202101/manifest.json`.
+  - Final verdict: `FIRST_CLOSEOUT_OBSERVED_WAITING_3_TO_5_CLOSEOUTS`.
+
+### Runtime Impact
+
+Docs/report only. No code deploy, no scoring, no `/du-doan`, no bundle voting,
+no lane weights, no PP-5, no shadow promotion, no Cohere promotion, and no live
+output policy change.
+
+---
+
+## V20.3.37.5 — Outstanding issues measurement cleanup + scorecard missing-row containment (2026-04-28 20:00 VN)
+
+### Context
+
+Owner approved the outstanding-issues plan and requested implementation without
+touching the plan file. Scope stayed measurement/admin-only: relock current VPS
+truth, consolidate pending issues, fix safe measurement gaps, verify, and sync
+docs.
+
+### Changes
+
+- **`web/backend/main.py`**
+  - Refined `output_eligible_completion_daily` semantics for future Wave 1
+    materialization:
+    - `present_models_json` now records output-eligible prediction coverage only,
+      not mixed runtime/shadow inventory.
+    - `completed_model_count` now represents output-eligible prediction coverage.
+    - `notes` records `bundle_contributor_count`,
+      `runtime_distinct_model_count`, and `gated_or_filtered_output_model_count`
+      so MB cases like `15 output rows present / 14 bundle contributors` are not
+      misread as missing prediction rows.
+- **`web/backend/_materialize_shadow_promotion_scorecard.py`**
+  - Writes diagnostic rows for `SHADOW_AUTO` models that failed or produced no
+    prediction row, using `promotion_bucket=DROP_CANDIDATE`, `parse_ok=0`, and
+    notes from `runtime_reliability_model_daily`.
+  - This preserves denominator honesty for future 18/20-model promotion
+    decisions: every active shadow model is represented per closed region-day.
+- **`artifacts/phase_checkpoints/OUTSTANDING_ISSUES_ACTION_PLAN_20260428.md`**
+  - New Vietnamese owner-facing report with `OPEN_NOW_MEASUREMENT_ONLY`,
+    `REPLAY_NOW`, `TRUE_WAIT_LIVE_ONLY`, `OWNER_DECIDE`, and `DROP_NOW` buckets.
+
+### Deploy / Verify
+
+- Live forensic sync before work:
+  - `artifacts/live_sync/20260428_194738/manifest.json`
+- Remote backup:
+  - `/root/Lottery_AI_Test/backups/measurement_cleanup_20260428_1955`
+- Deployed exactly two backend files:
+  - `web/backend/main.py`
+  - `web/backend/_materialize_shadow_promotion_scorecard.py`
+- Remote compile OK:
+  - `main.py=4b32ae855c947884cf555dc36648a0f53329e1977ac8d5351ab10f3e459b54f9`
+  - `_materialize_shadow_promotion_scorecard.py=a3a255d64c85e1d506861fcd65510f596d5738e6b7811bc57eea9c26f787e782`
+- Service restarted and public health OK:
+  - `V20.3.36`, output `15`, runtime `29`.
+- Scorecard backfill for `2026-04-28` now writes `11` rows per region:
+  - `MB=11 drops=0`
+  - `MN=11 drops=1` (`minimax-m2.7`)
+  - `MT=11 drops=2` (`minimax-m2.7`, `kimi-k2.5`)
+- Wave1 output completion materializer rerun for `2026-04-28`:
+  - `MB completed_model_count=15`, `missing_model_count=0`,
+    `completion_ratio=1.0`
+  - `notes` preserve `bundle_contributor_count=14` and
+    `gated_or_filtered_output_model_count=1`
+- Final sync:
+  - `artifacts/live_sync/20260428_200852/manifest.json`
+- Source table hashes verified unchanged by the P0 verifier:
+  - `predictions=3758 sha256=a54cf2a5...`
+  - `final_bundles=180 sha256=8adfd59b...`
+  - `lottery_results=14569 sha256=c94a7d3f...`
+
+### Runtime Impact
+
+Measurement/admin-only. No scoring, no `/du-doan`, no bundle voting, no lane
+weight, no output eligibility, no PP-5 re-enable, no shadow promotion, and no
+live output policy change.
+
+---
+
+## V20.3.37.4 — Pre-live total-force readiness report (docs-only) (2026-04-28 01:52 VN)
+
+### Context
+
+Owner requested one consolidated pre-live readiness pass across old/new/pending
+monitoring, replay, shadow, model, Cohere, no-token, rules, and P0 issues,
+using VPS runtime / production DB / logs as primary truth and without changing
+live output behavior.
+
+### Changes
+
+- **`artifacts/phase_checkpoints/PRE_LIVE_TOTAL_FORCE_READINESS_REPORT_CONSOLIDATED_OUTSTANDING_ISSUES_REPLAY_SHADOW_LIVE_SAFETY_20260428.md`** (new)
+  - Consolidates current readiness into 11 sections:
+    executive summary, current-truth reconciliation, master issue matrix,
+    policy replay matrix, model/family/shadow matrix, monitoring/wave matrix,
+    pre-live safe actions, true wait-live items, docs sync status, final
+    verdict gate, and three-line next step.
+  - Uses VPS/production evidence from sync
+    `artifacts/live_sync/20260428_014609/manifest.json`.
+  - Final verdict: `DEPLOYED_WAITING_FIRST_CLOSEOUT`.
+
+### Runtime Impact
+
+Docs/report only. No code deploy, no scoring, no `/du-doan`, no output policy,
+no lane weights, no bundle voting, and no registry change.
+
+---
+
+## V20.3.37.3 — P0 natural-closeout verifier deployed read-only (2026-04-28 01:18 VN)
+
+### Context
+
+After V20.3.37.2 deployed the P0 measurement-only hook, the next action is not
+to wait passively and not to overclaim manual smoke. A read-only verifier is now
+available locally and on VPS to classify P0 evidence after each closeout.
+
+### Changes
+
+- **`scripts/verify_p0_natural_closeout.py`** (new)
+  - Read-only SQLite verifier for P0 shadow tables, scheduler markers, and
+    source table hashes.
+  - Defaults to `DEPLOYED_MANUAL_SMOKE_PROVEN` unless `--natural-after` is
+    provided and post-manual closeout markers are present.
+  - Prints source hashes for `predictions`, `final_bundles`, and
+    `lottery_results`; never writes to DB or runtime files.
+
+### Deploy / Verify
+
+- Deployed to VPS: `/root/Lottery_AI_Test/scripts/verify_p0_natural_closeout.py`.
+- Backup directory prepared:
+  - `/root/Lottery_AI_Test/backups/exec_p0_verifier_20260428_0118`
+- Compile OK on local and VPS.
+- VPS smoke:
+  - `python scripts/verify_p0_natural_closeout.py --date 2026-04-27`
+  - `maturity=DEPLOYED_MANUAL_SMOKE_PROVEN`
+  - `natural_closeout_proven=False`
+  - source hashes unchanged:
+    `predictions=ee94b184...`,
+    `final_bundles=4235205e...`,
+    `lottery_results=bce500f5...`
+- Latest forensic sync before deploy:
+  - `artifacts/live_sync/20260428_011612/manifest.json`
+
+### Runtime Impact
+
+None. This is a read-only verifier utility. It does not change scheduler jobs,
+scoring, output policy, `/du-doan`, output eligibility, DB rows, or service
+behavior.
+
+---
+
+## V20.3.37.2 — Monitoring cleanup + P0 measurement-only VPS progression (2026-04-28 00:29 VN)
+
+### Context
+
+Owner directed an action pass, not another global audit. Scope was limited to
+measurement/admin-only fixes with `/du-doan`, scoring, bundle voting, and
+`model_registry.output_eligible` hard-locked.
+
+### Changes
+
+- **`scripts/shadow_rule_d1.py`**
+  - Added bounded recent backfill helpers that only run when
+    `mined_rule_effectiveness` MB rows exist.
+- **`web/backend/scheduler.py`**
+  - Deferred `shadow_rule_d1_comparison` from end-of-day pre-MRE timing to the
+    post-`model_daily_eval` path.
+  - Fixed `draw_availability_daily.ai_chain_rows` semantics for MN by counting
+    `auto_daily + ai_chain` for MN while preserving MT/MB `ai_chain` semantics.
+  - Added/deployed the fail-closed `[MULTI-LANE-SHADOW-P0]` closeout hook on VPS.
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`**
+  - Deployed the P0 multi-lane shadow materializer to VPS.
+- **`web/backend/main.py`** and **`web/frontend/monitoring.html`**
+  - Added owner-facing semantics for 0-row/schema-only surfaces:
+    `data_preservation_manifest_daily=MANUAL_LOCAL_ONLY`,
+    `sync_parity_audit_daily=MANUAL_LOCAL_ONLY`,
+    `bundle_replay_compare_daily=LEGACY_LOCAL`.
+
+### Deploy / Verify
+
+- VPS backups:
+  - `/root/Lottery_AI_Test/backups/exec_monitoring_cleanup_20260428_002327`
+  - `/root/Lottery_AI_Test/backups/exec_p0_shadow_hook_20260428_002740`
+- Remote compile OK:
+  - `scripts/shadow_rule_d1.py`
+  - `web/backend/scheduler.py`
+  - `web/backend/main.py`
+  - `web/backend/_materialize_multi_lane_shadow_p0.py`
+- Service restarted and health OK:
+  - `/api/health` `V20.3.36`, `expected_output_model_count=15`, `runtime_model_count=29`.
+- Measurement proof:
+  - `shadow_rule_d1_comparison=94`, latest `2026-04-27` after backfill `2026-04-20..2026-04-27`.
+  - `draw_availability_daily` MN `2026-04-27 ai_chain_rows=15` (`auto_daily=15`, raw `ai_chain=0`).
+  - `[SHADOW-PROMOTION-SCORECARD]` markers now persisted in `scheduler_logs`.
+  - P0 VPS smoke rows: `shadow_activation_registry=7`, `shadow_candidates=100`,
+    `shadow_results=100`, `shadow_method_scoreboard=84`,
+    `strongest_vs_final_shadow=3`, `no_token_drift_shadow=14`,
+    `rule_phase_evidence_shadow=53`, `shadow_feature_snapshots=21`,
+    `counterfactual_decision_audit_shadow=6`.
+  - `[MULTI-LANE-SHADOW-P0]` markers persisted for MN/MT/MB `2026-04-27`.
+- Production source table hashes unchanged by this pass:
+  - `predictions=3683 sha256=ee94b184359d98fa08eebc17407234be3b45fd8c37d672f0c261397a0b10152a`
+  - `final_bundles=177 sha256=4235205e2fd03f3289ae9ae09bb69c653bdcd8f54fc3d20da5e82fa2ccbf44e4`
+  - `lottery_results=14563 sha256=bce500f5bcefabe54965c4954bba297e15d5a43409dc697fda97eed8a74cb40d`
+- Final forensic sync:
+  - `artifacts/live_sync/20260428_002900/manifest.json`
+
+### Runtime Impact
+
+Measurement/admin-only. No production scoring, no bundle voting change, no
+`/du-doan` change, no output eligibility change, and no shadow promotion. P0 is
+now deployed with manual smoke proof, but still needs the next natural closeout
+before it can be called `NATURAL_CLOSEOUT_PROVEN`.
+
+---
+
+## V20.3.37.1 — Governance cleanup: FU-043 / FU-037 promote DONE + DEC-013 dedup (docs-only) (2026-04-28 00:05 VN)
+
+### Context
+
+Master reconciliation pass on 2026-04-27 found three doc-layer drifts that did not
+match live forensic truth:
+
+1. `FU-043` (V20.3.22 Wave 2 measurement-safe surfaces) was still flagged
+   `DEPLOYED_PENDING_LIVE_VERIFY`, but `pp1_live_watch_daily` (3 rows),
+   `verdict_distribution_daily` (572 rows / 8 days), `prompt_section_breakdown_daily`
+   (1515 rows / 6 days) plus `[PP1-WATCH] / [VERDICT-DIST] / [PROMPT-SECTION]`
+   scheduler markers (6/6/6 over 7 days) all proved live closeout coverage.
+2. `FU-037` (CCPD auto-wire V20.3.20.3) was still flagged
+   `DEPLOYED_PENDING_LIVE_VERIFY`, but `convergence_cluster_pattern_daily`
+   carried 129 rows over 21 dates and `[CCPD]` markers fired 6 times in 7 days.
+3. `docs/DECISION_LOG.md` had two distinct decisions sharing the same
+   identifier `DEC-013` (V20.3.35 DeepSeek direct-key route + V20.3.32 cohort
+   prune/expansion), which broke cross-ref integrity.
+
+This pass is docs-only governance cleanup. No code, scheduler, scoring,
+output policy, registry, prompt, or `/du-doan` change.
+
+### Changes
+
+- **`docs/FOLLOW_UP_TRACKER.md`**
+  - `FU-043` promoted from `DEPLOYED_PENDING_LIVE_VERIFY` → `DONE` with live
+    evidence (row counts + scheduler marker counts + master report cross-ref).
+  - `FU-037` promoted from `DEPLOYED_PENDING_LIVE_VERIFY` → `DONE` with live
+    evidence (CCPD row count + CCPD marker count + master report cross-ref).
+  - `FU-050` evidence cross-ref updated to `DEC-014` (V20.3.32 cohort).
+- **`docs/DECISION_LOG.md`**
+  - Renamed second occurrence `DEC-013` (V20.3.32 `kimi-k2.6` prune + 4 new
+    SHADOW_AUTO models) to `DEC-014` to remove duplicate identifier.
+  - Kept `DEC-013` for V20.3.35 DeepSeek direct-key routing (later in time).
+- **`docs/CHANGELOG_GOVERNANCE_LEDGER.md`**
+  - Updated 2026-04-27 cohort governance entry cross-ref `DEC-013` → `DEC-014`.
+
+### Verify
+
+- Live forensic sync before work:
+  - `artifacts/live_sync/20260428_000052/manifest.json`
+- Final cross-ref consistency check after edits:
+  - `DEC-013` appears only with V20.3.35 DeepSeek direct routing context
+    (`docs/DECISION_LOG.md:34`, `docs/CHANGELOG_GOVERNANCE_LEDGER.md:23`).
+  - `DEC-014` appears only with V20.3.32 cohort context
+    (`docs/DECISION_LOG.md:35`, `docs/FOLLOW_UP_TRACKER.md` FU-050 evidence,
+    `docs/CHANGELOG_GOVERNANCE_LEDGER.md:25`).
+- Code surfaces untouched in this pass:
+  - `web/backend/main.py`, `web/backend/scheduler.py`, `web/backend/database.py`,
+    `web/backend/model_registry.py`, `web/backend/gpt_analyzer.py`,
+    `web/frontend/monitoring.html`, `web/frontend/index.html`,
+    `web/frontend/app.js`, `web/frontend/review-dashboard.html`,
+    `web/_smart_deploy.py`, `scripts/deploy-vps.ps1`.
+  - `git status -s` for these paths empty in this pass.
+
+### Runtime Impact
+
+Documentation governance only. Owner-readable tracker now accurately matches
+live VPS state for FU-043 / FU-037; DECISION_LOG no longer carries duplicate
+`DEC-013` identifiers. No production runtime, scoring, output, scheduler,
+prompt, registry, UI, or `/du-doan` behavior changed in this pass.
+
+---
+
+## V20.3.37 — Multi-lane shadow P0 backbone (code-proven, not deployed) (2026-04-27 22:55 VN)
+
+### Context
+
+Owner approved P0 implementation for a multi-lane shadow program: build the
+shadow/data/governance backbone, open the strongest P0 lanes for daily
+measurement, and keep production `/du-doan` fully unchanged.
+
+### Changes
+
+- **`web/backend/_materialize_multi_lane_shadow_p0.py`** (new)
+  - Adds measurement-safe P0 shadow schemas and materializer:
+    - `shadow_activation_registry`
+    - `shadow_candidates`
+    - `shadow_results`
+    - `shadow_method_scoreboard`
+    - `strongest_vs_final_shadow`
+    - `no_token_drift_shadow`
+    - `rule_phase_evidence_shadow`
+    - `shadow_feature_snapshots`
+    - `counterfactual_decision_audit_shadow`
+  - Seeds P0 methods as `SHADOW_AUTO`, `output_eligible=0`,
+    `diagnostic_only=1`, `shadow_only=1`, `owner_approved=0`.
+  - Materializes P0 lanes:
+    - `strongest_to_final_preservation_v1`
+    - `no_token_drift_guard_v1`
+    - `rule_phase_evidence_v1`
+    - `meta_ranker_v1`
+    - `output_policy_replay_governance_v1`
+    - `freshness_readiness_guard_v1`
+    - `counterfactual_decision_audit_v1`
+- **`web/backend/scheduler.py`**
+  - Adds a fail-closed closeout hook `[MULTI-LANE-SHADOW-P0]` after existing
+    measurement materializers.
+  - Hook writes only P0 shadow tables and does not touch scoring, predictions,
+    final bundles, output eligibility, UI, or `/du-doan`.
+- **`artifacts/phase_checkpoints/MULTI_LANE_SHADOW_P0_BACKUP_ROLLBACK_MANIFEST_20260427.md`**
+  - Records branch/HEAD, touched files, forensic manifest, DB row counts,
+    rollback path, and safe-to-revert checks.
+- **`artifacts/phase_checkpoints/MULTI_LANE_SHADOW_ADMIN_DEV_VISUAL_LAYER_DESIGN_20260427.md`**
+  - Locks the read-only admin/dev visual layer design for `/monitoring` and
+    proposed `GET /api/admin/multi-lane-shadow-p0`.
+
+### Verify
+
+- Live forensic sync before work:
+  - `artifacts/live_sync/20260427_223005/manifest.json`
+- P0 surface audit from synced DB:
+  - required measurement surfaces latest `2026-04-27`
+  - roster `15` output-eligible, `11` `SHADOW_AUTO`, `7` no-token lanes
+- Compile OK:
+  - `python -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py web/backend/scheduler.py`
+- Local forensic smoke for `2026-04-27` all regions:
+  - `shadow_activation_registry=7`
+  - `shadow_candidates=100`
+  - `shadow_results=100`
+  - `shadow_method_scoreboard=84`
+  - `strongest_vs_final_shadow=3`
+  - `no_token_drift_shadow=14`
+  - `rule_phase_evidence_shadow=53`
+  - `shadow_feature_snapshots=21`
+  - `counterfactual_decision_audit_shadow=6`
+- Production-output tables unchanged during smoke:
+  - `final_bundles` count `177`, sha256 `847712fa8ea753fa0277857e3e5a2dc62a37a0be3561afa2a0b4d34f5b86cd2b`
+  - `predictions` count `3683`, sha256 `f5776d2958768b1052771e66d2d89fe9213f3ff0e7edb1d442d5aa53ddb5b5c3`
+- Backup/rollback manifest created from sync `artifacts/live_sync/20260427_224802/manifest.json`.
+- Admin/dev visual layer is design-only in this pass; no `main.py` or `monitoring.html` changes were made.
+
+### Runtime Impact
+
+Code-proven locally only. Not deployed. No production scoring, final bundle,
+prediction, output eligibility, `/du-doan`, or UI behavior changed. The new
+closeout hook is additive and fail-closed if deployed later.
+
+---
+
+## V20.3.36 — Shadow model promotion scorecard deployed (measurement-safe) (2026-04-27 21:01 VN)
+
+### Context
+
+Owner clarified that shadow models are a candidate pool for future output-live replacement
+or expansion toward 18/20 models, but must be measured rigorously before any promotion.
+
+### Changes
+
+- **`web/backend/_materialize_shadow_promotion_scorecard.py`** (new)
+  - Materializes `shadow_model_promotion_scorecard_daily`.
+  - Evaluates SHADOW_AUTO rows by region/weekday/station-set, main/secondary hits,
+    lo2 usefulness, reliability, PHASE-FIRST contract fields, latency, and promotion bucket.
+  - Writes only to its own measurement table.
+- **`web/backend/database.py`**
+  - Ensures `shadow_model_promotion_scorecard_daily` table and indexes.
+- **`web/backend/scheduler.py`**
+  - Wires scorecard materialization into `_materialize_closeout_measurements()`
+    with `[SHADOW-PROMOTION-SCORECARD]` log marker.
+- **`web/backend/main.py`**
+  - Health version bumped to `V20.3.36`.
+  - PP-5 remains disabled.
+
+### Verify
+
+- Deployed only measurement/backend files:
+  - `main.py`
+  - `database.py`
+  - `scheduler.py`
+  - `_materialize_shadow_promotion_scorecard.py`
+- Service active after restart: MainPID `460616`.
+- Public health: `V20.3.36`, output `15`, runtime `29`.
+- Compile OK on VPS.
+- Table `shadow_model_promotion_scorecard_daily` exists.
+- Smoke backfill: `95` rows.
+- 2026-04-27 scorecard rows:
+  - `MN=11`
+  - `MT=11`
+  - `MB=11`
+- PP-5 remains disabled (`ENABLE_FAMILY_BONUS=False`).
+- Output live roster unchanged: `15`.
+
+### Runtime Impact
+
+Measurement-only. No `/du-doan`, scoring, final bundle generation, output eligibility,
+lane weights, verdict weights, position weights, D7/sort, or UI behavior changed.
+
+---
+
+## V20.3.35 — Direct DeepSeek shadow routing for V4 Pro/Flash (2026-04-27 19:55 VN)
+
+### Context
+
+OpenRouter keys/routes for `deepseek-v4-pro` and `deepseek-v4-flash` could smoke-test
+small requests but failed on full shadow prompt with provider `402 Insufficient Balance`.
+Owner confirmed a direct DeepSeek vendor key should be used for these two shadow-only
+models instead.
+
+### Changes
+
+- **`gpt_analyzer.py`**
+  - Added `DEEPSEEK_SHADOW_API_KEY`.
+  - Added direct shadow routing:
+    - `deepseek-v4-pro` → official DeepSeek `deepseek-reasoner`
+    - `deepseek-v4-flash` → official DeepSeek `deepseek-chat`
+  - Added dedicated direct max-token caps:
+    - pro: `16384`
+    - flash: `4096`
+- **`scheduler.py`**
+  - `_get_api_key_for_model()` now routes these two model IDs to
+    `DEEPSEEK_SHADOW_API_KEY` / `deepseek_shadow_api_key` before OpenRouter.
+- **`database.py`**
+  - Added `.env` fallback for `deepseek_shadow_api_key`.
+- **`model_registry.py`**
+  - Provider field for the two shadow IDs changed from `openrouter` to `deepseek`.
+  - Both remain `SHADOW_AUTO` and `output_eligible=False`.
+- **VPS `.env`**
+  - Added `DEEPSEEK_SHADOW_API_KEY` from owner-provided direct DeepSeek key.
+  - Backup: `/root/Lottery_AI_Test/backups/env_pre_deepseek_direct_shadow_20260427_194604.bak`.
+
+### Verify
+
+- Deployed 4 backend files and restarted `lottery.service`; service active with MainPID `459258`.
+- PP-5 remains disabled.
+- Recovery rows now exist for both models across all 3 regions on `2026-04-27`:
+  - MN: `deepseek-v4-pro ["47","64"]`, `deepseek-v4-flash ["47","81"]`
+  - MT: `deepseek-v4-pro ["47","30"]`, `deepseek-v4-flash ["65","47"]`
+  - MB: `deepseek-v4-pro ["47","75"]`, `deepseek-v4-flash ["86","42"]`
+
+### Runtime Impact
+
+Shadow measurement only. No `/du-doan`, scoring, bundle voting, output policy, lane,
+verdict, position, or D7/sort changes.
+
+---
+
+## V20.3.34.2 — shadow dedicated keys synced; DeepSeek provider 402 remains (2026-04-27 19:08 VN)
+
+### Context
+
+Owner confirmed shadow models should use per-model OpenRouter keys, not the shared runtime key.
+VPS `.env` was missing dedicated keys for `gpt-5.5`, `deepseek-v4-pro`, and
+`deepseek-v4-flash`.
+
+### Changes
+
+- VPS `.env` only:
+  - added `OPENROUTER_KEY_GPT55` (suffix `9b05`)
+  - added `OPENROUTER_KEY_DEEPSEEK_V4_PRO` (suffix `960f`)
+  - added `OPENROUTER_KEY_DEEPSEEK_V4_FLASH` (suffix `b4f5`)
+- `.env` backup:
+  `/root/Lottery_AI_Test/backups/env_pre_shadow_keys_20260427_190419.bak`
+- Restarted `lottery.service` to load env.
+
+### Verify
+
+- Health after restart: running, `V20.3.32`, output `15`, runtime `29`.
+- PP-5 remains disabled (`ENABLE_FAMILY_BONUS=False`).
+- Dedicated-key smoke tests:
+  - `gpt-5.5`: HTTP 200
+  - `deepseek-v4-pro`: HTTP 200 on small smoke
+  - `deepseek-v4-flash`: HTTP 200
+  - `qwen3.6-plus`: HTTP 200
+- Full shadow prompt recovery still failed for DeepSeek V4 Pro/Flash with provider
+  `402 Insufficient Balance`, even with dedicated key and reduced in-process
+  `max_tokens=4096`. This indicates an upstream/provider-route credit or model-tier
+  issue, not a missing key on VPS.
+
+### Runtime Impact
+
+Shadow measurement only. No `/du-doan`, scoring, bundle voting, output policy, lane,
+verdict, position, or D7/sort changes.
+
+---
+
+## V20.3.34.1 — deepseek-v4-pro privacy unblocked + first live row (2026-04-27 12:37 VN)
+
+### Context
+
+Owner adjusted OpenRouter account privacy/provider settings to unblock `deepseek-v4-pro`:
+enabled `Paid endpoints that may train on request data`, removed `DeepSeek` from Allowed Providers
+(was acting as restrictive whitelist), and removed `Deepinfra` from Ignored Providers.
+
+### Verification (no code change in this hotfix)
+
+- API smoke test: `deepseek/deepseek-v4-pro` `200 OK`, `29 chars JSON`, `521 tokens`, `finish=stop`.
+- Full predict chain on VPS: stats + KB + REASONING_RULEBOOK + PHASE-FIRST gate ON + contract ON; `4177 chars / 30519 tokens / finish=stop / ~$0.0275`.
+- DB row: `predictions.id=10982` `(2026-04-27, MN, deepseek-v4-pro, shadow_auto_eval, ["47","64"], strength=8.5, status=PENDING)`.
+- Trace `2026-04-27 12:37:04`: `cohort=PFG-20260427-C, gate=true, contract=true, status=CURRENT, bucket=MN_T2, invalid=0, repair=false`.
+- MN 2026-04-27 coverage now `11/11` for the full V20.3.32 shadow cohort (`missing_rows=[]`).
+
+### Cleanup
+
+- VPS recovery scripts removed (`_recover_qwen36_mn_20260427.py`, `_recover_deepseek_v4_pro_mn_20260427.py`).
+- Local artifacts removed.
+- VPS `.env` backup `/root/Lottery_AI_Test/backups/.env_pre_qwen36_fix_20260427.bak` retained.
+
+### Runtime Impact
+
+Measurement-only. No `/du-doan`, scoring, bundle voting, or output policy changed.
+
+---
+
+## V20.3.34 — qwen3.6-plus key recovery + max_tokens open (2026-04-27 11:47 VN)
+
+### Context
+
+First MN cycle 2026-04-27 ran the full 11-model V20.3.32 shadow roster but two new models failed at the OpenRouter API call layer:
+
+- `qwen3.6-plus` → `401 User not found` (stale dedicated key on VPS env)
+- `deepseek-v4-pro` → `404 No endpoints available matching your guardrail restrictions and data policy` (OpenRouter account-level privacy gate)
+
+Both were correctly classified into PHASE-FIRST cohort `PFG-20260427-C` with gate+contract injected. The failure was provider/auth, not code/cohort. Owner directed automatic recovery for `qwen3.6-plus` and asked for a step-by-step guide for `deepseek-v4-pro`.
+
+### Changes (`qwen3.6-plus` only)
+
+- **`web/backend/gpt_analyzer.py`**
+  - `_MODEL_MAX_TOKENS['qwen3.6-plus']` raised from `24576` to `65536` per owner request to "open max token API". Model card max output is 66K, so this is within OpenRouter limits.
+- **VPS `/root/Lottery_AI_Test/.env`**
+  - Replaced stale `OPENROUTER_KEY_QWEN36_PLUS` with the new value provided by owner (key prefix `sk-or-`, suffix `1838`).
+  - Backup at `/root/Lottery_AI_Test/backups/.env_pre_qwen36_fix_20260427.bak`.
+  - File mode kept at `chmod 600`.
+- No registry change. No cohort change. No `/du-doan` / scoring / output-eligible change.
+
+### Verification
+
+- Smoke test: `qwen/qwen3.6-plus` `200 OK`, `12 chars JSON`, `297 tokens`, `finish=stop`, `max_tokens=65536` accepted.
+- Full chain test: stats + KB + REASONING_RULEBOOK + PHASE-FIRST gate ON + contract ON; `3413 chars / 22223 tokens / finish=stop / ~$0.0267`.
+- DB row: `predictions.id=10975` `(2026-04-27, MN, qwen3.6-plus, shadow_auto_eval, ["64","47"], str=7.5, status=PENDING)`.
+- Trace `2026-04-27 11:46:48` `cohort=PFG-20260427-C, gate=true, contract=true, status=CURRENT, bucket=MN_T2, invalid=0, repair=false`.
+- VPS service active after deploy + restart (`systemctl is-active lottery = active`).
+
+### deepseek-v4-pro — NOT in scope of code change
+
+Stays in `SHADOW_AUTO`. Owner action required at `https://openrouter.ai/settings/privacy` (enable training/logging providers) so the upstream DeepSeek policy gate accepts the call. Detailed step-by-step guide: `artifacts/phase_checkpoints/QWEN36_RECOVERY_AND_DEEPSEEK_V4_PRO_PRIVACY_GUIDE_20260427.md`.
+
+### Runtime Impact
+
+Measurement-only. No `/du-doan`, scoring, bundle voting, or output policy changed.
+
+---
+
+## V20.3.33 — FILTER REVIEW HUB: EMPTY-BUCKET CLARITY + RUNTIME TRACE OVERFLOW FIX (2026-04-27 00:34 VN)
+
+### Context
+
+Owner reviewed `https://xs.io.vn/filter` and flagged that the "Nguồn & đối chiếu" tab looked broken: the summary cards showed zeros, the runtime-rules panel had no visible rule/tail data, and long runtime trace text visually leaked near the bottom of the rules panel. Live API investigation showed the page was viewing `MT` on `2026-04-27` (`bucket=MT_T2`) where the runtime contract legitimately returned `rules_available=0`, `rules_triggered=0`, `sources=[]`, `unique_count=0`. The issue was therefore UI honesty/readability, not prediction runtime failure.
+
+### Changes
+
+- `web/frontend/review-dashboard.html`:
+  - Added explicit empty-state cards for `/filter` when the selected date/bucket has no active rules/source data.
+  - `renderRulesRuntimeCard()` now distinguishes a true empty runtime state (`0 rules`, no candidate tails, no convergence) from a data-rich runtime state. Instead of showing blank sections (`Phân bố theo tier`, `Trạng thái rule`, `Số hệ thống đang boost...`) with only dashes, it now shows a clear Vietnamese warning: bucket currently has no active rules/source and the zeros are a waiting/no-source state, not a scoring failure.
+  - `renderOverviewTab()` and `renderCandidatesTab()` now show a yellow `review-empty-state` message when `sources=[]` and `summary.unique_count=0`.
+  - `renderUniqPanel()` now shows a friendly empty row instead of a visually empty `Danh sách số (0)` panel.
+  - Added `overflow-wrap:anywhere` / `word-break:break-word` to runtime details list items so long trace strings no longer spill outside the card.
+- `scripts/deploy-vps.ps1`:
+  - Added `web/frontend/review-dashboard.html` to `$DeployFiles` so future deploy bundles carry `/filter` UI fixes.
+
+### Verify
+
+- Live probe: `GET /api/review-hub/filter?target_region=MT&date=2026-04-27` returns `success=true`, `summary.unique_count=0`, `sources_len=0`, `runtime_rules_state.active_bucket=MT_T2`, `rules_available=0`, `rules_triggered=0`.
+- Control probe: `GET /api/review-hub/filter?target_region=MT&date=2026-04-26` returns `summary.unique_count=52`, `sources_len=2`, `rules_available=4`, `rules_triggered=4`.
+- `review-dashboard.html` lints clean after the UI patch.
+
+### Rollback
+
+`git checkout HEAD~1 -- web/frontend/review-dashboard.html scripts/deploy-vps.ps1` and redeploy. No DB/backend/scoring code touched.
+
+---
+
+## V20.3.32 — SHADOW ROSTER PRUNE + PHASE-FIRST COHORT EXPANSION (MEASUREMENT-ONLY) (2026-04-27 00:27 VN)
+
+### Context
+
+Owner reviewed the new shadow model evaluation and directed an immediate prune of
+`kimi-k2.6`, while adding four new OpenRouter shadow candidates for the same
+PHASE-FIRST gate/contract measurement track as `minimax-m2.7` and `gpt-oss-120b`.
+
+### Changes
+
+- **`web/backend/model_registry.py`**
+  - `kimi-k2.6` changed from `SHADOW_AUTO` to `REMOVED`.
+  - Historical DB prediction/measurement rows are preserved for audit; the model is no longer scheduled or counted in active shadow/runtime roster.
+  - Added 4 `SHADOW_AUTO`, non-output-eligible models:
+    - `gpt-5.5`
+    - `deepseek-v4-pro`
+    - `deepseek-v4-flash`
+    - `qwen3.6-plus`
+- **`web/backend/gpt_analyzer.py`**
+  - Added OpenRouter slugs:
+    - `openai/gpt-5.5`
+    - `deepseek/deepseek-v4-pro`
+    - `deepseek/deepseek-v4-flash`
+    - `qwen/qwen3.6-plus`
+  - Expanded `SHADOW_GATE_MODELS` / `PHASE_FIRST_CONTRACT_MODELS` to:
+    `minimax-m2.7`, `gpt-oss-120b`, `gpt-5.5`, `deepseek-v4-pro`,
+    `deepseek-v4-flash`, `qwen3.6-plus`.
+  - Created cohort `PFG-20260427-C`; previous `PFG-20260426-B` is closed at
+    `2026-04-27 00:26:59`.
+  - Added max-token and cost-guard metadata for the new models.
+- **`web/backend/scheduler.py`, `web/backend/main.py`, `web/backend/database.py`**
+  - Added DB/env key routing names for the four new models.
+  - Important: secret values are not written into repo or docs.
+- **`web/backend/_materialize_convergence_cluster.py`**
+  - Updated shadow-family classification to remove `kimi-k2.6` and include the new shadow models.
+- **`web/backend/main.py`**
+  - Health version bumped to `V20.3.32`.
+
+### Validation
+
+- Local roster import check:
+  - output models remain `15`;
+  - `SHADOW_AUTO` becomes `11`;
+  - runtime-visible models become `29`;
+  - `kimi-k2.6` is absent from OpenRouter active set and marked `REMOVED`.
+- `py_compile` passed for changed backend files.
+- Linter check: no diagnostics on changed files.
+- VPS deploy verification:
+  - deployed 6 backend files via `web/_smart_deploy.py`;
+  - `lottery.service` active, MainPID `435296`, start `2026-04-27 00:35:32+07`;
+  - public health `V20.3.32`, output `15`, runtime `29`;
+  - VPS venv import check confirmed shadow roster `11`, runtime `29`, `kimi-k2.6=REMOVED`, new four models in OpenRouter set, six models in gate/contract cohort;
+  - VPS `py_compile` returned `REMOTE_COMPILE_OK`;
+  - per-model DB key slots are currently empty on VPS, but general `openrouter_api_key` is present and remains the fallback.
+
+### Measurement Timing
+
+If deployed and API keys are present before the next scheduler cycle:
+
+- First MN shadow/gate traces: `2026-04-27 ~04:15+07`.
+- First MT shadow/gate traces: after MT same-day verify, expected `~16:35-17:15+07`.
+- First MB shadow/gate traces: after MB same-day verify / watchdog window, expected `~17:35-18:15+07`.
+- First full-day quality table (`model_daily_eval`) should be available after the nightly MDE job, expected `2026-04-27 ~20:20+07`.
+- A stable keep/drop verdict should wait for at least one full closed cycle for mechanism proof and 3-5 closed cycles for quality proof.
+
+### Runtime Impact
+
+Measurement-only. No `/du-doan` output eligibility, scoring, bundle voting, lane weights,
+verdict weights, D7/sort, or final-bundle policy changed.
+
+---
+
+## V20.3.31 — OUTPUT POLICY REPLAY WRITER DEPLOYED TO CLOSEOUT (MEASUREMENT-SAFE) (2026-04-27 00:09 VN)
+
+### Context
+
+Owner clarified that code fixes and measurement-safe infrastructure must be deployed and
+verified consistently against VPS runtime/code/DB truth. The output policy replay writer
+from V20.3.30 is therefore promoted from local artifact-only to deployed measurement
+surface.
+
+### Changes
+
+- **`web/backend/_materialize_output_policy_replay.py`** (new)
+  - Creates/materializes `output_policy_replay_daily`.
+  - Replays 7 output policies from persisted predictions/bundles/results.
+  - Writes only to its own measurement table.
+  - Does not touch scoring, final bundles, predictions, scheduler decisions, or UI.
+- **`web/backend/database.py`**
+  - Ensures `output_policy_replay_daily` table and indexes in canonical runtime schema.
+- **`web/backend/scheduler.py`**
+  - Wires output-policy replay materialization into `_materialize_closeout_measurements()`
+    after the V20.3.22 diagnostic trio and before draw availability logging.
+- **`web/backend/main.py`**
+  - Health version bumped to `V20.3.31`.
+  - PP-5 remains disabled (`ENABLE_FAMILY_BONUS = False`).
+
+### Deploy / Verify
+
+- Deployed only 4 backend files:
+  - `web/backend/main.py`
+  - `web/backend/database.py`
+  - `web/backend/scheduler.py`
+  - `web/backend/_materialize_output_policy_replay.py`
+- `lottery.service` restarted successfully at `2026-04-27 00:08:29+07`, `MainPID=433506`.
+- Public health: `V20.3.31`, output `15`, runtime `26`.
+- Deployed hashes:
+  - `main.py` = `bf088cea46c795bb826e57a45f837fdf82c3699dbf71d153ba313014858301c0`
+  - `scheduler.py` = `2ed4eef01ef702678b398cffbb6e5b064f2568e86d4e5a7e9fdadbedac767cb2`
+  - `database.py` = `effcbcaf650d5d31c8a1a2089b95ce25ae55c469967af0975aa25cbb39b40194`
+  - `_materialize_output_policy_replay.py` = `5ad0e3e26e7ddabe46a48aa324f632ad94c9eadcdf0e34a2cf8d1bdc83a847ca`
+- Compile verification on VPS returned OK.
+- VPS schema verification: `output_policy_replay_daily` exists.
+- VPS smoke backfill `vps_smoke_v20_3_31`: 12 region-days, 84 replay rows.
+- PP-5 verification: `ENABLE_FAMILY_BONUS=True` absent; `False` present.
+- Non-target files unchanged: `model_registry.py`, `gpt_analyzer.py`, `/du-doan` frontend.
+
+### Runtime Impact
+
+Measurement-only. No live scoring/output policy change. Future closeouts will persist replay
+rows for owner review.
+
+---
+
+## V20.3.30 — OUTPUT POLICY REPLAY WRITER (MEASUREMENT-SAFE, LOCAL ARTIFACT) (2026-04-26 23:30 VN)
+
+### Context
+
+Owner directed Cursor to stop looping on narrative audits and implement a durable
+measurement-safe replay writer for `/du-doan` output policy decisions after PP-5 rollback.
+No live scoring/output policy change is allowed in this session.
+
+### Changes
+
+- Added `scripts/output_policy_replay_writer.py`.
+  - Reads the synced forensic DB in read-only mode.
+  - Writes replay rows to a separate artifact SQLite DB:
+    `artifacts/replay/output_policy_replay_daily.sqlite`.
+  - Writes summary JSON:
+    `artifacts/replay/output_policy_replay_summary.json`.
+  - Does not mutate production DB, `final_bundles`, `predictions`, scheduler, or live scoring.
+- Backfilled `post_pp5_rollback_60d_20260426`:
+  - `174` region-days
+  - `7` policies
+  - `1218` replay rows
+- Added decision pack:
+  `artifacts/phase_checkpoints/OUTPUT_REPLAY_WRITER_DECISION_PACK_20260426.md`.
+
+### Replay Result
+
+- Best current candidate: `D_CONTEXT_ADAPTIVE`
+  - BT WR `43.1%` vs baseline `40.8%` (`+2.3pp`)
+  - lo2 WR `63.2%` vs baseline `61.5%` (`+1.7pp`)
+  - net flips `+4`
+- Drop live `B_FLAT_TOTAL_MAIN_SECONDARY`:
+  - weak BT lift `+0.6pp`
+  - false-promotion `61.4%`
+  - lo2 delta `-1.2pp`
+
+### Runtime Impact
+
+None. This is local/artifact measurement infrastructure only. No VPS deploy, no service
+restart, no scoring/output change.
+
+---
+
+## V20.3.29 — PP-5 ROLLBACK (OWNER DIRECTIVE, FLAG-OFF ONLY) (2026-04-26 22:50 VN)
+
+### Context
+
+PP-5 Family Diversity Bonus (V20.3.28) was deployed live without explicit owner unlock
+for scoring/output changes. Owner then explicitly directed Cursor to rollback PP-5 now
+and continue only with replay/forensic decision prep.
+
+### Changes
+
+- **`web/backend/main.py` only**: changed `ENABLE_FAMILY_BONUS = True` to
+  `ENABLE_FAMILY_BONUS = False` inside the PP-5 Step 3c block.
+- No scheduler/database/model_registry/gpt_analyzer/frontend changes.
+- No DB rollback: production `final_bundles` through `2026-04-26` had no
+  `source_predictions_json.pp5_family_diversity_bonus` marker, so PP-5 had not
+  yet produced persisted final bundle rows.
+
+### Deploy / Verify
+
+- VPS backup before rollback:
+  `/root/Lottery_AI_Test/backups/pp5_rollback_20260426/main_py_before_pp5_rollback_20260426_224942.py`
+- `python3 -m py_compile /root/Lottery_AI_Test/web/backend/main.py` OK before restart.
+- `lottery.service` restarted successfully at `2026-04-26 22:49:42+07`, `MainPID=431176`.
+- Public health OK after rollback: `status=running`, version still `V20.3.28`,
+  `expected_output_model_count=15`, `runtime_model_count=26`.
+- VPS hashes after rollback:
+  - `web/backend/main.py` = `16c5d6dcf7eb3762e34b260af4e5b2c00632f3d743ba4541e5cafe8dd67a1037`
+  - `scheduler.py`, `database.py`, `model_registry.py`, `gpt_analyzer.py`, and frontend hashes unchanged from pre-rollback verification.
+- Marker verification: `ENABLE_FAMILY_BONUS = True` absent; `ENABLE_FAMILY_BONUS = False` present.
+
+### Rollback of This Rollback
+
+Not recommended without owner unlock. If owner explicitly reopens PP-5 later,
+restore from the backup above or set `ENABLE_FAMILY_BONUS = True` only after a
+new decision-log entry and replay threshold are approved.
+
+---
+
+## V20.3.28 — PP-5 FAMILY DIVERSITY BONUS (2026-04-26 22:09 VN)
+
+### Context
+
+Policy bake-off replayed 6 output policies on 174 closed region-days (production data).
+Result: Policy E (Family Bonus ×1.15) was the ONLY winner vs baseline:
+- BT: 43.7% vs 42.5% (+1.2pp), net +2 flips (4 WIN, 2 LOSE)
+- MB: 39.7% vs 36.2% (+3.5pp)
+- MN: 44.8% vs 46.6% (-1.8pp, acceptable)
+- MT: 46.6% vs 44.8% (+1.8pp)
+
+All secondary-promotion policies (B/C/D/F) LOST vs baseline and are dropped.
+
+### Changes
+
+- **`main.py` (generate_final_bundle)**: Added PP-5 Family Diversity Bonus block
+  (Step 3c, between PP-1 dampener and ranking). When a number has voters from
+  ≥2 model families (AI_TOKEN, NO_TOKEN, COMBO), its score is multiplied by 1.15.
+  Feature-flagged: `ENABLE_FAMILY_BONUS = True`. Rollback: set to False.
+- **`main.py` (source_summary)**: Added `pp5_family_diversity_bonus` trace entry
+  with events, factor, and family classification for each boosted number.
+- **`main.py` (health)**: Updated version string from V17.19.4 → V20.3.28.
+
+### Rollback
+
+Set `ENABLE_FAMILY_BONUS = False` in the PP-5 block (Step 3c). No other changes needed.
+
+### Evidence
+
+Policy bake-off script: `_policy_bakeoff.py` (temporary, removed after analysis).
+Deep forensic: `_deep_forensic.py` (temporary, removed after analysis).
+Full decision report: `decision_report_final.md` in conversation artifacts.
+
+## V20.3.27 — SHADOW CATCH-UP AFTER RESTART (2026-04-26 21:22 VN)
+
+### Context
+
+During V20.3.26 deployment (2026-04-26 18:22:51), `systemctl restart lottery` killed
+an in-progress shadow auto-eval for MB. The sequential eval had completed 5/8 models
+(`glm-5.1`, `grok-4.20`, `qwen3-coder`, `minimax-m2.7`, `kimi-k2.5`) when the process
+was terminated. The remaining 3 models (`kimi-k2.6`, `qwen3-max-thinking`, `gpt-oss-120b`)
+never ran, and the startup catch-up logic had no mechanism to detect or recover them.
+
+### Root Cause
+
+1. **Anti-duplicate guard** (line 4332): checked `COUNT(*) > 0` — any shadow rows at all
+   caused the entire shadow trigger to be skipped. With 5/8 rows present, a re-trigger was
+   impossible even though 3 models were missing.
+2. **Startup catch-up** (V9.4): only checked scrape/verify data — had no awareness of
+   shadow eval state whatsoever.
+
+### Changes
+
+- **`scheduler.py`**: Fixed anti-duplicate guard — now compares `COUNT(*)` vs `len(SHADOW_AUTO_EVAL_MODELS)`.
+  Only skips if ALL expected models have non-empty rows. Partial completion triggers RECOVERY mode.
+- **`scheduler.py`**: Added **V20.3.27 Shadow Catch-Up** to `_startup_catch_up()`. After the
+  standard scrape/verify catch-up, it checks each region for incomplete shadow eval
+  (`0 < count < expected`). If detected, it re-triggers `_run_shadow_auto_eval()` for that
+  region. The per-model HB16 duplicate guard safely skips models with existing valid rows.
+- **Log markers**: `[SHADOW_CATCH_UP]`, `[SHADOW_ALREADY_COMPLETE]`, `RECOVERY`/`FULL` mode labels.
+
+### Risk Assessment
+
+- **Impact**: Shadow eval only (measurement). No impact on production `/du-doan` output.
+- **Safety**: HB16 per-model guard prevents double predictions. `startup_shadow_catchup` trigger
+  source is tracked in `runtime_reliability_daily` for full audit trail.
+
+---
+
+## V20.3.26 — PREDICT ALWAYS / VERIFY LATER + MB WATCHDOG + DRAW AVAILABILITY (2026-04-26 18:25 VN)
+
+### Context
+
+During the 2026-04-26 MB live window, MB no-token `rerun_post_mt` ran correctly after MT
+scrape/verify, but the token AI chain (`gpt-5-mini`, Claude, Gemini, DeepSeek, GPT-5.4,
+`combo-super`) did not trigger. Root cause was a hidden calendar blocker:
+
+- `scheduler.py::MB_LOTTERY_HOLIDAYS[2026]` included `2026-04-26`.
+- `_run_ai_predict_job("MB")` called `is_lottery_day()` before prediction.
+- `is_lottery_day()` returned `False`, so logs showed:
+  - `🎌 Ngày 2026-04-26 là ngày nghỉ MB — KHÔNG có xổ số MB`
+  - `⏭️ Bỏ qua AI predict MB — ngày nghỉ xổ số`
+
+Owner clarified the desired policy: **predict even if the calendar thinks it is a holiday; let
+scrape/verify decide later whether the broadcaster actually drew results.**
+
+### Emergency recovery performed before this patch
+
+- Ran one-off owner-confirmed recovery script
+  `artifacts/_remote_recover_mb_ai_chain_20260426.py`.
+- Result: MB `ai_chain` completed 8/8 models, including `combo-super`.
+- MB final bundle generated before draw: `BT=93`, `lo2=["93","48"]`, `lo3=993`,
+  `xien2=["93","48"]`, `xien3=["93","48","75"]`.
+- The stale one-off recovery process was stopped after output was safe and bundle was created.
+
+### Changes
+
+- `web/backend/scheduler.py`
+  - Converted the holiday calendar into advisory-only telemetry.
+  - Added `is_lottery_holiday_advisory(date_str, region)`.
+  - Changed `is_lottery_day(...)` to always return `True` and log `[HOLIDAY_ADVISORY]`
+    when a date is listed in `MB_LOTTERY_HOLIDAYS`.
+  - Replaced holiday skip branches in `_run_auto_update`, `_run_ai_predict_job`,
+    `_run_free_model_auto_predict`, `_run_shadow_auto_eval`, and startup catch-up
+    with advisory-only logging.
+  - Added `_run_mb_prediction_watchdog()` scheduled at `17:55` VN.
+  - Added `_record_draw_availability(...)` and writes `[DRAW-AVAIL]` after closeout.
+  - If scrape returns no rows after retry window, logs `[NO_RESULT_AFTER_RETRY]`,
+    records draw availability, and skips verification instead of marking false LOSE.
+- `web/backend/database.py`
+  - Added `draw_availability_daily` schema to `ensure_runtime_measurement_tables()`.
+  - Hardened `verify_prediction(...)` and `verify_final_bundle(...)` to skip when
+    `actual_tails` is empty, avoiding false LOSE on real no-draw/no-result days.
+
+### Verify (live VPS)
+
+- Backup created before deploy:
+  - `scheduler.py.20260426_182243.bak` sha256 `7d31cf4a988aba1118fe209e857be3b818ac298699817745caf715f466728f62`
+  - `database.py.20260426_182243.bak` sha256 `93cbdd4a248a484b4ea4ec632b6c1add020432f7ab5483ea4cfc1d1dbd8ce7a1`
+- Post-deploy `/api/health`: `V17.19.4`, `expected_output_model_count=15`, `runtime_model_count=26`.
+- Post-deploy hashes:
+  - `scheduler.py` sha256 `2d158fba250d737beeb5bd80781e59e4e57a589b38f455b975590c2ab3cd33cc`
+  - `database.py` sha256 `404ed18a621e0879ad304fa55f90dd36077618b96da36625f88254de2cc11a41`
+- Holiday behavior:
+  - `is_lottery_holiday_advisory("2026-04-26","MB") = True`
+  - `is_lottery_day("2026-04-26","MB") = True`
+  - `is_lottery_day("2026-04-30","MB") = True`
+- Watchdog no-duplicate proof: MB `ai_chain` remained `8 → 8`, log says prediction already complete.
+- `draw_availability_daily` exists and row for `2026-04-26 MB` records `prediction_completed=1`,
+  `ai_chain_rows=8`, `rerun_rows=7`, `final_bundle_exists=1`, `holiday_advisory=1`.
+
+### Residual
+
+- `MB_LOTTERY_HOLIDAYS` still lists possible holidays, but now only as advisory telemetry.
+- If a real no-draw day occurs, predictions can exist; verification will skip while
+  `draw_availability_daily` records the no-result state.
+
+### Rollback
+
+Restore the two backup files under `/root/Lottery_AI_Test/backups/predict_always_v20_3_25/`
+to `web/backend/scheduler.py` and `web/backend/database.py`, then restart
+`lottery.service`. No scoring table rollback needed.
+
+---
+
+## V20.3.25 — APP TABLE: SECONDARY-NUMBER BADGE ALSO IN "ĐỘ BAN ĐẦU" CELL (2026-04-26 13:38 VN)
+
+### Context
+
+Owner follow-up to V20.3.24: same `phụ: NN` badge should also appear under the main number in the **before-result** column (`ĐỘ BAN ĐẦU`), for all 3 regions, only when the prediction has a secondary candidate (`numbers[1]`). Pure visual addition for side-by-side comparison; no scoring, no backend, no `/du-doan` change.
+
+### Changes
+
+- `web/frontend/app.js` — UI-only render tweak inside `renderPredictionsTable()`:
+  - `beforeDisplay` is now `let` (was `const`) so we can append the secondary badge after `hitNums` is computed.
+  - New `secNumberBefore = beforeNumbers[1]` extracted alongside the existing `secNumber` (= `afterNumbers[1]`).
+  - When `secNumberBefore` exists, append `<div class="td-numbers__secondary td-numbers__secondary--before">phụ: NN[ ✓]</div>` to `beforeDisplay`.
+  - Color rule mirrors the after-cell logic: hit (in `hit_numbers`) → green `#22c55e` with ✓; miss → muted grey `#94a3b8`; status `PENDING` or no hit info yet → soft green `#7FAA7F` (no verdict mark).
+- `web/frontend/index.html` — bumped cache-bust on `app.js` from `?v=20260426-secondary-pick-v1` to `?v=20260426-secondary-pick-v2` so browsers fetch the new render.
+
+### Verify (post-deploy)
+
+- `/app` table: every prediction row that has `numbers[1]` shows `phụ: NN` under both `ĐỘ BAN ĐẦU` and `ĐỘ SAU KQ` cells, in all 3 regions (MN/MT/MB).
+- Color stays consistent across both cells: same color rule, same hit semantics.
+- `/api/health` after restart still reports `V17.19.4`, `15/15/26`.
+
+### Rollback
+
+`git checkout HEAD~1 -- web/frontend/app.js web/frontend/index.html` and redeploy. No DB or backend code touched.
+
+---
+
+## V20.3.24 — APP TABLE: SECONDARY-NUMBER BADGE IN "ĐỘ SAU KQ" CELL (2026-04-26 13:30 VN)
+
+### Context
+
+Owner request on `https://xs.io.vn/app`: in the prediction table column `ĐỘ SAU KQ`, the cell currently only shows the main bạch-thủ number plus a `(= trước)` / `🔄` change indicator. Owner wants the **secondary number** to also appear in a small corner under the main number for quick at-a-glance review.
+
+### Changes
+
+- `web/frontend/app.js` — UI-only render tweak inside `renderPredictionsTable()` for the after-result column:
+  - The variable `secNumber` (= `afterNumbers[1]`) was already computed but never rendered. Added a small badge `<div class="td-numbers__secondary">phụ: <num>[ ✓]</div>` immediately after `btHtml + changeTag`.
+  - Color rule: `secNumber` hit (in `hit_numbers`) → green `#22c55e` with ✓ mark; otherwise muted grey `#94a3b8`; if status `PENDING` → soft green `#7FAA7F` (no hit/miss verdict yet). Title attribute carries the human-readable label (`Số phụ — trúng / không trúng / Số phụ`).
+  - No change to scoring, no change to `hit_numbers` semantics, no change to backend, no change to `/du-doan`.
+- `web/frontend/index.html` — bumped cache-bust on `<script src="app.js">` from `?v=20260426-rules-tails-v2` to `?v=20260426-secondary-pick-v1` so browsers fetch the new app.js without manual hard-refresh.
+- `scripts/deploy-vps.ps1` — `$DeployFiles` extended to include `web/frontend/index.html` and `web/frontend/app.js` so future deploys carry both.
+
+### Verify (post-deploy)
+
+- `/app` table column `ĐỘ SAU KQ` shows the BT number large, the change indicator inline, and a small `phụ: NN` line below; secondary turns green with ✓ on actual hit days.
+- `/api/health` after restart still reports `V17.19.4`, `15/15/26`.
+
+### Rollback
+
+`git checkout HEAD~1 -- web/frontend/app.js web/frontend/index.html` and redeploy. No DB or backend code touched.
+
+---
+
+## V20.3.23 — MONITORING UI OVERHAUL: SECTION/CARD SEPARATION + FULL VI LOCALIZATION + RESPONSIVE FIX (2026-04-26 13:15 VN)
+
+### Context
+
+Owner reported `https://xs.io.vn/monitoring` looking visually broken: sections bleeding into each other, cohort/Wave-1 cards overlapping, stat-grids cramped on tablets, and mixed VN/EN text confusing review.
+Owner explicitly scoped this pass to **UI only** — no scoring, no scheduler, no backend logic, no `/du-doan` change.
+
+### Changes
+
+- `web/frontend/monitoring.html` — UI-only refactor:
+  - Section container: every `.section` now has explicit padding, frosted background, border, border-bottom under title; `.subcard` introduced for nested boxes so `renderWave1Control` no longer renders `.section`-in-`.section` (was producing card-in-card visual stacking).
+  - Cohort grid (`Prompt Gate Cohort`): replaced `auto-fit minmax(420px, 1fr)` with explicit `repeat(2, minmax(0, 1fr))` and `cohort-stat-group` forced to 2 columns so labels like `Số contract phase-first không hợp lệ` no longer overlap neighbours; cohort card now has visible border + drop-shadow so each model is clearly separated.
+  - Tables: `.data-table-wrap` switched from `overflow:hidden` to `overflow:auto` with `width: max-content` table to allow horizontal scroll on narrow screens instead of crushed text.
+  - Responsive: consolidated to a single block at end of CSS (`@media 1180 / 900 / 640`) after component definitions so rules actually apply (the previous mid-CSS block was being shadowed). All grids `region-grid / board-guide-grid / yesterday-bar / rule-stats-grid / streak-grid / region-bt-grid / metric-grid / cohort-grid` now collapse correctly on tablet/mobile.
+  - CSS variable hygiene: added alias `--card-bg` because many JS-generated cards referenced `var(--card-bg)` while the canonical variable was `--bg-card`; before this fix those cards were transparent and visually melted into the parent section, which is the main reason the page looked "chồng chéo".
+  - Vietnamese localization: converted user-facing labels, section titles, board-meta `type / asOf / refreshed / trigger / note`, Wave-1 stat labels, cohort stat labels, region card labels, latest-verified strings, header buttons (`ADMIN ONLY → CHỈ ADMIN`, `Dashboard → Bảng điều khiển`). Technical metric/column terms (`BT`, `tail_db`, `WR`, `combo`, `MDE`, `fp_class`, registry IDs) intentionally kept in English where they are domain-specific.
+  - `metaTypeClass()` / `metaTypeLabel()` helpers added so `Realtime / Historical / Hybrid / Measurement Only / Canonical Pair / BT scope / Full Actual / tail_db` badges all display the correct Vietnamese text without breaking the existing badge `meta-badge ${type.toLowerCase()}` class binding.
+- `scripts/deploy-vps.ps1` — `$DeployFiles` now includes `web/frontend/monitoring.html` so future deploys carry monitoring UI changes.
+
+### Verify (post-deploy)
+
+- `/monitoring` loads (admin auth) without layout collapse on desktop ≥1180px and on tablet 900–1180px.
+- Cohort cards render in a 2-column grid on desktop; each card is visibly bordered and stat-cards inside don't overlap labels.
+- Wave-1 region rows render as `.subcard` (no double-border with the outer `.section`).
+- Polling proof unchanged: `loadMonitoring()` + `setInterval(... 60000)` still drive the realtime data path; no WebSocket/SSE introduced.
+- `/api/health` after restart should still report `V17.19.4`, `15/15/26`.
+
+### Residual
+
+- `monitoring.html` still has 25 inline-style warnings from the linter (legacy inline `style="..."` blocks); not blocking, will be migrated to classes in a later pass.
+- `-webkit-overflow-scrolling` warning is informational; harmless on modern browsers.
+
+### Rollback
+
+`git checkout HEAD~1 -- web/frontend/monitoring.html scripts/deploy-vps.ps1` and re-deploy. No DB or backend code touched.
+
+---
+
+## V20.3.22 — MEASUREMENT-SAFE WAVE 2: PP-1 LIVE WATCH + VERDICT DIST + PROMPT SECTION BREAKDOWN (2026-04-26 12:55 VN)
+
+### Context
+
+Owner authorized (in-prompt) the deploy of **measurement-safe-only** surfaces to feed:
+
+- PP-1 5-cycle verdict (Block 1 in `BLOCK_ACTIVATION_MATRIX_20260426.md`)
+- verdict_weight tuning (Block 13)
+- prompt section presence telemetry (operator visibility)
+
+Three NEW surfaces were created. None of them touch scoring, bundle voting, output policy,
+prompt assembly, or model registry. They only INSERT into their own measurement tables.
+
+### Changes
+
+- `web/backend/_materialize_pp1_live_watch.py` (NEW, standalone)
+  - Reads `final_bundles.source_predictions_json.pp1_convergence_dampener.events` and
+    `lottery_results.prizes_json`.
+  - Self-bootstraps `pp1_live_watch_daily` schema with UNIQUE(date, region, number).
+  - Computes per-event: `score_before`, `score_after`, `delta_pct`, `actual_hit`,
+    `is_final_bt`, `fp_class` (`TP` / `FP` / `PENDING`).
+- `web/backend/_materialize_verdict_distribution.py` (NEW, standalone)
+  - Aggregates `predictions.verdict` and `verdict_reason` markers per
+    (date, region, model). Self-bootstraps `verdict_distribution_daily`.
+  - Counts `HOT` / `WARM` / `COLD` / `SUPPRESS` verdicts and
+    `[CONV-DOWNGRADE]` / `[DIVERSITY-V10.5]` / `[DIVERSITY-V10.5-SWAP]` /
+    `[DIVERSITY-V10.5-RECOVERY]` / other markers; records `avg_strength`.
+- `web/backend/_materialize_prompt_section_breakdown.py` (NEW, standalone)
+  - Reads `prediction_trace.jsonl`, aggregates section presence per
+    (date, region, model, section_name). Self-bootstraps
+    `prompt_section_breakdown_daily` with UNIQUE composite key.
+- `web/backend/scheduler.py` — V20.3.22 wire
+  - Added 3 import-on-demand `try/except` blocks beside the existing CCPD wire
+    (V20.3.20.3) inside `_materialize_closeout_measurements(date_str, region)`.
+  - Order: CCPD → PP1-WATCH → VERDICT-DIST → PROMPT-SECTION.
+  - Each block logs `[PP1-WATCH] / [VERDICT-DIST] / [PROMPT-SECTION]` markers
+    via `_add_log` to `scheduler_logs`.
+
+### Verify (live VPS, sha256 + row counts)
+
+- `web/backend/scheduler.py` sha256 = `7d31cf4a988aba1118fe209e857be3b818ac298699817745caf715f466728f62`.
+- `web/backend/main.py` sha256 unchanged (`c1db9d099aaaa89c03cb828ab932567e4d3a5741d80dd9b21b1add694a3cfdd8`)
+  — PP-1 dampener intact (markers `pp1_convergence_dampener=2`, `[CONV-DOWNGRADE]=2`,
+  `[DIVERSITY-V10.5]=2`, no PP-2/3/4 leak).
+- `/api/health` after restart: V17.19.4, 15/15/26 stable.
+- DB: `pp1_live_watch_daily=2 rows` (`MN 2026-04-26 number=18 herd=3` and
+  `number=81 herd=4 is_final_bt=1`); `verdict_distribution_daily=462 rows` (7 days × 3
+  regions × ~22 models); `prompt_section_breakdown_daily=1019 rows` (back to
+  2026-04-22 when trace started carrying prompt_layers).
+- Both `materialize_for(...)` callable on import for all 3 helpers.
+
+### Residual
+
+- `pp1_live_watch_daily.actual_hit` = `NULL` and `fp_class` = `PENDING` for `2026-04-26`
+  rows (MN closeout pending). Will auto-fill at MN closeout via the new scheduler wire.
+- `bundle_replay_compare_daily` is still 0 rows on VPS — the F1/F2/F3 replay scripts
+  that populate it run locally; promotion to VPS is owner-decide.
+- Backfill stops at `2026-04-22` for `prompt_section_breakdown_daily` because
+  `prompt_layers` field only became standard in trace from that date.
+
+### Rollback
+
+Drop the 3 new tables, redeploy the previous `scheduler.py` (sha256
+`c1e5581463c9ad1d9fa6c61d6e2ab2c6de893fd20234d9b380dad3454ba1cac9` from V20.3.20.3),
+restart `lottery.service`. Removing the helper modules is optional — they no-op when
+unused. PP-1 dampener and CCPD are completely independent of this change.
+
+---
+
+## V20.3.21.10 — PRIZE-KEY ALIAS HARDENING (GĐB) + STATION-ALIAS LOOKUP (2026-04-26 12:08 VN)
+
+### Context
+
+Trong khi verify per-rule attribution trên `/api/review-hub/filter` và `/api/prediction-quality`,
+phát hiện hai lỗ hổng đã âm thầm "ăn" số trong cột `predicted_tails`:
+
+1. `mined_rule_eval._extract_tails_from_prizes('GĐB')` chỉ map `GĐB → 'Giải ĐB'`, nhưng `lottery_results.prizes_json` thực tế dùng key `'Giải Đặc Biệt'`. Hậu quả: mọi rule có prize_keys chứa `GĐB` (R1083 GĐB+G7, R1085 GĐB+G8, R1117 GĐB+G8, R1118 GĐB+G7, R1119 GĐB+G1, R1152 GĐB+G7, R1154 G5+GĐB, …) **không lấy được tail GĐB** — mất 1 chữ số mỗi rule.
+2. Một số rule lưu source_station với phụ âm cũ (`Đắc Nông`, `Đắc Lắc`) nhưng `lottery_results.station` đã chuẩn hoá `Đắk Nông`, `Đắk Lắk`. Dẫn đến `WHERE station=?` exact-match miss → `predicted_tails=[]` (false negative).
+
+### Changes
+
+- `web/backend/mined_rule_eval.py`
+  - Thêm `PRIZE_KEY_ALIASES` map mỗi short prize-key sang nhiều VN spellings cùng nghĩa
+    (đặc biệt `'GĐB' → ('Giải ĐB','Giải Đặc Biệt','Giải Đặc biệt','GĐB')`).
+  - `_extract_tails_from_prizes` quét lần lượt tất cả candidate trước khi fallback case-insensitive,
+    thay vì chỉ thử một key duy nhất.
+- `web/backend/main.py`
+  - `/api/prediction-quality`: lookup source-station prizes bằng `station=? OR station=?`
+    với canonical từ `_normalize_station(rule_engine.STATION_ALIASES)` để cover
+    `Đắc Nông`/`Đắk Nông` (và các alias khác đã có).
+
+### Verify (live VPS)
+
+- `mined_rule_eval._extract_tails_from_prizes(prizes, 'GĐB')` cho Nam Định 2026-04-25 nay trả `['17']` (trước: `[]`).
+- `R1085 GĐB+G8 (Đà Nẵng)` → `['18','81']` (G8 + GĐB).
+- `R1083 GĐB+G7 (Nam Định)` → `['17','27','39','57','99']` (đã có tail GĐB '17').
+- `R1154 G5+GĐB (Đắc Nông MT D-1/T7)` → `['57','98']` (alias station match thành công).
+- `R1117 GĐB+G8 (TP.HCM MN D-1/T7)` → `['52','65']` (GĐB '65', G8 '52').
+- `/api/health` → status running, 26 runtime models.
+
+### Residual
+
+- `R1116 (MN(D/CN) · Đà Lạt)` và `R1155 (MT(D/CN) · Khánh Hòa)` vẫn `tails=[]` đúng bản chất:
+  source là `D` (cùng ngày) cho MN/MT, đợi xổ chiều 16:15/17:15 mới có dữ liệu.
+- Không re-mining hay đụng vào DB live (rules + effectiveness giữ nguyên).
+
+---
+
+## V20.3.21.9 — RULE → PREDICTED-TAILS ATTRIBUTION ON REVIEW SURFACES (2026-04-26 11:50 VN)
+
+### Context
+
+Owner reported (screenshot review) that the review surfaces were not "thật sự nhất quán" cho việc xem nhanh:
+- `/app` panel "📐 Rules hôm nay — hỗ trợ quyết định" lặp đi lặp lại cùng `MB(D-1/T7) · Nam Định` cho 4 rules với prize_keys khác nhau, không thấy ngay từng rule sản sinh ra số gì.
+- `/filter?tab=overview` mục "Rules đang chạy tương ứng" chỉ liệt kê `R1081 Giới hạn`, `R1082 Giới hạn` … và bóc tách giải/nguồn nhưng không gắn từng rule với số nó dự đoán → review chậm.
+
+### Changes
+
+- `web/backend/filter_2_so_cuoi.py`
+  - `get_mined_review_filter_data` hiện gắn `predicted_tails`, `predicted_tails_count`, `prize_tails` cho từng `rules_detail` (per-station và roll-up theo group nguồn). Nguồn dữ liệu là `_extract_tails_from_prizes` áp lên `prizes_json` của đúng đài/ngày của rule.
+- `web/backend/main.py`
+  - `/api/prediction-quality` nay trả về `predicted_tails`, `predicted_tails_count`, `prize_tails` cho từng top-rule trong `rule_support[region].top_rules`. Dùng `_get_source_date(today, source_offset)` + `lottery_results.prizes_json` để bóc tách.
+- `web/frontend/review-dashboard.html`
+  - Thêm panel "Rule → số dự đoán (review nhanh)" ngay dưới mỗi nguồn (sau bảng giải/đài) với từng rule card hiển thị `R<id> <prize_keys> · <station>`, prize-by-prize tails, và tổng tails.
+  - CSS mới: `.rr-rules-list`, `.rr-rule-card`, `.rr-rule-prize`, `.num-chip`, …
+- `web/frontend/app.js`
+  - `renderQualityPanel` group rules cùng `source_slot · source_station` thành 1 block; mỗi rule child hiển thị `R<id> · <prize_keys>` kèm dòng `→ <số>` (tail chips xanh).
+- `web/frontend/index.html`
+  - cache-buster bumped lên `?v=20260426-rules-tails-v2`.
+
+### Verify
+
+- `python -c ast.parse` OK trên `filter_2_so_cuoi.py` và `main.py`.
+- `ReadLints` clean.
+- (chờ deploy VPS + restart để lấy live screenshot)
+
+---
+
+## V20.3.21.8 — REVIEW HUB RULES-RUNTIME ALIGNMENT + DEAD FILE CLEANUP (2026-04-26 10:38 VN)
+
+### Context
+
+Owner reported that the `Review Hub` quick view did not actually match the auto rules the system is running. Investigation confirmed the hub previously only displayed raw station tails, without exposing the real scoring truth from `extract_rule_candidates_v2`: bucket + split resolution, weak-bucket suppression, per-rule tier, DH multiplier, livingness 12W/16W, and anti-herding CAP.
+
+### Changes
+
+- `web/backend/filter_2_so_cuoi.py`
+  - `/api/review-hub/filter` now returns `runtime_rules_state` mirroring the engine SSOT:
+    - `active_bucket`, `runtime_mode`, `split_mode`, `sub_bucket_used`
+    - `effective_min_tier` (detects weak-bucket suppression)
+    - `rules_triggered`, `rules_available`
+    - `tier_counts`, `activation_status_counts`
+    - `candidate_tails` (sorted by boost)
+    - `convergence_tails` (sorted by rule count)
+    - full `trace_details` plus highlights: `suppression`, `conv_caps`, `live_dead`
+  - each `sources[*]` item and each station inside it now carries `rules_detail` (id, tier, activation_status, prediction_use, hr_12w, hr_16w, score)
+- `web/frontend/review-dashboard.html`
+  - new reusable `renderRulesRuntimeCard` panel showing live engine state
+  - panel is rendered on `Xem nhanh`, `Rules tự động`, and `Nguồn & đối chiếu` tabs
+  - source blocks now show per-rule tier chips via `renderSourceRulesStrip`
+- dead-code cleanup:
+  - deleted `web/frontend/filter.html` (no longer served)
+  - deleted `web/frontend/rules-dashboard.html` (no longer served)
+  - removed both entries from `docs/AUTOMATION_STATE.json` frontend manifest
+  - same two files also removed from VPS `web/frontend/`
+
+### Verify
+
+- `ReadLints` clean on `review-dashboard.html` and `filter_2_so_cuoi.py`
+- local smoke test on `2026-04-25` returns engine-aligned state:
+  - MN_T7 triggered=5, tiers=`{RWC: 5}`, top=[76, 00, 61, ...], conv=[76×3, 05×2, 11×2, ...]
+  - MT_T7 triggered=4, tiers=`{RS:1, LW:3, RWC:1}`, top=[21, 22, 55, ...], conv=[34×2, 55×2, 71×2]
+  - MB_T7 triggered=5, tiers=`{RWC: 5}`, top=[06(0.4 after CAP), 66, 52, ...], conv=[06×3, 52×2, 66×2]
+- live API `https://xs.io.vn/api/review-hub/filter?target_region=MB&date=2026-04-25` returned the same values, including `trace_highlights.conv_caps` containing the MB `CONV×3 CAP 06 0.4478 → 0.4000` entry
+- `/api/health` -> `running / 15 / 26`
+- live redirects preserved: `/review-dashboard -> /filter?tab=overview`, `/rules-dashboard -> /filter?tab=health`
+- VPS `web/frontend/` no longer contains `filter.html` or `rules-dashboard.html`
+
+### Safety
+
+- review-only enrichment: exposes what scoring already uses, no change to scoring
+- no scheduler change
+- no bundle publish change
+- no model/runtime roster change
+
+## V20.3.21.7 — REVIEW HUB UI SIMPLIFICATION + VIETNAMESE LABEL PASS (2026-04-26 10:08 VN)
+
+### Context
+
+After the canonical route unification was live, the owner reported that the UI was still too busy and still carried too much English for fast daily use.
+
+The next pass therefore focused on:
+
+- reducing top-level cognitive load
+- collapsing rarely used review tabs
+- making the visible owner-facing labels more Vietnamese and more direct
+
+### Changes
+
+- `web/frontend/review-dashboard.html`
+  - reduced visible top tabs from 6 to 4:
+    - `Xem nhanh`
+    - `Nguồn & đối chiếu`
+    - `Rules tự động`
+    - `Số gan`
+  - folded the old `Flow` and `Advanced` surfaces into the `Rules tự động` tab via inline accordion sections
+  - translated the main owner-facing strings into clearer Vietnamese
+  - rewrote the quick-reading hints so the page explicitly tells the owner what to read first
+  - renamed and simplified summary labels, overview cards, source summary, and verify groups
+- `web/frontend/index.html`
+  - `Review Hub` → `Xem nhanh`
+  - `Quality` → `Chất lượng`
+  - `Prediction Quality` → `Chất lượng dự đoán`
+- `web/frontend/accuracy.html`
+  - `Accuracy Dashboard` → `Bảng Độ Chính Xác`
+  - nav label `Review Hub` → `Xem nhanh`
+  - nav label `Dashboard` → `Bảng chính`
+
+### Verify
+
+- `review-dashboard.html` remains lint-clean
+- no backend contract change in this pass
+- layout simplification stays on the same canonical `/filter` route
+
+### Safety
+
+- UI-only clarity pass
+- no scoring change
+- no scheduler change
+- no bundle publish change
+- no route truth change beyond labels/layout
+
+## V20.3.21.6 — REVIEW HUB CANONICAL ROUTE + LIVE VERIFY (2026-04-26 02:58 VN)
+
+### Context
+
+The owner asked for the overlapping quick-review surfaces to stop behaving like separate tools and instead collapse into one operational link for fast decision support.
+
+The final live decision for this session was:
+
+- canonical review entrypoint = `/filter`
+- `/review-dashboard` becomes a redirect alias into the hub
+- `/rules-dashboard` becomes a redirect alias into the hub's health tab
+- main admin navs now expose one `Review Hub` entry instead of parallel review links
+
+### Changes
+
+- `web/backend/main.py`
+  - `/filter` now serves the unified review hub (`review-dashboard.html`)
+  - `/review-dashboard` now redirects to `/filter?tab=overview`
+  - `/rules-dashboard` now redirects to `/filter?tab=health`
+- `web/frontend/review-dashboard.html`
+  - clarified that the canonical live route is `/filter`
+  - default tab behavior now respects pathname (`/filter` opens candidate-first when no explicit tab is supplied)
+- `web/frontend/index.html`
+- `web/frontend/accuracy.html`
+- `web/frontend/settings.html`
+  - collapsed duplicated review nav links into one `Review Hub` entry
+
+### Live Verify
+
+- `https://xs.io.vn/filter`
+  - returns the unified `Review Hub` page
+  - page contains `Review Hub`, `Tong Quan`, and the new `/api/review-hub/filter` client path
+- `https://xs.io.vn/review-dashboard`
+  - returns `307` with `location: /filter?tab=overview`
+- `https://xs.io.vn/rules-dashboard`
+  - returns `307` with `location: /filter?tab=health`
+- `https://xs.io.vn/api/review-hub/filter?target_region=MN&date=2026-04-25`
+  - returns `success=True`, `source_mode=mined_rules_soft`, `unique_count=10`, `sources=2`
+- public health after deploy:
+  - `/api/health` -> `running / expected_output_model_count=15 / runtime_model_count=26`
+- live navbar verification:
+  - `/app`, `/accuracy`, `/settings` now contain `Review Hub`
+  - those pages no longer expose `/rules-dashboard` or `/review-dashboard` as parallel review links
+
+### Safety
+
+- review-only / read-only unification
+- no scoring change
+- no scheduler change
+- no bundle publish change
+- no model/runtime roster change
+
+## V20.3.21.5 — REVIEW HUB PHASE 3 ENTRYPOINT BRIDGES (2026-04-26 02:52 VN)
+
+### Context
+
+After Phase 1 UI consolidation and Phase 2 mined-rule candidate alignment, the next low-risk step was to make the old review pages start flowing into the unified hub instead of leaving three disconnected entrypoints.
+
+### Changes
+
+- `web/frontend/review-dashboard.html`
+  - now accepts URL query params for safe deep linking:
+    - `tab`
+    - `region`
+    - `date`
+    - `flowDate`
+  - initial region/tab/date state can now be driven from the URL before rendering
+- `web/frontend/filter.html`
+  - `Review` nav now points to `/review-dashboard?tab=candidates`
+- `web/frontend/rules-dashboard.html`
+  - `Review` nav now points to `/review-dashboard?tab=health`
+
+### Verify
+
+- `review-dashboard.html` still lint-clean
+- no new backend endpoint needed for this bridge step
+- old routes still remain available; this is additive navigation only
+
+### Safety
+
+- frontend-only transition step
+- no scoring change
+- no scheduler change
+- no bundle/publish change
+- no legacy route removal yet
+
+## V20.3.21.4 — REVIEW HUB PHASE 2 MINED-RULE CANDIDATE CONTRACT (2026-04-26 02:46 VN)
+
+### Context
+
+After the safer Phase 1 UI consolidation, the next risk-controlled step was to align the unified review hub with the auto/mined rule truth without destabilizing the legacy `/filter` page.
+
+The chosen approach was:
+
+- keep `/api/filter-2-so-cuoi` unchanged for the legacy page
+- add a new read-only candidate endpoint for `Review Hub`
+- switch only `/review-dashboard` to that new contract
+
+### Changes
+
+- `web/backend/filter_2_so_cuoi.py`
+  - added a new mined-rule-backed read-only candidate pipeline for the unified review hub
+  - grouped runtime-effective mined rules into review source blocks compatible with the existing frontend rendering model
+  - preserved same-day cascade behavior for `MN -> MT -> MB`
+  - added a safer VN-timezone resolver that falls back cleanly when `ZoneInfo("Asia/Ho_Chi_Minh")` is unavailable in local Windows environments
+- `web/backend/main.py`
+  - added `GET /api/review-hub/filter`
+  - endpoint is explicitly separated from `/api/filter-2-so-cuoi` so the legacy filter surface stays stable during migration
+- `web/frontend/review-dashboard.html`
+  - switched candidate loading from `/api/filter-2-so-cuoi` to `/api/review-hub/filter`
+  - updated owner-facing copy so the candidate layer is explicitly described as auto/mined-rule review data
+
+### Verify
+
+- Python syntax parse OK for:
+  - `web/backend/filter_2_so_cuoi.py`
+  - `web/backend/main.py`
+- local smoke test of the new mined-review pipeline succeeded for closed day `2026-04-25`
+  - `MN -> ('mined_rules_soft', merged_sources=2, unique=10, total=10)`
+  - `MT -> ('mined_rules_soft', merged_sources=2, unique=55, total=59)`
+  - `MB -> ('mined_rules_soft', merged_sources=2, unique=72, total=95)`
+- `ReadLints` clean for:
+  - `web/backend/filter_2_so_cuoi.py`
+  - `web/backend/main.py`
+  - `web/frontend/review-dashboard.html`
+
+### Safety
+
+- legacy `/filter` contract untouched
+- new endpoint is read-only
+- no prediction scoring change
+- no bundle/publish change
+- no scheduler change
+- no model roster / prompt runtime change
+
+## V20.3.21.3 — REVIEW HUB PHASE 1 LOCAL UI CONSOLIDATION (2026-04-26 02:34 VN)
+
+### Context
+
+Owner requested a sequential unification path for the three overlapping review surfaces:
+
+- `/filter`
+- `/review-dashboard`
+- `/rules-dashboard`
+
+The safest first step was to improve the owner-facing review shell without touching prediction scoring, scheduler behavior, or model runtime.
+
+### Changes
+
+- `web/frontend/review-dashboard.html`
+  - promoted the page into a clearer `Review Hub` surface instead of a loose mixed dashboard
+  - added a dedicated candidate review date picker
+  - added an explicit context strip that separates:
+    - candidate/date-scoped review data
+    - verified auto-rule tracking data
+    - preview lifecycle context
+  - added a new `Overview` tab as the first entry point
+  - relabeled tabs into a more readable hierarchy:
+    - `Tong Quan`
+    - `Candidate`
+    - `Rule Health`
+    - `D-1→D Flow`
+    - `So Gan`
+    - `Advanced`
+  - added explanatory review notes so candidate verify states are not confused with historical rule hit-rate semantics
+  - added a manual `Lam moi hub` refresh path that reuses existing read-only APIs
+
+### Verify
+
+- `ReadLints` clean for `web/frontend/review-dashboard.html`
+- no backend API signature changed
+- no scoring path changed
+- no scheduler path changed
+- no model roster or prompt/runtime contract changed
+
+### Safety
+
+- frontend-only
+- read-only review surface only

@@ -1,0 +1,20 @@
+table | rows | sha256(rowids+date+region) (best-effort)
+predictions | 4290 | a835076601d59001
+final_bundles | 201 | 72109fb3564f2718
+lottery_results | 14615 | 2a3d71c4a0ce5550
+model_daily_eval | 4164 | 06c262da5c53c9d7
+scheduler_logs | 114751 | 9955f691f1984abc
+mt_model_hit_output_drop_shadow | 301 | 44065877146a54ef
+loz_selector_shadow | 3273 | 03b7b89c97d365c0
+model_latency_cost_audit_daily | 3273 | 46823589782c222b
+model_strength_by_region_weekday_station_daily | 9052 | b690d308577a8497
+experimental_preview_shadow | 1116 | 0db12e8f1c1b36f1
+mb_experimental_preview_shadow | 28 | 9d99c62313cef015
+du_doan_test_runs | 604 | 55ee883f8027042c
+du_doan_test_bundles | 604 | 9879cd9f90270830
+du_doan_test_results | 604 | d02eb38ad9074573
+du_doan_test_candidates | 13960 | b0d9217049cf5028
+du_doan_test_model_contribution | 13960 | 23b0af66d7ca335b
+du_doan_test_audit_log | 199 | cc6815669dbdc47a
+loz_stage_trace_shadow | 6174 | 03eab0008d563dc8
+weekday_blackspot_shadow | 21 | b211593584049073

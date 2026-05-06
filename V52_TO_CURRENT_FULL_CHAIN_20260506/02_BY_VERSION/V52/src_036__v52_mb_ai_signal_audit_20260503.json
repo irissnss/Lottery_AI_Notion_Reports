@@ -1,0 +1,2377 @@
+{
+  "scope": "MB 2026-05-03 + rolling model eval",
+  "official": {
+    "date": "2026-05-03",
+    "official_bt": "48",
+    "official_loz1": "48",
+    "official_loz2": "89",
+    "official_lo2": [
+      "48",
+      "89"
+    ],
+    "actual_tail_count": 24,
+    "bt_status": "WIN",
+    "loz1_status": "WIN",
+    "loz2_status": "LOSE",
+    "lo2_status": "PARTIAL",
+    "final_bundle_timestamp": "2026-05-03 17:40:51",
+    "evaluation_timestamp": "2026-05-03 18:31:02",
+    "result_scrape_timestamp": "2026-05-03T18:31:01.833751+07:00",
+    "prediction_rows_count": 25,
+    "ai_rows_count": 8,
+    "no_token_rows_count": 7,
+    "shadow_rows_count": 10,
+    "run_source_split": {
+      "ai_chain": 8,
+      "rerun_post_mt": 7,
+      "shadow_auto_eval": 10
+    },
+    "model_count_expected": 25,
+    "model_count_actual": 25,
+    "top10_candidates": [
+      {
+        "rank": 1,
+        "number": "48",
+        "score": 0.0956,
+        "voters": [
+          "gpt-5.4",
+          "gpt-5-mini",
+          "lstm",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "TOKEN": 2,
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 2,
+        "number": "89",
+        "score": 0.078,
+        "voters": [
+          "random-forest",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "family_split": {
+          "NO_TOKEN": 4
+        }
+      },
+      {
+        "rank": 3,
+        "number": "90",
+        "score": 0.064,
+        "voters": [
+          "xgboost",
+          "meta-learning",
+          "smart-ml"
+        ],
+        "family_split": {
+          "NO_TOKEN": 3
+        }
+      },
+      {
+        "rank": 4,
+        "number": "85",
+        "score": 0.0633,
+        "voters": [
+          "combo-super",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "family_split": {
+          "TOKEN": 3
+        }
+      },
+      {
+        "rank": 5,
+        "number": "08",
+        "score": 0.0585,
+        "voters": [
+          "gpt-5.4",
+          "xgboost",
+          "combo-no-token"
+        ],
+        "family_split": {
+          "TOKEN": 1,
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 6,
+        "number": "28",
+        "score": 0.0539,
+        "voters": [
+          "random-forest",
+          "smart-ml"
+        ],
+        "family_split": {
+          "NO_TOKEN": 2
+        }
+      },
+      {
+        "rank": 7,
+        "number": "30",
+        "score": 0.0468,
+        "voters": [
+          "deepseek-reasoner",
+          "gpt-5-mini"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 8,
+        "number": "53",
+        "score": 0.0315,
+        "voters": [
+          "combo-super",
+          "claude-opus-4-20250514"
+        ],
+        "family_split": {
+          "TOKEN": 2
+        }
+      },
+      {
+        "rank": 9,
+        "number": "82",
+        "score": 0.027,
+        "voters": [
+          "lstm"
+        ],
+        "family_split": {
+          "NO_TOKEN": 1
+        }
+      },
+      {
+        "rank": 10,
+        "number": "14",
+        "score": 0.0234,
+        "voters": [
+          "gemini-2.5-pro"
+        ],
+        "family_split": {
+          "TOKEN": 1
+        }
+      }
+    ],
+    "source_flags": {
+      "pp1_convergence_dampener": {
+        "enabled": true,
+        "factor": 0.85,
+        "voters_threshold": 3,
+        "events": []
+      },
+      "pp5_family_diversity_bonus": {
+        "enabled": false,
+        "factor": 1.15,
+        "min_families": 2,
+        "events": []
+      },
+      "wr_gate_filtered": [
+        "gemini-2.5-flash"
+      ],
+      "dropped_main_candidate_reason": [
+        {
+          "number": "89",
+          "score": 0.078,
+          "voters": [
+            "random-forest",
+            "meta-learning",
+            "combo-no-token",
+            "smart-ensemble"
+          ],
+          "lane_votes": {
+            "rerun_post_mt": 4
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "90",
+          "score": 0.064,
+          "voters": [
+            "xgboost",
+            "meta-learning",
+            "smart-ml"
+          ],
+          "lane_votes": {
+            "rerun_post_mt": 3
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        },
+        {
+          "number": "85",
+          "score": 0.0633,
+          "voters": [
+            "combo-super",
+            "claude-opus-4-20250514",
+            "claude-sonnet-4-6"
+          ],
+          "lane_votes": {
+            "ai_chain": 3
+          },
+          "dropped_main_candidate_reason": "score_below_top1_after_position_verdict_lane_weights"
+        }
+      ],
+      "source_prizes_status": "RESOLVED",
+      "dominant_rule_group": "consensus_top1_cluster",
+      "lane_fusion_policy": {
+        "mt_rerun_post_mn_boost": 1.15,
+        "mt_ai_chain_downweight": 0.95,
+        "mb_all_sources": 1.0
+      },
+      "bt_gate_threshold": 12,
+      "wr_gate_threshold": 26,
+      "model_exclusion_reasons": [
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "reason": "bt_gate",
+          "detail": "bt<12",
+          "active": true
+        }
+      ]
+    },
+    "model_hits": [
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "57",
+          "30"
+        ],
+        "hits": [
+          "57"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "48",
+          "30"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "numbers": [
+          "48",
+          "08"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "48",
+          "82"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 5.3,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "90"
+        ],
+        "hits": [
+          "90"
+        ],
+        "strength": 5.4,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "28"
+        ],
+        "hits": [
+          "28"
+        ],
+        "strength": 4.6,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "89",
+          "48"
+        ],
+        "hits": [
+          "48"
+        ],
+        "strength": 4.5,
+        "verdict": "SKIP",
+        "status": "PARTIAL"
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "90",
+          "28"
+        ],
+        "hits": [
+          "90",
+          "28"
+        ],
+        "strength": 6.0,
+        "verdict": "CHOT",
+        "status": "WIN"
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "numbers": [
+          "08",
+          "90"
+        ],
+        "hits": [
+          "90"
+        ],
+        "strength": 4.3,
+        "verdict": "CHOT_HA",
+        "status": "PARTIAL"
+      }
+    ],
+    "dropped_actual_candidates": [
+      {
+        "tail": "28",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 6,
+          "number": "28",
+          "score": 0.0539,
+          "voters": [
+            "random-forest",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 2
+          }
+        },
+        "model_hit_count": 2,
+        "models": [
+          {
+            "model": "random-forest",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "89",
+              "28"
+            ],
+            "hits": [
+              "28"
+            ],
+            "strength": 4.6,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "smart-ml",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "90",
+              "28"
+            ],
+            "hits": [
+              "90",
+              "28"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT",
+            "status": "WIN"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "32428"
+          }
+        ]
+      },
+      {
+        "tail": "57",
+        "drop_stage": "AI_SIGNAL_DROPPED",
+        "in_top10": false,
+        "rank_info": null,
+        "model_hit_count": 1,
+        "models": [
+          {
+            "model": "deepseek-reasoner",
+            "family": "TOKEN",
+            "run_source": "ai_chain",
+            "numbers": [
+              "57",
+              "30"
+            ],
+            "hits": [
+              "57"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "30357"
+          },
+          {
+            "station": "Thái Bình",
+            "number": "2957"
+          }
+        ]
+      },
+      {
+        "tail": "90",
+        "drop_stage": "LOZ_LINE_SELECTION_MISS",
+        "in_top10": true,
+        "rank_info": {
+          "rank": 3,
+          "number": "90",
+          "score": 0.064,
+          "voters": [
+            "xgboost",
+            "meta-learning",
+            "smart-ml"
+          ],
+          "family_split": {
+            "NO_TOKEN": 3
+          }
+        },
+        "model_hit_count": 3,
+        "models": [
+          {
+            "model": "meta-learning",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "89",
+              "90"
+            ],
+            "hits": [
+              "90"
+            ],
+            "strength": 5.4,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          },
+          {
+            "model": "smart-ml",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "90",
+              "28"
+            ],
+            "hits": [
+              "90",
+              "28"
+            ],
+            "strength": 6.0,
+            "verdict": "CHOT",
+            "status": "WIN"
+          },
+          {
+            "model": "xgboost",
+            "family": "NO_TOKEN",
+            "run_source": "rerun_post_mt",
+            "numbers": [
+              "08",
+              "90"
+            ],
+            "hits": [
+              "90"
+            ],
+            "strength": 4.3,
+            "verdict": "CHOT_HA",
+            "status": "PARTIAL"
+          }
+        ],
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "number": "490"
+          }
+        ]
+      }
+    ]
+  },
+  "model_perf": {
+    "3": [
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 2,
+        "bt_rate": 0.6667,
+        "hit_count": 2
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 3,
+        "bt_wins": 2,
+        "bt_rate": 0.6667,
+        "hit_count": 2
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 3
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 2
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 3
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 2
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 2
+      }
+    ],
+    "7": [
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 3
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 5
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 1
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 2
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 2
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 5
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 3
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 5
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 5
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 1
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 4
+      },
+      {
+        "model": "minimax-m2.7",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 2,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 3
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 4
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 5
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 3
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 4
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 4
+      }
+    ],
+    "14": [
+      {
+        "model": "arcee-trinity",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 2,
+        "bt_rate": 0.1429,
+        "hit_count": 6
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 7
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 7
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 5,
+        "bt_rate": 0.3571,
+        "hit_count": 7
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 6
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 2
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 2
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 3,
+        "bt_rate": 0.2143,
+        "hit_count": 6
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 2,
+        "bt_rate": 0.1429,
+        "hit_count": 5
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 6
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 6,
+        "bt_rate": 0.4286,
+        "hit_count": 9
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 14,
+        "bt_wins": 3,
+        "bt_rate": 0.2143,
+        "hit_count": 8
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "bt_wins": 2,
+        "bt_rate": 0.1538,
+        "hit_count": 2
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 14,
+        "bt_wins": 2,
+        "bt_rate": 0.1429,
+        "hit_count": 6
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 14,
+        "bt_wins": 1,
+        "bt_rate": 0.0714,
+        "hit_count": 5
+      },
+      {
+        "model": "kimi-k2.6",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "llama-4-maverick",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 2,
+        "bt_rate": 0.6667,
+        "hit_count": 2
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 6
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 10
+      },
+      {
+        "model": "minimax-m2.7",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 1
+      },
+      {
+        "model": "mistral-large-3",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 2,
+        "bt_rate": 0.6667,
+        "hit_count": 2
+      },
+      {
+        "model": "mistral-nemo",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 14,
+        "bt_wins": 1,
+        "bt_rate": 0.0714,
+        "hit_count": 6
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 5
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 4
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 10
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 1,
+        "bt_rate": 0.0714,
+        "hit_count": 8
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 4,
+        "bt_rate": 0.2857,
+        "hit_count": 7
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 14,
+        "bt_wins": 3,
+        "bt_rate": 0.2143,
+        "hit_count": 9
+      }
+    ],
+    "30": [
+      {
+        "model": "arcee-trinity",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 6,
+        "bt_wins": 1,
+        "bt_rate": 0.1667,
+        "hit_count": 1
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 28,
+        "bt_wins": 7,
+        "bt_rate": 0.25,
+        "hit_count": 12
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 28,
+        "bt_wins": 8,
+        "bt_rate": 0.2857,
+        "hit_count": 15
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 1,
+        "bt_rate": 1.0,
+        "hit_count": 1
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 7,
+        "bt_rate": 0.2414,
+        "hit_count": 15
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 21,
+        "bt_wins": 6,
+        "bt_rate": 0.2857,
+        "hit_count": 10
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 9,
+        "bt_wins": 1,
+        "bt_rate": 0.1111,
+        "hit_count": 4
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 6,
+        "bt_rate": 0.2069,
+        "hit_count": 12
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 2
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 2
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 3,
+        "bt_rate": 0.1034,
+        "hit_count": 9
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 5,
+        "bt_rate": 0.1724,
+        "hit_count": 10
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 1,
+        "bt_rate": 1.0,
+        "hit_count": 2
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 5,
+        "bt_rate": 0.2632,
+        "hit_count": 8
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 9,
+        "bt_rate": 0.3103,
+        "hit_count": 15
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 1,
+        "bt_rate": 1.0,
+        "hit_count": 1
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 7,
+        "bt_rate": 0.2414,
+        "hit_count": 14
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 1,
+        "bt_wins": 1,
+        "bt_rate": 1.0,
+        "hit_count": 2
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "bt_wins": 2,
+        "bt_rate": 0.1538,
+        "hit_count": 2
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 1,
+        "bt_rate": 0.5,
+        "hit_count": 1
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 3,
+        "bt_rate": 0.1579,
+        "hit_count": 9
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 17,
+        "bt_wins": 2,
+        "bt_rate": 0.1176,
+        "hit_count": 6
+      },
+      {
+        "model": "kimi-k2.6",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "llama-4-maverick",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 3,
+        "bt_rate": 0.75,
+        "hit_count": 4
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 10,
+        "bt_rate": 0.3448,
+        "hit_count": 16
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 6,
+        "bt_rate": 0.2069,
+        "hit_count": 19
+      },
+      {
+        "model": "minimax-m2.7",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 11,
+        "bt_wins": 2,
+        "bt_rate": 0.1818,
+        "hit_count": 2
+      },
+      {
+        "model": "mistral-large-3",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 3,
+        "bt_rate": 0.75,
+        "hit_count": 4
+      },
+      {
+        "model": "mistral-nemo",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 1,
+        "bt_rate": 0.25,
+        "hit_count": 1
+      },
+      {
+        "model": "nemotron-3-super",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 2,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 1,
+        "bt_rate": 0.5,
+        "hit_count": 1
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 4,
+        "bt_rate": 0.2105,
+        "hit_count": 11
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 17,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 6
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 4
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 9,
+        "bt_rate": 0.3103,
+        "hit_count": 20
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 4,
+        "bt_rate": 0.1379,
+        "hit_count": 15
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 1
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 10,
+        "bt_rate": 0.3448,
+        "hit_count": 17
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 1,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 5,
+        "bt_rate": 0.1724,
+        "hit_count": 17
+      }
+    ],
+    "60": [
+      {
+        "model": "arcee-trinity",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 6,
+        "bt_wins": 1,
+        "bt_rate": 0.1667,
+        "hit_count": 1
+      },
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "family": "SHADOW",
+        "run_source": "auto_daily",
+        "n": 5,
+        "bt_wins": 2,
+        "bt_rate": 0.4,
+        "hit_count": 3
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 28,
+        "bt_wins": 7,
+        "bt_rate": 0.25,
+        "hit_count": 12
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 19,
+        "bt_wins": 6,
+        "bt_rate": 0.3158,
+        "hit_count": 11
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 3,
+        "bt_rate": 0.3333,
+        "hit_count": 3
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 28,
+        "bt_wins": 8,
+        "bt_rate": 0.2857,
+        "hit_count": 15
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 19,
+        "bt_wins": 6,
+        "bt_rate": 0.3158,
+        "hit_count": 10
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 3,
+        "bt_rate": 0.3333,
+        "hit_count": 4
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 10,
+        "bt_rate": 0.4348,
+        "hit_count": 13
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "combo-no-token",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 7,
+        "bt_rate": 0.2414,
+        "hit_count": 15
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 21,
+        "bt_wins": 6,
+        "bt_rate": 0.2857,
+        "hit_count": 10
+      },
+      {
+        "model": "combo-super",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 39,
+        "bt_wins": 7,
+        "bt_rate": 0.1795,
+        "hit_count": 20
+      },
+      {
+        "model": "deepseek-chat",
+        "family": "SHADOW",
+        "run_source": "auto_daily",
+        "n": 13,
+        "bt_wins": 3,
+        "bt_rate": 0.2308,
+        "hit_count": 7
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 6,
+        "bt_rate": 0.2069,
+        "hit_count": 12
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 15,
+        "bt_wins": 2,
+        "bt_rate": 0.1333,
+        "hit_count": 6
+      },
+      {
+        "model": "deepseek-reasoner",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 5,
+        "bt_rate": 0.5556,
+        "hit_count": 8
+      },
+      {
+        "model": "deepseek-v4-flash",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 2,
+        "bt_rate": 0.2857,
+        "hit_count": 2
+      },
+      {
+        "model": "deepseek-v4-pro",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 1,
+        "bt_rate": 0.1429,
+        "hit_count": 2
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 3,
+        "bt_rate": 0.1034,
+        "hit_count": 9
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 22,
+        "bt_wins": 5,
+        "bt_rate": 0.2273,
+        "hit_count": 11
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 2,
+        "bt_rate": 0.2222,
+        "hit_count": 6
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 5,
+        "bt_rate": 0.1724,
+        "hit_count": 10
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 22,
+        "bt_wins": 7,
+        "bt_rate": 0.3182,
+        "hit_count": 12
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 2,
+        "bt_rate": 0.2222,
+        "hit_count": 4
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "glm-5.1",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 5,
+        "bt_rate": 0.2632,
+        "hit_count": 8
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 9,
+        "bt_rate": 0.3103,
+        "hit_count": 15
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 17,
+        "bt_wins": 2,
+        "bt_rate": 0.1176,
+        "hit_count": 5
+      },
+      {
+        "model": "gpt-5-mini",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 2,
+        "bt_rate": 0.2222,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-5.1",
+        "family": "SHADOW",
+        "run_source": "auto_daily",
+        "n": 5,
+        "bt_wins": 1,
+        "bt_rate": 0.2,
+        "hit_count": 1
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "ai_chain",
+        "n": 29,
+        "bt_wins": 7,
+        "bt_rate": 0.2414,
+        "hit_count": 14
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "auto_daily",
+        "n": 3,
+        "bt_wins": 1,
+        "bt_rate": 0.3333,
+        "hit_count": 1
+      },
+      {
+        "model": "gpt-5.4",
+        "family": "TOKEN",
+        "run_source": "fallback",
+        "n": 9,
+        "bt_wins": 5,
+        "bt_rate": 0.5556,
+        "hit_count": 9
+      },
+      {
+        "model": "gpt-5.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 7,
+        "bt_wins": 3,
+        "bt_rate": 0.4286,
+        "hit_count": 3
+      },
+      {
+        "model": "gpt-oss-120b",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "bt_wins": 2,
+        "bt_rate": 0.1538,
+        "hit_count": 2
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 1,
+        "bt_rate": 0.5,
+        "hit_count": 1
+      },
+      {
+        "model": "grok-4.20-multi-agent",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 3,
+        "bt_rate": 0.1579,
+        "hit_count": 9
+      },
+      {
+        "model": "kimi-k2.5",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 17,
+        "bt_wins": 2,
+        "bt_rate": 0.1176,
+        "hit_count": 6
+      },
+      {
+        "model": "kimi-k2.6",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 3,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 2
+      },
+      {
+        "model": "llama-4-maverick",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 3,
+        "bt_rate": 0.75,
+        "hit_count": 4
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 1,
+        "bt_rate": 0.0435,
+        "hit_count": 4
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 2,
+        "bt_rate": 0.25,
+        "hit_count": 7
+      },
+      {
+        "model": "lstm",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 10,
+        "bt_rate": 0.3448,
+        "hit_count": 16
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 6,
+        "bt_rate": 0.2609,
+        "hit_count": 21
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 3
+      },
+      {
+        "model": "meta-learning",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 6,
+        "bt_rate": 0.2069,
+        "hit_count": 19
+      },
+      {
+        "model": "minimax-m2.7",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 11,
+        "bt_wins": 2,
+        "bt_rate": 0.1818,
+        "hit_count": 2
+      },
+      {
+        "model": "mistral-large-3",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 3,
+        "bt_rate": 0.75,
+        "hit_count": 4
+      },
+      {
+        "model": "mistral-nemo",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 4,
+        "bt_wins": 1,
+        "bt_rate": 0.25,
+        "hit_count": 1
+      },
+      {
+        "model": "nemotron-3-super",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 2,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "o4-mini",
+        "family": "SHADOW",
+        "run_source": "auto_daily",
+        "n": 5,
+        "bt_wins": 4,
+        "bt_rate": 0.8,
+        "hit_count": 5
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 1,
+        "bt_rate": 0.5,
+        "hit_count": 1
+      },
+      {
+        "model": "qwen3-coder",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 19,
+        "bt_wins": 4,
+        "bt_rate": 0.2105,
+        "hit_count": 11
+      },
+      {
+        "model": "qwen3-max-thinking",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 17,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 6
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "manual",
+        "n": 2,
+        "bt_wins": 0,
+        "bt_rate": 0.0,
+        "hit_count": 0
+      },
+      {
+        "model": "qwen3.6-plus",
+        "family": "SHADOW",
+        "run_source": "shadow_auto_eval",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 4
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 2,
+        "bt_rate": 0.087,
+        "hit_count": 11
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 2,
+        "bt_rate": 0.25,
+        "hit_count": 4
+      },
+      {
+        "model": "random-forest",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 9,
+        "bt_rate": 0.3103,
+        "hit_count": 20
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 7,
+        "bt_rate": 0.3043,
+        "hit_count": 10
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 4
+      },
+      {
+        "model": "smart-ensemble",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 4,
+        "bt_rate": 0.1379,
+        "hit_count": 15
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 5,
+        "bt_rate": 0.2174,
+        "hit_count": 14
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 5
+      },
+      {
+        "model": "smart-ml",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 10,
+        "bt_rate": 0.3448,
+        "hit_count": 17
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "auto_daily",
+        "n": 23,
+        "bt_wins": 7,
+        "bt_rate": 0.3043,
+        "hit_count": 23
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_after_verify",
+        "n": 8,
+        "bt_wins": 1,
+        "bt_rate": 0.125,
+        "hit_count": 3
+      },
+      {
+        "model": "xgboost",
+        "family": "NO_TOKEN",
+        "run_source": "rerun_post_mt",
+        "n": 29,
+        "bt_wins": 5,
+        "bt_rate": 0.1724,
+        "hit_count": 17
+      }
+    ]
+  },
+  "answer_labels": [
+    "AI_MB_NOT_PROVEN_WEAK",
+    "AI_MB_SAMPLE_TOO_THIN",
+    "PRUNING_NOT_ALLOWED_NO_LATENCY"
+  ]
+}

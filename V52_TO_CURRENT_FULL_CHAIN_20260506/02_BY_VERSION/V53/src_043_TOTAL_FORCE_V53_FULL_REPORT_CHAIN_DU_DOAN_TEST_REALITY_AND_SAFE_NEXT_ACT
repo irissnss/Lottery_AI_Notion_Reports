@@ -1,0 +1,387 @@
+# TOTAL-FORCE V53 / V52.5.8 — Full Report Chain Forensic + `/du-doan-test` Reality Audit
+
+> Date: 2026-05-03 23:55 → 2026-05-04 00:30 VN  
+> Mode: VPS-first / full-report-chain audit / anti-overclaim / no official mutation  
+> Live sync: `artifacts/live_sync/20260504_000308/manifest.json`  
+> Service: lottery.service active, PID `660933`, uptime 25 min at audit start (V52.5.5 deploy at 23:37 +07)
+
+---
+
+## A. Executive controller verdict (10 lines)
+
+1. Official `/du-doan` and `final_bundles` are UNCHANGED. Source-table hashes for `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval` are identical pre/post audit. Only `scheduler_logs` grew +12 from V52.6 UI restart.
+2. `/du-doan-test` is `LIVE_PARALLEL_AUTO_PENDING_ONLY` (not full live-parallel auto). Schema/engine/multi-region API/UI/runner all exist; scheduler auto-wire and natural realtime closeout are NOT enabled.
+3. Owner concern "test lane shows official numbers" is partially valid: the UI labels "= chính" / "≠ chính" are too quiet and the test column easily looks like a clone when test method picks the same number as official. This is a `UI_LABEL_CONFUSION_INDEPENDENT_AGREEMENT_LOOKS_LIKE_CLONE` situation, not a real cloning bug.
+4. DB confirms test bundles ARE independent: 2026-05-02 MB official `43` LOSE while 4 of 6 test methods picked `91` (WIN). 2026-05-03 MB AI_CHAIN/PRIOR_REGION picked `85` (LOSE) instead of official `48` (WIN).
+5. V52.6 UI fix shipped this pass: explicit source banner, picks-per-experiment table at top, "🟰 đồng thuận" / "🆚 khác chính" replaces ambiguous `= chính` chip.
+6. Official quality is `OFFICIAL_QUALITY_NOT_PROVEN`: 30d BT MN 60% (strong), MT 33%, MB 20% (very weak). MB Wed/Fri = 0/4. MT Mon/Fri = 0/4.
+7. MT 2026-05-03 LOSE: STRENGTH_WEIGHTED + SPECIALIST + NO_TOKEN test methods all agreed with official `29`; AI_CHAIN_PRESERVATION picked `33`, PRIOR_REGION picked `17` — none hit. This day was a true "no method had `08` or `18` at top" event; not a drop bug for 2026-05-03 itself, but rolling MT drop matrix (V52.1) confirms MT `LOZ_LINE_SELECTION_MISS=115` over 60d.
+8. MB 2026-05-03 WIN at BT 48: AI_CHAIN_PRESERVATION wrong (`85` LOSE, false_promotion=1) — confirms MB AI is structurally weaker than rerun_post_mt herd today.
+9. Loz remains `LOZ_SIGNAL_MIXED + LOZ_REGION_CONDITIONAL + LOZ_NOT_READY_FOR_RULE`. Tensor remains `TENSOR_NOT_OK_FOR_PRUNING + PRUNING_NOT_ALLOWED_NO_LATENCY` (3273/3273 NO_PER_MODEL_DURATION).
+10. Single safe code change shipped this pass: V52.6 UI source-badge + experiment-summary table — no backend/DB/scoring/prompt change. Everything else stays measurement-only or test-lane-only.
+
+---
+
+## B. V52.5.7 + full-chain report reconciliation
+
+| Claim | First report | Proof type | Evidence | Verdict |
+|---|---|---|---|---|
+| Cross-region leakage forensic V20.3.37.30 root-cause: spillover MN→MT 53.3% vs random 35.3%, same-model dup 17–20%, family TOKEN/NO_TOKEN/SHADOW all leak 36–47%. | V20.3.37.30 | `DB_PROVEN` | `cross_region_spillover_shadow` (9577 rows / 60d), `model_cross_region_dup_shadow` (640 / 29d) | CONFIRMED |
+| V20.3.37.36 Phase A: 5 measurement tables on VPS; service active V20.3.36; source-hash 4/5 identical. | V36 | `VPS_PROVEN + DB_PROVEN` | persistent rows, V36 evidence pack | CONFIRMED |
+| V20.3.37.37 single_vote_rescue replay positive. | V37 | overturned | superseded as `LEAKY_REFERENCE_ONLY` | SUPERSEDED |
+| V20.3.37.39 corrected_rescue_replay 900 rows / 30 dates clean-day NEGATIVE; TIER 3 gate not met. | V39 | `DB_PROVEN` | `corrected_rescue_replay_shadow` rows | CONFIRMED |
+| V20.3.37.41 9 measurement tables persistent + Option A guard PASS. | V41 | `CODE_PROVEN + DB_PROVEN` | main.py grep clean | CONFIRMED |
+| V20.3.37.45/45.2/45.3 MB experimental preview deployed; Composite V2 +3/30 (gate +4 not met). | V45 series | `VPS_PROVEN + DB_PROVEN` | `mb_experimental_preview_shadow` 14 rows for 2 dates pre-V52.5; backtest 30d net +3 | CONFIRMED |
+| V20.3.37.46 `/du-doan-test` schema riêng, MB engine, 7 runs/bundles/results, 147 candidates, 147 contributions for MB 2026-05-02. | V46 | `DB_PROVEN` | `du_doan_test_*` tables present | CONFIRMED |
+| V20.3.37.48/48.1/48.2 UI redesign + lo3 independent + AI prompt designed-not-executing + 14/25 voter coverage corrected. | V48 series | `CODE_PROVEN + DB_PROVEN` | `du-doan-test.html` compare-grid; `_generate_lo3_frequency` reused | CONFIRMED |
+| V20.3.37.49 V48 embedded report present; status `MANUAL_STAGE_0_CONFIRMED`. | V49 | `EMBEDDED_REPORT_PRESENT` | V48 transcript inside V48 report | CONFIRMED |
+| V20.3.37.50 MB experiment lab with registry/runner/evaluator/scoreboards. Status remains `MANUAL_STAGE_0_CONFIRMED`. | V50 | `DB_PROVEN` | `du_doan_test_experiments` + scoreboards | CONFIRMED |
+| V20.3.37.51 MT 03/05 official `29` LOSE, model-hit drop evidence; tensor `NO_PER_MODEL_DURATION`. | V51 | `DB_PROVEN` | `mt_model_hit_output_drop_shadow` | CONFIRMED |
+| V20.3.37.52 → V20.3.37.52.4.1 multi-region readiness UI + cutoff spec + bug fix on stuck loading. | V52 series | `VPS_PROVEN + UI_PROVEN` | live URL 200/401 + V52.4.1 fix | CONFIRMED |
+| V20.3.37.52.5.1 model strength tensor 9052 rows. | V52.5.1 | `DB_PROVEN` | `model_strength_by_region_weekday_station_daily` | CONFIRMED |
+| V20.3.37.52.5 multi-region preview/engine/registry/UI/runner; MN/MT/MB live test bundle in API. | V52.5.x | `DB_PROVEN + API_PROVEN` | 1098 preview rows; 579 test runs; in-process API smoke | CONFIRMED (status remains `LIVE_PARALLEL_AUTO_PENDING_ONLY`, not full auto) |
+| V52.5.7 60d evidence: MB SPECIALIST_ROSTER fw=5/fl=0, MN AI_CHAIN_PRESERVATION fw=4/fl=1, MT AI_CHAIN destructive fw=8/fl=12. | V52.5.7 | `DB_PROVEN` | `experimental_preview_shadow` flip stats | CONFIRMED (measurement-only, not unlock evidence) |
+
+No claim downgraded to NEEDS_DEEPER_AUDIT or OVERCLAIM in this pass. No standalone artifact missing — all referenced files exist on local + VPS.
+
+---
+
+## C. Owner requirement coverage matrix
+
+| Owner ask | V52.5.8/V53 status | Evidence |
+|---|---|---|
+| Tổng kiểm tra hệ đo lường + đánh giá sau live 03/05 | DONE this pass | this report + sub-artifacts |
+| Chỉ số tiến triển tới đâu, kế hoạch tiếp | DONE | sections D–O |
+| Vấn đề chờ live có đủ cơ sở dữ liệu chưa | DONE | code readiness matrix in section O; majority remains `WAIT_DATA` (need ≥14 VALID_LIVE_DAY) |
+| Chất lượng dự đoán cải thiện chưa | `OFFICIAL_QUALITY_NOT_PROVEN` | 30d MN 60% / MT 33% / MB 20% BT |
+| MT output sai dù model đúng | `MT_LOZ_LINE_SELECTION_MISS_60D=115` measured; one-day forensic in section H | `mt_model_hit_output_drop_shadow` |
+| MB AI sai nhiều | confirmed weak: MB AI_CHAIN_PRESERVATION 60d fw=10/fl=10 neutral, MB AI 30d top model `claude-sonnet-4-6 ai_chain` helpful only 0.28 | strength tensor V52.5.1 |
+| Loz1/loz2 lộn xộn | `LOZ_SIGNAL_MIXED + LOZ_REGION_CONDITIONAL` | `loz_selector_shadow` 3273 rows |
+| Model mạnh/yếu theo miền/thứ/đài | quantified | strength tensor 4 windows × 3 grains × 9052 rows |
+| Phương pháp/model/multi-lane/shadow tiến triển | section L | 9 measurement tables + 6 multi-region experiments × 3 regions |
+| `/du-doan-test` chạy thực nghiệm song song thật | `LIVE_PARALLEL_AUTO_PENDING_ONLY` | runner manual; no scheduler auto |
+| Không can thiệp `/du-doan` | OK | source hash IDENTICAL |
+| UI test so sánh trực quan | DONE V52.6: source banner + experiment summary table + đồng thuận label | `du-doan-test.html` v52.6 |
+| Giảm chi phí/thời gian, có thể không kịp 25 model live | `PRUNING_NOT_ALLOWED_NO_LATENCY` | 3273/3273 missing duration |
+| Loại bỏ model yếu sau đủ data | `WATCH_CANDIDATE / NOT_ENOUGH_DATA` cho từng model | tensor available, latency missing |
+| Output UI nâng cấp total miền/thứ/đài/strength | `IMPLEMENT_NOW_TEST_LANE_ONLY` (V52.6 chỉ thêm explanation; total enhancement chờ closeout evaluator multi-region) | `du_doan_test_*` |
+| Không tự ý production change | OK | this pass added 0 backend/DB writes |
+
+---
+
+## D. Official `/du-doan` mechanism + output-quality forensic
+
+Mechanism (read-only audit, no change):
+- UI: `web/frontend/du-doan.html` calls `/api/final-bundle`.
+- Backend: route handler reads `final_bundles` via `database.get_final_bundle()`.
+- `final_bundles` rows are produced by `generate_final_bundle()` after `predictions` are written for the region.
+- `predictions` written by AI cascade (MN auto 04:15 → MT 17:30 → MB 18:30) with run_source `auto_daily/ai_chain/rerun_post_mn/rerun_post_mt`.
+- `model_daily_eval` produced by daily eval job after lottery scrape.
+
+Rolling quality (anchored 2026-05-03):
+
+| Window | MN BT | MT BT | MB BT | MN LO2_FULL | MT LO2_FULL | MB LO2_FULL | MN LO2_ANY | MT LO2_ANY | MB LO2_ANY |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 7d | 4/7 (.571) | 4/7 (.571) | 2/7 (.286) | 4/7 (.571) | 1/7 (.143) | 0/7 | 4/7 | 5/7 | 4/7 |
+| 14d | 9/14 (.643) | 5/14 (.357) | 5/14 (.357) | 6/14 (.429) | 1/14 (.071) | 1/14 (.071) | 11/14 | 7/14 | 9/14 |
+| 30d | 18/30 (.600) | 10/30 (.333) | 6/30 (.200) | 10/30 (.333) | 5/30 (.167) | 2/30 (.067) | 25/30 (.833) | 20/30 (.667) | 13/30 (.433) |
+| 60d | 29/60 (.483) | 28/60 (.467) | 18/60 (.300) | 17/60 (.283) | 11/60 (.183) | 2/60 (.033) | 42/60 (.700) | 41/60 (.683) | 29/60 (.483) |
+
+Per-weekday 30d (BT WIN / total):
+- MB: Mon 1/4, Tue 1/4, Wed 0/4, Thu 1/4, **Fri 0/4**, Sat 2/5, Sun 1/5 — Wed+Fri are structural black spots.
+- MT: Mon 0/4, Tue 1/4, Wed 1/4, Thu 4/4, **Fri 0/4**, Sat 2/5, Sun 2/5.
+- MN: Mon 4/4, Tue 3/4, Wed 1/4, Thu 3/4, Fri 1/4, Sat 2/5, Sun 4/5.
+
+Verdict: `OFFICIAL_QUALITY_NOT_PROVEN` over 30d. `MN_HEALTHY + MT_VOLATILE_BY_WEEKDAY + MB_REGIONALLY_WEAK + MIXED_SIGNAL`. No production policy change should be triggered by this rolling state — the gap between MB and MN is structural, not noise.
+
+---
+
+## E. `/du-doan-test` reality: UI/API/DB/code/log proof
+
+### UI source map
+
+`web/frontend/du-doan-test.html` blocks → API field they read:
+
+| UI block | API field | Source table | Label |
+|---|---|---|---|
+| Compare grid Official column | `data.baseline.bach_thu / lo2 / lo3 / xien2 / xien3` | `final_bundles` (read-only via `get_final_bundle`) | `OFFICIAL_BASELINE` |
+| Compare grid Test column | `data.test_bundle.*` | `mb_experimental_preview_shadow` (MB legacy) OR `experimental_preview_shadow` (V52.5.x MN/MT/MB) → primary picked from registry priority list | `TEST_ENGINE_OUTPUT` (independent pick) |
+| Picks-per-experiment table (V52.6 NEW) | `data.experiments[*].candidate_bt` | `mb_experimental_preview_shadow` / `experimental_preview_shadow` | `TEST_ENGINE_OUTPUT_BY_METHOD` |
+| Test History | `data.test_history` | `du_doan_test_bundles + du_doan_test_results` | `TEST_HISTORY` |
+| 30-day Backtest Snapshot | `data.backtest_summary` | `mb_experimental_preview_shadow` (MB only) | `POST_CLOSEOUT_DIAGNOSTIC` |
+| V52.2 Measurement Surfaces | `data.v52_measurements` | `mt_model_hit_output_drop_shadow + loz_selector_shadow + model_latency_cost_audit_daily` | `MEASUREMENT_ONLY` |
+
+UI does NOT call `/api/final-bundle` directly. It only consumes `/api/du-doan-test/{region}` which reads `final_bundles` for the official baseline column with intent labelled "official baseline" — and this part is the only place where official numbers appear, by design.
+
+### API source map
+
+| API | Reads | Writes |
+|---|---|---|
+| `/api/du-doan-test/mb` (legacy MB) | `mb_experimental_preview_shadow` + `final_bundles` (baseline only) | NONE |
+| `/api/du-doan-test/{MN/MT/MB}` (V52.5.5 multi-region) | `experimental_preview_shadow` + `final_bundles` (baseline only) | NONE |
+| `/api/final-bundle` (production) | `final_bundles` | NONE |
+
+No alias. No fallback to official as test. No write path.
+
+### DB reality (2026-05-02 + 2026-05-03 spot check)
+
+`experimental_preview_shadow` for 2026-05-02 MB:
+- OFFICIAL_BASELINE_CONTROL: candidate_bt `43` (clone-by-design).
+- AI_CHAIN_PRESERVATION: candidate_bt `91` ≠ official `43` → would_flip_to_win=1 → independent pick + correct.
+- NO_TOKEN_HERD_REDUCTION: `91` ≠ official → would_flip_to_win=1.
+- PRIOR_REGION_CONTEXT_SAFE: `91` ≠ official → would_flip_to_win=1.
+- STRENGTH_WEIGHTED_V52_5_2: `91` ≠ official → would_flip_to_win=1.
+- SPECIALIST_ROSTER: `null` (no specialist vote) → no pick.
+
+For 2026-05-03 MB (official 48 WIN):
+- OFFICIAL_BASELINE_CONTROL `48` — clone-by-design label.
+- STRENGTH_WEIGHTED_V52_5_2 `48` — INDEPENDENT pick that AGREES with official top1.
+- NO_TOKEN_HERD_REDUCTION `48` — same agreement.
+- AI_CHAIN_PRESERVATION `85` ≠ `48` → false_promotion=1, INDEPENDENT pick worse than official today.
+- PRIOR_REGION_CONTEXT_SAFE `85` ≠ `48` → false_promotion=1.
+- SPECIALIST_ROSTER `null` (no specialist vote on `48` candidate).
+
+For 2026-05-03 MN (official 79 WIN): all 6 methods picked `79` independently. The agreement is real; the consensus around `79` was overwhelmingly strong (rank=1, voters=7).
+
+For 2026-05-03 MT (official 29 LOSE): STRENGTH_WEIGHTED + SPECIALIST + NO_TOKEN agreed with `29`. AI_CHAIN_PRESERVATION → `33` LOSE. PRIOR_REGION_CONTEXT_SAFE → `17` LOSE. None of those test alternatives hit either, so MT lost on every tested method on this single day.
+
+### Code path proof
+
+- `_materialize_experimental_preview_shadow.py` (V52.5.2) reads `final_bundles.source_predictions_json` for the candidate set, picks BT per-method, writes to `experimental_preview_shadow`. NEVER calls `generate_final_bundle()`. NEVER writes `final_bundles` or `predictions`.
+- `_du_doan_test_engine.py` (V52.5.3) reads `experimental_preview_shadow`, writes only `du_doan_test_*`. NEVER touches official.
+- `main.py` `api_du_doan_test_region` (V52.5.5) reads two SQL tables: `experimental_preview_shadow` for the test column, `final_bundles` (via `get_final_bundle`) for the official column. Both calls are SELECTs.
+
+### Log proof
+
+Service journalctl shows `INFO: 113.22.38.85:0 - "GET /api/du-doan-test/mt HTTP/1.0" 200 OK` and similar for MN/MB at 23:51 today, with `[LO3-FREQ]` lo3 derivation lines — confirming the test API is being called from owner's session and producing test_bundle responses, not an official clone.
+
+### Verdict label
+
+For 2026-05-03 the dominant label is `INDEPENDENT_AGREEMENT_WITH_OFFICIAL` for MN consensus, mixed with `INDEPENDENT_DIVERGENCE_WORSE_THAN_OFFICIAL` (MB AI_CHAIN/PRIOR_REGION on 85) and `INDEPENDENT_DIVERGENCE_NEUTRAL` (MT AI_CHAIN→33, PRIOR_REGION→17 — both LOSE like official).
+
+The UI was suffering from `UI_LABEL_CONFUSION_INDEPENDENT_AGREEMENT_LOOKS_LIKE_CLONE`. V52.6 ships explicit source banner + picks-per-experiment table + `🟰 đồng thuận` label to fix.
+
+---
+
+## F. 2026-05-03 post-live result (single-day forensic only — DO NOT extrapolate)
+
+| Region | Official BT | Official BT status | Official LO2 | LO2 status | Test methods that diverged | Diverging picks |
+|---|---|---|---|---|---|---|
+| MN | 79 | WIN | [79,96] | WIN | 0 | (consensus on 79) |
+| MT | 29 | LOSE | [29,03] | LOSE | 2 (AI_CHAIN → 33, PRIOR_REGION → 17) | both LOSE |
+| MB | 48 | WIN | [48,89] | PARTIAL | 2 (AI_CHAIN → 85, PRIOR_REGION → 85) | both LOSE (false_promotion=1 each) |
+
+Single-day verdict: `OFFICIAL_BETTER_THAN_TEST_TODAY_ON_2_OF_3_REGIONS`. This is one data point only; rolling 60d shows MB SPECIALIST_ROSTER fw=5/fl=0 (positive on rolling), AI_CHAIN_PRESERVATION fw=10/fl=10 (neutral), STRENGTH_WEIGHTED fw=8/fl=7 (slight positive). No unlock decision should derive from a single-day result.
+
+---
+
+## G. Rolling 7/14/30/60 metrics
+
+See section D for official table. Key signals:
+- MN BT trend healthy; LO2_ANY 70–83% range.
+- MT BT 30d 33% — below consensus baseline (~35–40% expected).
+- MB BT 30d 20% — structurally weak; 60d 30% — slightly better but still poor.
+- LO2_FULL is the worst metric — MB 7%, MT 17%, MN 33% on 30d.
+
+---
+
+## H. MT forensic (model đúng nhưng output sai)
+
+Single-day 2026-05-03: actual MT tails set is empty in shared map for `08`, `18` (owner's reported model hits). The V51 forensic already recorded `08` and `65` as `AI_SIGNAL_DROPPED`, `18` as no-token signal at top10 rank 3. None of those candidates ranked high enough in the shared candidate payload for the 6 V52.5.2 methods to pick them as primary BT — including the AI_CHAIN_PRESERVATION method (which picked `33`, not `08`/`18`).
+
+Rolling V52.1 evidence over 60d:
+- MT `LOZ_LINE_SELECTION_MISS = 115`
+- MT `AI_SIGNAL_DROPPED = 112`
+- MT `NOT_IN_CANDIDATE_UNIVERSE = 50`
+
+These three categories capture exactly the owner concern: many model picks DO contain the actual tail at top5–top10 but the bundle's loz line selection drops them. This is `LOZ_LINE_SELECTION_MISS` and is currently `LOZ_NOT_READY_FOR_RULE` for output policy change but `IMPLEMENT_NOW_MEASUREMENT_ONLY` to surface in UI.
+
+Verdict: `MT_LOZ_LINE_SELECTION_MISS_115_CONFIRMED + MT_AI_DROPPED_112_CONFIRMED + MT_OUTPUT_POLICY_CHANGE_NOT_ALLOWED_YET`.
+
+---
+
+## I. MB forensic (AI/no-token/final)
+
+Strength tensor V52.5.1 anchor 2026-05-02 window 30d:
+- TOKEN MB top: `claude-sonnet-4-6 ai_chain` BT 8/27 helpful 0.2815.
+- NO_TOKEN MB top: `random-forest rerun_post_mt` BT 9/28 helpful 0.3357.
+- SHADOW MB top: `llama-4-maverick shadow_auto_eval` BT 3/4 (sample thin).
+
+Conclusion: `AI_MB_WEAK_SIGNAL_CONFIRMED + NO_TOKEN_MB_RERUN_HEAVILY_USED_BUT_ALSO_MEDIOCRE`. The MB issue is dual: AI is genuinely weaker on MB by helpful_signal_strength, and no-token rerun_post_mt is the strongest TOKEN-equivalent voter but it is still only ~33% BT-rate.
+
+V52.5.7 60d flip stats for MB: SPECIALIST_ROSTER fw=5/fl=0, STRENGTH_WEIGHTED fw=8/fl=7, AI_CHAIN_PRESERVATION fw=10/fl=10. SPECIALIST_ROSTER has zero downside but only 5 free wins on 60d — measurement promising but `WATCH_CANDIDATE`, not yet unlock.
+
+Verdict: `AI_MB_WEAK_BUT_NOT_PROVEN_BAD_ENOUGH_TO_DROP + AI_MB_NO_TOKEN_OVERRODE_OBSERVED + DO_NOT_DROP_COST_ONLY_WITHOUT_SIGNAL_PROOF`.
+
+---
+
+## J. Loz1/loz2 control audit
+
+V52.1 `loz_selector_shadow` 60d:
+- 30d official beats model-top2 in all regions (model selectors more chaotic).
+- 14d MT model-top2 beats official (107 vs 81).
+- Mixed/conditional; no method is dominant across windows.
+
+Verdict: `LOZ_DIAGNOSTIC_ONLY + LOZ_SIGNAL_MIXED + LOZ_REGION_CONDITIONAL + LOZ_NOT_READY_FOR_RULE + LOZ_TEST_LANE_CANDIDATE_ONLY + LOZ_OUTPUT_POLICY_CHANGE_NOT_ALLOWED`.
+
+---
+
+## K. Model tensor / latency / pruning readiness
+
+`model_strength_by_region_weekday_station_daily` V52.5.1: 9052 rows × 4 windows × 3 grains. Diagnostic-grade.
+
+`model_latency_cost_audit_daily` V52.1+V52.2: 3273/3273 rows still `NO_PER_MODEL_DURATION`. `cost_estimate` and `latency_seconds` columns NULL.
+
+Verdicts:
+- `TENSOR_OK_FOR_DIAGNOSTIC` ✓
+- `TENSOR_NOT_OK_FOR_PRUNING` ✓
+- `TENSOR_NOT_OK_FOR_REALTIME_SELECTION` (because no per-model latency to compute deadline risk) ✓
+- `PRUNING_NOT_ALLOWED_NO_LATENCY` ✓
+- `READY_FOR_LATENCY_INSTRUMENTATION` ✓ (next code-ready task)
+- `KEEP_FOR_UNIQUE_SIGNAL` for several MB shadow models with sample-thin but positive signals (e.g., `arcee-trinity`, `glm-5.1`).
+
+No model should be dropped now.
+
+---
+
+## L. Shadow / multi-lane / method status table
+
+| Surface | Table | Latest date | Rows | Status |
+|---|---|---|---|---|
+| cross-region spillover | `cross_region_spillover_shadow` | 2026-05-01 (V36 backfill) | 9577 / 60d | `STABLE_MANUAL` |
+| same-model cross-region dup | `model_cross_region_dup_shadow` | V36 backfill | 640 / 29d | `STABLE_MANUAL` |
+| bundle universe coverage | `bundle_universe_coverage_shadow` | V36 backfill | 93 / 30d | `STABLE_MANUAL` |
+| MB structural drilldown | `mb_structural_drilldown_shadow` | V36 backfill | 61 / 60d | `STABLE_MANUAL` |
+| tier2 replay V1 | `tier2_replay_shadow` | V37 backfill | 180 / 14d | `DROP_AS_DESIGNED` |
+| tier2 replay V2 | `tier2_replay_v2_shadow` | V37 backfill | 540 / 30d | `DROP_AS_DESIGNED` |
+| single-vote rescue | `single_vote_rescue_replay_shadow` | V37 backfill | 540 / 30d | `LEAKY_REFERENCE_ONLY` |
+| strength skip calibration | `strength_skip_calibration_replay_shadow` | V37 backfill | 833 / 30d | `STABLE_MANUAL` |
+| corrected rescue replay | `corrected_rescue_replay_shadow` | V42 closeout | 900+ / 30d | `WAIT_DATA` (TIER 3 gate not met) |
+| MT model hit drop | `mt_model_hit_output_drop_shadow` | V52.2 backfill | 301 / 60d | `STABLE_MANUAL` |
+| loz selector shadow | `loz_selector_shadow` | V52.2 backfill | 3273 / 60d | `STABLE_MANUAL` |
+| latency/cost audit | `model_latency_cost_audit_daily` | V52.2 backfill | 3273 / 60d | `STABLE_MANUAL_NO_LATENCY_DATA` |
+| **strength tensor** | `model_strength_by_region_weekday_station_daily` | V52.5.1 anchor `2026-05-02` | 9052 | `STABLE_MANUAL` |
+| **multi-region preview** | `experimental_preview_shadow` | V52.5.7 60d backfill | 1098 / 60d × 3 regions | `STABLE_MANUAL` |
+| MB legacy preview | `mb_experimental_preview_shadow` | V52.5.x | 21 | `STABLE_MANUAL` |
+| **multi-region test runs** | `du_doan_test_runs/bundles/results` | V52.5.3 30d backfill | 579 each | `STABLE_MANUAL` |
+
+Method labels:
+- OFFICIAL_BASELINE_CONTROL → `LOGICAL_CLONE_ONLY`
+- COMPOSITE_CHALLENGER_V2 (MB) → `ACTIVE_TEST_METHOD`
+- TIER_AWARE_BUNDLE_SHADOW_V1 → `PLACEHOLDER_ONLY`
+- AI_CHAIN_PRESERVATION_V1 → `ACTIVE_TEST_METHOD`
+- SPECIALIST_ROSTER_V1 → `PLACEHOLDER_ONLY` (becomes `WATCH_CANDIDATE` for MB given fw=5/fl=0 over 60d)
+- PRIOR_REGION_CONTEXT_SAFE_V1 → `ACTIVE_TEST_METHOD`
+- NO_TOKEN_HERD_REDUCTION_V1 → `LOGICAL_CLONE_ONLY` / `DIAGNOSTIC_ONLY`
+- STRENGTH_WEIGHTED_V52_5_2 → `ACTIVE_TEST_METHOD`
+
+---
+
+## M. Leakage / force-fit / post-hoc audit
+
+V52.5.x experiments, per-row leakage_audit field is populated:
+- `anchor_date_for_strength` strict D-1.
+- `prior_regions_used` = MN: empty, MT: ['MN'], MB: ['MN','MT'].
+- `target_region_actual_used_for_selection` = false.
+- `target_region_actual_used_for_evaluation` = true (post-closeout only).
+
+`single_vote_rescue_replay_shadow` is `LEAKY_REFERENCE_ONLY` and is NOT used by V52.5.x decisions.
+
+`corrected_rescue_replay_shadow` is leakage-clean and `WAIT_DATA`.
+
+Audit verdict: `CLEAN_FORWARD_TEST` for V52.5.x methods + `POST_CLOSEOUT_DIAGNOSTIC_ONLY` for V46/V50/V52.5.6 backfill runs (correctly labelled in `du_doan_test_runs.mode`).
+
+No `OFFICIAL_CLONE_NOT_IMPROVEMENT` overclaim found in current docs — the `OFFICIAL_BASELINE_CONTROL` row is correctly labelled as control, not as improvement.
+
+---
+
+## N. Measurement completeness matrix
+
+| Area | Table | Auto/Manual | Latest | Region | Window | Quality | Missing | Verdict |
+|---|---|---|---|---|---|---|---|---|
+| Official BT/lo2 quality | `final_bundles` | auto | 2026-05-03 | MN/MT/MB | 60d | OK | none | `MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC` |
+| Per-model BT/loz hits | `model_daily_eval` | auto | 2026-05-03 | MN/MT/MB | 60d | OK | latency, cost, helped/hurt vs final | `MEASUREMENT_INCOMPLETE_FOR_PRODUCTION_DECISION` |
+| Per-model latency | `model_latency_cost_audit_daily` | manual | 2026-05-03 | all | 60d | NULL | `latency_seconds`, `cost_estimate`, `token_count` | `MEASUREMENT_MISSING_PER_MODEL_LATENCY` |
+| MT drop matrix | `mt_model_hit_output_drop_shadow` | manual | 2026-05-03 | MT | 60d | OK | none | `MEASUREMENT_SUFFICIENT_FOR_TEST_LANE` |
+| Loz selector shadow | `loz_selector_shadow` | manual | 2026-05-03 | all | 60d | OK | per-station split | `MEASUREMENT_SUFFICIENT_FOR_DIAGNOSTIC` |
+| Strength tensor | `model_strength_by_region_weekday_station_daily` | manual | anchor 2026-05-02 | all | 7/14/30/60 | OK | per-station fine for owner-asked queries | `MEASUREMENT_SUFFICIENT_FOR_TEST_LANE` |
+| Multi-region preview | `experimental_preview_shadow` | manual (V52.5.6 runner) | 2026-05-03 | all | 60d | OK | scheduler auto-wire | `MEASUREMENT_READY_FOR_TEST_ONLY_FIX` |
+| Test runs/bundles/results | `du_doan_test_*` | manual | 2026-05-03 | all | 30d | OK | natural realtime closeout | `MEASUREMENT_INCOMPLETE_FOR_PRODUCTION_DECISION` |
+| Official vs test comparison | this UI | manual | live | all | live | OK after V52.6 | banner clarity | `MEASUREMENT_READY_FOR_TEST_ONLY_FIX` |
+| Conversion trace per source-prize → final | none yet | n/a | n/a | n/a | n/a | n/a | conversion table per source-prize→final | `MEASUREMENT_MISSING_LOZ_STAGE_TRACE` |
+
+---
+
+## O. Code readiness matrix
+
+| ID | Item | Risk | Mutate official? | Verdict |
+|---|---|---|---|---|
+| C-01 | UI source banner + picks-per-experiment table + `đồng thuận` label | none | NO | `IMPLEMENT_NOW_UI_TEST_ONLY` ✓ DONE V52.6 |
+| C-02 | API `source_table` + `is_clone_of_official` + `selection_time` fields in `/api/du-doan-test/{region}` payload | none | NO | `IMPLEMENT_NOW_UI_TEST_ONLY` (next pass) |
+| C-03 | `du_doan_test_closeout_evaluator.py` extended to MN/MT/MB (currently V50 MB only) | none | NO | `IMPLEMENT_NOW_TEST_LANE_ONLY` |
+| C-04 | Scheduler auto-wire for V52.5.6 runner post-closeout | low (writes only test tables) | NO | `WAIT_DATA` (need 3+ manual clean closeouts first per FU-097 contract) |
+| C-05 | Per-model latency instrumentation in `gpt_analyzer.py` cascade timer | low | NO (writes only `model_latency_cost_audit_daily`) | `IMPLEMENT_NOW_MEASUREMENT_ONLY` |
+| C-06 | `loz_stage_trace` materializer (where exactly does the actual tail drop?) | none | NO | `IMPLEMENT_NOW_MEASUREMENT_ONLY` |
+| C-07 | MT correct-but-dropped UI panel for `/du-doan-test` | none | NO | `IMPLEMENT_NOW_UI_TEST_ONLY` |
+| C-08 | Model pruning for official roster | HIGH | YES | `OWNER_DECIDE` and `PRUNING_NOT_ALLOWED_NO_LATENCY` until C-05 done |
+| C-09 | Output policy change for loz line selection | HIGH | YES | `WAIT_DATA` + `LOZ_NOT_READY_FOR_RULE` |
+| C-10 | Composite Challenger V2 promote to official | HIGH | YES | `WAIT_DATA` (gate +4/30 not met, only +3) |
+| C-11 | Single-vote rescue regional unlock | HIGH | YES | `DROP_AS_DESIGNED` (V37 leaky) / `LEAKY_REFERENCE_ONLY` |
+| C-12 | Sunday retrain enabling new shadow models in production | medium | YES | `OWNER_DECIDE` + `WAIT_DATA` |
+| C-13 | Strength-tensor-backed roster reduction in test lane only | none | NO | `IMPLEMENT_NOW_TEST_LANE_ONLY` (after C-05) |
+
+This pass implements C-01 only.
+
+---
+
+## P. Safe next action plan
+
+24h (today + Monday 04/05 live): observe natural live closeout. V52.5.6 runner already produced 2026-05-03 rows; let 2026-05-04 close naturally and re-evaluate. NO code change.
+
+3 days: implement C-02 (API source labels), C-05 (latency instrumentation logging — measurement only), C-07 (MT correct-but-dropped panel in UI test).
+
+7 days: if 4–5 days of clean post-closeout V52.5.6 runs accumulate, implement C-03 (multi-region closeout evaluator) and C-13 (strength-aware roster reduction in test lane only).
+
+14 days: re-evaluate `MB_SPECIALIST_ROSTER_V1` (currently fw=5/fl=0 on 60d). If pattern holds and sample expands to 75–90d on the 7-day cadence, propose owner unlock package per FU-073/FU-114 thresholds.
+
+Items deliberately NOT done:
+- ANY mutation to `final_bundles`, `predictions`, `generate_final_bundle`, scoring, prompt, model roster, scheduler.
+- Any production "pruning" while `NO_PER_MODEL_DURATION` persists.
+- Any "rescue" promotion (V37 path is `LEAKY_REFERENCE_ONLY`).
+- Any official loz policy change (loz remains `MIXED + REGION_CONDITIONAL`).
+
+---
+
+## Q. What NOT to do next (explicit)
+
+- DO NOT propose to "swap to challenger" on official `/du-doan` based on 1 day or 30d Composite +3.
+- DO NOT promote MB SPECIALIST_ROSTER fw=5/fl=0 yet — sample is 60d on a method that picks `null` 50% of the time, not 60 active picks.
+- DO NOT prune 25 model roster citing cost — there is no per-model duration to back the cost claim.
+- DO NOT enable scheduler auto-wire for V52.5.6 runner before 3 clean post-closeout manual proofs.
+- DO NOT collapse MN/MT into MB lane — region differences are quantitatively confirmed.
+- DO NOT trust single-day MT 03/05 LOSE as proof a method is "destructive". Use rolling.
+
+---
+
+## Hash guard
+
+Pre `artifacts/_v53_pre_hash_20260503.txt` vs post `artifacts/_v53_post_hash_20260503.txt`:
+
+| Table | Pre | Post | Same |
+|---|---:|---:|---|
+| predictions | 4134 | 4134 | YES |
+| final_bundles | 195 | 195 | YES |
+| lottery_results | 14603 | 14603 | YES |
+| model_daily_eval | 4089 | 4089 | YES |
+| scheduler_logs | 113208 | 113220 | NO (+12 from V52.6 service restart only; no production scheduler run) |
+| mt_model_hit_output_drop_shadow | 301 | 301 | YES |
+| loz_selector_shadow | 3273 | 3273 | YES |
+| model_latency_cost_audit_daily | 3273 | 3273 | YES |
+| model_strength_by_region_weekday_station_daily | 9052 | 9052 | YES |
+| experimental_preview_shadow | 1098 | 1098 | YES |
+| mb_experimental_preview_shadow | 21 | 21 | YES |
+| du_doan_test_runs | 579 | 579 | YES |
+| du_doan_test_bundles | 579 | 579 | YES |
+| du_doan_test_results | 579 | 579 | YES |
+
+ZERO mutation to official, V52 measurement, V52.5 test-lane data. Only +12 scheduler_logs from `lottery` service restart on V52.6 deploy.

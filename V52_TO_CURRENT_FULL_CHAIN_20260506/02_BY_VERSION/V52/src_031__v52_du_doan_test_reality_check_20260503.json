@@ -1,0 +1,589 @@
+{
+  "final_status": "MANUAL_STAGE_0_CONFIRMED",
+  "tables": {
+    "du_doan_test_runs": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "run_label",
+        "mode",
+        "run_status",
+        "started_at",
+        "finished_at",
+        "duration_sec",
+        "model_count",
+        "shadow_count",
+        "no_token_count",
+        "ai_count",
+        "prompt_variant",
+        "config_hash",
+        "code_version",
+        "test_only",
+        "admin_only",
+        "official_output",
+        "output_impact",
+        "owner_approved",
+        "notes",
+        "source_hash_ref",
+        "source_timestamps_json",
+        "output_eligible",
+        "diagnostic_only"
+      ],
+      "latest": {
+        "run_date": "2026-05-03"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [
+        "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "REALTIME_AVAILABLE_ONLY"
+      ],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_bundles": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "mode",
+        "test_bt",
+        "test_lo2_json",
+        "official_bt",
+        "official_lo2_json",
+        "diff_from_official_json",
+        "aggregation_method",
+        "candidate_count",
+        "model_count",
+        "confidence_score",
+        "risk_flags_json",
+        "official_output",
+        "output_impact",
+        "admin_only",
+        "test_only",
+        "owner_approved",
+        "created_at",
+        "diagnostic_only",
+        "output_eligible"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.831130+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [
+        "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "REALTIME_AVAILABLE_ONLY"
+      ],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_results": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "actual_results_json",
+        "official_bt_status",
+        "official_lo2_status",
+        "test_bt_status",
+        "test_lo2_status",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "net_effect",
+        "evaluated_at",
+        "official_bt",
+        "official_lo2_json",
+        "test_bt",
+        "test_lo2_json",
+        "delta_bt",
+        "delta_lo2",
+        "correct_but_dropped",
+        "wrong_boosted",
+        "lo2_to_bt_promotion",
+        "official_lo2_already_had_test_bt"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "evaluated_at": "2026-05-03T20:19:33.953299+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_candidates": {
+      "exists": true,
+      "row_count": 308,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "model_name",
+        "model_family",
+        "run_source",
+        "source_table",
+        "candidate_tail",
+        "candidate_rank",
+        "output_task",
+        "strength",
+        "strength_bin",
+        "verdict",
+        "weekday",
+        "station",
+        "source_prize_tier",
+        "rule_support",
+        "prompt_variant",
+        "is_cloned_from_production",
+        "is_test_prompt",
+        "is_shadow_model",
+        "is_realtime_available",
+        "is_late_diagnostic",
+        "selection_basis",
+        "latency_sec",
+        "cost_estimate",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.832851+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_model_contribution": {
+      "exists": true,
+      "row_count": 308,
+      "columns": [
+        "id",
+        "run_id",
+        "model_name",
+        "model_family",
+        "region",
+        "weekday",
+        "station",
+        "run_source",
+        "output_task",
+        "candidate_tail",
+        "helped_test",
+        "hurt_test",
+        "helped_vs_official",
+        "hurt_vs_official",
+        "unique_signal",
+        "duplicate_signal",
+        "herd_signal",
+        "dropped_hit",
+        "wrong_boost",
+        "latency_sec",
+        "value_score",
+        "cost_estimate",
+        "timeout_count"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_audit_log": {
+      "exists": true,
+      "row_count": 5,
+      "columns": [
+        "id",
+        "timestamp",
+        "action",
+        "source_hash_before",
+        "source_hash_after",
+        "changed_files_json",
+        "changed_tables_json",
+        "official_tables_touched",
+        "output_impact",
+        "rollback_ref",
+        "notes"
+      ],
+      "latest": {},
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_experiments": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "experiment_name",
+        "region",
+        "status",
+        "method_family",
+        "description",
+        "input_sources",
+        "allowed_live_sources",
+        "forbidden_sources",
+        "uses_ai_prompt",
+        "uses_no_token",
+        "uses_prior_region",
+        "uses_shadow",
+        "uses_replay",
+        "uses_tensor",
+        "realtime_eligible",
+        "diagnostic_only",
+        "official_output",
+        "output_impact",
+        "test_only",
+        "admin_only",
+        "owner_approved",
+        "output_eligible",
+        "created_at",
+        "updated_at",
+        "version",
+        "notes"
+      ],
+      "latest": {
+        "created_at": "2026-05-03T20:16:40.270048+07:00",
+        "updated_at": "2026-05-03T20:19:34.708036+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_daily_summary": {
+      "exists": true,
+      "row_count": 1,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "official_bt",
+        "official_lo2",
+        "best_test_experiment",
+        "best_test_bt",
+        "best_test_lo2",
+        "official_bt_status",
+        "best_test_bt_status",
+        "delta_vs_official",
+        "would_save_count",
+        "would_break_count",
+        "false_promotion_count",
+        "leakage_risk_count",
+        "status",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.961099+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_experiment_scoreboard": {
+      "exists": true,
+      "row_count": 21,
+      "columns": [
+        "id",
+        "experiment_name",
+        "region",
+        "window_days",
+        "total_runs",
+        "bt_wins",
+        "bt_losses",
+        "lo2_wins",
+        "lo2_partial",
+        "delta_bt_vs_official",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "lo2_to_bt_promotion",
+        "net_lift",
+        "leakage_clean_count",
+        "leakage_risk_count",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_model_scoreboard": {
+      "exists": true,
+      "row_count": 132,
+      "columns": [
+        "id",
+        "model_name",
+        "model_family",
+        "provider",
+        "region",
+        "weekday",
+        "run_source",
+        "window_days",
+        "candidate_count",
+        "selected_count",
+        "bt_hit_count",
+        "lo2_hit_count",
+        "helped_test",
+        "hurt_test",
+        "correct_but_dropped",
+        "wrong_boosted",
+        "unique_useful_signal",
+        "avg_latency_seconds",
+        "p95_latency_seconds",
+        "timeout_count",
+        "cost_estimate",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_method_scoreboard": {
+      "exists": true,
+      "row_count": 21,
+      "columns": [
+        "id",
+        "method_name",
+        "experiment_name",
+        "region",
+        "window_days",
+        "candidate_count",
+        "selected_bt_count",
+        "selected_lo2_count",
+        "bt_win_count",
+        "lo2_hit_count",
+        "would_save",
+        "would_break",
+        "false_promotion",
+        "leakage_clean",
+        "leakage_risk",
+        "status",
+        "last_updated"
+      ],
+      "latest": {},
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_latency_daily": {
+      "exists": true,
+      "row_count": 0,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "model_name",
+        "provider",
+        "latency_seconds",
+        "token_count",
+        "cost_estimate",
+        "finish_reason",
+        "timeout_or_fallback",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": null,
+        "created_at": null
+      },
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_leakage_audit": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "test_bt",
+        "source_models",
+        "source_families",
+        "source_tables",
+        "source_ranks",
+        "source_scores",
+        "in_official_lo2",
+        "shared_candidate_pool",
+        "shared_selection_reason",
+        "independent_signal",
+        "leakage_status",
+        "verdict",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.960878+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_conversion_trace": {
+      "exists": true,
+      "row_count": 7,
+      "columns": [
+        "id",
+        "run_id",
+        "run_date",
+        "region",
+        "experiment_name",
+        "method_name",
+        "source_no_token_models",
+        "original_rank",
+        "original_score",
+        "test_rank",
+        "test_score",
+        "herd_cluster_size",
+        "herd_penalty_applied",
+        "candidate_changed",
+        "selected_bt_changed",
+        "source_available_at",
+        "target_cutoff_time",
+        "selection_basis",
+        "leakage_audit",
+        "rule_tier",
+        "source_prize_tier",
+        "candidate_tier",
+        "tier_boost",
+        "tier_penalty",
+        "tier_reason",
+        "verdict",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": "2026-05-03",
+        "created_at": "2026-05-03T20:19:33.960915+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "du_doan_test_ai_predictions": {
+      "exists": true,
+      "row_count": 0,
+      "columns": [
+        "id",
+        "run_date",
+        "region",
+        "model_name",
+        "prompt_variant",
+        "prompt_version",
+        "input_context_hash",
+        "output_json",
+        "candidate_bt",
+        "candidate_lo2",
+        "strength",
+        "verdict",
+        "latency_seconds",
+        "token_count",
+        "cost_estimate",
+        "finish_reason",
+        "timeout_or_fallback",
+        "official_output",
+        "output_impact",
+        "test_only",
+        "admin_only",
+        "created_at"
+      ],
+      "latest": {
+        "run_date": null,
+        "created_at": null
+      },
+      "regions": [],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    },
+    "mb_experimental_preview_shadow": {
+      "exists": true,
+      "row_count": 14,
+      "columns": [
+        "id",
+        "date",
+        "region",
+        "experiment_name",
+        "method_version",
+        "run_label",
+        "candidate_bt",
+        "candidate_lo2_json",
+        "candidate_ranked_json",
+        "baseline_bt",
+        "baseline_lo2_json",
+        "baseline_bt_status",
+        "baseline_lo2_status",
+        "source_models_json",
+        "source_rules_json",
+        "source_prizes_json",
+        "prior_region_context_json",
+        "selection_basis",
+        "latency_class",
+        "model_count",
+        "shadow_model_count",
+        "actual_known",
+        "candidate_bt_hit",
+        "candidate_lo2_status",
+        "would_flip_baseline_to_win",
+        "would_flip_baseline_to_lose",
+        "false_promotion",
+        "diagnostic_only",
+        "shadow_only",
+        "output_eligible",
+        "owner_approved",
+        "output_impact",
+        "created_at"
+      ],
+      "latest": {
+        "date": "2026-05-03",
+        "created_at": "2026-05-03T20:16:41.067975+07:00"
+      },
+      "regions": [
+        "MB"
+      ],
+      "modes": [],
+      "classification": "STABLE_MANUAL"
+    }
+  },
+  "route_api_ui": {
+    "route": "/du-doan-test admin-only",
+    "api": "/api/du-doan-test/mb admin-only",
+    "ui": "web/frontend/du-doan-test.html",
+    "mn_support": false,
+    "mt_support": false,
+    "mb_support": true,
+    "scheduler_auto_wire": false
+  }
+}

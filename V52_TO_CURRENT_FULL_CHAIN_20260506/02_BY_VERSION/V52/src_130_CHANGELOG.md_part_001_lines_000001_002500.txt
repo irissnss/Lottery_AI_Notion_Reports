@@ -1,0 +1,2500 @@
+# CHANGELOG — Lottery_AI_Test
+
+## V20.3.37.61 — Dynamic `/du-doan-test` pre-result trigger (2026-05-06 07:55 VN)
+
+### Scope
+
+Owner reported that experiment output still had not run on 2026-05-06 and clarified that model execution order must be dynamic by region/weekday/station-set. Added readiness-gated automation for `/du-doan-test` while preserving official hard locks.
+
+### Findings before fix
+
+At 07:49 VN after live sync:
+
+- MN had 15 `auto_daily` + 13 `shadow_auto_eval` prediction rows and official final bundle BT=95, lo2=[95,46].
+- MN had no lottery result rows yet (pre-result).
+- MN had 0 C-16 budget rows, 0 experimental_preview rows, 0 du_doan_test rows.
+- MT/MB had only no-token rows and no final bundle yet.
+
+### Immediate action
+
+Manually ran MN pre-result:
+
+- C-16 budget: pool 29, measured 28, selected 10, watch 18, skipped 1.
+- V52.5.6 test runner `REALTIME_AVAILABLE_ONLY`: created 7 runs / 7 bundles / 7 results / 164 candidates / 164 contributions.
+- MN adaptive output currently agrees with official: test_bt=95, official_bt=95, status=PENDING.
+
+### Implemented automation
+
+`web/backend/scheduler.py`:
+
+- Added `_run_du_doan_test_pre_result_trigger()`.
+- Added scheduler job `du_doan_test_pre_result_trigger` every 5 minutes.
+- Readiness gates per region:
+  - final bundle exists
+  - predictions exist (`preds >= 7`)
+  - actual result not present yet
+  - no test bundle exists yet
+- If ready: materialize C-16 budget and run V52.5.6 runner in `REALTIME_AVAILABLE_ONLY`.
+
+### Dynamic ordering
+
+No-token models already run first via 04:00 batch. Shadow/token model order uses C-16 selected-voter rows if available, otherwise latest tensor strength fallback. This makes region/weekday/station-set differences automatic.
+
+### Verification
+
+- VPS service active.
+- `/api/health=200`.
+- Scheduler log shows `/du-doan-test pre-result trigger: every 5 minutes, readiness-gated`.
+- Live sync `artifacts/live_sync/20260506_075455/manifest.json`.
+
+### Governance
+
+Writes only test/diagnostic tables. No `final_bundles`, official `predictions`, scoring, official scheduler, official roster, or output policy mutation.
+
+### Cross-links
+
+- `artifacts/phase_checkpoints/V61_DYNAMIC_DU_DOAN_TEST_TRIGGER_20260506.md`
+
+---
+
+## V20.3.37.60 — Mobile two-column UI + C-16-prioritized shadow model order (2026-05-05 23:42 VN)
+
+### Scope
+
+Owner reported mobile `/du-doan-test` still hard to read and clarified model execution must prioritize fast lanes and strong bucket models to reduce risk of missing prediction windows. This pass keeps official untouched.
+
+### Changes
+
+- `web/frontend/du-doan-test.html`: mobile compare grid now remains 2 columns (official/test) with smaller cards, text, icons, badges, and spacing.
+- `web/backend/scheduler.py`: added `_order_shadow_models_for_region()`.
+- `_run_shadow_auto_eval()` now orders `SHADOW_AUTO_EVAL_MODELS` by:
+  1. C-16 `du_doan_test_selected_voters` roles/scores for that date+region when available.
+  2. latest tensor helpful/BT strength fallback.
+  3. registry order fallback on error.
+
+### Verification
+
+- VPS service active; `/api/health=200`.
+- Verified C-16 order for MN/MT/MB 2026-05-05. MB starts with `qwen3.6-plus`, `qwen3-coder`, `glm-5.1`, `qwen3-max-thinking`; Google V55 models remain watch/order by C-16 score until more tensor history.
+
+### Governance
+
+No-token models already run first via 04:00 batch. This change affects only shadow_auto_eval sequence. No official scoring, final bundle, production prediction semantics, or roster change.
+
+### Cross-links
+
+- `artifacts/phase_checkpoints/V60_MOBILE_AND_MODEL_PRIORITY_ORDER_20260505.md`
+
+---
+
+## V20.3.37.59 — Strict LO3 / Xien verification fix for `/du-doan-test` (2026-05-05 23:25 VN)
+
+### Scope
+
+Owner correctly caught that `/du-doan-test` could label 3-càng as WIN when only the last 2 digits matched an actual tail. Fixed `/du-doan-test` API verification semantics to match official verifier: LO3 requires full 3-digit suffix match; xiên 2/3 require same-station hit when station rows exist.
+
+### Root cause
+
+The test API used 2-digit `actual_tail_set` to verify `test_lo3_status`. This reintroduced an old bug already fixed in `database.py` official verifier.
+
+### Implemented
+
+- `web/backend/main.py`: added strict helpers:
+  - `_du_doan_test_actual_axis_sets`
+  - `_du_doan_test_lo3_status`
+  - `_du_doan_test_xien_status`
+- Replaced both MB and MN/MT test API LO3 status paths.
+- Also included `MB_ADAPTIVE_BUDGET_SELECTOR_V1` in MB endpoint primary selection by reading its row from `experimental_preview_shadow`.
+
+### Verification (2026-05-05)
+
+- MN adaptive: BT=52 WIN, lo3=452 LOSE, xien2=[52,13] LOSE, xien3=[52,13,56] LOSE.
+- MT adaptive: BT=52 WIN, lo3=752 LOSE, xien2=[52,46] LOSE, xien3=[52,46,44] LOSE.
+- MB adaptive: BT=41 LOSE, lo3=341 LOSE, xien2=[41,98] LOSE, xien3=[41,98,19] LOSE.
+
+### Governance
+
+Any earlier LO3 WIN based only on last-2 digit match is invalid and should be treated as a test UI/API verification bug, not a real win. Official output remains untouched.
+
+### Cross-links
+
+- `artifacts/phase_checkpoints/V59_LO3_XIEN_STRICT_VERIFICATION_FIX_20260505.md`
+
+---
+
+## V20.3.37.58 — `/du-doan-test` visual parallel output cards (2026-05-05 23:20 VN)
+
+### Scope
+
+Owner clarified that `/du-doan-test` must visually show the actual test output (BT / 3 càng / xiên 2 / xiên 3), not just measurement tables. Added a prominent top card **“Dự đoán Test Song Song”** that mirrors official output presentation and labels whether the row is `PRE_RESULT_LOCKED` or `POST_CLOSEOUT_DIAGNOSTIC`.
+
+### Implemented
+
+- `web/frontend/du-doan-test.html`: added `renderParallelTestOutput(data)` before experience/model-budget sections.
+- Shows side-by-side test output vs official baseline for BT, lo3, xien2, xien3.
+- Shows explicit lock label:
+  - `PRE_RESULT_LOCKED` = valid natural realtime experiment proof.
+  - `POST_CLOSEOUT_DIAGNOSTIC` = after-result diagnostic; useful for learning but not realtime proof.
+
+### Verification
+
+- UI deployed to VPS.
+- `/du-doan-test=401` unauth (admin-only as expected).
+- `/api/health=200`.
+- File verified on VPS contains `Dự đoán Test Song Song`, `PRE_RESULT_LOCKED`, and `POST_CLOSEOUT_DIAGNOSTIC`.
+
+### Governance
+
+UI-only. No official mutation, no scoring change, no model roster change, no final bundle write.
+
+### Cross-links
+
+- `artifacts/phase_checkpoints/V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md`
+
+---
+
+## V20.3.37.57 — C-16 Adaptive Model Budget Selector for `/du-doan-test` (2026-05-05 23:00 VN)
+
+### Scope
+
+Implemented the test-lane model budget selector requested by owner: use the full measured pool (29 components) but select only the strongest daily voter subset by `region + weekday + station-set + output_type=BT`. This is the foundation for reducing future AI runtime/token cost without affecting official `/du-doan`.
+
+### Implemented
+
+- New materializer `web/backend/_materialize_du_doan_test_model_budget.py`.
+- New test-only tables:
+  - `du_doan_test_model_budget_daily`
+  - `du_doan_test_selected_voters`
+  - `du_doan_test_model_skip_reason`
+- `web/backend/_du_doan_test_schema.py`: added new C-16 tables to `TEST_TABLES`.
+- `web/backend/main.py`: added `_build_du_doan_test_model_budget_summary()` and returned `model_budget` in `/api/du-doan-test/mb` + `/api/du-doan-test/{region}`.
+- `web/frontend/du-doan-test.html`: added **“🧠 Model mạnh hôm nay / C-16 Adaptive Budget”** section.
+
+### Selection result for 2026-05-05
+
+- MN: pool 29, measured 28, selected 10, watch 16, skip 3.
+- MT: pool 29, measured 28, selected 8, watch 14, skip 7.
+- MB: pool 29, measured 28, selected 8, watch 10, skip 11.
+
+### Adaptive test output
+
+After budget surface verification, C-16 was also materialized as a real test-lane experiment method:
+
+- `MN_ADAPTIVE_BUDGET_SELECTOR_V1`: test_bt `52` vs official `15`, status WIN, would_save=1.
+- `MT_ADAPTIVE_BUDGET_SELECTOR_V1`: test_bt `52` vs official `44`, status WIN, would_save=0 / would_break=0 (divergent hit, not official replacement proof).
+- `MB_ADAPTIVE_BUDGET_SELECTOR_V1`: test_bt `41` vs official `83`, status LOSE.
+
+These rows were written only through `experimental_preview_shadow` → `du_doan_test_*`; official output remains unchanged.
+
+### Governance
+
+All C-16 writes are to `du_doan_test_*` + `experimental_preview_shadow` only. No `final_bundles`, production `predictions`, official scoring/voting/prompt/roster/scheduler mutation. C-16 now produces a test-lane challenger output, but remains `output_eligible=0`.
+
+### Verification
+
+- VPS materializer 2026-05-05 ALL succeeded.
+- Service active after restart; `/api/health=200`; `/du-doan-test=401` unauth; `/api/final-bundle?region=MN=200`.
+- VPS backup `/root/Lottery_AI_Test/backups/c16_model_budget_20260505_2248/`.
+- Live sync `artifacts/live_sync/20260505_230032/manifest.json`.
+
+### Cross-links
+
+- Phase checkpoint `artifacts/phase_checkpoints/V57_C16_ADAPTIVE_MODEL_BUDGET_SELECTOR_20260505.md`
+- FU-132
+
+---
+
+## V20.3.37.56 — `/du-doan-test` Experience Lane (2026-05-05 21:41 VN)
+
+### Scope
+
+Owner clarified that the experiment lane was too strict for *experience/testing* even though official promotion must remain strict. Added an admin-only `/du-doan-test` **Experience Mode** so owner can see daily method/shadow picks immediately without waiting 14/30/60 days and without touching `/du-doan`.
+
+### Implemented
+
+- Backend `web/backend/main.py`: added `_build_du_doan_test_experience_summary(region, date_str)`, a read-only helper that SELECTs from `final_bundles`, `lottery_results`, `du_doan_test_bundles`, `du_doan_test_results`, and V55 Google shadow `predictions`.
+- API enrichment: both `/api/du-doan-test/mb` and `/api/du-doan-test/{region}` now return `experience`.
+- Frontend `web/frontend/du-doan-test.html`: added top section **“🚀 Trải nghiệm hôm nay (EXPERIENCE MODE)”** with method rescues, harmful/false-promotion count, V55 Google shadow hits, method table, and shadow-pick table.
+
+### Verification
+
+- Compile/lint: local `py_compile main.py` OK; ReadLints no issues.
+- VPS backup: `/root/Lottery_AI_Test/backups/v56_experience_lane_20260505_2133/{main.py.bak,du-doan-test.html.bak}`.
+- VPS deploy after live window; service restarted; `/api/health=200`, `/du-doan=200`, `/du-doan-test=401`, `/api/du-doan-test/mn` unauth=401, `/api/final-bundle?region=MB=200`.
+- Direct helper verify for 2026-05-05:
+  - MN: `MN_AI_CHAIN_PRESERVATION_V1` picked 52 WIN; `true_rescues=1`; `gemini-3-flash` PARTIAL.
+  - MT: official 44 WIN; no rescue needed; V55 Google shadow watch only.
+  - MB: `MB_PRIOR_REGION_CONTEXT_SAFE_V1` picked 98 WIN; `gemini-3-flash` WIN `[91,14]`; `gemini-3.1-pro` PARTIAL `[90,14]`.
+
+### Governance
+
+All experience data is `official_output=false`, `output_impact=false`, `test_only=true`, `admin_only=true`, `output_eligible=false`, `promotion_allowed=false`. No scoring/voting/output model roster change.
+
+### Cross-links
+
+- Phase checkpoint: `artifacts/phase_checkpoints/V56_DU_DOAN_TEST_EXPERIENCE_LANE_20260505.md`
+- FU-131
+
+---
+
+## V20.3.37.55_full_chain — TOTAL-FORCE V55 closeout 04/05 + 05/05 + scheduler preflight fix + 2-day materialization (2026-05-05 20:14 VN)
+
+### Scope
+
+Full-chain V55 forensic pass after MN/MT/MB closeouts on 2026-05-05. Reads V52.5.7 → V53/V53.1 → V54 chain, classifies 04/05 + 05/05 official + test lane outcomes by region/method, refreshes rolling metrics, audits MT correct-but-dropped + MB AI weakness + loz stage trace + weekday blackspot. Discovered and fixed a scheduler preflight bug introduced by V55 (gemma-* was mis-routed to OpenRouter lane). Materialized 04/05 + 05/05 measurement surfaces (loz_stage_trace, mt_drop, v52, weekday_blackspot anchor 2026-05-05, model_strength tensor anchor 2026-05-05, experimental_preview_shadow MN/MT/MB, V52.5.6 multi-region runner ALL). ZERO official mutation.
+
+### Closeout result (DB-proven)
+
+- 2026-05-04: MN BT=65 LOSE + lo2 PARTIAL (32 hit). MT BT=29 WIN + lo2 WIN. MB BT=09 LOSE + lo2 LOSE.
+- 2026-05-05: MN BT=15 LOSE + lo2 LOSE. MT BT=44 WIN + lo2 PARTIAL (44 hit). MB BT=83 LOSE + lo2 LOSE.
+- Test lane rescues: MN_SPECIALIST_ROSTER picked 32 on 04/05 (free win); MN_AI_CHAIN_PRESERVATION picked 52 on 05/05 (free win). MT methods broke baseline win (AI_CHAIN, PRIOR_REGION, STRENGTH on 04/05). MB no method rescued.
+- 3 V55 Google direct shadow models day 1: `gemini-3-flash` MB BT WIN ([91,14] both hit); `gemini-3.1-pro` MB PARTIAL; `gemma-4-31b` 0 rows due to scheduler preflight bug.
+
+### Rolling metrics post-05/05 (anchor 2026-05-05, 30d)
+
+- MN BT 56.7% (V54: 60%); LO2_FULL 30%; LO2_ANY 83.3%.
+- MT BT 36.7% (V54: 33%); LO2_FULL 16.7%; LO2_ANY 66.7%. 7d MT BT 71.4% rising.
+- MB BT 20% (V54: 20%); LO2_FULL 6.7%; LO2_ANY 36.7%. 7d MB BT only 14.3%.
+- Weekday blackspot anchor 2026-05-05: MB Wed/Fri = WEEKDAY_BLACK_SPOT_CONFIRMED. MT Fri = BLACK_SPOT_CONFIRMED. MT Mon downgraded BLACK_SPOT → STRUCTURAL_RISK.
+
+### Bug fixed (V55 scheduler preflight)
+
+- `web/backend/scheduler.py` `_get_api_key_for_model`: branch `model.startswith("gemini") or model.startswith("gemma")` so Gemma routes to Google lane; per-model env `GEMINI_KEY_SHADOW_NEW` (or DB `gemini_key_shadow_new`) for shadow cohort, fallback `GEMINI_API_KEY` for legacy.
+- `_preflight_check_provider_runtime`: also matches `model.startswith("gemma")` as `provider="google"`, before OpenRouter prefix list. Removed `'gemma'` from OpenRouter prefix list.
+- VPS deploy lúc 20:08 VN (sau MB live window). Verify 13/13 shadow preflight ok=True; 3 Google direct shadow models all resolve `DEDICATED_GOOGLE_SHADOW (env GEMINI_KEY_SHADOW_NEW)`.
+- VPS backup at `/root/Lottery_AI_Test/backups/v55_shadow_add_20260505_0750/scheduler.py.post_v55_fix`.
+
+### V55 measurement materialization (04/05 + 05/05)
+
+- `loz_stage_trace_shadow` 04/05: MN 39 + MT 27 + MB 22 = 88 actual tails traced.
+- `loz_stage_trace_shadow` 05/05: MN 42 + MT 30 + MB 22 = 94 actual tails traced.
+- `mt_model_hit_output_drop_shadow` 04/05: 5 rows (ai_drop=2). 05/05: 5 rows (ai_drop=4).
+- `model_strength_by_region_weekday_station_daily` anchor advanced 2026-05-02 → 2026-05-05 (8875 rows).
+- `weekday_blackspot_shadow` anchor 2026-05-05 (21 rows).
+- `experimental_preview_shadow` 04/05+05/05 MN/MT/MB: 36 + 36 = 72 rows.
+- `du_doan_test_*` 04/05 already had 25 bundles; 05/05 NEW 25 bundles + 25 results + 396 candidates + 396 model_contribution rows.
+- `mb_experimental_preview_shadow` 05/05: 7 rows including `flip_win=1` (1 free win in shadow run).
+- `model_latency_cost_audit_daily` 04/05+05/05: 50+81 rows but `latency_available=0/0` and `NO_PER_MODEL_DURATION` 100% — C-05 still BROKEN_NEEDS_FIX.
+
+### Test-lane status (unchanged)
+
+`/du-doan-test` remains `LIVE_PARALLEL_AUTO_PENDING_ONLY`. V52.5.6 multi-region runner is still manual; C-03 multi-region closeout evaluator (next gate after 3-5 clean closeouts) and C-04 scheduler auto-wire (after evaluator stable) remain on the WAIT list.
+
+### Next-action plan (no production deploy in this pass)
+
+- 24h: V55 fixes are live (above).
+- 3d: daily forensic 06-08/05 + watch first run with `gemma-4-31b` 06/05.
+- 5-7d: build C-07 MT panel + C-14 chip UI + C-15 alert UI (UI-test-only); start C-05 latency instrumentation outside live windows.
+- 14d (~19/05): owner evidence pack for MN-only AI_CHAIN/SPECIALIST + V55 cohort; no production deploy.
+- 30d (~04/06): C-05 deployed + Composite V2 review; pruning proposal test-lane only.
+- 60-105d: Wave 1 official output improvement gating (per OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md).
+
+### Hash / mutation guard
+
+`predictions`, `final_bundles`, `lottery_results`, `model_daily_eval` grew only via NATURAL_LIVE_GROWTH (today's predictions + bundles + scrape + eval). All measurement/test/diagnostic table changes carry `official_output=false`, `output_impact=false`, `output_eligible=0`. No scoring/voting/output policy was changed. `scheduler_logs` grew naturally + 1 service restart for V55 preflight fix.
+
+### Cross-links
+
+- FU-126 V55 2-day forensic
+- FU-127 V55 loz stage trace 04/05+05/05
+- FU-128 V55 latency/cost still blocked
+- FU-129 V55 model strong/weak tensor advanced
+- FU-130 V55 test-lane auto-wire readiness still pending
+- Phase checkpoint: `artifacts/phase_checkpoints/TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md`
+- Live watch: `artifacts/live_watch/LIVE_WATCH_20260505_V55.md`
+- State: `artifacts/_v55_state_20260505.json`
+
+---
+
+## V20.3.37.55 — Add 3 Google direct shadow models (Gemini 3.1 Pro / Gemini 3 Flash / Gemma 4 31B) (2026-05-05 07:56 VN)
+
+### Scope
+
+Owner-requested addition of three new Google AI Studio (project `sxkt`, Tier-2) models into the SHADOW lane only. Zero impact on `/du-doan` output, scoring, bundle voting, output roster, or live cascade. Deployed in the morning (07:55 VN), well outside the 16:30/16:42/17:42 live windows.
+
+### Implemented
+
+- **Registry add** (`web/backend/model_registry.py`): three new entries with `status='SHADOW_AUTO'`, `provider='google'`, `output_eligible=False`, `allowed_regions=['MN','MT','MB']`, `schedule_slots=['completion_triggered_shadow','shadow_eval_post_verify']`:
+  - `gemini-3.1-pro` (Gemini 3.1 Pro)
+  - `gemini-3-flash` (Gemini 3 Flash)
+  - `gemma-4-31b` (Gemma 4 31B IT)
+- **Distribution policy** (`gpt_analyzer.MODEL_DISTRIBUTION_POLICY`): all three set to `FULL_CONTEXT` so they receive system prompt + dynamic prompt + context pack + reasoning rulebook + PHASE-FIRST GATE.
+- **Routing** (`gpt_analyzer.analyze_and_predict`): `is_gemini` predicate extended to also match models starting with `gemma`, so Gemma 4 31B routes through `_call_gemini` (google.genai SDK).
+- **API model name map** (`gpt_analyzer.GOOGLE_MODEL_API_MAP`): keeps stable registry id but routes to the actual API name returned by Google `ListModels` on 2026-05-05:
+  - `gemini-3.1-pro` → `gemini-3.1-pro-preview`
+  - `gemini-3-flash` → `gemini-3-flash-preview`
+  - `gemma-4-31b` → `gemma-4-31b-it`
+- **Per-model key isolation** (`gpt_analyzer.GOOGLE_MODEL_KEYS`): the new shadow cohort reads `GEMINI_KEY_SHADOW_NEW` (project sxkt, Tier-2). Output models `gemini-2.5-flash` / `gemini-2.5-pro` keep using the legacy `GEMINI_API_KEY` unchanged.
+- **PHASE-FIRST cohort** (`gpt_analyzer.SHADOW_GATE_MODELS` + `PHASE_FIRST_GATE_HISTORY`): closed cohort `PFG-20260428-D` at `2026-05-05 07:44:59`, opened new cohort `PFG-20260505-E` at `2026-05-05 07:45:00` containing the prior 5 + the 3 new Google direct shadow models (8 total). All gated models keep `contract_required=True`.
+- **VPS env**: `GEMINI_KEY_SHADOW_NEW` appended to `/root/Lottery_AI_Test/.env` (the actual file `env_loader.PROJECT_ENV_PATH` reads — confirmed via load_project_env then os.getenv). Backend-local `.env` left untouched after a temporary stray entry was removed.
+
+### Live API smoke test (real Google AI Studio call, project sxkt key)
+
+- `gemini-3.1-pro` → `gemini-3.1-pro-preview`: `PONG` in 2.54s, 151 tokens (input 9, output 2, ~140 thinking).
+- `gemini-3-flash` → `gemini-3-flash-preview`: `PONG` in 1.40s, 57 tokens.
+- `gemma-4-31b` → `gemma-4-31b-it`: `PONG` in 2.56s, 65 tokens.
+
+### Verification
+
+- VPS `/api/health` 200 OK; service active V20.3.36 PID 712542 since 07:55:55.
+- Registry counts: `SHADOW_AUTO=13` (10 → 13), `OUTPUT_ELIGIBLE=15` unchanged, `ALL_RUNTIME=31` (28 → 31), `registry_visible_model_count=31` from API.
+- All three models present in shadow batch for MN/MT/MB (`completion_triggered_shadow`).
+- All three models report `cohort=PFG-20260505-E gate_applied=True contract_required=True status=CURRENT`.
+- Two Google keys present and distinct (legacy `GEMINI_API_KEY` length 39 prefix `<REDACTED_GOOGLE_API_KEY>` ; shadow `GEMINI_KEY_SHADOW_NEW` length 39 prefix `<REDACTED_GOOGLE_API_KEY>`).
+
+### Hash guard
+
+Source hash unchanged for the 4 forensic tables `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval` because no scoring/voting/output code path was touched. `scheduler_logs` grew naturally from one service restart at 07:55:55. Backups retained at `/root/Lottery_AI_Test/backups/v55_shadow_add_20260505_0750/{model_registry.py.bak,gpt_analyzer.py.bak,env.bak,project_root_env.bak}`.
+
+### Risk notes
+
+- Gemini 3.1 Pro is a thinking model; runtime call uses `max_output_tokens=65536` so Pro will not hit `MAX_TOKENS` like the 64-token smoke probe did.
+- All three remain `output_eligible=False`; `/du-doan` cannot be affected by them. Scheduler picks them up via registry-derived `SHADOW_AUTO_EVAL_MODELS` (no hardcoding).
+- The Google `*-preview` suffix is current as of 2026-05-05 ListModels. If Google drops the suffix later, only the `GOOGLE_MODEL_API_MAP` entry needs updating; registry id stays stable for measurement continuity.
+
+### Cross-links
+
+- FU-125
+- Active roadmap row 2026-05-05
+- Phase checkpoint `artifacts/phase_checkpoints/SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md`
+
+---
+
+## V20.3.37.54 — Natural live watch + API source labels + loz trace + blackspot measurement (2026-05-04 13:20 VN)
+
+### Scope
+
+V54 live-window-aware pass. Started at 12:55 VN after MN bundle and before MN scrape / MT-MB cascade. No official selection logic, scoring, prompt, model roster, or output policy changed.
+
+### Implemented
+
+- **C-02 API source labels** in `web/backend/main.py`: `/api/du-doan-test/{region}` and MB legacy endpoint now return `source_proof` plus per-test fields such as `official_baseline_source_table`, `test_output_source_table`, `candidate_pool_source`, `is_clone_of_official`, `is_independent_agreement_with_official`, `selection_time`, `result_known_at_selection`, `is_realtime_prediction`, and `is_post_closeout_diagnostic`.
+- **C-06 loz stage trace**: new `web/backend/_materialize_loz_stage_trace_shadow.py` + new table `loz_stage_trace_shadow` (6174 rows, 60 closed days through 2026-05-03).
+- **C-15 weekday blackspot alert**: new `web/backend/_materialize_weekday_blackspot_shadow.py` + new table `weekday_blackspot_shadow` (21 rows, anchor 2026-05-03, 30d window).
+
+### Live watch
+
+- 2026-05-04 MN official bundle exists: BT `65`, lo2 `[65,32]`, PENDING result.
+- MT/MB have auto_daily predictions only; no final bundle or result yet at 12:55 VN.
+- No 2026-05-04 test rows yet. Verdict: `WAIT_CLOSEOUT`.
+
+### Measurement findings
+
+- Loz trace 60d: `LOZ_LINE_SELECTION_MISS` = MN 221, MT 182, MB 121; `CANDIDATE_POOL_MISS` = MN 105, MT 90, MB 73.
+- Weekday blackspots 30d: MB Wed/Fri = `WEEKDAY_BLACK_SPOT_CONFIRMED`; MT Mon/Fri = `WEEKDAY_BLACK_SPOT_CONFIRMED`.
+
+### Guardrail finding
+
+Post-hash detected `final_bundles` hash changed with count unchanged. Forensic shows only `updated_at/verified_at` for 2026-05-03 rows refreshed from `12:50:01` to `13:05:07` after service restart/startup catch-up; BT/lo2/status content did not change. Label: `OFFICIAL_TABLE_TIMESTAMP_REFRESH_BY_STARTUP_CATCHUP`. No output behavior mutation.
+
+### Hash guard
+
+`predictions`, `lottery_results`, `model_daily_eval`, V52 measurement tables, and V52.5 test-lane tables unchanged. `scheduler_logs` +19 from service restart + route smoke. New diagnostic tables only: `loz_stage_trace_shadow`, `weekday_blackspot_shadow`.
+
+Evidence: `artifacts/phase_checkpoints/TOTAL_FORCE_V54_NATURAL_LIVE_CLOSEOUT_MEASUREMENT_AND_TEST_LANE_CONTROL_20260504.md`.
+
+## V20.3.37.53.1 — Owner deliverables: experimental-lane roadmap + official output timeline (docs only, 2026-05-04 00:55 VN)
+
+### Pass type
+
+Two owner-facing markdown deliverables. ZERO code change. ZERO DB write. ZERO official mutation.
+
+### Files added
+
+- `docs/EXPERIMENTAL_LANE_ROADMAP_20260504.md` — luồng thực nghiệm hiện chạy thế nào, 6 phase ladder mỗi method đi qua, lifecycle model individual/shadow/AI weak, UI nâng cấp roadmap V52.7+, đo lường mới khi nào ra.
+- `docs/OFFICIAL_OUTPUT_IMPROVEMENT_TIMELINE_20260504.md` — per-method/measurement/mechanism status, gate criteria cụ thể, 4 wave production cải tiến với ETA earliest 2026-06-03 / 2026-06-15 / 2026-07-04 / 2026-08-15.
+
+### Key timeline anchors
+
+- **2026-05-07 (+3 ngày)**: ship C-02 API source labels + C-05 per-model latency instrument + C-07 MT correct-but-dropped panel + C-14 per-station/weekday strength chip.
+- **2026-05-11 (+7 ngày)**: ship C-03 multi-region closeout evaluator + M-02 loz stage trace + M-04 family contribution + M-08 black-spot alert.
+- **2026-05-15 (+11 ngày)**: review C-04 scheduler auto-wire after ≥5 manual closeout sạch.
+- **2026-06-03 (+30 ngày)**: Wave 1 owner review window — Composite V2 / AI_CHAIN MB / SPECIALIST MB candidates.
+- **2026-06-15 (+42 ngày)**: Wave 2 owner review — region-conditional pruning.
+- **2026-07-04 (+60 ngày)**: Wave 3 owner review — shadow→voter promotion.
+- **2026-08-15 (+105 ngày)**: Wave 4 owner review — family-aware / region-weekday-aware aggregation production.
+
+Every owner-review milestone is "agent trình evidence pack", NOT auto-deploy.
+
+## V20.3.37.53 / V52.5.8 — Full-chain controller audit + UI source-badge fix (VPS deployed, 2026-05-04 00:30 VN)
+
+### Pass type
+
+Full-chain forensic audit (V39 → V52.5.7) + `/du-doan-test` reality audit (UI/API/DB/code/log) + official 2026-05-03 post-live forensic + safe next-action plan. Single safe code change shipped (V52.6 UI labels). ZERO mutation to `/du-doan`, `final_bundles`, production `predictions`, scoring, prompt, model roster, scheduler.
+
+### Owner concern resolved
+
+Concern: "luồng thực nghiệm vẫn hiển thị các số dự đoán do luồng official". Verdict: `UI_LABEL_CONFUSION_INDEPENDENT_AGREEMENT_LOOKS_LIKE_CLONE` — DB confirms test methods pick INDEPENDENTLY (e.g., 2026-05-02 MB official=43 LOSE while 4 of 6 V52.5.2 methods independently picked 91 WIN; 2026-05-03 MB AI_CHAIN_PRESERVATION test_bt=85 LOSE ≠ official 48 WIN with false_promotion=1). When test method picks the SAME number as official it is independent agreement (consensus around top1 strong), not cloning.
+
+### V52.6 UI source-badge fix shipped
+
+- `renderSourceBanner` explains exactly which source table feeds each column.
+- `renderExperimentSummary` table at top shows ALL 6 method picks with their BT and `🟰 đồng thuận` / `🆚 khác chính` chips.
+- `diffChip` text changed from `= chính` / `≠ chính` to `🟰 đồng thuận` / `🆚 khác chính` with hover tooltip clarifying agreement vs clone.
+- Footer-note expanded to mention `experimental_preview_shadow` and explicit "đọc `final_bundles` chỉ để hiển thị baseline".
+- Cache buster on `/du-doan` admin link bumped to `?v=20260504-v52-6-source-badges`.
+
+### Findings (rolling, anchor 2026-05-03)
+
+- Official 30d BT: MN 60% / MT 33% / MB 20%. LO2_FULL: MN 33% / MT 17% / MB 7%. LO2_ANY: MN 83% / MT 67% / MB 43%.
+- Verdict: `OFFICIAL_QUALITY_NOT_PROVEN_MIXED_SIGNAL_REGION_CONDITIONAL`. MB Wed/Fri 0/4 BT (structural). MT Mon/Fri 0/4 BT.
+- `/du-doan-test` status remains `LIVE_PARALLEL_AUTO_PENDING_ONLY`: schema/engine/multi-region API/UI/runner exist; scheduler auto-wire NOT enabled; closeout evaluator V50 MB-only.
+
+### Hard locks reaffirmed
+
+- ZERO write to `final_bundles`, `predictions`, `generate_final_bundle()`, scoring, bundle voting, lane weights, verdict weights, output policy, model roster, production prompt.
+- `model_latency_cost_audit_daily` 3273/3273 still NO_PER_MODEL_DURATION → `PRUNING_NOT_ALLOWED_NO_LATENCY`.
+- Loz `LOZ_SIGNAL_MIXED + LOZ_REGION_CONDITIONAL + LOZ_NOT_READY_FOR_RULE`.
+
+### Hash guard
+
+Pre `artifacts/_v53_pre_hash_20260503.txt` vs post `artifacts/_v53_post_hash_20260503.txt`. Source hashes for `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval` IDENTICAL. V52 measurement tables and V52.5 test-lane tables IDENTICAL. Only `scheduler_logs` +12 from `lottery` service restart on V52.6 deploy (no production scheduler run).
+
+### Next-action plan
+
+24h: observe natural live closeout 2026-05-04. NO code change.  
+3d: implement C-02 API source labels, C-05 per-model latency instrumentation, C-07 MT correct-but-dropped panel.  
+7d: implement C-03 multi-region closeout evaluator + C-13 strength-aware roster (test lane only) after manual closeout proofs.  
+14d: re-evaluate MB SPECIALIST_ROSTER fw=5/fl=0; if pattern holds, propose owner unlock package.
+
+Evidence: `artifacts/phase_checkpoints/TOTAL_FORCE_V53_FULL_REPORT_CHAIN_DU_DOAN_TEST_REALITY_AND_SAFE_NEXT_ACTION_20260503.md`.
+
+## V20.3.37.52.5 — Multi-region parallel experimental test lane (VPS deployed, 2026-05-03 23:55 VN)
+
+### Scope
+
+Real parallel experimental lane mirroring `/du-doan` for MN/MT/MB, strictly admin-only `/du-doan-test`. All test-lane rows are flagged `official_output=false`, `output_impact=false`, `test_only=1`. ZERO mutation to `/du-doan`, `final_bundles`, production `predictions`, scoring, prompt, model roster, or scheduler.
+
+### What landed (V52.5.1 → V52.5.7)
+
+- `web/backend/_compute_model_strength_tensor.py` + new table `model_strength_by_region_weekday_station_daily` (V52.5.1, 9052 rows).
+- `web/backend/_materialize_experimental_preview_shadow.py` + new table `experimental_preview_shadow` (V52.5.2, 1080 rows / 60d for MN/MT/MB × 6 experiments).
+- `web/backend/_du_doan_test_engine.py` multi-region engine (V52.5.3, 540 runs/bundles/results across 3 regions × 30 days).
+- `web/backend/_du_doan_test_schema.py` registry extended to 20 experiments across MN/MT/MB (V52.5.4).
+- `web/backend/main.py` `api_du_doan_test_region` extended for MN/MT to return real `test_bundle` (V52.5.5); UI label bumped to v52.5; `/du-doan` admin link cache buster `?v=20260503-v52-5-live-parallel`.
+- `web/backend/_du_doan_test_daily_runner.py` multi-region with `--region MN/MT/MB/ALL` and `--mode REALTIME_AVAILABLE_ONLY/POST_CLOSEOUT_DIAGNOSTIC_FULL_25` (V52.5.6).
+
+### Selected 60d evidence (measurement-only, no official change)
+
+- MB SPECIALIST_ROSTER: fw=5, fl=0 (5 free wins).
+- MB STRENGTH_WEIGHTED V52.5.2: fw=8, fl=7, hits 19 vs official 18.
+- MN AI_CHAIN_PRESERVATION: fw=4, fl=1, hits 32 vs official 29.
+- MN SPECIALIST_ROSTER: fw=3, fl=0.
+- MT AI_CHAIN_PRESERVATION: fw=8, fl=12 (destructive — confirms owner's MT herding observation).
+- MT STRENGTH_WEIGHTED V52.5.2: fw=5, fl=6 (still negative net).
+
+### Anti-leakage
+
+Strength tensor anchored strictly D-1. MN selection uses D-1 only. MT selection uses D-1 + MN(D) actuals. MB selection uses D-1 + MN(D) + MT(D) actuals. Target-region same-day actuals are NEVER used for selection.
+
+### Hash guard
+
+Pre `artifacts/_v52_5_1_pre_hash_20260503.txt` vs post `artifacts/_v52_5_7_post_hash_20260503.txt`:
+
+- predictions, final_bundles, lottery_results, model_daily_eval: hash IDENTICAL.
+- scheduler_logs: +46 rows from `lottery` service restart + `[DU-DOAN-TEST-*]` test markers (no production scheduler run).
+- V52 measurement tables: hash IDENTICAL.
+- V52.5.x test-lane tables: created/grown as designed.
+
+### VPS backup
+
+`/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/` (code + 61 MB DB) before any change.
+
+Evidence: `artifacts/phase_checkpoints/V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md`.
+
+## V20.3.37.52.5.1 — Model strength tensor (measurement-only, 2026-05-03 23:05 VN)
+
+### Scope
+
+New materializer + new diagnostic table only. No mutation to `predictions`, `final_bundles`, official `/du-doan` output, scoring, bundle voting, prompt, model roster, or scheduler.
+
+### What landed
+
+- New script `web/backend/_compute_model_strength_tensor.py`.
+- New table `model_strength_by_region_weekday_station_daily` (UNIQUE on anchor/window/grain/model/region/weekday/station/run_source/run_label).
+- Tensor populated for anchor `2026-05-02` (D-1 of the 2026-05-03 test cycle):
+  - 4 windows (7/14/30/60), 3 grains (region, region_weekday, region_station).
+  - 9052 rows.
+
+### Anti-leakage
+
+- Anchor is always strict D-1 from the requested `--target-date`, so the snapshot only uses closed days; later test selections at D do not leak D actuals.
+- Table flagged `test_only=1`, `output_eligible=0`, `diagnostic_only=1`.
+
+### Hash guard
+
+Pre: `artifacts/_v52_5_1_pre_hash_20260503.txt`. Post: `artifacts/_v52_5_1_post_hash_20260503.txt`. Same hash on `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`, `scheduler_logs`, `mt_model_hit_output_drop_shadow`, `loz_selector_shadow`, `model_latency_cost_audit_daily`. New rows only in `model_strength_by_region_weekday_station_daily`.
+
+### VPS backup
+
+`/root/Lottery_AI_Test/backups/v52_5_1_20260503_2300/` (code + 61 MB DB) before the run.
+
+Evidence: `artifacts/phase_checkpoints/V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md`.
+
+## V20.3.37.52.4.1 — `/du-doan-test` UI loading fix (VPS deployed, 2026-05-03 22:40 VN)
+
+### Scope
+
+Frontend-only patch. No backend, official output, scoring, bundle voting,
+prompt, model roster, scheduler, or DB writes changed.
+
+### Cause
+
+V52.4 added a window-filter button row using inline `onclick="setWindowDays(\\\\'...\\\\')"`. After string concatenation the resulting HTML carried literal backslashes; combined with the lack of try/catch in `render(data)`, any single panel exception left the page stuck on the "Đang tải dự đoán test..." loading state.
+
+### Fix
+
+- Replaced inline `onclick` with `data-window` attributes plus `addEventListener` bound after `innerHTML` write.
+- Wrapped each render section with a `safeRender(fn, label, data)` helper so one broken panel does not break the whole page.
+- Added a fatal try/catch around `render(data)` to surface JS errors to the user.
+- Bumped cache buster on `/du-doan` admin link to `?v=20260503-v52-4-multi`.
+- Added live region title updates when switching MN/MT/MB tabs.
+
+### Smoke
+
+- `/du-doan=200`
+- `/du-doan-test=401` unauth
+- `/api/du-doan-test/mn=401`, `/mt=401`, `/mb=401` unauth
+- Admin direct API confirms MN/MT/MB shapes still match V52.4 expectations.
+
+Evidence: `artifacts/phase_checkpoints/V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md`.
+
+---
+
+## V20.3.37.52.4 — Multi-region `/du-doan-test` readiness UI/API (VPS deployed, 2026-05-03 22:25 VN)
+
+### Scope
+
+Test-lane UI/API only. No official output, scoring, bundle voting, prompt, model
+roster, scheduler, `final_bundles`, or production `predictions` behavior changed.
+
+### Change
+
+- `/du-doan-test` now has MN / MT / MB region tabs.
+- Added window filters: 7d / 14d / 30d / 60d.
+- Added read-only endpoint `/api/du-doan-test/{region}` for MN/MT/MB readiness.
+- MN/MT are surfaced as `MN_MT_TEST_LANE_DESIGN_ONLY`, not fake experiment outputs.
+- Wrote cutoff spec for future safe MN/MT engines:
+  `artifacts/phase_checkpoints/V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md`.
+
+### Verification
+
+- `/du-doan=200`
+- `/du-doan-test=401` unauth
+- `/api/du-doan-test/mn=401`, `/mt=401`, `/mb=401` unauth
+- Admin direct API: MN/MT return `has_v52=true`, `test_bundle=false`,
+  `cutoff=DESIGN_ONLY`; MB returns `test_bundle=true`.
+- Official hashes unchanged for `predictions`, `final_bundles`,
+  `lottery_results`, `model_daily_eval`. `scheduler_logs` grew only due restart.
+
+Evidence: `artifacts/phase_checkpoints/V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md`, `artifacts/_v52_4_pre_hash_20260503.txt`, `artifacts/_v52_4_post_hash_20260503.txt`, live sync `artifacts/live_sync/20260503_222141/manifest.json`.
+
+---
+
+## V20.3.37.52.3 — `/du-doan-test` surfaces V52 measurement rollups (VPS deployed, 2026-05-03 22:12 VN)
+
+### Scope
+
+Test-lane UI/API only. No official output, scoring, bundle voting, prompt, model
+roster, or scheduler behavior changed.
+
+### Change
+
+`/api/du-doan-test/mb` now returns `v52_measurements` with:
+
+- MT drop rollups from `mt_model_hit_output_drop_shadow`
+- MT current-date dropped tails
+- Loz selector rollups from `loz_selector_shadow`
+- Latency/cost availability from `model_latency_cost_audit_daily`
+
+`web/frontend/du-doan-test.html` now renders those rollups below the existing
+official-vs-test comparison.
+
+### Verification
+
+- `/du-doan=200`
+- `/du-doan-test=401` unauth
+- `/api/du-doan-test/mb=401` unauth
+- health `200`
+- Admin API direct smoke: `has_v52=true`, `mt_drop_60=4`, `loz_60=3`, `latency_60=1`
+- Official hashes unchanged for `predictions`, `final_bundles`,
+  `lottery_results`, `model_daily_eval`; `scheduler_logs` grew only from restart.
+
+Evidence: `artifacts/phase_checkpoints/V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md`, `artifacts/_v52_3_pre_hash_20260503.txt`, `artifacts/_v52_3_post_hash_20260503.txt`, live sync `artifacts/live_sync/20260503_221017/manifest.json`.
+
+---
+
+## V20.3.37.52.2 — V52 measurement surfaces 60-day backfill (VPS deployed, 2026-05-03 21:50 VN)
+
+### Scope
+
+Backfilled the V52.1 measurement-only surfaces over the latest 60 closed days.
+No official output, scoring, bundle voting, prompt, model roster, scheduler, or
+`/du-doan` behavior was changed.
+
+### Result
+
+- `mt_model_hit_output_drop_shadow`: 301 rows
+- `loz_selector_shadow`: 3273 rows
+- `model_latency_cost_audit_daily`: 3273 rows
+
+Official/source hash guard passed: `predictions`, `final_bundles`,
+`lottery_results`, `model_daily_eval`, and `scheduler_logs` all unchanged.
+
+Key 60d findings:
+
+- MT has 115 `LOZ_LINE_SELECTION_MISS` rows and 112 `AI_SIGNAL_DROPPED` rows.
+- Loz selector signal is region/window conditional; 30d official still beats model-top2 in all regions, but MT 14d model-top2 beats official (107 vs 81), so this remains shadow/test/UI-only.
+- Latency/cost is still missing on 3273/3273 rows; pruning remains blocked.
+
+Evidence: `artifacts/phase_checkpoints/V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md`, `artifacts/_v52_2_pre_hash_20260503.txt`, `artifacts/_v52_2_post_hash_20260503.txt`, `artifacts/_v52_2_measurement_rollup_20260503.md`, live sync `artifacts/live_sync/20260503_214559/manifest.json`.
+
+---
+
+## V20.3.37.52.1 — V52 measurement-only surfaces implemented (VPS deployed, 2026-05-03 21:40 VN)
+
+### Scope
+
+Implemented the safe V52 items that do not affect official output:
+
+- `mt_model_hit_output_drop_shadow`
+- `loz_selector_shadow`
+- `model_latency_cost_audit_daily`
+
+New standalone materializer:
+
+- `web/backend/_materialize_v52_measurement_surfaces.py`
+
+No changes were made to `/du-doan`, `/api/final-bundle`, `generate_final_bundle()`,
+`final_bundles`, production `predictions`, scoring, bundle voting, model roster,
+production prompt, or scheduler.
+
+### VPS result
+
+For `2026-05-03`, the materializer wrote:
+
+- MT drop rows: 5
+- Loz selector rows: 75
+- Latency/cost audit rows: 75
+
+Official/source hash guard passed:
+
+- `predictions`, `final_bundles`, `lottery_results`, `model_daily_eval`,
+  `scheduler_logs` all unchanged pre/post.
+
+Key evidence:
+
+- MT dropped actual tails: `08`, `18`, `43`, `63`, `65`.
+- `08` and `65` are labeled `AI_SIGNAL_DROPPED`.
+- MT model-top2 beat official loz on 15/25 model rows for 2026-05-03.
+- Latency/cost remains missing on 75/75 rows, so pruning stays blocked.
+
+Evidence: `artifacts/phase_checkpoints/V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md`, `artifacts/_v52_impl_pre_hash_20260503.txt`, `artifacts/_v52_impl_post_hash_20260503.txt`, live sync `artifacts/live_sync/20260503_213854/manifest.json`.
+
+---
+
+## V20.3.37.52 — Full-chain report forensic + safe next-step control (read-only, 2026-05-03 21:15 VN)
+
+### Scope
+
+V52 is a VPS-first, full-report-chain forensic/control pass. It made no code
+changes and no DB runtime writes. Official `/du-doan`, `/api/final-bundle`,
+`generate_final_bundle()`, `final_bundles`, production `predictions`, official
+scoring, bundle voting, lane weights, production prompt, model roster, and D-2
+remain untouched.
+
+### Findings
+
+- Full chain reconciled V39/V41/V46/V48/V49/V50/V51 plus embedded V48. V48 is
+  `V48_EMBEDDED_REPORT_PRESENT`, not missing.
+- `/du-doan-test` current label remains `MANUAL_STAGE_0_CONFIRMED`: real MB lab,
+  MB-only, manual runner/evaluator/scoreboards/leakage audit present, but no
+  scheduler auto-wire and no natural realtime proof.
+- Official quality remains `MIXED_SIGNAL / OFFICIAL_QUALITY_NOT_PROVEN`: 03/05
+  MN and MB were good, MT failed, and rolling windows are mixed.
+- MT 03/05 has one-day proof of no-token/rerun dominance plus AI/model hit drops;
+  safe next step is measurement-only MT model-hit-to-output-drop matrix.
+- Loz1/loz2 remains `LOZ_SIGNAL_MIXED`; safe next step is measurement-only loz
+  selector shadow, not an official loz rule.
+- Tensor remains `TENSOR_NOT_OK_FOR_PRUNING`; `NO_PER_MODEL_DURATION` still
+  blocks production pruning/cost reduction decisions.
+- Corrected replay remains `WAIT_DATA`; leaky V37 single-vote rescue remains
+  `LEAKY_REFERENCE_ONLY`; tier2 V1/V2 policies stay `DROP_AS_DESIGNED`.
+
+### Evidence
+
+- Main report: `artifacts/phase_checkpoints/TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md`
+- State: `artifacts/phase_checkpoints/_v52_full_chain_state_20260503.json`
+- Claim reconciliation: `artifacts/_v52_full_report_claim_reconciliation_20260503.md`
+- Official forensic: `artifacts/_v52_official_post_live_20260503_forensic.json`
+- MT audit: `artifacts/_v52_mt_model_correct_output_wrong_audit_20260503.json`
+- MB audit: `artifacts/_v52_mb_ai_signal_audit_20260503.json`
+- Test lane: `artifacts/_v52_du_doan_test_reality_check_20260503.json`
+- Force-fit/leakage: `artifacts/_v52_du_doan_test_force_fit_leakage_audit_20260503.json`
+- Tensor: `artifacts/_v52_model_tensor_pruning_readiness_20260503.json`
+- Loz: `artifacts/_v52_loz_control_audit_20260503.json`
+- Measurement matrix: `artifacts/_v52_measurement_completeness_matrix_20260503.md`
+- Code matrix: `artifacts/_v52_code_readiness_matrix_20260503.md`
+- Hash guard: `artifacts/_v52_pre_hash_20260503.txt`, `artifacts/_v52_post_hash_20260503.txt`
+- Live sync: `artifacts/live_sync/20260503_210802/manifest.json`
+
+---
+
+## V20.3.37.51 — Post-live 2026-05-03 measurement/test-lane/output-quality audit (read-only, 2026-05-03 20:45 VN)
+
+### Scope
+
+V51 is a read-only post-live controller audit. It did not change `/du-doan`,
+`generate_final_bundle()`, `final_bundles`, production `predictions`, official
+scoring, bundle voting, lane weights, model roster, production prompt, D-2, or
+any official output route.
+
+### Findings
+
+- Official 2026-05-03: MN BT `79` WIN + lo2 WIN; MT BT `29` LOSE + lo2 LOSE; MB BT `48` WIN + lo2 PARTIAL.
+- Rolling quality remains mixed; no sustainable improvement claim is allowed from one day.
+- MT one-day forensic supports the owner observation: top1 `29` was dominated by rerun_post_mn/no-token voters (1 AI + 6 no-token), while actual hit tails such as `08` and `18` were present in model/top10 evidence but dropped below official loz lines.
+- MB AI weakness is not proven as a model-prune conclusion. V50 diagnostic showed AI-chain/prior-region `85` would break official today, but tensor latency/cost is still missing.
+- `/du-doan-test` remains `MANUAL_STAGE_0_CONFIRMED`: V50 rows/scoreboards exist for MB, but they are post-closeout diagnostic rows, not realtime unlock proof; no scheduler auto-wire; MN/MT are not supported yet.
+- Tensor classification remains `TENSOR_NOT_OK_FOR_PRUNING` and `TENSOR_NOT_OK_FOR_REALTIME_SELECTION` because `NO_PER_MODEL_DURATION` persists across the tensor.
+- Loz classification is `LOZ_SIGNAL_MIXED`; measurement-only loz selector shadow is a safe future candidate, not an official rule.
+
+### Evidence
+
+- Report: `artifacts/phase_checkpoints/TOTAL_FORCE_V51_POST_LIVE_20260503_MEASUREMENT_TEST_LANE_OUTPUT_QUALITY_AUDIT.md`
+- State JSON: `artifacts/phase_checkpoints/_v51_post_live_20260503_state.json`
+- Official forensic: `artifacts/_v51_official_output_forensic_20260503.json`
+- Test-lane reality: `artifacts/_v51_du_doan_test_reality_check_20260503.json`
+- Tensor gap: `artifacts/_v51_model_tensor_gap_audit_20260503.json`
+- Loz audit: `artifacts/_v51_loz_control_audit_20260503.json`
+- Matrix: `artifacts/_v51_code_readiness_matrix_20260503.md`
+- Hash guard: `artifacts/_v51_pre_hash_20260503.txt`, `artifacts/_v51_post_hash_20260503.txt`
+- Live sync: `artifacts/live_sync/20260503_204208/manifest.json`
+
+---
+
+## V20.3.37.50 — `/du-doan-test` MB parallel experiment lab V50 (VPS deployed, 2026-05-03 20:20 VN)
+
+### Scope
+
+V50 completed the admin-only MB test lane as a separate experiment lab without touching official output logic. No changes were made to `generate_final_bundle()`, production scoring, bundle voting, lane weights, production prompt, model roster, `final_bundles`, production `predictions`, `lottery_results`, or `model_daily_eval`.
+
+### Implemented
+
+- Added V50 test schema/registry helpers in `web/backend/_du_doan_test_schema.py`.
+- Upgraded `_du_doan_test_daily_runner.py` with `--region`, `--mode`, `--dry-run`, source-hash guard, audit log, and `[DU-DOAN-TEST-MB]` test markers.
+- Added `_du_doan_test_closeout_evaluator.py` for closeout results, daily summary, experiment/model/method scoreboards, and leakage/conversion audit.
+- Extended `_du_doan_test_mb_engine.py` with experiment-registry enforcement, mode labels, source hash refs, and signal audit writes.
+- Extended `/api/du-doan-test/mb` and `du-doan-test.html` to show mode/governance, official vs test, 7/14/30 scoreboards, model/method contribution, and signal trace/leakage audit.
+
+### VPS evidence
+
+- Runner created today rows for MB `2026-05-03`: 7 preview rows, 7 test runs, 7 bundles, 7 results, 161 candidates, 161 model contributions, 7 leakage audit rows, 7 conversion trace rows.
+- Evaluator wrote 1 daily summary, 21 experiment scoreboard rows, 132 model scoreboard rows, and 21 method scoreboard rows.
+- Official MB today: BT `48` WIN, lo2 `["48","89"]` PARTIAL. V50 found no improvement today; AI-chain and prior-region `85` would break official.
+- Official hash guard: `predictions`, `final_bundles`, `lottery_results`, and `model_daily_eval` unchanged. `scheduler_logs` changed only due restart/test markers.
+
+### Final label
+
+`MANUAL_STAGE_0_CONFIRMED`. The lab lane is real, separate, and evaluated, but scheduler auto-wire and natural realtime proof are not enabled yet.
+
+Evidence: `artifacts/phase_checkpoints/DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md`, `artifacts/daily_evidence/du_doan_test_mb/2026-05-03.md`, `artifacts/_du_doan_test_v50_vps_pre_hash_20260503.txt`, `artifacts/_du_doan_test_v50_post_hash_20260503.txt`, live sync `artifacts/live_sync/20260503_201947/manifest.json`.
+
+---
+
+## V20.3.37.49 — FULL REPORT RE-READ + EMBEDDED V48 AUDIT + `/du-doan-test` live-parallel control (read-only, 2026-05-03 12:55 VN)
+
+### Scope
+
+V49 is a read-only controller pass. No runtime code, official route, output logic,
+production prompt, scoring, model roster, scheduler, `final_bundles`, production
+`predictions`, `lottery_results`, or `model_daily_eval` was changed.
+
+### Required correction
+
+The embedded owner-facing section **`TOTAL-FORCE V48 — KẾT QUẢ ĐẦY ĐỦ`** was found in
+the transcript and fully extracted. Therefore V48 is **not missing**:
+`V48_EMBEDDED_REPORT_PRESENT`.
+
+### Current truth
+
+- Final status label: **`MANUAL_STAGE_0_CONFIRMED`**.
+- `/du-doan-test` is a real separate admin-only MB test lane, but **not**
+  live-parallel auto.
+- Scheduler evidence: 0 lifetime `DU-DOAN-TEST` markers and 0 `du_doan_test`
+  references in `scheduler.py`.
+- DB evidence: 2026-05-02 has 7 runs/bundles/results, 147 candidates, 147 model
+  contribution rows, 1 audit log; 2026-05-03 has 0 test/preview rows at 12:48 +07.
+- Access proof: `/du-doan=200`, `/du-doan-test=401` unauth,
+  `/api/final-bundle?region=MB=200`, `/api/du-doan-test/mb=401` unauth.
+- Start-live state: MN 2026-05-03 has 25 predictions and final bundle BT=79
+  PENDING; MT/MB are pre-cascade with 7 `auto_daily` rows each and no today final
+  bundle.
+
+### No-overclaim corrections maintained
+
+- 7 experiments are not 7 independent pipelines. They share the same 8-tail
+  candidate pool and 14 voter models; most are `SHARED_SOURCE_VARIANT`.
+- 25-model realtime test is not proven: production MB had 25 prediction models,
+  but test contribution has 14 voter models; 11 shadow_auto_eval models are missing
+  from the test contribution layer.
+- AI test prompt is not executing: `du_doan_test_ai_predictions` does not exist,
+  0 rows have `is_test_prompt=1`, and all prompt variants are
+  `production_prompt_clone_or_none`.
+- `MB_TIER_AWARE_BUNDLE_SHADOW_V1` is currently a score transform, not real
+  prize-tier weighting.
+- `MB_NO_TOKEN_HERD_REDUCTION_V1` is a score-adjusted clone over the shared
+  candidate set, not a true no-token rerun.
+- Prior-region safe logic uses MN(D)+MT(D), not MB(D), but row-level
+  `source_available_at` / `target_cutoff_time` / `leakage_audit` columns are still
+  missing, so future proof should be strengthened.
+
+### Evidence
+
+- Sync manifest: `artifacts/live_sync/20260503_124229/manifest.json`
+- Raw audit: `artifacts/_v49_audit_out.json`
+- Route smoke: `artifacts/_v49_route_smoke_out.txt`
+- Pre/post hash: `artifacts/_du_doan_test_v49_pre_hash_20260503.txt`,
+  `artifacts/_du_doan_test_v49_post_hash_20260503.txt`
+- Live watch: `artifacts/live_watch/LIVE_WATCH_20260503.md`
+- Report: `artifacts/phase_checkpoints/DU_DOAN_TEST_V49_FULL_REPORT_REREAD_AND_LIVE_PARALLEL_CONTROL_20260503.md`
+
+---
+
+## V20.3.37.48.2 — TOTAL-FORCE START-OF-LIVE + `/du-doan-test` parallel-completion control pass (read-only, 2026-05-03 10:30 VN)
+
+### Owner directive
+
+Total-force pass đầu chu kỳ live 2026-05-03 với yêu cầu **verify-before-claim, không pass-wash**. Phải phân loại đúng 5 mức trạng thái: SCHEMA_CREATED < ENGINE_DRY_RUN < MANUAL_TEST_LANE < LIVE_PARALLEL_AUTO < EVIDENCE_READY_FOR_OWNER_REVIEW. Không được nhầm test với shadow/replay/tensor.
+
+### Scope (READ-ONLY, ZERO output mutation)
+
+Pass này không sửa: `/du-doan` route/HTML/JS, `generate_final_bundle()`, `final_bundles`, `predictions`, `lottery_results`, `model_daily_eval`, scoring, bundle voting, lane weights, output policy, model roster, prompt, scheduler.
+
+### Pre/post-action source-table hash (12 bảng)
+
+12/12 IDENTICAL pre/post audit:
+- predictions 4098 / `130e5e5de858…`, final_bundles 193 / `443251d22f73…`, lottery_results 14596 / `4acf72d3bda7…`, model_daily_eval 4014 / `bc7a827b642e…`, scheduler_logs 112612 / `ee4b0a6bcede…`
+- du_doan_test_runs 7, du_doan_test_candidates 147, du_doan_test_bundles 7, du_doan_test_results 7, du_doan_test_model_contribution 147, du_doan_test_audit_log 1, mb_experimental_preview_shadow 7
+
+(Note: predictions / final_bundles / scheduler_logs increased vs V47 baseline, but all increments were caused by **legitimate live cycle activity** for 2026-05-03 — MN AI cascade kicked off 2026-05-02 21:24, MN final_bundle BT=79 generated 21:24, 25 predictions written, 469 scheduler log lines from natural cron. The test-lane code did NOT cause any of those changes.)
+
+### Live state at 10:14 +07
+
+- Service `lottery.service` active, PID 630181 since 01:59 today, uptime ~8h.
+- `runtime_model_count=25`, `active_measurement_model_count=25`, `registry_visible_model_count=28`.
+- `/du-doan` 200 OK; `/api/final-bundle?region=MN` returns BT=79 PENDING; `/api/final-bundle?region=MB` returns 2026-05-02 BT=43 (today's MB cascade not yet fired).
+- `/du-doan-test` unauth = 401; `/api/du-doan-test/mb` unauth = 401 (admin-only proven).
+- 2026-05-03 in test/preview tables: **0 rows** → `LIVE_PARALLEL_AUTO = NO`.
+
+### Critical findings (verify-before-claim)
+
+1. **`/du-doan-test` MB lane state = `MANUAL_TEST_LANE` (mức 3/5)**. Engine + runner + UI tồn tại; 0 scheduler marker `[DU-DOAN-TEST]` lifetime; 1 lifetime audit log row; chỉ 1 ngày persisted (2026-05-02).
+2. **7 experiments ≠ 7 independent pipelines.** Tất cả 7 dùng cùng candidate set 8 tails `[12, 28, 30, 43, 63, 79, 80, 91]` × 14 voter models từ `mb_experimental_preview_shadow.candidate_ranked_json`. Chúng là **scoring transforms over a shared candidate set** — phân loại `SHARED_SOURCE_VARIANT` (5/7), `VALID_TEST/control` (1/7 = baseline), `PLACEHOLDER` (1/7 = specialist `test_bt=null`).
+3. **25-model claim corrected**. 25 model predicted MB 2026-05-02 (production), nhưng **chỉ 14 voter** thực sự góp vào candidate ranking trong test layer. 11 model (`deepseek-v4-flash`, `deepseek-v4-pro`, `gemini-2.5-flash`, `glm-5.1`, `gpt-5.5`, `gpt-oss-120b`, `grok-4.20-multi-agent`, `kimi-k2.5`, `qwen3-coder`, `qwen3-max-thinking`, `qwen3.6-plus`) là `shadow_auto_eval` không vào final_bundles candidate set nên test engine không thấy. Cờ `du_doan_test_runs.model_count = 25` thực ra là số production prediction count, không phải voter count → cần rename hoặc chia 2 cột.
+4. **AI test prompt = `DESIGNED_ONLY`**. `du_doan_test_ai_predictions` table không tồn tại; 0 row `is_test_prompt=1`; 100% `prompt_variant='production_prompt_clone_or_none'`.
+5. **30-day backtest hardcoded**. API trả về 8/30 composite, 9/30 AI chain, +5/-2 flips từ artifact `_mb_experimental_backtest_20260503_002427.md`. Persisted shadow rows chỉ 1 ngày.
+6. **"MB_TIER_AWARE_BUNDLE_SHADOW_V1" misnamed**. Code không thực sự tính source/prize tier — chỉ adjust score theo `ai_chain_votes`, `ai_model_votes`, `voter_count`, `prior_tails`. Không có G1/G2/.../G7/GDB tier weighting.
+7. **"MB_NO_TOKEN_HERD_REDUCTION_V1" không thực sự rerun** no-token model với herd-reduction logic — chỉ là score-adjustment formula trên cùng candidate set.
+8. **"MB_PRIOR_REGION_CONTEXT_SAFE_V1" KHÔNG có leakage**. Dùng MN(D) + MT(D) actual tails (live-available trước MB scrape). KHÔNG dùng MB(D) actual cho selection.
+9. **Schema column DDL = 100% complete**. Population gaps: `strength`/`strength_bin`/`verdict`/`is_test_prompt`/`is_realtime_available`/`latency_sec`/`cost_estimate`/`value_score` đa số NULL.
+10. **Daily runner thiếu** mode separation, source-hash guard, audit log append, scheduler markers.
+
+### Today's manual action plan (chờ owner OK)
+
+Sau MB scrape ~18:30 +07:
+```bash
+# Dry-run preview
+ssh root@14.225.224.89 "cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 web/backend/_du_doan_test_daily_runner.py --date 2026-05-03 --dry-run --json"
+
+# Live write to test tables (admin manual, no scheduler auto)
+ssh root@14.225.224.89 "cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 web/backend/_du_doan_test_daily_runner.py --date 2026-05-03 --json"
+```
+
+### Verification artifacts
+
+- `artifacts/live_sync/20260503_101603/manifest.json` (live forensic sync)
+- `artifacts/_du_doan_test_v48_pre_hash_20260503.txt` (12-table pre-hash)
+- `artifacts/_du_doan_test_v48_post_hash_20260503.txt` (12-table post-hash, 12/12 IDENTICAL)
+- `artifacts/_v48_audit_out.json` (56 KB, sec_03 + 06 + 09 + 10 + 12 + 13 + 14 + 15 + 20 raw)
+- `artifacts/_v48_readiness_out.json` (start-of-live readiness with scheduler logs)
+- `artifacts/_v48_extras_out.json` (lifetime scoreboard + lock flags + schema gap)
+- `artifacts/_v48_route_smoke.sh` + remote run output (HTTP 200/401, no test write paths)
+- `artifacts/phase_checkpoints/DU_DOAN_TEST_V48_START_LIVE_PARALLEL_COMPLETION_20260503.md` (33-section consolidated report)
+
+### Governance contract
+
+- Output impact: **false**.
+- Owner approval: still required for any flow into `/du-doan` proper, scheduler auto-wire, AI test prompt deploy, model roster prune, scoring change.
+- Rollback plan: drop 7 test/preview tables + remove route in main.py + delete frontend + restart service. Total time <5 minutes; official tables not affected.
+- 9 follow-ups created (FU-097..FU-105) — see `docs/FOLLOW_UP_TRACKER.md`.
+
+---
+
+## V20.3.37.48.1 — `/du-doan-test` row-aligned grid + independent test lo3 (admin/dev, 2026-05-03 02:01 VN)
+
+### Owner feedback on V48
+
+> "các card chưa cân chỉnh ngay ngắn sao 5 card giống nhau sao bên dài bên ngắn em.
+> Rồi 3 càng thì chưa đúng nha em, 3 càng phải theo BT mà em chưa chuẩn ah em.
+> Output UI /du-doan-test chạy độc lập riêng biệt hoàn toàn với UI /du-doan mà đúng không em"
+
+Two real defects in V48:
+1. **Cards mismatched in height between official / test column** — V48 used a 2-column
+   layout where each column was its own grid; CSS could not align card heights per
+   axis, so the test column appeared visually shorter/taller depending on inner
+   content (especially the lo3 "📌 Sao chép" notice).
+2. **Test lo3 was cloned from official** — violated the "test runs fully independent"
+   contract; e.g. test BT=91 still showed lo3=243 (which is `2|43`, official BT).
+
+### Fix
+
+1. `web/backend/main.py` — `api_du_doan_test_mb` now computes test lo3 by calling
+   the same `_generate_lo3_frequency(test_bt, "MB", date)` helper used by `/du-doan`.
+   This means test lo3 = (most frequent prefix digit that co-occurred with the test
+   BT in the past 90 days of MB lottery_results) + test BT. lo3 status is recomputed
+   against actual MB tails. Returned fields:
+   - `test_bundle.lo3` is the new independent value (e.g. test BT=91 → test lo3=991).
+   - `test_bundle.lo3_cloned_from_official=false`,
+     `test_bundle.lo3_method="frequency_co_occurrence_with_test_bt"`.
+   - `axis_diff.lo3_same` becomes meaningful (real algorithm comparison instead of
+     trivially-true clone).
+2. `web/frontend/du-doan-test.html` — full structural rewrite:
+   - Switched from column-based `compare-shell` to **row-based `compare-grid`** with
+     `grid-template-columns: 1fr 1fr; align-items: stretch;`. Each axis is one row
+     of 2 cells, so CSS grid auto-equalizes the heights of the official and test
+     cards on the same axis.
+   - Each cell uses `display:flex; flex-direction:column;` so the inner `v11-card`
+     fills the row height — no more bên-dài-bên-ngắn.
+   - Removed the "📌 Sao chép từ /du-doan" notice on the lo3 test card (no longer
+     applicable; test lo3 is now independent).
+   - New version marker visible in header: `v48.1`.
+   - Mobile responsive (≤760px) collapses the 2-col grid to a single column.
+
+### Verification (in-process FastAPI smoke on VPS, `_du_doan_test_v48_direct_smoke.py`)
+
+```
+PAGE http=200, all 11 markers PASS:
+  testVersion_v48_1=True, compare_grid=True, renderAxisCard=True,
+  Bạch Thủ Lô / Lô 3 Càng / Xiên 2 / Xiên 3 all True,
+  compare_cell_official=True, compare_cell_test=True,
+  NO_lo3_clone_text=True (notice removed),
+  NO_compare_shell_class=True (old column grid retired)
+
+API http=200 success=True, test_bundle for 2026-05-02:
+  experiment_name = MB_COMPOSITE_CHALLENGER_V2
+  bach_thu = 91 (WIN)            vs official 43 (LOSE)
+  lo2     = ['91','43'] (PARTIAL)
+  lo3     = 991 (WIN)            vs official 243 (LOSE)   ← independent
+  xien2   = ['91','43'] (PARTIAL)
+  xien3   = ['91','43','12'] (PARTIAL)
+  lo3_cloned_from_official = False
+  lo3_method = frequency_co_occurrence_with_test_bt
+
+axis_diff = bach_thu_same=False, lo2_same=True, lo3_same=False,
+            xien2_same=True, xien3_same=True
+
+LO3 INDEPENDENT: test BT=91 → test lo3=991 (tail matches BT) ✓
+
+OFFICIAL_API /api/final-bundle?region=MB http=200 unchanged:
+  BT=43 lo2=['43','91'] lo3=243 xien2=['43','91'] xien3=['43','91','12']
+```
+
+`/du-doan` HTML/JS/route untouched. `_generate_lo3_frequency` is read-only from
+`lottery_results` only — no DB writes triggered, source-table integrity preserved.
+
+---
+
+## V20.3.37.48 — `/du-doan-test` UI full prediction-axis comparison + color-coded clone (admin/dev experimental, 2026-05-03 01:48 VN)
+
+### Owner directive
+
+> "UI cần giống output /du-doan giống nha em … số dự doán của Ui /du-doan-test cũng đủ
+> BT, cũng đủ chính phụ, xiên 2, xiên 3, 3 càng đầy đủ và clone luôn output /du-doan
+> với màu biểu diễn khác để dễ dàng so sánh."
+
+`/du-doan-test` previously only showed BT + lo2 in custom experiment cards; the user could
+not visually compare against `/du-doan` because lo3, xien2, xien3 were missing entirely.
+
+### Hard locks (preserved, verified by post-deploy hash)
+
+This pass did NOT modify:
+- `/du-doan` output, route, JS, or HTML
+- `/api/final-bundle` response shape
+- `generate_final_bundle()` algorithm
+- `final_bundles`, `predictions`, `lottery_results`, `model_daily_eval` row content
+- scoring weights / bundle voting / lane weights / verdict weights
+- output policy / model roster / production prompt
+- scheduler / cron / autoscheduler
+- public navigation outside the existing admin-only Test MB link
+
+### Changes (admin/dev surface only)
+
+1. `web/backend/main.py` — `/api/du-doan-test/mb` enrichment
+   - New top-level keys: `test_bundle`, `test_bundle_meta`, `axis_diff`, `actual_known`.
+   - `test_bundle` is derived from the highest-priority challenger experiment found in
+     `mb_experimental_preview_shadow` for the active date (priority order:
+     `MB_COMPOSITE_CHALLENGER_V2` → `MB_AI_CHAIN_PRESERVATION_V1` →
+     `MB_TIER_AWARE_BUNDLE_SHADOW_V1` → `MB_PRIOR_REGION_CONTEXT_SAFE_V1` →
+     `MB_SPECIALIST_ROSTER_V1` → `MB_NO_TOKEN_HERD_REDUCTION_V1`).
+   - Per-axis derivation:
+     - `bach_thu` = `candidate_bt`
+     - `lo2`      = `candidate_lo2_json` (already present, top 2 deduped)
+     - `xien2`    = top 2 deduped tails from `candidate_ranked_json` (BT first)
+     - `xien3`    = top 3 deduped tails from `candidate_ranked_json` (BT first)
+     - `lo3`      = cloned from official baseline (`final_bundles.lo3`),
+                    `lo3_cloned_from_official=True` (test does not redefine 3-càng).
+   - Per-axis status (`*_status`) re-derived against `lottery_results` MB tails for the
+     date when actuals are known.
+   - `axis_diff` provides quick `bach_thu_same / lo2_same / lo3_same / xien2_same /
+     xien3_same` flags for the UI.
+   - Read-only end-to-end. No write paths added.
+
+2. `web/frontend/du-doan-test.html` — full UI redesign (visible v48 marker)
+   - Two-column `compare-shell` grid mirroring `/du-doan` 5-card stack on each side:
+     left = official (blue/purple `/du-doan` palette), right = test challenger
+     (gold/amber accent).
+   - Each axis card shows: status verify badge (Trúng/Trượt/Phụ/Chờ) + same/different
+     diff chip vs official.
+   - Lo3 test card surfaces the `📌 Sao chép từ /du-doan (test chưa override 3-càng)`
+     notice when cloned from official.
+   - Below comparison: 30-day backtest snapshot, all-challenger experiment grid (with
+     PRIMARY badge on the one promoted into the test column), and full test history.
+   - Region tabs explicit: MN/MT now pure links to `/du-doan`, only MB stays on test
+     surface — eliminates ambiguity.
+
+### Verification
+
+- Live forensic sync: `artifacts/live_sync/20260503_014002/manifest.json`
+  (production_db pulled `999ad7525c2f9e81d4821352a23648b2035bc8aead70ad0d0d7268ad5c5756d4`).
+- Source-table hash (pre vs post deploy):
+  `artifacts/_du_doan_test_v48_post_hash_20260503.txt`
+  - `predictions` 4059 rows: UNCHANGED `80241cbab7…`
+  - `final_bundles` 192 rows: UNCHANGED `88d5b298e6…`
+  - `lottery_results` 14596 rows: UNCHANGED `4acf72d3bd…`
+  - `model_daily_eval` 4014 rows: UNCHANGED `bc7a827b64…`
+  - `scheduler_logs`: +20 rows (expected scheduler heartbeat).
+- In-process FastAPI smoke (VPS venv) — `artifacts/_du_doan_test_v48_direct_smoke.py`:
+  - Page `/du-doan-test` http=200, all 10 markers PASS:
+    `testVersion`, `compare-shell`, `renderBundleStack`,
+    `Bạch Thủ Lô`, `Lô 3 Càng`, `Xiên 2`, `Xiên 3`,
+    `compare-col official`, `compare-col test`, `sao chép từ /du-doan`.
+  - API `/api/du-doan-test/mb` http=200 success=True. Live data 2026-05-02 fallback:
+    - test BT=91 WIN vs official BT=43 LOSE (composite_v2)
+    - test lo2=`['91','43']` PARTIAL, xien2=`['91','43']` PARTIAL
+    - test xien3=`['91','43','12']` PARTIAL
+    - test lo3=243 (cloned, lo3_cloned_from_official=true)
+    - axis_diff: bach_thu_same=False, lo2_same=True, lo3_same=True, xien2_same=True, xien3_same=True
+  - API `/api/final-bundle?region=MB` http=200 unchanged (regression-clean):
+    BT=43 lo2=`['43','91']` lo3=243 xien2=`['43','91']` xien3=`['43','91','12']`.
+
+### Files touched
+
+- `web/backend/main.py` (single function `api_du_doan_test_mb` extended)
+- `web/frontend/du-doan-test.html` (full rewrite, mirrors `/du-doan` card stack)
+- Artifacts: `_du_doan_test_v48_pre_hash_20260503.txt`,
+  `_du_doan_test_v48_post_hash_20260503.txt`,
+  `_du_doan_test_v48_direct_smoke.py`,
+  `_du_doan_test_v48_admin_smoke.sh`.
+
+### Governance / output impact
+
+- Output impact: false (admin-only experimental surface, never publicly linked except
+  the existing Test MB chip in `/du-doan` header for admin role).
+- Owner approval: still required before any of these challenger axes can flow into
+  `/du-doan` proper; this pass is presentation-only.
+- 30-day backtest gate unchanged: composite challenger 8/30 BT wins (vs baseline 5/30,
+  best AI_CHAIN 9/30) — still below the +4-net-BT-win lift threshold per 30 MB days.
+- All measurement-only flags on test/preview tables remain
+  (`diagnostic_only=1`, `shadow_only=1`, `output_eligible=0`, `owner_approved=0`,
+  `output_impact=false`).
+
+---
+
+## V20.3.37.41 — TOTAL-FORCE LIVE STABILITY + MEASUREMENT CONTROL + CORRECTED REPLAY CONTINUATION (read-only audit pass, 2026-05-02 12:34 VN)
+
+### Context
+
+Owner directive: hệ live ổn định, đo lường đầy đủ, không nóng vội output, không leakage,
+có cải tiến thật. Pass này thực hiện full controller rev: live watch + 9 measurement
+table semantic audit + Option A guard + corrected replay gate + PP1 hook check + FU-065
+verifier alias check + rollover UX + automation plan + roadmap reconciliation.
+
+### Scope (READ-ONLY, ZERO output mutation)
+
+This pass did NOT modify:
+- `/du-doan` output
+- `generate_final_bundle()`
+- `final_bundles` rows
+- `predictions` rows
+- scoring weights
+- bundle voting
+- lane weights
+- verdict weights
+- output policy
+- model roster
+- production prompt content
+- scheduler
+
+### Findings
+
+**Live state 2026-05-02 12:34 VN**:
+- VPS V20.3.36 active (PID 609864 post V40 restart), health 200 OK
+- MN: 25 predictions / final bundle BT=`73`, lo2=`[73,54]` ACTIVE
+  - Top 10 candidates: 73(6v), 54(5v PP-1 dampened), 70(3v), 30(2v), 51(3v), 17(3v), 57(2v), 59(1v), 85(1v), 80(1v)
+  - Source prizes: G6/DB/G8/G5/G7 RESOLVED
+  - PP-1 fired on 54 (4-voter herd, factor 0.85, 0.1097→0.0933)
+  - 15/15 BT gate pass
+  - Rule quality: 0 READY_STRONG / 5 READY_WITH_CAUTION (watch flag)
+- MT/MB: pre-cascade (7 auto_daily predictions each, no AI chain, no shadow yet)
+
+**9 measurement tables on VPS** all confirmed persistent with `shadow_only=1`,
+`output_eligible=0`, `diagnostic_only=1`, `owner_approved=0`:
+1. cross_region_spillover_shadow (9577 rows, 60d)
+2. model_cross_region_dup_shadow (640 rows, 29d)
+3. bundle_universe_coverage_shadow (93 rows, 30d)
+4. mb_structural_drilldown_shadow (61 rows, 60d)
+5. tier2_replay_shadow (180 rows, 14d) — DROP_AS_DESIGNED V1
+6. tier2_replay_v2_shadow (540 rows, 30d) — DROP_AS_DESIGNED V2
+7. **single_vote_rescue_replay_shadow** (540 rows, 30d) — **LEAKY_REFERENCE_ONLY** (do not use for unlock)
+8. strength_skip_calibration_replay_shadow (833 rows, 30d) — RESEARCH_DIAGNOSTIC
+9. **corrected_rescue_replay_shadow** (900 rows, 30d, latest 2026-05-02) — **ACTIVE_REPLAY_ACCUMULATION**, today has 30 PENDING placeholder rows
+
+**Option A stop guard**: `web/backend/main.py` grep clean. Only PP-5 family bonus
+pattern matched (`ENABLE_FAMILY_BONUS = False` since V20.3.29). No SP_BACKED_MAIN,
+no SINGLE_VOTE_RESCUE, no rescue feature flag, no B_SP_BACKED_MAIN. Production output
+code untouched.
+
+**Corrected replay gate evaluation** (`corrected_rescue_replay_shadow` 30d clean-day VALID_LIVE_DAY n=12):
+- MN_ONLY_SINGLE_VOTE_RESCUE / SP_BACKED_MAIN_D1_ONLY / SP_BACKED_MAIN_PRIOR (all MN): +1 net pp each (thin)
+- NO_TOKEN_ONLY MT: +2 net pp (thin)
+- MB_ONLY_SINGLE_VOTE / MT_ONLY / SP_BACKED_MAIN_D1_ONLY MT/MB / SP_BACKED_MAIN_PRIOR MT/MB / NO_TOKEN_ONLY MN/MB: -1 to -3 net pp (destructive)
+- TIER 3 gate criteria: VALID days 12<14 ❌; net BT_WIN +2 max (need ≥+5) ❌; region-destructive slice exists ❌; false_promotion 17% (need <3%) ❌
+- → **GATE NOT MET**. Status `ACCUMULATE_MORE_DATA`. Option A stays STOPPED.
+
+**PP1-WATCH-POST-MDE V36 hook**: code deployed in `scheduler.py:521+7066`. Last
+[P0-RULE-PHASE-POST-MDE] companion hook fired 2026-05-01 13:20 successfully (rule_phase=56
+rule_injection=9). [PP1-WATCH-POST-MDE] marker NEVER observed because V36 deploy happened
+2026-05-02 12:24 (AFTER yesterday's MDE). First natural fire window: today ~13:20 VN.
+WAIT_NATURAL_FIRE.
+
+**FU-065 verifier alias**: NOT REPRODUCING today. `rule_phase_evidence_v1` has 56 rows
+in BOTH `rule_phase_evidence_shadow` AND `shadow_results` for 2026-05-01. All 18 P0
+methods present in `shadow_results`. Verifier should report 18/18 correctly.
+
+**Day rollover UX**: backend behavior is by-design (no scheduler at 00:00; first AI MN
+~04:15 VN; MN result ~16:30; cascading thereafter). Frontend `/search`/`/app` falls back
+to latest available data when today empty. UX banner planned (frontend-only, zero output
+risk) but NOT implemented this session — awaits owner OK.
+
+**Automation 4-stage plan** documented in report §18: today Stage 0 manual after 18:45;
+Stage 1 idempotent runner (next session); Stage 2 auto-wire 4 low-risk tables (after 1
+week stable); Stage 3 auto-wire replay tables; Stage 4 verifier dashboard.
+
+**Source-table integrity**: 5/5 IDENTICAL pre/post action:
+- predictions 3955768d
+- final_bundles 5e9fa332
+- lottery_results cea74776
+- model_daily_eval 9da864dd
+- scheduler_logs 1f8189a9 (natural log growth allowed)
+
+### Roadmap CP reconciliation
+
+- CP-1.3 backfill: was LOCKED → now **VPS_BACKFILL_DONE** (4 of 5 tables to 30-60d, tier2 14d)
+- CP-1.4 auto-materialize: was LOCKED → **DEFERRED_TO_NATURAL_CLOSEOUT** (manual is current ground truth; auto-wire = Stage 2 in §18)
+- CP-X.1 PP1 hook: DEPLOYED_AWAITING_NATURAL_FIRE → **WAIT_NATURAL_FIRE_TODAY_~13_20_VN**
+- CP-X.4 single-vote rescue: REPLAY_CORRECTION_FAILED → unchanged + **CORRECTED_REPLAY_THIN_POSITIVE_GATE_NOT_MET** annotation
+- CP-X.6 (FU-065): LOW_PRIORITY_DOC_FIRST → LOW_PRIORITY_NOT_REPRODUCING_TODAY
+- CP-2.2: LOCKED_ON_OWNER_OK_REFINE → **REFINED_V2_RAN_NEGATIVE_DROP_AS_DESIGNED + CORRECTED_FRAMEWORK_DEPLOYED_GATE_NOT_MET**
+
+### Artifacts created
+
+- `artifacts/phase_checkpoints/LIVE_STABILITY_MEASUREMENT_AND_ROLLOVER_AUDIT_20260502.md` (23 sections)
+- `artifacts/phase_checkpoints/_live_stability_state_20260502.json` (session checkpoint)
+- `artifacts/live_watch/LIVE_WATCH_20260502.md` (live watch by region)
+- `artifacts/_live_stability_pre_hash_20260502.txt` (pre-action hash)
+- `artifacts/_measurement_table_semantic_audit_20260502.json` (9-table semantic audit)
+
+### Runtime impact
+
+ZERO change to /du-doan, scoring, bundle, lane, prompt, model roster, scheduler output,
+or any output-affecting logic. Only docs/measurement/diagnostic surfaces touched.
+
+### Honest verdict
+
+- 22/22 technical self-audit PASS
+- 15/15 governance no-overclaim self-audit PASS
+- TIER 3 unlock NOT proposed
+- Owner can ask for refresh after MDE 13:20 (PP1 hook verify) and after 18:45 (post-closeout materialize)
+
+---
+
+## V20.3.37.40 — UI ENRICHMENT: WR ranking shows model's today picks (READ-ONLY, owner readability) (2026-05-02 12:24 VN)
+
+### Context
+
+Owner request: in the "WR 14 ngày gần nhất" panel on `/app`, beside each
+top-model name + WR%, also show the number(s) that model is predicting today
+so the owner can compare model picks against bundle BT visually before/during
+each draw.
+
+### Scope (TIGHTLY BOUNDED)
+
+This change is READ-ONLY UI enrichment. It does NOT touch:
+- `/du-doan` output
+- `generate_final_bundle()`
+- `final_bundles` rows
+- `predictions` rows
+- scoring weights
+- bundle voting algorithm
+- lane weights
+- verdict weights
+- output policy
+- model roster
+- production prompt content
+- scheduler
+
+### Changes
+
+- `web/backend/main.py`:
+  - In `/api/prediction-quality` (handler `get_prediction_quality`), added a
+    READ-ONLY enrichment step right after `RUNTIME_MODELS` filter (Step 1c)
+    that attaches `today_main`, `today_secondary`, and `today_picks` to each
+    `rankings[region][i]` entry by SELECTing `predictions.main_numbers` for
+    the current effective `today` date. Failure-isolated; never breaks the API.
+- `web/frontend/app.js`:
+  - In `renderQualityPanel()` WR ranking loop, render a small monospace badge
+    `today_main · today_secondary` (e.g. `73·51`) next to each model name.
+    Falls back to `—` if the model has no prediction yet.
+- `web/frontend/index.html`:
+  - Bumped `app.js` cache key from `?v=20260426-secondary-pick-v2` to
+    `?v=20260502-wr-model-picks-v1`.
+
+### VPS deploy verification
+
+- `_smart_deploy.py --files` pushed 3 files (main.py, app.js, index.html)
+- `lottery.service` active V20.3.36 post-restart (PID 609864)
+- Health endpoint 200 OK
+- Live API smoke `https://xs.io.vn/api/prediction-quality` returns
+  `today_main` and `today_secondary` for all qualifying models in MN/MT/MB
+  (e.g. MN combo-no-token WR=85.7% today_main=73 today_secondary=51 — matches
+  the actual MN final bundle BT=73 lo2=[73,54])
+
+### Source-table integrity
+
+- 5/5 source tables IDENTICAL pre/post action:
+  - predictions 3955768d
+  - final_bundles ac279969
+  - lottery_results cea74776
+  - model_daily_eval 9da864dd
+  - scheduler_logs 11c86344
+
+### Runtime Impact
+
+ZERO change to `/du-doan`, scoring, bundle, lane, prompt, model roster,
+scheduler, or any output-affecting logic. Only `/api/prediction-quality`
+response payload now carries 3 additional read-only fields per ranking entry.
+
+### Rollback
+
+- Revert 3 files via git or re-deploy previous version
+- Or simply remove the Step 1c block in `main.py` and the `picksHtml` block
+  in `app.js`; cache key bump in `index.html` is harmless
+
+---
+
+## V20.3.37.39 — STABILITY + corrected non-leakage rescue replay framework (measurement-only, VPS deployed) (2026-05-02 10:40 VN)
+
+### Context
+
+Owner directive: stability-first, không đứng yên, không đụng output. Build
+corrected non-leakage rescue replay framework theo 4 design rules, deploy lên
+VPS để có evidence base bền vững thay vì leaky V37.
+
+### Changes
+
+- NEW measurement-only materializer:
+  - `web/backend/_materialize_corrected_rescue_replay_shadow.py`
+  - 10 variants:
+    - MN_ONLY / MT_ONLY / MB_ONLY / AI_ONLY / NO_TOKEN_ONLY single-vote rescue
+    - SP_BACKED_MAIN_D1_ONLY (D-1 = MN+MT+MB previous day)
+    - SP_BACKED_MAIN_PRIOR_REGION_ONLY (D-1 + same-day prior region)
+    - STRENGTH_REGION_GATE_CORRECTED (AI MN bin 3.5-5.0)
+    - BUNDLE_TIER_AWARE_SHADOW_ONLY (placeholder)
+    - CANDIDATE_EXPANSION_SHADOW_ONLY (placeholder)
+- NEW table `corrected_rescue_replay_shadow` (CREATE IF NOT EXISTS)
+- 30d backfill local + VPS: 900 rows / 30 dates
+- Embedded `leakage_audit` and `selection_basis` columns for forensic trail
+- Day_tag column adopted from FU-083
+
+### CONTRACT (DESIGN RULES) embedded in materializer
+
+1. NO target-day actual support (live cannot know)
+2. NO hit-known selection (deterministic quality-based PRIOR to outcome)
+3. NO baseline-miss-known selection (rescue must commit before knowing baseline result)
+4. USE ONLY live-available data:
+   - `D-1 = MN(D-1) + MT(D-1) + MB(D-1)` -- ALL THREE regions previous day
+   - Same-day prior region: MN target = nothing; MT target = MN(D); MB target = MN(D)+MT(D)
+
+### HONEST evidence (clean-day VALID 12 dates × 3 regions = 36 rows per variant)
+
+| Variant | Region | n | fw | fl | NET clean-day | Note |
+|---|---|---:|---:|---:|---:|---|
+| MN_ONLY_SINGLE_VOTE_RESCUE_CORRECTED | MN | 12 | 3 | 2 | +8.3 pp | Thin positive |
+| SP_BACKED_MAIN_D1_ONLY | MN | 12 | 3 | 2 | +8.3 pp | Same as above |
+| SP_BACKED_MAIN_PRIOR_REGION_ONLY | MN | 12 | 3 | 2 | +8.3 pp | Same as above |
+| NO_TOKEN_ONLY_SINGLE_VOTE_CORRECTED | MT | 12 | 4 | 2 | +16.7 pp | Surprise |
+| All other variants | All | 12 | -- | -- | NEGATIVE | DROP |
+| Aggregate ALL regions | -- | 36 | -- | -- | NEGATIVE | confirms region-conditional only |
+
+### Verdict
+
+- 4 variants show positive thin signal but TIER 3 gate NOT met:
+  - Sample only 12 VALID days (need >= 14 minimum)
+  - flips_to_win > flips_to_lose marginal
+  - Cross-region effect negative if applied uniformly
+- DO NOT implement Option A
+- DO NOT implement single-vote rescue in `generate_final_bundle()`
+- Continue measurement; revisit when VALID day count reaches 21+
+
+### VPS deploy
+
+- File pushed via `_smart_deploy.py`
+- Service active V20.3.36 post-restart
+- Backfill 30d on VPS persistent: 900 rows / 30 dates
+- Total measurement tables on VPS = 9 (V36 + V37 + V39)
+
+### Source-table integrity
+
+- 5/5 source tables IDENTICAL pre/post action:
+  - predictions 3955768d
+  - final_bundles 83f60752
+  - lottery_results cea74776
+  - model_daily_eval 9da864dd
+  - scheduler_logs 2e429883
+
+### Runtime Impact
+
+ZERO `/du-doan`, scoring, bundle voting, lane weights, output policy, output
+eligibility, model roster, prompt content, scheduler change.
+
+### Rollback
+
+- DROP TABLE `corrected_rescue_replay_shadow` (local + VPS)
+- rm `web/backend/_materialize_corrected_rescue_replay_shadow.py` (VPS)
+- No source-table mutation needed
+
+### Next checkpoints
+
+- Continue accumulating data; refine evidence pack each closeout
+- TIER 3 unlock OWNER_LOCK until corrected replay reaches:
+  - >= 14 VALID days
+  - flips_to_win > flips_to_lose with healthy margin
+  - false_promotion < 3%
+  - no region-destructive slice
+  - leakage audit clean
+- Layer 2 (replay framework) is now ENGAGED; Option A still STOPPED
+
+---
+
+## V20.3.37.38 — STOP Option A: corrected non-leaky replay invalidates single-vote rescue unlock (docs/report only) (2026-05-02 01:50 VN)
+
+### Context
+
+Owner approved Option A to implement `B_SP_BACKED_MAIN` single-vote rescue behind
+a feature flag. Before editing `generate_final_bundle()`, the V37 replay code was
+re-read and found to contain future-data leakage.
+
+### Critical correction
+
+The V37 positive finding (`+13 flips_to_win / 0 flips_to_lose`) is invalid for
+live use because `_materialize_single_vote_rescue_replay_shadow.py`:
+
+- used target-region same-day `lottery_results` as source-prize support
+- only selected a rescue candidate when replay already knew that candidate hit
+
+Live prediction cannot know either before draw time.
+
+### Corrected replay
+
+Added read-only corrected replay artifact:
+
+- `artifacts/_corrected_single_vote_rescue_replay.py`
+- `artifacts/_corrected_single_vote_rescue_replay.txt`
+- closeout: `artifacts/phase_checkpoints/OPTION_A_STOP_LEAKAGE_CORRECTION_20260502.md`
+
+Corrected replay rules:
+
+- source-prize support uses only live-available data:
+  - D-1 all regions
+  - same-day prior regions only (MN for MT; MN+MT for MB)
+- deterministic selection before outcome:
+  - highest-strength eligible single-vote main candidate
+
+### Corrected result
+
+Clean-day primary:
+
+- MN: +8.3 pp
+- MT: -16.7 pp
+- MB: -16.7 pp
+- ALL: **-8.3 pp**
+
+All-day diagnostic:
+
+- MN: +3.3 pp
+- MT: -30.0 pp
+- MB: 0.0 pp
+- ALL: **-8.9 pp**
+
+### Verdict
+
+STOP. Do **not** implement Option A in production. Do not touch
+`generate_final_bundle()`. Do not deploy single-vote rescue. FU-085 must be
+downgraded from positive owner-unlock candidate to corrected-replay failed.
+
+### Runtime Impact
+
+ZERO. No `/du-doan`, final_bundles, predictions, scoring, bundle voting, lane
+weights, output policy, prompt, model roster, or scheduler change.
+
+### Next action
+
+Design a corrected non-leaky replay materializer before any future rescue
+discussion. Any future rescue candidate must prove:
+
+- net +5 pp clean-day primary
+- flips_to_win > flips_to_lose
+- no region destructive slice
+- no target-day actual leakage
+
+---
+
+## V20.3.37.37 — TOTAL-FORCE URGENT EXECUTION: 3 NEW replay materializers + evidence pack + Single-vote rescue POSITIVE (2026-05-02 01:30 VN)
+
+### Context
+
+Owner explicit directive: "không thận trọng đến mức đứng yên" -- act now on
+zero-output-risk + enough-data items. Build refined CP-2.2 V2 replay, single-vote
+rescue replay, strength calibration replay; deploy on VPS; produce evidence pack.
+
+### Changes
+
+- **3 NEW replay materializers** (measurement-only, all VPS deployed):
+  - `web/backend/_materialize_tier2_replay_v2_shadow.py` -- 6 V2 refined policies
+    (4 V2 with smaller multipliers + S_SINGLE_VOTE_RESCUE_REGIONAL_V1 + T_STRENGTH_REGION_GATE_V1)
+    + day_tag column for clean-day primary metric
+  - `web/backend/_materialize_single_vote_rescue_replay_shadow.py` -- 6 rescue variants
+    (A_ALL_SINGLE_MAIN, B_SP_BACKED_MAIN, C_SP_BACKED_MAIN_SEC, D_AI_SP_BACKED,
+    E_NT_SP_BACKED, F_REGIONAL_MN_MB_ONLY)
+  - `web/backend/_materialize_strength_skip_calibration_replay_shadow.py` -- bin x family x region
+    aggregation with SP-backed split
+- **3 NEW shadow tables on VPS**:
+  - `tier2_replay_v2_shadow`: 540 rows / 30 dates
+  - `single_vote_rescue_replay_shadow`: 540 rows / 30 dates
+  - `strength_skip_calibration_replay_shadow`: 833 rows / 30 dates
+- **Targeted prompt trace extraction** for owner-strong tails 91/23/30/75/17/46/57/37
+  on 2026-05-01 (`artifacts/_v37_prompt_trace_out.txt`)
+- **State checkpoint file** for anti-fragmentation:
+  `artifacts/phase_checkpoints/_controller_state_20260502.json`
+
+### Findings (HONEST)
+
+#### 🔴 CP-2.2 V2 6 policies STILL UNDERPERFORM
+- Clean-day VALID (12 days): all 6 policies show -19.4 pp NET vs baseline
+- Per region clean-day: MB -25.0 pp, MN -16.7 pp, MT -16.7 pp
+- All-day diagnostic: -8.9 pp
+- Verdict: **DROP V2 as designed**. The fundamental issue (universe too narrow
+  + tier-blind aggregation) cannot be fixed by score multiplier tweaks.
+- Refining V2 multipliers helped reduce loss vs V1 but still net negative.
+  Need TIER 3 architectural change (tier-aware bundle) not score tweaks.
+
+#### 🟢 Single-vote rescue replay POSITIVE — REAL IMPROVEMENT EVIDENCE
+- 30d clean-day, 6 variants tested:
+  - A_ALL_SINGLE_MAIN: **+18 flips_to_win, 0 flips_to_lose**
+  - B_SP_BACKED_MAIN: **+13 flips_to_win, 0 flips_to_lose**
+  - C_SP_BACKED_MAIN_SEC: **+16 fw, 0 fl**
+  - D_AI_SP_BACKED: **+12 fw, 0 fl**
+  - E_NT_SP_BACKED: **+14 fw, 0 fl**
+  - F_REGIONAL_MN_MB_ONLY: **+8 fw, 0 fl**
+- ALL 6 variants show ZERO flips_to_lose because rescue only fires when
+  baseline missed -- mathematically a free option
+- Per-region: MB 4-6 fw, MN 3-5 fw, MT 4-7 fw across variants
+- This is the FIRST positive replay finding across V32-V37 -- TIER 3 owner-unlock candidate
+
+#### 🟡 Strength calibration evidence
+- AI MN bin 3-4: 9 SKIP cases, 4 hit (44.4%); SP-backed: 2/2 SKIP hit (100%)
+- AI MN bin 4-5: 3 SKIP cases, 2 hit (66.7%)
+- Confirms V35 hypothesis: 5.0 SKIP gate is statistically counterproductive
+  for AI x MN context, especially when source-prize-backed
+- TIER 3 owner-unlock candidate (FU-084)
+
+#### 🟢 Prompt trace confirms AI saw owner-strong tails
+- 91 in reasoning of claude-sonnet-4-6, claude-opus-4, deepseek-reasoner,
+  gpt-5.5, deepseek-v4-pro, deepseek-v4-flash for MT 2026-05-01 (6+ models)
+- 75 in deepseek-reasoner str 7.5, gemini-2.5-flash str 7.9
+- AI signal is present in reasoning; bundle is the bottleneck
+
+### Source-table integrity
+
+- 4/5 source tables IDENTICAL: predictions f7c04600, final_bundles 5702955f,
+  lottery_results cea74776, model_daily_eval 9da864dd
+- scheduler_logs +33 rows (was 111213 baseline V36, now 111246) from session
+  command logging -- expected and approved
+- Zero source-data mutation across V37 session
+
+### VPS deploy verification
+
+- Service active V20.3.36 post-restart
+- Health 200 OK
+- 3 new files uploaded successfully (44513 bytes total)
+- All 3 backfill 30d on VPS successful
+
+### Total measurement tables on VPS production = 8
+
+| # | Table | Rows | Dates |
+|---|---|---:|---:|
+| 1 | cross_region_spillover_shadow | 9577 | 60 |
+| 2 | model_cross_region_dup_shadow | 640 | 29 |
+| 3 | bundle_universe_coverage_shadow | 93 | 30 |
+| 4 | mb_structural_drilldown_shadow | 61 | 60 |
+| 5 | tier2_replay_shadow (V1 baseline) | 180 | 14 |
+| 6 | tier2_replay_v2_shadow (NEW V37) | 540 | 30 |
+| 7 | single_vote_rescue_replay_shadow (NEW V37) | 540 | 30 |
+| 8 | strength_skip_calibration_replay_shadow (NEW V37) | 833 | 30 |
+
+### Runtime Impact
+
+ZERO `/du-doan`, scoring, bundle voting, lane weights, output policy, output
+eligibility, model roster, prompt content, scheduler runtime change beyond
+V36 pp1 hook.
+
+### Rollback
+
+- DROP TABLE 3 new tables; rm 3 new files; service restart not needed
+  (no scheduler change)
+- V36 pp1 hook revert separate (not affected here)
+
+### Owner-unlock package candidates (TIER 3)
+
+1. **PRIMARY**: Single-vote rescue regional + SP-backed (FU-085)
+   - Replay shows +13 fw, 0 fl on B_SP_BACKED_MAIN variant
+   - Risk: LOW (free option mathematically)
+   - Expected lift: +5-10 pp BT_WIN if implemented as bundle-layer rescue
+2. **SECONDARY**: Strength gate region-conditional for AI MN bin 3-4 (FU-084)
+   - Small sample (n=2 SP-backed cases) but 100% SKIP-hit suggests strong signal
+   - Risk: MEDIUM (touches verdict gate code)
+3. **NOT NOW**: V2 6 policies (drop as designed; even with smaller multipliers
+   they don't beat baseline)
+
+### Next checkpoints
+
+- Owner reviews evidence pack
+- If owner OKs TIER 3 unlock for single-vote rescue: implement as feature flag
+  in `generate_final_bundle()` with rollback path
+- Continue measurement accumulation; refined replay every 14d natural closeouts
+
+---
+
+## V20.3.37.36 — Phase A measurement-only deploy: CP-1.2 + CP-X.1 + CP-X.5 + CP-X.2 (2026-05-02 01:00 VN)
+
+### Context
+
+Owner approved Phase A (4 zero-risk measurement-only items): CP-1.2 (VPS push of
+4 V33 measurement materializers + 1 NEW V35 MB drilldown materializer), CP-X.1
+(pp1 post-MDE rerun hook for FU-082 timing race), CP-X.5 (MB structural
+drilldown shadow table for FU-086), CP-X.2 (day_tag criteria docs for FU-083).
+
+### Changes
+
+- **CP-1.2 VPS DEPLOY** (5 measurement-only files pushed to production):
+  - `web/backend/_materialize_cross_region_spillover_shadow.py` (18054 bytes)
+  - `web/backend/_materialize_model_cross_region_dup_shadow.py` (9558 bytes)
+  - `web/backend/_materialize_bundle_universe_coverage_shadow.py` (12090 bytes)
+  - `web/backend/_materialize_tier2_replay_shadow.py` (17044 bytes)
+  - `web/backend/_materialize_mb_structural_drilldown_shadow.py` (11877 bytes) -- NEW V35
+- **CP-X.1 SCHEDULER HOOK** (scheduler.py edit + redeploy):
+  - Added `_run_pp1_live_watch_post_mde(end_date, trigger)` function
+  - Wired call in MDE post-job handler (after existing `_run_p0_rule_phase_post_mde`)
+  - Calls existing idempotent `_pp1lw_materialize_for(date, region)` for MN/MT/MB
+  - Logs `[PP1-WATCH-POST-MDE]` marker similar to existing post-MDE pattern
+- **CP-X.5 MB DRILLDOWN MATERIALIZER** (NEW V35 file deployed):
+  - Schema: `mb_structural_drilldown_shadow` (CREATE IF NOT EXISTS)
+  - Per-day MB diagnostics: weekday + friday_flag + drop_stage + top1_concentration
+    + universe_coverage + good_dropped_no_pick + single_vote_main_correct
+    + ai/no_token/shadow_top_vote_share
+  - Backfilled 60d on VPS: 61 rows / 60 dates
+- **CP-X.2 DAY GOVERNANCE DOCS** (new file):
+  - `docs/DAY_GOVERNANCE_CRITERIA.md` -- canonical day-tag definitions
+  - VALID_LIVE_DAY (>=22 min predictions), DEGRADED (15-21), INCOMPLETE (10-14),
+    EXCLUDE_PRIMARY (<10) -- mandatory split in all replay reports
+
+### VPS deploy verification
+
+- Service active V20.3.36 after restart
+- Health endpoint 200 OK post-deploy
+- 5/5 source tables hash IDENTICAL pre/post action (predictions, final_bundles,
+  lottery_results, model_daily_eval) -- scheduler_logs grew +20 rows from
+  smoke command logging (expected)
+- 5 NEW measurement tables on VPS production DB:
+  - `cross_region_spillover_shadow`: 9577 rows / 60 dates
+  - `model_cross_region_dup_shadow`: 640 rows / 29 dates
+  - `bundle_universe_coverage_shadow`: 93 rows / 30 dates
+  - `mb_structural_drilldown_shadow`: 61 rows / 60 dates
+  - `tier2_replay_shadow`: 180 rows / 14 dates
+- All rows: `output_eligible=0, owner_approved=0, diagnostic_only=1, shadow_only=1`
+
+### Smoke tests (all on VPS)
+
+- spillover materializer 2026-05-01: 149 rows written (skipped=False)
+- dup materializer: 50 rows / 25 models with dup
+- universe materializer: 3 rows (1 per region)
+- MB drilldown: 1 row, weekday_sun_first=5 (Friday confirmed!), friday_flag=1, drop_stage=CANDIDATE_SPLIT
+- tier2_replay: 12 rows (4 policies x 3 regions)
+
+### Phase B readiness (post-deploy analysis)
+
+- 6 ready criteria PASS, 0 partial, 2 NOT_READY:
+  - V2 policy code does NOT exist (Phase B step 1 = build new materializer)
+  - 21d window has only 12 VALID days (need 14+ for full clean-day replay)
+- Verdict: **HOLD Phase B**. V2 code can be built next session; meanwhile
+  surfaces auto-populate via post-MDE hook fire at next MDE 13:20-20:20.
+
+### Verify
+
+- Live sync `artifacts/live_sync/20260502_010116/manifest.json`
+- Deploy log `artifacts/_v36_deploy_log.txt`
+- VPS table summary `artifacts/_vps_v36_table_summary.txt`
+- Hash compare local-baseline vs VPS-post-backfill: 4/5 IDENTICAL, scheduler_logs +20
+- Phase B readiness analysis `artifacts/_phase_b_readiness.txt`
+
+### Runtime Impact
+
+ZERO `/du-doan`, scoring, bundle voting, lane weights, output policy, output
+eligibility, model roster, prompt content change. Scheduler hook is additive
+(piggy-backs on existing post-MDE call); no existing functionality modified.
+
+### Rollback
+
+- Files: scp `git diff HEAD~1 -- web/backend/scheduler.py` to revert + restart
+- Tables: `DROP TABLE` for 5 new tables (data is diagnostic only)
+- pp1 hook: revert scheduler.py and restart service
+
+### Next checkpoints
+
+- After next MDE (13:20-20:20 today/tomorrow): pp1_live_watch_daily should
+  see post-MDE rows; verify with `[PP1-WATCH-POST-MDE]` log marker
+- After next natural closeout: 5 new tables auto-populate (no scheduler hook
+  added for them yet -- they require manual rerun OR the existing P0 hook
+  could be extended later if owner OK; current design = standalone scripts)
+- Phase B step 1 = build `_materialize_tier2_replay_shadow_v2.py` with V2
+  policies + S_SINGLE_VOTE_RESCUE_REGIONAL_V1 + T_STRENGTH_REGION_GATE_V1
+  + day_tag column. Estimate ~3 hours work. Awaiting owner OK.
+
+---
+
+## V20.3.37.35 — TOTAL-FORCE MONOLITHIC CONTROL PASS: 7 deep-dive audits + FU-082..086 + active roadmap CP-X expansion (read-only) (2026-05-02 00:30 VN)
+
+### Context
+
+Owner issued TOTAL-FORCE MONOLITHIC CONTROL prompt requiring full controller
+sweep covering ALL outstanding items, not only CP-1.2/CP-2.2. Prompt
+specifically called for self-discovered scope expansion across pp1 timing,
+FU-065 alias clarification, MB structural drilldown, strength calibration
+TIER 3 spec, single-vote rescue TIER 3 spec, degraded-day hygiene, bundle
+tier-blindness verification, active-roadmap coverage gap.
+
+### Changes
+
+- Created comprehensive read-only audit:
+  - `artifacts/_audit_v35_controller.py` -- 7 deep-dive sections
+  - `artifacts/_v35_controller_out.txt` -- raw output
+- Created FU tracker entries:
+  - `FU-082` pp1_live_watch_daily timing race + post-result-scrape rerun hook
+  - `FU-083` Degraded-day hygiene 60d tagging + replay filter
+  - `FU-084` Strength gate calibration TIER 3 region-conditional review
+  - `FU-085` Single-vote rescue regional gate TIER 3
+  - `FU-086` MB structural weakness multi-axis drilldown
+- Expanded `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md` to include CP-X.1..X.7
+  tracks beyond CP-1.x/CP-2.x
+- Created 28-section closeout report:
+  - `artifacts/phase_checkpoints/TOTAL_FORCE_MONOLITHIC_CONTROL_20260502.md`
+- Live sync `artifacts/live_sync/20260502_002558/manifest.json`
+
+### Findings (incremental over V20.3.37.34)
+
+1. **FU-065 alias VERIFIER-LEVEL CONFIRMED**: verifier query
+   `SELECT COUNT(*) FROM shadow_results WHERE method_key=?` returns 0 for
+   `rule_phase_evidence_v1` because that method writes to its dedicated table
+   `rule_phase_evidence_shadow` (56 rows on 2026-05-01). The verifier
+   reporting is FALSE NEGATIVE for this method only. Other 17 P0 methods
+   write to shadow_results normally. Verifier-level fix: add per-method
+   table mapping for methods that own dedicated tables.
+2. **MB Friday-specific drop_stage**: CANDIDATE_SPLIT 2 + SECONDARY_ONLY_SIGNAL 1
+   + BUNDLE_SKEW 1 over 5 Fridays in 30d. CANDIDATE_SPLIT dominates Friday;
+   BUNDLE_SKEW dominates other weekdays. Top MB Friday picks (74x13, 67x9,
+   94x5) NOT in MB Friday actual (e.g. 2026-04-03 actual was 04, 09, 15, 24,
+   29, 36, 42, 44, 52, 54...). Models simply do NOT find MB Friday cluster.
+3. **Strength gate region-conditional finding REFINED**:
+   - AI x MN x bin 3-4: **57.1% main_hit (HIGHEST in entire grid)**
+   - NO_TOKEN x MN x bin 4-5: 50.7%
+   - NO_TOKEN x MT x bin 4-5: 54.9%
+   - AI x MB x any bin: 16-25% (MB cannot be saved by strength)
+   The current uniform 5.0 SKIP gate cuts off productive signal in AI x MN
+   and NO_TOKEN x MN/MT contexts. **Region-conditional gate is the right TIER 3
+   candidate**, NOT a global threshold change.
+4. **Single-vote rescue lift quantified per region**:
+   - MN single-vote main: 54.8% hit vs baseline 44% -> **+10.8 pp**
+   - MT single-vote main: 31.2% hit vs baseline 35% -> -3.8 pp (REGRESSION)
+   - MB single-vote main: 33.6% hit vs baseline 24% -> +9.6 pp
+   Region-conditional rescue (MN+MB only, NOT MT) is the right TIER 3 candidate.
+5. **Degraded-day hygiene 60d tag distribution**:
+   - VALID_LIVE_DAY (>=22 min predictions): 12 days (20%)
+   - DEGRADED_LIVE_DAY (15-21): 18 days (30%)
+   - INCOMPLETE (10-14): 21 days (35%)
+   - EXCLUDE_PRIMARY (<10): 9 days (15%)
+   V33 CP-2.1 14d replay window included DEGRADED days, distorting metrics.
+   Refined CP-2.2 must split clean-day primary vs all-day diagnostic.
+6. **Bundle tier-blindness CODE-CONFIRMED**: `final_bundles.source_predictions_json`
+   contains only `{number, score, voters}` per ranked candidate. NO tier
+   field, NO source-prize-backed flag, NO family weight. Bundle is purely
+   vote-count + score based. Tier exists in `rule_engine.py` BOOST_TABLE
+   but flows ONLY to no-token candidate scoring, NOT to bundle aggregation.
+7. **pp1_live_watch timing race trail**: scheduler runs PP1-WATCH at closeout
+   time when `actual_known=False` (pre-result-scrape) -> 0 events inserted.
+   When `actual_known=True` -> 1-3 events inserted. 2026-05-01 all 3 regions
+   had `actual_known=False` -> 0 events. Pattern: pp1 needs post-result-scrape
+   rerun hook (similar to FU-065 post-MDE pattern).
+
+### Reconciliations
+
+1. CP-1.1 LOCAL_COMPLETE_BUT_NOT_PERSISTENT (status confirmed; VPS sync wipes
+   local-only tables per live-data-integrity rule)
+2. CP-2.1 DROP_AS_DESIGNED (4 policies all underperformed, evidence locked)
+3. P0 verifier 18/18 maturity post-MDE for 2026-05-01 (state confirmed)
+4. Source-table hashes 5/5 IDENTICAL pre/post action (zero source mutation)
+5. REMOVED model residue is legitimate historical (RECONCILED false alarm
+   from V34 carried over)
+6. MB G5 present 30/30 rows (RECONCILED healthy from V34)
+7. Cohere shadow-only output_eligible=0 (RECONCILED healthy from V34)
+
+### Verify
+
+- VPS health 200 OK, V20.3.36, output 15, runtime 25
+- DB integrity_check `ok`
+- Sync `artifacts/live_sync/20260502_002558/manifest.json`
+- compile-OK on all audit scripts
+- Source hash 5/5 UNCHANGED before/after action
+
+### Runtime Impact
+
+ZERO. No `/du-doan`, scoring, bundle voting, lane weights, output policy,
+output eligibility, model roster, prompt content, or scheduler change. All
+audit work is read-only; only docs/tracker/changelog/roadmap files updated.
+
+### Rollback
+
+- Delete audit script (read-only, no DB mutation)
+- Revert docs commits if needed
+- No source-table mutation -> no rollback needed for source tables
+
+### Active roadmap update
+
+CP-X.1..CP-X.7 added to `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md` covering
+pp1 timing, degraded-day hygiene, strength TIER 3, single-vote rescue TIER 3,
+MB structural drilldown, FU-065 verifier-level fix, bundle tier-aware TIER 3.
+
+### Next checkpoints
+
+- 4 owner-OK-NOW measurement-only items (CP-1.2 + CP-X.1 + CP-X.5 + CP-X.2)
+- 1 owner-OK CP-2.2 refined replay design (with V2 policies + S/T new policies)
+- 4 TIER 3 owner-locks (HOLD until evidence pack)
+
+---
+
+## V20.3.37.34 — TOTAL-FORCE ABSOLUTE CONTROL PASS: 9 self-discovered audits + 4 reconciliations (read-only) (2026-05-01 23:55 VN)
+
+### Context
+
+Owner issued TOTAL-FORCE ABSOLUTE CONTROL PASS prompt requiring agent to NOT
+only address owner-mentioned issues but to self-discover additional omissions
+across 15 categories: metric semantics drift, strength/SKIP inversion,
+degraded-day hygiene, runtime error debt, shadow failure vs usefulness,
+owner decisions reconciliation, Cohere overclaim, model roster residue,
+no-token lifecycle, source-data alignment, prompt pressure, bundle layer
+blind spots, local vs VPS drift, cost/key/provider, MB structural weakness.
+
+### Changes
+
+- Added 2 NEW read-only audit scripts:
+  - `artifacts/_audit_self_discovered_v34.py` — 9-category self-discovery audit
+  - `artifacts/_audit_removed_residue.py` — REMOVED model residue forensic
+- Added 25-section closeout report:
+  - `artifacts/phase_checkpoints/TOTAL_FORCE_ABSOLUTE_CONTROL_PASS_20260501.md`
+- Live sync: `artifacts/live_sync/20260501_235521/manifest.json`
+
+### Self-discovered findings (NEW, not previously raised by owner)
+
+1. **Strength/SKIP inversion CONFIRMED structurally**: Strength bin analysis 30d
+   shows non-monotonic main_hit pattern: <4=34.2%, **4-5=38.5% (highest)**,
+   5-6=33.2%, 6-7=32.0%, 7-8=38.1%, >=8=40.6%. The current strength gate at
+   5.0 cuts off the 4-5 bin which has 38.5% main_hit -- nearly as good as
+   the >=8 bin. **Owner concern about claude-opus-4 91 strength=4.2 SKIP is
+   structurally validated** as a real issue, not an anomaly.
+2. **Metric semantics drift identified**: BT_PARTIAL = 0 across all regions
+   (BT is binary). lo2 W+P inflation potential: MN lo2_WIN 27% but lo2_PARTIAL
+   53% -> if W+P used = 80% (massively inflated). Honest WR computation should
+   use BT_WIN only as top1 truth.
+3. **Degraded-day hygiene gap**: Many days in 30d window have <25 predictions
+   (1-22). Days 2026-04-02..2026-04-18 are degraded. TIER 2 replay 14d window
+   2026-04-18..2026-05-01 included partly degraded days. Refined replay must
+   tag and exclude degraded days.
+4. **Runtime error debt 48h**: 32 markers, but ALL are INFO level
+   (`[FALLBACK_CLEAR]`, `[SHADOW_SKIP_FALLBACK]`, `partial-fail-safe`) -- no
+   actual Tracebacks or fatal errors. Runtime is clean.
+5. **Cohere effectiveness data**: 45 rows over 30d in
+   `cohere_effectiveness_daily`. effect_label column not available in this
+   schema version -- need followup but no overclaim risk because Cohere is
+   already shadow-only output_eligible=0.
+6. **Model roster residue RECONCILED (false alarm)**: minimax-m2.7 last
+   prediction = 2026-04-28 (prune day, DEC-015), kimi-k2.6 last = 2026-04-26
+   (before DEC-014 prune). After prune dates: ZERO new rows. Residue rows
+   are historical legitimate measurement -- prune is working correctly.
+7. **MB Friday structurally bad**: weekday breakdown 30d shows MB BT_WIN by
+   weekday: Sun 0/4, Mon 1/4, Tue 1/4, Wed 0/4, Thu 2/5, **Fri 0/5 (0%)**,
+   Sat 2/4. **MB Friday is 0% over 30d** -- structural per-bucket issue.
+8. **MB drop_stage 30d**: BUNDLE_SKEW 16/30 (53%), NO_GAP 5, CANDIDATE_SPLIT 2,
+   UPSTREAM_MISS 1, SECONDARY_ONLY_SIGNAL 1. Confirms bundle aggregation as
+   primary MB failure mode.
+9. **Source-data alignment HEALTHY**: All 9 prize keys present for MN/MT
+   (G1..G8 + DB). MB has 8 keys (no G8 by station design). MB G5 present
+   30/30 rows in 30d window -- the historical owner concern about G5 missing
+   is FIXED (no current drift).
+
+### Reconciliations
+
+1. CP-1.1 surfaces from V20.3.37.33: VPS sync wiped local cross_region_spillover_shadow,
+   model_cross_region_dup_shadow, bundle_universe_coverage_shadow, tier2_replay_shadow.
+   Per live-data-integrity rule, this is expected. CP-1.2 VPS push remains
+   AWAITING owner OK to make persistence.
+2. P0 verifier: 18/18 methods registered, 18/18 methods with result rows,
+   18/18 with scoreboard rows, 0 output_eligible (post-MDE state confirmed).
+3. FU-065 fully closed for 2026-05-01 cycle (post-MDE hook fires 13:20).
+4. Source-table hashes 5/5 IDENTICAL before/after action -- zero source mutation.
+
+### Verify
+
+- VPS health 200 OK, V20.3.36, output 15, runtime 25
+- DB integrity_check `ok`
+- Sync `artifacts/live_sync/20260501_235521/manifest.json`
+- compile-OK on 2 new audit scripts
+- Source hash 5/5 UNCHANGED
+
+### Runtime Impact
+
+ZERO. No `/du-doan`, scoring, bundle voting, lane weights, output policy,
+output eligibility, model roster, prompt content, or scheduler change. All
+audit work is read-only.
+
+### Rollback
+
+- Delete 2 new audit scripts (read-only, no DB mutation)
+- No source-table mutation -> no rollback needed for source tables
+
+### Next checkpoints
+
+- CP-1.1 4 surfaces still LOCAL_ONLY status (wiped by VPS sync); CP-1.2 owner OK still required
+- CP-2.1 4 policies REPLAY_NEGATIVE; CP-2.2 refinement design awaiting owner OK
+- TIER 3 unlocks remain HOLD until refined replay evidence pack
+- Self-discovered: degraded-day hygiene must be applied to next replay window
+
+---
+
+## V20.3.37.33 — TOTAL-FORCE EXTREME continuation: CP-1.1 complete + CP-2.1 launch + honest replay verdict (measurement-only, local) (2026-05-01 22:55 VN)
+
+### Context
+
+Owner issued TOTAL-FORCE EXTREME continuation prompt to fix prior coverage drop:
+CP-1.1 / CP-1.2 / CP-2.1 had been missed in earlier prompts. Required to build
+master matrix, complete remaining CP-1.1 measurement surfaces, prepare CP-1.2
+VPS deploy plan, and launch CP-2.1 14d replay shadow-only.
+
+### Changes
+
+- Re-synced VPS at 2026-05-01T22:48 (manifest `artifacts/live_sync/20260501_224840/manifest.json`); DB integrity OK.
+- Discovered VPS sync OVERWROTE local `cross_region_spillover_shadow` table from V20.3.37.32 (live-data-integrity rule: VPS truth wins). Re-backfilled 60d (9428 rows) into local DB.
+- Deployed 2 NEW measurement-only standalone materializers (LOCAL DB):
+  - `web/backend/_materialize_model_cross_region_dup_shadow.py` -> NEW table `model_cross_region_dup_shadow` (590 rows over 29d)
+  - `web/backend/_materialize_bundle_universe_coverage_shadow.py` -> NEW table `bundle_universe_coverage_shadow` (90 rows over 30d)
+- Deployed CP-2.1 TIER 2 replay materializer (LOCAL DB):
+  - `web/backend/_materialize_tier2_replay_shadow.py` -> NEW table `tier2_replay_shadow` (168 rows = 4 policies x 14 days x 3 regions)
+- All new tables registered with `output_eligible=0, diagnostic_only=1, shadow_only=1, owner_approved=0` defaults.
+- Source-table hash compare BEFORE vs AFTER all writes: 5/5 IDENTICAL (predictions, final_bundles, lottery_results, model_daily_eval, scheduler_logs).
+- P0 verifier 2026-05-01 (post-MDE): `methods_with_result_rows=18/18`, `methods_with_scoreboard_rows=18/18`, `output_eligible_count=0`, `owner_approved_count=0`. FU-065 fully closed for 2026-05-01.
+- Reconciled prior alias confusion: V20.3.37.32 verifier reported `rule_phase_evidence_v1=0 result_rows` because that method writes to its OWN table `rule_phase_evidence_shadow` (which has 56 rows for 2026-05-01), not to `shadow_results`. The verifier's `result_rows` counter checks `shadow_results` table only.
+- Created consolidated 18-section closeout report:
+  - `artifacts/phase_checkpoints/TOTAL_FORCE_CP11_CP12_CP21_CONTINUATION_CLOSEOUT_20260501.md`
+
+### Findings
+
+- **CP-1.1 complete locally** (all 5 surfaces now exist in local DB):
+  - `cross_region_spillover_shadow` (V20.3.37.32, re-backfilled here, 9428 rows)
+  - `model_cross_region_dup_shadow` (NEW, 590 rows)
+  - `bundle_universe_coverage_shadow` (NEW, 90 rows)
+  - `pp1_live_watch_daily` exists (15 rows total) but timing semantic issue separate
+  - `rule_phase_evidence_shadow` confirmed populated for 2026-05-01 (56 rows; FU-065 post-MDE hook works)
+- **CP-1.2 status**: spillover materializer LOCAL ONLY; VPS deploy plan documented in report section 7. AWAITING owner OK.
+- **CP-2.1 launched, HONEST FINDING**: TIER 2 replay over 14d shows ALL 4 proposed policies UNDERPERFORM baseline:
+  - L_LANE_REWEIGHT_CONFLICT: -9.5 pp BT_WIN vs baseline (4 fw / 8 fl)
+  - R_REGION_DEDUP_PENALTY: -11.9 pp (4 fw / 9 fl)
+  - M_MIRROR_DECAY_MN: -14.3 pp (3 fw / 9 fl)
+  - U_UNIVERSE_FLOOR: -14.3 pp (3 fw / 9 fl)
+  -> Recommendation: DO NOT promote any policy as currently designed. Keep
+     in shadow for ongoing measurement; refine policy logic before next replay.
+     This is exactly the value of replay-first discipline -- saved us from
+     deploying 4 bad policies.
+- **bundle_universe_coverage_shadow herd risk distribution 30d**:
+  - EXTREME_HERD: 16 days (top1>=50%) -> WIN/LOSE 8/8 (random)
+  - HIGH_CONCENTRATION: 52 days -> 35% WIN
+  - MODERATE: 19 days -> 26% WIN
+  - NARROW_UNIVERSE: 3 days -> 67% WIN (small sample)
+- **good_dropped_no_pick on 2026-05-01**: MB 22/25 (88%), MT 22/28 (78.6%), MN 31/41 (75.6%). Models are NOT proposing 75-88% of actual hits.
+- **Top duplicators 30d (`model_cross_region_dup_shadow`)**: qwen3-coder 68 dup pairs, gpt-5-mini 52, grok-4.20 48, gpt-5.4 36. Both AI and SHADOW lanes high.
+
+### Verify
+
+- Live sync `artifacts/live_sync/20260501_224840/manifest.json`
+- VPS health V20.3.36 output 15 runtime 25 SHADOW_AUTO 10
+- DB integrity_check returns `ok`
+- Source hash 5/5 UNCHANGED before/after action
+- compile OK on 3 new materializer files
+- Backfill logs: `_spillover_rebackfill_v33.json`, `_dup_backfill_30d.json`, `_universe_backfill_30d.json`, `_tier2_replay_14d.json`
+
+### Runtime Impact
+
+ZERO. No `/du-doan`, scoring, bundle voting, lane weights, output policy, output eligibility, model roster, prompt content, or scheduler change. All new tables exist in LOCAL DB only; VPS push is a separate owner-OK item.
+
+### Rollback
+
+- DROP TABLE: `cross_region_spillover_shadow`, `model_cross_region_dup_shadow`, `bundle_universe_coverage_shadow`, `tier2_replay_shadow` (local DB)
+- Delete materializer files (3 new files)
+- No source-table mutation -> no rollback needed for predictions/final_bundles/lottery_results
+
+### Next checkpoints (from active roadmap)
+
+- CP-1.1: STATUS upgraded to LOCAL_COMPLETE_AWAITING_VPS_PUSH
+- CP-1.2: VPS push plan documented; AWAITING owner OK
+- CP-2.1: STATUS REPLAY_COMPLETE_DROP_ALL_POLICIES_REFINE_BEFORE_NEXT
+- CP-3.0: HOLD until refined replay shows positive net (target 2026-05-19)
+
+---
+
+## V20.3.37.32 — TOTAL-FORCE post-live + cross_region_spillover_shadow_v1 deploy (measurement-only, local) (2026-05-01 20:30 VN)
+
+### Context
+
+Owner issued a TOTAL-FORCE prompt for the 2026-05-01 live closeout demanding:
+verify 17/46/91/23 examples, audit no-token vs AI vs shadow vs rules vs prompt
+vs ML freshness vs bundle-skew, implement measurement-only
+`cross_region_spillover_shadow_v1`, no `/du-doan` or scoring change.
+
+### Changes
+
+- Implemented standalone measurement-only materializer:
+  - `web/backend/_materialize_cross_region_spillover_shadow.py`
+  - Adds NEW table `cross_region_spillover_shadow` via `CREATE TABLE IF NOT EXISTS`
+  - All rows written with `output_eligible=0, diagnostic_only=1, shadow_only=1, owner_approved=0`
+  - Method registered as `cross_region_spillover_shadow_v1` (NOT yet wired into P0 portfolio loop — separate VPS deploy item)
+- Backfilled 60 days into local DB:
+  - 9428 rows from 2026-03-03 to 2026-05-01
+  - run_label `backfill_cross_region_spillover_<date>`
+  - Verified source-table hashes UNCHANGED before/after action:
+    `predictions=f7c04600...`, `final_bundles=5702955f...`, `lottery_results=cea74776...`,
+    `model_daily_eval=52fa374a...`, `scheduler_logs=96363a50...` — all identical pre/post
+- Created 6 read-only audit scripts:
+  - `artifacts/_audit_q1.py` (today bundle + 30d outcome)
+  - `artifacts/_audit_cross_region_leakage.py` (bundle-pair leakage forensic)
+  - `artifacts/_audit_source_prize_strong.py` (source-prize coverage for 17/46/91/23)
+  - `artifacts/_audit_bundle_anti_trap.py` (bundle drop_stage + policy replay)
+  - `artifacts/_audit_cross_region_dup_rules.py` (same-model cross-region duplication)
+  - `artifacts/_audit_winrate_summary.py` (30/14/7d win-rate + herd concentration)
+  - `artifacts/_audit_candidate_lifecycle.py` (per-tail lifecycle + top-20 dropped)
+  - `artifacts/_audit_spillover_data.py` (post-backfill spillover stats)
+  - `artifacts/_pre_action_hash.py` (source-table hash guard)
+- Created consolidated 15-section closeout report:
+  - `artifacts/phase_checkpoints/POST_LIVE_TOTAL_FORCE_CROSS_REGION_SPILLOVER_CLOSEOUT_20260501.md`
+
+### Findings (incremental over V20.3.37.30)
+
+- 60-day per-prediction-tail spillover (9428 rows):
+  - `MN -> MT` 31.6% vs random 34.9% -> **-3.3 pp (BELOW baseline)**
+  - `MN -> MB` 23.2% vs 23.9% -> -0.7 pp
+  - `MT -> MB` 23.4% vs 23.8% -> -0.4 pp
+  - `MB -> MN` next-day 44.3% vs 43.5% -> +0.9 pp
+  - `MB -> MT` next-day 35.3% vs 35.1% -> +0.2 pp
+- Per-family: NO_TOKEN MB->MN 49.0% (highest across pair); SHADOW MT->MB 13.4% (lowest)
+- Honest reconciliation with V20.3.37.30 +18 pp claim:
+  - V20.3.37.30 measured at BUNDLE level (15 day samples, high variance)
+  - V20.3.37.32 measured at PER-TAIL level (9428 datapoints, statistical robust)
+  - Both are valid for their measurements; bundle-level elevation comes from
+    bundle universe being narrow (14-20%) + heavy vote concentration, not from
+    model-level systematic cross-region leak
+- Owner examples 17/46/91/23 fully traced:
+  - `17` proposed by 4 NO_TOKEN models for MN, hit MT G8 Gia Lai
+  - `46` proposed by 4 mixed models for MT, hit MB G7 Hai Phong
+  - `91` proposed by claude-opus-4 ONLY for MT, hit MT G4 Gia Lai (also MN, MB)
+    - Strength=4.2 < 5.0 -> verdict=SKIP at WR gate -> dropped before bundle
+  - `23` proposed by smart-ml ONLY for MT secondary, hit MT G3
+    - 1 vote -> bundle dropped
+- Tier 1-4 real names: `READY_STRONG`, `READY_WITH_CAUTION`, `LIMITED_WEIGHT`,
+  `REFERENCE_ONLY` (rule_engine.py BOOST_TABLE)
+- Bundle classification today:
+  - MN: BUNDLE_SKEW + HERDING_BAD + SECONDARY_SIGNAL_IGNORED
+  - MT: BUNDLE_SKEW + HERDING_BAD + RERUN_DEGRADED + AI_SIGNAL_OVERTRUSTED
+  - MB: CANDIDATE_SPLIT + HERDING_BAD + MODEL_SIGNAL_IGNORED (74 herd 14/25=56%)
+- ~13 GOOD_CANDIDATE_DROPPED tails today across 3 regions
+
+### Verify
+
+- VPS health: `https://xs.io.vn/api/health` 200 OK V20.3.36 output 15 runtime 25
+- Live sync: `artifacts/live_sync/20260501_201308/manifest.json`
+- DB hash production: `ec116cb0011490f2f0ee24030630d5b5605e76a6c8c65776c0d7bbb4b97cd54f`
+- P0 verifier 2026-05-01: `NATURAL_CLOSEOUT_PROVEN`, 18/18 methods registered,
+  16/18 with result rows, 0 output_eligible, 0 owner_approved
+- Source-table hashes UNCHANGED before/after action (5 tables verified)
+- compile: `py_compile` OK on materializer
+
+### Runtime Impact
+
+ZERO. No `/du-doan`, scoring, bundle voting, lane weights, output policy,
+output eligibility, model roster, prompt content, scheduler change. The new
+table exists in LOCAL DB only; VPS push is a separate owner-OK item.
+
+### Rollback
+
+- Drop NEW table: `DROP TABLE cross_region_spillover_shadow;` (local DB)
+- Delete materializer file: `web/backend/_materialize_cross_region_spillover_shadow.py`
+- No source-table mutation -> no rollback needed for predictions/final_bundles/lottery_results
+
+### Next checkpoints (from active roadmap)
+
+- CP-1.1 partial: 1/5 measurement surfaces deployed (spillover); 4 awaiting owner OK
+- CP-2.1: TIER 2 replay launch awaiting owner OK
+- CP-1.2 implicit: VPS deploy of `_materialize_cross_region_spillover_shadow.py` awaiting owner OK
+- CP-3.0: TIER 3 unlock decisions held until 2026-05-19 evidence pack
+
+### Active roadmap update
+
+`docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md` CP-1.1 status updated to
+`PARTIAL_DEPLOYED_LOCAL` (1/5 surfaces) — see roadmap for next pieces.
+
+---
+
+## V20.3.37.31 — Active roadmap memory layer + Cursor enforcement rule (docs/governance only) (2026-05-01 19:55 VN)
+
+### Context
+
+Owner correctly raised that long-running multi-week initiatives (TIER 1 -> 2 -> 3
+spanning ~3 weeks) risk being forgotten across session pauses or agent switches.
+Existing memory layers (CHANGELOG/SSOT/FOLLOW_UP_TRACKER/DECISION_LOG/agent
+transcripts) record state but do not enforce deadline-aware re-surfacing.
+
+### Changes
+
+- Created dedicated initiative roadmap with hard deadlines and auto-action:
+  - `docs/ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md`
+  - Contains 12 checkpoints (CP-1.1 .. CP-4.0) with `Hard Deadline`,
+    `Owner OK by`, `Status`, `Auto-action threshold` columns.
+  - Embedded `Session-start protocol` (section 3) and `Escalation logic`
+    (section 4) so any future agent can self-execute correctly.
+- Created Cursor rule for session-start enforcement:
+  - `.cursor/rules/active-roadmap-precedence.mdc` (alwaysApply true)
+  - Mandates: list all `docs/ACTIVE_ROADMAP_*.md` files; for each file with
+    `STATUS: ACTIVE`, surface OVERDUE checkpoints at top of first reply,
+    NEAR-deadline checkpoints at end of first reply, and re-surface stale
+    `AWAITING_OWNER_OK` items.
+  - Also covers FU items with status `MEASURED_BUT_NOT_FIXED`, `WAIT_LIVE`,
+    `DEPLOYED_PENDING_LIVE_VERIFY`, `OWNER_LOCK` as secondary check.
+  - Defines escalation path: 7-day reminder, 14-day FU `BLOCKED` + DECISION_LOG.
+- Cross-linked from:
+  - `docs/FOLLOW_UP_TRACKER.md` FU-073 (next_action + notes updated to point at roadmap)
+  - `docs/CURRENT_TRUTH_SSOT.md` 2026-05-01 row (evidence column extended)
+  - This CHANGELOG entry
+
+### Coverage
+
+The roadmap file plus the Cursor rule together close 3 prior gaps:
+- Gap 1: no deadline-aware checkpoint table for an initiative.
+- Gap 2: no auto-action when items go stale (used to require owner to remember).
+- Gap 3: no enforcement that future agents read pending roadmaps at session start.
+
+After this version, any agent (current or future) opening a session in this
+workspace MUST read all active roadmap files and surface overdue items before
+replying. This is enforced by `alwaysApply: true` in the Cursor rule.
+
+### Runtime Impact
+
+No runtime code deploy. No DB writes. No `/du-doan`, scoring, bundle voting,
+lane weights, output eligibility, model roster, prompt, or scheduler change.
+This is a docs/governance-only memory layer.
+
+### Verification plan
+
+- Simulated session-start check after this commit: agent reads
+  `ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md`, finds CP-1.1 and CP-2.1 in status
+  `AWAITING_OWNER_OK` with deadline 2026-05-04, and would surface them on the
+  first reply of the next session.
+- Cross-reference grep: `FU-073`, `ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE`,
+  `CP-1.1` should resolve in CHANGELOG, FOLLOW_UP_TRACKER, SSOT, roadmap file,
+  and Cursor rule.
+
+### Next checkpoints (mirror of roadmap, for quick reference)
+
+- CP-1.1: Owner OK TIER 1 deploy by 2026-05-04
+- CP-2.1: Owner OK TIER 2 replay launch by 2026-05-04
+- CP-2.5: Replay evidence pack target 2026-05-19
+- CP-3.0: Owner reviews evidence pack by 2026-05-26
+- CP-4.0: TIER 4 sample maturity check 2026-06-15
+
+---
+
+## V20.3.37.30 — Cross-region leakage forensic deepening + structural herding root-cause (docs/report only) (2026-05-01 19:25 VN)
+
+### Context
+
+Owner asked for a deeper, full-system "total-force" sweep after the 2026-05-01
+live close (3/3 region LOSE). The earlier V20.3.37.29 audit confirmed the
+spillover happens; this pass quantifies the magnitude vs random baseline and
+isolates the structural root cause across no-token, AI, rules, prompt, ML,
+shadow, and bundle aggregation layers.
+
+### Changes
+
+- Added 5 new read-only audit scripts (zero DB writes, zero runtime touch):
+  - `artifacts/_audit_q1.py` — today bundle + 30-day rolling outcome
+  - `artifacts/_audit_cross_region_leakage.py` — bundle-pair leakage vs random baseline
+  - `artifacts/_audit_source_prize_strong.py` — source-prize chain coverage for owner-strong numbers
+  - `artifacts/_audit_bundle_anti_trap.py` — bundle drop_stage and policy replay forensics
+  - `artifacts/_audit_cross_region_dup_rules.py` — same-model cross-region duplication
+  - `artifacts/_audit_winrate_summary.py` — 30/14/7d win-rate + herd concentration
+- Added consolidated owner report:
+  - `artifacts/phase_checkpoints/TOTAL_FORCE_CROSS_REGION_LEAKAGE_AUDIT_20260501.md`
+- Live sync manifest: `artifacts/live_sync/20260501_190852/manifest.json`
+
+### Findings (incremental over V20.3.37.29)
+
+- Bundle leak vs random baseline (30d):
+  - `MN -> MT BT_leak = 53.3%` vs baseline `35.3%` -> **+18.0 pp** above random
+  - `MT -> MN BT_leak = 57.9%` vs baseline `43.8%` -> **+14.1 pp**
+  - `MT -> MB BT_leak = 15.8%` (below baseline; lo2 26.3% slight elevation)
+  - `MB -> MN next-day lo2_leak = 54.2%` vs baseline 43.8%
+- Same-model cross-region duplication (14d): `MN/MT 17.2%`, `MN/MB 17.8%`,
+  `MT/MB 20.3%` — vs random independent-pick baseline ~4%, i.e. **4-5x baseline**.
+- Today MB top-1 herd: 13/25 models (52%) all picked `74` for MB; bundle picked
+  `94` (5 votes); both LOSE; only 6 distinct top-1 picks for 25 models (massive
+  convergence).
+- MT bundle pick `16` won over correct picks `30/75/91` because 5 voters from
+  `rerun_post_mn` (no-token combo lane) clustered on 16. AI lane had 2 main_hits
+  but `0` bundle votes.
+- Universe coverage today: MT 18 distinct, MB 14 distinct, MN 20 distinct over
+  100-tail space — coverage 14-20% means **no lift over random**.
+- All 7 output policies (`A_BASELINE`, `B_FLAT_TOTAL_MAIN_SECONDARY`,
+  `D_CONTEXT_ADAPTIVE`, `D2_CONTEXT_ADAPTIVE_SAFE_GATE`, `F_FAMILY_LANE_FUSION`,
+  `F2_FAMILY_LANE_SAFE_GATE`, `S_SECONDARY_STRICT_GATE`) picked `bt=16` for MT
+  today — **output policy layer cannot rescue when input universe is herded
+  wrong**.
+- Owner-strong numbers `91, 23, 17, 46` all confirmed present in source-prize
+  chain D-1/D for MT today — chain is clean, scoring layer is the bottleneck.
+- AI / NO_TOKEN / SHADOW families all show 36-47% leak rate on missed picks
+  -> shared-context herding, not a single-lane bug.
+
+### Root-cause hypotheses (ranked)
+
+- H1 (CONFIRMED, primary): Shared-context cross-region herding — prompt + source-prize +
+  phase-mirror context overlap drives same models to pick the same cluster
+  for all 3 regions, so the right number lands on the wrong region.
+- H2 (CONFIRMED, secondary): `weighted_voting_wr` bundle aggregation amplifies herd over
+  dispersed correct signal -> repeated `BUNDLE_SKEW`.
+- H3 (CONFIRMED, tertiary): Universe coverage too narrow (14-20%) -> no random-lift.
+- H4 (PARTIAL, contributor): MN D-1 stale carry pattern (BT_in_prev_same_region 93%
+  vs baseline 44%).
+
+### Proposed roadmap
+
+- TIER 1 (deploy NOW, measurement-safe, owner-OK requested): 5 new diagnostic
+  surfaces (`cross_region_leakage_daily`, `model_cross_region_dup_daily`,
+  `bundle_universe_coverage_daily`) + close `pp1_live_watch_daily` + finish
+  `rule_phase_evidence_shadow` timing race.
+- TIER 2 (replay-first, no live deploy): 4 new policies in
+  `output_policy_replay_daily` — `R_REGION_DEDUP_PENALTY`, `U_UNIVERSE_FLOOR`,
+  `L_LANE_REWEIGHT_CONFLICT`, `M_MIRROR_DECAY_MN`. Run shadow 14d.
+- TIER 3 (HOLD, owner unlock required): region-isolated prompt context, anti-herd
+  prompt injection, `lane_diverse_voting` aggregation, PP-1 dampener tuning.
+- TIER 4 (decision-pending): shadow promotion, low-WR model prune, Cohere on/off.
+
+### Runtime Impact
+
+No runtime code deploy. No DB writes. No `/du-doan`, scoring, bundle voting,
+lane weights, output eligibility, model roster, prompt, or scheduler change.
+The result is a measurement/forensic report and a TIER-1/TIER-2 proposal for
+owner approval. Any code-level change requires explicit owner unlock.
+
+### Next checkpoints
+
+- Owner reviews `TOTAL_FORCE_CROSS_REGION_LEAKAGE_AUDIT_20260501.md`.
+- If TIER 1 OK -> deploy 3-5 measurement surfaces tomorrow (2026-05-02).
+- If TIER 2 OK -> run replay 4 new policies for 14d window starting 2026-05-02.
+- TIER 3 stays HOLD until TIER 2 evidence pack delivered (target 2026-05-06).
+
+---
+
+## V20.3.37.29 — Cross-region spillover audit + FU-073 tracker (docs/report only) (2026-05-01 19:10 VN)
+
+### Context
+
+Owner observed that some predictions missed in an earlier region but hit a later
+same-day region, e.g. MN `17` missed MN but hit MT, and MT `46` missed MT but
+hit MB. Owner requested a total-force audit across no-token, AI, rules, prompt,
+ML learning, source-prize, and shadow methods.
+
+### Changes
+
+- Added read-only audit script:
+  - `artifacts/db_audit_20260501/_post_live_cross_region_total_audit.py`
+- Added audit output:
+  - `artifacts/db_audit_20260501/post_live_cross_region_total_audit.json`
+- Added owner report:
+  - `artifacts/phase_checkpoints/POST_LIVE_CROSS_REGION_TOTAL_FORCE_AUDIT_20260501.md`
+- Added tracker item:
+  - `FU-073 — Cross-region spillover shadow measurement (MN->MT/MB, MT->MB)`
+
+### Findings
+
+- Latest closed date: `2026-05-01`.
+- 30d audit: `935/3553` predicted tail items hit a downstream same-day region
+  (`26.32%`).
+- Downstream-only items: `502/3553` (`14.13%`).
+- Region pair counts:
+  - `MN->MT=399`
+  - `MN->MB=256`
+  - `MT->MB=280`
+- Owner examples confirmed in latest-day events:
+  - MN `17` -> MT via no-token models.
+  - MT `46` -> MB via AI and no-token models.
+
+### Runtime Impact
+
+No runtime code deploy. No DB writes. No `/du-doan`, scoring, output policy,
+model roster, D7/sort key, lane weights, or prompt changes. The result is a
+measurement recommendation only: implement `cross_region_spillover_shadow_v1`
+as shadow-only/read-only before considering any output use.
+
+---
+
+## V20.3.37.28 — D-2 foundation HOLD / REFERENCE_ONLY / OWNER_LOCK (2026-05-01 11:05 VN)
+
+### Context
+
+Owner directive after the bounded D-2 expanded-ruleset foundation pass.
+The latest-14-closed-day artifact replay (`2026-04-17..2026-04-30`) showed
+`NOISE_RISK` in MN/MT/MB, D-2 top1 worse than D-1, candidate pool inflated,
+and overall `would_save_simple` did not beat `would_break_simple`. Active D-2
+engineering is parked.
+
+### Changes
+
+- Added closeout artifact:
+  - `artifacts/phase_checkpoints/D2_FOUNDATION_HOLD_DECISION_20260501.md`.
+- Updated governance to reflect HOLD / REFERENCE_ONLY / OWNER_LOCK:
+  - `docs/CURRENT_TRUTH_SSOT.md` new V20.3.37.28 row.
+  - `docs/FOLLOW_UP_TRACKER.md` FU-075 rewritten to closeout language.
+  - `docs/DECISION_LOG.md` added DEC-022 (park D-2 active engineering).
+  - `docs/CHANGELOG_GOVERNANCE_LEDGER.md` new ledger entry.
+
+### Verification
+
+- No code change.
+- No deploy.
+- No scheduler hook.
+- No production DB write.
+- No `/du-doan`, `final_bundles`, `predictions`, `lottery_results` change.
+- No scoring / `BOOST_TABLE` / lane weight / bundle voting / output policy /
+  model roster / output eligibility change.
+- No P0 registry addition.
+- No prompt runtime / no-token live / model call for D-2.
+- D-2 remains owner-locked and not output-ready.
+
+### Region Verdict
+
+- MN: `MN_REFERENCE_ONLY`.
+- MT: `MT_REFERENCE_ONLY`.
+- MB: `MB_REFERENCE_ONLY` (close to `MB_DROP_FOR_NOW` due to highest noise).
+
+### Final
+
+D-2 is parked. Reopen requires explicit owner decision.
+
+## V20.3.37.27 — Expanded-ruleset rollback + full stack redesign spec (2026-05-01 00:45 VN)
+
+### Context
+
+Owner clarified that `D-1` is shorthand for the current ruleset and `D-2`
+is shorthand for the expanded ruleset with extra calendar D-2 source days.
+The first local implementation was incomplete: it measured a broad expanded
+source pool but did not mirror the full current-rule stack
+(`105` weekly rules, MRE 12W/16W, rule-engine/no-token use, prompt context,
+review APIs, and P0 shadow rule-phase).
+
+### Changes
+
+- Rolled back the premature local expanded-ruleset implementation:
+  - removed `scripts/d2_source_shadow_replay.py`;
+  - removed `scripts/d2_source_shadow_review.py`;
+  - removed `d2_source_confirm_gate_shadow_v1` from
+    `web/backend/_materialize_multi_lane_shadow_p0.py`;
+  - removed the expanded-ruleset portfolio entry from
+    `scripts/verify_p0_natural_closeout.py`;
+  - deleted the expanded-ruleset replay/smoke artifacts and implementation report.
+- Kept the UTF-8 stdout fix in `scripts/verify_p0_natural_closeout.py` as a
+  standalone Windows JSON-output fix; it does not change portfolio semantics.
+- Added current-ruleset full mechanism audit:
+  `artifacts/phase_checkpoints/D1_RULE_MECHANISM_FULL_AUDIT_20260501.md`.
+- Added redesigned expanded-ruleset experiment spec:
+  `artifacts/phase_checkpoints/D2_RULE_STACK_EXPERIMENT_SPEC_20260501.md`.
+- Added owner-review closeout/spec:
+  `artifacts/phase_checkpoints/D2_ROLLBACK_REDESIGN_OWNER_REVIEW_SPEC_20260501.md`.
+- Added current runtime precheck:
+  `artifacts/phase_checkpoints/CURRENT_RUNTIME_TRUTH_D2_PRECHECK_20260501.md`.
+- Added overreach rollback audit:
+  `artifacts/phase_checkpoints/D2_OVERREACH_ROLLBACK_AUDIT_20260501.md`.
+- Added expanded-ruleset shadow spec:
+  `artifacts/phase_checkpoints/D2_EXPANDED_RULESET_SHADOW_SPEC_20260501.md`.
+- Added MN/MT/MB decision pack:
+  `artifacts/phase_checkpoints/D2_LOCAL_REPLAY_REGION_DECISION_PACK_20260501.md`.
+- Added JSON audit:
+  `artifacts/db_audit_20260501/d2_total_force_audit_20260501.json`.
+- Added Stage 1 artifact replay outputs from a one-off local artifact runner
+  that was removed after replay:
+  - `artifacts/replay/expanded_calendar_d2_source_copy.sqlite`
+  - `artifacts/replay/expanded_calendar_d2_ruleset_replay.sqlite`
+  - `artifacts/replay/expanded_calendar_d2_ruleset_summary.json`
+  - `artifacts/db_audit_20260501/d2_no_leak_proof.json`
+  - `artifacts/phase_checkpoints/D2_STAGE1_ARTIFACT_REPLAY_RESULTS_20260501.md`
+
+### Verification
+
+- `rg` confirms no remaining `d2_source_confirm*`, `d2_source_shadow*`,
+  `FU-075`, `DEC-021`, or old `V20.3.37.27` implementation references before
+  the new rollback/redesign docs were added.
+- `python -m py_compile web/backend/_materialize_multi_lane_shadow_p0.py scripts/verify_p0_natural_closeout.py` passed after rollback.
+- Stage 1 artifact replay ran over `186` region-days from `2026-02-28` to
+  `2026-04-30`.
+- Replay summary: current vs expanded top1 `50.00% -> 45.70%`, top2
+  `69.35% -> 64.52%`, top3 `80.11% -> 80.11%`, average candidates
+  `10.65 -> 42.66`, would-save `46`, would-break `38`.
+- No-leak proof shows copied-DB pre/post hashes unchanged for `predictions`,
+  `final_bundles`, `lottery_results`, `mined_rules`, and
+  `mined_rule_effectiveness`.
+
+### Runtime Impact
+
+No deploy occurred. No `/du-doan`, final bundle, scoring, rule boost, prompt
+runtime text, model roster, output eligibility, scheduler behavior, production
+DB write, or DB schema change. The expanded ruleset remains artifact-only /
+shadow-only candidate material and is not output-ready.
+
+## V20.3.37.26 — Live measurement closeout + post-MDE proof (docs/report only) (2026-04-30 20:35 VN)
+
+### Context
+
+Owner requested a total-force outstanding issues / tracker / changelog /
+wait-data governance pass after the 2026-04-30 live cycle, with strict
+production-output protection. The first audit at 20:07 VN happened before the
+20:20 MDE/post-MDE hook window; a second post-MDE verification was run at
+20:33 VN.
+
+### Changes
+
+- **Reports / artifacts**
+  - Added `artifacts/db_audit_20260430/_live_closeout_total_force_audit.py`
+    and output `live_closeout_total_force_audit.json` (read-only).
+  - Added `artifacts/db_audit_20260430/_post_mde_rule_phase_verify.py`
+    and output `post_mde_rule_phase_verify_20260430.json` (read-only).
+  - Added owner report
+    `artifacts/phase_checkpoints/TOTAL_FORCE_LIVE_MEASUREMENT_MULTI_LANE_SHADOW_CLOSEOUT_AUDIT_20260430.md`.
+- **Tracker / SSOT**
+  - Updated `docs/FOLLOW_UP_TRACKER.md`:
+    - `FU-065` -> `DONE` after first live post-MDE proof.
+    - `FU-069` -> `DONE` for the deployed writer-hardening scope; remaining
+      non-BT native facts and reliability gap remain separate tracked items.
+    - `FU-071` -> `DONE` after first Cohere P0 live proof.
+    - `FU-066` notes updated: 2026-04-30 is the first clean natural closeout
+      for the 18-method portfolio.
+  - Added SSOT row for V20.3.37.26.
+
+### Verification
+
+- VPS sync: `artifacts/live_sync/20260430_200717/manifest.json`
+- Post-MDE sync: `artifacts/live_sync/20260430_203233/manifest.json`
+- Health: `V20.3.36`, output `15`, runtime `25`, measured components `26`,
+  registry-visible inventory `28`.
+- P0 verifier for 2026-04-30:
+  - `NATURAL_CLOSEOUT_PROVEN`
+  - expected/registered methods `18/18`
+  - methods with result rows `18/18`
+  - methods with scoreboard rows `18/18`
+  - `output_eligible_count=0`
+  - `owner_approved_count=0`
+- FU-065 post-MDE hook:
+  - marker `[P0-RULE-PHASE-POST-MDE] 2026-04-30: rule_phase=55 rule_injection=9 skipped=none`
+  - `rule_phase_evidence_shadow=55`
+  - `rule_injection_contract_shadow_v1=9`
+- Suspicious scheduler errors in the audit query: `0`.
+
+### Runtime Impact
+
+No runtime code deploy in this pass. No `/du-doan`, final bundle scoring,
+bundle voting, lane weights, output policy, output eligibility, model roster,
+public UI behavior, or DDL/schema change.
+
+---
+
+## V20.3.37.25 — Compact `/user-view` local preview (2026-04-30 20:55 VN)
+
+### Context
+
+Owner asked for a compact user-facing view based on `https://xs.io.vn/app`,
+with a separate local demo link before any live rollout.
+
+### Changes
+
+- **`web/frontend/user-view.html`**
+  - Added a compact read-only user dashboard shell.
+  - Keeps the dark Lottery AI theme while removing admin actions such as
+    predict/update/delete.
+  - Shows model/date controls, MN/MT/MB tabs, WR/backtest KPIs, prediction card,
+    result card, and filtered prediction history.
+  - Removed the preview refresh CTA and added the final viewer navigation set:
+    `Tổng quan` (`/user-view`), `Dự đoán` (`/du-doan`), and `Tra cứu`
+    (`/search`).
+- **`web/frontend/du-doan.html` and `web/frontend/search.html`**
+  - Synced the same viewer navigation set across the three viewer-facing pages.
+  - Kept `Dashboard` hidden unless `/api/auth/check` returns admin.
+  - Renamed the return link from `Tổng quan` to explicit `User View` so viewers
+    can clearly switch back to `https://xs.io.vn/user-view` from the other
+    viewer pages.
+  - Fixed the viewer return control on `/du-doan` and `/search` so it renders as
+    a visible `USER VIEW` button instead of an unclear/blank-looking header slot.
+- **`web/frontend/user-view.js`**
+  - History region filter now defaults to the active region instead of global
+    `Tất cả miền`.
+  - Switching MN/MT/MB tabs also switches the history region filter and reloads
+    history, avoiding confusing mixed/all-region rows in the user view.
+- **`web/frontend/user-view.html`**
+  - Bumped the user-view JS cache key to force browsers to load the corrected
+    filter behavior.
+- **`web/backend/main.py` (auth lockdown after viewer rollout audit)**
+  - Made the four pattern rule endpoints admin-only:
+    `POST /api/rules`, `PUT /api/rules/{id}`, `DELETE /api/rules/{id}`,
+    `POST /api/rules/{id}/toggle`. Previously they had no auth check, which a
+    live probe confirmed by reaching `200` without any cookie.

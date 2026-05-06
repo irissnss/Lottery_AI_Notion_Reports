@@ -1,0 +1,2500 @@
+Transitions system from CODE_PROVEN to OPERATIONAL_LOCK pipeline.
+All changes: CODE_PROVEN. Awaiting 3-day LOG_PROVEN before LIVE_PROVEN status.
+
+### BLOCKER Fixes (scheduler.py)
+
+- **A1 — P2 FREEZE**: V5.3 re-scrape path (L397) now checks `_verified` flag.  
+  If region already verified → `[WRITE_BLOCKED_POST_VERIFY]` + skip entire V5.3 block.  
+  **Eliminates FALSE LOCK**: no more data mutation or `force_reverify=True` after verify.
+
+- **A2 — MANUAL GATE**: `run_now(region)` now checks `_verified` flag.  
+  If region verified → `[MANUAL_BLOCKED_POST_VERIFY]` + return.  
+  Prevents human-trigger from bypassing operational lock.
+
+- **A3 — CONTEXT_INTEGRITY** (database.py + scheduler.py):  
+  New column `context_integrity TEXT DEFAULT 'unknown'` in predictions table.  
+  Values: `clean` (upstream verified), `provisional` (pre-result), `contaminated`, `unknown` (legacy).  
+  Threaded through all 6 `save_prediction()` call sites + 8 function signatures.  
+  04:00 auto predictions = 'provisional'. Post-verify cascade = 'clean'.
+
+- **A4 — RUN_ID TRACING**: `run_id = {region}_{date}_{hex8}` generated at `_run_auto_update()` entry.  
+  Used in `[WRITE_BLOCKED_POST_VERIFY]`, `[H2_RETIRED]`, `[MANUAL_BLOCKED_POST_VERIFY]` tags.
+
+- **A5 — ANTI-DUPLICATE**: Guard in `_run_ai_predict_job()` checks existing predictions by `(date, region, run_source)`.  
+  If duplicates exist for `ai_chain` or `fallback` → `[DUPLICATE_PREDICT_PREVENTED]` + skip.
+
+- **A6 — CATCH-UP GATE**: `_startup_catch_up()` now checks `_verified` flag.  
+  If region verified → skip catch-up (prevents post-verify rerun on service restart).
+
+### Flow Changes (scheduler.py)
+
+- **B1/B2 — RETRY TIMING**: `sleep(90)` → `sleep(60)`, `max_retry=10` → `max_retry=30`.  
+  30 × 60s = 30-minute operational window (Owner-Lock L4).
+
+- **B3 — SCHEDULE ANCHORS**: Default times 16:35→**16:30**, 17:35→**17:30**, 18:38→**18:30** (Owner-Lock L4).
+
+- **B4 — H2 RETIREMENT**: Delayed rescrape scheduling commented out.  
+  `[H2_RETIRED]` logged at original H2 scheduling point.  
+  Reason: main retry loop (30 min) > H2 delay (20 min) → H2 redundant.  
+  Function `_delayed_rescrape_job()` preserved for manual recovery.
+
+### MB Rerun (scheduler.py L3237)
+- `_rerun_mb_ai_after_mt_verify()` now passes `context_integrity='clean'` (MT verified → MB = clean).
+
+### Database Migration (database.py)
+- `ALTER TABLE predictions ADD COLUMN context_integrity TEXT DEFAULT 'unknown'`
+- `save_prediction()`: new param `context_integrity: str = 'unknown'` added to signature + INSERT
+
+### OPEN from V17.10.1 — NOW CLOSED:
+- ~~🔴 P2 CRITICAL~~ → **CLOSED by A1** (V5.3 path gated by `_verified`)
+- ~~🟡 O2 HIGH~~ → **CLOSED by A4** (run_id at pipeline entries)
+- ~~🟡 O3 HIGH~~ → **CLOSED by A3** (context_integrity column + logic)
+- ~~🟠 F04 MEDIUM~~ → **CLOSED by A5** (anti-duplicate guard)
+
+---
+
+## V17.10.1 — FORENSIC AUDIT SAFE_NOW FIXES (2026-04-12 VN)
+
+### Context
+Post-deploy forensic audit (ULTRA_FORENSIC_AUDIT_V17_10.md) identified 15 forensic points.
+This patch implements **SAFE_NOW** (zero behavior change) fixes only. Policy/schema changes = HOLD.
+
+### Changes (scheduler.py)
+
+- **S2**: `MAX_LOGS` 50→200 — full-day pipeline generates ~95 entries; cap 50 caused evidence loss (F15)
+- **S3**: `[DOWNSTREAM_BLOCKED]` wording enhanced with `D1={actual}/{expected} D2={OK/INCOMPLETE}` breakdown — operator triage no longer blind to root cause (F05)
+- **S4**: `[REGION_FROZEN_SOFT]` → `[REGION_FROZEN_H2_ONLY]` at all 4 write points — honest scope caveat prevents overclaim. Log now explicitly states "V5.3 path NOT gated (P2 OPEN)" (F12)
+
+### OPEN GAPS (NOT fixed — requires owner decision or live evidence):
+
+- **🔴 P2 CRITICAL**: V5.3 re-scrape path (`if existing:` L396-427) does NOT check `_verified` flag → can mutate data after freeze → HOLD_FOR_OWNER
+- **🟡 O1 HIGH**: DOWNSTREAM_BLOCKED now has D1/D2 breakdown (FIXED by S3)
+- **🟡 O2 HIGH**: No correlation_id / run_id across pipeline → HOLD_UNTIL_LIVE_PROVEN
+- **🟡 O3 HIGH**: No `context_integrity` tag on predictions → HOLD_FOR_OWNER
+- **🟠 F04 MEDIUM**: Potential duplicate predictions from fallback cron + main flow → needs live-day audit
+- **🟠 F15 MEDIUM**: In-memory log cap (FIXED by S2)
+
+---
+
+## V17.10 — 2D OPERATIONAL LOCK + B-STRICT + SOFT FREEZE + P1 CRON GATE (2026-04-12 VN)
+
+### PRODUCTION CHANGES (scheduler.py + scraper.py)
+
+**2D Completeness Gate (Foundation)**
+- `EXPECTED_PRIZE_GROUPS` + `EXPECTED_PRIZE_SLOTS`: MN/MT=9 groups/18 slots, MB=9 groups/27 slots
+- `validate_prize_card()` in `scraper.py`: per-station prize-card structure validator (SSOT)
+- D1 (station count) + D2 (prize-card) checked in retry loop; `_cov_flag` downgraded if D2 fails
+- Coverage log enhanced with D2 tag: `[PRIZE_CARD_COMPLETE]` / `[PRIZE_CARD_D2_INCOMPLETE]`
+
+**B-STRICT Downstream Blocking**
+- Rerun (`_rerun_free_models_after_scrape`) + AI chain (`_run_ai_predict_job`) moved INSIDE `_cov_flag == "COMPLETE"` gate for MN/MT/MB branches
+- Partial-data days: `[DOWNSTREAM_BLOCKED]` log, no downstream execution
+- Upstream fallback warning: `[FALLBACK_UPSTREAM_INCOMPLETE]` tag with D2 detail
+
+**P1 FIX: Cron Fallback Gate (CRITICAL)**
+- `_run_ai_predict_job`: fallback crons (16:42 `auto_ai_mt`, 17:42 `auto_ai_mb`) now check `{upstream}_verified` flag in `daily_stats`
+- If upstream NOT verified → `[FALLBACK_BLOCKED]` + return (no predict)
+- If upstream verified → `[FALLBACK_CLEAR]` (proceed, redundant with main-flow cascade)
+- MN morning (04:15) exempt — no same-day upstream dependency
+- Fail-safe: if check errors → BLOCK by default
+
+**SOFT FREEZE**
+- DB migration: `mn_verified`, `mt_verified`, `mb_verified` INTEGER DEFAULT 0 in `daily_stats`
+- Verify gate sets `{region}_verified = 1` after successful verification
+- H2 rescrape checks freeze flag; skips if already verified (`[REGION_FROZEN_SOFT]`)
+- H2 cascade: if H2 achieves COMPLETE on unfrozen region → full downstream cascade
+
+### GOVERNANCE (`.Antigravityrules.md`)
+- §39 ANTI-WEEKDAY-CONFUSION: mandatory calendar verification in reports
+- §40 SUPERSEDED-FIRST: reports must declare supersession
+- §41 NO-STALE-CODE-DECISION: scratch/temp ≠ canonical truth
+- §42 CLEAN-VS-CONTAMINATED-EVIDENCE: contaminated days marked
+- §43 CURRENT-TRUTH-LEDGER-REQUIRED: single truth before audit
+- §44 LIVE-CHECKPOINT-REMINDER-REQUIRED: reminder matrix mandatory
+- §45 CHANGELOG-HISTORY-MANDATORY: all changes logged
+- §46 NO-CLEANUP-WITHOUT-MANIFEST: organized cleanup with manifest
+- §47 NO-OVERCLAIM-CLOSURE: CODE_PROVEN ≠ LIVE_PROVEN
+- §48 TIME-ANCHOR-SHADOW-OBSERVE: shadow ≠ deployed
+Status: PROPOSED — awaiting owner review of master reconcile
+
+### EVIDENCE
+- VPS: MD5 `3cad0f80` (scheduler.py), `6eaff933` (scraper.py)
+- Local↔VPS: MATCH (drift CLOSED)
+- Service: `active` after restart
+- DB: `mn/mt/mb_verified` columns exist, default 0
+- P1 test: MT/MB FALLBACK_BLOCKED when upstream not verified ✅
+- FORENSIC_AUDIT: 14-point audit completed, P1 CLOSED
+
+### STILL OPEN
+- 🟡 P2: V5.3 re-scrape path (L396-420) outside soft freeze — MEDIUM
+- 🟡 O1-O3: Observability gaps (log detail, correlation ID, context_integrity)
+- ⬜ HARD freeze: HOLD (after 3 clean days)
+- ⬜ Shadow time anchor observe: NOT_STARTED
+
+### SUPERSEDES
+- V17.9 (A4 logging-only fallback)
+- V17.8 (B-STRICT foundation without cron gate)
+- All prior "fallback warn-only" semantics
+
+---
+
+## V17.6.27.2 — ULTRA TOTAL RECONCILE AUDIT + R-11 METADATA FIX (2026-04-10 VN)
+
+### AUDIT (17-section full audit, no scoring change)
+- **`reports/ULTRA_TOTAL_RECONCILE_2026-04-10_VI.md`**: 17-section audit covering Pre-flight, 19-item Open Issue Ledger, 12-item Master Reconcile Matrix, Current Truth Lock, 10 Operational Gap areas, Implement Now, Master Measurement Doctrine, Monitoring Center Design, 10 Required Boards Inventory, Model Pruning advisory (15 models), Rules/Prompt/Algorithm Review, Doc sync board, Final Verdict.
+- **Evidence level:** `CODE_ONLY` (Python not installed → no DB query, no runtime verify, no deploy)
+- **Blocker:** Python + VPS SSH not available in sandbox; Notion MCP not functional
+- **Key finding R-11:** `lane_fusion_policy` metadata stale in `main.py` L6009-6013
+
+### PRODUCTION CHANGE (metadata-only, zero scoring impact)
+- **FIX R-11:** `main.py` `lane_fusion_policy` metadata in `source_summary`:
+  - Old: `mb_rerun_post_mt_boost: 1.08`, `mt_mb_ai_chain_downweight: 0.95`
+  - New: `mb_all_sources: 1.0` (reflects V17.6.27 equalization), `mt_ai_chain_downweight: 0.95`
+  - Impact: **metadata/trace only** — actual scoring at L5770 was already correct (MB=1.0)
+  - Status: `IMPLEMENTED_LOCALLY` — needs deploy to VPS
+
+### GOVERNANCE
+- No scoring-sensitive rollout
+- No WR target change, no bundle architecture change
+- HOLD unchanged: STR-CAL-008, RULE-SHADOW-009
+- All items tagged with proper evidence labels per `.Antigravityrules.md`
+
+## V17.6.27.1 — LIVE-WEEK FORENSIC CLOSURE (digest + UI trace) (2026-04-09 VN)
+
+### DECISION-GRADE ADD-ON (docs + measurement tool)
+- **`reports/ULTRA_DECISION_GRADE_CLOSURE_2026-04-09_VI.md`**: strongest-vs-BT **bằng số** (aggregated_score), thresholds hành động, MB 7D baseline, shadow diagnostic path, user-visible status (login redirect trên VPS test).
+- **`reports/tools/decision_grade_snapshot.py`**: script tái lập snapshot sau `pull` DB.
+
+### ADDITIVE / DOCS ONLY (no scoring, no schema, no bundle architecture change)
+- **`web/frontend/du-doan.html`**: surfacing **Top candidate sau voting** (top 5 `ranked_numbers` + voter list) from existing `source_predictions_json` — owner-visible trace only.
+- **`reports/daily_digest.py`**: Q3 đổi wording chuẩn — phân biệt **số trên thẻ Lô 2** vs **attribution theo model** (tránh hiểu nhầm “UI thiếu số”).
+- **`reports/live_week_baseline_pack.py`**: **CRITICAL_RECONCILE** — boards 6/8/13/16 từng hard-code “UI không render lo2” (pre–V17.6.25). Đã cập nhật theo **current truth**: lo2 + ranked strip **có trên `/du-doan`**; gap còn lại = **attribution-only** (đồng bộ digest Q3). Regenerate `2026-04-09_boards.*`.
+- **Parity**: local SHA256 `du-doan.html` + `gpt_analyzer.py` **khớp** VPS tại audit 2026-04-09 ~17:40 ICT.
+
+## V17.6.27 — FINAL CLOSURE: MB EQUALIZED + SHADOW EXECUTABLE + CANONICAL SYNC (2026-04-08 VN)
+
+### PRODUCTION CHANGES
+- **MB lane-weight equalized to 1.0 for ALL MB sources** (owner-approved)
+  - Previous: `rerun_post_mt` 1.08x, `ai_chain` 0.95x → counterproductive
+  - New: all MB sources = 1.0 (no artificial bias)
+  - Evidence: 14D simulation 10 LOSE→WIN, 1 regression, net +9
+  - File: `main.py` lane-weight section
+  - Rollback: restore `main.py.bak-pre-v17627` on VPS
+- **AI context shadow injection LIVE** (additive, non-scoring)
+  - 4-block structured context appended to context_pack
+  - Shadow output field parsing (backward compatible)
+  - File: `gpt_analyzer.py` `_build_shadow_context_blocks` + `_parse_shadow_output_fields`
+- **Dead code annotated** in production code:
+  - `CORE_POLICY`: marked INACTIVE/DEAD CODE with shadow candidate note
+  - `rules` param in `create_analysis_prompt`: marked UNUSED, kept for API compat
+- **Version: V17.6.27** (from V17.6.25)
+- VPS: service restarted 23:00, /api/health confirmed V17.6.27
+
+### GATE STATUS
+- Source-prize: **WAITING** — fix deployed + service restarted 21:58 Apr 08, but all combo-super rows pre-date the restart. First post-fix rows will be 04-09 cycle.
+- MB equalization: **LIVE** — monitoring via daily digest
+
+### CANONICAL SYNC
+- Vocabulary, metric names, status labels locked
+- experiment_registry.md updated to V17.6.27
+- daily_digest.py Q1 upgraded with formal PASS/FAIL/WAITING gate logic
+- lo2 display note updated (no longer "hidden")
+
+## V17.6.26 — 09/04 LIVE COMMAND CENTER + CLEANUP + READINESS (2026-04-08 VN)
+
+### Scope
+- Archived 85 temp forensic scripts from project root → `_archive_temp_scripts/`
+- Final parity verification: 5/5 VPS files match local ✅
+- DB fresh pull: 19,988,480 bytes, hash 6f066120... ✅
+- VPS health: V17.6.25 running, lottery.service active ✅
+- 09/04 command center playbook created with 5 checkpoints (PRE-MN through END-OF-DAY)
+- Source-prize gate status: CODE_FIXED_DEPLOYED_WAITING_FIRST_ROW (0 post-fix rows, 04-09 cycle pending)
+- MB lane-weight counterfactual confirmed: 10 flips, 1 regression, net +9 (14D)
+- lo2 display: confirmed live and rendering correctly on production
+- No new code changes — readiness confirmation + cleanup only
+
+## V17.6.25 — BOLD RESET: LO2 DISPLAY LIVE + MB LANE-WEIGHT EVIDENCE + TOTAL FORCE (2026-04-08 VN)
+
+### PRODUCTION CHANGES
+- **lo2 display on /du-doan: NOW LIVE** — first production UI change in this series
+  - Card "Lô 2 Số" with supporting numbers shown between BT and Lô 3 Càng
+  - Purple badge "Tham khảo — không phải pick chính" for clear semantics
+  - lo2 status dots added to history table
+  - Deploy: SCP du-doan.html + main.py → VPS, service restarted
+- **Version: V17.6.25** (from V17.6.22)
+- VPS file parity: all 5 backend files content-match local ✅
+
+### KEY DATA (7D ending 04-08)
+- lo2 WR BEATS BT WR everywhere: MB +29pp, MN +29pp, MT +57pp
+- lo2 was hidden → now visible → instant perception improvement
+- MB tie-break simulation (14D): 10 LOSE→WIN flips, only 1 regression = net +9
+- MB lane-weight finding: fallback (54%) > rerun_after_verify (46.4%) — weight counterproductive
+- MB model families: AI-LLM 51.6% > ML 48.2% > Smart-Ens 46.4% > Combo 35.7%
+
+### AUDIT FINDINGS
+- database.py: VPS vs local = content identical (line ending diff only)
+- CORE_POLICY in gpt_analyzer.py: still dead code (not injected)
+- combo-no-token reasoning_json: does NOT include selected_source_prizes (by design)
+- create_analysis_prompt: `rules` parameter defined but never used inside function
+- du-doan.html: history colspan was mismatched (5 vs 4) — now 5 columns with lo2
+
+## V17.6.24 — FINAL LIVE-READY 09/04 CLOSURE (2026-04-08 VN)
+
+### Scope
+- MB root cause tree: 4-layer forensic (Brain 43.8% → Final BT 14.3%, only 1/7 wins)
+- MB key finding: fallback models (52.4% hit) outperform rerun_after_verify (28.6%) 
+- 3-accuracy REFRESHED with stricter 7D window:
+  - lo2 BEATS BT everywhere: MB +29pp, MN +29pp, MT +57pp
+  - MT lo2 = 100% vs BT = 42.9%
+- Source-prize gate: CODE_FIXED_DEPLOYED_WAITING_FIRST_ROW (04-09 cycle)
+- VPS health confirmed: V17.6.22 running, service active
+- 7 specific lo2-WIN-but-hidden cases identified with dates/numbers
+- 42 strong-model-hit-not-selected cases across all regions (7D)
+- All FIX_NOW items closed — 0 remaining
+- 7 OWNER_LOCK items documented with full dossier
+
+## V17.6.23 — CLEAN RESET: DAILY DIGEST + 3-ACCURACY + LIVE-WEEK FREEZE (2026-04-08 VN)
+
+### Scope
+- Created owner-facing daily digest script: `reports/daily_digest.py`
+- Answers 5 critical questions daily + 3-accuracy summary table
+- CRITICAL FINDING: lo2 WR consistently HIGHER than BT WR across all regions:
+  - MT: lo2=100% vs BT=50% (7D)
+  - MN: lo2=62.5% vs BT=37.5%
+  - MB: lo2=50% vs BT=25%
+  lo2 is hidden in /du-doan UI — this is the single biggest explainability gap.
+- 3-accuracy framework formalized: Brain accuracy (model hit) vs Final selection (BT) vs User-perceived
+- DB fresh pull: 19,988,480 bytes (size increased from previous pull — new data ingested)
+- Source-prize: still 0/12 pre-fix rows have key, 0 post-fix rows exist yet (04-09 cycle pending)
+- All scoring-sensitive items remain HOLD
+
+### Daily digest answers:
+1. Source-prize alive? (combo-super selected_source_prizes presence)
+2. BT results by region? (WIN/LOSE + lo2 status)
+3. Supporting hits hidden? (lo2 hits not shown on UI)
+4. Strong model slot missed? (strongest hit != BT)
+5. Pending alerts? (red flags for owner attention)
+6. 3-accuracy table (Brain vs Final vs lo2)
+
+## V17.6.22 — SETTINGS/DU-DOAN/AI-CONTEXT RECONCILIATION (2026-04-08 VN)
+
+### Scope
+- Fixed /api/health version string: V17.6.11 → V17.6.22 (was stale since V17.6.11 era).
+- Deployed main.py to VPS, service restarted, health verified showing V17.6.22.
+- Full /settings diagnostics audit: traced all 6 status cards to their data sources.
+- Full /du-doan chain audit: confirmed lo2 hidden, no re-ranking at API/UI layer.
+- Created AI Context Shadow Contract spec (docs/ai_context_shadow_contract.md):
+  4-block injection (Phase Verdict, Source-Prize Direction, Candidate Convergence, Override Discipline)
+  + shadow output contract (main_pick, supporting_numbers, selection_chain, override_reason).
+- Aligned with Notion V17.6.21 owner direction page.
+
+### /settings findings
+- **Runtime Version card**: hardcoded in /api/health → was V17.6.11, now V17.6.22. FIX DEPLOYED.
+- **Canonical Alignment**: only checks 5 schedule keys, not all runtime_effective fields → partial view.
+- **Latest 02:00/03:00/04:00 cards**: pattern-match on last 300 scheduler_logs → "Chưa có dữ liệu"
+  means no matching log text in last 300 rows, NOT that job never ran.
+- **No auto-refresh**: cards only update on page load or manual action.
+- **Source weights UTC bug**: Effectiveness tab uses browser UTC date, not VN timezone.
+
+### /du-doan confirmed findings (unchanged from V17.6.21)
+- lo2 hidden in UI (explainability gap, not selection bug)
+- No re-ranking at API or UI layer
+- Bundle content passes through unmodified
+
+### AI Context findings
+- Current prompt is assembled runtime stack (~3000+ tokens user + system + context_pack)
+- CORE_POLICY defined but NEVER injected (dead code)
+- Phase context exists but only as week-slot text, not structured verdict
+- No override discipline in current contract
+- Shadow spec created for phased rollout
+
+### Runtime/scoring safety
+- Version fix is display-only, zero scoring impact.
+- AI context contract is SPEC/SHADOW only, no production change.
+- HOLD unchanged for STR-CAL-008, RULE-SHADOW-009, lane-weight.
+
+## V17.6.21 — ULTRA TOTAL FORCE: 16-BOARD BASELINE EXPANSION (2026-04-08 VN)
+
+### Scope
+- Expanded live-week baseline pack from 8 boards to 16 boards (V2_EXPANDED).
+- Added 8 new forensic/advisory boards: ui_render_input_vs_output, strongest_model_hit_not_selected,
+  phu_number_survival, final_number_chain_trace, region_weekday_model_strength,
+  region_weekday_bonus_shadow, weekly_rule_12w_advisory, ui_explainability_gap.
+
+### Key findings from expanded boards
+- **UI /du-doan gap**: lo2 field exists in final_bundles + API response but is NOT rendered on /du-doan page.
+  24/24 bundles in 7D window affected. This is an explainability gap, not a selection bug.
+- **Phu number survival**: 147 phu-hit-not-BT groups in 7D. 18 of these are in lo2 but lo2 is hidden in UI.
+  129 ranked below BT and not surfaced. Primary drop mechanism: ranking (BT-first discipline).
+- **Strongest model hit not selected**: 21 cases in 7D where a model with strength>=6.0 hit but wasn't BT.
+  Includes MN 04-08 claude-opus str=8.5 hit 33, MT 04-07 claude-sonnet str=9.7 hit 65.
+- **Region/weekday shadow bonus**: +0.5 bonus simulation changed 3/24 selections — all 3 changes were
+  from LOSE to WIN, suggesting shadow bonus is promising but sample too small for production rollout.
+- **12W rule advisory**: mined_rule_effectiveness has data but few rules with >=2 evals in 4W/12W windows.
+  Rule infrastructure is active (105 rules, 2134 effectiveness rows) but evaluation density is sparse.
+- **Source-prize**: Still 0/48 rows with key (all pre-fix). Waiting 04-09 cycle for first post-fix evidence.
+- **Main-selection misalignment**: 11/24 = 45.8% (unchanged from V17.6.20 snapshot).
+
+### DB parity (verified 2026-04-08 20:02)
+- Remote: 19,984,384 | Local: 19,984,384 | Hash: 7ff1a7e4... | PASS
+
+### Runtime/scoring safety
+- No scoring-sensitive rollout. HOLD unchanged for STR-CAL-008, RULE-SHADOW-009.
+- Shadow bonus simulation is advisory-only, no production impact.
+
+## V17.6.20 — LIVE-WEEK RESET + BASELINE FREEZE (2026-04-08 VN)
+
+### Scope
+- Full live-week reset: closed all clear items, froze measurement baseline, prepared shadow pack.
+- Created canonical `reports/live_week_baseline_pack.py` — 8-board query pack for daily live-week measurement.
+- Boards: daily_execution, model_performance, final_synthesis, selected_vs_dropped, lane_contribution, source_prize_survival, main_selection_failure, weekly_compare.
+- Each board has classification (production-backed / heuristic-backed), query source, and daily reuse instruction.
+
+### Source-prize closure status
+- V17.6.19 scheduler.py fix confirmed deployed to VPS (hash match, service restarted 19:25).
+- All 04-08 rows were generated BEFORE the fix → still show NO_KEY. Expected: first evidence on 04-09 cycle.
+- `final_bundles.source_predictions_json` already has `selected_source_prizes` since 04-06 (main.py injection works).
+- Status: CODE_FIXED + DEPLOYED + WAITING_NEXT_CYCLE_EVIDENCE.
+
+### VPS file parity (verified 2026-04-08 19:42)
+- scheduler.py: MATCH
+- combo_super.py: content-MATCH (CRLF vs LF only)
+- gpt_analyzer.py: content-MATCH (CRLF vs LF only)
+- main.py: content-MATCH (CRLF vs LF only)
+
+### DB parity
+- Remote size: 19,984,384 | Local size: 19,984,384 | Hash: PASS
+
+### 14D baseline frozen
+- MN BT WR: 46.7% | MT BT WR: 46.7% | MB BT WR: 13.3%
+- Top models 7D: smart-ml 75%, lstm 70.8%, smart-ensemble 70.8%
+- Main-selection misalignment: 11/24 = 45.8%
+- Lane-weight simulation: 6/16 MT+MB days changed under neutral weights
+
+### Runtime/scoring safety status
+- No scoring-sensitive rollout. HOLD unchanged for STR-CAL-008, RULE-SHADOW-009.
+
+## V17.6.19 — SOURCE-PRIZE GAP ROOT-CAUSE FIX (2026-04-08 VN)
+
+### Root Cause
+- `scheduler.py` was OVERWRITING `combo_super.py`'s reasoning_json after it saved.
+  - combo_super.py saved 7-key reasoning (including `selected_source_prizes`, `knowledge_weights`)
+  - scheduler.py then saved a 5-key version (WITHOUT those keys) using wrong field names
+  - Result: production reasoning_json never had `selected_source_prizes` — 0/48 rows in 7d window
+- Secondary bug: scheduler.py read combo-super result using wrong keys (`main_numbers` → should be `numbers`, `strength_score` → should be `strength`), causing its reconstructed reasoning to have `total_models: 0`.
+
+### Fix
+- Removed redundant `save_prediction_reasoning` call in `scheduler.py` for `combo-super`.
+- Fixed field name reads (`numbers`, `strength`) in scheduler's combo-super wrapper.
+- combo_super.py is now the canonical reasoning producer for combo-super predictions.
+
+### Deploy
+- File: `web/backend/scheduler.py`
+- VPS deploy: direct SCP + systemctl restart lottery
+- VPS backup: `scheduler.py.bak-pre-v17619`
+- Health check: `/api/health` HTTP 200, service active
+- Verification pending: next combo-super cycle must produce `selected_source_prizes` in reasoning_json.
+
+### Lane-weight audit (evidence only, no change)
+- MT: `rerun_post_mn` gets 1.15x, AI chain gets 0.95x → net 1.21x ML advantage
+- MB: `rerun_post_mt` gets 1.08x, AI chain gets 0.95x → net 1.14x ML advantage
+- 7D simulation: MT had 2/8 days where neutral weights would have changed BT selection (both LOSE→different)
+- MB had 4/8 days changed (3 LOSE→different, 1 WIN→different)
+- HOLD: scoring-sensitive, needs shadow comparison before any change
+
+### Runtime/scoring safety status
+- No scoring-sensitive rollout. HOLD unchanged for EXP-STR-CAL-008, EXP-RULE-SHADOW-009.
+- No WR target change, no bundle architecture change.
+
+## V17.6.18 — FORENSIC TRACE FIX + UI/UX REMEDIATION (2026-04-08 VN)
+
+### Scope (Audit & Patch)
+- **Prediction Trace Fix**: Resolved the missing `source_prizes` and empty logs bug in `prediction_trace.jsonl`.
+  - Discovered that `log_prediction_trace` was prematurely called in `gpt_analyzer.py` before the model's JSON response string was loaded into the `result` dictionary.
+  - Relocated trace logging down to line `3485`, ensuring variables (`prediction`, `strength`) are accurately parsed.
+  - Programmatically implemented real-time `selected_source_prizes` mapping based on the `main_numbers` and passed that to the trace system and final DB payload, bypassing non-conforming AI model outputs natively.
+- **UI/UX Mobile Remediation**: Applied responsive layouts for smaller viewports `(<= 480px)`:
+  - Addressed horizontal clipping of region selection tabs (MN/MT/MB) with fluid flex configurations overriding rigid properties like `mask-image`. 
+  - Restructured navbar container grids across pages (`/settings`, `/du-doan`) to eliminate overdrawn forms and components intersecting on mobile displays.
+  - Corrected contrast violations on action elements as confirmed per UI audits.
+- Deploy: Verified success of deployment pipeline on remote VPS (`14.225.224.89`) preserving `sandbox` bounds.
+## V17.6.17 — TOTAL FORCE CLOSURE + ROLLOUT-READINESS PACK (2026-04-07 VN)
+
+### Scope (additive/query-support only)
+- Re-confirmed DB truth discipline from VPS (`14.225.224.89`):
+  - local backup + fresh pull
+  - size parity: local = remote (`19,406,848` bytes)
+  - hash parity: local = remote (`sha256` match)
+  - integrity: `PRAGMA integrity_check = ok`
+- Hardened forensic pack outputs for canonical gate usage:
+  - added `board_classification` (`production-backed` / `heuristic-backed` / `pending_more_evidence`)
+  - added explicit `query_assumptions`
+  - added `source_prize_emission_inspection` for 7d/14d windows.
+- Improved sync transparency:
+  - updated `web/_sync_db.py pull` to print remote/local size + sha256 parity after download.
+
+### Runtime/scoring safety status
+- No rollout of scoring-sensitive patches.
+- HOLD remains unchanged:
+  - `EXP-STR-CAL-008`
+  - `EXP-RULE-SHADOW-009`
+- No WR target change, no bundle architecture change, no product semantics change.
+
+### Source-prize gap closure status
+- End-to-end path rechecked: `gpt_analyzer.py` -> `predictions.reasoning_json` -> `main.py` aggregate -> `final_bundles.source_predictions_json` -> forensic extractor.
+- 7d/14d production-backed evidence:
+  - `reasoning_has_source_prize_key_rows = 0`
+  - `reasoning_source_prize_nonempty_rows = 0`
+  - bundle `selected_source_prizes` non-empty rows remain `0` in active windows.
+- Verdict:
+  - instrumentation/aggregation/extractor path is in place,
+  - upstream payload still not emitting source-prize list,
+  - keep pending strictly as next-cycle evidence gate (no pass-washing).
+
+## V17.6.16 — TOTAL FORCE NEXT-PHASE EXECUTION (2026-04-07 VN)
+
+### Scope (additive/query-support only)
+- Re-ran DB truth discipline:
+  - local backup + fresh pull from VPS (`14.225.224.89`)
+  - size parity: local = remote (`19,406,848` bytes)
+  - integrity: `PRAGMA integrity_check = ok`
+  - anchor window remains `MAX(predictions.date)`-based.
+- Hardened canonical forensic pack:
+  - updated `web/backend/_forensic_7d_pack.py` to support `--window-days` and optional `--anchor-date`
+  - output now includes both JSON + Markdown summaries
+  - added shadow-compare section and expanded selected-vs-dropped deltas
+  - improved gate parsing heuristic for region/day extraction from `scheduler_logs`.
+- Added compare templates:
+  - `web/backend/_forensic_compare_templates.sql` (W1/W2/W4 query-only templates).
+
+### Runtime additive patch deployed (no scoring behavior change)
+- Files deployed to VPS runtime:
+  - `web/backend/main.py`
+  - `web/backend/gpt_analyzer.py`
+- Patch intent:
+  - `gpt_analyzer.py`: trace now forwards `selected_source_prizes` if model payload provides it.
+  - `main.py`: final bundle trace attempts to fill `selected_source_prizes` from persisted `reasoning_json`.
+- Deploy + verify:
+  - `systemctl restart lottery` -> active
+  - `https://xs.io.vn/api/health` -> `V17.6.11`
+  - `/api/prediction-quality` diagnostics key count remains `9`.
+
+### Source-prize gap status
+- Current 7d evidence shows:
+  - `reasoning_json` rows with `selected_source_prizes/source_prizes` key: `0`
+  - `final_bundles.source_predictions_json.selected_source_prizes` non-empty rows: `0/21` (7d scope)
+- Verdict: instrumentation path is now additive-ready, but payload source still not emitting prize list in current cycles.
+
+### Governance lock (unchanged)
+- No rollout for scoring-sensitive patches.
+- Hold remains:
+  - `EXP-STR-CAL-008`
+  - `EXP-RULE-SHADOW-009`
+- No WR-target change, no bundle architecture change.
+
+## V17.6.15 — ULTRA 7-DAY QUERY-ONLY FORENSIC PACK (2026-04-07 VN)
+
+### Forensic execution scope (query-only, no scoring rollout)
+- Executed 7-day forensic pack on VPS-synced DB window anchored by `MAX(predictions.date)`:
+  - anchor date: `2026-04-06`
+  - window: `2026-03-31` -> `2026-04-06`
+- Added reusable pack script:
+  - `web/backend/_forensic_7d_pack.py`
+  - output artifact: `reports/_forensic_7d/forensic_7d_pack_2026-04-06.json`
+- Covered boards A-H in one run:
+  - model performance (region/model/family/lane/verdict/strength)
+  - selected-vs-dropped
+  - lane contribution
+  - partial survival
+  - source-prize survival
+  - main-selection failure
+  - trigger/timing
+  - learning/method/rule coverage
+
+### Governance lock (unchanged)
+- No scoring-sensitive rollout.
+- No WR-target change.
+- No bundle architecture change.
+- Keep HOLD:
+  - `EXP-STR-CAL-008`
+  - `EXP-RULE-SHADOW-009`
+
+### Outputs
+- New report:
+  - `reports/ULTRA_7D_QUERY_FORENSIC_PACK_2026-04-07_VI.md`
+
+## V17.6.14 — ULTRA TOTAL SYSTEM AUDIT + POST-MIDNIGHT DIAGNOSTICS FIX (2026-04-07 VN)
+
+### Runtime patch (`web/backend/main.py`) — low-risk, additive truth fix
+- Fixed `/api/prediction-quality` day snapshot anchor:
+  - Before: day-level diagnostics used calendar `today` (`get_vn_now()`), causing post-midnight empty/zero metrics before day-new predictions exist.
+  - After: diagnostics anchor date uses `MAX(predictions.date)`; if unavailable, fallback to VN current date.
+- Scope affected: day-snapshot diagnostics only (partial usefulness/survival, MT lane fusion, MN luck inflation, and related day-based slices).
+- No scoring logic change, no selection behavior change, no bundle architecture change.
+
+### Deploy + verify (production truth)
+- Deployed updated `main.py` to VPS runtime path and restarted `lottery` (`active`).
+- Verify production API:
+  - `/api/health` remains `V17.6.11`.
+  - `/api/prediction-quality.date` now returns latest available cycle date (`2026-04-06`) post-midnight.
+  - Previously-zero diagnostics now populated with real values:
+    - `partial_usefulness`: MN=4, MT=9, MB=5
+    - `mt_lane_fusion.lanes`: 3 lanes
+    - `mn_luck_inflation`: non-zero snapshot
+
+### Ultra total forensic closure (MN/MT/MB all layers)
+- Full-system audit confirms:
+  - MN currently strongest contributor in latest cycle and rolling windows.
+  - MT has model-level strength but final main-selection miss concentration.
+  - MB remains weakest conversion from useful partial signals to final winning picks.
+- Scoring-sensitive rollout lock unchanged:
+  - `EXP-STR-CAL-008` = HOLD
+  - `EXP-RULE-SHADOW-009` = HOLD
+
+## V17.6.13 — POST-CYCLE TOTAL AUDIT + TRUTH CLOSURE (2026-04-06 VN)
+
+### Production truth closure (no runtime patch rollout)
+- Verified from production API + VPS DB/log + VPS service path:
+  - `/api/health` = `V17.6.11`, service `lottery` = `active`.
+  - `/api/prediction-quality.execution_diagnostics` has full 9 blocks.
+  - Latest MB/MT final bundle rows include all 8 trace keys in `source_predictions_json`.
+- P0 MB day-2 stability closure:
+  - `C3 rerun_post_mt` and `C4 combo-no-token pre_result_numbers non-empty` both pass on `2026-04-05` and `2026-04-06` (2 consecutive days).
+
+### Post-cycle forensic findings (MT/MB)
+- MT final miss mainly at **main-selection layer**:
+  - final BT picked `68` (LOSE) while multiple AI rows hit `46`/`81`; MT bundle kept `46` only as Lo2 (PARTIAL).
+  - lane-weighted score favored rerun cluster `68` (`rerun_post_mn` mass) over AI hit cluster.
+- MB had useful partial signals but final synthesis did not convert:
+  - AI rows with useful hits (`52`, `32`) existed, but final ranked top2 stayed `46/37` and both lost.
+  - Evidence points to scoring/selection trade-off, not data freshness or gate crash.
+
+### Governance decisions in this cycle
+- **No rollout** for scoring-sensitive experiments:
+  - `EXP-STR-CAL-008`: HOLD (owner rollout lock still required).
+  - `EXP-RULE-SHADOW-009`: HOLD (owner rollout lock + readiness window needed).
+- Kept continuity-first approach: no parallel measurement system created.
+
+## UI-V1.2 — RESPONSIVE GRID NAV + SURFACE DEPTH RECOVERY (2026-04-06 VN)
+
+### Root Cause: Mobile Header Overflow
+- **Problem**: All owner-facing routes had nav buttons using `flex-wrap` which overflowed/clipped on ≤500px viewports
+- **Fix**: Replaced `flex-wrap` with **CSS Grid** layout that auto-fills columns at each breakpoint
+- **Impact**: 8 routes audited and fixed — zero horizontal overflow at 320-500px
+
+### Responsive Grid Navigation — Per Route
+| Route | Fix Applied | Grid Layout |
+|-------|------------|-------------|
+| `/app` (styles.css) | `header-right` → `grid repeat(auto-fill, minmax(90px, 1fr))` at 768px, `repeat(3, 1fr)` at 480px | ✅ |
+| `/du-doan` | `dudoan-header-right` → `grid repeat(3, 1fr)` at 600px | ✅ |
+| `/accuracy` | New `.top-bar-nav` class with `grid repeat(4, 1fr)` at 768px, `repeat(3, 1fr)` at 480px | ✅ |
+| `/filter` | `header-right` → `grid repeat(4, 1fr)` at 768px, `repeat(3, 1fr)` at 600px; date picker `grid-column: 1/-1` | ✅ |
+| `/search` | `header-right` → `grid repeat(2, 1fr)` at 768px (4 buttons only) | ✅ |
+| `/review-dashboard` | `hdr-nav` → `grid repeat(4, 1fr)` at 768px, `repeat(3, 1fr)` at 480px | ✅ |
+| `/rules-dashboard` | Inherits from shared `styles.css` `.header-right` grid fix | ✅ |
+| `/settings` | Inherits from shared `styles.css` `.header-right` grid fix | ✅ |
+
+### Region Tabs — Scroll-Snap with Fade Indicator
+- Tabs at ≤480px: `scroll-snap-type: x proximity` + `scroll-snap-align: start`
+- Added `mask-image: linear-gradient(to right, black 85%, transparent 100%)` fade-edge hint
+- Tab items: `min-width: 120px`, `flex: 0 0 auto` (prevents squishing)
+
+### Surface Depth Improvements
+| Component | Before | After |
+|-----------|--------|-------|
+| accuracy `.stat-card` | No shadow, `#E7E5E4` border | Shadow + `#D6D3D1` border + **top-stripe gradient** |
+| accuracy `.section-card` | No shadow, thin border | Shadow + thicker header border + `#FAFAF8` header bg |
+| accuracy `.top-bar` | Weak `#E7E5E4` border | `#D6D3D1` + dual shadow |
+| filter `.stat-card` | No shadow | Shadow + **top-stripe gradient** |
+| filter `.source-block` | No shadow | `box-shadow: 0 1px 2px rgba(0,0,0,0.05)` |
+| filter `.header` | No shadow | `box-shadow + #D6D3D1` border |
+| filter `.back-link` | Gray, minimal | Warm hover state, `#FAFAF8` bg, structured sizing |
+| quality panel | `bg-accent-soft`, 1px border | `bg-card` (white), **2px accent border**, `shadow-lg`, separator line |
+| quality region cards | `shadow-xs` | `shadow-sm` + hover lift animation |
+| review `.sm-card` | No shadow | `box-shadow: 0 1px 2px` |
+| search `.search-page-header` | `glass-shadow` (legacy) | `shadow-md` (design system token) |
+
+### Files Changed
+- `web/frontend/styles.css` — header grid, tabs scroll-snap, quality panel depth
+- `web/frontend/du-doan.html` — header grid at 600px
+- `web/frontend/accuracy.html` — full nav restructure + card depth
+- `web/frontend/filter.html` — header grid + card depth + button styling
+- `web/frontend/search.html` — header grid + shadow fix
+- `web/frontend/review-dashboard.html` — nav grid + summary card shadow
+
+
+## UI-V1.1 — SURFACE HIERARCHY + CARD ELEVATION + DEPTH POLISH (2026-04-06 VN)
+
+### Surface Hierarchy System (styles.css SSOT)
+- **Page canvas** darkened from `#F8F8F6` → `#F3F1EE` for stronger card separation
+- **4-level shadow system**: `--shadow-xs` / `--shadow-sm` / `--shadow-md` / `--shadow-lg` / `--shadow-xl`
+- **Border tokens refined**: `--border-color` strengthened to `#D6D3D1`, added `--border-subtle`, `--border-accent`
+- **New surface tokens**: `--bg-dense`, `--bg-elevated`, `--bg-accent-soft` for multi-level hierarchy
+- **Text contrast improved**: `--text-secondary` → `#44403C`, `--text-muted` → `#78716C`
+
+### Card Depth & Elevation Polish
+| Component | Before | After |
+|-----------|--------|-------|
+| `.card` | 1px border, near-invisible shadow | Stronger border + `shadow-sm`, hover lifts with `shadow-md` |
+| `.v11-card` | Flat `glass-shadow` | `shadow-md` + hover lift animation |
+| `.v12-card-hero` | Subtle orange tint | Stronger tint + `shadow-lg` + orange ring glow |
+| `.stat-item` | Flat, no visual anchor | Orange top-stripe indicator + `shadow-sm` + hover lift |
+| `.card-header` | Transparent | Subtle `--bg-dense` background tint |
+| `.quality-panel` | Barely visible | `--bg-accent-soft` + `shadow-md` + accent border |
+
+### Data-Heavy Zone Improvements
+- Table headers: bold text, `2px` bottom border, muted background
+- Zebra striping added for row separation
+- Row hover opacity increased from `0.03` → `0.06`
+- Win/Lose/Partial row tints strengthened
+
+### Dark-Mode Remnants Fixed
+- `model-select`, `date-input`, `filter-select`: `rgba(15,23,42,0.6)` → `var(--bg-muted)`
+- Removed all `backdrop-filter: blur(20px)` from cards/tabs
+
+### Responsive Integrity
+- Desktop (1200px): verified ✅
+- Mobile (375px): verified ✅ — card separation, shadows, spacing all intact
+- No horizontal overflow, no layout regression
+
+### Files Changed
+- `styles.css` (SSOT token layer + all component classes)
+- `CHANGELOG.md`
+
+---
+
+## UI-V1.0 — SYSTEM-WIDE LIGHT THEME FINALIZATION + JS RENDER FIX + RESPONSIVE INTEGRITY (2026-04-06 VN)
+
+### Theme Architecture (styles.css SSOT)
+- `:root` design token system: warm-white base (`#F8F8F6`), deep orange primary (`#EA580C`), semantic accents
+- All component classes converted: cards, tables, status badges, input controls, spinners
+- V11/V12 prediction card styles: dark glass → light border/shadow
+- Responsive breakpoints verified intact at 375px/768px/1200px
+
+### Module Conversion (10 production HTML files)
+| File | Key Changes |
+|------|-------------|
+| `du-doan.html` | Body bg, cards, bundle banners, trace strips → light theme |
+| `viewer.html` | Isolated `:root` tokens replaced, filter controls, trailing nav |
+| `review-dashboard.html` | KPI gradient, table headers, tab active, verify-hit badges |
+| `rules-dashboard.html` | Header/tab bg, progress bars, Dự Đoán button accent |
+| `filter.html` | Section gradients, header gradient, all dark card surfaces |
+| `accuracy.html` | Body gradient, stat/filter/region cards, purple→orange accent |
+| `login.html` | Purple/blue gradient → orange brand identity |
+| `settings.html` | Purple accent (#667eea) → deep orange across all components |
+| `search.html` | Result tables, loading overlays, dark text containers |
+| `index.html` | Dự Đoán/Review button accent colors |
+
+### JavaScript Render Fix (critical – dynamic inline styles)
+| File | Lines Fixed | Issue |
+|------|-------------|-------|
+| `app.js` | L1389-1427 | `#e2e8f0` white text on dark bg → `#1C1917` dark text on light bg |
+| `app.js` | L1410-1420 | `rgba(255,255,255,0.04)` glass bg → `rgba(0,0,0,0.03)` light bg |
+| `app.js` | L1427 | `rgba(255,255,255,0.02)` dashed border → `#E7E5E4` solid |
+| `app.js` | L1935 | Recommendation block white text → dark text |
+| `accuracy.js` | L16 | `#10b981` chart color → `#059669` (better light-bg contrast) |
+| `accuracy.js` | L272-283 | Glass borders/bg + white group label text → light equivalents |
+
+### Not Touched (Hard Lock)
+- Prediction logic, scheduler logic, API contracts, DB schema
+- Semantic status colors (win=#22c55e, lose=#ef4444, pending=#f59e0b) — unchanged
+- `settings.html` borders using `#e2e8f0` — valid light-theme gray-200 borders
+
+### Verification Status
+- Code audit: ✅ All `#e2e8f0` text, `#0a0e1a`/`#0f1117` backgrounds eliminated from production files
+- Archive files: Not modified (legacy demo pages in `/archive/`)
+- Browser regression: ⏳ BLOCKED — server not running locally (MANUAL_SANDBOX_ACTION)
+- Deploy: ⏳ Pending owner action
+
+---
+
+## V17.6.12 — NIGHT HARDENING: ADDITIVE MEASUREMENT CONTINUITY (2026-04-05 VN)
+
+### Runtime patch (`web/backend/daily_evaluation.py`)
+- Triển khai additive instrumentation theo continuity-first, không tạo hệ đo lường song song:
+  - `daily_eval_log.model_bt_rates_json` (per-model BT snapshot theo ngày/miền)
+  - `daily_eval_log.method_coverage_json` (coverage snapshot từ reasoning factors đã persist)
+  - `daily_eval_log.method_coverage_ratio` (tỷ lệ coverage trên catalog mục tiêu 18 methods)
+- Không thay đổi scoring/prediction logic; chỉ mở rộng logging trong pipeline eval đã có.
+
+### Deploy + verify (production truth)
+- Deploy trực tiếp VPS: upload `web/backend/daily_evaluation.py`, restart `lottery` thành công (`active`).
+- Verify runtime:
+  - `/api/health` vẫn `V17.6.11`, service active.
+  - Chạy `evaluate_day('2026-04-05')` trên VPS thành công; ghi dữ liệu mới vào `daily_eval_log`.
+  - `PRAGMA table_info(daily_eval_log)` xác nhận có 3 cột mới.
+  - Dữ liệu mẫu ngày `2026-04-05`: `model_count=15`, `method_coverage_ratio` có giá trị số thực theo miền.
+
+### Night-honesty lock (reconfirmed)
+- P0 MB C3/C4 hiện vẫn mới pass 1 ngày (`2026-04-05`) -> giữ `DEPLOYED_UNVERIFIED_STABILITY`.
+- Latest MB `final_bundles` rows vẫn thiếu 8 trace keys -> giữ `BLOCKED_BY_DAY_NEW_EVIDENCE` (không pass-washing).
+
+## V17.6.11 — KPI FORENSIC COMPLETION + P0 MB DAY-NEW EVIDENCE RECONCILE (2026-04-05 VN)
+
+### Runtime patch (`web/backend/main.py`)
+- Bổ sung 4 diagnostics/KPI còn thiếu trong `/api/prediction-quality.execution_diagnostics`:
+  - `main_selection_failure_kpi` (14d/28d, main miss nhưng secondary hit)
+  - `source_prize_survival_matrix` (14d/28d theo region×prize)
+  - `lane_contribution_metric` (14d/28d theo run_source×status ratio)
+  - `model_exclusion_reason_metric` (14d/28d active vs shadow counts)
+
+### Deploy + verify (production truth)
+- Deploy trực tiếp VPS: upload `web/backend/main.py`, restart `lottery` thành công (`active`).
+- Verify VPS localhost + production public API:
+  - `/api/prediction-quality` trả đủ 9 khối diagnostics (bao gồm 4 khối mới).
+  - `/api/health.version` đã align về `V17.6.11` (khóa xung đột runtime-version giữa dossier/report/runtime).
+- DB truth reconcile (sync VPS -> local):
+  - MB day-new `run_source='rerun_post_mt'` đã có (`2026-04-05`, 7 rows).
+  - MB day-new `combo-no-token` có `pre_result_numbers` non-empty (`pre_state=OK`).
+
+### Honest note
+- `final_bundles.source_predictions_json` bản ghi ngày hiện tại vẫn chưa chứa full trace keys mới (freeze/history effect của bundle đã sinh trước), nên trace-field evidence của bundle tiếp tục theo dõi ở cycle kế tiếp.
+
+### Cycle-truth continuity rebaseline (docs-only, no runtime logic change)
+- Rebaseline production truth bằng query VPS DB trực tiếp:
+  - P0 C3/C4 hiện mới pass `2026-04-05` (1 ngày), chưa đủ 2 ngày liên tiếp -> giữ `DEPLOYED_UNVERIFIED_STABILITY`.
+  - Latest MB `final_bundles` rows vẫn thiếu 8 trace keys mới -> giữ `BLOCKED_BY_DAY_NEW_EVIDENCE`.
+- Rebaseline stale claims theo schema/data hiện tại:
+  - Claim `158 dead rules` và `hot_cold MB Friday 5.9%` không còn đúng theo DB thực tế hiện tại.
+  - Claim `18/18 method tracking đã có` chưa đúng (DB currently shows 6 factor types populated).
+- Artifact report continuity: `reports/CURSOR_CYCLE_TRUTH_CONTINUITY_REBASELINE_2026-04-05_VI.md`.
+
+## V17.6.10 — EXECUTION NIGHT FOLLOW-UP: EXCLUSION TAXONOMY + EARLY/WRONG KPI NUMERICS (2026-04-05 VN)
+
+### Runtime patch (main.py)
+- `generate_final_bundle()` bổ sung `model_exclusion_reasons` taxonomy có active/shadow status:
+  - active: `bt_gate`, `wr_gate`, `empty_or_invalid`, `policy_exclude` (nếu bật)
+  - shadow-ready: `verdict_gate`, `strength_gate`, `duplicate`
+- Bổ sung `shadow_controls` metadata để rollback/activation rõ ràng:
+  - `enable_verdict_hard_exclude`
+  - `enable_strength_hard_exclude`
+  - `min_strength_for_voting`
+  - `partial_correct_bonus_shadow_multiplier`
+- `score_breakdown` thêm shadow metric:
+  - `partial_bonus_shadow`
+  - `shadow_score_if_partial_bonus`
+
+### Monitoring 14d/28d enrichment (main.py → `/api/prediction-quality`)
+- `execution_diagnostics.monitoring_14d_28d` bổ sung số liệu thực:
+  - `early_step_wrong_region_kpi.window_14d/window_28d`
+    - total
+    - same_day_cross_region (+ratio)
+    - next_day_same_region (+ratio)
+    - model_family_drift
+  - `main_vs_secondary_success_matrix.window_14d/window_28d`
+    - main_hit / secondary_hit / both_hit / none_hit
+
+### Deploy + verify
+- Deploy VPS: cập nhật `web/backend/main.py`, restart `lottery.service` thành công (`active`).
+- Verify production API:
+  - `/api/prediction-quality` trả đủ keys mới:
+    - `early_step_wrong_region_kpi.window_14d/window_28d`
+    - `main_vs_secondary_success_matrix.window_14d/window_28d`
+- Verify production UI:
+  - `/du-doan` MB vẫn hiển thị rõ banner `12/15` + wording gate-filter đúng semantics.
+- Note trung thực:
+  - `model_exclusion_reasons`/`shadow_controls` trong `source_predictions_json` cần cycle bundle mới để xuất hiện trên bản ghi ngày mới (bundle ngày hiện tại đã frozen trước patch follow-up).
+
+## V17.6.9 — ULTRA TOTAL FORCE EXECUTION: PARTIAL-SIGNAL SURVIVAL + TRACE ENRICHMENT (2026-04-05 VN)
+
+### Runtime scoring + fusion patch (main.py)
+- `generate_final_bundle()` thêm **region-adaptive gate**:
+  - MB: `min_bt=12`, `min_wr=26`
+  - MT: `min_bt=14`, `min_wr=28`
+  - fallback region khác giữ `15/30`
+- Thêm **adaptive SKIP penalty**:
+  - model có BT/WR đủ tốt: SKIP weight 0.7 (thay vì fixed 0.4)
+  - model yếu vẫn giữ 0.4
+- Thêm **secondary survival tuning**:
+  - secondary weight nâng từ fixed 0.7 -> adaptive 0.75..0.90 (region + quality dependent)
+- Thêm **lane-aware fusion**:
+  - MT `rerun_post_mn` boost 1.15
+  - MB `rerun_post_mt` boost 1.08
+  - MT/MB `ai_chain` downweight 0.95
+
+### Trace enrichment (main.py + gpt_analyzer.py)
+- `source_predictions_json` bổ sung các field forensic:
+  - `selected_source_prizes`, `top1_reason`, `top2_reason`, `dominant_rule_group`, `week_phase_score`,
+  - `main_selection_reason`, `dropped_main_candidate_reason`, `partial_survival_reason`,
+  - `score_breakdown`, `gate_diagnostics`, `lane_fusion_policy`.
+- `prediction_trace.jsonl` writer (`log_prediction_trace`) nhận và log đầy đủ 8 field trace enrichment nêu trên.
+
+### Monitoring enrichment API
+- `/api/prediction-quality` thêm `execution_diagnostics`:
+  - `partial_usefulness`
+  - `partial_survival_to_final`
+  - `mt_lane_fusion`
+  - `mn_luck_inflation`
+  - `monitoring_14d_28d`
+
+### Owner-facing UI semantics
+- `/app` wording PARTIAL đổi sang hướng rõ nghĩa:
+  - `PARTIAL (có tín hiệu đúng)`
+  - BT miss vẫn hiển thị rõ + note theo dõi survival vào final bundle.
+- `/du-doan` thêm explainability strip nếu bundle có trace field:
+  - `Main-selection: ...`
+  - `Partial-signal: ...`
+  - list candidate bị rơi khỏi BT (nếu có).
+
+### Deploy + verify
+- Deploy trực tiếp VPS qua SFTP (do VPS `git pull/fetch` vẫn lỗi nền):
+  - `web/backend/main.py`
+  - `web/backend/gpt_analyzer.py`
+  - `web/frontend/du-doan.html`
+  - `web/frontend/app.js`
+- Restart `lottery.service` thành công, trạng thái `active (running)`.
+- Verify production:
+  - `/api/prediction-quality` trả `execution_diagnostics` đúng schema mới.
+  - `/du-doan` vẫn render ổn định, có evidence `12/15` sau deploy.
+
+## V17.6.8 — SETTINGS/RUNTIME REDESIGN: UI↔RUNTIME CONSISTENCY LOCK (2026-04-05 VN)
+
+### Runtime + API contract
+- `scheduler.py` mở rộng `get_scheduler_status()`:
+  - Sửa default optimizer time về chuẩn `03:00`.
+  - Bổ sung `runtime_effective`, `canonical_slots`, `alignment`, `jobs_overview`, `latest_runs`.
+- `database.py` `seed_defaults()` cập nhật canonical defaults:
+  - `schedule_mn=16:35`, `schedule_mt=17:35`, `schedule_mb=18:38`.
+  - Bổ sung defaults cho `ai_predict_*`, `retrain_*`, `free_predict_time`, `weight_optimizer_*`, `daily_eval_time`.
+- `main.py`:
+  - `/api/health` bump `version` -> `V17.6.8`.
+  - `/api/settings/bulk` thêm guard `RUNTIME_SYSTEM_EDITABLE_KEYS` để chặn system keys ngoài phạm vi runtime UI.
+
+### UI redesign (no fake settings)
+- `settings.html` section hệ thống được redesign theo 3 lớp:
+  - Editable runtime settings.
+  - Read-only canonical/governance info.
+  - Operational status (alignment + latest runs 02h/03h/04h + runtime version).
+- `settings.js` load/save thêm các key runtime thật (`ai_predict_*`, `retrain_*`, `free_predict_time`, `weight_optimizer_*`) và validate định dạng giờ `HH:MM` trước khi lưu.
+- `loadSchedulerStatus()` consume payload mới để hiển thị trạng thái aligned/drift + latest overnight job evidence.
+
+### Owner-facing hydration & metrics semantics hardening (follow-up)
+- Tránh trạng thái `--:--` vô lý bằng cách prefill default runtime values ngay trên UI (trước khi API trả về).
+- `settings.js` bổ sung `DEFAULT_RUNTIME_SETTINGS` + `applyRuntimeDefaults()` để field thời gian quan trọng luôn có baseline hiển thị.
+- Status panel thêm fallback rõ nghĩa khi thiếu quyền/thiếu dữ liệu (`Đang tải...`, `Chưa có`, `Cần quyền admin`) thay vì để trống khó hiểu.
+- Section metrics thêm note semantic cho cards:
+  - `Kết Quả XS` = tổng rows `lottery_results` lũy kế.
+  - `Dự Đoán` = tổng rows `predictions` lũy kế.
+
+### Owner-facing status terminal-state hardening (master flow follow-up)
+- `loadSchedulerStatus()` thêm timeout bảo vệ fetch cho `/api/health` và `/api/scheduler/status`, tránh loading vô hạn.
+- Tất cả card chính có terminal state rõ nghĩa sau timeout/lỗi:
+  - `Không lấy được version` cho Runtime Version khi health lỗi.
+  - `Chưa có dữ liệu` khi payload không success.
+  - `Lỗi kết nối` khi request nổ ở catch.
+  - `Cần quyền admin` khi endpoint trả non-2xx do auth.
+- Label metrics được đổi rõ nghĩa hơn: `Kết Quả XS (lũy kế DB)` và `Dự Đoán (lũy kế DB)`.
+
+### Local-vs-VPS reconciliation (production-truth lock)
+- Chốt lại SSOT vận hành: production owner-facing evidence + VPS DB/API/log là nguồn kết luận readiness; local chỉ dùng debug.
+- Verify production session admin tại `https://xs.io.vn/settings` cho thấy status panel đã hydrate đầy đủ (`V17.6.8`, `ALIGNED`, latest 02/03/04 có timestamp).
+- Bổ sung wording metrics chi tiết hơn ở helper note:
+  - `Kết Quả XS` = toàn bộ lịch sử ingest trong `lottery_results`.
+  - `Dự Đoán` = toàn bộ bản ghi `predictions` qua mọi lane/model/run_source.
+- Master reconciliation tiếp theo (local-debug parity hardening):
+  - Sync an toàn provider env từ VPS -> local (không log lộ secret), xóa file sync tạm sau khi merge.
+  - Fix local canonical drift 4 fields (`schedule_mn`, `schedule_mt`, `ai_predict_mt_time`, `ai_predict_mb_time`) và reload scheduler local để về `ALIGNED`, `drift=0`.
+  - Báo cáo tổng lực mới: `reports/MASTER_RECONCILIATION_LOCAL_VPS_PRODUCTION_V1768_VI.md` (36 trục/36 bảng + 34 dòng kết luận khóa).
+
+### Local-code / VPS-DB truth discipline lock (master one-flow)
+- Thực thi bắt buộc: backup `data/lottery_ai.db` local rồi pull snapshot VPS mới nhất về local để forensic/readiness không bị local snapshot cũ làm méo.
+- Bằng chứng parity sau sync: `lottery_results=14412`, `predictions=2335`, `scheduler_logs=21772`, `final_bundles=109`, `day_governance=108`, `daily_eval_log=175` match local=VPS.
+- Báo cáo master mới: `reports/MASTER_RECONCILIATION_LOCAL_VPS_PRODUCTION_V1768_VII.md` (40 trục/40 bảng + 36 dòng kết luận khóa).
+- Verdict không đổi: production owner-facing `USABLE_FOR_CONTROLLED_OPERATION`; clean-live vẫn `PARTIAL_READY` do P0 MB C3/C4 day-new chưa đủ.
+
+### Final pre-live lock (close 3 open gaps)
+- Report-first + execute: `reports/FINAL_PRELIVE_LOCK_GAP3_PHASE0_VI.md` -> `reports/FINAL_PRELIVE_LOCK_GAP3_CLOSEOUT_VI.md`.
+- Gap #1 `google-genai`:
+  - Repair pip trong local venv và cài `google-genai` thành công.
+  - Verify import `google.genai` pass, warning thiếu package được xử lý.
+- Gap #2 `SESSION_SECRET`:
+  - Set explicit `SESSION_SECRET` cho local + VPS env (không lộ secret).
+  - Restart local server và `systemctl restart lottery` trên VPS; verify login/session/admin flow local + production đều pass.
+- Gap #3 P0 MB day-new:
+  - Không pass-washing: C3/C4 vẫn chờ evidence MT-next day-new, clean-live vẫn giữ `PARTIAL_READY`.
+
+### SSOT governance
+- `.Antigravityrules.md` thêm §36I: **Settings UI MUST MIRROR REAL RUNTIME (No Fake Settings lock)**.
+- Verdict vận hành vẫn giữ nguyên nguyên tắc honesty-lock:
+  - `PARTIAL_READY` nếu chưa đủ day-new evidence cho P0 MB C3/C4.
+
+---
+
+## V17.6.7 — SUPREME TOTAL CONTROL: RUNTIME CANONICAL DRIFT FIX + EXTREME PHASE0 (2026-04-05 VN)
+
+### Report-first (Phase 0)
+- Báo cáo mới: `reports/ULTRA_SUPREME_TOTAL_CONTROL_PHASE0_V1767_VI.md` (30 trục audit, 29 bảng bắt buộc, 36 dòng khóa cuối).
+- Chốt trung thực: **PARTIAL_READY**; P0 MB vẫn **2/4**; không pass-washing.
+
+### Runtime Drift Found (critical)
+- Production `app_settings` trước fix bị lệch canonical:
+  - `schedule_mn=16:38` (chuẩn `16:35`)
+  - `schedule_mt=17:38` (chuẩn `17:35`)
+  - `ai_predict_mt_time=16:58` (chuẩn `16:42`)
+  - `ai_predict_mb_time=17:58` (chuẩn `17:42`)
+
+### Runtime Fix Executed (same session)
+- Đã update trực tiếp production DB về canonical:
+  - `schedule_mn=16:35`, `schedule_mt=17:35`
+  - `ai_predict_mt_time=16:42`, `ai_predict_mb_time=17:42`
+- Restart service `lottery` và verify:
+  - `/api/health` vẫn running (`V17.6.5`)
+  - `scheduler_logs` xác nhận:
+    - `Weight optimizer: sun lúc 03:00`
+    - `Free Model Auto-Predict: hàng ngày lúc 04:00`
+    - `AI Auto-Predict: MT=16:42, MB=17:42, MN=04:15`
+    - `Scheduler đã khởi động: MN=16:35, MT=17:35, MB=18:38`
+
+### Deep Verify 02:00 / 03:00 / 04:00
+- 02:00 retrain: có evidence chạy thật + `training_history` mới.
+- 03:00 optimizer: có evidence chạy thật + artifact `app_settings.weights_MN/MT/MB` cập nhật `03:02..03:10 +07`.
+- 04:00 free-model: có rows `predictions.run_source='auto_daily'` tại `04:00:00..04:00:05`.
+
+### Open Conditions (owner lock)
+- P0 C3: chưa có day-new `rerun_post_mt` cho MB.
+- P0 C4: chưa có day-new MB no-token `DD Sau KQ` non-empty.
+- Verdict giữ nguyên: **PARTIAL_READY**, chưa `FULL_CLOSURE_PASS`.
+
+---
+
+## V17.6.6 — EXTREME NIGHT CRITICAL CLOSEOUT (PARTIAL_READY LOCK) (2026-04-05 VN)
+
+### Report-first
+- Thêm báo cáo mới: `reports/ULTRA_EXTREME_NIGHT_CRITICAL_V1766_VI.md`.
+- Báo cáo chốt đúng chuẩn trung thực: **PARTIAL_READY**, không pass-washing khi chưa có day-new evidence.
+- Bổ sung checklist auto-verify cực rõ cho phiên MT kế tiếp để chốt 2 điều kiện còn thiếu của P0 MB:
+  - Có `rerun_post_mt` ngày mới.
+  - MB no-token `DD Sau KQ` không còn trống.
+
+### Runtime Verify (tonight snapshot)
+- Health VPS: `{"version":"V17.6.5","status":"running"}`.
+- SQL forensic MB (`>=2026-04-03`): vẫn thấy lịch sử `rerun_after_verify`; chưa có day-new `rerun_post_mt` trong snapshot hiện tại.
+- DD state forensic: `2026-04-03 = OK/OK`, `2026-04-04 = OK/EMPTY`, `2026-04-05 manual = OK/EMPTY`.
+- Verdict giữ nguyên: **PARTIAL (2/4)** cho P0 MB.
+
+### Closure Gate (locked)
+- **FULL_CLOSURE_PASS** chỉ khi đủ 4/4 điều kiện owner lock.
+- **LIVE-READY** chỉ được kết luận sau phiên MT kế tiếp nếu FULL_CLOSURE_PASS = TRUE và dirty-day exclusion vẫn giữ.
+
+---
+
+## V17.6.5 — EXTREME LIVE-READINESS LOCK + GATE_PHASE HARDLOCK (2026-04-06 VN)
+
+### Code
+- `[DATA_REFRESH_GATE]` log thêm field `gate_phase` (bên cạnh `date/sla_target/window/within_sla_window/station_actual/station_expected`) để audit phase rõ ràng hơn.
+- `/api/health` bump `version` lên `V17.6.5`.
+
+### SSOT / Report
+- Báo cáo mới: `reports/ULTRA_EXTREME_LIVE_READINESS_V1765_VI.md` (24 trục, 24 bảng, 30 dòng kết luận).
+- `.Antigravityrules.md` cập nhật schema HARDLOCK: thêm `gate_phase`.
+
+### Runtime Verify (VPS, phiên hiện tại)
+- Health: `{"version":"V17.6.5"}` sau pull + restart service.
+- SQL MB: vẫn chưa có `run_source='rerun_post_mt'` trong dữ liệu hiện có; 04/04 vẫn legacy `rerun_after_verify`.
+- `main_numbers/pre_result_numbers`: 04/04 = `OK/EMPTY`, 04/03 = `OK/OK`.
+- P0 MB: **PARTIAL (2/4)** — chưa đạt điều kiện (3)(4) owner lock.
+
+### Live-Readiness Verdict
+- Dirty-day `2026-04-04` được giữ cho forensic, **loại khỏi measurement optimize chính**.
+- Hệ chưa `FULL LIVE-READY`; cần tối thiểu 1 ngày MT mới sau deploy để chốt P0.
+
+### Deploy Status
+- **LOCAL:** Applied (`master`)
+- **VPS:** ✅ `git pull` + `systemctl restart lottery` + health `V17.6.5`
+
+---
+
+## V17.6.4 — HARDLOCK GATE INSTRUMENT + ULTRA SUPREME CLOSEOUT (2026-04-06 VN)
+
+### Code
+- `[DATA_REFRESH_GATE]` trong `scheduler.py` bổ sung fields có cấu trúc:
+  - `region`, `date`, `vn_time`
+  - `sla_target`, `window`, `within_sla_window`
+  - `station_actual`, `station_expected`
+- `/api/health` bump `version` lên `V17.6.4`.
+
+### SSOT / Report
+- `.Antigravityrules.md` §36B bổ sung schema log HARDLOCK V17.6.4.
+- Báo cáo mới: `reports/ULTRA_SUPREME_CLOSEOUT_V1764_VI.md` (22 trục, 22 bảng, 28 dòng kết luận).
+
+### Runtime Verify (VPS, phiên hiện tại)
+- Health: `{"version":"V17.6.4"}` sau `git pull` + `systemctl restart lottery`.
+- SQL MB (`2026-04-03`/`2026-04-04`) vẫn chỉ thấy `rerun_after_verify` (legacy); chưa có `rerun_post_mt`.
+- Trạng thái P0 MB: **PARTIAL** (điều kiện 1,2 đạt; điều kiện 3,4 chờ ngày chạy thật sau deploy).
+
+### Deploy Status
+- **LOCAL:** Applied (`master`)
+- **VPS:** ✅ `git pull` + `systemctl restart lottery` + health `V17.6.4`
+
+---
+
+## V17.6.3 — SKIP/FREEZE CYCLE LAW + §36D MB ROW FIX + CLOSEOUT REPORT (2026-04-06 VN)
+
+### SSOT
+- **§36F:** Luật skip/freeze theo chu kỳ ngày (sau verify miền X → freeze predict/rerun nhắm X cùng ngày; MB kết thúc vòng).
+- **§36D:** Sửa hàng MB verify — **không** free-model rerun cùng ngày (khớp `scheduler.py` “KHÔNG re-predict sau MB”).
+- **`rerun_post_mb`:** Ghi chú reserved/test; path auto sau MB không gọi `_rerun_free_models_after_scrape`.
+- **Hard Rules §36:** thêm mục 6 (skip/freeze).
+
+### Báo cáo
+- `reports/ULTRA_MASTER_CLOSEOUT_V1763_VI.md` — Phase 0 + 20 trục + matrix + 26 dòng kết luận.
+
+### Code
+- Comment `scheduler.py`: nhánh `trigger_region=="MB"` không dùng trong production auto path.
+
+### Deploy Status
+- **LOCAL:** Applied (commit đầu mục V17.6.3 trên `master`)
+- **VPS:** `git pull` + `systemctl restart lottery` — 2026-04-05/06; `/api/health` → `V17.6.3`
+
+---
+
+## V17.6.2 — HARDLOCK TYPO FIX + GATE vn_time + §36 run_source footnote (2026-04-05 VN)
+
+### §36 SSOT
+- **§36A.1:** Bảng sửa wording 16:42/17:42 (AI MT / MN→MT; AI MB / MT→MB); thêm mục **sửa nhầm label** khi dán checklist (`VERIFY_READY_SLOT MN` vs `MT` là sai).
+- **§36D:** Footnote `rerun_post_mn` | `rerun_post_mt` | `rerun_post_mb` + LOCK theo phase.
+- **16:41/17:41:** Định nghĩa vận hành + SLA cửa sổ; log gate kèm `vn_time`.
+
+### Code
+- `[DATA_REFRESH_GATE]` log thêm **`vn_time=HH:MM:SS` (Asia/Ho_Chi_Minh)** trong `_run_auto_update` để audit so với mục tiêu 16:41/17:41.
+
+### Verify VPS (T1 snapshot)
+- Query `predictions` MB `2026-04-03` / `2026-04-04`: chỉ thấy `rerun_after_verify` (legacy trước V17.6.1). **Chưa** có hàng `rerun_post_*` — bình thường cho ngày đã chạy trước patch; cần xác nhận lại sau phiên MT đầu tiên **sau** deploy V17.6.1.
+
+### Deploy Status
+- **LOCAL:** ✅ Applied
+- **VPS:** ✅ `git pull` + `systemctl restart lottery` — 2026-04-05 (`75abea7`)
+
+---
+
+## V17.6.1 — RERUN LOCK PER-PHASE + §36 DATA_REFRESH 16:41/17:41 (2026-04-04 VN)
+
+### P0: MB no-token không rerun sau MT (DD Sau KQ / cuốn chiếu)
+- **Root cause:** `_rerun_free_models_after_scrape` dùng một `run_source` (`rerun_after_verify`) cho cả sóng MN và sóng MT. Sau MN đã ghi MB → sóng MT thấy COUNT > 0 → **skip** rerun MB.
+- **Evidence VPS (T1):** `2026-04-04` MB chỉ có một làn `rerun_after_verify` ~16:38; `2026-04-03` có `pre_result_numbers` đầy đủ sau hai pha; MT có đủ `lottery_results` ngày 04/04.
+- **Fix:** `run_source` theo trigger: `rerun_post_mn` | `rerun_post_mt` | `rerun_post_mb`; LOCK chỉ skip khi **đúng phase** đã ghi (`scheduler.py`).
+
+### SSOT §36 (`.Antigravityrules.md`)
+- Bảng timeline: thêm **16:41** / **17:41** = DATA_REFRESH_GATE (tên nghiệp vụ; runtime = log `[DATA_REFRESH_GATE]` sau commit scrape).
+- §36B: gỡ tham chiếu `_check_new_data()` (không tồn tại trong code); mô tả đúng `_run_auto_update`.
+
+### Docs / registry
+- `monitoring_protocol.md`: forensic log reconcile 04/04.
+- `experiment_registry.md`: Last Updated.
+- **Notion** `Lottery_AI_Test` HOME: callout V17.6.1 (MCP).
+
+### Deploy Status
+- **LOCAL:** ✅ Applied
+- **VPS:** ✅ `git pull` + `systemctl restart lottery` — 2026-04-04 (`06fb9a6`, `scripts/deploy-vps.ps1`)
+
+---
+
+## V17.6 — UI TRANSPARENCY + HEALTH VERSION + AUDIT COMPLETION (2026-04-04 22:42 VN)
+
+### Warning Wording Fix (du-doan.html)
+- **Before:** "⚠️ Thiếu model — kết quả tổng hợp chưa đầy đủ" — gây lo lắng, owner tưởng system lỗi
+- **After:** "🔍 3 model chất lượng thấp đã lọc (gpt-5-mini, lstm, random-forest) — kết quả dựa trên 12 model tốt nhất"
+- Shows filtered model names from `source_predictions_json.wr_gate_filtered`
+- Icon changed: ⚠️ → 🔍 (investigative, not alarming)
+
+### Health Endpoint Version (main.py)
+- `/api/health` now includes `"version": "V17.5.1"` and `"expected_model_count": 15`
+- Enables quick remote version verification without SSH
+
+### ULTRA TOTAL-FORCE MASTER AUDIT Findings
+- **MB operates perfectly** — 9/9 timeline triggers match, 15/15 models executed
+- **12/15 = Quality Gate by design** — 3 models (WR<30%) correctly filtered
+- **67 vs 37 = weighted score > vote count** — WR-weighting policy, not bug
+- **Combo Super MB NOT empty** — output [24,37], deepseek-reasoner empty (finish_reason=length)
+- **Verify 2026-04-04:** `rule_engine.py` (livingness block) đã khớp VPS — `git hash-object` trùng blob; `.Antigravityrules.md` đã có trong repo/VPS (Linux case-sensitive có thể hiện chữ thường); lần deploy này đẩy bundle V17.6/UI + health + script `scripts/deploy-vps.ps1`
+
+### Deploy Status
+- **LOCAL:** ✅ Applied
+- **VPS:** ✅ `git pull` + `systemctl restart lottery` — 2026-04-04 (`scripts/deploy-vps.ps1`)
+
+---
+
+## V17.5.1-P1 — CRITICAL: Empty Tail / JSON Herding Fix (2026-04-04 17:33 VN)
+
+### Bug Fix: Diversity Pass JSON Parsing (P0 CRITICAL)
+- **Root cause:** `main_numbers` stored as JSON array `["69","56"]` in DB, but Diversity Pass treated it as CSV via `.split(',')` → produced garbage fragments like `"]`, `["69"` which triggered false herding detection → 7+ AI models wrongly flagged → Combo-Super `strength=0` → SKIP
+- **Fix (scheduler.py L2367-2387):**
+  1. Parse `main_numbers` via `json.loads()` (JSON-first, CSV-fallback)
+  2. Validate: only keep non-empty strings matching 1-2 digit numbers (`isdigit() + len<=2`)
+  3. Guard: `if not _n.strip(): continue` before tail computation (§37)
+- **Impact:** Eliminates all false herding on empty/malformed AI outputs. Combo-Super MT/MB verdicts will now reflect genuine model agreement.
+- **Risk:** ZERO — JSON parsing is strict; CSV fallback preserved; validation-only addition
+
+### Documentation
+- `.Antigravityrules.md`: §37 DIVERSITY-EMPTY-GUARD added
+- `CHANGELOG.md`: This entry
+
+### Deploy Status
+- **LOCAL:** ✅ Applied
+- **VPS:** ✅ Cùng pipeline deploy 2026-04-04 (`scripts/deploy-vps.ps1`)
+
+---
+
+## V17.5.1 — A+ GOVERNANCE + WEEK-PHASE LIVINGNESS + STALE CLEANUP (2026-04-04 15:40 VN)
+
+### A+ Governance Mode
+- **EXPECTED_STATION_COUNT dict:** 21 entries (3 regions × 7 days), verified from 3+ sources
+- **[STATION_COVERAGE] flag:** COMPLETE / PARTIAL / DEGRADED — logged after DATA_REFRESH_GATE
+- **Zero runtime blocking** — flags are log-only for monitoring visibility
+
+### Week-Phase Livingness Boost (rule_engine.py)
+- **Livingness-weighted multiplier** added after DH multiplier in `extract_rule_candidates_v2()`
+- Queries `mined_rule_effectiveness` for same source×prize, same weekday, 8 weeks (56 days)
+- Hit ratio ≥75% (ACTIVE source) → boost ×1.15
+- Hit ratio ≤25% (DROP/DEAD source) → boost ×0.70
+- Only applies in `soft`/`active` runtime modes
+
+### Stale Comments/Docstrings Fixed (D1-D9)
+- Fixed 8 stale time references: `16:38/17:38` → `16:35/17:35` (Canonical V2)
+- Fixed `12:30` → `04:00` in `_run_free_model_auto_predict()` docstring (D7)
+
+### Week-Slot Trace Field (database.py)
+- **New column `week_slot`** in predictions table (INTEGER, nullable)
+- Computed as `((ISO_week - 1) % 8) + 1` on every save — same formula as `gpt_analyzer.get_week_slot()`
+- Safe migration: `ALTER TABLE ADD COLUMN` with try/except idempotency
+- Enables retrospective week-phase analysis per prediction
+
+### Documentation Sync
+- `monitoring_protocol.md`: Day 5 entry added, F5 corrected (PARTIALLY_ALIVE, not DEAD)
+- `experiment_registry.md`: Last Updated → 2026-04-04
+- `CHANGELOG.md`: This entry
+
+### File Changes
+| File | Changes |
+|------|---------|
+| `scheduler.py` L85-106 | `EXPECTED_STATION_COUNT` dict (21 entries) |
+| `scheduler.py` L299-314 | `[STATION_COVERAGE]` flag calculation + log |
+| `scheduler.py` 8 locations | Stale time refs D1-D9 fixed |
+| `rule_engine.py` L483-512 | Livingness-weighted boost multiplier |
+| `database.py` L605-617 | `week_slot` column migration |
+| `database.py` L912-932 | `week_slot` computation + INSERT |
+| `monitoring_protocol.md` | Day 5 entry + F5 correction |
+| `experiment_registry.md` | Date update |
+
+### Risk Assessment
+- **A+ Governance:** ZERO risk — log-only, no blocking, no schema change
+- **Livingness boost:** LOW risk — try/except wrapped, non-fatal on error, only in soft/active mode
+- **Stale fixes:** ZERO risk — comments/docstrings only
+
+---
+
+## V17.5 — CANONICAL TIMELINE V2: SCRAPE-PHASE SHIFT + DOCS SYNC (2026-04-04 VN)
+
+### Canonical Timeline V2 Alignment
+- **Scrape-phase START shifted 3 min earlier** per owner-canonical decision:
+  - MN: `16:38` → `16:35` (init_scheduler default)
+  - MT: `17:38` → `17:35` (init_scheduler default)
+  - MB: `18:38` unchanged
+  - Verify-ready fallbacks: `16:42` / `17:42` unchanged
+- **get_scheduler_status() stale defaults fixed:** `16:42/17:42/18:40` → `16:35/17:35/18:38`
+  - These were never read at runtime (DB settings override), but divergence was a documentation/debugging hazard
+
+### Documentation Sync
+- `.Antigravityrules.md` §36: Updated 6 references from `16:38/17:38` → `16:35/17:35`
+- `CHANGELOG.md`: This entry
+
+### File Changes
+| File | Changes |
+|------|---------|
+| `scheduler.py` L3731-3732 | `init_scheduler()` defaults: `'16:35'` / `'17:35'` |
+| `scheduler.py` L3972-3974 | `get_scheduler_status()` defaults: `'16:35'` / `'17:35'` / `'18:38'` |
+| `.Antigravityrules.md` §36 | 6x time reference updates (V2) |
+| `CHANGELOG.md` | This entry |
+
+### Risk Assessment
+- **Behavioral impact: ZERO if DB settings are populated** (defaults only fire when `get_setting()` returns None)
+- **If DB is empty:** MN/MT scrape starts 3 min earlier → more time for retry loop before 16:42/17:42 verify fallback
+- **Deploy:** `scheduler.py` → VPS required. Docs = local only.
+
+---
+
+## V17.4 — CANONICAL TIMELINE LOCK: F1 FIX + §36 SSOT HARDENING (2026-04-04 VN)
+
+### Forensic Audit — Ultra Total-Force Timeline Audit (Day 5/14)
+- **8-axis deep-trace** across scheduler.py (4010 lines), database.py (3238 lines), meta_predict.py, lstm_predict.py
+- **14/15 canonical items confirmed CODE_REALITY = OWNER_CANONICAL**
+- **1 code fix** (F1) + §36 SSOT rule added
+
+### F1 Fix — Remove MN from MT Rerun Downstream (`scheduler.py` L2791)
+- **Before:** `elif trigger_region == "MT": repredict_regions = ['MB', 'MN']`
+- **After:** `elif trigger_region == "MT": repredict_regions = ['MB']`
+- **Rationale:** MN đã verify xong tại 16:38. Lock guard đã skip MN 100%, nhưng code intent sai
+- **Risk:** Rất thấp — behavioral change = zero (lock guard already blocked MN)
+
+### §36 CANONICAL TIMELINE RULE (`.Antigravityrules.md`)
+- 36A: Canonical slots — 04:00, 04:15, 16:38, 16:42, 17:38, 17:42, 18:38
+- 36B: Scrape-phase semantics (start ≠ verify, đủ đài mới verify)
+- 36C: DD column routing (AI = DD Sau always, owner confirmed)
+- 36D: Rerun cascade (MT→MB only, V17.4 locked)
+- 36E: Fallback cron protection (lock guard, canonical support lane)
+
+### File Changes
+| File | Changes |
+|------|---------|
+| `scheduler.py` | F1 fix: L2791 `['MB', 'MN']` → `['MB']` |
+| `.Antigravityrules.md` | +§36 CANONICAL TIMELINE RULE (5 subsections, 5 hard rules) |
+| `CHANGELOG.md` | This entry |
+| `monitoring_protocol.md` | +Day 5 canonical audit log |
+
+### Deploy
+- Pending: `scheduler.py` → VPS
+- Docs only: `.Antigravityrules.md`, `CHANGELOG.md`, `monitoring_protocol.md`
+
+---
+
+## V17.3.1 — WAVE-2+ CLOSEOUT: DDL MIGRATION + EVAL BACKFILL + PRODUCTION VERIFY (2026-04-04 00:30 VN)
+
+### Owner Decisions LOCKED
+- Rule Promotion: `AUTO_WITH_GATE` (không FULL_AUTO)
+- AUC Tolerance: `-0.02` (tree/meta reject nếu AUC drop > 0.02)
+- Reasoning Scope: `FORWARD-ONLY` (không backfill ngày cũ)
+- Eval Log Backfill: `LÀM NGAY` (đã thực hiện)
+
+### Group 1 — DB Schema Fix
+- `ALTER TABLE training_history ADD COLUMN backup_path TEXT` — chạy trực tiếp trên VPS
+- **Trước:** 10 columns, thiếu `backup_path` → code ghi backup_path sẽ FAIL
+- **Sau:** 11 columns, `backup_path` ready cho retrain gate ghi nhận
+
+### Group 2 — Eval Log Backfill
+- 56 rows `daily_eval_log` có `eval_policy=INCLUDE` cho ngày EXCLUDED trong `day_governance`
+- UPDATE SET `eval_policy` = `day_governance.evaluation_policy` cho tất cả matched rows
+- **Trước:** 56 stale, **Sau:** 0 stale
+- Phân bố cuối: EXCLUDE_PRIMARY=56, INCLUDE=117
+
+### Group 3 — Production Deep Verification
+| Component | Result | Evidence |
+|-----------|--------|----------|
+| Eval leak check | ✅ PASS | 0 leaks postbackfill |
+| Rule lifecycle | ✅ CODE OK | 105 shadow, chờ T2 trigger |
+| Combo-super reasoning | ✅ PASS | 177/177 (100%) |
+| Retrain safety backup_path | ✅ READY | Column exists, writable |
+| Weight optimizer | ✅ ACTIVE | 3 regions, optimizer enabled=1 |
+| Health API | ✅ PASS | running 00:29:39+07 |
+| Service PID | ✅ ACTIVE | 162766, 140.1M memory |
+
+### File Changes
+| File | Changes |
+|------|---------|
+| VPS `lottery_ai.db` | +backup_path column, 56 eval_log rows backfilled |
+| `CHANGELOG.md` | This entry |
+| `monitoring_protocol.md` | +Day 4 closeout log |
+
+### Deploy
+- DDL + backfill chạy trực tiếp trên VPS qua SSH (không cần restart service)
+- Service giữ nguyên PID 162766
+
+---
+
+## V17.3 — WAVE-2+ STABILIZATION: EVAL CLEANUP + RULE LIFECYCLE + RETRAIN SAFETY (2026-04-04 VN)
+
+### Mục tiêu
+Toàn diện sửa 5 root cause gây metric contamination và pattern staleness, chuẩn bị reset measurement cycle.
+
+### Group 1: Evaluation Cleanup — Metric Contamination Fix (`daily_evaluation.py`)
+- `_get_combo_super_predictions()` JOIN `day_governance` → filter `EXCLUDE_PRIMARY` / `EXCLUDE_ALL`
+- New column `eval_policy` in `daily_eval_log` for audit trail
+- **Impact**: Rolling WR, TOP1, report gen now use clean dataset only
+
+### Group 2: Rule Lifecycle (`weekly_rule_miner.py`)
+- `auto_promote_eligible_rules()`: hit_rate ≥55% + samples ≥8 → auto promote
+- `demote_stale_rules()`: hit_rate <25% + active ≥14 days → auto demote
+- `--lifecycle` CLI flag for standalone run
+- **Governance**: `AUTO_WITH_GATE` default (owner-approved)
+
+### Group 3: Pattern Tracker Reasoning Fix (`scheduler.py`)
+- `_run_combo_super_wrapper` now builds + saves `reasoning_json` for combo-super
+- Format matches `combo-no-token` for consistency
+- **Root fix**: 43-day pattern staleness — combo-super was ONLY producer NOT saving reasoning
+
+### Group 4: Retrain Safety Gates (`scheduler.py`)
+- `AUC_REGRESSION_TOLERANCE = -0.02` — reject new model if AUC drops > 0.02
+- `_backup_model_file()` + `_restore_model_file()` helpers
+- Applied to: Meta-Learning, XGBoost, Random Forest
+- ROLLBACK status in `training_history` table
+- **Impact**: Prevents silent model degradation during weekly retrain
+
+### Group 5: Weight Optimizer Consumer Audit
+- Verified chain: `weight_optimizer.optimize_and_save()` → DB `app_settings` → `get_learned_weights()`
+- 6 consumers confirmed healthy: scheduler, combo_super, ensemble_voting, main, knowledge_weights, statistical_analyzer
+- **Status**: No broken links, no action needed
+
+### Group 6: SSOT Sync
+- CHANGELOG updated (this entry)
+- `.Antigravityrules.md` lifecycle governance references added
+
+### Group 7: Repo Cleanup
+- No orphan scripts created during Wave-2+
+- All changes are modifications to existing files only
+
+### File Changes
+
+| File | Changes |
+|------|---------|
+| `daily_evaluation.py` | +eval_policy column, +day_governance JOIN, +filter logic |
+| `weekly_rule_miner.py` | +auto_promote, +demote_stale, +lifecycle CLI |
+| `scheduler.py` | +combo-super reasoning_json, +retrain AUC gate, +model backup/restore |
+| `CHANGELOG.md` | This entry |
+
+### Deploy
+- ✅ 3 files deployed via `_smart_deploy.py` (2026-04-04 00:04 VN)
+- ✅ VPS restart: PID 162766, `active (running)`
+- ✅ Health: `{"status":"running","time":"2026-04-04T00:04:54+07:00"}`
+- ✅ Status API: all 3 regions OK, data_coverage 30/30 days
+- ⏳ Post-deploy: First prediction cycle (04/04 04:00) → verify 7/7 completeness → reset measurement cycle
+
+---
+
+## V17.1 — PREDICTION GUARD FIX + FREEZE GUARD + PROVENANCE TRACKING (2026-04-03 20:15 VN)
+
+### Fixes — 5 Issues from V17.0 Known Issues
+
+| # | Issue | Root Cause | Fix |
+|---|-------|-----------|-----|
+| 1 | `prediction_guard` → `too many values to unpack` | Guard returns 4-tuple, callers expect 3 | Fixed 3 call sites (L952, L1245, L1576) in `scheduler.py` to unpack 4 values |
+| 2 | `run_now()` no provenance | Manual triggers untraceable | Added `run_source` tracking + safety warning log |
+| 3 | Freeze guard missing | Verified bundles can be overwritten | Added freeze guard in `save_final_bundle()` — blocks overwrite unless `force=True` |
+| 4 | API doesn't handle frozen | No feedback when bundle frozen | `/api/generate-bundle` returns `{frozen: true, message: ...}` |
+| 5 | Gemini package missing on VPS | `google-generativeai` not installed | Created `_install_gemini.sh` script |
+
+### Freeze Guard (`database.py`)
+- `save_final_bundle()` now checks `verified_at IS NOT NULL`
+- If bundle đã verified → return `{frozen: True}` + log `[FREEZE-GUARD]`
+- Pass `force=True` to bypass (admin CLI only)
+- `generate_final_bundle()` handles frozen response gracefully
+
+### Provenance Tracking (`scheduler.py`)
+- `run_now()` logs: `[RUN_NOW] ⚠️ MANUAL TRIGGER: {region} bởi admin`
+- `[RUN_NOW] run_source={source}, requested by admin`
+- Traces manual triggers for forensic audit
+
+### File Changes
+- **scheduler.py**: prediction_guard 4-tuple fix (3 sites) + run_now provenance
+- **database.py**: freeze guard in `save_final_bundle()`
+- **main.py**: frozen bundle handling in `generate_final_bundle()` + `/api/generate-bundle`
+- **[NEW] _install_gemini.sh**: Gemini package install script for VPS
+
+### Deploy
+- Pending: `scheduler.py`, `database.py`, `main.py` → VPS
+- Owner-action: Run `_install_gemini.sh` on VPS for Gemini models
+
+---
+
+## V17.0 — LOCK GUARD V2: AI CHAIN INDEPENDENT FROM ML VERIFY (2026-04-03 19:27 VN)
+
+### Forensic Root Cause (Day 4/14)
+- **Incident**: MB chỉ có 7/15 models — 8 AI models bị block hoàn toàn
+- **Trigger**: Manual scrape (`Chạy ngay: MB thủ công`) lúc 11:37:17 → premature verify
+- **Bug**: LOCK guard tại L1886 check `status IN ('WIN','LOSE','PARTIAL')` — block ALL predictions nếu BẤT KỲ prediction verified
+- **Impact**: AI chain triggered 11:37:19 → `🔒 MB đã verify (7 predictions) → skip AI predict`
+- **Clarification**: Reported "37→67 drift" = confusion MT(37) vs MB(67). Không có drift thực sự
+
+### Fix — 3 LOCK Guards Refactored (`scheduler.py`)
+
+| Vị trí | Trước (V5.4) | Sau (V17.0) |
+|--------|-------------|-------------|
+| `_run_ai_models_predict` L1886 | `status IN (WIN,LOSE,PARTIAL)` | `run_source='ai_chain'` |
+| `_rerun_mb_ai_after_mt_verify` L2394 | Any verified → block | `run_source='ai_chain'` |
+| `_rerun_free_models_after_scrape` L2758 | Any verified → block | `run_source='rerun_after_verify'` |
+
+**Logic V17.0**: Mỗi pipeline type tự quản independent. ML verify ≠ block AI chain.
+
+### Known Issues (Chưa fix)
+- Gemini models fail on VPS: `Google Generative AI package not installed`
+- `prediction_guard` error: `too many values to unpack (expected 3, got 4)`
+- Freeze guard (prevent post-deadline changes) chưa implement
+
+### Deploy
+- ✅ `scheduler.py` deployed via `_smart_deploy.py` (170,929 bytes)
+- ✅ VPS restart: PID 155144, `active (running)`
+- ✅ Health check: `{"status":"running","time":"2026-04-03T19:29:23+07:00"}`
+
+### Tác động kỳ vọng
+- Từ ngày mai (04/04): MB sẽ nhận đủ 15 models (7 ML + 8 AI)
+- AI chain không bị block bởi ML verify nữa
+
+---
+
+## V17.0-forensic — DAY 2 DEEP FORENSIC DRILLDOWN + §33-§35 SSOT HARDENING (2026-04-01 22:46 VN)
+
+### Forensic Audit Summary (Day 2/14)
+- **12 ABSOLUTELY_LOCKED facts** identified via 6-track root-cause analysis
+- **3-layer WR-not-BT misalignment** confirmed as systemic root cause:
+  - Training target = `hit` = any-tail WR, NOT BT (meta_data_collector col#31)
+  - Calibrator discount = WR-based (`status='WIN'`), NOT BT-based
+  - CS pool sort = aggregate WR, NOT BT rate
+- **Absorption paradox** confirmed: Full-context AI MB BT 0-5.9%, no-context ML MB BT 40-45%
+- **Bundle architecture = +42.8% BT lift** — DO NOT TOUCH
+- **12/18 methods unmeasured** in pattern_effectiveness
+- **hot_cold MB T5 = 5.9%** confirmed anti-signal
+
+### SSOT Hardening (.Antigravityrules.md) — +3 Standards (35 total)
+- **+§33 FORENSIC ROOT-CAUSE AUDIT STANDARD**: 4-layer trace + 6-table mandate + AUC warning
+- **+§34 MODEL ABSORPTION AUDIT STANDARD**: Context injection restrictions + monthly matrix update
+- **+§35 METHOD/PATTERN MEASUREMENT STANDARD**: 18-method tracking mandate + anti-signal rules
+
+### New Experiments (experiment_registry.md) — +4 Experiments (11 total)
+
+| # | ID | Title | State | Icon |
+|---|-----|-------|-------|------|
+| 8 | EXP-STR-CAL-008 | strength calibrator ML bypass (Option B) | APPROVED | 🔵 |
+| 9 | EXP-RULE-SHADOW-009 | MB rule bonus shadow | APPROVED | 🔵 |
+| 10 | EXP-OBS-FILL-010 | 12 unmeasured method tracking | APPROVED | 🔵 |
+| 11 | EXP-OBS-EVAL-011 | per-model daily BT eval log | APPROVED | 🔵 |
+
+### Monitoring Protocol Updates
+- §5B: +6 Day 2 findings (F3, F4, F7, F9, F10, F12)
+- §7: +4 new experiments registered
+- §11D-2: +8 Day 2 forensic signal classifications
+- §11E: +2 false comfort items (FC-6 AUC, FC-7 strength)
+
+### File Changes
+- **.Antigravityrules.md**: +75 lines — §33 + §34 + §35
+- **experiment_registry.md**: +94 lines — 4 new experiment cards + 3 new standards
+- **monitoring_protocol.md**: +22 lines — Day 2 findings + new experiments
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- DOCS ONLY — no code changes during 14-day monitoring lock
+- No VPS restart needed
+
+### Next Milestones
+- Day 3 (02/04): Notion MCP update + daily monitoring
+- Day 5 (04/04): Rules MB bonus evidence gate
+- Day 7 (06/04): Deploy CS-002 + CAL-008 + OBS-FILL-010 + OBS-EVAL-011
+- Day 14 (13/04): Final Phase 1 assessment
+
+---
+
+## V14.4-nav — NAVIGATION HARD-LOCK: `/DU-DOAN` DEFAULT + `/APP` FORENSIC ONLY (2026-03-31 14:20 VN)
+
+### Owner Decision
+- `/du-doan` = default post-login screen (product)
+- `/app` = forensic-only route (admin diagnostics)
+- Cross-navigation buttons mandatory on both screens
+
+### Navigation Audit (7-point)
+| Check | Status |
+|-------|--------|
+| Login → `/du-doan` | ✅ Already correct (V12.2) |
+| `/du-doan` has `⚙️ Dashboard` (admin-gated) | ✅ Already correct |
+| `/app` has `🎯 Dự Đoán` back button | ❌ → ✅ **FIXED** |
+| Non-admin `/app` → redirect `/du-doan` | ✅ Already correct |
+| Other admin pages have both nav buttons | ✅ Already correct |
+| Loop: `/du-doan` ↔ `/app` | ❌ → ✅ **FIXED** |
+| Active state on current page | ✅ Tab-based, correct |
+
+### Frontend Changes (`index.html`, ZERO backend impact)
+- Added `🎯 Dự Đoán` button as first nav item in `/app` header (green accent, `font-weight:700`)
+- Cache-bust: `v=20260331-V14-4-nav-lock`
+
+### Governance
+- Added **§32 NAVIGATION BOUNDARY RULE** to `.Antigravityrules.md`
+
+### Deploy
+- Frontend files only: `index.html` + `.Antigravityrules.md` + `CHANGELOG.md`
+
+### Rollback
+- Revert `index.html` from git
+
+---
+
+## V14.4 — HARD SINGLE-PICK LOCK: `/APP` PRIMARY COLUMNS = 1 SỐ DUY NHẤT (2026-03-31 13:50 VN)
+
+### Owner Decision (Hard-Lock)
+- `/app` cả **DĐ Ban Đầu** và **DĐ Sau KQ** = single-pick only
+- Format `03, 60` (join) = **BỊ CẤM** trong cột chính
+- Format `67 phụ: 64` = **BỊ CẤM** trong cột chính
+- Secondary numbers → tooltip (hover) + detail popup metadata grid
+- "Đúng là đúng, sai là sai" — BT number quyết định
+
+### Frontend Changes (`app.js`, ZERO backend impact)
+- **L1610**: `beforeDisplay = beforeNumbers.join(', ')` → `beforeNumbers[0]` (single-pick)
+- **L1610**: Added `beforeTooltip` = `"Tất cả: XX, YY"` for hover
+- **L1630-1645**: Removed `secHtml` (inline secondary label) from `afterDisplay`
+- **L1631**: Added `afterTooltip` for hover preservation
+- **L1401-1411**: Removed prominent "Số phụ" card from detail popup
+- **L1429**: Moved secondary to metadata grid: `"Số dự đoán: XX (phụ: YY)"`
+- **L1673-1674**: Added `title="${beforeTooltip}"` + `title="${afterTooltip}"` to `<td>` elements
+
+### Hotfix: afterTooltip Scoping Bug
+- `const afterTooltip` was inside `else` block → `ReferenceError` when `!hasRepredict`
+- Fix: moved declaration before `if/else` at L1610
+
+### Governance
+- Added **§31 APP SINGLE-PICK LOCK RULE** to `.Antigravityrules.md`
+
+### Deploy
+- Frontend file only: `app.js` + `index.html` (SFTP, no service restart)
+- Cache-bust: `v=20260331-V14-4-single-pick-lock`
+
+### Verification
+- ✅ History table loads correctly (scoping bug fixed)
+- ✅ DĐ Ban Đầu: single number (e.g., `45`, `42`, `68`)
+- ✅ DĐ Sau KQ: single BT number (e.g., `81 ❌ 🔄`, `46 ✅`)
+- ✅ No secondary numbers inline
+
+### Rollback
+- Revert `app.js` and `index.html` from git
+
+---
+
+## V14.2 — PRODUCT SIMPLIFICATION: REMOVE LÔ 2 SỐ / BẠCH THỦ SINGLE PRIMARY (2026-03-31 13:10 VN)
+
+### Owner Decision (Hard-Lock)
+- `/du-doan` chỉ có **1 primary pick duy nhất = Bạch Thủ**
+- Card **Lô 2 Số = REMOVED** khỏi user-facing product
+- Final card set: **Bạch Thủ (hero) → Lô 3 Càng → Xiên 2 → Xiên 3**
+- Secondary number = internal/admin only
+
+### Frontend Changes (du-doan.html, ZERO backend impact)
+- **Removed** Card 2 (Lô 2 Số) render block entirely
+- **Removed** "Lô 2" column from history table (header + data + status dot)
+- **Updated** BT hero subtitle: "Con lô mạnh nhất" → **"Pick trung tâm duy nhất"**
+- **Updated** meta description: removed "Lô 2 Số" from SEO text
+- **Fixed** all colspans from 5 → 4
+
+### Governance
+- Added **§30 PRODUCT SEMANTICS LOCK** to `.Antigravityrules.md`
+
+### Deploy
+- Frontend file only: `du-doan.html` (SFTP, no service restart)
+- Docs: `.Antigravityrules.md`, `CHANGELOG.md`
+
+### Rollback
+- Revert `du-doan.html` from git
+
+---
+
+## V14.1 — DUAL-LANE LABEL FIX: PARTIAL → PHỤ TRÚNG (2026-03-31 12:10 VN)
+
+### Dual-Lane Semantics Decision (Owner Approved)
+- **Option A: GIỮ dual-lane + gắn nhãn rõ** — locked as official policy
+- Lane 1: BT Truth (`main_numbers[0]`) → KPI, model ranking, hero display
+- Lane 2: Any-Hit Overall (`predicted_numbers`) → WR trending, analytics, status badge
+- PARTIAL = BT miss + số phụ trúng — **intentional design**, not a bug
+
+### Frontend Label Changes (3 files, ZERO backend impact)
+- **du-doan.html** L609: PARTIAL label '1/2' → **'Phụ trúng'**
+- **app.js** L1353: Hero status '🟡 PARTIAL' → **'🟡 PHỤ TRÚNG'**
+- **app.js** L1660: History badge 'PARTIAL' → **'PHỤ TRÚNG'**
+
+### Deploy
+- Frontend files only (SFTP, no service restart needed)
+
+### Rollback
+- Revert `du-doan.html` and `app.js` from git
+
+---
+
+## V14 — HARD SEMANTICS RESET: DỰ ĐOÁN SAU = BẠCH THỦ SOURCE OF TRUTH (2026-03-31 11:16 VN)
+
+### Audit Finding
+- "Lô 1 Số" = mechanical derivation of `main_numbers[0]` — 100% semantically redundant with first element of "Dự đoán sau"
+- Governed by: §24 BT North Star, §17 Semantics Rule, §25 Hard Prompt Standard (H1/H11)
+
+### Frontend Changes (ONLY — no backend/DB changes)
+
+#### index.html
+- Removed `<th>Lô 1 Số</th>` column header
+- Updated "Dự Đoán Sau" tooltip: "Bạch Thủ (số mạnh nhất) + số phụ"
+- Reduced empty-state colspan 12 → 11
+- Cache-bust: `v20260331-V14-semantics-reset`
+
+#### app.js
+- **Removed** entire "Lô 1 Số" `<td>` IIFE block from `renderHistory()` (was L1648-L1660)
+- **Refactored** "Dự đoán sau" column: BT number displayed large/bold with ✅/❌ HIT/MISS indicator; secondary number shown smaller with opacity
+- **Updated** Hero section label: "Lô 1 Số — Bạch Thủ" → "Bạch Thủ — Dự đoán sau"
+- **Updated** banner text: "Lô 1 Số (XX) MISS" → "Bạch Thủ (XX) MISS"
+- **Updated** tooltip: "1SP MISS" → "BT MISS"
+- **Updated** colspan: 12 → 11
+
+### Verification
+- ✅ Browser: "Lô 1 Số" column gone
+- ✅ Browser: "Dự Đoán Sau" shows BT with HIT/MISS indicators
+- ✅ Console: `v20260331-V14-semantics-reset` loaded, no JS errors
+- ✅ 11-column layout renders correctly
+
+### Deploy
+- Frontend files deployed via SFTP (no service restart needed for static files)
+
+### Full-System Semantics Audit (7 matrices, 10 questions answered)
+- ✅ Frontend: BT prominent, "Lô 1 Số" removed, secondary labeled "Số phụ"
+- ✅ BT Evaluation: `top1_hit` (daily_evaluation.py) uses `picks[0]` — single-pick correct
+- ✅ BT Ranking: `get_model_bt_rates()` uses `main_numbers[0]` — single-pick correct
+- ✅ API: Returns both `numbers` (list) + `main_number` (single-pick) — clear separation
+- ⚠️ Overall Status: Retains any-hit (WIN/PARTIAL/LOSE) — **by design**, locked during monitoring window
+
+### SSOT Hardening (.Antigravityrules.md)
+- **+§29 BT CANONICAL SOURCE DEFINITION**: `main_numbers[0]` = BT truth, `[1]` = secondary display only
+- Formalizes: "Lô 1 Số" deprecated, "Dự đoán sau" = official BT label, no new backend fields needed
+
+### Rollback
+- Revert `index.html` and `app.js` from git
+
+---
+
+## V16.6-deploy — POST-DEPLOY MONITORING LOCK + RUNTIME VERIFY (2026-03-30 23:16 VN)
+
+### Deploy Completion (23:02 VN)
+- 5 files deployed via `_quick_deploy.py`: database.py (121KB), scheduler.py (170KB), main.py (241KB), gpt_analyzer.py (188KB), du-doan.html (27KB)
+- Service restart: PID 41948, `active (running)`
+- Deploy scripts fixed: +gpt_analyzer.py + UTF-8 encoding
+
+### Runtime Verification
+- `/api/health` → running ✅
+- `/api/model-ranking?metric=bt` → active cho MN/MT/MB (15 models each) ✅
+- `/api/status` → COMBO_SUPER_V5.0_UNIFIED_POOL ✅
+- Predictions 30/03 = pre-deploy logic (đúng — tạo trước 23:02)
+
+### State Transitions
+- EXP-BT-SE-001: ON_DISK_ONLY → RUNTIME_ACTIVE 🟢
+- EXP-LIV-PR-005: ON_DISK_ONLY → RUNTIME_ACTIVE 🟢
+- 5 PROPOSED experiments: unchanged ⚪
+
+### Monitoring Lock (31/03 → 06/04)
+- **[NEW] monitoring_protocol.md**: Daily checklist + 14-day log table
+- No code changes permitted in monitoring window
+- Baseline locked: MN 42.71% | MT 43.61% | MB 32.04% | Overall 39.65%
+- First BT-logic prediction: 31/03 04:00 → auto-transition to MONITORING
+- 7d checkpoint (SE-001): 06/04
+- 14d checkpoint (PR-005): 13/04
+- Fail trigger: 3d BT <15% or WR regression >5%
+- Rollback paths documented in monitoring_protocol.md
+
+### File Changes
+- **[NEW] monitoring_protocol.md**: Daily monitoring checklist + log table
+- **_quick_deploy.py**: +gpt_analyzer.py + UTF-8 fix
+- **_deploy_orchestrator.py**: +gpt_analyzer.py
+- **experiment_registry.md**: SE-001 + PR-005 → RUNTIME_ACTIVE
+
+---
+
+## V16.6 — EXPERIMENT GOVERNANCE: STATE LOCK + HYBRID CHANGE TRACEABILITY (2026-03-30 22:45 VN)
+
+### SSOT Hardening (.Antigravityrules.md) — +1 Standard (28 total)
+- **+§28 EXPERIMENT GOVERNANCE STANDARD**: State machine + ID system + 12-field card + pass/fail/rollback + runtime visibility + SSOT split
+
+### New: Experiment Registry (`experiment_registry.md`)
+- **Living document** — SSOT cho mọi experiment/hybrid change
+- **7 experiments registered** với đầy đủ 12 fields:
+
+| # | ID | Title | State | Icon |
+|---|-----|-------|-------|------|
+| 1 | EXP-BT-SE-001 | smart-ensemble BT-rate model ranking | ON_DISK_ONLY | 🟠 |
+| 2 | EXP-BT-SML-002 | smart-ml BT-aware ranking | PROPOSED | ⚪ |
+| 3 | EXP-BT-CS-003 | combo-super BT-priority voting | PROPOSED | ⚪ |
+| 4 | EXP-BT-IW-004 | downstream interleave BT weighting | PROPOSED | ⚪ |
+| 5 | EXP-LIV-PR-005 | weekly livingness → AI prompt | ON_DISK_ONLY | 🟠 |
+| 6 | EXP-LIV-GATE-006 | weekly livingness → voting/gating | PROPOSED | ⚪ |
+| 7 | EXP-NT-RULE-007 | no-token weekly rule alignment | PROPOSED | ⚪ |
+
+### State Machine (§28A) — 10 States
+- PROPOSED → APPROVED → LOCAL_ONLY → ON_DISK_ONLY → RUNTIME_ACTIVE → MONITORING → PASS_LOCKED
+- Branch: MONITORING → ROLLBACK_REQUIRED → ROLLED_BACK
+- Terminal: DEPRECATED
+
+### Experiment ID System (§28B)
+- Format: `EXP-{CATEGORY}-{SCOPE}-{NNN}`
+- Categories: BT / LIV / NT / PR / VOT / BUN
+- Scopes: SE / SML / CS / IW / GATE / ALL
+
+### Standards Locked (§28)
+- 12-field experiment card mandatory for all hybrid/experiment changes
+- 2-layer summary: Technical (agent) + Owner-Friendly (Vietnamese, no jargon)
+- Pass/fail defaults: BT ≥25% (MN/MT), ≥20% (MB), 7d code / 14d prompt window
+- Runtime visibility: log markers + metadata + API required for RUNTIME_ACTIVE
+- SSOT split: rules.md (governance) / experiment_registry.md (cards) / CHANGELOG (transitions)
+
+### File Changes
+- **.Antigravityrules.md**: +134 lines — §28 EXPERIMENT GOVERNANCE (7 subsections A-G + Hard Rules)
+- **[NEW] experiment_registry.md**: 7 experiment cards with full 12-field detail
+- **CHANGELOG.md**: This entry
+
+### Deploy Needed
+- 3 files: `.Antigravityrules.md`, `experiment_registry.md`, `CHANGELOG.md`
+- Plus V16.3/V16.4/V16.5 pending: `database.py`, `main.py`, `gpt_analyzer.py`, `scheduler.py`
+
+### Next Steps
+1. Owner restart VPS → EXP-BT-SE-001 + EXP-LIV-PR-005 transition ON_DISK_ONLY → RUNTIME_ACTIVE
+2. Monitor 7d for pass/fail criteria
+3. Begin PROPOSED experiments sequentially (EXP-BT-SML-002 first after SE-001 passes)
+
+---
+
+## V16.5 — TOTAL STANDARDIZATION: HARD/SOFT/NO-TOKEN PROMPT LOCK + BT ENSEMBLE FIX (2026-03-30 21:30 VN)
+
+### SSOT Hardening (.Antigravityrules.md) — +3 Standards (27 total)
+- **+§25 HARD PROMPT STANDARD**: 12 rules AI KHÔNG ĐƯỢC vi phạm (H1-H12)
+  - BT=#1, max 2 số, no overclaim, MB ceiling, prize-source lock, trace reasoning
+- **+§26 SOFT PROMPT STANDARD**: 10 bước reasoning AI PHẢI LÀM (S1-S10)
+  - Window scan 8W, livingness tiers, multi-source convergence, width discipline
+- **+§27 NO-TOKEN RULE STANDARD**: 5 rules cho ML models (N1-N5)
+  - Inter-region data, prize-source filter, weekly rules inject, BT-first ensemble, BT audit
+- **§5 cross-reference**: Added pointer to §25+§26+§27
+
+### smart-ensemble BT-first Selection (scheduler.py)
+- **WAS**: `get_model_win_rates(days=14)` → top-2 by aggregate WR
+- **NOW**: `get_model_bt_rates(days=30)` → top-2 by BT hit rate (§27 N4)
+- **Fallback**: If BT data insufficient (<5 samples) → falls back to WR
+- **Impact**: ML ensemble now aligned with BT North Star metric
+
+### V16.5 Gap Hunt Update
+
+| Gap ID | Type | Status V16.4 | Status V16.5 |
+|--------|------|:------------:|:------------:|
+| G1 | SSOT HARD PROMPT missing | ⏳ | ✅ FIXED — §25 |
+| G2 | SSOT SOFT PROMPT missing | ⏳ | ✅ FIXED — §26 |
+| G3 | SSOT NO-TOKEN missing | ⏳ | ✅ FIXED — §27 |
+| G5 | smart-ensemble WR-based | ⏳ | ✅ FIXED — BT-first |
+| G6 | Livingness re-classification | ⏳ | ⏳ P2 |
+| G7 | Livingness→voting/gating | ⏳ | ⏳ P2 |
+| G8 | No ranking snapshot | ⏳ | ⏳ P2 |
+| G9 | ML no rule context | ⏳ | ⏳ P2 |
+| G10 | ML no prize-source filter | ⏳ | ⏳ P2 |
+| G11 | FK orphaned | ⏳ | ⏳ P3 |
+| G12 | No cost tracking | ⏳ | ⏳ P3 |
+
+### Long-Term Operating Cadence (Locked)
+- Daily: model ranking auto (API)
+- Weekly T2 00:30: rules mining (auto)
+- Bi-weekly: prompt review (manual)
+- Monthly: gap hunt + SSOT review (manual)
+- Pass/Fail: BT ≥25% MN/MT, ≥20% MB (30d rolling)
+
+### File Changes
+- **.Antigravityrules.md**: +73 lines — §25 HARD PROMPT + §26 SOFT PROMPT + §27 NO-TOKEN + §5 cross-ref
+- **scheduler.py**: smart-ensemble WR→BT selection (+12 lines net)
+- **CHANGELOG.md**: This entry
+
+### Deploy Needed
+- 3 files: `.Antigravityrules.md`, `scheduler.py`, `CHANGELOG.md`
+- Plus V16.3/V16.4 if still pending: `database.py`, `main.py`, `gpt_analyzer.py`
+
+---
+
+## V16.4 — TOTAL SYSTEM STANDARDIZATION + PROMPT BT LOCK + WEEKLY LIVINGNESS (2026-03-30 21:00 VN)
+
+### SSOT Hardening (.Antigravityrules.md) — +6 Standards
+- **+SEMANTICS RULE**: MT/MB prediction ≠ re-predict; wording locked
+- **+AUTO RANKING RULE**: Daily/7d/14d/30d + BT-first + regional; tier classifications
+- **+WEEKLY LIVINGNESS RULE**: 1-8 tuần tiers: ACTIVE/SUPPORT/SHADOW/DROP
+- **+TRACEABILITY RULE**: Every change → CHANGELOG + SSOT + Notion MCP
+- **+LONG-TERM IMPROVEMENT RULE**: objective + metric + pass/fail + monitoring + rollback
+- **+GAP-HUNT RULE**: Every audit chủ động tìm gaps; owner repeat ≥2x → elevate to standard
+
+### Prompt BT North Star Injection (gpt_analyzer.py)
+- **+§24 BT NORTH STAR**: Explicit directive in REASONING_RULEBOOK — "numbers[0] = BT = KPI #1"
+- Tells AI: 1 số mạnh >>> 2 số trung bình; BT thắng mọi xung đột
+- References BT MODEL RANKING + WEEKLY LIVINGNESS from context pack
+- Version bump: RR-10.2 → **RR-16.4**, CTX-10.2 → **CTX-16.4**, PB-10.3 → **PB-16.4**
+
+### Context Pack BT + Livingness Injection (gpt_analyzer.py → build_context_pack)
+- **+Section 1b**: BT MODEL RANKING (30d) — injects per-model BT rate with tier icons (🥇≥25%/🥈≥15%/🥉≥5%/⛔<5%)
+- **+Section 3b**: WEEKLY LIVINGNESS — 8-week same-weekday rule hit tiers (🟢ACTIVE/🟡SUPPORT/🟠SHADOW/🔴DROP)
+- Both sections are non-fatal: wrapped in try/except, degrade gracefully if DB unavailable
+
+### Gap Hunt Update (V16.3 → V16.4)
+
+| Gap ID | Type | Status V16.3 | Status V16.4 |
+|--------|------|:------------:|:------------:|
+| G1 | SSOT Missing Standards | ⏳ 6 standards missing | ✅ FIXED — +6 standards |
+| G8 | PROMPT_NO_BT | ⏳ DEFERRED | ✅ FIXED — §24 BT directive |
+| G9 | NO_WEEKLY_INJECT | ⏳ DEFERRED | ✅ FIXED — livingness in context |
+| G6 | RANKING_NOT_IN_PROMPT | not tracked | ✅ FIXED — BT ranking in context |
+| G7 | FK_BROKEN | ⏳ DEFERRED | ⏳ DEFERRED |
+| G10 | NO_TOKEN_UNALIGNED | ⏳ DEFERRED | ⏳ DEFERRED |
+| G11 | EVAL_PARTIAL | ⏳ DEFERRED | ⏳ DEFERRED |
+| G12 | NO_COST_TRACKING | ⏳ DEFERRED | ⏳ DEFERRED |
+
+### File Changes
+- **.Antigravityrules.md**: +117 lines — 6 new SSOT sections (§19-§24)
+- **gpt_analyzer.py**: +58 lines — §24 BT directive + BT ranking + livingness in context pack + version bump
+- **CHANGELOG.md**: This entry
+
+### Deploy Needed
+- 3 files: `.Antigravityrules.md`, `gpt_analyzer.py`, `CHANGELOG.md`
+- Plus V16.3 pending: `database.py`, `main.py`
+
+---
+
+## V16.3 — BẠCH THỦ NORTH STAR PIVOT + AUTO RANKING + SSOT HARDENING (2026-03-30 21:00 VN)
+
+### SSOT Hardening (.Antigravityrules.md)
+- **+BẠC THỦ NORTH STAR RULE**: Declares BT as #1 metric. numbers[0] hit = primary KPI
+- **+INTER-REGION DATA RULE**: Locks MN/MT/MB data chains (MN=D-1, MT=D-1+MN_D, MB=D-1+MN_D+MT_D)
+- **+PRIZE-SOURCE LOCK RULE**: MN/MT soi G1,G2,G5,G7,G8,ĐB; MB soi G1,G2,G6,G7,ĐB
+
+### BT-Specific Model Ranking (database.py)
+- **NEW**: `get_model_bt_rates(target_region, days)` — parses main_numbers[0] hit against hit_numbers
+- Returns per-model: `bt_hits`, `bt_rate`, `bt_weight` (normalized)
+- Differentiates from aggregate WR: model may have WR=50% but BT rate only 20%
+
+### WR Gate Refactor (main.py → generate_final_bundle)
+- **V16.2**: Gate used aggregate WR (`MIN_WR_FOR_VOTING=30`)
+- **V16.3**: Gate now uses BT rate first (`MIN_BT_FOR_VOTING=15`), WR as fallback
+- Models with ≥5 BT samples → gate by BT rate; otherwise → fall back to aggregate WR
+- Scoring weight: `effective_weight = bt_weight` (if ≥5 samples) else `wr_weight`
+
+### Auto Model Ranking API (main.py)
+- **NEW**: `/api/model-ranking?region=MN&days=30&metric=bt`
+- Returns sorted model list with: bt_rate, bt_hits, wr_rate, tier
+- Tiers: KEEP_FULL (≥25% BT) / KEEP_LIMITED (≥15%) / SHADOW_ONLY (≥5%) / DROP_CANDIDATE (<5%)
+- Supports: `metric=bt` / `metric=wr` / `metric=both` (60%BT+40%WR combined)
+
+### Traceability
+- `source_predictions_json` now includes: `model_bt` dict, `bt_gate_threshold`
+- Both BT and WR data preserved for forensic audit
+
+### File Changes
+- **.Antigravityrules.md**: +75 lines — 3 new SSOT sections
+- **database.py**: +90 lines — `get_model_bt_rates()`
+- **main.py**: +102 lines — `/api/model-ranking` endpoint; refactored WR gate + scoring in `generate_final_bundle()`
+
+### System Gap Hunt Summary
+
+| Gap ID | Type | Root Cause | Impact on BT | Priority | Fix Status |
+|--------|------|------------|:------------:|:--------:|:----------:|
+| G1 | METRIC_MISALIGNMENT | `get_model_win_rates()` = aggregate WR, not BT-specific | CRITICAL | P0 | ✅ FIXED — `get_model_bt_rates()` |
+| G2 | SSOT_MISSING | BT north star not declared in `.Antigravityrules.md` | CRITICAL | P0 | ✅ FIXED |
+| G3 | SSOT_MISSING | Inter-region rules not in SSOT | HIGH | P0 | ✅ FIXED |
+| G4 | SSOT_MISSING | Prize-source lock not in SSOT | HIGH | P0 | ✅ FIXED |
+| G5 | NO_AUTO_RANKING | No ranked model view / dashboard | HIGH | P1 | ✅ FIXED — `/api/model-ranking` |
+| G6 | GATE_MISALIGNED | WR gate uses aggregate WR, not BT rate | HIGH | P1 | ✅ FIXED |
+| G7 | FK_BROKEN | `mined_rule_effectiveness` FK orphaned from `mined_rules` IDs | MEDIUM | P2 | ⏳ DEFERRED |
+| G8 | PROMPT_NO_BT | AI prompt doesn't explicitly enforce BT priority | MEDIUM | P2 | ⏳ DEFERRED |
+| G9 | NO_WEEKLY_INJECT | Weekly livingness not injected into AI prompt | MEDIUM | P2 | ⏳ DEFERRED |
+| G10 | NO_TOKEN_UNALIGNED | No-token models don't ingest weekly rule context | MEDIUM | P2 | ⏳ DEFERRED |
+| G11 | EVAL_PARTIAL | `daily_evaluation.py` top1_hit only for combo-super | LOW | P3 | ⏳ DEFERRED |
+| G12 | NO_COST_TRACKING | No model cost-efficiency metric | LOW | P3 | ⏳ DEFERRED |
+
+### Known Issues
+- G7-G12 deferred to next session
+- Deploy needed: 3 files (database.py, main.py, .Antigravityrules.md)
+
+---
+
+## V16.2 — 7-PART SYSTEM AUDIT: RULES + WR GATE + SEMANTICS (2026-03-30 20:30 VN)
+
+### Business Semantics Correction (scheduler.py + meta_predict.py)
+- Replaced "re-predict" → "dự đoán bổ sung (phase Miền D)" across 7 spots
+- Aligns with `.Antigravityrules.md` mandated terminology
+
+### Rules Weekly Audit — 8-Week Rolling Window
+- **Script**: `rules_weekly_audit.py` (V2) — business-key join to bypass broken rule_id FK
+- **105 active rules classified**:
+
+| Livingness | Count | % |
+|-----------|:-----:|:-:|
+| SỐNG MẠNH | 23 | 22% |
+| YẾU | 24 | 23% |
+| SUY GIẢM | 10 | 10% |
+| CHẾT | 48 | 46% |
+
+- **29 ACTIVE_THIS_WEEK** rules — primary pool for prediction injection
+- **MB weakest**: only 4 SỐNG MẠNH (vs MN=9, MT=10)
+- **Top rule**: MT_CN / Hậu Giang / G1+G2 — 100% HR across 8 weeks
+- **Finding**: Rule_id FK broken (re-seed shifted IDs 16-229 → 421-525)
+
+### WR Gate Filter (main.py → generate_final_bundle)
+- Models with WR < 30% excluded from weighted voting (`MIN_WR_FOR_VOTING = 30`)
+- Set to `0` to disable (rollback path)
+- Traceability: `wr_gate_threshold` + `wr_gate_filtered` in `source_predictions_json`
+- Purpose: de-noise bundle consensus, especially for MB (10/16 models under 35% WR)
+
+### File Changes
+- **scheduler.py**: 7 wording fixes (re-predict → dự đoán bổ sung)
+- **meta_predict.py**: 3 wording fixes
+- **main.py**: +WR gate filter in `generate_final_bundle()` + traceability metadata
+
+### Known Issues
+- `mined_rule_effectiveness` FK orphaned from current `mined_rules` IDs — needs re-backfill
+- Phase 6-8 deferred: no-token alignment, weekly prompt injection, xiên strategy
+
+---
+
+## V16.1 — RUNTIME STABILIZATION + TRIAL-READY LOCK (2026-03-30 19:15 VN)
+
+### New Governance Rule: DUAL-TABLE EVALUATION
+- Added to `.Antigravityrules.md`: mọi đánh giá kết quả dự đoán PHẢI đánh giá **2 bảng** song song
+- **`predictions`** (per-model) → tối ưu MODEL (ranking, WR, accuracy)
+- **`final_bundles`** (UI bundle) → tối ưu UI (chất lượng sản phẩm `/du-doan`)
+- Đánh giá chỉ 1 bảng = KHÔNG ĐẦY ĐỦ
+
+### Day 1 Trial Issues Found + Fixed
+
+| # | Issue | Root Cause | Fix |
+|---|-------|-----------|-----|
+| 1 | MT/MB bundle missing on `/du-doan` | `generate_final_bundle()` not called in scheduler auto-predict chain | Added auto-gen hook in `_run_ai_predict_job()` L2343-2353 |
+| 2 | MN bundle stuck PENDING after verify | `_has_pending_predictions()` gate blocked bundle verify | Decoupled bundle verify from prediction gate in `/api/status` |
+| 3 | PENDING badge hidden on `/du-doan` | `getVerifyBadge()` returned empty for PENDING status | Added ⏳ Chờ KQ badge rendering |
+| 4 | History treo loading on region switch | `data-loaded` state not reset when switching tabs | Reset `data-loaded` attribute on tab click |
+| 5 | Lo3 verify false WIN (446 → 46 match BT=46) | Only checked 2-digit tail instead of full 3-digit | Extract full 3-digit tails from prize numbers in `verify_final_bundle()` |
+| 6 | Scheduler bundle verify missing | `verify_final_bundle()` not called post-scrape | Added `_vfb()` calls in all 3 region blocks (MN L280, MT L316, MB L354) |
+
+### Bundle Version / Overwrite Semantics (Audited + Documented)
+
+| Aspect | Behavior |
+|--------|----------|
+| Unique key | `(date, region)` — 1 row per date per region |
+| Create | INSERT with `bundle_version=1`, all statuses = PENDING |
+| Update/Re-gen | UPSERT — numbers replaced, `bundle_version++`, all statuses → PENDING, `verified_at` → NULL |
+| Verify | `verify_final_bundle()` flips each card status independently (PENDING → WIN/LOSE/N/A) |
+| History display | Luôn hiển thị bản mới nhất (row hiện tại), không có multi-version history |
+| Traceability | `source_predictions_json` ghi ranked numbers + model WR snapshot tại thời điểm gen |
+| `created_at` vs `updated_at` | `created_at` = lần đầu INSERT, `updated_at` = lần cuối UPSERT |
+
+**Limitation**: Không giữ snapshot các version trước. Chỉ forensic qua `bundle_version` count + `source_predictions_json`.
+Phase 2 consideration: version history table nếu cần so sánh bundle v1 vs v2.
+
+### Lo3 Verify — UPGRADED from Trial Limitation to Fixed
+- **V16 Phase 1.5**: Lo3 = simplified 2-digit tail check → false WIN (ví dụ: Lo3=446 match BT=46)
+- **V16.1**: Lo3 = full 3-digit tail extraction from prize numbers
+- Example: Lo3=446, BT=46 → V16 says WIN (46∈tails ✗), V16.1 says LOSE (446∉3-digit tails ✅)
+- **Lo3 WR sau V16.1**: metric chính xác hơn, nhưng WR sẽ thấp hơn V16 Phase 1.5 (vì strict hơn)
+
+### Same-Station Xiên — Post-Fix Baseline Note
+- Xiên 2/3 WR hiện tại (CHANGELOG V16 Phase 1.5 scoreboard) = **post-fix same-station baseline**
+- WR trước fix có khả năng inflate (region-wide pooling = dễ match → false WIN)
+- **Không có** before/after exact delta vì historical snapshot trước fix không tồn tại
+- Tất cả backfill 90 bundles đều dùng same-station logic → WR phản ánh post-fix chính xác
+- Lưu ý: không so sánh WR hiện tại với bất kỳ WR nào trước V16 Phase 1.5 vì methodology khác
+
+### File Changes
+- **scheduler.py**: +auto bundle gen in `_run_ai_predict_job()` + 3 `verify_final_bundle()` hooks post-scrape
+- **main.py**: Decoupled bundle verify block in `/api/status` (bypasses `_has_pending_predictions()`)
+- **database.py**: Lo3 3-digit tail extraction in `verify_final_bundle()`
+- **du-doan.html**: PENDING badge + history `data-loaded` reset
+
+### Deploy
+- ✅ 4 files deployed via `_quick_deploy.py` → VPS restart (PID new)
+- ✅ MN bundle flipped PENDING→LOSE at 17:33 (23s after restart)
+- ✅ MT bundle BT=46 verified WIN
+- ✅ MB bundle shows ⏳ Chờ KQ (correct — awaiting 18:38 scrape)
+
+### FIXED_NEEDS_MONITORING (2 ngày: 31/03 + 01/04)
+
+| Item | Success Criteria | Nếu Fail → Nghi | Route/API Check |
+|------|-----------------|------------------|----------------|
+| MT bundle auto-gen | Bundle tồn tại cho MT mỗi ngày | `_run_ai_predict_job` exception | `curl /api/final-bundle?region=MT` |
+| MB bundle auto-gen | Bundle tồn tại cho MB mỗi ngày | `_run_ai_predict_job` exception | `curl /api/final-bundle?region=MB` |
+| Decoupled verify | 3 bundles flip PENDING→WIN/LOSE mỗi ngày | `/api/status` verify block exception | `/du-doan` badges |
+| Lo3 3-digit verify | Lo3 status chính xác (cross-check thủ công) | `verify_final_bundle` 3-digit logic | `curl /api/final-bundle?region=*` |
+
+Sau 2 ngày pass → chuyển sang PASS_LOCKED. Nếu fail → check scheduler logs.
+
+### Trial Limitations — Locked Wording (4 items)
+
+1. **Backfill = current WR weights** — Backfill 30 ngày dùng WR weights hiện tại, không phải historical snapshot. Hữu ích cho trial monitoring, chưa phải forensic-grade replay. Phase 2: WR snapshot per-date.
+
+2. **Xiên 3 = trial-only, low-confidence** — Same-station enforcement rất strict (cần 3 số về cùng 1 đài). 30-day WR = 0% cả 3 miền. Không phải bug. Phase 2: review gate logic / station relaxation.
+
+3. **History row click = not implemented** — History section trên `/du-doan` chỉ hiển thị summary. Click vào row không mở chi tiết bundle cũ. Phase 2: detail view.
+
+4. **Bundle version old snapshots = not preserved** — Chỉ 1 row per (date, region). Re-gen thay thế row cũ. Không giữ forensic snapshot của version trước. Phase 2: version history table.
+
+### Trial Operating Checklist
+
+| Giờ VN | Event | Phải có | Phải flip | API check | Nếu missing |
+|--------|-------|---------|-----------|-----------|-------------|
+| 04:00 | Free model predict | 12 predictions mới | N/A | `/app` filter date=today | Scheduler down |
+| 04:15 | AI predict MN + bundle | MN bundle `v≥1` | N/A | `/api/final-bundle?region=MN` | `_run_ai_predict_job` error |
+| 16:38 | Scrape MN + verify | MN results in DB | MN bundle PENDING→WIN/LOSE | `/du-doan` tab MN | Scraper fail |
+| ~16:40 | Chain: AI MT + bundle | MT bundle created/updated | N/A | `/api/final-bundle?region=MT` | Chain exception |
+| 17:38 | Scrape MT + verify | MT results in DB | MT bundle PENDING→WIN/LOSE | `/du-doan` tab MT | Scraper fail |
+| ~17:40 | Chain: AI MB + bundle | MB bundle created/updated | N/A | `/api/final-bundle?region=MB` | Chain exception |
+| 18:38 | Scrape MB + verify + eval | MB results in DB | MB bundle PENDING→WIN/LOSE | `/du-doan` tab MB | Scraper fail |
+
+Quick health: `curl https://xs.io.vn/api/health`
+
+---
+
+## V16 Phase 1.5 — SAME-STATION FIX + 30-DAY BACKFILL (2026-03-30 13:42 VN)
+
+### Same-Station Xiên Fix (database.py + main.py)
+- **Root cause**: Xiên 2/3 verify was region-wide (all stations pooled) → false WIN when numbers appeared across different stations
+- **Fix**: `_get_per_station_tails()` helper + `verify_final_bundle(station_results=...)` param
+- All 6 verify hooks updated (3 in `/app` endpoint, 3 in scheduler)
+- Backward compatible: `station_results=None` falls back to region-wide
+
+### 30-Day Backfill (`_backfill_bundles.py`)
+- 90 bundles generated (30 days × 3 regions) + 90 verified with same-station logic
+- **Documented limitations**: uses current WR weights (not historical snapshots), `bundle_version=1`
+- **Lo3 verify**: simplified 2-digit tail check (Phase 1 trial limitation) → **FIXED in V16.1** (full 3-digit)
+
+### 30-Day Scoreboard (T1:VPS_LIVE, verified 2026-03-30)
+
+| Card | MN (30) | MT (30) | MB (30) |
+|------|---------|---------|---------|
+| Bạch Thủ WR | 40.0% | 50.0% | 40.0% |
+| Lô 2 (full/any) | 23.3%/56.7% | 16.7%/63.3% | 0%/53.3% |
+| Lô 3 (simplified→V16.1 full 3-digit) | 40.0% | 50.0% | 40.0% |
+| Xiên 2 (same-station) | 16.7% | 6.7% | 0% |
+| Xiên 3 (same-station) | 0% | 0% | 0% |
+
+Rolling 7-day BT: MN=71%, MT=29%, MB=29%
+
+### Traceability
+- 91/91 bundles have: `source_predictions_json`, `policy_version_ref`, `generation_method`, `consensus_level`
+
+### File Changes
+- **database.py**: +`_get_per_station_tails()`, updated `verify_final_bundle()` signature + xiên logic
+- **main.py**: 6 verify hooks updated with `station_results=`
+- **[NEW] `_backfill_bundles.py`**: Standalone 30-day backfill script
+
+### Deploy
+- ✅ 3 files uploaded via `_quick_deploy.py` → VPS restart OK (PID 36737)
+- ✅ Backfill executed on VPS: 90 generated, 90 verified, 0 errors
+
+### 3 Locked Limitations (Trial Phase — SSOT)
+
+1. **~~Lo3 verify = simplified 2-digit tail check~~** → **FIXED in V16.1** (full 3-digit verify)
+   - ~~Lo3 WR metric hiện tại chỉ là trial metric, không dùng như metric chuẩn cuối~~
+   - ~~Phase 2: implement full 3-digit verify~~ → Done: V16.1 `verify_final_bundle()` extracts 3-digit tails
+
+2. **Backfill dùng current WR weights** (NOT historical snapshot weights)
+   - Backfill 30 ngày là trial backfill, hữu ích cho so sánh nhanh + trial monitoring
+   - Chưa phải historical replay mức forensic cuối cùng
+   - Phase 2: implement WR snapshot per-date nếu cần forensic-grade replay
+
+3. **Xiên 3 same-station = 0% WR** (30-day window)
+   - Không phải bug — same-station enforcement rất strict (cần 3 số về cùng 1 đài)
+   - Status: trial-only, low-confidence
+   - Phase 2: review policy — xem xét relaxation hoặc thay đổi gate logic
+
+### Trial Readiness
+- **Status: READY_WITH_LIMITATIONS**
+- Owner có thể trial với nhận thức đúng về 3 limitation trên
+- Scheduler verify hooks hoạt động cho MN (16:36), MT (17:36), MB (18:36)
+- Mỗi ngày sẽ tự động flip PENDING → WIN/LOSE khi kết quả về
+
+### Phase 2 Roadmap (Deferred)
+1. ~~Lo3 full 3-digit verify~~ → **Done in V16.1**
+2. Historical snapshot WR weights cho forensic-grade replay
+3. Xiên 3 policy review (gate threshold / station relaxation)
+4. Optional: WR dashboard per-card per-region trên `/du-doan`
+5. Bundle version history table (old snapshot preservation)
+6. History row click → detail view trên `/du-doan`
+
+---
+
+## V13.2 — MOBILE UX + HISTORY TRACEABILITY + DB RELATIONS (2026-03-30 02:10 VN)
+
+### Changes
+- **Mobile UX** (`du-doan.html`): Header buttons become icon-only on <480px, empty-state shows schedule time + fallback button + history link
+- **History Columns** (`index.html`): "DĐ Ban Đầu" → "Dự Đoán Trước", "DĐ Sau KQ 🔄" → "Dự Đoán Sau", new "Lô 1 Số" column added
+- **Lô 1 Số Tracking** (`app.js`): Derived at render time from `main_numbers[0]`, shows ✅/❌ hit indicator
+- **DB Relation** (`predictions` table): New `policy_version_ref TEXT` column linking to `prediction_policies` for audit trail
+- **Migration**: `migration_v13_2_policy_ref.py` — additive ALTER, zero impact on existing data
+
+### Rollback
+- Drop column: `policy_version_ref` (SQLite: recreate table without column)
+- Revert frontend files from git
+
+---
+
+## V13.1 — DB VERSIONING + CARD GOVERNANCE (2026-03-30 01:50 VN)
+
+### Problem
+- No structured tracking of prediction policies/strategies
+- Card logic (bạch thủ, lô 2, lô 3, xiên 2, xiên 3) undocumented in DB
+- No rollback/versioning capability for prediction strategies
+
+### Solution — `prediction_policies` table (additive, zero impact)
+
+```sql
+CREATE TABLE prediction_policies (
+    policy_key TEXT UNIQUE,     -- single_pick, two_pick, lo3_prefix, xien2, xien3, shell_arch
+    policy_version TEXT,        -- v1_aggregated_top1, v1_frequency, v1_gated_top3, etc.
+    strategy TEXT,              -- algorithm name
+    parameters_json TEXT,       -- config with thresholds, sources
+    rollout_phase TEXT,         -- phase1/phase2/phase3
+    evaluation_window_days INT, -- 14 days default
+    ...
+);
+```
+
+### Policies Locked (Owner Approved 2026-03-30)
+
+| Policy | Version | Strategy | Phase |
+|--------|---------|----------|-------|
+| Bạch thủ | v1_aggregated_top1 | combo-super main_numbers[0] | Phase 1 |
+| Lô 2 số | v1_aggregated_top2 | combo-super main_numbers[0:2] | Phase 1 |
+| Lô 3 số | v1_frequency | Frequency co-occurrence prefix | Phase 1 |
+| Xiên 2 | v1_same_prediction | Both hits same draw | Phase 1 |
+| Xiên 3 | v1_gated_top3 | Top3 + quality gate (≥40% score[0]) | Phase 1 |
+| Shell | v13_responsive | User/admin role-based split | Phase 1 |
+
+### File Changes
+- **[NEW] migration_prediction_policies.py**: Migration script (CREATE TABLE + seed 6 policies)
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- ✅ Migration deployed + executed on VPS (6 rows verified)
+- No service restart needed (additive table only)
+- Rollback: `DROP TABLE prediction_policies`
+
+---
+
+## V13 — FULL UI SHELL RE-ARCHITECTURE (2026-03-30)
+
+### Problem
+- 10 frontend pages had fragmented, inconsistent navigation
+- Admin access via `?admin=1` URL parameter — insecure, easily bypassed
+- No unified shell pattern — each page had ad-hoc header/nav
+
+### Solution — Unified Shell Architecture
+
+#### User Shell (`/du-doan`, `/search`)
+- Clean product-focused navbar: Dự Đoán · Tra cứu · Dashboard (admin only) · Đăng xuất
+- Cookie-based auth (`credentials: 'include'`), no localStorage JWT
+
+#### Admin Shell (`/app`, `/filter`, `/accuracy`, `/rules-dashboard`, `/review-dashboard`, `/settings`)
+- Full admin navbar: Dự Đoán · Tra cứu · Dashboard · Bảng Tổng Hợp · Accuracy · Rules · Review · Cài đặt
+- Always-on for authenticated admins — no `display:none` toggles
+- Role gate in `app.js`: non-admins redirected to `/du-doan`
+
+### Auth Security
+- Removed all `?admin=1` URL parameter checks
+- Replaced with `fetch('/api/auth/check', { credentials: 'include' })`
+- Non-admin users cannot access admin routes
+
+### File Changes
+- **login.html**: Admin login → `/du-doan` (not `/app`)
+- **du-doan.html**: User shell + cookie-based auth
+- **search.html**: User shell + auth + logout
+- **index.html**: Admin shell (all tools visible)
+- **app.js**: Cookie-based role gate (replaces `?admin=1`)
+- **filter.html**: Admin shell nav
+- **accuracy.html**: Admin shell nav
+- **rules-dashboard.html**: Admin shell nav
+- **review-dashboard.html**: Admin shell nav
+- **settings.html**: Admin shell nav
+
+---
+
+## V12.2 — LOGIN REDIRECT + AUTH FIX + ADMIN SEPARATION (2026-03-30 00:15 VN)
+
+### Login Redirect
+- Admin login → `/du-doan` (user product screen), NOT `/app` (admin dashboard)
+- `login.html`: both `checkAuth()` and form submit redirect → `/du-doan`
+
+### Auth Fix (Root Cause)
+- `du-doan.html` was checking `localStorage.getItem('jwt_token')` — but app uses HTTP-only cookies
+- Fixed: replaced with `credentials: 'include'` pattern (matching `app.js`)
+- This caused redirect loop: login → /du-doan → bounce back to /login
+
+### Admin Dashboard Link
+- `du-doan.html` header: "⚙️ Dashboard" link (auto-shows for admin via `/api/auth/check`)
+- Links to `/app` — admin-only technical dashboard
+
+### Version
+- PID 26963
+
+---
+
+### Course Correction
+- Owner flagged: **Lô 2 số ≠ Xiên 2** — different product role, different verify logic
+- Restored 5-card layout (reverted from 4-card Phương án B)
+
+### Dedicated User Prediction Screen `/du-doan`
+- New standalone page: `du-doan.html` — clean, mobile-first, no admin noise
+- Region tabs (MN / MT / MB) with auto-fetch from API
+- Auth-gated (redirects to `/login` if not authenticated)
+- Route registered in `main.py`
+
+### 5-Card Structure
+- 🏆 **Bạch Thủ Lô** — `numbers[0]`, con lô mạnh nhất
+- 🎯 **Lô 2 Số** — `numbers[0] + [1]`, verify riêng từng con (RESTORED)
+- 🎲 **Lô 3 Càng** — derive 3 chữ số, tham khảo
+- 🔗 **Xiên 2** — 2 con lô cùng đài, tham khảo
+- 🔗 **Xiên 3** — 3 con lô cùng đài, tham khảo
+
+### Nav Update
+- "🎯 Dự Đoán" button added to header (visible to all users, green accent)
+- Links to `/du-doan` dedicated screen
+
+### Demo Cleanup
+- 4 demo files archived → `frontend/archive/`
+  - demo_redesign.html, demo_2_so_cuoi.html, demo_best_picks.html, demo_v11.html
+
+### Version
+- `v20260329-V12-rearchitect`
+
+---
+
+
+### Internet Terminology Research (15+ sources)
+- Chuẩn hóa theo thuật ngữ xổ số Việt Nam:
+  - **Bạch thủ lô** = chọn duy nhất 1 con lô 2 chữ số → Card Hero
+  - **Lô 3 càng** = dự đoán 3 số cuối các giải (≠ "3 số riêng lẻ")
+  - **Xiên 2/3** = 2-3 con lô cùng về → verify same-station (sản phẩm khắt khe hơn thị trường)
+- "Dự Đoán 1 Số / 2 Số / 3 Số" → ❌ sai thuật ngữ, đã sửa
+
+### Card Structure — Phương án B (4 cards, giảm từ 5)
+- Card 1: **Bạch Thủ Lô** — `numbers[0]`, Hero card, con lô mạnh nhất hôm nay
+- Card 2: **Lô 3 Càng** — `derive3Digit()`, 3 số cuối, "tham khảo"
+- Card 3: **Xiên 2** — `numbers[0]+[1]`, 2 con lô cùng đài, "tham khảo"
+- Card 4: **Xiên 3** — +`getXien3Number()`, 3 con lô cùng đài, "tham khảo"
+- **Removed**: "Dự Đoán 2 Số" (trùng hoàn toàn với Xiên 2)
+
+### User/Admin Separation (admin gate `?admin=1`)
+- **User sees**: Bạch Thủ Lô + Lô 3 Càng + Xiên 2 + Xiên 3 + simplified history (4 cols)
+- **Admin sees**: full history (11 cols), batch actions, nav buttons (Filter/Accuracy/Rules/Review/Settings)
+- Nav buttons: 6 admin links gated with `header-admin-btn` + `display:none`
+- History table: 7 columns gated with `admin-col` class
+- Batch actions (select all, delete, toggle models): gated as admin-only
+
+### File Changes
+- **app.js**: `isAdminMode` global, 4-card render, history user/admin split, Tham khảo badges
+- **index.html**: nav admin gate, thead admin-col classes, cache busters
+- **styles.css**: `.v12-thamkhao-badge` amber pill badge
+
+### Deploy
+- ✅ 3 deploy rounds, all verified via browser
+- Service active: lottery.service PID 25958
+- No JS errors in console
+- Version: `v20260329-V12-terminology`
+
+### Phase 2 Roadmap (1 week)
+- `single_pick_hit` tracking in verify
+- `verify_xien_same_station()` backend
+- Historical prefix analysis for Lô 3 Càng
+
+---
+
+## V10.4 — PHASE 3A/3B: MB WEEKDAY TRACKING + DIVERSITY PASS (2026-03-29 02:10 VN)
+
+### Phase 3A: MB Per-Weekday Model Performance Tracking (gpt_analyzer.py)
+- Queries VPS DB for per-model, per-weekday WR for MB region (n≥3 evals)
+- Injects ranked model list into MB HARD MODE AI context
+- Shows: 🥇≥50%, 🥈≥35%, 🥉≥20%, ⛔<20% tier per model per weekday
+- Actionable: TRUST/CAUTION directives with top/bottom model names
+- Sample-size warning when min evals < 8
+
+### Phase 3B: Post-Prediction Diversity Pass (scheduler.py)
+- Runs AFTER all 5 AI models predict, BEFORE combo-super
+- Detects herding: 4+ AI models chose same tail number
+- Identifies 2 weakest models (lowest 30d WR) → strength penalty -1.0
+- Does NOT swap numbers — reduces strength so combo-super de-prioritizes
+- Full traceability: `[DIVERSITY-PASS]` tag in verdict_reason with original numbers
+- AI token models only — ML/ensemble untouched
+
+### Dashboard Visibility (app.js)
+- Added `renderDiversityAlert()` function — 🔄 orange badge for diversity pass
+- Both `renderPrediction` and `renderPredictionFromDB` now show convergence + diversity alerts
+
+### File Changes
+- **gpt_analyzer.py**: +55 lines — MB weekday tracking query + context injection
+- **scheduler.py**: +126 lines — diversity pass logic after AI model loop
+- **app.js**: +27 lines — diversity alert badge + wiring
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- Via auto-deploy pipeline (git push → cron pull → VPS restart)
+
+---
+
+## V10.3 — ANTI-HERDING HARDENING + MB CALIBRATION + DASHBOARD DIAGNOSTICS (2026-03-29 01:20 VN)
+
+### 4 IMPLEMENT_NOW Fixes (Closing V10.2 Remaining Gaps)
+
+#### A. RULE BOOST CAP ENFORCEMENT (rule_engine.py)
+- `extract_rule_candidates_v2()`: CONV×3+ boost capped at +0.40 (was uncapped → observed +0.597)
+- CONV×2 capped at +0.50 (moderate convergence still positive signal)
+- CONV×4+ capped at +0.40 (same as ×3)
+- Constants: `CONV_BOOST_CAP`, `CONV_BOOST_CAP_DEFAULT`
+- Log: `🔒 CONV×N CAP: tail boost X → Y`
+
+#### B. STRENGTH AUTO-DOWNGRADE FOR CONV×3+ (prediction_guard.py)
+- Fix 3b: When model picks number already chosen by 4+ other models → strength -1.5
+- Added to `verdict_reason`: `[CONV-DOWNGRADE] {num} herding×{freq+1} str-1.5`
+- Returns 4-tuple: `(verdict, reason, warnings, strength_adjustment)` (backward compat)
+- `scheduler.py`: Updated to unpack 4-tuple + apply strength adjustment
+
+#### C. MB 1-STATION CONFIDENCE CALIBRATION (gpt_analyzer.py)
+- MB HARD MODE: Added V10.3 CALIBRATION section
+- Base confidence ceiling: 55% (MN/MT = 70%)
+- Rule match from 1 station = weak evidence → reduce trust 20%
+- Require ≥2 independent evidence sources for confidence boost
+- Single rule match → keep SKIP or strength ≤5
+
+#### D. DASHBOARD CONVERGENCE ALERT (app.js)
+- `renderConvergenceAlert()`: Detects `[CONV-DOWNGRADE]` in verdict_reason
+- Shows red alert badge: "🚨 CONVERGENCE TRAP DETECTED"
+- Displays in both live (`renderPrediction`) and DB (`renderPredictionFromDB`) views
+- Owner sees herding risk without checking logs
+
+### File Changes
+- **rule_engine.py**: +CONV_BOOST_CAP constants, +cap enforcement in extract_rule_candidates_v2
+- **prediction_guard.py**: +Fix 3b strength downgrade, 4-tuple return
+- **scheduler.py**: Updated guard caller for 4-tuple
+- **gpt_analyzer.py**: +MB V10.3 calibration section in build_context_pack
+- **app.js**: +renderConvergenceAlert() function + integration in 2 render functions
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- ✅ DEPLOYED via auto-deploy pipeline (commit `61571bb` → VPS cron pull → restart confirmed @ 01:50 VN)
+
+---
+
+## V10.2 — PROMPT-LEVEL ANTI-HERDING + CONVERGENCE TRAP GUARD (2026-03-29 00:00 VN)
+
+### Root Cause (Structural Gap in V5.9.12)
+- V5.9.12 anti-herding guard operates at `combo_super.py` aggregation layer only
+- AI model prompt-level convergence NOT covered: 6/7 AI models independently pick 74@MT from CONV×3 signal → ALL LOSE
+- All AI models receive same `build_context_pack()` → same CONV×3 signal → same independent decision = **herding by design**
+
+### Fix — 3 Layers (gpt_analyzer.py only, NO business logic change)
+
+#### A. CONVERGENCE TRAP GUARD (Context Pack V10.2)
+- `build_context_pack()`: When `convergence_map` has tail with count ≥3, inject `🚨 CONVERGENCE TRAP ALERT`
+- Warns each AI: "6/7 AI khác CŨNG SẼ CHỌN số này → herding risk CỰC CAO"
+- Directs AI to find ALTERNATIVE numbers or REDUCE confidence if still choosing CONV×3+
+- Each AI model now aware it's in a potential herding scenario
+
+#### B. §23 AI-LEVEL ANTI-HERDING (Reasoning Rulebook RR-10.2)
+- New rule §23 in `REASONING_RULEBOOK` — AI models can refuse convergent picks
+- Grants AI right to counter-pick if: rule eff < 55%, source livingness < 4/8w, no cross-region confirmation
+- Mandatory confidence downgrade when choosing CONV×3+ number
+- Goal: 2-3/7 AI models should diversify to mitigate catastrophic loss
+
+#### C. MB LOSS STREAK AWARENESS (Context Pack V10.2)
+- `build_context_pack()` MB HARD MODE: per-weekday loss streak detection over 8 weeks
+- 2+ consecutive 0-WIN weeks → `🚨 STREAK POLICY` → max confidence LOW
+- 1 consecutive 0-WIN week → `⚠️ previous week 0 WIN` → caution flag
+- Shows recent 4-week breakdown per weekday for calibration
+
+### Version Bumps
+- `REASONING_RULEBOOK`: RR-9.5 → **RR-10.2** (+§23 AI-level anti-herding)
+- `CONTEXT_PACK`: CTX-10.0 → **CTX-10.2** (+convergence trap + MB streak)
+- `PROMPT_BUNDLE`: PB-10.1 → **PB-10.3**
+
+### File Changes
+- **gpt_analyzer.py**: 4 edits — §23 rule, convergence trap, MB streak, version bump
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- ✅ DEPLOYED — included in commit `e84494e` → VPS auto-pull
+
+---
+
+## V5.9.12 — CONDITIONAL ANTI-HERDING + GOVERNANCE (2026-03-28 23:30 VN)
+
+### Root Cause (MT 28/03 — 74 Herding Incident)
+- 8/15 models chose 74 as main number for MT → ALL LOSE
+- Diversity score = 36.7 (HIGH RISK)
+- 3 Ninh Thuận rules CONV×3 (boost +0.597) overwhelmed AI diversity
+- `ENABLE_ANTI_HERDING = False` in prediction_guard.py — no guard active
+- Only ML models (meta-learning: 42, 62) avoided herding → WIN
+
+### Fix — Conditional Anti-Herding (V5.9.12)
+- **prediction_guard.py**: Replace binary `ENABLE_ANTI_HERDING = False` with conditional logic
+  - 4+ models on same number → `🔴 HIGH CONVERGENCE` warning in verdict
+  - 2-3 models → `ℹ️ Moderate convergence` info (V5.9.11: positive signal preserved)
+  - Always active (no toggle) — severity-based, not switch-based
+- **`.Antigravityrules.md`**: Added 3 governance sections:
+  - `NO-STALE-DB EVALUATION RULE` — 3-tier DB classification (T1/T2/T3)
+  - `ANTI-HERDING CONDITIONAL GOVERNANCE` — policy for conditional herding
+  - `DB-SOURCE REPORTING RULE` — mandatory DB source header in reports
+
+### Evidence Base
+- V5.9.11 data: herding WR=30.8% > non-herding WR=16.8% (moderate herding = positive)
+- 28/03 MT: 8/15 on 74, diversity=36.7 → ALL LOSE (extreme herding = catastrophic)
+- Solution: preserve moderate herding benefit, guard against extreme convergence
+
+### File Changes
+- **prediction_guard.py**: Fix 3 rewritten — V5.9.12 conditional (was V5.9.11 disabled)
+- **`.Antigravityrules.md`**: +66 lines — 3 new governance sections
+
+### Deploy
+- ✅ DEPLOYED — included in V10.2 push (`e84494e`)
+- Rollback: revert prediction_guard.py Fix 3 section to `ENABLE_ANTI_HERDING = False`
+
+---
+
+## V10.0 — DEPLOY WEBHOOK AUTOMATION (2026-03-28 19:15 VN)
+
+### Problem
+- Agent KHÔNG chạy được bất cứ command nào (Windows sandbox block Python/git/scp/ssh)
+- Mọi deploy phải owner mở terminal chạy tay → bottleneck, dễ quên, không scalable
+- Cần kiến trúc deploy tự động THẬT, không chỉ "có script cho owner chạy"
+
+### Solution — VPS Deploy Webhook
+- **`deploy_api.py`**: FastAPI module thêm `/api/_system/deploy` endpoint
+- Agent đọc file local → encode base64 → POST lên VPS webhook → VPS tự deploy
+- Flow: validate token → backup → write files → restart → health check → verify → report
+
+### Architecture
+```
+Agent edits code → Agent POST /api/_system/deploy → VPS auto:
+  1. Validate X-Deploy-Token
+  2. Guard: Vietnix-only (block Windows/Vultr)
+  3. Backup current files
+  4. Write new files
+  5. Restart service (detached script — survives process kill)
+  6. Health check (HTTP 200)
+  7. Re-verify predictions
+  8. Return JSON {status: PASS/FAIL}
+```
+
+### API Endpoints
+| Endpoint | Method | Mô tả |
+|----------|--------|--------|
+| `/api/_system/deploy` | POST | Deploy files + restart + verify |
+| `/api/_system/deploy/status/{id}` | GET | Poll deploy status |
+| `/api/_system/deploy/list` | GET | List recent deploys |
+| `/api/_system/deploy/health` | GET | Deploy system health |
+| `/api/_system/rollback` | POST | Rollback deploy |
+
+### Security
+- `DEPLOY_TOKEN` from `.env` (not in code)
+- Vietnix-only guard (hostname + IP + platform check)
+- Rate limit: 1 deploy / 60 giây
+- Path whitelist: chỉ `web/backend/`, `web/frontend/`, `deploy/`, `tools/`
+- File size limit: 5MB/file
+- Base64 validation
+- Constant-time token comparison
+
+### File Changes
+- **[NEW] `deploy_api.py`**: VPS-side webhook API module
+- **[NEW] `_agent_deploy.py`**: Agent-side deploy helper (read → encode → POST)
+- **`main.py`**: Register deploy_api router
+- **`_deploy_orchestrator.py`**: Add deploy_api.py to deploy list
+
+### Bootstrap (1 lần duy nhất)
+1. Owner thêm `DEPLOY_TOKEN=<secret>` vào VPS `.env`
+2. Owner chạy `python web/_deploy_orchestrator.py` (LẦN CUỐI)
+3. Sau đó: mọi deploy qua webhook — zero manual
+
+---
+
+## V9.4 — STATION-COUNT LOCK (2026-03-28 19:00 VN)
+
+### Root Cause (3 lớp)
+1. **Verify lần 1 thiếu đài**: MN Thứ Bảy có 4 đài nhưng verify lần 1 chỉ có 1 đài (16:38) → LOSE sai
+2. **LOCK cứng**: `verify_prediction` LOCK trạng thái WIN/LOSE/PARTIAL, không re-verify khi bổ sung đài
+3. **main.py chỉ verify PENDING**: `_has_pending_predictions` chỉ check `status='PENDING'`, bỏ qua predictions đã LOSE sai
+
+### Fix — STATION-COUNT LOCK (database.py)
+- **GIỮ LOCK** theo quy tắc nghiệp vụ (prediction verified → không verify lại)
+- **STATION_COUNT comparison** (thay vì hit_count như V9.3):
+  - `verified_station_count` column mới trong predictions table
+  - Khi verify → lưu station count hiện tại
+  - Khi gọi lại verify: so sánh `current_station_count` vs `verified_station_count`
+  - Nếu station_count tăng → DỮ LIỆU NGUỒN ĐÃ THAY ĐỔI → unlock + re-verify
+  - Nếu station_count không tăng → giữ LOCK (đúng quy tắc)
+- **Vì sao station_count > hit_count**: hit_count=0 cả 1 đài lẫn 4 đài nếu số hiếm → miss unlock
+
+### File Changes
+- **database.py** V9.4: `verify_prediction()` dùng `verified_station_count` + migration ALTER TABLE
+  - Tất cả caller: `current_station_count=len(results)`
+- **scheduler.py**: 4 call sites truyền `current_station_count=len(existing)`
+- **main.py**: 10 call sites truyền `current_station_count=len(results)`
+- **_deploy_orchestrator.py** V9.4: deploy 3 file (database.py + scheduler.py + main.py)
+
+### V9.3 Superseded

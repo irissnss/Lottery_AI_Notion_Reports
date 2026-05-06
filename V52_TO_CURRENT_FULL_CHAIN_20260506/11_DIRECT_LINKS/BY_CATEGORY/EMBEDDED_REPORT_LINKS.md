@@ -1,0 +1,16 @@
+# 08_EMBEDDED_REPORTS Links
+
+- [embedded_report_001_lines_000019_000248.md](../08_EMBEDDED_REPORTS/embedded_report_001_lines_000019_000248.md)
+- [embedded_report_002_lines_000007_000017.md](../08_EMBEDDED_REPORTS/embedded_report_002_lines_000007_000017.md)
+- [embedded_report_003_lines_000037_000286.md](../08_EMBEDDED_REPORTS/embedded_report_003_lines_000037_000286.md)
+- [embedded_report_004_lines_000004_000025.md](../08_EMBEDDED_REPORTS/embedded_report_004_lines_000004_000025.md)
+- [embedded_report_005_lines_000040_000289.md](../08_EMBEDDED_REPORTS/embedded_report_005_lines_000040_000289.md)
+- [embedded_report_006_lines_000240_000489.md](../08_EMBEDDED_REPORTS/embedded_report_006_lines_000240_000489.md)
+- [embedded_report_007_lines_000019_000212.md](../08_EMBEDDED_REPORTS/embedded_report_007_lines_000019_000212.md)
+- [embedded_report_008_lines_000788_001037.md](../08_EMBEDDED_REPORTS/embedded_report_008_lines_000788_001037.md)
+- [embedded_report_009_lines_000149_000256.md](../08_EMBEDDED_REPORTS/embedded_report_009_lines_000149_000256.md)
+- [embedded_report_010_lines_000025_000180.md](../08_EMBEDDED_REPORTS/embedded_report_010_lines_000025_000180.md)
+- [embedded_report_011_lines_000635_000706.md](../08_EMBEDDED_REPORTS/embedded_report_011_lines_000635_000706.md)
+- [embedded_report_012_lines_000038_000287.md](../08_EMBEDDED_REPORTS/embedded_report_012_lines_000038_000287.md)
+- [embedded_report_013_lines_000019_000221.md](../08_EMBEDDED_REPORTS/embedded_report_013_lines_000019_000221.md)
+- [EMBEDDED_REPORT_INDEX.md](../08_EMBEDDED_REPORTS/EMBEDDED_REPORT_INDEX.md)

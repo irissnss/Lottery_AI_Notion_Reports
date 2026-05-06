@@ -1,0 +1,135 @@
+{
+  "methods": {
+    "OFFICIAL_BASELINE_CONTROL": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "control_clone_official",
+      "output_eligible": false
+    },
+    "COMPOSITE_CHALLENGER_V2": {
+      "phase": "TEST_LANE_PARALLEL",
+      "samples_30d": "~MB only",
+      "gate": "NOT_MET",
+      "next": "WAIT_30D"
+    },
+    "STRENGTH_WEIGHTED_V52_5_2": {
+      "phase": "TEST_LANE_PARALLEL",
+      "60d_MB_fw_fl": "8/7",
+      "gate": "NOT_MET",
+      "next": "ACCUMULATE"
+    },
+    "AI_CHAIN_PRESERVATION_V1": {
+      "phase": "TEST_LANE_PARALLEL",
+      "60d_MN_fw_fl": "4/1",
+      "60d_MT_fw_fl": "8/12 destructive",
+      "60d_MB": "destructive",
+      "today_05_05": "1 free win MN (52 hit), 0 in MT/MB",
+      "gate": "REGION_CONDITIONAL_ONLY_MN_PROMISING",
+      "next": "WAIT_14D_MN_ONLY"
+    },
+    "SPECIALIST_ROSTER_V1": {
+      "phase": "TEST_LANE_PARALLEL",
+      "60d_MB_fw_fl": "5/0",
+      "today_04_05": "1 free win MN (32 hit) + None for MB/MT",
+      "today_05_05": "no rescue",
+      "gate": "PROMISING_BUT_THIN_SAMPLE",
+      "next": "WAIT_30_60D"
+    },
+    "PRIOR_REGION_CONTEXT_SAFE_V1": {
+      "phase": "TEST_LANE_PARALLEL",
+      "samples_thin": true,
+      "gate": "NOT_ENOUGH_EVIDENCE",
+      "next": "WAIT_30D"
+    },
+    "NO_TOKEN_HERD_REDUCTION_V1": {
+      "phase": "TEST_LANE_PARALLEL",
+      "samples_thin": true,
+      "gate": "NOT_ENOUGH_EVIDENCE",
+      "next": "WAIT_30D"
+    },
+    "TIER_AWARE_BUNDLE_SHADOW_V1_MB": {
+      "phase": "SHADOW_BACKFILL",
+      "samples_thin": true,
+      "gate": "NOT_MET"
+    },
+    "corrected_rescue_replay": {
+      "phase": "SHADOW_BACKFILL",
+      "gate": "TIER3_NOT_MET",
+      "samples": "14_VALID_LIVE_DAY_NEEDED"
+    },
+    "single_vote_rescue_replay": {
+      "phase": "DROP_AS_DESIGNED",
+      "reason": "LEAKY_REFERENCE_ONLY"
+    },
+    "tier2_replay_shadow_V1": {
+      "phase": "DROP_AS_DESIGNED",
+      "reason": "NEGATIVE_LIFT"
+    },
+    "tier2_replay_shadow_V2": {
+      "phase": "DROP_AS_DESIGNED",
+      "reason": "NEGATIVE_LIFT_V2"
+    },
+    "cohere_rerank_effectiveness_v1": {
+      "phase": "SHADOW_BACKFILL",
+      "gate": "VALUE_NOT_PROVEN"
+    },
+    "mt_model_hit_output_drop_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "loz_stage_trace_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "weekday_blackspot_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "cross_region_spillover_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "model_cross_region_dup_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "bundle_universe_coverage_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "mb_structural_drilldown_shadow": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only"
+    },
+    "model_latency_cost_audit_daily": {
+      "phase": "BROKEN_NEEDS_FIX",
+      "reason": "NO_PER_MODEL_DURATION 100%"
+    },
+    "model_strength_by_region_weekday_station_daily": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "measurement_only",
+      "latest_anchor": "2026-05-05"
+    },
+    "experimental_preview_shadow_multi_region": {
+      "phase": "TEST_LANE_PARALLEL",
+      "role": "test_bundle_diagnostic",
+      "admin_only": true
+    },
+    "V55_GOOGLE_DIRECT_SHADOW_COHORT": {
+      "phase": "TEST_LANE_PARALLEL",
+      "models": [
+        "gemini-3.1-pro",
+        "gemini-3-flash",
+        "gemma-4-31b"
+      ],
+      "first_predictions": "2026-05-05",
+      "today_status": {
+        "gemini-3.1-pro": "3 rows (MB PARTIAL, MN LOSE, MT LOSE)",
+        "gemini-3-flash": "3 rows (MB WIN! MN PARTIAL, MT LOSE)",
+        "gemma-4-31b": "0 rows on 05/05 due to scheduler preflight bug; FIXED IN V55 — will run 06/05 onward"
+      },
+      "gate": "NOT_ENOUGH_EVIDENCE_NEED_14D"
+    }
+  },
+  "live_parallel_status": "LIVE_PARALLEL_AUTO_PENDING_ONLY",
+  "why_not_full_auto": "V52.5.6 manual runner only; multi-region closeout evaluator (C-03) not built; scheduler auto-wire (C-04) blocked on >=3-5 clean closeouts"
+}

@@ -1,0 +1,242 @@
+# TOTAL-FORCE V54 — 2026-05-04 Natural Live Watch + Measurement Instrumentation + Test-Lane Control
+
+> Generated: 2026-05-04 ~13:20 VN  
+> Mode: VPS-first / live-window aware / no official output mutation / measurement + test-lane only  
+> Live sync: `artifacts/live_sync/20260504_125506/manifest.json`
+
+## A. Executive Verdict
+
+1. V54 started at 12:55 VN, between MN bundle generation and MN result scrape; this is live-sensitive but not immediately adjacent to cascade.
+2. `/du-doan-test` remains `LIVE_PARALLEL_AUTO_PENDING_ONLY`, not full live-parallel auto.
+3. 2026-05-04 is not closed: MN has official bundle BT `65` / lo2 `[65,32]` pending result; MT/MB only have auto_daily predictions, no final bundle yet.
+4. C-02 API source labels were safely deployed: no selection logic change, response metadata only.
+5. C-06 loz stage trace was safely deployed as measurement-only and backfilled through closed date 2026-05-03: 6174 rows.
+6. C-15 weekday blackspot alert was safely deployed as measurement-only: 21 rows; MB Wed/Fri and MT Mon/Fri confirmed blackspots on 30d.
+7. C-05 latency instrumentation was NOT deployed because it touches `gpt_analyzer.py` live model-call path before MT/MB cascade. Exact plan written.
+8. C-07 MT correct-but-dropped UI and C-14 strength chips were not deployed yet; plans written.
+9. Post-hash: `predictions`, `lottery_results`, `model_daily_eval`, V52/V52.5 tables unchanged. `final_bundles` content unchanged but hash changed due startup catch-up refreshing `updated_at/verified_at` for 2026-05-03 rows after restart.
+10. No official output behavior changed. No scoring/prompt/model roster/bundle voting/generate_final_bundle change.
+
+## B. Current State After V53/V53.1
+
+- V53/V52.5.8 status remains valid.
+- Timeline standardised:
+  - `2026-06-03` = early evidence review window.
+  - `2026-06-15` = safer production-review window if gates met.
+- V53.1 docs remain the owner-facing roadmap/timeline.
+
+## C. 2026-05-04 Live State
+
+| Region | State | Official bundle | Predictions | Result rows | Test rows |
+|---|---|---|---|---:|---:|
+| MN | `BUNDLE_READY_PENDING_RESULT` | BT `65`, lo2 `[65,32]`, lo3 `465`, PENDING | auto_daily=15, shadow_auto_eval=10 | 0 | 0 |
+| MT | `PREDICTIONS_READY_NO_BUNDLE` | none | auto_daily=7 | 0 | 0 |
+| MB | `PREDICTIONS_READY_NO_BUNDLE` | none | auto_daily=7 | 0 | 0 |
+
+No 2026-05-04 official-vs-test quality verdict is allowed before scrape/eval.
+
+## D. `/du-doan-test` Reality Proof
+
+### UI
+
+V52.6 UI source banner and picks-per-experiment table are present. No further UI change in V54.
+
+### API
+
+C-02 deployed in `web/backend/main.py`:
+
+- top-level `source_proof`;
+- `test_bundle` source fields;
+- `experiments[*]` source fields.
+
+Fields include:
+
+- `official_baseline_source_table`
+- `test_output_source_table`
+- `source_lane`
+- `candidate_pool_source`
+- `method_pick_source`
+- `is_clone_of_official`
+- `is_independent_agreement_with_official`
+- `selection_time`
+- `result_known_at_selection`
+- `is_realtime_prediction`
+- `is_post_closeout_diagnostic`
+- `run_id`
+- `experiment_id`
+- `official_output`
+- `output_impact`
+- `test_only`
+- `output_eligible`
+
+Admin in-process smoke for 2026-05-03:
+
+| Region | Source | clone? | independent agreement? | post-closeout diagnostic? |
+|---|---|---:|---:|---:|
+| MN | `experimental_preview_shadow` | false | true | true |
+| MT | `experimental_preview_shadow` | false | true | true |
+| MB | `mb_experimental_preview_shadow` | false | true | true |
+
+### DB / Code / Log
+
+- `experimental_preview_shadow` and `mb_experimental_preview_shadow` unchanged by C-02.
+- `du_doan_test_*` unchanged by C-02.
+- Code path still reads official baseline from `final_bundles` only for comparison.
+- Route smoke after restart: `/du-doan=200`, `/du-doan-test=401`, `/api/du-doan-test/mn=401`, `/api/final-bundle?region=MN=200`.
+
+Labels:
+
+- `TEST_LANE_REAL_DB_SEPARATION_CONFIRMED`
+- `TEST_LANE_OUTPUT_INDEPENDENT_FROM_OFFICIAL_WRITE_PATH`
+- `TEST_LANE_CANDIDATE_POOL_SHARED_WITH_OFFICIAL_SOURCE_PREDICTIONS`
+- `OFFICIAL_BASELINE_CLONE_BY_DESIGN`
+- `UI_LABEL_CONFUSION_RESOLVED`
+- `API_SOURCE_FIELDS_PRESENT`
+- `TEST_LANE_MANUAL_CONTROLLED`
+- `LIVE_PARALLEL_AUTO_PENDING_ONLY`
+
+## E. Official vs Test Comparison
+
+2026-05-04 is pre-closeout:
+
+- MN official exists but result unknown.
+- MT/MB official final bundle not generated yet.
+- test lane rows for 2026-05-04 do not exist yet.
+
+Verdict: `WAIT_CLOSEOUT`.
+
+## F. Official Quality Rolling
+
+No new rolling verdict since V53 because 2026-05-04 is not closed.
+
+Current standing:
+
+- MN: healthy.
+- MT: volatile, Monday/Friday blackspots.
+- MB: structurally weak, Wednesday/Friday blackspots.
+- Overall: `OFFICIAL_QUALITY_NOT_PROVEN / MIXED_SIGNAL`.
+
+## G. MT Correct-But-Dropped Forensic
+
+V54 adds `loz_stage_trace_shadow` to complement V52.1 `mt_model_hit_output_drop_shadow`.
+
+60d closed through 2026-05-03:
+
+| Region | NOT_IN_MODEL_OUTPUT | LOZ_LINE_SELECTION_MISS | CANDIDATE_POOL_MISS | FINAL_OUTPUT_HIT |
+|---|---:|---:|---:|---:|
+| MN | 2229 | 221 | 105 | 59 |
+| MT | 1807 | 182 | 90 | 52 |
+| MB | 1204 | 121 | 73 | 31 |
+
+MT still has large loz selection miss surface, but `NOT_IN_MODEL_OUTPUT` dominates, so a simple loz policy swap is unsafe.
+
+## H. MB AI / No-Token / Specialist
+
+No new model result for 2026-05-04 yet. V53 standing remains:
+
+- MB AI weak but not prunable.
+- MB specialist promising but sample thin.
+- No-token rerun_post_mt is strongest MB non-AI family but still mediocre.
+
+## I. Loz Stage Trace Status
+
+`LOZ_STAGE_TRACE_DEPLOYED_MEASUREMENT_ONLY`.
+
+New table:
+
+- `loz_stage_trace_shadow`
+- 6174 rows
+- writes only diagnostic rows
+- no official mutation
+
+Verdict remains `LOZ_DIAGNOSTIC_ONLY + LOZ_SIGNAL_MIXED + LOZ_NOT_READY_FOR_RULE`.
+
+## J. Model Tensor + Latency / Pruning
+
+No pruning. C-05 not deployed during live window.
+
+Status:
+
+- `TENSOR_OK_FOR_DIAGNOSTIC`
+- `PRUNING_NOT_ALLOWED_NO_LATENCY`
+- `READY_FOR_LATENCY_COLLECTION`
+
+## K. Implemented In V54
+
+| Item | Status | Output |
+|---|---|---|
+| C-02 API source labels | DONE | `main.py` response enrichment |
+| C-06 loz stage trace | DONE | `loz_stage_trace_shadow`, 6174 rows |
+| C-15 weekday blackspot alert | DONE | `weekday_blackspot_shadow`, 21 rows |
+
+## L. Not Implemented
+
+| Item | Why |
+|---|---|
+| C-05 latency instrumentation | touches live model-call path; defer until outside live window |
+| C-07 MT UI panel | backend data now ready; UI next |
+| C-14 strength chips | tensor ready; UI next |
+| C-03 evaluator | wait 3 clean manual closeouts |
+| C-04 scheduler auto-wire | wait 3-5 clean closeouts |
+| official output changes | forbidden; no gate met |
+
+## M. Code Readiness
+
+See `artifacts/_v54_code_readiness_matrix_20260504.md`.
+
+## N. Safe Next Plan
+
+### Next 24h
+
+- Let 2026-05-04 close naturally.
+- Run V52.5.6 runner manually after results.
+- No more service restarts unless outage.
+
+### Next 3 Days
+
+- Deploy C-05 outside live window.
+- Deploy C-07 UI panel.
+- Deploy C-14 strength chips.
+
+### Next 7 Days
+
+- Build multi-region closeout evaluator.
+- Surface C-15 blackspot panel.
+- Consider scheduler auto-wire only after clean manual proofs.
+
+### Next 14 Days
+
+- Re-evaluate loz trace after 14 valid days.
+- No official loz policy change until stable rule exists.
+
+### Next 30 Days
+
+- Evidence review for Wave 1 candidates only; no auto deploy.
+
+## O. Do Not Do Next
+
+- Do not claim 2026-05-04 quality before closeout.
+- Do not prune models before latency/cost data.
+- Do not change official loz policy.
+- Do not promote Composite V2 until gate met.
+- Do not use V37 single-vote rescue.
+- Do not scheduler-auto-wire test lane before 3-5 clean closeouts.
+
+## Hash Guard
+
+Pre: `artifacts/_v54_pre_hash_20260504.txt`  
+Post: `artifacts/_v54_post_hash_20260504.txt`
+
+| Table | Pre | Post | Same | Note |
+|---|---:|---:|---|---|
+| predictions | 4173 | 4173 | YES | unchanged |
+| final_bundles | 196 | 196 | NO | content same; `updated_at/verified_at` for 2026-05-03 refreshed by startup catch-up |
+| lottery_results | 14603 | 14603 | YES | unchanged |
+| model_daily_eval | 4089 | 4089 | YES | unchanged |
+| scheduler_logs | 113457 | 113476 | NO | service restart + route smoke |
+| V52 measurement tables | same | same | YES | unchanged |
+| V52.5 test-lane tables | same | same | YES | unchanged |
+| loz_stage_trace_shadow | new | 6174 | n/a | new diagnostic table |
+| weekday_blackspot_shadow | new | 21 | n/a | new diagnostic table |
+
+Final-bundle timestamp refresh is recorded as `OFFICIAL_TABLE_TIMESTAMP_REFRESH_BY_STARTUP_CATCHUP`; no BT/lo2/status behavior changed.

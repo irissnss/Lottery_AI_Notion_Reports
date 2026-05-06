@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-04",
+  "status": "PRE_CLOSEOUT_LIVE_WATCH",
+  "generated_at_vn": "2026-05-04T12:55:52+07:00",
+  "regions": {
+    "MN": {
+      "state": "BUNDLE_READY_PENDING_RESULT",
+      "official_bundle": {
+        "bt": "65",
+        "lo2": ["65", "32"],
+        "lo3": "465",
+        "created_at": "2026-05-04 04:23:51",
+        "status": "PENDING"
+      },
+      "predictions": {"auto_daily": 15, "shadow_auto_eval": 10},
+      "test_rows": 0,
+      "comparison": "WAIT_CLOSEOUT"
+    },
+    "MT": {
+      "state": "PREDICTIONS_READY_NO_BUNDLE",
+      "official_bundle": null,
+      "predictions": {"auto_daily": 7},
+      "test_rows": 0,
+      "comparison": "WAIT_CASCADE_AND_CLOSEOUT"
+    },
+    "MB": {
+      "state": "PREDICTIONS_READY_NO_BUNDLE",
+      "official_bundle": null,
+      "predictions": {"auto_daily": 7},
+      "test_rows": 0,
+      "comparison": "WAIT_CASCADE_AND_CLOSEOUT"
+    }
+  },
+  "do_not_claim": "No 2026-05-04 quality verdict before result scrape and evaluation."
+}

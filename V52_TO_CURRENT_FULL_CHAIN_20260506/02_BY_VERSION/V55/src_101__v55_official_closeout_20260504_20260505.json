@@ -1,0 +1,2225 @@
+{
+  "2026-05-04": {
+    "MN": {
+      "final_bundle_exists": true,
+      "bt": "65",
+      "lo2": [
+        "65",
+        "32"
+      ],
+      "lo3": "465",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "PARTIAL",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-04 04:23:51",
+      "updated_at": "2026-05-05 16:34:35",
+      "verified_at": "2026-05-05 16:34:35",
+      "actual_tails_count": 6,
+      "actual_db_tails": [
+        "19",
+        "25",
+        "85"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "04",
+        "16",
+        "41"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "04",
+        "16",
+        "19",
+        "25",
+        "41",
+        "85"
+      ],
+      "predictions_count": 25,
+      "predictions_by_run_source": {
+        "auto_daily": 15,
+        "shadow_auto_eval": 10
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 6,
+      "actual_missing_from_candidates_sample": [
+        "04",
+        "16",
+        "19",
+        "25",
+        "41",
+        "85"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 25,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 7
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "top1": "32",
+          "top2": "89",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "auto_daily",
+          "top1": "32",
+          "top2": "54",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "auto_daily",
+          "top1": "89",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "lstm",
+          "run_source": "auto_daily",
+          "top1": "18",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "auto_daily",
+          "top1": "32",
+          "top2": "96",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "random-forest",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "auto_daily",
+          "top1": "32",
+          "top2": "89",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "auto_daily",
+          "top1": "48",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "auto_daily",
+          "top1": "65",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "auto_daily",
+          "top1": "30",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "auto_daily",
+          "top1": "42",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "auto_daily",
+          "top1": "65",
+          "top2": "30",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "auto_daily",
+          "top1": "65",
+          "top2": "45",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "auto_daily",
+          "top1": "65",
+          "top2": "48",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-super",
+          "run_source": "auto_daily",
+          "top1": "65",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "65",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "48",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "48",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "65",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "63",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "42",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "48",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "54",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "48",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "65": [
+          "combo-super",
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "claude-sonnet-4-6"
+        ],
+        "32": [
+          "combo-no-token",
+          "random-forest",
+          "xgboost",
+          "lstm",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "89": [
+          "combo-no-token",
+          "meta-learning",
+          "smart-ensemble"
+        ],
+        "48": [
+          "gpt-5.4",
+          "gpt-5-mini"
+        ],
+        "30": [
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ],
+        "82": [
+          "claude-opus-4-20250514",
+          "gpt-5-mini"
+        ],
+        "56": [
+          "combo-super",
+          "claude-sonnet-4-6"
+        ],
+        "42": [
+          "claude-opus-4-20250514"
+        ],
+        "45": [
+          "gemini-2.5-pro"
+        ],
+        "39": [
+          "gemini-2.5-flash"
+        ]
+      }
+    },
+    "MT": {
+      "final_bundle_exists": true,
+      "bt": "29",
+      "lo2": [
+        "29",
+        "41"
+      ],
+      "lo3": "629",
+      "bt_status_recorded": "WIN",
+      "lo2_status_recorded": "WIN",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": true,
+      "created_at": "2026-05-04 16:42:00",
+      "updated_at": "2026-05-05 17:27:42",
+      "verified_at": "2026-05-05 17:27:42",
+      "actual_tails_count": 4,
+      "actual_db_tails": [
+        "39",
+        "52"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "41",
+        "94"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "39",
+        "41",
+        "52",
+        "94"
+      ],
+      "predictions_count": 25,
+      "predictions_by_run_source": {
+        "rerun_post_mn": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 10
+      },
+      "candidate_universe_size": 18,
+      "actual_in_candidates_count": 1,
+      "actual_missing_from_candidates_count": 3,
+      "actual_missing_from_candidates_sample": [
+        "39",
+        "52",
+        "94"
+      ],
+      "actual_in_bundle_top10_count": 1,
+      "actual_in_bundle_top10": [
+        "41"
+      ],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 25,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 3,
+        "top1_or_top2_hit_actual": 3,
+        "top1_eq_official_bt": 5
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mn",
+          "top1": "96",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mn",
+          "top1": "96",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mn",
+          "top1": "29",
+          "top2": "25",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mn",
+          "top1": "29",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mn",
+          "top1": "25",
+          "top2": "85",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mn",
+          "top1": "29",
+          "top2": "96",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mn",
+          "top1": "29",
+          "top2": "58",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "82",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "97",
+          "top2": "28",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "42",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "82",
+          "top2": "28",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "79",
+          "top2": "97",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "28",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "58",
+          "top2": "82",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "29",
+          "top2": "26",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "88",
+          "top2": "17",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "82",
+          "top2": "28",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "82",
+          "top2": "28",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "97",
+          "top2": "35",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "42",
+          "top2": "17",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "82",
+          "top2": "48",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "82",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "48",
+          "top2": "90",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "42",
+          "top2": "24",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "28",
+          "top2": "42",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "29": [
+          "combo-super",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "combo-no-token"
+        ],
+        "41": [
+          "meta-learning",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "96": [
+          "xgboost",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "25": [
+          "lstm",
+          "combo-no-token"
+        ],
+        "82": [
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ],
+        "58": [
+          "gpt-5.4",
+          "random-forest"
+        ],
+        "28": [
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "85": [
+          "lstm"
+        ],
+        "42": [
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ],
+        "97": [
+          "deepseek-reasoner",
+          "claude-sonnet-4-6"
+        ]
+      }
+    },
+    "MB": {
+      "final_bundle_exists": true,
+      "bt": "09",
+      "lo2": [
+        "09",
+        "38"
+      ],
+      "lo3": "409",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "LOSE",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-04 17:40:09",
+      "updated_at": "2026-05-05 18:18:16",
+      "verified_at": "2026-05-05 18:18:16",
+      "actual_tails_count": 2,
+      "actual_db_tails": [
+        "51"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "15"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "15",
+        "51"
+      ],
+      "predictions_count": 25,
+      "predictions_by_run_source": {
+        "rerun_post_mt": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 10
+      },
+      "candidate_universe_size": 17,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 2,
+      "actual_missing_from_candidates_sample": [
+        "15",
+        "51"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 25,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 4
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mt",
+          "top1": "60",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mt",
+          "top1": "38",
+          "top2": "92",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mt",
+          "top1": "38",
+          "top2": "60",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mt",
+          "top1": "38",
+          "top2": "35",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mt",
+          "top1": "52",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mt",
+          "top1": "62",
+          "top2": "38",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mt",
+          "top1": "60",
+          "top2": "92",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "46",
+          "top2": "64",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "09",
+          "top2": "08",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "46",
+          "top2": "64",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "24",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "56",
+          "top2": "64",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "09",
+          "top2": "19",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "19",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "19",
+          "top2": "24",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "59",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "24",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "48",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "59",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "24",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "46",
+          "top2": "64",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "09": [
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6"
+        ],
+        "38": [
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml"
+        ],
+        "92": [
+          "random-forest",
+          "smart-ml"
+        ],
+        "64": [
+          "deepseek-reasoner",
+          "gpt-5-mini"
+        ],
+        "60": [
+          "random-forest",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "19": [
+          "combo-super",
+          "gpt-5.4",
+          "gemini-2.5-pro"
+        ],
+        "46": [
+          "gpt-5-mini"
+        ],
+        "52": [
+          "lstm",
+          "smart-ensemble"
+        ],
+        "08": [
+          "claude-sonnet-4-6"
+        ],
+        "39": [
+          "lstm"
+        ]
+      }
+    }
+  },
+  "2026-05-05": {
+    "MN": {
+      "final_bundle_exists": true,
+      "bt": "15",
+      "lo2": [
+        "15",
+        "13"
+      ],
+      "lo3": "015",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "LOSE",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 04:22:20",
+      "updated_at": "2026-05-05 16:36:37",
+      "verified_at": "2026-05-05 16:36:37",
+      "actual_tails_count": 6,
+      "actual_db_tails": [
+        "09",
+        "46",
+        "93"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "32",
+        "77",
+        "95"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "09",
+        "32",
+        "46",
+        "77",
+        "93",
+        "95"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "auto_daily": 15,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 2,
+      "actual_missing_from_candidates_count": 4,
+      "actual_missing_from_candidates_sample": [
+        "09",
+        "46",
+        "77",
+        "93"
+      ],
+      "actual_in_bundle_top10_count": 1,
+      "actual_in_bundle_top10": [
+        "95"
+      ],
+      "actual_missed_by_bundle_but_in_candidates_count": 1,
+      "actual_missed_by_bundle_but_in_candidates_sample": [
+        "32"
+      ],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 2,
+        "top1_or_top2_hit_actual": 2,
+        "top1_eq_official_bt": 4
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "auto_daily",
+          "top1": "94",
+          "top2": "15",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "auto_daily",
+          "top1": "03",
+          "top2": "15",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "auto_daily",
+          "top1": "18",
+          "top2": "32",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "88",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "auto_daily",
+          "top1": "15",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "auto_daily",
+          "top1": "41",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "auto_daily",
+          "top1": "24",
+          "top2": "95",
+          "top1_hit_actual": false,
+          "top2_hit_actual": true,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "auto_daily",
+          "top1": "13",
+          "top2": "69",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "25",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "auto_daily",
+          "top1": "13",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "auto_daily",
+          "top1": "24",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "auto_daily",
+          "top1": "52",
+          "top2": "69",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "26",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "24",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "63",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "56",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "56",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "52",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "15": [
+          "combo-no-token",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "13": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ],
+        "88": [
+          "random-forest",
+          "xgboost",
+          "smart-ensemble"
+        ],
+        "52": [
+          "combo-super",
+          "gpt-5.4",
+          "claude-opus-4-20250514",
+          "gpt-5-mini"
+        ],
+        "03": [
+          "combo-no-token",
+          "meta-learning"
+        ],
+        "24": [
+          "gemini-2.5-pro",
+          "claude-sonnet-4-6"
+        ],
+        "41": [
+          "gpt-5.4",
+          "gpt-5-mini"
+        ],
+        "95": [
+          "claude-sonnet-4-6"
+        ],
+        "69": [
+          "combo-super",
+          "gemini-2.5-flash"
+        ],
+        "94": [
+          "smart-ml"
+        ]
+      }
+    },
+    "MT": {
+      "final_bundle_exists": true,
+      "bt": "44",
+      "lo2": [
+        "44",
+        "31"
+      ],
+      "lo3": "044",
+      "bt_status_recorded": "WIN",
+      "lo2_status_recorded": "PARTIAL",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 16:42:00",
+      "updated_at": "2026-05-05 17:31:01",
+      "verified_at": "2026-05-05 17:31:01",
+      "actual_tails_count": 4,
+      "actual_db_tails": [
+        "43",
+        "78"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "53",
+        "89"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "43",
+        "53",
+        "78",
+        "89"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "rerun_post_mn": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 4,
+      "actual_missing_from_candidates_sample": [
+        "43",
+        "53",
+        "78",
+        "89"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 3
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "31",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mn",
+          "top1": "08",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "31",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mn",
+          "top1": "31",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mn",
+          "top1": "46",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mn",
+          "top1": "44",
+          "top2": "12",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mn",
+          "top1": "30",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "52",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "73",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "39",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "39",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "39",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "37",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "30",
+          "top2": "44",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "37",
+          "top2": "13",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "46",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "52",
+          "top2": "79",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "37",
+          "top2": "03",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "79",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "67",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "13",
+          "top2": "37",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "44": [
+          "combo-super",
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "31": [
+          "meta-learning",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "46": [
+          "claude-opus-4-20250514",
+          "lstm"
+        ],
+        "39": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ],
+        "08": [
+          "smart-ml"
+        ],
+        "30": [
+          "combo-super",
+          "random-forest"
+        ],
+        "52": [
+          "claude-opus-4-20250514",
+          "gpt-5-mini"
+        ],
+        "12": [
+          "xgboost"
+        ],
+        "03": [
+          "gpt-5.4",
+          "gemini-2.5-flash"
+        ],
+        "09": [
+          "lstm"
+        ]
+      }
+    },
+    "MB": {
+      "final_bundle_exists": true,
+      "bt": "83",
+      "lo2": [
+        "83",
+        "41"
+      ],
+      "lo3": "083",
+      "bt_status_recorded": "LOSE",
+      "lo2_status_recorded": "LOSE",
+      "bt_hit_any_actual_tail": false,
+      "lo2_full": false,
+      "lo2_any": false,
+      "created_at": "2026-05-05 17:39:20",
+      "updated_at": "2026-05-05 18:31:33",
+      "verified_at": "2026-05-05 18:31:33",
+      "actual_tails_count": 2,
+      "actual_db_tails": [
+        "12"
+      ],
+      "actual_g7_tails": [],
+      "actual_g8_tails": [
+        "37"
+      ],
+      "actual_g6_tails": [],
+      "actual_tails_sample": [
+        "12",
+        "37"
+      ],
+      "predictions_count": 27,
+      "predictions_by_run_source": {
+        "rerun_post_mt": 7,
+        "ai_chain": 8,
+        "shadow_auto_eval": 12
+      },
+      "candidate_universe_size": 16,
+      "actual_in_candidates_count": 0,
+      "actual_missing_from_candidates_count": 2,
+      "actual_missing_from_candidates_sample": [
+        "12",
+        "37"
+      ],
+      "actual_in_bundle_top10_count": 0,
+      "actual_in_bundle_top10": [],
+      "actual_missed_by_bundle_but_in_candidates_count": 0,
+      "actual_missed_by_bundle_but_in_candidates_sample": [],
+      "model_correctness_summary": {
+        "n_models": 27,
+        "top1_hit_actual": 0,
+        "top2_hit_actual": 0,
+        "top1_or_top2_hit_actual": 0,
+        "top1_eq_official_bt": 3
+      },
+      "model_correct_detail": [
+        {
+          "model": "smart-ensemble",
+          "run_source": "rerun_post_mt",
+          "top1": "19",
+          "top2": "78",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "smart-ml",
+          "run_source": "rerun_post_mt",
+          "top1": "60",
+          "top2": "83",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "combo-no-token",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "19",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "meta-learning",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "58",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "lstm",
+          "run_source": "rerun_post_mt",
+          "top1": "78",
+          "top2": "43",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "xgboost",
+          "run_source": "rerun_post_mt",
+          "top1": "83",
+          "top2": "60",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": true,
+          "in_official_voter_set_top1": true
+        },
+        {
+          "model": "random-forest",
+          "run_source": "rerun_post_mt",
+          "top1": "19",
+          "top2": "60",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5-mini",
+          "run_source": "ai_chain",
+          "top1": "71",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "claude-opus-4-20250514",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "top1": "98",
+          "top2": "67",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "top1": "09",
+          "top2": "41",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "combo-super",
+          "run_source": "ai_chain",
+          "top1": "41",
+          "top2": "36",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "glm-5.1",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "grok-4.20-multi-agent",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-coder",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "kimi-k2.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "91",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3-max-thinking",
+          "run_source": "shadow_auto_eval",
+          "top1": "41",
+          "top2": "98",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-oss-120b",
+          "run_source": "shadow_auto_eval",
+          "top1": "14",
+          "top2": null,
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gpt-5.5",
+          "run_source": "shadow_auto_eval",
+          "top1": "66",
+          "top2": "09",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "09",
+          "top2": "91",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "qwen3.6-plus",
+          "run_source": "shadow_auto_eval",
+          "top1": "91",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "run_source": "shadow_auto_eval",
+          "top1": "90",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        },
+        {
+          "model": "gemini-3-flash",
+          "run_source": "shadow_auto_eval",
+          "top1": "91",
+          "top2": "14",
+          "top1_hit_actual": false,
+          "top2_hit_actual": false,
+          "top1_eq_official_bt": false,
+          "in_official_voter_set_top1": false
+        }
+      ],
+      "bundle_top10_voters": {
+        "83": [
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml"
+        ],
+        "41": [
+          "combo-super",
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "claude-opus-4-20250514",
+          "gemini-2.5-flash",
+          "claude-sonnet-4-6"
+        ],
+        "60": [
+          "random-forest",
+          "xgboost",
+          "smart-ml"
+        ],
+        "98": [
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "claude-opus-4-20250514",
+          "gemini-2.5-flash"
+        ],
+        "19": [
+          "random-forest",
+          "combo-no-token",
+          "smart-ensemble"
+        ],
+        "09": [
+          "gpt-5.4",
+          "gpt-5-mini"
+        ],
+        "78": [
+          "lstm",
+          "smart-ensemble"
+        ],
+        "71": [
+          "gpt-5-mini"
+        ],
+        "43": [
+          "lstm"
+        ],
+        "58": [
+          "meta-learning"
+        ]
+      }
+    }
+  }
+}

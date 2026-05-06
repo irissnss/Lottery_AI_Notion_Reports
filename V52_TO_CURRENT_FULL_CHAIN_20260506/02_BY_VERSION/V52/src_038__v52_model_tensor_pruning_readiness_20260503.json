@@ -1,0 +1,52 @@
+{
+  "trace_lines": 852,
+  "trace_json_parsed": 852,
+  "trace_latency_cost_fields": {},
+  "classification": [
+    "TENSOR_OK_FOR_DIAGNOSTIC",
+    "TENSOR_NOT_OK_FOR_PRUNING",
+    "TENSOR_NOT_OK_FOR_REALTIME_SELECTION",
+    "PRUNING_NOT_ALLOWED_NO_LATENCY"
+  ],
+  "csv_rows": 3216,
+  "csv_columns": [
+    "date",
+    "model_name",
+    "model_family",
+    "provider",
+    "status_registry",
+    "region",
+    "weekday",
+    "station_set",
+    "run_source",
+    "output_type",
+    "verdict",
+    "strength",
+    "strength_bin",
+    "source_prize_tier",
+    "rules_injected",
+    "rules_count",
+    "prompt_version",
+    "prompt_total_chars",
+    "context_pack_chars",
+    "finish_reason",
+    "convergence_flag",
+    "bt_hit",
+    "hit_count",
+    "top1_hit",
+    "top2_hit",
+    "any_hit",
+    "helped_final",
+    "wrong_boosted",
+    "correct_but_dropped",
+    "unique_useful_signal",
+    "model_voted_ranked_count",
+    "latency_available",
+    "latency_seconds",
+    "timeout_or_fallback"
+  ],
+  "no_per_model_duration_count": 3216,
+  "latency_available_values": {
+    "NO_PER_MODEL_DURATION": 3216
+  }
+}

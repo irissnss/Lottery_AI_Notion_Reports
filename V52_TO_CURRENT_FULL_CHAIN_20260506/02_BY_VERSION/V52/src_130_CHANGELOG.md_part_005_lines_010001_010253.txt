@@ -1,0 +1,253 @@
+- Warns each AI: "6/7 AI khác CŨNG SẼ CHỌN số này → herding risk CỰC CAO"
+- Directs AI to find ALTERNATIVE numbers or REDUCE confidence if still choosing CONV×3+
+- Each AI model now aware it's in a potential herding scenario
+
+#### B. §23 AI-LEVEL ANTI-HERDING (Reasoning Rulebook RR-10.2)
+- New rule §23 in `REASONING_RULEBOOK` — AI models can refuse convergent picks
+- Grants AI right to counter-pick if: rule eff < 55%, source livingness < 4/8w, no cross-region confirmation
+- Mandatory confidence downgrade when choosing CONV×3+ number
+- Goal: 2-3/7 AI models should diversify to mitigate catastrophic loss
+
+#### C. MB LOSS STREAK AWARENESS (Context Pack V10.2)
+- `build_context_pack()` MB HARD MODE: per-weekday loss streak detection over 8 weeks
+- 2+ consecutive 0-WIN weeks → `🚨 STREAK POLICY` → max confidence LOW
+- 1 consecutive 0-WIN week → `⚠️ previous week 0 WIN` → caution flag
+- Shows recent 4-week breakdown per weekday for calibration
+
+### Version Bumps
+- `REASONING_RULEBOOK`: RR-9.5 → **RR-10.2** (+§23 AI-level anti-herding)
+- `CONTEXT_PACK`: CTX-10.0 → **CTX-10.2** (+convergence trap + MB streak)
+- `PROMPT_BUNDLE`: PB-10.1 → **PB-10.3**
+
+### File Changes
+- **gpt_analyzer.py**: 4 edits — §23 rule, convergence trap, MB streak, version bump
+- **CHANGELOG.md**: This entry
+
+### Deploy
+- ✅ DEPLOYED — included in commit `e84494e` → VPS auto-pull
+
+---
+
+## V5.9.12 — CONDITIONAL ANTI-HERDING + GOVERNANCE (2026-03-28 23:30 VN)
+
+### Root Cause (MT 28/03 — 74 Herding Incident)
+- 8/15 models chose 74 as main number for MT → ALL LOSE
+- Diversity score = 36.7 (HIGH RISK)
+- 3 Ninh Thuận rules CONV×3 (boost +0.597) overwhelmed AI diversity
+- `ENABLE_ANTI_HERDING = False` in prediction_guard.py — no guard active
+- Only ML models (meta-learning: 42, 62) avoided herding → WIN
+
+### Fix — Conditional Anti-Herding (V5.9.12)
+- **prediction_guard.py**: Replace binary `ENABLE_ANTI_HERDING = False` with conditional logic
+  - 4+ models on same number → `🔴 HIGH CONVERGENCE` warning in verdict
+  - 2-3 models → `ℹ️ Moderate convergence` info (V5.9.11: positive signal preserved)
+  - Always active (no toggle) — severity-based, not switch-based
+- **`.Antigravityrules.md`**: Added 3 governance sections:
+  - `NO-STALE-DB EVALUATION RULE` — 3-tier DB classification (T1/T2/T3)
+  - `ANTI-HERDING CONDITIONAL GOVERNANCE` — policy for conditional herding
+  - `DB-SOURCE REPORTING RULE` — mandatory DB source header in reports
+
+### Evidence Base
+- V5.9.11 data: herding WR=30.8% > non-herding WR=16.8% (moderate herding = positive)
+- 28/03 MT: 8/15 on 74, diversity=36.7 → ALL LOSE (extreme herding = catastrophic)
+- Solution: preserve moderate herding benefit, guard against extreme convergence
+
+### File Changes
+- **prediction_guard.py**: Fix 3 rewritten — V5.9.12 conditional (was V5.9.11 disabled)
+- **`.Antigravityrules.md`**: +66 lines — 3 new governance sections
+
+### Deploy
+- ✅ DEPLOYED — included in V10.2 push (`e84494e`)
+- Rollback: revert prediction_guard.py Fix 3 section to `ENABLE_ANTI_HERDING = False`
+
+---
+
+## V10.0 — DEPLOY WEBHOOK AUTOMATION (2026-03-28 19:15 VN)
+
+### Problem
+- Agent KHÔNG chạy được bất cứ command nào (Windows sandbox block Python/git/scp/ssh)
+- Mọi deploy phải owner mở terminal chạy tay → bottleneck, dễ quên, không scalable
+- Cần kiến trúc deploy tự động THẬT, không chỉ "có script cho owner chạy"
+
+### Solution — VPS Deploy Webhook
+- **`deploy_api.py`**: FastAPI module thêm `/api/_system/deploy` endpoint
+- Agent đọc file local → encode base64 → POST lên VPS webhook → VPS tự deploy
+- Flow: validate token → backup → write files → restart → health check → verify → report
+
+### Architecture
+```
+Agent edits code → Agent POST /api/_system/deploy → VPS auto:
+  1. Validate X-Deploy-Token
+  2. Guard: Vietnix-only (block Windows/Vultr)
+  3. Backup current files
+  4. Write new files
+  5. Restart service (detached script — survives process kill)
+  6. Health check (HTTP 200)
+  7. Re-verify predictions
+  8. Return JSON {status: PASS/FAIL}
+```
+
+### API Endpoints
+| Endpoint | Method | Mô tả |
+|----------|--------|--------|
+| `/api/_system/deploy` | POST | Deploy files + restart + verify |
+| `/api/_system/deploy/status/{id}` | GET | Poll deploy status |
+| `/api/_system/deploy/list` | GET | List recent deploys |
+| `/api/_system/deploy/health` | GET | Deploy system health |
+| `/api/_system/rollback` | POST | Rollback deploy |
+
+### Security
+- `DEPLOY_TOKEN` from `.env` (not in code)
+- Vietnix-only guard (hostname + IP + platform check)
+- Rate limit: 1 deploy / 60 giây
+- Path whitelist: chỉ `web/backend/`, `web/frontend/`, `deploy/`, `tools/`
+- File size limit: 5MB/file
+- Base64 validation
+- Constant-time token comparison
+
+### File Changes
+- **[NEW] `deploy_api.py`**: VPS-side webhook API module
+- **[NEW] `_agent_deploy.py`**: Agent-side deploy helper (read → encode → POST)
+- **`main.py`**: Register deploy_api router
+- **`_deploy_orchestrator.py`**: Add deploy_api.py to deploy list
+
+### Bootstrap (1 lần duy nhất)
+1. Owner thêm `DEPLOY_TOKEN=<secret>` vào VPS `.env`
+2. Owner chạy `python web/_deploy_orchestrator.py` (LẦN CUỐI)
+3. Sau đó: mọi deploy qua webhook — zero manual
+
+---
+
+## V9.4 — STATION-COUNT LOCK (2026-03-28 19:00 VN)
+
+### Root Cause (3 lớp)
+1. **Verify lần 1 thiếu đài**: MN Thứ Bảy có 4 đài nhưng verify lần 1 chỉ có 1 đài (16:38) → LOSE sai
+2. **LOCK cứng**: `verify_prediction` LOCK trạng thái WIN/LOSE/PARTIAL, không re-verify khi bổ sung đài
+3. **main.py chỉ verify PENDING**: `_has_pending_predictions` chỉ check `status='PENDING'`, bỏ qua predictions đã LOSE sai
+
+### Fix — STATION-COUNT LOCK (database.py)
+- **GIỮ LOCK** theo quy tắc nghiệp vụ (prediction verified → không verify lại)
+- **STATION_COUNT comparison** (thay vì hit_count như V9.3):
+  - `verified_station_count` column mới trong predictions table
+  - Khi verify → lưu station count hiện tại
+  - Khi gọi lại verify: so sánh `current_station_count` vs `verified_station_count`
+  - Nếu station_count tăng → DỮ LIỆU NGUỒN ĐÃ THAY ĐỔI → unlock + re-verify
+  - Nếu station_count không tăng → giữ LOCK (đúng quy tắc)
+- **Vì sao station_count > hit_count**: hit_count=0 cả 1 đài lẫn 4 đài nếu số hiếm → miss unlock
+
+### File Changes
+- **database.py** V9.4: `verify_prediction()` dùng `verified_station_count` + migration ALTER TABLE
+  - Tất cả caller: `current_station_count=len(results)`
+- **scheduler.py**: 4 call sites truyền `current_station_count=len(existing)`
+- **main.py**: 10 call sites truyền `current_station_count=len(results)`
+- **_deploy_orchestrator.py** V9.4: deploy 3 file (database.py + scheduler.py + main.py)
+
+### V9.3 Superseded
+- V9.3 dùng hit_count comparison: LỖ HỔNG nếu số hiếm → cả 2 verify đều hit=0 → LOCK giữ LOSE sai
+- V9.4 dùng station_count: 100% chính xác — station count tăng = dữ liệu nguồn thay đổi
+
+### Deploy
+- Command duy nhất: `python web/_deploy_orchestrator.py`
+
+---
+
+## V6.9 — NO ELIMINATION (2026-03-19 15:07 VN)
+
+### Thay đổi
+- **scheduler.py** Smart Ensemble (L646): Bỏ `MIN_WR_THRESHOLD=30` và top-2 exclusion
+  - TẤT CẢ 4 model (meta-learning, lstm, xgboost, random-forest) luôn chạy + lưu DB
+  - Ensemble chỉ dùng top 2 theo WR cho tính toán cuối (⭐)
+  - Model ngoài top 2 vẫn chạy, lưu, được đánh giá (📊)
+  - Log: `⚠️ Low WR (vẫn chạy)` thay vì `🔇 Excluded`
+- **scheduler.py** Combo No Token (L1265): Bỏ `get_dynamic_ml_filter(top_n=3)`
+  - TẤT CẢ 4 model luôn chạy, WR-weighted scoring tự nhiên ưu tiên model mạnh
+
+### Lý do (owner decision)
+- Model bị loại → không được đánh giá → không bao giờ cải thiện
+- Phải duy trì dự đoán để daily_eval / ranking / tự học hoạt động
+- Cảnh báo trực quan thay vì loại bỏ
+
+### Deploy
+- Backup: `/var/www/lottery_ai/backup_pre_v683/scheduler.py.bak_pre_v69`
+- PID 1555080, 10 jobs, 0 errors
+- Parity: md5 `ad6cf788` local = VPS ✅
+
+---
+
+## V6.8.3 — PARTIAL DEPLOY FIX (2026-03-18 21:38 VN)
+
+### Root Cause
+- **PARTIAL DEPLOY**: V6.8 `scheduler.py` deployed Mar 17, but 4 model files NOT deployed:
+  - `meta_predict.py` (VPS: Feb 14, needed: V6.8 `include_same_day_cross` L195)
+  - `ml_predict.py` (VPS: Feb 13, needed: V6.8 `include_same_day_cross` L158)
+  - `lstm_predict.py` (VPS: Feb 14, needed: V6.8 `fresh_cross_tails` L98)
+  - `meta_data_collector.py` (VPS: Feb 14, needed: updated `_get_cross_region_momentum`)
+- VPS journal proof: `TypeError: predict_with_meta() got an unexpected keyword argument 'include_same_day_cross'`
+- Impact: ALL no-token individual model predictions crash, ensembles degraded, 0 V68
+
+### Fix Applied
+- Deployed 4 files from local → VPS `/var/www/lottery_ai/backend/`
+- Backup: `/var/www/lottery_ai/backup_pre_v683/`
+- Service `lottery` restarted → PID 1515902 (21:38 VN)
+- Post-deploy signature verification: ALL 4 functions ✅
+- Scheduler startup: 10 jobs registered, 0 errors
+
+### SSOT Corrections
+- Service unit name = `lottery` (NOT `lottery_ai`)
+- Mar 17 = INVALID (deploy timing)
+- Mar 18 = INVALID (partial deploy / TypeError crash)
+- V6.8 Valid Day 1 = **Mar 19** (first full cycle with complete V6.8.3 code)
+- Monitoring window 5–7 days starts Mar 19
+
+---
+
+## V6.8.2 — RUNTIME VERIFICATION (2026-03-17)
+
+### Runtime Finding
+- Mar 17 predictions: 0/44 have `_v68_traceability`
+- Root cause: **DEPLOYMENT_TIMING** — V6.8 code deployed (19:12 VN) and service
+  restarted (21:33 VN) AFTER all prediction cycles completed (15:02-17:50 VN)
+- Old service PID 1481437 ran all Mar 17 cycles WITHOUT V6.8 code
+- Status: DEPLOYED_NOT_YET_OBSERVED — first valid runtime expected Mar 18+
+
+### Superseded Hypothesis
+- "LOCK guard blocks re-predict" — **SUPERSEDED**: LOCK only blocks
+  WIN/LOSE/PARTIAL, PENDING not affected. Code path verified correct.
+- No code fix needed for LOCK guard
+
+### Monitoring
+- Valid post-V6.8 window starts: Mar 18 (first full cycle with new service)
+- Minimum monitoring: 5 days (Mar 18-22)
+
+---
+
+## V6.8.1 — CONSOLIDATION HARDENING (2026-03-17)
+
+### Code Changes
+- **scheduler.py** `_run_free_model_prediction()`: Persist `_v68_traceability` metadata (input_hash, fresh_cross_tails_count, trigger_region) into `analysis_text` JSON for forensic audit
+- **index.html** L496-497: Column headers updated — "DĐ Trước KQ" → "DĐ Ban Đầu", "DĐ Sau KQ" → "DĐ Sau KQ 🔄" with tooltips
+- **app.js** L1545-1590: Semantic comparison indicator — 🔄 (changed), (= trước) (same), — (no re-predict)
+
+### Audit Findings
+- RF `cross_region_momentum` importance: #1 (MN 10.3%, MB 12.1%), #2 (MT 9.2%) — HIGH impact
+- XGB importance: #13-16 (3.5-5.9%) — MODERATE impact
+- Meta-learning importance: PENDING_EVIDENCE (pkl load failed locally)
+- LSTM: heuristic +0.05 post-prediction boost, NOT model-level wiring
+- Train/serve mismatch: training `date <`, inference `date <=` — risk LOW-MODERATE
+- Output diff 7-day: MN 65% change, MT 12%, MB 0% (pre-deploy data)
+
+---
+
+## V6.8 — FRESH DATA WIRING FIX (2026-03-17)
+
+### Code Changes
+- **meta_data_collector.py** `_get_cross_region_momentum()`: Added `include_same_day` param, `date <=` when True
+- **meta_predict.py** `extract_prediction_features()`: Pass `include_same_day_cross` to momentum
+- **ml_predict.py** `predict_with_xgboost/random_forest()`: Pass `include_same_day_cross`
+- **lstm_predict.py** `predict_with_lstm()`: Accept `fresh_cross_tails`, apply +0.05 boost
+- **scheduler.py** `_rerun_free_models_after_scrape()`: Query fresh tails, pass params to all 7 models
+
+### Known Limitations
+- `cross_region_momentum` = 1/22 features for meta/xgb/rf
+- LSTM boost = heuristic, not model-level
+- Train/serve distribution shift on momentum feature

@@ -1,0 +1,46 @@
+{
+  "audit_pass": "V53 / V52.5.8",
+  "anchor_date": "2026-05-03",
+  "post_live_closed": true,
+  "single_day": {
+    "MN": {"bt": "79", "bt_status": "WIN", "lo2": ["79", "96"], "lo2_status": "WIN"},
+    "MT": {"bt": "29", "bt_status": "LOSE", "lo2": ["29", "03"], "lo2_status": "LOSE"},
+    "MB": {"bt": "48", "bt_status": "WIN", "lo2": ["48", "89"], "lo2_status": "PARTIAL"}
+  },
+  "rolling_bt_win_rate": {
+    "3d": {"MN": 0.6667, "MT": 0.3333, "MB": 0.3333},
+    "7d": {"MN": 0.5714, "MT": 0.5714, "MB": 0.2857},
+    "14d": {"MN": 0.6429, "MT": 0.3571, "MB": 0.3571},
+    "30d": {"MN": 0.6, "MT": 0.3333, "MB": 0.2},
+    "60d": {"MN": 0.4833, "MT": 0.4667, "MB": 0.3}
+  },
+  "rolling_lo2_full_win_rate": {
+    "3d": {"MN": 0.6667, "MT": 0.0, "MB": 0.0},
+    "7d": {"MN": 0.5714, "MT": 0.1429, "MB": 0.0},
+    "14d": {"MN": 0.4286, "MT": 0.0714, "MB": 0.0714},
+    "30d": {"MN": 0.3333, "MT": 0.1667, "MB": 0.0667},
+    "60d": {"MN": 0.2833, "MT": 0.1833, "MB": 0.0333}
+  },
+  "rolling_lo2_any_win_rate": {
+    "30d": {"MN": 0.8333, "MT": 0.6667, "MB": 0.4333},
+    "60d": {"MN": 0.7, "MT": 0.6833, "MB": 0.4833}
+  },
+  "weekday_30d_bt_win_rate": {
+    "MN": {"Mon": "4/4", "Tue": "3/4", "Wed": "1/4", "Thu": "3/4", "Fri": "1/4", "Sat": "2/5", "Sun": "4/5"},
+    "MT": {"Mon": "0/4", "Tue": "1/4", "Wed": "1/4", "Thu": "4/4", "Fri": "0/4", "Sat": "2/5", "Sun": "2/5"},
+    "MB": {"Mon": "1/4", "Tue": "1/4", "Wed": "0/4", "Thu": "1/4", "Fri": "0/4", "Sat": "2/5", "Sun": "1/5"}
+  },
+  "structural_findings": {
+    "MB_Wed_zero_BT_30d": "0/4",
+    "MB_Fri_zero_BT_30d": "0/4 — confirms FU-086 MB Friday hypothesis",
+    "MT_Mon_zero_BT_30d": "0/4",
+    "MT_Fri_zero_BT_30d": "0/4",
+    "MN_consistent": "BT 60% / LO2_ANY 83% — healthy"
+  },
+  "verdict": "OFFICIAL_QUALITY_NOT_PROVEN_MIXED_SIGNAL_REGION_CONDITIONAL",
+  "no_overclaim_protections": [
+    "Single-day MN/MT/MB results NOT used for decision unlock",
+    "30d MB BT 20% does NOT trigger automatic policy change",
+    "Test-lane improvements over the same window NOT extrapolated to production"
+  ]
+}
