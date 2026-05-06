@@ -1,5 +1,11 @@
 # Public Raw Links — Full Package
 
+## V66.1 — Coverage expansion + 7 discoveries (NEW 2026-05-07 01:10)
+
+- [V66.1 findings report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_1_FINDINGS_REPORT.md)
+- [V66.1 coverage matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v66_coverage_matrix.txt)
+- [V66.1 findings dump](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v661_findings.txt)
+
 ## V66 — Lag-1 + Cross-region adaptive exploit signal (measurement-only) (NEW 2026-05-07)
 
 - [V66 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_REPORT.md)
