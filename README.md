@@ -10,7 +10,7 @@ Start here:
 
 Raw first link:
 
-https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/master/READ_THIS_FIRST.md
+https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/READ_THIS_FIRST.md
 
 Important:
 
