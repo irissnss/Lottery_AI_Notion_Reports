@@ -1,0 +1,26 @@
+{
+  "version": "V69+V70",
+  "title": "V69 metrics expansion + V70 CONSENSUS_V1 selector beats OFFICIAL",
+  "published_at": "2026-05-07T01:55:00+07:00",
+  "main_report": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V69_V70_METRICS_AND_CONSENSUS_20260507/V69_V70_REPORT.md",
+  "files": [
+    {
+      "src": "V69_V70_REPORT.md",
+      "dst_rel": "V69_V70_REPORT.md",
+      "sha256": "e015102bd81af9c8220b5527f29fcc34aa9b0799df25d3de0dce5d92ca2d1636",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V69_V70_METRICS_AND_CONSENSUS_20260507/V69_V70_REPORT.md"
+    },
+    {
+      "src": "v69_metrics_eval.txt",
+      "dst_rel": "evidence/v69_metrics_eval.txt",
+      "sha256": "0a7d49e36b3f0ea2cdd5b8896412fc95b1d95f1c73a2cd08cd41862b702c8595",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V69_V70_METRICS_AND_CONSENSUS_20260507/evidence/v69_metrics_eval.txt"
+    },
+    {
+      "src": "v69_consensus_eval.txt",
+      "dst_rel": "evidence/v69_consensus_eval.txt",
+      "sha256": "d48adca87f68c5af5847385edb58f69b26eaa012eb40a67e79607d2371f9eed9",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V69_V70_METRICS_AND_CONSENSUS_20260507/evidence/v69_consensus_eval.txt"
+    }
+  ]
+}

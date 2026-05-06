@@ -1,0 +1,232 @@
+﻿=== A. C-16 ADAPTIVE_BUDGET_SELECTOR_V1 ΓÇö AFTER expansion (15-20 voters) ===
+14 closed days per region
+
+  MN: n=14 BT_hit=7/14=50.0% LO2_hit=8/14=57.1% official=6/14=42.9% net_profit=+546.0u
+  MT: n=14 BT_hit=6/14=42.9% LO2_hit=9/14=64.3% official=8/14=57.1% net_profit=+466.0u
+  MB: n=14 BT_hit=2/14=14.3% LO2_hit=7/14=50.0% official=4/14=28.6% net_profit=+126.0u
+
+=== B. V67 ADAPTIVE_EXPLOIT_V1 ΓÇö AFTER STRICT gate ===
+
+  MN: n=2 BT_hit=2/2=100.0% LO2_hit=2/2=100.0% official=0/2=0.0% net_profit=+158.0u
+  MT: n=2 BT_hit=1/2=50.0% LO2_hit=1/2=50.0% official=2/2=100.0% net_profit=+78.0u
+  MB: n=6 BT_hit=3/6=50.0% LO2_hit=3/6=50.0% official=1/6=16.7% net_profit=+204.0u
+
+=== C. Method consensus ΓÇö when N test methods agree on same BT ===
+
+For each closed day, count how many methods picked the same tail; bucket by agreement count.
+
+  Agreement=1 method(s) -> n_picks=45 hit=13 hit_rate=28.9%
+  Agreement=2 method(s) -> n_picks=12 hit=3 hit_rate=25.0%
+  Agreement=3 method(s) -> n_picks=14 hit=9 hit_rate=64.3%
+  Agreement=4 method(s) -> n_picks=13 hit=8 hit_rate=61.5%
+  Agreement=5 method(s) -> n_picks=9 hit=2 hit_rate=22.2%
+  Agreement=6 method(s) -> n_picks=8 hit=5 hit_rate=62.5%
+  Agreement=7 method(s) -> n_picks=1 hit=0 hit_rate=0.0%
+  Agreement=8 method(s) -> n_picks=4 hit=2 hit_rate=50.0%
+  Agreement=9 method(s) -> n_picks=2 hit=0 hit_rate=0.0%
+  Agreement=11 method(s) -> n_picks=1 hit=1 hit_rate=100.0%
+
+=== D. Per-method 14d cumulative profit (rough payout model) ===
+
+method_name                                       n  hit   rate     profit  regions
+  MN_AI_CHAIN_PRESERVATION_V1                    17   10  58.8%     +783.0       MN
+  MT_NO_TOKEN_HERD_REDUCTION_V1                  17   10  58.8%     +783.0       MT
+  MT_OFFICIAL_BASELINE_CONTROL                   17   10  58.8%     +783.0       MT
+  MT_SPECIALIST_ROSTER_V1                        17   10  58.8%     +783.0       MT
+  MT_STRENGTH_WEIGHTED_V52_5_2                   17   10  58.8%     +783.0       MT
+  MN_SPECIALIST_ROSTER_V1                        17    9  52.9%     +703.0       MN
+  MN_ADAPTIVE_BUDGET_SELECTOR_V1                 14    7  50.0%     +546.0       MN
+  MN_NO_TOKEN_HERD_REDUCTION_V1                  17    7  41.2%     +543.0       MN
+  MN_OFFICIAL_BASELINE_CONTROL                   17    7  41.2%     +543.0       MN
+  MN_STRENGTH_WEIGHTED_V52_5_2                   17    7  41.2%     +543.0       MN
+  MT_AI_CHAIN_PRESERVATION_V1                    17    7  41.2%     +543.0       MT
+  MT_PRIOR_REGION_CONTEXT_SAFE_V1                17    7  41.2%     +543.0       MT
+  MB_NO_TOKEN_HERD_REDUCTION_V1                  17    7  41.2%     +473.0       MB
+  MB_STRENGTH_WEIGHTED_V52_5_2                   17    7  41.2%     +473.0       MB
+  MT_ADAPTIVE_BUDGET_SELECTOR_V1                 14    6  42.9%     +466.0       MT
+  MB_PRIOR_REGION_CONTEXT_SAFE_V1                17    6  35.3%     +403.0       MB
+  MB_AI_CHAIN_PRESERVATION_V1                    17    5  29.4%     +333.0       MB
+  MB_OFFICIAL_BASELINE_CONTROL                   17    5  29.4%     +333.0       MB
+  MB_ADAPTIVE_EXPLOIT_V1                          6    3  50.0%     +204.0       MB
+  MN_ADAPTIVE_EXPLOIT_V1                          2    2 100.0%     +158.0       MN
+  MB_ADAPTIVE_BUDGET_SELECTOR_V1                 14    2  14.3%     +126.0       MB
+  MT_ADAPTIVE_EXPLOIT_V1                          2    1  50.0%      +78.0       MT
+
+=== E. Daily multi-method scoreboard (last 5 closed days) ===
+
+
+--- 2026-05-02 ---
+  MN: official BT=73 HIT
+    MN_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=73 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=54 HIT
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=73 HIT
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=73 HIT
+    MN_SPECIALIST_ROSTER_V1                        BT=73 HIT
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=54 HIT
+  MT: official BT=88 HIT
+    MT_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=30 HIT
+    MT_ADAPTIVE_EXPLOIT_V1                         BT=16 MISS
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=71 MISS
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=88 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=88 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=71 MISS
+    MT_SPECIALIST_ROSTER_V1                        BT=88 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=71 MISS
+  MB: official BT=43 MISS
+    MB_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=43 MISS
+    MB_ADAPTIVE_EXPLOIT_V1                         BT=94 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=91 HIT
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=91 HIT
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=43 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=91 HIT
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=91 HIT
+
+--- 2026-05-03 ---
+  MN: official BT=79 HIT
+    MN_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=79 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=79 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=79 HIT
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=79 HIT
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=79 HIT
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=79 HIT
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=79 HIT
+    MN_SPECIALIST_ROSTER_V1                        BT=79 HIT
+    MN_SPECIALIST_ROSTER_V1                        BT=79 HIT
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=79 HIT
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=79 HIT
+  MT: official BT=29 MISS
+    MT_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=29 MISS
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=33 MISS
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=33 MISS
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=29 MISS
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=29 MISS
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=29 MISS
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=29 MISS
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=17 MISS
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=17 MISS
+    MT_SPECIALIST_ROSTER_V1                        BT=29 MISS
+    MT_SPECIALIST_ROSTER_V1                        BT=29 MISS
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=29 MISS
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=29 MISS
+  MB: official BT=48 HIT
+    MB_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=08 MISS
+    MB_ADAPTIVE_EXPLOIT_V1                         BT=43 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=85 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=85 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=48 HIT
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=48 HIT
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=48 HIT
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=48 HIT
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=85 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=85 MISS
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=48 HIT
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=48 HIT
+
+--- 2026-05-04 ---
+  MN: official BT=65 MISS
+    MN_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=32 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=65 MISS
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=65 MISS
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=65 MISS
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=65 MISS
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=65 MISS
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=65 MISS
+    MN_SPECIALIST_ROSTER_V1                        BT=32 HIT
+    MN_SPECIALIST_ROSTER_V1                        BT=32 HIT
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=65 MISS
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=65 MISS
+  MT: official BT=29 HIT
+    MT_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=29 HIT
+    MT_ADAPTIVE_EXPLOIT_V1                         BT=29 HIT
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=82 HIT
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=82 HIT
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=29 HIT
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=29 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=29 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=29 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=82 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=82 HIT
+    MT_SPECIALIST_ROSTER_V1                        BT=29 HIT
+    MT_SPECIALIST_ROSTER_V1                        BT=29 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=82 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=82 HIT
+  MB: official BT=09 MISS
+    MB_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=09 MISS
+    MB_ADAPTIVE_EXPLOIT_V1                         BT=85 HIT
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=09 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=09 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=09 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=09 MISS
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=09 MISS
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=09 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=19 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=19 MISS
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=09 MISS
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=09 MISS
+
+--- 2026-05-05 ---
+  MN: official BT=15 MISS
+    MN_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=52 HIT
+    MN_ADAPTIVE_EXPLOIT_V1                         BT=65 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=52 HIT
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=52 HIT
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=15 MISS
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=15 MISS
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=15 MISS
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=15 MISS
+    MN_SPECIALIST_ROSTER_V1                        BT=15 MISS
+    MN_SPECIALIST_ROSTER_V1                        BT=15 MISS
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=15 MISS
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=15 MISS
+  MT: official BT=44 HIT
+    MT_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=52 HIT
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=39 HIT
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=39 HIT
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=44 HIT
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=44 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=44 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=44 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=52 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=52 HIT
+    MT_SPECIALIST_ROSTER_V1                        BT=44 HIT
+    MT_SPECIALIST_ROSTER_V1                        BT=44 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=44 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=44 HIT
+  MB: official BT=83 MISS
+    MB_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=41 MISS
+    MB_ADAPTIVE_EXPLOIT_V1                         BT=09 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=41 MISS
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=41 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=41 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=41 MISS
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=83 MISS
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=83 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=98 HIT
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=98 HIT
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=41 MISS
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=41 MISS
+
+--- 2026-05-06 ---
+  MN: official BT=95 MISS
+    MN_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=95 MISS
+    MN_AI_CHAIN_PRESERVATION_V1                    BT=95 MISS
+    MN_NO_TOKEN_HERD_REDUCTION_V1                  BT=95 MISS
+    MN_OFFICIAL_BASELINE_CONTROL                   BT=95 MISS
+    MN_SPECIALIST_ROSTER_V1                        BT=95 MISS
+    MN_STRENGTH_WEIGHTED_V52_5_2                   BT=95 MISS
+  MT: official BT=11 HIT
+    MT_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=71 HIT
+    MT_AI_CHAIN_PRESERVATION_V1                    BT=71 HIT
+    MT_NO_TOKEN_HERD_REDUCTION_V1                  BT=71 HIT
+    MT_OFFICIAL_BASELINE_CONTROL                   BT=11 HIT
+    MT_PRIOR_REGION_CONTEXT_SAFE_V1                BT=11 HIT
+    MT_SPECIALIST_ROSTER_V1                        BT=11 HIT
+    MT_STRENGTH_WEIGHTED_V52_5_2                   BT=71 HIT
+  MB: official BT=79 MISS
+    MB_ADAPTIVE_BUDGET_SELECTOR_V1                 BT=78 MISS
+    MB_ADAPTIVE_EXPLOIT_V1                         BT=41 HIT
+    MB_AI_CHAIN_PRESERVATION_V1                    BT=32 MISS
+    MB_NO_TOKEN_HERD_REDUCTION_V1                  BT=32 MISS
+    MB_OFFICIAL_BASELINE_CONTROL                   BT=79 MISS
+    MB_PRIOR_REGION_CONTEXT_SAFE_V1                BT=32 MISS
+    MB_STRENGTH_WEIGHTED_V52_5_2                   BT=32 MISS
