@@ -1,0 +1,146 @@
+﻿=== Q1. final_budget_score distribution per region (run_date=2026-05-06) ===
+
+--- MN (n=29 measured) ---
+  count score>=0.42: 22  >=0.35: 22  >=0.30: 22  total=29
+  current selected_count = 20
+  top 10 by score:
+    CONTROL         gpt-oss-120b                     cls=TOKEN    score=0.582 str=0.584 rec=0.647
+    SELECTED_VOTER  glm-5.1                          cls=TOKEN    score=0.571 str=0.583 rec=0.634
+    CONTROL         smart-ensemble                   cls=NO_TOKEN score=0.561 str=0.615 rec=0.639
+    CONTROL         claude-sonnet-4-6                cls=TOKEN    score=0.561 str=0.613 rec=0.636
+    SELECTED_VOTER  gemini-2.5-pro                   cls=TOKEN    score=0.547 str=0.614 rec=0.553
+    SELECTED_VOTER  combo-no-token                   cls=NO_TOKEN score=0.544 str=0.607 rec=0.566
+    SELECTED_VOTER  qwen3.6-plus                     cls=TOKEN    score=0.543 str=0.535 rec=0.569
+    SELECTED_VOTER  combo-super                      cls=TOKEN    score=0.528 str=0.608 rec=0.474
+    CONTROL         xgboost                          cls=NO_TOKEN score=0.519 str=0.567 rec=0.539
+    SELECTED_VOTER  kimi-k2.5                        cls=TOKEN    score=0.519 str=0.502 rec=0.519
+
+--- MT (n=29 measured) ---
+  count score>=0.42: 0  >=0.35: 4  >=0.30: 11  total=29
+  current selected_count = 15
+  top 10 by score:
+    CONTROL         gpt-oss-120b                     cls=TOKEN    score=0.416 str=0.377 rec=0.461
+    CONTROL         gpt-5-mini                       cls=TOKEN    score=0.391 str=0.369 rec=0.449
+    CONTROL         smart-ensemble                   cls=NO_TOKEN score=0.385 str=0.369 rec=0.467
+    CONTROL         xgboost                          cls=NO_TOKEN score=0.363 str=0.300 rec=0.546
+    SELECTED_VOTER  qwen3-coder                      cls=TOKEN    score=0.343 str=0.250 rec=0.466
+    SELECTED_VOTER  smart-ml                         cls=NO_TOKEN score=0.338 str=0.244 rec=0.596
+    SELECTED_VOTER  random-forest                    cls=NO_TOKEN score=0.330 str=0.231 rec=0.624
+    SELECTED_VOTER  grok-4.20-multi-agent            cls=TOKEN    score=0.327 str=0.250 rec=0.419
+    SELECTED_VOTER  kimi-k2.5                        cls=TOKEN    score=0.316 str=0.210 rec=0.204
+    SELECTED_VOTER  combo-no-token                   cls=NO_TOKEN score=0.309 str=0.225 rec=0.521
+
+--- MB (n=29 measured) ---
+  count score>=0.42: 0  >=0.35: 4  >=0.30: 12  total=29
+  current selected_count = 15
+  top 10 by score:
+    CONTROL         lstm                             cls=NO_TOKEN score=0.399 str=0.342 rec=0.316
+    CONTROL         qwen3.6-plus                     cls=TOKEN    score=0.382 str=0.365 rec=0.394
+    CONTROL         gpt-5-mini                       cls=TOKEN    score=0.364 str=0.347 rec=0.450
+    SELECTED_VOTER  random-forest                    cls=NO_TOKEN score=0.357 str=0.342 rec=0.239
+    SELECTED_VOTER  deepseek-reasoner                cls=TOKEN    score=0.330 str=0.278 rec=0.389
+    CONTROL         smart-ml                         cls=NO_TOKEN score=0.316 str=0.300 rec=0.223
+    SELECTED_VOTER  qwen3-coder                      cls=TOKEN    score=0.315 str=0.295 rec=0.130
+    SELECTED_VOTER  meta-learning                    cls=NO_TOKEN score=0.313 str=0.280 rec=0.184
+    SELECTED_VOTER  qwen3-max-thinking               cls=TOKEN    score=0.312 str=0.212 rec=0.237
+    SELECTED_VOTER  grok-4.20-multi-agent            cls=TOKEN    score=0.308 str=0.272 rec=0.211
+
+=== Q2. Strength tensor top-20 per region (anchor=2026-05-05, window=30d, grain=region) ===
+
+latest anchor: 2026-05-05
+
+--- MN top-20 ---
+   1. gpt-5.5                          fam=SHADOW   helpful=0.600 bt=0.556 any=0.889 n=9
+   2. combo-super                      fam=TOKEN    helpful=0.580 bt=0.567 any=0.800 n=30
+   3. claude-sonnet-4-6                fam=TOKEN    helpful=0.578 bt=0.593 any=0.778 n=27
+   4. smart-ensemble                   fam=NO_TOKEN helpful=0.560 bt=0.600 any=0.833 n=30
+   5. gemini-2.5-pro                   fam=TOKEN    helpful=0.559 bt=0.586 any=0.862 n=29
+   6. xgboost                          fam=NO_TOKEN helpful=0.553 bt=0.500 any=0.767 n=30
+   7. glm-5.1                          fam=SHADOW   helpful=0.552 bt=0.571 any=0.714 n=21
+   8. claude-opus-4-20250514           fam=TOKEN    helpful=0.541 bt=0.556 any=0.852 n=27
+   9. deepseek-v4-pro                  fam=SHADOW   helpful=0.533 bt=0.667 any=0.778 n=9
+  10. gpt-oss-120b                     fam=SHADOW   helpful=0.525 bt=0.625 any=0.688 n=16
+  11. combo-no-token                   fam=NO_TOKEN helpful=0.517 bt=0.655 any=0.793 n=29
+  12. gpt-5.4                          fam=TOKEN    helpful=0.513 bt=0.500 any=0.833 n=30
+  13. meta-learning                    fam=NO_TOKEN helpful=0.510 bt=0.552 any=0.724 n=29
+  14. smart-ml                         fam=NO_TOKEN helpful=0.507 bt=0.533 any=0.767 n=30
+  15. gemini-2.5-flash                 fam=TOKEN    helpful=0.483 bt=0.483 any=0.759 n=29
+  16. deepseek-reasoner                fam=TOKEN    helpful=0.481 bt=0.556 any=0.667 n=27
+  17. gpt-5-mini                       fam=TOKEN    helpful=0.473 bt=0.433 any=0.800 n=30
+  18. grok-4.20-multi-agent            fam=SHADOW   helpful=0.467 bt=0.429 any=0.667 n=21
+  19. kimi-k2.5                        fam=SHADOW   helpful=0.460 bt=0.500 any=0.650 n=20
+  20. random-forest                    fam=NO_TOKEN helpful=0.447 bt=0.433 any=0.600 n=30
+
+--- MT top-20 ---
+   1. smart-ml                         fam=NO_TOKEN helpful=0.507 bt=0.533 any=0.700 n=30
+   2. meta-learning                    fam=NO_TOKEN helpful=0.460 bt=0.500 any=0.700 n=30
+   3. smart-ensemble                   fam=NO_TOKEN helpful=0.447 bt=0.500 any=0.667 n=30
+   4. random-forest                    fam=NO_TOKEN helpful=0.440 bt=0.400 any=0.667 n=30
+   5. grok-4.20-multi-agent            fam=SHADOW   helpful=0.429 bt=0.429 any=0.619 n=21
+   6. xgboost                          fam=NO_TOKEN helpful=0.420 bt=0.433 any=0.667 n=30
+   7. combo-no-token                   fam=NO_TOKEN helpful=0.393 bt=0.500 any=0.633 n=30
+   8. combo-super                      fam=TOKEN    helpful=0.371 bt=0.429 any=0.571 n=7
+   9. minimax-m2.7                     fam=SHADOW   helpful=0.367 bt=0.333 any=0.583 n=12
+  10. gemini-2.5-flash                 fam=TOKEN    helpful=0.367 bt=0.300 any=0.667 n=30
+  11. qwen3-coder                      fam=SHADOW   helpful=0.362 bt=0.381 any=0.619 n=21
+  12. gpt-oss-120b                     fam=SHADOW   helpful=0.360 bt=0.333 any=0.533 n=15
+  13. lstm                             fam=NO_TOKEN helpful=0.360 bt=0.333 any=0.600 n=30
+  14. gpt-5-mini                       fam=TOKEN    helpful=0.352 bt=0.379 any=0.552 n=29
+  15. claude-opus-4-20250514           fam=TOKEN    helpful=0.331 bt=0.414 any=0.517 n=29
+  16. glm-5.1                          fam=SHADOW   helpful=0.324 bt=0.286 any=0.667 n=21
+  17. qwen3-max-thinking               fam=SHADOW   helpful=0.300 bt=0.200 any=0.550 n=20
+  18. deepseek-v4-flash                fam=SHADOW   helpful=0.289 bt=0.333 any=0.444 n=9
+  19. kimi-k2.5                        fam=SHADOW   helpful=0.280 bt=0.300 any=0.550 n=20
+  20. gpt-5.4                          fam=TOKEN    helpful=0.273 bt=0.233 any=0.433 n=30
+
+--- MB top-20 ---
+   1. qwen3.6-plus                     fam=SHADOW   helpful=0.340 bt=0.300 any=0.600 n=10
+   2. gpt-5.5                          fam=SHADOW   helpful=0.311 bt=0.444 any=0.556 n=9
+   3. random-forest                    fam=NO_TOKEN helpful=0.307 bt=0.267 any=0.633 n=30
+   4. gpt-5-mini                       fam=TOKEN    helpful=0.287 bt=0.367 any=0.500 n=30
+   5. lstm                             fam=NO_TOKEN helpful=0.287 bt=0.367 any=0.467 n=30
+   6. qwen3-coder                      fam=SHADOW   helpful=0.286 bt=0.191 any=0.571 n=21
+   7. meta-learning                    fam=NO_TOKEN helpful=0.280 bt=0.200 any=0.467 n=30
+   8. grok-4.20-multi-agent            fam=SHADOW   helpful=0.267 bt=0.191 any=0.476 n=21
+   9. smart-ml                         fam=NO_TOKEN helpful=0.260 bt=0.300 any=0.433 n=30
+  10. claude-sonnet-4-6                fam=TOKEN    helpful=0.248 bt=0.276 any=0.414 n=29
+  11. xgboost                          fam=NO_TOKEN helpful=0.247 bt=0.167 any=0.500 n=30
+  12. deepseek-reasoner                fam=TOKEN    helpful=0.240 bt=0.267 any=0.433 n=30
+  13. smart-ensemble                   fam=NO_TOKEN helpful=0.240 bt=0.133 any=0.533 n=30
+  14. combo-no-token                   fam=NO_TOKEN helpful=0.233 bt=0.233 any=0.433 n=30
+  15. gpt-5.4                          fam=TOKEN    helpful=0.233 bt=0.233 any=0.433 n=30
+  16. combo-super                      fam=TOKEN    helpful=0.226 bt=0.261 any=0.348 n=23
+  17. qwen3-max-thinking               fam=SHADOW   helpful=0.220 bt=0.100 any=0.450 n=20
+  18. glm-5.1                          fam=SHADOW   helpful=0.219 bt=0.238 any=0.381 n=21
+  19. claude-opus-4-20250514           fam=TOKEN    helpful=0.207 bt=0.207 any=0.379 n=29
+  20. kimi-k2.5                        fam=SHADOW   helpful=0.200 bt=0.158 any=0.368 n=19
+
+=== Q3. Per-region+weekday top-5 (anchor=2026-05-05, window=30d, grain=region_weekday) ===
+
+--- MN ---
+  Mon: claude-sonnet-4-6(h=0.80), combo-super(h=0.80), xgboost(h=0.80), claude-opus-4-20250514(h=0.72), combo-no-token(h=0.70)
+  Tue: combo-super(h=0.68), claude-opus-4-20250514(h=0.64), claude-sonnet-4-6(h=0.52), smart-ensemble(h=0.52), gpt-5.4(h=0.44)
+  Wed: qwen3-coder(h=0.80), gpt-5-mini(h=0.65), gpt-5.4(h=0.60), glm-5.1(h=0.53), gemini-2.5-flash(h=0.50)
+  Thu: deepseek-reasoner(h=1.00), grok-4.20-multi-agent(h=1.00), glm-5.1(h=0.87), qwen3-max-thinking(h=0.87), combo-super(h=0.85)
+  Fri: glm-5.1(h=0.80), smart-ml(h=0.60), deepseek-reasoner(h=0.55), meta-learning(h=0.55), kimi-k2.5(h=0.53)
+  Sat: lstm(h=0.87), gemini-2.5-pro(h=0.80), meta-learning(h=0.80), xgboost(h=0.75), smart-ensemble(h=0.70)
+  Sun: claude-sonnet-4-6(h=0.67), glm-5.1(h=0.67), grok-4.20-multi-agent(h=0.67), qwen3-max-thinking(h=0.67), gemini-2.5-pro(h=0.65)
+
+--- MT ---
+  Mon: meta-learning(h=0.52), smart-ml(h=0.44), gemini-2.5-flash(h=0.44), gpt-5-mini(h=0.40), smart-ensemble(h=0.40)
+  Tue: lstm(h=0.52), smart-ml(h=0.44), claude-opus-4-20250514(h=0.40), random-forest(h=0.40), combo-no-token(h=0.36)
+  Wed: smart-ensemble(h=0.70), random-forest(h=0.60), xgboost(h=0.60), glm-5.1(h=0.47), smart-ml(h=0.40)
+  Thu: meta-learning(h=0.90), smart-ml(h=0.90), qwen3-max-thinking(h=0.87), random-forest(h=0.85), combo-no-token(h=0.80)
+  Fri: claude-opus-4-20250514(h=0.53), lstm(h=0.50), meta-learning(h=0.50), combo-no-token(h=0.35), smart-ensemble(h=0.35)
+  Sat: smart-ml(h=0.50), xgboost(h=0.50), gemini-2.5-flash(h=0.45), lstm(h=0.45), meta-learning(h=0.35)
+  Sun: grok-4.20-multi-agent(h=1.00), gpt-5.4(h=0.75), smart-ml(h=0.70), qwen3-coder(h=0.67), gpt-5-mini(h=0.65)
+
+--- MB ---
+  Mon: grok-4.20-multi-agent(h=0.47), meta-learning(h=0.36), gpt-5-mini(h=0.32), qwen3-coder(h=0.27), claude-opus-4-20250514(h=0.24)
+  Tue: gpt-5-mini(h=0.44), lstm(h=0.44), grok-4.20-multi-agent(h=0.33), combo-no-token(h=0.32), deepseek-reasoner(h=0.32)
+  Wed: gpt-5-mini(h=0.40), lstm(h=0.40), random-forest(h=0.35), smart-ensemble(h=0.35), xgboost(h=0.30)
+  Thu: claude-sonnet-4-6(h=0.50), lstm(h=0.40), deepseek-reasoner(h=0.35), combo-super(h=0.33), random-forest(h=0.30)
+  Fri: meta-learning(h=0.45), qwen3-coder(h=0.33), gpt-5-mini(h=0.25), smart-ml(h=0.25), combo-super(h=0.20)
+  Sat: meta-learning(h=0.60), gpt-5.4(h=0.55), claude-opus-4-20250514(h=0.50), combo-no-token(h=0.50), random-forest(h=0.50)
+  Sun: deepseek-reasoner(h=0.50), smart-ml(h=0.50), combo-super(h=0.47), grok-4.20-multi-agent(h=0.47), qwen3-coder(h=0.47)
+

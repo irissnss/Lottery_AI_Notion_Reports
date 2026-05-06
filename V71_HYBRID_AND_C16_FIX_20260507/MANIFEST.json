@@ -1,0 +1,26 @@
+{
+  "version": "V71",
+  "title": "V71 HYBRID_V1 + C-16 score-gate fix - MT/MB rescued",
+  "published_at": "2026-05-07T02:05:00+07:00",
+  "main_report": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V71_HYBRID_AND_C16_FIX_20260507/V71_REPORT.md",
+  "files": [
+    {
+      "src": "V71_REPORT.md",
+      "dst_rel": "V71_REPORT.md",
+      "sha256": "a1525e08352e100f58c7f955f4e849fe56ee42bbc5e31b47a2f0c394157883e2",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V71_HYBRID_AND_C16_FIX_20260507/V71_REPORT.md"
+    },
+    {
+      "src": "v71_audit.txt",
+      "dst_rel": "evidence/v71_audit.txt",
+      "sha256": "e8056f29c158d2fb46849ec17e518ddabcaf7375bff9cf23747d7e7fe9a5d0fa",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V71_HYBRID_AND_C16_FIX_20260507/evidence/v71_audit.txt"
+    },
+    {
+      "src": "v71_full_eval.txt",
+      "dst_rel": "evidence/v71_full_eval.txt",
+      "sha256": "f500cc1539b0109ecfca23fcc9e1cd616c548044d439045eca59ba89f3d1ca56",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V71_HYBRID_AND_C16_FIX_20260507/evidence/v71_full_eval.txt"
+    }
+  ]
+}

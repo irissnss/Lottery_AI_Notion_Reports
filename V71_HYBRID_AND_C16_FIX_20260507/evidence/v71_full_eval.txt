@@ -1,0 +1,46 @@
+﻿=== V71 ΓÇö OFFICIAL vs HYBRID vs CONSENSUS vs C-16 vs V67 (14d window) ===
+
+--- MN (payout 80x) ---
+  OFFICIAL                         n=14 hit= 6 rate= 42.9% [95%CI  21.4- 67.4]  profit=  +466.0u
+  HYBRID_V1                        n=14 hit= 6 rate= 42.9% [95%CI  21.4- 67.4]  profit=  +466.0u
+  CONSENSUS_V1                     n=13 hit= 6 rate= 46.2% [95%CI  23.2- 70.9]  profit=  +467.0u
+  ADAPTIVE_BUDGET_SELECTOR_V1      n=14 hit= 6 rate= 42.9% [95%CI  21.4- 67.4]  profit=  +466.0u
+  ADAPTIVE_EXPLOIT_V1              n= 2 hit= 2 rate=100.0% [95%CI  34.2-100.0]  profit=  +158.0u
+
+--- MT (payout 80x) ---
+  OFFICIAL                         n=14 hit= 8 rate= 57.1% [95%CI  32.6- 78.6]  profit=  +626.0u
+  HYBRID_V1                        n=14 hit= 8 rate= 57.1% [95%CI  32.6- 78.6]  profit=  +626.0u
+  CONSENSUS_V1                     n=14 hit= 8 rate= 57.1% [95%CI  32.6- 78.6]  profit=  +626.0u
+  ADAPTIVE_BUDGET_SELECTOR_V1      n=14 hit= 6 rate= 42.9% [95%CI  21.4- 67.4]  profit=  +466.0u
+  ADAPTIVE_EXPLOIT_V1              n= 2 hit= 1 rate= 50.0% [95%CI   9.5- 90.5]  profit=   +78.0u
+
+--- MB (payout 70x) ---
+  OFFICIAL                         n=14 hit= 4 rate= 28.6% [95%CI  11.7- 54.6]  profit=  +266.0u
+  HYBRID_V1                        n=14 hit= 5 rate= 35.7% [95%CI  16.3- 61.2]  profit=  +336.0u
+  CONSENSUS_V1                     n=13 hit= 5 rate= 38.5% [95%CI  17.7- 64.5]  profit=  +337.0u
+  ADAPTIVE_BUDGET_SELECTOR_V1      n=14 hit= 3 rate= 21.4% [95%CI   7.6- 47.6]  profit=  +196.0u
+  ADAPTIVE_EXPLOIT_V1              n= 6 hit= 3 rate= 50.0% [95%CI  18.8- 81.2]  profit=  +204.0u
+
+=== ALL-REGION 14d combined ===
+
+  OFFICIAL                         n= 42 hit= 18 rate= 42.9% [95%CI  29.1- 57.8]  profit=   +1358.0u
+  HYBRID_V1                        n= 42 hit= 19 rate= 45.2% [95%CI  31.2- 60.1]  profit=   +1428.0u
+  CONSENSUS_V1                     n= 40 hit= 19 rate= 47.5% [95%CI  32.9- 62.5]  profit=   +1430.0u
+  ADAPTIVE_BUDGET_SELECTOR_V1      n= 42 hit= 15 rate= 35.7% [95%CI  23.0- 50.8]  profit=   +1128.0u
+  ADAPTIVE_EXPLOIT_V1              n= 10 hit=  6 rate= 60.0% [95%CI  31.3- 83.2]  profit=    +440.0u
+
+=== HYBRID tier breakdown (per-region) ===
+
+--- MN ---
+  HIGH   n=13 hit= 6 rate= 46.2%
+  LOW    n= 1 hit= 0 rate=  0.0%
+--- MT ---
+  HIGH   n=14 hit= 8 rate= 57.1%
+--- MB ---
+  HIGH   n=13 hit= 5 rate= 38.5%
+  MEDIUM n= 1 hit= 0 rate=  0.0%
+
+=== C-16 selected_count after gate-removal patch (run_date=2026-05-06) ===
+  MN: pool=29 measured=28 selected=20 (target 15-20)
+  MT: pool=29 measured=28 selected=20 (target 15-20)
+  MB: pool=29 measured=28 selected=20 (target 15-20)
