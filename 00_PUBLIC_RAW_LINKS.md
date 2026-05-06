@@ -1,5 +1,13 @@
 # Public Raw Links — Full Package
 
+## V67 — ADAPTIVE_EXPLOIT_V1 selector deployed test-lane (NEW 2026-05-07 01:30)
+
+- [V67 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/V67_REPORT.md)
+- [V67 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/00_READING_INDEX.md)
+- [V67 14d backfill eval](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/evidence/v67_eval.txt)
+- [V67 discovery 8 anti-model](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/evidence/v67_discovery8_recommit.txt)
+- [V67 active roadmap (updated)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V67_ADAPTIVE_EXPLOIT_V1_20260507/governance/ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT.md)
+
 ## V66.1 — Coverage expansion + 7 discoveries (NEW 2026-05-07 01:10)
 
 - [V66.1 findings report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_1_FINDINGS_REPORT.md)
