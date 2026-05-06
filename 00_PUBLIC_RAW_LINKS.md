@@ -1,5 +1,13 @@
 # Public Raw Links — Full Package
 
+## V66 — Lag-1 + Cross-region adaptive exploit signal (measurement-only) (NEW 2026-05-07)
+
+- [V66 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/V66_REPORT.md)
+- [V66 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/00_READING_INDEX.md)
+- [V66 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/MANIFEST.json)
+- [V66 active roadmap](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/governance/ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT.md)
+- [V66 signal review (raw)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V66_LAG1_ADAPTIVE_EXPLOIT_20260507/evidence/v66_signal_review.txt)
+
 ## V65 — Lag-1 leakage + strength priority + test-lane weighting (NEW 2026-05-07)
 
 - [V65 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/V65_AUDIT_REPORT.md)
