@@ -1,0 +1,71 @@
+{
+  "bundle_duplicate_count": 15,
+  "budget_duplicate_count": 0,
+  "selected_empty_pick_count": 3,
+  "missing_shadow_count": 0,
+  "latency_rows": [
+    {
+      "date": "2026-05-04",
+      "region": "MB",
+      "rows": 25,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MN",
+      "rows": 25,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MT",
+      "rows": 25,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MB",
+      "rows": 27,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MN",
+      "rows": 27,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MT",
+      "rows": 27,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MB",
+      "rows": 28,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MN",
+      "rows": 28,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MT",
+      "rows": 27,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    }
+  ]
+}

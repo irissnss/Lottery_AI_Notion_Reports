@@ -1,0 +1,4363 @@
+{
+  "official_safety": {
+    "final_bundles_recent": [
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "bach_thu": "09",
+        "lo2": "[\"09\", \"38\"]",
+        "created_at": "2026-05-04 17:40:09",
+        "updated_at": "2026-05-05 18:18:16",
+        "verified_at": "2026-05-05 18:18:16"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "bach_thu": "65",
+        "lo2": "[\"65\", \"32\"]",
+        "created_at": "2026-05-04 04:23:51",
+        "updated_at": "2026-05-05 16:34:35",
+        "verified_at": "2026-05-05 16:34:35"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "bach_thu": "29",
+        "lo2": "[\"29\", \"41\"]",
+        "created_at": "2026-05-04 16:42:00",
+        "updated_at": "2026-05-05 17:27:42",
+        "verified_at": "2026-05-05 17:27:42"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "bach_thu": "83",
+        "lo2": "[\"83\", \"41\"]",
+        "created_at": "2026-05-05 17:39:20",
+        "updated_at": "2026-05-06 17:55:01",
+        "verified_at": "2026-05-06 17:55:01"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "bach_thu": "15",
+        "lo2": "[\"15\", \"13\"]",
+        "created_at": "2026-05-05 04:22:20",
+        "updated_at": "2026-05-06 15:55:50",
+        "verified_at": "2026-05-06 15:55:50"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "bach_thu": "44",
+        "lo2": "[\"44\", \"31\"]",
+        "created_at": "2026-05-05 16:42:00",
+        "updated_at": "2026-05-06 17:29:53",
+        "verified_at": "2026-05-06 17:29:53"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "bach_thu": "79",
+        "lo2": "[\"79\", \"32\"]",
+        "created_at": "2026-05-06 17:38:59",
+        "updated_at": "2026-05-06 18:31:33",
+        "verified_at": "2026-05-06 18:31:33"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "bach_thu": "95",
+        "lo2": "[\"95\", \"46\"]",
+        "created_at": "2026-05-06 04:24:20",
+        "updated_at": "2026-05-06 16:34:36",
+        "verified_at": "2026-05-06 16:34:36"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "bach_thu": "11",
+        "lo2": "[\"11\", \"99\"]",
+        "created_at": "2026-05-06 16:42:00",
+        "updated_at": "2026-05-06 23:20:22",
+        "verified_at": "2026-05-06 23:20:22"
+      }
+    ],
+    "predictions_recent_counts": [
+      {
+        "date": "2026-05-04",
+        "target_region": "MB",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MB",
+        "run_source": "rerun_post_mt",
+        "n": 7
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MB",
+        "run_source": "shadow_auto_eval",
+        "n": 10
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MN",
+        "run_source": "auto_daily",
+        "n": 15
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MN",
+        "run_source": "shadow_auto_eval",
+        "n": 10
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MT",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MT",
+        "run_source": "rerun_post_mn",
+        "n": 7
+      },
+      {
+        "date": "2026-05-04",
+        "target_region": "MT",
+        "run_source": "shadow_auto_eval",
+        "n": 10
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MB",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MB",
+        "run_source": "rerun_post_mt",
+        "n": 7
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MB",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MN",
+        "run_source": "auto_daily",
+        "n": 15
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MN",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MT",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MT",
+        "run_source": "rerun_post_mn",
+        "n": 7
+      },
+      {
+        "date": "2026-05-05",
+        "target_region": "MT",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MB",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MB",
+        "run_source": "rerun_post_mt",
+        "n": 7
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MB",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MN",
+        "run_source": "auto_daily",
+        "n": 15
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MN",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MT",
+        "run_source": "ai_chain",
+        "n": 8
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MT",
+        "run_source": "rerun_post_mn",
+        "n": 7
+      },
+      {
+        "date": "2026-05-06",
+        "target_region": "MT",
+        "run_source": "shadow_auto_eval",
+        "n": 13
+      }
+    ]
+  },
+  "test_line_region_timeline": [
+    {
+      "run_date": "2026-05-04",
+      "region": "MB",
+      "official_bundle_created_at": "2026-05-04 17:40:09",
+      "first_test_bundle_created_at": "2026-05-05T00:45:45.523196+07:00",
+      "actual_result_created_at": "2026-05-04T18:31:01.727554+07:00",
+      "test_bundle_rows": 13,
+      "pending_bt_rows": 0,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 13
+    },
+    {
+      "run_date": "2026-05-04",
+      "region": "MN",
+      "official_bundle_created_at": "2026-05-04 04:23:51",
+      "first_test_bundle_created_at": "2026-05-05T00:45:40+07:00",
+      "actual_result_created_at": "2026-05-04T16:38:38.654514+07:00",
+      "test_bundle_rows": 6,
+      "pending_bt_rows": 0,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 18
+    },
+    {
+      "run_date": "2026-05-04",
+      "region": "MT",
+      "official_bundle_created_at": "2026-05-04 16:42:00",
+      "first_test_bundle_created_at": "2026-05-05T00:45:43+07:00",
+      "actual_result_created_at": "2026-05-04T17:30:00.634797+07:00",
+      "test_bundle_rows": 6,
+      "pending_bt_rows": 0,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 12
+    },
+    {
+      "run_date": "2026-05-05",
+      "region": "MB",
+      "official_bundle_created_at": "2026-05-05 17:39:20",
+      "first_test_bundle_created_at": "2026-05-05T20:32:35.313464+07:00",
+      "actual_result_created_at": "2026-05-05T18:31:33.177544+07:00",
+      "test_bundle_rows": 14,
+      "pending_bt_rows": 2,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 14
+    },
+    {
+      "run_date": "2026-05-05",
+      "region": "MN",
+      "official_bundle_created_at": "2026-05-05 04:22:20",
+      "first_test_bundle_created_at": "2026-05-05T20:32:30+07:00",
+      "actual_result_created_at": "2026-05-05T16:36:37.083100+07:00",
+      "test_bundle_rows": 7,
+      "pending_bt_rows": 3,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 21
+    },
+    {
+      "run_date": "2026-05-05",
+      "region": "MT",
+      "official_bundle_created_at": "2026-05-05 16:42:00",
+      "first_test_bundle_created_at": "2026-05-05T20:32:32+07:00",
+      "actual_result_created_at": "2026-05-05T17:31:01.653737+07:00",
+      "test_bundle_rows": 7,
+      "pending_bt_rows": 0,
+      "pending_lo2_rows": 0,
+      "actual_rows_joined": 14
+    },
+    {
+      "run_date": "2026-05-06",
+      "region": "MB",
+      "official_bundle_created_at": "2026-05-06 17:38:59",
+      "first_test_bundle_created_at": "2026-05-06T17:40:01.920956+07:00",
+      "actual_result_created_at": "2026-05-06T18:31:32.933031+07:00",
+      "test_bundle_rows": 14,
+      "pending_bt_rows": 14,
+      "pending_lo2_rows": 14,
+      "actual_rows_joined": 14
+    },
+    {
+      "run_date": "2026-05-06",
+      "region": "MN",
+      "official_bundle_created_at": "2026-05-06 04:24:20",
+      "first_test_bundle_created_at": "2026-05-06T07:50:54+07:00",
+      "actual_result_created_at": "2026-05-06T16:34:35.829649+07:00",
+      "test_bundle_rows": 7,
+      "pending_bt_rows": 21,
+      "pending_lo2_rows": 21,
+      "actual_rows_joined": 21
+    },
+    {
+      "run_date": "2026-05-06",
+      "region": "MT",
+      "official_bundle_created_at": "2026-05-06 16:42:00",
+      "first_test_bundle_created_at": "2026-05-06T16:45:01+07:00",
+      "actual_result_created_at": "2026-05-06T17:30:00.663173+07:00",
+      "test_bundle_rows": 7,
+      "pending_bt_rows": 14,
+      "pending_lo2_rows": 14,
+      "actual_rows_joined": 14
+    }
+  ],
+  "duplicates": {
+    "du_doan_test_bundles": [
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "595,601",
+        "picks": "09,09",
+        "first_created": "2026-05-05T00:45:45.530380+07:00",
+        "last_created": "2026-05-05T00:45:46+07:00"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "598,604",
+        "picks": "09,09",
+        "first_created": "2026-05-05T00:45:45.536578+07:00",
+        "last_created": "2026-05-05T00:45:46+07:00"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "592,599",
+        "picks": "09,09",
+        "first_created": "2026-05-05T00:45:45.523196+07:00",
+        "last_created": "2026-05-05T00:45:46+07:00"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "597,603",
+        "picks": "19,19",
+        "first_created": "2026-05-05T00:45:45.534534+07:00",
+        "last_created": "2026-05-05T00:45:46+07:00"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "596,602",
+        "picks": null,
+        "first_created": "2026-05-05T00:45:45.532382+07:00",
+        "last_created": "2026-05-05T00:45:46+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "620,626",
+        "picks": "41,41",
+        "first_created": "2026-05-05T20:32:35.321414+07:00",
+        "last_created": "2026-05-05T20:32:36+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "623,629",
+        "picks": "41,41",
+        "first_created": "2026-05-05T20:32:35.328104+07:00",
+        "last_created": "2026-05-05T20:32:36+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "617,624",
+        "picks": "83,83",
+        "first_created": "2026-05-05T20:32:35.313464+07:00",
+        "last_created": "2026-05-05T20:32:36+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "622,628",
+        "picks": "98,98",
+        "first_created": "2026-05-05T20:32:35.325852+07:00",
+        "last_created": "2026-05-05T20:32:36+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "mode": "POST_CLOSEOUT_DIAGNOSTIC_FULL_25",
+        "row_count": 2,
+        "ids": "621,627",
+        "picks": null,
+        "first_created": "2026-05-05T20:32:35.323649+07:00",
+        "last_created": "2026-05-05T20:32:36+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "mode": "REALTIME_AVAILABLE_ONLY",
+        "row_count": 2,
+        "ids": "650,657",
+        "picks": "32,32",
+        "first_created": "2026-05-06T17:40:01.929262+07:00",
+        "last_created": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "mode": "REALTIME_AVAILABLE_ONLY",
+        "row_count": 2,
+        "ids": "653,660",
+        "picks": "32,32",
+        "first_created": "2026-05-06T17:40:01.935834+07:00",
+        "last_created": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "mode": "REALTIME_AVAILABLE_ONLY",
+        "row_count": 2,
+        "ids": "647,655",
+        "picks": "79,79",
+        "first_created": "2026-05-06T17:40:01.920956+07:00",
+        "last_created": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "mode": "REALTIME_AVAILABLE_ONLY",
+        "row_count": 2,
+        "ids": "652,659",
+        "picks": "32,32",
+        "first_created": "2026-05-06T17:40:01.933632+07:00",
+        "last_created": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "mode": "REALTIME_AVAILABLE_ONLY",
+        "row_count": 2,
+        "ids": "651,658",
+        "picks": null,
+        "first_created": "2026-05-06T17:40:01.931519+07:00",
+        "last_created": "2026-05-06T17:40:03+07:00"
+      }
+    ],
+    "du_doan_test_results": [
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "result_rows": 2,
+        "result_ids": "595,601"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "result_rows": 2,
+        "result_ids": "598,604"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "result_rows": 2,
+        "result_ids": "592,599"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "result_rows": 2,
+        "result_ids": "597,603"
+      },
+      {
+        "run_date": "2026-05-04",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "result_rows": 2,
+        "result_ids": "596,602"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "result_rows": 2,
+        "result_ids": "620,626"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "result_rows": 2,
+        "result_ids": "623,629"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "result_rows": 2,
+        "result_ids": "617,624"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "result_rows": 2,
+        "result_ids": "622,628"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "result_rows": 2,
+        "result_ids": "621,627"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "result_rows": 2,
+        "result_ids": "650,657"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "result_rows": 2,
+        "result_ids": "653,660"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "result_rows": 2,
+        "result_ids": "647,655"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "result_rows": 2,
+        "result_ids": "652,659"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "result_rows": 2,
+        "result_ids": "651,658"
+      }
+    ],
+    "experimental_preview": [],
+    "budget_daily": []
+  },
+  "c16": {
+    "daily": [
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "total_pool_count": 29,
+        "measured_pool_count": 28,
+        "selected_count": 8,
+        "watch_count": 10,
+        "skipped_count": 11,
+        "created_at": "2026-05-05T23:10:52+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MN",
+        "total_pool_count": 29,
+        "measured_pool_count": 28,
+        "selected_count": 10,
+        "watch_count": 16,
+        "skipped_count": 3,
+        "created_at": "2026-05-05T23:10:51+07:00"
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MT",
+        "total_pool_count": 29,
+        "measured_pool_count": 28,
+        "selected_count": 8,
+        "watch_count": 14,
+        "skipped_count": 7,
+        "created_at": "2026-05-05T23:10:52+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "total_pool_count": 29,
+        "measured_pool_count": 23,
+        "selected_count": 8,
+        "watch_count": 10,
+        "skipped_count": 11,
+        "created_at": "2026-05-06T17:40:00+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "total_pool_count": 29,
+        "measured_pool_count": 28,
+        "selected_count": 10,
+        "watch_count": 18,
+        "skipped_count": 1,
+        "created_at": "2026-05-06T07:50:52+07:00"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "total_pool_count": 29,
+        "measured_pool_count": 22,
+        "selected_count": 8,
+        "watch_count": 10,
+        "skipped_count": 11,
+        "created_at": "2026-05-06T16:45:00+07:00"
+      }
+    ],
+    "empty_pick_selected": [
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "model_name": "qwen3-max-thinking",
+        "selector_role": "SELECTED_VOTER",
+        "final_budget_score": 0.3125,
+        "pick_for_date_json": "{}"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "model_name": "qwen3.6-plus",
+        "selector_role": "CONTROL",
+        "final_budget_score": 0.3824,
+        "pick_for_date_json": "{}"
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "model_name": "qwen3-coder",
+        "selector_role": "SELECTED_VOTER",
+        "final_budget_score": 0.3431,
+        "pick_for_date_json": "{}"
+      }
+    ],
+    "selected_summary": [
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.428
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "selector_role": "SELECTED_VOTER",
+        "n": 4,
+        "avg_score": 0.3494
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "selector_role": "SKIP_TODAY",
+        "n": 11,
+        "avg_score": 0.2478
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MB",
+        "selector_role": "WATCH_ONLY",
+        "n": 10,
+        "avg_score": 0.2281
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MN",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.4747
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MN",
+        "selector_role": "SELECTED_VOTER",
+        "n": 6,
+        "avg_score": 0.5241
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MN",
+        "selector_role": "SKIP_TODAY",
+        "n": 3,
+        "avg_score": 0.2223
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MN",
+        "selector_role": "WATCH_ONLY",
+        "n": 16,
+        "avg_score": 0.3198
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MT",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.4371
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MT",
+        "selector_role": "SELECTED_VOTER",
+        "n": 4,
+        "avg_score": 0.4305
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MT",
+        "selector_role": "SKIP_TODAY",
+        "n": 7,
+        "avg_score": 0.2303
+      },
+      {
+        "run_date": "2026-05-05",
+        "region": "MT",
+        "selector_role": "WATCH_ONLY",
+        "n": 14,
+        "avg_score": 0.2811
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.3653
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "selector_role": "SELECTED_VOTER",
+        "n": 4,
+        "avg_score": 0.328
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "selector_role": "SKIP_TODAY",
+        "n": 11,
+        "avg_score": 0.2568
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "selector_role": "WATCH_ONLY",
+        "n": 10,
+        "avg_score": 0.1853
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.5532
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "selector_role": "SELECTED_VOTER",
+        "n": 6,
+        "avg_score": 0.54
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "selector_role": "SKIP_TODAY",
+        "n": 1,
+        "avg_score": 0.0935
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "selector_role": "WATCH_ONLY",
+        "n": 18,
+        "avg_score": 0.3958
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "selector_role": "CONTROL",
+        "n": 4,
+        "avg_score": 0.3892
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "selector_role": "SELECTED_VOTER",
+        "n": 4,
+        "avg_score": 0.3345
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "selector_role": "SKIP_TODAY",
+        "n": 11,
+        "avg_score": 0.247
+      },
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "selector_role": "WATCH_ONLY",
+        "n": 10,
+        "avg_score": 0.1781
+      }
+    ]
+  },
+  "shadow_google": [
+    {
+      "date": "2026-05-05",
+      "target_region": "MB",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"91\", \"14\"]",
+      "status": "WIN",
+      "hit_numbers": "[\"91\", \"14\"]",
+      "hit_count": 2,
+      "created_at": "2026-05-05T17:56:51.188139+07:00",
+      "verified_at": "2026-05-05T18:31:33.290585+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MB",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"90\", \"14\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"14\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-05T17:56:21.091964+07:00",
+      "verified_at": "2026-05-05T18:31:33.296115+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MB",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"14\", \"09\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"14\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-05T21:18:03.129352+07:00",
+      "verified_at": "2026-05-05T23:02:55.040013+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MN",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"13\", \"52\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"52\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-05T08:15:46.268611+07:00",
+      "verified_at": "2026-05-05T16:36:37.533218+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MN",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"56\", \"13\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-05T08:15:25.665043+07:00",
+      "verified_at": "2026-05-05T16:36:37.545277+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MN",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"13\", \"05\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-05T20:47:30.941253+07:00",
+      "verified_at": "2026-05-05T21:16:40.986867+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MT",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"13\", \"37\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-05T16:59:55.657538+07:00",
+      "verified_at": "2026-05-05T17:31:01.747269+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MT",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"67\", \"14\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-05T16:59:31.738591+07:00",
+      "verified_at": "2026-05-05T17:31:01.751788+07:00"
+    },
+    {
+      "date": "2026-05-05",
+      "target_region": "MT",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"37\", \"03\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-05T21:02:45.202847+07:00",
+      "verified_at": "2026-05-05T21:16:41.032809+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MB",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"64\", \"49\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-06T17:39:22.488132+07:00",
+      "verified_at": "2026-05-06T18:31:33.032502+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MB",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"49\", \"64\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-06T17:54:24.804878+07:00",
+      "verified_at": "2026-05-06T18:31:33.037803+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MB",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"49\", \"64\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-06T17:56:08.744268+07:00",
+      "verified_at": "2026-05-06T18:31:33.042879+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MN",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"93\", \"95\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"93\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-06T04:40:59.732218+07:00",
+      "verified_at": "2026-05-06T16:34:35.954493+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MN",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"95\", \"56\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"56\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-06T04:41:47.515566+07:00",
+      "verified_at": "2026-05-06T16:34:35.960423+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MN",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"95\", \"27\"]",
+      "status": "LOSE",
+      "hit_numbers": "[]",
+      "hit_count": 0,
+      "created_at": "2026-05-06T04:43:57.519335+07:00",
+      "verified_at": "2026-05-06T16:34:35.967278+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MT",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"71\", \"46\"]",
+      "status": "WIN",
+      "hit_numbers": "[\"71\", \"46\"]",
+      "hit_count": 2,
+      "created_at": "2026-05-06T16:56:17.027411+07:00",
+      "verified_at": "2026-05-06T17:30:00.814857+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MT",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"71\", \"67\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"71\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-06T16:56:00.107516+07:00",
+      "verified_at": "2026-05-06T17:30:00.819933+07:00"
+    },
+    {
+      "date": "2026-05-06",
+      "target_region": "MT",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "main_numbers": "[\"71\", \"67\"]",
+      "status": "PARTIAL",
+      "hit_numbers": "[\"71\"]",
+      "hit_count": 1,
+      "created_at": "2026-05-06T16:58:19.615115+07:00",
+      "verified_at": "2026-05-06T17:30:00.825213+07:00"
+    }
+  ],
+  "missing_shadow": [],
+  "measurement_surfaces": {
+    "latency": [
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "rows": 25,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "rows": 25,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "rows": 25,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "rows": 27,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "rows": 27,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "rows": 27,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "rows": 28,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "rows": 28,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "rows": 27,
+        "latency_available": 0,
+        "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+      }
+    ],
+    "loz_stage": [
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "rows": 22,
+        "top1": 3,
+        "top2": 3,
+        "top10": 3,
+        "loz_miss": 2,
+        "pool_miss": 1
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "rows": 39,
+        "top1": 2,
+        "top2": 3,
+        "top10": 3,
+        "loz_miss": 2,
+        "pool_miss": 0
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "rows": 27,
+        "top1": 3,
+        "top2": 6,
+        "top10": 6,
+        "loz_miss": 1,
+        "pool_miss": 3
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "rows": 22,
+        "top1": 5,
+        "top2": 5,
+        "top10": 5,
+        "loz_miss": 2,
+        "pool_miss": 3
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "rows": 42,
+        "top1": 3,
+        "top2": 5,
+        "top10": 5,
+        "loz_miss": 3,
+        "pool_miss": 2
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "rows": 30,
+        "top1": 6,
+        "top2": 6,
+        "top10": 6,
+        "loz_miss": 5,
+        "pool_miss": 0
+      }
+    ],
+    "mt_drop": [
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "rows": 5,
+        "ai_drop": 2,
+        "notoken_drop": 0
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "rows": 5,
+        "ai_drop": 4,
+        "notoken_drop": 3
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "rows": 4,
+        "ai_drop": 2,
+        "notoken_drop": 2
+      }
+    ],
+    "strength_latest": [
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region",
+        "window_days": 7,
+        "rows": 27
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region",
+        "window_days": 14,
+        "rows": 33
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region",
+        "window_days": 30,
+        "rows": 39
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region",
+        "window_days": 60,
+        "rows": 71
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_station",
+        "window_days": 7,
+        "rows": 152
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_station",
+        "window_days": 14,
+        "rows": 165
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_station",
+        "window_days": 30,
+        "rows": 196
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_station",
+        "window_days": 60,
+        "rows": 376
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_weekday",
+        "window_days": 7,
+        "rows": 177
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_weekday",
+        "window_days": 14,
+        "rows": 191
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_weekday",
+        "window_days": 30,
+        "rows": 224
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MB",
+        "grain": "region_weekday",
+        "window_days": 60,
+        "rows": 432
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region",
+        "window_days": 7,
+        "rows": 27
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region",
+        "window_days": 14,
+        "rows": 32
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region",
+        "window_days": 30,
+        "rows": 51
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region",
+        "window_days": 60,
+        "rows": 61
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_station",
+        "window_days": 7,
+        "rows": 531
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_station",
+        "window_days": 14,
+        "rows": 568
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_station",
+        "window_days": 30,
+        "rows": 679
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_station",
+        "window_days": 60,
+        "rows": 748
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_weekday",
+        "window_days": 7,
+        "rows": 177
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_weekday",
+        "window_days": 14,
+        "rows": 189
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_weekday",
+        "window_days": 30,
+        "rows": 224
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MN",
+        "grain": "region_weekday",
+        "window_days": 60,
+        "rows": 247
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region",
+        "window_days": 7,
+        "rows": 27
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region",
+        "window_days": 14,
+        "rows": 33
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region",
+        "window_days": 30,
+        "rows": 41
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region",
+        "window_days": 60,
+        "rows": 71
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_station",
+        "window_days": 7,
+        "rows": 354
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_station",
+        "window_days": 14,
+        "rows": 405
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_station",
+        "window_days": 30,
+        "rows": 460
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_station",
+        "window_days": 60,
+        "rows": 865
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_weekday",
+        "window_days": 7,
+        "rows": 177
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_weekday",
+        "window_days": 14,
+        "rows": 190
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_weekday",
+        "window_days": 30,
+        "rows": 218
+      },
+      {
+        "anchor_date": "2026-05-05",
+        "region": "MT",
+        "grain": "region_weekday",
+        "window_days": 60,
+        "rows": 417
+      }
+    ]
+  },
+  "scheduler": [
+    {
+      "log_time": "2026-05-06 00:50:53",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_start mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MN_realtime_available_only_2026-05-06"
+    },
+    {
+      "log_time": "2026-05-06 00:50:55",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_finish mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MN_realtime_available_only_2026-05-06 official_tables_touched=false"
+    },
+    {
+      "log_time": "2026-05-06 00:54:32",
+      "log_level": "INFO",
+      "region": null,
+      "job_name": null,
+      "date_str": null,
+      "message": "🧪 /du-doan-test pre-result trigger: every 5 minutes, readiness-gated"
+    },
+    {
+      "log_time": "2026-05-06 09:34:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔑 [RUN_ID_SET] region=MT run_id=MT_2026-05-06_a24353b0 (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 09:34:48",
+      "log_level": "WARNING",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🚨 [RULE_QUALITY_ALERT] MT (2026-05-06 wd=2): 0 READY_STRONG rules (total=5). AI predictions will rely more on statistical patterns. Tiers: LIMITED_WEIGHT=5"
+    },
+    {
+      "log_time": "2026-05-06 09:34:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[CASCADE_STAGE_START] region=MT stage=AI_CHAIN expected_models=8 run_id=MT_2026-05-06_a24353b0"
+    },
+    {
+      "log_time": "2026-05-06 09:34:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_env_drift:google:selected_db', 'gemini-2.5-pro:db_env_drift:google:selected_db', 'gpt-5.4:db_env_drift:openai:selected_db', 'combo-super:hybrid_aggregator:skip_direct_key_check']"
+    },
+    {
+      "log_time": "2026-05-06 09:34:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gpt-5-mini region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 09:35:58",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gpt-5-mini region=MT status=OK duration=69.1s"
+    },
+    {
+      "log_time": "2026-05-06 09:35:58",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=claude-sonnet-4-6 region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:36:46",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=claude-sonnet-4-6 region=MT status=OK duration=48.4s"
+    },
+    {
+      "log_time": "2026-05-06 09:36:46",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gemini-2.5-flash region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:37:28",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gemini-2.5-flash region=MT status=OK duration=42.0s"
+    },
+    {
+      "log_time": "2026-05-06 09:37:28",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=claude-opus-4-20250514 region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:38:08",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=claude-opus-4-20250514 region=MT status=OK duration=40.1s"
+    },
+    {
+      "log_time": "2026-05-06 09:38:08",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=deepseek-reasoner region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:39:54",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=deepseek-reasoner region=MT status=OK duration=106.0s"
+    },
+    {
+      "log_time": "2026-05-06 09:39:54",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gemini-2.5-pro region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 09:40:37",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gemini-2.5-pro region=MT status=OK duration=42.9s"
+    },
+    {
+      "log_time": "2026-05-06 09:40:37",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gpt-5.4 region=MT attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 09:40:59",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gpt-5.4 region=MT status=OK duration=21.9s"
+    },
+    {
+      "log_time": "2026-05-06 09:42:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔑 [RUN_ID_SET] region=MT run_id=MT_2026-05-06_d3c25fa2 (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 09:42:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "✅ [FALLBACK_CLEAR] MT (2026-05-06): all upstream verified. Fallback cron proceeding (redundant with main-flow cascade)."
+    },
+    {
+      "log_time": "2026-05-06 09:42:00",
+      "log_level": "WARNING",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🚨 [RULE_QUALITY_ALERT] MT (2026-05-06 wd=2): 0 READY_STRONG rules (total=5). AI predictions will rely more on statistical patterns. Tiers: LIMITED_WEIGHT=5"
+    },
+    {
+      "log_time": "2026-05-06 09:42:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔒 [RUN_ID_END] region=MT run_id=MT_2026-05-06_d3c25fa2 (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 09:42:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "⏭️ [SHADOW_SKIP_FALLBACK] MT: fallback path skipped main predict (ai_chain already has 7 rows). Shadow trigger deferred to ai_chain path."
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_rerank",
+      "date_str": "2026-05-06",
+      "message": "🔀 [SHADOW_RERANK] MT: original=['99', '71'] → reranked=['99', '71'] (scores=[0.9752, 0.945], bt_changed=False, latency=1762ms)"
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[CASCADE_STAGE_END] region=MT stage=AI_CHAIN done_models=8 success=8 errors=0 duration=469.8s"
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "[SHADOW_PREFLIGHT] ✅ checked=13 warnings=['gemini-3.1-pro:db_env_drift:google:selected_db', 'gemini-3-flash:db_env_drift:google:selected_db', 'gemma-4-31b:db_env_drift:google:selected_db']"
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "🔍 === Shadow Auto-Eval Start (2026-05-06) === models=['glm-5.1', 'grok-4.20-multi-agent', 'qwen3-coder', 'kimi-k2.5', 'qwen3-max-thinking', 'gpt-oss-120b', 'gpt-5.5', 'deepseek-v4-pro', 'deepseek-v4-flash', 'qwen3.6-plus', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b'] regions=['MT'] trigger_source=ai_chain"
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  📦 [SHADOW_CONTEXT] [MT] source_data keys=['MT_D1', 'MB_D1', 'MN_D1', 'MN'] total_stations=9"
+    },
+    {
+      "log_time": "2026-05-06 09:42:38",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🧠 [SHADOW_ORDER_C16] [MT] ordered_by_budget_or_tensor=['grok-4.20-multi-agent', 'gpt-oss-120b', 'deepseek-v4-flash', 'qwen3-max-thinking', 'glm-5.1', 'kimi-k2.5', 'gpt-5.5', 'qwen3.6-plus', 'qwen3-coder', 'deepseek-v4-pro', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b']"
+    },
+    {
+      "log_time": "2026-05-06 09:42:39",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 1/13: grok-4.20-multi-agent — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:42:50",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] grok-4.20-multi-agent: ['71', '46'] (str=7.2, 11.6s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:42:50",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 2/13: gpt-oss-120b — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:44:56",
+      "log_level": "WARNING",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ⚠️ [MT] gpt-oss-120b: SAVED but EMPTY prediction [] (str=0.0, 125.3s) — parser/contract issue. [shadow_auto_eval][EMPTY_PREDICTION]"
+    },
+    {
+      "log_time": "2026-05-06 09:44:56",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 3/13: deepseek-v4-flash — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 09:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] start MT: fb=1 preds=17 trigger=cron_5min_readiness"
+    },
+    {
+      "log_time": "2026-05-06 09:45:01",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_start mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MT_realtime_available_only_2026-05-06"
+    },
+    {
+      "log_time": "2026-05-06 09:45:02",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_finish mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MT_realtime_available_only_2026-05-06 official_tables_touched=false"
+    },
+    {
+      "log_time": "2026-05-06 09:45:02",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] done MT: budget_selected=8 runs=7 bundles=7"
+    },
+    {
+      "log_time": "2026-05-06 09:45:13",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] deepseek-v4-flash: ['71', '46'] (str=7.5, 17.5s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:45:13",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 4/13: qwen3-max-thinking — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:45:42",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] qwen3-max-thinking: ['46', '71'] (str=7.2, 28.6s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:45:42",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 5/13: glm-5.1 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:46:32",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] glm-5.1: ['71', '46'] (str=7.5, 50.5s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:46:32",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 6/13: kimi-k2.5 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 09:51:35",
+      "log_level": "WARNING",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ❌ [MT] kimi-k2.5: ⚠️ Model kimi-k2.5: Trả về rỗng (finish_reason: None). Model có thể không hỗ trợ loại prompt này. (302.8s)"
+    },
+    {
+      "log_time": "2026-05-06 09:51:35",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 7/13: gpt-5.5 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:52:33",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] gpt-5.5: ['71', '46'] (str=7.1, 58.1s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:52:33",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 8/13: qwen3.6-plus — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:53:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] qwen3.6-plus: ['67', '46'] (str=7.5, 74.5s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:53:48",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 9/13: qwen3-coder — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:54:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] qwen3-coder: ['71', '46'] (str=7.5, 12.0s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:54:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 10/13: deepseek-v4-pro — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 09:55:15",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] deepseek-v4-pro: ['71', '46'] (str=6.8, 75.4s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:55:15",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 11/13: gemini-3.1-pro — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:56:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] gemini-3.1-pro: ['71', '67'] (str=7.2, 44.2s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:56:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 12/13: gemini-3-flash — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:56:17",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] gemini-3-flash: ['71', '46'] (str=7.1, 16.9s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:56:17",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 13/13: gemma-4-31b — starting..."
+    },
+    {
+      "log_time": "2026-05-06 09:58:19",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] gemma-4-31b: ['71', '67'] (str=7.5, 122.5s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 09:58:19",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "[SHADOW_SUMMARY] MT 2026-05-06: success=11 error=1 persisted=12 missing_rows=['kimi-k2.5'] empty_rows=['gpt-oss-120b']"
+    },
+    {
+      "log_time": "2026-05-06 09:58:19",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "🔍 Shadow Auto-Eval Done (ai_chain): regions=['MT']"
+    },
+    {
+      "log_time": "2026-05-06 10:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:30:06",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔑 [RUN_ID_SET] region=MB run_id=MB_2026-05-06_e6251ffd (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 10:30:06",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "✅ [RULE_QUALITY] MB (2026-05-06 wd=2): 1/5 READY_STRONG. Tiers: LIMITED_WEIGHT=4, READY_STRONG=1"
+    },
+    {
+      "log_time": "2026-05-06 10:30:06",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[CASCADE_STAGE_START] region=MB stage=AI_CHAIN expected_models=8 run_id=MB_2026-05-06_e6251ffd"
+    },
+    {
+      "log_time": "2026-05-06 10:30:06",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[AI_PREFLIGHT] ✅ MB checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_env_drift:google:selected_db', 'gemini-2.5-pro:db_env_drift:google:selected_db', 'gpt-5.4:db_env_drift:openai:selected_db', 'combo-super:hybrid_aggregator:skip_direct_key_check']"
+    },
+    {
+      "log_time": "2026-05-06 10:30:06",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gpt-5-mini region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:31:36",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gpt-5-mini region=MB status=OK duration=89.9s"
+    },
+    {
+      "log_time": "2026-05-06 10:31:36",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=claude-sonnet-4-6 region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:32:25",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=claude-sonnet-4-6 region=MB status=OK duration=48.7s"
+    },
+    {
+      "log_time": "2026-05-06 10:32:25",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gemini-2.5-flash region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:33:07",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gemini-2.5-flash region=MB status=OK duration=41.5s"
+    },
+    {
+      "log_time": "2026-05-06 10:33:07",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=claude-opus-4-20250514 region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:33:53",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=claude-opus-4-20250514 region=MB status=OK duration=46.3s"
+    },
+    {
+      "log_time": "2026-05-06 10:33:53",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=deepseek-reasoner region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:36:09",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=deepseek-reasoner region=MB status=OK duration=136.1s"
+    },
+    {
+      "log_time": "2026-05-06 10:36:09",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gemini-2.5-pro region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:36:53",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gemini-2.5-pro region=MB status=OK duration=44.3s"
+    },
+    {
+      "log_time": "2026-05-06 10:36:53",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_START] model=gpt-5.4 region=MB attempt=1"
+    },
+    {
+      "log_time": "2026-05-06 10:37:15",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[MODEL_CALL_END] model=gpt-5.4 region=MB status=OK duration=21.8s"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_rerank",
+      "date_str": "2026-05-06",
+      "message": "🔀 [SHADOW_RERANK] MB: original=['32', '78'] → reranked=['32', '78'] (scores=[0.9732, 0.9704], bt_changed=False, latency=1900ms)"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "[CASCADE_STAGE_END] region=MB stage=AI_CHAIN done_models=8 success=8 errors=0 duration=532.5s"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔒 [RUN_ID_END] region=MB run_id=MB_2026-05-06_e6251ffd (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "[SHADOW_PREFLIGHT] ✅ checked=13 warnings=['gemini-3.1-pro:db_env_drift:google:selected_db', 'gemini-3-flash:db_env_drift:google:selected_db', 'gemma-4-31b:db_env_drift:google:selected_db']"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "🔍 === Shadow Auto-Eval Start (2026-05-06) === models=['glm-5.1', 'grok-4.20-multi-agent', 'qwen3-coder', 'kimi-k2.5', 'qwen3-max-thinking', 'gpt-oss-120b', 'gpt-5.5', 'deepseek-v4-pro', 'deepseek-v4-flash', 'qwen3.6-plus', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b'] regions=['MB'] trigger_source=ai_chain"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  📦 [SHADOW_CONTEXT] [MB] source_data keys=['MT_D1', 'MB_D1', 'MN_D1', 'MN', 'MT'] total_stations=11"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🧠 [SHADOW_ORDER_C16] [MB] ordered_by_budget_or_tensor=['gemini-3-flash', 'grok-4.20-multi-agent', 'qwen3-coder', 'gpt-5.5', 'deepseek-v4-flash', 'qwen3.6-plus', 'deepseek-v4-pro', 'glm-5.1', 'qwen3-max-thinking', 'gpt-oss-120b', 'kimi-k2.5', 'gemini-3.1-pro', 'gemma-4-31b']"
+    },
+    {
+      "log_time": "2026-05-06 10:38:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 1/13: gemini-3-flash — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:39:22",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] gemini-3-flash: ['64', '49'] (str=6.0, 22.9s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:39:22",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 2/13: grok-4.20-multi-agent — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:39:33",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] grok-4.20-multi-agent: ['78', '37'] (str=6.0, 11.2s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:39:33",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 3/13: qwen3-coder — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:39:44",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] qwen3-coder: ['78', '37'] (str=6.0, 10.3s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:39:44",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 4/13: gpt-5.5 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] start MB: fb=1 preds=18 trigger=cron_5min_readiness"
+    },
+    {
+      "log_time": "2026-05-06 10:40:01",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_start mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MB_realtime_available_only_2026-05-06"
+    },
+    {
+      "log_time": "2026-05-06 10:40:04",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_mb",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-MB] runner_finish mode=REALTIME_AVAILABLE_ONLY run_label=du_doan_test_v52_5_6_MB_realtime_available_only_2026-05-06 official_tables_touched=false"
+    },
+    {
+      "log_time": "2026-05-06 10:40:04",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] done MB: budget_selected=8 runs=7 bundles=7"
+    },
+    {
+      "log_time": "2026-05-06 10:41:02",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] gpt-5.5: ['49', '64'] (str=6.0, 78.0s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:41:02",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 5/13: deepseek-v4-flash — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:41:44",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] deepseek-v4-flash: ['79', '49'] (str=6.0, 41.8s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:41:44",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 6/13: qwen3.6-plus — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:42:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔑 [RUN_ID_SET] region=MB run_id=MB_2026-05-06_1e0e63a1 (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 10:42:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "✅ [FALLBACK_CLEAR] MB (2026-05-06): all upstream verified. Fallback cron proceeding (redundant with main-flow cascade)."
+    },
+    {
+      "log_time": "2026-05-06 10:42:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "✅ [RULE_QUALITY] MB (2026-05-06 wd=2): 1/5 READY_STRONG. Tiers: LIMITED_WEIGHT=4, READY_STRONG=1"
+    },
+    {
+      "log_time": "2026-05-06 10:42:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "ai_predict",
+      "date_str": "2026-05-06",
+      "message": "🔒 [RUN_ID_END] region=MB run_id=MB_2026-05-06_1e0e63a1 (ai-predict batch)"
+    },
+    {
+      "log_time": "2026-05-06 10:42:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "⏭️ [SHADOW_SKIP_FALLBACK] MB: fallback path skipped main predict (ai_chain already has 8 rows). Shadow trigger deferred to ai_chain path."
+    },
+    {
+      "log_time": "2026-05-06 10:43:35",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] qwen3.6-plus: ['49', '64'] (str=6.0, 111.6s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:43:35",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 7/13: deepseek-v4-pro — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:46:14",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] deepseek-v4-pro: ['49', '13'] (str=5.5, 158.8s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:46:14",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 8/13: glm-5.1 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:48:58",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] glm-5.1: ['49', '79'] (str=5.0, 163.7s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:48:58",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 9/13: qwen3-max-thinking — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:49:26",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] qwen3-max-thinking: ['62', '38'] (str=5.8, 27.8s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:49:26",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 10/13: gpt-oss-120b — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:50:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] gpt-oss-120b: ['78', '37'] (str=0.0, 92.9s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:50:59",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 11/13: kimi-k2.5 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:53:37",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] kimi-k2.5: ['49', '71'] (str=6.0, 158.3s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:53:37",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 12/13: gemini-3.1-pro — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:54:24",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] gemini-3.1-pro: ['49', '64'] (str=6.0, 47.4s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:54:24",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MB] model 13/13: gemma-4-31b — starting..."
+    },
+    {
+      "log_time": "2026-05-06 10:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 10:56:08",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MB] gemma-4-31b: ['49', '64'] (str=6.0, 103.9s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 10:56:08",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "[SHADOW_SUMMARY] MB 2026-05-06: success=13 error=0 persisted=13 missing_rows=[] empty_rows=[]"
+    },
+    {
+      "log_time": "2026-05-06 10:56:08",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "🔍 Shadow Auto-Eval Done (ai_chain): regions=['MB']"
+    },
+    {
+      "log_time": "2026-05-06 11:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:30:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:35:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:45:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:50:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 11:55:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:00:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:05:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:10:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:15:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:20:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:25:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:30:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:30:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:35:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:45:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:50:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 12:55:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:00:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:05:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:10:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:15:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:20:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:25:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:30:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:30:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:35:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:45:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:50:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 13:55:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:00:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:05:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:10:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:15:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:20:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:25:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:30:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:30:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:35:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:45:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:50:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 14:55:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:00:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:05:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:10:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:15:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:20:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:25:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:30:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:30:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:30:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:35:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:35:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:35:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:40:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:40:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:40:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:45:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:45:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:45:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:50:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:50:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:50:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:55:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:55:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 15:55:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:00:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:00:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:00:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:05:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:05:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:05:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:10:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:10:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:10:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:11:50",
+      "log_level": "INFO",
+      "region": null,
+      "job_name": null,
+      "date_str": null,
+      "message": "🧪 /du-doan-test pre-result trigger: every 5 minutes, readiness-gated"
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_catchup",
+      "date_str": "2026-05-06",
+      "message": "🔄 [SHADOW_CATCH_UP] [MT] Incomplete shadow eval detected: 11/13 models. Recovering 2 missing models..."
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "[SHADOW_PREFLIGHT] ✅ checked=13 warnings=['gemini-3.1-pro:db_env_drift:google:selected_db', 'gemini-3-flash:db_env_drift:google:selected_db', 'gemma-4-31b:db_env_drift:google:selected_db']"
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "🔍 === Shadow Auto-Eval Start (2026-05-06) === models=['glm-5.1', 'grok-4.20-multi-agent', 'qwen3-coder', 'kimi-k2.5', 'qwen3-max-thinking', 'gpt-oss-120b', 'gpt-5.5', 'deepseek-v4-pro', 'deepseek-v4-flash', 'qwen3.6-plus', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b'] regions=['MT'] trigger_source=startup_shadow_catchup"
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  📦 [SHADOW_CONTEXT] [MT] source_data keys=['MT_D1', 'MB_D1', 'MN_D1', 'MN'] total_stations=9"
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🧠 [SHADOW_ORDER_C16] [MT] ordered_by_budget_or_tensor=['gpt-oss-120b', 'qwen3-coder', 'grok-4.20-multi-agent', 'kimi-k2.5', 'glm-5.1', 'qwen3-max-thinking', 'qwen3.6-plus', 'gpt-5.5', 'deepseek-v4-flash', 'deepseek-v4-pro', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b']"
+    },
+    {
+      "log_time": "2026-05-06 16:12:20",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 1/13: gpt-oss-120b — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:13:35",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] gpt-oss-120b: ['46', '71'] (str=0.0, 75.1s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:13:35",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 2/13: qwen3-coder — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:14:16",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] qwen3-coder: ['78', '43'] (str=7.5, 41.2s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:14:17",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 3/13: grok-4.20-multi-agent — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:14:29",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] grok-4.20-multi-agent: ['46', '71'] (str=7.2, 12.5s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:14:29",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 4/13: kimi-k2.5 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:15:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:15:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:15:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:20:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:20:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:20:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:25:00",
+      "log_level": "INFO",
+      "region": "MN",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:25:00",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:25:00",
+      "log_level": "INFO",
+      "region": "MB",
+      "job_name": "du_doan_test_auto",
+      "date_str": "2026-05-06",
+      "message": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+    },
+    {
+      "log_time": "2026-05-06 16:25:19",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] kimi-k2.5: ['67', '46'] (str=7.5, 649.4s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:25:19",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 5/13: glm-5.1 — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:26:06",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] glm-5.1: ['46', '71'] (str=7.1, 47.9s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:26:06",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 6/13: qwen3-max-thinking — starting..."
+    },
+    {
+      "log_time": "2026-05-06 16:26:34",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  ✅ [MT] qwen3-max-thinking: ['46', '71'] (str=7.2, 27.4s) [shadow_auto_eval]"
+    },
+    {
+      "log_time": "2026-05-06 16:26:34",
+      "log_level": "INFO",
+      "region": "MT",
+      "job_name": "shadow_eval",
+      "date_str": "2026-05-06",
+      "message": "  🔄 [SHADOW_EVAL_SEQUENTIAL] [MT] model 7/13: qwen3.6-plus — starting..."
+    }
+  ]
+}
