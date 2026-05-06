@@ -1,0 +1,669 @@
+{
+  "latency": [
+    {
+      "date": "2026-05-03",
+      "region": "MB",
+      "rows": 50,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MN",
+      "rows": 50,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MT",
+      "rows": 50,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MB",
+      "rows": 25,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MN",
+      "rows": 25,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MT",
+      "rows": 25,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MB",
+      "rows": 27,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MN",
+      "rows": 27,
+      "latency_available": 0,
+      "no_duration": 0
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MT",
+      "rows": 27,
+      "latency_available": 0,
+      "no_duration": 0
+    }
+  ],
+  "loz_stage": [
+    {
+      "date": "2026-05-03",
+      "region": "MB",
+      "rows": 24,
+      "top1": 3,
+      "top2": 4,
+      "top10": 4,
+      "loz_miss": 2,
+      "pool_miss": 1
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MN",
+      "rows": 36,
+      "top1": 5,
+      "top2": 9,
+      "top10": 9,
+      "loz_miss": 5,
+      "pool_miss": 2
+    },
+    {
+      "date": "2026-05-03",
+      "region": "MT",
+      "rows": 40,
+      "top1": 2,
+      "top2": 5,
+      "top10": 5,
+      "loz_miss": 4,
+      "pool_miss": 1
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MB",
+      "rows": 22,
+      "top1": 3,
+      "top2": 3,
+      "top10": 3,
+      "loz_miss": 2,
+      "pool_miss": 1
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MN",
+      "rows": 39,
+      "top1": 2,
+      "top2": 3,
+      "top10": 3,
+      "loz_miss": 2,
+      "pool_miss": 0
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MT",
+      "rows": 27,
+      "top1": 3,
+      "top2": 6,
+      "top10": 6,
+      "loz_miss": 1,
+      "pool_miss": 3
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MB",
+      "rows": 22,
+      "top1": 5,
+      "top2": 5,
+      "top10": 5,
+      "loz_miss": 2,
+      "pool_miss": 3
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MN",
+      "rows": 42,
+      "top1": 3,
+      "top2": 5,
+      "top10": 5,
+      "loz_miss": 3,
+      "pool_miss": 2
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MT",
+      "rows": 30,
+      "top1": 6,
+      "top2": 6,
+      "top10": 6,
+      "loz_miss": 5,
+      "pool_miss": 0
+    }
+  ],
+  "mt_drop": [
+    {
+      "date": "2026-05-03",
+      "region": "MT",
+      "rows": 10,
+      "ai_drop": 4,
+      "notoken_drop": 6
+    },
+    {
+      "date": "2026-05-04",
+      "region": "MT",
+      "rows": 5,
+      "ai_drop": 2,
+      "notoken_drop": 0
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MT",
+      "rows": 5,
+      "ai_drop": 4,
+      "notoken_drop": 3
+    }
+  ],
+  "strength_latest": [
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region",
+      "window_days": 7,
+      "rows": 27
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region",
+      "window_days": 14,
+      "rows": 33
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region",
+      "window_days": 30,
+      "rows": 39
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region",
+      "window_days": 60,
+      "rows": 71
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_station",
+      "window_days": 7,
+      "rows": 152
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_station",
+      "window_days": 14,
+      "rows": 165
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_station",
+      "window_days": 30,
+      "rows": 196
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_station",
+      "window_days": 60,
+      "rows": 376
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_weekday",
+      "window_days": 7,
+      "rows": 177
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_weekday",
+      "window_days": 14,
+      "rows": 191
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_weekday",
+      "window_days": 30,
+      "rows": 224
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "grain": "region_weekday",
+      "window_days": 60,
+      "rows": 432
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region",
+      "window_days": 7,
+      "rows": 27
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region",
+      "window_days": 14,
+      "rows": 32
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region",
+      "window_days": 30,
+      "rows": 51
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region",
+      "window_days": 60,
+      "rows": 61
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_station",
+      "window_days": 7,
+      "rows": 531
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_station",
+      "window_days": 14,
+      "rows": 568
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_station",
+      "window_days": 30,
+      "rows": 679
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_station",
+      "window_days": 60,
+      "rows": 748
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_weekday",
+      "window_days": 7,
+      "rows": 177
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_weekday",
+      "window_days": 14,
+      "rows": 189
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_weekday",
+      "window_days": 30,
+      "rows": 224
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "grain": "region_weekday",
+      "window_days": 60,
+      "rows": 247
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region",
+      "window_days": 7,
+      "rows": 27
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region",
+      "window_days": 14,
+      "rows": 33
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region",
+      "window_days": 30,
+      "rows": 41
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region",
+      "window_days": 60,
+      "rows": 71
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_station",
+      "window_days": 7,
+      "rows": 354
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_station",
+      "window_days": 14,
+      "rows": 405
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_station",
+      "window_days": 30,
+      "rows": 460
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_station",
+      "window_days": 60,
+      "rows": 865
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_weekday",
+      "window_days": 7,
+      "rows": 177
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_weekday",
+      "window_days": 14,
+      "rows": 190
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_weekday",
+      "window_days": 30,
+      "rows": 218
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "grain": "region_weekday",
+      "window_days": 60,
+      "rows": 417
+    }
+  ],
+  "weekday_blackspot_latest": [
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Mon",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.2
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Tue",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.2
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Thu",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Sat",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MB",
+      "weekday_name": "Sun",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Mon",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 4,
+      "bt_rate": 0.8,
+      "lo2_full_rate": 0.6,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Tue",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 3,
+      "bt_rate": 0.6,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.6
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Thu",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 3,
+      "bt_rate": 0.75,
+      "lo2_full_rate": 0.75,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.75
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Sat",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MN",
+      "weekday_name": "Sun",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 3,
+      "bt_rate": 0.75,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Mon",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 5,
+      "bt_wins": 1,
+      "bt_rate": 0.2,
+      "lo2_full_rate": 0.2,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Tue",
+      "blackspot_label": "WATCH",
+      "total_days": 5,
+      "bt_wins": 2,
+      "bt_rate": 0.4,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.8
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Wed",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Thu",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 4,
+      "bt_rate": 1.0,
+      "lo2_full_rate": 0.75,
+      "lo2_any_rate": 1.0
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Fri",
+      "blackspot_label": "WEEKDAY_BLACK_SPOT_CONFIRMED",
+      "total_days": 4,
+      "bt_wins": 0,
+      "bt_rate": 0.0,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.25
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Sat",
+      "blackspot_label": "WEEKDAY_STRUCTURAL_RISK",
+      "total_days": 4,
+      "bt_wins": 1,
+      "bt_rate": 0.25,
+      "lo2_full_rate": 0.0,
+      "lo2_any_rate": 0.5
+    },
+    {
+      "anchor_date": "2026-05-05",
+      "region": "MT",
+      "weekday_name": "Sun",
+      "blackspot_label": "WATCH",
+      "total_days": 4,
+      "bt_wins": 2,
+      "bt_rate": 0.5,
+      "lo2_full_rate": 0.25,
+      "lo2_any_rate": 0.5
+    }
+  ]
+}

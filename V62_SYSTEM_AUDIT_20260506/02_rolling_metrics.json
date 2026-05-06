@@ -1,0 +1,116 @@
+{
+  "MN": {
+    "7d": {
+      "n": 7,
+      "bt_win": 3,
+      "bt_pct": 42.9,
+      "lo2_full": 3,
+      "lo2_any": 4,
+      "lo2_full_pct": 42.9,
+      "lo2_any_pct": 57.1
+    },
+    "14d": {
+      "n": 14,
+      "bt_win": 6,
+      "bt_pct": 42.9,
+      "lo2_full": 5,
+      "lo2_any": 9,
+      "lo2_full_pct": 35.7,
+      "lo2_any_pct": 64.3
+    },
+    "30d": {
+      "n": 30,
+      "bt_win": 16,
+      "bt_pct": 53.3,
+      "lo2_full": 8,
+      "lo2_any": 24,
+      "lo2_full_pct": 26.7,
+      "lo2_any_pct": 80.0
+    },
+    "60d": {
+      "n": 60,
+      "bt_win": 28,
+      "bt_pct": 46.7,
+      "lo2_full": 17,
+      "lo2_any": 40,
+      "lo2_full_pct": 28.3,
+      "lo2_any_pct": 66.7
+    }
+  },
+  "MT": {
+    "7d": {
+      "n": 7,
+      "bt_win": 5,
+      "bt_pct": 71.4,
+      "lo2_full": 2,
+      "lo2_any": 5,
+      "lo2_full_pct": 28.6,
+      "lo2_any_pct": 71.4
+    },
+    "14d": {
+      "n": 14,
+      "bt_win": 8,
+      "bt_pct": 57.1,
+      "lo2_full": 2,
+      "lo2_any": 9,
+      "lo2_full_pct": 14.3,
+      "lo2_any_pct": 64.3
+    },
+    "30d": {
+      "n": 30,
+      "bt_win": 12,
+      "bt_pct": 40.0,
+      "lo2_full": 5,
+      "lo2_any": 20,
+      "lo2_full_pct": 16.7,
+      "lo2_any_pct": 66.7
+    },
+    "60d": {
+      "n": 60,
+      "bt_win": 30,
+      "bt_pct": 50.0,
+      "lo2_full": 12,
+      "lo2_any": 43,
+      "lo2_full_pct": 20.0,
+      "lo2_any_pct": 71.7
+    }
+  },
+  "MB": {
+    "7d": {
+      "n": 7,
+      "bt_win": 1,
+      "bt_pct": 14.3,
+      "lo2_full": 0,
+      "lo2_any": 2,
+      "lo2_full_pct": 0.0,
+      "lo2_any_pct": 28.6
+    },
+    "14d": {
+      "n": 14,
+      "bt_win": 4,
+      "bt_pct": 28.6,
+      "lo2_full": 1,
+      "lo2_any": 8,
+      "lo2_full_pct": 7.1,
+      "lo2_any_pct": 57.1
+    },
+    "30d": {
+      "n": 30,
+      "bt_win": 6,
+      "bt_pct": 20.0,
+      "lo2_full": 2,
+      "lo2_any": 11,
+      "lo2_full_pct": 6.7,
+      "lo2_any_pct": 36.7
+    },
+    "60d": {
+      "n": 60,
+      "bt_win": 15,
+      "bt_pct": 25.0,
+      "lo2_full": 2,
+      "lo2_any": 26,
+      "lo2_full_pct": 3.3,
+      "lo2_any_pct": 43.3
+    }
+  }
+}

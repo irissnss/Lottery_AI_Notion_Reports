@@ -1,0 +1,50 @@
+[
+  {
+    "id": "FU-128/C-05",
+    "title": "Per-model latency/cost instrumentation missing",
+    "status": "BROKEN_NEEDS_FIX",
+    "priority": "P0"
+  },
+  {
+    "id": "FU-124/C-03",
+    "title": "Multi-region closeout evaluator",
+    "status": "WAIT_3_5_CLEAN_CLOSEOUTS",
+    "priority": "P0/P1"
+  },
+  {
+    "id": "FU-130/C-04",
+    "title": "Test-lane scheduler auto-wire readiness",
+    "status": "WAIT_3_5_CLEAN_CLOSEOUTS",
+    "priority": "P1"
+  },
+  {
+    "id": "FU-129/C-14",
+    "title": "Strength tensor UI chips",
+    "status": "READY_TO_BUILD_UI_TEST_ONLY",
+    "priority": "P2"
+  },
+  {
+    "id": "FU-121/C-07",
+    "title": "MT correct-but-dropped UI panel",
+    "status": "READY_TO_BUILD_UI_TEST_ONLY",
+    "priority": "P1"
+  },
+  {
+    "id": "FU-123/C-15",
+    "title": "MB blackspot alert UI surface",
+    "status": "DEPLOYED_PENDING_LIVE_VERIFY",
+    "priority": "P2"
+  },
+  {
+    "id": "FU-132/C-16",
+    "title": "Adaptive model budget selector",
+    "status": "DEPLOYED_PENDING_LIVE_VERIFY",
+    "priority": "P1"
+  },
+  {
+    "id": "FU-125",
+    "title": "V55 Google direct shadow cohort",
+    "status": "DEPLOYED_PENDING_LIVE_VERIFY",
+    "priority": "P2"
+  }
+]

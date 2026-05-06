@@ -14,3 +14,8 @@ Raw first link:
 https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/READ_THIS_FIRST.md
 
 This repository contains report exports only. The private code/runtime repo remains `irissnss/Lottery_AI_Test`.
+
+## Latest V62 Audit
+
+- [V62 read-first](V62_SYSTEM_AUDIT_20260506/READ_THIS_FIRST.md)
+- [V62 raw links](V62_SYSTEM_AUDIT_20260506/00_RAW_LINKS.md)

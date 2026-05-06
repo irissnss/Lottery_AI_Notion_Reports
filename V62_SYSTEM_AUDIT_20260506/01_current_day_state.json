@@ -1,0 +1,807 @@
+{
+  "MN": {
+    "predictions_by_run_source": [
+      {
+        "run_source": "auto_daily",
+        "n": 15,
+        "models": "claude-opus-4-20250514,claude-sonnet-4-6,combo-no-token,combo-super,deepseek-reasoner,gemini-2.5-flash,gemini-2.5-pro,gpt-5-mini,gpt-5.4,lstm,meta-learning,random-forest,smart-ensemble,smart-ml,xgboost"
+      },
+      {
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "models": "deepseek-v4-flash,deepseek-v4-pro,gemini-3-flash,gemini-3.1-pro,gemma-4-31b,glm-5.1,gpt-5.5,gpt-oss-120b,grok-4.20-multi-agent,kimi-k2.5,qwen3-coder,qwen3-max-thinking,qwen3.6-plus"
+      }
+    ],
+    "final_bundle": [
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "bach_thu": "95",
+        "lo2": "[\"95\", \"46\"]",
+        "lo3": "395",
+        "xien2": "[\"95\", \"46\"]",
+        "xien3": "[\"95\", \"46\", \"27\"]",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "lo3_status": "LOSE",
+        "xien2_status": "LOSE",
+        "xien3_status": "LOSE",
+        "created_at": "2026-05-06 04:24:20",
+        "updated_at": "2026-05-06 16:34:36",
+        "verified_at": "2026-05-06 16:34:36"
+      }
+    ],
+    "lottery_results": [
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "station": "Cần Thơ",
+        "tail_db": "05",
+        "tail_g8": "94",
+        "created_at": "2026-05-06T16:34:35.835860+07:00"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "station": "Sóc Trăng",
+        "tail_db": "40",
+        "tail_g8": "78",
+        "created_at": "2026-05-06T16:34:35.841607+07:00"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "station": "Đồng Nai",
+        "tail_db": "11",
+        "tail_g8": "15",
+        "created_at": "2026-05-06T16:34:35.829649+07:00"
+      }
+    ],
+    "test_budget": [
+      {
+        "run_date": "2026-05-06",
+        "region": "MN",
+        "total_pool_count": 29,
+        "measured_pool_count": 28,
+        "selected_count": 10,
+        "watch_count": 18,
+        "skipped_count": 1,
+        "station_set_json": "[\"Cần Thơ\", \"Sóc Trăng\", \"Đồng Nai\", \"Khánh Hòa\", \"Đà Nẵng\"]",
+        "budget_version": "c16_adaptive_model_budget_v1",
+        "created_at": "2026-05-06T07:50:52+07:00"
+      }
+    ],
+    "test_bundles": [
+      {
+        "experiment_name": "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_AI_CHAIN_PRESERVATION_V1",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_NO_TOKEN_HERD_REDUCTION_V1",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_OFFICIAL_BASELINE_CONTROL",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "test_bt": null,
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_SPECIALIST_ROSTER_V1",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      },
+      {
+        "experiment_name": "MN_STRENGTH_WEIGHTED_V52_5_2",
+        "test_bt": "95",
+        "official_bt": "95",
+        "test_lo2_json": "[\"95\", \"46\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:54+07:00"
+      }
+    ],
+    "experimental_preview": [
+      {
+        "experiment_name": "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:52+07:00"
+      },
+      {
+        "experiment_name": "MN_AI_CHAIN_PRESERVATION_V1",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      },
+      {
+        "experiment_name": "MN_NO_TOKEN_HERD_REDUCTION_V1",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      },
+      {
+        "experiment_name": "MN_OFFICIAL_BASELINE_CONTROL",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      },
+      {
+        "experiment_name": "MN_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "candidate_bt": null,
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      },
+      {
+        "experiment_name": "MN_SPECIALIST_ROSTER_V1",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      },
+      {
+        "experiment_name": "MN_STRENGTH_WEIGHTED_V52_5_2",
+        "candidate_bt": "95",
+        "baseline_bt": "95",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T07:50:53+07:00"
+      }
+    ]
+  },
+  "MT": {
+    "predictions_by_run_source": [
+      {
+        "run_source": "ai_chain",
+        "n": 8,
+        "models": "claude-opus-4-20250514,claude-sonnet-4-6,combo-super,deepseek-reasoner,gemini-2.5-flash,gemini-2.5-pro,gpt-5-mini,gpt-5.4"
+      },
+      {
+        "run_source": "rerun_post_mn",
+        "n": 7,
+        "models": "combo-no-token,lstm,meta-learning,random-forest,smart-ensemble,smart-ml,xgboost"
+      },
+      {
+        "run_source": "shadow_auto_eval",
+        "n": 12,
+        "models": "deepseek-v4-flash,deepseek-v4-pro,gemini-3-flash,gemini-3.1-pro,gemma-4-31b,glm-5.1,gpt-5.5,gpt-oss-120b,grok-4.20-multi-agent,qwen3-coder,qwen3-max-thinking,qwen3.6-plus"
+      }
+    ],
+    "final_bundle": [
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "bach_thu": "11",
+        "lo2": "[\"11\", \"99\"]",
+        "lo3": "811",
+        "xien2": "[\"11\", \"99\"]",
+        "xien3": "[\"11\", \"99\", \"87\"]",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "lo3_status": "LOSE",
+        "xien2_status": "LOSE",
+        "xien3_status": "LOSE",
+        "created_at": "2026-05-06 16:42:00",
+        "updated_at": "2026-05-06 17:30:00",
+        "verified_at": "2026-05-06 17:30:00"
+      }
+    ],
+    "lottery_results": [
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "station": "Khánh Hòa",
+        "tail_db": "04",
+        "tail_g8": "85",
+        "created_at": "2026-05-06T17:30:00.670123+07:00"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "station": "Đà Nẵng",
+        "tail_db": "69",
+        "tail_g8": "21",
+        "created_at": "2026-05-06T17:30:00.663173+07:00"
+      }
+    ],
+    "test_budget": [
+      {
+        "run_date": "2026-05-06",
+        "region": "MT",
+        "total_pool_count": 29,
+        "measured_pool_count": 22,
+        "selected_count": 8,
+        "watch_count": 10,
+        "skipped_count": 11,
+        "station_set_json": "[\"Khánh Hòa\", \"Đà Nẵng\"]",
+        "budget_version": "c16_adaptive_model_budget_v1",
+        "created_at": "2026-05-06T16:45:00+07:00"
+      }
+    ],
+    "test_bundles": [
+      {
+        "experiment_name": "MT_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "test_bt": "71",
+        "official_bt": "11",
+        "test_lo2_json": "[\"71\", \"87\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_AI_CHAIN_PRESERVATION_V1",
+        "test_bt": "71",
+        "official_bt": "11",
+        "test_lo2_json": "[\"71\", \"11\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_NO_TOKEN_HERD_REDUCTION_V1",
+        "test_bt": "71",
+        "official_bt": "11",
+        "test_lo2_json": "[\"71\", \"11\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_OFFICIAL_BASELINE_CONTROL",
+        "test_bt": "11",
+        "official_bt": "11",
+        "test_lo2_json": "[\"11\", \"99\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "test_bt": "11",
+        "official_bt": "11",
+        "test_lo2_json": "[\"11\", \"99\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_SPECIALIST_ROSTER_V1",
+        "test_bt": "11",
+        "official_bt": "11",
+        "test_lo2_json": "[\"11\", \"99\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_STRENGTH_WEIGHTED_V52_5_2",
+        "test_bt": "71",
+        "official_bt": "11",
+        "test_lo2_json": "[\"71\", \"11\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      }
+    ],
+    "experimental_preview": [
+      {
+        "experiment_name": "MT_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "candidate_bt": "71",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:00+07:00"
+      },
+      {
+        "experiment_name": "MT_AI_CHAIN_PRESERVATION_V1",
+        "candidate_bt": "71",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_NO_TOKEN_HERD_REDUCTION_V1",
+        "candidate_bt": "71",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_OFFICIAL_BASELINE_CONTROL",
+        "candidate_bt": "11",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "candidate_bt": "11",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_SPECIALIST_ROSTER_V1",
+        "candidate_bt": "11",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      },
+      {
+        "experiment_name": "MT_STRENGTH_WEIGHTED_V52_5_2",
+        "candidate_bt": "71",
+        "baseline_bt": "11",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T16:45:01+07:00"
+      }
+    ]
+  },
+  "MB": {
+    "predictions_by_run_source": [
+      {
+        "run_source": "ai_chain",
+        "n": 8,
+        "models": "claude-opus-4-20250514,claude-sonnet-4-6,combo-super,deepseek-reasoner,gemini-2.5-flash,gemini-2.5-pro,gpt-5-mini,gpt-5.4"
+      },
+      {
+        "run_source": "rerun_post_mt",
+        "n": 7,
+        "models": "combo-no-token,lstm,meta-learning,random-forest,smart-ensemble,smart-ml,xgboost"
+      },
+      {
+        "run_source": "shadow_auto_eval",
+        "n": 13,
+        "models": "deepseek-v4-flash,deepseek-v4-pro,gemini-3-flash,gemini-3.1-pro,gemma-4-31b,glm-5.1,gpt-5.5,gpt-oss-120b,grok-4.20-multi-agent,kimi-k2.5,qwen3-coder,qwen3-max-thinking,qwen3.6-plus"
+      }
+    ],
+    "final_bundle": [
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "bach_thu": "79",
+        "lo2": "[\"79\", \"32\"]",
+        "lo3": "779",
+        "xien2": "[\"79\", \"32\"]",
+        "xien3": "[\"79\", \"32\", \"49\"]",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "lo3_status": "LOSE",
+        "xien2_status": "LOSE",
+        "xien3_status": "LOSE",
+        "created_at": "2026-05-06 17:38:59",
+        "updated_at": "2026-05-06 18:31:33",
+        "verified_at": "2026-05-06 18:31:33"
+      }
+    ],
+    "lottery_results": [
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "station": "Bắc Ninh",
+        "tail_db": "41",
+        "tail_g8": "90",
+        "created_at": "2026-05-06T18:31:32.933031+07:00"
+      }
+    ],
+    "test_budget": [
+      {
+        "run_date": "2026-05-06",
+        "region": "MB",
+        "total_pool_count": 29,
+        "measured_pool_count": 23,
+        "selected_count": 8,
+        "watch_count": 10,
+        "skipped_count": 11,
+        "station_set_json": "[\"Bắc Ninh\"]",
+        "budget_version": "c16_adaptive_model_budget_v1",
+        "created_at": "2026-05-06T17:40:00+07:00"
+      }
+    ],
+    "test_bundles": [
+      {
+        "experiment_name": "MB_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "test_bt": "79",
+        "official_bt": "79",
+        "test_lo2_json": "[\"79\", \"92\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.929262+07:00"
+      },
+      {
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_COMPOSITE_CHALLENGER_V2",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.924604+07:00"
+      },
+      {
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.935834+07:00"
+      },
+      {
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "test_bt": "79",
+        "official_bt": "79",
+        "test_lo2_json": "[\"79\", \"32\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.920956+07:00"
+      },
+      {
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "test_bt": "79",
+        "official_bt": "79",
+        "test_lo2_json": "[\"79\", \"32\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.933632+07:00"
+      },
+      {
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "test_bt": null,
+        "official_bt": "79",
+        "test_lo2_json": "[\"79\", \"32\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.931519+07:00"
+      },
+      {
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "test_bt": null,
+        "official_bt": "79",
+        "test_lo2_json": "[\"79\", \"32\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_STRENGTH_WEIGHTED_V52_5_2",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:03+07:00"
+      },
+      {
+        "experiment_name": "MB_TIER_AWARE_BUNDLE_SHADOW_V1",
+        "test_bt": "32",
+        "official_bt": "79",
+        "test_lo2_json": "[\"32\", \"79\"]",
+        "test_bt_status": "PENDING",
+        "test_lo2_status": "PENDING",
+        "would_save": 0,
+        "would_break": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:01.927192+07:00"
+      }
+    ],
+    "experimental_preview": [
+      {
+        "experiment_name": "MB_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "candidate_bt": "79",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:00+07:00"
+      },
+      {
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "candidate_bt": "32",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      },
+      {
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "candidate_bt": "32",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      },
+      {
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "candidate_bt": "79",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      },
+      {
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "candidate_bt": "32",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      },
+      {
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "candidate_bt": null,
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      },
+      {
+        "experiment_name": "MB_STRENGTH_WEIGHTED_V52_5_2",
+        "candidate_bt": "32",
+        "baseline_bt": "79",
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "actual_known": 0,
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "created_at": "2026-05-06T17:40:02+07:00"
+      }
+    ]
+  }
+}
