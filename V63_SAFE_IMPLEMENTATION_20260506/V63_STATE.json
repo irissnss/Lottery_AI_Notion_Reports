@@ -1,0 +1,132 @@
+{
+  "version": "V20.3.37.63",
+  "sync_manifest": "artifacts/live_sync/20260506_231849/manifest.json",
+  "c05_status": "DEPLOYED_PENDING_NEXT_MODEL_CALL",
+  "c03_status": "MULTI_REGION_EVALUATOR_DEPLOYED_AND_BACKFILLED_2026_05_05",
+  "latency_rows_2026_05_06": [
+    {
+      "date": "2026-05-06",
+      "region": "MB",
+      "row_count": 28,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MN",
+      "row_count": 28,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MT",
+      "row_count": 27,
+      "latency_available": 0,
+      "missing": "NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT"
+    }
+  ],
+  "evaluator_2026_05_05": [
+    {
+      "run_date": "2026-05-05",
+      "region": "MB",
+      "runs": 14,
+      "test_bt_wins": 2,
+      "would_save": 2,
+      "would_break": 0,
+      "false_promotion": 0
+    },
+    {
+      "run_date": "2026-05-05",
+      "region": "MN",
+      "runs": 7,
+      "test_bt_wins": 2,
+      "would_save": 2,
+      "would_break": 0,
+      "false_promotion": 0
+    },
+    {
+      "run_date": "2026-05-05",
+      "region": "MT",
+      "runs": 7,
+      "test_bt_wins": 7,
+      "would_save": 0,
+      "would_break": 0,
+      "false_promotion": 0
+    }
+  ],
+  "scoreboards": [
+    {
+      "region": "MB",
+      "window_days": 7,
+      "experiment_rows": 9,
+      "total_runs": 84,
+      "would_save": 14,
+      "would_break": 8
+    },
+    {
+      "region": "MB",
+      "window_days": 14,
+      "experiment_rows": 9,
+      "total_runs": 126,
+      "would_save": 19,
+      "would_break": 13
+    },
+    {
+      "region": "MB",
+      "window_days": 30,
+      "experiment_rows": 9,
+      "total_runs": 222,
+      "would_save": 28,
+      "would_break": 17
+    },
+    {
+      "region": "MN",
+      "window_days": 7,
+      "experiment_rows": 7,
+      "total_runs": 49,
+      "would_save": 4,
+      "would_break": 0
+    },
+    {
+      "region": "MN",
+      "window_days": 14,
+      "experiment_rows": 7,
+      "total_runs": 91,
+      "would_save": 4,
+      "would_break": 0
+    },
+    {
+      "region": "MN",
+      "window_days": 30,
+      "experiment_rows": 7,
+      "total_runs": 187,
+      "would_save": 5,
+      "would_break": 0
+    },
+    {
+      "region": "MT",
+      "window_days": 7,
+      "experiment_rows": 7,
+      "total_runs": 49,
+      "would_save": 0,
+      "would_break": 6
+    },
+    {
+      "region": "MT",
+      "window_days": 14,
+      "experiment_rows": 7,
+      "total_runs": 91,
+      "would_save": 5,
+      "would_break": 9
+    },
+    {
+      "region": "MT",
+      "window_days": 30,
+      "experiment_rows": 7,
+      "total_runs": 187,
+      "would_save": 13,
+      "would_break": 14
+    }
+  ]
+}
