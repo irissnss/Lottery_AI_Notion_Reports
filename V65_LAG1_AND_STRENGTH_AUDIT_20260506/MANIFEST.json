@@ -1,0 +1,64 @@
+{
+  "version": "V65",
+  "title": "V65 Lag-1 leakage + strength priority + test-lane weighting audit",
+  "published_at": "2026-05-07T00:15:00+07:00",
+  "source": "private repo artifacts/v65_lag1_audit/",
+  "files": [
+    {
+      "src_rel": "V65_AUDIT_REPORT.md",
+      "dst_rel": "V65_AUDIT_REPORT.md",
+      "sha256": "3b9033f6ae1c197819d84bbc483debf811f9feed86a8003548bed636649758d0",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/V65_AUDIT_REPORT.md"
+    },
+    {
+      "src_rel": "v65_q1_lag1_audit_v2_report.md",
+      "dst_rel": "evidence/v65_q1_lag1_audit_v2_report.md",
+      "sha256": "46b31fecc4347283d79bf1fad8cd257b1f2cd31cba717b443c65cfcdcf44f626",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_lag1_audit_v2_report.md"
+    },
+    {
+      "src_rel": "v65_q1_lag1_audit_report.md",
+      "dst_rel": "evidence/v65_q1_lag1_audit_v1_report.md",
+      "sha256": "7e938f8371803d9b0d7f7e6f0e7c021f850265946a7687e90e842a7364607b2d",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_lag1_audit_v1_report.md"
+    },
+    {
+      "src_rel": "v65_q1c_cohere_audit.md",
+      "dst_rel": "evidence/v65_q1c_cohere_audit.md",
+      "sha256": "290d6e468621300ed428eaa0a9563e89ba293e355fc777ab22b34f143c564779",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1c_cohere_audit.md"
+    },
+    {
+      "src_rel": "v65_q23_strength_audit.txt",
+      "dst_rel": "evidence/v65_q23_strength_audit.txt",
+      "sha256": "b37c0734be2724f854a852c98d179ba54bdcdd067ed714085573d51c90234f1e",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q23_strength_audit.txt"
+    },
+    {
+      "src_rel": "v65_q1_v2_per_class.json",
+      "dst_rel": "evidence/v65_q1_v2_per_class.json",
+      "sha256": "274cb8239b2c81e6f6e9181fa6a588b121508f1d898512eb041fc4d0ff30ce17",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_v2_per_class.json"
+    },
+    {
+      "src_rel": "v65_q1_v2_baselines.json",
+      "dst_rel": "evidence/v65_q1_v2_baselines.json",
+      "sha256": "74454a4489d3c5ec350c32b0daf257119119fc9c0f8671b3deb1bdddb2170aa1",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_v2_baselines.json"
+    },
+    {
+      "src_rel": "v65_q1_per_class.json",
+      "dst_rel": "evidence/v65_q1_per_class.json",
+      "sha256": "a91607b70e65b7d82e5f4bbacf4c40d8861990f809216aa73d30d42a77992e16",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_per_class.json"
+    },
+    {
+      "src_rel": "v65_q1_per_model.json",
+      "dst_rel": "evidence/v65_q1_per_model.json",
+      "sha256": "68afd62714b803257a3dedae06ac7c6bf2c7c29dedf2ee953673df3d138d033d",
+      "raw": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_per_model.json"
+    }
+  ],
+  "secret_redaction": "Patterns for OpenAI, Google AI Studio, OpenRouter, JWT-like tokens applied; no DB/jsonl shipped.",
+  "main_report": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/V65_AUDIT_REPORT.md"
+}

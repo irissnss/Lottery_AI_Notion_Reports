@@ -1,0 +1,947 @@
+{
+  "MB_claude-opus-4-20250514": {
+    "n_pred": 29,
+    "lose_N": 19,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 10,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 8
+  },
+  "MB_claude-sonnet-4-6": {
+    "n_pred": 29,
+    "lose_N": 18,
+    "lose_N_then_hit_N1": 9,
+    "hit_N_any": 11,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 11
+  },
+  "MB_combo-no-token": {
+    "n_pred": 30,
+    "lose_N": 16,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 14,
+    "hit_N1_any": 13,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 5
+  },
+  "MB_combo-super": {
+    "n_pred": 30,
+    "lose_N": 19,
+    "lose_N_then_hit_N1": 10,
+    "hit_N_any": 11,
+    "hit_N1_any": 16,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 9
+  },
+  "MB_deepseek-reasoner": {
+    "n_pred": 30,
+    "lose_N": 16,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 14,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 10
+  },
+  "MB_gemini-2.5-flash": {
+    "n_pred": 30,
+    "lose_N": 19,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 11,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 9,
+    "bt_hit_N1": 10
+  },
+  "MB_gemini-2.5-pro": {
+    "n_pred": 30,
+    "lose_N": 21,
+    "lose_N_then_hit_N1": 12,
+    "hit_N_any": 9,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 9
+  },
+  "MB_gpt-5-mini": {
+    "n_pred": 30,
+    "lose_N": 15,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 15,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 8
+  },
+  "MB_gpt-5.4": {
+    "n_pred": 30,
+    "lose_N": 18,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 12,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 7
+  },
+  "MB_lstm": {
+    "n_pred": 30,
+    "lose_N": 15,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 15,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 5
+  },
+  "MB_meta-learning": {
+    "n_pred": 30,
+    "lose_N": 17,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 13,
+    "hit_N1_any": 11,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 8
+  },
+  "MB_random-forest": {
+    "n_pred": 30,
+    "lose_N": 11,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 19,
+    "hit_N1_any": 11,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 7
+  },
+  "MB_smart-ensemble": {
+    "n_pred": 30,
+    "lose_N": 13,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 17,
+    "hit_N1_any": 14,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 7
+  },
+  "MB_smart-ml": {
+    "n_pred": 30,
+    "lose_N": 16,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 14,
+    "hit_N1_any": 11,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 9
+  },
+  "MB_xgboost": {
+    "n_pred": 30,
+    "lose_N": 14,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 16,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 7
+  },
+  "MB_glm-5.1": {
+    "n_pred": 25,
+    "lose_N": 17,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 8,
+    "hit_N1_any": 8,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 4
+  },
+  "MB_grok-4.20-multi-agent": {
+    "n_pred": 24,
+    "lose_N": 13,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 11,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 5
+  },
+  "MB_qwen3-coder": {
+    "n_pred": 24,
+    "lose_N": 11,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 13,
+    "hit_N1_any": 10,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 4
+  },
+  "MB_qwen3.6-plus": {
+    "n_pred": 13,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 6,
+    "hit_N1_any": 6,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 3
+  },
+  "MB_arcee-trinity": {
+    "n_pred": 6,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 1,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MB_nemotron-3-super": {
+    "n_pred": 2,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 0,
+    "hit_N1_any": 0,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MB_qwen3-max-thinking": {
+    "n_pred": 21,
+    "lose_N": 12,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 9,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 4
+  },
+  "MB_kimi-k2.5": {
+    "n_pred": 20,
+    "lose_N": 13,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 7,
+    "hit_N1_any": 11,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 7
+  },
+  "MB_minimax-m2.7": {
+    "n_pred": 11,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 2,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MB_llama-4-maverick": {
+    "n_pred": 4,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 3,
+    "hit_N1_any": 0,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MB_mistral-large-3": {
+    "n_pred": 4,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 3,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 1
+  },
+  "MB_mistral-nemo": {
+    "n_pred": 4,
+    "lose_N": 3,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 1,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MB_gpt-oss-120b": {
+    "n_pred": 17,
+    "lose_N": 13,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 4,
+    "hit_N1_any": 7,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 3
+  },
+  "MB_kimi-k2.6": {
+    "n_pred": 4,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 2,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MB_deepseek-v4-flash": {
+    "n_pred": 10,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 3,
+    "hit_N1_any": 6,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 4
+  },
+  "MB_deepseek-v4-pro": {
+    "n_pred": 10,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 5,
+    "hit_N1_any": 4,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 2
+  },
+  "MB_gpt-5.5": {
+    "n_pred": 10,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 5,
+    "hit_N1_any": 7,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 4
+  },
+  "MB_gemini-3-flash": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 1,
+    "hit_N1_any": 0,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MB_gemini-3.1-pro": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MB_gemma-4-31b": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MN_claude-opus-4-20250514": {
+    "n_pred": 29,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 24,
+    "hit_N1_any": 19,
+    "bt_lose_N_then_hit_N1": 9,
+    "bt_hit_N1": 15
+  },
+  "MN_claude-sonnet-4-6": {
+    "n_pred": 29,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 22,
+    "hit_N1_any": 25,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 18
+  },
+  "MN_combo-no-token": {
+    "n_pred": 30,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 23,
+    "hit_N1_any": 19,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 16
+  },
+  "MN_combo-super": {
+    "n_pred": 30,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 23,
+    "hit_N1_any": 22,
+    "bt_lose_N_then_hit_N1": 9,
+    "bt_hit_N1": 18
+  },
+  "MN_deepseek-reasoner": {
+    "n_pred": 28,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 19,
+    "hit_N1_any": 20,
+    "bt_lose_N_then_hit_N1": 10,
+    "bt_hit_N1": 19
+  },
+  "MN_gemini-2.5-flash": {
+    "n_pred": 30,
+    "lose_N": 8,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 22,
+    "hit_N1_any": 24,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 17
+  },
+  "MN_gemini-2.5-pro": {
+    "n_pred": 30,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 25,
+    "hit_N1_any": 21,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 16
+  },
+  "MN_gpt-5-mini": {
+    "n_pred": 30,
+    "lose_N": 6,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 24,
+    "hit_N1_any": 21,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 16
+  },
+  "MN_gpt-5.4": {
+    "n_pred": 30,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 25,
+    "hit_N1_any": 22,
+    "bt_lose_N_then_hit_N1": 9,
+    "bt_hit_N1": 14
+  },
+  "MN_lstm": {
+    "n_pred": 30,
+    "lose_N": 8,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 22,
+    "hit_N1_any": 19,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 11
+  },
+  "MN_meta-learning": {
+    "n_pred": 30,
+    "lose_N": 8,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 22,
+    "hit_N1_any": 23,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 12
+  },
+  "MN_random-forest": {
+    "n_pred": 30,
+    "lose_N": 13,
+    "lose_N_then_hit_N1": 9,
+    "hit_N_any": 17,
+    "hit_N1_any": 21,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 9
+  },
+  "MN_smart-ensemble": {
+    "n_pred": 30,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 25,
+    "hit_N1_any": 24,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 15
+  },
+  "MN_smart-ml": {
+    "n_pred": 30,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 23,
+    "hit_N1_any": 22,
+    "bt_lose_N_then_hit_N1": 10,
+    "bt_hit_N1": 20
+  },
+  "MN_xgboost": {
+    "n_pred": 30,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 23,
+    "hit_N1_any": 22,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 15
+  },
+  "MN_glm-5.1": {
+    "n_pred": 25,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 18,
+    "hit_N1_any": 22,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 14
+  },
+  "MN_grok-4.20-multi-agent": {
+    "n_pred": 24,
+    "lose_N": 8,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 16,
+    "hit_N1_any": 17,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 12
+  },
+  "MN_qwen3-coder": {
+    "n_pred": 24,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 17,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 11
+  },
+  "MN_qwen3.6-plus": {
+    "n_pred": 13,
+    "lose_N": 4,
+    "lose_N_then_hit_N1": 3,
+    "hit_N_any": 9,
+    "hit_N1_any": 8,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 6
+  },
+  "MN_kimi-k2.5": {
+    "n_pred": 21,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 14,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 10
+  },
+  "MN_minimax-m2.7": {
+    "n_pred": 12,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 7,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 8
+  },
+  "MN_nemotron-3-super": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 1,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 2
+  },
+  "MN_qwen3-max-thinking": {
+    "n_pred": 21,
+    "lose_N": 10,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 11,
+    "hit_N1_any": 18,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 15
+  },
+  "MN_arcee-trinity": {
+    "n_pred": 4,
+    "lose_N": 0,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 4,
+    "hit_N1_any": 4,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 3
+  },
+  "MN_gpt-oss-120b": {
+    "n_pred": 18,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 13,
+    "hit_N1_any": 11,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 7
+  },
+  "MN_llama-4-maverick": {
+    "n_pred": 4,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 3,
+    "hit_N1_any": 3,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 3
+  },
+  "MN_mistral-large-3": {
+    "n_pred": 4,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 3,
+    "hit_N1_any": 4,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 2
+  },
+  "MN_mistral-nemo": {
+    "n_pred": 4,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 2,
+    "hit_N1_any": 3,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MN_kimi-k2.6": {
+    "n_pred": 3,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 1,
+    "hit_N1_any": 3,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 2
+  },
+  "MN_deepseek-v4-flash": {
+    "n_pred": 10,
+    "lose_N": 3,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 7,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 8
+  },
+  "MN_deepseek-v4-pro": {
+    "n_pred": 10,
+    "lose_N": 3,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 7,
+    "hit_N1_any": 7,
+    "bt_lose_N_then_hit_N1": 2,
+    "bt_hit_N1": 5
+  },
+  "MN_gpt-5.5": {
+    "n_pred": 10,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 9,
+    "hit_N1_any": 8,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 6
+  },
+  "MN_gemini-3-flash": {
+    "n_pred": 2,
+    "lose_N": 0,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 2,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MN_gemini-3.1-pro": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MN_gemma-4-31b": {
+    "n_pred": 2,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 0,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MT_claude-opus-4-20250514": {
+    "n_pred": 29,
+    "lose_N": 14,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 15,
+    "hit_N1_any": 13,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 9
+  },
+  "MT_claude-sonnet-4-6": {
+    "n_pred": 29,
+    "lose_N": 16,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 13,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 11
+  },
+  "MT_combo-no-token": {
+    "n_pred": 30,
+    "lose_N": 11,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 19,
+    "hit_N1_any": 20,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 10
+  },
+  "MT_combo-super": {
+    "n_pred": 30,
+    "lose_N": 17,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 13,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 11
+  },
+  "MT_deepseek-reasoner": {
+    "n_pred": 30,
+    "lose_N": 14,
+    "lose_N_then_hit_N1": 9,
+    "hit_N_any": 16,
+    "hit_N1_any": 18,
+    "bt_lose_N_then_hit_N1": 10,
+    "bt_hit_N1": 13
+  },
+  "MT_gemini-2.5-flash": {
+    "n_pred": 30,
+    "lose_N": 10,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 20,
+    "hit_N1_any": 14,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 9
+  },
+  "MT_gemini-2.5-pro": {
+    "n_pred": 30,
+    "lose_N": 15,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 15,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 9,
+    "bt_hit_N1": 12
+  },
+  "MT_gpt-5-mini": {
+    "n_pred": 30,
+    "lose_N": 14,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 16,
+    "hit_N1_any": 14,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 9
+  },
+  "MT_gpt-5.4": {
+    "n_pred": 30,
+    "lose_N": 16,
+    "lose_N_then_hit_N1": 11,
+    "hit_N_any": 14,
+    "hit_N1_any": 17,
+    "bt_lose_N_then_hit_N1": 10,
+    "bt_hit_N1": 12
+  },
+  "MT_lstm": {
+    "n_pred": 30,
+    "lose_N": 11,
+    "lose_N_then_hit_N1": 8,
+    "hit_N_any": 19,
+    "hit_N1_any": 20,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 13
+  },
+  "MT_meta-learning": {
+    "n_pred": 30,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 21,
+    "hit_N1_any": 17,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 11
+  },
+  "MT_random-forest": {
+    "n_pred": 30,
+    "lose_N": 10,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 20,
+    "hit_N1_any": 18,
+    "bt_lose_N_then_hit_N1": 11,
+    "bt_hit_N1": 16
+  },
+  "MT_smart-ensemble": {
+    "n_pred": 30,
+    "lose_N": 10,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 20,
+    "hit_N1_any": 17,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 9
+  },
+  "MT_smart-ml": {
+    "n_pred": 30,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 21,
+    "hit_N1_any": 18,
+    "bt_lose_N_then_hit_N1": 7,
+    "bt_hit_N1": 11
+  },
+  "MT_xgboost": {
+    "n_pred": 30,
+    "lose_N": 11,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 19,
+    "hit_N1_any": 16,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 8
+  },
+  "MT_glm-5.1": {
+    "n_pred": 23,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 16,
+    "hit_N1_any": 14,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 8
+  },
+  "MT_grok-4.20-multi-agent": {
+    "n_pred": 24,
+    "lose_N": 8,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 16,
+    "hit_N1_any": 13,
+    "bt_lose_N_then_hit_N1": 4,
+    "bt_hit_N1": 7
+  },
+  "MT_qwen3-coder": {
+    "n_pred": 24,
+    "lose_N": 10,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 14,
+    "hit_N1_any": 15,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 9
+  },
+  "MT_qwen3.6-plus": {
+    "n_pred": 13,
+    "lose_N": 6,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 7,
+    "hit_N1_any": 10,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 6
+  },
+  "MT_arcee-trinity": {
+    "n_pred": 3,
+    "lose_N": 0,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 3,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MT_kimi-k2.5": {
+    "n_pred": 21,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 6,
+    "hit_N_any": 12,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 6
+  },
+  "MT_minimax-m2.7": {
+    "n_pred": 12,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 7,
+    "hit_N1_any": 9,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 6
+  },
+  "MT_qwen3-max-thinking": {
+    "n_pred": 21,
+    "lose_N": 9,
+    "lose_N_then_hit_N1": 7,
+    "hit_N_any": 12,
+    "hit_N1_any": 12,
+    "bt_lose_N_then_hit_N1": 8,
+    "bt_hit_N1": 8
+  },
+  "MT_nemotron-3-super": {
+    "n_pred": 1,
+    "lose_N": 0,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 1
+  },
+  "MT_llama-4-maverick": {
+    "n_pred": 4,
+    "lose_N": 3,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 1,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MT_mistral-large-3": {
+    "n_pred": 3,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 2,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 1
+  },
+  "MT_mistral-nemo": {
+    "n_pred": 4,
+    "lose_N": 2,
+    "lose_N_then_hit_N1": 2,
+    "hit_N_any": 2,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MT_gpt-oss-120b": {
+    "n_pred": 16,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 9,
+    "hit_N1_any": 10,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 6
+  },
+  "MT_kimi-k2.6": {
+    "n_pred": 3,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 2,
+    "hit_N1_any": 2,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  },
+  "MT_deepseek-v4-flash": {
+    "n_pred": 10,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 5,
+    "hit_N1_any": 6,
+    "bt_lose_N_then_hit_N1": 5,
+    "bt_hit_N1": 5
+  },
+  "MT_deepseek-v4-pro": {
+    "n_pred": 10,
+    "lose_N": 7,
+    "lose_N_then_hit_N1": 4,
+    "hit_N_any": 3,
+    "hit_N1_any": 6,
+    "bt_lose_N_then_hit_N1": 6,
+    "bt_hit_N1": 6
+  },
+  "MT_gpt-5.5": {
+    "n_pred": 10,
+    "lose_N": 5,
+    "lose_N_then_hit_N1": 5,
+    "hit_N_any": 5,
+    "hit_N1_any": 7,
+    "bt_lose_N_then_hit_N1": 3,
+    "bt_hit_N1": 4
+  },
+  "MT_gemini-3-flash": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MT_gemini-3.1-pro": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 0,
+    "hit_N_any": 1,
+    "hit_N1_any": 0,
+    "bt_lose_N_then_hit_N1": 0,
+    "bt_hit_N1": 0
+  },
+  "MT_gemma-4-31b": {
+    "n_pred": 2,
+    "lose_N": 1,
+    "lose_N_then_hit_N1": 1,
+    "hit_N_any": 1,
+    "hit_N1_any": 1,
+    "bt_lose_N_then_hit_N1": 1,
+    "bt_hit_N1": 1
+  }
+}

@@ -1,5 +1,14 @@
 # Public Raw Links — Full Package
 
+## V65 — Lag-1 leakage + strength priority + test-lane weighting (NEW 2026-05-07)
+
+- [V65 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/V65_AUDIT_REPORT.md)
+- [V65 reading index](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/00_READING_INDEX.md)
+- [V65 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/MANIFEST.json)
+- [V65 evidence: lag-1 v2](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1_lag1_audit_v2_report.md)
+- [V65 evidence: Cohere effectiveness](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q1c_cohere_audit.md)
+- [V65 evidence: strength tensor + C-16 dump](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V65_LAG1_AND_STRENGTH_AUDIT_20260506/evidence/v65_q23_strength_audit.txt)
+
 - [READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/READ_THIS_FIRST.md)
 - [Logical synthesis read-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506/READ_THIS_FIRST.md)
 - [Master logical synthesis](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506/MASTER_LOGICAL_SYNTHESIS_V52_TO_V61.md)
