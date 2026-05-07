@@ -4,7 +4,7 @@
   "latest_folder": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507",
   "latest_report": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/V79_REPORT.md",
   "latest_manifest": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/REPORT_MANIFEST.json",
-  "public_commit": "TBD_PUBLIC",
+  "public_commit": "32d7133460c314c400b02e83f65a9faae895e2a4",
   "private_commit": "09e226c1efb6c8f5adf3bf92355d2b24bb076d65",
   "created_at_vn": "2026-05-07T21:25:00+07:00",
   "status": "DEPLOYED â€” AIâ†”NO_TOKEN cross-verification + cluster-weighted consensus shadow; official output unchanged",
@@ -44,3 +44,4 @@
     "hash_guard_deep_diff_passed": true
   }
 }
+
