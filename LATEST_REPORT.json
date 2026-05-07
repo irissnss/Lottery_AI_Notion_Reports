@@ -1,34 +1,50 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V76",
-  "latest_folder": "V76_P0_BATCH_20260507",
-  "latest_report": "V76_P0_BATCH_20260507/V76_REPORT.md",
-  "latest_manifest": "V76_P0_BATCH_20260507/REPORT_MANIFEST.json",
+  "latest_version": "V77",
+  "latest_folder": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507",
+  "latest_report": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md",
+  "latest_manifest": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/REPORT_MANIFEST.json",
   "public_commit": "TBD_AT_PUSH",
   "private_commit": "TBD_AT_PUSH",
-  "created_at_vn": "2026-05-07T15:21:45+07:00",
-  "status": "DEPLOYED — 3/3 P0 PASS (drift + latency + cost), hash guard PASS",
+  "created_at_vn": "2026-05-07T18:55:00+07:00",
+  "status": "DEPLOYED — V77-1+V77-2+V77-3+V77-4 PASS, hash guard PASS, alert-only contract honored",
   "official_touched": false,
-  "test_lane_status": "BALANCED — V73 region-adaptive HYBRID + 20 voters + V67 eager + CONSENSUS gate>=3",
-  "next_action": "Cron daily 23:35-23:50 VN; drift alerts active after 14 fresh days; P1 next session",
+  "test_lane_status": "INCIDENT_FIXED — V70/V73 timing bug fixed (post-cascade rerun 19:00 VN); fast incident monitor 19:05 VN; MN/MB cold streak confirmed real (regime shift, not bug)",
+  "next_action": "Tomorrow 2026-05-08 19:00 VN cron should fire post-cascade V70+V73 re-run with full pool; 19:05 VN fast incident monitor will alert if streak continues; verify V70 agreement_count >= 3 for MN/MT",
+  "owner_verification": {
+    "mn_4day_cold_streak_claim": "CONFIRMED",
+    "mb_4day_cold_streak_claim": "CONFIRMED",
+    "mt_status": "FINE — OFFICIAL 4/4",
+    "v73_saved_mn_today": true
+  },
   "read_order": [
-    "V76_P0_BATCH_20260507/READ_THIS_FIRST.md",
-    "V76_P0_BATCH_20260507/V76_REPORT.md",
+    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md",
+    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md",
+    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/4d_regression_table.md",
+    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/v70_v73_timing_root_cause.md",
+    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/fast_incident_alerts_20260507.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
   "changed_since_previous": [
-    "V76 P0-1 Drift detector materializer + cron 23:50 VN (alert-only)",
-    "V76 P0-2 C-16 latency_score live integration (rolling 7d avg, no prune)",
-    "V76 P0-3 Cost provider table + cost_estimate filled (tracking only)",
-    "Cron schedule expanded to 5 jobs daily VN",
-    "Pre/post hashes 4 official tables UNCHANGED"
+    "V77 emergency post-closeout incident audit triggered by owner",
+    "V77-1 NEW cron 19:00 VN: Post-cascade V70+V73 re-run with full pool (test-lane only)",
+    "V77-2 NEW cron 19:05 VN: Fast incident monitor 5 alert classes (alert-only, never auto-rollback)",
+    "V77-3 V70/V73 backfilled 4 days x 3 regions with proper-timing pool",
+    "V77-4 VPS schema fix: output_lock_status + readiness_status columns added (V74 fix had not persisted on VPS)",
+    "MN/MB OFFICIAL 0/4 last 4d confirmed real cold streak (regime shift, not test-lane bug)",
+    "V73 saved MN today (95 vs OFFICIAL 94) - first save under stress",
+    "V70 timing bug found and fixed: original 23:45 cron fired before daily test runners completed",
+    "Pre/post hashes 4 official tables UNCHANGED (only natural growth from cascade)"
   ],
-  "open_issues_count": 0,
+  "open_issues_count": 1,
   "safety_summary": {
     "official_unchanged": true,
     "hash_guard_passed": true,
-    "public_safe": true
+    "public_safe": true,
+    "v77_alert_only": true,
+    "no_auto_rollback": true,
+    "cron_purely_additive": true
   }
 }

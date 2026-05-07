@@ -1,0 +1,79 @@
+﻿======================================================================
+PHASE 1 ΓÇö Re-run V73 HYBRID with backfilled V70 inputs
+======================================================================
+  V73 2026-05-04 MN: bt=65 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-04 MT: bt=82 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-04 MB: bt=09 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-05 MN: bt=15 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-05 MT: bt=44 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-05 MB: bt=41 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-06 MN: bt=95 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-06 MT: bt=71 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-06 MB: bt=32 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-07 MN: bt=95 tier=AURA cons=None exp=None bud=None
+  V73 2026-05-07 MT: bt=88 tier=HIGH cons=None exp=None bud=None
+  V73 2026-05-07 MB: bt=79 tier=AURA cons=None exp=None bud=None
+
+======================================================================
+PHASE 2 ΓÇö C-03 Closeout Evaluator (correct signature)
+======================================================================
+  EVAL 2026-05-04 MN: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-04 MT: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-04 MB: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-05 MN: would_save=2 would_break=0 false_promotion=0
+  EVAL 2026-05-05 MT: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-05 MB: would_save=2 would_break=0 false_promotion=0
+  EVAL 2026-05-06 MN: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-06 MT: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-06 MB: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-07 MN: would_save=2 would_break=0 false_promotion=0
+  EVAL 2026-05-07 MT: would_save=0 would_break=0 false_promotion=0
+  EVAL 2026-05-07 MB: would_save=0 would_break=0 false_promotion=0
+
+======================================================================
+PHASE 3 ΓÇö Add output_lock_status, readiness_status to du_doan_test_bundles
+======================================================================
+  existing columns: ['admin_only', 'aggregation_method', 'candidate_count', 'confidence_score', 'created_at', 'diagnostic_only', 'diff_from_official_json', 'experiment_name', 'id', 'mode', 'model_count', 'official_bt', 'official_lo2_json', 'official_output', 'output_eligible', 'output_impact', 'owner_approved', 'region', 'risk_flags_json', 'run_date', 'run_id', 'test_bt', 'test_lo2_json', 'test_only']
+  added: ['output_lock_status', 'readiness_status']
+  backfilled 685 rows with POST_CLOSEOUT_DIAGNOSTIC_ONLY
+
+======================================================================
+PHASE 4 ΓÇö Build test_lane_fast_incident_monitor (alert-only)
+======================================================================
+
+  Alerts generated:
+    ≡ƒö┤ [RED_FAST          ] MB C16_BUDGET     streak=4 hits=0/4 off=0/4 ΓÇö C16_BUDGET miss_streak=4 in MB ΓÇö 4-day cold
+    ≡ƒö┤ [RED_FAST          ] MB OFFICIAL       streak=4 hits=0/4 off=0/4 ΓÇö OFFICIAL miss_streak=4 in MB ΓÇö 4-day cold
+    ≡ƒö┤ [RED_FAST          ] MB V67_EXPLOIT    streak=4 hits=0/4 off=0/4 ΓÇö V67_EXPLOIT miss_streak=4 in MB ΓÇö 4-day cold
+    ≡ƒö┤ [RED_FAST          ] MB V70_CONSENSUS  streak=4 hits=0/4 off=0/4 ΓÇö V70_CONSENSUS miss_streak=4 in MB ΓÇö 4-day cold
+    ≡ƒö┤ [RED_FAST          ] MB V73_HYBRID     streak=4 hits=0/4 off=0/4 ΓÇö V73_HYBRID miss_streak=4 in MB ΓÇö 4-day cold
+    ≡ƒƒó [GREEN             ] MN C16_BUDGET     streak=2 hits=1/4 off=0/4 ΓÇö C16_BUDGET 1/4 hits in last 4d MN
+    ≡ƒö┤ [RED_FAST          ] MN OFFICIAL       streak=4 hits=0/4 off=0/4 ΓÇö OFFICIAL miss_streak=4 in MN ΓÇö 4-day cold
+    ≡ƒƒó [GREEN             ] MN V67_EXPLOIT    streak=0 hits=1/4 off=0/4 ΓÇö V67_EXPLOIT 1/4 hits in last 4d MN
+    ≡ƒö┤ [RED_FAST          ] MN V70_CONSENSUS  streak=4 hits=0/4 off=0/4 ΓÇö V70_CONSENSUS miss_streak=4 in MN ΓÇö 4-day cold
+    ≡ƒƒó [GREEN             ] MN V73_HYBRID     streak=0 hits=1/4 off=0/4 ΓÇö V73_HYBRID 1/4 hits in last 4d MN
+    ≡ƒƒó [GREEN             ] MT C16_BUDGET     streak=0 hits=3/4 off=4/4 ΓÇö C16_BUDGET 3/4 hits in last 4d MT
+    ≡ƒƒó [GREEN             ] MT OFFICIAL       streak=0 hits=4/4 off=4/4 ΓÇö OFFICIAL 4/4 hits in last 4d MT
+    ≡ƒö┤ [RED_FAST          ] MT V67_EXPLOIT    streak=4 hits=0/4 off=4/4 ΓÇö V67_EXPLOIT miss_streak=4 in MT ΓÇö 4-day cold
+    ≡ƒƒó [GREEN             ] MT V70_CONSENSUS  streak=0 hits=4/4 off=4/4 ΓÇö V70_CONSENSUS 4/4 hits in last 4d MT
+    ≡ƒƒó [GREEN             ] MT V73_HYBRID     streak=0 hits=4/4 off=4/4 ΓÇö V73_HYBRID 4/4 hits in last 4d MT
+
+======================================================================
+PHASE 5 ΓÇö Would-save / would-break across 4 days (V73 vs OFFICIAL)
+======================================================================
+  2026-05-04 MN: official=65Γ¥î v73=65Γ¥î -
+  2026-05-04 MT: official=29Γ£à v73=82Γ£à -
+  2026-05-04 MB: official=09Γ¥î v73=09Γ¥î -
+  2026-05-05 MN: official=15Γ¥î v73=15Γ¥î -
+  2026-05-05 MT: official=44Γ£à v73=44Γ£à -
+  2026-05-05 MB: official=83Γ¥î v73=41Γ¥î -
+  2026-05-06 MN: official=95Γ¥î v73=95Γ¥î -
+  2026-05-06 MT: official=11Γ£à v73=71Γ£à -
+  2026-05-06 MB: official=79Γ¥î v73=32Γ¥î -
+  2026-05-07 MN: official=94Γ¥î v73=95Γ£à WOULD_SAVE
+  2026-05-07 MT: official=88Γ£à v73=88Γ£à -
+  2026-05-07 MB: official=20Γ¥î v73=79Γ¥î -
+
+  TOTAL: would_save=1  would_break=0  net=1
+
+DONE.

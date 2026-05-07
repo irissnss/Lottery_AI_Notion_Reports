@@ -1,14 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V76_P0_BATCH_20260507** (V76)
+Latest: **V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507** (V77)
 
 ## Latest report
 
-- [V76_P0_BATCH_20260507/V76_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/V76_REPORT.md)
+- [V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md)
+- [V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V76_P0_BATCH_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/)
 - [V75_NEXT_ACTION_PROPOSAL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/)
 - [V74_TOTAL_FORCE_AUDIT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/)
 - [V73_REGION_ADAPTIVE_HYBRID_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V73_REGION_ADAPTIVE_HYBRID_20260507/)

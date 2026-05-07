@@ -1,0 +1,99 @@
+{
+  "report_id": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507",
+  "version": "V20.3.37.77",
+  "generated_at": "2026-05-07T18:55:00+07:00",
+  "type": "emergency_post_closeout_incident_audit",
+  "owner_directive_summary": "MN/MB tệ 4 ngày liên tiếp 2026-05-04..05-07; emergency audit + test-lane root cause + safe fix",
+  "files": [
+    {"path": "READ_THIS_FIRST.md", "purpose": "TL;DR + navigation"},
+    {"path": "V77_REPORT.md", "purpose": "Full audit report (15 sections)"},
+    {"path": "REPORT_MANIFEST.json", "purpose": "this manifest"},
+    {"path": "evidence/4d_regression_table.md", "purpose": "4-day per-region per-method hit table"},
+    {"path": "evidence/v70_v73_timing_root_cause.md", "purpose": "Detailed timing bug analysis"},
+    {"path": "evidence/fast_incident_alerts_20260507.md", "purpose": "Fast incident alert dump"},
+    {"path": "evidence/v77_audit_output.txt", "purpose": "Raw audit output"},
+    {"path": "evidence/v77_backfill_log.txt", "purpose": "Raw backfill log"}
+  ],
+  "owner_verification": {
+    "mn_4day_cold_streak": {"claim": "tệ 4 ngày liên tiếp", "verdict": "CONFIRMED", "official_4d_hits": "0/4"},
+    "mb_4day_cold_streak": {"claim": "cũng tệ", "verdict": "CONFIRMED", "official_4d_hits": "0/4"},
+    "mt_status": {"claim": "implied tệ", "verdict": "MT FINE", "official_4d_hits": "4/4"},
+    "today_overall": {"verdict": "PARTIAL — MN/MB miss, MT hit, V73 saved MN"}
+  },
+  "system_health_summary": {
+    "actual_data_complete_2026_05_07": {"MN": true, "MT": true, "MB": true},
+    "evaluator_pending": false,
+    "duplicate_rows": false,
+    "v73_cron_ran": true,
+    "c16_selected_count_20_all_regions": true,
+    "v67_strict_disabled": true,
+    "v73_region_priority_correct": true,
+    "consensus_excludes_official_clone": true,
+    "cost_NOT_in_score": true,
+    "official_tables_natural_growth_only": true
+  },
+  "fixes_implemented_v77": [
+    {
+      "id": "V77-1",
+      "name": "Post-cascade V70+V73 re-run cron at 19:00 VN",
+      "type": "test_lane_only_additive_cron",
+      "files": ["web/backend/scheduler.py"],
+      "status": "DEPLOYED"
+    },
+    {
+      "id": "V77-2",
+      "name": "Fast incident monitor cron at 19:05 VN (alert-only)",
+      "type": "test_lane_only_additive_cron",
+      "files": [
+        "web/backend/_materialize_test_lane_fast_incident_monitor.py",
+        "web/backend/scheduler.py"
+      ],
+      "status": "DEPLOYED",
+      "alert_classes": ["RED_FAST", "ORANGE_FAST", "YELLOW_FAST", "EXPLOIT_FAIL_FAST", "BUDGET_FAIL_FAST", "GREEN"],
+      "auto_rollback_triggered": 0
+    },
+    {
+      "id": "V77-3",
+      "name": "V70/V73 backfill 4 days × 3 regions with full pool",
+      "type": "test_lane_only_data_backfill",
+      "rows_added": 24,
+      "status": "DONE"
+    },
+    {
+      "id": "V77-4",
+      "name": "VPS schema fix: output_lock_status, readiness_status columns added",
+      "type": "test_lane_only_schema_add",
+      "rows_backfilled": 685,
+      "status": "DONE"
+    }
+  ],
+  "official_hash_drift": {
+    "predictions": {"before": 4423, "after": 4460, "delta": "+37 natural cascade"},
+    "final_bundles": {"before": 205, "after": 207, "delta": "+2 natural tomorrow-prep"},
+    "lottery_results": {"before": 14624, "after": 14628, "delta": "+4 natural closeout"},
+    "model_daily_eval": {"before": 4328, "after": 4328, "delta": "0"}
+  },
+  "alert_summary_2026_05_07": {
+    "RED_FAST": 5,
+    "ORANGE_FAST": 0,
+    "YELLOW_FAST": 0,
+    "EXPLOIT_FAIL_FAST": 0,
+    "BUDGET_FAIL_FAST": 1,
+    "GREEN": 9
+  },
+  "hard_locks_verified": [
+    "no_predictions_mutation",
+    "no_final_bundles_mutation_other_than_natural",
+    "no_lottery_results_mutation",
+    "no_generate_final_bundle_change",
+    "no_scoring_change",
+    "no_voting_change",
+    "no_model_roster_change",
+    "no_prompt_change",
+    "v77_test_lane_only",
+    "v77_alert_only_no_rollback",
+    "v77_cron_purely_additive_v76_retained"
+  ],
+  "next_checkpoint": "2026-05-08T19:00:00+07:00",
+  "supersedes": "V76_P0_BATCH_20260507"
+}

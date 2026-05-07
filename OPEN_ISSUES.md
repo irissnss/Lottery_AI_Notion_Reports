@@ -1,40 +1,57 @@
-# Open issues for 2026-05-07 as of V76
+# Open issues — V77 audit (updated 2026-05-07 18:55 VN)
 
-## ✅ Resolved during V74-V76 sessions
+## ⚠️ Active P1 — needs owner monitoring
 
-1. **README stale** → fixed (V74)
-2. **Missing GitHub discovery metadata** → fixed (V74)
-3. **C-16 budget at 15** → fixed to 20 (V74 + V71 patch)
-4. **CONSENSUS_V1 14d empty** → re-backfilled (V74)
-5. **C-03 PENDING 37 rows** → reduced to 9 (V74)
-6. **C-17B output_lock_status missing** → column added 669 rows backfilled (V74)
-7. **C-05 latency live broken** → was data lag, RESOLVED 2026-05-07 20/42 captured (V74.1)
-8. **Continuous measurement doctrine** → 4 governance docs locked (V74)
-9. **GitHub README + discovery files** → 8 files created (V74)
-10. **Daily evidence pack** → bootstrapped (V74)
-11. **V76 P0-1 Drift detector** → deployed alert-only (this session)
-12. **V76 P0-2 C-16 latency_score live** → deployed no-prune (this session)
-13. **V76 P0-3 Cost provider table** → deployed tracking-only (this session)
+1. **MN OFFICIAL 0/4 cold streak (last 4 days 2026-05-04..05-07)**
+   - Confirmed real (not bug). MN official BT missed 65, 15, 95, 94 over 4 days.
+   - V73 saved MN today (95 ✅). V67 EXPLOIT was the source.
+   - Watch: if MN official remains 0 for 7+ days, escalate to P0 regime-shift investigation.
 
-## 🟢 No open P0 items
+2. **MB OFFICIAL 0/4 cold streak (last 4 days 2026-05-04..05-07)**
+   - Confirmed real. MB official BT missed 09, 83, 79, 20.
+   - ALL test methods 0/N also (V73, V70, V67, C16). MB is in deep cold.
+   - Watch: if MB stays cold 7+ more days, escalate to P0. May need weekday-specific model rotation in MB.
 
-All P0 items closed in V76. Cron daily 23:35-23:50 VN will continuously measure and alert.
+## ✅ Resolved during V77 session
 
-## 🟡 P1 watch (next session)
+3. **V70/V73 timing bug** — V70 cron at 23:45 fired before daily test runner populated pool → consensus_v1 always emitted agreement=1 → no consensus row → V73 fell back to V67-only.
+   - Root cause: cron timing mismatch with `/du-doan-test` runner (which fires MN=04:30, MT=16:45, MB=17:45 VN dynamically).
+   - Fix: V77-1 added cron 19:00 VN re-running V70+V73 for `target_date=today` AFTER all 3 region runners complete. Original 23:45/23:48 cron retained for tomorrow-target prep.
+   - Verified: backfill of 4 days × 3 regions with full pool → V70 hit MT 4/4, V73 would_save = 1 vs OFFICIAL.
 
-1. Drift alerts will activate after 14 fresh days (target 2026-05-21).
-2. C-16 latency_score has rolling 7d avg active from 2026-05-13 onwards (need ≥2 valid days).
-3. Cost provider table prices are estimates; owner can edit `_provider_pricing_table.py` to update with real provider invoices.
+4. **VPS schema regression** — `du_doan_test_bundles` was missing `output_lock_status` and `readiness_status` columns (V74 fix had not persisted on VPS).
+   - Fix: V77-4 added both columns and backfilled 685 existing rows with `POST_CLOSEOUT_DIAGNOSTIC_ONLY`.
+
+5. **Fast incident monitor missing** — V76 drift detector requires n30 ≥ 10 (~14 fresh days) to settle, no immediate signal for 4-day patterns.
+   - Fix: V77-2 added `test_lane_fast_incident_monitor` table + materializer + cron 19:05 VN. 5 alert classes (RED_FAST/ORANGE_FAST/YELLOW_FAST/EXPLOIT_FAIL_FAST/BUDGET_FAIL_FAST). Alert-only.
+
+6. **C-03 evaluator residual PENDING** — re-ran for 4 days × 3 regions, all backfilled.
+
+## 🟡 P1 watch (next session or natural cron)
+
+7. **C-05 historical backfill** — V63 deployed 2026-05-06 evening; historical days before that have `lat=None`. Cannot recover but rolling 14d valid from 2026-05-21 onwards.
+
+8. **V67 EXPLOIT thin sample** — only 3 picks across 3 regions (1/3 hit rate). V67 needs more days of lag-1 BOOST data to evaluate properly.
+
+9. **Slow models flagged** by C-05 (V76):
+   - `gpt-oss-120b` 190.8s, `glm-5.1` 184.4s, `deepseek-reasoner` 134.4s, etc.
+   - Action: 14 days of history needed before any down-rank decision. NO pruning yet.
+
+10. **MT V67 single failure today** — V67=95 missed, OFFICIAL=88 hit. Single-source signal not enough for MT (V67 has 0/1 for MT).
 
 ## ⏳ Always-on (continuous measurement)
 
-- 5 cron jobs daily VN: 23:35 V66, 23:40 V67, 23:45 V70, 23:48 V73, 23:50 V76 drift.
+- Daily V66/V67/V70/V73 cron 23:35–23:48 VN.
+- **NEW V77 cron 19:00 + 19:05 VN** (post-cascade rerun + fast incident).
+- V76 drift cron 23:50 VN (alerts active after 2026-05-21).
 - Daily evidence pack auto-generation.
-- Drift alerts will surface RED/YELLOW/ORANGE when methods drift, degrade, or consensus weakens.
 - Window gates 7/14/30/60/90/180 days are CHECKPOINTS, not stop points.
 
-## P1 / P2 next steps
+## 📋 Open P0 (escalation gate)
 
-- P1: method interaction trace, C-16 top-20 audit surface, UI dashboard, per-station consensus.
-- P2: OFFICIAL_PROMOTION_DOSSIER draft, region-specific candidates, Lo3/Xien consensus.
-- P3: NO_TOKEN local timing, Cohere wide-pool, production cascade strength-ordering (owner gate).
+11. **MB cold streak escalation** — if MB OFFICIAL remains 0/N for 7+ more days (i.e., 11+ total), trigger forensic root-cause investigation with:
+    - Per-weekday hit rate analysis for MB
+    - Model class breakdown (TOKEN vs NO_TOKEN) in MB
+    - Comparison of MB regime pre-2026-05-04 vs post-2026-05-04
+    - Possible mitigation: weekday-specific model rotation
+    - Owner gate: any selector or model roster change requires owner OK
