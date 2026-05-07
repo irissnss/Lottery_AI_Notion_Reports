@@ -1,10 +1,10 @@
-﻿{
+{
   "schema_version": "latest_report_v1",
   "latest_version": "V80",
   "latest_folder": "V80_ABSOLUTE_CLOSURE_PASS_20260507",
   "latest_report": "V80_ABSOLUTE_CLOSURE_PASS_20260507/V80_REPORT.md",
   "latest_manifest": "V80_ABSOLUTE_CLOSURE_PASS_20260507/REPORT_MANIFEST.json",
-  "public_commit": "TBD_PUBLIC",
+  "public_commit": "388d0d518f312eece760def72c786b703a09285e",
   "private_commit": "6ed534596dc1bf7d5f68633682edc67a8a25bfed",
   "created_at_vn": "2026-05-07T21:55:00+07:00",
   "status": "DEPLOYED â€” Notion/code/runtime sync + shadow completion; official unchanged",
@@ -25,3 +25,4 @@
     "shadow_only": true
   }
 }
+
