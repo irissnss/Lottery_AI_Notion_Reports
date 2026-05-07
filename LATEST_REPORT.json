@@ -4,7 +4,7 @@
   "latest_folder": "V78_AI_PROMPT_REGION_AUDIT_20260507",
   "latest_report": "V78_AI_PROMPT_REGION_AUDIT_20260507/V78_REPORT.md",
   "latest_manifest": "V78_AI_PROMPT_REGION_AUDIT_20260507/REPORT_MANIFEST.json",
-  "public_commit": "TBD_AT_PUSH",
+  "public_commit": "9d424492b21e8ca28904210dfa8782c880d05081",
   "private_commit": "d48ee9111083c7923ed9b2c44ce859630699c569",
   "created_at_vn": "2026-05-07T20:05:00+07:00",
   "status": "DEPLOYED â€” V78 shadow prompt audit + V77 timezone hardening; official output unchanged",
@@ -46,3 +46,4 @@
     "shadow_only": true
   }
 }
+
