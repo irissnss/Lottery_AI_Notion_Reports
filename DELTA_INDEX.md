@@ -1,3 +1,11 @@
+## V90 → V91
+
+- Docs-only reconciliation (no VPS deploy, no UI change, no DB write).
+- 74 stale FU classified (67 docs-only resolvable, 7 runtime queue).
+- 11 evidence matrices for Notion AI lookup.
+- Decision calendar hardened.
+- V91_ONE_SOURCE_INDEX.md single file.
+
 ## V89 → V90
 
 - 5 final tabs (Backend Modules 293 / Scripts 19 / Web Helpers 42 / Active Roadmaps 2 / Cursor Rules 3).

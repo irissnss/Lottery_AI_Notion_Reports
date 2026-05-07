@@ -1,25 +1,27 @@
-# Open issues — as of V90 (2026-05-08)
+# Open issues — as of V91 (2026-05-08)
 
-## Resolved this session (V90)
+## Resolved this session (V91 — docs-only reconciliation)
 
-1. 5 final tabs in /monitoring (29 tabs total): Backend Modules / Scripts / Web Helpers / Active Roadmaps / Cursor Rules.
-2. Found and surfaced 293 backend Python modules (V85/V88 missed ~230 legacy audit/diag scripts).
-3. Active Roadmaps + Cursor Rules now visible (workspace rule mention required).
+1. NEWER_THAN_V89_FOUND verified: latest = V90.
+2. 74 stale FU re-audited: 54 SUPERSEDED + 13 RESOLVED + 7 NEEDS_RUNTIME.
+3. 11 evidence matrices generated for Notion AI lookup.
+4. Decision calendar hardened with pass/fail/owner_action/auto_report.
+5. Per-decision tracking spec.
+6. Stale-FU auto-update spec.
+7. V91_ONE_SOURCE_INDEX.md single Notion lookup.
 
-## ĐẾN ĐÂY THẬT SỰ HẾT
+## Active items (queued with date)
 
-Total V85+V86+V87+V88+V89+V90 = ~1378 items reconciled. Không còn category nào sót.
+| Date | Trigger | Pass condition |
+|---|---|---|
+| 2026-05-08 | Cron 19:00-19:14 VN proof | All 6 jobs success |
+| 2026-05-12 | 4 P0 methods 14d gate | min_days >= 14 |
+| 2026-05-14 | 7d V79/V80/V81 + MB cold gate | MB OFFICIAL not 0/7 |
+| 2026-05-21 | 14d full + MN dossier | MN candidates sustain lift |
+| 2026-06-06 | 30d full sweep | Wilson CI computed |
+| 2026-07-06 | 60d V79/V80/V81 + MB SPECIALIST | 60d Wilson > baseline + zero MT break |
 
-## Active automated triggers (unchanged)
-
-- 2026-05-08 6-cron natural proof.
-- 2026-05-12 4 P0 methods 14d gate.
-- 2026-05-14 V79/V80/V81 7d + MB cold gate.
-- 2026-05-21 14d full + MN dossier + drift V76 active.
-- 2026-06-06 30d sweep.
-- 2026-07-06 60d V79/V80/V81.
-
-## Owner-locked
+## Owner-locked (unchanged)
 
 - Selector promotion (any).
 - Official prompt change.

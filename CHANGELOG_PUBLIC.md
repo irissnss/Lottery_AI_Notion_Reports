@@ -1,3 +1,12 @@
+## V91 — Total Reconciliation + Stale-FU Closure + Actionable Evidence Pass (2026-05-08 01:15 VN)
+
+- NEWER_THAN_V89_FOUND verified: latest = V90.
+- 74 stale FU re-audited: 54 SUPERSEDED + 13 RESOLVED + 7 NEEDS_RUNTIME (67/74 = 90% docs-only).
+- 11 evidence matrices generated for Notion AI lookup (FU reconciliation, actionable evidence, method accuracy, region strategy, prompt status, routes audit, decision calendar hardened, per-decision tracking, stale-FU auto-update spec, 29 tabs audit, V91_ONE_SOURCE_INDEX).
+- Decision calendar hardened with pass/fail/owner_action/auto_report.
+- NO VPS deploy. NO UI change. NO DB write.
+- 4 official tables hash byte-identical.
+
 ## V90 — Final cleanup (2026-05-08 01:05 VN)
 
 - 5 final tabs in /monitoring (29 tabs total): 🐍 Backend Modules (293) / 📜 Scripts (19) / 🛠️ Web Helpers (42) / 🗺️ Active Roadmaps (2) / ⚖️ Cursor Rules (3).

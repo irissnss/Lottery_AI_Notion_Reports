@@ -1,32 +1,26 @@
 # NEXT ACTION (2026-05-08)
 
-V90 Final cleanup shipped. /monitoring giờ có **29 tabs**. Đến đây thật sự HẾT.
+V91 Total Reconciliation shipped. Hệ thống tự chạy.
 
 ## Owner action right now
 
-- Đăng nhập admin → `/monitoring` → cuộn xuống V87 Master Index → 29 tabs.
-- 5 tabs cuối cùng (V90):
-  - 🐍 **Backend Modules (293)** — kind pill (core/materializer/test_lane/audit)
-  - 📜 **Scripts** (19)
-  - 🛠️ **Web Helpers** (42) — kind pill (deploy/sync/vps/diag/test)
-  - 🗺️ **Active Roadmaps** (2)
-  - ⚖️ **Cursor Rules** (3)
+- (Optional) Đọc [V91_ONE_SOURCE_INDEX.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/V91_ONE_SOURCE_INDEX.md) — 1 file Notion AI lookup.
+- (Optional) Đọc [V91_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/V91_REPORT.md) — main Vietnamese report.
+- (Optional) Vào /monitoring (V87 Master Index 29 tabs) như cũ.
 
-## Not necessary unless owner asks
-
-- Re-audit 72 stale FU items (V90 candidate).
-- Live cron last_run actual timestamps đã có realtime ở V89.
-- Tất cả file/registry đã được kê — không còn category nào sót.
-
-## Until next session (automated)
+## Until next gate (automated)
 
 - 26 cron jobs daily VN.
-- /monitoring auto-refresh 60s.
-- Decision calendar tự kích hoạt.
+- 2026-05-08: 6-cron natural proof.
+- 2026-05-12: 4 P0 methods 14d gate.
+- 2026-05-14: V79/V80/V81 7d + MB cold escalation.
+- 2026-05-21: 14d + MN dossier draft.
+- 2026-06-06: 30d sweep.
+- 2026-07-06: 60d full V79/V80/V81 + MB SPECIALIST.
 
-## Owner-gate (no auto-action)
+## Owner-gate
 
-1. Selector promotion (any).
-2. Official prompt change.
-3. Production model swap.
-4. Global NO_TOKEN floor change.
+- MN_TEST_LANE_VOTER_PROPOSAL dossier — 2026-05-21
+- MB regime forensic — auto-trigger 2026-05-14 if cold ≥7d
+- Selector promotion — OWNER_LOCKED
+- Official prompt change — OWNER_LOCKED
