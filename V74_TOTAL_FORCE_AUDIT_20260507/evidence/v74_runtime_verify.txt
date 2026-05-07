@@ -1,0 +1,63 @@
+﻿=== A. C-16 selected_count 2026-05-07 ===
+  MN: selected=20 (target 15-20)  PASS
+  MT: selected=20 (target 15-20)  PASS
+  MB: selected=20 (target 15-20)  PASS
+
+=== B. V67 STRICT gate disabled ===
+  STRICT_MIN_CONTRIBUTIONS=0: True
+  STRICT_SCORE_THRESHOLD=0.0: True
+  Verdict: PASS
+
+=== C. V73 region-adaptive priority ===
+  MN exploit-first: MN: PASS
+  Verdict: PASS
+
+=== D. Cron schedule (4 jobs) ===
+  V66 23:35: PASS
+  V67 23:40: PASS
+  V70 23:45: PASS
+  V73 23:48: PASS
+
+=== E. V73 smoke 2026-05-07 ===
+  MN: tier=AURA bt=95  PASS
+  MT: tier=MEDIUM bt=95  PASS
+  MB: tier=AURA bt=79  PASS
+
+=== F. Official table counts ===
+  predictions: 4419
+  final_bundles: 205
+  lottery_results: 14621
+  model_daily_eval: 4328
+
+=== G. C-05 latency live status ===
+  rows since 2026-05-06: 83, latency_available count: 0, avg_lat: None
+
+=== H. C-03 evaluator PENDING check ===
+  pending rows by region: {'MB': 14, 'MN': 16, 'MT': 7}
+
+=== I. C-17A duplicate check ===
+  dup groups (date+region+experiment+run_label): 0
+
+=== J. C-17B output_lock_status ===
+  du_doan_test_bundles has output_lock_status/readiness_status column: False
+
+=== K. V66.1 latest anchor: 2026-05-06 ===
+
+=== L. Consensus rows last 14d: ===
+  {}
+
+=== SUMMARY ===
+  A_c16_20_voters: PASS
+  B_v67_strict_disabled: PASS
+  C_v73_region_priority: PASS
+  D_cron_schedule: PASS
+  E_v73_today_row: PASS
+  F_official_counts: {'predictions': 4419, 'final_bundles': 205, 'lottery_results': 14621, 'model_daily_eval': 4328}
+  G_c05_latency: {'rows': 83, 'available': 0, 'avg_lat': None}
+  H_c03_pending: {'MB': 14, 'MN': 16, 'MT': 7}
+  I_c17a_dup_groups: 0
+  J_c17b_lock_column: MISSING
+  K_v66_anchor: 2026-05-06
+  L_consensus_rows: {}
+
+[OK] Verify results saved.

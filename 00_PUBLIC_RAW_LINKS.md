@@ -1,3 +1,19 @@
+# Public Raw Links
+
+## V74 — TOTAL FORCE AUDIT (NEW 2026-05-07T11:18:20+07:00)
+
+- [V74 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/V74_REPORT.md)
+- [V74 read-this-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/READ_THIS_FIRST.md)
+- [V74 evidence: scoreboard](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/evidence/scoreboard.md)
+- [V74 evidence: open_issues](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/evidence/open_issues.md)
+- [V74 governance: CONTINUOUS_MEASUREMENT_DOCTRINE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/governance/CONTINUOUS_MEASUREMENT_DOCTRINE.md)
+- [V74 governance: METRIC_DICTIONARY](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/governance/METRIC_DICTIONARY.md)
+- [V74 governance: OFFICIAL_PROMOTION_GATE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/governance/OFFICIAL_PROMOTION_GATE.md)
+- [V74 governance: TEST_LANE_METHOD_REGISTRY](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/governance/TEST_LANE_METHOD_REGISTRY.md)
+- [V74 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/REPORT_MANIFEST.json)
+
+## V73 — Region-adaptive HYBRID
+
 ﻿# Public Raw Links â€” Full Package
 
 ## V67 â€” ADAPTIVE_EXPLOIT_V1 selector deployed test-lane (NEW 2026-05-07 01:30)

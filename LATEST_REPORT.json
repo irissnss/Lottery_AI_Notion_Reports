@@ -1,0 +1,39 @@
+{
+  "schema_version": "latest_report_v1",
+  "latest_version": "V74",
+  "latest_folder": "V74_TOTAL_FORCE_AUDIT_20260507",
+  "latest_report": "V74_TOTAL_FORCE_AUDIT_20260507/V74_REPORT.md",
+  "latest_manifest": "V74_TOTAL_FORCE_AUDIT_20260507/REPORT_MANIFEST.json",
+  "public_commit": "TBD_AT_PUSH",
+  "private_commit": "TBD_AT_PUSH",
+  "created_at_vn": "2026-05-07T11:18:20+07:00",
+  "status": "DEPLOYED — runtime verified + governance locked + GitHub metadata fixed",
+  "official_touched": false,
+  "test_lane_status": "BALANCED — V73 region-adaptive HYBRID + 20 voters + V67 eager + CONSENSUS gate>=3",
+  "next_action": "Fix C-05 latency capture in next session; cron continues 23:35-23:48 VN",
+  "read_order": [
+    "V74_TOTAL_FORCE_AUDIT_20260507/READ_THIS_FIRST.md",
+    "V74_TOTAL_FORCE_AUDIT_20260507/V74_REPORT.md",
+    "V74_TOTAL_FORCE_AUDIT_20260507/DELTA_FROM_PREVIOUS.md",
+    "REPORT_INDEX.md",
+    "CHANGELOG_PUBLIC.md",
+    "OPEN_ISSUES.md",
+    "NEXT_ACTION.md"
+  ],
+  "changed_since_previous": [
+    "C-16 budget all 3 regions = 20 voters",
+    "CONSENSUS_V1 re-backfilled",
+    "C-03 evaluator backfill — PENDING reduced from 37 to 9",
+    "C-17B output_lock_status column added",
+    "4 governance docs created",
+    "Daily evidence pack bootstrapped",
+    "GitHub README rewritten (was stale)",
+    "LATEST_REPORT.json / REPORT_INDEX.md / CHANGELOG_PUBLIC.md / OPEN_ISSUES.md / NEXT_ACTION.md / DELTA_INDEX.md created"
+  ],
+  "open_issues_count": 1,
+  "safety_summary": {
+    "official_unchanged": true,
+    "hash_guard_passed": true,
+    "public_safe": true
+  }
+}

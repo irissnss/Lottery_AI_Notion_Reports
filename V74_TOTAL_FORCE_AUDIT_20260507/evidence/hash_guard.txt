@@ -1,0 +1,6 @@
+Hash guard for 4 official tables (LOCAL post-V74 work):
+
+  predictions: count=4419 sha256[:16]=1e37616357ef4bf9
+  final_bundles: count=205 sha256[:16]=0bea37fd49432e5c
+  lottery_results: count=14621 sha256[:16]=72c9b2dd4681e26b
+  model_daily_eval: count=4328 sha256[:16]=a2964f07e3368306

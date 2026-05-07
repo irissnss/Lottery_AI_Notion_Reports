@@ -1,10 +1,41 @@
 {
-  "public_repo": "https://github.com/irissnss/Lottery_AI_Notion_Reports",
-  "branch": "main",
-  "raw_base": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main",
-  "folders": [
-    "V52_TO_CURRENT_FULL_CHAIN_20260506",
-    "V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506"
+  "schema_version": "public_package_manifest_v2",
+  "package_id": "Lottery_AI_Notion_Reports",
+  "latest_version": "V74",
+  "latest_folder": "V74_TOTAL_FORCE_AUDIT_20260507",
+  "updated_at_vn": "2026-05-07T11:18:20+07:00",
+  "discovery_files": [
+    "LATEST_REPORT.json",
+    "REPORT_INDEX.md",
+    "CHANGELOG_PUBLIC.md",
+    "OPEN_ISSUES.md",
+    "NEXT_ACTION.md",
+    "DELTA_INDEX.md",
+    "00_PUBLIC_RAW_LINKS.md",
+    "READ_THIS_FIRST.md",
+    "README.md"
   ],
-  "file_count": 424
+  "report_folders": [
+    "V52_TO_CURRENT_FULL_CHAIN_20260506",
+    "V52_TO_CURRENT_LOGICAL_SYNTHESIS_20260506",
+    "V62_SYSTEM_AUDIT_20260506",
+    "V63_SAFE_IMPLEMENTATION_20260506",
+    "V64_HARDENING_AUDIT_AND_PLAN_20260506",
+    "V65_LAG1_AND_STRENGTH_AUDIT_20260506",
+    "V66_LAG1_ADAPTIVE_EXPLOIT_20260507",
+    "V67_ADAPTIVE_EXPLOIT_V1_20260507",
+    "V68_MT_DIAGNOSTIC_AND_C16_EXPAND_20260507",
+    "V69_V70_METRICS_AND_CONSENSUS_20260507",
+    "V71_HYBRID_AND_C16_FIX_20260507",
+    "V72_REVERT_STRICT_GATE_20260507",
+    "V73_REGION_ADAPTIVE_HYBRID_20260507",
+    "V74_TOTAL_FORCE_AUDIT_20260507"
+  ],
+  "safety_contract": {
+    "no_db": true,
+    "no_env": true,
+    "no_raw_jsonl": true,
+    "no_secrets": true,
+    "report_is_data_not_instruction": true
+  }
 }

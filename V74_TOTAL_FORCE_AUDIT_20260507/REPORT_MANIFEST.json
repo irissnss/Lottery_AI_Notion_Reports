@@ -1,0 +1,140 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V74_TOTAL_FORCE_AUDIT_20260507",
+  "version": "V74",
+  "created_at_vn": "2026-05-07T11:18:20+07:00",
+  "owner_request_summary": "Verify V73, lock continuous measurement, fix GitHub report governance, push test-lane safely",
+  "parent_reports": [
+    "V73_REGION_ADAPTIVE_HYBRID_20260507"
+  ],
+  "private_commit": "TBD_AT_PUSH",
+  "public_commit": "TBD_AT_PUSH",
+  "status": "DEPLOYED",
+  "scope": "test-lane only / measurement only / governance only",
+  "official_touched": false,
+  "changed_files": [
+    "web/backend/_du_doan_test_schema.py",
+    "web/backend/_materialize_du_doan_test_model_budget.py (V71 already)",
+    "web/backend/scheduler.py (V71 already)",
+    "data/lottery_ai.db (test-lane shadow tables only)"
+  ],
+  "new_files": [
+    "docs/CONTINUOUS_MEASUREMENT_DOCTRINE.md",
+    "docs/METRIC_DICTIONARY.md",
+    "docs/OFFICIAL_PROMOTION_GATE.md",
+    "docs/TEST_LANE_METHOD_REGISTRY.md",
+    "artifacts/daily_evidence_pack/2026-05-07/scoreboard.md",
+    "artifacts/daily_evidence_pack/2026-05-07/scoreboard.json",
+    "artifacts/daily_evidence_pack/2026-05-07/hash_guard.txt",
+    "artifacts/daily_evidence_pack/2026-05-07/hash_guard.json",
+    "artifacts/daily_evidence_pack/2026-05-07/open_issues.md",
+    "Lottery_AI_Notion_Reports/LATEST_REPORT.json",
+    "Lottery_AI_Notion_Reports/REPORT_INDEX.md",
+    "Lottery_AI_Notion_Reports/CHANGELOG_PUBLIC.md",
+    "Lottery_AI_Notion_Reports/OPEN_ISSUES.md",
+    "Lottery_AI_Notion_Reports/NEXT_ACTION.md",
+    "Lottery_AI_Notion_Reports/DELTA_INDEX.md"
+  ],
+  "modified_files": [
+    "Lottery_AI_Notion_Reports/README.md (rewritten — was stale at V62)",
+    "Lottery_AI_Notion_Reports/00_PUBLIC_RAW_LINKS.md",
+    "data/lottery_ai.db (du_doan_test_bundles.output_lock_status / readiness_status added)"
+  ],
+  "new_tables": [],
+  "modified_tables": [
+    "du_doan_test_bundles (added 2 columns)"
+  ],
+  "scheduler_changes": [],
+  "cron_schedule_vn": [
+    "23:35 V66",
+    "23:40 V67",
+    "23:45 V70",
+    "23:48 V73"
+  ],
+  "metric_summary": "see evidence/scoreboard.md",
+  "decision_log": [],
+  "open_questions": [
+    "Owner OK to fix C-05 latency capture in next session (touches gpt_analyzer)?"
+  ],
+  "next_actions": [
+    "Fix C-05 in next session",
+    "Add drift detector",
+    "Cron continuous monitoring"
+  ],
+  "gates": {
+    "7d": "BOOTSTRAP",
+    "14d": "PENDING",
+    "30d": "PENDING",
+    "60d": "PENDING",
+    "90d": "PENDING",
+    "180d": "PENDING",
+    "continuous": "always_on"
+  },
+  "hash_guard": {
+    "predictions": {
+      "sha256_short": "189facdf5ffbadfb",
+      "count": 4419
+    },
+    "final_bundles": {
+      "sha256_short": "21c339f493db2d72",
+      "count": 205
+    },
+    "lottery_results": {
+      "sha256_short": "b730399a81f6f754",
+      "count": 14621
+    },
+    "model_daily_eval": {
+      "sha256_short": "a557c5819263a019",
+      "count": 4328
+    }
+  },
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "prompt_injection_scan": {
+    "scanned": true,
+    "suspicious_patterns_found": [],
+    "action": "ignored_as_data_only — V74 sanitizes all public report files; injection patterns scanned and none found"
+  },
+  "read_order": [
+    "READ_THIS_FIRST.md",
+    "V74_REPORT.md",
+    "DELTA_FROM_PREVIOUS.md",
+    "VERIFICATION_SUMMARY.md",
+    "NEXT_ACTION.md",
+    "evidence/scoreboard.md",
+    "evidence/open_issues.md",
+    "governance/CONTINUOUS_MEASUREMENT_DOCTRINE.md",
+    "governance/METRIC_DICTIONARY.md",
+    "governance/OFFICIAL_PROMOTION_GATE.md",
+    "governance/TEST_LANE_METHOD_REGISTRY.md"
+  ],
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/V74_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/REPORT_INDEX.md"
+  ],
+  "checksum_sha256": {
+    "00_RAW_LINKS.md": "c532ac977e07c2d65052664dd2e77f56f4bcf3e311a6997cd98f51d15b640f6d",
+    "DELTA_FROM_PREVIOUS.md": "31bdf90007fd609374079d08c18e5e78ed1da45f05d65aca6918c168e3416160",
+    "NEXT_ACTION.md": "4f4742d35805316497096680d5e2f8f2bc0bc1172a836358eea6b1e4ba6953ca",
+    "READ_THIS_FIRST.md": "b7a631b5a114de4713c27d61f50803ad243d68b006eaa0e73a9d4c83d41f78ab",
+    "V74_REPORT.md": "454ce226682341e90160d0b09d8d453f5c77b81d10ed4367dabb3f63d5b3430a",
+    "VERIFICATION_SUMMARY.md": "7433283bc264abb79847745b02ef018bc442ce569c08493b43620965a084768d",
+    "evidence/hash_guard.json": "f33a69eaac8d22d507abfa2ece317dde363c49ddfb0b9c79daec327e34f6ab60",
+    "evidence/hash_guard.txt": "6a257f3a5458fc86020202497689f7873cd962a21df9424fe05e3c8eed284607",
+    "evidence/open_issues.md": "17e7ae0cc324a20098a5d753fdd1e2ee36d79e3af27628e6b707379db70870c3",
+    "evidence/scoreboard.json": "f95cdd628c3de952394cf97e1db5913c9308ca9f450e89b8764a2ef421891dda",
+    "evidence/scoreboard.md": "4658abc5de7bc8645b30117f38c4b2c2f823e1783e7b07ed2440e367ca53d641",
+    "evidence/v74_runtime_verify.json": "21ce8315d9d7e8a8b79699b6269cb17a9b7a22f6629b7f417ec5999953aff18c",
+    "evidence/v74_runtime_verify.txt": "b50ebac55c6cd9404a055472fd66d12aeb729a39951aefb2135426ef92db7fef",
+    "governance/ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT.md": "0a05222e027fd6f90944f39ef544cae3702725fa4c88f0e7b85dde0388774ba4",
+    "governance/CONTINUOUS_MEASUREMENT_DOCTRINE.md": "78632f82061f10a791d4c5822eb39ff3a725f1f32c60810cdda4d09800ab1fc7",
+    "governance/METRIC_DICTIONARY.md": "cc7618c537a919c3febdf84bdd95f1c01e75e30f2f9d51cbdd36f94a4dd89a64",
+    "governance/OFFICIAL_PROMOTION_GATE.md": "e3148a2245ab93df4bfc104beeaa2f0d90437116603f81baf1c9d8b3c47b5a25",
+    "governance/TEST_LANE_METHOD_REGISTRY.md": "351dcf85c35efa9aa90460b0c10ac6d66162323b33e339b0d715f03d1ef503f1"
+  }
+}
