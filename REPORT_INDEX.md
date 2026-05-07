@@ -1,15 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507** (V77)
+Latest: **V78_AI_PROMPT_REGION_AUDIT_20260507** (V78)
 
 ## Latest report
 
-- [V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md)
-- [V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md)
+- [V78_AI_PROMPT_REGION_AUDIT_20260507/V78_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V78_AI_PROMPT_REGION_AUDIT_20260507/V78_REPORT.md)
+- [V78_AI_PROMPT_REGION_AUDIT_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V78_AI_PROMPT_REGION_AUDIT_20260507/READ_THIS_FIRST.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V78_AI_PROMPT_REGION_AUDIT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V78_AI_PROMPT_REGION_AUDIT_20260507/)
 - [V76_P0_BATCH_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/)
 - [V75_NEXT_ACTION_PROPOSAL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/)
 - [V74_TOTAL_FORCE_AUDIT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/)

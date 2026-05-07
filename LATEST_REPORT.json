@@ -1,50 +1,48 @@
-{
+﻿{
   "schema_version": "latest_report_v1",
-  "latest_version": "V77",
-  "latest_folder": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507",
-  "latest_report": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md",
-  "latest_manifest": "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/REPORT_MANIFEST.json",
-  "public_commit": "5c356b9ce76bd6389795705e50d1daa684ca09d6",
-  "private_commit": "a5c8b1b1c866597ee344ae44eeca56b3a1042404",
-  "created_at_vn": "2026-05-07T18:55:00+07:00",
-  "status": "DEPLOYED — V77-1+V77-2+V77-3+V77-4 PASS, hash guard PASS, alert-only contract honored",
+  "latest_version": "V78",
+  "latest_folder": "V78_AI_PROMPT_REGION_AUDIT_20260507",
+  "latest_report": "V78_AI_PROMPT_REGION_AUDIT_20260507/V78_REPORT.md",
+  "latest_manifest": "V78_AI_PROMPT_REGION_AUDIT_20260507/REPORT_MANIFEST.json",
+  "public_commit": "TBD_AT_PUSH",
+  "private_commit": "d48ee9111083c7923ed9b2c44ce859630699c569",
+  "created_at_vn": "2026-05-07T20:05:00+07:00",
+  "status": "DEPLOYED â€” V78 shadow prompt audit + V77 timezone hardening; official output unchanged",
   "official_touched": false,
-  "test_lane_status": "INCIDENT_FIXED — V70/V73 timing bug fixed (post-cascade rerun 19:00 VN); fast incident monitor 19:05 VN; MN/MB cold streak confirmed real (regime shift, not bug)",
-  "next_action": "Tomorrow 2026-05-08 19:00 VN cron should fire post-cascade V70+V73 re-run with full pool; 19:05 VN fast incident monitor will alert if streak continues; verify V70 agreement_count >= 3 for MN/MT",
+  "test_lane_status": "SHADOW_PROMPT_AUDIT_ACTIVE â€” MN/MB/MT region-specialist prompts, no provider calls",
+  "next_action": "Verify 2026-05-08 19:00/19:05/19:10 VN crons; compare V78 shadow BT vs OFFICIAL/V67/V70/V73 after closeout",
   "owner_verification": {
-    "mn_4day_cold_streak_claim": "CONFIRMED",
-    "mb_4day_cold_streak_claim": "CONFIRMED",
-    "mt_status": "FINE — OFFICIAL 4/4",
-    "v73_saved_mn_today": true
+    "mn_ai_herd_wrong_2026_05_07": "CONFIRMED â€” herd 94 missed, V67/V73 95 hit",
+    "mb_all_methods_cold": "CONFIRMED â€” requires regime-shift monitoring",
+    "mt_consensus_first": "KEEP â€” V70/V73 4/4 after V77 fix"
   },
   "read_order": [
-    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/READ_THIS_FIRST.md",
-    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/V77_REPORT.md",
-    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/4d_regression_table.md",
-    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/v70_v73_timing_root_cause.md",
-    "V77_POST_CLOSEOUT_INCIDENT_AUDIT_20260507/evidence/fast_incident_alerts_20260507.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/READ_THIS_FIRST.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/V78_REPORT.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/prompt_coverage_matrix.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/mn_recovery_deep_dive.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/mb_regime_shift_deep_dive.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/no_token_vs_ai_coordination.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/shadow_prompt_specs.md",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507/evidence/would_save_would_break_selector_proposals.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
   "changed_since_previous": [
-    "V77 emergency post-closeout incident audit triggered by owner",
-    "V77-1 NEW cron 19:00 VN: Post-cascade V70+V73 re-run with full pool (test-lane only)",
-    "V77-2 NEW cron 19:05 VN: Fast incident monitor 5 alert classes (alert-only, never auto-rollback)",
-    "V77-3 V70/V73 backfilled 4 days x 3 regions with proper-timing pool",
-    "V77-4 VPS schema fix: output_lock_status + readiness_status columns added (V74 fix had not persisted on VPS)",
-    "MN/MB OFFICIAL 0/4 last 4d confirmed real cold streak (regime shift, not test-lane bug)",
-    "V73 saved MN today (95 vs OFFICIAL 94) - first save under stress",
-    "V70 timing bug found and fixed: original 23:45 cron fired before daily test runners completed",
-    "Pre/post hashes 4 official tables UNCHANGED (only natural growth from cascade)"
+    "Fixed V77 timezone bug in selector/monitor nested cron helpers",
+    "Created MN/MB/MT region-specialist shadow prompt files",
+    "Created V78 dry-run shadow prompt audit materializer and six shadow tables",
+    "Confirmed MN AI/official herd ignored V67 save candidate on 2026-05-07",
+    "Confirmed MB all-method cold state",
+    "No provider calls and no official mutation"
   ],
-  "open_issues_count": 1,
+  "open_issues_count": 2,
   "safety_summary": {
     "official_unchanged": true,
-    "hash_guard_passed": true,
+    "hash_guard_deep_diff_passed": true,
     "public_safe": true,
-    "v77_alert_only": true,
-    "no_auto_rollback": true,
-    "cron_purely_additive": true
+    "provider_calls": false,
+    "shadow_only": true
   }
 }

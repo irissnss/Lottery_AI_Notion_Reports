@@ -1,0 +1,35 @@
+{
+  "report_id": "V78_AI_PROMPT_REGION_AUDIT_20260507",
+  "version": "V20.3.37.78",
+  "files": [
+    "READ_THIS_FIRST.md",
+    "V78_REPORT.md",
+    "ignored_save_candidates.md",
+    "mb_ai_failure_table.md",
+    "mb_regime_shift_deep_dive.md",
+    "mn_ai_failure_table.md",
+    "mn_recovery_deep_dive.md",
+    "no_token_vs_ai_coordination.md",
+    "prompt_coverage_matrix.md",
+    "shadow_prompt_specs.md",
+    "would_save_would_break_selector_proposals.md",
+    "wrong_herd_tails.md"
+  ],
+  "runtime_files": [
+    "web/backend/_materialize_ai_region_prompt_shadow_audit.py",
+    "web/backend/prompts/shadow/MN_AI_REGION_SPECIALIST_PROMPT_SHADOW_V1.md",
+    "web/backend/prompts/shadow/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V1.md",
+    "web/backend/prompts/shadow/MT_AI_REGION_SPECIALIST_PROMPT_SHADOW_V1.md",
+    "web/backend/scheduler.py"
+  ],
+  "rows": {
+    "ai_prompt_context_audit_shadow": 12,
+    "ai_region_specialist_prompt_shadow_results": 12,
+    "ai_herding_failure_daily": 24,
+    "official_vs_testlane_rescue_daily": 12,
+    "mn_mb_failure_streak_daily": 2,
+    "method_cluster_performance_daily": 24
+  },
+  "official_touched": false,
+  "provider_calls": false
+}
