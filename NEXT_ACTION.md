@@ -1,21 +1,16 @@
 # NEXT ACTION
 
-V78 is now the latest report. Focus next live cycle on verifying V77/V78 cron chain and comparing shadow prompt output.
+V79 is latest.
 
-## Tomorrow 2026-05-08
+## 2026-05-08 live checks
 
-1. 19:00 VN — Verify V77 post-cascade V70+V73 rerun.
-2. 19:05 VN — Verify V77 fast incident monitor.
-3. 19:10 VN — Verify V78 prompt shadow audit writes 86 rows.
-4. After closeout — compare V78 shadow BT vs OFFICIAL/V67/V70/V73.
+1. 19:00 VN — V77 post-cascade V70+V73 rerun.
+2. 19:05 VN — V77 fast incident monitor.
+3. 19:08 VN — V79 AI↔NO_TOKEN cross-verification.
+4. 19:10 VN — V78 prompt shadow audit.
+5. After closeout — compare V79 cluster_weighted_tail vs OFFICIAL/V67/V70/V73.
 
-## Watch
+## Owner decisions
 
-- MN: Does V67/V73 continue to beat AI/official herd?
-- MB: If all-method cold persists 7 additional days, escalate P0 MB regime-shift forensic.
-- MT: Do not disturb consensus-first logic while V70/V73 remain strong.
-
-## Owner gates
-
-- Provider calls for region-specialist shadow prompts require owner OK.
+- Provider calls for shadow prompt packages require owner OK.
 - Any official prompt/scoring/selector/model-roster change requires owner OK and promotion dossier.

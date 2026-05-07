@@ -1,23 +1,23 @@
-# Open issues — V78 (updated 2026-05-07 20:05 VN)
+# Open issues — V79
 
 ## Active
 
-1. **FU-144 / V78 Prompt Shadow Audit**
+1. **FU-145 / V79 cross-verification**
    - Status: DEPLOYED_PENDING_LIVE_VERIFY.
-   - Verify natural cron 19:10 VN tomorrow.
-   - No provider calls yet. Owner OK required before calling AI providers with shadow prompts.
+   - Verify natural cron 19:08 VN tomorrow.
 
-2. **MB all-method cold**
+2. **Provider shadow calls**
+   - Status: OWNER_LOCK.
+   - V79 did not call providers. Owner approval required before using shadow prompt packages with paid models.
+
+3. **MB all-method cold**
    - Status: WATCH.
-   - OFFICIAL 0/4, V70/V73/C16/V67 no save in 4-day window.
-   - Escalate to P0 if cold persists 7 additional days.
+   - Escalate to P0 if persists 7 additional days.
 
-3. **MN AI herd ignores V67 save candidate**
-   - Status: MEASURED.
-   - 2026-05-07 AI/official herd 94 missed; V67/V73 95 hit.
-   - Track with V78 shadow prompts.
+4. **Public metadata mismatch**
+   - Status: FIXED_IN_V79.
+   - Root metadata now points V79.
 
-## Resolved / Mitigated
+## Official lock
 
-- V77 timezone cron bug mitigated in V78 by replacing `datetime.now(VN_TZ)` string usage in selector/monitor nested jobs.
-- V78 shadow tables all guard flags valid: `output_eligible=0`, `diagnostic_only=1`, `owner_approved=0`.
+- Official path remains locked. No prompt/scoring/final bundle/model roster changes.
