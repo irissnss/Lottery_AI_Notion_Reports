@@ -1,3 +1,15 @@
+## V84 — MASTER CONTROL BOARD (2026-05-07 23:30 VN)
+
+- 24-row master control board covering ALL families V63 → V83.
+- 18-method P0 portfolio maturity matrix: 14 READY_TO_EVALUATE, 4 WAIT 5 days (until 2026-05-12).
+- 14d region split: 2 POTENTIAL_LIFT (strongest_to_final_preservation, counterfactual_decision_audit), 3 DESTRUCTIVE_BIAS.
+- 60d evidence availability map per family.
+- Decision calendar 11 specific VN dates 2026-05-08 → 2026-07-06.
+- Owner-gate queue 9 items with trigger dates.
+- D-1/D-2 subsumed; D-7 ambiguous resolved as 7d gate concept.
+- UI master board spec proposed (owner OK pending).
+- 4 official tables hash UNCHANGED.
+
 ## V83 — V82 MONITOR UI PANEL (admin-only, read-only) (2026-05-07 23:20 VN)
 
 - New backend module `web/backend/_v82_monitor.py` (read-only payload, 18 keys).

@@ -1,0 +1,92 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V84_MASTER_CONTROL_BOARD_20260507",
+  "version": "V84",
+  "internal_version": "V20.3.37.84",
+  "created_at_vn": "2026-05-07T23:40:15+07:00",
+  "owner_request_summary": "Master Control Board: 1 bảng duy nhất gom V63->V83, decision dates cụ thể, no waiting vague",
+  "parent_reports": [
+    "V83_V82_MONITOR_UI_PANEL_20260507",
+    "V82_60D_EVIDENCE_CONTROL_PASS_20260507",
+    "V81_PROVIDER_SHADOW_PILOT_20260507"
+  ],
+  "status": "DELIVERED — 24-row master board + 18-method maturity matrix + 11-date decision calendar + 9 owner-gate items; official UNCHANGED",
+  "scope": "audit only / read-only / no DB writes / no VPS deploy",
+  "official_touched": false,
+  "deliverables": {
+    "master_control_board_rows": 24,
+    "p0_portfolio_methods": 18,
+    "p0_ready_to_evaluate": 14,
+    "p0_wait_more_days": 4,
+    "p0_potential_lift": [
+      "strongest_to_final_preservation_v1",
+      "counterfactual_decision_audit_v1"
+    ],
+    "p0_destructive_bias": [
+      "rule_phase_evidence_v1",
+      "rule_injection_contract_shadow_v1",
+      "no_token_drift_guard_v1"
+    ],
+    "v52_5_60d_promotion_candidates": [
+      "MN_SPECIALIST_ROSTER_V1",
+      "MN_AI_CHAIN_PRESERVATION_V1"
+    ],
+    "v52_5_60d_destructive": [
+      "MT_AI_CHAIN_PRESERVATION_V1",
+      "MT_PRIOR_REGION_CONTEXT_SAFE_V1"
+    ],
+    "decision_calendar_dates": 11,
+    "owner_gate_queue_items": 9,
+    "wave1_status": "DEPLOYED + LIVE_PROVEN",
+    "wave2_status": "DEPLOYED + LIVE_PROVEN",
+    "d1_d2_status": "DOC_COMPLETE_SUBSUMED",
+    "d7_status": "AMBIGUOUS_LABEL_RESOLVED_AS_7D_GATE_CONCEPT"
+  },
+  "key_decision_dates": [
+    "2026-05-08: 6-cron natural proof",
+    "2026-05-12: 4 P0 methods 14d gate",
+    "2026-05-14: V79/V80/V81 7d + MB cold-streak escalation",
+    "2026-05-21: 14d full + MN dossier + drift V76 active",
+    "2026-06-06: 30d full sweep",
+    "2026-07-06: 60d full V79/V80/V81"
+  ],
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change",
+    "UI Master Board build (new) — only after owner OK"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/master_control_board.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/decision_calendar.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "9d8c629d99f725d269d26ca62c73f844f4e87aa7a08b79bdbdd6b940b5fe8538",
+    "V84_REPORT.md": "8b5cc218d6b9c01a25aedebe02750065f628bf84f582ca9a8e70a835d0d7bdea",
+    "evidence/14d_method_x_region_flips.md": "ef80d29af5e29acb8091a49853b22b9d58c8e64616c9a604107f4edbf5e8d818",
+    "evidence/17_methods_status.md": "d6c708c3ae74ec60c91939761f4912e63b6592e040c46591ef5ae91df575d6ef",
+    "evidence/60d_evidence_availability.md": "00839e66f54ee37a84182a5b4e37f32250dd0d89ef2fddf540b53894eef9654f",
+    "evidence/ai_no_token_status.md": "d9c3109e7d1062d12b4f50352b46b48073c1e56c4706035bc53ef77b745d20c0",
+    "evidence/d7_wave_items.md": "cd832a96e5bcc5202b33659320f91565e6c14342417c2343d8b936c5a7a34d23",
+    "evidence/decision_calendar.md": "b1a43028c27dd2b4dd012bd124bee98435c294d5157108c10411d42ef440c31b",
+    "evidence/master_control_board.md": "d490bb7b1d99c0f90e9f46a8b6246c20880a8a517f9eb99bac7c5b7c7188581c",
+    "evidence/mb_master_queue.md": "39b807979c26336e4b7f0434f5ee08a624978664cab377bffe9a87bc0ac44b98",
+    "evidence/method_maturity_matrix.md": "854acc185b8537514c9c323b266bbd13f75ff812c1c2c8718cbd6361ee5d1c45",
+    "evidence/mn_master_queue.md": "ecf2a8eb05729db9a4d67439ee9b096019daeb72bd4f79fd7f68538abd290563",
+    "evidence/mt_protection_queue.md": "3038d090bd02ee95c20013e35f77420453c67a57ce6e1010e060d2a509972bb2",
+    "evidence/no_official_touch_hash_guard.md": "cd824409b9440cc5b1eee1cdda3871b5e1eeb389e7ee815503fdb5ff1aeaf5d5",
+    "evidence/open_owner_gate_queue.md": "1b87a273902134aa3f5dea249b507efb7da9920ee5d3f3bc73baf21180d43bad",
+    "evidence/prompt_first_status.md": "29799c30d488891ed37ff25899eaf21e77e41f232d05a0e372a35b592cb33524",
+    "evidence/ui_master_board_spec.md": "f82943fc02e6a7a6b7d630df92b9a817fc42dc4bedf2289ee297ba57397b9b3c",
+    "evidence/v81_provider_pilot_status.md": "e640b0b7f44c93319eca89751210e7a53e9993c44f2f9186affc6941b10e906a"
+  }
+}

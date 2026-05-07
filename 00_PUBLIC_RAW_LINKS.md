@@ -1,3 +1,12 @@
+## V84 — MASTER CONTROL BOARD (NEW 2026-05-07T23:40:15+07:00)
+
+- [V84 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md)
+- [Master Control Board](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/master_control_board.md)
+- [Method Maturity Matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/method_maturity_matrix.md)
+- [Decision Calendar](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/decision_calendar.md)
+- [Owner Gate Queue](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/open_owner_gate_queue.md)
+- [V84 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/REPORT_MANIFEST.json)
+
 ## V83 — V82 MONITOR UI PANEL (NEW 2026-05-07T23:23:43+07:00)
 
 - [V83 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md)

@@ -1,15 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V83_V82_MONITOR_UI_PANEL_20260507** (V83)
+Latest: **V84_MASTER_CONTROL_BOARD_20260507** (V84)
 
 ## Latest report
 
-- [V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md)
-- [V83_V82_MONITOR_UI_PANEL_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/READ_THIS_FIRST.md)
+- [V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md)
+- [V84_MASTER_CONTROL_BOARD_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/READ_THIS_FIRST.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V83_V82_MONITOR_UI_PANEL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/)
 - [V82_60D_EVIDENCE_CONTROL_PASS_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/)
 - [V81_PROVIDER_SHADOW_PILOT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/)
 - [V80_ABSOLUTE_CLOSURE_PASS_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V80_ABSOLUTE_CLOSURE_PASS_20260507/)

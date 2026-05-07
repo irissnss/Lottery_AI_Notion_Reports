@@ -1,3 +1,12 @@
+## V83 → V84
+
+- Master Control Board reconciliation of all V63→V83 threads.
+- 18-method maturity matrix with min_days/min_samples gates.
+- Decision calendar with specific VN dates.
+- Region master queues (MN/MT/MB).
+- Owner-gate queue 9 items.
+- No DB writes. No official changes.
+
 ## V82 → V83
 
 - Admin read-only V82 monitor UI panel.

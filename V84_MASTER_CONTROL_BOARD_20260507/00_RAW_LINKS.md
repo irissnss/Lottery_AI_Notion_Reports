@@ -1,0 +1,23 @@
+# V84 raw links (2026-05-07T23:40:15+07:00)
+
+- [READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/READ_THIS_FIRST.md)
+- [REPORT_MANIFEST.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/REPORT_MANIFEST.json)
+- [V84_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md)
+
+## evidence
+- [14d_method_x_region_flips.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/14d_method_x_region_flips.md)
+- [17_methods_status.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/17_methods_status.md)
+- [60d_evidence_availability.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/60d_evidence_availability.md)
+- [ai_no_token_status.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/ai_no_token_status.md)
+- [d7_wave_items.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/d7_wave_items.md)
+- [decision_calendar.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/decision_calendar.md)
+- [master_control_board.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/master_control_board.md)
+- [mb_master_queue.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/mb_master_queue.md)
+- [method_maturity_matrix.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/method_maturity_matrix.md)
+- [mn_master_queue.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/mn_master_queue.md)
+- [mt_protection_queue.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/mt_protection_queue.md)
+- [no_official_touch_hash_guard.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/no_official_touch_hash_guard.md)
+- [open_owner_gate_queue.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/open_owner_gate_queue.md)
+- [prompt_first_status.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/prompt_first_status.md)
+- [ui_master_board_spec.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/ui_master_board_spec.md)
+- [v81_provider_pilot_status.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/evidence/v81_provider_pilot_status.md)
