@@ -1,0 +1,37 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508",
+  "version": "V92",
+  "internal_version": "V20.3.37.92",
+  "created_at_vn": "2026-05-08T01:32:33+07:00",
+  "status": "DELIVERED — V92 absolute SSOT wrapper; V90/V91 verified; root metadata fixed to V92",
+  "official_touched": false,
+  "source_reports": [
+    "V90_FINAL_CLEANUP_20260508",
+    "V91_TOTAL_RECONCILIATION_20260508"
+  ],
+  "fu_stale_total": 74,
+  "fu_superseded": 54,
+  "fu_resolved": 13,
+  "fu_needs_runtime": 7,
+  "public_root_fixed_to": "V92",
+  "checksum_sha256": {
+    "00_RAW_LINKS.md": "ad7e58416ddcfc212661a9b2c1c195cb485c453a7a07ac47ee3d3d9b44ef66e0",
+    "READ_THIS_FIRST.md": "6f6192f226d3465994d19a3fb434e5a239b5c9590ffaef532a1df8b8c70c7461",
+    "V92_ONE_SOURCE_TRUTH.md": "d989ba939c2f92837610b8f030ccb2bef3d59fc94d1f2b6a63b631e8184faba3",
+    "V92_REPORT.md": "7be47c92cf77d3ea31e5cdaa82dfe3d72bf96004eef828ea2cecf9fd96ece21f",
+    "evidence/actionable_evidence_matrix.md": "8868da6e29afb04969299fbe0c632c65342ef5736462385c0e5cee5df88ee94e",
+    "evidence/decision_calendar_hardened.md": "74388580d01a82580aa9eb61dfdf41d795d01160876c34a767720a107583f685",
+    "evidence/fu_reconciled.json": "7f7923eecde950d987f780c7f6b35241a5ea4256bf870589dc1080977696e1ad",
+    "evidence/FU_STALE_RECONCILIATION_MATRIX.md": "36d56ccc92ed2646ad4536720a4000539a667f1e3e08fb0e87abff5dab1a398a",
+    "evidence/method_accuracy_action_map.md": "a75c496ca41fcf11b2b08fedb18b2aa02844045371250443e18226ab39e83de3",
+    "evidence/monitoring_24_tabs_audit.md": "ce527ee81a2fbabf1f14ed73143b2be8abd38165db8eacd5860382529e97188f",
+    "evidence/per_decision_tracking.md": "7f30eb513ef6f545031d8c39836874c7cc1c3d121d641472fe7a9128702d05ec",
+    "evidence/post_v91_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v91_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/prompt_rule_no_token_status.md": "a7e2f98e3c511fb8e4b774029fff15b7b66ddcc20d0cd18bdd7f42479c87b7d5",
+    "evidence/region_strategy_matrix.md": "f56cbb5f821efe1e2ee5ece84c69a6d2b45366ac2bfe7e6909330f053d518d13",
+    "evidence/routes_ui_coverage.md": "6f39966b92929a19709547e0e71cc6819fd08492b6e439685ea0c204194eac49",
+    "evidence/stale_fu_auto_update_spec.md": "b9b636bec08f701eb87cbc04efaf96620f175a26bd074b58a7d7c4b8f37a11bb"
+  }
+}

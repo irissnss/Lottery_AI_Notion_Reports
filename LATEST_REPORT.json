@@ -1,53 +1,30 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V91",
-  "latest_folder": "V91_TOTAL_RECONCILIATION_20260508",
-  "latest_report": "V91_TOTAL_RECONCILIATION_20260508/V91_REPORT.md",
-  "latest_manifest": "V91_TOTAL_RECONCILIATION_20260508/REPORT_MANIFEST.json",
-  "previous_root_pointer_was": "V90",
-  "created_at_vn": "2026-05-08T01:23:55+07:00",
-  "status": "DELIVERED — V91 Total Reconciliation: 74 FU reconciled (67 docs-only, 7 runtime queue), 11 evidence matrices, V91_ONE_SOURCE_INDEX for Notion AI; official UNCHANGED",
+  "latest_version": "V92",
+  "latest_folder": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508",
+  "latest_report": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md",
+  "latest_manifest": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/REPORT_MANIFEST.json",
+  "previous_root_pointer_was": "V91",
+  "created_at_vn": "2026-05-08T01:32:33+07:00",
+  "status": "DELIVERED — V92 absolute SSOT reconciliation wrapper; V90/V91 verified; official UNCHANGED",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs (V90 ship), V91 docs-only reconciliation",
-  "next_action": "Owner đọc V91_ONE_SOURCE_INDEX.md hoặc V91_REPORT.md. Hệ thống tự chạy: 26 cron jobs daily VN. Decision calendar: 2026-05-08/12/14/21/06-06/07-06.",
+  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs; V92 docs-only SSOT",
+  "next_action": "Automated gates only: 2026-05-08/12/14/21/06-06/07-06",
   "owner_lock_for_official": true,
-  "v91_classification": "NEWER_THAN_V89_FOUND",
-  "v91_deliverables": {
-    "fu_stale_total": 74,
-    "fu_superseded": 54,
-    "fu_resolved": 13,
-    "fu_needs_runtime": 7,
-    "evidence_matrices": 11,
-    "monitoring_tabs": 29
-  },
-  "agent_ide_endpoint": "/api/admin/master-board (schema v90_master_board_v4, 36 keys, V90 unchanged)",
   "read_order": [
-    "V91_TOTAL_RECONCILIATION_20260508/READ_THIS_FIRST.md",
-    "V91_TOTAL_RECONCILIATION_20260508/V91_REPORT.md",
-    "V91_TOTAL_RECONCILIATION_20260508/V91_ONE_SOURCE_INDEX.md",
+    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/READ_THIS_FIRST.md",
+    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md",
+    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "changed_since_previous": [
-    "V91 Total Reconciliation Action Pass (docs-only)",
-    "74 stale FU re-audited and classified (67/74 = 90% docs-only resolvable)",
-    "11 evidence matrices generated for Notion AI lookup",
-    "Decision calendar hardened with pass/fail/owner_action/auto_report",
-    "Per-decision tracking + stale-FU auto-update spec",
-    "FU-V91-BATCH section appended FOLLOW_UP_TRACKER",
-    "NO VPS deploy. NO UI change. NO DB write.",
-    "Pre/post hashes 4 official tables UNCHANGED"
-  ],
   "open_issues_count": 0,
-  "session_complete": true,
   "safety_summary": {
     "official_unchanged": true,
     "hash_guard_passed": true,
     "public_safe": true,
-    "shadow_only": true,
-    "no_auto_promotion": true,
-    "ui_no_action_button": true,
-    "ai_keys_redacted": true
+    "no_runtime_change": true,
+    "secrets_redacted": true
   }
 }

@@ -1,15 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V91_TOTAL_RECONCILIATION_20260508** (V91)
+Latest: **V92_ABSOLUTE_SSOT_RECONCILIATION_20260508** (V92)
 
 ## Latest report
 
-- [V91_TOTAL_RECONCILIATION_20260508/V91_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/V91_REPORT.md)
-- [V91_TOTAL_RECONCILIATION_20260508/V91_ONE_SOURCE_INDEX.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/V91_ONE_SOURCE_INDEX.md)
+- [V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md)
+- [V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V91_TOTAL_RECONCILIATION_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/)
 - [V90_FINAL_CLEANUP_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/)
 - [V89_5_EXTENSION_PACK_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/)
 - [V88_TOTAL_ENCYCLOPEDIA_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/)

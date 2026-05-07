@@ -1,3 +1,9 @@
+## V91 → V92
+
+- V92 absolute SSOT wrapper over verified V91 reconciliation.
+- Root metadata reset to V92.
+- No runtime changes.
+
 ## V90 → V91
 
 - Docs-only reconciliation (no VPS deploy, no UI change, no DB write).
