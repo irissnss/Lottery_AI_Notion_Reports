@@ -1,3 +1,11 @@
+## V88 → V89
+
+- 6 new tabs (Migrations / Live Cron / FU Audit / Phase Findings / Decision Log / Governance Ledger).
+- Backend +6 blocks. Schema v88_v2 → v89_v3.
+- 72/152 FU stale flagged.
+- 24 tabs total. 1019 items reconciled.
+- No DB writes.
+
 ## V87 → V88
 
 - 6 new tabs in /monitoring V87 Master Index (Settings/History/FU/Phase/Backups/Notion).

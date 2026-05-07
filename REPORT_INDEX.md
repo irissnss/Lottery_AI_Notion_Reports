@@ -1,15 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V88_TOTAL_ENCYCLOPEDIA_20260508** (V88)
+Latest: **V89_5_EXTENSION_PACK_20260508** (V89)
 
 ## Latest report
 
-- [V88_TOTAL_ENCYCLOPEDIA_20260508/V88_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/V88_REPORT.md)
-- [V88_TOTAL_ENCYCLOPEDIA_20260508/TOTAL_ENCYCLOPEDIA.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/TOTAL_ENCYCLOPEDIA.md)
+- [V89_5_EXTENSION_PACK_20260508/V89_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/V89_REPORT.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V88_TOTAL_ENCYCLOPEDIA_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/)
 - [V87_MASTER_INDEX_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/)
 - [V86_TOTAL_FORENSIC_REGISTRY_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/)
 - [V85_DEEP_MASTER_CONTROL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/)

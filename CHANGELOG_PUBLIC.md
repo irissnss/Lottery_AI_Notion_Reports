@@ -1,3 +1,11 @@
+## V89 — 5-extension pack (2026-05-08 00:55 VN)
+
+- 6 new tabs in /monitoring (24 tabs total): Migrations / Live Cron (realtime next_run) / FU Audit (72/152 stale flagged) / Phase Findings (116 first paragraph) / Decision Log (22 DEC) / Governance Ledger (96 entries).
+- Schema v88_master_board_v2 → v89_master_board_v3 (31 keys).
+- monitoring.html 201KB → 209KB.
+- ~1019 items reconciled across V85+V86+V87+V88+V89.
+- 4 official tables hash byte-identical.
+
 ## V88 — TOTAL_ENCYCLOPEDIA + 6 new tabs in /monitoring (2026-05-08 00:40 VN)
 
 - 6 new tabs: ⚙️ Settings (252) / 📜 Automation History (28) / 📋 FU History (151) / 🗓️ Phase Checkpoints (116) / 💾 VPS Backups (31) / 📓 Notion Docs (15).

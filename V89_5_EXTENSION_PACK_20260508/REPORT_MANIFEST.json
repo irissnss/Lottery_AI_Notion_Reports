@@ -1,0 +1,61 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V89_5_EXTENSION_PACK_20260508",
+  "version": "V89",
+  "internal_version": "V20.3.37.89",
+  "created_at_vn": "2026-05-08T00:58:23+07:00",
+  "owner_request_summary": "Tiến hành 5 đề xuất V88 (Migrations + Live Cron + FU Audit + Phase Findings + Decision Log) cho sạch sẽ trong tối",
+  "parent_reports": [
+    "V88_TOTAL_ENCYCLOPEDIA_20260508",
+    "V87_MASTER_INDEX_20260508"
+  ],
+  "status": "DEPLOYED — 6 new tabs (24 total) + 72 FU stale flagged; official UNCHANGED",
+  "scope": "ui extension + audit / read-only / no DB writes",
+  "official_touched": false,
+  "deliverables": {
+    "new_tabs_added": 6,
+    "total_tabs": 24,
+    "migrations_files": 3,
+    "live_cron_realtime": true,
+    "fu_audit_total": 152,
+    "fu_audit_stale": 72,
+    "phase_findings": 116,
+    "decision_log": 22,
+    "governance_ledger": 96,
+    "schema_version_bump": "v88_master_board_v2 → v89_master_board_v3",
+    "monitoring_html_size_kb": 209,
+    "grand_total_items_v85_to_v89": 1019
+  },
+  "verification": {
+    "local_compile": true,
+    "vps_deploy_at_vn": "2026-05-08T00:53:00+07:00",
+    "service_active": true,
+    "health_200": true,
+    "master_board_unauth_401": true,
+    "official_hash_unchanged": true,
+    "backend_smoke_keys_count": 31
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/V89_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "d1e70f242ea313932a39d22af3399c26961a807dbf3d649fedc570579250b3f8",
+    "V89_REPORT.md": "abf063be973094c82c30e56855c28721e7da11e1017129c44df640f8ed2070a2",
+    "evidence/post_v89_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v89_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/_v87_master_board_v89.py": "57783e5338e74a95ab4678693e8ee6790e9a947eb1cdba7936a2f26f69a7447c"
+  }
+}
