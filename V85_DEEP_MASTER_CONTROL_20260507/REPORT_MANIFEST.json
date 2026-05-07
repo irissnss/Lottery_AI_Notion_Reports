@@ -1,0 +1,80 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V85_DEEP_MASTER_CONTROL_20260507",
+  "version": "V85",
+  "internal_version": "V20.3.37.85",
+  "created_at_vn": "2026-05-07T23:58:56+07:00",
+  "owner_request_summary": "V84 chưa đủ — review lại methods/models/metrics/rules/prompts/cơ chế ở mọi version",
+  "parent_reports": [
+    "V84_MASTER_CONTROL_BOARD_20260507",
+    "V83_V82_MONITOR_UI_PANEL_20260507"
+  ],
+  "status": "DELIVERED — 8 super-families full inventory; ~298 items reconciled; official UNCHANGED",
+  "scope": "audit only / read-only / no DB writes / no VPS deploy",
+  "official_touched": false,
+  "deliverables": {
+    "models_total": 41,
+    "models_active": 15,
+    "models_shadow_auto": 13,
+    "models_token": 32,
+    "models_no_token": 7,
+    "db_tables_total": 129,
+    "db_tables_by_family": {
+      "OFFICIAL": 4,
+      "TEST_LANE": 21,
+      "WAVE_1_2": 13,
+      "SHADOW": 43,
+      "INFRA": 1,
+      "SUPPORT": 47
+    },
+    "cron_jobs_total": 26,
+    "prompt_layers_total": 8,
+    "phase_first_cohorts_total": 5,
+    "metrics_c_total": 8,
+    "metrics_pb_total": 3,
+    "metrics_flip_total": 16,
+    "shadow_methods_p0_portfolio": 18,
+    "shadow_methods_v52_5_total": 30,
+    "shadow_selectors_total": 11,
+    "v81_provider_models": 3,
+    "generated_at_vn": "2026-05-07T23:53:02+07:00"
+  },
+  "owner_lock_remaining": [
+    "Selector promotion",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change",
+    "UI Master Board build"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/V85_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f1_all_models.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f2_all_db_tables.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f3_all_cron_jobs.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f4_all_prompts.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f5_all_metrics.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f6_all_rules.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f7_all_mechanisms.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f8_all_shadow_methods.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "5d77b0afcee53e66f0766894fd07185dbd2048a0b0fc574b708f9ffb023231ea",
+    "V85_REPORT.md": "f59ba297183c0d9ab943a3df0f771a5d2d33b2828a1e424c3f016c052a2b1947",
+    "evidence/deep_summary.json": "a73f9438f9d9970385aad81efa7e7e61d18f64b2da2fb4cade797467a44361e2",
+    "evidence/f1_all_models.md": "40f25dc426be047adf58c45509c9719f766c1be6d15650855aef5915c7d3686f",
+    "evidence/f2_all_db_tables.md": "fe16d632316a2f2987d241eea8682d34caf28da821406d2158dd62f681d6b374",
+    "evidence/f3_all_cron_jobs.md": "f39be563551dd7ef8bd37aacf2dc69313895a9908a09926ff10ce82b80bb1606",
+    "evidence/f4_all_prompts.md": "83a9778300224107d84c581928663bdc7029bf9c546fb3a68def42c6aef6e464",
+    "evidence/f5_all_metrics.md": "24d1298e9fa0980092a4dbb00725748db4af0efbc55c89b1996aa3e60451cb4a",
+    "evidence/f6_all_rules.md": "f53dfeeec5fb45ce820cde26fe9ea6e3bd30291aab1687a9d7c0a7c1406e23ba",
+    "evidence/f7_all_mechanisms.md": "d00dae0ae6e773f55d4725e7223645011e5d31c419ae695af2db07ba23639697",
+    "evidence/f8_all_shadow_methods.md": "a470fa32f138d1b1e637b2732d4f0b85cca393febcb7be768c19eccb79357c05"
+  }
+}

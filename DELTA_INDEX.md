@@ -1,3 +1,10 @@
+## V84 → V85
+
+- Deep counts everything: 41 models, 129 DB tables, 26 cron, 8 prompts, 5 PFG cohorts, 27 metrics, 59 shadow methods.
+- 8 super-family inventory files.
+- ~298 items vs V84 24-row summary.
+- No DB writes. No official changes.
+
 ## V83 → V84
 
 - Master Control Board reconciliation of all V63→V83 threads.

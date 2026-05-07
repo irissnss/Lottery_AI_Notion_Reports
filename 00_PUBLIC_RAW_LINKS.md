@@ -1,3 +1,15 @@
+## V85 — DEEP MASTER CONTROL (NEW 2026-05-07T23:58:56+07:00)
+
+- [V85 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/V85_REPORT.md)
+- [F1 all models](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f1_all_models.md)
+- [F2 all DB tables](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f2_all_db_tables.md)
+- [F3 all cron](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f3_all_cron_jobs.md)
+- [F4 all prompts](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f4_all_prompts.md)
+- [F5 all metrics](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f5_all_metrics.md)
+- [F6 all rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f6_all_rules.md)
+- [F7 all mechanisms](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f7_all_mechanisms.md)
+- [F8 all shadow methods](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/evidence/f8_all_shadow_methods.md)
+
 ## V84 — MASTER CONTROL BOARD (NEW 2026-05-07T23:40:15+07:00)
 
 - [V84 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/V84_REPORT.md)

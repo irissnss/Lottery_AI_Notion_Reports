@@ -1,0 +1,27 @@
+{
+  "models_total": 41,
+  "models_active": 15,
+  "models_shadow_auto": 13,
+  "models_token": 32,
+  "models_no_token": 7,
+  "db_tables_total": 129,
+  "db_tables_by_family": {
+    "OFFICIAL": 4,
+    "TEST_LANE": 21,
+    "WAVE_1_2": 13,
+    "SHADOW": 43,
+    "INFRA": 1,
+    "SUPPORT": 47
+  },
+  "cron_jobs_total": 26,
+  "prompt_layers_total": 8,
+  "phase_first_cohorts_total": 5,
+  "metrics_c_total": 8,
+  "metrics_pb_total": 3,
+  "metrics_flip_total": 16,
+  "shadow_methods_p0_portfolio": 18,
+  "shadow_methods_v52_5_total": 30,
+  "shadow_selectors_total": 11,
+  "v81_provider_models": 3,
+  "generated_at_vn": "2026-05-07T23:53:02+07:00"
+}
