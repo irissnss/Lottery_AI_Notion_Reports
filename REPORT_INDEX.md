@@ -1,14 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V75_NEXT_ACTION_PROPOSAL_20260507** (V75)
+Latest: **V76_P0_BATCH_20260507** (V76)
 
 ## Latest report
 
-- [V75_NEXT_ACTION_PROPOSAL_20260507/V75_PROPOSAL.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/V75_PROPOSAL.md)
+- [V76_P0_BATCH_20260507/V76_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/V76_REPORT.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V75_NEXT_ACTION_PROPOSAL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/)
 - [V74_TOTAL_FORCE_AUDIT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/)
 - [V73_REGION_ADAPTIVE_HYBRID_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V73_REGION_ADAPTIVE_HYBRID_20260507/)
 - [V72_REVERT_STRICT_GATE_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V72_REVERT_STRICT_GATE_20260507/)

@@ -1,5 +1,14 @@
 # CHANGELOG (public-side)
 
+## V76 — P0 BATCH (2026-05-07 15:16 VN)
+
+- 3/3 P0 items deployed test-lane only with strict owner contract honored.
+- P0-1 Drift detector: alert-only (NEVER auto-rollback), cron 23:50 VN, 4 alert classes.
+- P0-2 C-16 latency_score live: rolling 7d avg, gentle curve, never prunes. Variance 0.150-0.950 (was flat 0.50).
+- P0-3 Cost provider table: tracking only, NEVER auto down-rank. 2026-05-07 MN $1.10/day.
+- Cron now 5 jobs daily VN: 23:35→40→45→48→50.
+- Pre/post hashes 4 official tables UNCHANGED.
+
 ## V75 — NEXT-ACTION PROPOSAL (2026-05-07)
 
 - C-05 RESOLVED (was data lag, not broken). 20/42 latency rows captured 2026-05-07.

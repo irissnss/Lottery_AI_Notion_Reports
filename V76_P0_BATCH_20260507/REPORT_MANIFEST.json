@@ -1,0 +1,117 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V76_P0_BATCH_20260507",
+  "version": "V76",
+  "created_at_vn": "2026-05-07T15:21:45+07:00",
+  "owner_request_summary": "Option A — implement all 3 P0 items: drift detector + C-16 latency live + cost tracking, test-lane only, hash guard 4 official tables unchanged",
+  "parent_reports": [
+    "V75_NEXT_ACTION_PROPOSAL_20260507",
+    "V74_TOTAL_FORCE_AUDIT_20260507"
+  ],
+  "private_commit": "TBD",
+  "public_commit": "TBD",
+  "status": "DEPLOYED — 3/3 P0 PASS, hash guard PASS",
+  "scope": "test-lane only / measurement only",
+  "official_touched": false,
+  "new_files": [
+    "web/backend/_materialize_drift_monitor.py",
+    "web/backend/_provider_pricing_table.py"
+  ],
+  "modified_files": [
+    "web/backend/_materialize_du_doan_test_model_budget.py (latency_score live, no prune)",
+    "web/backend/_materialize_v52_measurement_surfaces.py (cost from provider table)",
+    "web/backend/scheduler.py (cron 23:50 VN drift monitor)",
+    "CHANGELOG.md (V20.3.37.76)",
+    "docs/CURRENT_TRUTH_SSOT.md",
+    "docs/FOLLOW_UP_TRACKER.md (FU-142)",
+    "docs/AUTOMATION_STATE.json (seq=17)",
+    "docs/AUTOMATION_HISTORY.jsonl"
+  ],
+  "new_tables": [
+    "test_lane_signal_drift_monitor"
+  ],
+  "modified_tables": [],
+  "scheduler_changes": [
+    "Added 23:50 VN cron: V76 drift monitor (alert-only, never auto-rollback)"
+  ],
+  "cron_schedule_vn": [
+    "23:35 V66",
+    "23:40 V67",
+    "23:45 V70",
+    "23:48 V73",
+    "23:50 V76 drift monitor (NEW)"
+  ],
+  "metric_summary": {
+    "drift_2026_05_07_rows": 12,
+    "drift_alert_summary": {
+      "GRAY": 12
+    },
+    "drift_reason": "n30 < 10 (newly-deployed methods, will activate after 14 fresh days)",
+    "c16_latency_score_variance": "min=0.150 max=0.950 avg=0.540 6_distinct_values (was flat 0.50)",
+    "c05_cost_2026_05_07_filled_rows": 20,
+    "c05_total_mn_cost_2026_05_07": "~$1.10",
+    "c05_most_expensive": "claude-opus-4-20250514 $0.42",
+    "c05_cheapest": "gemma-4-31b $0.000 (free tier)"
+  },
+  "decision_log": [],
+  "open_questions": [],
+  "next_actions": [
+    "Cron daily 23:35-23:50 VN auto-fires; drift alerts active after 14 fresh days (target 2026-05-21)",
+    "P1 next: method interaction trace + C-16 top-20 audit surface + UI dashboard + per-station consensus",
+    "P2 later: OFFICIAL_PROMOTION_DOSSIER draft + region candidate analysis + Lo3/Xien consensus"
+  ],
+  "gates": {
+    "7d": "BOOTSTRAP",
+    "14d": "PENDING (CP-66.7 target 2026-05-21)",
+    "30d": "PENDING",
+    "60d": "PENDING",
+    "90d": "PENDING",
+    "180d": "PENDING",
+    "continuous": "always_on (5 cron jobs daily VN)"
+  },
+  "hash_guard": {
+    "predictions": {
+      "sha256_short": "189facdf5ffbadfb",
+      "count": 4419
+    },
+    "final_bundles": {
+      "sha256_short": "21c339f493db2d72",
+      "count": 205
+    },
+    "lottery_results": {
+      "sha256_short": "b730399a81f6f754",
+      "count": 14621
+    },
+    "model_daily_eval": {
+      "sha256_short": "a557c5819263a019",
+      "count": 4328
+    }
+  },
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "prompt_injection_scan": {
+    "scanned": true,
+    "suspicious_patterns_found": [],
+    "action": "ignored_as_data_only"
+  },
+  "read_order": [
+    "READ_THIS_FIRST.md",
+    "V76_REPORT.md",
+    "evidence/v76_verify.txt",
+    "evidence/c05_latency_2026_05_07.txt"
+  ],
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/V76_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "b03b493fb9382a45715bacd5b7a8490a3a56e9660899e22755cc5ea00df1c4f0",
+    "V76_REPORT.md": "adc7e203a1ababb204520f667d14128a1bf8f95ba325aa5138af92b755ab0b9e",
+    "evidence/c05_latency_2026_05_07.txt": "06f63707c36ef5d7a3724567b9ad8ea9a26570cb01afd2a64066a595e6afdad5",
+    "evidence/v76_verify.txt": "ec501fff712b0f8468091565edebb47de00c5a728fd3312d0e367a4edf072f72"
+  }
+}

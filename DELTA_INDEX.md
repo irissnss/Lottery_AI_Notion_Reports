@@ -1,5 +1,14 @@
 # DELTA INDEX (between consecutive versions)
 
+## V75 → V76
+- 3 P0 items deployed: drift detector + C-16 latency_score live + cost provider table.
+- New shadow table: `test_lane_signal_drift_monitor`.
+- New file: `_provider_pricing_table.py` (configurable USD/1k tokens).
+- Patched: `_latency_score()` rolling 7d avg gentle curve no-prune.
+- Patched: V52 measurement materializer to derive cost_estimate from provider table.
+- New cron 23:50 VN (drift monitor alert-only).
+- Cron schedule expanded to 5 jobs.
+
 ## V74 → V75
 - C-05 status corrected: NOT BROKEN, was data lag. 20/42 rows captured 2026-05-07.
 - V75 NEXT_ACTION_PROPOSAL published with P0-P3 tiers.

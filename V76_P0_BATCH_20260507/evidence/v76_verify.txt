@@ -1,0 +1,54 @@
+﻿=== A. Drift monitor 2026-05-07 ===
+  MB C16_BUDGET         GRAY     n7d=2 n30d=2 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+  MB V67_EXPLOIT        GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MB V70_CONSENSUS      GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MB V73_HYBRID         GRAY     n7d=2 n30d=2 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+  MN C16_BUDGET         GRAY     n7d=2 n30d=2 d7= 50.0% d30= 50.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+  MN V67_EXPLOIT        GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MN V70_CONSENSUS      GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MN V73_HYBRID         GRAY     n7d=2 n30d=2 d7= 50.0% d30= 50.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+  MT C16_BUDGET         GRAY     n7d=2 n30d=2 d7=100.0% d30=100.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+  MT V67_EXPLOIT        GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MT V70_CONSENSUS      GRAY     n7d=0 n30d=0 d7=  0.0% d30=  0.0% ╬ö= +0.0pp  sample 30d < 10 (n30=0)
+  MT V73_HYBRID         GRAY     n7d=2 n30d=2 d7=100.0% d30=100.0% ╬ö= +0.0pp  sample 30d < 10 (n30=2)
+
+=== B. C-05 cost_estimate filled (2026-05-07) ===
+  claude-opus-4-20250514         lat= 41.57s tokens= 27955 cost=$0.41933
+  gpt-5.4                        lat= 25.03s tokens= 21219 cost=$0.10609
+  gpt-5.5                        lat= 71.62s tokens= 21131 cost=$0.10565
+  claude-sonnet-4-6              lat= 47.69s tokens= 29158 cost=$0.08747
+  deepseek-reasoner              lat=134.39s tokens= 32817 cost=$0.04594
+  grok-4.20-multi-agent          lat= 10.87s tokens= 20618 cost=$0.04124
+  deepseek-v4-pro                lat=115.23s tokens= 29058 cost=$0.04068
+  gemini-2.5-pro                 lat= 33.89s tokens= 25303 cost=$0.03163
+  gemini-3.1-pro                 lat= 48.56s tokens= 23870 cost=$0.02984
+  gpt-5-mini                     lat= 87.65s tokens= 25730 cost=$0.02573
+  qwen3.6-plus                   lat=136.77s tokens= 23567 cost=$0.02357
+  gemini-2.5-flash               lat= 39.15s tokens= 29216 cost=$0.02191
+  qwen3-max-thinking             lat= 25.43s tokens= 21700 cost=$0.02170
+  kimi-k2.5                      lat= 11.29s tokens= 25883 cost=$0.02071
+  gpt-oss-120b                   lat=190.83s tokens= 19594 cost=$0.01959
+  gemini-3-flash                 lat= 21.86s tokens= 21241 cost=$0.01593
+  deepseek-v4-flash              lat= 22.35s tokens= 20957 cost=$0.01467
+  glm-5.1                        lat=184.44s tokens= 24076 cost=$0.01445
+  qwen3-coder                    lat=  6.40s tokens= 21544 cost=$0.01293
+  gemma-4-31b                    lat=137.01s tokens= 22028 cost=$0.00000
+
+  Total daily cost (top 20 with cost): $1.0991
+  Cost rows filled: 20
+
+=== C. C-16 latency_score new (2026-05-07) ===
+  MN top-10 voters latency_score (new V76 logic):
+    claude-sonnet-4-6              latency=0.800 strength=0.613 recent=0.636 final=0.590
+    gemini-2.5-pro                 latency=0.800 strength=0.614 recent=0.553 final=0.576
+    kimi-k2.5                      latency=0.950 strength=0.502 recent=0.519 final=0.564
+    smart-ensemble                 latency=0.500 strength=0.615 recent=0.639 final=0.561
+    gpt-5.4                        latency=0.950 strength=0.557 recent=0.489 final=0.550
+    gpt-oss-120b                   latency=0.150 strength=0.584 recent=0.647 final=0.548
+    combo-no-token                 latency=0.500 strength=0.607 recent=0.566 final=0.544
+    grok-4.20-multi-agent          latency=0.950 strength=0.483 recent=0.507 final=0.539
+    claude-opus-4-20250514         latency=0.800 strength=0.593 recent=0.517 final=0.539
+    glm-5.1                        latency=0.150 strength=0.583 recent=0.634 final=0.536
+
+=== D. Latency score variance check (was flat 0.50, now should vary) ===
+  min=0.150 max=0.950 avg=0.540 distinct_values=6

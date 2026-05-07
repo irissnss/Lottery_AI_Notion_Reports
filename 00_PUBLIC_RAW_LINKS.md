@@ -1,5 +1,12 @@
 # Public Raw Links
 
+## V76 — P0 BATCH (NEW 2026-05-07T15:21:45+07:00)
+
+- [V76 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/V76_REPORT.md)
+- [V76 read-this-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/READ_THIS_FIRST.md)
+- [V76 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/REPORT_MANIFEST.json)
+- [V76 verify evidence](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V76_P0_BATCH_20260507/evidence/v76_verify.txt)
+
 ## V75 — NEXT-ACTION PROPOSAL (NEW 2026-05-07T11:57:00+07:00)
 
 - [V75 main proposal](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/V75_PROPOSAL.md)
