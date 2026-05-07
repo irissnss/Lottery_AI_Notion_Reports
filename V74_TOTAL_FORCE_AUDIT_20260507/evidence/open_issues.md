@@ -1,31 +1,48 @@
-# Open issues for 2026-05-07 as of V74 audit
+# Open issues for 2026-05-07 as of V74 (updated 11:35 VN)
 
-## P0 fix-now flagged
-1. **C-05 latency live proof**: 0/83 model_latency_cost_audit_daily rows since 2026-05-06 have latency_available=1.
-   - Status: P0_BROKEN_NEEDS_FIX
-   - Cause: instrumentation deployed but live model calls have not been captured properly yet.
-   - Action: schedule investigation in next session (touches gpt_analyzer; deploy outside live window).
-   - Risk: blocks pruning/timeout decisions.
+## ✅ Resolved during V74 session
 
-2. **C-17B output_lock_status** column was missing on `du_doan_test_bundles`.
-   - Status: FIXED (V74 added column + backfilled 669 rows; READY_PRE_RESULT_LOCKED 39, POST_CLOSEOUT_DIAGNOSTIC_ONLY 569, NOT_READY_NO_PICK 61).
+1. **C-05 latency live proof — RESOLVED, was data lag, not broken**
+   - Original concern: 0/83 rows had `latency_available` for 2026-05-06 → looked broken.
+   - Root cause: V63 instrumentation deployed 2026-05-06 evening (after most live calls had already happened that day). 2026-05-07 is the first full natural cycle with V63 capture.
+   - Verified 2026-05-07: **20/42 rows captured** (avg 69.6s, min 6.4s qwen3-coder, max 190.8s gpt-oss-120b). 0 timeouts. Sum tokens 486,665.
+   - Remaining 22 rows are NO_TOKEN local ML models (`combo-no-token`, `lstm`, `meta-learning`, `random-forest`, `smart-ensemble`, `smart-ml`, `xgboost`, `combo-super`) — these run as local Python in <1s and don't go through API instrumentation. NOT a bug; expected by design.
+   - Action: cron will continue capturing daily; C-16 latency_score will start using real values from 2026-05-07 onwards.
 
-3. **C-03 PENDING rows** in `du_doan_test_results`.
-   - Status: REDUCED 37 → 9 (V74 backfill 14 dates ALL regions). Remaining 9 rows are MN-only for future/non-closed dates.
+2. **C-17B output_lock_status / readiness_status columns** added to `du_doan_test_bundles` (669 rows backfilled).
 
-4. **CONSENSUS_V1 14d table empty** at start of V74 audit.
-   - Status: FIXED (V74 re-backfilled 15 anchors; 30+ rows now present). Cause unknown (suspect manual cleanup during V72 cycle).
+3. **C-03 evaluator PENDING** reduced 37 → 9 (residual MN-only for non-closed dates).
 
-## P1 watch
-5. **README stale on public repo** (mentions V62 "latest").
-   - Status: FIXING in V74 — README rewrite + new `LATEST_REPORT.json` + `REPORT_INDEX.md` + `CHANGELOG_PUBLIC.md` will be primary discovery surfaces.
+4. **CONSENSUS_V1 14d rows** rebuilt (15 anchors).
 
-6. **C-16 budget for 2026-05-07 was at 15** at start of audit; re-materialized to 20 in V74. Cron will keep this stable from 2026-05-08 onwards.
+5. **C-16 budget for 2026-05-07** re-materialized to 20 voters MN/MT/MB.
 
-7. **CONSENSUS gate rejected MT/MB 2026-05-07** (only 2 methods agreed) — natural early-day state, expected to recover post-closeout when other materializers run.
+6. **README stale at V62** rewritten + 6 new GitHub discovery metadata files.
 
-## Always-on (continuous measurement doctrine)
+## 🟡 P1 watch (next session or natural cron)
+
+7. **C-05 historical backfill (2026-04-23 → 2026-05-06)**: trace records for those days have `lat=None token=None` (V63 not deployed yet). Cannot recover historical latency, but rolling 14d window will become valid from 2026-05-21 onwards as new days accumulate with V63 capture.
+
+8. **Slow models flagged** by C-05 first day:
+   - `gpt-oss-120b` 190.8s
+   - `glm-5.1` 184.4s
+   - `deepseek-reasoner` 134.4s
+   - `gemma-4-31b` 137.0s
+   - `qwen3.6-plus` 136.8s
+   - `deepseek-v4-pro` 115.2s
+   - Action: collect 14 days of latency history, then C-16 latency_score will down-rank them automatically. NO promotion or pruning yet — pure measurement.
+
+9. **CONSENSUS_V1 SKIP for MT/MB on 2026-05-07** (only 2 method agreement at materialization time). Expected to recover after natural closeout when other materializers fire.
+
+## ⏳ Always-on (continuous measurement)
+
 - Daily V66/V67/V70/V73 cron 23:35–23:48 VN.
-- Daily evidence pack will be produced (this session bootstrap).
+- Daily evidence pack auto-generation.
 - Window gates 7/14/30/60/90/180 days are CHECKPOINTS, not stop points.
-- Drift monitor required for next session.
+- Drift detector materializer to be added in next session (P1 from CONTINUOUS_MEASUREMENT_DOCTRINE §7).
+
+## 📋 Open P0 next session (only 1 left, was 3)
+
+1. Add `test_lane_signal_drift_monitor` materializer (per region per method rolling 7d-vs-30d alert).
+
+(C-05, C-17B, C-03, C-16 budget — all resolved in V74 session)
