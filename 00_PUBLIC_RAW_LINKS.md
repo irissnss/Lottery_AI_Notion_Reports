@@ -1,3 +1,10 @@
+## V81 — PROVIDER SHADOW PILOT (NEW 2026-05-07T22:38:07+07:00)
+
+- [V81 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md)
+- [V81 read-this-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/READ_THIS_FIRST.md)
+- [V81 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/REPORT_MANIFEST.json)
+- [V81 per-call evidence](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/evidence/per_call_table.md)
+
 # Public Raw Links
 
 - Latest: https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json

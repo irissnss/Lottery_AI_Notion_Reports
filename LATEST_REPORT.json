@@ -1,28 +1,44 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V80",
-  "latest_folder": "V80_ABSOLUTE_CLOSURE_PASS_20260507",
-  "latest_report": "V80_ABSOLUTE_CLOSURE_PASS_20260507/V80_REPORT.md",
-  "latest_manifest": "V80_ABSOLUTE_CLOSURE_PASS_20260507/REPORT_MANIFEST.json",
-  "public_commit": "388d0d518f312eece760def72c786b703a09285e",
-  "private_commit": "6ed534596dc1bf7d5f68633682edc67a8a25bfed",
-  "created_at_vn": "2026-05-07T21:55:00+07:00",
-  "status": "DEPLOYED â€” Notion/code/runtime sync + shadow completion; official unchanged",
+  "latest_version": "V81",
+  "latest_folder": "V81_PROVIDER_SHADOW_PILOT_20260507",
+  "latest_report": "V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md",
+  "latest_manifest": "V81_PROVIDER_SHADOW_PILOT_20260507/REPORT_MANIFEST.json",
+  "previous_root_pointer_was": "V80",
+  "previous_root_pointer_folder": "V80_ABSOLUTE_CLOSURE_PASS_20260507",
+  "metadata_was_stale_until": "V81",
+  "stale_metadata_note": "Root LATEST_REPORT.json was stale at V77 even after V78/V79/V80 folders were published. V81 publish reset root metadata to V81 with fixup recorded here.",
+  "created_at_vn": "2026-05-07T22:38:07+07:00",
+  "status": "DEPLOYED — V81 owner-approved provider shadow pilot (3 models × 3 regions × 2 days, 18/18 parse_ok, 0 breaks)",
   "official_touched": false,
-  "test_lane_status": "V80_SHADOW_COMPLETION_ACTIVE",
-  "next_action": "Verify natural cron chain 19:00/19:05/19:08/19:10/19:12 on next live day",
+  "test_lane_status": "ACTIVE — 6 cron jobs daily VN 19:00-19:14",
+  "next_action": "Natural 19:14 VN cron proof on 2026-05-08; accumulate 7-14d rolling would_save vs would_break before any selector promotion proposal",
+  "owner_lock_for_official": true,
   "read_order": [
-    "V80_ABSOLUTE_CLOSURE_PASS_20260507/READ_THIS_FIRST.md",
-    "V80_ABSOLUTE_CLOSURE_PASS_20260507/V80_REPORT.md",
-    "V80_ABSOLUTE_CLOSURE_PASS_20260507/evidence/master_reconcile_matrix.md",
+    "V81_PROVIDER_SHADOW_PILOT_20260507/READ_THIS_FIRST.md",
+    "V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md",
+    "V81_PROVIDER_SHADOW_PILOT_20260507/evidence/per_call_table.md",
+    "V81_PROVIDER_SHADOW_PILOT_20260507/evidence/per_model_summary.md",
+    "V81_PROVIDER_SHADOW_PILOT_20260507/evidence/per_region_summary.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
+  "changed_since_previous": [
+    "V78 region-specialist shadow prompts published (folder V78_AI_PROMPT_REGION_AUDIT_20260507)",
+    "V79 AI↔NO_TOKEN cross-verification + cluster-weighted consensus published",
+    "V80 absolute closure: Notion/code/runtime sync + shadow completion published",
+    "V81 owner-approved provider shadow pilot deployed: 3 models × 3 regions × 2 days = 18 calls, 18 OK",
+    "Cron expanded to 6 daily jobs 19:00-19:14 VN (post-cascade chain)",
+    "Pre/post hashes 4 official tables UNCHANGED across V77-V81"
+  ],
+  "open_issues_count": 0,
   "safety_summary": {
     "official_unchanged": true,
-    "provider_calls": false,
-    "shadow_only": true
+    "hash_guard_passed": true,
+    "public_safe": true,
+    "shadow_only": true,
+    "no_auto_promotion": true,
+    "owner_provider_consent_recorded": true
   }
 }
-

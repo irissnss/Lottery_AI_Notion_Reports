@@ -1,0 +1,151 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V81_PROVIDER_SHADOW_PILOT_20260507",
+  "version": "V81",
+  "internal_version": "V20.3.37.81",
+  "created_at_vn": "2026-05-07T22:38:07+07:00",
+  "owner_request_summary": "OK proceed with shadow provider pilot (1 fast + 1 reasoning + 1 cheap/new), shadow only, no official mutation",
+  "parent_reports": [
+    "V80_ABSOLUTE_CLOSURE_PASS_20260507",
+    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507"
+  ],
+  "status": "DEPLOYED — 3 models × 3 regions × 2 days = 18 calls, 18 OK, 0 contract violations",
+  "scope": "shadow only / measurement only / owner-approved provider calls",
+  "official_touched": false,
+  "new_files": [
+    "web/backend/_materialize_ai_region_specialist_provider_shadow_pilot.py"
+  ],
+  "modified_files": [
+    "web/backend/scheduler.py (cron 19:14 VN)",
+    "CHANGELOG.md (V20.3.37.81)",
+    "docs/CURRENT_TRUTH_SSOT.md",
+    "docs/FOLLOW_UP_TRACKER.md (FU-147)",
+    "docs/AUTOMATION_STATE.json (seq=21)",
+    "docs/AUTOMATION_HISTORY.jsonl"
+  ],
+  "new_tables": [
+    "ai_region_specialist_provider_shadow_results"
+  ],
+  "models_used": [
+    {
+      "model_id": "deepseek-chat",
+      "lane": "FAST_CHEAP",
+      "provider": "deepseek"
+    },
+    {
+      "model_id": "claude-sonnet-4-6",
+      "lane": "REASONING",
+      "provider": "anthropic"
+    },
+    {
+      "model_id": "gemini-3-flash",
+      "lane": "NEW_CHEAP",
+      "provider": "google_shadow_key"
+    }
+  ],
+  "scheduler_changes": [
+    "Added 19:14 VN cron: V81 provider shadow pilot (owner-approved, 3 models × 3 regions)"
+  ],
+  "cron_schedule_vn": [
+    "19:00 V77 post-cascade rerun",
+    "19:05 V77 fast incident monitor",
+    "19:08 V79 AI/NO_TOKEN cross verify",
+    "19:10 V78 prompt shadow audit",
+    "19:12 V80 shadow completion",
+    "19:14 V81 provider shadow pilot (NEW)"
+  ],
+  "metric_summary": {
+    "calls_total": 18,
+    "parse_ok": 18,
+    "bad_flags": 0,
+    "per_model_2day": {
+      "claude-sonnet-4-6": {
+        "hits": 3,
+        "saves": 1,
+        "breaks": 0,
+        "hi_conf": 2,
+        "lo_conf": 2
+      },
+      "deepseek-chat": {
+        "hits": 3,
+        "saves": 1,
+        "breaks": 0,
+        "hi_conf": 3,
+        "lo_conf": 2
+      },
+      "gemini-3-flash": {
+        "hits": 3,
+        "saves": 1,
+        "breaks": 0,
+        "hi_conf": 3,
+        "lo_conf": 2
+      }
+    },
+    "per_region_2day": {
+      "MN": {
+        "hits": "3/6",
+        "saves": 3,
+        "breaks": 0,
+        "note": "V67/V73 convergence on 2026-05-07 tail 95"
+      },
+      "MT": {
+        "hits": "6/6",
+        "saves": 0,
+        "breaks": 0,
+        "note": "consensus-first stable"
+      },
+      "MB": {
+        "hits": "0/6",
+        "saves": 0,
+        "breaks": 0,
+        "note": "honest LOW confidence + herd warnings"
+      }
+    }
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap"
+  ],
+  "next_actions": [
+    "Natural 19:14 VN cron proof on 2026-05-08",
+    "Accumulate 7-14d rolling would_save vs would_break per model + region",
+    "Owner OK before any selector/official promotion proposal",
+    "GPT-5-mini key validation on VPS (separate ops follow-up)"
+  ],
+  "gates": {
+    "7d": "BOOTSTRAP",
+    "14d": "PENDING (target 2026-05-21)",
+    "30d": "PENDING",
+    "60d": "PENDING",
+    "180d": "PENDING",
+    "continuous": "active (6 cron jobs daily VN 19:00-19:14)"
+  },
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/REPORT_MANIFEST.json",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "4c6b1ee17eff4e5ad47f32e6ac636c06d269a2630c94d8498eb33f2997a964ae",
+    "V81_REPORT.md": "db0ac97a55c20f066efc279f4e7de8e7912f43c4b8ebe0cf50408f2985b7dca4",
+    "evidence/MB_PROMPT_SHADOW_V1.md": "0898f6ad32df83656c97467a94bacfa4ee0b635262c3f0eee75ce47f8a89848e",
+    "evidence/MN_PROMPT_SHADOW_V1.md": "a50b85b077c89bd3c193be483cdfd42dcd0d050dda1baccce0975ca8fb4647ba",
+    "evidence/MT_PROMPT_SHADOW_V1.md": "6d7cdbefac9aa5f644f457c470c62b7818477696195863498e6c375241cfedde",
+    "evidence/per_call_table.md": "ba727f7f3d828ef77e35421b7e40cf04114d88f4c86701c40d5ac5d36d9e4b85",
+    "evidence/per_model_summary.md": "ace63cabb33c0a003950fbca5a49b6bcc4ec0968948b7e206029170313258906",
+    "evidence/per_region_summary.md": "b8e4767ab4ffbeafd39e01081bafd75db415eeee4366c6abfc78e2f0eaef4d2a",
+    "evidence/post_deploy_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/post_v81_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v81_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/v81_db_inspect.txt": "c84ba5949a7b69a9ef9d7f67c31f99c461b5521f5b8f63c4f48cc41c7b38d134"
+  }
+}
