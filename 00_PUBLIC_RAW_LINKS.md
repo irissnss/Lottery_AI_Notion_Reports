@@ -1,3 +1,10 @@
+## V87 — Master Index in /monitoring (NEW 2026-05-08T00:29:11+07:00)
+
+- [V87 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/V87_REPORT.md)
+- [Backend module source](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/evidence/_v87_master_board.py)
+- [READ_THIS_FIRST](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/READ_THIS_FIRST.md)
+- [V87 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/REPORT_MANIFEST.json)
+
 ## V86 — TOTAL FORENSIC REGISTRY (NEW 2026-05-08T00:14:52+07:00)
 
 - [V86 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/V86_REPORT.md)

@@ -1,0 +1,99 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V87_MASTER_INDEX_20260508",
+  "version": "V87",
+  "internal_version": "V20.3.37.87",
+  "created_at_vn": "2026-05-08T00:29:11+07:00",
+  "owner_request_summary": "/monitoring là nơi tổng hợp toàn bộ — phải triger, realtime, trực quan, hỗ trợ Agent IDE",
+  "parent_reports": [
+    "V86_TOTAL_FORENSIC_REGISTRY_20260508",
+    "V85_DEEP_MASTER_CONTROL_20260507",
+    "V84_MASTER_CONTROL_BOARD_20260507"
+  ],
+  "status": "DEPLOYED — 12-tab Master Index in /monitoring; READ-ONLY; official UNCHANGED",
+  "scope": "ui extension + new admin endpoint / read-only / no DB writes",
+  "official_touched": false,
+  "deliverables": {
+    "backend_module_lines": 370,
+    "new_route": "/api/admin/master-board",
+    "new_section": "sectionV87MasterIndex",
+    "tabs": [
+      "Models",
+      "Prompts",
+      "Rules",
+      "Mechanisms",
+      "Metrics",
+      "Shadow Methods",
+      "DB Tables",
+      "Cron",
+      "Frontend",
+      "API",
+      "Decision Calendar",
+      "Owner Gate"
+    ],
+    "tabs_count": 12,
+    "monitoring_html_size_kb": 196,
+    "monitoring_html_size_change_kb": 34,
+    "models": 41,
+    "shadow_methods": 59,
+    "db_tables": 129,
+    "cron_jobs": 26,
+    "api_endpoints": 132,
+    "frontend_pages": 12,
+    "decision_dates": 11,
+    "owner_gate_items": 9
+  },
+  "verification": {
+    "local_compile": true,
+    "vps_deploy_at_vn": "2026-05-08T00:24:00+07:00",
+    "service_active": true,
+    "health_200": true,
+    "master_board_unauth_401": true,
+    "monitoring_unauth_401": true,
+    "official_hash_unchanged": true,
+    "backend_smoke_keys": [
+      "models",
+      "prompts",
+      "rules",
+      "mechanisms",
+      "metrics",
+      "shadow_methods",
+      "db_tables",
+      "cron_jobs",
+      "frontend_pages",
+      "api_endpoints",
+      "decision_calendar",
+      "owner_gate_queue"
+    ]
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change"
+  ],
+  "ui_no_action_buttons": [
+    "promote_button: false",
+    "rollback_button: false",
+    "edit_button: false",
+    "trigger_run_button: false"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/V87_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/evidence/_v87_master_board.py",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "4f796d4d3bb5994eb5b9edc2f6957bbef67755b3a00ba180878aa1cf35439b15",
+    "V87_REPORT.md": "019d9266d22a89fdf161b40bcbdc50a3b88cbf2bc189ca3e406fa2def37507f6",
+    "evidence/post_v87_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v87_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/_v87_master_board.py": "1c0c8cea055f5e8c98d49be17442f59ee151cbdeee8b71ee00e2ed5d20579e14"
+  }
+}

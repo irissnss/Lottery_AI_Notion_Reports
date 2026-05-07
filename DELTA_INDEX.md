@@ -1,3 +1,10 @@
+## V86 → V87
+
+- /monitoring now has V87 Master Index section with 12 tabs.
+- New /api/admin/master-board endpoint for Agent IDE.
+- Backend READ-ONLY module + frontend tabbed display.
+- No new write endpoint.
+
 ## V85 → V86
 
 - TOTAL_PUBLIC_REGISTRY.md for Notion AI.

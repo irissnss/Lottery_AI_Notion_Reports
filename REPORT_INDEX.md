@@ -1,15 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V86_TOTAL_FORENSIC_REGISTRY_20260508** (V86)
+Latest: **V87_MASTER_INDEX_20260508** (V87)
 
 ## Latest report
 
-- [V86_TOTAL_FORENSIC_REGISTRY_20260508/V86_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/V86_REPORT.md)
-- [V86_TOTAL_FORENSIC_REGISTRY_20260508/TOTAL_PUBLIC_REGISTRY.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/TOTAL_PUBLIC_REGISTRY.md)
+- [V87_MASTER_INDEX_20260508/V87_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/V87_REPORT.md)
+- [V87_MASTER_INDEX_20260508/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/READ_THIS_FIRST.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V86_TOTAL_FORENSIC_REGISTRY_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/)
 - [V85_DEEP_MASTER_CONTROL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/)
 - [V84_MASTER_CONTROL_BOARD_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V84_MASTER_CONTROL_BOARD_20260507/)
 - [V83_V82_MONITOR_UI_PANEL_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/)

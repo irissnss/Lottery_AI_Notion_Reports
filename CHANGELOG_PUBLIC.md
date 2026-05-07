@@ -1,3 +1,12 @@
+## V87 — Master Index 12 tabs in /monitoring (2026-05-08 00:25 VN)
+
+- New backend module `_v87_master_board.py` READ-ONLY 370 lines.
+- New admin endpoint `/api/admin/master-board` for Agent IDE single-call lookup.
+- New `sectionV87MasterIndex` in /monitoring with 12 tabs: Models / Prompts / Rules / Mechanisms / Metrics / Shadow Methods / DB Tables / Cron / Frontend / API / Decision Calendar / Owner Gate.
+- Cached payload, switch tab no re-fetch. Auto-refresh 60s.
+- monitoring.html 162KB → 196KB (+34KB).
+- 4 official tables hash UNCHANGED.
+
 ## V86 — TOTAL FORENSIC REGISTRY + V82 merged into /monitoring (2026-05-08 00:10 VN)
 
 - TOTAL_PUBLIC_REGISTRY.md (26 KB) for Notion AI single-table lookup.
