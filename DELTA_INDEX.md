@@ -1,3 +1,12 @@
+## V85 → V86
+
+- TOTAL_PUBLIC_REGISTRY.md for Notion AI.
+- V82 monitor merged into /monitoring (sectionV82MasterControl).
+- 132 API + 12 frontend + 142 FU + 224 CHANGELOG inventoried.
+- No new write endpoint.
+- /v82-monitor kept standalone.
+- No DB writes.
+
 ## V84 → V85
 
 - Deep counts everything: 41 models, 129 DB tables, 26 cron, 8 prompts, 5 PFG cohorts, 27 metrics, 59 shadow methods.

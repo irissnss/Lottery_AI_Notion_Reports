@@ -1,0 +1,76 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V86_TOTAL_FORENSIC_REGISTRY_20260508",
+  "version": "V86",
+  "internal_version": "V20.3.37.86",
+  "created_at_vn": "2026-05-08T00:14:52+07:00",
+  "owner_request_summary": "V85 chưa đủ. /monitoring đã có sẵn em quên. /v82-monitor không có nút dễ quên — gộp vào /monitoring. Đào sâu, không bỏ sót.",
+  "parent_reports": [
+    "V85_DEEP_MASTER_CONTROL_20260507",
+    "V84_MASTER_CONTROL_BOARD_20260507",
+    "V83_V82_MONITOR_UI_PANEL_20260507"
+  ],
+  "status": "DELIVERED — TOTAL_PUBLIC_REGISTRY 26KB + V82 merged into /monitoring; official UNCHANGED",
+  "scope": "audit + UI merge / read-only / no DB writes / no scoring change",
+  "official_touched": false,
+  "deliverables": {
+    "total_public_registry_kb": 26,
+    "api_endpoints": 132,
+    "api_admin": 24,
+    "api_public": 86,
+    "api_pages": 22,
+    "api_admin_only_count": 90,
+    "frontend_pages": 12,
+    "fu_items": 142,
+    "changelog_versions": 224,
+    "phase_checkpoints": 116,
+    "automation_history_entries": 26,
+    "monitoring_html_section_added": "sectionV82MasterControl",
+    "monitoring_html_size_kb": 162,
+    "monitoring_html_size_change_kb": 20
+  },
+  "v82_monitor_merge": {
+    "section_id": "sectionV82MasterControl",
+    "location": "monitoring.html after sectionParallelShadowProof",
+    "load_function": "loadV82MasterControl",
+    "api_endpoint_used": "/api/admin/v82-monitor (existing V83)",
+    "auto_refresh_sec": 60,
+    "sub_sections": [
+      "Per-region 7d OFFICIAL/AI herd/NO_TOKEN herd",
+      "V82 60d cached summary",
+      "V79 cluster-weighted (rank=1)",
+      "V81 provider pilot per-call",
+      "V67/V70/V73 traces",
+      "V80 MB regime + MN V67 save + V77 incident"
+    ],
+    "no_promote_button": true,
+    "no_rollback_button": true,
+    "v82_monitor_standalone_kept": true
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change",
+    "UI Master Board build extension"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/V86_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/TOTAL_PUBLIC_REGISTRY.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "999092c5891f4116988771a532fd876dc498a093d44cf3f4367bd00944806a13",
+    "TOTAL_PUBLIC_REGISTRY.md": "91f92d8e8faf2ab4e2673ab48e7eef858794d4389ca05eaf07ddd7618d0bee8e",
+    "V86_REPORT.md": "8b5e14a054a84ba7b16298608da8905d44e9ac3d34c72431342b7d46094410e9",
+    "evidence/inventory_all.json": "e70bb17dc36c1aa7c15972d803cfa46f8679d2f0cc8daf6bd41e8339c4840ced",
+    "evidence/post_v86_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v86_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9"
+  }
+}

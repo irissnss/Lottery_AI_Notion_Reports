@@ -1,0 +1,2895 @@
+{
+  "api_endpoints": [
+    {
+      "method": "GET",
+      "path": "/login",
+      "function": "login_page",
+      "line": 2262,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "function": "root",
+      "line": 2270,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/login",
+      "function": "login",
+      "line": 2278,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/logout",
+      "function": "logout",
+      "line": 2296,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/auth/check",
+      "function": "check_auth",
+      "line": 2302,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/settings/{category}",
+      "function": "get_settings",
+      "line": 2333,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/settings",
+      "function": "update_settings",
+      "line": 2353,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/settings/bulk",
+      "function": "update_settings_bulk",
+      "line": 2361,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/db-stats",
+      "function": "get_database_stats",
+      "line": 2379,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/data-coverage",
+      "function": "api_data_coverage",
+      "line": 2387,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/backfill",
+      "function": "api_backfill",
+      "line": 2400,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/rules",
+      "function": "api_get_rules",
+      "line": 2443,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/rules",
+      "function": "api_create_rule",
+      "line": 2458,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/rules/{rule_id}",
+      "function": "api_update_rule",
+      "line": 2477,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/rules/{rule_id}",
+      "function": "api_delete_rule",
+      "line": 2501,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/rules/{rule_id}/toggle",
+      "function": "api_toggle_rule",
+      "line": 2516,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/overview",
+      "function": "api_mined_rules_overview",
+      "line": 2544,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/bucket/{bucket_code}",
+      "function": "api_mined_rules_bucket",
+      "line": 2608,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/split-audit",
+      "function": "api_mined_rules_split_audit",
+      "line": 2701,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/flow/{target_date}",
+      "function": "api_mined_rules_flow",
+      "line": 2742,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/effectiveness/{rule_id}",
+      "function": "api_mined_rule_effectiveness",
+      "line": 2784,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/mined-rules/preview-state",
+      "function": "api_mined_rules_preview_state",
+      "line": 2837,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/filter",
+      "function": "filter_page",
+      "line": 2920,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/filter-2-so-cuoi",
+      "function": "api_filter_2_so_cuoi",
+      "line": 2929,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/review-hub/filter",
+      "function": "api_review_hub_filter",
+      "line": 2948,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/so-gan",
+      "function": "api_so_gan",
+      "line": 2974,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/top-models",
+      "function": "api_top_models",
+      "line": 3083,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/reasoning",
+      "function": "api_get_reasoning",
+      "line": 3136,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/effectiveness",
+      "function": "api_get_effectiveness",
+      "line": 3151,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/learned-weights",
+      "function": "api_get_learned_weights",
+      "line": 3176,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "function": "list_users",
+      "line": 3188,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/users",
+      "function": "create_new_user",
+      "line": 3195,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "PUT",
+      "path": "/api/users/{user_id}",
+      "function": "update_existing_user",
+      "line": 3208,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/users/{user_id}",
+      "function": "delete_existing_user",
+      "line": 3224,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/viewer/predictions",
+      "function": "viewer_predictions",
+      "line": 3237,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/viewer/today",
+      "function": "viewer_today",
+      "line": 3256,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/prediction-trace",
+      "function": "get_prediction_trace",
+      "line": 3279,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "function": "health_check",
+      "line": 3321,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/scheduler/status",
+      "function": "scheduler_status",
+      "line": 3352,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/scheduler/reload",
+      "function": "scheduler_reload",
+      "line": 3359,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/scheduler/run-now/{region}",
+      "function": "scheduler_run_now",
+      "line": 3367,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/scheduler/run-free-predict",
+      "function": "scheduler_run_free_predict",
+      "line": 3383,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/scheduler/run-retrain",
+      "function": "scheduler_run_retrain",
+      "line": 3393,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/training-status",
+      "function": "get_training_status_api",
+      "line": 3416,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/scheduler/shadow-eval-now",
+      "function": "shadow_eval_now_api",
+      "line": 3427,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/accuracy/dashboard",
+      "function": "accuracy_dashboard_api",
+      "line": 3456,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/prediction-quality",
+      "function": "get_prediction_quality",
+      "line": 3474,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/model-selection",
+      "function": "get_model_selection",
+      "line": 4363,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/prediction-advisory",
+      "function": "get_prediction_advisory",
+      "line": 4405,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/model-warnings",
+      "function": "model_warnings_api",
+      "line": 4596,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/model-ranking",
+      "function": "model_ranking_api",
+      "line": 4617,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/accuracy/today-warnings",
+      "function": "accuracy_today_warnings",
+      "line": 4746,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/accuracy/chot_ha",
+      "function": "accuracy_chot_ha_report_api",
+      "line": 4893,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/backtest/run",
+      "function": "run_backtest_api",
+      "line": 4912,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/backtest/ai-models",
+      "function": "backtest_ai_models_api",
+      "line": 4944,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/predict/ml-model",
+      "function": "predict_with_ml_model",
+      "line": 4968,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/ml-models/train",
+      "function": "train_ml_models",
+      "line": 5013,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/accuracy",
+      "function": "accuracy_page",
+      "line": 5066,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/rules-dashboard",
+      "function": "rules_dashboard_page",
+      "line": 5072,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/review-dashboard",
+      "function": "review_dashboard_page",
+      "line": 5080,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/analysis-rules",
+      "function": "get_analysis_rules",
+      "line": 5091,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/analysis-rules",
+      "function": "save_analysis_rules",
+      "line": 5100,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/notifications-config",
+      "function": "get_notifications_config",
+      "line": 5112,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/time",
+      "function": "get_server_time",
+      "line": 5120,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/status",
+      "function": "get_status",
+      "line": 5191,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/backtest-metrics",
+      "function": "get_backtest_metrics",
+      "line": 5369,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/sync/push",
+      "function": "push_results",
+      "line": 5381,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/update/{region}",
+      "function": "update_results",
+      "line": 5413,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/predict/MN",
+      "function": "predict_mn",
+      "line": 5677,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/predict/MT",
+      "function": "predict_mt",
+      "line": 5755,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/predict/MB",
+      "function": "predict_mb",
+      "line": 5830,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/elimination/{date_str}/{region}",
+      "function": "get_elimination_report",
+      "line": 7486,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/repredict-quality",
+      "function": "api_repredict_quality",
+      "line": 7513,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/rerun-drift",
+      "function": "get_rerun_drift",
+      "line": 7536,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/predictions",
+      "function": "get_predictions",
+      "line": 7705,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/results/{region}",
+      "function": "get_results",
+      "line": 7807,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/search-results",
+      "function": "search_results",
+      "line": 7829,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/win-rates",
+      "function": "get_all_win_rates",
+      "line": 7859,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/backtest",
+      "function": "run_backtest",
+      "line": 7870,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/optimize-weights",
+      "function": "optimize_weights_api",
+      "line": 7922,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/run-optimizer-now",
+      "function": "run_optimizer_now_api",
+      "line": 7984,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/predictions/{date_str}/{target_region}",
+      "function": "delete_single_prediction",
+      "line": 7998,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/predictions/delete-batch",
+      "function": "delete_batch_predictions",
+      "line": 8026,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/system-prompt-raw",
+      "function": "get_system_prompt_raw",
+      "line": 8044,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/system-alerts",
+      "function": "get_system_alerts",
+      "line": 8055,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/system-alerts/{alert_id}/resolve",
+      "function": "resolve_system_alert",
+      "line": 8113,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/preflight-status",
+      "function": "get_preflight_status",
+      "line": 8136,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/final-bundle",
+      "function": "api_get_final_bundle",
+      "line": 9008,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/final-bundle/history",
+      "function": "api_get_bundle_history",
+      "line": 9093,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/final-bundle/selection-delta",
+      "function": "api_selection_delta",
+      "line": 9119,
+      "category": "PUBLIC_API",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/du-doan-test/mb",
+      "function": "api_du_doan_test_mb",
+      "line": 9662,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/du-doan-test/{region}",
+      "function": "api_du_doan_test_region",
+      "line": 10290,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/generate-bundle",
+      "function": "api_generate_bundle",
+      "line": 10745,
+      "category": "PUBLIC_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/app",
+      "function": "serve_frontend",
+      "line": 10793,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/styles.css",
+      "function": "serve_css",
+      "line": 10801,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/app.js",
+      "function": "serve_js",
+      "line": 10809,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/search",
+      "function": "serve_search_page",
+      "line": 10817,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/du-doan",
+      "function": "serve_dudoan_page",
+      "line": 10825,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/du-doan-test",
+      "function": "serve_dudoan_test_page",
+      "line": 10834,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/v82-monitor",
+      "function": "serve_v82_monitor_page",
+      "line": 10848,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/v82-monitor",
+      "function": "api_admin_v82_monitor",
+      "line": 10866,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/user-view",
+      "function": "serve_user_view_page",
+      "line": 10886,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/settings",
+      "function": "serve_settings_page",
+      "line": 10894,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/settings.js",
+      "function": "serve_settings_js",
+      "line": 10902,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/viewer",
+      "function": "serve_viewer_page",
+      "line": 10910,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/viewer.js",
+      "function": "serve_viewer_js",
+      "line": 10915,
+      "category": "PAGE",
+      "admin_only": false
+    },
+    {
+      "method": "GET",
+      "path": "/user-view.js",
+      "function": "serve_user_view_js",
+      "line": 10923,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/login.html",
+      "function": "serve_login_page",
+      "line": 10931,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/accuracy.js",
+      "function": "serve_accuracy_js",
+      "line": 10939,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/monitoring",
+      "function": "serve_monitoring",
+      "line": 10949,
+      "category": "PAGE",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/runtime-monitoring-center",
+      "function": "get_runtime_monitoring_center",
+      "line": 10958,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/parallel-shadow-proof",
+      "function": "get_parallel_shadow_proof",
+      "line": 11412,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/bt-trail",
+      "function": "get_bt_trail",
+      "line": 11565,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/selection-gap",
+      "function": "get_selection_gap",
+      "line": 11651,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/rule-summary",
+      "function": "get_rule_summary",
+      "line": 11850,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/experiments",
+      "function": "get_experiments",
+      "line": 11968,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/prompt-gate-cohort",
+      "function": "get_prompt_gate_cohort",
+      "line": 12083,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/model-daily-accuracy",
+      "function": "get_model_daily_accuracy",
+      "line": 12327,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/shadow-rules-emit",
+      "function": "get_shadow_rules_emit",
+      "line": 12458,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/combo-vs-single",
+      "function": "get_combo_vs_single",
+      "line": 12529,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/cohere-effectiveness",
+      "function": "get_cohere_effectiveness",
+      "line": 12609,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/model-bt-by-region",
+      "function": "get_model_bt_by_region",
+      "line": 12742,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/eq-experiment-tracker",
+      "function": "get_eq_experiment_tracker",
+      "line": 12841,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/region-streaks",
+      "function": "get_region_streaks",
+      "line": 12911,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/model-family-bt",
+      "function": "get_model_family_bt",
+      "line": 13004,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/ml-freshness-chain",
+      "function": "get_ml_freshness_chain",
+      "line": 13085,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/runtime-reliability",
+      "function": "get_runtime_reliability",
+      "line": 13099,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/strongest-vs-final",
+      "function": "get_strongest_vs_final",
+      "line": 13300,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/candidate-drop-stage",
+      "function": "get_candidate_drop_stage",
+      "line": 13399,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/shadow-comparison",
+      "function": "get_shadow_comparison",
+      "line": 13506,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/rule-offset-performance",
+      "function": "get_rule_offset_performance",
+      "line": 13613,
+      "category": "ADMIN_API",
+      "admin_only": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/admin/mb-d1-shadow",
+      "function": "get_mb_d1_shadow",
+      "line": 13677,
+      "category": "ADMIN_API",
+      "admin_only": true
+    }
+  ],
+  "api_endpoints_total": 132,
+  "api_categories": {
+    "PAGE": 22,
+    "PUBLIC_API": 86,
+    "ADMIN_API": 24
+  },
+  "api_admin_only": 90,
+  "frontend_pages": [
+    {
+      "name": "accuracy.html",
+      "size_kb": 19
+    },
+    {
+      "name": "du-doan-test.html",
+      "size_kb": 63
+    },
+    {
+      "name": "du-doan.html",
+      "size_kb": 44
+    },
+    {
+      "name": "index.html",
+      "size_kb": 21
+    },
+    {
+      "name": "login.html",
+      "size_kb": 8
+    },
+    {
+      "name": "monitoring.html",
+      "size_kb": 162
+    },
+    {
+      "name": "review-dashboard.html",
+      "size_kb": 86
+    },
+    {
+      "name": "search.html",
+      "size_kb": 34
+    },
+    {
+      "name": "settings.html",
+      "size_kb": 93
+    },
+    {
+      "name": "user-view.html",
+      "size_kb": 19
+    },
+    {
+      "name": "v82-monitor.html",
+      "size_kb": 18
+    },
+    {
+      "name": "viewer.html",
+      "size_kb": 21
+    }
+  ],
+  "frontend_pages_total": 12,
+  "fu_items": [
+    {
+      "id": "FU-151",
+      "title": "V85 DEEP MASTER CONTROL: 8 super-families full inventory",
+      "status": "DELIVERED_INVENTORY_DOCS_ONLY"
+    },
+    {
+      "id": "FU-150",
+      "title": "V84 Master Control Board + 60D method maturity + all-open-threads reconciliation",
+      "status": "DELIVERED_AUDIT_DOCS_ONLY"
+    },
+    {
+      "id": "FU-149",
+      "title": "V83 admin-only V82 monitor UI panel (read-only shadow surfaces)",
+      "status": "DEPLOYED_PENDING_OWNER_VERIFY"
+    },
+    {
+      "id": "FU-148",
+      "title": "V82 60D evidence control pass (P0.1→P0.6 verification + accuracy dossier)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-147",
+      "title": "V81 owner-approved provider shadow pilot (3 models × 3 regions)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-146",
+      "title": "V80 absolute closure: Notion/code/runtime sync + shadow completion",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-145",
+      "title": "V79 AI↔NO_TOKEN cross-verification + cluster-weighted consensus",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-144",
+      "title": "V78 AI prompt/context forensic + region-specialist shadow prompts",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-143",
+      "title": "V77 post-closeout incident audit + V70/V73 timing fix + fast incident monitor",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-142",
+      "title": "V76 P0 batch: drift monitor + C-16 latency live + cost tracking",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-141",
+      "title": "V74 follow-up: C-05 RESOLVED + V75 next-action proposal",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-140",
+      "title": "V74 TOTAL FORCE AUDIT (governance + runtime verify + GitHub metadata)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-139",
+      "title": "V73 region-adaptive HYBRID (owner-final balanced state)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-138",
+      "title": "V72 V67 STRICT gate REVERTED → eager (per owner)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-137",
+      "title": "V71 HYBRID_V1 + C-16 score-gate fix (rescued MT/MB)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-136",
+      "title": "V69 metrics + V70 CONSENSUS_V1 selector (test-lane only)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-135",
+      "title": "V68 MT diagnostic + C-16 budget expansion 15-20 voters",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-134",
+      "title": "V67 ADAPTIVE_EXPLOIT_V1 selector (test-lane only)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-133",
+      "title": "V66/V66.1 Lag-1 + cross-region adaptive exploit signal (measurement-only)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-132",
+      "title": "C-16 adaptive model budget selector",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-131",
+      "title": "V56 `/du-doan-test` Experience Lane",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-130",
+      "title": "V55 test-lane auto-wire readiness",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-129",
+      "title": "V55 model strong/weak tensor advanced + UI surfacing pending",
+      "status": "READY_TO_BUILD_UI_TEST_ONLY"
+    },
+    {
+      "id": "FU-128",
+      "title": "V55 latency/cost still blocked",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-127",
+      "title": "V55 loz stage trace 04/05+05/05 backfilled",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-126",
+      "title": "V55 2-day official-vs-test scorecard",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-125",
+      "title": "V55 add 3 Google direct shadow models (Gemini 3.1 Pro / Gemini 3 Flash / Gemma 4 31B)",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-124",
+      "title": "V54 multi-region evaluator / auto readiness",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-123",
+      "title": "V54 MB Wed/Fri blackspot alert",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-122",
+      "title": "V54 region/weekday/station strength chips",
+      "status": "READY_TO_BUILD_UI_TEST_ONLY"
+    },
+    {
+      "id": "FU-121",
+      "title": "V54 MT correct-but-dropped UI panel",
+      "status": "READY_TO_BUILD_UI_TEST_ONLY"
+    },
+    {
+      "id": "FU-120",
+      "title": "V54 loz stage trace",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-119",
+      "title": "V54 per-model latency instrumentation",
+      "status": "READY_TO_BUILD_MEASUREMENT_ONLY"
+    },
+    {
+      "id": "FU-118",
+      "title": "V54 API source labels",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-117",
+      "title": "V54 natural live closeout proof",
+      "status": "WAIT_CLOSEOUT"
+    },
+    {
+      "id": "FU-116",
+      "title": "Owner deliverables: experimental-lane roadmap + official output timeline",
+      "status": "DONE_DOCS_DELIVERED"
+    },
+    {
+      "id": "FU-115",
+      "title": "V53 / V52.5.8 full-chain controller audit + UI source-badge fix",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-114",
+      "title": "V52.5 multi-region experimental lane buildout",
+      "status": "DEPLOYED_PENDING_LIVE_VERIFY"
+    },
+    {
+      "id": "FU-113",
+      "title": "V52 duplicate FU-073 tracker ID cleanup",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-112",
+      "title": "V52 `/du-doan-test` MN/MT expansion cutoff spec",
+      "status": "DESIGN_ONLY"
+    },
+    {
+      "id": "FU-111",
+      "title": "V52 measurement-only MT drop + loz/cost surfaces",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-105",
+      "title": "Daily runner audit log + source-hash guard (V48.2)",
+      "status": "DONE"
+    },
+    {
+      "id": "FU-110",
+      "title": "V51 MT model-hit dropped before official loz/output (2026-05-03)",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-109",
+      "title": "V51 loz1/loz2 selector measurement surface",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-108",
+      "title": "V51 model latency/cost instrumentation blocks pruning",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-104",
+      "title": "Realtime vs Diagnostic mode separation in test runner (V48.2)",
+      "status": "DONE"
+    },
+    {
+      "id": "FU-103",
+      "title": "Latency / cost / value-score instrumentation per model in test layer (V48.2)",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-102",
+      "title": "AI test prompt execution (V48.2)",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-101",
+      "title": "Method scoreboard table for `du_doan_test_*` (V48.2)",
+      "status": "DONE"
+    },
+    {
+      "id": "FU-100",
+      "title": "Direct raw-25 candidate ingestion in test engine (V48.2)",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "FU-099",
+      "title": "7-experiment independence bottleneck (V48.2)",
+      "status": "NOT_YET_PROVEN"
+    },
+    {
+      "id": "FU-098",
+      "title": "Tier-aware misnamed (no real tier computation) (V48.2)",
+      "status": "PARTIAL"
+    },
+    {
+      "id": "FU-097",
+      "title": "Live-parallel auto-wire (only after 3-5 manual clean closeouts) (V48.2)",
+      "status": "OWNER_LOCK"
+    },
+    {
+      "id": "FU-096",
+      "title": "`/du-doan-test` UI side-by-side full-axis comparison (V48 → V48.1)",
+      "status": "—"
+    },
+    {
+      "id": "FU-086",
+      "title": "MB structural weakness multi-axis drilldown (V35)",
+      "status": "—"
+    },
+    {
+      "id": "FU-085",
+      "title": "Single-vote rescue gate replay spec (TIER 3 owner-lock)",
+      "status": "—"
+    },
+    {
+      "id": "FU-084",
+      "title": "Strength gate calibration TIER 3 review",
+      "status": "—"
+    },
+    {
+      "id": "FU-083",
+      "title": "Degraded-day hygiene 60d tagging + replay filter",
+      "status": "—"
+    },
+    {
+      "id": "FU-082",
+      "title": "pp1_live_watch_daily timing race (post-result-scrape rerun needed)",
+      "status": "—"
+    },
+    {
+      "id": "FU-081",
+      "title": "TIER 2 replay 14d HONEST NEGATIVE: drop all 4 policies as designed",
+      "status": "—"
+    },
+    {
+      "id": "FU-080",
+      "title": "2026-05-01 post-live TOTAL-FORCE closeout (consolidated)",
+      "status": "—"
+    },
+    {
+      "id": "FU-079",
+      "title": "Tier 1-4 real-code definition + usage audit",
+      "status": "—"
+    },
+    {
+      "id": "FU-078",
+      "title": "Source-prize D/D-1 candidate survival audit",
+      "status": "—"
+    },
+    {
+      "id": "FU-077",
+      "title": "No-token rerun cascade + spillover hot-spot",
+      "status": "—"
+    },
+    {
+      "id": "FU-076",
+      "title": "cross_region_spillover_shadow_v1 measurement-only deploy",
+      "status": "—"
+    },
+    {
+      "id": "FU-073",
+      "title": "Cross-region spillover shadow measurement (MN->MT/MB, MT->MB)",
+      "status": "—"
+    },
+    {
+      "id": "FU-075",
+      "title": "D-2 expanded ruleset foundation HOLD / REFERENCE_ONLY / OWNER_LOCK / NOT_OUTPUT_READY",
+      "status": "—"
+    },
+    {
+      "id": "FU-074",
+      "title": "Auth lockdown for write/delete/compute endpoints exposed by viewer rollout audit",
+      "status": "—"
+    },
+    {
+      "id": "FU-073",
+      "title": "Compact `/user-view` preview for viewer users",
+      "status": "—"
+    },
+    {
+      "id": "FU-072",
+      "title": "Native non-BT shadow_results writer for `lo2/lo3/xien2/xien3` axes (owner-gated)",
+      "status": "—"
+    },
+    {
+      "id": "FU-071",
+      "title": "Cohere rerank measurement consolidated into P0 shadow",
+      "status": "—"
+    },
+    {
+      "id": "FU-070",
+      "title": "Model count semantics + policy replay consolidation clarified",
+      "status": "—"
+    },
+    {
+      "id": "FU-069",
+      "title": "Measurement coverage hardening deployed (shadow-only)",
+      "status": "—"
+    },
+    {
+      "id": "FU-068",
+      "title": "DB table inventory + consolidation proposal (read-only)",
+      "status": "—"
+    },
+    {
+      "id": "FU-067",
+      "title": "Parallel Shadow Proof admin monitoring board deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-066",
+      "title": "P0.10 first natural closeout proof + rule-phase backfill workaround applied",
+      "status": "—"
+    },
+    {
+      "id": "FU-065",
+      "title": "Long-term scheduler-hook fix for rule-phase MRE timing race",
+      "status": "—"
+    },
+    {
+      "id": "FU-064",
+      "title": "P0.9 portfolio verifier coverage deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-063",
+      "title": "P0.8 full method portfolio scaffold coverage deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-062",
+      "title": "P0.7 parallel proof harness baseline control deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-061",
+      "title": "P0.6 shared measurement core and lane containment deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-060",
+      "title": "P0.5 multi-lane shadow expansion implemented locally as measurement-only code",
+      "status": "—"
+    },
+    {
+      "id": "FU-059",
+      "title": "MiniMax M2.7 removed from active shadow measurement after MN/MT failures",
+      "status": "—"
+    },
+    {
+      "id": "FU-058",
+      "title": "P0 monitoring cleanup closeout confirms first-closeout observed, rule-phase gap remains",
+      "status": "—"
+    },
+    {
+      "id": "FU-057",
+      "title": "Total-force master execution plan created; final gate remains first-closeout observed",
+      "status": "—"
+    },
+    {
+      "id": "FU-056",
+      "title": "Multi-lane shadow P0 backbone deployed measurement-only; first natural closeout observed, 3-5 closeouts pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-055",
+      "title": "Shadow model promotion scorecard needed for future output roster expansion to 18/20",
+      "status": "—"
+    },
+    {
+      "id": "FU-054",
+      "title": "MT 2026-04-27 BUNDLE_SKEW: strongest/lo2 hit but BT selected wrong",
+      "status": "—"
+    },
+    {
+      "id": "FU-053",
+      "title": "DeepSeek V4 dedicated keys synced, but provider 402 remains on full MT/MB shadow prompt",
+      "status": "—"
+    },
+    {
+      "id": "FU-052",
+      "title": "qwen3.6-plus + deepseek-v4-pro both recovered; full V20.3.32 cohort 11/11 on MN 2026-04-27",
+      "status": "—"
+    },
+    {
+      "id": "FU-051",
+      "title": "`/filter` empty bucket/readability fix deployed; owner visual review pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-050",
+      "title": "Shadow roster V20.3.32 prune/expansion needs first live-cycle proof",
+      "status": "—"
+    },
+    {
+      "id": "FU-049",
+      "title": "Durable output-policy replay writer created; VPS closeout wire not yet approved",
+      "status": "—"
+    },
+    {
+      "id": "FU-048",
+      "title": "PP-5 unauthorized scoring deploy rolled back per owner directive",
+      "status": "—"
+    },
+    {
+      "id": "FU-047",
+      "title": "Predict-Always / Verify-Later deployed after MB holiday-guard incident",
+      "status": "—"
+    },
+    {
+      "id": "FU-046",
+      "title": "`/app` table secondary-number badge extended to `ĐỘ BAN ĐẦU` cell (V20.3.25); review pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-045",
+      "title": "`/app` table secondary-number badge (V20.3.24) deployed; visual review confirmation pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-044",
+      "title": "Monitoring UI overhaul (V20.3.23) deployed; visual review confirmation pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-043",
+      "title": "V20.3.22 measurement-safe Wave 2 surfaces deployed (PP-1 live watch + verdict dist + prompt section breakdown)",
+      "status": "—"
+    },
+    {
+      "id": "FU-038",
+      "title": "PHASE-FIRST gate cohort expanded to six shadow models; first V20.3.32 proof pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-039",
+      "title": "Prompt gate measurement axis corrected in realtime board; nightly tables still remain date+region surfaces",
+      "status": "—"
+    },
+    {
+      "id": "FU-042",
+      "title": "Per-rule predicted-tails attribution + GĐB alias bug fixed live",
+      "status": "—"
+    },
+    {
+      "id": "FU-040",
+      "title": "Governance automation hooks configured; first natural event proof still pending",
+      "status": "—"
+    },
+    {
+      "id": "FU-041",
+      "title": "Review Hub unified and deployed as the canonical review link",
+      "status": "—"
+    },
+    {
+      "id": "FU-028",
+      "title": "MN cluster-skew on losing days",
+      "status": "—"
+    },
+    {
+      "id": "FU-029",
+      "title": "MT structural BUNDLE_SKEW + rerun_post_mn dependency",
+      "status": "—"
+    },
+    {
+      "id": "FU-030",
+      "title": "MB rescue-dependency on rerun_post_mt + ML/Combo",
+      "status": "—"
+    },
+    {
+      "id": "FU-031",
+      "title": "Wave 1 measurement coverage gap on 2026-04-24",
+      "status": "—"
+    },
+    {
+      "id": "FU-037",
+      "title": "C3 auto-materialize wired into scheduler closeout (V20.3.20.3)",
+      "status": "—"
+    },
+    {
+      "id": "FU-036",
+      "title": "Realtime measurement surfaces deployed to VPS production (C1+C3+C5)",
+      "status": "—"
+    },
+    {
+      "id": "FU-035",
+      "title": "Offline replay (F1/F2/F3) + measurement surfaces (C1/C3/C5) executed; locked blocks now have hard deadlines",
+      "status": "—"
+    },
+    {
+      "id": "FU-034",
+      "title": "PP-1 convergence dampener deployed; needs live-cycle proof",
+      "status": "—"
+    },
+    {
+      "id": "FU-033",
+      "title": "AI gate `AI_BLOCKED` is observability-only, not a true publish brake",
+      "status": "—"
+    },
+    {
+      "id": "FU-032",
+      "title": "MB publish-before-ready honesty signal on degraded days",
+      "status": "—"
+    },
+    {
+      "id": "FU-026",
+      "title": "Wave 1 control surfaces deployed; parity-manifest path still needs live proof",
+      "status": "—"
+    },
+    {
+      "id": "FU-027",
+      "title": "Wave 2 remains locked until fresh live trace proves stronger reasoning-contract depth",
+      "status": "—"
+    },
+    {
+      "id": "FU-024",
+      "title": "`rule_custom_prompt` was stale, duplicated, and truncated in runtime",
+      "status": "—"
+    },
+    {
+      "id": "FU-025",
+      "title": "Measurement-safe rerun/prompt forensic tables are now active",
+      "status": "—"
+    },
+    {
+      "id": "FU-023",
+      "title": "Post-closeout measurement timing gap on `2026-04-23`",
+      "status": "—"
+    },
+    {
+      "id": "FU-001",
+      "title": "Monitoring freshness semantics gap",
+      "status": "—"
+    },
+    {
+      "id": "FU-002",
+      "title": "MB post-red-line recovery needs confirmation",
+      "status": "—"
+    },
+    {
+      "id": "FU-003",
+      "title": "Cohere measurement is useful but not decision-grade yet",
+      "status": "—"
+    },
+    {
+      "id": "FU-004",
+      "title": "`gpt-oss-120b` improved but not fully closed",
+      "status": "—"
+    },
+    {
+      "id": "FU-005",
+      "title": "Monitoring missing-row alert still hardcodes `15`",
+      "status": "—"
+    },
+    {
+      "id": "FU-006",
+      "title": "`prediction_trace.jsonl` live history was partially lost after deploy overwrite incident",
+      "status": "—"
+    },
+    {
+      "id": "FU-007",
+      "title": "Manual AI predict endpoints still drift from owner source-doctrine",
+      "status": "—"
+    },
+    {
+      "id": "FU-008",
+      "title": "Anti-trap owner doctrine is only partially implemented",
+      "status": "—"
+    },
+    {
+      "id": "FU-009",
+      "title": "`tail_db`-only historical boards understate full actual-tail truth",
+      "status": "—"
+    },
+    {
+      "id": "FU-010",
+      "title": "AI prompt cohort uplift is deployed but not yet live-proven",
+      "status": "—"
+    },
+    {
+      "id": "FU-011",
+      "title": "ML / no-token equivalent for anti-trap is missing",
+      "status": "—"
+    },
+    {
+      "id": "FU-012",
+      "title": "Trace/runtime honesty and §25 persistence materialization still need live proof",
+      "status": "—"
+    },
+    {
+      "id": "FU-013",
+      "title": "MT bundle-skew and main-vs-secondary visibility pack is deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-014",
+      "title": "ML/no-token freshness and station-set diagnostics pack is deployed",
+      "status": "—"
+    },
+    {
+      "id": "FU-015",
+      "title": "New shadow AI cohort is not yet fully healthy across all regions",
+      "status": "—"
+    },
+    {
+      "id": "FU-022",
+      "title": "Unstable low-value shadow-only models were cleared from the live auto-eval roster",
+      "status": "—"
+    },
+    {
+      "id": "FU-016",
+      "title": "New shadow AI max-token coverage was incomplete and is now hardened",
+      "status": "—"
+    },
+    {
+      "id": "FU-017",
+      "title": "DB-backed runtime reliability tables are now active",
+      "status": "—"
+    },
+    {
+      "id": "FU-019",
+      "title": "Forensic/admin semantics are still distributed across overlapping surfaces",
+      "status": "—"
+    },
+    {
+      "id": "FU-020",
+      "title": "Helper path / migration / shadow-table safety still needed canonicalization",
+      "status": "—"
+    },
+    {
+      "id": "FU-021",
+      "title": "Trace/history honesty around parse failures needed hardening",
+      "status": "—"
+    },
+    {
+      "id": "FU-018",
+      "title": "DB-backed strongest-vs-final and candidate-drop-stage tables are now active",
+      "status": "—"
+    },
+    {
+      "id": "FU-001",
+      "title": "[Title]",
+      "status": "[One"
+    }
+  ],
+  "fu_items_total": 142,
+  "fu_status_counts": {
+    "DELIVERED_INVENTORY_DOCS_ONLY": 1,
+    "DELIVERED_AUDIT_DOCS_ONLY": 1,
+    "DEPLOYED_PENDING_OWNER_VERIFY": 1,
+    "DEPLOYED_PENDING_LIVE_VERIFY": 29,
+    "READY_TO_BUILD_UI_TEST_ONLY": 3,
+    "READY_TO_BUILD_MEASUREMENT_ONLY": 1,
+    "WAIT_CLOSEOUT": 1,
+    "DONE_DOCS_DELIVERED": 1,
+    "NOT_YET_PROVEN": 8,
+    "DESIGN_ONLY": 1,
+    "DONE": 3,
+    "PARTIAL": 2,
+    "OWNER_LOCK": 1,
+    "—": 88,
+    "[One": 1
+  },
+  "changelog_versions": [
+    {
+      "version": "V20.3.37.85",
+      "title": "V85 DEEP MASTER CONTROL: 8 super-families full inventory (audit only, no official touch) (2026-05-07 23:55 VN)"
+    },
+    {
+      "version": "V20.3.37.84",
+      "title": "V84 Master Control Board + 60D method maturity + all-open-threads reconciliation (audit only, no official touch) (2026-05-07 23:30 VN)"
+    },
+    {
+      "version": "V20.3.37.83",
+      "title": "V83 admin-only V82 monitor UI panel (read-only, shadow surfaces only) (2026-05-07 23:20 VN)"
+    },
+    {
+      "version": "V20.3.37.82",
+      "title": "V82 60D evidence control pass + P0.1→P0.6 verification + accuracy optimization dossier (shadow only, no official touch) (2026-05-07 23:05 VN)"
+    },
+    {
+      "version": "V20.3.37.81",
+      "title": "V81 owner-approved provider shadow pilot: 3 models × 3 regions × 2 days (test-lane only) (2026-05-07 22:18 VN)"
+    },
+    {
+      "version": "V20.3.37.80",
+      "title": "V80 absolute closure: Notion/code/runtime sync + shadow completion + HCM hardening (test-lane only) (2026-05-07 21:55 VN)"
+    },
+    {
+      "version": "V20.3.37.79",
+      "title": "V79 AI↔NO_TOKEN cross-verification + cluster-weighted consensus + HCM timezone audit (test-lane only) (2026-05-07 21:25 VN)"
+    },
+    {
+      "version": "V20.3.37.78",
+      "title": "V78 AI prompt/context forensic + region-specialist shadow prompts + V77 timezone hardening (test-lane only) (2026-05-07 20:05 VN)"
+    },
+    {
+      "version": "V20.3.37.77",
+      "title": "V77 Post-closeout incident audit: V70/V73 timing fix + fast incident monitor + 4-day regression diagnostic (2026-05-07 18:55 VN)"
+    },
+    {
+      "version": "V20.3.37.76",
+      "title": "V76 P0 batch: drift monitor + C-16 latency_score live + cost provider (test-lane only) (2026-05-07 15:16 VN)"
+    },
+    {
+      "version": "V20.3.37.74.1",
+      "title": "V74 follow-up: C-05 RESOLVED (was data lag, not broken) + V75 next-action proposal (2026-05-07 11:55 VN)"
+    },
+    {
+      "version": "V20.3.37.74",
+      "title": "V74 TOTAL FORCE AUDIT: runtime verify + continuous measurement doctrine + GitHub report governance (2026-05-07 11:15 VN)"
+    },
+    {
+      "version": "V20.3.37.73",
+      "title": "V73 region-adaptive HYBRID — owner-final balanced state (2026-05-07 02:22 VN)"
+    },
+    {
+      "version": "V20.3.37.72",
+      "title": "V67 STRICT-gate REVERTED to eager (per owner directive) (2026-05-07 02:13 VN)"
+    },
+    {
+      "version": "V20.3.37.71",
+      "title": "V71 HYBRID_V1 selector + C-16 score-gate fix → MT/MB rescued (2026-05-07 02:00 VN)"
+    },
+    {
+      "version": "V20.3.37.69",
+      "title": "V69 metrics expansion + V70 CONSENSUS_V1 selector (test-lane only) (2026-05-07 01:50 VN)"
+    },
+    {
+      "version": "V20.3.37.68",
+      "title": "V68 MT diagnostic fix + C-16 budget expansion 8-10 → 15-20 (2026-05-07 01:40 VN)"
+    },
+    {
+      "version": "V20.3.37.67",
+      "title": "V67 ADAPTIVE_EXPLOIT_V1 selector + Discovery 8 (model anti-recommit) (2026-05-07 01:25 VN)"
+    },
+    {
+      "version": "V20.3.37.66.1",
+      "title": "V66.1 expand coverage: per-model + lag-2/3 + LO2 + per-weekday cross + repeat-tail (2026-05-07 01:10 VN)"
+    },
+    {
+      "version": "V20.3.37.66",
+      "title": "V66 Lag-1 + Cross-region Adaptive Exploit Signal (measurement-only) (2026-05-07 00:55 VN)"
+    },
+    {
+      "version": "V20.3.37.65",
+      "title": "V65 lag-1 leakage + strength priority + test-lane weighting audit (2026-05-06 23:50 VN)"
+    },
+    {
+      "version": "V20.3.37.63",
+      "title": "C-05 latency instrumentation + C-03 multi-region evaluator (2026-05-06 23:20 VN)"
+    },
+    {
+      "version": "V20.3.37.62",
+      "title": "Notion AI logical synthesis + report export rule sync (2026-05-06)"
+    },
+    {
+      "version": "V20.3.37.61",
+      "title": "Dynamic `/du-doan-test` pre-result trigger (2026-05-06 07:55 VN)"
+    },
+    {
+      "version": "V20.3.37.60",
+      "title": "Mobile two-column UI + C-16-prioritized shadow model order (2026-05-05 23:42 VN)"
+    },
+    {
+      "version": "V20.3.37.59",
+      "title": "Strict LO3 / Xien verification fix for `/du-doan-test` (2026-05-05 23:25 VN)"
+    },
+    {
+      "version": "V20.3.37.58",
+      "title": "`/du-doan-test` visual parallel output cards (2026-05-05 23:20 VN)"
+    },
+    {
+      "version": "V20.3.37.57",
+      "title": "C-16 Adaptive Model Budget Selector for `/du-doan-test` (2026-05-05 23:00 VN)"
+    },
+    {
+      "version": "V20.3.37.56",
+      "title": "`/du-doan-test` Experience Lane (2026-05-05 21:41 VN)"
+    },
+    {
+      "version": "V20.3.37.55_full_chain",
+      "title": "TOTAL-FORCE V55 closeout 04/05 + 05/05 + scheduler preflight fix + 2-day materialization (2026-05-05 20:14 VN)"
+    },
+    {
+      "version": "V20.3.37.55",
+      "title": "Add 3 Google direct shadow models (Gemini 3.1 Pro / Gemini 3 Flash / Gemma 4 31B) (2026-05-05 07:56 VN)"
+    },
+    {
+      "version": "V20.3.37.54",
+      "title": "Natural live watch + API source labels + loz trace + blackspot measurement (2026-05-04 13:20 VN)"
+    },
+    {
+      "version": "V20.3.37.53.1",
+      "title": "Owner deliverables: experimental-lane roadmap + official output timeline (docs only, 2026-05-04 00:55 VN)"
+    },
+    {
+      "version": "V20.3.37.52.5",
+      "title": "Multi-region parallel experimental test lane (VPS deployed, 2026-05-03 23:55 VN)"
+    },
+    {
+      "version": "V20.3.37.52.5.1",
+      "title": "Model strength tensor (measurement-only, 2026-05-03 23:05 VN)"
+    },
+    {
+      "version": "V20.3.37.52.4.1",
+      "title": "`/du-doan-test` UI loading fix (VPS deployed, 2026-05-03 22:40 VN)"
+    },
+    {
+      "version": "V20.3.37.52.4",
+      "title": "Multi-region `/du-doan-test` readiness UI/API (VPS deployed, 2026-05-03 22:25 VN)"
+    },
+    {
+      "version": "V20.3.37.52.3",
+      "title": "`/du-doan-test` surfaces V52 measurement rollups (VPS deployed, 2026-05-03 22:12 VN)"
+    },
+    {
+      "version": "V20.3.37.52.2",
+      "title": "V52 measurement surfaces 60-day backfill (VPS deployed, 2026-05-03 21:50 VN)"
+    },
+    {
+      "version": "V20.3.37.52.1",
+      "title": "V52 measurement-only surfaces implemented (VPS deployed, 2026-05-03 21:40 VN)"
+    },
+    {
+      "version": "V20.3.37.52",
+      "title": "Full-chain report forensic + safe next-step control (read-only, 2026-05-03 21:15 VN)"
+    },
+    {
+      "version": "V20.3.37.51",
+      "title": "Post-live 2026-05-03 measurement/test-lane/output-quality audit (read-only, 2026-05-03 20:45 VN)"
+    },
+    {
+      "version": "V20.3.37.50",
+      "title": "`/du-doan-test` MB parallel experiment lab V50 (VPS deployed, 2026-05-03 20:20 VN)"
+    },
+    {
+      "version": "V20.3.37.49",
+      "title": "FULL REPORT RE-READ + EMBEDDED V48 AUDIT + `/du-doan-test` live-parallel control (read-only, 2026-05-03 12:55 VN)"
+    },
+    {
+      "version": "V20.3.37.48.2",
+      "title": "TOTAL-FORCE START-OF-LIVE + `/du-doan-test` parallel-completion control pass (read-only, 2026-05-03 10:30 VN)"
+    },
+    {
+      "version": "V20.3.37.48.1",
+      "title": "`/du-doan-test` row-aligned grid + independent test lo3 (admin/dev, 2026-05-03 02:01 VN)"
+    },
+    {
+      "version": "V20.3.37.48",
+      "title": "`/du-doan-test` UI full prediction-axis comparison + color-coded clone (admin/dev experimental, 2026-05-03 01:48 VN)"
+    },
+    {
+      "version": "V20.3.37.41",
+      "title": "TOTAL-FORCE LIVE STABILITY + MEASUREMENT CONTROL + CORRECTED REPLAY CONTINUATION (read-only audit pass, 2026-05-02 12:34 VN)"
+    },
+    {
+      "version": "V20.3.37.40",
+      "title": "UI ENRICHMENT: WR ranking shows model's today picks (READ-ONLY, owner readability) (2026-05-02 12:24 VN)"
+    },
+    {
+      "version": "V20.3.37.39",
+      "title": "STABILITY + corrected non-leakage rescue replay framework (measurement-only, VPS deployed) (2026-05-02 10:40 VN)"
+    },
+    {
+      "version": "V20.3.37.38",
+      "title": "STOP Option A: corrected non-leaky replay invalidates single-vote rescue unlock (docs/report only) (2026-05-02 01:50 VN)"
+    },
+    {
+      "version": "V20.3.37.37",
+      "title": "TOTAL-FORCE URGENT EXECUTION: 3 NEW replay materializers + evidence pack + Single-vote rescue POSITIVE (2026-05-02 01:30 VN)"
+    },
+    {
+      "version": "V20.3.37.36",
+      "title": "Phase A measurement-only deploy: CP-1.2 + CP-X.1 + CP-X.5 + CP-X.2 (2026-05-02 01:00 VN)"
+    },
+    {
+      "version": "V20.3.37.35",
+      "title": "TOTAL-FORCE MONOLITHIC CONTROL PASS: 7 deep-dive audits + FU-082..086 + active roadmap CP-X expansion (read-only) (2026-05-02 00:30 VN)"
+    },
+    {
+      "version": "V20.3.37.34",
+      "title": "TOTAL-FORCE ABSOLUTE CONTROL PASS: 9 self-discovered audits + 4 reconciliations (read-only) (2026-05-01 23:55 VN)"
+    },
+    {
+      "version": "V20.3.37.33",
+      "title": "TOTAL-FORCE EXTREME continuation: CP-1.1 complete + CP-2.1 launch + honest replay verdict (measurement-only, local) (2026-05-01 22:55 VN)"
+    },
+    {
+      "version": "V20.3.37.32",
+      "title": "TOTAL-FORCE post-live + cross_region_spillover_shadow_v1 deploy (measurement-only, local) (2026-05-01 20:30 VN)"
+    },
+    {
+      "version": "V20.3.37.31",
+      "title": "Active roadmap memory layer + Cursor enforcement rule (docs/governance only) (2026-05-01 19:55 VN)"
+    },
+    {
+      "version": "V20.3.37.30",
+      "title": "Cross-region leakage forensic deepening + structural herding root-cause (docs/report only) (2026-05-01 19:25 VN)"
+    },
+    {
+      "version": "V20.3.37.29",
+      "title": "Cross-region spillover audit + FU-073 tracker (docs/report only) (2026-05-01 19:10 VN)"
+    },
+    {
+      "version": "V20.3.37.28",
+      "title": "D-2 foundation HOLD / REFERENCE_ONLY / OWNER_LOCK (2026-05-01 11:05 VN)"
+    },
+    {
+      "version": "V20.3.37.27",
+      "title": "Expanded-ruleset rollback + full stack redesign spec (2026-05-01 00:45 VN)"
+    },
+    {
+      "version": "V20.3.37.26",
+      "title": "Live measurement closeout + post-MDE proof (docs/report only) (2026-04-30 20:35 VN)"
+    },
+    {
+      "version": "V20.3.37.25",
+      "title": "Compact `/user-view` local preview (2026-04-30 20:55 VN)"
+    },
+    {
+      "version": "V20.3.37.24",
+      "title": "Cohere rerank bridge into P0 shadow + measured-component count 26 (2026-04-30 03:30 VN)"
+    },
+    {
+      "version": "V20.3.37.23",
+      "title": "Model-count semantics + policy replay consolidation proof (2026-04-30 03:00 VN)"
+    },
+    {
+      "version": "V20.3.37.22",
+      "title": "Coverage hardening deployed (shadow-only) (2026-04-30 02:40 VN)"
+    },
+    {
+      "version": "V20.3.37.21",
+      "title": "Coverage gap audit + Wave-readiness proposal (read-only) (2026-04-30 02:05 VN)"
+    },
+    {
+      "version": "V20.3.37.20",
+      "title": "DB inventory + consolidation proposal (read-only audit) (2026-04-30 01:55 VN)"
+    },
+    {
+      "version": "V20.3.37.19",
+      "title": "Parallel Shadow Proof monitoring board (admin-only) (2026-04-30 01:45 VN)"
+    },
+    {
+      "version": "V20.3.37.18",
+      "title": "FU-065 post-MRE/MDE rule-phase hook deployed (2026-04-30 01:30 VN)"
+    },
+    {
+      "version": "V20.3.37.17",
+      "title": "Post-live total-force report for 2026-04-29 cycle (docs-only) (2026-04-30 01:05 VN)"
+    },
+    {
+      "version": "V20.3.37.16",
+      "title": "P0.10 first natural closeout proof + rule-phase backfill workaround (2026-04-30 00:40 VN)"
+    },
+    {
+      "version": "V20.3.37.15",
+      "title": "P0.9 portfolio verifier coverage (2026-04-28 22:40 VN)"
+    },
+    {
+      "version": "V20.3.37.14",
+      "title": "P0.8 full method portfolio scaffold coverage (2026-04-28 22:35 VN)"
+    },
+    {
+      "version": "V20.3.37.13",
+      "title": "P0.7 parallel proof harness baseline control (2026-04-28 22:30 VN)"
+    },
+    {
+      "version": "V20.3.37.12",
+      "title": "P0.6 shared measurement core + lane containment (2026-04-28 22:25 VN)"
+    },
+    {
+      "version": "V20.3.37.11",
+      "title": "P0.5 multi-lane shadow expansion deployed measurement-only (2026-04-28 22:05 VN)"
+    },
+    {
+      "version": "V20.3.37.10",
+      "title": "Next-live watch checklist after MiniMax prune (docs-only) (2026-04-28 21:20 VN)"
+    },
+    {
+      "version": "V20.3.37.9",
+      "title": "MiniMax M2.7 shadow-only prune (2026-04-28 21:10 VN)"
+    },
+    {
+      "version": "V20.3.37.8",
+      "title": "P0 monitoring cleanup + wait-live closeout (docs-only) (2026-04-28 21:00 VN)"
+    },
+    {
+      "version": "V20.3.37.7",
+      "title": "Total-force monolithic execution closeout (docs-only) (2026-04-28 20:45 VN)"
+    },
+    {
+      "version": "V20.3.37.6",
+      "title": "Total-force execution plan closeout report (docs-only) (2026-04-28 20:30 VN)"
+    },
+    {
+      "version": "V20.3.37.5",
+      "title": "Outstanding issues measurement cleanup + scorecard missing-row containment (2026-04-28 20:00 VN)"
+    },
+    {
+      "version": "V20.3.37.4",
+      "title": "Pre-live total-force readiness report (docs-only) (2026-04-28 01:52 VN)"
+    },
+    {
+      "version": "V20.3.37.3",
+      "title": "P0 natural-closeout verifier deployed read-only (2026-04-28 01:18 VN)"
+    },
+    {
+      "version": "V20.3.37.2",
+      "title": "Monitoring cleanup + P0 measurement-only VPS progression (2026-04-28 00:29 VN)"
+    },
+    {
+      "version": "V20.3.37.1",
+      "title": "Governance cleanup: FU-043 / FU-037 promote DONE + DEC-013 dedup (docs-only) (2026-04-28 00:05 VN)"
+    },
+    {
+      "version": "V20.3.37",
+      "title": "Multi-lane shadow P0 backbone (code-proven, not deployed) (2026-04-27 22:55 VN)"
+    },
+    {
+      "version": "V20.3.36",
+      "title": "Shadow model promotion scorecard deployed (measurement-safe) (2026-04-27 21:01 VN)"
+    },
+    {
+      "version": "V20.3.35",
+      "title": "Direct DeepSeek shadow routing for V4 Pro/Flash (2026-04-27 19:55 VN)"
+    },
+    {
+      "version": "V20.3.34.2",
+      "title": "shadow dedicated keys synced; DeepSeek provider 402 remains (2026-04-27 19:08 VN)"
+    },
+    {
+      "version": "V20.3.34.1",
+      "title": "deepseek-v4-pro privacy unblocked + first live row (2026-04-27 12:37 VN)"
+    },
+    {
+      "version": "V20.3.34",
+      "title": "qwen3.6-plus key recovery + max_tokens open (2026-04-27 11:47 VN)"
+    },
+    {
+      "version": "V20.3.33",
+      "title": "FILTER REVIEW HUB: EMPTY-BUCKET CLARITY + RUNTIME TRACE OVERFLOW FIX (2026-04-27 00:34 VN)"
+    },
+    {
+      "version": "V20.3.32",
+      "title": "SHADOW ROSTER PRUNE + PHASE-FIRST COHORT EXPANSION (MEASUREMENT-ONLY) (2026-04-27 00:27 VN)"
+    },
+    {
+      "version": "V20.3.31",
+      "title": "OUTPUT POLICY REPLAY WRITER DEPLOYED TO CLOSEOUT (MEASUREMENT-SAFE) (2026-04-27 00:09 VN)"
+    },
+    {
+      "version": "V20.3.30",
+      "title": "OUTPUT POLICY REPLAY WRITER (MEASUREMENT-SAFE, LOCAL ARTIFACT) (2026-04-26 23:30 VN)"
+    },
+    {
+      "version": "V20.3.29",
+      "title": "PP-5 ROLLBACK (OWNER DIRECTIVE, FLAG-OFF ONLY) (2026-04-26 22:50 VN)"
+    },
+    {
+      "version": "V20.3.28",
+      "title": "PP-5 FAMILY DIVERSITY BONUS (2026-04-26 22:09 VN)"
+    },
+    {
+      "version": "V20.3.27",
+      "title": "SHADOW CATCH-UP AFTER RESTART (2026-04-26 21:22 VN)"
+    },
+    {
+      "version": "V20.3.26",
+      "title": "PREDICT ALWAYS / VERIFY LATER + MB WATCHDOG + DRAW AVAILABILITY (2026-04-26 18:25 VN)"
+    },
+    {
+      "version": "V20.3.25",
+      "title": "APP TABLE: SECONDARY-NUMBER BADGE ALSO IN \"ĐỘ BAN ĐẦU\" CELL (2026-04-26 13:38 VN)"
+    },
+    {
+      "version": "V20.3.24",
+      "title": "APP TABLE: SECONDARY-NUMBER BADGE IN \"ĐỘ SAU KQ\" CELL (2026-04-26 13:30 VN)"
+    },
+    {
+      "version": "V20.3.23",
+      "title": "MONITORING UI OVERHAUL: SECTION/CARD SEPARATION + FULL VI LOCALIZATION + RESPONSIVE FIX (2026-04-26 13:15 VN)"
+    },
+    {
+      "version": "V20.3.22",
+      "title": "MEASUREMENT-SAFE WAVE 2: PP-1 LIVE WATCH + VERDICT DIST + PROMPT SECTION BREAKDOWN (2026-04-26 12:55 VN)"
+    },
+    {
+      "version": "V20.3.21.10",
+      "title": "PRIZE-KEY ALIAS HARDENING (GĐB) + STATION-ALIAS LOOKUP (2026-04-26 12:08 VN)"
+    },
+    {
+      "version": "V20.3.21.9",
+      "title": "RULE → PREDICTED-TAILS ATTRIBUTION ON REVIEW SURFACES (2026-04-26 11:50 VN)"
+    },
+    {
+      "version": "V20.3.21.8",
+      "title": "REVIEW HUB RULES-RUNTIME ALIGNMENT + DEAD FILE CLEANUP (2026-04-26 10:38 VN)"
+    },
+    {
+      "version": "V20.3.21.7",
+      "title": "REVIEW HUB UI SIMPLIFICATION + VIETNAMESE LABEL PASS (2026-04-26 10:08 VN)"
+    },
+    {
+      "version": "V20.3.21.6",
+      "title": "REVIEW HUB CANONICAL ROUTE + LIVE VERIFY (2026-04-26 02:58 VN)"
+    },
+    {
+      "version": "V20.3.21.5",
+      "title": "REVIEW HUB PHASE 3 ENTRYPOINT BRIDGES (2026-04-26 02:52 VN)"
+    },
+    {
+      "version": "V20.3.21.4",
+      "title": "REVIEW HUB PHASE 2 MINED-RULE CANDIDATE CONTRACT (2026-04-26 02:46 VN)"
+    },
+    {
+      "version": "V20.3.21.3",
+      "title": "REVIEW HUB PHASE 1 LOCAL UI CONSOLIDATION (2026-04-26 02:34 VN)"
+    },
+    {
+      "version": "V20.3.21.2",
+      "title": "PROMPT GATE TELEMETRY HARDENING (2026-04-26 02:16 VN)"
+    },
+    {
+      "version": "V20.3.21.1",
+      "title": "GATE LINEAGE HARDENING + GOVERNANCE AUTOMATION HOOKS (2026-04-26 02:08 VN)"
+    },
+    {
+      "version": "V20.3.21",
+      "title": "RULES 12W/16W HARDENING + PHASE-FIRST COHORT SWITCH + BUCKET-AWARE LIVE MONITORING (2026-04-26 01:40 VN)"
+    },
+    {
+      "version": "V20.3.20.3",
+      "title": "C3 AUTO-MATERIALIZE WIRED INTO CLOSEOUT (2026-04-25 23:30 VN)"
+    },
+    {
+      "version": "V20.3.20.2",
+      "title": "REALTIME MEASUREMENT SURFACES DEPLOYED ON VPS (2026-04-25 23:10 VN)"
+    },
+    {
+      "version": "V20.3.20.1",
+      "title": "FIX_NOW REPLAY + CREATE_NOW MEASUREMENT SURFACES + DOCTRINE HONESTY CORRECTION (2026-04-25 23:05 VN)"
+    },
+    {
+      "version": "V20.3.20",
+      "title": "PP-1 CONVERGENCE DAMPENER (2026-04-25 21:45 VN)"
+    },
+    {
+      "version": "V20.3.19",
+      "title": "WAVE 1 CONTROL SURFACES + MONITORING VISIBILITY (2026-04-25 00:16 VN)"
+    },
+    {
+      "version": "V20.3.18",
+      "title": "PROMPT INTEGRITY CONTAINMENT + MEASUREMENT-SAFE DRIFT/PRESSURE TABLES (2026-04-24 01:01 VN)"
+    },
+    {
+      "version": "V20.3.17",
+      "title": "PUBLIC DU-DOAN PROVENANCE + SHADOW-ONLY HIDEOUT (2026-04-22 23:40 VN)"
+    },
+    {
+      "version": "V20.3.16",
+      "title": "KIMI K2.6 SHADOW ONBOARDING + REMOVED-MODEL UI CLEANUP (2026-04-22 22:19 VN)"
+    },
+    {
+      "version": "V20.3.15",
+      "title": "PRUNE UNSTABLE SHADOW-ONLY MODELS + REGISTRY-DRIVEN HEALTH ROSTER (2026-04-22 21:32 VN)"
+    },
+    {
+      "version": "V20.3.14",
+      "title": "STAGE-AWARE LIVE-DAY MONITORING + SHADOW MISSING VISIBILITY (2026-04-22 10:13 VN)"
+    },
+    {
+      "version": "V20.3.13",
+      "title": "FINAL SAFE-FIX-NOW HARDENING BEFORE NEXT LIVE CYCLE (2026-04-22 02:37 VN)"
+    },
+    {
+      "version": "V20.3.12",
+      "title": "METRIC CONTRACT NORMALIZATION ON EXISTING SURFACES (2026-04-22 02:17 VN)"
+    },
+    {
+      "version": "V20.3.11",
+      "title": "SHADOW FAILURE REHYDRATION + FORENSIC SURFACE CANONICAL PAIRING (2026-04-22 01:45 VN)"
+    },
+    {
+      "version": "V20.3.10",
+      "title": "SHADOW LOG METADATA HYGIENE (2026-04-22 01:19 VN)"
+    },
+    {
+      "version": "V20.3.9",
+      "title": "STRONGEST-VS-FINAL + CANDIDATE-DROP-STAGE DB MATERIALIZATION (2026-04-22 01:00 VN)"
+    },
+    {
+      "version": "V20.3.8",
+      "title": "SHADOW RUNTIME RELIABILITY + FRESHNESS DB TABLES (2026-04-21 23:50 VN)"
+    },
+    {
+      "version": "V20.3.7",
+      "title": "NEW SHADOW AI COHORT MAX-TOKEN HARDENING + HEALTH TRUTH SPLIT (2026-04-21 23:02 VN)"
+    },
+    {
+      "version": "V20.3.6",
+      "title": "MT BUNDLE-SKEW VISIBILITY + COHERE EFFECTIVENESS + ML FRESHNESS CHAIN + MAIN-VS-SECONDARY ENRICH (2026-04-21 22:39 VN)"
+    },
+    {
+      "version": "V20.3.5",
+      "title": "REASONING RULEBOOK NUMBERING HONESTY + CLOSED-DAY TRUTH REFRESH (2026-04-21 20:42 VN)"
+    },
+    {
+      "version": "V20.3.4",
+      "title": "TRACE RUNTIME-HONESTY + §25 PERSISTENCE MATERIALIZATION HARDENING (2026-04-21 19:54 VN)"
+    },
+    {
+      "version": "V20.3.2",
+      "title": "SOFT ANTI-TRAP DOCTRINE SUPPORT COUNT REFINEMENT (2026-04-21 02:12 VN)"
+    },
+    {
+      "version": "V20.3.1",
+      "title": "OWNER ANTI-TRAP SPEND LEVELS + MAIN-NUMBER OUTPUT CONTRACT + PROMPT METADATA HONESTY + GROK TOKEN-LIMIT BUG FIX (2026-04-21 01:54 VN)"
+    },
+    {
+      "version": "V20.3.0",
+      "title": "OWNER DOCTRINE MANUAL-PATH ALIGNMENT + ANTI-TRAP DIAGNOSTICS + MEASUREMENT SEMANTICS ENRICH (2026-04-21 00:16 VN)"
+    },
+    {
+      "version": "V20.2.9",
+      "title": "LIVE DATA PRESERVATION RULE HARDLOCK + CURSOR ENFORCEMENT SURFACES (2026-04-20 23:15 VN)"
+    },
+    {
+      "version": "V20.2.8",
+      "title": "VPS-FIRST FORENSIC SYNC + TRACE INCIDENT HARDENING (2026-04-20 22:45 VN)"
+    },
+    {
+      "version": "V20.2.7",
+      "title": "EXPECTED-MODEL-COUNT SSOT + PER-BOARD MONITORING FRESHNESS METADATA (2026-04-20 16:20 VN)"
+    },
+    {
+      "version": "V20.2.6",
+      "title": "NON-DUPLICATION SURFACE HARDENING + MONITORING SEMANTICS CLEANUP (2026-04-20 13:05 VN)"
+    },
+    {
+      "version": "V20.2.5",
+      "title": "CANONICAL ROOT `.env` LOADER HARDENING (2026-04-19 23:30 VN)"
+    },
+    {
+      "version": "V20.2.4",
+      "title": "GLM-5.1 MANUAL/API KEY MAP FIX + NEW-MODEL KEY AUDIT (2026-04-19 23:10 VN)"
+    },
+    {
+      "version": "V20.2.3",
+      "title": "GPT-OSS SHADOW KEY-PATH FIX + POST-LIVE ROOT-TO-LEAF AUDIT (2026-04-19 23:02 VN)"
+    },
+    {
+      "version": "V20.2.2",
+      "title": "COHERE_RERANK_LOG DB WRITE + KEY ROUTING FIX (2026-04-17 00:20 VN)"
+    },
+    {
+      "version": "V20.2.1",
+      "title": "MONOLITHIC AUDIT CANON LOCK (2026-04-16 17:00 VN)"
+    },
+    {
+      "version": "V20.2",
+      "title": "ADDENDUM D: 3-LAYER REASONING MANDATE + 12W/16W EXECUTION (2026-04-16 VN)"
+    },
+    {
+      "version": "V17.18.8",
+      "title": "HB31 DOUBLE SHADOW TRIGGER FIX (2026-04-15 19:22 VN)"
+    },
+    {
+      "version": "V17.18.7",
+      "title": "TRACEBACK LOGGING + HB2 SCHEMA FIX (2026-04-15 02:35 VN)"
+    },
+    {
+      "version": "V17.18.6",
+      "title": "HB16 HOTFIX + PARSER HARDENING (2026-04-15 00:42 VN)"
+    },
+    {
+      "version": "V17.18.5",
+      "title": "COHERE RERANK SHADOW INTEGRATION (2026-04-14 23:15 VN)"
+    },
+    {
+      "version": "V17.18.4",
+      "title": "P0 SHADOW AUTO-EVAL CONTEXT FIX (2026-04-14 22:50 VN)"
+    },
+    {
+      "version": "V17.18.3",
+      "title": "P0 CRASH FIX + SHADOW HARDENING + OBSERVABILITY (2026-04-14 VN)"
+    },
+    {
+      "version": "V17.15.4c",
+      "title": "SCOPE FIX: _model_call_start NameError PREVENTION (2026-04-13 21:39 VN)"
+    },
+    {
+      "version": "V17.15.4",
+      "title": "FORENSIC STABILIZATION: RUN_ID + PERFORMANCE + MEASUREMENT (2026-04-13 VN)"
+    },
+    {
+      "version": "V17.11.1",
+      "title": "EMERGENCY SETTINGS/RUNTIME FIX (2026-04-12 15:00 VN)"
+    },
+    {
+      "version": "V17.11",
+      "title": "OWNER-LOCK OPERATIONAL ENFORCEMENT (2026-04-12 VN)"
+    },
+    {
+      "version": "V17.10.1",
+      "title": "FORENSIC AUDIT SAFE_NOW FIXES (2026-04-12 VN)"
+    },
+    {
+      "version": "V17.10",
+      "title": "2D OPERATIONAL LOCK + B-STRICT + SOFT FREEZE + P1 CRON GATE (2026-04-12 VN)"
+    },
+    {
+      "version": "V17.6.27.2",
+      "title": "ULTRA TOTAL RECONCILE AUDIT + R-11 METADATA FIX (2026-04-10 VN)"
+    },
+    {
+      "version": "V17.6.27.1",
+      "title": "LIVE-WEEK FORENSIC CLOSURE (digest + UI trace) (2026-04-09 VN)"
+    },
+    {
+      "version": "V17.6.27",
+      "title": "FINAL CLOSURE: MB EQUALIZED + SHADOW EXECUTABLE + CANONICAL SYNC (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.26",
+      "title": "09/04 LIVE COMMAND CENTER + CLEANUP + READINESS (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.25",
+      "title": "BOLD RESET: LO2 DISPLAY LIVE + MB LANE-WEIGHT EVIDENCE + TOTAL FORCE (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.24",
+      "title": "FINAL LIVE-READY 09/04 CLOSURE (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.23",
+      "title": "CLEAN RESET: DAILY DIGEST + 3-ACCURACY + LIVE-WEEK FREEZE (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.22",
+      "title": "SETTINGS/DU-DOAN/AI-CONTEXT RECONCILIATION (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.21",
+      "title": "ULTRA TOTAL FORCE: 16-BOARD BASELINE EXPANSION (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.20",
+      "title": "LIVE-WEEK RESET + BASELINE FREEZE (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.19",
+      "title": "SOURCE-PRIZE GAP ROOT-CAUSE FIX (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.18",
+      "title": "FORENSIC TRACE FIX + UI/UX REMEDIATION (2026-04-08 VN)"
+    },
+    {
+      "version": "V17.6.17",
+      "title": "TOTAL FORCE CLOSURE + ROLLOUT-READINESS PACK (2026-04-07 VN)"
+    },
+    {
+      "version": "V17.6.16",
+      "title": "TOTAL FORCE NEXT-PHASE EXECUTION (2026-04-07 VN)"
+    },
+    {
+      "version": "V17.6.15",
+      "title": "ULTRA 7-DAY QUERY-ONLY FORENSIC PACK (2026-04-07 VN)"
+    },
+    {
+      "version": "V17.6.14",
+      "title": "ULTRA TOTAL SYSTEM AUDIT + POST-MIDNIGHT DIAGNOSTICS FIX (2026-04-07 VN)"
+    },
+    {
+      "version": "V17.6.13",
+      "title": "POST-CYCLE TOTAL AUDIT + TRUTH CLOSURE (2026-04-06 VN)"
+    },
+    {
+      "version": "V17.6.12",
+      "title": "NIGHT HARDENING: ADDITIVE MEASUREMENT CONTINUITY (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.11",
+      "title": "KPI FORENSIC COMPLETION + P0 MB DAY-NEW EVIDENCE RECONCILE (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.10",
+      "title": "EXECUTION NIGHT FOLLOW-UP: EXCLUSION TAXONOMY + EARLY/WRONG KPI NUMERICS (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.9",
+      "title": "ULTRA TOTAL FORCE EXECUTION: PARTIAL-SIGNAL SURVIVAL + TRACE ENRICHMENT (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.8",
+      "title": "SETTINGS/RUNTIME REDESIGN: UI↔RUNTIME CONSISTENCY LOCK (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.7",
+      "title": "SUPREME TOTAL CONTROL: RUNTIME CANONICAL DRIFT FIX + EXTREME PHASE0 (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.6",
+      "title": "EXTREME NIGHT CRITICAL CLOSEOUT (PARTIAL_READY LOCK) (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.5",
+      "title": "EXTREME LIVE-READINESS LOCK + GATE_PHASE HARDLOCK (2026-04-06 VN)"
+    },
+    {
+      "version": "V17.6.4",
+      "title": "HARDLOCK GATE INSTRUMENT + ULTRA SUPREME CLOSEOUT (2026-04-06 VN)"
+    },
+    {
+      "version": "V17.6.3",
+      "title": "SKIP/FREEZE CYCLE LAW + §36D MB ROW FIX + CLOSEOUT REPORT (2026-04-06 VN)"
+    },
+    {
+      "version": "V17.6.2",
+      "title": "HARDLOCK TYPO FIX + GATE vn_time + §36 run_source footnote (2026-04-05 VN)"
+    },
+    {
+      "version": "V17.6.1",
+      "title": "RERUN LOCK PER-PHASE + §36 DATA_REFRESH 16:41/17:41 (2026-04-04 VN)"
+    },
+    {
+      "version": "V17.6",
+      "title": "UI TRANSPARENCY + HEALTH VERSION + AUDIT COMPLETION (2026-04-04 22:42 VN)"
+    },
+    {
+      "version": "V17.5.1",
+      "title": "A+ GOVERNANCE + WEEK-PHASE LIVINGNESS + STALE CLEANUP (2026-04-04 15:40 VN)"
+    },
+    {
+      "version": "V17.5",
+      "title": "CANONICAL TIMELINE V2: SCRAPE-PHASE SHIFT + DOCS SYNC (2026-04-04 VN)"
+    },
+    {
+      "version": "V17.4",
+      "title": "CANONICAL TIMELINE LOCK: F1 FIX + §36 SSOT HARDENING (2026-04-04 VN)"
+    },
+    {
+      "version": "V17.3.1",
+      "title": "WAVE-2+ CLOSEOUT: DDL MIGRATION + EVAL BACKFILL + PRODUCTION VERIFY (2026-04-04 00:30 VN)"
+    },
+    {
+      "version": "V17.3",
+      "title": "WAVE-2+ STABILIZATION: EVAL CLEANUP + RULE LIFECYCLE + RETRAIN SAFETY (2026-04-04 VN)"
+    },
+    {
+      "version": "V17.1",
+      "title": "PREDICTION GUARD FIX + FREEZE GUARD + PROVENANCE TRACKING (2026-04-03 20:15 VN)"
+    },
+    {
+      "version": "V17.0",
+      "title": "LOCK GUARD V2: AI CHAIN INDEPENDENT FROM ML VERIFY (2026-04-03 19:27 VN)"
+    },
+    {
+      "version": "V14.4",
+      "title": "HARD SINGLE-PICK LOCK: `/APP` PRIMARY COLUMNS = 1 SỐ DUY NHẤT (2026-03-31 13:50 VN)"
+    },
+    {
+      "version": "V14.2",
+      "title": "PRODUCT SIMPLIFICATION: REMOVE LÔ 2 SỐ / BẠCH THỦ SINGLE PRIMARY (2026-03-31 13:10 VN)"
+    },
+    {
+      "version": "V14.1",
+      "title": "DUAL-LANE LABEL FIX: PARTIAL → PHỤ TRÚNG (2026-03-31 12:10 VN)"
+    },
+    {
+      "version": "V14",
+      "title": "HARD SEMANTICS RESET: DỰ ĐOÁN SAU = BẠCH THỦ SOURCE OF TRUTH (2026-03-31 11:16 VN)"
+    },
+    {
+      "version": "V16.6",
+      "title": "EXPERIMENT GOVERNANCE: STATE LOCK + HYBRID CHANGE TRACEABILITY (2026-03-30 22:45 VN)"
+    },
+    {
+      "version": "V16.5",
+      "title": "TOTAL STANDARDIZATION: HARD/SOFT/NO-TOKEN PROMPT LOCK + BT ENSEMBLE FIX (2026-03-30 21:30 VN)"
+    },
+    {
+      "version": "V16.4",
+      "title": "TOTAL SYSTEM STANDARDIZATION + PROMPT BT LOCK + WEEKLY LIVINGNESS (2026-03-30 21:00 VN)"
+    },
+    {
+      "version": "V16.3",
+      "title": "BẠCH THỦ NORTH STAR PIVOT + AUTO RANKING + SSOT HARDENING (2026-03-30 21:00 VN)"
+    },
+    {
+      "version": "V16.2",
+      "title": "7-PART SYSTEM AUDIT: RULES + WR GATE + SEMANTICS (2026-03-30 20:30 VN)"
+    },
+    {
+      "version": "V16.1",
+      "title": "RUNTIME STABILIZATION + TRIAL-READY LOCK (2026-03-30 19:15 VN)"
+    },
+    {
+      "version": "V13.2",
+      "title": "MOBILE UX + HISTORY TRACEABILITY + DB RELATIONS (2026-03-30 02:10 VN)"
+    },
+    {
+      "version": "V13.1",
+      "title": "DB VERSIONING + CARD GOVERNANCE (2026-03-30 01:50 VN)"
+    },
+    {
+      "version": "V13",
+      "title": "FULL UI SHELL RE-ARCHITECTURE (2026-03-30)"
+    },
+    {
+      "version": "V12.2",
+      "title": "LOGIN REDIRECT + AUTH FIX + ADMIN SEPARATION (2026-03-30 00:15 VN)"
+    },
+    {
+      "version": "V10.4",
+      "title": "PHASE 3A/3B: MB WEEKDAY TRACKING + DIVERSITY PASS (2026-03-29 02:10 VN)"
+    },
+    {
+      "version": "V10.3",
+      "title": "ANTI-HERDING HARDENING + MB CALIBRATION + DASHBOARD DIAGNOSTICS (2026-03-29 01:20 VN)"
+    },
+    {
+      "version": "V10.2",
+      "title": "PROMPT-LEVEL ANTI-HERDING + CONVERGENCE TRAP GUARD (2026-03-29 00:00 VN)"
+    },
+    {
+      "version": "V5.9.12",
+      "title": "CONDITIONAL ANTI-HERDING + GOVERNANCE (2026-03-28 23:30 VN)"
+    },
+    {
+      "version": "V10.0",
+      "title": "DEPLOY WEBHOOK AUTOMATION (2026-03-28 19:15 VN)"
+    },
+    {
+      "version": "V9.4",
+      "title": "STATION-COUNT LOCK (2026-03-28 19:00 VN)"
+    },
+    {
+      "version": "V6.9",
+      "title": "NO ELIMINATION (2026-03-19 15:07 VN)"
+    },
+    {
+      "version": "V6.8.3",
+      "title": "PARTIAL DEPLOY FIX (2026-03-18 21:38 VN)"
+    },
+    {
+      "version": "V6.8.2",
+      "title": "RUNTIME VERIFICATION (2026-03-17)"
+    },
+    {
+      "version": "V6.8.1",
+      "title": "CONSOLIDATION HARDENING (2026-03-17)"
+    },
+    {
+      "version": "V6.8",
+      "title": "FRESH DATA WIRING FIX (2026-03-17)"
+    }
+  ],
+  "changelog_versions_total": 224,
+  "phase_checkpoints_total": 116,
+  "phase_checkpoints_by_date": {
+    "2026-05-06": [
+      "V61_DYNAMIC_DU_DOAN_TEST_TRIGGER_20260506.md"
+    ],
+    "2026-05-05": [
+      "SHADOW_ADD_GOOGLE_DIRECT_COHORT_20260505.md",
+      "V56_DU_DOAN_TEST_EXPERIENCE_LANE_20260505.md",
+      "V57_C16_ADAPTIVE_MODEL_BUDGET_SELECTOR_20260505.md",
+      "V58_DU_DOAN_TEST_VISUAL_PARALLEL_OUTPUT_20260505.md",
+      "V59_LO3_XIEN_STRICT_VERIFICATION_FIX_20260505.md",
+      "V60_MOBILE_AND_MODEL_PRIORITY_ORDER_20260505.md"
+    ],
+    "2026-05-04": [
+      "TOTAL_FORCE_V54_NATURAL_LIVE_CLOSEOUT_MEASUREMENT_AND_TEST_LANE_CONTROL_20260504.md",
+      "TOTAL_FORCE_V55_20260504_20260505_CLOSEOUT_AND_NEXT_UPGRADE_PLAN.md"
+    ],
+    "2026-05-03": [
+      "DU_DOAN_TEST_FULL_MODEL_TENSOR_MB_RECOVERY_20260503.md",
+      "DU_DOAN_TEST_V47_LIVE_PARALLEL_VERIFICATION_20260503.md",
+      "DU_DOAN_TEST_V48_START_LIVE_PARALLEL_COMPLETION_20260503.md",
+      "DU_DOAN_TEST_V49_FULL_REPORT_REREAD_AND_LIVE_PARALLEL_CONTROL_20260503.md",
+      "DU_DOAN_TEST_V50_PARALLEL_EXPERIMENT_LANE_COMPLETION_20260503.md",
+      "TOTAL_FORCE_V51_POST_LIVE_20260503_MEASUREMENT_TEST_LANE_OUTPUT_QUALITY_AUDIT.md",
+      "TOTAL_FORCE_V52_FULL_CHAIN_REPORT_FORENSIC_AND_SAFE_NEXT_STEP_20260503.md",
+      "TOTAL_FORCE_V53_FULL_REPORT_CHAIN_DU_DOAN_TEST_REALITY_AND_SAFE_NEXT_ACTION_20260503.md",
+      "V52_2_MEASUREMENT_BACKFILL_ROLLUP_20260503.md",
+      "V52_3_DU_DOAN_TEST_UI_MEASUREMENT_SURFACING_20260503.md",
+      "V52_4_1_DU_DOAN_TEST_UI_FIX_20260503.md",
+      "V52_4_MN_MT_TEST_LANE_CUTOFF_SPEC_20260503.md",
+      "V52_4_MULTI_REGION_DU_DOAN_TEST_UI_READINESS_20260503.md",
+      "V52_5_1_MODEL_STRENGTH_TENSOR_20260503.md",
+      "V52_5_MULTI_REGION_PARALLEL_TEST_LANE_20260503.md",
+      "V52_MEASUREMENT_ONLY_IMPLEMENTATION_20260503.md"
+    ],
+    "2026-05-02": [
+      "FULL_QUALITY_COVERAGE_AND_IMPROVEMENT_GAP_AUDIT_20260502.md",
+      "GLOBAL_MODEL_REGION_WEEKDAY_MB_RECOVERY_AUDIT_20260502.md",
+      "LIVE_STABILITY_MEASUREMENT_AND_ROLLOVER_AUDIT_20260502.md",
+      "LOTTERY_PROFIT_REPORT_20260502.md",
+      "LOZ1_LOZ2_MONTHLY_BREAKDOWN_20260502.md",
+      "LOZ_SYSTEM_STABILITY_SUMMARY_20260502.md",
+      "MODEL_REGION_WEEKDAY_DEEP_DIVE_20260502.md",
+      "OPTION_A_STOP_LEAKAGE_CORRECTION_20260502.md",
+      "PHASE_A_COMPLETION_PHASE_B_KICKOFF_20260502.md",
+      "POST_LIVE_TOTAL_FORCE_CLOSEOUT_AND_SYSTEM_IMPACT_20260502.md",
+      "STABILITY_AND_CORRECTED_REPLAY_EXECUTION_20260502.md",
+      "TOTAL_FORCE_MONOLITHIC_CONTROL_20260502.md",
+      "TOTAL_FORCE_URGENT_IMPROVEMENT_EXECUTION_20260502.md"
+    ],
+    "2026-05-01": [
+      "CURRENT_RUNTIME_TRUTH_D2_PRECHECK_20260501.md",
+      "D1_RULE_MECHANISM_FULL_AUDIT_20260501.md",
+      "D2_BASIC_REGION_VERDICT_20260501.md",
+      "D2_EXPANDED_RULESET_SHADOW_SPEC_20260501.md",
+      "D2_FOUNDATION_HOLD_DECISION_20260501.md",
+      "D2_LOCAL_REPLAY_REGION_DECISION_PACK_20260501.md",
+      "D2_MINIMUM_ARTIFACT_REPLAY_REPORT_20260501.md",
+      "D2_NEXT_PHASE_RECOMMENDATION_20260501.md",
+      "D2_OVERREACH_ROLLBACK_AUDIT_20260501.md",
+      "D2_ROLLBACK_REDESIGN_OWNER_REVIEW_SPEC_20260501.md",
+      "D2_RULE_STACK_EXPERIMENT_SPEC_20260501.md",
+      "D2_STAGE1_ARTIFACT_REPLAY_RESULTS_20260501.md",
+      "POST_LIVE_CROSS_REGION_TOTAL_FORCE_AUDIT_20260501.md",
+      "POST_LIVE_TOTAL_FORCE_CROSS_REGION_SPILLOVER_CLOSEOUT_20260501.md",
+      "PRELIVE_READINESS_AUDIT_20260501.md",
+      "SOURCE_PRIZE_D_D1_CROSS_REGION_AUDIT_20260501.md",
+      "TOTAL_FORCE_ABSOLUTE_CONTROL_PASS_20260501.md",
+      "TOTAL_FORCE_CP11_CP12_CP21_CONTINUATION_CLOSEOUT_20260501.md",
+      "TOTAL_FORCE_CROSS_REGION_LEAKAGE_AUDIT_20260501.md"
+    ],
+    "2026-04-30": [
+      "AXES_ML_RULES_PRIZE_READINESS_AUDIT_20260430.md",
+      "BACKTEST_60_VS_90_EXPERIMENT_20260430.md",
+      "COHERE_RERANK_P0_BRIDGE_CLOSEOUT_20260430.md",
+      "FULL_PARALLEL_MEASUREMENT_CONSOLIDATED_STATUS_20260430.md",
+      "FULL_PARALLEL_MEASUREMENT_CONSOLIDATED_STATUS_FINAL_20260430.md",
+      "ML_LEARNING_MECHANISMS_AND_60_90_BACKTEST_REPORT_20260430.md",
+      "MODEL_COUNT_AND_POLICY_REPLAY_CONSOLIDATION_20260430.md",
+      "PRELIVE_READINESS_AUDIT_20260430.md",
+      "TOTAL_FORCE_DB_INVENTORY_CONSOLIDATION_CLOSEOUT_20260430.md",
+      "TOTAL_FORCE_LIVE_MEASUREMENT_MULTI_LANE_SHADOW_CLOSEOUT_AUDIT_20260430.md",
+      "TOTAL_FORCE_MONOLITHIC_EXECUTION_CLOSEOUT_20260430.md",
+      "TOTAL_FORCE_OUTSTANDING_TRACKER_CHANGELOG_WAIT_DATA_CLOSEOUT_20260430.md",
+      "TOTAL_FORCE_PARALLEL_MEASUREMENT_MASTER_TRACKER_20260430.md"
+    ],
+    "2026-04-29": [
+      "POST_LIVE_FULL_CYCLE_AUDIT_REPORT_20260429.md",
+      "POST_LIVE_TOTAL_FORCE_CLOSEOUT_20260429.md"
+    ],
+    "2026-04-28": [
+      "EXECUTION_CLOSEOUT_REPORT_MONITORING_CLEANUP_MULTI_LANE_SHADOW_P0_PROGRESSION_20260428.md",
+      "MINIMAX_M27_SHADOW_PRUNE_CLOSEOUT_20260428.md",
+      "NEXT_LIVE_WATCH_CHECKLIST_AFTER_MINIMAX_PRUNE_20260428.md",
+      "OUTPUT_REPLAY_EXECUTION_DECISION_PACK_20260428.md",
+      "OUTSTANDING_ISSUES_ACTION_PLAN_20260428.md",
+      "P05_MULTI_LANE_SHADOW_EXPANSION_CODE_PROVEN_20260428.md",
+      "P05_MULTI_LANE_SHADOW_METHOD_PORTFOLIO_FULL_REPORT_20260428.md",
+      "PRE_LIVE_TOTAL_FORCE_READINESS_REPORT_20260428.md",
+      "PRE_LIVE_TOTAL_FORCE_READINESS_REPORT_CONSOLIDATED_OUTSTANDING_ISSUES_REPLAY_SHADOW_LIVE_SAFETY_20260428.md",
+      "TOTAL_FORCE_EXECUTION_CLOSEOUT_FULL_RECONCILIATION_LIVE_FORENSIC_MEASUREMENT_CLEANUP_MULTI_LANE_SHADOW_ROADMAP_20260428.md",
+      "TOTAL_FORCE_EXECUTION_CLOSEOUT_P0_MONITORING_CLEANUP_MULTI_LANE_SHADOW_RECONCILIATION_DO_NOW_WAIT_LIVE_20260428.md",
+      "TOTAL_FORCE_EXECUTION_PLAN_FULL_RECONCILIATION_LIVE_FORENSIC_MULTI_LANE_SHADOW_DO_NOW_WAIT_LIVE_ROADMAP_20260428.md"
+    ],
+    "2026-04-27": [
+      "FINAL_OUTPUT_REPLAY_MEASUREMENT_DECISION_PACK_20260427.md",
+      "MASTER_RECONCILIATION_REPORT_MONITORING_MULTI_LANE_SHADOW_CURRENT_SYSTEM_STATE_20260427.md",
+      "MONITORING_AND_MULTI_LANE_SHADOW_MASTER_RECONCILIATION_REPORT_20260427.md",
+      "MONITORING_TOTAL_FORCE_AUDIT_REPORT_20260427.md",
+      "MT_BUNDLE_SKEW_REPLAY_PACK_20260427.md",
+      "MULTI_LANE_SHADOW_ADMIN_DEV_VISUAL_LAYER_DESIGN_20260427.md",
+      "MULTI_LANE_SHADOW_IMPLEMENTATION_DECISION_PACK_20260427.md",
+      "MULTI_LANE_SHADOW_IMPLEMENTATION_PLANNING_DOCUMENT_20260427.md",
+      "MULTI_LANE_SHADOW_P0_BACKUP_ROLLBACK_MANIFEST_20260427.md",
+      "MULTI_LANE_SHADOW_P0_IMPLEMENTATION_REPORT_20260427.md",
+      "OUTPUT_REPLAY_WRITER_DEPLOYED_CLOSEOUT_20260427.md",
+      "QWEN36_RECOVERY_AND_DEEPSEEK_V4_PRO_PRIVACY_GUIDE_20260427.md",
+      "SHADOW_MODEL_PROMOTION_MEASUREMENT_ROADMAP_20260427.md",
+      "SHADOW_NEW_MODELS_FIRST_CYCLE_AUDIT_20260427.md",
+      "SHADOW_PROMOTION_SCORECARD_DEPLOYED_CLOSEOUT_20260427.md",
+      "SHADOW_ROSTER_V20332_DEPLOYED_CLOSEOUT_20260427.md"
+    ],
+    "2026-04-26": [
+      "BLOCK_ACTIVATION_MATRIX_20260426.md",
+      "DEEP_OUTPUT_REPLAY_AFTER_PP5_ROLLBACK_20260426.md",
+      "MASTER_STATUS_DASHBOARD_20260426.md",
+      "OUTPUT_POLICY_DECISION_REPORT_20260426.md",
+      "OUTPUT_REPLAY_WRITER_DECISION_PACK_20260426.md",
+      "OUTPUT_SECONDARY_AUDIT_REPORT_20260426.md",
+      "PP5_EFFECT_VERDICT_REPORT_20260426.md",
+      "PP5_ROLLBACK_AND_REPLAY_CLOSEOUT_20260426.md"
+    ],
+    "2026-04-25": [
+      "BLOCK_ACTIVATION_MATRIX_20260425.md"
+    ],
+    "2026-04-24": [
+      "PHASE_G_IMPLEMENTATION_PLAN_20260424.md"
+    ],
+    "2026-04-23": [
+      "PHASE_A_TRUTH_LOCK_20260423.md",
+      "PHASE_B_PROMPT_INTEGRITY_20260423.md",
+      "PHASE_C_RERUN_DRIFT_20260423.md",
+      "PHASE_D_RULES_CHAIN_20260423.md",
+      "PHASE_E_PROMPT_PRESSURE_GAN_KB_20260423.md",
+      "PHASE_F_SHADOW_ML_UI_20260423.md"
+    ]
+  },
+  "automation_history_entries": 26
+}

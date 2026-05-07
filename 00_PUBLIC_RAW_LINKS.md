@@ -1,3 +1,10 @@
+## V86 — TOTAL FORENSIC REGISTRY (NEW 2026-05-08T00:14:52+07:00)
+
+- [V86 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/V86_REPORT.md)
+- [TOTAL_PUBLIC_REGISTRY (Notion AI lookup)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/TOTAL_PUBLIC_REGISTRY.md)
+- [READ_THIS_FIRST](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/READ_THIS_FIRST.md)
+- [Inventory JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/evidence/inventory_all.json)
+
 ## V85 — DEEP MASTER CONTROL (NEW 2026-05-07T23:58:56+07:00)
 
 - [V85 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V85_DEEP_MASTER_CONTROL_20260507/V85_REPORT.md)

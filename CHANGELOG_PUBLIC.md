@@ -1,3 +1,12 @@
+## V86 — TOTAL FORENSIC REGISTRY + V82 merged into /monitoring (2026-05-08 00:10 VN)
+
+- TOTAL_PUBLIC_REGISTRY.md (26 KB) for Notion AI single-table lookup.
+- V82 Master Control Board merged into /monitoring as sectionV82MasterControl.
+- /v82-monitor standalone kept.
+- 132 API endpoints + 12 frontend pages + 142 FU + 224 CHANGELOG + 116 phase_checkpoints.
+- monitoring.html 142KB → 162KB (+20KB).
+- 4 official tables hash UNCHANGED.
+
 ## V85 — DEEP MASTER CONTROL (2026-05-07 23:55 VN)
 
 - 8 super-family full inventory: 41 AI models + 129 DB tables + 26 cron jobs + 8 prompts + 5 PFG cohorts + 3 V81 pilot models + 27 metrics + 59 shadow methods.
