@@ -1,37 +1,33 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V82",
-  "latest_folder": "V82_60D_EVIDENCE_CONTROL_PASS_20260507",
-  "latest_report": "V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md",
-  "latest_manifest": "V82_60D_EVIDENCE_CONTROL_PASS_20260507/REPORT_MANIFEST.json",
-  "previous_root_pointer_was": "V81",
-  "created_at_vn": "2026-05-07T23:09:39+07:00",
-  "status": "DEPLOYED — V82 60D evidence control pass; 307 audit cells; MN 2 clean lift candidates; MT consensus-first confirmed; MB cold; official UNCHANGED",
+  "latest_version": "V83",
+  "latest_folder": "V83_V82_MONITOR_UI_PANEL_20260507",
+  "latest_report": "V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md",
+  "latest_manifest": "V83_V82_MONITOR_UI_PANEL_20260507/REPORT_MANIFEST.json",
+  "previous_root_pointer_was": "V82",
+  "created_at_vn": "2026-05-07T23:23:43+07:00",
+  "status": "DEPLOYED — V83 admin-only V82 monitor UI panel; read-only; 18-key JSON payload; official UNCHANGED",
   "official_touched": false,
   "test_lane_status": "ACTIVE — 6 cron jobs daily VN 19:00-19:14",
-  "next_action": "Natural cron 19:00-19:14 VN on 2026-05-08; accumulate V79/V80/V81 7d; MB cold-streak watch; 14d MN dossier prep if lift holds",
+  "next_action": "Owner verify /v82-monitor after admin login; continue natural cron",
   "owner_lock_for_official": true,
-  "audit_cells": 307,
+  "new_routes": [
+    "/v82-monitor",
+    "/api/admin/v82-monitor"
+  ],
   "read_order": [
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/READ_THIS_FIRST.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/p0_status_matrix.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/60d_method_region_table.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/no_token_vs_ai_60d.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/ai_herd_risk_60d.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/safety_gate_matrix.md",
-    "V82_60D_EVIDENCE_CONTROL_PASS_20260507/evidence/optimal_plan.md",
+    "V83_V82_MONITOR_UI_PANEL_20260507/READ_THIS_FIRST.md",
+    "V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md",
+    "V83_V82_MONITOR_UI_PANEL_20260507/REPORT_MANIFEST.json",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
   "changed_since_previous": [
-    "V82 60D evidence control pass: 307 audit cells (method × region × window)",
-    "MN 60d 2 promotion candidates with clean lift (test-lane only, requires dossier + owner OK)",
-    "MT consensus-first doctrine confirmed by 60d data (AI_HERD -6.7pp 12 breaks)",
-    "MB cold confirmed; all methods ±5pp around OFFICIAL 25%",
-    "NO_TOKEN vs AI delta region-specific (no global floor change)",
-    "V67/V70/V73/V79 max 4-15d trace; V81 only 2d -> RETRO_LIMITED",
+    "V83 admin-only V82 monitor UI panel deployed",
+    "New backend module _v82_monitor.py (read-only payload, 18 keys)",
+    "New routes /v82-monitor (HTML) + /api/admin/v82-monitor (JSON)",
+    "New frontend v82-monitor.html (7-section dashboard, auto-refresh 5min, NO promote button)",
     "Pre/post hashes 4 official tables UNCHANGED"
   ],
   "open_issues_count": 0,
@@ -39,7 +35,9 @@
     "official_unchanged": true,
     "hash_guard_passed": true,
     "public_safe": true,
-    "audit_only_no_writes": true,
-    "no_auto_promotion": true
+    "shadow_only": true,
+    "no_auto_promotion": true,
+    "ui_no_action_button": true,
+    "admin_only_auth": true
   }
 }

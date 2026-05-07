@@ -1,3 +1,11 @@
+## V83 — V82 MONITOR UI PANEL (admin-only, read-only) (2026-05-07 23:20 VN)
+
+- New backend module `web/backend/_v82_monitor.py` (read-only payload, 18 keys).
+- 2 new admin-required routes: `GET /v82-monitor` (HTML) + `GET /api/admin/v82-monitor` (JSON).
+- New frontend `web/frontend/v82-monitor.html` — 7-section dashboard, auto-refresh 5min.
+- Hard contract honored: NO promote/rollback/edit/trigger button, NO DB write, NO scoring/selector change.
+- Pre/post hashes 4 official tables UNCHANGED.
+
 ## V82 — 60D EVIDENCE CONTROL PASS (2026-05-07 23:05 VN)
 
 - 307 audit cells (method × region × window {60, 30, 14, 7, 4}).

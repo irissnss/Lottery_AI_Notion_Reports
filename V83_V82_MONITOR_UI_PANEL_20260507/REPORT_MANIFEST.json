@@ -1,0 +1,81 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V83_V82_MONITOR_UI_PANEL_20260507",
+  "version": "V83",
+  "internal_version": "V20.3.37.83",
+  "created_at_vn": "2026-05-07T23:23:43+07:00",
+  "owner_request_summary": "OK build UI admin read-only panel for V82 monitor",
+  "parent_reports": [
+    "V82_60D_EVIDENCE_CONTROL_PASS_20260507",
+    "V81_PROVIDER_SHADOW_PILOT_20260507"
+  ],
+  "status": "DEPLOYED — admin read-only V82 monitor UI live; official UNCHANGED",
+  "scope": "ui-only / admin-only / read-only / no DB writes",
+  "official_touched": false,
+  "new_files": [
+    "web/backend/_v82_monitor.py",
+    "web/frontend/v82-monitor.html"
+  ],
+  "modified_files": [
+    "web/backend/main.py (+30 lines for 2 admin routes)",
+    "CHANGELOG.md (V20.3.37.83)",
+    "docs/CURRENT_TRUTH_SSOT.md",
+    "docs/FOLLOW_UP_TRACKER.md (FU-149)",
+    "docs/AUTOMATION_STATE.json (seq=23)",
+    "docs/AUTOMATION_HISTORY.jsonl"
+  ],
+  "new_routes": [
+    "GET /v82-monitor (admin-required HTML)",
+    "GET /api/admin/v82-monitor (admin-required JSON)"
+  ],
+  "new_tables": [],
+  "modified_tables": [],
+  "scheduler_changes": [],
+  "verification": {
+    "local_compile": true,
+    "vps_deploy_at_vn": "2026-05-07T23:19:00+07:00",
+    "service_active": true,
+    "health_200": true,
+    "v82_monitor_route_unauth_status": 401,
+    "v82_monitor_api_unauth_status": 401,
+    "official_hash_changed": false,
+    "backend_module_smoke": "18 payload keys, 7d MN rows, 12 cluster rows, 21 V81 rows"
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change"
+  ],
+  "ui_no_action_buttons": [
+    "promote_button: false",
+    "rollback_button: false",
+    "edit_button: false",
+    "trigger_run_button: false"
+  ],
+  "next_actions": [
+    "Owner login admin and visit /v82-monitor to verify dashboard",
+    "Continue 7d natural cron 19:00-19:14 VN (V77/V78/V79/V80/V81)",
+    "MB cold-streak watch",
+    "14d MN dossier prep if lift holds (target 2026-05-21)"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "e5ebe5686d2f54c9ad31553f0caf417a6bb42130c9df17d9bb02dcff11c09b2a",
+    "V83_REPORT.md": "491d91fe644dfcc2e4ff3af5a66e8f567c1770ad4b5276e3bbd99e9382dda299",
+    "evidence/post_v83_ui_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v83_ui_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/v82-monitor.html": "8f8aad64bc118fd65cfcef075a8faffb05e4203dd32c04ed9761ee5ddbbf5a92",
+    "evidence/_v82_monitor.py": "2f294e540e0198e92e2d9bac80fa1e9fd15bc6cc5589b65f94e13d6304231f4c"
+  }
+}

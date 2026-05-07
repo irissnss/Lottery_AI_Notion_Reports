@@ -1,3 +1,10 @@
+## V82 → V83
+
+- Admin read-only V82 monitor UI panel.
+- New routes /v82-monitor + /api/admin/v82-monitor.
+- New backend module _v82_monitor.py + frontend v82-monitor.html.
+- NO promote button anywhere.
+
 ## V81 → V82
 
 - 60D evidence audit covering 307 cells.

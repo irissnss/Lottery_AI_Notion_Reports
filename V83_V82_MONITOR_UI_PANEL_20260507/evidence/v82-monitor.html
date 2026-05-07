@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V82 Monitor — Lottery AI (Admin Read-Only)</title>
+    <link rel="stylesheet" href="styles.css?v=20260507-v82" />
+    <style>
+      :root {
+        --good: #34d399;
+        --bad: #f87171;
+        --warn: #fbbf24;
+        --info: #60a5fa;
+        --muted: #9ca3af;
+      }
+      body { background: var(--bg-primary, #0f172a); color: var(--text-primary, #e5e7eb); margin: 0; font-family: 'Inter', -apple-system, sans-serif; }
+      .v82-wrap { max-width: 1400px; margin: 0 auto; padding: 16px; }
+      .v82-header {
+        display: flex; align-items: center; justify-content: space-between;
+        background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.4);
+        border-radius: 10px; padding: 12px 16px; margin-bottom: 12px;
+      }
+      .v82-header h1 { margin: 0; font-size: 1.05rem; font-weight: 800; color: #fca5a5; }
+      .v82-header .badge {
+        background: rgba(251,191,36,0.18); color: #fde68a;
+        border: 1px solid rgba(251,191,36,0.45);
+        padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+        margin-left: 8px;
+      }
+      .v82-header .meta { font-size: 0.72rem; color: var(--muted); }
+      .v82-section {
+        background: var(--bg-card, #1e293b); border: 1px solid var(--border-color, #334155);
+        border-radius: 10px; padding: 12px 14px; margin-bottom: 12px;
+      }
+      .v82-section h2 { font-size: 0.92rem; margin: 0 0 8px 0; font-weight: 700; color: #93c5fd; }
+      .v82-section h3 { font-size: 0.78rem; margin: 12px 0 6px 0; font-weight: 700; color: var(--text-secondary, #cbd5e1); }
+      .v82-section p.note { font-size: 0.72rem; color: var(--muted); margin: 4px 0 8px; }
+      table.v82-tbl { width: 100%; border-collapse: collapse; font-size: 0.74rem; }
+      table.v82-tbl th, table.v82-tbl td {
+        padding: 5px 7px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06);
+        white-space: nowrap;
+      }
+      table.v82-tbl th { color: #93c5fd; font-weight: 600; background: rgba(148,163,184,0.06); }
+      table.v82-tbl tbody tr:hover { background: rgba(148,163,184,0.05); }
+      .pill { display: inline-block; padding: 2px 7px; border-radius: 999px; font-size: 0.65rem; font-weight: 700; }
+      .pill-good { background: rgba(52,211,153,0.18); color: var(--good); border: 1px solid rgba(52,211,153,0.4); }
+      .pill-bad  { background: rgba(248,113,113,0.18); color: var(--bad);  border: 1px solid rgba(248,113,113,0.4); }
+      .pill-warn { background: rgba(251,191,36,0.18); color: var(--warn); border: 1px solid rgba(251,191,36,0.4); }
+      .pill-info { background: rgba(96,165,250,0.18); color: var(--info); border: 1px solid rgba(96,165,250,0.4); }
+      .pill-muted { background: rgba(148,163,184,0.15); color: var(--muted); border: 1px solid rgba(148,163,184,0.3); }
+      .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+      @media (max-width: 1024px) { .grid-3 { grid-template-columns: 1fr; } }
+      .toolbar { display: flex; gap: 8px; align-items: center; }
+      .toolbar button {
+        padding: 5px 12px; border-radius: 8px; border: 1px solid var(--border-color, #334155);
+        background: transparent; color: var(--text-secondary, #cbd5e1); cursor: pointer; font-size: 0.72rem;
+      }
+      .toolbar button:hover { background: rgba(148,163,184,0.08); }
+      #v82-error { color: var(--bad); font-size: 0.78rem; margin-top: 6px; }
+      #v82-loading { color: var(--info); font-size: 0.78rem; }
+    </style>
+  </head>
+  <body>
+    <div class="v82-wrap">
+      <div class="v82-header">
+        <div>
+          <h1>V82 MONITOR — ADMIN READ-ONLY</h1>
+          <span class="badge">SHADOW ONLY</span>
+          <span class="badge">OFFICIAL UNCHANGED</span>
+          <span class="badge">NO PROMOTE</span>
+          <div class="meta" id="v82-meta">đang tải...</div>
+        </div>
+        <div class="toolbar">
+          <button onclick="loadV82()">Tải lại</button>
+          <a class="toolbar" href="/du-doan-test" style="color: var(--text-secondary,#cbd5e1); text-decoration:none; padding:5px 12px; border:1px solid var(--border-color,#334155); border-radius:8px; font-size:0.72rem;">Quay về /du-doan-test</a>
+        </div>
+      </div>
+
+      <div id="v82-loading">Đang tải dữ liệu shadow...</div>
+      <div id="v82-error"></div>
+
+      <div id="v82-body" style="display:none;">
+
+        <!-- Section 1: Per-region last 7 days OFFICIAL vs AI vs NO_TOKEN -->
+        <div class="v82-section">
+          <h2>1. 7 ngày gần nhất theo miền — OFFICIAL vs AI herd vs NO_TOKEN herd</h2>
+          <p class="note">Đối chiếu pick từng miền hàng ngày. Cột hit = pick đó có nằm trong tails thực tế ngày đó không.</p>
+          <div class="grid-3" id="region-recent-grid"></div>
+        </div>
+
+        <!-- Section 2: V82 60d summary cached -->
+        <div class="v82-section">
+          <h2>2. V82 60d evidence summary (cached)</h2>
+          <p class="note">Lấy từ V82 60D Evidence Control Pass. Owner-locked cho mọi promotion.</p>
+          <div class="grid-3" id="v82-60d-grid"></div>
+        </div>
+
+        <!-- Section 3: V79 cluster-weighted recent -->
+        <div class="v82-section">
+          <h2>3. V79 cluster-weighted consensus — 7 ngày gần nhất (rank=1)</h2>
+          <div id="v79-cluster-tbl"></div>
+        </div>
+
+        <!-- Section 4: V79 AI vs NO_TOKEN cross-verify -->
+        <div class="v82-section">
+          <h2>4. V79 AI ↔ NO_TOKEN cross-verify — 7 ngày gần nhất</h2>
+          <div id="v79-cross-tbl"></div>
+        </div>
+
+        <!-- Section 5: V81 provider pilot -->
+        <div class="v82-section">
+          <h2>5. V81 provider shadow pilot — per-call (7 ngày)</h2>
+          <p class="note">Owner-approved 3 model: deepseek-chat / claude-sonnet-4-6 / gemini-3-flash. Cron 19:14 VN.</p>
+          <div id="v81-pilot-tbl"></div>
+        </div>
+
+        <!-- Section 6: V67/V70/V73 traces -->
+        <div class="v82-section">
+          <h2>6. V67 / V70 / V73 selector traces — 7 ngày gần nhất</h2>
+          <div class="grid-3" id="trace-grid"></div>
+        </div>
+
+        <!-- Section 7: V80 MB regime + MN V67 save -->
+        <div class="v82-section">
+          <h2>7. V80 MB regime + MN V67-save monitor</h2>
+          <div class="grid-3">
+            <div>
+              <h3>MB regime shift (14d)</h3>
+              <div id="mb-regime-tbl"></div>
+            </div>
+            <div>
+              <h3>MN AI herd vs V67 save (14d)</h3>
+              <div id="mn-save-tbl"></div>
+            </div>
+            <div>
+              <h3>V77 fast incident monitor (7d)</h3>
+              <div id="incident-tbl"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Owner controls notice -->
+        <div class="v82-section" style="border-color: rgba(248,113,113,0.4); background: rgba(248,113,113,0.05);">
+          <h2 style="color: #fca5a5;">⚠ Lưu ý owner</h2>
+          <p class="note" id="v82-owner-note"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      function pill(text, cls) {
+        return `<span class="pill pill-${cls}">${text}</span>`;
+      }
+      function fmtPct(v) {
+        if (v === null || v === undefined) return '-';
+        return (v * 100).toFixed(1) + '%';
+      }
+      function fmt(v) {
+        if (v === null || v === undefined || v === '') return '-';
+        return v;
+      }
+      function hitPill(v) {
+        if (v === true || v === 1) return pill('HIT', 'good');
+        if (v === false || v === 0) return pill('MISS', 'bad');
+        return pill('PENDING', 'muted');
+      }
+      function tbl(rows, cols) {
+        if (!rows || rows.length === 0) return '<p class="note">Chưa có dữ liệu.</p>';
+        let h = '<table class="v82-tbl"><thead><tr>';
+        cols.forEach(c => h += `<th>${c.label}</th>`);
+        h += '</tr></thead><tbody>';
+        rows.forEach(r => {
+          h += '<tr>';
+          cols.forEach(c => {
+            const v = c.fmt ? c.fmt(r[c.key], r) : fmt(r[c.key]);
+            h += `<td>${v === undefined || v === null ? '-' : v}</td>`;
+          });
+          h += '</tr>';
+        });
+        h += '</tbody></table>';
+        return h;
+      }
+
+      function renderRegionRecent(payload) {
+        const grid = document.getElementById('region-recent-grid');
+        let html = '';
+        ['MN', 'MT', 'MB'].forEach(reg => {
+          const data = payload.region_recent[reg] || { rows: [] };
+          html += `<div><h3>${reg}</h3>` + tbl(data.rows, [
+            { key: 'date', label: 'Ngày' },
+            { key: 'official_tail', label: 'Off', fmt: v => v ? `<b>${v}</b>` : '-' },
+            { key: 'official_hit', label: 'Off?', fmt: hitPill },
+            { key: 'ai_herd_tail', label: 'AI', fmt: (v, r) => v ? `<b>${v}</b> <span class="pill pill-muted">${r.ai_herd_count}/${r.ai_herd_total}</span>` : '-' },
+            { key: 'ai_herd_hit', label: 'AI?', fmt: hitPill },
+            { key: 'no_token_tail', label: 'NT', fmt: (v, r) => v ? `<b>${v}</b> <span class="pill pill-muted">${r.no_token_count}/${r.no_token_total}</span>` : '-' },
+            { key: 'no_token_hit', label: 'NT?', fmt: hitPill },
+          ]) + '</div>';
+        });
+        grid.innerHTML = html;
+      }
+
+      function renderV8260d(payload) {
+        const grid = document.getElementById('v82-60d-grid');
+        let html = '';
+        ['MN', 'MT', 'MB'].forEach(reg => {
+          const data = payload.v82_60d_summary[reg] || [];
+          const verdictPill = (verdict) => {
+            if (verdict.includes('PROMOTION_CANDIDATE')) return pill(verdict, 'good');
+            if (verdict.includes('DESTRUCTIVE') || verdict.includes('DO_NOT_PROMOTE')) return pill(verdict, 'bad');
+            if (verdict.includes('BASELINE_STRONG')) return pill(verdict, 'info');
+            if (verdict.includes('BASELINE')) return pill(verdict, 'muted');
+            return pill(verdict, 'warn');
+          };
+          html += `<div><h3>${reg}</h3>` + tbl(data, [
+            { key: 'method', label: 'Method', fmt: v => v.replace(/^(V52_5_)?(MN|MT|MB)_?/, '') },
+            { key: 'n', label: 'n' },
+            { key: 'hit', label: 'Hit', fmt: fmtPct },
+            { key: 'save', label: 'Sv' },
+            { key: 'break', label: 'Br' },
+            { key: 'verdict', label: 'Verdict', fmt: verdictPill },
+          ]) + '</div>';
+        });
+        grid.innerHTML = html;
+      }
+
+      function renderV79Cluster(payload) {
+        document.getElementById('v79-cluster-tbl').innerHTML = tbl(payload.v79_cluster_weighted_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'region', label: 'Miền' },
+          { key: 'selected_tail', label: 'Tail', fmt: v => v ? `<b>${v}</b>` : '-' },
+          { key: 'final_cluster_score', label: 'Score', fmt: v => v == null ? '-' : Number(v).toFixed(3) },
+          { key: 'independent_cluster_count', label: 'Clusters' },
+          { key: 'ai_cluster_weight', label: 'AI w', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+          { key: 'no_token_cluster_weight', label: 'NT w', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+          { key: 'exploit_weight', label: 'V67 w', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+          { key: 'consensus_weight', label: 'V70 w', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+          { key: 'herd_risk_flag', label: 'Risk', fmt: v => v ? pill(v, v.includes('NONE') ? 'muted' : 'warn') : '-' },
+          { key: 'selected_reason', label: 'Reason' },
+        ]);
+      }
+
+      function renderV79Cross(payload) {
+        document.getElementById('v79-cross-tbl').innerHTML = tbl(payload.v79_cross_verify_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'region', label: 'Miền' },
+          { key: 'official_tail', label: 'Off' },
+          { key: 'ai_herd_tail', label: 'AI', fmt: (v, r) => v ? `${v} (${r.ai_herd_count}, c=${r.ai_cluster_count})` : '-' },
+          { key: 'no_token_herd_tail', label: 'NT', fmt: (v, r) => v ? `${v} (${r.no_token_herd_count}, c=${r.no_token_cluster_count})` : '-' },
+          { key: 'v67_tail', label: 'V67' },
+          { key: 'v70_tail', label: 'V70' },
+          { key: 'v73_tail', label: 'V73' },
+          { key: 'cluster_weighted_tail', label: 'Cluster' },
+          { key: 'final_shadow_recommendation', label: 'Final', fmt: v => v ? `<b>${v}</b>` : '-' },
+          { key: 'confidence', label: 'Conf', fmt: v => v ? pill(v, v === 'HIGH' ? 'good' : v === 'LOW' ? 'bad' : 'warn') : '-' },
+          { key: 'herd_risk_flag', label: 'Risk', fmt: v => v ? pill(v, v.includes('NONE') ? 'muted' : 'warn') : '-' },
+          { key: 'would_save', label: 'Sv' },
+          { key: 'would_break', label: 'Br' },
+          { key: 'actual_status', label: 'St', fmt: v => v === 'WIN' ? pill('WIN', 'good') : v === 'LOSE' ? pill('LOSE', 'bad') : pill('PEND', 'muted') },
+        ]);
+      }
+
+      function renderV81Pilot(payload) {
+        document.getElementById('v81-pilot-tbl').innerHTML = tbl(payload.v81_provider_pilot_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'region', label: 'Miền' },
+          { key: 'model_id', label: 'Model' },
+          { key: 'lane', label: 'Lane', fmt: v => v ? pill(v, 'info') : '-' },
+          { key: 'parse_status', label: 'Parse', fmt: v => v === 'OK' ? pill('OK', 'good') : pill(v || '-', 'bad') },
+          { key: 'parsed_bt', label: 'Pick BT', fmt: v => v ? `<b>${v}</b>` : '-' },
+          { key: 'official_bt', label: 'Off' },
+          { key: 'v67_tail', label: 'V67' },
+          { key: 'v73_tail', label: 'V73' },
+          { key: 'parsed_confidence', label: 'Conf', fmt: v => v ? pill(v, v === 'HIGH' ? 'good' : v === 'LOW' ? 'bad' : 'warn') : '-' },
+          { key: 'parsed_herd_warning', label: 'Warn', fmt: v => v && v !== 'NONE' ? pill(v, 'warn') : pill('NONE', 'muted') },
+          { key: 'actual_status', label: 'St', fmt: v => v === 'WIN' ? pill('WIN', 'good') : v === 'LOSE' ? pill('LOSE', 'bad') : pill('PEND', 'muted') },
+          { key: 'would_save', label: 'Sv' },
+          { key: 'would_break', label: 'Br' },
+          { key: 'latency_seconds', label: 'Latency(s)', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+        ]);
+      }
+
+      function renderTraces(payload) {
+        const t = payload.v67_v70_v73_traces_recent || {};
+        const grid = document.getElementById('trace-grid');
+        grid.innerHTML = `
+          <div><h3>V67 EXPLOIT</h3>${tbl(t.v67_exploit, [
+            { key: 'date', label: 'Ngày' }, { key: 'region', label: 'Miền' },
+            { key: 'candidate_tail', label: 'BT' }, { key: 'score', label: 'Score', fmt: v => v == null ? '-' : Number(v).toFixed(2) },
+            { key: 'contribution_count', label: 'Contrib' },
+          ])}</div>
+          <div><h3>V70 CONSENSUS</h3>${tbl(t.v70_consensus, [
+            { key: 'date', label: 'Ngày' }, { key: 'region', label: 'Miền' },
+            { key: 'candidate_tail', label: 'BT' }, { key: 'agreement_count', label: 'Agree' },
+          ])}</div>
+          <div><h3>V73 HYBRID</h3>${tbl(t.v73_hybrid, [
+            { key: 'date', label: 'Ngày' }, { key: 'region', label: 'Miền' },
+            { key: 'candidate_tail', label: 'BT' },
+            { key: 'confidence_tier', label: 'Tier', fmt: v => v ? pill(v, v === 'CROWN' || v === 'AURA' ? 'good' : v === 'HIGH' ? 'info' : 'warn') : '-' },
+            { key: 'consensus_pick', label: 'V70 pick' },
+            { key: 'exploit_pick', label: 'V67 pick' },
+          ])}</div>
+        `;
+      }
+
+      function renderV80(payload) {
+        document.getElementById('mb-regime-tbl').innerHTML = tbl(payload.v80_mb_regime_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'regime_state', label: 'State', fmt: v => v ? pill(v, v.includes('COLD') ? 'bad' : 'warn') : '-' },
+          { key: 'all_method_cold_streak', label: 'Cold streak' },
+          { key: 'diversification_warning', label: 'Diversify', fmt: v => v ? pill('YES', 'warn') : '-' },
+        ]);
+        document.getElementById('mn-save-tbl').innerHTML = tbl(payload.v80_mn_v67_save_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'official_tail', label: 'Off' },
+          { key: 'ai_herd_tail', label: 'AI' },
+          { key: 'v67_tail', label: 'V67' },
+          { key: 'v73_tail', label: 'V73' },
+          { key: 'save_signal', label: 'Save?', fmt: v => v ? pill('SAVE', 'good') : '-' },
+        ]);
+        document.getElementById('incident-tbl').innerHTML = tbl(payload.v77_fast_incident_recent, [
+          { key: 'date', label: 'Ngày' },
+          { key: 'region', label: 'Miền' },
+          { key: 'alert_class', label: 'Alert', fmt: v => v ? pill(v, v.includes('RED') ? 'bad' : v.includes('ORANGE') || v.includes('YELLOW') ? 'warn' : 'good') : '-' },
+          { key: 'method_name', label: 'Method' },
+          { key: 'fail_streak', label: 'Streak' },
+        ]);
+      }
+
+      async function loadV82() {
+        const loadingEl = document.getElementById('v82-loading');
+        const errEl = document.getElementById('v82-error');
+        const bodyEl = document.getElementById('v82-body');
+        loadingEl.style.display = 'block';
+        errEl.textContent = '';
+        bodyEl.style.display = 'none';
+        try {
+          const r = await fetch('/api/admin/v82-monitor', { credentials: 'include' });
+          if (r.status === 401) { window.location.href = '/login'; return; }
+          if (r.status === 403) { errEl.textContent = 'Cần quyền admin để xem V82 monitor.'; loadingEl.style.display = 'none'; return; }
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          const payload = await r.json();
+          document.getElementById('v82-meta').textContent = `Generated: ${payload.generated_at_vn} • Today VN: ${payload.today_vn} • Schema: ${payload.schema_version}`;
+          document.getElementById('v82-owner-note').textContent = (payload.owner_controls && payload.owner_controls.note) || '';
+          renderRegionRecent(payload);
+          renderV8260d(payload);
+          renderV79Cluster(payload);
+          renderV79Cross(payload);
+          renderV81Pilot(payload);
+          renderTraces(payload);
+          renderV80(payload);
+          loadingEl.style.display = 'none';
+          bodyEl.style.display = 'block';
+        } catch (e) {
+          loadingEl.style.display = 'none';
+          errEl.textContent = 'Lỗi tải: ' + (e.message || e);
+        }
+      }
+
+      loadV82();
+      setInterval(loadV82, 5 * 60 * 1000);
+    </script>
+  </body>
+</html>

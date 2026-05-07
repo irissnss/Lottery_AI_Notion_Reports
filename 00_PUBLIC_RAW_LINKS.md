@@ -1,3 +1,11 @@
+## V83 — V82 MONITOR UI PANEL (NEW 2026-05-07T23:23:43+07:00)
+
+- [V83 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/V83_REPORT.md)
+- [V83 read-this-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/READ_THIS_FIRST.md)
+- [V83 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/REPORT_MANIFEST.json)
+- [Backend module source](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/evidence/_v82_monitor.py)
+- [Frontend HTML source](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V83_V82_MONITOR_UI_PANEL_20260507/evidence/v82-monitor.html)
+
 ## V82 — 60D EVIDENCE CONTROL PASS (NEW 2026-05-07T23:09:39+07:00)
 
 - [V82 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md)
