@@ -1,0 +1,129 @@
+# Region forensic — MB
+
+
+## MB 60d window
+
+| method | n | k | hit | Wilson_lo | Wilson_hi | save | break | net | status |
+|---|---|---|---|---|---|---|---|---|---|
+| V52_5_MB_SPECIALIST_ROSTER_V1 | 41 | 15 | 0.366 | 0.236 | 0.519 | 5 | 0 | +5 | BEATS_OFFICIAL_60D |
+| V52_5_MB_PRIOR_REGION_CONTEXT_SAFE_V1 | 60 | 17 | 0.283 | 0.185 | 0.408 | 8 | 6 | +2 | PARITY |
+| AI_HERD | 60 | 16 | 0.267 | 0.171 | 0.390 | 12 | 11 | +1 | PARITY |
+| V52_5_MB_STRENGTH_WEIGHTED_V52_5_2 | 60 | 16 | 0.267 | 0.171 | 0.390 | 8 | 7 | +1 | PARITY |
+| V52_5_MB_AI_CHAIN_PRESERVATION_V1 | 59 | 15 | 0.254 | 0.161 | 0.378 | 10 | 10 | +0 | PARITY |
+| OFFICIAL | 60 | 15 | 0.250 | 0.158 | 0.372 | 0 | 0 | +0 | BASELINE |
+| V52_5_MB_OFFICIAL_BASELINE_CONTROL | 60 | 15 | 0.250 | 0.158 | 0.372 | 0 | 0 | +0 | PARITY |
+| V52_5_MB_NO_TOKEN_HERD_REDUCTION_V1 | 60 | 15 | 0.250 | 0.158 | 0.372 | 4 | 4 | +0 | PARITY |
+| V70_CONSENSUS | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| NO_TOKEN_HERD | 60 | 14 | 0.233 | 0.144 | 0.354 | 5 | 6 | -1 | DESTRUCTIVE |
+| V52_5_MB_ADAPTIVE_BUDGET_SELECTOR_V1 | 3 | 0 | 0.000 | 0.000 | 0.561 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_EXPLOIT_V1 | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_CONSENSUS_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_HYBRID_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V73_HYBRID | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V67_EXPLOIT | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CLUSTER_WEIGHTED | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CROSS_VERIFY | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_claude-sonnet-4-6 | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_gemini-3-flash | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_deepseek-chat | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+
+## MB 30d window
+
+| method | n | k | hit | Wilson_lo | Wilson_hi | save | break | net | status |
+|---|---|---|---|---|---|---|---|---|---|
+| V52_5_MB_STRENGTH_WEIGHTED_V52_5_2 | 30 | 8 | 0.267 | 0.142 | 0.445 | 4 | 2 | +2 | BEATS_OFFICIAL_30D_n30 |
+| V70_CONSENSUS | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_AI_CHAIN_PRESERVATION_V1 | 30 | 7 | 0.233 | 0.118 | 0.409 | 4 | 3 | +1 | PARITY |
+| V52_5_MB_PRIOR_REGION_CONTEXT_SAFE_V1 | 30 | 7 | 0.233 | 0.118 | 0.409 | 5 | 4 | +1 | PARITY |
+| V52_5_MB_NO_TOKEN_HERD_REDUCTION_V1 | 30 | 7 | 0.233 | 0.118 | 0.409 | 3 | 2 | +1 | PARITY |
+| OFFICIAL | 30 | 6 | 0.200 | 0.095 | 0.373 | 0 | 0 | +0 | BASELINE |
+| AI_HERD | 30 | 6 | 0.200 | 0.095 | 0.373 | 4 | 4 | +0 | PARITY |
+| NO_TOKEN_HERD | 30 | 6 | 0.200 | 0.095 | 0.373 | 3 | 3 | +0 | PARITY |
+| V52_5_MB_OFFICIAL_BASELINE_CONTROL | 30 | 6 | 0.200 | 0.095 | 0.373 | 0 | 0 | +0 | PARITY |
+| V52_5_MB_SPECIALIST_ROSTER_V1 | 11 | 2 | 0.182 | 0.051 | 0.477 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_BUDGET_SELECTOR_V1 | 3 | 0 | 0.000 | 0.000 | 0.561 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_EXPLOIT_V1 | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_CONSENSUS_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_HYBRID_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V73_HYBRID | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V67_EXPLOIT | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CLUSTER_WEIGHTED | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CROSS_VERIFY | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_claude-sonnet-4-6 | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_gemini-3-flash | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_deepseek-chat | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+
+## MB 14d window
+
+| method | n | k | hit | Wilson_lo | Wilson_hi | save | break | net | status |
+|---|---|---|---|---|---|---|---|---|---|
+| V52_5_MB_STRENGTH_WEIGHTED_V52_5_2 | 14 | 5 | 0.357 | 0.163 | 0.612 | 3 | 1 | +2 | PARITY |
+| V52_5_MB_NO_TOKEN_HERD_REDUCTION_V1 | 14 | 5 | 0.357 | 0.163 | 0.612 | 3 | 1 | +2 | PARITY |
+| V52_5_MB_AI_CHAIN_PRESERVATION_V1 | 14 | 4 | 0.286 | 0.117 | 0.546 | 3 | 2 | +1 | PARITY |
+| V52_5_MB_PRIOR_REGION_CONTEXT_SAFE_V1 | 14 | 4 | 0.286 | 0.117 | 0.546 | 4 | 3 | +1 | PARITY |
+| V70_CONSENSUS | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| OFFICIAL | 14 | 3 | 0.214 | 0.076 | 0.476 | 0 | 0 | +0 | BASELINE |
+| AI_HERD | 14 | 3 | 0.214 | 0.076 | 0.476 | 2 | 2 | +0 | PARITY |
+| NO_TOKEN_HERD | 14 | 3 | 0.214 | 0.076 | 0.476 | 2 | 2 | +0 | PARITY |
+| V52_5_MB_OFFICIAL_BASELINE_CONTROL | 14 | 3 | 0.214 | 0.076 | 0.476 | 0 | 0 | +0 | PARITY |
+| V52_5_MB_ADAPTIVE_BUDGET_SELECTOR_V1 | 3 | 0 | 0.000 | 0.000 | 0.561 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_EXPLOIT_V1 | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_CONSENSUS_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_HYBRID_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V73_HYBRID | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V67_EXPLOIT | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CLUSTER_WEIGHTED | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CROSS_VERIFY | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_claude-sonnet-4-6 | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_gemini-3-flash | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_deepseek-chat | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+
+## MB 7d window
+
+| method | n | k | hit | Wilson_lo | Wilson_hi | save | break | net | status |
+|---|---|---|---|---|---|---|---|---|---|
+| AI_HERD | 7 | 2 | 0.286 | 0.082 | 0.641 | 2 | 1 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_STRENGTH_WEIGHTED_V52_5_2 | 7 | 2 | 0.286 | 0.082 | 0.641 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_PRIOR_REGION_CONTEXT_SAFE_V1 | 7 | 2 | 0.286 | 0.082 | 0.641 | 2 | 1 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_NO_TOKEN_HERD_REDUCTION_V1 | 7 | 2 | 0.286 | 0.082 | 0.641 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V70_CONSENSUS | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| OFFICIAL | 7 | 1 | 0.143 | 0.026 | 0.513 | 0 | 0 | +0 | BASELINE |
+| NO_TOKEN_HERD | 7 | 1 | 0.143 | 0.026 | 0.513 | 1 | 1 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_OFFICIAL_BASELINE_CONTROL | 7 | 1 | 0.143 | 0.026 | 0.513 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_AI_CHAIN_PRESERVATION_V1 | 7 | 1 | 0.143 | 0.026 | 0.513 | 1 | 1 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_BUDGET_SELECTOR_V1 | 3 | 0 | 0.000 | 0.000 | 0.561 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_EXPLOIT_V1 | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_CONSENSUS_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_HYBRID_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V73_HYBRID | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V67_EXPLOIT | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CLUSTER_WEIGHTED | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CROSS_VERIFY | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_claude-sonnet-4-6 | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_gemini-3-flash | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_deepseek-chat | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+
+## MB 4d window
+
+| method | n | k | hit | Wilson_lo | Wilson_hi | save | break | net | status |
+|---|---|---|---|---|---|---|---|---|---|
+| AI_HERD | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| NO_TOKEN_HERD | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_PRIOR_REGION_CONTEXT_SAFE_V1 | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| V70_CONSENSUS | 4 | 1 | 0.250 | 0.046 | 0.699 | 1 | 0 | +1 | INSUFFICIENT_SAMPLE |
+| OFFICIAL | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | BASELINE |
+| V52_5_MB_OFFICIAL_BASELINE_CONTROL | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_STRENGTH_WEIGHTED_V52_5_2 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_AI_CHAIN_PRESERVATION_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_NO_TOKEN_HERD_REDUCTION_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_BUDGET_SELECTOR_V1 | 3 | 0 | 0.000 | 0.000 | 0.561 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_ADAPTIVE_EXPLOIT_V1 | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_CONSENSUS_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V52_5_MB_HYBRID_V1 | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V73_HYBRID | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V67_EXPLOIT | 1 | 0 | 0.000 | 0.000 | 0.793 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CLUSTER_WEIGHTED | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V79_CROSS_VERIFY | 4 | 0 | 0.000 | 0.000 | 0.490 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_claude-sonnet-4-6 | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_gemini-3-flash | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |
+| V81_deepseek-chat | 2 | 0 | 0.000 | 0.000 | 0.658 | 0 | 0 | +0 | INSUFFICIENT_SAMPLE |

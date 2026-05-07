@@ -1,27 +1,26 @@
-# Open issues — as of V81 (2026-05-07)
+# Open issues — as of V82 (2026-05-07)
 
-## Resolved during V77-V81 sessions
+## Resolved this session (V82)
 
-1. **V77 timing bug** (V70/V73 cron firing before daily test runners) → fixed (V77).
-2. **scheduler tzinfo string bug** → fixed via `_today_vn_date_str()` / `_tomorrow_vn_date_str()` helpers (V78).
-3. **AI prompt context gaps** (no_token_herd, V67/V70/V73, agreement_count) → captured in shadow prompts + shadow context (V78/V79).
-4. **AI ↔ NO_TOKEN cross-verification missing** → shadow lane implemented (V79).
-5. **Cluster-weighted consensus** → shadow lane implemented (V79).
-6. **MB regime-shift watch** → shadow monitor implemented (V80).
-7. **MN V67 save signal monitor** → shadow daily implemented (V80).
-8. **No-token rule-aware feature pack** → shadow built (V80).
-9. **Public root metadata stale at V77 after V78/V79/V80 publish** → fixed (V81 publish resets root).
-10. **Provider shadow pilot owner consent** → received 2026-05-07 22:02 VN; pilot deployed shadow only (V81).
+1. 60D real evidence audit completed for OFFICIAL/AI_HERD/NO_TOKEN_HERD + 6 V52.5 methods.
+2. P0.1 → P0.6 verified; only P0.6 has 7-14d proof, others 4d only and marked `RETRO_LIMITED`.
+3. Region-specific NO_TOKEN vs AI delta computed (MN +3.4pp, MT +8.3pp, MB -3.3pp).
+4. AI herd risk severity per region computed (MT 27 severe-herd days but only 43.3% hit).
+5. MN 2 promotion candidates identified with 60d clean lift (test-lane only).
+6. MT consensus-first doctrine confirmed (AI_HERD destructive 60d).
 
 ## Open watch (no P0)
 
-1. Natural 6-job cron chain proof on 2026-05-08 (19:00 → 19:14 VN).
-2. Accumulate 7-14d rolling `would_save vs would_break` per model + region in V81 shadow table.
-3. MB cold streak watch — escalate to P0 regime-shift forensic if >= 7 more days all-method cold.
-4. GPT-5-mini key validation on VPS (separate ops follow-up; pilot used deepseek-chat for FAST_CHEAP slot instead).
+1. Natural cron 6 jobs 19:00-19:14 VN on 2026-05-08.
+2. 7d accumulation V79/V80/V81 (to 2026-05-14).
+3. MB 7d cold-streak watch — escalate P0 if cold continues.
+4. 14d MN dossier prep (target 2026-05-21).
+5. UI admin panel build (DATA_READY, owner OK pending).
+6. GPT-5-mini key validation (separate ops).
 
 ## Owner-locked
 
-- Selector promotion (any) — requires explicit owner OK + 7-14d shadow proof + dossier.
+- Selector promotion (any).
 - Official prompt change.
 - Production model swap.
+- Global NO_TOKEN floor change.

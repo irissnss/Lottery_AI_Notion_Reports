@@ -1,0 +1,160 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V82_60D_EVIDENCE_CONTROL_PASS_20260507",
+  "version": "V82",
+  "internal_version": "V20.3.37.82",
+  "created_at_vn": "2026-05-07T23:09:39+07:00",
+  "owner_request_summary": "60D evidence control pass + P0.1->P0.6 verification + accuracy optimization dossier; shadow only, no official touch",
+  "parent_reports": [
+    "V81_PROVIDER_SHADOW_PILOT_20260507",
+    "V80_ABSOLUTE_CLOSURE_PASS_20260507",
+    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507",
+    "V78_AI_PROMPT_REGION_AUDIT_20260507"
+  ],
+  "status": "DEPLOYED — 307 audit cells; MN 2 clean lift candidates 60d; MT consensus-first confirmed; MB cold needs forensic; official UNCHANGED",
+  "scope": "audit only / read-only / no DB writes",
+  "official_touched": false,
+  "audit_cells": 307,
+  "windows_evaluated": [
+    60,
+    30,
+    14,
+    7,
+    4
+  ],
+  "methods_evaluated": [
+    "OFFICIAL",
+    "AI_HERD",
+    "NO_TOKEN_HERD",
+    "V52_5_*_STRENGTH_WEIGHTED_V52_5_2",
+    "V52_5_*_SPECIALIST_ROSTER_V1",
+    "V52_5_*_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "V52_5_*_OFFICIAL_BASELINE_CONTROL",
+    "V52_5_*_NO_TOKEN_HERD_REDUCTION_V1",
+    "V52_5_*_AI_CHAIN_PRESERVATION_V1",
+    "V52_5_*_HYBRID_V1",
+    "V52_5_*_CONSENSUS_V1",
+    "V52_5_*_ADAPTIVE_BUDGET_SELECTOR_V1",
+    "V52_5_*_ADAPTIVE_EXPLOIT_V1",
+    "V67_EXPLOIT",
+    "V70_CONSENSUS",
+    "V73_HYBRID",
+    "V79_CLUSTER_WEIGHTED",
+    "V79_CROSS_VERIFY",
+    "V81_claude-sonnet-4-6",
+    "V81_deepseek-chat",
+    "V81_gemini-3-flash"
+  ],
+  "mn_promotion_candidates_60d": [
+    {
+      "method": "MN_SPECIALIST_ROSTER_V1",
+      "n": 60,
+      "hit_rate": 0.5167,
+      "would_save": 4,
+      "would_break": 0,
+      "verdict": "PROMOTION_CANDIDATE_AFTER_DOSSIER"
+    },
+    {
+      "method": "MN_AI_CHAIN_PRESERVATION_V1",
+      "n": 59,
+      "hit_rate": 0.5254,
+      "would_save": 5,
+      "would_break": 1,
+      "verdict": "PROMOTION_CANDIDATE_AFTER_DOSSIER"
+    }
+  ],
+  "mt_destructive_60d": [
+    {
+      "method": "MT_AI_CHAIN_PRESERVATION_V1",
+      "n": 60,
+      "hit_rate": 0.4167,
+      "would_break": 12,
+      "verdict": "DO_NOT_PROMOTE"
+    },
+    {
+      "method": "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+      "n": 60,
+      "hit_rate": 0.4167,
+      "would_break": 9,
+      "verdict": "DO_NOT_PROMOTE"
+    },
+    {
+      "method": "AI_HERD_MT",
+      "n": 60,
+      "hit_rate": 0.4333,
+      "would_break": 12,
+      "verdict": "DOCTRINE_AI_DESTRUCTIVE_FOR_MT"
+    }
+  ],
+  "no_token_vs_ai_60d_per_region": [
+    {
+      "region": "MN",
+      "no_token": 0.5167,
+      "ai": 0.4833,
+      "delta_pp": 3.34,
+      "recommendation": "KEEP_BALANCED"
+    },
+    {
+      "region": "MT",
+      "no_token": 0.5167,
+      "ai": 0.4333,
+      "delta_pp": 8.34,
+      "recommendation": "AI_CAP_DECREASE"
+    },
+    {
+      "region": "MB",
+      "no_token": 0.2333,
+      "ai": 0.2667,
+      "delta_pp": -3.34,
+      "recommendation": "REGION_SPECIFIC_ONLY"
+    }
+  ],
+  "v67_v70_v73_v79_v81_status": "RETRO_LIMITED_BY_TABLE_AVAILABILITY (max 2-15d, cannot promote)",
+  "rule_phase_no_token_pack_status": "SHADOW_ONLY_NO_CONSUMER (intentional safety)",
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change",
+    "UI admin panel build"
+  ],
+  "next_actions": [
+    "24h: wait for 2026-05-08 closeout + natural cron 6 jobs 19:00-19:14 VN",
+    "7d (to 2026-05-14): accumulate V79/V80/V81 + MB cold-streak watch",
+    "14d (to 2026-05-21): if MN candidates hold lift fresh-live -> draft MN_TEST_LANE_VOTER_PROPOSAL dossier (test lane only, no official)",
+    "P1: build UI admin read-only panel after owner OK",
+    "P2: MB regime forensic deep dive if cold persists >= 7 more days"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "e3d84ee06d4c1457bfffceafb09fd3c98218af9da138d4e327fb6f2389022470",
+    "V82_REPORT.md": "bc9e4164530e42f0052f1c276cba98aa457ce6a0131d6c6836776197fe10e28b",
+    "evidence/14d_method_region_table.md": "66d528b5d8c795fb55da83f037db36b5932e400d13f8ae0a24c86e54eb74c9cd",
+    "evidence/30d_method_region_table.md": "50e673b364adf5fe22c82688fbfa4ac4548d3db7fdbf1b3115a0856345701650",
+    "evidence/4d_method_region_table.md": "ed24b6bb2e9bcc1bb9a726cd9d5f68d185edda1c4e13461abe4d0cec40480627",
+    "evidence/60d_method_region_table.md": "f2b45115a09275843ee4429782cce6a0699b59efc974773f157bbee92c07f004",
+    "evidence/7d_method_region_table.md": "6c0be02c649edbd8ab3487d1020254e2b013e90b8151511c3da2afa2999d000e",
+    "evidence/ai_herd_risk_60d.md": "eca7f4fcd5e6baf317955409d8462e98ffeee0da60dfbe8267a135c29e07dc28",
+    "evidence/cluster_weighted_4d.md": "e688bcc28bebf9c77cdc93134f9ac41eeb5d0cd9ef65cd3e3f618fafcdbc4d59",
+    "evidence/mb_60d_region_forensic.md": "f6c29248e3c3eec2bbf5c8f91a240fe8de2be45a013fe2c6507d8824c252de34",
+    "evidence/method_region_window_eval.json": "bd524791c1f6889dcac3531fb6bd251eebff0b6034a655417bc3b8a4912082d8",
+    "evidence/mn_60d_region_forensic.md": "42d406804b5ae9221888d0573fad209765bf7964ea9d693802d13a8505ed0569",
+    "evidence/mt_60d_region_forensic.md": "cec6eb8a976186c53794ceb780da6e70741174e36edb445530d6ec0d566f6a89",
+    "evidence/no_token_vs_ai_60d.md": "1426f5d28cef18f05287131a478fae19eb431ed275f871e37bff2a92724c4897",
+    "evidence/optimal_plan.md": "5399192df7b6f0b2e8b1aa365b269b67af82b2b702e2a57d08a34a899050f317",
+    "evidence/p0_status_matrix.md": "936353f991bd4f71a42326c6f27b61ce3feca314e0b8c033c84c06a9f7a1a004",
+    "evidence/p0_status_scan.json": "a0d75236ab507e205023b7bb8020925d1b71cdd21e02b2905438916dec8d521a",
+    "evidence/safety_gate_matrix.md": "f7da67c67d5c749025baf464ba47abdfd5a9ae80619c9e64052e6363fe43550d",
+    "evidence/v81_provider_pilot_review.md": "23c657295fa05a688208242f0cccd4d514c30ab5692638fba6971f04748f6901"
+  }
+}

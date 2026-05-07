@@ -1,3 +1,14 @@
+## V82 — 60D EVIDENCE CONTROL PASS (2026-05-07 23:05 VN)
+
+- 307 audit cells (method × region × window {60, 30, 14, 7, 4}).
+- 60D real evidence: OFFICIAL/AI_HERD/NO_TOKEN_HERD + 6 V52.5 methods.
+- MN: 2 promotion candidates clean lift — SPECIALIST_ROSTER +6.7pp (save=4 break=0); AI_CHAIN_PRESERVATION +7.5pp (save=5 break=1).
+- MT: consensus-first doctrine confirmed (AI_HERD -6.7pp with 12 breaks).
+- MB: cold confirmed; all methods within ±5pp.
+- V67/V70/V73/V79 max 4-15d; V81 2d → RETRO_LIMITED, no promotion.
+- NO_TOKEN vs AI: region-specific (MN +3.4pp, MT +8.3pp, MB -3.3pp); no global floor change.
+- Hash guard: 4 official tables UNCHANGED.
+
 ## V81 — PROVIDER SHADOW PILOT (owner-approved) (2026-05-07 22:18 VN)
 
 - 3 models × 3 regions × 2 days = 18 provider calls. 18/18 parse_status=OK. 0 contract violations.

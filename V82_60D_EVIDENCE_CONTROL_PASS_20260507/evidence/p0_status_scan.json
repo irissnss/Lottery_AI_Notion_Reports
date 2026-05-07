@@ -1,0 +1,133 @@
+{
+  "scanned_at_vn": "2026-05-07T22:54:22+07:00",
+  "p0": {
+    "P0.1": {
+      "topic": "Code ↔ Notion reconcile",
+      "expected_doctrine": "V80 SYNC PATCH on 7 Notion pages + master_reconcile_matrix + governance row for V80/V81",
+      "implemented": {
+        "v80_master_reconcile_matrix": true,
+        "v80_notion_doc_patch_matrix": true,
+        "v80_changelog_present": true,
+        "v80_shadow_materializer_present": true,
+        "v81_provider_pilot_materializer_present": true,
+        "ssot_v81_row_present": true,
+        "fu_147_present": true
+      },
+      "evidence": [
+        "artifacts/v80_absolute_closure/master_reconcile_matrix.md",
+        "CHANGELOG.md V20.3.37.80 + V20.3.37.81",
+        "docs/FOLLOW_UP_TRACKER.md FU-146 + FU-147"
+      ],
+      "60d_proof": false,
+      "14d_proof": false,
+      "7d_proof": false,
+      "risk": "LOW (governance only)",
+      "next_action": "Continuous; new versions must keep this pattern."
+    },
+    "P0.2": {
+      "topic": "AI ↔ NO_TOKEN cross-verification",
+      "expected_doctrine": "Shadow table comparing AI herd vs NO_TOKEN herd vs V67/V70/V73/C16/OFFICIAL",
+      "implemented": {
+        "materializer_present": true,
+        "table_exists": true,
+        "rows_total": 12,
+        "rows_last_7d": 12,
+        "rows_last_60d": 12,
+        "cron_19_08_registered": true
+      },
+      "evidence": [
+        "web/backend/_materialize_ai_no_token_cross_verification_shadow.py",
+        "scheduler 19:08 VN cron"
+      ],
+      "60d_proof": false,
+      "14d_proof": false,
+      "7d_proof": false,
+      "risk": "LOW shadow only",
+      "next_action": "Wait for 7-14d natural cron rows before promotion proposal."
+    },
+    "P0.3": {
+      "topic": "Cluster-weighted consensus",
+      "expected_doctrine": "AI cluster cap, NO_TOKEN floor, V67/V70/V73/C16 as independent clusters",
+      "implemented": {
+        "table_exists": true,
+        "rows_total": 130,
+        "rows_last_60d": 130,
+        "schema_has_independent_cluster_count": true
+      },
+      "evidence": [
+        "cluster_weighted_consensus_shadow"
+      ],
+      "60d_proof": false,
+      "14d_proof": false,
+      "7d_proof": false,
+      "risk": "LOW shadow only",
+      "next_action": "Use 60d eval in this V82 audit if data permits; otherwise mark LIMITED."
+    },
+    "P0.4": {
+      "topic": "Rule-phase synthesis pack",
+      "expected_doctrine": "Convergence current_week_context + primary/secondary/stale rules + top source-prize",
+      "implemented": {
+        "table_exists": true,
+        "rows_total": 12,
+        "rows_last_7d": 12,
+        "rows_last_60d": 12,
+        "no_token_rule_pack_table": true,
+        "no_token_rule_pack_rows": 12,
+        "consumed_by_official": false
+      },
+      "evidence": [
+        "rule_phase_synthesis_shadow",
+        "no_token_rule_aware_pack_shadow"
+      ],
+      "60d_proof": false,
+      "14d_proof": false,
+      "7d_proof": false,
+      "risk": "LOW shadow only — not consumed by official prompt",
+      "next_action": "Backfill shadow + observe; no consumer yet (intentional safety)."
+    },
+    "P0.5": {
+      "topic": "MB regime-shift mode",
+      "expected_doctrine": "all-method cold flag, downshift confidence, diversification warning",
+      "implemented": {
+        "table_exists": true,
+        "rows_total": 4,
+        "rows_last_7d": 4,
+        "shadow_only_flags_clean": true
+      },
+      "evidence": [
+        "mb_regime_shift_shadow"
+      ],
+      "60d_proof": false,
+      "14d_proof": false,
+      "7d_proof": false,
+      "risk": "LOW shadow only",
+      "next_action": "7d natural watch."
+    },
+    "P0.6": {
+      "topic": "Timezone HCM hardening",
+      "expected_doctrine": "All scheduler chain Asia/Ho_Chi_Minh, helpers used, no datetime.now(VN_TZ) string bug",
+      "implemented": {
+        "tzinfo_string_bug_present": true,
+        "helper_today_present": true,
+        "helper_tomorrow_present": true,
+        "cron_chain_19_minutes": [
+          0,
+          5,
+          8,
+          10,
+          12,
+          14
+        ],
+        "vn_tz_constant_typed": true
+      },
+      "evidence": [
+        "web/backend/scheduler.py"
+      ],
+      "60d_proof": false,
+      "14d_proof": true,
+      "7d_proof": true,
+      "risk": "HIGH if regression — selector chain blocks otherwise",
+      "next_action": "Audit non-scheduler legacy datetime; lock as P1 follow-up."
+    }
+  }
+}

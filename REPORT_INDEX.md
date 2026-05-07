@@ -1,15 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V81_PROVIDER_SHADOW_PILOT_20260507** (V81)
+Latest: **V82_60D_EVIDENCE_CONTROL_PASS_20260507** (V82)
 
 ## Latest report
 
-- [V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/V81_REPORT.md)
-- [V81_PROVIDER_SHADOW_PILOT_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/READ_THIS_FIRST.md)
+- [V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/V82_REPORT.md)
+- [V82_60D_EVIDENCE_CONTROL_PASS_20260507/READ_THIS_FIRST.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V82_60D_EVIDENCE_CONTROL_PASS_20260507/READ_THIS_FIRST.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V81_PROVIDER_SHADOW_PILOT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V81_PROVIDER_SHADOW_PILOT_20260507/)
 - [V80_ABSOLUTE_CLOSURE_PASS_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V80_ABSOLUTE_CLOSURE_PASS_20260507/)
 - [V79_AI_NO_TOKEN_CROSS_VERIFY_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/)
 - [V78_AI_PROMPT_REGION_AUDIT_20260507](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V78_AI_PROMPT_REGION_AUDIT_20260507/)

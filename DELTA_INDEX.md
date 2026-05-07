@@ -1,3 +1,12 @@
+## V81 → V82
+
+- 60D evidence audit covering 307 cells.
+- MN promotion candidates identified (test-lane only, dossier required).
+- MT consensus-first confirmed by data.
+- MB cold confirmed needs forensic.
+- V67/V70/V73/V79/V81 marked RETRO_LIMITED.
+- No official changes.
+
 ## V80 → V81
 
 - Owner-approved provider shadow pilot deployed.
