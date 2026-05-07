@@ -1,3 +1,9 @@
+## V90 — Final cleanup (NEW 2026-05-08T01:09:45+07:00)
+
+- [V90 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/V90_REPORT.md)
+- [Backend module v90](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/evidence/_v87_master_board_v90.py)
+- [READ_THIS_FIRST](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/READ_THIS_FIRST.md)
+
 ## V89 — 5-extension pack (NEW 2026-05-08T00:58:23+07:00)
 
 - [V89 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/V89_REPORT.md)

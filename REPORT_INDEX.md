@@ -1,14 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V89_5_EXTENSION_PACK_20260508** (V89)
+Latest: **V90_FINAL_CLEANUP_20260508** (V90)
 
 ## Latest report
 
-- [V89_5_EXTENSION_PACK_20260508/V89_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/V89_REPORT.md)
+- [V90_FINAL_CLEANUP_20260508/V90_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/V90_REPORT.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 
 ## Historical reports (newest first)
 
+- [V89_5_EXTENSION_PACK_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/)
 - [V88_TOTAL_ENCYCLOPEDIA_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/)
 - [V87_MASTER_INDEX_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V87_MASTER_INDEX_20260508/)
 - [V86_TOTAL_FORENSIC_REGISTRY_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V86_TOTAL_FORENSIC_REGISTRY_20260508/)

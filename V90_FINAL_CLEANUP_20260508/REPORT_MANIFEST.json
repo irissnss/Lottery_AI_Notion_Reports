@@ -1,0 +1,58 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V90_FINAL_CLEANUP_20260508",
+  "version": "V90",
+  "internal_version": "V20.3.37.90",
+  "created_at_vn": "2026-05-08T01:09:45+07:00",
+  "owner_request_summary": "Chắc không còn gì không? Em rà kỹ phát hiện còn sót → V90 final cleanup",
+  "parent_reports": [
+    "V89_5_EXTENSION_PACK_20260508",
+    "V88_TOTAL_ENCYCLOPEDIA_20260508"
+  ],
+  "status": "DEPLOYED — 5 final tabs (29 total); ~1378 items reconciled; official UNCHANGED",
+  "scope": "ui extension + audit / read-only / no DB writes",
+  "official_touched": false,
+  "deliverables": {
+    "new_tabs_added": 5,
+    "total_tabs": 29,
+    "backend_modules": 293,
+    "scripts": 19,
+    "web_helpers": 42,
+    "active_roadmaps": 2,
+    "cursor_rules": 3,
+    "schema_version_bump": "v89_master_board_v3 → v90_master_board_v4",
+    "monitoring_html_size_kb": 214,
+    "grand_total_items_v85_to_v90": 1378
+  },
+  "verification": {
+    "local_compile": true,
+    "vps_deploy_at_vn": "2026-05-08T01:05:00+07:00",
+    "service_active": true,
+    "health_200": true,
+    "official_hash_unchanged": true,
+    "backend_smoke_keys_count": 36
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/V90_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "c611ec502a610b7895b962c8a9bc53ebc574c4cd27fcd27c63e699cf2aa62a4e",
+    "V90_REPORT.md": "a0d9ae3c13257f5e867a170e3fd9f1221ebd18926e133488748d41105a236216",
+    "evidence/post_v90_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v90_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/_v87_master_board_v90.py": "bba81a85d0b68f66400bd853ab24321c482affe7c7a1b7f0d79bb18b48207064"
+  }
+}

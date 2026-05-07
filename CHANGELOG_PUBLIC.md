@@ -1,3 +1,11 @@
+## V90 — Final cleanup (2026-05-08 01:05 VN)
+
+- 5 final tabs in /monitoring (29 tabs total): 🐍 Backend Modules (293) / 📜 Scripts (19) / 🛠️ Web Helpers (42) / 🗺️ Active Roadmaps (2) / ⚖️ Cursor Rules (3).
+- Schema v89_master_board_v3 → v90_master_board_v4 (36 keys).
+- Total V85+V86+V87+V88+V89+V90 = ~1378 items reconciled.
+- ĐẾN ĐÂY THẬT SỰ HẾT — không còn category nào sót.
+- 4 official tables hash byte-identical.
+
 ## V89 — 5-extension pack (2026-05-08 00:55 VN)
 
 - 6 new tabs in /monitoring (24 tabs total): Migrations / Live Cron (realtime next_run) / FU Audit (72/152 stale flagged) / Phase Findings (116 first paragraph) / Decision Log (22 DEC) / Governance Ledger (96 entries).

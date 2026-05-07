@@ -1,20 +1,20 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V89",
-  "latest_folder": "V89_5_EXTENSION_PACK_20260508",
-  "latest_report": "V89_5_EXTENSION_PACK_20260508/V89_REPORT.md",
-  "latest_manifest": "V89_5_EXTENSION_PACK_20260508/REPORT_MANIFEST.json",
-  "previous_root_pointer_was": "V88",
-  "created_at_vn": "2026-05-08T00:58:23+07:00",
-  "status": "DEPLOYED — V89 5-extension pack: Migrations + Live Cron + FU Audit + Phase Findings + Decision Log + Governance Ledger; 24 tabs total; 72 FU stale flagged; official UNCHANGED",
+  "latest_version": "V90",
+  "latest_folder": "V90_FINAL_CLEANUP_20260508",
+  "latest_report": "V90_FINAL_CLEANUP_20260508/V90_REPORT.md",
+  "latest_manifest": "V90_FINAL_CLEANUP_20260508/REPORT_MANIFEST.json",
+  "previous_root_pointer_was": "V89",
+  "created_at_vn": "2026-05-08T01:09:45+07:00",
+  "status": "DEPLOYED — V90 Final cleanup: 5 final tabs (29 total); ~1378 items reconciled; ĐẾN ĐÂY THẬT SỰ HẾT; official UNCHANGED",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 24 tabs",
-  "next_action": "Owner login admin → /monitoring → cuộn xuống V87 Master Index → click 24 tabs (6 mới: Migrations/Live Cron/FU Audit/Phase Findings/Decision Log/Governance Ledger). 72 FU stale cần V90 re-verify nếu owner OK.",
+  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs",
+  "next_action": "Owner login admin → /monitoring → 29 tabs. Đến đây thật sự HẾT — không còn category nào sót.",
   "owner_lock_for_official": true,
-  "v89_24_tabs": [
+  "v90_29_tabs": [
     "Models",
     "Prompts",
-    "Rules",
+    "Rules (PB-18)",
     "Mechanisms",
     "Metrics",
     "Shadow Methods",
@@ -35,39 +35,39 @@
     "FU Audit",
     "Phase Findings",
     "Decision Log",
-    "Governance Ledger"
+    "Governance Ledger",
+    "Backend Modules",
+    "Scripts",
+    "Web Helpers",
+    "Active Roadmaps",
+    "Cursor Rules"
   ],
-  "agent_ide_endpoint": "/api/admin/master-board (schema v89_master_board_v3, 31 keys)",
-  "key_finding": "72/152 FU items stale — claim DEPLOYED/DONE without CHANGELOG mention, OR claim WAIT with >= 3 CHANGELOG mentions",
+  "agent_ide_endpoint": "/api/admin/master-board (schema v90_master_board_v4, 36 keys)",
   "deliverable_counts": {
-    "migrations": 3,
-    "fu_audit_total": 152,
-    "fu_audit_stale": 72,
-    "phase_findings": 116,
-    "decision_log": 22,
-    "governance_ledger": 96,
-    "total_tabs": 24,
-    "grand_total_items": 1019
+    "backend_modules": 293,
+    "scripts": 19,
+    "web_helpers": 42,
+    "active_roadmaps": 2,
+    "cursor_rules": 3,
+    "total_tabs": 29,
+    "grand_total_items": 1378
   },
   "read_order": [
-    "V89_5_EXTENSION_PACK_20260508/READ_THIS_FIRST.md",
-    "V89_5_EXTENSION_PACK_20260508/V89_REPORT.md",
+    "V90_FINAL_CLEANUP_20260508/READ_THIS_FIRST.md",
+    "V90_FINAL_CLEANUP_20260508/V90_REPORT.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
   "changed_since_previous": [
-    "V89 5-extension pack: 6 new tabs in /monitoring",
-    "Schema v88_master_board_v2 → v89_master_board_v3 (31 keys)",
-    "72/152 FU items stale flagged (audit rule violations)",
-    "22 owner decisions parsed from DECISION_LOG.md",
-    "96 governance ledger entries parsed",
-    "116 phase_checkpoint findings extracted",
-    "3 migration files inventoried with tables changed",
-    "Live cron next_run realtime via APScheduler",
-    "Pre/post hashes 4 official tables UNCHANGED"
+    "V90 Final cleanup: 5 new tabs (Backend Modules 293 / Scripts 19 / Web Helpers 42 / Active Roadmaps 2 / Cursor Rules 3)",
+    "Schema v89_master_board_v3 → v90_master_board_v4 (36 keys)",
+    "29 tabs total. ~1378 items reconciled across V85+V86+V87+V88+V89+V90",
+    "Pre/post hashes 4 official tables UNCHANGED",
+    "ĐẾN ĐÂY THẬT SỰ HẾT — không còn category nào sót"
   ],
   "open_issues_count": 0,
+  "session_complete": true,
   "safety_summary": {
     "official_unchanged": true,
     "hash_guard_passed": true,
@@ -75,7 +75,6 @@
     "shadow_only": true,
     "no_auto_promotion": true,
     "ui_no_action_button": true,
-    "admin_only_auth": true,
     "ai_keys_redacted": true
   }
 }

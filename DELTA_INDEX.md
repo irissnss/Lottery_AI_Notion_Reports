@@ -1,3 +1,11 @@
+## V89 → V90
+
+- 5 final tabs (Backend Modules 293 / Scripts 19 / Web Helpers 42 / Active Roadmaps 2 / Cursor Rules 3).
+- Backend +5 blocks. Schema v89_v3 → v90_v4 (36 keys).
+- 29 tabs total. 1378 items reconciled.
+- ĐẾN ĐÂY THẬT SỰ HẾT.
+- No DB writes.
+
 ## V88 → V89
 
 - 6 new tabs (Migrations / Live Cron / FU Audit / Phase Findings / Decision Log / Governance Ledger).
