@@ -1,3 +1,11 @@
+## V87 → V88
+
+- 6 new tabs in /monitoring V87 Master Index (Settings/History/FU/Phase/Backups/Notion).
+- TOTAL_ENCYCLOPEDIA.md 36KB single file.
+- Backend extended with 6 new blocks. Schema v87_v1 → v88_v2.
+- Total 18 tabs. 991 items reconciled.
+- No DB writes. No new write endpoint.
+
 ## V86 → V87
 
 - /monitoring now has V87 Master Index section with 12 tabs.

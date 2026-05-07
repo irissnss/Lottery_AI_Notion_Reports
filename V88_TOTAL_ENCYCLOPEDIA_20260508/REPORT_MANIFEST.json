@@ -1,0 +1,76 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V88_TOTAL_ENCYCLOPEDIA_20260508",
+  "version": "V88",
+  "internal_version": "V20.3.37.88",
+  "created_at_vn": "2026-05-08T00:44:39+07:00",
+  "owner_request_summary": "V86 chưa gom nốt. Gom 1 nơi tham chiếu rõ ràng + changlog đầy đủ.",
+  "parent_reports": [
+    "V87_MASTER_INDEX_20260508",
+    "V86_TOTAL_FORENSIC_REGISTRY_20260508",
+    "V85_DEEP_MASTER_CONTROL_20260507"
+  ],
+  "status": "DEPLOYED — 6 new tabs in /monitoring (18 total) + TOTAL_ENCYCLOPEDIA 36KB; ~991 items reconciled; official UNCHANGED",
+  "scope": "ui extension + audit / read-only / no DB writes",
+  "official_touched": false,
+  "deliverables": {
+    "new_tabs_added": 6,
+    "total_tabs": 18,
+    "new_tabs": [
+      "Settings",
+      "Automation History",
+      "FU History",
+      "Phase Checkpoints",
+      "VPS Backups",
+      "Notion Docs"
+    ],
+    "settings_rows": 252,
+    "settings_categories": 8,
+    "automation_history": 28,
+    "fu_items_full": 151,
+    "phase_checkpoints": 116,
+    "vps_backups": 31,
+    "notion_docs": 15,
+    "schema_version_bump": "v87_master_board_v1 → v88_master_board_v2",
+    "monitoring_html_size_kb": 201,
+    "monitoring_html_size_change_kb": 5,
+    "encyclopedia_md_size_kb": 36,
+    "grand_total_items_v85_to_v88": 991
+  },
+  "verification": {
+    "local_compile": true,
+    "vps_deploy_at_vn": "2026-05-08T00:39:00+07:00",
+    "service_active": true,
+    "health_200": true,
+    "master_board_unauth_401": true,
+    "monitoring_unauth_401": true,
+    "official_hash_unchanged": true,
+    "backend_smoke_keys_count": 25
+  },
+  "owner_lock_remaining": [
+    "Selector promotion (any)",
+    "Official prompt change",
+    "Production model swap",
+    "Global NO_TOKEN floor change"
+  ],
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false
+  },
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/V88_REPORT.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/TOTAL_ENCYCLOPEDIA.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V88_TOTAL_ENCYCLOPEDIA_20260508/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "354eebefb04521d3fbe1e597f623e67c99c4db322d6bdc0b9fdd62fc1df13fde",
+    "TOTAL_ENCYCLOPEDIA.md": "967ee15e38226c3dcdf4b0000d600fdefd22e12cc23264cf449f48d303e3bed6",
+    "V88_REPORT.md": "a70ca03961a614b55c4f9a0effada7e9cbb01b511e3f46e81487f3f3f1ff6d3d",
+    "evidence/post_v88_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/pre_v88_hash.json": "6cd3c7beb8db17c3eb8e468e29acd929c1f1096f3271f5b7ca12b8cd2fd3a4c9",
+    "evidence/v88_inventory.json": "7fb0f1f273453a3267f1dd3e45d63047d97d61054a7b6fded7dbebff8aea0f65",
+    "evidence/_v87_master_board_v88.py": "b70243ba5e4d87e774793ff734c35d731df7a85931b3d960da68757b4bdd3912"
+  }
+}

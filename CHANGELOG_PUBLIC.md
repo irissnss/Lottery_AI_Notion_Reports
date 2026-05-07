@@ -1,3 +1,14 @@
+## V88 — TOTAL_ENCYCLOPEDIA + 6 new tabs in /monitoring (2026-05-08 00:40 VN)
+
+- 6 new tabs: ⚙️ Settings (252) / 📜 Automation History (28) / 📋 FU History (151) / 🗓️ Phase Checkpoints (116) / 💾 VPS Backups (31) / 📓 Notion Docs (15).
+- /monitoring now has **18 tabs** total.
+- TOTAL_ENCYCLOPEDIA.md (36 KB) single searchable file.
+- Backend extended `_v87_master_board.py` with 6 new READ-ONLY blocks.
+- Schema bump `v87_master_board_v1 → v88_master_board_v2` (25 keys).
+- monitoring.html 196KB → 201KB.
+- ~991 items reconciled across V85+V86+V87+V88.
+- 4 official tables hash byte-identical.
+
 ## V87 — Master Index 12 tabs in /monitoring (2026-05-08 00:25 VN)
 
 - New backend module `_v87_master_board.py` READ-ONLY 370 lines.
