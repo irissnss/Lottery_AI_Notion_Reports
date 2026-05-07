@@ -1,47 +1,27 @@
-{
+﻿{
   "schema_version": "latest_report_v1",
-  "latest_version": "V79",
-  "latest_folder": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507",
-  "latest_report": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/V79_REPORT.md",
-  "latest_manifest": "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/REPORT_MANIFEST.json",
-  "public_commit": "32d7133460c314c400b02e83f65a9faae895e2a4",
-  "private_commit": "09e226c1efb6c8f5adf3bf92355d2b24bb076d65",
-  "created_at_vn": "2026-05-07T21:25:00+07:00",
-  "status": "DEPLOYED â€” AIâ†”NO_TOKEN cross-verification + cluster-weighted consensus shadow; official output unchanged",
+  "latest_version": "V80",
+  "latest_folder": "V80_ABSOLUTE_CLOSURE_PASS_20260507",
+  "latest_report": "V80_ABSOLUTE_CLOSURE_PASS_20260507/V80_REPORT.md",
+  "latest_manifest": "V80_ABSOLUTE_CLOSURE_PASS_20260507/REPORT_MANIFEST.json",
+  "public_commit": "TBD_PUBLIC",
+  "private_commit": "6ed534596dc1bf7d5f68633682edc67a8a25bfed",
+  "created_at_vn": "2026-05-07T21:55:00+07:00",
+  "status": "DEPLOYED â€” Notion/code/runtime sync + shadow completion; official unchanged",
   "official_touched": false,
-  "test_lane_status": "AI_NO_TOKEN_CROSS_VERIFY_ACTIVE â€” cluster-weighted shadow consensus, no provider calls",
-  "next_action": "Verify natural cron 2026-05-08 19:08 VN and compare V79 cluster tail after closeout",
-  "owner_verification": {
-    "ai_reads_no_token_today": "Before V79: mostly NO/PARTIAL. V79: YES in shadow layer.",
-    "raw_ai_vote_overweight": "Mitigated in shadow by AI cap 0.35 and cluster count.",
-    "no_token_floor": "Added in shadow when valid picks exist.",
-    "official_locked": true
-  },
+  "test_lane_status": "V80_SHADOW_COMPLETION_ACTIVE",
+  "next_action": "Verify natural cron chain 19:00/19:05/19:08/19:10/19:12 on next live day",
   "read_order": [
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/READ_THIS_FIRST.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/V79_REPORT.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/evidence/current_prompt_no_token_audit.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/evidence/ai_no_token_cross_verification.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/evidence/cluster_weighted_consensus.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/evidence/timezone_hcm_audit.md",
-    "V79_AI_NO_TOKEN_CROSS_VERIFY_20260507/evidence/backtest_would_save_would_break.md",
+    "V80_ABSOLUTE_CLOSURE_PASS_20260507/READ_THIS_FIRST.md",
+    "V80_ABSOLUTE_CLOSURE_PASS_20260507/V80_REPORT.md",
+    "V80_ABSOLUTE_CLOSURE_PASS_20260507/evidence/master_reconcile_matrix.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "changed_since_previous": [
-    "Fixed public latest metadata mismatch by making V79 the latest report",
-    "Added AIâ†”NO_TOKEN cross-verification shadow report",
-    "Added cluster-weighted consensus evidence",
-    "Added timezone HCM audit evidence",
-    "No provider calls and no official mutation"
-  ],
-  "open_issues_count": 3,
   "safety_summary": {
     "official_unchanged": true,
     "provider_calls": false,
-    "shadow_only": true,
-    "hash_guard_deep_diff_passed": true
+    "shadow_only": true
   }
 }
-

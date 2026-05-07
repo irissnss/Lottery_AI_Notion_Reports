@@ -1,0 +1,15 @@
+{
+  "report_id": "V80_ABSOLUTE_CLOSURE_PASS_20260507",
+  "version": "V20.3.37.80",
+  "files": [
+    "accuracy_gap_priority_matrix.md",
+    "cron_chain_verify.md",
+    "master_reconcile_matrix.md",
+    "notion_doc_patch_matrix.md",
+    "prompt_code_gap_matrix.md",
+    "READ_THIS_FIRST.md",
+    "V80_REPORT.md"
+  ],
+  "official_touched": false,
+  "provider_calls": false
+}
