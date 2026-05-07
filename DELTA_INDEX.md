@@ -1,5 +1,11 @@
 # DELTA INDEX (between consecutive versions)
 
+## V74 → V75
+- C-05 status corrected: NOT BROKEN, was data lag. 20/42 rows captured 2026-05-07.
+- V75 NEXT_ACTION_PROPOSAL published with P0-P3 tiers.
+- OPEN_ISSUES.md updated: C-05 marked RESOLVED.
+- No code change in V75 (proposal only).
+
 ## V73 → V74
 - Runtime verification PASS/FAIL table
 - C-16 budget 2026-05-07 fixed to 20 voters

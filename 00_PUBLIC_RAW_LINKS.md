@@ -1,5 +1,13 @@
 # Public Raw Links
 
+## V75 — NEXT-ACTION PROPOSAL (NEW 2026-05-07T11:57:00+07:00)
+
+- [V75 main proposal](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/V75_PROPOSAL.md)
+- [V75 read-this-first](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/READ_THIS_FIRST.md)
+- [V75 manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/REPORT_MANIFEST.json)
+- [V75 evidence: C-05 latency 2026-05-07](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/evidence/c05_latency_2026_05_07.txt)
+- [V75 evidence: scoreboard](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/evidence/scoreboard.md)
+
 ## V74 — TOTAL FORCE AUDIT (NEW 2026-05-07T11:18:20+07:00)
 
 - [V74 main report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V74_TOTAL_FORCE_AUDIT_20260507/V74_REPORT.md)

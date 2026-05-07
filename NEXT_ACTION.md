@@ -1,16 +1,16 @@
-# V74 — next actions
+# NEXT ACTION — V75 proposal awaiting owner choice
 
-## P0 (next session)
-1. Fix `gpt_analyzer.py` C-05 latency capture (deploy outside live window).
-2. Add `test_lane_signal_drift_monitor` materializer.
-3. Continue V73 / V67 / V70 / V66 cron and observe 14-day fresh evidence at CP-66.7.
+Owner needs to choose from V75_PROPOSAL.md §8:
 
-## P1
-1. Method interaction trace dashboard.
-2. C-16 top-20 audit per region/weekday.
-3. UI surface in `/du-doan-test` for owner.
+- **A** OK em làm hết P0 (drift detector + C-16 latency_score + cost table)
+- **B** Chỉ làm drift detector trước
+- **C** Để cron tự chạy 14d trước, đừng đụng
+- **D** Làm UI dashboard P1-3 luôn
+- **E** Custom anh chỉ định
 
-## P2
-1. Draft `OFFICIAL_PROMOTION_DOSSIER.md`.
-2. `official_promotion_readiness_shadow` materializer.
-3. Region-specific promotion candidates analysis.
+P0 list (em đề xuất):
+1. Drift detector materializer (30 min, ZERO risk)
+2. C-16 latency_score live integration (20 min, ZERO risk; uses C-05 data)
+3. Cost provider table for daily $ tracking (20 min, ZERO risk)
+
+P1/P2/P3: see V75_PROPOSAL.md.

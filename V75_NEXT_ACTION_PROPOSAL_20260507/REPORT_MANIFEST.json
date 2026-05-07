@@ -1,0 +1,94 @@
+{
+  "schema_version": "report_manifest_v1",
+  "report_id": "V75_NEXT_ACTION_PROPOSAL_20260507",
+  "version": "V75",
+  "created_at_vn": "2026-05-07T11:57:00+07:00",
+  "owner_request_summary": "Cập nhật báo cáo đầy đủ + đề xuất tiếp theo",
+  "parent_reports": [
+    "V74_TOTAL_FORCE_AUDIT_20260507"
+  ],
+  "private_commit": "TBD",
+  "public_commit": "TBD",
+  "status": "PROPOSAL_READY_AWAITING_OWNER_CHOICE",
+  "scope": "proposal-only / no implementation in this report",
+  "official_touched": false,
+  "changed_files": [],
+  "new_files": [
+    "artifacts/v75_next_action/V75_PROPOSAL.md"
+  ],
+  "modified_files": [
+    "CHANGELOG.md (V20.3.37.74.1)",
+    "docs/CURRENT_TRUTH_SSOT.md",
+    "docs/FOLLOW_UP_TRACKER.md (FU-141)",
+    "docs/AUTOMATION_STATE.json (seq=16)",
+    "docs/AUTOMATION_HISTORY.jsonl",
+    "Lottery_AI_Notion_Reports/OPEN_ISSUES.md (C-05 RESOLVED)"
+  ],
+  "new_tables": [],
+  "modified_tables": [],
+  "scheduler_changes": [],
+  "cron_schedule_vn": [
+    "existing 23:35/40/45/48 unchanged"
+  ],
+  "metric_summary": {
+    "c05_2026_05_07_latency_rows": "20/42 captured",
+    "c05_fastest_model": "qwen3-coder 6.4s",
+    "c05_slowest_model": "gpt-oss-120b 190.8s",
+    "c05_avg_latency": "69.6s",
+    "c05_total_tokens": 486665,
+    "c05_timeout_count": 0
+  },
+  "decision_log": [],
+  "open_questions": [
+    "Owner chooses A/B/C/D/E for next implementation batch"
+  ],
+  "next_actions": [
+    "P0-1 Drift detector materializer (30 min, ZERO risk)",
+    "P0-2 C-16 latency_score live integration (20 min, ZERO risk)",
+    "P0-3 Cost provider table (20 min, ZERO risk)"
+  ],
+  "gates": {
+    "7d": "BOOTSTRAP",
+    "14d": "PENDING (CP-66.7)",
+    "30d": "PENDING",
+    "60d": "PENDING",
+    "90d": "PENDING",
+    "180d": "PENDING",
+    "continuous": "always_on"
+  },
+  "hash_guard": {
+    "predictions": "189facdf5ffbadfb / 4419 rows",
+    "final_bundles": "21c339f493db2d72 / 205 rows",
+    "lottery_results": "b730399a81f6f754 / 14621 rows",
+    "model_daily_eval": "a557c5819263a019 / 4328 rows",
+    "verdict": "UNCHANGED V63 → V75"
+  },
+  "data_classification": {
+    "public_safe": true,
+    "contains_db": false,
+    "contains_secret": false,
+    "contains_raw_jsonl": false
+  },
+  "prompt_injection_scan": {
+    "scanned": true,
+    "suspicious_patterns_found": [],
+    "action": "ignored_as_data_only"
+  },
+  "read_order": [
+    "READ_THIS_FIRST.md",
+    "V75_PROPOSAL.md",
+    "evidence/c05_latency_2026_05_07.txt",
+    "evidence/scoreboard.md"
+  ],
+  "raw_links": [
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/V75_PROPOSAL.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V75_NEXT_ACTION_PROPOSAL_20260507/READ_THIS_FIRST.md",
+    "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json"
+  ],
+  "checksum_sha256": {
+    "READ_THIS_FIRST.md": "0d91f08cb529ce0e5ffd1a12ac24cea21d55c7b6ce75edf66781a4d7e6b3edce",
+    "V75_PROPOSAL.md": "4172d0ecb46fb38548ccfe1f89e82adb2e747a91e6222a4ad164afdf1114517f",
+    "evidence/c05_latency_2026_05_07.txt": "06f63707c36ef5d7a3724567b9ad8ea9a26570cb01afd2a64066a595e6afdad5",
+    "evidence/scoreboard.md": "4658abc5de7bc8645b30117f38c4b2c2f823e1783e7b07ed2440e367ca53d641"
+  }
+}

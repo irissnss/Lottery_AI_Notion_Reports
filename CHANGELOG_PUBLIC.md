@@ -1,5 +1,14 @@
 # CHANGELOG (public-side)
 
+## V75 — NEXT-ACTION PROPOSAL (2026-05-07)
+
+- C-05 RESOLVED (was data lag, not broken). 20/42 latency rows captured 2026-05-07.
+- Per-model latency: qwen3-coder 6.4s fastest → gpt-oss-120b 190.8s slowest. 0 timeouts. avg 69.6s.
+- V75_PROPOSAL.md published with P0-P3 priority tiers.
+- P0: drift detector + C-16 latency_score live + cost provider table.
+- Owner needs to choose A/B/C/D/E for next implementation.
+- ZERO official touch.
+
 ## V74 — TOTAL FORCE AUDIT (2026-05-07)
 - Runtime verified V73; PASS on A/B/C/D/E/F/I.
 - Fixed: C-16 2026-05-07 → 20 voters; CONSENSUS_V1 re-backfilled; C-03 PENDING 37→9; C-17B output_lock_status column added.

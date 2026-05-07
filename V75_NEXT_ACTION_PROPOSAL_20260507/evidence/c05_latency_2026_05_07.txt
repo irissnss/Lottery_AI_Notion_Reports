@@ -1,0 +1,50 @@
+﻿=== C-05 latency rows for 2026-05-07 ===
+  total rows: 42, latency_OK: 20, missing: 22
+  avg_lat: 69.60s, min: 6.3968, max: 190.8276
+  sum_tokens: 486665, timeout_count: 0
+
+=== Per-model 2026-05-07 ===
+  MN gpt-oss-120b                   lat=190.83s tokens= 19594 timeout=0
+  MN glm-5.1                        lat=184.44s tokens= 24076 timeout=0
+  MN gemma-4-31b                    lat=137.01s tokens= 22028 timeout=0
+  MN qwen3.6-plus                   lat=136.77s tokens= 23567 timeout=0
+  MN deepseek-reasoner              lat=134.39s tokens= 32817 timeout=0
+  MN deepseek-v4-pro                lat=115.23s tokens= 29058 timeout=0
+  MN gpt-5-mini                     lat= 87.65s tokens= 25730 timeout=0
+  MN gpt-5.5                        lat= 71.62s tokens= 21131 timeout=0
+  MN gemini-3.1-pro                 lat= 48.56s tokens= 23870 timeout=0
+  MN claude-sonnet-4-6              lat= 47.69s tokens= 29158 timeout=0
+  MN claude-opus-4-20250514         lat= 41.57s tokens= 27955 timeout=0
+  MN gemini-2.5-flash               lat= 39.15s tokens= 29216 timeout=0
+  MN gemini-2.5-pro                 lat= 33.89s tokens= 25303 timeout=0
+  MN qwen3-max-thinking             lat= 25.43s tokens= 21700 timeout=0
+  MN gpt-5.4                        lat= 25.03s tokens= 21219 timeout=0
+  MN deepseek-v4-flash              lat= 22.35s tokens= 20957 timeout=0
+  MN gemini-3-flash                 lat= 21.86s tokens= 21241 timeout=0
+  MN kimi-k2.5                      lat= 11.29s tokens= 25883 timeout=0
+  MN grok-4.20-multi-agent          lat= 10.87s tokens= 20618 timeout=0
+  MN qwen3-coder                    lat=  6.40s tokens= 21544 timeout=0
+
+=== Models WITHOUT latency on 2026-05-07 (likely NO_TOKEN local ML) ===
+  MB combo-no-token                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN combo-no-token                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT combo-no-token                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN combo-super                    reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB lstm                           reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN lstm                           reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT lstm                           reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB meta-learning                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN meta-learning                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT meta-learning                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB random-forest                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN random-forest                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT random-forest                  reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB smart-ensemble                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN smart-ensemble                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT smart-ensemble                 reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB smart-ml                       reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN smart-ml                       reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT smart-ml                       reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MB xgboost                        reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MN xgboost                        reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
+  MT xgboost                        reason=NO_PER_MODEL_DURATION,NO_COST_ESTIMATE,NO_TOKEN_COUNT
