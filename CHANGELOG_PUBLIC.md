@@ -1,3 +1,26 @@
+## V98 — ABSOLUTE RUNTIME ↔ PUBLIC ↔ NOTION SSOT + MONITORING COMMAND CENTER (2026-05-09 00:50 VN)
+
+- Public root pointer V92 → V98. README no longer claims V74 latest.
+- V93-V97 batch (private commit `1cd2833`, 28 files +4759 -39) documented in V98 wrapper.
+- /monitoring V98 Command Center 10 panels admin-locked auto-refresh 60s deployed:
+  1. SSOT Status (public/private/runtime/Notion mismatch class)
+  2. Runtime Parity (md5 + endpoint status)
+  3. Natural-Fire Cron Tracker (11 crons row count)
+  4. Accuracy Root Cause (10 items severity + FU)
+  5. Owner Gate Queue (12 items)
+  6. Prompt/Context Completeness (SP-4.1 + 21 fields)
+  7. Bundle Conversion (V94.1 + V93 MN save 5d)
+  8. Cross-Region Leakage (6 pairs × 3 windows)
+  9. Data Freshness 30d (provisional vs clean)
+  10. Public/Notion Sync Checklist
+- 7 new FU items (FU-169 RESOLVED, FU-170-175 owner-gated, FU-176 RESOLVED).
+- Hash guard 4 official tables IDENTICAL across V92.1 → V98 (predictions=4542, final_bundles=210, lottery_results=14634, model_daily_eval=4493).
+- Notion `Lottery_AI_Test` sync UNVERIFIED (no MCP in Cursor scope) — FU-170 owner-locked.
+- V97 SP-4.1 prompt fix (max 2 numbers) is verified live (predictions 30d 0/2102 rows ≥3).
+- Cron natural-fire status PARTIAL (V66.1+V67 OK; V70/V73/V76/C16 0 rows post-restart) — FU-172 escalated.
+- 4 file local↔VPS md5 drift documented (FU-171, runtime OK).
+- NO official scoring/selector/prompt production change beyond V97 SP-4.1.
+
 ## V92 — ABSOLUTE SSOT RECONCILIATION (2026-05-08 01:30 VN)
 
 - Public root pointer fixed to V92.

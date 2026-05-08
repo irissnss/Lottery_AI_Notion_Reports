@@ -1,30 +1,64 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V92",
-  "latest_folder": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508",
-  "latest_report": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md",
-  "latest_manifest": "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/REPORT_MANIFEST.json",
-  "previous_root_pointer_was": "V91",
-  "created_at_vn": "2026-05-08T01:32:33+07:00",
-  "status": "DELIVERED — V92 absolute SSOT reconciliation wrapper; V90/V91 verified; official UNCHANGED",
+  "latest_version": "V98",
+  "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
+  "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
+  "previous_root_pointer_was": "V92",
+  "created_at_vn": "2026-05-09T00:50:00+07:00",
+  "status": "DELIVERED — V98 absolute SSOT reconciliation; private V93-V97 batch (commit 1cd2833) synced to public; /monitoring V98 Command Center 10 panels deployed; runtime/private/public parity verified; Notion sync UNVERIFIED (no MCP); official UNCHANGED",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs; V92 docs-only SSOT",
-  "next_action": "Automated gates only: 2026-05-08/12/14/21/06-06/07-06",
+  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V93/V94/V95 shadow audit tables; V97 SP-4.1 prompt deployed",
+  "next_action": "Auto: 2026-05-09 cron natural-fire (16:30 cascade + 19:14-19:22 shadow + 23:35-23:55 V93.2 clean test). Owner: 2026-05-14 7d MB cold; 2026-05-21 14d MN dossier + FU-174/175; 2026-06-08 30d sweep",
   "owner_lock_for_official": true,
   "read_order": [
-    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/READ_THIS_FIRST.md",
-    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md",
-    "V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md",
+    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
     "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 0,
+  "open_issues_count": 7,
+  "open_issues_summary": "FU-169 (RESOLVED V98 public sync), FU-170 (Notion UNVERIFIED), FU-171 (md5 drift 4 files), FU-172 (cron misfire 23:45+), FU-173/174/175 (defer evidence reports), FU-176 (RESOLVED V98 monitoring command center)",
+  "v93_to_v98_summary": {
+    "V93": "MB 56 forensic + 3-càng audit",
+    "V93.1": "P0 shadow audits 3 tables cron 19:16",
+    "V93.2": "Sibling stdout fix 6 materializers — NATURAL_FIRE_PARTIAL",
+    "V94": "Cross-region leakage forensic + D-2 region-gated",
+    "V94.1": "Spillover-aware safe batch 3 shadow surfaces cron 19:18",
+    "V95": "Data integrity + AI context audit + UI dashboard cron 19:20",
+    "V96": "Master Tracker SSOT + 9-panel realtime dashboard cron 19:22",
+    "V97": "SP-4.0 → SP-4.1 prompt fix L159+L161 max 2 numbers",
+    "V97.1": "Governance commit V93-V97 batch (1cd2833) + cron natural-fire validate (PARTIAL)",
+    "V98": "Absolute SSOT reconciliation + monitoring command center 10 panels + public reports update + governance"
+  },
   "safety_summary": {
     "official_unchanged": true,
     "hash_guard_passed": true,
     "public_safe": true,
-    "no_runtime_change": true,
+    "no_runtime_change_beyond_v97_sp41": true,
+    "no_selector_change": true,
+    "no_promote_button": true,
     "secrets_redacted": true
+  },
+  "runtime_parity": {
+    "private_commit": "1cd2833 (V93-V97 batch)",
+    "vps_git_commit": "ceb36c2 V17.19.4 2026-04-19 — modified-via-scp not committed",
+    "files_md5_match": 7,
+    "files_md5_drift": 4,
+    "drift_files": [
+      "_materialize_v93_p0_shadow_audits.py",
+      "_materialize_v94_safe_batch.py",
+      "_materialize_v95_data_integrity_audit.py",
+      "_v95_dashboard.py"
+    ],
+    "drift_severity": "P1 (runtime is OK; VPS = truth)"
+  },
+  "monitoring_command_center": {
+    "deployed": true,
+    "deploy_time_vn": "2026-05-09T00:45:00+07:00",
+    "url_admin": "https://xs.io.vn/api/admin/v98-command-center",
+    "url_ui": "https://xs.io.vn/monitoring",
+    "panels_count": 10,
+    "auto_refresh_seconds": 60
   }
 }

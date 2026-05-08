@@ -1,15 +1,19 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V92_ABSOLUTE_SSOT_RECONCILIATION_20260508** (V92)
+Latest: **V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509** (V98)
 
 ## Latest report
 
-- [V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_REPORT.md)
-- [V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/V92_ONE_SOURCE_TRUTH.md)
+- [V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+
+## V98 wraps V93-V97 (all private only previously)
+
+V93/V93.1/V93.2/V94/V94.1/V95/V96/V97/V97.1 are private commit `1cd2833`. Public was V92 stale before V98 publish. V98_REPORT.md documents the entire V93→V97 chain and includes hash guard proof of zero official mutation.
 
 ## Historical reports (newest first)
 
+- [V92_ABSOLUTE_SSOT_RECONCILIATION_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V92_ABSOLUTE_SSOT_RECONCILIATION_20260508/)
 - [V91_TOTAL_RECONCILIATION_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V91_TOTAL_RECONCILIATION_20260508/)
 - [V90_FINAL_CLEANUP_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V90_FINAL_CLEANUP_20260508/)
 - [V89_5_EXTENSION_PACK_20260508](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V89_5_EXTENSION_PACK_20260508/)
