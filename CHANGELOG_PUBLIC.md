@@ -1,3 +1,24 @@
+## V103.1 — CROSS-REGION & D-1 RECURRENCE TRACKER UI + §52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK (2026-05-09 22:35 VN)
+
+- Owner re-emphasized (2nd time): "lose hôm nay xổ ngày mai" + "lose miền trước xổ miền sau" must have measurement table AND visual UI at `https://xs.io.vn/monitoring`; codify rule into `.Antigravityrules.md` / `.AGENT.md` / `.cursorrules`.
+- NEW `web/backend/_v103_cross_region_tracker.py` (290 lines) — admin-only aggregator combining V101 + V102 + V103 + V94 leakage shadow tables.
+- NEW admin route `/api/admin/v103-cross-region-tracker` (401 unauth, 200 admin, no-store cache).
+- NEW UI panel `sectionV103CrossRegionTracker` in `monitoring.html` with 4 panels:
+  - P1 V101 MN D-1/D-2 cross-region top 15 today.
+  - P2 V102 60d/90d recurrence stats with `eligible_for_shadow_boost` flag + STRONG/MEDIUM today.
+  - P3 V103 prompt gate REQUIRED/REVIEW/BLOCKED counts + top + supply layer heatmap.
+  - P4 V94 cross-region leakage continuous monitor.
+- UI panel registered in `loadAllSections()` AND `setInterval(60s)` — auto-refresh, admin-locked, no promote/rollback button.
+- NEW governance section `§52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK` in `.Antigravityrules.md`: 13-deliverable contract + self-check matrix + violation taxonomy (`§52_VIOLATION_UI_MISSING`, `§52_VIOLATION_DOC_MISSING`, `§52D_DRIFT_VIOLATION`, `§52B_VIOLATION_REFRESH_MISSING`, `§52_OWNER_REREMINDER`).
+- Mirrored §52 contract in `.AGENT.md §9D` + `.cursorrules`.
+- VPS deploy + restart + smoke OK (`/api/health=200`, admin endpoint `=401`).
+- Hash 4 official tables IDENTICAL pre/post.
+- Notion sync payload: `evidence/NOTION_SYNC_PAYLOAD_V103_1.md`.
+- FU-V103-1-MONITORING-UI = DEPLOYED_PENDING_LIVE_VERIFY (pass condition: 2026-05-10 19:00 VN cycle populate panels).
+- Shadow only, output_eligible=0, diagnostic_only=1, owner_approved=0. Official UNCHANGED.
+
+---
+
 ## V103 — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN)
 
 - New shadow tables: `v103_candidate_supply_shadow` (8743 rows 30d) + `v103_prompt_candidate_gate_shadow` (8743 rows 30d).

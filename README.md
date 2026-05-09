@@ -5,8 +5,10 @@
 
 ## Latest
 
-- **V103** — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN): supply audit 11 source layers, prompt gate REQUIRED/REVIEW/BLOCKED with non-gan core requirement. Latest in V99.1→V103 chain delivered tonight. **All shadow only, official UNCHANGED.**
+- **V103.1** — CROSS-REGION & D-1 RECURRENCE TRACKER UI + §52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK (2026-05-09 22:35 VN): owner-re-emphasized "lose hôm nay xổ ngày mai" + "lose miền trước xổ miền sau" must have measurement table AND visual UI at `/monitoring`. Built `_v103_cross_region_tracker.py` aggregator + admin API + `sectionV103CrossRegionTracker` UI panel + governance §52 in `.Antigravityrules.md` / `.AGENT.md` / `.cursorrules` so the deliverable chain (shadow table + admin API + /monitoring UI + CHANGELOG + SSOT + FU + Notion + private+public push) is hardlocked for every future flagged pattern. **All shadow only, official UNCHANGED.**
+- **V103** — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN): supply audit 11 source layers, prompt gate REQUIRED/REVIEW/BLOCKED with non-gan core requirement. Part of V99.1→V103.1 chain delivered tonight. **All shadow only, official UNCHANGED.**
 - Latest evidence (under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/`):
+  - [NOTION_SYNC_PAYLOAD_V103_1.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/NOTION_SYNC_PAYLOAD_V103_1.md)
   - [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md)
   - [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md)
   - [V101_SHADOW_RULE_PROMPT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md)
@@ -16,7 +18,8 @@
 
 | Version | Date | Scope | Status |
 |---|---|---|---|
-| V103 | 2026-05-09 | Candidate supply audit + tightened prompt gate REQUIRED/REVIEW/BLOCKED | DELIVERED (this release) |
+| V103.1 | 2026-05-09 | Cross-Region & D-1 Recurrence Tracker UI panel + §52 Measurement-UI-Deploy-Sync Hardlock | DELIVERED (this release) |
+| V103 | 2026-05-09 | Candidate supply audit + tightened prompt gate REQUIRED/REVIEW/BLOCKED | DELIVERED |
 | V102 | 2026-05-09 | 60d recurrence tracker (lost-D→hit-D+1, cross-region) + STRONG/MEDIUM/WEAK class | DELIVERED |
 | V101 | 2026-05-09 | MN cross-region D-1/D-2 rule + region-specific V2 prompts + admin readout API | DELIVERED |
 | V100 | 2026-05-09 | du-doan-test UI fix (default MN, mobile, history, tech metrics) + Gan calculator 252K rows | DELIVERED |

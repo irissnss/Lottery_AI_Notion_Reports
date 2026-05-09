@@ -1,8 +1,9 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V103",
+  "latest_version": "V103.1",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/NOTION_SYNC_PAYLOAD_V103_1.md",
+  "v103_1_cross_region_d1_recurrence_tracker_ui_at_vn": "2026-05-09T22:35:00+07:00",
   "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
   "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
   "previous_root_pointer_was": "V92",
@@ -89,7 +90,29 @@
     "additional_admin_apis": [
       "/api/admin/test-lane-history (V100)",
       "/api/admin/test-lane-metrics (V100)",
-      "/api/admin/v101-shadow-pilot (V101)"
+      "/api/admin/v101-shadow-pilot (V101)",
+      "/api/admin/v103-cross-region-tracker (V103.1)"
     ]
+  },
+  "v103_1_cross_region_d1_recurrence_tracker": {
+    "deployed": true,
+    "deploy_time_vn": "2026-05-09T22:35:00+07:00",
+    "url_admin": "https://xs.io.vn/api/admin/v103-cross-region-tracker",
+    "url_ui": "https://xs.io.vn/monitoring (sectionV103CrossRegionTracker)",
+    "panels": [
+      "P1 V101 MN D-1/D-2 cross-region top 15 today",
+      "P2 V102 60d/90d recurrence stats with boost-eligible flag + STRONG/MEDIUM today",
+      "P3 V103 prompt gate REQUIRED/REVIEW/BLOCKED counts + top + supply layer heatmap",
+      "P4 V94 cross-region leakage continuous monitor"
+    ],
+    "owner_intent": "lose hôm nay xổ ngày mai (D-1 recurrence) + lose miền trước xổ miền sau (cross-region same-day/next-day)",
+    "auto_refresh_seconds": 60,
+    "admin_locked": true,
+    "promote_button_present": false,
+    "rollback_button_present": false,
+    "official_mutation": false,
+    "governance_section_52": "Antigravityrules.md §52 + AGENT.md §9D + cursorrules — measurement-ui-deploy-sync hardlock",
+    "follow_up_id": "FU-V103-1-MONITORING-UI",
+    "status": "DEPLOYED_PENDING_LIVE_VERIFY"
   }
 }

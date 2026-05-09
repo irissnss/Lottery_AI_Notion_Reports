@@ -1,6 +1,21 @@
-# NEXT ACTION (V103 — 2026-05-09 22:00 VN, post live closeout)
+# NEXT ACTION (V103.1 — 2026-05-09 22:35 VN, owner re-emphasis)
 
-V99.1 → V103 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+V99.1 → V103.1 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+
+## V103.1 owner re-emphasis (2026-05-09 22:12 VN)
+
+Owner đã nhắc lần thứ 2: "có bảng theo dõi đo lường không em ... có UI trực quan ở https://xs.io.vn/monitoring để theo dõi và không bị lãng quên ... cập nhật changlog Notion MCP, deploy code, githup pri/Public, ghi nhận vào .AGENT/.Antigravityrules/.cursorrules để luôn luôn tuân thủ".
+
+**V103.1 = response chain:**
+- NEW `web/backend/_v103_cross_region_tracker.py` — admin-only aggregator (V101 + V102 + V103 + V94 leakage trong 1 payload).
+- NEW admin route `/api/admin/v103-cross-region-tracker` (401 unauth, 200 admin).
+- NEW UI panel `sectionV103CrossRegionTracker` ở `https://xs.io.vn/monitoring` với 4 panels (V101 MN top 15, V102 60d recurrence, V103 prompt gate, V94 leakage). Auto-refresh 60s.
+- NEW `.Antigravityrules.md §52` MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK + mirror `.AGENT.md §9D` + `.cursorrules`. Codify 13-deliverable contract để không quên ở phiên sau.
+- VPS deploy + restart + smoke OK. Hash 4 official tables IDENTICAL.
+- Notion sync payload: `evidence/NOTION_SYNC_PAYLOAD_V103_1.md`.
+- FU-V103-1-MONITORING-UI = DEPLOYED_PENDING_LIVE_VERIFY.
+
+
 
 ## Đã làm tối nay (2026-05-09)
 

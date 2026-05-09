@@ -1,4 +1,12 @@
-# Open issues — as of V103 (2026-05-09 22:00 VN)
+# Open issues — as of V103.1 (2026-05-09 22:35 VN)
+
+## V103.1 owner re-emphasis — `FU-V103-1-MONITORING-UI` DEPLOYED
+
+Owner re-emphasized at 22:12 VN: cross-region & D-1 recurrence patterns must have measurement table AND visual UI at `/monitoring`; codify rule into 3 governance files. V103.1 ships:
+
+- Aggregator `_v103_cross_region_tracker.py` + admin route + UI panel `sectionV103CrossRegionTracker` registered in `loadAllSections()` + `setInterval(60s)`.
+- Governance §52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK in `.Antigravityrules.md` + mirrored in `.AGENT.md §9D` + `.cursorrules`.
+- Status: `DEPLOYED_PENDING_LIVE_VERIFY`. Pass condition: live cycle 2026-05-10 19:00 VN populate panels with current-day candidates.
 
 ## Resolved this evening (V99.1 → V103)
 
