@@ -9,6 +9,7 @@
   "created_at_vn": "2026-05-09T00:50:00+07:00",
   "v98_1_updated_at_vn": "2026-05-09T09:30:00+07:00",
   "v99_1_metadata_cleanup_at_vn": "2026-05-09T11:35:00+07:00",
+  "v99_2_total_force_at_vn": "2026-05-09T13:15:00+07:00",
   "status": "DELIVERED V98 + V98.1 sanity passed — 6/6 cron natural-fire verified, V97 SP-4.1 first live cycle confirmed, 3 FUs closed (FU-172, FU-V97.1-CRON-MISFIRE, FU-V97.1-LOG-PERSIST), monitoring command center 10 panels live; Notion sync UNVERIFIED (FU-170); official UNCHANGED",
   "official_touched": false,
   "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V93/V94/V95 shadow audit tables; V97 SP-4.1 prompt deployed; V98.1 cron natural-fire 6/6 verified",
@@ -20,13 +21,20 @@
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 5,
-  "open_issues_summary": "ACTIVE: FU-170 (Notion UNVERIFIED, no MCP), FU-171 (md5 drift 4 files, defer 2026-05-14), FU-173/174/175 (defer 14d gate 2026-05-21), FU-V99-BT-SCORING-DEBATE (NEW V99.1 — owner gate scoring semantic strict ĐB vs any-prize)",
-  "resolved_in_v98_v98_1": "FU-169 (public stale fixed), FU-176 (V98 command center deployed), FU-172 (cron misfire — 6/6 fired V98.1), FU-V97.1-CRON-MISFIRE (V98.1 verified), FU-V97.1-LOG-PERSIST (V98.1 false_negative resolved UTC vs VN tz)",
+  "open_issues_count": 6,
+  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT V99.2 L3, revisit 30d), FU-170 (Notion UNVERIFIED), FU-173/174/175 (defer 14d gate 2026-05-21)",
+  "resolved_in_v98_v98_1_v99_1": "FU-169 (public stale V98), FU-176 (V98 command center), FU-172 (cron misfire V98.1), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF)",
   "v99_1_findings": {
-    "mb_2026_05_08_56_truth": "EVALUATOR_SEMANTIC_DIFFERENCE — V93 multi-prize vs production strict-ĐB; both correct under different rules; new FU-V99-BT-SCORING-DEBATE owner-gated",
-    "github_token_leak": "P0_CRITICAL — VPS git remote URL contains GitHub PAT (prefix ghp_cvoSP***, full value REDACTED) — owner must REVOKE at github.com/settings/tokens",
-    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V98 work via scp deploy mode; runtime is truth; documented FU-171"
+    "mb_2026_05_08_56_truth": "EVALUATOR_SEMANTIC_DIFFERENCE — V93 multi-prize vs production strict-ĐB; both correct under different rules",
+    "github_token_leak": "P0_CRITICAL — VPS git remote URL + private commit fb2ae98 contains GitHub PAT (prefix ghp_cvoSP***, REDACTED) — owner must REVOKE",
+    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V98 work via scp deploy mode; runtime is truth"
+  },
+  "v99_2_findings": {
+    "security_scan": "Working tree 0 GitHub PAT classic. .env files protected by .gitignore. AI provider keys env-only no exposure proof. False positives identified (84 GLM-pattern hits in _test_output_utf8.txt = lottery digit sequences).",
+    "bt_doctrine_lock": "STRICT_DAC_BIET = production KPI (UNCHANGED). TAIL_ANY_PRIZE_DIAGNOSTIC = shadow signal only. V93 MB 56 valid under DIAGNOSTIC, NOT production bug under STRICT. FU-V99-BT-SCORING-DEBATE → DEFAULT KEEP STRICT.",
+    "evaluator_sanity": "SANITY PASS — 10 tests OK, 747 rows shadow integrity 100%, STRICT_ZERO_VALIDATED 14d (Wilson 95% upper 0.7%) lottery rare event normal.",
+    "scoreboard_14d": "OFFICIAL strict 0% (n=42), TEST_LANE strict 0% (n=371). Lenient: OFFICIAL 38.1%, TEST_LANE 35.3%. NO method qualifies for production promotion.",
+    "bundle_replay_status": "Preliminary 10 hypotheses, ALL defer FU-173 14d gate 2026-05-21. NO promotion eligible."
   },
   "v93_to_v98_summary": {
     "V93": "MB 56 forensic + 3-càng audit",
