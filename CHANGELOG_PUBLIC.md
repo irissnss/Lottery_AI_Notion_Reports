@@ -1,3 +1,22 @@
+## V104 — SHADOW PROMPT INJECTION PER REGION (Phase A) (2026-05-09 23:55 VN)
+
+- Owner directive (verbatim, condensed): "[V104 TOTAL FORCE] Mục tiêu chính là triển khai V104 shadow-only để candidate từ V103 thật sự đi vào prompt AI shadow theo từng miền MN/MT/MB, để model phải accept/reject với lý do rõ ràng."
+- NEW backend `web/backend/_v104_shadow_prompt_injection.py` (~660 lines).
+- 2 NEW shadow tables: `v104_shadow_prompt_candidate_injection` (1823 rows 30d backfill 2026-04-10 → 2026-05-10, 81 rows for 2026-05-09 — MN OPTIONAL=39 / MT OPTIONAL=24 / MB OPTIONAL=18, REQUIRED=0 honest) + `v104_shadow_prompt_model_decision` (0 rows Phase A; columns ready for Phase B ACCEPT/REJECT/HOLD per model).
+- NEW admin route `/api/admin/v104-shadow-prompt-injection` (401 admin-locked).
+- NEW UI section `sectionV104ShadowPromptInjection` registered in `loadAllSections()` AND `setInterval(60000)` of `web/frontend/monitoring.html` — 4 sub-panels (owner intent, per-region summary, strict vs diagnostic warning, per-region candidate tables), NO promote/rollback/trigger button.
+- NEW 3 region prompts (independent): `web/backend/prompts/shadow/MN/MT/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V104.md`. MN: MN_D = (MN+MT+MB) D-1+D-2 pool + gan 15d/7d. MT: anti-import + consensus-first + no-break guard. MB: cold-aware + gan 30d/15d + cross-region downstream priority.
+- Gating logic: REQUIRED_IN_PROMPT = V103=REQUIRED OR (V103=REVIEW + recurrence STRONG/MEDIUM + lift_pp ≥ 5 + non-gan core + ≥2 layers). Gan alone NEVER promotes (anti-noise rule `ANTI_NOISE_GAN_ONLY`).
+- 13/61/64/89 case audit: all 4 surface as OPTIONAL_REVIEW today (V103 gate=REVIEW, non_gan_core=true, V102 recurrence_class=None today → upgrade rule honestly miss).
+- Notion MCP §52F: 2 V104 sub-pages auto-created on canonical `Lottery_AI_Test`: (1) `🧪 V104 — Shadow Prompt Injection per Region (Phase A, 2026-05-09)` id `35b1d385-9bf8-81bb-b5a8-ecffb0c817e6`, (2) `📝 V104 — Owner Conversation Context (Phiên 2026-05-09 22:00 → 23:50 VN)` id `35b1d385-9bf8-8150-88cf-e36abe524520`.
+- VPS deploy: scp 6 files + restart lottery + 30d backfill on VPS = same 1823 rows. Endpoints: health=200, v104=401 admin-locked, v103=401, monitoring=401, du-doan=200.
+- Hash guard 4 official tables IDENTICAL pre vs post: predictions=4625, final_bundles=213, lottery_results=14642, model_daily_eval=4493 — VPS post-hash matches local pre-hash exactly. ZERO official mutation.
+- Phase B (provider pilot) = OWNER_GATE_REQUIRED (FU-V104-PHASE-B-PROVIDER-PILOT). Drive ingest LISTED PARTIAL (FU-V104-DRIVE-INGEST-PARTIAL).
+- AUTOMATION_STATE seq 52 → 53 with `notion_pages[]` array + hash_guard array.
+- NO runtime production change, NO official table touch, NO production prompt change.
+
+---
+
 ## V103.2 — NOTION MCP AUTO-SYNC + §52F NOTION AUTOMATION HARDLOCK (2026-05-09 22:55 VN)
 
 - Owner directive (verbatim): "tại sao không cập nhật Notion MCP được em? em tiến hành 1 cách tự động đi chứ, lớn quá thì chia nhỏ từng trang ra chứ em. Tổng hợp các yêu cầu mà anh anh trao đổi trong trò chuyện này đẩy lên github Pulic luôn nha em."

@@ -5,21 +5,27 @@
 
 ## Latest
 
+- **V104** — SHADOW PROMPT INJECTION PER REGION (Phase A) (2026-05-09 23:55 VN): owner directive V104 TOTAL FORCE 11-lane. Phase A delivered (no provider call): 2 NEW shadow tables (`v104_shadow_prompt_candidate_injection` 1823 rows 30d backfill / `v104_shadow_prompt_model_decision` 0 rows Phase A placeholder), 3 region prompts MN/MT/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V104.md (independent), admin route `/api/admin/v104-shadow-prompt-injection` (401 admin-locked), `sectionV104ShadowPromptInjection` UI panel registered in `loadAllSections()` AND `setInterval(60s)`. Gating logic: gan alone NEVER promotes; REQUIRED_IN_PROMPT requires V103=REQUIRED OR (V103=REVIEW + recurrence STRONG/MEDIUM + lift_pp ≥ 5 + non-gan core + ≥2 layers). 13/61/64/89 case audit: all 4 surface OPTIONAL_REVIEW today (V102 doesn't classify them STRONG/MEDIUM, so honest no-promote). Notion 2 V104 sub-pages auto-created. 4 official tables SHA256 IDENTICAL pre vs post deploy. Phase B (provider pilot) = OWNER_GATE_REQUIRED. **NO production touch.**
 - **V103.2** — NOTION MCP AUTO-SYNC + §52F NOTION AUTOMATION HARDLOCK (2026-05-09 22:55 VN): owner explicitly demanded automatic Notion sync ("tại sao không cập nhật Notion MCP được em? em tiến hành 1 cách tự động đi chứ"). Discovered `user-notion` MCP server in workspace, authenticated as bot Antigravity, located canonical `Lottery_AI_Test` page, auto-created 2 sub-pages (V103.1 details 45 blocks + Phiên 2026-05-09 conversation context 38 blocks). Codified `§52F NOTION MCP AUTOMATION OBLIGATION` in 3 governance files. New public file `evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md` mirrors the Notion page content. FU-170 RESOLVED. **No runtime change, no official touch.**
 - **V103.1** — CROSS-REGION & D-1 RECURRENCE TRACKER UI + §52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK (2026-05-09 22:35 VN): owner-re-emphasized "lose hôm nay xổ ngày mai" + "lose miền trước xổ miền sau" must have measurement table AND visual UI at `/monitoring`. Built `_v103_cross_region_tracker.py` aggregator + admin API + `sectionV103CrossRegionTracker` UI panel + governance §52 in `.Antigravityrules.md` / `.AGENT.md` / `.cursorrules` so the deliverable chain (shadow table + admin API + /monitoring UI + CHANGELOG + SSOT + FU + Notion + private+public push) is hardlocked for every future flagged pattern. **All shadow only, official UNCHANGED.**
 - **V103** — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN): supply audit 11 source layers, prompt gate REQUIRED/REVIEW/BLOCKED with non-gan core requirement. Part of V99.1→V103.1 chain delivered tonight. **All shadow only, official UNCHANGED.**
 - Latest evidence (under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/`):
+  - [V104_SHADOW_PROMPT_INJECTION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md)
+  - [CONVERSATION_CONTEXT_V104_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V104_20260509.md)
+  - [DRIVE_REPORT_INGEST_INDEX_V104.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/DRIVE_REPORT_INGEST_INDEX_V104.md)
   - [NOTION_SYNC_PAYLOAD_V103_1.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/NOTION_SYNC_PAYLOAD_V103_1.md)
   - [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md)
   - [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md)
   - [V101_SHADOW_RULE_PROMPT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md)
   - [V100_MASTER_PHASE_TRACKING.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md)
 
-## V93→V103 Quick Index
+## V93→V104 Quick Index
 
 | Version | Date | Scope | Status |
 |---|---|---|---|
-| V103.1 | 2026-05-09 | Cross-Region & D-1 Recurrence Tracker UI panel + §52 Measurement-UI-Deploy-Sync Hardlock | DELIVERED (this release) |
+| V104 | 2026-05-09 | Shadow prompt injection per region (Phase A) — 2 shadow tables + 3 region prompts + admin API + UI panel | DELIVERED (this release) |
+| V103.2 | 2026-05-09 | Notion MCP auto-sync + §52F Notion Automation Hardlock | DELIVERED |
+| V103.1 | 2026-05-09 | Cross-Region & D-1 Recurrence Tracker UI panel + §52 Measurement-UI-Deploy-Sync Hardlock | DELIVERED |
 | V103 | 2026-05-09 | Candidate supply audit + tightened prompt gate REQUIRED/REVIEW/BLOCKED | DELIVERED |
 | V102 | 2026-05-09 | 60d recurrence tracker (lost-D→hit-D+1, cross-region) + STRONG/MEDIUM/WEAK class | DELIVERED |
 | V101 | 2026-05-09 | MN cross-region D-1/D-2 rule + region-specific V2 prompts + admin readout API | DELIVERED |

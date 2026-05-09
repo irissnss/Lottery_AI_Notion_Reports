@@ -1,6 +1,28 @@
-# NEXT ACTION (V103.2 — 2026-05-09 22:55 VN, Notion MCP self-sync)
+# NEXT ACTION (V104 — 2026-05-09 23:55 VN, Shadow Prompt Injection Phase A)
 
-V99.1 → V103.2 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+V99.1 → V104 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+
+## V104 owner directive (2026-05-09 23:23 VN)
+
+Owner: "[V104 TOTAL FORCE] Mục tiêu chính là triển khai V104 shadow-only để candidate từ V103 thật sự đi vào prompt AI shadow theo từng miền MN/MT/MB, để model phải accept/reject với lý do rõ ràng."
+
+**V104 = response chain:**
+- NEW backend `web/backend/_v104_shadow_prompt_injection.py` (~660 lines).
+- 2 NEW shadow tables: `v104_shadow_prompt_candidate_injection` (1823 rows 30d backfill) + `v104_shadow_prompt_model_decision` (Phase B placeholder).
+- 3 NEW independent region prompts: `MN/MT/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V104.md`.
+- NEW admin route `/api/admin/v104-shadow-prompt-injection` (401 admin-locked).
+- NEW UI section `sectionV104ShadowPromptInjection` (loadAll + 60s refresh, 4 sub-panels).
+- Notion MCP §52F: 2 V104 sub-pages auto-created (id `35b1d385-9bf8-81bb-b5a8-ecffb0c817e6` + `35b1d385-9bf8-8150-88cf-e36abe524520`).
+- Hash 4 official tables IDENTICAL pre vs post (predictions=4625 / final_bundles=213 / lottery_results=14642 / model_daily_eval=4493).
+- 13/61/64/89 case audit: all 4 surface OPTIONAL_REVIEW today (V103=REVIEW, non_gan_core=true, V102 recurrence_class=None today → upgrade rule honestly miss).
+
+**Owner action**:
+1. Open https://xs.io.vn/monitoring → see new `sectionV104ShadowPromptInjection` panel.
+2. Open https://www.notion.so/Lottery_AI_Test-067b40e9009647e7952c504503559a29 → see new V104 sub-pages.
+3. Decide on `FU-V104-PHASE-B-PROVIDER-PILOT`: approve provider roster + cost budget + cron timing.
+4. Decide on `FU-V104-DRIVE-INGEST-PARTIAL`: paste Drive content OR install Drive MCP.
+
+---
 
 ## V103.2 owner re-emphasis (2026-05-09 22:42 VN) — Notion MCP
 

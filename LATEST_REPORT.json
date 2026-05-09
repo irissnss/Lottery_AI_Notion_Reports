@@ -1,8 +1,9 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V103.2",
+  "latest_version": "V104",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md",
+  "v104_phase_a_shadow_prompt_injection_at_vn": "2026-05-09T23:55:00+07:00",
   "v103_2_notion_mcp_autosync_at_vn": "2026-05-09T22:55:00+07:00",
   "v103_1_cross_region_d1_recurrence_tracker_ui_at_vn": "2026-05-09T22:35:00+07:00",
   "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
@@ -16,10 +17,10 @@
   "v101_shadow_pilot_at_vn": "2026-05-09T20:35:00+07:00",
   "v102_recurrence_tracker_at_vn": "2026-05-09T21:10:00+07:00",
   "v103_candidate_supply_at_vn": "2026-05-09T21:55:00+07:00",
-  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103/V103.1/V103.2 chain — all SHADOW-only, official UNCHANGED. V103.1 monitoring tracker UI panel for cross-region + D-1 recurrence patterns; §52 hardlock codified. V103.2 Notion MCP self-sync: 2 sub-pages auto-created on canonical Lottery_AI_Test page (45 + 38 blocks) + §52F NOTION MCP AUTOMATION OBLIGATION codified in 3 governance files. FU-170 (Notion sync) RESOLVED. FU-V103-2-NOTION-MCP-AUTOSYNC opened DEPLOYED_PENDING_LIVE_VERIFY. V104 prompt injection OWNER_LOCK pending.",
+  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103/V103.1/V103.2/V104 chain — all SHADOW-only, official UNCHANGED. V104 Phase A: 2 NEW shadow tables (v104_shadow_prompt_candidate_injection 1823 rows 30d backfill / v104_shadow_prompt_model_decision 0 rows Phase A placeholder), 3 region prompts MN/MT/MB_V104 (independent), admin route /api/admin/v104-shadow-prompt-injection 401 admin-locked, sectionV104ShadowPromptInjection registered loadAll + 60s refresh. Gating logic: gan alone NEVER promotes; REQUIRED requires V103=REQUIRED OR (V103=REVIEW + recurrence STRONG/MEDIUM + lift_pp ≥ 5 + non-gan core + ≥2 layers). 13/61/64/89 audit: all 4 surface OPTIONAL_REVIEW today. Phase B (provider pilot) = OWNER_GATE_REQUIRED. Notion 2 V104 sub-pages auto-created. 4 official tables SHA256 IDENTICAL pre vs post. ZERO production mutation.",
   "official_touched": false,
   "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V99 exact evaluator (station-aware STRICT vs DIAGNOSTIC); V100 Gan signal shadow (gan_normal/gan_special); V101 MN cross-region rule shadow + region-specific V2 prompts; V102 recurrence stats + candidate context; V103 candidate supply + prompt gate (REQUIRED/REVIEW/BLOCKED)",
-  "next_action": "V104 OWNER_LOCK: actually inject V103 REQUIRED+REVIEW candidates into shadow AI prompts (per region MN/MT/MB independent), capture accept/reject decisions for analysis. Owner: 2026-05-21 14d gates (FU-173/174/175); FU-V99-GITHUB-TOKEN-LEAK revoke; FU-170 Notion MCP. Auto: 2026-05-10 daily MN/MT/MB cascade with SP-4.1 + V101/V102/V103 shadow tables refresh.",
+  "next_action": "V104 Phase B OWNER_GATE_REQUIRED: approve provider roster (suggested MN claude-opus + gpt-5-pro + gemini-2.5-pro; MT consensus subset; MB cold-aware subset) + cost budget + cron slot không đụng 19:35-19:55 VN production closeout. FU-V104-DRIVE-INGEST-PARTIAL OWNER_LOCK: cần Drive content access. FU-V99-GITHUB-TOKEN-LEAK P0: owner revoke ghp_cvoSP*** PAT. FU-173/174/175 14d gate 2026-05-21. Auto: 2026-05-10 daily cascade + V104 30d backfill snapshot.",
   "owner_lock_for_official": true,
   "read_order": [
     "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
@@ -30,9 +31,24 @@
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 7,
-  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-SHADOW-PROMPT-INJECTION (OWNER_LOCK — inject V103 REQUIRED candidates per region, shadow only)",
-  "resolved_in_v98_to_v103": "FU-169 (V98 public stale), FU-176 (V98 command center), FU-172 (V98.1 cron misfire), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF), FU-V100-UI-GAN (V100 du-doan-test UI + Gan calculator), FU-V101-SHADOW-RULE-PROMPT (V101 deployed), FU-V102-RECURRENCE-TRACKER (V102 deployed), FU-V103-CANDIDATE-SUPPLY-GATE (V103 deployed pending live verify), FU-170 (RESOLVED V103.2 — Notion MCP auto-sync 2 sub-pages: V103.1 + Phiên 2026-05-09)",
+  "open_issues_count": 8,
+  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-PHASE-B-PROVIDER-PILOT (OWNER_GATE_REQUIRED — approve roster + cost + cron), FU-V104-DRIVE-INGEST-PARTIAL (OWNER_LOCK — Drive content access)",
+  "resolved_in_v98_to_v104": "FU-169 (V98), FU-176 (V98), FU-172 (V98.1), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1), FU-171 (V99.1), FU-V100-UI-GAN (V100), FU-V101-SHADOW-RULE-PROMPT (V101), FU-V102-RECURRENCE-TRACKER (V102), FU-V103-CANDIDATE-SUPPLY-GATE (V103), FU-170 (V103.2), FU-V104-SHADOW-PROMPT-INJECTION (V104 Phase A delivered, superseded by FU-V104-PHASE-B-PROVIDER-PILOT)",
+  "v104_notion_pages": [
+    {"id": "35b1d385-9bf8-81bb-b5a8-ecffb0c817e6", "title": "🧪 V104 — Shadow Prompt Injection per Region (Phase A, 2026-05-09)", "url": "https://www.notion.so/V104-Shadow-Prompt-Injection-per-Region-Phase-A-2026-05-09-35b1d3859bf881bbb5a8ecffb0c817e6"},
+    {"id": "35b1d385-9bf8-8150-88cf-e36abe524520", "title": "📝 V104 — Owner Conversation Context (Phiên 2026-05-09 22:00 → 23:50 VN)", "url": "https://www.notion.so/V104-Owner-Conversation-Context-Phi-n-2026-05-09-22-00-23-50-VN-35b1d3859bf8815088cfe36abe524520"}
+  ],
+  "v104_phase_a": {
+    "shadow_table_injection_rows": 1823,
+    "shadow_table_decision_rows_phase_a": 0,
+    "regions_today_2026_05_09": {"MN": {"REQUIRED": 0, "OPTIONAL_REVIEW": 39, "BLOCKED": 0}, "MT": {"REQUIRED": 0, "OPTIONAL_REVIEW": 24, "BLOCKED": 0}, "MB": {"REQUIRED": 0, "OPTIONAL_REVIEW": 18, "BLOCKED": 0}},
+    "case_audit_today": "MN 13 / MT 61 / MB 64 / MN 89 — all surface OPTIONAL_REVIEW (V103=REVIEW, non_gan_core=true, V102 recurrence_class=None today so upgrade rule honestly miss)",
+    "url_admin": "https://xs.io.vn/api/admin/v104-shadow-prompt-injection",
+    "url_ui": "https://xs.io.vn/monitoring (sectionV104ShadowPromptInjection)",
+    "auto_refresh_seconds": 60,
+    "admin_locked": true,
+    "phase_b_owner_gate_required": true
+  },
   "v103_2_notion_pages": [
     {"id": "35b1d385-9bf8-8156-94fc-d86cfa331153", "title": "V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Measurement-UI-Deploy-Sync Hardlock (2026-05-09)", "url": "https://www.notion.so/V103-1-Cross-Region-D-1-Recurrence-Tracker-UI-52-Measurement-UI-Deploy-Sync-Hardlock-2026-05-35b1d3859bf8815694fcd86cfa331153", "blocks": 45},
     {"id": "35b1d385-9bf8-8140-b9fc-d0583c5e02ff", "title": "Phiên 2026-05-09 — Tổng hợp yêu cầu owner + chuỗi V99.1 → V103.1 (full conversation context)", "url": "https://www.notion.so/Phi-n-2026-05-09-T-ng-h-p-y-u-c-u-owner-chu-i-V99-1-V103-1-full-conversation-context-35b1d3859bf88140b9fcd0583c5e02ff", "blocks": 38}

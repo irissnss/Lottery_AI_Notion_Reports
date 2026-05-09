@@ -1,4 +1,15 @@
-# Open issues — as of V103.2 (2026-05-09 22:55 VN)
+# Open issues — as of V104 (2026-05-09 23:55 VN)
+
+## V104 Phase A delivered — `FU-V104-SHADOW-PROMPT-INJECTION` RESOLVED, 2 NEW FUs OPENED
+
+V104 Phase A shipped (no provider call): 2 shadow tables + 3 region prompts MN/MT/MB independent + admin route 401 + UI panel registered loadAll/60s + Notion 2 sub-pages auto-created. Gating logic: gan alone NEVER promotes; REQUIRED_IN_PROMPT requires V103=REQUIRED OR (V103=REVIEW + recurrence STRONG/MEDIUM + lift_pp ≥ 5 + non-gan core + ≥2 layers). 13/61/64/89 audit: all 4 surface OPTIONAL_REVIEW today honestly. Hash 4 official tables IDENTICAL pre vs post.
+
+**New FUs:**
+
+- `FU-V104-PHASE-B-PROVIDER-PILOT` (P1 OWNER_GATE_REQUIRED): approve provider roster (suggested MN claude-opus + gpt-5-pro + gemini-2.5-pro; MT consensus subset; MB cold-aware subset) + cost budget + cron slot không đụng 19:35-19:55 VN production closeout.
+- `FU-V104-DRIVE-INGEST-PARTIAL` (P2 OWNER_LOCK): WebFetch không đọc được Drive `.txt` content. Owner action: (1) paste Báo Cáo 16 + Phân Tích Đánh Giá 1 trong chat, OR (2) provide direct-download `?export=download&id=` URLs, OR (3) install Drive MCP server.
+
+`FU-V104-SHADOW-PROMPT-INJECTION` Phase A → RESOLVED, superseded by `FU-V104-PHASE-B-PROVIDER-PILOT`.
 
 ## V103.2 Notion MCP self-sync — `FU-V103-2-NOTION-MCP-AUTOSYNC` DEPLOYED, `FU-170` RESOLVED
 
