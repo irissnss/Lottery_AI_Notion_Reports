@@ -1,15 +1,18 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V98",
+  "latest_version": "V98.1",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
   "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
+  "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/v98_1_morning_sanity_check.md",
   "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
   "previous_root_pointer_was": "V92",
   "created_at_vn": "2026-05-09T00:50:00+07:00",
-  "status": "DELIVERED — V98 absolute SSOT reconciliation; private V93-V97 batch (commit 1cd2833) synced to public; /monitoring V98 Command Center 10 panels deployed; runtime/private/public parity verified; Notion sync UNVERIFIED (no MCP); official UNCHANGED",
+  "v98_1_updated_at_vn": "2026-05-09T09:30:00+07:00",
+  "v99_1_metadata_cleanup_at_vn": "2026-05-09T11:35:00+07:00",
+  "status": "DELIVERED V98 + V98.1 sanity passed — 6/6 cron natural-fire verified, V97 SP-4.1 first live cycle confirmed, 3 FUs closed (FU-172, FU-V97.1-CRON-MISFIRE, FU-V97.1-LOG-PERSIST), monitoring command center 10 panels live; Notion sync UNVERIFIED (FU-170); official UNCHANGED",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V93/V94/V95 shadow audit tables; V97 SP-4.1 prompt deployed",
-  "next_action": "Auto: 2026-05-09 cron natural-fire (16:30 cascade + 19:14-19:22 shadow + 23:35-23:55 V93.2 clean test). Owner: 2026-05-14 7d MB cold; 2026-05-21 14d MN dossier + FU-174/175; 2026-06-08 30d sweep",
+  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V93/V94/V95 shadow audit tables; V97 SP-4.1 prompt deployed; V98.1 cron natural-fire 6/6 verified",
+  "next_action": "Auto: 2026-05-09 16:30-18:30 VN MT/MB cascade + 19:14-19:22 VN shadow chain + 23:35-23:55 VN V93.2 round 2. Owner: 2026-05-14 md5 drift FU-171; 2026-05-21 14d gates FU-173/174/175; 2026-06-08 30d sweep",
   "owner_lock_for_official": true,
   "read_order": [
     "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
@@ -17,8 +20,14 @@
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 7,
-  "open_issues_summary": "FU-169 (RESOLVED V98 public sync), FU-170 (Notion UNVERIFIED), FU-171 (md5 drift 4 files), FU-172 (cron misfire 23:45+), FU-173/174/175 (defer evidence reports), FU-176 (RESOLVED V98 monitoring command center)",
+  "open_issues_count": 5,
+  "open_issues_summary": "ACTIVE: FU-170 (Notion UNVERIFIED, no MCP), FU-171 (md5 drift 4 files, defer 2026-05-14), FU-173/174/175 (defer 14d gate 2026-05-21), FU-V99-BT-SCORING-DEBATE (NEW V99.1 — owner gate scoring semantic strict ĐB vs any-prize)",
+  "resolved_in_v98_v98_1": "FU-169 (public stale fixed), FU-176 (V98 command center deployed), FU-172 (cron misfire — 6/6 fired V98.1), FU-V97.1-CRON-MISFIRE (V98.1 verified), FU-V97.1-LOG-PERSIST (V98.1 false_negative resolved UTC vs VN tz)",
+  "v99_1_findings": {
+    "mb_2026_05_08_56_truth": "EVALUATOR_SEMANTIC_DIFFERENCE — V93 multi-prize vs production strict-ĐB; both correct under different rules; new FU-V99-BT-SCORING-DEBATE owner-gated",
+    "github_token_leak": "P0_CRITICAL — VPS git remote URL contains GitHub PAT (prefix ghp_cvoSP***, full value REDACTED) — owner must REVOKE at github.com/settings/tokens",
+    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V98 work via scp deploy mode; runtime is truth; documented FU-171"
+  },
   "v93_to_v98_summary": {
     "V93": "MB 56 forensic + 3-càng audit",
     "V93.1": "P0 shadow audits 3 tables cron 19:16",
