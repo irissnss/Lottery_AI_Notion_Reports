@@ -1,8 +1,9 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V104",
+  "latest_version": "V104.1",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_1_PHASE_B_ACTIVATED_REPORT.md",
+  "v104_1_phase_b_activated_at_vn": "2026-05-10T00:15:00+07:00",
   "v104_phase_a_shadow_prompt_injection_at_vn": "2026-05-09T23:55:00+07:00",
   "v103_2_notion_mcp_autosync_at_vn": "2026-05-09T22:55:00+07:00",
   "v103_1_cross_region_d1_recurrence_tracker_ui_at_vn": "2026-05-09T22:35:00+07:00",
@@ -17,10 +18,10 @@
   "v101_shadow_pilot_at_vn": "2026-05-09T20:35:00+07:00",
   "v102_recurrence_tracker_at_vn": "2026-05-09T21:10:00+07:00",
   "v103_candidate_supply_at_vn": "2026-05-09T21:55:00+07:00",
-  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103/V103.1/V103.2/V104 chain — all SHADOW-only, official UNCHANGED. V104 Phase A: 2 NEW shadow tables (v104_shadow_prompt_candidate_injection 1823 rows 30d backfill / v104_shadow_prompt_model_decision 0 rows Phase A placeholder), 3 region prompts MN/MT/MB_V104 (independent), admin route /api/admin/v104-shadow-prompt-injection 401 admin-locked, sectionV104ShadowPromptInjection registered loadAll + 60s refresh. Gating logic: gan alone NEVER promotes; REQUIRED requires V103=REQUIRED OR (V103=REVIEW + recurrence STRONG/MEDIUM + lift_pp ≥ 5 + non-gan core + ≥2 layers). 13/61/64/89 audit: all 4 surface OPTIONAL_REVIEW today. Phase B (provider pilot) = OWNER_GATE_REQUIRED. Notion 2 V104 sub-pages auto-created. 4 official tables SHA256 IDENTICAL pre vs post. ZERO production mutation.",
+  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103/V103.1/V103.2/V104/V104.1 chain — all SHADOW-only, official UNCHANGED. V104.1 Phase B ACTIVATED 2026-05-10 00:15 VN per owner explicit acceleration ('mắc gì sau 7 ngày mới nâng cấp khi 60d evidence đã thấy phù hợp'). NEW _v104_phase_b_runner.py (370 lines) + 3 provider wrappers + scheduler crons 19:24 + 19:30 VN. First real fire 2026-05-10 00:08 VN target_date=2026-05-09: 9 calls fired, 5 succeeded, 4 failed, 45 decision rows stored. **MN 13 ACCEPT HIGH by Claude Opus** ('V67+V70+V73+V101 convergence, test_bt×2, strong pattern match'). MB 64 REJECT MEDIUM. Hash 4 official tables IDENTICAL pre vs post. ZERO production mutation. GitHub PAT rotated VPS-side (FU-V99-TOKEN-LEAK ROTATED). New FUs: FU-V104-1-OPENAI-KEY-INVALID P0, FU-V104-1-GEMINI-EMPTY P1, FU-V104-1-MT-CLAUDE-TRUNCATED P1, FU-V104-PHASE-B-7D-ADJUSTMENT P2 review 2026-05-17.",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V99 exact evaluator (station-aware STRICT vs DIAGNOSTIC); V100 Gan signal shadow (gan_normal/gan_special); V101 MN cross-region rule shadow + region-specific V2 prompts; V102 recurrence stats + candidate context; V103 candidate supply + prompt gate (REQUIRED/REVIEW/BLOCKED)",
-  "next_action": "V104 Phase B OWNER_GATE_REQUIRED: approve provider roster (suggested MN claude-opus + gpt-5-pro + gemini-2.5-pro; MT consensus subset; MB cold-aware subset) + cost budget + cron slot không đụng 19:35-19:55 VN production closeout. FU-V104-DRIVE-INGEST-PARTIAL OWNER_LOCK: cần Drive content access. FU-V99-GITHUB-TOKEN-LEAK P0: owner revoke ghp_cvoSP*** PAT. FU-173/174/175 14d gate 2026-05-21. Auto: 2026-05-10 daily cascade + V104 30d backfill snapshot.",
+  "test_lane_status": "ACTIVE V104.1 — /monitoring V87 Master Index + V96 Master Tracker + V98 Command Center + V103 Cross-Region Tracker + V104 Shadow Prompt Injection panel; V104 Phase B daily 19:30 VN cron (3 models × 3 regions, cost guard 12 calls max/day, 1500 max output tokens). 7-day adjustment review 2026-05-17.",
+  "next_action": "(1) Owner revoke old GitHub PAT ghp_cvoSP*** explicitly on GitHub Settings → Developer settings → PATs (new PAT đã active VPS). (2) Owner regen OPENAI_API_KEY at platform.openai.com → update VPS .env → systemctl restart lottery (FU-V104-1-OPENAI-KEY-INVALID). (3) Watch /monitoring V104 panel daily; review 2026-05-17 19:30 VN với 7d Phase B evidence (FU-V104-PHASE-B-7D-ADJUSTMENT). (4) FU-V104-DRIVE-INGEST-PARTIAL OWNER_LOCK Drive content access. (5) FU-173/174/175 14d gate 2026-05-21.",
   "owner_lock_for_official": true,
   "read_order": [
     "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
@@ -31,10 +32,11 @@
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 8,
-  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-PHASE-B-PROVIDER-PILOT (OWNER_GATE_REQUIRED — approve roster + cost + cron), FU-V104-DRIVE-INGEST-PARTIAL (OWNER_LOCK — Drive content access)",
+  "open_issues_count": 11,
+  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (ROTATED — owner revoke old PAT explicitly on GitHub UI), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-PHASE-B-PROVIDER-PILOT (ACTIVATED, superseded by 4 new sub-FUs), FU-V104-DRIVE-INGEST-PARTIAL (OWNER_LOCK — Drive content access), FU-V104-1-OPENAI-KEY-INVALID (P0 owner regen at platform.openai.com), FU-V104-1-GEMINI-EMPTY-RESPONSE (P1 SDK fallback), FU-V104-1-MT-CLAUDE-TRUNCATED (P1 bump max_tokens), FU-V104-PHASE-B-7D-ADJUSTMENT (DEFERRED review 2026-05-17 19:30 VN)",
   "resolved_in_v98_to_v104": "FU-169 (V98), FU-176 (V98), FU-172 (V98.1), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1), FU-171 (V99.1), FU-V100-UI-GAN (V100), FU-V101-SHADOW-RULE-PROMPT (V101), FU-V102-RECURRENCE-TRACKER (V102), FU-V103-CANDIDATE-SUPPLY-GATE (V103), FU-170 (V103.2), FU-V104-SHADOW-PROMPT-INJECTION (V104 Phase A delivered, superseded by FU-V104-PHASE-B-PROVIDER-PILOT)",
   "v104_notion_pages": [
+    {"id": "35b1d385-9bf8-812a-8953-d7e627976a9d", "title": "V104.1 — Phase B Activated + GitHub PAT Rotated (2026-05-10 00:15 VN)", "url": "https://www.notion.so/V104-1-Phase-B-Activated-GitHub-PAT-Rotated-2026-05-10-00-15-VN-35b1d3859bf8812a8953d7e627976a9d"},
     {"id": "35b1d385-9bf8-81bb-b5a8-ecffb0c817e6", "title": "🧪 V104 — Shadow Prompt Injection per Region (Phase A, 2026-05-09)", "url": "https://www.notion.so/V104-Shadow-Prompt-Injection-per-Region-Phase-A-2026-05-09-35b1d3859bf881bbb5a8ecffb0c817e6"},
     {"id": "35b1d385-9bf8-8150-88cf-e36abe524520", "title": "📝 V104 — Owner Conversation Context (Phiên 2026-05-09 22:00 → 23:50 VN)", "url": "https://www.notion.so/V104-Owner-Conversation-Context-Phi-n-2026-05-09-22-00-23-50-VN-35b1d3859bf8815088cfe36abe524520"}
   ],
@@ -47,7 +49,29 @@
     "url_ui": "https://xs.io.vn/monitoring (sectionV104ShadowPromptInjection)",
     "auto_refresh_seconds": 60,
     "admin_locked": true,
-    "phase_b_owner_gate_required": true
+    "phase_b_owner_gate_required": false,
+    "phase_b_status": "ACTIVATED 2026-05-10 00:15 VN — see v104_1_phase_b"
+  },
+  "v104_1_phase_b": {
+    "deployed": true,
+    "deploy_time_vn": "2026-05-10T00:15:00+07:00",
+    "owner_directive": "Anh muốn Lane Test chạy thực sự với các thay đổi. Mắc gì sau 7 ngày mới nâng cấp khi 60d evidence đã thấy phù hợp.",
+    "first_real_fire_at_vn": "2026-05-10T00:08:14+07:00",
+    "first_real_fire_target_date": "2026-05-09",
+    "scheduler_crons": ["19:24 VN daily V104 materializer", "19:30 VN daily V104 Phase B runner"],
+    "roster_per_region": ["claude-opus-4-20250514 (anthropic)", "gpt-5-pro (openai)", "gemini-2.5-pro (gemini)"],
+    "cost_guard": {"max_calls_per_day": 12, "per_call_timeout_seconds": 90, "max_output_tokens": 1500, "max_candidates_per_prompt": 20},
+    "first_fire_results": {"total_calls": 9, "calls_ok": 5, "calls_failed": 4, "decision_rows_stored": 45, "elapsed_seconds": 216.66},
+    "owner_case_audit": {
+      "MN_13": "ACCEPT HIGH by claude-opus-4-20250514 — reason: V67+V70+V73+V101 convergence, test_bt×2, strong pattern match",
+      "MB_64": "REJECT MEDIUM by claude-opus-4-20250514 — reason: AI-herd + V67 but no cross-region, MB herd suspicious",
+      "MT_61": "PARSE_FAIL (max_tokens=1500 truncated, FU-V104-1-MT-CLAUDE-TRUNCATED)",
+      "MN_89": "not_in_candidate_set_for_2026-05-09 (was earlier-day candidate)"
+    },
+    "hash_guard_4_official": {"verdict": "all_4_identical_pre_vs_post_zero_official_mutation", "predictions": 4625, "final_bundles": 213, "lottery_results": 14642, "model_daily_eval": 4493},
+    "github_pat_rotation": {"vps_git_remote_updated": true, "git_ls_remote_verify_head": "494071b", "new_token_in_tracked_files": false, "old_token_revocation": "owner_action_required_on_github_ui"},
+    "seven_day_adjustment_review_at_vn": "2026-05-17T19:30:00+07:00",
+    "new_fus": ["FU-V104-1-OPENAI-KEY-INVALID (P0)", "FU-V104-1-GEMINI-EMPTY-RESPONSE (P1)", "FU-V104-1-MT-CLAUDE-TRUNCATED (P1)", "FU-V104-PHASE-B-7D-ADJUSTMENT (P2 deferred 2026-05-17)"]
   },
   "v103_2_notion_pages": [
     {"id": "35b1d385-9bf8-8156-94fc-d86cfa331153", "title": "V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Measurement-UI-Deploy-Sync Hardlock (2026-05-09)", "url": "https://www.notion.so/V103-1-Cross-Region-D-1-Recurrence-Tracker-UI-52-Measurement-UI-Deploy-Sync-Hardlock-2026-05-35b1d3859bf8815694fcd86cfa331153", "blocks": 45},

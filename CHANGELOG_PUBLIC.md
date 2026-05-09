@@ -1,3 +1,22 @@
+## V104.1 — PHASE B ACTIVATED + GITHUB PAT ROTATED (2026-05-10 00:15 VN)
+
+- Owner directive (verbatim, condensed): "Cập nhật API Token Githup Mới đi em "ghp_N9GS***" anh đã gennere rồi đó. Anh muốn Lane Test chạy thực sự với các thay đổi. Mắc gì sau 7 ngày mới nâng cấp khi mọi bằng chứng đề cho thấy các điều chỉnh phù hợp khi verify 60 ngày rồi mà em."
+- **GitHub PAT rotation**: VPS git remote `origin` URL on `vietnix:/root/Lottery_AI_Test` updated to new owner-generated PAT. Verified via `git ls-remote origin HEAD` returns `494071b3d6046ec1fb9bd0cb51656878ac909596` (V104 commit head, auth working). New token NEVER written to any tracked file in private/public repo. Local Windows uses Credential Manager (clean). FU-V99-GITHUB-TOKEN-LEAK status `OPEN` → `ROTATED`. Owner manual action remaining: revoke old `ghp_cvoSP***` explicitly on GitHub UI.
+- **V104 Phase B activated**: NEW backend `web/backend/_v104_phase_b_runner.py` (~370 lines) với limited roster 3 models × 3 regions = 9 calls/day max + 3 buffer (`MAX_TOTAL_CALLS_PER_DAY=12`). Roster: Claude Opus 4 + GPT-5-pro + Gemini 2.5 Pro per MN/MT/MB. Cost guard: 90s timeout, 1500 output tokens, 20 candidates per prompt max. 3 thin provider wrappers (Anthropic / OpenAI gpt-5/o-series-aware / Gemini google-genai+legacy fallback).
+- V104 review prompt embeds full region prompt family + forces strict JSON `{decisions[], shadow_bt, shadow_lo2, max_two_numbers=true, production_weight=false}`. Decisions written to `v104_shadow_prompt_model_decision` với `provider_called=1, output_eligible=0, diagnostic_only=1, shadow_only=1`.
+- **Scheduler crons added** in `web/backend/scheduler.py`: 19:24 VN daily V104 materializer + 19:30 VN daily V104 Phase B runner (BEFORE production cron 19:35-19:55 VN). Both registered in journalctl.
+- **First real Phase B fire 2026-05-10 00:08 VN target_date=2026-05-09**: 9 calls fired total, 5 succeeded (3 Anthropic Opus + 2 Gemini empty/parse_fail), 4 failed (3 OpenAI 401 + 1 Gemini 503). 45 decision rows stored in `v104_shadow_prompt_model_decision`. Elapsed 216.66s.
+  - **MN**: Claude Opus ACCEPT 2 / HOLD 2 / REJECT 16, shadow_bt='05' shadow_lo2=['13']. MN 13 = ACCEPT HIGH ("V67+V70+V73+V101 convergence, test_bt×2, strong pattern match") ✅ catches exact owner-flagged case.
+  - **MT**: Claude Opus PARSE_FAIL (max_tokens=1500 hit), GPT-5-pro 401, Gemini PARSE_FAIL.
+  - **MB**: Claude Opus ACCEPT 2 / HOLD 2 / REJECT 14 shadow_bt='37' shadow_lo2=['02']. MB 64 = REJECT MEDIUM ("AI-herd + V67 but no cross-region, MB herd suspicious").
+  - **MN 89**: not in candidate set for 2026-05-09 (was earlier-day candidate).
+- **Hash guard 4 official tables SHA256 IDENTICAL pre vs post** (predictions=4625 / final_bundles=213 / lottery_results=14642 / model_daily_eval=4493). ZERO production mutation. ✅
+- **NEW FUs**: `FU-V104-1-OPENAI-KEY-INVALID` P0 (owner regen at platform.openai.com), `FU-V104-1-GEMINI-EMPTY-RESPONSE` P1 (SDK fallback), `FU-V104-1-MT-CLAUDE-TRUNCATED` P1 (bump max_tokens), `FU-V104-PHASE-B-7D-ADJUSTMENT` P2 (review 2026-05-17 19:30 VN).
+- AUTOMATION_STATE seq 53 → 54 với phase_b_first_fire + hash_guard + github_pat_rotation arrays.
+- NO production prompt change, NO selector touch, NO `/du-doan` mutation.
+
+---
+
 ## V104 — SHADOW PROMPT INJECTION PER REGION (Phase A) (2026-05-09 23:55 VN)
 
 - Owner directive (verbatim, condensed): "[V104 TOTAL FORCE] Mục tiêu chính là triển khai V104 shadow-only để candidate từ V103 thật sự đi vào prompt AI shadow theo từng miền MN/MT/MB, để model phải accept/reject với lý do rõ ràng."

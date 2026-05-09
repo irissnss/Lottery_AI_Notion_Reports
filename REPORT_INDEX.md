@@ -1,10 +1,11 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V104** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V104 chain, 2026-05-09)
+Latest: **V104.1** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V104.1 chain, 2026-05-09 → 2026-05-10)
 
-## Latest evidence (V99.1 → V104, all under V98 wrapper folder)
+## Latest evidence (V99.1 → V104.1, all under V98 wrapper folder)
 
-- [V104_SHADOW_PROMPT_INJECTION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md) — **V104 Phase A delivery** + 13/61/64/89 case audit + control matrix + Phase B owner-gate plan
+- [V104_1_PHASE_B_ACTIVATED_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_1_PHASE_B_ACTIVATED_REPORT.md) — **V104.1 Phase B activated + GitHub PAT rotated** — 9-call first real fire, 45 decision rows, MN 13 ACCEPT HIGH by Claude Opus, hash guard 4 official tables IDENTICAL, 7-day review 2026-05-17
+- [V104_SHADOW_PROMPT_INJECTION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md) — V104 Phase A delivery + 13/61/64/89 case audit + control matrix + Phase B owner-gate plan
 - [CONVERSATION_CONTEXT_V104_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V104_20260509.md) — V104 owner conversation context (verbatim 6 owner messages 22:00 → 23:23 VN)
 - [DRIVE_REPORT_INGEST_INDEX_V104.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/DRIVE_REPORT_INGEST_INDEX_V104.md) — 32-file Drive folder PARTIAL/LISTED_NOT_READ honest index
 - [CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md) — V103.2 verbatim conversation context (10 timestamped owner messages 09:05 → 22:42 VN + agent confirmations) + Notion MCP self-sync details + §52F automation rule

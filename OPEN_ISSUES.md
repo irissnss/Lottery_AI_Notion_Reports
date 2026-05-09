@@ -42,7 +42,7 @@ Owner re-emphasized at 22:12 VN: cross-region & D-1 recurrence patterns must hav
 
 | FU | Severity | Title | Earliest decision |
 |---|---|---|---|
-| **FU-V99-GITHUB-TOKEN-LEAK** | P0 | VPS git remote + private commit fb2ae98 contains `ghp_cvoSP***` PAT — owner MUST revoke | Owner action required |
+| **FU-V99-GITHUB-TOKEN-LEAK** | P0 | **ROTATED 2026-05-10 00:15 VN** — VPS git remote `origin` updated to new owner-generated PAT, `git ls-remote` returns 494071b... (V104 commit head, auth working). New token NEVER written to any tracked file. Old `ghp_cvoSP***` still on owner's GitHub UI — **owner action: revoke explicitly**. | Owner revoke old PAT on GitHub Settings |
 | **FU-V99-BT-SCORING-DEBATE** | P0 | LOCKED to `STRICT_DAC_BIET` production. `TAIL_ANY_PRIZE_DIAGNOSTIC` shadow only. | Revisit 2026-06-08 30d gate |
 | **FU-V104-SHADOW-PROMPT-INJECTION** | P1 | OWNER_LOCK — actually inject V103 REQUIRED+REVIEW candidates into shadow AI prompts (per region MN/MT/MB independent), capture accept/reject for analysis | Awaiting owner OK (proposed [A]) |
 | **FU-170** | P1 | Notion `Lottery_AI_Test` V93-V103 sync UNVERIFIED (no MCP in Cursor scope) | Owner provide MCP/manual copy |

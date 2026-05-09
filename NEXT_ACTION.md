@@ -1,6 +1,34 @@
-# NEXT ACTION (V104 — 2026-05-09 23:55 VN, Shadow Prompt Injection Phase A)
+# NEXT ACTION (V104.1 — 2026-05-10 00:15 VN, Phase B Activated + GitHub PAT Rotated)
 
-V99.1 → V104 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+V99.1 → V104.1 chain delivered. **All shadow-only, official UNCHANGED. Phase B activated under owner explicit acceleration directive.**
+
+## V104.1 owner directive (2026-05-09 23:57 VN)
+
+> "Cập nhật API Token Githup Mới đi em "ghp_N9GS***" anh đã gennere rồi đó.
+> Anh muốn Lane Test chạy thực sự với các thay đổi. Nếu quá sai thì kiểm soát điều
+> chỉnh sau 7 ngày, mắc gì sau 7 ngày mới nâng cấp trong khi mọi bằng chứng đề
+> cho thấy các điều chỉnh phù hợp khi verify 60 ngày rồi mà em."
+
+**V104.1 = response chain:**
+
+- **GitHub PAT rotated**: VPS git remote `origin` URL on vietnix updated với new owner-generated token. `git ls-remote origin HEAD` returns `494071b...` = V104 commit head, auth working. New token NEVER written to any tracked file. FU-V99-GITHUB-TOKEN-LEAK status `OPEN` → `ROTATED`. **Owner action remaining: revoke old `ghp_cvoSP***` PAT explicitly on GitHub Settings → Developer settings.**
+- **V104 Phase B activated**: NEW `web/backend/_v104_phase_b_runner.py` (~370 lines) + 3 thin provider wrappers (Anthropic / OpenAI / Gemini) + scheduler crons 19:24 + 19:30 VN daily.
+- **First real fire 2026-05-10 00:08 VN target_date=2026-05-09**: 9 calls fired, 5 ok, 4 failed, 45 decision rows stored. Elapsed 216.66s.
+- **Owner-flagged case audit**: **MN 13 = ACCEPT HIGH** by Claude Opus với reason "V67+V70+V73+V101 convergence, test_bt×2, strong pattern match" — Phase B catches the exact case owner flagged at 21:25 VN ✅.
+  - MB 64 = REJECT MEDIUM by Claude Opus ("AI-herd + V67 but no cross-region, MB herd suspicious").
+  - MT 61 = PARSE_FAIL (Claude max_tokens=1500 truncated → FU-V104-1-MT-CLAUDE-TRUNCATED).
+  - MN 89 = not in 2026-05-09 V104 candidate set (was earlier-day candidate).
+- **Hash guard**: 4 official tables SHA256 IDENTICAL pre vs post (predictions=4625, final_bundles=213, lottery_results=14642, model_daily_eval=4493). ZERO production mutation.
+- **7-day adjustment review gate**: 2026-05-17 19:30 VN per owner directive.
+
+**Owner action**:
+
+1. **Revoke old GitHub PAT explicitly** on GitHub Settings → Developer settings → Personal access tokens. New PAT đã active VPS-side; old PAT vẫn valid until owner revokes.
+2. **Regenerate OPENAI_API_KEY** at https://platform.openai.com/api-keys (current `sk-proj-***` returns 401) → update VPS `/root/Lottery_AI_Test/.env` → `systemctl restart lottery`. Without this, 3 calls/day fail (Anthropic + Gemini still fire).
+3. Watch https://xs.io.vn/monitoring V104 panel daily 19:30 VN cycle to see Phase B decisions populate.
+4. 2026-05-17 19:30 VN: review 7-day Phase B evidence (FU-V104-PHASE-B-7D-ADJUSTMENT).
+
+---
 
 ## V104 owner directive (2026-05-09 23:23 VN)
 
