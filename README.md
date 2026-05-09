@@ -5,14 +5,25 @@
 
 ## Latest
 
-- **V98** — ABSOLUTE RUNTIME ↔ PUBLIC ↔ NOTION SSOT + MONITORING COMMAND CENTER (2026-05-09): private V93-V97 batch synced to public; `/monitoring` V98 Command Center 10 panels deployed; runtime/private/public parity verified; official UNCHANGED
-- Folder: [`V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/`](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md)
+- **V103** — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN): supply audit 11 source layers, prompt gate REQUIRED/REVIEW/BLOCKED with non-gan core requirement. Latest in V99.1→V103 chain delivered tonight. **All shadow only, official UNCHANGED.**
+- Latest evidence (under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/`):
+  - [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md)
+  - [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md)
+  - [V101_SHADOW_RULE_PROMPT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md)
+  - [V100_MASTER_PHASE_TRACKING.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md)
 
-## V93→V98 Quick Index
+## V93→V103 Quick Index
 
 | Version | Date | Scope | Status |
 |---|---|---|---|
-| V98 | 2026-05-09 | Absolute SSOT + monitoring command center 10 panels + public sync | DELIVERED (this release) |
+| V103 | 2026-05-09 | Candidate supply audit + tightened prompt gate REQUIRED/REVIEW/BLOCKED | DELIVERED (this release) |
+| V102 | 2026-05-09 | 60d recurrence tracker (lost-D→hit-D+1, cross-region) + STRONG/MEDIUM/WEAK class | DELIVERED |
+| V101 | 2026-05-09 | MN cross-region D-1/D-2 rule + region-specific V2 prompts + admin readout API | DELIVERED |
+| V100 | 2026-05-09 | du-doan-test UI fix (default MN, mobile, history, tech metrics) + Gan calculator 252K rows | DELIVERED |
+| V99.2 | 2026-05-09 | Total force security + BT doctrine LOCK STRICT + 14d/30d scoreboard + bundle replay preliminary | DELIVERED |
+| V99.1 | 2026-05-09 | Truth verify + V99 exact evaluator + V98.1 metadata + 3 P0 findings | DELIVERED |
+| V98.1 | 2026-05-09 | Morning sanity check + 3 FUs closed | DELIVERED |
+| V98 | 2026-05-09 | Absolute SSOT + monitoring command center 10 panels + public sync | DELIVERED |
 | V97.1 | 2026-05-08 | Governance commit V93-V97 batch + cron natural-fire validate (PARTIAL) | private only |
 | V97 | 2026-05-08 | SP-4.0 → SP-4.1 prompt fix L159+L161 max 2 numbers | private only |
 | V96 | 2026-05-08 | Master Tracker SSOT + 9-panel realtime dashboard cron 19:22 VN | private only |

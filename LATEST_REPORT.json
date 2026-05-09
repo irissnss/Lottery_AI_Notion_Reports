@@ -1,42 +1,57 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V98.1",
+  "latest_version": "V103",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
-  "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/v98_1_morning_sanity_check.md",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md",
+  "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
   "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
   "previous_root_pointer_was": "V92",
   "created_at_vn": "2026-05-09T00:50:00+07:00",
   "v98_1_updated_at_vn": "2026-05-09T09:30:00+07:00",
   "v99_1_metadata_cleanup_at_vn": "2026-05-09T11:35:00+07:00",
   "v99_2_total_force_at_vn": "2026-05-09T13:15:00+07:00",
-  "status": "DELIVERED V98 + V98.1 sanity passed — 6/6 cron natural-fire verified, V97 SP-4.1 first live cycle confirmed, 3 FUs closed (FU-172, FU-V97.1-CRON-MISFIRE, FU-V97.1-LOG-PERSIST), monitoring command center 10 panels live; Notion sync UNVERIFIED (FU-170); official UNCHANGED",
+  "v100_ui_gan_at_vn": "2026-05-09T16:30:00+07:00",
+  "v101_shadow_pilot_at_vn": "2026-05-09T20:35:00+07:00",
+  "v102_recurrence_tracker_at_vn": "2026-05-09T21:10:00+07:00",
+  "v103_candidate_supply_at_vn": "2026-05-09T21:55:00+07:00",
+  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103 chain — all SHADOW-only, official UNCHANGED. V100 du-doan-test UI fix + Gan calculator (252K rows). V101 MN cross-region D-1/D-2 rule + V2 region prompts. V102 60d recurrence tracker (lost-D→hit-D+1). V103 candidate supply audit + tightened prompt gate (REQUIRED needs recurrence + non-gan core layer + 2 layers). V104 prompt injection OWNER_LOCK pending.",
   "official_touched": false,
-  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V93/V94/V95 shadow audit tables; V97 SP-4.1 prompt deployed; V98.1 cron natural-fire 6/6 verified",
-  "next_action": "Auto: 2026-05-09 16:30-18:30 VN MT/MB cascade + 19:14-19:22 VN shadow chain + 23:35-23:55 VN V93.2 round 2. Owner: 2026-05-14 md5 drift FU-171; 2026-05-21 14d gates FU-173/174/175; 2026-06-08 30d sweep",
+  "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V99 exact evaluator (station-aware STRICT vs DIAGNOSTIC); V100 Gan signal shadow (gan_normal/gan_special); V101 MN cross-region rule shadow + region-specific V2 prompts; V102 recurrence stats + candidate context; V103 candidate supply + prompt gate (REQUIRED/REVIEW/BLOCKED)",
+  "next_action": "V104 OWNER_LOCK: actually inject V103 REQUIRED+REVIEW candidates into shadow AI prompts (per region MN/MT/MB independent), capture accept/reject decisions for analysis. Owner: 2026-05-21 14d gates (FU-173/174/175); FU-V99-GITHUB-TOKEN-LEAK revoke; FU-170 Notion MCP. Auto: 2026-05-10 daily MN/MT/MB cascade with SP-4.1 + V101/V102/V103 shadow tables refresh.",
   "owner_lock_for_official": true,
   "read_order": [
+    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
+    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md",
+    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md",
+    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md",
     "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
-    "REPORT_INDEX.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ],
-  "open_issues_count": 6,
-  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT V99.2 L3, revisit 30d), FU-170 (Notion UNVERIFIED), FU-173/174/175 (defer 14d gate 2026-05-21)",
-  "resolved_in_v98_v98_1_v99_1": "FU-169 (public stale V98), FU-176 (V98 command center), FU-172 (cron misfire V98.1), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF)",
+  "open_issues_count": 7,
+  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-170 (Notion UNVERIFIED), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-SHADOW-PROMPT-INJECTION (OWNER_LOCK — inject V103 REQUIRED candidates per region, shadow only)",
+  "resolved_in_v98_to_v103": "FU-169 (V98 public stale), FU-176 (V98 command center), FU-172 (V98.1 cron misfire), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF), FU-V100-UI-GAN (V100 du-doan-test UI + Gan calculator), FU-V101-SHADOW-RULE-PROMPT (V101 deployed), FU-V102-RECURRENCE-TRACKER (V102 deployed), FU-V103-CANDIDATE-SUPPLY-GATE (V103 deployed pending live verify)",
+  "v100_v103_findings": {
+    "v100_ui_default": "du-doan-test default tab MN (was MB), mobile responsive @media 480/768, history panel + tech metrics panel, 2 admin APIs",
+    "v100_gan": "gan_signal_shadow_v100 252K rows shadow, owner thresholds: MB normal=30 special=15, MN+MT normal=15 special=7. NO official touch.",
+    "v101_mn_cross_region": "v101_mn_cross_region_rule_shadow (MN candidates from yesterday MT/MB tails), v101_region_prompt_context_shadow (per-region addendum text + context JSON). 14d backfill done.",
+    "v101_v2_prompts": "MN/MT/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V2.md created, contains V101 rule context + V100 gan signals + V99 evaluator semantic guards. Shadow-only, NOT injected into production runtime yet.",
+    "v102_recurrence_stats": "v102_recurrence_stats_shadow + v102_candidate_recurrence_context_shadow with STRONG/MEDIUM/WEAK/BLOCKED class. 60d/90d quantified. Lost-D → hit-D+1 patterns + cross-region same-day/next-day measured.",
+    "v103_candidate_supply": "v103_candidate_supply_shadow tracks AI/no-token/official/test/V67/V70/V73/V101/V102/gan/rule layers. v103_prompt_candidate_gate_shadow tightened gate: REQUIRED needs recurrence + non-gan core + 2 layers.",
+    "v103_30d_backfill": "8743 rows candidate supply, 8743 rows prompt gate. Smoke 2026-05-10 (pre-cycle): REQUIRED=0, REVIEW=49, BLOCKED=251 (expected — most core sources for D+1 not run yet)."
+  },
   "v99_1_findings": {
     "mb_2026_05_08_56_truth": "EVALUATOR_SEMANTIC_DIFFERENCE — V93 multi-prize vs production strict-ĐB; both correct under different rules",
     "github_token_leak": "P0_CRITICAL — VPS git remote URL + private commit fb2ae98 contains GitHub PAT (prefix ghp_cvoSP***, REDACTED) — owner must REVOKE",
-    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V98 work via scp deploy mode; runtime is truth"
+    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V103 work via scp deploy mode; runtime is truth"
   },
   "v99_2_findings": {
-    "security_scan": "Working tree 0 GitHub PAT classic. .env files protected by .gitignore. AI provider keys env-only no exposure proof. False positives identified (84 GLM-pattern hits in _test_output_utf8.txt = lottery digit sequences).",
-    "bt_doctrine_lock": "STRICT_DAC_BIET = production KPI (UNCHANGED). TAIL_ANY_PRIZE_DIAGNOSTIC = shadow signal only. V93 MB 56 valid under DIAGNOSTIC, NOT production bug under STRICT. FU-V99-BT-SCORING-DEBATE → DEFAULT KEEP STRICT.",
+    "security_scan": "Working tree 0 GitHub PAT classic. .env files protected by .gitignore. AI provider keys env-only no exposure proof.",
+    "bt_doctrine_lock": "STRICT_DAC_BIET = production KPI (UNCHANGED). TAIL_ANY_PRIZE_DIAGNOSTIC = shadow signal only. FU-V99-BT-SCORING-DEBATE → DEFAULT KEEP STRICT, revisit 30d.",
     "evaluator_sanity": "SANITY PASS — 10 tests OK, 747 rows shadow integrity 100%, STRICT_ZERO_VALIDATED 14d (Wilson 95% upper 0.7%) lottery rare event normal.",
-    "scoreboard_14d": "OFFICIAL strict 0% (n=42), TEST_LANE strict 0% (n=371). Lenient: OFFICIAL 38.1%, TEST_LANE 35.3%. NO method qualifies for production promotion.",
-    "bundle_replay_status": "Preliminary 10 hypotheses, ALL defer FU-173 14d gate 2026-05-21. NO promotion eligible."
+    "scoreboard_14d": "OFFICIAL strict 0% (n=42), TEST_LANE strict 0% (n=371). Lenient: OFFICIAL 38.1%, TEST_LANE 35.3%. NO method qualifies for production promotion."
   },
-  "v93_to_v98_summary": {
+  "v93_to_v103_summary": {
     "V93": "MB 56 forensic + 3-càng audit",
     "V93.1": "P0 shadow audits 3 tables cron 19:16",
     "V93.2": "Sibling stdout fix 6 materializers — NATURAL_FIRE_PARTIAL",
@@ -45,30 +60,24 @@
     "V95": "Data integrity + AI context audit + UI dashboard cron 19:20",
     "V96": "Master Tracker SSOT + 9-panel realtime dashboard cron 19:22",
     "V97": "SP-4.0 → SP-4.1 prompt fix L159+L161 max 2 numbers",
-    "V97.1": "Governance commit V93-V97 batch (1cd2833) + cron natural-fire validate (PARTIAL)",
-    "V98": "Absolute SSOT reconciliation + monitoring command center 10 panels + public reports update + governance"
+    "V97.1": "Governance commit V93-V97 batch + cron natural-fire validate",
+    "V98": "Absolute SSOT reconciliation + monitoring command center 10 panels + public V93-V97 sync",
+    "V98.1": "Morning sanity check + 3 FUs closed",
+    "V99.1": "Truth verify + V99 exact evaluator + V98.1 metadata cleanup + 3 P0 findings",
+    "V99.2": "Total force security + BT doctrine LOCK + scoreboard + bundle replay preliminary",
+    "V100": "du-doan-test UI fix (default MN + mobile + history + tech metrics) + Gan calculator 252K rows",
+    "V101": "MN cross-region D-1/D-2 rule + region-specific V2 prompts + admin readout API",
+    "V102": "60d recurrence tracker (lost-D→hit-D+1, cross-region same-day/next-day) + candidate context with STRONG/MEDIUM/WEAK class",
+    "V103": "Candidate supply audit + tightened prompt gate (REQUIRED/REVIEW/BLOCKED) — V104 prompt injection OWNER_LOCK"
   },
   "safety_summary": {
     "official_unchanged": true,
     "hash_guard_passed": true,
     "public_safe": true,
-    "no_runtime_change_beyond_v97_sp41": true,
-    "no_selector_change": true,
+    "shadow_only_v100_v103": true,
+    "no_selector_change_post_v97": true,
     "no_promote_button": true,
     "secrets_redacted": true
-  },
-  "runtime_parity": {
-    "private_commit": "1cd2833 (V93-V97 batch)",
-    "vps_git_commit": "ceb36c2 V17.19.4 2026-04-19 — modified-via-scp not committed",
-    "files_md5_match": 7,
-    "files_md5_drift": 4,
-    "drift_files": [
-      "_materialize_v93_p0_shadow_audits.py",
-      "_materialize_v94_safe_batch.py",
-      "_materialize_v95_data_integrity_audit.py",
-      "_v95_dashboard.py"
-    ],
-    "drift_severity": "P1 (runtime is OK; VPS = truth)"
   },
   "monitoring_command_center": {
     "deployed": true,
@@ -76,6 +85,11 @@
     "url_admin": "https://xs.io.vn/api/admin/v98-command-center",
     "url_ui": "https://xs.io.vn/monitoring",
     "panels_count": 10,
-    "auto_refresh_seconds": 60
+    "auto_refresh_seconds": 60,
+    "additional_admin_apis": [
+      "/api/admin/test-lane-history (V100)",
+      "/api/admin/test-lane-metrics (V100)",
+      "/api/admin/v101-shadow-pilot (V101)"
+    ]
   }
 }

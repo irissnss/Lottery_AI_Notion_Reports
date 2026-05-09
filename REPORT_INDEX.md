@@ -1,15 +1,22 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509** (V98)
+Latest: **V103** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V103 chain, 2026-05-09)
 
-## Latest report
+## Latest evidence (V99.1 → V103, all under V98 wrapper folder)
 
-- [V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md)
-- [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+- [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md) — V103 candidate supply audit + tightened prompt gate
+- [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md) — V102 60d recurrence quantification
+- [V101_SHADOW_RULE_PROMPT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md) — V101 MN cross-region rule + V2 prompts
+- [V101_POST_LIVE_LAG_RECURRENCE_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_POST_LIVE_LAG_RECURRENCE_20260509.md) — post-live recurrence supporting evidence
+- [V100_MASTER_PHASE_TRACKING.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md) — V93→V100 master phase tracker
+- [V99_2_TOTAL_FORCE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V99_2_TOTAL_FORCE_REPORT.md) — V99.2 security + BT doctrine + scoreboard
+- [V99_1_TRUTH_VERIFY_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V99_1_TRUTH_VERIFY_REPORT.md) — V99.1 truth verify + V99 exact evaluator
+- [V98_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md) — V98 monitoring command center wrapper
+- [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — canonical pointer
 
-## V98 wraps V93-V97 (all private only previously)
+## V98 wraps V93-V103 (V93-V97 + V98.1 + V99.1/V99.2 + V100/V101/V102/V103)
 
-V93/V93.1/V93.2/V94/V94.1/V95/V96/V97/V97.1 are private commit `1cd2833`. Public was V92 stale before V98 publish. V98_REPORT.md documents the entire V93→V97 chain and includes hash guard proof of zero official mutation.
+V93→V97 are private commit `1cd2833`. V98 published wrapper. V98.1 morning sanity. V99.1 = `bfea15d`/`74cab5b`. V99.2 = `d134838`/`b0a4e7a`. V100 = `5624570`. V101 = `522969c`. V102 = `7dc3536`. V103 = `2dac1ea` (+ governance sweep `582edab`). All shadow-only tonight, official UNCHANGED.
 
 ## Historical reports (newest first)
 

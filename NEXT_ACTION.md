@@ -1,58 +1,63 @@
-# NEXT ACTION (V98.1 — 2026-05-09 09:30 VN morning sanity check)
+# NEXT ACTION (V103 — 2026-05-09 22:00 VN, post live closeout)
 
-V98.1 morning sanity check complete. **3 FUs CLOSED, V97 first live prompt cycle confirmed.**
+V99.1 → V103 chain delivered tonight. **All shadow-only, official UNCHANGED.**
 
-## Sáng nay đã verify
+## Đã làm tối nay (2026-05-09)
 
-- ✅ 6/6 cron 23:35-23:55 VN of 2026-05-08 fired (V93.2 stdout fix VERIFIED)
-- ✅ 5/5 daytime shadow chain 19:14-19:22 VN fired
-- ✅ V97 SP-4.1 LIVE: 0/123 predictions ≥3 numbers
-- ✅ MN cascade 04:24 VN sáng nay — final_bundle MN BT=05 (first V97 prediction)
-- ✅ Hash 4 official tables: 4584/211/14634/4493 (natural cycle only)
-- ✅ Public V98 URLs all 200, LATEST_REPORT shows V98
-- ✅ scheduler_logs persists normally (UTC vs VN clarified)
+| Version | Scope | Status |
+|---|---|---|
+| V99.1 | Truth verify + V99 exact evaluator (station-aware STRICT/DIAGNOSTIC) + 3 P0 findings | DELIVERED (private bfea15d, public 74cab5b) |
+| V99.2 | Security scan + BT doctrine LOCK STRICT_DAC_BIET + 14d/30d scoreboard + bundle replay preliminary | DELIVERED (private d134838, public b0a4e7a) |
+| V100 | `du-doan-test` UI fix (default MN, mobile responsive, history + tech metrics) + Gan calculator 252K rows | DELIVERED (private 5624570) |
+| V101 | MN cross-region D-1/D-2 rule shadow + region-specific V2 prompts + admin readout API | DELIVERED (private 522969c) |
+| V102 | 60d recurrence tracker (lost-D → hit-D+1 + cross-region) + candidate context STRONG/MEDIUM/WEAK class | DELIVERED (private 7dc3536) |
+| V103 | Candidate supply audit + tightened prompt gate REQUIRED/REVIEW/BLOCKED | DELIVERED (private 2dac1ea + governance 582edab) |
 
-## Còn pending (3 P1 owner-gated, 5 carry-over 14d)
+## V103 prompt gate logic (hardened)
 
-- **FU-170** Notion sync — owner provide MCP/screenshot
-- **FU-171** 4 file md5 drift — defer 2026-05-14
-- **FU-173/174/175** — defer 2026-05-21 14d gate
+- `REQUIRED`: recurrence_class STRONG **AND** ≥1 non-gan core layer (AI / test / official / V67-V70-V73 / V101 / rules) **AND** ≥2 total source layers.
+- `REVIEW`: recurrence MEDIUM/STRONG with ≥1 layer support, but doesn't meet REQUIRED bar.
+- `BLOCKED`: recurrence WEAK or no corroboration — never injected.
+- **Gan support is secondary** — alone never promotes to REQUIRED. This prevents "long-unseen flood" from drowning AI prompts.
 
-**No manual action required this morning** — owner tiếp tục an tâm.
+## Smoke 2026-05-10 (pre-cycle, expected pattern)
 
-## Tomorrow (auto, no action)
+- `REQUIRED=0` (D+1 official not yet drawn, AI/test for D+1 hasn't run yet) — natural empty state.
+- `REVIEW=49`, `BLOCKED=251` — lower-layer signals already present.
+- After 04:24 VN MN cascade + 16:30/18:30 VN MT/MB cascade + 19:14-19:22 shadow chain, supply layers fill → REQUIRED count will populate.
 
-- 16:30-18:30 VN: 3-region cascade với SP-4.1 prompt (V97 first natural fire)
-- 19:14-19:22 VN: 5 cron shadow chain auto-fire
-- 19:22 VN: V96 master tracker daily snapshot
-- 23:35-23:55 VN: V93.2 fix cron clean test (no service restart in interim)
+## V104 OWNER_LOCK (next decision)
 
-## Tomorrow (owner action)
+Next logical step is V104 = **actually inject** V103 REQUIRED+selected REVIEW candidates into the SHADOW AI prompts (still shadow-only, max 2 numbers, no production runtime change), and capture per-region MN/MT/MB accept/reject decisions for analysis.
 
-1. Login `https://xs.io.vn/monitoring` → V98 Command Center 10 panels
-2. Verify Panel 3 (Natural-Fire Cron) all 11 crons fire ✅
-3. Verify Panel 1 (SSOT) classification cleared
-4. Decide on:
-   - **FU-170** Notion sync — provide MCP access or screenshot
-   - **FU-171** 4 file md5 drift — pull canonical from VPS
-   - **FU-172** Cron 23:45+ misfire — investigate APScheduler config
+**Anh xác nhận điều gì để em tiếp tục:**
 
-## 14-day gate (2026-05-21)
+- [A] Tiếp tục V104: shadow prompt injection + accept/reject capture (per region MN/MT/MB independent, fully shadow), không touch production prompt SP-4.1.
+- [B] Đợi 1-2 chu kỳ live (2026-05-10/11) để V103 supply fill rồi mới V104.
+- [C] Khác — anh chỉ định.
 
-- FU-173 bundle conversion replay 30d
-- FU-174 combo-super BT-first replay
-- FU-175 prompt context injection dossier
-- FU-165 RR-16.4 §9 D-2 region-gated update
+Mặc định em **đề xuất [A]** vì owner đã phê duyệt độc lập per-region và lane test đã sẵn sàng.
 
-## 30-day gate (2026-06-08)
+## Owner pending (P0/P1)
 
-- FU-162 verdict_weight recalibration evidence
-- FU-164 cross-region anti-trap re-eval
-- FU-166 secondary signal survival evidence
-- FU-167 spillover-aware selector promotion proposal
+- **P0 FU-V99-GITHUB-TOKEN-LEAK** — owner cần revoke PAT `ghp_cvoSP***` (VPS git remote + private commit fb2ae98 history).
+- **P0 FU-V99-BT-SCORING-DEBATE** — locked to STRICT_DAC_BIET production, revisit 2026-06-08 30d gate.
+- **P1 FU-170** Notion `Lottery_AI_Test` sync — em không có MCP access, owner cần copy payload manual hoặc cấp MCP.
+- **P1 FU-173 / FU-174 / FU-175** — defer 2026-05-21 14d gate.
+
+## Auto (no owner action)
+
+- 2026-05-10 04:24 VN — MN cascade SP-4.1 (continuing daily).
+- 2026-05-10 16:30/18:30 VN — MT + MB cascade.
+- 2026-05-10 19:14-19:22 VN — 5-cron shadow chain (V81/V93.1/V94.1/V95/V96).
+- 2026-05-10 23:35-23:55 VN — V93.2 stdout fix cron continuing.
+- V100 Gan signal + V101/V102/V103 shadow tables refresh on schedule.
 
 ## Read first
 
-- [V98_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md)
+- [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md)
+- [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md)
+- [V101_SHADOW_RULE_PROMPT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md)
+- [V100_MASTER_PHASE_TRACKING.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md)
 - [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
 - [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md)

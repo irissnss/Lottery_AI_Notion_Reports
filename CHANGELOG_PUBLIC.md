@@ -1,3 +1,67 @@
+## V103 — CANDIDATE SUPPLY AUDIT + TIGHTENED PROMPT GATE (2026-05-09 21:55 VN)
+
+- New shadow tables: `v103_candidate_supply_shadow` (8743 rows 30d) + `v103_prompt_candidate_gate_shadow` (8743 rows 30d).
+- Supply audit tracks 11 source layers per candidate tail: AI / no-token / official / test / V67 / V70 / V73 / V101 / V102 / gan / rule.
+- Prompt gate tightened: `REQUIRED` needs recurrence STRONG + ≥1 non-gan core layer + ≥2 total source layers. Gan support is secondary only — never alone promotes to REQUIRED.
+- Smoke 2026-05-10 pre-cycle: REQUIRED=0, REVIEW=49, BLOCKED=251 (expected — D+1 core sources not yet run).
+- Private commit `2dac1ea` + governance sweep `582edab`.
+- V104 prompt injection = OWNER_LOCK pending (proposed [A]: shadow inject REQUIRED/REVIEW with accept/reject capture per region).
+- Shadow only, output_eligible=0, diagnostic_only=1, owner_approved=0. Official UNCHANGED.
+
+## V102 — D-1 LOST SIGNAL RECURRENCE TRACKER (2026-05-09 21:10 VN)
+
+- New shadow tables: `v102_recurrence_stats_shadow` + `v102_candidate_recurrence_context_shadow`.
+- Quantifies 4 recurrence patterns over 60d/90d:
+  1. Same-region D-1 lost → D hit (e.g. MN yesterday losing prediction reappearing today).
+  2. Cross-region same-day (MT D → MB D, MN D → MT D, etc.).
+  3. Cross-region next-day (MN D-1 → MT D, MT D-1 → MB D).
+  4. Combined STRONG/MEDIUM/WEAK class per candidate.
+- Sources tracked: official, test_lane, V67/V70/V73 traces, V101 candidates, individual AI models.
+- `recurrence_class`: STRONG → recommended for `PROMPT_REVIEW_STRONG`; MEDIUM → review only; WEAK/BLOCKED → not surfaced.
+- Private commit `7dc3536`.
+- Shadow only, no production runtime change.
+
+## V101 — MN CROSS-REGION D-1/D-2 RULE + REGION-SPECIFIC V2 PROMPTS (2026-05-09 20:35 VN)
+
+- New shadow tables: `v101_mn_cross_region_rule_shadow` (ranked MN candidates from previous-day MT/MB tails) + `v101_region_prompt_context_shadow` (per-region addendum text + context JSON).
+- Three new region-specific shadow prompts (V2):
+  - `MN_AI_REGION_SPECIALIST_PROMPT_SHADOW_V2.md`: V101 cross-region context + V100 gan + V99 evaluator semantic guards.
+  - `MT_AI_REGION_SPECIALIST_PROMPT_SHADOW_V2.md`: consensus-first + gan diagnostic + semantic guards.
+  - `MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V2.md`: MB gan thresholds + cold flag doctrine + semantic guards.
+- New admin API: `/api/admin/v101-shadow-pilot` (admin-locked readout).
+- 14d backfill done locally + VPS.
+- Per-region independent — owner can tune one region without affecting others.
+- Private commit `522969c`. Shadow only, NOT injected into production prompt SP-4.1 yet.
+
+## V100 — `du-doan-test` UI FIX + GAN CALCULATOR FOUNDATION (2026-05-09 16:30 VN)
+
+- `/du-doan-test` UI: default tab MN (was MB), mobile responsive @media 480/768, two new panels (Lịch sử dự đoán + Bảng chỉ số kỹ thuật).
+- Two new admin APIs: `/api/admin/test-lane-history`, `/api/admin/test-lane-metrics`.
+- New shadow table: `gan_signal_shadow_v100` (252K rows 30d) computing `gan_normal` (any prize) + `gan_special` (ĐB/G8) per region/station/tail.
+- Owner-specified thresholds: MB normal=30 special=15; MN+MT normal=15 special=7.
+- Private commit `5624570`.
+- Shadow only, no production runtime change.
+
+## V99.2 — TOTAL FORCE SECURITY + BT DOCTRINE LOCK + SCOREBOARD (2026-05-09 13:15 VN)
+
+- Security scan PARTIAL: 0 PAT in working tree, .env protected by .gitignore, AI provider keys env-only. Owner must revoke `ghp_cvoSP***` PAT (FU-V99-GITHUB-TOKEN-LEAK P0).
+- BT doctrine LOCKED: `STRICT_DAC_BIET` = production KPI (UNCHANGED). `TAIL_ANY_PRIZE_DIAGNOSTIC` = shadow signal only. FU-V99-BT-SCORING-DEBATE → DEFAULT KEEP STRICT (revisit 2026-06-08 30d gate).
+- V99 evaluator sanity PASS: 10 tests OK, 747 rows shadow integrity 100%, STRICT_ZERO_VALIDATED 14d (Wilson 95% upper 0.7%).
+- 14d/30d scoreboard: OFFICIAL strict 0% (n=42), TEST_LANE strict 0% (n=371). Lenient: OFFICIAL 38.1%, TEST_LANE 35.3%. NO method qualifies for production promotion.
+- Bundle replay 10 hypotheses preliminary, ALL defer FU-173 14d gate.
+- Private commit `d134838`, public `b0a4e7a`.
+
+## V99.1 — TRUTH VERIFY + V99 EXACT EVALUATOR + 3 P0 FINDINGS (2026-05-09 11:35 VN)
+
+- V99 exact station-aware evaluator built (`v99_exact_evaluator_results` shadow table). Supports `BT_STRICT_DAC_BIET` (production) and `TAIL_ANY_PRIZE_DIAGNOSTIC` (shadow).
+- V98.1 metadata cleanup in `LATEST_REPORT.json`.
+- 3 P0 findings:
+  - **MB 2026-05-08 "56" report conflict** = EVALUATOR_SEMANTIC_DIFFERENCE (V93 multi-prize lenient vs production strict-ĐB; both correct under their semantic).
+  - **GitHub PAT leak** in VPS git remote URL + private commit `fb2ae98` history (REDACTED in working tree, owner must revoke).
+  - **VPS git drift expected** — VPS at `ceb36c2` V17.19.4 2026-04-19; all V77→V103 work via scp deploy mode.
+- FU-171 false_negative resolved (CRLF/LF only, not content drift).
+- Private commit `bfea15d` (token-redacted), public `74cab5b`.
+
 ## V98 — ABSOLUTE RUNTIME ↔ PUBLIC ↔ NOTION SSOT + MONITORING COMMAND CENTER (2026-05-09 00:50 VN)
 
 - Public root pointer V92 → V98. README no longer claims V74 latest.
