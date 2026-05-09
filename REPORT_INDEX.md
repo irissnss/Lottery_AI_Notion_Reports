@@ -1,9 +1,14 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V104.1** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V104.1 chain, 2026-05-09 → 2026-05-10)
+Latest: **V105.2** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V105.2 chain, 2026-05-09 → 2026-05-10)
 
-## Latest evidence (V99.1 → V104.1, all under V98 wrapper folder)
+## Latest evidence (V99.1 → V105.2, all under V98 wrapper folder)
 
+- [V105_LANE_TEST_INDEPENDENCE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_LANE_TEST_INDEPENDENCE_REPORT.md) — V105.1 true AI/no-token lane independence + context completeness + official hash guard
+- [V105_MONITORING_UI_DATA_HEALTH_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_MONITORING_UI_DATA_HEALTH_REPORT.md) — `/monitoring` readability/status badges/why-empty + prediction quality realtime data health + V105.2 legacy contrast patch
+- [V105_PROVIDER_ROUTING_HEALTH_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_PROVIDER_ROUTING_HEALTH_REPORT.md) — GPT 5.5 OpenRouter routing fix + Claude truncation fix + Gemini residual issue
+- [V105_SECURITY_PAT_DEPLOY_KEY_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_SECURITY_PAT_DEPLOY_KEY_REPORT.md) — redacted PAT cleanup status + SSH deploy key recommendation
+- [CONVERSATION_CONTEXT_V105.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V105.md) — V105 owner context and hard locks
 - [V104_1_PHASE_B_ACTIVATED_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_1_PHASE_B_ACTIVATED_REPORT.md) — **V104.1 Phase B activated + GitHub PAT rotated** — 9-call first real fire, 45 decision rows, MN 13 ACCEPT HIGH by Claude Opus, hash guard 4 official tables IDENTICAL, 7-day review 2026-05-17
 - [V104_SHADOW_PROMPT_INJECTION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V104_SHADOW_PROMPT_INJECTION_REPORT.md) — V104 Phase A delivery + 13/61/64/89 case audit + control matrix + Phase B owner-gate plan
 - [CONVERSATION_CONTEXT_V104_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V104_20260509.md) — V104 owner conversation context (verbatim 6 owner messages 22:00 → 23:23 VN)

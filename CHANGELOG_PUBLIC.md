@@ -1,3 +1,22 @@
+## V105.2 — MONITORING LEGACY CONTRAST + NOTION/PUBLIC SYNC (2026-05-10 01:45 VN)
+
+- Hardened legacy `/monitoring` pastel inline cards after owner screenshots showed low-contrast text in older V95/V103/V104 panels.
+- Deployed frontend-only contrast fix; `/monitoring` remains admin-locked (`401` unauth).
+- Created 4 Notion V105 pages under canonical `Lottery_AI_Test`.
+- Redacted secret scans found no full `ghp_`, `sk-`, or Google `AIza` token patterns in private/public report trees.
+
+---
+
+## V105.1 — TRUE LANE TEST INDEPENDENCE + PROVIDER ROUTING FIX (2026-05-10 01:30 VN)
+
+- Fixed GPT lane-test routing: `gpt-5.5` uses OpenRouter key source; GPT 5 mini/GPT 5.4 remain OpenAI-platform routed.
+- Added independent AI shadow, no-token shadow, and context completeness audit surfaces. All V105 outputs remain `shadow_only=1`, `diagnostic_only=1`, `output_eligible=0`, `owner_approved=0`.
+- Added `/monitoring` V105 Lane Test Control with provider health, why-empty/data health, status badges, and 60s refresh.
+- Added prediction-quality data-health metadata so `/app` can show source/date/row counts without mixing shadow and official metrics.
+- Verified VPS real run for target_date `2026-05-09`: 9 provider calls, 93 AI rows, 7422 no-token rows, 7515 context rows. Official table hashes unchanged 4/4.
+
+---
+
 ## V104.1 — PHASE B ACTIVATED + GITHUB PAT ROTATED (2026-05-10 00:15 VN)
 
 - Owner directive (verbatim, condensed): "Cập nhật API Token Githup Mới đi em "ghp_N9GS***" anh đã gennere rồi đó. Anh muốn Lane Test chạy thực sự với các thay đổi. Mắc gì sau 7 ngày mới nâng cấp khi mọi bằng chứng đề cho thấy các điều chỉnh phù hợp khi verify 60 ngày rồi mà em."

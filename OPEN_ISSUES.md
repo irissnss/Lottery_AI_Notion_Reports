@@ -1,4 +1,17 @@
-# Open issues — as of V104 (2026-05-09 23:55 VN)
+# Open issues — as of V105.2 (2026-05-10 01:45 VN)
+
+## V105.2 status
+
+V105.1 shipped true lane-test independence and provider routing fix. V105.2 patched legacy `/monitoring` contrast after owner screenshots showed older pastel cards with low-contrast text.
+
+Active owner actions:
+
+- `FU-V105-LANE-TEST-INDEPENDENCE`: owner live-verify `/monitoring` after admin login.
+- `FU-V105-SSH-DEPLOY-KEY`: revoke old and newly pasted PATs, then approve replacing PAT-based VPS remote with SSH deploy key.
+- `FU-V104-1-GEMINI-EMPTY-RESPONSE`: Gemini empty/parse rows remain explicit provider-health issue.
+- `FU-V104-DRIVE-INGEST-PARTIAL`: Drive Báo Cáo 17 / Phân Tích Đánh Giá 2 content access still needed.
+
+---
 
 ## V104 Phase A delivered — `FU-V104-SHADOW-PROMPT-INJECTION` RESOLVED, 2 NEW FUs OPENED
 

@@ -1,4 +1,24 @@
-# NEXT ACTION (V104.1 — 2026-05-10 00:15 VN, Phase B Activated + GitHub PAT Rotated)
+# NEXT ACTION (V105.2 — 2026-05-10 01:45 VN, Monitoring Contrast + Lane Independence)
+
+V105.1 shipped shadow-only lane-test independence and provider routing fix. V105.2 patched legacy `/monitoring` contrast after owner screenshots.
+
+Owner actions:
+
+1. Open `/monitoring` after admin login and verify old V95/V103/V104 cards are now readable, plus V105 panel shows AI=93, no-token=7422, context=7515 for target_date `2026-05-09`.
+2. Revoke old `ghp_cvoSP***` and newly pasted PAT; approve SSH deploy key replacement for VPS remote.
+3. Continue 7-day Phase B review on `2026-05-17 19:30 VN`.
+4. Provide Drive Báo Cáo 17 / Phân Tích Đánh Giá 2 content or install Drive MCP if full ingest is required.
+
+System status:
+
+- GPT routing fixed: `gpt-5.5` uses OpenRouter; GPT 5 mini/GPT 5.4 stay OpenAI.
+- MT Claude truncation fixed.
+- Gemini empty response remains P1 provider-health issue but is no longer silent.
+- Official hashes 4/4 identical; `/du-doan` and `/app` return 200; admin endpoints return 401 unauth.
+
+---
+
+# Previous: V104.1 — 2026-05-10 00:15 VN, Phase B Activated + GitHub PAT Rotated
 
 V99.1 → V104.1 chain delivered. **All shadow-only, official UNCHANGED. Phase B activated under owner explicit acceleration directive.**
 
