@@ -1,3 +1,18 @@
+## V103.2 — NOTION MCP AUTO-SYNC + §52F NOTION AUTOMATION HARDLOCK (2026-05-09 22:55 VN)
+
+- Owner directive (verbatim): "tại sao không cập nhật Notion MCP được em? em tiến hành 1 cách tự động đi chứ, lớn quá thì chia nhỏ từng trang ra chứ em. Tổng hợp các yêu cầu mà anh anh trao đổi trong trò chuyện này đẩy lên github Pulic luôn nha em."
+- Discovered `user-notion` MCP server in workspace (`mcps/user-notion/tools/`). Previous default to `FU-170 OWNER_LOCK` without first attempting MCP = `§52F_VIOLATION_NOTION_NOT_ATTEMPTED` (and `§52_OWNER_REREMINDER` because owner had flagged this ≥2 sessions).
+- Authenticated as bot `Antigravity` workspace `TanPhat ERP`. Located canonical page `Lottery_AI_Test` (id `067b40e9-0096-47e7-952c-504503559a29`). Created 2 sub-pages:
+  - `V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Hardlock` (id `35b1d385-9bf8-8156-94fc-d86cfa331153`, 45 blocks).
+  - `Phiên 2026-05-09 — Tổng hợp yêu cầu owner + V99.1 → V103.1` (id `35b1d385-9bf8-8140-b9fc-d0583c5e02ff`, 38 blocks; verbatim owner messages 09:05 → 22:42 VN).
+- NEW public file `evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md` — verbatim conversation context for the same content as Notion (so public GitHub holds the authoritative ngữ cảnh).
+- NEW governance section `§52F NOTION MCP AUTOMATION OBLIGATION` (10 hard rules) in `.Antigravityrules.md` + mirrored `§9D-1` in `.AGENT.md` + Notion MCP Automation Rule section in `.cursorrules`. Mandates: discover MCP tools first, attempt MCP calls, only escalate to FU-170 with concrete error.
+- FU-170 status flipped from `OWNER_LOCK` to `RESOLVED`. New FU `FU-V103-2-NOTION-MCP-AUTOSYNC` opened (`DEPLOYED_PENDING_LIVE_VERIFY`).
+- AUTOMATION_STATE seq 51 → 52 with `notion_pages[]` array (page IDs + URLs) so future agents verify continuity without re-searching.
+- NO runtime change, NO official table touch, NO production prompt change.
+
+---
+
 ## V103.1 — CROSS-REGION & D-1 RECURRENCE TRACKER UI + §52 MEASUREMENT-UI-DEPLOY-SYNC HARDLOCK (2026-05-09 22:35 VN)
 
 - Owner re-emphasized (2nd time): "lose hôm nay xổ ngày mai" + "lose miền trước xổ miền sau" must have measurement table AND visual UI at `https://xs.io.vn/monitoring`; codify rule into `.Antigravityrules.md` / `.AGENT.md` / `.cursorrules`.

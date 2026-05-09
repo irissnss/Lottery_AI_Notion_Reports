@@ -1,4 +1,8 @@
-# Open issues — as of V103.1 (2026-05-09 22:35 VN)
+# Open issues — as of V103.2 (2026-05-09 22:55 VN)
+
+## V103.2 Notion MCP self-sync — `FU-V103-2-NOTION-MCP-AUTOSYNC` DEPLOYED, `FU-170` RESOLVED
+
+Owner explicitly demanded automatic Notion sync (22:42 VN). Agent discovered `user-notion` MCP in workspace (folder `mcps/user-notion/tools/` with full tool set), authenticated, created 2 sub-pages on canonical `Lottery_AI_Test` page (45 + 38 blocks). Codified `§52F NOTION MCP AUTOMATION OBLIGATION` in `.Antigravityrules.md` + `.AGENT.md` + `.cursorrules`. NEW public file `CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md` (verbatim owner messages 09:05 → 22:42 VN). FU-170 status flipped from `OWNER_LOCK` to `RESOLVED`. New FU `FU-V103-2-NOTION-MCP-AUTOSYNC` = `DEPLOYED_PENDING_LIVE_VERIFY`. Pass condition: owner opens Notion canonical page and sees the 2 new sub-pages.
 
 ## V103.1 owner re-emphasis — `FU-V103-1-MONITORING-UI` DEPLOYED
 

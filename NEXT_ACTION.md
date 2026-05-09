@@ -1,6 +1,26 @@
-# NEXT ACTION (V103.1 — 2026-05-09 22:35 VN, owner re-emphasis)
+# NEXT ACTION (V103.2 — 2026-05-09 22:55 VN, Notion MCP self-sync)
 
-V99.1 → V103.1 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+V99.1 → V103.2 chain delivered tonight. **All shadow-only, official UNCHANGED.**
+
+## V103.2 owner re-emphasis (2026-05-09 22:42 VN) — Notion MCP
+
+Owner: "tại sao không cập nhật Notion MCP được em? em tiến hành 1 cách tự động đi chứ, lớn quá thì chia nhỏ từng trang ra chứ em. Tổng hợp các yêu cầu mà anh anh trao đổi trong trò chuyện này đẩy lên github Pulic luôn nha em."
+
+**V103.2 = response chain:**
+- Discovered `user-notion` MCP server in workspace (`mcps/user-notion/tools/` with 22 API tools). Previous default `FU-170 OWNER_LOCK` = `§52F_VIOLATION_NOTION_NOT_ATTEMPTED`.
+- Authenticated as bot `Antigravity` workspace `TanPhat ERP`. Located canonical page `Lottery_AI_Test` (id `067b40e9-0096-47e7-952c-504503559a29`).
+- Created 2 Notion sub-pages (auto, no manual copy-paste):
+  - `V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Hardlock` (id `35b1d385-9bf8-8156-94fc-d86cfa331153`, 45 blocks).
+  - `Phiên 2026-05-09 — Tổng hợp yêu cầu owner + V99.1 → V103.1` (id `35b1d385-9bf8-8140-b9fc-d0583c5e02ff`, 38 blocks; 10 timestamped owner messages 09:05 → 22:42 VN).
+- NEW public file `evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md` — verbatim owner messages + agent confirmations.
+- Codified `§52F NOTION MCP AUTOMATION OBLIGATION` in `.Antigravityrules.md` (10 hard rules) + mirrored `§9D-1` in `.AGENT.md` + Notion MCP Automation Rule section in `.cursorrules`.
+- FU-170 status flipped from `OWNER_LOCK` → `RESOLVED`. New FU `FU-V103-2-NOTION-MCP-AUTOSYNC` = `DEPLOYED_PENDING_LIVE_VERIFY`.
+
+**Owner action**: open https://www.notion.so/Lottery_AI_Test-067b40e9009647e7952c504503559a29 → see 2 new sub-pages V103.1 + Phiên 2026-05-09 (live-verify).
+
+---
+
+
 
 ## V103.1 owner re-emphasis (2026-05-09 22:12 VN)
 

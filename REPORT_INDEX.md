@@ -1,9 +1,10 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V103.1** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V103.1 chain, 2026-05-09)
+Latest: **V103.2** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V103.2 chain, 2026-05-09)
 
-## Latest evidence (V99.1 → V103.1, all under V98 wrapper folder)
+## Latest evidence (V99.1 → V103.2, all under V98 wrapper folder)
 
+- [CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md) — **V103.2 verbatim conversation context** (10 timestamped owner messages 09:05 → 22:42 VN + agent confirmations) + Notion MCP self-sync details + §52F automation rule
 - [NOTION_SYNC_PAYLOAD_V103_1.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/NOTION_SYNC_PAYLOAD_V103_1.md) — V103.1 cross-region & D-1 recurrence tracker UI + §52 governance hardlock
 - [V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md) — V103 candidate supply audit + tightened prompt gate
 - [V102_RECURRENCE_60D_ANALYSIS_20260509.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md) — V102 60d recurrence quantification

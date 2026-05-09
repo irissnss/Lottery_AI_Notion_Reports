@@ -1,8 +1,9 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V103.1",
+  "latest_version": "V103.2",
   "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/NOTION_SYNC_PAYLOAD_V103_1.md",
+  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V99_1_TO_V103_2_20260509.md",
+  "v103_2_notion_mcp_autosync_at_vn": "2026-05-09T22:55:00+07:00",
   "v103_1_cross_region_d1_recurrence_tracker_ui_at_vn": "2026-05-09T22:35:00+07:00",
   "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
   "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
@@ -15,7 +16,7 @@
   "v101_shadow_pilot_at_vn": "2026-05-09T20:35:00+07:00",
   "v102_recurrence_tracker_at_vn": "2026-05-09T21:10:00+07:00",
   "v103_candidate_supply_at_vn": "2026-05-09T21:55:00+07:00",
-  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103 chain — all SHADOW-only, official UNCHANGED. V100 du-doan-test UI fix + Gan calculator (252K rows). V101 MN cross-region D-1/D-2 rule + V2 region prompts. V102 60d recurrence tracker (lost-D→hit-D+1). V103 candidate supply audit + tightened prompt gate (REQUIRED needs recurrence + non-gan core layer + 2 layers). V104 prompt injection OWNER_LOCK pending.",
+  "status": "DELIVERED V99.1/V99.2/V100/V101/V102/V103/V103.1/V103.2 chain — all SHADOW-only, official UNCHANGED. V103.1 monitoring tracker UI panel for cross-region + D-1 recurrence patterns; §52 hardlock codified. V103.2 Notion MCP self-sync: 2 sub-pages auto-created on canonical Lottery_AI_Test page (45 + 38 blocks) + §52F NOTION MCP AUTOMATION OBLIGATION codified in 3 governance files. FU-170 (Notion sync) RESOLVED. FU-V103-2-NOTION-MCP-AUTOSYNC opened DEPLOYED_PENDING_LIVE_VERIFY. V104 prompt injection OWNER_LOCK pending.",
   "official_touched": false,
   "test_lane_status": "ACTIVE — /monitoring V87 Master Index 29 tabs + V96 Master Tracker + V98 Command Center 10 panels; V99 exact evaluator (station-aware STRICT vs DIAGNOSTIC); V100 Gan signal shadow (gan_normal/gan_special); V101 MN cross-region rule shadow + region-specific V2 prompts; V102 recurrence stats + candidate context; V103 candidate supply + prompt gate (REQUIRED/REVIEW/BLOCKED)",
   "next_action": "V104 OWNER_LOCK: actually inject V103 REQUIRED+REVIEW candidates into shadow AI prompts (per region MN/MT/MB independent), capture accept/reject decisions for analysis. Owner: 2026-05-21 14d gates (FU-173/174/175); FU-V99-GITHUB-TOKEN-LEAK revoke; FU-170 Notion MCP. Auto: 2026-05-10 daily MN/MT/MB cascade with SP-4.1 + V101/V102/V103 shadow tables refresh.",
@@ -30,8 +31,12 @@
     "NEXT_ACTION.md"
   ],
   "open_issues_count": 7,
-  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-170 (Notion UNVERIFIED), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-SHADOW-PROMPT-INJECTION (OWNER_LOCK — inject V103 REQUIRED candidates per region, shadow only)",
-  "resolved_in_v98_to_v103": "FU-169 (V98 public stale), FU-176 (V98 command center), FU-172 (V98.1 cron misfire), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF), FU-V100-UI-GAN (V100 du-doan-test UI + Gan calculator), FU-V101-SHADOW-RULE-PROMPT (V101 deployed), FU-V102-RECURRENCE-TRACKER (V102 deployed), FU-V103-CANDIDATE-SUPPLY-GATE (V103 deployed pending live verify)",
+  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (P0 owner revoke), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-SHADOW-PROMPT-INJECTION (OWNER_LOCK — inject V103 REQUIRED candidates per region, shadow only)",
+  "resolved_in_v98_to_v103": "FU-169 (V98 public stale), FU-176 (V98 command center), FU-172 (V98.1 cron misfire), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1 false_negative UTC/VN), FU-171 (V99.1 false_negative CRLF/LF), FU-V100-UI-GAN (V100 du-doan-test UI + Gan calculator), FU-V101-SHADOW-RULE-PROMPT (V101 deployed), FU-V102-RECURRENCE-TRACKER (V102 deployed), FU-V103-CANDIDATE-SUPPLY-GATE (V103 deployed pending live verify), FU-170 (RESOLVED V103.2 — Notion MCP auto-sync 2 sub-pages: V103.1 + Phiên 2026-05-09)",
+  "v103_2_notion_pages": [
+    {"id": "35b1d385-9bf8-8156-94fc-d86cfa331153", "title": "V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Measurement-UI-Deploy-Sync Hardlock (2026-05-09)", "url": "https://www.notion.so/V103-1-Cross-Region-D-1-Recurrence-Tracker-UI-52-Measurement-UI-Deploy-Sync-Hardlock-2026-05-35b1d3859bf8815694fcd86cfa331153", "blocks": 45},
+    {"id": "35b1d385-9bf8-8140-b9fc-d0583c5e02ff", "title": "Phiên 2026-05-09 — Tổng hợp yêu cầu owner + chuỗi V99.1 → V103.1 (full conversation context)", "url": "https://www.notion.so/Phi-n-2026-05-09-T-ng-h-p-y-u-c-u-owner-chu-i-V99-1-V103-1-full-conversation-context-35b1d3859bf88140b9fcd0583c5e02ff", "blocks": 38}
+  ],
   "v100_v103_findings": {
     "v100_ui_default": "du-doan-test default tab MN (was MB), mobile responsive @media 480/768, history panel + tech metrics panel, 2 admin APIs",
     "v100_gan": "gan_signal_shadow_v100 252K rows shadow, owner thresholds: MB normal=30 special=15, MN+MT normal=15 special=7. NO official touch.",
