@@ -1,0 +1,73 @@
+{
+  "version": "V105.15-18",
+  "date": "2026-05-10",
+  "private_source_commit": "c97e4d021b40c040634e7f7004210efb8a6a9c14",
+  "scope": "lane_test_and_shadow_only_except_publish_gates_that_protect_official",
+  "official_du_doan_contract": {
+    "model_count": "exact_15_output_eligible",
+    "shadow_backfill": false,
+    "changed_by_v105_18_lo2_weight": false
+  },
+  "lane_test_lo2_weight_by_region": {
+    "MN": 0.55,
+    "MT": 0.55,
+    "MB": 0.95
+  },
+  "audit_endpoint": {
+    "path": "/api/admin/lo1-lo2-audit/{region}?days=30",
+    "schema_version": "lo1_lo2_audit_v2",
+    "read_only": true,
+    "writes_official_tables": false,
+    "modes": [
+      "official",
+      "top1_only",
+      "mixed_weighted",
+      "lane_test_region_weighted"
+    ]
+  },
+  "vps_30d_smoke": {
+    "MN": {
+      "lo2_pos_weight": 0.55,
+      "official": {"bt_pct": 50.0, "lo2_pct": 26.67},
+      "top1_only": {"bt_pct": 50.0, "lo2_pct": 23.33},
+      "mixed_weighted": {"bt_pct": 53.33, "lo2_pct": 30.0},
+      "lane_test_region_weighted": {"bt_pct": 53.33, "lo2_pct": 30.0}
+    },
+    "MT": {
+      "lo2_pos_weight": 0.55,
+      "official": {"bt_pct": 46.67, "lo2_pct": 13.33},
+      "top1_only": {"bt_pct": 43.33, "lo2_pct": 16.67},
+      "mixed_weighted": {"bt_pct": 46.67, "lo2_pct": 13.33},
+      "lane_test_region_weighted": {"bt_pct": 46.67, "lo2_pct": 16.67}
+    },
+    "MB": {
+      "lo2_pos_weight": 0.95,
+      "official": {"bt_pct": 20.0, "lo2_pct": 6.67},
+      "top1_only": {"bt_pct": 10.0, "lo2_pct": 0.0},
+      "mixed_weighted": {"bt_pct": 16.67, "lo2_pct": 0.0},
+      "lane_test_region_weighted": {"bt_pct": 16.67, "lo2_pct": 3.33}
+    }
+  },
+  "deployment": {
+    "target": "VPS /root/Lottery_AI_Test",
+    "service": "lottery.service",
+    "restart_time_vn": "2026-05-10T21:11:00+07:00",
+    "service_active": true,
+    "health_200": true
+  },
+  "journal_evidence": {
+    "lane_test_shadow_context_seen": true,
+    "models_seen": [
+      "qwen3.6-plus",
+      "qwen3-coder",
+      "qwen3-max-thinking"
+    ],
+    "known_non_code_error": "gemma-4-31b Google Gemini quota 429 RESOURCE_EXHAUSTED"
+  },
+  "runtime_artifact_policy": {
+    "db_included": false,
+    "jsonl_trace_included": false,
+    "logs_included": false,
+    "secrets_included": false
+  }
+}
