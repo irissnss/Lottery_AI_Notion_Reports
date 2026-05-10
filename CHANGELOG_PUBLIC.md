@@ -1,3 +1,13 @@
+## V105.20 — DUAL-LANE STABILIZATION + REAL TEST-LANE MEASUREMENT (2026-05-10 22:55 VN)
+
+- Official `/du-doan` verified exact 15/15 with official hashes unchanged.
+- Lane `/du-doan-test` verified exact 20/20 with `MAIN_TEST_EQUALS_OFFICIAL` marker and challenger preview.
+- V102 STRONG/PROMPT_REVIEW_STRONG admitted to test-only adaptive selector under non-gan-core + >=2-layer gate.
+- Public evidence folder: `V105_20_DUAL_LANE_STABILIZATION_20260510`.
+- Notion page: `35c1d385-9bf8-81e7-b20a-df49057d3da4`.
+
+---
+
 ## V105.19 — Hard Stabilization Night Pass (2026-05-10 22:15 VN)
 
 - Public latest advanced to V105.19.

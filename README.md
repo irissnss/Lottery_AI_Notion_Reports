@@ -1,5 +1,9 @@
 # Lottery AI Notion Reports
 
+Latest: V105.20 — dual-lane stabilization + real test-lane measurement. See `LATEST_REPORT.json`.
+
+# Lottery AI Notion Reports
+
 > **Source of truth for discovery**: [`LATEST_REPORT.json`](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) and [`REPORT_INDEX.md`](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/REPORT_INDEX.md).
 > **Do NOT use this README to find latest version** — README is updated each release but the JSON/INDEX is canonical.
 

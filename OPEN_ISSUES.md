@@ -1,5 +1,11 @@
-# Open issues — as of V105.19 (2026-05-10 22:15 VN)
+# Open Issues — as of V105.20 (2026-05-10 22:55 VN)
 
-- `FU-V105-19-SECURITY-OWNER-ACTION`: revoke pasted/old PATs; approve SSH deploy key migration.
-- `FU-V105-19-LIVE-24H-WATCH`: next natural cycle must keep official 15/15 and lane 20/20 with no closed-file crash.
-- `FU-V105-19-14D-EVIDENCE`: continue CP-66.7 / CP-66.8 evidence pack after enough closed days.
+## V105.20 status
+
+- `FU-V105-20-DUAL-LANE-STABILIZATION`: DEPLOYED_LIVE_SMOKE_VERIFIED. Continue 24h/7d/14d measurement; no official promotion claim.
+- Drive ingest remains blocked for Báo Cáo 18, Báo Cáo 19, Phân Tích Đánh Giá 4 because no local files/Drive MCP/direct content are available.
+- Security owner action remains: revoke any old PATs and approve SSH deploy key migration.
+
+## Measurement risk
+
+30d lane_test results are mixed: MN better than official, MT worse with 6 would-break, MB BT slightly better but lo2 weaker. Any future adjustment should be region-specific and stay test-lane only until evidence improves.
