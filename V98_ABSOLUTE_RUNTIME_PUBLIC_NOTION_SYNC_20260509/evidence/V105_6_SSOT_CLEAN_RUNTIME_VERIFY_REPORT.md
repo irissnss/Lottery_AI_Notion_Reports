@@ -15,9 +15,9 @@ V105.6 fixes the public SSOT stale gap and adds runtime data-health surfaces aro
 
 | Source | Status | Latest version | Issue |
 |---|---|---:|---|
-| Notion | read | V105.5 | V105.5 page exists and contains owner formula lock; V105.6 pages pending creation in this session |
-| GitHub public LATEST | read | remote V105.2 / local V105.5 | Public remote stale before push; local had V105.5 but was not on raw GitHub |
-| GitHub public evidence V105.5 | 404 before push | V105.5 | `V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md` absent on raw GitHub before public push |
+| Notion | read/done | V105.6 | V105.5 page exists; 3 V105.6 pages created under canonical `Lottery_AI_Test` |
+| GitHub public LATEST | read/verified | V105.6 | Raw public now points to V105.6 after public commit |
+| GitHub public evidence V105.5 | 200 after push | V105.5 | `V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md` raw URL verified 200 after push |
 | Private repo docs | read | V105.5 plus P&L V105.6/V105.7 | Label collision: P&L hotfix used V105.6/V105.7; this total-force wrapper recorded as V20.3.37.105.8 privately |
 | VPS runtime | checked | V105.6 deployed | health public 200 via WebFetch; localhost admin endpoints 401; source-pool/status tables populated shadow-only |
 
@@ -41,7 +41,7 @@ Pre/post VPS hash guard stayed identical:
 
 ## Public Fix
 
-This report, V105.5 evidence, and V105.5 conversation context are now the public read path after push. Raw URL verification must be repeated after push and the public commit hash recorded in the final report.
+This report, V105.5 evidence, and V105.5 conversation context are now the public read path. Raw URL verification passed after push.
 
 ## Notion MCP Sync
 
