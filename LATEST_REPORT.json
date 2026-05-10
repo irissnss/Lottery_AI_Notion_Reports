@@ -1,242 +1,36 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.6",
-  "latest_folder": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509",
-  "latest_report": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_6_SSOT_CLEAN_RUNTIME_VERIFY_REPORT.md",
-  "v105_5_regional_source_pool_lane_test_at_vn": "2026-05-10T11:50:00+07:00",
-  "v105_2_monitoring_legacy_contrast_at_vn": "2026-05-10T01:45:00+07:00",
-  "v105_1_lane_test_independence_at_vn": "2026-05-10T01:30:00+07:00",
-  "v104_1_phase_b_activated_at_vn": "2026-05-10T00:15:00+07:00",
-  "v104_phase_a_shadow_prompt_injection_at_vn": "2026-05-09T23:55:00+07:00",
-  "v103_2_notion_mcp_autosync_at_vn": "2026-05-09T22:55:00+07:00",
-  "v103_1_cross_region_d1_recurrence_tracker_ui_at_vn": "2026-05-09T22:35:00+07:00",
-  "latest_postscript": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
-  "latest_manifest": "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
-  "previous_root_pointer_was": "V92",
-  "created_at_vn": "2026-05-09T00:50:00+07:00",
-  "v98_1_updated_at_vn": "2026-05-09T09:30:00+07:00",
-  "v99_1_metadata_cleanup_at_vn": "2026-05-09T11:35:00+07:00",
-  "v99_2_total_force_at_vn": "2026-05-09T13:15:00+07:00",
-  "v100_ui_gan_at_vn": "2026-05-09T16:30:00+07:00",
-  "v101_shadow_pilot_at_vn": "2026-05-09T20:35:00+07:00",
-  "v102_recurrence_tracker_at_vn": "2026-05-09T21:10:00+07:00",
-  "v103_candidate_supply_at_vn": "2026-05-09T21:55:00+07:00",
-  "status": "DELIVERED through V105.6 — public SSOT cleanup + live cron/source-pool data health + no-token scoreboard. All V105.5/V105.6 runtime rows are shadow-only/admin-only; official hashes unchanged 4/4.",
+  "latest_version": "V105.19",
+  "latest_folder": "V105_19_HARD_STABILIZATION_20260510",
+  "latest_report": "V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_HARD_STABILIZATION_REPORT.md",
+  "status": "DELIVERED — official safe, lane test 20/20 verified, live-day controller/readiness endpoints deployed, identity audit complete, Notion pages created.",
   "official_touched": false,
-  "test_lane_status": "ACTIVE V105.6 — V101 source-pool cron 19:23, V104 materializer 19:24, Phase B 19:30 source-gated, V105 control 19:34. /monitoring includes dedicated sectionV105RegionalSourcePool.",
-  "next_action": "Owner live-verify /monitoring sectionV105RegionalSourcePool after admin login and after MN/MT/MB result scrape; revoke old/new PATs and approve SSH deploy key migration.",
-  "owner_lock_for_official": true,
+  "notion_pages": [
+    {
+      "title": "V105.19 Hard Stabilization Summary",
+      "id": "35c1d385-9bf8-81f6-98cb-cf2cc2579ca1",
+      "url": "https://www.notion.so/V105-19-Hard-Stabilization-Summary-35c1d3859bf881f698cbcf2cc2579ca1"
+    },
+    {
+      "title": "V105.19 Runtime Incidents + Fixes",
+      "id": "35c1d385-9bf8-814c-af29-fcf5045108d2",
+      "url": "https://www.notion.so/V105-19-Runtime-Incidents-Fixes-35c1d3859bf8814caf29fcf5045108d2"
+    },
+    {
+      "title": "V105.19 Lane Test Contract + Metrics",
+      "id": "35c1d385-9bf8-81bd-a159-e7119bb039c5",
+      "url": "https://www.notion.so/V105-19-Lane-Test-Contract-Metrics-35c1d3859bf881bda159e7119bb039c5"
+    },
+    {
+      "title": "V105.19 Identity / Duplicate Audit",
+      "id": "35c1d385-9bf8-8106-8f56-cffad7c73ac9",
+      "url": "https://www.notion.so/V105-19-Identity-Duplicate-Audit-35c1d3859bf881068f56cffad7c73ac9"
+    }
+  ],
   "read_order": [
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_6_SSOT_CLEAN_RUNTIME_VERIFY_REPORT.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V105_5.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V100_MASTER_PHASE_TRACKING.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V101_SHADOW_RULE_PROMPT_REPORT.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V102_RECURRENCE_60D_ANALYSIS_20260509.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V103_CANDIDATE_SUPPLY_PROMPT_GATE_REPORT.md",
-    "V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/V98_REPORT.md",
-    "OPEN_ISSUES.md",
-    "NEXT_ACTION.md"
-  ],
-  "open_issues_count": 11,
-  "open_issues_summary": "ACTIVE: FU-V99-GITHUB-TOKEN-LEAK (ROTATED — owner revoke old PAT explicitly on GitHub UI), FU-V99-BT-SCORING-DEBATE (LOCKED to STRICT, revisit 30d), FU-V103-1-MONITORING-UI (DEPLOYED_PENDING_LIVE_VERIFY), FU-V103-2-NOTION-MCP-AUTOSYNC (DEPLOYED_PENDING_LIVE_VERIFY), FU-173/174/175 (defer 2026-05-21 14d gate), FU-V104-PHASE-B-PROVIDER-PILOT (ACTIVATED, superseded by 4 new sub-FUs), FU-V104-DRIVE-INGEST-PARTIAL (OWNER_LOCK — Drive content access), FU-V104-1-OPENAI-KEY-INVALID (P0 owner regen at platform.openai.com), FU-V104-1-GEMINI-EMPTY-RESPONSE (P1 SDK fallback), FU-V104-1-MT-CLAUDE-TRUNCATED (P1 bump max_tokens), FU-V104-PHASE-B-7D-ADJUSTMENT (DEFERRED review 2026-05-17 19:30 VN)",
-  "resolved_in_v98_to_v104": "FU-169 (V98), FU-176 (V98), FU-172 (V98.1), FU-V97.1-CRON-MISFIRE (V98.1), FU-V97.1-LOG-PERSIST (V98.1), FU-171 (V99.1), FU-V100-UI-GAN (V100), FU-V101-SHADOW-RULE-PROMPT (V101), FU-V102-RECURRENCE-TRACKER (V102), FU-V103-CANDIDATE-SUPPLY-GATE (V103), FU-170 (V103.2), FU-V104-SHADOW-PROMPT-INJECTION (V104 Phase A delivered, superseded by FU-V104-PHASE-B-PROVIDER-PILOT)",
-  "v104_notion_pages": [
-    {
-      "id": "35b1d385-9bf8-812a-8953-d7e627976a9d",
-      "title": "V104.1 — Phase B Activated + GitHub PAT Rotated (2026-05-10 00:15 VN)",
-      "url": "https://www.notion.so/V104-1-Phase-B-Activated-GitHub-PAT-Rotated-2026-05-10-00-15-VN-35b1d3859bf8812a8953d7e627976a9d"
-    },
-    {
-      "id": "35b1d385-9bf8-81bb-b5a8-ecffb0c817e6",
-      "title": "🧪 V104 — Shadow Prompt Injection per Region (Phase A, 2026-05-09)",
-      "url": "https://www.notion.so/V104-Shadow-Prompt-Injection-per-Region-Phase-A-2026-05-09-35b1d3859bf881bbb5a8ecffb0c817e6"
-    },
-    {
-      "id": "35b1d385-9bf8-8150-88cf-e36abe524520",
-      "title": "📝 V104 — Owner Conversation Context (Phiên 2026-05-09 22:00 → 23:50 VN)",
-      "url": "https://www.notion.so/V104-Owner-Conversation-Context-Phi-n-2026-05-09-22-00-23-50-VN-35b1d3859bf8815088cfe36abe524520"
-    }
-  ],
-  "v104_phase_a": {
-    "shadow_table_injection_rows": 1823,
-    "shadow_table_decision_rows_phase_a": 0,
-    "regions_today_2026_05_09": {
-      "MN": {
-        "REQUIRED": 0,
-        "OPTIONAL_REVIEW": 39,
-        "BLOCKED": 0
-      },
-      "MT": {
-        "REQUIRED": 0,
-        "OPTIONAL_REVIEW": 24,
-        "BLOCKED": 0
-      },
-      "MB": {
-        "REQUIRED": 0,
-        "OPTIONAL_REVIEW": 18,
-        "BLOCKED": 0
-      }
-    },
-    "case_audit_today": "MN 13 / MT 61 / MB 64 / MN 89 — all surface OPTIONAL_REVIEW (V103=REVIEW, non_gan_core=true, V102 recurrence_class=None today so upgrade rule honestly miss)",
-    "url_admin": "https://xs.io.vn/api/admin/v104-shadow-prompt-injection",
-    "url_ui": "https://xs.io.vn/monitoring (sectionV104ShadowPromptInjection)",
-    "auto_refresh_seconds": 60,
-    "admin_locked": true,
-    "phase_b_owner_gate_required": false,
-    "phase_b_status": "ACTIVATED 2026-05-10 00:15 VN — see v104_1_phase_b"
-  },
-  "v104_1_phase_b": {
-    "deployed": true,
-    "deploy_time_vn": "2026-05-10T00:15:00+07:00",
-    "owner_directive": "Anh muốn Lane Test chạy thực sự với các thay đổi. Mắc gì sau 7 ngày mới nâng cấp khi 60d evidence đã thấy phù hợp.",
-    "first_real_fire_at_vn": "2026-05-10T00:08:14+07:00",
-    "first_real_fire_target_date": "2026-05-09",
-    "scheduler_crons": [
-      "19:24 VN daily V104 materializer",
-      "19:30 VN daily V104 Phase B runner"
-    ],
-    "roster_per_region": [
-      "claude-opus-4-20250514 (anthropic)",
-      "gpt-5-pro (openai)",
-      "gemini-2.5-pro (gemini)"
-    ],
-    "cost_guard": {
-      "max_calls_per_day": 12,
-      "per_call_timeout_seconds": 90,
-      "max_output_tokens": 1500,
-      "max_candidates_per_prompt": 20
-    },
-    "first_fire_results": {
-      "total_calls": 9,
-      "calls_ok": 5,
-      "calls_failed": 4,
-      "decision_rows_stored": 45,
-      "elapsed_seconds": 216.66
-    },
-    "owner_case_audit": {
-      "MN_13": "ACCEPT HIGH by claude-opus-4-20250514 — reason: V67+V70+V73+V101 convergence, test_bt×2, strong pattern match",
-      "MB_64": "REJECT MEDIUM by claude-opus-4-20250514 — reason: AI-herd + V67 but no cross-region, MB herd suspicious",
-      "MT_61": "PARSE_FAIL (max_tokens=1500 truncated, FU-V104-1-MT-CLAUDE-TRUNCATED)",
-      "MN_89": "not_in_candidate_set_for_2026-05-09 (was earlier-day candidate)"
-    },
-    "hash_guard_4_official": {
-      "verdict": "all_4_identical_pre_vs_post_zero_official_mutation",
-      "predictions": 4625,
-      "final_bundles": 213,
-      "lottery_results": 14642,
-      "model_daily_eval": 4493
-    },
-    "github_pat_rotation": {
-      "vps_git_remote_updated": true,
-      "git_ls_remote_verify_head": "494071b",
-      "new_token_in_tracked_files": false,
-      "old_token_revocation": "owner_action_required_on_github_ui"
-    },
-    "seven_day_adjustment_review_at_vn": "2026-05-17T19:30:00+07:00",
-    "new_fus": [
-      "FU-V104-1-OPENAI-KEY-INVALID (P0)",
-      "FU-V104-1-GEMINI-EMPTY-RESPONSE (P1)",
-      "FU-V104-1-MT-CLAUDE-TRUNCATED (P1)",
-      "FU-V104-PHASE-B-7D-ADJUSTMENT (P2 deferred 2026-05-17)"
-    ]
-  },
-  "v103_2_notion_pages": [
-    {
-      "id": "35b1d385-9bf8-8156-94fc-d86cfa331153",
-      "title": "V103.1 — Cross-Region & D-1 Recurrence Tracker UI + §52 Measurement-UI-Deploy-Sync Hardlock (2026-05-09)",
-      "url": "https://www.notion.so/V103-1-Cross-Region-D-1-Recurrence-Tracker-UI-52-Measurement-UI-Deploy-Sync-Hardlock-2026-05-35b1d3859bf8815694fcd86cfa331153",
-      "blocks": 45
-    },
-    {
-      "id": "35b1d385-9bf8-8140-b9fc-d0583c5e02ff",
-      "title": "Phiên 2026-05-09 — Tổng hợp yêu cầu owner + chuỗi V99.1 → V103.1 (full conversation context)",
-      "url": "https://www.notion.so/Phi-n-2026-05-09-T-ng-h-p-y-u-c-u-owner-chu-i-V99-1-V103-1-full-conversation-context-35b1d3859bf88140b9fcd0583c5e02ff",
-      "blocks": 38
-    }
-  ],
-  "v100_v103_findings": {
-    "v100_ui_default": "du-doan-test default tab MN (was MB), mobile responsive @media 480/768, history panel + tech metrics panel, 2 admin APIs",
-    "v100_gan": "gan_signal_shadow_v100 252K rows shadow, owner thresholds: MB normal=30 special=15, MN+MT normal=15 special=7. NO official touch.",
-    "v101_mn_cross_region": "v101_mn_cross_region_rule_shadow (MN candidates from yesterday MT/MB tails), v101_region_prompt_context_shadow (per-region addendum text + context JSON). 14d backfill done.",
-    "v101_v2_prompts": "MN/MT/MB_AI_REGION_SPECIALIST_PROMPT_SHADOW_V2.md created, contains V101 rule context + V100 gan signals + V99 evaluator semantic guards. Shadow-only, NOT injected into production runtime yet.",
-    "v102_recurrence_stats": "v102_recurrence_stats_shadow + v102_candidate_recurrence_context_shadow with STRONG/MEDIUM/WEAK/BLOCKED class. 60d/90d quantified. Lost-D → hit-D+1 patterns + cross-region same-day/next-day measured.",
-    "v103_candidate_supply": "v103_candidate_supply_shadow tracks AI/no-token/official/test/V67/V70/V73/V101/V102/gan/rule layers. v103_prompt_candidate_gate_shadow tightened gate: REQUIRED needs recurrence + non-gan core + 2 layers.",
-    "v103_30d_backfill": "8743 rows candidate supply, 8743 rows prompt gate. Smoke 2026-05-10 (pre-cycle): REQUIRED=0, REVIEW=49, BLOCKED=251 (expected — most core sources for D+1 not run yet)."
-  },
-  "v99_1_findings": {
-    "mb_2026_05_08_56_truth": "EVALUATOR_SEMANTIC_DIFFERENCE — V93 multi-prize vs production strict-ĐB; both correct under different rules",
-    "github_token_leak": "P0_CRITICAL — VPS git remote URL + private commit fb2ae98 contains GitHub PAT (prefix ghp_cvoSP***, REDACTED) — owner must REVOKE",
-    "vps_git_drift": "Expected — VPS at ceb36c2 V17.19.4 2026-04-19; all V77-V103 work via scp deploy mode; runtime is truth"
-  },
-  "v99_2_findings": {
-    "security_scan": "Working tree 0 GitHub PAT classic. .env files protected by .gitignore. AI provider keys env-only no exposure proof.",
-    "bt_doctrine_lock": "STRICT_DAC_BIET = production KPI (UNCHANGED). TAIL_ANY_PRIZE_DIAGNOSTIC = shadow signal only. FU-V99-BT-SCORING-DEBATE → DEFAULT KEEP STRICT, revisit 30d.",
-    "evaluator_sanity": "SANITY PASS — 10 tests OK, 747 rows shadow integrity 100%, STRICT_ZERO_VALIDATED 14d (Wilson 95% upper 0.7%) lottery rare event normal.",
-    "scoreboard_14d": "OFFICIAL strict 0% (n=42), TEST_LANE strict 0% (n=371). Lenient: OFFICIAL 38.1%, TEST_LANE 35.3%. NO method qualifies for production promotion."
-  },
-  "v93_to_v103_summary": {
-    "V93": "MB 56 forensic + 3-càng audit",
-    "V93.1": "P0 shadow audits 3 tables cron 19:16",
-    "V93.2": "Sibling stdout fix 6 materializers — NATURAL_FIRE_PARTIAL",
-    "V94": "Cross-region leakage forensic + D-2 region-gated",
-    "V94.1": "Spillover-aware safe batch 3 shadow surfaces cron 19:18",
-    "V95": "Data integrity + AI context audit + UI dashboard cron 19:20",
-    "V96": "Master Tracker SSOT + 9-panel realtime dashboard cron 19:22",
-    "V97": "SP-4.0 → SP-4.1 prompt fix L159+L161 max 2 numbers",
-    "V97.1": "Governance commit V93-V97 batch + cron natural-fire validate",
-    "V98": "Absolute SSOT reconciliation + monitoring command center 10 panels + public V93-V97 sync",
-    "V98.1": "Morning sanity check + 3 FUs closed",
-    "V99.1": "Truth verify + V99 exact evaluator + V98.1 metadata cleanup + 3 P0 findings",
-    "V99.2": "Total force security + BT doctrine LOCK + scoreboard + bundle replay preliminary",
-    "V100": "du-doan-test UI fix (default MN + mobile + history + tech metrics) + Gan calculator 252K rows",
-    "V101": "MN cross-region D-1/D-2 rule + region-specific V2 prompts + admin readout API",
-    "V102": "60d recurrence tracker (lost-D→hit-D+1, cross-region same-day/next-day) + candidate context with STRONG/MEDIUM/WEAK class",
-    "V103": "Candidate supply audit + tightened prompt gate (REQUIRED/REVIEW/BLOCKED) — V104 prompt injection OWNER_LOCK"
-  },
-  "safety_summary": {
-    "official_unchanged": true,
-    "hash_guard_passed": true,
-    "public_safe": true,
-    "shadow_only_v100_v103": true,
-    "no_selector_change_post_v97": true,
-    "no_promote_button": true,
-    "secrets_redacted": true
-  },
-  "monitoring_command_center": {
-    "deployed": true,
-    "deploy_time_vn": "2026-05-09T00:45:00+07:00",
-    "url_admin": "https://xs.io.vn/api/admin/v98-command-center",
-    "url_ui": "https://xs.io.vn/monitoring",
-    "panels_count": 10,
-    "auto_refresh_seconds": 60,
-    "additional_admin_apis": [
-      "/api/admin/test-lane-history (V100)",
-      "/api/admin/test-lane-metrics (V100)",
-      "/api/admin/v101-shadow-pilot (V101)",
-      "/api/admin/v103-cross-region-tracker (V103.1)"
-    ]
-  },
-  "v103_1_cross_region_d1_recurrence_tracker": {
-    "deployed": true,
-    "deploy_time_vn": "2026-05-09T22:35:00+07:00",
-    "url_admin": "https://xs.io.vn/api/admin/v103-cross-region-tracker",
-    "url_ui": "https://xs.io.vn/monitoring (sectionV103CrossRegionTracker)",
-    "panels": [
-      "P1 V101 MN D-1/D-2 cross-region top 15 today",
-      "P2 V102 60d/90d recurrence stats with boost-eligible flag + STRONG/MEDIUM today",
-      "P3 V103 prompt gate REQUIRED/REVIEW/BLOCKED counts + top + supply layer heatmap",
-      "P4 V94 cross-region leakage continuous monitor"
-    ],
-    "owner_intent": "lose hôm nay xổ ngày mai (D-1 recurrence) + lose miền trước xổ miền sau (cross-region same-day/next-day)",
-    "auto_refresh_seconds": 60,
-    "admin_locked": true,
-    "promote_button_present": false,
-    "rollback_button_present": false,
-    "official_mutation": false,
-    "governance_section_52": "Antigravityrules.md §52 + AGENT.md §9D + cursorrules — measurement-ui-deploy-sync hardlock",
-    "follow_up_id": "FU-V103-1-MONITORING-UI",
-    "status": "DEPLOYED_PENDING_LIVE_VERIFY"
-  },
-  "v105_6_ssot_clean_runtime_verify_at_vn": "2026-05-10T12:40:00+07:00"
+    "V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_HARD_STABILIZATION_REPORT.md",
+    "V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_RUNTIME_CONTROL_MATRIX.md",
+    "V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_LANE_TEST_CONTRACT.md",
+    "V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_IDENTITY_DUPLICATE_AUDIT.md"
+  ]
 }
