@@ -1,15 +1,15 @@
-# Open issues — as of V105.2 (2026-05-10 01:45 VN)
+# Open issues — as of V105.6 (2026-05-10 12:40 VN)
 
-## V105.2 status
+## V105.6 status
 
-V105.1 shipped true lane-test independence and provider routing fix. V105.2 patched legacy `/monitoring` contrast after owner screenshots showed older pastel cards with low-contrast text.
+V105.6 fixed public SSOT stale pointers and added dedicated source-pool data-health + no-token scoreboard. Current pre-MN-draw source status is `WAITING_MN` for MT/MB; this is expected until same-day results are scraped.
 
 Active owner actions:
 
-- `FU-V105-LANE-TEST-INDEPENDENCE`: owner live-verify `/monitoring` after admin login.
-- `FU-V105-SSH-DEPLOY-KEY`: revoke old and newly pasted PATs, then approve replacing PAT-based VPS remote with SSH deploy key.
-- `FU-V104-1-GEMINI-EMPTY-RESPONSE`: Gemini empty/parse rows remain explicit provider-health issue.
-- `FU-V104-DRIVE-INGEST-PARTIAL`: Drive Báo Cáo 17 / Phân Tích Đánh Giá 2 content access still needed.
+- `FU-V105-5-LIVE-CRON-VERIFY`: verify after natural 19:23 → 19:34 chain tonight.
+- `FU-V105-5-SOURCE-PARTIAL-UI`: owner verify `/monitoring` sectionV105RegionalSourcePool after admin login.
+- `FU-V105-SSH-DEPLOY-KEY`: revoke old/new PATs, approve SSH deploy key migration.
+- `FU-V105-PREDICTION-QUALITY-REALTIME-AUDIT`: continue watching official/shadow separation.
 
 ---
 

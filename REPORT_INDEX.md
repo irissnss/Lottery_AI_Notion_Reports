@@ -1,9 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.2** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (V99.1 → V105.2 chain, 2026-05-09 → 2026-05-10)
+Latest: **V105.6** wrapped under `V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/` (SSOT clean + source-pool live verify, 2026-05-10)
 
-## Latest evidence (V99.1 → V105.2, all under V98 wrapper folder)
+## Latest evidence (V105.6)
 
+- [V105_6_SSOT_CLEAN_RUNTIME_VERIFY_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_6_SSOT_CLEAN_RUNTIME_VERIFY_REPORT.md) — public SSOT cleanup, source-pool runtime verify, monitoring data health, official untouched proof
+- [V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md) — clean V105.5 owner formula evidence
+- [CONVERSATION_CONTEXT_V105_5.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/CONVERSATION_CONTEXT_V105_5.md) — formula/hard-lock context
+
+## Latest evidence (V99.1 → V105.5, all under V98 wrapper folder)
+
+- [V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_5_REGIONAL_SOURCE_POOL_LANE_TEST_REPORT.md) — owner-approved MN/MT/MB source-pool formulas + 113d backfill + 12w/16w top5 + `/monitoring` source completeness
 - [V105_LANE_TEST_INDEPENDENCE_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_LANE_TEST_INDEPENDENCE_REPORT.md) — V105.1 true AI/no-token lane independence + context completeness + official hash guard
 - [V105_MONITORING_UI_DATA_HEALTH_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_MONITORING_UI_DATA_HEALTH_REPORT.md) — `/monitoring` readability/status badges/why-empty + prediction quality realtime data health + V105.2 legacy contrast patch
 - [V105_PROVIDER_ROUTING_HEALTH_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V98_ABSOLUTE_RUNTIME_PUBLIC_NOTION_SYNC_20260509/evidence/V105_PROVIDER_ROUTING_HEALTH_REPORT.md) — GPT 5.5 OpenRouter routing fix + Claude truncation fix + Gemini residual issue

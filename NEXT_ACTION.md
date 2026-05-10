@@ -1,20 +1,20 @@
-# NEXT ACTION (V105.2 — 2026-05-10 01:45 VN, Monitoring Contrast + Lane Independence)
+# NEXT ACTION (V105.6 — 2026-05-10 12:40 VN, SSOT Clean + Source-Pool Data Health)
 
-V105.1 shipped shadow-only lane-test independence and provider routing fix. V105.2 patched legacy `/monitoring` contrast after owner screenshots.
+V105.6 fixes public SSOT drift and adds a dedicated regional source-pool data-health panel. V105.5 formulas remain locked and production remains untouched.
 
 Owner actions:
 
-1. Open `/monitoring` after admin login and verify old V95/V103/V104 cards are now readable, plus V105 panel shows AI=93, no-token=7422, context=7515 for target_date `2026-05-09`.
-2. Revoke old `ghp_cvoSP***` and newly pasted PAT; approve SSH deploy key replacement for VPS remote.
-3. Continue 7-day Phase B review on `2026-05-17 19:30 VN`.
-4. Provide Drive Báo Cáo 17 / Phân Tích Đánh Giá 2 content or install Drive MCP if full ingest is required.
+1. Open `/monitoring` after admin login and verify `sectionV105RegionalSourcePool`.
+2. Before MN result, status should show MT/MB waiting for `MN D`; after MN/MT result scrape, verify MT/MB same-day sources update.
+3. Revoke old and newly pasted PATs, then approve SSH deploy key replacement.
+4. Continue 7-day Phase B review on `2026-05-17 19:30 VN`.
 
 System status:
 
-- GPT routing fixed: `gpt-5.5` uses OpenRouter; GPT 5 mini/GPT 5.4 stay OpenAI.
-- MT Claude truncation fixed.
-- Gemini empty response remains P1 provider-health issue but is no longer silent.
-- Official hashes 4/4 identical; `/du-doan` and `/app` return 200; admin endpoints return 401 unauth.
+- Public stale remote was V105.2 before this cleanup; local public is now V105.6 pending push.
+- V105.5 source-pool rows: 10170; top5: 1695; evidence: 263; flag violations: 0.
+- No-token scoreboard rows: 7422; flag violations: 0.
+- Official hashes unchanged 4/4.
 
 ---
 

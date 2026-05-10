@@ -1,3 +1,25 @@
+## V105.6 — SSOT CLEAN + LIVE CRON VERIFY + REGIONAL SOURCE-POOL DATA HEALTH (2026-05-10 12:40 VN)
+
+- Fixed public SSOT drift wrapper: latest pointer now V105.6 with V105.5 evidence and conversation context.
+- Added dedicated `/monitoring` source-pool data-health panel and admin API.
+- Added `v101_region_source_pool_evidence_shadow` and `v105_no_token_independent_scoreboard`.
+- Deployed source-gated V104 Phase B guard: if source-pool is incomplete, Phase B logs `PHASE_B_BLOCKED_BY_SOURCE` and does not force provider calls.
+- Official hashes unchanged 4/4; no production mutation.
+
+---
+
+## V105.5 — REGIONAL SOURCE-POOL LANE TEST MEASUREMENT (2026-05-10 11:50 VN)
+
+- Added owner-approved V101 regional source pools:
+  - `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2`
+  - `MT_D = (MN+MT+MB) D-1 + MN D`
+  - `MB_D = (MN+MT+MB) D-1 + MN D + MT D`
+- Backfilled 113 days on VPS: regional source-pool 10170 rows, top5 1695 rows, flag violations 0.
+- `/monitoring` V105 panel now shows V101 top5 + source completeness; pre-draw state honestly reports `SOURCE_PARTIAL`.
+- Official hashes unchanged 4/4; no production mutation.
+
+---
+
 ## V105.2 — MONITORING LEGACY CONTRAST + NOTION/PUBLIC SYNC (2026-05-10 01:45 VN)
 
 - Hardened legacy `/monitoring` pastel inline cards after owner screenshots showed low-contrast text in older V95/V103/V104 panels.
