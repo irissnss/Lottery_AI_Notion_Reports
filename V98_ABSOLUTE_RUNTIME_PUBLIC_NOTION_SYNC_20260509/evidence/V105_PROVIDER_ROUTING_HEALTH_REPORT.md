@@ -19,6 +19,6 @@ Total calls: `9`; failed calls: `2`; rows stored: `93`.
 
 ## Current Health
 
-`GPT_KEY_ROUTING_MISMATCH`: fixed.
-`MT_CLAUDE_TRUNCATED`: fixed.
+`GPT_KEY_ROUTING_MISMATCH`: fixed.  
+`MT_CLAUDE_TRUNCATED`: fixed.  
 `GEMINI_EMPTY_RESPONSE`: partial, still open as provider-specific issue but no longer silent.

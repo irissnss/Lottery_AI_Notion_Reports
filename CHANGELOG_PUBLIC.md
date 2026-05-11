@@ -1,16 +1,34 @@
-## V105.27 — TOTAL FORCE CONTROL + STABILITY-FIRST + PREDICTION QUALITY ROADMAP (2026-05-11 21:30 VN)
+## V105.29 — TOTAL FORCE NO-MISS CONTROL + LOSE-CARRYOVER SIGNAL LAYER + RUNTIME STABILITY (2026-05-12 00:55 VN)
 
-- Published public V105.27 evidence folder: `V105_27_TOTAL_FORCE_CONTROL_20260511`.
-- LANE 0 PRE-FLIGHT: official sha256 captured for predictions / final_bundles / lottery_results / model_daily_eval, git rev pinned, provider_call_count=0 enforced.
-- LANE 1 SSOT MATRIX: cross-surface reconciliation across CHANGELOG / SSOT / FU_TRACKER / AUTOMATION_STATE / public_root / Notion / artifacts; identified CHANGELOG_STALE for V105.21/23/24/26 and PUBLIC_STALE folders V105.25b/V105.26 (now backfilled in same push window).
-- LANE 2 FORMULA + D-2 GUARD: code path `_attach_owner_priority_meta` confirms `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2`, `MT_D = (MN+MT+MB) D-1 + MN D` (no D-2), `MB_D = (MN+MT+MB) D-1 + MN D + MT D` (no D-2). 7d runtime probe over `predictions.source_regions` returns `D2_LEAK_BLOCKED = true` for MT/MB.
-- LANE 3 CASCADE / DD TRƯỚC-SAU: 2026-05-11 evidence shows MN-trigger no-token cascade failed (0 success, 14 errors — all `I/O operation on closed file`) and later MT-trigger cascade succeeded (7/7 MB rerun_post_mt). `_safe_stdio_ctx` patch local-only; VPS deploy is owner-gated (Decision #10).
-- LANE 4 STATION IDENTITY: code maps Huế aliases to `Thừa Thiên Huế`; mission canonical is `Huế` — conflict elevated as Decision #2.
-- LANE 5 SECURITY: tracked private/public repo zero secret hits; PAT revoke and SSH deploy-key migration still owner-gated (Decision #9).
-- LANE 6-9 PIPELINE: source-pool gap drilldown still active (`SOURCE_FORMULA_EXCLUSION` dominant + `PROMPT_NOT_INJECTED` measurement artifact); MN D-2 prompt-wire gap measured shadow-only (Decision #3); V102 RELAXED HOLD until V103 supply class clean (Decision #6); Top2 A/B shadow scoped 14d for MN+MB, MT measurement-only (Decision #4).
-- LANE 10-11 REGION GUARDS: MT PROTECT regression watch active; MB FORENSIC `MB_D_v2` options drafted shadow-only (Decision #5).
-- LANE 12-14 GOVERNANCE: 10-item owner decision register published in `evidence/OWNER_DECISION_REGISTER.md`.
-- Official tables untouched, provider call count = 0, no `/du-doan` / `/api/final-bundle` / `generate_final_bundle()` semantic change.
+- 20 LANE audit V105.23→V105.29; 14 lanes PASS, 2 lanes open (`_safe_stdio_ctx` VPS deploy + AI priority reorder), 1 governance gate (PRIZE_SOURCE_VIOLATION).
+- V105.29 Lose-Carryover Signal Layer materialized (shadow-only): 4 tables, 30d backtest for 6 paths. All paths break_ratio 0.93-0.99 → `LOSE_CARRYOVER_DO_NOT_PROMOTE`. Useful only as supporting prompt-context when Rule105/source-pool/model-strength also confirm.
+- Rule105 vs V101 separation audit (21 buckets): confirmed separate in code (mined_rules vs v101_region_source_pool_top5_shadow); flagged 30 mined_rules using prize_keys outside owner V105.29 prize-source lock (MB:13, MN:6, MT:11) → `PRIZE_SOURCE_VIOLATION_DETECTED`.
+- `scheduler.py` refactor: module-level `_safe_stdio_ctx` context manager wrapping all no-token entry points (`_run_free_model_prediction`, `_run_smart_ensemble`, `_run_smart_ml_ensemble`, `_run_combo_no_token`, `_rerun_free_models_after_scrape`). Smoke 3/3 PASS. VPS deploy script `_v10529_DEPLOY_SAFE_STDIO_VPS.md` ready; owner OK pending.
+- Official 4-table hash guard pre/post IDENTICAL (predictions=4791, final_bundles=219, lottery_results=14655, model_daily_eval=4655). No provider/manual AI call. MT_PROTECT_PRESERVED (D-2 leak MT/MB 7d = 0).
+- Status PARTIAL — not PASS.
+
+---
+
+## V105.28 — TOTAL FORCE RUNTIME CONTRACT VERIFY (2026-05-11 23:38 VN)
+
+- Latest public pointer advanced to `V105_28_RUNTIME_CONTRACT_VERIFY_20260511`.
+- Verified owner runtime contract end-to-end: DD Trước/DD Sau routing, no-token retrain-before-rerun cascade, 90s soft / 300s hard timeout, official 15 / lane-test 20 gate, region-only freeze, manual provider block, MT protect, and OWNER_CONFIRMED_PAT_REVOKED.
+- PASS gates: `DD_TRUOC_DD_SAU_MATCH`, `RETRAIN_BEFORE_RERUN_CONFIRMED`, `SOFT_90S_CONFIRMED`, `OFFICIAL_15_GATE_CONFIRMED`, `LANE_TEST_20_GATE_CONFIRMED`, `REGION_FREEZE_OK`, `TOKEN_GATE_CORRECT`, `MANUAL_PROVIDER_BLOCKED`, `MT_PROTECT_PRESERVED`, `OWNER_CONFIRMED_PAT_REVOKED`, `SECRET_SCAN_CLEAN` (public/docs).
+- Open gaps: `CLOSED_FILE_DEPLOY_PENDING` (86 closed_file errors on 2026-05-11 + 25 on 2026-05-10 in MB no-token rerun — `_safe_stdio_ctx` wraps only AI token path; no-token path still raw print) and `AI_PRIORITY_ORDER_GAP` (scheduler iterates `AUTO_AI_MODELS` static; no region+weekday strongest-first reorder yet).
+- Official 4-table hash guard unchanged: predictions=4791, final_bundles=219, lottery_results=14655, model_daily_eval=4655. No provider/manual AI call.
+- 10 shadow audit tables `v10528_*` materialized; all `shadow_only=1`, `output_eligible=0`, `diagnostic_only=1`.
+- Final acceptance: **PARTIAL** — not PASS.
+
+---
+
+## V105.27 — TOTAL FORCE SSOT + MN D-2 RANKED TOP5 SHADOW WIRE (2026-05-11 22:27 VN)
+
+- Latest public pointer advanced to `V105_27_TOTAL_FORCE_CONTROL_20260511`.
+- MN D-2 ranked top5 prompt visibility is closed in shadow only: `mn_d2_rows=137`, `mn_d2_prompt_seen_count=137`, `real_prompt_not_injected_count=0`, `mt_mb_d2_prompt_leak_count=0`, `v10527_prompt_flow_trace=450`.
+- Top2/Bundler A/B and MB_D_v2 remain blocked from promotion. MB_D_v2 result: `would_save=115`, `would_break=171`, `break_ratio=0.3379`, `auto_disable=true`.
+- Official hash guard unchanged for `predictions`, `final_bundles`, `lottery_results`, and `model_daily_eval`; no manual/provider AI call was issued.
+- Notion bridge pages created/recorded for V105.25 and V105.26; V105.27 page ID retained in `LATEST_REPORT.json`.
+- Final acceptance remains **PARTIAL**, not PASS, due promotion gates and owner security/deploy decisions.
 
 ---
 

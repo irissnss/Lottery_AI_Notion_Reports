@@ -1,0 +1,40 @@
+{
+  "schema_version": "v10529_post_hash_v1",
+  "generated_at_vn": "2026-05-12T00:49:07.642824+07:00",
+  "official_tables": [
+    {
+      "table": "predictions",
+      "pre_row_count": 4791,
+      "post_row_count": 4791,
+      "pre_sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea",
+      "post_sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea",
+      "unchanged": true
+    },
+    {
+      "table": "final_bundles",
+      "pre_row_count": 219,
+      "post_row_count": 219,
+      "pre_sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130",
+      "post_sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130",
+      "unchanged": true
+    },
+    {
+      "table": "lottery_results",
+      "pre_row_count": 14655,
+      "post_row_count": 14655,
+      "pre_sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6",
+      "post_sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6",
+      "unchanged": true
+    },
+    {
+      "table": "model_daily_eval",
+      "pre_row_count": 4655,
+      "post_row_count": 4655,
+      "pre_sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79",
+      "post_sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79",
+      "unchanged": true
+    }
+  ],
+  "all_official_tables_unchanged": true,
+  "no_provider_manual_ai_called_in_session": true
+}

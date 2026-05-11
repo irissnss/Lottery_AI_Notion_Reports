@@ -1,0 +1,421 @@
+{
+  "schema_version": "v10529_drilldown_v1",
+  "generated_at_vn": "2026-05-12T00:46:48.471820+07:00",
+  "lane6_final_bundles_7d": {
+    "all_7d": [
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "31",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "23",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "70",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "13",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "71",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "76",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "78",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "05",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "88",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "37",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "13",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "model_count": 13,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "61",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "20",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "94",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "88",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "moderate",
+        "bach_thu": "79",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "95",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "11",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "83",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "15",
+        "is_fallback": 0
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "model_count": 15,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "44",
+        "is_fallback": 0
+      }
+    ],
+    "below_15_count": 1,
+    "below_15_rows": [
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "model_count": 13,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu": "61",
+        "is_fallback": 0
+      }
+    ]
+  },
+  "lane9_mined_rules_prize_keys": {
+    "rows_sampled": 40,
+    "by_region_violation_summary": {
+      "MB": {
+        "total": 35,
+        "violations": 13,
+        "samples": [
+          {
+            "prize_keys": "G5+G7",
+            "n": 6,
+            "tokens": [
+              "G5",
+              "G7"
+            ]
+          },
+          {
+            "prize_keys": "G1+G8",
+            "n": 3,
+            "tokens": [
+              "G1",
+              "G8"
+            ]
+          },
+          {
+            "prize_keys": "G7+G8",
+            "n": 2,
+            "tokens": [
+              "G7",
+              "G8"
+            ]
+          },
+          {
+            "prize_keys": "G5+GĐB",
+            "n": 1,
+            "tokens": [
+              "G5"
+            ]
+          },
+          {
+            "prize_keys": "G2+G5",
+            "n": 1,
+            "tokens": [
+              "G2",
+              "G5"
+            ]
+          }
+        ]
+      },
+      "MN": {
+        "total": 35,
+        "violations": 6,
+        "samples": [
+          {
+            "prize_keys": "G6+G7",
+            "n": 5,
+            "tokens": [
+              "G6",
+              "G7"
+            ]
+          },
+          {
+            "prize_keys": "GĐB+G6",
+            "n": 1,
+            "tokens": [
+              "G6"
+            ]
+          }
+        ]
+      },
+      "MT": {
+        "total": 35,
+        "violations": 11,
+        "samples": [
+          {
+            "prize_keys": "G6+G7",
+            "n": 7,
+            "tokens": [
+              "G6",
+              "G7"
+            ]
+          },
+          {
+            "prize_keys": "GĐB+G6",
+            "n": 3,
+            "tokens": [
+              "G6"
+            ]
+          },
+          {
+            "prize_keys": "G6",
+            "n": 1,
+            "tokens": [
+              "G6"
+            ]
+          }
+        ]
+      }
+    },
+    "violation_sample_first_20": [
+      {
+        "region": "MB",
+        "prize_keys": "G5+G7",
+        "n": 6,
+        "tokens": [
+          "G5",
+          "G7"
+        ]
+      },
+      {
+        "region": "MB",
+        "prize_keys": "G1+G8",
+        "n": 3,
+        "tokens": [
+          "G1",
+          "G8"
+        ]
+      },
+      {
+        "region": "MB",
+        "prize_keys": "G7+G8",
+        "n": 2,
+        "tokens": [
+          "G7",
+          "G8"
+        ]
+      },
+      {
+        "region": "MB",
+        "prize_keys": "G5+GĐB",
+        "n": 1,
+        "tokens": [
+          "G5"
+        ]
+      },
+      {
+        "region": "MB",
+        "prize_keys": "G2+G5",
+        "n": 1,
+        "tokens": [
+          "G2",
+          "G5"
+        ]
+      },
+      {
+        "region": "MN",
+        "prize_keys": "G6+G7",
+        "n": 5,
+        "tokens": [
+          "G6",
+          "G7"
+        ]
+      },
+      {
+        "region": "MN",
+        "prize_keys": "GĐB+G6",
+        "n": 1,
+        "tokens": [
+          "G6"
+        ]
+      },
+      {
+        "region": "MT",
+        "prize_keys": "G6+G7",
+        "n": 7,
+        "tokens": [
+          "G6",
+          "G7"
+        ]
+      },
+      {
+        "region": "MT",
+        "prize_keys": "GĐB+G6",
+        "n": 3,
+        "tokens": [
+          "G6"
+        ]
+      },
+      {
+        "region": "MT",
+        "prize_keys": "G6",
+        "n": 1,
+        "tokens": [
+          "G6"
+        ]
+      }
+    ]
+  },
+  "lane14_mb_d_v2_tables_present": {
+    "matching_tables": []
+  }
+}

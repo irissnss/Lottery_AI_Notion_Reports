@@ -1,0 +1,2967 @@
+{
+  "schema_version": "v10528_deep_probes_v1",
+  "generated_at_vn": "2026-05-11T23:28:29.610665+07:00",
+  "closed_file_audit": {
+    "lookback_days": 14,
+    "since_date": "2026-04-27",
+    "total_rows_500_capped": 111,
+    "per_day_count": {
+      "2026-05-11": 86,
+      "2026-05-10": 25
+    },
+    "per_region_count": {
+      "_": 43,
+      "MN": 44,
+      "MB": 24
+    },
+    "per_job_count": {
+      "_": 43,
+      "shadow_eval": 68
+    },
+    "sample_first_25": [
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB random-forest: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB xgboost: xgboost prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB lstm: lstm prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB meta-learning: meta-learning prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB COMBO No Token: All 4 ML models failed: meta-learning: meta-learning prediction failed: I/O operation on closed file.; lstm: lstm prediction failed: I/O operation on closed file.; xgboost: xgboost prediction failed: I/O oper"
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ❌ All 4 ML models failed: meta-learning: meta-learning prediction failed: I/O operation on closed file.; lstm: lstm prediction failed: I/O operation on closed file.; xgboost: xgboost prediction failed: I/O operation on closed file.; rando"
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ random-forest: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ xgboost: xgboost prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ lstm: lstm prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ meta-learning: meta-learning prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB Smart ML: Both ML models failed: XGBoost: xgboost prediction failed: I/O operation on closed file.; RF: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ❌ Both ML models failed: XGBoost: xgboost prediction failed: I/O operation on closed file.; RF: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ Random Forest: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ XGBoost: xgboost prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MB Smart Ensemble: Both models failed: meta-learning: meta-learning prediction failed: I/O operation on closed file.; lstm: lstm prediction failed: I/O operation on closed file.; xgboost: xgboost prediction failed: I/O operatio"
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ❌ Both models failed: meta-learning: meta-learning prediction failed: I/O operation on closed file.; lstm: lstm prediction failed: I/O operation on closed file.; xgboost: xgboost prediction failed: I/O operation on closed file.; random-fo"
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ random-forest: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ xgboost: xgboost prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ lstm: lstm prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "  ⚠️ meta-learning: meta-learning prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MT random-forest: random-forest prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MT xgboost: xgboost prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MT lstm: lstm prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MT meta-learning: meta-learning prediction failed: I/O operation on closed file."
+      },
+      {
+        "log_time": "2026-05-11 09:38:54",
+        "region": null,
+        "date_str": null,
+        "job_name": null,
+        "msg": "❌ Re-predict MT COMBO No Token: All 4 ML models failed: meta-learning: meta-learning prediction failed: I/O operation on closed file.; lstm: lstm prediction failed: I/O operation on closed file.; xgboost: xgboost prediction failed: I/O oper"
+      }
+    ]
+  },
+  "final_bundles_below_15": {
+    "lookback_days": 30,
+    "since_date": "2026-04-11",
+    "total": 93,
+    "with_model_count_15": 61,
+    "without_15_count": 32,
+    "without_15_rows": [
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "bach_thu": "61",
+        "model_count": 13,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-05-09 17:27:57"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "bach_thu": "09",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-05-05 18:18:16"
+      },
+      {
+        "date": "2026-05-03",
+        "region": "MB",
+        "bach_thu": "48",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-05-04 18:30:53"
+      },
+      {
+        "date": "2026-05-02",
+        "region": "MB",
+        "bach_thu": "43",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-05-03 18:18:43"
+      },
+      {
+        "date": "2026-05-01",
+        "region": "MB",
+        "bach_thu": "94",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-05-02 18:27:40"
+      },
+      {
+        "date": "2026-04-30",
+        "region": "MB",
+        "bach_thu": "62",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-05-01 18:29:35"
+      },
+      {
+        "date": "2026-04-29",
+        "region": "MB",
+        "bach_thu": "63",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-30 18:26:15"
+      },
+      {
+        "date": "2026-04-28",
+        "region": "MB",
+        "bach_thu": "41",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-29 17:58:54"
+      },
+      {
+        "date": "2026-04-27",
+        "region": "MB",
+        "bach_thu": "46",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-28 17:45:26"
+      },
+      {
+        "date": "2026-04-26",
+        "region": "MB",
+        "bach_thu": "93",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-27 18:22:48"
+      },
+      {
+        "date": "2026-04-25",
+        "region": "MB",
+        "bach_thu": "15",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-26 18:27:57"
+      },
+      {
+        "date": "2026-04-24",
+        "region": "MB",
+        "bach_thu": "67",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-25 18:16:12"
+      },
+      {
+        "date": "2026-04-23",
+        "region": "MB",
+        "bach_thu": "58",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "WIN",
+        "verified_at": "2026-04-24 18:28:45"
+      },
+      {
+        "date": "2026-04-22",
+        "region": "MB",
+        "bach_thu": "22",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-23 18:05:30"
+      },
+      {
+        "date": "2026-04-21",
+        "region": "MB",
+        "bach_thu": "93",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-22 18:29:15"
+      },
+      {
+        "date": "2026-04-20",
+        "region": "MB",
+        "bach_thu": "54",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-21 17:54:53"
+      },
+      {
+        "date": "2026-04-19",
+        "region": "MB",
+        "bach_thu": "10",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-20 18:22:48"
+      },
+      {
+        "date": "2026-04-19",
+        "region": "MN",
+        "bach_thu": "82",
+        "model_count": 13,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-20 16:17:33"
+      },
+      {
+        "date": "2026-04-18",
+        "region": "MB",
+        "bach_thu": "11",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-19 18:30:23"
+      },
+      {
+        "date": "2026-04-18",
+        "region": "MN",
+        "bach_thu": "06",
+        "model_count": 9,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "moderate",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-19 16:33:38"
+      },
+      {
+        "date": "2026-04-17",
+        "region": "MB",
+        "bach_thu": "43",
+        "model_count": 12,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "moderate",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-18 18:24:19"
+      },
+      {
+        "date": "2026-04-17",
+        "region": "MN",
+        "bach_thu": "74",
+        "model_count": 13,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "WIN",
+        "verified_at": "2026-04-18 16:25:30"
+      },
+      {
+        "date": "2026-04-17",
+        "region": "MT",
+        "bach_thu": "60",
+        "model_count": 13,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-18 17:24:55"
+      },
+      {
+        "date": "2026-04-16",
+        "region": "MB",
+        "bach_thu": "02",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-17 18:02:12"
+      },
+      {
+        "date": "2026-04-15",
+        "region": "MB",
+        "bach_thu": "42",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-16 18:29:45"
+      },
+      {
+        "date": "2026-04-14",
+        "region": "MB",
+        "bach_thu": "47",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-15 18:29:03"
+      },
+      {
+        "date": "2026-04-14",
+        "region": "MN",
+        "bach_thu": "20",
+        "model_count": 8,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-15 16:19:29"
+      },
+      {
+        "date": "2026-04-13",
+        "region": "MB",
+        "bach_thu": "31",
+        "model_count": 17,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-14 18:32:37"
+      },
+      {
+        "date": "2026-04-13",
+        "region": "MT",
+        "bach_thu": "24",
+        "model_count": 19,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-14 17:29:42"
+      },
+      {
+        "date": "2026-04-12",
+        "region": "MB",
+        "bach_thu": "24",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "verified_at": "2026-04-13 18:19:40"
+      },
+      {
+        "date": "2026-04-11",
+        "region": "MB",
+        "bach_thu": "97",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "moderate",
+        "bach_thu_status": "WIN",
+        "lo2_status": "WIN",
+        "verified_at": "2026-04-12 18:28:47"
+      },
+      {
+        "date": "2026-04-11",
+        "region": "MN",
+        "bach_thu": "87",
+        "model_count": 14,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "verified_at": "2026-04-12 16:34:43"
+      }
+    ]
+  },
+  "dd_column_distribution": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "row_count": 657,
+    "by_date_region_runsource": [
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "auto_daily",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 0,
+        "pre_empty_marker": 0,
+        "pre_null": 7,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 11,
+        "pre_empty_marker": 2,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 12,
+        "main_present": 12,
+        "pre_real": 0,
+        "pre_empty_marker": 12,
+        "pre_null": 0,
+        "verified": 12,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "glm-5.1",
+          "gpt-5.5"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 4,
+        "pre_empty_marker": 9,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 12,
+        "main_present": 12,
+        "pre_real": 5,
+        "pre_empty_marker": 7,
+        "pre_null": 0,
+        "verified": 12,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "glm-5.1",
+          "gpt-5.5"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 0,
+        "pre_empty_marker": 0,
+        "pre_null": 7,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 12,
+        "main_present": 12,
+        "pre_real": 0,
+        "pre_empty_marker": 12,
+        "pre_null": 0,
+        "verified": 12,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "glm-5.1",
+          "gpt-5.5"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 6,
+        "main_present": 6,
+        "pre_real": 0,
+        "pre_empty_marker": 6,
+        "pre_null": 0,
+        "verified": 6,
+        "pending": 0,
+        "sample_models": [
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro",
+          "gpt-5-mini",
+          "gpt-5.4"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 12,
+        "main_present": 12,
+        "pre_real": 0,
+        "pre_empty_marker": 12,
+        "pre_null": 0,
+        "verified": 12,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "glm-5.1",
+          "gpt-5.5"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 10,
+        "pre_empty_marker": 3,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 13,
+        "main_present": 13,
+        "pre_real": 0,
+        "pre_empty_marker": 13,
+        "pre_null": 0,
+        "verified": 13,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "gemini-3-flash",
+          "gemini-3.1-pro",
+          "gemma-4-31b",
+          "glm-5.1"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "rows": 10,
+        "main_present": 10,
+        "pre_real": 0,
+        "pre_empty_marker": 10,
+        "pre_null": 0,
+        "verified": 10,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "glm-5.1",
+          "gpt-5.5",
+          "gpt-oss-120b",
+          "grok-4.20-multi-agent"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "rows": 10,
+        "main_present": 10,
+        "pre_real": 0,
+        "pre_empty_marker": 10,
+        "pre_null": 0,
+        "verified": 10,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "glm-5.1",
+          "gpt-5.5",
+          "gpt-oss-120b",
+          "grok-4.20-multi-agent"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "rows": 15,
+        "main_present": 15,
+        "pre_real": 4,
+        "pre_empty_marker": 11,
+        "pre_null": 0,
+        "verified": 15,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-no-token",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "rows": 10,
+        "main_present": 10,
+        "pre_real": 0,
+        "pre_empty_marker": 10,
+        "pre_null": 0,
+        "verified": 10,
+        "pending": 0,
+        "sample_models": [
+          "deepseek-v4-flash",
+          "deepseek-v4-pro",
+          "glm-5.1",
+          "gpt-5.5",
+          "gpt-oss-120b",
+          "grok-4.20-multi-agent"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7,
+        "main_present": 7,
+        "pre_real": 7,
+        "pre_empty_marker": 0,
+        "pre_null": 0,
+        "verified": 7,
+        "pending": 0,
+        "sample_models": [
+          "combo-no-token",
+          "lstm",
+          "meta-learning",
+          "random-forest",
+          "smart-ensemble",
+          "smart-ml"
+        ]
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8,
+        "main_present": 8,
+        "pre_real": 0,
+        "pre_empty_marker": 8,
+        "pre_null": 0,
+        "verified": 8,
+        "pending": 0,
+        "sample_models": [
+          "claude-opus-4-20250514",
+          "claude-sonnet-4-6",
+          "combo-super",
+          "deepseek-reasoner",
+          "gemini-2.5-flash",
+          "gemini-2.5-pro"
+        ]
+      }
+    ]
+  },
+  "strength_tensor_ranking": {
+    "latest_anchor": "2026-05-05",
+    "total_rows": 17815,
+    "top5_by_region_weekday": {
+      "MB_w-1": [
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.35300476190476193,
+          "lo2_wr": 0.17223809523809525,
+          "helpful": 0.2807,
+          "preds": 212
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3517595238095238,
+          "lo2_wr": 0.18294285714285716,
+          "helpful": 0.28423571428571426,
+          "preds": 208
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.310774358974359,
+          "lo2_wr": 0.2734076923076923,
+          "helpful": 0.2958282051282051,
+          "preds": 188
+        },
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2834452380952381,
+          "lo2_wr": 0.2039357142857143,
+          "helpful": 0.2516404761904762,
+          "preds": 222
+        },
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.280347619047619,
+          "lo2_wr": 0.16948095238095237,
+          "helpful": 0.236,
+          "preds": 212
+        }
+      ],
+      "MB_w0": [
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6333333333333333,
+          "lo2_wr": 0.0,
+          "helpful": 0.37999999999999995,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5499999999999999,
+          "lo2_wr": 0.20555,
+          "helpful": 0.4122166666666667,
+          "preds": 17
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.4666666666666666,
+          "lo2_wr": 0.0,
+          "helpful": 0.27999999999999997,
+          "preds": 17
+        },
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.31666666666666665,
+          "lo2_wr": 0.2333333333333333,
+          "helpful": 0.2833333333333333,
+          "preds": 17
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2333333333333333,
+          "lo2_wr": 0.055549999999999995,
+          "helpful": 0.16221666666666665,
+          "preds": 17
+        }
+      ],
+      "MB_w1": [
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.4666666666666666,
+          "lo2_wr": 0.0,
+          "helpful": 0.27999999999999997,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.45,
+          "lo2_wr": 0.31666666666666665,
+          "helpful": 0.39666666666666667,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.39999999999999997,
+          "lo2_wr": 0.0,
+          "helpful": 0.24,
+          "preds": 15
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3833333333333333,
+          "lo2_wr": 0.2888833333333333,
+          "helpful": 0.34555,
+          "preds": 17
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.37221666666666664,
+          "lo2_wr": 0.2333333333333333,
+          "helpful": 0.31666666666666665,
+          "preds": 17
+        }
+      ],
+      "MB_w2": [
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5,
+          "lo2_wr": 0.25,
+          "helpful": 0.39999999999999997,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5,
+          "lo2_wr": 0.3333333333333333,
+          "helpful": 0.43333333333333335,
+          "preds": 14
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3333333333333333,
+          "lo2_wr": 0.055549999999999995,
+          "helpful": 0.22221666666666665,
+          "preds": 15
+        },
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.25,
+          "lo2_wr": 0.30555,
+          "helpful": 0.27221666666666666,
+          "preds": 15
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.16666666666666666,
+          "lo2_wr": 0.5,
+          "helpful": 0.3,
+          "preds": 15
+        }
+      ],
+      "MB_w3": [
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5833333333333334,
+          "lo2_wr": 0.3333333333333333,
+          "helpful": 0.48333333333333334,
+          "preds": 15
+        },
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5,
+          "lo2_wr": 0.4166666666666667,
+          "helpful": 0.4666666666666666,
+          "preds": 14
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3333333333333333,
+          "lo2_wr": 0.16666666666666666,
+          "helpful": 0.26666666666666666,
+          "preds": 13
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3333333333333333,
+          "lo2_wr": 0.0,
+          "helpful": 0.19999999999999998,
+          "preds": 14
+        },
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.25,
+          "lo2_wr": 0.055549999999999995,
+          "helpful": 0.17221666666666666,
+          "preds": 15
+        }
+      ],
+      "MB_w4": [
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.22221666666666665,
+          "lo2_wr": 0.0,
+          "helpful": 0.13333333333333333,
+          "preds": 15
+        },
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.19443333333333332,
+          "lo2_wr": 0.0,
+          "helpful": 0.11666666666666665,
+          "preds": 15
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.16666666666666666,
+          "lo2_wr": 0.4166666666666667,
+          "helpful": 0.26666666666666666,
+          "preds": 15
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.16666666666666666,
+          "lo2_wr": 0.6388833333333334,
+          "helpful": 0.35555000000000003,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.16666666666666666,
+          "lo2_wr": 0.08333333333333333,
+          "helpful": 0.13333333333333333,
+          "preds": 14
+        }
+      ],
+      "MB_w5": [
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.8,
+          "lo2_wr": 0.2,
+          "helpful": 0.56,
+          "preds": 13
+        },
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6388833333333334,
+          "lo2_wr": 0.13888333333333333,
+          "helpful": 0.43888333333333335,
+          "preds": 16
+        },
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5833499999999999,
+          "lo2_wr": 0.22221666666666665,
+          "helpful": 0.43888333333333335,
+          "preds": 16
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.55555,
+          "lo2_wr": 0.3888833333333333,
+          "helpful": 0.48888333333333334,
+          "preds": 16
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5277833333333334,
+          "lo2_wr": 0.30555,
+          "helpful": 0.4388833333333333,
+          "preds": 16
+        }
+      ],
+      "MB_w6": [
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5666666666666667,
+          "lo2_wr": 0.25555,
+          "helpful": 0.44221666666666665,
+          "preds": 16
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5666666666666667,
+          "lo2_wr": 0.31666666666666665,
+          "helpful": 0.4666666666666666,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5583333333333333,
+          "lo2_wr": 0.03333333333333333,
+          "helpful": 0.34833333333333333,
+          "preds": 16
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.48888333333333334,
+          "lo2_wr": 0.6,
+          "helpful": 0.5333333333333333,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.48,
+          "lo2_wr": 0.39,
+          "helpful": 0.44400000000000006,
+          "preds": 13
+        }
+      ],
+      "MN_w-1": [
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.3076173913043478,
+          "lo2_wr": 0.12942826086956521,
+          "helpful": 0.23634239130434784,
+          "preds": 460
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.27905,
+          "lo2_wr": 0.1638764705882353,
+          "helpful": 0.23298333333333332,
+          "preds": 456
+        },
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.2626076923076923,
+          "lo2_wr": 0.21827596153846154,
+          "helpful": 0.24487307692307692,
+          "preds": 444
+        },
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.2365938775510204,
+          "lo2_wr": 0.23328571428571426,
+          "helpful": 0.23527244897959182,
+          "preds": 460
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.2304548076923077,
+          "lo2_wr": 0.1672721153846154,
+          "helpful": 0.20517884615384616,
+          "preds": 444
+        }
+      ],
+      "MN_w0": [
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.972225,
+          "lo2_wr": 0.07777500000000001,
+          "helpful": 0.6144499999999999,
+          "preds": 17
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.816675,
+          "lo2_wr": 0.491675,
+          "helpful": 0.686675,
+          "preds": 17
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.741675,
+          "lo2_wr": 0.491675,
+          "helpful": 0.641675,
+          "preds": 17
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.691675,
+          "lo2_wr": 0.4639,
+          "helpful": 0.60055,
+          "preds": 17
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.625,
+          "lo2_wr": 0.4166666666666667,
+          "helpful": 0.5416666666666666,
+          "preds": 17
+        }
+      ],
+      "MN_w1": [
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.73125,
+          "lo2_wr": 0.19375,
+          "helpful": 0.51625,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.66785,
+          "lo2_wr": 0.15715,
+          "helpful": 0.46357499999999996,
+          "preds": 15
+        },
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6638999999999999,
+          "lo2_wr": 0.0,
+          "helpful": 0.398325,
+          "preds": 17
+        },
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6638999999999999,
+          "lo2_wr": 0.43610000000000004,
+          "helpful": 0.572775,
+          "preds": 17
+        },
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.65,
+          "lo2_wr": 0.5375,
+          "helpful": 0.605,
+          "preds": 16
+        }
+      ],
+      "MN_w2": [
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.79465,
+          "lo2_wr": 0.64285,
+          "helpful": 0.733925,
+          "preds": 14
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.78125,
+          "lo2_wr": 0.0625,
+          "helpful": 0.49375,
+          "preds": 15
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.71875,
+          "lo2_wr": 0.34375,
+          "helpful": 0.56875,
+          "preds": 15
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5625,
+          "lo2_wr": 0.34375,
+          "helpful": 0.475,
+          "preds": 15
+        },
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.34375,
+          "lo2_wr": 0.09375,
+          "helpful": 0.24375000000000002,
+          "preds": 15
+        }
+      ],
+      "MN_w3": [
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.96875,
+          "lo2_wr": 0.8125,
+          "helpful": 0.90625,
+          "preds": 15
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.9375,
+          "lo2_wr": 1.0,
+          "helpful": 0.9625,
+          "preds": 10
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.93334,
+          "lo2_wr": 0.11665999999999999,
+          "helpful": 0.60666,
+          "preds": 14
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.89286,
+          "lo2_wr": 0.36428000000000005,
+          "helpful": 0.6814199999999999,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.854175,
+          "lo2_wr": 0.770825,
+          "helpful": 0.820825,
+          "preds": 13
+        }
+      ],
+      "MN_w4": [
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.90625,
+          "lo2_wr": 0.09375,
+          "helpful": 0.58125,
+          "preds": 15
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.65625,
+          "lo2_wr": 0.53125,
+          "helpful": 0.60625,
+          "preds": 15
+        },
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.65625,
+          "lo2_wr": 0.0,
+          "helpful": 0.39375,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.60715,
+          "lo2_wr": 0.098225,
+          "helpful": 0.403575,
+          "preds": 14
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.59375,
+          "lo2_wr": 0.125,
+          "helpful": 0.40625,
+          "preds": 15
+        }
+      ],
+      "MN_w5": [
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.8819499999999999,
+          "lo2_wr": 0.8958333333333334,
+          "helpful": 0.8875000000000001,
+          "preds": 16
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.8264,
+          "lo2_wr": 0.395825,
+          "helpful": 0.654175,
+          "preds": 16
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.8264,
+          "lo2_wr": 0.7639,
+          "helpful": 0.8014,
+          "preds": 16
+        },
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.8194499999999999,
+          "lo2_wr": 0.6041666666666666,
+          "helpful": 0.7333333333333334,
+          "preds": 16
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.7986166666666666,
+          "lo2_wr": 0.20138333333333333,
+          "helpful": 0.5597166666666666,
+          "preds": 16
+        }
+      ],
+      "MN_w6": [
+        {
+          "model_name": "claude-sonnet-4-6",
+          "model_family": "TOKEN",
+          "bt_wr": 0.8819499999999999,
+          "lo2_wr": 0.7986166666666666,
+          "helpful": 0.8486166666666667,
+          "preds": 16
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.8819499999999999,
+          "lo2_wr": 0.36805,
+          "helpful": 0.6763833333333333,
+          "preds": 16
+        },
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.854175,
+          "lo2_wr": 0.6389,
+          "helpful": 0.76805,
+          "preds": 16
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.854175,
+          "lo2_wr": 0.05555,
+          "helpful": 0.534725,
+          "preds": 16
+        },
+        {
+          "model_name": "gemini-2.5-flash",
+          "model_family": "TOKEN",
+          "bt_wr": 0.708325,
+          "lo2_wr": 0.2639,
+          "helpful": 0.53055,
+          "preds": 16
+        }
+      ],
+      "MT_w-1": [
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.30981444444444445,
+          "lo2_wr": 0.1644011111111111,
+          "helpful": 0.25165,
+          "preds": 380
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.29827,
+          "lo2_wr": 0.2578566666666667,
+          "helpful": 0.28210555555555555,
+          "preds": 380
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2928033333333333,
+          "lo2_wr": 0.19558777777777775,
+          "helpful": 0.25391888888888886,
+          "preds": 380
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2851411111111111,
+          "lo2_wr": 0.17646444444444445,
+          "helpful": 0.24167,
+          "preds": 380
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2713688888888889,
+          "lo2_wr": 0.3015833333333333,
+          "helpful": 0.28345444444444445,
+          "preds": 380
+        }
+      ],
+      "MT_w0": [
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6611166666666667,
+          "lo2_wr": 0.21666666666666667,
+          "helpful": 0.48333333333333334,
+          "preds": 17
+        },
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6,
+          "lo2_wr": 0.09999999999999999,
+          "helpful": 0.39999999999999997,
+          "preds": 17
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5888833333333333,
+          "lo2_wr": 0.60555,
+          "helpful": 0.59555,
+          "preds": 17
+        },
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.50555,
+          "lo2_wr": 0.31666666666666665,
+          "helpful": 0.43,
+          "preds": 17
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.43888333333333335,
+          "lo2_wr": 0.20555,
+          "helpful": 0.34555,
+          "preds": 17
+        }
+      ],
+      "MT_w1": [
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.7555499999999999,
+          "lo2_wr": 0.5388833333333333,
+          "helpful": 0.6688833333333334,
+          "preds": 17
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.7000000000000001,
+          "lo2_wr": 0.22221666666666665,
+          "helpful": 0.5088833333333334,
+          "preds": 17
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6888833333333334,
+          "lo2_wr": 0.055549999999999995,
+          "helpful": 0.43554999999999994,
+          "preds": 17
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6888833333333334,
+          "lo2_wr": 0.2888833333333333,
+          "helpful": 0.5288833333333333,
+          "preds": 17
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6333333333333333,
+          "lo2_wr": 0.39999999999999997,
+          "helpful": 0.54,
+          "preds": 16
+        }
+      ],
+      "MT_w2": [
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.8333333333333334,
+          "lo2_wr": 0.13888333333333333,
+          "helpful": 0.55555,
+          "preds": 15
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6388833333333334,
+          "lo2_wr": 0.5833333333333334,
+          "helpful": 0.6166666666666666,
+          "preds": 15
+        },
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6388833333333334,
+          "lo2_wr": 0.5833333333333334,
+          "helpful": 0.6166666666666666,
+          "preds": 15
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5833333333333334,
+          "lo2_wr": 0.11111666666666666,
+          "helpful": 0.39444999999999997,
+          "preds": 15
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5833333333333334,
+          "lo2_wr": 0.16666666666666666,
+          "helpful": 0.4166666666666667,
+          "preds": 15
+        }
+      ],
+      "MT_w3": [
+        {
+          "model_name": "combo-super",
+          "model_family": "TOKEN",
+          "bt_wr": 0.9666666666666667,
+          "lo2_wr": 0.21109999999999998,
+          "helpful": 0.6644333333333333,
+          "preds": 15
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.9444499999999999,
+          "lo2_wr": 0.55555,
+          "helpful": 0.7888833333333333,
+          "preds": 15
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.9444499999999999,
+          "lo2_wr": 0.5833333333333334,
+          "helpful": 0.7999999999999999,
+          "preds": 15
+        },
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.9166666666666666,
+          "lo2_wr": 0.8888833333333334,
+          "helpful": 0.90555,
+          "preds": 15
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.9166666666666666,
+          "lo2_wr": 0.6666666666666666,
+          "helpful": 0.8166666666666668,
+          "preds": 13
+        }
+      ],
+      "MT_w4": [
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.6389,
+          "lo2_wr": 0.27776666666666666,
+          "helpful": 0.49443333333333334,
+          "preds": 13
+        },
+        {
+          "model_name": "lstm",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.4722166666666667,
+          "lo2_wr": 0.2777833333333333,
+          "helpful": 0.39444999999999997,
+          "preds": 15
+        },
+        {
+          "model_name": "deepseek-reasoner",
+          "model_family": "TOKEN",
+          "bt_wr": 0.3333333333333333,
+          "lo2_wr": 0.25,
+          "helpful": 0.3,
+          "preds": 13
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.30555,
+          "lo2_wr": 0.3611166666666667,
+          "helpful": 0.3277833333333333,
+          "preds": 15
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.2777833333333333,
+          "lo2_wr": 0.6388833333333334,
+          "helpful": 0.4222166666666667,
+          "preds": 15
+        }
+      ],
+      "MT_w5": [
+        {
+          "model_name": "smart-ml",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6388833333333334,
+          "lo2_wr": 0.6944499999999999,
+          "helpful": 0.6611166666666667,
+          "preds": 16
+        },
+        {
+          "model_name": "combo-no-token",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.6388833333333334,
+          "lo2_wr": 0.11111666666666666,
+          "helpful": 0.42778333333333335,
+          "preds": 16
+        },
+        {
+          "model_name": "claude-opus-4-20250514",
+          "model_family": "TOKEN",
+          "bt_wr": 0.61666,
+          "lo2_wr": 0.16668,
+          "helpful": 0.43667999999999996,
+          "preds": 16
+        },
+        {
+          "model_name": "xgboost",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5833333333333334,
+          "lo2_wr": 0.3611166666666667,
+          "helpful": 0.49445,
+          "preds": 16
+        },
+        {
+          "model_name": "smart-ensemble",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5833333333333334,
+          "lo2_wr": 0.55555,
+          "helpful": 0.5722166666666667,
+          "preds": 16
+        }
+      ],
+      "MT_w6": [
+        {
+          "model_name": "random-forest",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.5861166666666667,
+          "lo2_wr": 0.6222166666666666,
+          "helpful": 0.60055,
+          "preds": 16
+        },
+        {
+          "model_name": "gpt-5.4",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5700000000000001,
+          "lo2_wr": 0.61,
+          "helpful": 0.5860000000000001,
+          "preds": 13
+        },
+        {
+          "model_name": "gpt-5-mini",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5583333333333333,
+          "lo2_wr": 0.48888333333333334,
+          "helpful": 0.53055,
+          "preds": 16
+        },
+        {
+          "model_name": "gemini-2.5-pro",
+          "model_family": "TOKEN",
+          "bt_wr": 0.5111166666666667,
+          "lo2_wr": 0.325,
+          "helpful": 0.4366666666666667,
+          "preds": 16
+        },
+        {
+          "model_name": "meta-learning",
+          "model_family": "NO_TOKEN",
+          "bt_wr": 0.4611166666666667,
+          "lo2_wr": 0.38611666666666666,
+          "helpful": 0.43111666666666665,
+          "preds": 16
+        }
+      ]
+    }
+  },
+  "auto_ai_models_static": {
+    "TOKEN_MODELS": [
+      "gpt-5-mini",
+      "claude-sonnet-4-6",
+      "gemini-2.5-flash",
+      "claude-opus-4-20250514",
+      "deepseek-reasoner",
+      "gemini-2.5-pro",
+      "gpt-5.4"
+    ],
+    "NO_TOKEN_MODELS": [
+      "meta-learning",
+      "lstm",
+      "xgboost",
+      "random-forest",
+      "smart-ensemble",
+      "smart-ml",
+      "combo-no-token"
+    ],
+    "OUTPUT_ELIGIBLE_MODELS": [
+      "gpt-5-mini",
+      "claude-sonnet-4-6",
+      "gemini-2.5-flash",
+      "claude-opus-4-20250514",
+      "deepseek-reasoner",
+      "gemini-2.5-pro",
+      "gpt-5.4",
+      "meta-learning",
+      "lstm",
+      "xgboost",
+      "random-forest",
+      "smart-ensemble",
+      "smart-ml",
+      "combo-no-token",
+      "combo-super"
+    ],
+    "OUTPUT_ELIGIBLE_count": 15
+  },
+  "manual_provider_block_log": {
+    "exists": false,
+    "error": "no such table: v10524_manual_predict_block_log"
+  }
+}

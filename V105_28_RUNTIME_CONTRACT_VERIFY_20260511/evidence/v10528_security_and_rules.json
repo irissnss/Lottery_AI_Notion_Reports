@@ -1,0 +1,149 @@
+{
+  "schema_version": "v10528_security_and_rules_v1",
+  "generated_at_vn": "2026-05-11T23:30:30.443005+07:00",
+  "secret_scan": {
+    "files_scanned": 1712,
+    "bytes_scanned": 40511607,
+    "counts_by_pattern": {
+      "openai_sk": 3,
+      "anthropic_sk_ant": 1,
+      "google_aiza": 2
+    },
+    "sample_paths_by_pattern_first_25": {
+      "openai_sk": [
+        "Lottery_AI_Test\\web\\backend\\.env"
+      ],
+      "anthropic_sk_ant": [
+        "Lottery_AI_Test\\web\\backend\\.env"
+      ],
+      "google_aiza": [
+        "Lottery_AI_Test\\web\\backend\\.env"
+      ]
+    },
+    "verdict": "SECRET_SCAN_HITS_PRESENT",
+    "notes": "Counts/paths only. Secret values never printed. If any count > 0, owner action required: rotate + redact."
+  },
+  "git_remote_audit": {
+    "remotes_raw_first_4": [
+      "origin\thttps://github.com/irissnss/Lottery_AI_Test.git (fetch)",
+      "origin\thttps://github.com/irissnss/Lottery_AI_Test.git (push)"
+    ],
+    "https_remote_present": true,
+    "ssh_remote_present": false,
+    "owner_confirmed_pat_revoked": true,
+    "ssh_deploy_key_status": "owner_action_recommended"
+  },
+  "station_identity": {
+    "canonical_hue_in_code": true,
+    "short_hue_alias_present": true,
+    "canonical_tphcm_in_code": true
+  },
+  "rules_105_and_window_consistency": {
+    "_v101_shadow_pilot": {
+      "exists": true,
+      "mentions_12W_or_16W": true,
+      "mentions_top5": true,
+      "mentions_DB_or_G1_G7": true,
+      "mentions_MN_D2_or_D-2": true,
+      "mentions_MT_D2_wide": false
+    },
+    "rule_engine": {
+      "exists": true,
+      "mentions_12W_or_16W": true,
+      "mentions_top5": false,
+      "mentions_DB_or_G1_G7": true,
+      "mentions_MN_D2_or_D-2": false,
+      "mentions_MT_D2_wide": false
+    },
+    "weekly_rule_miner": {
+      "exists": true,
+      "mentions_12W_or_16W": false,
+      "mentions_top5": false,
+      "mentions_DB_or_G1_G7": false,
+      "mentions_MN_D2_or_D-2": false,
+      "mentions_MT_D2_wide": false
+    },
+    "_v10527_ranked_prompt_wire_shadow": {
+      "exists": true,
+      "mentions_12W_or_16W": true,
+      "mentions_top5": true,
+      "mentions_DB_or_G1_G7": true,
+      "mentions_MN_D2_or_D-2": true,
+      "mentions_MT_D2_wide": false
+    },
+    "gpt_analyzer": {
+      "exists": true,
+      "mentions_12W_or_16W": true,
+      "mentions_top5": true,
+      "mentions_DB_or_G1_G7": true,
+      "mentions_MN_D2_or_D-2": true,
+      "mentions_MT_D2_wide": false
+    }
+  },
+  "hooks_and_governance": {
+    "cursor_hooks": {
+      "version": 1,
+      "hooks": {
+        "beforeShellExecution": [
+          {
+            "command": "python .cursor/hooks/governance_guard.py",
+            "matcher": "web/_smart_deploy\\.py|web/_deploy_orchestrator\\.py|web/_update_vps\\.py|systemctl restart lottery",
+            "failClosed": true,
+            "timeout": 20
+          }
+        ],
+        "afterShellExecution": [
+          {
+            "command": "python .cursor/hooks/deploy_automation_ledger.py",
+            "matcher": "web/_smart_deploy\\.py|web/_deploy_orchestrator\\.py|web/_update_vps\\.py|systemctl restart lottery",
+            "timeout": 20
+          }
+        ]
+      }
+    },
+    "cursor_rules": [
+      "active-roadmap-precedence.mdc",
+      "governance-traceability-automation.mdc",
+      "live-data-integrity.mdc"
+    ],
+    "root_governance_files_present": {
+      ".Antigravityrules.md": true,
+      ".AGENT.md": true,
+      ".cursorrules": true,
+      "CHANGELOG.md": true,
+      "docs/CURRENT_TRUTH_SSOT.md": true,
+      "docs/FOLLOW_UP_TRACKER.md": true,
+      "docs/AUTOMATION_STATE.json": true,
+      "docs/AUTOMATION_HISTORY.jsonl": true
+    },
+    "public_mirror_root_files": [
+      "00_PUBLIC_RAW_LINKS.md",
+      "CHANGELOG_PUBLIC.md",
+      "CHECKSUMS_SHA256.txt",
+      "DELTA_INDEX.md",
+      "LATEST_REPORT.json",
+      "NEXT_ACTION.md",
+      "OPEN_ISSUES.md",
+      "PUBLIC_PACKAGE_MANIFEST.json",
+      "README.md",
+      "READ_THIS_FIRST.md",
+      "REPORT_INDEX.md",
+      "_v103_1_commit.cmd",
+      "_v103_2_commit.cmd",
+      "_v103_commit_public.cmd",
+      "_v104_1_commit.cmd",
+      "_v104_commit.cmd",
+      "_v981_commit.cmd",
+      "_v991_commit.cmd",
+      "_v991_commit2.cmd",
+      "_v991_redo_public.cmd",
+      "_v992_commit.cmd"
+    ],
+    "public_mirror_v10527_folder_exists": true
+  },
+  "owner_confirmation": {
+    "OWNER_CONFIRMED_PAT_REVOKED": true,
+    "OWNER_CONFIRMED_AT": "2026-05-11 V105.28 mission prompt",
+    "OWNER_CONFIRMATION_TEXT": "Key GitHub đã revoke rồi, không còn tồn key nào."
+  }
+}

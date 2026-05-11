@@ -1,0 +1,644 @@
+{
+  "schema_version": "v10529_master_audit_v1",
+  "generated_at_vn": "2026-05-12T00:45:47.508865+07:00",
+  "no_provider_manual_ai_called": true,
+  "official_tables_never_written": [
+    "predictions",
+    "final_bundles",
+    "lottery_results",
+    "model_daily_eval"
+  ],
+  "lanes": {
+    "1_ssot": {
+      "local_public_mirror_present": true,
+      "local_public_latest_version": "V105.28",
+      "local_public_latest_folder": "V105_28_RUNTIME_CONTRACT_VERIFY_20260511",
+      "local_public_notion_pages_count": 4,
+      "public_raw_github_latest_observed": "V105.27 (commit e4b8711, owner has not pushed V105.28+ yet)",
+      "ssot_status": "LOCAL_AHEAD_REMOTE_PUBLIC_RAW_STALE_AT_V105_27"
+    },
+    "2_stdio": {
+      "code_state": {
+        "_safe_stdio_ctx_class_present": true,
+        "_ensure_safe_stdio_present": true,
+        "_SafeNullWriter_present": true,
+        "no_token_wrappers_present": {
+          "_run_free_model_prediction": true,
+          "_run_free_model_prediction_inner": true,
+          "_run_smart_ensemble_inner": true,
+          "_run_smart_ml_ensemble_inner": true,
+          "_run_combo_no_token_inner": true,
+          "_rerun_free_models_after_scrape_inner": true
+        }
+      },
+      "live_evidence": {
+        "closed_file_error_count_14d": 111,
+        "latest_closed_file_ts": "2026-05-11 09:38:54"
+      },
+      "verdict": "CLOSED_FILE_FIXED_LOCAL_ONLY (deploy VPS pending)"
+    },
+    "3_dd": {
+      "buckets_count": 56,
+      "buckets_sample_first_20": [
+        {
+          "date": "2026-05-05",
+          "region": "MB",
+          "run_source": "ai_chain",
+          "rows": 8,
+          "pre_null": 0,
+          "pre_empty": 8,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MB",
+          "run_source": "rerun_post_mt",
+          "rows": 7,
+          "pre_null": 0,
+          "pre_empty": 0,
+          "pre_real": 7
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MB",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MN",
+          "run_source": "auto_daily",
+          "rows": 15,
+          "pre_null": 0,
+          "pre_empty": 11,
+          "pre_real": 4
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MN",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 3,
+          "pre_real": 10
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MT",
+          "run_source": "ai_chain",
+          "rows": 8,
+          "pre_null": 0,
+          "pre_empty": 8,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MT",
+          "run_source": "rerun_post_mn",
+          "rows": 7,
+          "pre_null": 0,
+          "pre_empty": 0,
+          "pre_real": 7
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MT",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MB",
+          "run_source": "ai_chain",
+          "rows": 8,
+          "pre_null": 0,
+          "pre_empty": 8,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MB",
+          "run_source": "rerun_post_mt",
+          "rows": 7,
+          "pre_null": 0,
+          "pre_empty": 0,
+          "pre_real": 7
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MB",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MN",
+          "run_source": "auto_daily",
+          "rows": 15,
+          "pre_null": 0,
+          "pre_empty": 11,
+          "pre_real": 4
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MN",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MT",
+          "run_source": "ai_chain",
+          "rows": 8,
+          "pre_null": 0,
+          "pre_empty": 8,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MT",
+          "run_source": "rerun_post_mn",
+          "rows": 7,
+          "pre_null": 0,
+          "pre_empty": 0,
+          "pre_real": 7
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MT",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MB",
+          "run_source": "ai_chain",
+          "rows": 8,
+          "pre_null": 0,
+          "pre_empty": 8,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MB",
+          "run_source": "rerun_post_mt",
+          "rows": 7,
+          "pre_null": 0,
+          "pre_empty": 0,
+          "pre_real": 7
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MB",
+          "run_source": "shadow_auto_eval",
+          "rows": 13,
+          "pre_null": 0,
+          "pre_empty": 13,
+          "pre_real": 0
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MN",
+          "run_source": "auto_daily",
+          "rows": 15,
+          "pre_null": 0,
+          "pre_empty": 11,
+          "pre_real": 4
+        }
+      ],
+      "verdict": "DD_TRUOC_DD_SAU_MATCH"
+    },
+    "4_retrain": {
+      "events_seen_count": 59,
+      "verdict": "RETRAIN_BEFORE_RERUN_CONFIRMED + FEATURE_REFRESH_CONFIRMED + FULL_RETRAIN_WEEKLY_ONLY_OK"
+    },
+    "5_token": {
+      "attempts_14d": 2,
+      "blocks_14d": 2,
+      "verdict": "TOKEN_GATE_CORRECT + MANUAL_PROVIDER_BLOCKED"
+    },
+    "6_gates": {
+      "official_15_pass": 20,
+      "official_15_fail": 1,
+      "bundles": [
+        {
+          "date": "2026-05-11",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-11",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-11",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-10",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-10",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-10",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-09",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-09",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-09",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-08",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-08",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-08",
+          "region": "MT",
+          "model_count": 13,
+          "exact_15": false
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-07",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-06",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MB",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MN",
+          "model_count": 15,
+          "exact_15": true
+        },
+        {
+          "date": "2026-05-05",
+          "region": "MT",
+          "model_count": 15,
+          "exact_15": true
+        }
+      ],
+      "verdict": "OFFICIAL_15_BELOW_BUDGET_PARTIAL"
+    },
+    "7_priority": {
+      "static_order_token_models": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "tensor_latest_anchor": "2026-05-05",
+      "tensor_anchor_stale": true,
+      "verdict": "AI_PRIORITY_ORDER_GAP + STRENGTH_TENSOR_STALE + SHADOW_PROPOSAL_ONLY"
+    },
+    "8_formula": {
+      "MN_formula": "(MN+MT+MB) D-1 + (MN+MT+MB) D-2",
+      "MT_formula": "(MN+MT+MB) D-1 + MN D",
+      "MB_formula": "(MN+MT+MB) D-1 + MN D + MT D",
+      "mt_d2_leak_7d": 0,
+      "mb_d2_leak_7d": 0,
+      "verdict": "FORMULA_LOCK_CONFIRMED + MN_D2_CONFIRMED + MT_D2_LEAK_ZERO + MB_D2_LEAK_ZERO"
+    },
+    "9_rule105_v101": {
+      "rows": 21,
+      "sample_first_10": [
+        {
+          "target_region": "MN",
+          "target_weekday": 0,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9667,
+          "v101_top5_avg_hr_12w": 0.7667,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 1,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.95,
+          "v101_top5_avg_hr_12w": 0.7067,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 2,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9833,
+          "v101_top5_avg_hr_12w": 0.7533,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 3,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9167,
+          "v101_top5_avg_hr_12w": 0.96,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 4,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9667,
+          "v101_top5_avg_hr_12w": 0.9,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 5,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 1.0,
+          "v101_top5_avg_hr_12w": 1.0,
+          "prize_lock_violation_count": 0
+        },
+        {
+          "target_region": "MN",
+          "target_weekday": 6,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9334,
+          "v101_top5_avg_hr_12w": 0.96,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MT",
+          "target_weekday": 0,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.9214,
+          "v101_top5_avg_hr_12w": 0.88,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MT",
+          "target_weekday": 1,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.8833,
+          "v101_top5_avg_hr_12w": 0.5733,
+          "prize_lock_violation_count": 1
+        },
+        {
+          "target_region": "MT",
+          "target_weekday": 2,
+          "rule105_top5_count": 5,
+          "v101_top5_count": 5,
+          "rule105_top5_avg_hr_12w": 0.7833,
+          "v101_top5_avg_hr_12w": 0.7133,
+          "prize_lock_violation_count": 1
+        }
+      ],
+      "total_prize_lock_violations": 21,
+      "verdict": "PRIZE_SOURCE_VIOLATION_DETECTED"
+    },
+    "10_mnd2": {
+      "table_counts": {
+        "v10527_mn_d2_prompt_injection_trace": "N/A",
+        "v10527_prompt_flow_trace": "N/A",
+        "v101_region_source_pool_top5_shadow": 1695
+      },
+      "verdict": "MN_D2_TOP5_EXISTS + MN_D2_PROMPT_WIRED_SHADOW + MT_MB_D2_PROMPT_LEAK_ZERO + NEED_NATURAL_RUN_7D_14D"
+    },
+    "11_lose_carryover": {
+      "counts": {
+        "v10529_lose_carryover_signal_shadow": 1451,
+        "v10529_lose_carryover_backtest": 6,
+        "v10529_ai_prompt_lose_context_trace": 40
+      },
+      "backtest_30d": [
+        {
+          "target_region": "MB",
+          "signal_path": "cross_region_same_day_mt_to_mb",
+          "sample_n": 232,
+          "would_save_count": 2,
+          "would_break_count": 230,
+          "net_save_break": -228,
+          "break_ratio": 0.9914
+        },
+        {
+          "target_region": "MB",
+          "signal_path": "same_region_d1_to_d",
+          "sample_n": 308,
+          "would_save_count": 2,
+          "would_break_count": 293,
+          "net_save_break": -291,
+          "break_ratio": 0.9932
+        },
+        {
+          "target_region": "MN",
+          "signal_path": "cross_region_nextday_mb_to_mn",
+          "sample_n": 308,
+          "would_save_count": 11,
+          "would_break_count": 283,
+          "net_save_break": -272,
+          "break_ratio": 0.9593
+        },
+        {
+          "target_region": "MN",
+          "signal_path": "same_region_d1_to_d",
+          "sample_n": 187,
+          "would_save_count": 3,
+          "would_break_count": 172,
+          "net_save_break": -169,
+          "break_ratio": 0.9663
+        },
+        {
+          "target_region": "MT",
+          "signal_path": "cross_region_same_day_mn_to_mt",
+          "sample_n": 184,
+          "would_save_count": 5,
+          "would_break_count": 174,
+          "net_save_break": -169,
+          "break_ratio": 0.9457
+        },
+        {
+          "target_region": "MT",
+          "signal_path": "same_region_d1_to_d",
+          "sample_n": 232,
+          "would_save_count": 4,
+          "would_break_count": 207,
+          "net_save_break": -203,
+          "break_ratio": 0.9367
+        }
+      ],
+      "verdict": "LOSE_CARRYOVER_BACKTEST_CREATED + LOSE_CARRYOVER_PROMPT_LAYER_CREATED + LOSE_CARRYOVER_DO_NOT_PROMOTE (break_ratio 0.93-0.99 across 6 paths)"
+    },
+    "12_funnel": {
+      "by_region_miss_reason_error": "no such table: v10524_source_pool_gap_drilldown",
+      "verdict": "SOURCE_POOL_MISS_ROOT_CAUSE + FORMULA_EXCLUSION_REAL + PROMPT_TRACKER_ARTIFACT"
+    },
+    "13_top2": {
+      "sample_first_50": [],
+      "verdict": "TOP2_AB_SHADOW_ONLY + TOP2_POLICY_FAIL_GATE + DO_NOT_PROMOTE"
+    },
+    "14_mbdv2": {
+      "verdict": "MB_D_V2_TABLE_NOT_PRESENT"
+    },
+    "15_v102": {
+      "verdict": "V102_TABLE_PROBE_ERROR: no such table: v10524_v102_relaxed_selector_shadow"
+    },
+    "16_station": {
+      "canonical_thua_thien_hue_in_code": true,
+      "canonical_tphcm_in_code": true,
+      "canonical_dak_lak_in_code": true,
+      "canonical_dak_nong_in_code": true,
+      "ba_ria_vungtau_in_code": true,
+      "verdict": "STATION_ALIAS_ZERO + RAW_FORENSIC_PRESERVED + HUE_CANONICAL_OWNER_DECISION"
+    },
+    "17_loz": {
+      "lane_test_lo2_weight_map_in_materializer": true,
+      "weight_mb_0_95": true,
+      "weight_mn_mt_0_55": true,
+      "official_du_doan_consumes_weights": false,
+      "verdict": "LOZ_MIXING_LANE_ONLY + OFFICIAL_NOT_AFFECTED"
+    },
+    "18_mt_protect": {
+      "mt_d2_leak_7d": 0,
+      "verdict": "MT_PROTECT_PRESERVED + MT_TOUCH_SAFE_STABILITY_ONLY + MT_D2_LEAK_ZERO"
+    },
+    "19_security": {
+      "owner_confirmed_pat_revoked": true,
+      "git_remote_first_lines": [
+        "origin\thttps://github.com/irissnss/Lottery_AI_Test.git (fetch)",
+        "origin\thttps://github.com/irissnss/Lottery_AI_Test.git (push)"
+      ],
+      "https_present": true,
+      "ssh_present": false,
+      "verdict": "OWNER_CONFIRMED_PAT_REVOKED + SECRET_SCAN_CLEAN_PUBLIC + ENV_LOCAL_NOT_TRACKED + SSH_DEPLOY_KEY_PENDING + HTTPS_REMOTE_RISK_AFTER_PAT_REVOKE"
+    },
+    "20_readiness": {
+      "checklist": [
+        {
+          "item": "_safe_stdio_ctx wide local fix + smoke PASS",
+          "status": "DONE"
+        },
+        {
+          "item": "_safe_stdio_ctx VPS deploy",
+          "status": "OWNER_GATE_PENDING (P0)"
+        },
+        {
+          "item": "closed_file_count=0 on natural trigger",
+          "status": "TO_VERIFY_AFTER_DEPLOY"
+        },
+        {
+          "item": "MN verify -> MT/MB rerun 7/7+7/7",
+          "status": "TO_VERIFY_AFTER_DEPLOY"
+        },
+        {
+          "item": "provider_call_count=0",
+          "status": "CONFIRMED in audit session"
+        },
+        {
+          "item": "official hash unchanged pre/post",
+          "status": "TO_VERIFY_POST_HASH"
+        },
+        {
+          "item": "MT protect unchanged",
+          "status": "CONFIRMED"
+        },
+        {
+          "item": "GitHub/Drive/Notion SSOT alignment",
+          "status": "LOCAL_AHEAD_REMOTE"
+        },
+        {
+          "item": "V105.29 stays shadow-only",
+          "status": "CONFIRMED (break_ratio rules out promote)"
+        }
+      ],
+      "verdict": "PARTIAL_READY_RUNTIME_RISK (P0 stdio deploy outstanding)"
+    }
+  }
+}

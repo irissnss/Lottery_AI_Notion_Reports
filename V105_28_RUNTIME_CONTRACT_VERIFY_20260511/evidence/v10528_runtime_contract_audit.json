@@ -1,0 +1,4354 @@
+{
+  "schema_version": "v10528_runtime_contract_audit_v1",
+  "generated_at_vn": "2026-05-11T23:27:28.945496+07:00",
+  "no_provider_manual_ai_called": true,
+  "official_tables_never_written": [
+    "predictions",
+    "final_bundles",
+    "lottery_results",
+    "model_daily_eval"
+  ],
+  "lane1_dd_truoc_dd_sau": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "row_count": 657,
+    "by_date_region_run_source": [
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 11,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_TRUOC",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 7,
+        "verified_win": 1,
+        "verified_lose": 5,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "DD_TRUOC_LIKELY_OK"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 6,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 11,
+        "with_pre_empty_marker": 2,
+        "with_pre_null": 0,
+        "verified_win": 4,
+        "verified_lose": 2,
+        "verified_partial": 7,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 6,
+        "verified_partial": 8,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 12,
+        "with_main": 12,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 12,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 8,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 5,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 4,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 9,
+        "with_pre_null": 0,
+        "verified_win": 8,
+        "verified_lose": 2,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 2,
+        "verified_lose": 1,
+        "verified_partial": 4,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 1,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 11,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 13,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 12,
+        "with_main": 12,
+        "with_pre_real": 5,
+        "with_pre_empty_marker": 7,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 6,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION_INTERMEDIATE",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 7,
+        "verified_win": 0,
+        "verified_lose": 7,
+        "verified_partial": 0,
+        "pending": 0,
+        "verdict": "DD_ROTATION_NOT_OBSERVED"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 2,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 2,
+        "verified_lose": 6,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 1,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 6,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 7,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 11,
+        "verified_partial": 4,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 12,
+        "with_main": 12,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 12,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 11,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 6,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 6,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 12,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 4,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 6,
+        "with_main": 6,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 6,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 5,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 12,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 13,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 12,
+        "with_main": 12,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 12,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 2,
+        "verified_partial": 9,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 4,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 4,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 3,
+        "verified_partial": 9,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 1,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 3,
+        "verified_lose": 0,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 11,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 11,
+        "verified_partial": 4,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 8,
+        "verified_partial": 4,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 2,
+        "verified_lose": 2,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 8,
+        "verified_partial": 0,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 9,
+        "verified_lose": 0,
+        "verified_partial": 4,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 1,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 5,
+        "verified_lose": 0,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 5,
+        "verified_partial": 7,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 7,
+        "verified_partial": 7,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 12,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 1,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 7,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 4,
+        "verified_lose": 8,
+        "verified_partial": 1,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 2,
+        "verified_lose": 0,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 3,
+        "verified_lose": 2,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 10,
+        "with_pre_empty_marker": 3,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 4,
+        "verified_partial": 8,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 8,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 13,
+        "with_main": 13,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 13,
+        "with_pre_null": 0,
+        "verified_win": 3,
+        "verified_lose": 0,
+        "verified_partial": 10,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 7,
+        "verified_partial": 0,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 3,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 10,
+        "with_main": 10,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 10,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 3,
+        "verified_partial": 7,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "expected_dd_column": "DD_ROTATION",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 1,
+        "verified_partial": 5,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 1,
+        "verified_partial": 7,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SAU_SHADOW",
+        "rows": 10,
+        "with_main": 10,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 10,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 7,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "run_source": "auto_daily",
+        "expected_dd_column": "DD_SAU",
+        "rows": 15,
+        "with_main": 15,
+        "with_pre_real": 4,
+        "with_pre_empty_marker": 11,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 5,
+        "verified_partial": 10,
+        "pending": 0,
+        "verdict": "DD_SAU_BUT_PRE_FILLED_INVESTIGATE"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "shadow_auto_eval",
+        "expected_dd_column": "DD_SHADOW",
+        "rows": 10,
+        "with_main": 10,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 10,
+        "with_pre_null": 0,
+        "verified_win": 1,
+        "verified_lose": 3,
+        "verified_partial": 6,
+        "pending": 0,
+        "verdict": "SHADOW_DIAGNOSTIC"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "expected_dd_column": "DD_ROTATION_FINAL",
+        "rows": 7,
+        "with_main": 7,
+        "with_pre_real": 7,
+        "with_pre_empty_marker": 0,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 5,
+        "verified_partial": 2,
+        "pending": 0,
+        "verdict": "DD_ROTATION_OBSERVED"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "expected_dd_column": "DD_SAU",
+        "rows": 8,
+        "with_main": 8,
+        "with_pre_real": 0,
+        "with_pre_empty_marker": 8,
+        "with_pre_null": 0,
+        "verified_win": 0,
+        "verified_lose": 5,
+        "verified_partial": 3,
+        "pending": 0,
+        "verdict": "DD_SAU_OK"
+      }
+    ]
+  },
+  "lane2_retrain_order": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "regions_with_events": 24,
+    "by_date_region": [
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 1
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 1
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "markers_seen": [
+          "AI_PREDICT_CHAIN",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS"
+        ],
+        "marker_order_indexes": {
+          "AI_PREDICT_CHAIN": 0,
+          "OUTPUT_FORENSICS": 1,
+          "FRESHNESS_CHAIN": 2,
+          "EXT_MEASUREMENTS": 3
+        },
+        "expected_order": [
+          "VERIFY_FINAL_BUNDLE",
+          "OUTPUT_FORENSICS",
+          "FRESHNESS_CHAIN",
+          "EXT_MEASUREMENTS",
+          "REGION_FROZEN_H2_ONLY",
+          "RERUN_NO_TOKEN",
+          "AI_PREDICT_CHAIN"
+        ],
+        "order_ok": true,
+        "event_count": 4
+      }
+    ]
+  },
+  "lane3_ai_priority_order": {
+    "AUTO_AI_MODELS_static_order": [
+      "gpt-5-mini",
+      "claude-sonnet-4-6",
+      "gemini-2.5-flash",
+      "claude-opus-4-20250514",
+      "deepseek-reasoner",
+      "gemini-2.5-pro",
+      "gpt-5.4"
+    ],
+    "model_strength_tensor_table_present": true,
+    "tensor_sample_top_30": [
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Thái Bình",
+        "model_name": "arcee-trinity",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 5
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "claude-haiku-4-5-20251001",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 2
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "deepseek-v4-flash",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "",
+        "model_name": "gemini-3-flash",
+        "bt_wr": 1.0,
+        "lo2_wr": 1.0,
+        "helpful": 1.0,
+        "n": 4
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "gemini-3-flash",
+        "bt_wr": 1.0,
+        "lo2_wr": 1.0,
+        "helpful": 1.0,
+        "n": 4
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "",
+        "model_name": "gemma-4-31b",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 4
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "gemma-4-31b",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 4
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "gpt-5.1",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 2
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "gpt-5.5",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "gpt-5.5",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Bắc Ninh",
+        "model_name": "llama-4-maverick",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 6
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "llama-4-maverick",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 5
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Thái Bình",
+        "model_name": "llama-4-maverick",
+        "bt_wr": 1.0,
+        "lo2_wr": 1.0,
+        "helpful": 1.0,
+        "n": 5
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Bắc Ninh",
+        "model_name": "mistral-large-3",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 6
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "mistral-large-3",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 5
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Thái Bình",
+        "model_name": "mistral-large-3",
+        "bt_wr": 1.0,
+        "lo2_wr": 1.0,
+        "helpful": 1.0,
+        "n": 5
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Bắc Ninh",
+        "model_name": "mistral-nemo",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 6
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Bắc Ninh",
+        "model_name": "o4-mini",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 1
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Hà Nội",
+        "model_name": "o4-mini",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.25,
+        "helpful": 0.7,
+        "n": 2
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Hải Phòng",
+        "model_name": "o4-mini",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 1
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "o4-mini",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 2
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "qwen3.6-plus",
+        "bt_wr": 1.0,
+        "lo2_wr": 0.0,
+        "helpful": 0.6,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "gpt-5.4",
+        "bt_wr": 0.8181818181818182,
+        "lo2_wr": 0.2727272727272727,
+        "helpful": 0.6000000000000001,
+        "n": 11
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "",
+        "model_name": "llama-4-maverick",
+        "bt_wr": 0.7916666666666666,
+        "lo2_wr": 0.20833333333333334,
+        "helpful": 0.5583333333333333,
+        "n": 6
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "",
+        "model_name": "mistral-large-3",
+        "bt_wr": 0.7916666666666666,
+        "lo2_wr": 0.20833333333333334,
+        "helpful": 0.5583333333333333,
+        "n": 6
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "",
+        "model_name": "o4-mini",
+        "bt_wr": 0.75,
+        "lo2_wr": 0.08335,
+        "helpful": 0.48335,
+        "n": 2
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Quảng Ninh",
+        "model_name": "deepseek-v4-flash",
+        "bt_wr": 0.6875,
+        "lo2_wr": 0.3125,
+        "helpful": 0.5375,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Thái Bình",
+        "model_name": "gpt-oss-120b",
+        "bt_wr": 0.6875,
+        "lo2_wr": 0.0,
+        "helpful": 0.4125,
+        "n": 8
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Nam Định",
+        "model_name": "claude-sonnet-4-6",
+        "bt_wr": 0.6666615384615385,
+        "lo2_wr": 0.12819999999999998,
+        "helpful": 0.4512769230769231,
+        "n": 13
+      },
+      {
+        "region": "MB",
+        "weekday": -1,
+        "station": "Thái Bình",
+        "model_name": "minimax-m2.7",
+        "bt_wr": 0.6428571428571429,
+        "lo2_wr": 0.0,
+        "helpful": 0.3857142857142857,
+        "n": 7
+      }
+    ],
+    "actual_call_order_by_date_region": {
+      "2026-05-04::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-04::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-04::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-05::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-05::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-05::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-06::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-06::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-06::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-07::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-07::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-07::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-08::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-08::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-08::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-09::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-09::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-09::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-10::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-10::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-10::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-11::MN": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-11::MT": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ],
+      "2026-05-11::MB": [
+        "gpt-5-mini",
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-20250514",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4"
+      ]
+    },
+    "priority_logic_uses_region_weekday_strength": false,
+    "priority_logic_notes": "scheduler._run_ai_models_predict iterates AUTO_AI_MODELS in static registry order. There is no per region+weekday strongest-first reorder. Strength tensor exists for measurement but is not consumed by the scheduler order."
+  },
+  "lane4_timeout_orchestration": {
+    "lookback_days": 14,
+    "since_date": "2026-04-27",
+    "rows_inspected": 381,
+    "soft_continue_90s_count": 66,
+    "hard_timeout_300s_count": 0,
+    "ok_after_soft_continue_count": 5,
+    "ok_count": 308,
+    "fail_count": 2,
+    "exception_count": 0,
+    "sample_first_15": [
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.6-plus: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] kimi-k2.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-oss-120b: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] glm-5.1: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] deepseek-v4-pro: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.6-plus: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] kimi-k2.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] glm-5.1: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.6-plus: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.6-plus: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] grok-4.20-multi-agent: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] kimi-k2.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "type": "SOFT_CONTINUE_90S",
+        "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-oss-120b: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+      }
+    ],
+    "code_contract": {
+      "AI_MODEL_SOFT_CONTINUE_SEC_default": 90,
+      "AI_MODEL_HARD_TIMEOUT_SEC_default": 300,
+      "soft_continue_log_marker": "[SOFT_CONTINUE_90S]",
+      "hard_timeout_log_marker": "TIMEOUT_300S / TIMEOUT_AFTER_300s",
+      "delayed_success_log_marker": "OK_AFTER_SOFT_CONTINUE_90S"
+    }
+  },
+  "lane5_model_count_gate": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "official_final_bundles": [
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "model_count": 13,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": false
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "moderate",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "model_count": 14,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "LOSE",
+        "official_15_ok": false
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "LOSE",
+        "lo2_status": "PARTIAL",
+        "official_15_ok": true
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "model_count": 15,
+        "expected": 15,
+        "fb_status": "ACTIVE",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "bach_thu_status": "WIN",
+        "lo2_status": "WIN",
+        "official_15_ok": true
+      }
+    ],
+    "public_publish_audit_sample": [
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "PARTIAL_READY",
+        "publish_audit_state": "PUBLISHED_BEFORE_READY",
+        "audit_reason": "bundle_exists_but_not_ready_or_marked_incomplete"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "PARTIAL_READY",
+        "publish_audit_state": "PUBLISHED_BEFORE_READY",
+        "audit_reason": "bundle_exists_but_not_ready_or_marked_incomplete"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "publication_status": "OFFICIAL",
+        "readiness_state": "READY",
+        "publish_audit_state": "OK_READY",
+        "audit_reason": "bundle_ready_for_public_surface"
+      }
+    ],
+    "lane_test_experimental_preview_sample": [
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 9,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_CONSENSUS_V1",
+        "effective_count": 3,
+        "model_count": 3,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_SPECIALIST_ROSTER_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "method": "MB_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 8,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 7,
+        "model_count": 7,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_CONSENSUS_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_SPECIALIST_ROSTER_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "method": "MN_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 9,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 4,
+        "model_count": 4,
+        "shadow_model_count": 1,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_CONSENSUS_V1",
+        "effective_count": 4,
+        "model_count": 4,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_SPECIALIST_ROSTER_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "method": "MT_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 9,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_CONSENSUS_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_SPECIALIST_ROSTER_V1",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "method": "MB_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 18,
+        "model_count": 18,
+        "shadow_model_count": 3,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 10,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 8,
+        "model_count": 8,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_CONSENSUS_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_SPECIALIST_ROSTER_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "method": "MN_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_ADAPTIVE_BUDGET_SELECTOR_V1",
+        "effective_count": 20,
+        "model_count": 20,
+        "shadow_model_count": 9,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": true
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_ADAPTIVE_EXPLOIT_V1",
+        "effective_count": 6,
+        "model_count": 6,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_AI_CHAIN_PRESERVATION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_CONSENSUS_V1",
+        "effective_count": 5,
+        "model_count": 5,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_HYBRID_V1",
+        "effective_count": 0,
+        "model_count": 0,
+        "shadow_model_count": 0,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_NO_TOKEN_HERD_REDUCTION_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_OFFICIAL_BASELINE_CONTROL",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_SPECIALIST_ROSTER_V1",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "method": "MT_STRENGTH_WEIGHTED_V52_5_2",
+        "effective_count": 17,
+        "model_count": 17,
+        "shadow_model_count": 2,
+        "output_impact": "false",
+        "diagnostic_only": 1,
+        "output_eligible": 0,
+        "owner_approved": 0,
+        "twenty_full_budget_ok": false
+      }
+    ],
+    "total_final_bundle_rows": 24,
+    "total_lane_rows": 264,
+    "official_15_gate_pass_count": 22,
+    "official_15_gate_fail_count": 2,
+    "lane_20_gate_pass_count": 93
+  },
+  "lane6_freeze_scope": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "verdicts": [
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 22,
+          "PARTIAL": 3,
+          "WIN": 3
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 8,
+          "PARTIAL": 15,
+          "WIN": 5
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 27,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 17,
+          "PARTIAL": 8,
+          "WIN": 2
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 4,
+          "PARTIAL": 13,
+          "WIN": 11
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 24,
+          "PARTIAL": 4
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 27,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 15,
+          "PARTIAL": 11,
+          "WIN": 1
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 13,
+          "PARTIAL": 13,
+          "WIN": 2
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 18,
+          "PARTIAL": 10
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 27,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 23,
+          "PARTIAL": 4
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 26,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 21,
+          "PARTIAL": 5
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 25,
+          "PARTIAL": 3
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 27,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 10,
+          "PARTIAL": 14,
+          "WIN": 3
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 4,
+          "PARTIAL": 19,
+          "WIN": 5
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 22,
+          "PARTIAL": 6
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 18,
+          "PARTIAL": 7,
+          "WIN": 3
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 1,
+          "PARTIAL": 13,
+          "WIN": 14
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 12,
+          "PARTIAL": 14,
+          "WIN": 2
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 20,
+          "PARTIAL": 7,
+          "WIN": 1
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 10,
+          "PARTIAL": 9,
+          "WIN": 9
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 12,
+          "PARTIAL": 14,
+          "WIN": 2
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 28,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 10,
+          "PARTIAL": 15,
+          "WIN": 3
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "self_verified": true,
+        "verified_rows": 25,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 5,
+          "PARTIAL": 19,
+          "WIN": 1
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MN",
+        "self_verified": true,
+        "verified_rows": 25,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 12,
+          "PARTIAL": 13
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "self_verified": true,
+        "verified_rows": 25,
+        "pending_rows": 0,
+        "status_distribution": {
+          "LOSE": 13,
+          "PARTIAL": 11,
+          "WIN": 1
+        },
+        "daily_stats_for_day": {
+          "mn": 1,
+          "mt": 1,
+          "mb": 1
+        }
+      }
+    ],
+    "rerun_visibility": [
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-11",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MB",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-10",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-09",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 6
+      },
+      {
+        "date": "2026-05-08",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-07",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-06",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-05",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MB",
+        "run_source": "rerun_post_mt",
+        "rows": 7
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "ai_chain",
+        "rows": 8
+      },
+      {
+        "date": "2026-05-04",
+        "region": "MT",
+        "run_source": "rerun_post_mn",
+        "rows": 7
+      }
+    ],
+    "global_freeze_bug_detected": false,
+    "global_freeze_bug_note": "save_prediction LOCK guard is per-row (date,region,ai_model). WIN/LOSE/PARTIAL block applies only to the specific verified row. MT/MB rerun_post_mn/rerun_post_mt rows remain insertable after MN/MT verify."
+  },
+  "lane7_stdio_ctx": {
+    "lookback_days": 7,
+    "since_date": "2026-05-04",
+    "closed_file_error_count": 111,
+    "latest_closed_file_error_ts": "2026-05-11 09:38:54",
+    "rerun_summary_sample": [
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MB hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 7 thành công, 0 lỗi (trigger: MT)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MT hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 0 thành công, 14 lỗi (trigger: MN)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MN hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Auto Free-Model hoàn tất: 9 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MB hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MT hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 14 thành công, 0 lỗi (trigger: MN)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MN hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Auto Free-Model hoàn tất: 9 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MB hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 7 thành công, 0 lỗi (trigger: MT)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MT hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 14 thành công, 0 lỗi (trigger: MN)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MN hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Auto Free-Model hoàn tất: 9 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MB hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 7 thành công, 0 lỗi (trigger: MT)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MT hoàn tất: 6 thành công, 2 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 14 thành công, 0 lỗi (trigger: MN)"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MN hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Auto Free-Model hoàn tất: 9 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 AUTO AI PREDICT MB hoàn tất: 8 thành công, 0 lỗi"
+      },
+      {
+        "date": null,
+        "region": null,
+        "msg": "🏁 Re-predict hoàn tất: 7 thành công, 0 lỗi (trigger: MT)"
+      }
+    ],
+    "code_state": {
+      "_safe_stdio_ctx_function_present": false,
+      "_SafeNullWriter_class_present": true,
+      "_ensure_safe_stdio_present_in_start_timed_model_call": true
+    }
+  },
+  "lane8_token_guard": {
+    "lookback_days": 14,
+    "since_date": "2026-04-27",
+    "once_daily_attempt_count": 2,
+    "once_daily_block_count": 2,
+    "once_daily_block_sample": [
+      {
+        "date_str": "2026-05-11",
+        "region": "MB",
+        "message": "🚫 [AI_ONCE_DAILY_BLOCK] MB (2026-05-11): token/provider AI already attempted today (attempt_marker=1). Owner contract: no manual refill, no DD Trước/DD Sau token rerun."
+      },
+      {
+        "date_str": "2026-05-11",
+        "region": "MT",
+        "message": "🚫 [AI_ONCE_DAILY_BLOCK] MT (2026-05-11): token/provider AI already attempted today (attempt_marker=1). Owner contract: no manual refill, no DD Trước/DD Sau token rerun."
+      }
+    ],
+    "manual_predict_provider_blocked_db_rows": [],
+    "code_defaults": {
+      "OWNER_MANUAL_PROVIDER_CALLS_ENABLED_default": "0 (blocked)",
+      "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED_default": "0 (blocked)",
+      "OWNER_AI_TOKEN_ONCE_DAILY_ONLY_default": "1 (enforced)"
+    }
+  },
+  "lane11_loz_scope": {
+    "lane_test_lo2_weight_constant_present": true,
+    "lane_test_mb_weight_0_95_present_in_materializer": true,
+    "lane_test_mn_mt_weight_0_55_present_in_materializer": true,
+    "applied_in_official_du_doan_or_combo_super": false,
+    "notes": "LO1/LO2 weighted aggregation lives in _materialize_du_doan_test_model_budget.py (_write_adaptive_preview_row) and _materialize_adaptive_exploit_v1.py step 5. main.py lo1/lo2 audit endpoint adds the same map for replay only. Official /du-doan and combo_super do not consume these weights."
+  }
+}

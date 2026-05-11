@@ -1,0 +1,32 @@
+{
+  "schema_version": "v10529_safe_stdio_smoke_v1",
+  "generated_at_vn": "2026-05-12T00:40:24.837299+07:00",
+  "case_A_print_absorbed": {
+    "status": "OK_NO_RAISE",
+    "post_ctx_stdout_is_ClosedStream": true
+  },
+  "case_B_real_exc_propagates": {
+    "status": "OK_RAISED_INTENDED",
+    "error": "intended real error"
+  },
+  "case_C_no_token_wrapper": {
+    "status": "OK_RETURNED_DICT",
+    "result_keys": [
+      "error"
+    ],
+    "has_error": true,
+    "error_msg": "Unknown free model: not-a-real-model"
+  },
+  "module_state": {
+    "_safe_stdio_ctx_class_present": true,
+    "_ensure_safe_stdio_present": true,
+    "_SafeNullWriter_present": true,
+    "_run_free_model_prediction_present": true,
+    "_run_free_model_prediction_inner_present": true,
+    "_run_smart_ensemble_inner_present": true,
+    "_run_smart_ml_ensemble_inner_present": true,
+    "_run_combo_no_token_inner_present": true,
+    "_rerun_free_models_after_scrape_inner_present": true
+  },
+  "no_provider_manual_ai_called": true
+}

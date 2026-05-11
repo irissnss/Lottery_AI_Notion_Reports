@@ -1,6 +1,28 @@
-# V105.27 — TOTAL FORCE CONTROL REPORT (2026-05-11, 18:00 VN)
+# V105.27 — TOTAL FORCE CONTROL REPORT (2026-05-11, 22:27 VN)
 
 > **Tiếng Việt** — Báo cáo Owner. Đọc-only. Không đổi official. Không gọi provider. Bảo vệ MT. Khoá công thức MN/MT/MB. Cải thiện chất lượng dự đoán chỉ qua đo lường shadow/lane-test theo `region + weekday + station_set`.
+
+## 0. CẬP NHẬT CUỐI PHIÊN — 17 MỤC BẮT BUỘC
+
+Phần này supersede các dòng 18:00 bên dưới nếu có chỗ lệch do materializer/Notion/SSOT đã chạy tiếp lúc 22:01-22:27 VN.
+
+1. **Verdict:** `PARTIAL`, không PASS. Official lock giữ nguyên; MN D-2 ranked top5 đã được wire vào shadow prompt, nhưng Top2/Bundler + MB_D_v2 + security/deploy gates chưa đạt.
+2. **Live sync:** audit dựa trên `artifacts/live_sync/latest_manifest.json` và DB local đã sync từ live theo rule live-data-integrity.
+3. **Official hash guard:** `predictions=4791`, `final_bundles=219`, `lottery_results=14655`, `model_daily_eval=4655`; pre/post sha256 giống nhau 4/4.
+4. **Provider/manual AI:** 0 call. Không chạy `run_analysis`, `_run_ai_predict_job`, `_run_shadow_auto_eval`, hoặc manual provider route.
+5. **MN D-2 ranked prompt wire:** `mn_d2_rows=137`, `mn_d2_prompt_seen_count=137`, `coverage=1.0`, `real_prompt_not_injected_count=0`, `model_decision_seen_count=1`.
+6. **Leak guard:** `mt_mb_d2_prompt_leak_count=0`; D-2 ranked top5 chỉ đi vào MN shadow profile `MN_D2_RANKED_TOP5_SHADOW_V10527`.
+7. **Prompt flow trace:** `v10527_prompt_flow_trace=450`, đủ chain source-pool → prompt → top2/bundle/UI diagnostic.
+8. **Source-pool reason refresh:** top root causes vẫn là `PROMPT_NOT_INJECTED` và `SOURCE_FORMULA_EXCLUSION`; MB formula exclusion `1052`, MT `1013`, MN `898`.
+9. **MN TP. HCM weekday miss:** vẫn còn miss buckets cần theo dõi, chủ yếu `PROMPT_NOT_INJECTED` và `SOURCE_FORMULA_EXCLUSION`; chưa promote official.
+10. **MN top5-not-top2:** `rows=15`, `would_save=9`; đây là bằng chứng để tiếp tục shadow Top2, không phải lý do promote.
+11. **Top2/Bundler A/B:** `v10527_top2_policy_ab_shadow=3150`, `v10527_bundler_drop_audit_shadow=196`; không policy nào pass gate `net_save>0`, `break_ratio<=0.05`, >=14d, owner OK.
+12. **MB_D_v2:** `rows=506`, `would_save=115`, `would_break=171`, `break_ratio=0.3379`, `auto_disable=true`; giữ OFF.
+13. **V102 relaxed:** tiếp tục HOLD; gate tối thiểu >=14 ngày, `net_save>0`, `break_ratio<=0.05`, owner explicit OK.
+14. **Token/manual guard:** V105.22b contract vẫn là truth: manual provider/shadow rerun đóng; duplicate token save blocked.
+15. **Station identity:** current code canonical là `Thừa Thiên Huế`; owner còn cần chốt có đổi owner-facing shorthand sang `Huế` hay không.
+16. **Public/Notion SSOT:** local public mirror đã advance lên V105.27; Notion bridge pages: V105.25 `35d1d385-9bf8-816f-8aa0-fd6a2393359e`, V105.26 `35d1d385-9bf8-8118-b19a-d288e87f462b`, V105.27 `35d1d385-9bf8-819c-ad9a-f2564aabf3d3`.
+17. **Owner gates còn mở:** revoke PAT + SSH deploy key, OK deploy `_safe_stdio_ctx` VPS, quyết định Huế canonical, daily 00:05 snapshot, và giữ Top2/Bundler/MB_D_v2 trong shadow 14 ngày.
 
 ---
 

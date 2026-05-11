@@ -1,25 +1,23 @@
-# NEXT ACTION (V105.27 — 2026-05-11 21:30 VN)
+# NEXT ACTION (V105.28 — 2026-05-11 23:38 VN, Runtime Contract Verify)
 
-10 owner-gated decisions awaiting explicit OK. See `V105_27_TOTAL_FORCE_CONTROL_20260511/evidence/OWNER_DECISION_REGISTER.md` for full detail.
+V105.28 audit closed. Status PARTIAL — not PASS. Official 4-table hash unchanged. No provider/manual AI call. MT protect tuyệt đối.
 
-## P0 — Stability (must clear first)
+Next actions:
 
-1. Decision #10 — VPS deploy `_safe_stdio_ctx` patch (scheduler.py). Without this, every `rerun_post_mn` MT no-token batch silently fails with `I/O operation on closed file` and DD Sau MT defaults to D-1 fallback values. Local patch ready, hash captured in `preflight.json`.
-2. Decision #9 — Revoke any PAT ever pasted in chat/history; approve SSH deploy-key migration to remove HTTPS+PAT from VPS remote URL. Independent of #10 but must clear before next public push round.
+1. Owner OK deploy `_safe_stdio_ctx` rộng cho no-token rerun path. V105.27 Decision #10 đã có owner OK; V105.28 chứng minh đã hit thật ngày 2026-05-10 (25 lỗi) + 2026-05-11 (86 lỗi). Kế hoạch:
+   - Bổ sung context manager `_safe_stdio_ctx` (export hàm `_ensure_safe_stdio`).
+   - Wrap `_run_smart_ensemble`, `_run_smart_ml_ensemble`, `_run_combo_no_token`, `_run_free_model_prediction` ở scheduler.
+   - `python -m py_compile` local PASS, lints clean.
+   - VPS backup `backups/v105_28_safe_stdio_full_path_<ts>/`.
+   - scp + `systemctl restart lottery.service` + `/api/health=200`.
+   - Watch chu kỳ verify tiếp theo: kỳ vọng MT/MB rerun success 7/7.
+2. Owner OK enable scheduler region+weekday strongest-first reorder cho `AUTO_AI_MODELS`. Shadow proposal đã có (`v10528_ai_priority_order_proposal`, 24 buckets). Sau khi áp:
+   - KHÔNG bỏ model nào (vẫn 7 token models).
+   - Chỉ reorder.
+   - Watch 7d hit rate so với static order.
+3. Add APScheduler cron 19:30 VN: materialize `model_strength_by_region_weekday_station_daily` daily để tensor luôn tươi (latest anchor hiện 2026-05-05).
+4. Owner setup SSH deploy key + `git remote set-url origin git@github.com:...` (HTTPS sẽ fail sau PAT revoke).
+5. Daily 00:05 VN snapshot vẫn owner-gated (carry V105.27).
+6. Huế canonical, MB_D_v2 scope, V102 relaxed, Top2/Bundler A/B vẫn HOLD theo V105.27 OWNER_DECISION_REGISTER.
 
-## P1 — Prediction quality (after stability)
-
-3. Decision #1 — Publish V105.24/25/25b/26/27 to Drive + Notion + public mirror (this push window completes part of it).
-4. Decision #2 — Approve station alias fixup direction (Huế canonical vs. Thừa Thiên Huế canonical).
-5. Decision #3 — Approve MN D-2 prompt wire shadow profile `mn_d2_shadow_v1` (14d shadow, no official promote).
-6. Decision #5 — Pick MB_D_v2 shadow option (1) relax TOP30 cap, (2) add source-prize strong class, (3) same-day MN/MT weighting, or (4) add D-2.
-7. Decision #4 — Run Top2 A/B shadow 14d for MN+MB (MT measurement-only).
-8. Decision #6 — Keep V102 RELAXED HOLD until V103 supply class backfill 14d clean.
-9. Decision #8 — Clarify MB `rerun_post_mn` intermediate display label vs. suppress until MT verify.
-10. Decision #7 — Keep manual AI/provider "cuốn chiếu" blocked (formal owner confirmation).
-
-## Watch / live verify
-
-- 24h: natural cascade after #10 deploy must show 7/7 MT rerun_post_mn + 7/7 MB rerun_post_mn/mt with 0 closed-file errors.
-- 7d: MN D-2 shadow vs no-D-2 shadow delta on entered_top2 / would_save / would_break.
-- 14d: V102 RELAXED watch, Top2 A/B shadow, MB_D_v2 shadow scoreboard.
+Evidence: `V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/V105_28_RUNTIME_CONTRACT_REPORT.md` (sections 8, 14, 15).
