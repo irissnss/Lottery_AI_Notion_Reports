@@ -1,3 +1,13 @@
+## V105.23 — TOTAL FORCE CODE-TRUTH AUDIT + PUBLIC NOTION EVIDENCE (2026-05-11 11:40 VN)
+
+- Published public V105.23 evidence folder: `V105_23_TOTAL_FORCE_CODE_TRUTH_AUDIT_20260511`.
+- Final acceptance is **PARTIAL**, not PASS: official locked and token guard verified, but SOURCE_POOL_MISS, V102 0-row strict shadow, MT/MB below-budget lane rows, and missing persistent V105.23 drilldown surfaces remain open.
+- Added public machine-readable matrix: `V105_23_EVIDENCE_MATRIX.json` for Notion/control review.
+- Updated `LATEST_REPORT.json`, `REPORT_INDEX.md`, `NEXT_ACTION.md`, and `OPEN_ISSUES.md` to point to V105.23.
+- No official/runtime source changes; no manual/provider AI verification call.
+
+---
+
 ## V105.22 — Total Force Live Prep (2026-05-11T08:59:39+07:00)
 
 - Added region-independent lane profile and live-prep evidence package.

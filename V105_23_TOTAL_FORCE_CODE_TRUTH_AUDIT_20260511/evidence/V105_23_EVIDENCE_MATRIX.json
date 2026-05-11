@@ -1,0 +1,175 @@
+{
+  "schema_version": "v10523_public_evidence_matrix_v1",
+  "version": "V105.23",
+  "generated_at_vn": "2026-05-11T11:20:00+07:00",
+  "final_acceptance": "PARTIAL",
+  "official_touched": false,
+  "provider_manual_ai_called": false,
+  "official_hash_pre_post": {
+    "predictions": {
+      "count": 4750,
+      "sha256": "4e7ec39408cfd5ace2f49abfa51a0acd9d11b4701e8716b1faccf829ba5f7293",
+      "pre_equals_post": true
+    },
+    "final_bundles": {
+      "count": 217,
+      "sha256": "a3b12676ec1be9386e66c9fff640c70d651614fd5ae8c6aabad3974b30a14c91",
+      "pre_equals_post": true
+    },
+    "lottery_results": {
+      "count": 14649,
+      "sha256": "1dfdcb41cfd9f7cea2863bb70d0d3e1ca04270eb62fb547533dd4ac4948df9ad",
+      "pre_equals_post": true
+    },
+    "model_daily_eval": {
+      "count": 4572,
+      "sha256": "bd716238c1e56bf1551f494049a3622acf7faddf2747d47ec9f6a48b6877a952",
+      "pre_equals_post": true
+    }
+  },
+  "vps_runtime": {
+    "service": "lottery.service active",
+    "pid": "1029465",
+    "runtime_head": "ceb36c2daaff3b4a265a9e2b7a047abd7bfa8aad V17.19.4 production snapshot (2026-04-19)",
+    "git_metadata_drift": true,
+    "endpoints": {
+      "/api/health": 200,
+      "/api/status": 200,
+      "/du-doan": 200,
+      "/api/final-bundle?region=MN": 200,
+      "/api/final-bundle?region=MT": 200,
+      "/api/final-bundle?region=MB": 200,
+      "/du-doan-test": 401,
+      "/api/admin/v10522-live-prep": 401
+    },
+    "current_pid_journal_hit_count": 0,
+    "process_scan_manual_provider_matches": 0
+  },
+  "token_guard": {
+    "OWNER_MANUAL_PROVIDER_CALLS_ENABLED_default": false,
+    "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED_default": false,
+    "OWNER_AI_TOKEN_ONCE_DAILY_ONLY_default": true,
+    "manual_run_now_http_423_when_locked": true,
+    "manual_shadow_eval_http_423_when_locked": true,
+    "duplicate_token_save_block": true,
+    "gap_manual_predict_region_endpoints_need_owner_gate": true
+  },
+  "region_profiles": {
+    "MN": {
+      "profile_name": "MN_LANE_TEST_PROFILE",
+      "source_pool_formula": "MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2",
+      "protect_mode": false,
+      "exact_model_count": 20,
+      "lo2_weight": 0.55,
+      "official_impact_allowed": false
+    },
+    "MT": {
+      "profile_name": "MT_LANE_TEST_PROFILE",
+      "source_pool_formula": "MT_D = (MN+MT+MB) D-1 + MN D",
+      "protect_mode": true,
+      "exact_model_count": 20,
+      "lo2_weight": 0.55,
+      "official_impact_allowed": false
+    },
+    "MB": {
+      "profile_name": "MB_LANE_TEST_PROFILE",
+      "source_pool_formula": "MB_D = (MN+MT+MB) D-1 + MN D + MT D",
+      "protect_mode": false,
+      "forensic_mode": true,
+      "exact_model_count": 20,
+      "lo2_weight": 0.95,
+      "official_impact_allowed": false
+    }
+  },
+  "source_pool_formula_checks": {
+    "mt_d2_rows": 0,
+    "mb_d2_rows": 0,
+    "mn_with_d2_rows": 3080
+  },
+  "source_pool_miss": {
+    "MN": {
+      "source_pool_miss_invisible": 28,
+      "source_pool_miss_rows": 28,
+      "prompt_not_injected": 1212
+    },
+    "MT": {
+      "source_pool_miss_invisible": 24,
+      "source_pool_miss_rows": 29,
+      "prompt_not_injected": 994
+    },
+    "MB": {
+      "source_pool_miss_invisible": 14,
+      "source_pool_miss_rows": 18,
+      "prompt_not_injected": 671
+    }
+  },
+  "v102": {
+    "v10522_v102_strong_selector_shadow_rows": 0,
+    "latest_v103_candidate_supply_date": "2026-05-09",
+    "supply_rows_per_region": {
+      "MN": 100,
+      "MT": 100,
+      "MB": 100
+    },
+    "v102_strong_or_prompt_per_region": {
+      "MN": 0,
+      "MT": 0,
+      "MB": 0
+    },
+    "strict_current_per_region": {
+      "MN": 0,
+      "MT": 0,
+      "MB": 0
+    },
+    "needs_persistent_relaxed_shadow": true
+  },
+  "lose_only": {
+    "MN": {
+      "recycled_from_win_count": 0,
+      "source_actual_unknown_used": 0,
+      "pass_gate": 1
+    },
+    "MT": {
+      "recycled_from_win_count": 0,
+      "source_actual_unknown_used": 0,
+      "pass_gate": 1
+    },
+    "MB": {
+      "recycled_from_win_count": 0,
+      "source_actual_unknown_used": 0,
+      "pass_gate": 1
+    }
+  },
+  "model_count": {
+    "official_latest_mn_model_count": 15,
+    "lane_latest_mn_adaptive_budget_model_count": 20,
+    "lane_latest_mt_adaptive_exploit_model_count": 4,
+    "lane_latest_mb_adaptive_exploit_model_count": 5,
+    "mt_mb_ready": false
+  },
+  "station_identity": {
+    "unexpected_count_total": 0,
+    "raw_lottery_results_forensic_not_mutated": true,
+    "aliases_checked": [
+      "Huế -> Thừa Thiên Huế",
+      "HCM/TPHCM/TP HCM/TP.HCM -> TP. HCM",
+      "Đắc Lắc -> Đắk Lắk",
+      "Đắc Nông -> Đắk Nông"
+    ]
+  },
+  "security": {
+    "full_tokens_redacted": true,
+    "token_like_pattern_files_found": [
+      "docs/AUTOMATION_STATE.json",
+      "artifacts/1.Báo Cáo Cursor/Báo Cáo 17 Update Liên Tục.txt"
+    ],
+    "owner_action_required": "revoke exposed/old PATs and approve SSH deploy key migration"
+  },
+  "required_follow_up": [
+    "Persist v10523_source_pool_gap_drilldown",
+    "Persist v10523_v102_relaxed_selector_shadow",
+    "Add admin UI/API for source_pool -> prompt -> rank -> top2 -> bundle -> UI",
+    "Owner-gate manual /api/predict/{region}",
+    "Wire MAIN_TEST_EQUALS_OFFICIAL exact marker into /du-doan-test"
+  ]
+}
