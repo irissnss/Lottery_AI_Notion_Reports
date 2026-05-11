@@ -62,7 +62,13 @@
     "OWNER_CONFIRMED_90S_SOFT_300S_HARD_TIMEOUT": true,
     "OWNER_CONFIRMED_15_OFFICIAL_20_LANE_TEST_GATE": true,
     "OWNER_CONFIRMED_RETRAIN_BEFORE_RERUN_NO_TOKEN_CASCADE": true,
-    "OWNER_CONFIRMED_REGION_ONLY_FREEZE": true
+    "OWNER_CONFIRMED_REGION_ONLY_FREEZE": true,
+    "OWNER_ADDED_SSH_DEPLOY_KEY_2026_05_12": true,
+    "GIT_REMOTES_MIGRATED_TO_SSH": {
+      "Lottery_AI_Test": "git@github.com:irissnss/Lottery_AI_Test.git",
+      "Lottery_AI_Notion_Reports": "git@github.com:irissnss/Lottery_AI_Notion_Reports.git"
+    },
+    "DRIVE_UPLOAD_SCOPE": "OWNER_CONFIRMED_SKIP — only local E:/Lottery_AI_Test/artifacts + GitHub public mirror are SSOT."
   },
   "read_order": [
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",
