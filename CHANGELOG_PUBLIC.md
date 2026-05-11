@@ -1,3 +1,11 @@
+## V105.22 — Total Force Live Prep (2026-05-11T08:59:39+07:00)
+
+- Added region-independent lane profile and live-prep evidence package.
+- Official hashes unchanged; V105.22 changes are lane-test/shadow/admin-readout only.
+- Morning lane status is explicit: MN ready 20/20, MT/MB preview below budget.
+
+---
+
 ## V105.20 — DUAL-LANE STABILIZATION + REAL TEST-LANE MEASUREMENT (2026-05-10 22:55 VN)
 
 - Official `/du-doan` verified exact 15/15 with official hashes unchanged.

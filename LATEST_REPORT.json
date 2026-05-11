@@ -1,22 +1,48 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.20",
-  "latest_folder": "V105_20_DUAL_LANE_STABILIZATION_20260510",
-  "latest_report": "V105_20_DUAL_LANE_STABILIZATION_20260510/evidence/V105_20_DUAL_LANE_STABILIZATION_REPORT.md",
-  "status": "DELIVERED — official exact 15/15 stable, lane test exact 20/20, MAIN_TEST_EQUALS_OFFICIAL marker, V102 strong test-only selector source, 30d measurement mixed evidence.",
+  "latest_version": "V105.22",
+  "latest_folder": "V105_22_TOTAL_FORCE_LIVE_PREP_20260511",
+  "latest_report": "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_TOTAL_FORCE_LIVE_PREP_REPORT.md",
+  "created_at_vn": "2026-05-11T08:59:39+07:00",
+  "status": "DELIVERED — region-independent lane profiles, V105.22 shadow audits, official hash proof, live-prep checklist.",
   "official_touched": false,
+  "hash_guard": {
+    "predictions": {
+      "rows": 4739,
+      "sha256": "a3a6022eda6fadcf244f7b429091d5d6d0a1946d8816ce1266e6fc14584a1b2c"
+    },
+    "final_bundles": {
+      "rows": 217,
+      "sha256": "105ed85c01defb3c6407dff87f7ede426afd3f54f137981aeeb6d80ece2aadcf"
+    },
+    "lottery_results": {
+      "rows": 14649,
+      "sha256": "379b7b51587bf5c8e2d5fac206099bc2b7ee3fd4feb2fbd68f57a1e230911e87"
+    },
+    "model_daily_eval": {
+      "rows": 4572,
+      "sha256": "3f71c595ee87b620182e0f2f28949f33de9916c489dc635167ff066a3e0e6517"
+    }
+  },
+  "read_order": [
+    "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_TOTAL_FORCE_LIVE_PREP_REPORT.md",
+    "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_REGION_INDEPENDENT_LANE_PROFILES.md",
+    "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_V102_STRONG_SELECTOR_SHADOW.md",
+    "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_CANDIDATE_UNIVERSE_COVERAGE.md",
+    "V105_22_TOTAL_FORCE_LIVE_PREP_20260511/evidence/V105_22_TOMORROW_LIVE_READY_CHECKLIST.md"
+  ],
   "notion_pages": [
     {
-      "title": "V105.20 Dual-Lane Stabilization + Test-Lane Measurement",
-      "id": "35c1d385-9bf8-81e7-b20a-df49057d3da4",
-      "url": "https://www.notion.so/V105-20-Dual-Lane-Stabilization-Test-Lane-Measurement-35c1d3859bf881e7b20adf49057d3da4"
+      "title": "V105.22 — Region-Independent Lane Test Live Prep",
+      "id": "35d1d385-9bf8-8177-8926-f7c17bb56fe0"
+    },
+    {
+      "title": "V105.22 — MN Priority / MT Protect / MB Forensic Strategy",
+      "id": "35d1d385-9bf8-8106-b94a-e777a575cc1a"
+    },
+    {
+      "title": "V105.22 — Tomorrow Live Readiness Checklist",
+      "id": "35d1d385-9bf8-818f-8ffa-d700ad9f0d5f"
     }
-  ],
-  "read_order": [
-    "V105_20_DUAL_LANE_STABILIZATION_20260510/evidence/V105_20_DUAL_LANE_STABILIZATION_REPORT.md",
-    "V105_20_DUAL_LANE_STABILIZATION_20260510/evidence/V105_20_DUAL_LANE_PROBE.md",
-    "V105_20_DUAL_LANE_STABILIZATION_20260510/evidence/NOTION_SYNC_PAYLOAD_V105_20.md",
-    "OPEN_ISSUES.md",
-    "NEXT_ACTION.md"
   ]
 }

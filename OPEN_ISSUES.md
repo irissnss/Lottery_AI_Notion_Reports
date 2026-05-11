@@ -1,11 +1,5 @@
-# Open Issues — as of V105.20 (2026-05-10 22:55 VN)
+# Open issues — V105.22
 
-## V105.20 status
-
-- `FU-V105-20-DUAL-LANE-STABILIZATION`: DEPLOYED_LIVE_SMOKE_VERIFIED. Continue 24h/7d/14d measurement; no official promotion claim.
-- Drive ingest remains blocked for Báo Cáo 18, Báo Cáo 19, Phân Tích Đánh Giá 4 because no local files/Drive MCP/direct content are available.
-- Security owner action remains: revoke any old PATs and approve SSH deploy key migration.
-
-## Measurement risk
-
-30d lane_test results are mixed: MN better than official, MT worse with 6 would-break, MB BT slightly better but lo2 weaker. Any future adjustment should be region-specific and stay test-lane only until evidence improves.
+- `SECURITY_OWNER_ACTION`: VPS git remote still matches PAT token pattern; revoke PATs and migrate deploy to SSH key.
+- `LANE_MORNING_WAIT`: MT/MB are preview below budget in the 08:57 probe; do not label as main-ready until exact 20/20.
+- `V102_STRONG_EMPTY_THIS_RUN`: selector shadow table produced 0 rows in latest materialization; keep measuring, do not promote.
