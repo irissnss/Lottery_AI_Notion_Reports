@@ -1,0 +1,3348 @@
+{
+  "completed_at_vn": "2026-05-11T12:38:34+07:00",
+  "db_path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+  "db_sha256_post": "b193153d0431546ec99b97cb8c2e5f02e1d3bc0c4517acebb47c83f512314299",
+  "db_sha256_pre": "7fbc0b9e8af3328e4f4feb9f6e5264e4490d106f00d1ed9f727bb419cfcf5dee",
+  "db_size": 257335296,
+  "drilldown_payload": {
+    "contracts": {
+      "no_provider_or_manual_ai_call": true,
+      "official_tables_never_written": [
+        "predictions",
+        "final_bundles",
+        "lottery_results",
+        "model_daily_eval"
+      ],
+      "source_pool_formula_locked": {
+        "MB": "MB_D = (MN+MT+MB) D-1 + MN D + MT D",
+        "MN": "MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2",
+        "MT": "MT_D = (MN+MT+MB) D-1 + MN D"
+      }
+    },
+    "diagnostic_only": true,
+    "flow_summary": [
+      {
+        "appeared_in_actuals": 671,
+        "first_miss_stage": "PROMPT",
+        "region": "MB",
+        "row_count": 2830
+      },
+      {
+        "appeared_in_actuals": 18,
+        "first_miss_stage": "SOURCE_POOL",
+        "region": "MB",
+        "row_count": 22
+      },
+      {
+        "appeared_in_actuals": 1212,
+        "first_miss_stage": "PROMPT",
+        "region": "MN",
+        "row_count": 2830
+      },
+      {
+        "appeared_in_actuals": 28,
+        "first_miss_stage": "SOURCE_POOL",
+        "region": "MN",
+        "row_count": 37
+      },
+      {
+        "appeared_in_actuals": 994,
+        "first_miss_stage": "PROMPT",
+        "region": "MT",
+        "row_count": 2830
+      },
+      {
+        "appeared_in_actuals": 29,
+        "first_miss_stage": "SOURCE_POOL",
+        "region": "MT",
+        "row_count": 34
+      }
+    ],
+    "generated_at_vn": "2026-05-11T12:38:30+07:00",
+    "miss_matrix": [
+      {
+        "false_promo": 1,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MB",
+        "row_count": 483,
+        "source_formula_stage": "D-1",
+        "would_break": 1,
+        "would_save": 5
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MB",
+        "row_count": 192,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 1
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MB",
+        "row_count": 14,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 1
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MB",
+        "row_count": 382,
+        "source_formula_stage": "MN_D",
+        "would_break": 1,
+        "would_save": 3
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MB",
+        "row_count": 301,
+        "source_formula_stage": "MN_D",
+        "would_break": 0,
+        "would_save": 4
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MB",
+        "row_count": 6,
+        "source_formula_stage": "MN_D",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MB",
+        "row_count": 447,
+        "source_formula_stage": "MT_D",
+        "would_break": 1,
+        "would_save": 6
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MB",
+        "row_count": 233,
+        "source_formula_stage": "MT_D",
+        "would_break": 0,
+        "would_save": 1
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MB",
+        "row_count": 9,
+        "source_formula_stage": "MT_D",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 8,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MN",
+        "row_count": 1068,
+        "source_formula_stage": "D-1",
+        "would_break": 8,
+        "would_save": 6
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MN",
+        "row_count": 419,
+        "source_formula_stage": "D-1",
+        "would_break": 1,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MN",
+        "row_count": 24,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 5,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MN",
+        "row_count": 1041,
+        "source_formula_stage": "D-2",
+        "would_break": 5,
+        "would_save": 6
+      },
+      {
+        "false_promo": 4,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MN",
+        "row_count": 454,
+        "source_formula_stage": "D-2",
+        "would_break": 4,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MN",
+        "row_count": 16,
+        "source_formula_stage": "D-2",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MT",
+        "row_count": 747,
+        "source_formula_stage": "D-1",
+        "would_break": 1,
+        "would_save": 6
+      },
+      {
+        "false_promo": 2,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MT",
+        "row_count": 358,
+        "source_formula_stage": "D-1",
+        "would_break": 2,
+        "would_save": 2
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "PROMPT_NOT_INJECTED+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 27,
+        "source_formula_stage": "D-1",
+        "would_break": 1,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MT",
+        "row_count": 14,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 12,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 9,
+        "source_formula_stage": "D-1",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 2,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+        "region": "MT",
+        "row_count": 629,
+        "source_formula_stage": "MN_D",
+        "would_break": 2,
+        "would_save": 4
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "PROMPT_NOT_INJECTED",
+        "region": "MT",
+        "row_count": 476,
+        "source_formula_stage": "MN_D",
+        "would_break": 1,
+        "would_save": 4
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "SOURCE_FORMULA_EXCLUSION+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 24,
+        "source_formula_stage": "MN_D",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 1,
+        "miss_reason": "PROMPT_NOT_INJECTED+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 17,
+        "source_formula_stage": "MN_D",
+        "would_break": 1,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP",
+        "region": "MT",
+        "row_count": 14,
+        "source_formula_stage": "MN_D",
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "false_promo": 0,
+        "miss_reason": "TOP30_CAP+STATION_ALIAS",
+        "region": "MT",
+        "row_count": 7,
+        "source_formula_stage": "MN_D",
+        "would_break": 0,
+        "would_save": 0
+      }
+    ],
+    "official_impact_allowed": false,
+    "official_output": false,
+    "output_eligible": false,
+    "owner_approved": false,
+    "schema_version": "v10524_source_pool_gap_drilldown_v1",
+    "shadow_only": true,
+    "station_identity_audit": [
+      {
+        "affected_rows": 1,
+        "column_or_path": "station",
+        "match_type": "ALIAS_MAPPED",
+        "surface": "DB_COLUMN",
+        "table_name": "pnl_daily_settlements",
+        "unexpected_count": 1,
+        "weekday_warning": 0
+      },
+      {
+        "affected_rows": 1052,
+        "column_or_path": "station",
+        "match_type": "ALIAS_MAPPED",
+        "surface": "DB_COLUMN",
+        "table_name": "lottery_results",
+        "unexpected_count": 0,
+        "weekday_warning": 0
+      },
+      {
+        "affected_rows": 13597,
+        "column_or_path": "station",
+        "match_type": "EXACT_CANONICAL",
+        "surface": "DB_COLUMN",
+        "table_name": "lottery_results",
+        "unexpected_count": 0,
+        "weekday_warning": 0
+      },
+      {
+        "affected_rows": 23,
+        "column_or_path": "station",
+        "match_type": "EXACT_CANONICAL",
+        "surface": "DB_COLUMN",
+        "table_name": "pnl_daily_settlements",
+        "unexpected_count": 0,
+        "weekday_warning": 0
+      }
+    ],
+    "table_counts": {
+      "v10524_candidate_flow_trace": 8583,
+      "v10524_source_pool_gap_drilldown": 7423,
+      "v10524_station_identity_full_audit": 69
+    },
+    "target_date": "2026-05-11",
+    "top_miss_per_region": {
+      "MB": [
+        {
+          "actual_tail": "72",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "91",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 11,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "79",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 10,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "91",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 10,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "14",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 9,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "17",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 9,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "20",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 9,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "25",
+          "first_date": "2026-04-19",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 9,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "25",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 9,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "79",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 9,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "11",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 8,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "13",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "27",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-03",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "37",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "42",
+          "first_date": "2026-04-21",
+          "last_date": "2026-05-09",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 8,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "46",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "54",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-03",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "72",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 8,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "79",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 8,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "84",
+          "first_date": "2026-04-23",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "91",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-03",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 8,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "05",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 7,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "09",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-01",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "13",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-08",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "13",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-09",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "14",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-07",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "14",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-07",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "17",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 7,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "25",
+          "first_date": "2026-04-19",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 7,
+          "source_formula_stage": "MT_D"
+        },
+        {
+          "actual_tail": "28",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-03",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 7,
+          "source_formula_stage": "D-1"
+        }
+      ],
+      "MN": [
+        {
+          "actual_tail": "05",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 21,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "27",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 20,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "67",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 20,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "05",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-06",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 19,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "44",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 19,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "30",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 18,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "82",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 18,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "82",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 18,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "27",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 17,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "44",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 17,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "83",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 17,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "93",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 17,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "01",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 16,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "30",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-04",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 16,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "75",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 16,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "98",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 16,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "37",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "65",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "67",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "79",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "83",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "90",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "91",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "93",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-2"
+        },
+        {
+          "actual_tail": "98",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 15,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "01",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "19",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "46",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "52",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "59",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        }
+      ],
+      "MT": [
+        {
+          "actual_tail": "02",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-06",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "30",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "85",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 14,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "01",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 13,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "25",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 13,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "35",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 13,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "48",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 13,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "49",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-05",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 13,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "82",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 13,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "85",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-09",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 13,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "02",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-02",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "09",
+          "first_date": "2026-04-17",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 12,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "34",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "34",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-07",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 12,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "39",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 12,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "54",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "71",
+          "first_date": "2026-04-15",
+          "last_date": "2026-05-10",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "73",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "84",
+          "first_date": "2026-04-16",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 12,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "38",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "42",
+          "first_date": "2026-04-13",
+          "last_date": "2026-05-03",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "45",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-07",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "67",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-08",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "75",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "90",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-09",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "91",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-06",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 11,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "38",
+          "first_date": "2026-04-18",
+          "last_date": "2026-05-09",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 10,
+          "source_formula_stage": "MN_D"
+        },
+        {
+          "actual_tail": "39",
+          "first_date": "2026-04-21",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 10,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "49",
+          "first_date": "2026-04-12",
+          "last_date": "2026-05-05",
+          "miss_reason": "PROMPT_NOT_INJECTED",
+          "occurrences": 10,
+          "source_formula_stage": "D-1"
+        },
+        {
+          "actual_tail": "52",
+          "first_date": "2026-04-14",
+          "last_date": "2026-05-10",
+          "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+          "occurrences": 10,
+          "source_formula_stage": "MN_D"
+        }
+      ]
+    },
+    "window_days": 30
+  },
+  "official_post": [
+    {
+      "row_count": 4750,
+      "sha256": "c8312b347a8cd92b26b49c10eb4b31266a644303fa08671b397b7fa376542868",
+      "table": "predictions"
+    },
+    {
+      "row_count": 217,
+      "sha256": "0126a7dafd1674f9f4ce7bb0c90d0d4d76042af2cb12b745d8d9d75c8bfb1e38",
+      "table": "final_bundles"
+    },
+    {
+      "row_count": 14649,
+      "sha256": "ecee21c893684cdd729e35c0024414f69b703344e93d9c2108697ba64ac72458",
+      "table": "lottery_results"
+    },
+    {
+      "row_count": 4572,
+      "sha256": "083a36ffea774fa6a711348b36e7293d5ed68b2ba88c40a1a119b8fdd36262df",
+      "table": "model_daily_eval"
+    }
+  ],
+  "official_pre": [
+    {
+      "row_count": 4750,
+      "sha256": "c8312b347a8cd92b26b49c10eb4b31266a644303fa08671b397b7fa376542868",
+      "table": "predictions"
+    },
+    {
+      "row_count": 217,
+      "sha256": "0126a7dafd1674f9f4ce7bb0c90d0d4d76042af2cb12b745d8d9d75c8bfb1e38",
+      "table": "final_bundles"
+    },
+    {
+      "row_count": 14649,
+      "sha256": "ecee21c893684cdd729e35c0024414f69b703344e93d9c2108697ba64ac72458",
+      "table": "lottery_results"
+    },
+    {
+      "row_count": 4572,
+      "sha256": "083a36ffea774fa6a711348b36e7293d5ed68b2ba88c40a1a119b8fdd36262df",
+      "table": "model_daily_eval"
+    }
+  ],
+  "official_unchanged": true,
+  "runtime_manifest": {
+    "contracts": {
+      "manual_predict_token_gate": "OWNER_MANUAL_PROVIDER_CALLS_ENABLED",
+      "no_provider_or_manual_ai_call": true,
+      "official_tables_never_written": [
+        "predictions",
+        "final_bundles",
+        "lottery_results",
+        "model_daily_eval"
+      ]
+    },
+    "db_schema": {
+      "exists": true,
+      "official_tables": {
+        "final_bundles": 217,
+        "lottery_results": 14649,
+        "model_daily_eval": 4572,
+        "predictions": 4750
+      },
+      "sha256": "b193153d0431546ec99b97cb8c2e5f02e1d3bc0c4517acebb47c83f512314299",
+      "shadow_tables": [
+        "ai_no_token_cross_verification_shadow",
+        "ai_prompt_context_audit_shadow",
+        "ai_region_specialist_prompt_shadow_results",
+        "ai_region_specialist_provider_shadow_results",
+        "bundle_universe_coverage_shadow",
+        "cluster_weighted_consensus_shadow",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "cross_region_spillover_shadow",
+        "experimental_preview_shadow",
+        "gan_signal_shadow_v100",
+        "lag1_adaptive_exploit_signal_shadow",
+        "loz_selector_shadow",
+        "loz_stage_trace_shadow",
+        "mb_experimental_preview_shadow",
+        "mb_regime_shift_shadow",
+        "mb_structural_drilldown_shadow",
+        "model_cross_region_dup_shadow",
+        "mt_model_hit_output_drop_shadow",
+        "no_token_drift_shadow",
+        "no_token_rule_aware_pack_shadow",
+        "rule_phase_evidence_shadow",
+        "rule_phase_synthesis_shadow",
+        "single_vote_rescue_replay_shadow",
+        "strength_skip_calibration_replay_shadow",
+        "strongest_vs_final_shadow",
+        "tier2_replay_shadow",
+        "tier2_replay_v2_shadow",
+        "v101_mn_cross_region_rule_shadow",
+        "v101_region_prompt_context_shadow",
+        "v101_region_source_pool_evidence_shadow",
+        "v101_region_source_pool_shadow",
+        "v101_region_source_pool_top5_shadow",
+        "v102_candidate_recurrence_context_shadow",
+        "v102_recurrence_stats_shadow",
+        "v103_candidate_supply_shadow",
+        "v103_prompt_candidate_gate_shadow",
+        "v104_shadow_prompt_candidate_injection",
+        "v104_shadow_prompt_model_decision",
+        "v10522_v102_strong_selector_shadow",
+        "v10524_candidate_flow_trace",
+        "v10524_source_pool_gap_drilldown",
+        "v10524_station_identity_full_audit",
+        "v10524_v102_relaxed_selector_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_scoreboard",
+        "v105_no_token_independent_shadow",
+        "v93_mn_save_signal_per_method_shadow",
+        "v93_verdict_weight_recalibration_shadow",
+        "v93_wr_gate_filter_audit_shadow",
+        "v94_cross_region_leakage_continuous_monitor",
+        "v94_cross_region_spillover_aware_shadow",
+        "v94_no_token_first_simulation_shadow",
+        "v95_ai_context_completeness_shadow",
+        "v95_data_freshness_audit_shadow",
+        "v96_master_tracker_daily_snapshot",
+        "v99_exact_evaluator_results",
+        "verdict_distribution_daily",
+        "verified_bucket_rules",
+        "weekday_blackspot_shadow"
+      ],
+      "size": 257347584,
+      "table_count": 164,
+      "tables": [
+        "adaptive_exploit_v67_candidate_trace",
+        "ai_herding_failure_daily",
+        "ai_no_token_cross_verification_shadow",
+        "ai_primary_gate_daily",
+        "ai_prompt_context_audit_shadow",
+        "ai_reasoning_contract_daily",
+        "ai_region_specialist_prompt_shadow_results",
+        "ai_region_specialist_provider_shadow_results",
+        "app_settings",
+        "bundle_family_contribution_daily",
+        "bundle_readiness_gate_daily",
+        "bundle_replay_compare_daily",
+        "bundle_universe_coverage_daily",
+        "bundle_universe_coverage_shadow",
+        "candidate_drop_stage_daily",
+        "cluster_weighted_consensus_shadow",
+        "cohere_effectiveness_daily",
+        "cohere_rerank_log",
+        "consensus_v1_trace",
+        "convergence_cluster_pattern_daily",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "cross_region_spillover_shadow",
+        "daily_eval_log",
+        "daily_stats",
+        "data_preservation_manifest_daily",
+        "day_governance",
+        "draw_availability_daily",
+        "du_doan_test_ai_predictions",
+        "du_doan_test_audit_log",
+        "du_doan_test_bundles",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_daily_summary",
+        "du_doan_test_experiment_scoreboard",
+        "du_doan_test_experiments",
+        "du_doan_test_latency_daily",
+        "du_doan_test_leakage_audit",
+        "du_doan_test_method_scoreboard",
+        "du_doan_test_model_budget_daily",
+        "du_doan_test_model_contribution",
+        "du_doan_test_model_scoreboard",
+        "du_doan_test_model_skip_reason",
+        "du_doan_test_results",
+        "du_doan_test_runs",
+        "du_doan_test_selected_voters",
+        "experimental_preview_shadow",
+        "final_bundles",
+        "freshness_chain_daily",
+        "gan_signal_shadow_v100",
+        "hybrid_v1_trace",
+        "lag1_adaptive_exploit_signal_shadow",
+        "lane_test_lose_only_audit_daily",
+        "lane_test_region_profiles",
+        "lottery_results",
+        "loz_selector_shadow",
+        "loz_stage_trace_shadow",
+        "main_vs_secondary_quality_daily",
+        "mb_ai_chain_preservation_v1",
+        "mb_experimental_preview_shadow",
+        "mb_regime_shift_shadow",
+        "mb_structural_drilldown_shadow",
+        "method_cluster_performance_daily",
+        "mined_rule_effectiveness",
+        "mined_rules",
+        "mining_log",
+        "mn_ai_herd_vs_v67_save_daily",
+        "mn_mb_failure_streak_daily",
+        "model_cross_region_dup_shadow",
+        "model_daily_eval",
+        "model_latency_cost_audit_daily",
+        "model_strength_by_region_weekday_station_daily",
+        "mt_model_hit_output_drop_shadow",
+        "no_token_drift_shadow",
+        "no_token_rule_aware_pack_shadow",
+        "official_vs_testlane_rescue_daily",
+        "output_eligible_completion_daily",
+        "output_policy_replay_daily",
+        "pattern_effectiveness",
+        "pattern_rules",
+        "pnl_capital_events",
+        "pnl_daily_bets",
+        "pnl_daily_settlements",
+        "pnl_daily_summary",
+        "pp1_live_watch_daily",
+        "pre_partial_post_lose_daily",
+        "pre_vs_post_rerun_effect_daily",
+        "pre_win_post_lose_daily",
+        "prediction_policies",
+        "predictions",
+        "prompt_pressure_daily",
+        "prompt_section_breakdown_daily",
+        "public_bundle_publish_audit_daily",
+        "reasoning_layer_penetration_daily",
+        "rule_conversion_loss_stage_daily",
+        "rule_effectiveness",
+        "rule_features",
+        "rule_injection_contract",
+        "rule_phase_evidence_shadow",
+        "rule_phase_synthesis_shadow",
+        "runtime_reliability_daily",
+        "runtime_reliability_model_daily",
+        "scheduler_logs",
+        "shadow_activation_registry",
+        "shadow_candidates",
+        "shadow_daily_comparison",
+        "shadow_feature_snapshots",
+        "shadow_method_scoreboard",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "shadow_rule_d1_comparison",
+        "single_vote_rescue_replay_shadow",
+        "source_prize_effectiveness_daily",
+        "source_prize_strong_coverage",
+        "sqlite_sequence",
+        "station_identity_runtime_audit",
+        "strength_skip_calibration_replay_shadow",
+        "strongest_candidate_escape_daily",
+        "strongest_vs_final_conversion_daily",
+        "strongest_vs_final_shadow",
+        "sync_parity_audit_daily",
+        "system_alerts",
+        "test_lane_fast_incident_monitor",
+        "test_lane_signal_drift_monitor",
+        "tier2_replay_shadow",
+        "tier2_replay_v2_shadow",
+        "trace_field_completeness_daily",
+        "training_history",
+        "training_records",
+        "users",
+        "v101_mn_cross_region_rule_shadow",
+        "v101_region_prompt_context_shadow",
+        "v101_region_source_pool_evidence_shadow",
+        "v101_region_source_pool_shadow",
+        "v101_region_source_pool_top5_shadow",
+        "v102_candidate_recurrence_context_shadow",
+        "v102_recurrence_stats_shadow",
+        "v103_candidate_supply_shadow",
+        "v103_prompt_candidate_gate_shadow",
+        "v104_shadow_prompt_candidate_injection",
+        "v104_shadow_prompt_model_decision",
+        "v10522_v102_strong_selector_shadow",
+        "v10524_candidate_flow_trace",
+        "v10524_source_pool_gap_drilldown",
+        "v10524_station_identity_full_audit",
+        "v10524_v102_relaxed_selector_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_scoreboard",
+        "v105_no_token_independent_shadow",
+        "v93_mn_save_signal_per_method_shadow",
+        "v93_verdict_weight_recalibration_shadow",
+        "v93_wr_gate_filter_audit_shadow",
+        "v94_cross_region_leakage_continuous_monitor",
+        "v94_cross_region_spillover_aware_shadow",
+        "v94_no_token_first_simulation_shadow",
+        "v95_ai_context_completeness_shadow",
+        "v95_data_freshness_audit_shadow",
+        "v96_master_tracker_daily_snapshot",
+        "v99_exact_evaluator_results",
+        "verdict_distribution_daily",
+        "verified_bucket_rules",
+        "weekday_blackspot_shadow",
+        "weekday_rule_strength_daily"
+      ],
+      "v10524_tables": [
+        "v10524_candidate_flow_trace",
+        "v10524_source_pool_gap_drilldown",
+        "v10524_station_identity_full_audit",
+        "v10524_v102_relaxed_selector_shadow"
+      ]
+    },
+    "deploy_timestamp_vn": null,
+    "diagnostic_only": true,
+    "env_guard_flags": {
+      "AI_MODEL": {
+        "set": false,
+        "value": null
+      },
+      "AI_MODEL_HARD_TIMEOUT_SEC": {
+        "set": false,
+        "value": null
+      },
+      "AI_MODEL_SOFT_CONTINUE_SEC": {
+        "set": false,
+        "value": null
+      },
+      "ENABLE_SCHEDULER": {
+        "set": false,
+        "value": null
+      },
+      "OWNER_AI_TOKEN_ONCE_DAILY_ONLY": {
+        "set": false,
+        "value": null
+      },
+      "OWNER_MANUAL_PROVIDER_CALLS_ENABLED": {
+        "set": false,
+        "value": null
+      },
+      "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED": {
+        "set": false,
+        "value": null
+      },
+      "TEST_LANE_FULL_BUDGET_TARGET": {
+        "set": false,
+        "value": null
+      }
+    },
+    "env_secret_fingerprints": {
+      "ANTHROPIC_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "COHERE_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "CURSOR_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "DEEPSEEK_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "GEMINI_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "GOOGLE_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "GROQ_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "MISTRAL_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      },
+      "OPENAI_API_KEY": {
+        "fingerprint": null,
+        "length": 0,
+        "set": false
+      }
+    },
+    "file_hashes": {
+      "backend": {
+        "web/backend/_v101_shadow_pilot.py": {
+          "exists": true,
+          "mtime": "2026-05-10T13:15:55+07:00",
+          "sha256": "cb6a7264ea07a0496bc75a9399a2361e61086b6ba70c343ee00c4f4429fa0909",
+          "size": 49572
+        },
+        "web/backend/_v102_recurrence_tracker.py": {
+          "exists": true,
+          "mtime": "2026-05-10T16:35:58+07:00",
+          "sha256": "4ca63e289cb1f93697cd5890fef48ef704f953acf1c435b058edc56bbf4038e8",
+          "size": 19384
+        },
+        "web/backend/_v103_candidate_supply.py": {
+          "exists": true,
+          "mtime": "2026-05-10T16:35:57+07:00",
+          "sha256": "15271182ed643b5085afec350a8e5e8f84f1a61a1997d03395acdd1d3065e53a",
+          "size": 21161
+        },
+        "web/backend/_v10522_live_prep.py": {
+          "exists": true,
+          "mtime": "2026-05-11T08:51:48+07:00",
+          "sha256": "4aca8e6c67137ef098e9514bb2577e4314d3932953d8beac5db0cdab297002bd",
+          "size": 50658
+        },
+        "web/backend/_v10524_runtime_manifest.py": {
+          "exists": true,
+          "mtime": "2026-05-11T12:28:59+07:00",
+          "sha256": "74898f9958f0fd0f3ed58130f1b9c69f5c85181375838fa0f402a21e07873ce9",
+          "size": 9780
+        },
+        "web/backend/_v10524_source_pool_gap_drilldown.py": {
+          "exists": true,
+          "mtime": "2026-05-11T12:26:14+07:00",
+          "sha256": "ada1356b44787bd113c7626fe0887c3400fdcfe3109f376fd81418fecc915247",
+          "size": 39654
+        },
+        "web/backend/_v10524_v102_relaxed_selector_shadow.py": {
+          "exists": true,
+          "mtime": "2026-05-11T12:38:18+07:00",
+          "sha256": "5b3a443b99ea708b9cbc243c719c53c7a8a25043cd85cff94ad581531ae0ac7e",
+          "size": 21462
+        },
+        "web/backend/database.py": {
+          "exists": true,
+          "mtime": "2026-05-11T09:51:54+07:00",
+          "sha256": "3c62afcabf2fdff34a214f55283ce22d4a3262347c4387777341e2b078e5b6e9",
+          "size": 199524
+        },
+        "web/backend/main.py": {
+          "exists": true,
+          "mtime": "2026-05-11T12:31:25+07:00",
+          "sha256": "2fc57d063d7f7447757c5a1627c49b8e09b8cfb37f5828b679b956a43040df64",
+          "size": 695543
+        },
+        "web/backend/model_registry.py": {
+          "exists": true,
+          "mtime": "2026-05-06T19:06:30+07:00",
+          "sha256": "0dec0b84ec822a57901b2ca6fb2d2bdd627a8655d068302b0adbb42a60e627d8",
+          "size": 32905
+        },
+        "web/backend/scheduler.py": {
+          "exists": true,
+          "mtime": "2026-05-11T09:50:56+07:00",
+          "sha256": "cde2f8f7ac99fd645f9b64523b5578dd13c551c882f71a4eebba7aa0d45f9653",
+          "size": 407149
+        },
+        "web/backend/station_identity.py": {
+          "exists": true,
+          "mtime": "2026-05-11T08:51:48+07:00",
+          "sha256": "17176f05cde81798c79e976a9fa27f4121e947a492a3a9daf9fcc2760efc677d",
+          "size": 3903
+        }
+      },
+      "frontend": {
+        "web/frontend/app.js": {
+          "exists": true,
+          "mtime": "2026-05-10T13:15:55+07:00",
+          "sha256": "f3b701e3f8fe4b858556fe6ec9cbc0c3f243c3cc1c3d048305ecd934eb387f8f",
+          "size": 108117
+        },
+        "web/frontend/du-doan-test.html": {
+          "exists": true,
+          "mtime": "2026-05-11T12:32:14+07:00",
+          "sha256": "74c72cd156553349d30d5004e30aadc3f00c5d1e4872d860703c669a738d75d4",
+          "size": 82873
+        },
+        "web/frontend/du-doan.html": {
+          "exists": true,
+          "mtime": "2026-05-10T11:03:43+07:00",
+          "sha256": "d7d869ae2cd5f7dcea2abc4c5617785d5cf1538a282f4657053a0b8d39eb5495",
+          "size": 45832
+        },
+        "web/frontend/index.html": {
+          "exists": true,
+          "mtime": "2026-05-03T19:31:35+07:00",
+          "sha256": "3b62098eaadb9ad950c683fa46451e3c8784d3138c4e03f1212a4cb554586269",
+          "size": 21704
+        },
+        "web/frontend/monitoring.html": {
+          "exists": true,
+          "mtime": "2026-05-11T12:34:37+07:00",
+          "sha256": "619100088bb91b7a143abe87096b20ed10cb041034008a269ca4b2840579ccbf",
+          "size": 322484
+        }
+      }
+    },
+    "generated_at_vn": "2026-05-11T12:38:30+07:00",
+    "official_impact_allowed": false,
+    "official_output": false,
+    "output_eligible": false,
+    "owner_approved": false,
+    "process": {
+      "argv": [
+        "artifacts/v10524/_v10524_run_local_audit.py"
+      ],
+      "captured_at_vn": "2026-05-11T12:38:30+07:00",
+      "cwd": "E:\\Lottery_AI_Test",
+      "last_restart_at_vn": null,
+      "pid": 65776,
+      "ppid": 63528,
+      "uptime_seconds": null
+    },
+    "schema_version": "v10524_runtime_manifest_v1",
+    "shadow_only": true,
+    "source_ref": {
+      "available": true,
+      "branch": "master",
+      "captured_at_vn": "2026-05-11T12:38:30+07:00",
+      "commit": "e626ba74d968b38479e1d261c9ea56029704c361",
+      "describe": "e626ba7-dirty",
+      "dirty": true
+    }
+  },
+  "schema_version": "v10524_local_audit_v1",
+  "started_at_vn": "2026-05-11T12:38:27+07:00",
+  "station_code_audit": {
+    "alias_findings": [
+      {
+        "canonical": "Đắk Lắk",
+        "file": "web/backend/cross_region.py",
+        "occurrences": 1,
+        "raw": "Đắc Lắc",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/gpt_analyzer.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/gpt_analyzer.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Đắk Nông",
+        "file": "web/backend/main.py",
+        "occurrences": 1,
+        "raw": "Đắc Nông",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/metrics_calculator.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/metrics_calculator.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/pnl_settlement.py",
+        "occurrences": 3,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/pnl_settlement.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/pnl_settlement.py",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/scheduler.py",
+        "occurrences": 2,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/scheduler.py",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/scraper.py",
+        "occurrences": 9,
+        "raw": "HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/scraper.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/scraper.py",
+        "occurrences": 4,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/scraper.py",
+        "occurrences": 2,
+        "raw": "Thành phố Hồ Chí Minh",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/scraper.py",
+        "occurrences": 5,
+        "raw": "Huế",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/scraper.py",
+        "occurrences": 2,
+        "raw": "Bà Rịa Vũng Tàu",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/scraper.py",
+        "occurrences": 1,
+        "raw": "Bà Rịa-Vũng Tàu",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 12,
+        "raw": "HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "TP HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 2,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Thành phố Hồ Chí Minh",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 6,
+        "raw": "Huế",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 2,
+        "raw": "Hue",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Lắk",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Đắc Lắc",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Lắk",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Dak Lak",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Nông",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Đắc Nông",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Nông",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Dak Nong",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Bà Rịa Vũng Tàu",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/station_identity.py",
+        "occurrences": 1,
+        "raw": "Bà Rịa-Vũng Tàu",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_analyze_fallback_sources.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_analyze_xskt.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_analyze_xskt.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_analyze_xskt2.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_analyze_xskt2.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Đắk Lắk",
+        "file": "web/backend/_backtest_rules.py",
+        "occurrences": 2,
+        "raw": "Đắc Lắc",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_rescrape_mn_now.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_fallback.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_fallback.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xsdp_json.py",
+        "occurrences": 4,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xsdp_json.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_test_xsdp_json.py",
+        "occurrences": 1,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/_test_xsdp_json.py",
+        "occurrences": 1,
+        "raw": "Bà Rịa Vũng Tàu",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xsdp_parser.py",
+        "occurrences": 5,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xsdp_parser.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xsdp_parser.py",
+        "occurrences": 1,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_test_xsdp_parser.py",
+        "occurrences": 1,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Bà Rịa - Vũng Tàu",
+        "file": "web/backend/_test_xsdp_parser.py",
+        "occurrences": 1,
+        "raw": "Bà Rịa Vũng Tàu",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xskt.py",
+        "occurrences": 3,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xskt.py",
+        "occurrences": 2,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xskt.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_test_xskt.py",
+        "occurrences": 1,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_v100_gan_calculator.py",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_v100_gan_calculator.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_v100_gan_calculator.py",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 6,
+        "raw": "HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 1,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Lắk",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 1,
+        "raw": "Đắc Lắc",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "Đắk Nông",
+        "file": "web/backend/_v10522_live_prep.py",
+        "occurrences": 1,
+        "raw": "Đắc Nông",
+        "raw_forensic_exception": true,
+        "unexpected": 0
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mb.html",
+        "occurrences": 6,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mb.html",
+        "occurrences": 5,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mb.html",
+        "occurrences": 2,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mb.html",
+        "occurrences": 2,
+        "raw": "Thành phố Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_xsdp_mb.html",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 43,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 4,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 8,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 2,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 2,
+        "raw": "Thành phố Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_xsdp_mn.html",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mt.html",
+        "occurrences": 6,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mt.html",
+        "occurrences": 5,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mt.html",
+        "occurrences": 2,
+        "raw": "Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_mt.html",
+        "occurrences": 2,
+        "raw": "Thành phố Hồ Chí Minh",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/backend/_xsdp_mt.html",
+        "occurrences": 3,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/backend/_xsdp_test_results.json",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/monitoring.html",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/pnl-tracker.html",
+        "occurrences": 3,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/pnl-tracker.html",
+        "occurrences": 1,
+        "raw": "TPHCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/frontend/pnl-tracker.html",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/settings.js",
+        "occurrences": 2,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "Thừa Thiên Huế",
+        "file": "web/frontend/settings.js",
+        "occurrences": 2,
+        "raw": "Huế",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/user-view.js",
+        "occurrences": 1,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/archive/demo_2_so_cuoi.html",
+        "occurrences": 5,
+        "raw": "HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      },
+      {
+        "canonical": "TP. HCM",
+        "file": "web/frontend/archive/demo_2_so_cuoi.html",
+        "occurrences": 5,
+        "raw": "TP.HCM",
+        "raw_forensic_exception": false,
+        "unexpected": 1
+      }
+    ],
+    "files_scanned": 376,
+    "schema_version": "v10524_station_code_audit_v1",
+    "summary": {
+      "alias_findings_total": 89,
+      "alias_unexpected_count": 62,
+      "raw_forensic_exceptions": [
+        "web/backend/_v10522_live_prep.py",
+        "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "web/backend/_v10524_station_identity_full_audit.py",
+        "web/backend/scraper.py",
+        "web/backend/station_identity.py"
+      ],
+      "weekday_as_station_unexpected": 132,
+      "weekday_findings_total": 147
+    },
+    "weekday_findings": [
+      {
+        "file": "web/backend/combo_super.py",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']         region_names = {'MN':"
+      },
+      {
+        "file": "web/backend/database.py",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": " thay đổi)         #         # Ví dụ MN Thứ Bảy:         #   Verify lần 1: 1 đài"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": "══════     dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm',"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": "').weekday())         dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm',"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": " % 8) + 1             _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Th"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu',"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "))         dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu',"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "            _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Th"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": " dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "   _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','C"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": ": ĐÀI An Giang top tails=50,02,14 | DOW Thứ Năm top=14,73,02 | Gan=02(freq=71) C"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": " Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_o"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": "_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhậ"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": "mes_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": "ứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_obj = dateti"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": "ứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']        "
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": "['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']          "
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "ứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_obj = datetime.strptime"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "ứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']         dow_vi_p20"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": ",'Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']             _wd_gat"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "══════════════════     dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư'"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']         dow_vi_p20 = dow_name"
+      },
+      {
+        "file": "web/backend/gpt_analyzer.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "'Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']             _wd_gate      = _"
+      },
+      {
+        "file": "web/backend/pnl_settlement.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "\", \"Thứ 4\", \"Thứ 5\", \"Thứ 6\", \"Thứ 7\", \"Chủ Nhật\"]   def _planned_stations_by_we"
+      },
+      {
+        "file": "web/backend/pnl_settlement.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "    # Mon=0           'weekday_label': 'Chủ Nhật',           'lookback_weeks': 8"
+      },
+      {
+        "file": "web/backend/scheduler.py",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']             region_vn = {'MN'"
+      },
+      {
+        "file": "web/backend/scheduler.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Learning.     Chạy hàng tuần (mặc định: Chủ Nhật 03:00 AM).          Flow cho mỗ"
+      },
+      {
+        "file": "web/backend/scheduler.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ight_optimizer_day') or 'sun'  # Gom về Chủ Nhật (audit fix #7)     optimizer_ti"
+      },
+      {
+        "file": "web/backend/scheduler.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-Learning) ===         # Chạy hàng tuần Chủ Nhật 02:00 AM — tự thu thập data + t"
+      },
+      {
+        "file": "web/backend/_check_cross_region.py",
+        "match": "Chu Nhat",
+        "raw_forensic_exception": false,
+        "snippet": "ite3.Row  # ============ MB 08/02/2026 (Chu Nhat) - NGUON ============ print(\"=\""
+      },
+      {
+        "file": "web/backend/_check_cross_region.py",
+        "match": "Chu Nhat",
+        "raw_forensic_exception": false,
+        "snippet": "* 80) print(\"NGUON: MB ngay 08/02/2026 (Chu Nhat)\") print(\"=\" * 80)  rows = db.e"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": ".cursor()  DOW_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',     "
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "ủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ Năm', 5: 'Th"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": ": 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DO"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": " 'Thứ Tư',            4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DOW_SHORT = {0:'"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "        4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DOW_SHORT = {0:'CN', 1:'T2', 2"
+      },
+      {
+        "file": "web/backend/_deep_focus_v3.py",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "e3.Row c = conn.cursor()  DOW_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3:"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ hai",
+        "raw_forensic_exception": true,
+        "snippet": "am\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\","
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ ba",
+        "raw_forensic_exception": true,
+        "snippet": "au\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\","
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ tư",
+        "raw_forensic_exception": true,
+        "snippet": "bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\""
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ năm",
+        "raw_forensic_exception": true,
+        "snippet": " nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhậ"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ sáu",
+        "raw_forensic_exception": true,
+        "snippet": "ứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     col"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thứ bảy",
+        "raw_forensic_exception": true,
+        "snippet": "ứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     column_targets"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "chủ nhật",
+        "raw_forensic_exception": true,
+        "snippet": " tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     column_targets = (       "
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu hai",
+        "raw_forensic_exception": true,
+        "snippet": " = _try_aliases()     weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\","
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu ba",
+        "raw_forensic_exception": true,
+        "snippet": "ases()     weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\","
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu ba",
+        "raw_forensic_exception": true,
+        "snippet": "u ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu tu",
+        "raw_forensic_exception": true,
+        "snippet": " weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\""
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu nam",
+        "raw_forensic_exception": true,
+        "snippet": "ords = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nha"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu sau",
+        "raw_forensic_exception": true,
+        "snippet": "u hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ ha"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "thu bay",
+        "raw_forensic_exception": true,
+        "snippet": "u ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba"
+      },
+      {
+        "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+        "match": "chu nhat",
+        "raw_forensic_exception": true,
+        "snippet": " tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\""
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: xổ số Thủ đô Hà Nội<li>Thứ Ba: "
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "ent><li>Thứ Hai: xổ số Thủ đô Hà Nội<li>Thứ Ba: xổ số Quảng Ninh<li>Thứ Tư: xổ s"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "ô Hà Nội<li>Thứ Ba: xổ số Quảng Ninh<li>Thứ Tư: xổ số Bắc Ninh<li>Thứ Năm: xổ số"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": "Quảng Ninh<li>Thứ Tư: xổ số Bắc Ninh<li>Thứ Năm: xổ số Thủ đô Hà Nội<li>Thứ Sáu:"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": "Ninh<li>Thứ Năm: xổ số Thủ đô Hà Nội<li>Thứ Sáu: xổ số Hải Phòng<li>Thứ Bảy: xổ "
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "ô Hà Nội<li>Thứ Sáu: xổ số Hải Phòng<li>Thứ Bảy: xổ số Nam Định<li>Chủ Nhật: xổ "
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "i><a href=/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div cl"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div class=\"visib"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "i><a href=/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">CN</a></ul></div></div><div cl"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "<th>Thứ 4<th>Thứ 5<th>Thứ 6<th>Thứ 7<th>Chủ nhật<tbody><tr><td style=height:32.5"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\">Thống Kê Giải "
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026</a></h3><div cl"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\"><img width=113"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\"></a></div><div"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\" style=color:#0"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Thống kê giải đặc biệt miền Bắc hôm nay chủ nhật ngày 15/02/2026 dựa trên bảng t"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Hải Phòng<li>Thứ Bảy: xổ số Nam Định<li>Chủ Nhật: xổ số Thái Bình<li>Thời gian t"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/"
+      },
+      {
+        "file": "web/backend/_xsdp_mb.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: TP.HCM - Đồng Tháp - Cà Mau<li>"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "Thứ Hai: TP.HCM - Đồng Tháp - Cà Mau<li>Thứ Ba: Bến Tre - Vũng Tàu - Bạc Liêu<li"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "hứ Ba: Bến Tre - Vũng Tàu - Bạc Liêu<li>Thứ Tư: Đồng Nai - Cần Thơ - Sóc Trăng<l"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": "ứ Tư: Đồng Nai - Cần Thơ - Sóc Trăng<li>Thứ Năm: Tây Ninh - An Giang - Bình Thuậ"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": "ăm: Tây Ninh - An Giang - Bình Thuận<li>Thứ Sáu: Vĩnh Long - Bình Dương - Trà Vi"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "u: Vĩnh Long - Bình Dương - Trà Vinh<li>Thứ Bảy: TP.HCM - Long An - Bình Phước -"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "i><a href=/xsmn-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div cl"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "/xsmn-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div class=\"visib"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\">Thống Kê Xổ Số Miền"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026</a></h3><div class=p"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\"><img width=113 heig"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\"></a></div><div clas"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\" style=color:#000>Th"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": " kê xổ số miền Nam 15/02/2026 - Hôm nay chủ nhật ngày 15/02/2026, thống kê XSMN "
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "M - Long An - Bình Phước - Hậu Giang<li>Chủ Nhật: Tiền Giang - Kiên Giang - Đà L"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/"
+      },
+      {
+        "file": "web/backend/_xsdp_mn.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: Phú Yên - TT.Huế<li>Thứ Ba: Quả"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Ba",
+        "raw_forensic_exception": false,
+        "snippet": "ontent><li>Thứ Hai: Phú Yên - TT.Huế<li>Thứ Ba: Quảng Nam - Đắk Lắk<li>Thứ Tư: K"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Tư",
+        "raw_forensic_exception": false,
+        "snippet": "T.Huế<li>Thứ Ba: Quảng Nam - Đắk Lắk<li>Thứ Tư: Khánh Hòa - Đà Nẵng<li>Thứ Năm: "
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Năm",
+        "raw_forensic_exception": false,
+        "snippet": "k Lắk<li>Thứ Tư: Khánh Hòa - Đà Nẵng<li>Thứ Năm: Quảng Bình - Bình Định - Quảng "
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Sáu",
+        "raw_forensic_exception": false,
+        "snippet": ": Quảng Bình - Bình Định - Quảng Trị<li>Thứ Sáu: Gia Lai - Ninh Thuận<li>Thứ Bảy"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Thứ Bảy",
+        "raw_forensic_exception": false,
+        "snippet": "Trị<li>Thứ Sáu: Gia Lai - Ninh Thuận<li>Thứ Bảy: Quảng Ngãi - Đà Nẵng - Đắk Nông"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep."
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "7</a><li><a href=/xsmt-chu-nhat-cn.html>Chủ Nhật</a></ul></div><div class=\"visib"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\">Thống Kê Xổ Số Miền"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026</a></h3><div class=p"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\"><img width=113 heig"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\"></a></div><div clas"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\" style=color:#000>Th"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "ê xổ số miền Trung 15/02/2026 - Hôm nay chủ nhật ngày 15/02/2026, thống kê XSMT "
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Bảy: Quảng Ngãi - Đà Nẵng - Đắk Nông<li>Chủ Nhật: Khánh Hòa - Kon Tum<li>Thời gi"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "chủ nhật",
+        "raw_forensic_exception": false,
+        "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/"
+      },
+      {
+        "file": "web/backend/_xsdp_mt.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x"
+      },
+      {
+        "file": "web/frontend/settings.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "tion>                 <option value=\"6\">Chủ Nhật</option>               </select"
+      },
+      {
+        "file": "web/frontend/settings.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "tion>                 <option value=\"6\">Chủ Nhật</option>               </select"
+      },
+      {
+        "file": "web/frontend/settings.js",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "Ngãi', 'Đắk Nông']     },     '6': { // Chủ Nhật (Sunday, weekday=6)         MB:"
+      },
+      {
+        "file": "web/frontend/archive/demo_best_picks.html",
+        "match": "Chủ Nhật",
+        "raw_forensic_exception": false,
+        "snippet": "       <p class=\"subtitle\">29/03/2026 — Chủ Nhật</p>     </div>      <!-- Alerts"
+      },
+      {
+        "file": "web/frontend/archive/demo_redesign.html",
+        "match": "Thứ Hai",
+        "raw_forensic_exception": false,
+        "snippet": "               <div class=\"header-date\">Thứ Hai, 10/02/2026</div>               "
+      }
+    ]
+  },
+  "steps": [
+    {
+      "name": "drilldown_materialize",
+      "result": {
+        "drilldown_rows": 7423,
+        "flow_rows": 8583,
+        "official_tables_touched": false,
+        "schema_version": "v10524_source_pool_gap_drilldown_v1",
+        "station_identity_rows": 69,
+        "target_date": "2026-05-11",
+        "updated_at": "2026-05-11T12:38:29+07:00",
+        "window_days": 30
+      }
+    },
+    {
+      "name": "v102_relaxed_materialize",
+      "result": {
+        "official_tables_touched": false,
+        "production_selector_unchanged": true,
+        "rows": 13,
+        "schema_version": "v10524_v102_relaxed_selector_shadow_v1",
+        "target_date": "2026-05-11",
+        "updated_at": "2026-05-11T12:38:30+07:00",
+        "window_days": 30
+      }
+    },
+    {
+      "manifest_path": "E:\\Lottery_AI_Test\\artifacts\\v10524\\DEPLOYED_RUNTIME_MANIFEST.json",
+      "name": "runtime_manifest_write",
+      "schema_version": "v10524_runtime_manifest_v1"
+    },
+    {
+      "name": "station_code_audit",
+      "summary": {
+        "alias_findings_total": 89,
+        "alias_unexpected_count": 62,
+        "raw_forensic_exceptions": [
+          "web/backend/_v10522_live_prep.py",
+          "web/backend/_v10524_source_pool_gap_drilldown.py",
+          "web/backend/_v10524_station_identity_full_audit.py",
+          "web/backend/scraper.py",
+          "web/backend/station_identity.py"
+        ],
+        "weekday_as_station_unexpected": 132,
+        "weekday_findings_total": 147
+      }
+    }
+  ],
+  "v102_relaxed_payload": {
+    "contracts": {
+      "no_production_selector_writes": true,
+      "official_tables_never_written": [
+        "predictions",
+        "final_bundles",
+        "lottery_results",
+        "model_daily_eval"
+      ],
+      "production_v102_strict_unchanged": true
+    },
+    "diagnostic_only": true,
+    "examples": [
+      {
+        "candidate_tail": "02",
+        "entered_top2": 1,
+        "false_promo": 0,
+        "region": "MB",
+        "relaxed_level": "RELAXED_L1",
+        "source_layers": 2,
+        "target_date": "2026-05-10",
+        "v102_class": "MEDIUM",
+        "v102_score": 14.2286,
+        "would_break": 0,
+        "would_save": 0
+      }
+    ],
+    "generated_at_vn": "2026-05-11T12:38:30+07:00",
+    "level_definitions": {
+      "RELAXED_L1": "MEDIUM + source_layers>=2",
+      "RELAXED_L2": "WEAK + non-gan core + lose-only",
+      "STRICT": "STRONG/PROMPT_REVIEW_STRONG + non-gan core + source_layers>=2 + lose-only"
+    },
+    "matrix": [
+      {
+        "avg_score": 13.616,
+        "entered_top2": 1,
+        "false_promo": 0,
+        "region": "MB",
+        "relaxed_level": "RELAXED_L1",
+        "row_count": 6,
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "avg_score": 15.546,
+        "entered_top2": 0,
+        "false_promo": 0,
+        "region": "MN",
+        "relaxed_level": "RELAXED_L1",
+        "row_count": 5,
+        "would_break": 0,
+        "would_save": 0
+      },
+      {
+        "avg_score": 14.432,
+        "entered_top2": 0,
+        "false_promo": 0,
+        "region": "MT",
+        "relaxed_level": "RELAXED_L1",
+        "row_count": 2,
+        "would_break": 0,
+        "would_save": 0
+      }
+    ],
+    "official_impact_allowed": false,
+    "official_output": false,
+    "output_eligible": false,
+    "owner_approved": false,
+    "schema_version": "v10524_v102_relaxed_selector_shadow_v1",
+    "shadow_only": true,
+    "table_count": 13,
+    "target_date": "2026-05-11",
+    "window_days": 30
+  }
+}

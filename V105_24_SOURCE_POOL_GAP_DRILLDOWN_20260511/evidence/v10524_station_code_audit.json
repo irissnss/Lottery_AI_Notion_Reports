@@ -1,0 +1,1553 @@
+{
+  "alias_findings": [
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/scraper.py",
+      "occurrences": 3,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/scraper.py",
+      "occurrences": 1,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/scraper.py",
+      "occurrences": 2,
+      "raw": "Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/scraper.py",
+      "occurrences": 2,
+      "raw": "Thành phố Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/scraper.py",
+      "occurrences": 3,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/scraper.py",
+      "occurrences": 2,
+      "raw": "Bà Rịa Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/scraper.py",
+      "occurrences": 1,
+      "raw": "Bà Rịa-Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 4,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "TP HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Thành phố Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 2,
+      "raw": "Hue",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Lắk",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Đắc Lắc",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Lắk",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Dak Lak",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Nông",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Đắc Nông",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Nông",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Dak Nong",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Bà Rịa Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/station_identity.py",
+      "occurrences": 1,
+      "raw": "Bà Rịa-Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_analyze_fallback_sources.py",
+      "occurrences": 1,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_analyze_xskt.py",
+      "occurrences": 1,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_analyze_xskt.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_analyze_xskt2.py",
+      "occurrences": 1,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_analyze_xskt2.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Lắk",
+      "file": "web/backend/_backtest_rules.py",
+      "occurrences": 2,
+      "raw": "Đắc Lắc",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_fallback.py",
+      "occurrences": 1,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_fallback.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xsdp_json.py",
+      "occurrences": 2,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xsdp_json.py",
+      "occurrences": 1,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/_test_xsdp_json.py",
+      "occurrences": 1,
+      "raw": "Bà Rịa Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xsdp_parser.py",
+      "occurrences": 2,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xsdp_parser.py",
+      "occurrences": 1,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xsdp_parser.py",
+      "occurrences": 1,
+      "raw": "Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Bà Rịa - Vũng Tàu",
+      "file": "web/backend/_test_xsdp_parser.py",
+      "occurrences": 1,
+      "raw": "Bà Rịa Vũng Tàu",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xskt.py",
+      "occurrences": 3,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xskt.py",
+      "occurrences": 2,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xskt.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_test_xskt.py",
+      "occurrences": 1,
+      "raw": "Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 3,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 1,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 1,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 1,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Lắk",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 1,
+      "raw": "Đắc Lắc",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Đắk Nông",
+      "file": "web/backend/_v10522_live_prep.py",
+      "occurrences": 1,
+      "raw": "Đắc Nông",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mb.html",
+      "occurrences": 6,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mb.html",
+      "occurrences": 5,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mb.html",
+      "occurrences": 2,
+      "raw": "Thành phố Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/_xsdp_mb.html",
+      "occurrences": 2,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mn.html",
+      "occurrences": 43,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mn.html",
+      "occurrences": 4,
+      "raw": "TPHCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mn.html",
+      "occurrences": 8,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mn.html",
+      "occurrences": 2,
+      "raw": "Thành phố Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/_xsdp_mn.html",
+      "occurrences": 2,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mt.html",
+      "occurrences": 6,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mt.html",
+      "occurrences": 5,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/backend/_xsdp_mt.html",
+      "occurrences": 2,
+      "raw": "Thành phố Hồ Chí Minh",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "Thừa Thiên Huế",
+      "file": "web/backend/_xsdp_mt.html",
+      "occurrences": 3,
+      "raw": "Huế",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/frontend/archive/demo_2_so_cuoi.html",
+      "occurrences": 5,
+      "raw": "HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    },
+    {
+      "canonical": "TP. HCM",
+      "file": "web/frontend/archive/demo_2_so_cuoi.html",
+      "occurrences": 5,
+      "raw": "TP.HCM",
+      "raw_forensic_exception": true,
+      "unexpected": 0
+    }
+  ],
+  "files_scanned": 381,
+  "schema_version": "v10525_station_code_audit_v2",
+  "summary": {
+    "alias_findings_total": 61,
+    "alias_unexpected_count": 0,
+    "raw_forensic_exceptions": [
+      "web/backend/_analyze_fallback_sources.py",
+      "web/backend/_analyze_xskt.py",
+      "web/backend/_analyze_xskt2.py",
+      "web/backend/_backtest_rules.py",
+      "web/backend/_rescrape_mn_now.py",
+      "web/backend/_test_fallback.py",
+      "web/backend/_test_xsdp_json.py",
+      "web/backend/_test_xsdp_parser.py",
+      "web/backend/_test_xskt.py",
+      "web/backend/_v10522_live_prep.py",
+      "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "web/backend/_v10524_station_identity_full_audit.py",
+      "web/backend/_xsdp_mb.html",
+      "web/backend/_xsdp_mn.html",
+      "web/backend/_xsdp_mt.html",
+      "web/backend/_xsdp_test_results.json",
+      "web/backend/scraper.py",
+      "web/backend/station_identity.py",
+      "web/frontend/archive/demo_2_so_cuoi.html"
+    ],
+    "weekday_as_station_unexpected_loose": 44,
+    "weekday_as_station_unexpected_strict": 0,
+    "weekday_findings_total": 147
+  },
+  "weekday_findings": [
+    {
+      "file": "web/backend/combo_super.py",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": false,
+      "snippet": "', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']         region_names = {'MN':",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/database.py",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": false,
+      "snippet": " thay đổi)         #         # Ví dụ MN Thứ Bảy:         #   Verify lần 1: 1 đài",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": false,
+      "snippet": "══════     dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm',",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": false,
+      "snippet": "').weekday())         dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm',",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": false,
+      "snippet": " % 8) + 1             _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Th",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": false,
+      "snippet": "dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu',",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": false,
+      "snippet": "))         dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu',",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": false,
+      "snippet": "            _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Th",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": false,
+      "snippet": "vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": false,
+      "snippet": " dow_names_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": false,
+      "snippet": "   _wd_names_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','C",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": false,
+      "snippet": ": ĐÀI An Giang top tails=50,02,14 | DOW Thứ Năm top=14,73,02 | Gan=02(freq=71) C",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": false,
+      "snippet": " Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_o",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": false,
+      "snippet": "_p20 = ['Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhậ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": false,
+      "snippet": "mes_vn  = ['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": false,
+      "snippet": "ứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_obj = dateti",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": false,
+      "snippet": "ứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']        ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": false,
+      "snippet": "['Thứ Hai','Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']          ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": false,
+      "snippet": "ứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy']     dt_obj = datetime.strptime",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": false,
+      "snippet": "ứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']         dow_vi_p20",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": false,
+      "snippet": ",'Thứ Ba','Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']             _wd_gat",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "══════════════════     dow_names_vi = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư'",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": " Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy', 'Chủ Nhật']         dow_vi_p20 = dow_name",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/gpt_analyzer.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "'Thứ Tư','Thứ Năm','Thứ Sáu','Thứ Bảy','Chủ Nhật']             _wd_gate      = _",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/pnl_settlement.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "\", \"Thứ 4\", \"Thứ 5\", \"Thứ 6\", \"Thứ 7\", \"Chủ Nhật\"]   def _planned_stations_by_we",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/pnl_settlement.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "    # Mon=0           'weekday_label': 'Chủ Nhật',           'lookback_weeks': 8",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/scheduler.py",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": false,
+      "snippet": "', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ nhật']             region_vn = {'MN'",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/scheduler.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "Learning.     Chạy hàng tuần (mặc định: Chủ Nhật 03:00 AM).          Flow cho mỗ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/scheduler.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "ight_optimizer_day') or 'sun'  # Gom về Chủ Nhật (audit fix #7)     optimizer_ti",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/scheduler.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "-Learning) ===         # Chạy hàng tuần Chủ Nhật 02:00 AM — tự thu thập data + t",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_check_cross_region.py",
+      "match": "Chu Nhat",
+      "raw_forensic_exception": false,
+      "snippet": "ite3.Row  # ============ MB 08/02/2026 (Chu Nhat) - NGUON ============ print(\"=\"",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_check_cross_region.py",
+      "match": "Chu Nhat",
+      "raw_forensic_exception": false,
+      "snippet": "* 80) print(\"NGUON: MB ngay 08/02/2026 (Chu Nhat)\") print(\"=\" * 80)  rows = db.e",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": false,
+      "snippet": ".cursor()  DOW_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',     ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": false,
+      "snippet": "_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": false,
+      "snippet": "ủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ Năm', 5: 'Th",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": false,
+      "snippet": ": 'Thứ Ba', 3: 'Thứ Tư',            4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DO",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": false,
+      "snippet": " 'Thứ Tư',            4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DOW_SHORT = {0:'",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": false,
+      "snippet": "        4: 'Thứ Năm', 5: 'Thứ Sáu', 6: 'Thứ Bảy'} DOW_SHORT = {0:'CN', 1:'T2', 2",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_deep_focus_v3.py",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "e3.Row c = conn.cursor()  DOW_VI = {0: 'Chủ Nhật', 1: 'Thứ Hai', 2: 'Thứ Ba', 3:",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ hai",
+      "raw_forensic_exception": true,
+      "snippet": "am\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\",",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ ba",
+      "raw_forensic_exception": true,
+      "snippet": "au\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\",",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ tư",
+      "raw_forensic_exception": true,
+      "snippet": "bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\"",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ năm",
+      "raw_forensic_exception": true,
+      "snippet": " nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhậ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ sáu",
+      "raw_forensic_exception": true,
+      "snippet": "ứ hai\", \"thứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     col",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thứ bảy",
+      "raw_forensic_exception": true,
+      "snippet": "ứ ba\", \"thứ tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     column_targets",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": " tư\", \"thứ năm\", \"thứ sáu\", \"thứ bảy\", \"chủ nhật\"}     column_targets = (       ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu hai",
+      "raw_forensic_exception": true,
+      "snippet": " = _try_aliases()     weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\",",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu ba",
+      "raw_forensic_exception": true,
+      "snippet": "ases()     weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\",",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu ba",
+      "raw_forensic_exception": true,
+      "snippet": "u ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu tu",
+      "raw_forensic_exception": true,
+      "snippet": " weekday_words = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\"",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu nam",
+      "raw_forensic_exception": true,
+      "snippet": "ords = {\"thu hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nha",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu sau",
+      "raw_forensic_exception": true,
+      "snippet": "u hai\", \"thu ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ ha",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "thu bay",
+      "raw_forensic_exception": true,
+      "snippet": "u ba\", \"thu tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_v10524_source_pool_gap_drilldown.py",
+      "match": "chu nhat",
+      "raw_forensic_exception": true,
+      "snippet": " tu\", \"thu nam\", \"thu sau\", \"thu bay\", \"chu nhat\", \"thứ hai\", \"thứ ba\", \"thứ tư\"",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": true,
+      "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: xổ số Thủ đô Hà Nội<li>Thứ Ba: ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": true,
+      "snippet": "ent><li>Thứ Hai: xổ số Thủ đô Hà Nội<li>Thứ Ba: xổ số Quảng Ninh<li>Thứ Tư: xổ s",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": true,
+      "snippet": "ô Hà Nội<li>Thứ Ba: xổ số Quảng Ninh<li>Thứ Tư: xổ số Bắc Ninh<li>Thứ Năm: xổ số",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": true,
+      "snippet": "Quảng Ninh<li>Thứ Tư: xổ số Bắc Ninh<li>Thứ Năm: xổ số Thủ đô Hà Nội<li>Thứ Sáu:",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": true,
+      "snippet": "Ninh<li>Thứ Năm: xổ số Thủ đô Hà Nội<li>Thứ Sáu: xổ số Hải Phòng<li>Thứ Bảy: xổ ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": true,
+      "snippet": "ô Hà Nội<li>Thứ Sáu: xổ số Hải Phòng<li>Thứ Bảy: xổ số Nam Định<li>Chủ Nhật: xổ ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "i><a href=/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div cl",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div class=\"visib",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "i><a href=/xsmb-chu-nhat-cn.html title=\"Chủ nhật\">CN</a></ul></div></div><div cl",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "<th>Thứ 4<th>Thứ 5<th>Thứ 6<th>Thứ 7<th>Chủ nhật<tbody><tr><td style=height:32.5",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\">Thống Kê Giải ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026</a></h3><div cl",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\"><img width=113",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\"></a></div><div",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Chủ Nhật Ngày 15/02/2026\" style=color:#0",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Thống kê giải đặc biệt miền Bắc hôm nay chủ nhật ngày 15/02/2026 dựa trên bảng t",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Hải Phòng<li>Thứ Bảy: xổ số Nam Định<li>Chủ Nhật: xổ số Thái Bình<li>Thời gian t",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mb.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": true,
+      "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: TP.HCM - Đồng Tháp - Cà Mau<li>",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": true,
+      "snippet": "Thứ Hai: TP.HCM - Đồng Tháp - Cà Mau<li>Thứ Ba: Bến Tre - Vũng Tàu - Bạc Liêu<li",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": true,
+      "snippet": "hứ Ba: Bến Tre - Vũng Tàu - Bạc Liêu<li>Thứ Tư: Đồng Nai - Cần Thơ - Sóc Trăng<l",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": true,
+      "snippet": "ứ Tư: Đồng Nai - Cần Thơ - Sóc Trăng<li>Thứ Năm: Tây Ninh - An Giang - Bình Thuậ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": true,
+      "snippet": "ăm: Tây Ninh - An Giang - Bình Thuận<li>Thứ Sáu: Vĩnh Long - Bình Dương - Trà Vi",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": true,
+      "snippet": "u: Vĩnh Long - Bình Dương - Trà Vinh<li>Thứ Bảy: TP.HCM - Long An - Bình Phước -",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "i><a href=/xsmn-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div cl",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "/xsmn-chu-nhat-cn.html title=\"Chủ nhật\">Chủ Nhật</a></ul></div><div class=\"visib",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\">Thống Kê Xổ Số Miền",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026</a></h3><div class=p",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\"><img width=113 heig",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\"></a></div><div clas",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": " Số Miền Nam 15/02/2026 - Thống Kê XSMN Chủ Nhật 15/02/2026\" style=color:#000>Th",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": " kê xổ số miền Nam 15/02/2026 - Hôm nay chủ nhật ngày 15/02/2026, thống kê XSMN ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "M - Long An - Bình Phước - Hậu Giang<li>Chủ Nhật: Tiền Giang - Kiên Giang - Đà L",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mn.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": true,
+      "snippet": " thưởng</span><ul class=sub-content><li>Thứ Hai: Phú Yên - TT.Huế<li>Thứ Ba: Quả",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Ba",
+      "raw_forensic_exception": true,
+      "snippet": "ontent><li>Thứ Hai: Phú Yên - TT.Huế<li>Thứ Ba: Quảng Nam - Đắk Lắk<li>Thứ Tư: K",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Tư",
+      "raw_forensic_exception": true,
+      "snippet": "T.Huế<li>Thứ Ba: Quảng Nam - Đắk Lắk<li>Thứ Tư: Khánh Hòa - Đà Nẵng<li>Thứ Năm: ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Năm",
+      "raw_forensic_exception": true,
+      "snippet": "k Lắk<li>Thứ Tư: Khánh Hòa - Đà Nẵng<li>Thứ Năm: Quảng Bình - Bình Định - Quảng ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Sáu",
+      "raw_forensic_exception": true,
+      "snippet": ": Quảng Bình - Bình Định - Quảng Trị<li>Thứ Sáu: Gia Lai - Ninh Thuận<li>Thứ Bảy",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Thứ Bảy",
+      "raw_forensic_exception": true,
+      "snippet": "Trị<li>Thứ Sáu: Gia Lai - Ninh Thuận<li>Thứ Bảy: Quảng Ngãi - Đà Nẵng - Đắk Nông",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMB Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmb-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMN Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmn-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-chu-nhat-cn.html title=\"XSMT Chủ Nhật\">Chủ Nhật</a><li><a href=/xsmt-truc-tiep.",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "7</a><li><a href=/xsmt-chu-nhat-cn.html>Chủ Nhật</a></ul></div><div class=\"visib",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmb-chu-nhat-cn.html title=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMB Chủ Nhật\" class=list-item>XSMB Chủ nhật</a> <a href=/xsmb-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmn-chu-nhat-cn.html title=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMN Chủ Nhật\" class=list-item>XSMN Chủ nhật</a> <a href=/xsmn-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "href=/xsmt-chu-nhat-cn.html title=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật<",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "le=\"XSMT Chủ Nhật\" class=list-item>XSMT Chủ nhật</a> <a href=/xsmt-truc-tiep.htm",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\">Thống Kê Xổ Số Miền",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026</a></h3><div class=p",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\"><img width=113 heig",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\"></a></div><div clas",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ố Miền Trung 15/02/2026 - Thống Kê XSMT Chủ Nhật 15/02/2026\" style=color:#000>Th",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "ê xổ số miền Trung 15/02/2026 - Hôm nay chủ nhật ngày 15/02/2026, thống kê XSMT ",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "Bảy: Quảng Ngãi - Đà Nẵng - Đắk Nông<li>Chủ Nhật: Khánh Hòa - Kon Tum<li>Thời gi",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "chủ nhật",
+      "raw_forensic_exception": true,
+      "snippet": "-mega-chu-nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/backend/_xsdp_mt.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": true,
+      "snippet": "nhat.html title=\"XS Mega 6/45 chủ nhật\">Chủ Nhật</a></ul><li><a href=/xs-power-x",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/frontend/settings.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "tion>                 <option value=\"6\">Chủ Nhật</option>               </select",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/frontend/settings.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "tion>                 <option value=\"6\">Chủ Nhật</option>               </select",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/frontend/settings.js",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "Ngãi', 'Đắk Nông']     },     '6': { // Chủ Nhật (Sunday, weekday=6)         MB:",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/frontend/archive/demo_best_picks.html",
+      "match": "Chủ Nhật",
+      "raw_forensic_exception": false,
+      "snippet": "       <p class=\"subtitle\">29/03/2026 — Chủ Nhật</p>     </div>      <!-- Alerts",
+      "weekday_as_station_strict": false
+    },
+    {
+      "file": "web/frontend/archive/demo_redesign.html",
+      "match": "Thứ Hai",
+      "raw_forensic_exception": false,
+      "snippet": "               <div class=\"header-date\">Thứ Hai, 10/02/2026</div>               ",
+      "weekday_as_station_strict": false
+    }
+  ]
+}

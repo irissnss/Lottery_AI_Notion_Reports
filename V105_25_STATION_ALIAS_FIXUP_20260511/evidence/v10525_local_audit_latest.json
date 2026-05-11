@@ -1,0 +1,270 @@
+{
+  "completed_at_vn": "2026-05-11T15:26:30+07:00",
+  "db_path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+  "db_sha256_post": "ec74f80f3b39935c52cc6959af8033dc677ec56c8c2e0fd9057741d30da151fc",
+  "db_sha256_pre": "4e616ed724bd4646ed3311efd9bc5a8a68ab61813d9468d815d15548a497c469",
+  "db_size_post": 257380352,
+  "db_size_pre": 257376256,
+  "official_post": [
+    {
+      "row_count": 4750,
+      "sha256": "c8312b347a8cd92b26b49c10eb4b31266a644303fa08671b397b7fa376542868",
+      "table": "predictions"
+    },
+    {
+      "row_count": 217,
+      "sha256": "0126a7dafd1674f9f4ce7bb0c90d0d4d76042af2cb12b745d8d9d75c8bfb1e38",
+      "table": "final_bundles"
+    },
+    {
+      "row_count": 14649,
+      "sha256": "ecee21c893684cdd729e35c0024414f69b703344e93d9c2108697ba64ac72458",
+      "table": "lottery_results"
+    },
+    {
+      "row_count": 4572,
+      "sha256": "083a36ffea774fa6a711348b36e7293d5ed68b2ba88c40a1a119b8fdd36262df",
+      "table": "model_daily_eval"
+    }
+  ],
+  "official_pre": [
+    {
+      "row_count": 4750,
+      "sha256": "c8312b347a8cd92b26b49c10eb4b31266a644303fa08671b397b7fa376542868",
+      "table": "predictions"
+    },
+    {
+      "row_count": 217,
+      "sha256": "0126a7dafd1674f9f4ce7bb0c90d0d4d76042af2cb12b745d8d9d75c8bfb1e38",
+      "table": "final_bundles"
+    },
+    {
+      "row_count": 14649,
+      "sha256": "ecee21c893684cdd729e35c0024414f69b703344e93d9c2108697ba64ac72458",
+      "table": "lottery_results"
+    },
+    {
+      "row_count": 4572,
+      "sha256": "083a36ffea774fa6a711348b36e7293d5ed68b2ba88c40a1a119b8fdd36262df",
+      "table": "model_daily_eval"
+    }
+  ],
+  "official_unchanged": true,
+  "schema_version": "v10525_local_audit_v1",
+  "started_at_vn": "2026-05-11T15:26:22+07:00",
+  "steps": [
+    {
+      "name": "lane1_station_code_audit",
+      "result": {
+        "alias_findings_total": 61,
+        "alias_unexpected_count": 0,
+        "raw_forensic_exceptions": [
+          "web/backend/_analyze_fallback_sources.py",
+          "web/backend/_analyze_xskt.py",
+          "web/backend/_analyze_xskt2.py",
+          "web/backend/_backtest_rules.py",
+          "web/backend/_rescrape_mn_now.py",
+          "web/backend/_test_fallback.py",
+          "web/backend/_test_xsdp_json.py",
+          "web/backend/_test_xsdp_parser.py",
+          "web/backend/_test_xskt.py",
+          "web/backend/_v10522_live_prep.py",
+          "web/backend/_v10524_source_pool_gap_drilldown.py",
+          "web/backend/_v10524_station_identity_full_audit.py",
+          "web/backend/_xsdp_mb.html",
+          "web/backend/_xsdp_mn.html",
+          "web/backend/_xsdp_mt.html",
+          "web/backend/_xsdp_test_results.json",
+          "web/backend/scraper.py",
+          "web/backend/station_identity.py",
+          "web/frontend/archive/demo_2_so_cuoi.html"
+        ],
+        "weekday_as_station_unexpected_loose": 44,
+        "weekday_as_station_unexpected_strict": 0,
+        "weekday_findings_total": 147
+      }
+    },
+    {
+      "name": "lane4_v103_supply_class_backfill",
+      "result": {
+        "contracts": {
+          "diagnostic_only": true,
+          "production_selector_unchanged": true,
+          "shadow_only": true
+        },
+        "official_tables_never_written": [
+          "predictions",
+          "final_bundles",
+          "lottery_results",
+          "model_daily_eval"
+        ],
+        "result": {
+          "matchable_rows": 0,
+          "rows_examined": 8743,
+          "rows_remaining_null": 8743,
+          "rows_updated": 0,
+          "tables_missing": false
+        },
+        "schema_version": "v10525_v103_supply_class_backfill_v1",
+        "updated_at": "2026-05-11T15:26:25+07:00"
+      }
+    },
+    {
+      "name": "lane4_v102_relaxed_materialize",
+      "result": {
+        "official_tables_touched": false,
+        "production_selector_unchanged": true,
+        "rows": 60,
+        "schema_version": "v10524_v102_relaxed_selector_shadow_v1",
+        "target_date": "2026-05-11",
+        "updated_at": "2026-05-11T15:26:25+07:00",
+        "window_days": 30
+      }
+    },
+    {
+      "name": "lane24_drilldown_materialize",
+      "result": {
+        "drilldown_rows": 7423,
+        "flow_rows": 8583,
+        "official_tables_touched": false,
+        "schema_version": "v10524_source_pool_gap_drilldown_v1",
+        "station_identity_rows": 69,
+        "target_date": "2026-05-11",
+        "updated_at": "2026-05-11T15:26:25+07:00",
+        "window_days": 30
+      }
+    },
+    {
+      "name": "lane2_reason_ranking",
+      "result": {
+        "miss_rate": 1.0,
+        "miss_total": 7423,
+        "region_summary": [
+          {
+            "miss": 2067,
+            "miss_rate": 1.0,
+            "region": "MB",
+            "total": 2067
+          },
+          {
+            "miss": 3022,
+            "miss_rate": 1.0,
+            "region": "MN",
+            "total": 3022
+          },
+          {
+            "miss": 2334,
+            "miss_rate": 1.0,
+            "region": "MT",
+            "total": 2334
+          }
+        ],
+        "top_root_causes": [
+          {
+            "count": 2109,
+            "miss_reason": "PROMPT_NOT_INJECTED",
+            "region": "MN"
+          },
+          {
+            "count": 1223,
+            "miss_reason": "PROMPT_NOT_INJECTED",
+            "region": "MT"
+          },
+          {
+            "count": 1021,
+            "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+            "region": "MB"
+          },
+          {
+            "count": 1017,
+            "miss_reason": "PROMPT_NOT_INJECTED",
+            "region": "MB"
+          },
+          {
+            "count": 987,
+            "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+            "region": "MT"
+          },
+          {
+            "count": 873,
+            "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+            "region": "MN"
+          }
+        ]
+      }
+    },
+    {
+      "name": "lane3_candidate_flow_funnel",
+      "result": {
+        "biggest_drops": [
+          {
+            "drop_rate": 1.0,
+            "from": "in_source_pool",
+            "lost": 2830,
+            "region": "MB",
+            "to": "in_prompt"
+          },
+          {
+            "drop_rate": 1.0,
+            "from": "in_source_pool",
+            "lost": 2830,
+            "region": "MN",
+            "to": "in_prompt"
+          },
+          {
+            "drop_rate": 1.0,
+            "from": "in_source_pool",
+            "lost": 2830,
+            "region": "MT",
+            "to": "in_prompt"
+          }
+        ]
+      }
+    },
+    {
+      "name": "lane5_v102_relaxed_watch",
+      "result": {
+        "promotion_rule": "STRICT shadow-only V105.25: promotion to production is BLOCKED. Required to unlock: >=14 days with net_save > 0 AND break_ratio <= 0.05 AND owner explicit approval AND zero impact on official tables.",
+        "windows_days": [
+          7,
+          14
+        ]
+      }
+    },
+    {
+      "name": "lane6_runtime_manifest_daily",
+      "result": {
+        "contracts": {
+          "no_provider_call": true,
+          "official_tables_never_written": [
+            "predictions",
+            "final_bundles",
+            "lottery_results",
+            "model_daily_eval"
+          ],
+          "shadow_only": true
+        },
+        "drift": {
+          "alert": false,
+          "captured_at_vn": "2026-05-11T15:26:28+07:00",
+          "critical_files": {
+            "any_file_changed": false,
+            "backend_changes": [],
+            "commit_changed": false,
+            "drift_alert": false,
+            "frontend_changes": []
+          },
+          "db": {
+            "db_changed": false,
+            "informational_only": true
+          },
+          "prior_snapshot": null,
+          "schema_version": "v10525_runtime_manifest_daily_v1",
+          "today_snapshot": "E:\\Lottery_AI_Test\\artifacts\\v10524\\snapshots\\runtime_manifest_2026-05-11.json"
+        },
+        "drift_alert_path": "E:\\Lottery_AI_Test\\artifacts\\v10524\\drift_alert.json",
+        "snapshot_path": "E:\\Lottery_AI_Test\\artifacts\\v10524\\snapshots\\runtime_manifest_2026-05-11.json"
+      }
+    }
+  ]
+}

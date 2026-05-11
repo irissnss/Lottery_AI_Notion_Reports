@@ -1,0 +1,2052 @@
+{
+  "latest_scrape": [
+    {
+      "region": "MB",
+      "max_date": "2026-05-10",
+      "days": 2272
+    },
+    {
+      "region": "MN",
+      "max_date": "2026-05-11",
+      "days": 2294
+    },
+    {
+      "region": "MT",
+      "max_date": "2026-05-11",
+      "days": 2294
+    }
+  ],
+  "daily_stats_7d": [
+    {
+      "id": 390,
+      "date": "2026-05-11",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 0,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-11 09:38:53",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 0,
+      "mn_predicted": 0
+    },
+    {
+      "id": 384,
+      "date": "2026-05-10",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-10 09:35:50",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    },
+    {
+      "id": 378,
+      "date": "2026-05-09",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-09 09:38:52",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    },
+    {
+      "id": 372,
+      "date": "2026-05-08",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-08 09:38:02",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    },
+    {
+      "id": 366,
+      "date": "2026-05-07",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-07 09:35:36",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    },
+    {
+      "id": 360,
+      "date": "2026-05-06",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-06 09:34:35",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    },
+    {
+      "id": 354,
+      "date": "2026-05-05",
+      "mn_updated": 1,
+      "mt_updated": 1,
+      "mb_updated": 1,
+      "mt_predicted": 0,
+      "mb_predicted": 0,
+      "created_at": "2026-05-05 09:36:37",
+      "mn_verified": 1,
+      "mt_verified": 1,
+      "mb_verified": 1,
+      "mn_predicted": 0
+    }
+  ],
+  "cascade_5d": [
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "run_source": "rerun_post_mt",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "run_source": "rerun_post_mn",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "run_source": "rerun_post_mn",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "run_source": "rerun_post_mt",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "run_source": "rerun_post_mn",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "run_source": "rerun_post_mt",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "run_source": "rerun_post_mn",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "run_source": "rerun_post_mt",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "run_source": "auto_daily",
+      "cnt": 7
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "run_source": "rerun_post_mn",
+      "cnt": 7
+    }
+  ],
+  "ai_chain_5d": [
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-11",
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-10",
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-09",
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-08",
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "cnt": 1
+    },
+    {
+      "date": "2026-05-07",
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "cnt": 1
+    }
+  ],
+  "station_identity_audit": {
+    "error": "no such column: date"
+  },
+  "v101_source_pool_summary": {
+    "error": "no such column: date"
+  },
+  "v103_supply_class_dist": {
+    "error": "no such column: class"
+  },
+  "v104_prompt_injection": {
+    "error": "no such column: injected"
+  },
+  "v105_no_token_scoreboard_30d": {
+    "error": "no such column: ai_model"
+  },
+  "closed_file_3d": [
+    {
+      "d": "2026-05-11",
+      "cnt": 66
+    },
+    {
+      "d": "2026-05-10",
+      "cnt": 45
+    }
+  ],
+  "final_bundles_7d": [
+    {
+      "date": "2026-05-11",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": null,
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-11",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-11 16:38:53",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-11",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-11 17:30:00",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-10",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 20:54:56",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-10",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 16:35:51",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-10",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 17:36:51",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-09",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 18:27:58",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-09",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 16:34:14",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-09",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-10 17:34:52",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-08",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-09 18:16:14",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-08",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-09 16:06:49",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-08",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-09 17:27:57",
+      "model_count": 13
+    },
+    {
+      "date": "2026-05-07",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-08 17:49:58",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-07",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-08 16:21:25",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-07",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-08 17:27:38",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-07 18:26:49",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-07 16:19:56",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-06",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-07 16:57:10",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MB",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-06 17:55:01",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MN",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-06 15:55:50",
+      "model_count": 15
+    },
+    {
+      "date": "2026-05-05",
+      "region": "MT",
+      "status": "ACTIVE",
+      "verified_at": "2026-05-06 17:29:53",
+      "model_count": 15
+    }
+  ],
+  "d2_leak_in_predictions": [],
+  "v94_leakage_monitor_recent": {
+    "error": "no such column: date"
+  },
+  "predictions_today": [
+    {
+      "target_region": "MB",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"17\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "combo-no-token",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"31\", \"29\"]",
+      "pre_short": "[\"31\", \"49\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"92\", \"30\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"17\", \"30\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "deepseek-v4-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"30\", \"39\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "deepseek-v4-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"30\", \"54\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"30\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"30\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"79\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "glm-5.1",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"17\", \"39\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"46\", \"16\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"16\", \"39\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gpt-5.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"39\", \"30\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "gpt-oss-120b",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"54\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "grok-4.20-multi-agent",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"23\", \"68\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "kimi-k2.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"62\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "lstm",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"29\", \"82\"]",
+      "pre_short": "[\"92\", \"04\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "meta-learning",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"47\", \"31\"]",
+      "pre_short": "[\"49\", \"47\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "qwen3-coder",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"30\", \"23\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "qwen3-max-thinking",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"30\", \"01\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "qwen3.6-plus",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PENDING",
+      "main_short": "[\"16\", \"46\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "random-forest",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"31\", \"77\"]",
+      "pre_short": "[\"31\", \"77\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "smart-ensemble",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"29\", \"31\"]",
+      "pre_short": "[\"92\", \"31\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "smart-ml",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"31\", \"16\"]",
+      "pre_short": "[\"31\", \"49\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MB",
+      "ai_model": "xgboost",
+      "run_source": "rerun_post_mt",
+      "context_integrity": "clean",
+      "status": "PENDING",
+      "main_short": "[\"16\", \"31\"]",
+      "pre_short": "[\"16\", \"31\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"83\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"83\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "combo-no-token",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"72\", \"89\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "combo-super",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"83\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"28\", \"83\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "deepseek-v4-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"23\", \"86\"]",
+      "pre_short": "[\"23\", \"33\"]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "deepseek-v4-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"13\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"13\", \"31\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"30\", \"01\"]",
+      "pre_short": "[\"01\", \"30\"]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"39\", \"32\"]",
+      "pre_short": "[\"32\", \"30\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"32\", \"01\"]",
+      "pre_short": "[\"01\", \"30\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "glm-5.1",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"30\", \"39\"]",
+      "pre_short": "[\"39\", \"01\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gpt-5-mini",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"23\", \"33\"]",
+      "pre_short": "[]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gpt-5.4",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"13\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gpt-5.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"31\"]",
+      "pre_short": "[\"23\", \"06\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gpt-oss-120b",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"23\", \"33\"]",
+      "pre_short": "[\"23\", \"86\"]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "grok-4.20-multi-agent",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"23\"]",
+      "pre_short": "[\"23\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "kimi-k2.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"30\", \"39\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "lstm",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"74\", \"81\"]",
+      "pre_short": "[\"74\", \"81\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "meta-learning",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"72\", \"29\"]",
+      "pre_short": "[\"72\", \"29\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "qwen3-coder",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"32\"]",
+      "pre_short": "[\"23\", \"32\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "qwen3-max-thinking",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"30\", \"12\"]",
+      "pre_short": "[\"30\", \"12\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "qwen3.6-plus",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"23\", \"32\"]",
+      "pre_short": "[\"01\", \"32\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "random-forest",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"72\", \"34\"]",
+      "pre_short": "[\"72\", \"34\"]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "smart-ensemble",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"04\", \"65\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "smart-ml",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"04\", \"34\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "xgboost",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"89\", \"72\"]",
+      "pre_short": "[\"89\", \"72\"]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "claude-opus-4-20250514",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"17\", \"52\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "claude-sonnet-4-6",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "WIN",
+      "main_short": "[\"97\", \"28\"]",
+      "pre_short": "[]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "combo-no-token",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"70\", \"11\"]",
+      "pre_short": "NULL",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "combo-super",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"17\", \"52\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "deepseek-reasoner",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "PARTIAL",
+      "main_short": "[\"17\", \"24\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "deepseek-v4-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "deepseek-v4-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"17\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-flash",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"86\", \"41\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemini-2.5-pro",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"86\", \"17\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemini-3-flash",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"17\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemini-3.1-pro",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"52\", \"68\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemma-4-31b",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"86\", \"17\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "glm-5.1",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"82\", \"28\"]",
+      "pre_short": "[]",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gpt-5-mini",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"68\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gpt-5.4",
+      "run_source": "ai_chain",
+      "context_integrity": "clean",
+      "status": "LOSE",
+      "main_short": "[\"86\", \"18\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gpt-5.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"17\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gpt-oss-120b",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"23\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "grok-4.20-multi-agent",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"86\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "kimi-k2.5",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "PARTIAL",
+      "main_short": "[\"17\", \"28\"]",
+      "pre_short": "[]",
+      "hit_count": 1
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "lstm",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "WIN",
+      "main_short": "[\"11\", \"87\"]",
+      "pre_short": "NULL",
+      "hit_count": 2
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "meta-learning",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"70\", \"16\"]",
+      "pre_short": "NULL",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "qwen3-coder",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"23\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "qwen3-max-thinking",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"15\", \"84\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "qwen3.6-plus",
+      "run_source": "shadow_auto_eval",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"68\", \"23\"]",
+      "pre_short": "[]",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "random-forest",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"70\", \"16\"]",
+      "pre_short": "NULL",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "smart-ensemble",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"16\", \"70\"]",
+      "pre_short": "NULL",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "smart-ml",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"16\", \"70\"]",
+      "pre_short": "NULL",
+      "hit_count": 0
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "xgboost",
+      "run_source": "auto_daily",
+      "context_integrity": "provisional",
+      "status": "LOSE",
+      "main_short": "[\"70\", \"16\"]",
+      "pre_short": "NULL",
+      "hit_count": 0
+    }
+  ],
+  "shadow_method_scoreboard_sample": {
+    "error": "no such column: date"
+  }
+}

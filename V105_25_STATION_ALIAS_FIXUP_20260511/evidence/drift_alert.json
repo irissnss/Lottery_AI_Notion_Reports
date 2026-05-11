@@ -1,0 +1,18 @@
+{
+  "alert": false,
+  "captured_at_vn": "2026-05-11T15:26:28+07:00",
+  "critical_files": {
+    "any_file_changed": false,
+    "backend_changes": [],
+    "commit_changed": false,
+    "drift_alert": false,
+    "frontend_changes": []
+  },
+  "db": {
+    "db_changed": false,
+    "informational_only": true
+  },
+  "prior_snapshot": null,
+  "schema_version": "v10525_runtime_manifest_daily_v1",
+  "today_snapshot": "E:\\Lottery_AI_Test\\artifacts\\v10524\\snapshots\\runtime_manifest_2026-05-11.json"
+}

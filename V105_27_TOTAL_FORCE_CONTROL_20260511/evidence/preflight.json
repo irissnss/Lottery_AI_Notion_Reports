@@ -1,0 +1,42 @@
+{
+  "db_path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+  "db_size_bytes": 252735488,
+  "git_head": "e626ba7",
+  "git_branch": "master",
+  "git_dirty_files": 809,
+  "official_tables": {
+    "predictions": {
+      "rows": 4791,
+      "sha256": "675efcd3c1139e2fed6b73a25f529c3e295010461d5640a26c345e4f630a93cc"
+    },
+    "final_bundles": {
+      "rows": 219,
+      "sha256": "7c851d9b4e42907ac08817da125e19e2a5771bd0fe20f8b98d17e0270eae8c1a"
+    },
+    "lottery_results": {
+      "rows": 14654,
+      "sha256": "36079dac47a93d8d9fb0c12736d2fe51490e6992d8713f7563e9edab76e99e0a"
+    },
+    "model_daily_eval": {
+      "rows": 4572,
+      "sha256": "083a36ffea774fa6a711348b36e7293d5ed68b2ba88c40a1a119b8fdd36262df"
+    }
+  },
+  "diagnostic_tables_present": {
+    "v10524_source_pool_gap_drilldown": null,
+    "v10524_candidate_flow_trace": null,
+    "v10524_v102_strong_selector_shadow": null,
+    "lane_test_region_profiles": 3,
+    "mb_ai_chain_preservation_v1": 30,
+    "station_identity_runtime_audit": 69,
+    "rule_injection_contract": 3076,
+    "bundle_universe_coverage_daily": 3076,
+    "source_prize_strong_coverage": 3076,
+    "candidate_drop_stage_daily": 103,
+    "lane_test_lose_only_audit_daily": 90,
+    "scheduler_logs": 124071,
+    "daily_stats": 106
+  },
+  "provider_call_count_session": 0,
+  "official_impact": false
+}

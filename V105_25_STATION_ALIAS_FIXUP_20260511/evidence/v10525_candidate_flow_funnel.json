@@ -1,0 +1,257 @@
+{
+  "biggest_drops": [
+    {
+      "drop_rate": 1.0,
+      "from": "in_source_pool",
+      "lost": 2830,
+      "region": "MB",
+      "to": "in_prompt"
+    },
+    {
+      "drop_rate": 1.0,
+      "from": "in_source_pool",
+      "lost": 2830,
+      "region": "MN",
+      "to": "in_prompt"
+    },
+    {
+      "drop_rate": 1.0,
+      "from": "in_source_pool",
+      "lost": 2830,
+      "region": "MT",
+      "to": "in_prompt"
+    }
+  ],
+  "contracts": {
+    "diagnostic_only": true,
+    "no_provider_call": true,
+    "shadow_only_read": true
+  },
+  "first_miss_summary": [
+    {
+      "count": 2830,
+      "first_miss_stage": "PROMPT",
+      "region": "MB"
+    },
+    {
+      "count": 22,
+      "first_miss_stage": "SOURCE_POOL",
+      "region": "MB"
+    },
+    {
+      "count": 2830,
+      "first_miss_stage": "PROMPT",
+      "region": "MN"
+    },
+    {
+      "count": 37,
+      "first_miss_stage": "SOURCE_POOL",
+      "region": "MN"
+    },
+    {
+      "count": 2830,
+      "first_miss_stage": "PROMPT",
+      "region": "MT"
+    },
+    {
+      "count": 34,
+      "first_miss_stage": "SOURCE_POOL",
+      "region": "MT"
+    }
+  ],
+  "funnels": [
+    {
+      "appeared_in_actuals": 689,
+      "conversion_vs_source_pool": {
+        "bundled": 0.0205,
+        "in_prompt": 0.0,
+        "in_source_pool": 1.0,
+        "ranked": 0.0936,
+        "top2": 0.0286,
+        "top5": 0.0576,
+        "ui_output": 0.0205
+      },
+      "region": "MB",
+      "stage_counts": {
+        "bundled": 58,
+        "in_prompt": 0,
+        "in_source_pool": 2830,
+        "ranked": 265,
+        "top2": 81,
+        "top5": 163,
+        "ui_output": 58
+      },
+      "stage_drops": [
+        {
+          "drop_rate": 1.0,
+          "from": "in_source_pool",
+          "lost": 2830,
+          "to": "in_prompt"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "in_prompt",
+          "lost": -265,
+          "to": "ranked"
+        },
+        {
+          "drop_rate": 0.3849,
+          "from": "ranked",
+          "lost": 102,
+          "to": "top5"
+        },
+        {
+          "drop_rate": 0.5031,
+          "from": "top5",
+          "lost": 82,
+          "to": "top2"
+        },
+        {
+          "drop_rate": 0.284,
+          "from": "top2",
+          "lost": 23,
+          "to": "bundled"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "bundled",
+          "lost": 0,
+          "to": "ui_output"
+        }
+      ],
+      "total_rows": 2852
+    },
+    {
+      "appeared_in_actuals": 1240,
+      "conversion_vs_source_pool": {
+        "bundled": 0.0205,
+        "in_prompt": 0.0,
+        "in_source_pool": 1.0,
+        "ranked": 0.0929,
+        "top2": 0.0237,
+        "top5": 0.0569,
+        "ui_output": 0.0205
+      },
+      "region": "MN",
+      "stage_counts": {
+        "bundled": 58,
+        "in_prompt": 0,
+        "in_source_pool": 2830,
+        "ranked": 263,
+        "top2": 67,
+        "top5": 161,
+        "ui_output": 58
+      },
+      "stage_drops": [
+        {
+          "drop_rate": 1.0,
+          "from": "in_source_pool",
+          "lost": 2830,
+          "to": "in_prompt"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "in_prompt",
+          "lost": -263,
+          "to": "ranked"
+        },
+        {
+          "drop_rate": 0.3878,
+          "from": "ranked",
+          "lost": 102,
+          "to": "top5"
+        },
+        {
+          "drop_rate": 0.5839,
+          "from": "top5",
+          "lost": 94,
+          "to": "top2"
+        },
+        {
+          "drop_rate": 0.1343,
+          "from": "top2",
+          "lost": 9,
+          "to": "bundled"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "bundled",
+          "lost": 0,
+          "to": "ui_output"
+        }
+      ],
+      "total_rows": 2867
+    },
+    {
+      "appeared_in_actuals": 1023,
+      "conversion_vs_source_pool": {
+        "bundled": 0.0205,
+        "in_prompt": 0.0,
+        "in_source_pool": 1.0,
+        "ranked": 0.0908,
+        "top2": 0.0367,
+        "top5": 0.0608,
+        "ui_output": 0.0205
+      },
+      "region": "MT",
+      "stage_counts": {
+        "bundled": 58,
+        "in_prompt": 0,
+        "in_source_pool": 2830,
+        "ranked": 257,
+        "top2": 104,
+        "top5": 172,
+        "ui_output": 58
+      },
+      "stage_drops": [
+        {
+          "drop_rate": 1.0,
+          "from": "in_source_pool",
+          "lost": 2830,
+          "to": "in_prompt"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "in_prompt",
+          "lost": -257,
+          "to": "ranked"
+        },
+        {
+          "drop_rate": 0.3307,
+          "from": "ranked",
+          "lost": 85,
+          "to": "top5"
+        },
+        {
+          "drop_rate": 0.3953,
+          "from": "top5",
+          "lost": 68,
+          "to": "top2"
+        },
+        {
+          "drop_rate": 0.4423,
+          "from": "top2",
+          "lost": 46,
+          "to": "bundled"
+        },
+        {
+          "drop_rate": 0.0,
+          "from": "bundled",
+          "lost": 0,
+          "to": "ui_output"
+        }
+      ],
+      "total_rows": 2864
+    }
+  ],
+  "official_tables_never_written": [
+    "predictions",
+    "final_bundles",
+    "lottery_results",
+    "model_daily_eval"
+  ],
+  "schema_version": "v10525_candidate_flow_funnel_v1",
+  "target_date": "2026-05-11",
+  "window_days": 30,
+  "window_start": "2026-04-12"
+}

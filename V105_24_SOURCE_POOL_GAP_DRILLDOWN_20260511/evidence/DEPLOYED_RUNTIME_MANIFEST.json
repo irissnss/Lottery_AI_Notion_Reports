@@ -1,0 +1,476 @@
+{
+  "contracts": {
+    "manual_predict_token_gate": "OWNER_MANUAL_PROVIDER_CALLS_ENABLED",
+    "no_provider_or_manual_ai_call": true,
+    "official_tables_never_written": [
+      "predictions",
+      "final_bundles",
+      "lottery_results",
+      "model_daily_eval"
+    ]
+  },
+  "db_schema": {
+    "exists": true,
+    "official_tables": {
+      "final_bundles": 217,
+      "lottery_results": 14649,
+      "model_daily_eval": 4572,
+      "predictions": 4750
+    },
+    "sha256": "b193153d0431546ec99b97cb8c2e5f02e1d3bc0c4517acebb47c83f512314299",
+    "shadow_tables": [
+      "ai_no_token_cross_verification_shadow",
+      "ai_prompt_context_audit_shadow",
+      "ai_region_specialist_prompt_shadow_results",
+      "ai_region_specialist_provider_shadow_results",
+      "bundle_universe_coverage_shadow",
+      "cluster_weighted_consensus_shadow",
+      "corrected_rescue_replay_shadow",
+      "counterfactual_decision_audit_shadow",
+      "cross_region_spillover_shadow",
+      "experimental_preview_shadow",
+      "gan_signal_shadow_v100",
+      "lag1_adaptive_exploit_signal_shadow",
+      "loz_selector_shadow",
+      "loz_stage_trace_shadow",
+      "mb_experimental_preview_shadow",
+      "mb_regime_shift_shadow",
+      "mb_structural_drilldown_shadow",
+      "model_cross_region_dup_shadow",
+      "mt_model_hit_output_drop_shadow",
+      "no_token_drift_shadow",
+      "no_token_rule_aware_pack_shadow",
+      "rule_phase_evidence_shadow",
+      "rule_phase_synthesis_shadow",
+      "single_vote_rescue_replay_shadow",
+      "strength_skip_calibration_replay_shadow",
+      "strongest_vs_final_shadow",
+      "tier2_replay_shadow",
+      "tier2_replay_v2_shadow",
+      "v101_mn_cross_region_rule_shadow",
+      "v101_region_prompt_context_shadow",
+      "v101_region_source_pool_evidence_shadow",
+      "v101_region_source_pool_shadow",
+      "v101_region_source_pool_top5_shadow",
+      "v102_candidate_recurrence_context_shadow",
+      "v102_recurrence_stats_shadow",
+      "v103_candidate_supply_shadow",
+      "v103_prompt_candidate_gate_shadow",
+      "v104_shadow_prompt_candidate_injection",
+      "v104_shadow_prompt_model_decision",
+      "v10522_v102_strong_selector_shadow",
+      "v10524_candidate_flow_trace",
+      "v10524_source_pool_gap_drilldown",
+      "v10524_station_identity_full_audit",
+      "v10524_v102_relaxed_selector_shadow",
+      "v105_ai_shadow_decision_independent",
+      "v105_context_completeness_audit",
+      "v105_no_token_independent_scoreboard",
+      "v105_no_token_independent_shadow",
+      "v93_mn_save_signal_per_method_shadow",
+      "v93_verdict_weight_recalibration_shadow",
+      "v93_wr_gate_filter_audit_shadow",
+      "v94_cross_region_leakage_continuous_monitor",
+      "v94_cross_region_spillover_aware_shadow",
+      "v94_no_token_first_simulation_shadow",
+      "v95_ai_context_completeness_shadow",
+      "v95_data_freshness_audit_shadow",
+      "v96_master_tracker_daily_snapshot",
+      "v99_exact_evaluator_results",
+      "verdict_distribution_daily",
+      "verified_bucket_rules",
+      "weekday_blackspot_shadow"
+    ],
+    "size": 257347584,
+    "table_count": 164,
+    "tables": [
+      "adaptive_exploit_v67_candidate_trace",
+      "ai_herding_failure_daily",
+      "ai_no_token_cross_verification_shadow",
+      "ai_primary_gate_daily",
+      "ai_prompt_context_audit_shadow",
+      "ai_reasoning_contract_daily",
+      "ai_region_specialist_prompt_shadow_results",
+      "ai_region_specialist_provider_shadow_results",
+      "app_settings",
+      "bundle_family_contribution_daily",
+      "bundle_readiness_gate_daily",
+      "bundle_replay_compare_daily",
+      "bundle_universe_coverage_daily",
+      "bundle_universe_coverage_shadow",
+      "candidate_drop_stage_daily",
+      "cluster_weighted_consensus_shadow",
+      "cohere_effectiveness_daily",
+      "cohere_rerank_log",
+      "consensus_v1_trace",
+      "convergence_cluster_pattern_daily",
+      "corrected_rescue_replay_shadow",
+      "counterfactual_decision_audit_shadow",
+      "cross_region_spillover_shadow",
+      "daily_eval_log",
+      "daily_stats",
+      "data_preservation_manifest_daily",
+      "day_governance",
+      "draw_availability_daily",
+      "du_doan_test_ai_predictions",
+      "du_doan_test_audit_log",
+      "du_doan_test_bundles",
+      "du_doan_test_candidates",
+      "du_doan_test_conversion_trace",
+      "du_doan_test_daily_summary",
+      "du_doan_test_experiment_scoreboard",
+      "du_doan_test_experiments",
+      "du_doan_test_latency_daily",
+      "du_doan_test_leakage_audit",
+      "du_doan_test_method_scoreboard",
+      "du_doan_test_model_budget_daily",
+      "du_doan_test_model_contribution",
+      "du_doan_test_model_scoreboard",
+      "du_doan_test_model_skip_reason",
+      "du_doan_test_results",
+      "du_doan_test_runs",
+      "du_doan_test_selected_voters",
+      "experimental_preview_shadow",
+      "final_bundles",
+      "freshness_chain_daily",
+      "gan_signal_shadow_v100",
+      "hybrid_v1_trace",
+      "lag1_adaptive_exploit_signal_shadow",
+      "lane_test_lose_only_audit_daily",
+      "lane_test_region_profiles",
+      "lottery_results",
+      "loz_selector_shadow",
+      "loz_stage_trace_shadow",
+      "main_vs_secondary_quality_daily",
+      "mb_ai_chain_preservation_v1",
+      "mb_experimental_preview_shadow",
+      "mb_regime_shift_shadow",
+      "mb_structural_drilldown_shadow",
+      "method_cluster_performance_daily",
+      "mined_rule_effectiveness",
+      "mined_rules",
+      "mining_log",
+      "mn_ai_herd_vs_v67_save_daily",
+      "mn_mb_failure_streak_daily",
+      "model_cross_region_dup_shadow",
+      "model_daily_eval",
+      "model_latency_cost_audit_daily",
+      "model_strength_by_region_weekday_station_daily",
+      "mt_model_hit_output_drop_shadow",
+      "no_token_drift_shadow",
+      "no_token_rule_aware_pack_shadow",
+      "official_vs_testlane_rescue_daily",
+      "output_eligible_completion_daily",
+      "output_policy_replay_daily",
+      "pattern_effectiveness",
+      "pattern_rules",
+      "pnl_capital_events",
+      "pnl_daily_bets",
+      "pnl_daily_settlements",
+      "pnl_daily_summary",
+      "pp1_live_watch_daily",
+      "pre_partial_post_lose_daily",
+      "pre_vs_post_rerun_effect_daily",
+      "pre_win_post_lose_daily",
+      "prediction_policies",
+      "predictions",
+      "prompt_pressure_daily",
+      "prompt_section_breakdown_daily",
+      "public_bundle_publish_audit_daily",
+      "reasoning_layer_penetration_daily",
+      "rule_conversion_loss_stage_daily",
+      "rule_effectiveness",
+      "rule_features",
+      "rule_injection_contract",
+      "rule_phase_evidence_shadow",
+      "rule_phase_synthesis_shadow",
+      "runtime_reliability_daily",
+      "runtime_reliability_model_daily",
+      "scheduler_logs",
+      "shadow_activation_registry",
+      "shadow_candidates",
+      "shadow_daily_comparison",
+      "shadow_feature_snapshots",
+      "shadow_method_scoreboard",
+      "shadow_model_promotion_scorecard_daily",
+      "shadow_results",
+      "shadow_rule_d1_comparison",
+      "single_vote_rescue_replay_shadow",
+      "source_prize_effectiveness_daily",
+      "source_prize_strong_coverage",
+      "sqlite_sequence",
+      "station_identity_runtime_audit",
+      "strength_skip_calibration_replay_shadow",
+      "strongest_candidate_escape_daily",
+      "strongest_vs_final_conversion_daily",
+      "strongest_vs_final_shadow",
+      "sync_parity_audit_daily",
+      "system_alerts",
+      "test_lane_fast_incident_monitor",
+      "test_lane_signal_drift_monitor",
+      "tier2_replay_shadow",
+      "tier2_replay_v2_shadow",
+      "trace_field_completeness_daily",
+      "training_history",
+      "training_records",
+      "users",
+      "v101_mn_cross_region_rule_shadow",
+      "v101_region_prompt_context_shadow",
+      "v101_region_source_pool_evidence_shadow",
+      "v101_region_source_pool_shadow",
+      "v101_region_source_pool_top5_shadow",
+      "v102_candidate_recurrence_context_shadow",
+      "v102_recurrence_stats_shadow",
+      "v103_candidate_supply_shadow",
+      "v103_prompt_candidate_gate_shadow",
+      "v104_shadow_prompt_candidate_injection",
+      "v104_shadow_prompt_model_decision",
+      "v10522_v102_strong_selector_shadow",
+      "v10524_candidate_flow_trace",
+      "v10524_source_pool_gap_drilldown",
+      "v10524_station_identity_full_audit",
+      "v10524_v102_relaxed_selector_shadow",
+      "v105_ai_shadow_decision_independent",
+      "v105_context_completeness_audit",
+      "v105_no_token_independent_scoreboard",
+      "v105_no_token_independent_shadow",
+      "v93_mn_save_signal_per_method_shadow",
+      "v93_verdict_weight_recalibration_shadow",
+      "v93_wr_gate_filter_audit_shadow",
+      "v94_cross_region_leakage_continuous_monitor",
+      "v94_cross_region_spillover_aware_shadow",
+      "v94_no_token_first_simulation_shadow",
+      "v95_ai_context_completeness_shadow",
+      "v95_data_freshness_audit_shadow",
+      "v96_master_tracker_daily_snapshot",
+      "v99_exact_evaluator_results",
+      "verdict_distribution_daily",
+      "verified_bucket_rules",
+      "weekday_blackspot_shadow",
+      "weekday_rule_strength_daily"
+    ],
+    "v10524_tables": [
+      "v10524_candidate_flow_trace",
+      "v10524_source_pool_gap_drilldown",
+      "v10524_station_identity_full_audit",
+      "v10524_v102_relaxed_selector_shadow"
+    ]
+  },
+  "deploy_timestamp_vn": null,
+  "diagnostic_only": true,
+  "env_guard_flags": {
+    "AI_MODEL": {
+      "set": false,
+      "value": null
+    },
+    "AI_MODEL_HARD_TIMEOUT_SEC": {
+      "set": false,
+      "value": null
+    },
+    "AI_MODEL_SOFT_CONTINUE_SEC": {
+      "set": false,
+      "value": null
+    },
+    "ENABLE_SCHEDULER": {
+      "set": false,
+      "value": null
+    },
+    "OWNER_AI_TOKEN_ONCE_DAILY_ONLY": {
+      "set": false,
+      "value": null
+    },
+    "OWNER_MANUAL_PROVIDER_CALLS_ENABLED": {
+      "set": false,
+      "value": null
+    },
+    "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED": {
+      "set": false,
+      "value": null
+    },
+    "TEST_LANE_FULL_BUDGET_TARGET": {
+      "set": false,
+      "value": null
+    }
+  },
+  "env_secret_fingerprints": {
+    "ANTHROPIC_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "COHERE_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "CURSOR_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "DEEPSEEK_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "GEMINI_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "GOOGLE_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "GROQ_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "MISTRAL_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    },
+    "OPENAI_API_KEY": {
+      "fingerprint": null,
+      "length": 0,
+      "set": false
+    }
+  },
+  "file_hashes": {
+    "backend": {
+      "web/backend/_v101_shadow_pilot.py": {
+        "exists": true,
+        "mtime": "2026-05-10T13:15:55+07:00",
+        "sha256": "cb6a7264ea07a0496bc75a9399a2361e61086b6ba70c343ee00c4f4429fa0909",
+        "size": 49572
+      },
+      "web/backend/_v102_recurrence_tracker.py": {
+        "exists": true,
+        "mtime": "2026-05-10T16:35:58+07:00",
+        "sha256": "4ca63e289cb1f93697cd5890fef48ef704f953acf1c435b058edc56bbf4038e8",
+        "size": 19384
+      },
+      "web/backend/_v103_candidate_supply.py": {
+        "exists": true,
+        "mtime": "2026-05-10T16:35:57+07:00",
+        "sha256": "15271182ed643b5085afec350a8e5e8f84f1a61a1997d03395acdd1d3065e53a",
+        "size": 21161
+      },
+      "web/backend/_v10522_live_prep.py": {
+        "exists": true,
+        "mtime": "2026-05-11T08:51:48+07:00",
+        "sha256": "4aca8e6c67137ef098e9514bb2577e4314d3932953d8beac5db0cdab297002bd",
+        "size": 50658
+      },
+      "web/backend/_v10524_runtime_manifest.py": {
+        "exists": true,
+        "mtime": "2026-05-11T12:28:59+07:00",
+        "sha256": "74898f9958f0fd0f3ed58130f1b9c69f5c85181375838fa0f402a21e07873ce9",
+        "size": 9780
+      },
+      "web/backend/_v10524_source_pool_gap_drilldown.py": {
+        "exists": true,
+        "mtime": "2026-05-11T12:26:14+07:00",
+        "sha256": "ada1356b44787bd113c7626fe0887c3400fdcfe3109f376fd81418fecc915247",
+        "size": 39654
+      },
+      "web/backend/_v10524_v102_relaxed_selector_shadow.py": {
+        "exists": true,
+        "mtime": "2026-05-11T12:38:18+07:00",
+        "sha256": "5b3a443b99ea708b9cbc243c719c53c7a8a25043cd85cff94ad581531ae0ac7e",
+        "size": 21462
+      },
+      "web/backend/database.py": {
+        "exists": true,
+        "mtime": "2026-05-11T09:51:54+07:00",
+        "sha256": "3c62afcabf2fdff34a214f55283ce22d4a3262347c4387777341e2b078e5b6e9",
+        "size": 199524
+      },
+      "web/backend/main.py": {
+        "exists": true,
+        "mtime": "2026-05-11T12:31:25+07:00",
+        "sha256": "2fc57d063d7f7447757c5a1627c49b8e09b8cfb37f5828b679b956a43040df64",
+        "size": 695543
+      },
+      "web/backend/model_registry.py": {
+        "exists": true,
+        "mtime": "2026-05-06T19:06:30+07:00",
+        "sha256": "0dec0b84ec822a57901b2ca6fb2d2bdd627a8655d068302b0adbb42a60e627d8",
+        "size": 32905
+      },
+      "web/backend/scheduler.py": {
+        "exists": true,
+        "mtime": "2026-05-11T09:50:56+07:00",
+        "sha256": "cde2f8f7ac99fd645f9b64523b5578dd13c551c882f71a4eebba7aa0d45f9653",
+        "size": 407149
+      },
+      "web/backend/station_identity.py": {
+        "exists": true,
+        "mtime": "2026-05-11T08:51:48+07:00",
+        "sha256": "17176f05cde81798c79e976a9fa27f4121e947a492a3a9daf9fcc2760efc677d",
+        "size": 3903
+      }
+    },
+    "frontend": {
+      "web/frontend/app.js": {
+        "exists": true,
+        "mtime": "2026-05-10T13:15:55+07:00",
+        "sha256": "f3b701e3f8fe4b858556fe6ec9cbc0c3f243c3cc1c3d048305ecd934eb387f8f",
+        "size": 108117
+      },
+      "web/frontend/du-doan-test.html": {
+        "exists": true,
+        "mtime": "2026-05-11T12:32:14+07:00",
+        "sha256": "74c72cd156553349d30d5004e30aadc3f00c5d1e4872d860703c669a738d75d4",
+        "size": 82873
+      },
+      "web/frontend/du-doan.html": {
+        "exists": true,
+        "mtime": "2026-05-10T11:03:43+07:00",
+        "sha256": "d7d869ae2cd5f7dcea2abc4c5617785d5cf1538a282f4657053a0b8d39eb5495",
+        "size": 45832
+      },
+      "web/frontend/index.html": {
+        "exists": true,
+        "mtime": "2026-05-03T19:31:35+07:00",
+        "sha256": "3b62098eaadb9ad950c683fa46451e3c8784d3138c4e03f1212a4cb554586269",
+        "size": 21704
+      },
+      "web/frontend/monitoring.html": {
+        "exists": true,
+        "mtime": "2026-05-11T12:34:37+07:00",
+        "sha256": "619100088bb91b7a143abe87096b20ed10cb041034008a269ca4b2840579ccbf",
+        "size": 322484
+      }
+    }
+  },
+  "generated_at_vn": "2026-05-11T12:38:30+07:00",
+  "official_impact_allowed": false,
+  "official_output": false,
+  "output_eligible": false,
+  "owner_approved": false,
+  "process": {
+    "argv": [
+      "artifacts/v10524/_v10524_run_local_audit.py"
+    ],
+    "captured_at_vn": "2026-05-11T12:38:30+07:00",
+    "cwd": "E:\\Lottery_AI_Test",
+    "last_restart_at_vn": null,
+    "pid": 65776,
+    "ppid": 63528,
+    "uptime_seconds": null
+  },
+  "schema_version": "v10524_runtime_manifest_v1",
+  "shadow_only": true,
+  "source_ref": {
+    "available": true,
+    "branch": "master",
+    "captured_at_vn": "2026-05-11T12:38:30+07:00",
+    "commit": "e626ba74d968b38479e1d261c9ea56029704c361",
+    "describe": "e626ba7-dirty",
+    "dirty": true
+  }
+}

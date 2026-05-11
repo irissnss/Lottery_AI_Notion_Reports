@@ -1,3 +1,43 @@
+## V105.27 — TOTAL FORCE CONTROL + STABILITY-FIRST + PREDICTION QUALITY ROADMAP (2026-05-11 21:30 VN)
+
+- Published public V105.27 evidence folder: `V105_27_TOTAL_FORCE_CONTROL_20260511`.
+- LANE 0 PRE-FLIGHT: official sha256 captured for predictions / final_bundles / lottery_results / model_daily_eval, git rev pinned, provider_call_count=0 enforced.
+- LANE 1 SSOT MATRIX: cross-surface reconciliation across CHANGELOG / SSOT / FU_TRACKER / AUTOMATION_STATE / public_root / Notion / artifacts; identified CHANGELOG_STALE for V105.21/23/24/26 and PUBLIC_STALE folders V105.25b/V105.26 (now backfilled in same push window).
+- LANE 2 FORMULA + D-2 GUARD: code path `_attach_owner_priority_meta` confirms `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2`, `MT_D = (MN+MT+MB) D-1 + MN D` (no D-2), `MB_D = (MN+MT+MB) D-1 + MN D + MT D` (no D-2). 7d runtime probe over `predictions.source_regions` returns `D2_LEAK_BLOCKED = true` for MT/MB.
+- LANE 3 CASCADE / DD TRƯỚC-SAU: 2026-05-11 evidence shows MN-trigger no-token cascade failed (0 success, 14 errors — all `I/O operation on closed file`) and later MT-trigger cascade succeeded (7/7 MB rerun_post_mt). `_safe_stdio_ctx` patch local-only; VPS deploy is owner-gated (Decision #10).
+- LANE 4 STATION IDENTITY: code maps Huế aliases to `Thừa Thiên Huế`; mission canonical is `Huế` — conflict elevated as Decision #2.
+- LANE 5 SECURITY: tracked private/public repo zero secret hits; PAT revoke and SSH deploy-key migration still owner-gated (Decision #9).
+- LANE 6-9 PIPELINE: source-pool gap drilldown still active (`SOURCE_FORMULA_EXCLUSION` dominant + `PROMPT_NOT_INJECTED` measurement artifact); MN D-2 prompt-wire gap measured shadow-only (Decision #3); V102 RELAXED HOLD until V103 supply class clean (Decision #6); Top2 A/B shadow scoped 14d for MN+MB, MT measurement-only (Decision #4).
+- LANE 10-11 REGION GUARDS: MT PROTECT regression watch active; MB FORENSIC `MB_D_v2` options drafted shadow-only (Decision #5).
+- LANE 12-14 GOVERNANCE: 10-item owner decision register published in `evidence/OWNER_DECISION_REGISTER.md`.
+- Official tables untouched, provider call count = 0, no `/du-doan` / `/api/final-bundle` / `generate_final_bundle()` semantic change.
+
+---
+
+## V105.25 — STATION ALIAS FIXUP + SOURCE-POOL REASON RANKING + V103 SUPPLY CLASS FIX (2026-05-11 15:30 VN)
+
+- Published public V105.25 evidence folder: `V105_25_STATION_ALIAS_FIXUP_20260511`.
+- LANE 1 STATION ALIAS FIXUP: code/runtime/prompt/UI labels canonicalized via `station_identity.py` SSOT. Audit `_v10524_station_code_audit.py` upgraded to v10525 with embedded-canonical detection + strict weekday-as-station rule + expanded forensic exception list. Post-audit `alias_unexpected_count = 0` and `weekday_as_station_unexpected_strict = 0`. Raw `lottery_results.station` NOT mutated.
+- LANE 2 SOURCE-POOL REASON RANKING: `_v10525_source_pool_reason_ranking.py` aggregates `v10524_source_pool_gap_drilldown` by region × weekday × station × miss_reason × source_prize. Top REAL root cause across MN/MT/MB = `SOURCE_FORMULA_EXCLUSION` (MN 187, MT 405, MB 1021). `PROMPT_NOT_INJECTED=4349` is a measurement artifact pending V104 wiring.
+- LANE 3 CANDIDATE FLOW FUNNEL: `_v10525_candidate_flow_funnel.py` computes conversions across source_pool → prompt → rank → top5 → top2 → bundled → ui. Biggest drop is `top5→top2` for MN/MB and `top2→bundled` for MT. First-miss stage by region matches the rank table.
+- LANE 4 V103 SUPPLY CLASS FIX: `_v10525_v103_supply_class_backfill.py` propagates V102 recurrence (`v102_recurrence_score`, `v102_recurrence_class`, `v102_recommendation`, `v102_evidence_json`) into `v103_candidate_supply_shadow` where the join `(target_date, region, candidate_tail)` matches. `_v10524_v102_relaxed_selector_shadow.py` got an evidence_json-aware fallback so `non_gan_core_present` derives correctly when V103 row is absent — RELAXED_L2 activated 0 → 11 rows (RELAXED_L1 = 13). No V102 promotion to official.
+- LANE 5 V102 RELAXED WATCH: `_v10525_v102_relaxed_watch.py` tracks 7d/14d observations + entered_top2 + would_save + would_break + net_save + save_ratio + break_ratio. Promotion gate hard-coded: window_days >= 14 + save_ratio >= 0.30 + break_ratio <= 0.10 + net_save > 0 + owner explicit OK.
+- LANE 6 RUNTIME MANIFEST DAILY: `_v10525_runtime_manifest_daily.py` snapshots runtime manifest to `artifacts/runtime_manifest/<date>/manifest.json` and writes `drift_alert.json` when critical file hashes change without a corresponding `commit/ref` change. Scheduler wiring 00:05 VN is pending owner OK.
+- End-to-end audit `artifacts/v10525/v10525_local_audit_latest.json` confirms `official_unchanged = true` for predictions / final_bundles / lottery_results / model_daily_eval (SHA256 pre = post). No manual/provider AI call was issued at any step.
+- Updated `LATEST_REPORT.json`, `REPORT_INDEX.md`, `NEXT_ACTION.md`, `OPEN_ISSUES.md` to point to V105.25.
+
+---
+
+## V105.24 — SOURCE_POOL_GAP_DRILLDOWN + V102_RELAXED_SHADOW + TOKEN_LOCK + RUNTIME_MANIFEST (2026-05-11 13:50 VN)
+
+- Published public V105.24 evidence folder: `V105_24_SOURCE_POOL_GAP_DRILLDOWN_20260511`.
+- Persistent shadow drilldown surfaces created: `v10524_source_pool_gap_drilldown`, `v10524_candidate_flow_trace`, `v10524_v102_relaxed_selector_shadow`.
+- Token-cost contract guard hardened: owner-lock flags, `_owner_ai_token_attempt_exists`, manual API endpoints + startup catch-up blocked, duplicate-save prevention.
+- `DEPLOYED_RUNTIME_MANIFEST.json` (file hash + commit ref + DB hash) generated as forensic identity.
+- Final acceptance **OFFICIAL LOCKED**: official tables unchanged; only shadow + admin-readout work. Outstanding from V105.24 audit: 62 alias residue (resolved in V105.25), `RELAXED_L2 = 0` (resolved in V105.25), V103 supply class NULL (mitigated in V105.25).
+
+---
+
 ## V105.23 — TOTAL FORCE CODE-TRUTH AUDIT + PUBLIC NOTION EVIDENCE (2026-05-11 11:40 VN)
 
 - Published public V105.23 evidence folder: `V105_23_TOTAL_FORCE_CODE_TRUTH_AUDIT_20260511`.

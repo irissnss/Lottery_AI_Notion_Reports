@@ -1,0 +1,359 @@
+{
+  "contracts": {
+    "diagnostic_only": true,
+    "no_provider_call": true,
+    "shadow_only_read": true
+  },
+  "generated_at_vn": "2026-05-11T15:26:27+07:00",
+  "miss_rate": 1.0,
+  "miss_total": 7423,
+  "official_tables_never_written": [
+    "predictions",
+    "final_bundles",
+    "lottery_results",
+    "model_daily_eval"
+  ],
+  "region_summary": [
+    {
+      "miss": 2067,
+      "miss_rate": 1.0,
+      "region": "MB",
+      "total": 2067
+    },
+    {
+      "miss": 3022,
+      "miss_rate": 1.0,
+      "region": "MN",
+      "total": 3022
+    },
+    {
+      "miss": 2334,
+      "miss_rate": 1.0,
+      "region": "MT",
+      "total": 2334
+    }
+  ],
+  "schema_version": "v10525_source_pool_reason_ranking_v1",
+  "target_date": "2026-05-11",
+  "top_prize_root_causes": [
+    {
+      "count": 2109,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "source_prize": "?"
+    },
+    {
+      "count": 1223,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MT",
+      "source_prize": "?"
+    },
+    {
+      "count": 1021,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "source_prize": "?"
+    },
+    {
+      "count": 1017,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "source_prize": "?"
+    },
+    {
+      "count": 987,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MT",
+      "source_prize": "?"
+    },
+    {
+      "count": 873,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MN",
+      "source_prize": "?"
+    },
+    {
+      "count": 44,
+      "miss_reason": "PROMPT_NOT_INJECTED+STATION_ALIAS",
+      "region": "MT",
+      "source_prize": "?"
+    },
+    {
+      "count": 40,
+      "miss_reason": "TOP30_CAP",
+      "region": "MN",
+      "source_prize": "?"
+    },
+    {
+      "count": 36,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION+STATION_ALIAS",
+      "region": "MT",
+      "source_prize": "?"
+    },
+    {
+      "count": 29,
+      "miss_reason": "TOP30_CAP",
+      "region": "MB",
+      "source_prize": "?"
+    },
+    {
+      "count": 28,
+      "miss_reason": "TOP30_CAP",
+      "region": "MT",
+      "source_prize": "?"
+    },
+    {
+      "count": 16,
+      "miss_reason": "TOP30_CAP+STATION_ALIAS",
+      "region": "MT",
+      "source_prize": "?"
+    }
+  ],
+  "top_root_causes_region_reason": [
+    {
+      "count": 2109,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN"
+    },
+    {
+      "count": 1223,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MT"
+    },
+    {
+      "count": 1021,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB"
+    },
+    {
+      "count": 1017,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB"
+    },
+    {
+      "count": 987,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MT"
+    },
+    {
+      "count": 873,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MN"
+    },
+    {
+      "count": 44,
+      "miss_reason": "PROMPT_NOT_INJECTED+STATION_ALIAS",
+      "region": "MT"
+    },
+    {
+      "count": 40,
+      "miss_reason": "TOP30_CAP",
+      "region": "MN"
+    },
+    {
+      "count": 36,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION+STATION_ALIAS",
+      "region": "MT"
+    },
+    {
+      "count": 29,
+      "miss_reason": "TOP30_CAP",
+      "region": "MB"
+    },
+    {
+      "count": 28,
+      "miss_reason": "TOP30_CAP",
+      "region": "MT"
+    },
+    {
+      "count": 16,
+      "miss_reason": "TOP30_CAP+STATION_ALIAS",
+      "region": "MT"
+    }
+  ],
+  "top_station_root_causes": [
+    {
+      "count": 289,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Hà Nội"
+    },
+    {
+      "count": 266,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Hà Nội"
+    },
+    {
+      "count": 194,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "TP. HCM"
+    },
+    {
+      "count": 177,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Thái Bình"
+    },
+    {
+      "count": 165,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Nam Định"
+    },
+    {
+      "count": 159,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MT",
+      "station_canonical": "Khánh Hòa"
+    },
+    {
+      "count": 157,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Thái Bình"
+    },
+    {
+      "count": 155,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Hải Phòng"
+    },
+    {
+      "count": 147,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Bắc Ninh"
+    },
+    {
+      "count": 145,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Hải Phòng"
+    },
+    {
+      "count": 144,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Quảng Ninh"
+    },
+    {
+      "count": 139,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MT",
+      "station_canonical": "Đà Nẵng"
+    },
+    {
+      "count": 138,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Bắc Ninh"
+    },
+    {
+      "count": 129,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MB",
+      "station_canonical": "Nam Định"
+    },
+    {
+      "count": 126,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MB",
+      "station_canonical": "Quảng Ninh"
+    },
+    {
+      "count": 124,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MT",
+      "station_canonical": "Khánh Hòa"
+    },
+    {
+      "count": 123,
+      "miss_reason": "SOURCE_FORMULA_EXCLUSION",
+      "region": "MT",
+      "station_canonical": "Đà Nẵng"
+    },
+    {
+      "count": 119,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Kiên Giang"
+    },
+    {
+      "count": 118,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MT",
+      "station_canonical": "Thừa Thiên Huế"
+    },
+    {
+      "count": 112,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Đà Lạt"
+    },
+    {
+      "count": 109,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Tiền Giang"
+    },
+    {
+      "count": 106,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Cà Mau"
+    },
+    {
+      "count": 105,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Hậu Giang"
+    },
+    {
+      "count": 102,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Đồng Tháp"
+    },
+    {
+      "count": 99,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Long An"
+    },
+    {
+      "count": 98,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Bến Tre"
+    },
+    {
+      "count": 98,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Vũng Tàu"
+    },
+    {
+      "count": 94,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Bình Thuận"
+    },
+    {
+      "count": 93,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Sóc Trăng"
+    },
+    {
+      "count": 93,
+      "miss_reason": "PROMPT_NOT_INJECTED",
+      "region": "MN",
+      "station_canonical": "Trà Vinh"
+    }
+  ],
+  "total_rows": 7423,
+  "window_days": 30,
+  "window_start": "2026-04-12"
+}
