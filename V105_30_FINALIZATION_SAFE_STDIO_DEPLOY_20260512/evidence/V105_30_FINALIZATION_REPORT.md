@@ -1,5 +1,32 @@
 # V105.30 — TOTAL FORCE FINALIZATION REPORT (2026-05-12, 01:48 VN)
 
+> ## 🛑 ADDENDUM 2026-05-12 02:30 VN — RULE105 PRIZE-SOURCE AUDIT CORRECTION (V105.30b)
+>
+> Owner pointed out em đã sai logic LANE 4. Em đã re-check (`v10530_rule105_recheck.json`):
+>
+> | Item | Value |
+> |---|---|
+> | Total active mined_rules | 105 |
+> | Em flag "violation" theo `target_region` (sai) | 30 |
+> | TRUE violations theo `source_region` (đúng) | **0** |
+> | False positive rate | **30 / 30 = 100%** |
+>
+> Doctrine `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) D-2` nghĩa là target MN có thể mine rule với source = MB, và prize_keys dùng theo bộ giải của MB (gồm G6). Tương tự target MB mine với source MN/MT dùng được G5/G8. Em đã check theo target_region thay vì source_region → ra 30 false positive.
+>
+> **Hậu quả**:
+> - Quarantine recommendation trong Section 10/11/22 (P1 governance gate, Decision #12 B re-mine production) là KHÔNG cần thiết.
+> - Production `mined_rules` đúng owner doctrine. Không có rule vi phạm.
+> - 30 rules em đã đánh dấu `kept_strict=0` trong `v10530_rule105_strict_remine_shadow` là **misinterpreted** — bản chất hợp lệ.
+> - Owner decision #12 = B (re-mine strict) đã được thực hiện ở mức audit; vì không có violation thật, không cần re-mine production.
+> - Shadow tables `v10530_rule105_*` giữ lại làm `EXAMINATION_TRACE` (đã re-check), **không phải `VIOLATION_FOUND`**.
+>
+> Tóm tắt verdict V105.30 LANE 4 sau correction: `PRIZE_SOURCE_NO_REAL_VIOLATION_OBSERVED` + `EM_AUDIT_LOGIC_CORRECTED` + `PRODUCTION_RULE105_DOCTRINE_OK`.
+>
+> Em xin lỗi vì đã kết luận vội. Owner đúng. Mọi đoạn dưới đây vẫn giữ nguyên để minh bạch quá trình kiểm tra, nhưng các verdict "VIOLATION" về Rule105 đã bị overrule bởi addendum này.
+
+---
+
+
 > Báo cáo Owner. Tiếng Việt. Owner approval đã ghi: `A,A,A,A,A,A,A,A,A,A,A,B,A,A,A`. Stability-first. Evidence-first. Không gọi provider. Không động official. MT protect preserved. D-2 only MN. Rule105 strict prize-source. Lose-carryover prompt-support only. SSOT GitHub raw đã lên V105.29 (commit `18ddf38`). Không pass-wash.
 
 ---

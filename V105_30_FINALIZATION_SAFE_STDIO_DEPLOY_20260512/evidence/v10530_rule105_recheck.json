@@ -1,0 +1,817 @@
+{
+  "schema_version": "v10530_rule105_recheck_v1",
+  "generated_at_vn": "2026-05-12T02:23:14.321313+07:00",
+  "owner_correction_acknowledged": "Lock prize-source applies to source_region (đài nguồn) not target_region. MN D = (MN+MT) D-1/D-2 + MB D-1/D-2 → target MN can legitimately mine rules using source MB with prize_keys G6+G7 because G6 is a real MB prize.",
+  "correct_lock_by_source_region": {
+    "MN": [
+      "DB",
+      "G1",
+      "G2",
+      "G5",
+      "G7",
+      "G8"
+    ],
+    "MT": [
+      "DB",
+      "G1",
+      "G2",
+      "G5",
+      "G7",
+      "G8"
+    ],
+    "MB": [
+      "DB",
+      "G1",
+      "G2",
+      "G6",
+      "G7"
+    ]
+  },
+  "summary": {
+    "total_active_rules": 105,
+    "old_wrong_flag_count": 30,
+    "true_violation_count_under_correct_source_rule": 0,
+    "false_positive_count": 30,
+    "true_positive_count": 0,
+    "wrong_violation_breakdown_by_target": {
+      "MN": 6,
+      "MT": 11,
+      "MB": 13
+    },
+    "true_violation_breakdown_by_source": {}
+  },
+  "old_wrong_violations_30_examined": [
+    {
+      "id": 1262,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1267,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1274,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1279,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1285,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "GĐB+G6",
+      "tokens": [
+        "DB",
+        "G6"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1292,
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1296,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1297,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "GĐB+G6",
+      "tokens": [
+        "DB",
+        "G6"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1298,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6",
+      "tokens": [
+        "G6"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1301,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1305,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "GĐB+G6",
+      "tokens": [
+        "DB",
+        "G6"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1307,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1312,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1317,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1323,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "GĐB+G6",
+      "tokens": [
+        "DB",
+        "G6"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1325,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1329,
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G6"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1333,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G1+G8",
+      "tokens": [
+        "G1",
+        "G8"
+      ],
+      "wrong_violating": [
+        "G8"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1335,
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "prize_keys": "G1+G8",
+      "tokens": [
+        "G1",
+        "G8"
+      ],
+      "wrong_violating": [
+        "G8"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1338,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D",
+      "prize_keys": "G5+GĐB",
+      "tokens": [
+        "DB",
+        "G5"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1339,
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "prize_keys": "G7+G8",
+      "tokens": [
+        "G7",
+        "G8"
+      ],
+      "wrong_violating": [
+        "G8"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1344,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1345,
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1346,
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1348,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G2+G5",
+      "tokens": [
+        "G2",
+        "G5"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1357,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G1+G8",
+      "tokens": [
+        "G1",
+        "G8"
+      ],
+      "wrong_violating": [
+        "G8"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1358,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1359,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "prize_keys": "G7+G8",
+      "tokens": [
+        "G7",
+        "G8"
+      ],
+      "wrong_violating": [
+        "G8"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1360,
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    },
+    {
+      "id": 1365,
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "wrong_violating": [
+        "G5"
+      ],
+      "correct_violating": [],
+      "still_violation_under_correct_rule": false
+    }
+  ],
+  "true_violations_under_correct_logic": [],
+  "sample_review_first_15": [
+    {
+      "id": 1261,
+      "target": "MN",
+      "source": "MN",
+      "prize_keys": "G2+G7",
+      "tokens": [
+        "G2",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1262,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": true,
+      "correct_flag": false
+    },
+    {
+      "id": 1263,
+      "target": "MN",
+      "source": "MN",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1264,
+      "target": "MN",
+      "source": "MN",
+      "prize_keys": "G1+G7",
+      "tokens": [
+        "G1",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1265,
+      "target": "MN",
+      "source": "MN",
+      "prize_keys": "GĐB+G1",
+      "tokens": [
+        "DB",
+        "G1"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1266,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "GĐB+G7",
+      "tokens": [
+        "DB",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1267,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": true,
+      "correct_flag": false
+    },
+    {
+      "id": 1268,
+      "target": "MN",
+      "source": "MT",
+      "prize_keys": "G5+G7",
+      "tokens": [
+        "G5",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1269,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G7",
+      "tokens": [
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1270,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G1+G7",
+      "tokens": [
+        "G1",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1271,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G7",
+      "tokens": [
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1272,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "GĐB+G7",
+      "tokens": [
+        "DB",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1273,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G1+G7",
+      "tokens": [
+        "G1",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    },
+    {
+      "id": 1274,
+      "target": "MN",
+      "source": "MB",
+      "prize_keys": "G6+G7",
+      "tokens": [
+        "G6",
+        "G7"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G6",
+        "G7"
+      ],
+      "wrong_flag": true,
+      "correct_flag": false
+    },
+    {
+      "id": 1275,
+      "target": "MN",
+      "source": "MN",
+      "prize_keys": "G7+G8",
+      "tokens": [
+        "G7",
+        "G8"
+      ],
+      "allowed_by_source": [
+        "DB",
+        "G1",
+        "G2",
+        "G5",
+        "G7",
+        "G8"
+      ],
+      "wrong_flag": false,
+      "correct_flag": false
+    }
+  ],
+  "no_provider_manual_ai_called": true
+}

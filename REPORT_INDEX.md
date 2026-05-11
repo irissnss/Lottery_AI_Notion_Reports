@@ -1,8 +1,25 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.28** under `V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/` (total-force runtime contract verify: DD Trước/DD Sau, no-token retrain cascade, AI priority, 90s/300s timeout, official 15 / lane-test 20 gate, region-only freeze, MT protect, PAT revoke, 2026-05-11).
+Latest: **V105.30** — `V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/` (finalization: `_safe_stdio_ctx` VPS, Rule105 strict shadow + **V105.30b** owner recheck prize-source per source_region, `SIGNAL_LAYER_REGISTRY`, public SSOT; Notion page optional — owner dùng GitHub raw).
 
-## Latest evidence (V105.28)
+## Quick links — V105.30 (read in order)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + status one-liner.
+2. [V105_30_FINALIZATION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md) — báo cáo đầy đủ (tiếng Việt).
+3. [v10530_rule105_recheck.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_rule105_recheck.json) — **0** true violations after source_region correction.
+
+## Latest evidence (V105.30)
+
+- [V105_30_FINALIZATION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md) — full Vietnamese report; stability PASS for safe-stdio deploy; experiments HOLD.
+- [v10530_master_audit.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_master_audit.json) — lane summary.
+- [v10530_rule105_recheck.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_rule105_recheck.json) — Rule105 V105.30b recheck.
+- [v10530_hash_double_check.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_hash_double_check.json) — official 4-table integrity proof.
+
+## Previous evidence (V105.29)
+
+- [V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_REPORT.md) — lose-carryover signal layer + runtime stability.
+
+## Previous evidence (V105.28)
 
 - [V105_28_RUNTIME_CONTRACT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/V105_28_RUNTIME_CONTRACT_REPORT.md) — full Vietnamese report (17 sections); status PARTIAL_NOT_PASS.
 - [v10528_preflight.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_preflight.json) — pre-hash + env flags + git state + live sync manifest.
