@@ -1,10 +1,10 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.29",
-  "latest_folder": "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512",
-  "latest_report": "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_REPORT.md",
-  "created_at_vn": "2026-05-12T00:55:00+07:00",
-  "status": "PARTIAL — V105.29 ran 20 LANE audit and added V105.29 Lose-Carryover Signal Layer shadow + Rule105 vs V101 separation audit. Local _safe_stdio_ctx wide patch is now in scheduler.py (smoke 3/3 PASS) with VPS deploy script ready; owner OK still pending. Backtest 30d for all 6 LOSE-carryover paths: break_ratio 0.93-0.99 -> LOSE_CARRYOVER_DO_NOT_PROMOTE. 30 mined_rules use prize_keys outside owner prize-source lock (MB:13, MN:6, MT:11) -> PRIZE_SOURCE_VIOLATION_DETECTED. Public raw GitHub still V105.27; local mirror at V105.28+V105.29 pending SSH migration. Official 4 tables pre/post sha256 identical; provider_call_count=0; MT protect preserved.",
+  "latest_version": "V105.30",
+  "latest_folder": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512",
+  "latest_report": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
+  "created_at_vn": "2026-05-12T01:48:00+07:00",
+  "status": "V105_30_STABILITY_PASS_FOR_SAFE_STDIO + DEPLOYED_PENDING_NATURAL_VERIFY — Owner approval string A,A,A,A,A,A,A,A,A,A,A,B,A,A,A executed: (#10) _safe_stdio_ctx wide DEPLOYED LIVE to VPS, scheduler.py md5 9c17595d, service active, 6/6 endpoints 200, 5-min closed_file=0, provider_call=0; (#12 B) Rule105 strict shadow re-mine built (105 rows = 75 kept + 30 quarantine, 0 bucket collapsed, 19/21 buckets top5_incomplete) -> QUARANTINE_INVALID_RECOMMENDED + PRODUCTION_REPLACE_NOT_ALLOWED_YET; (#14 B) AI strongest-first HOLD shadow 7d. Public raw GitHub advanced from V105.27 to V105.29 (commit 18ddf38). docs/SIGNAL_LAYER_REGISTRY.md created with 13 layers. Lose-carryover / Top2/Bundler / MB_D_v2 / V102 relaxed: DO_NOT_PROMOTE. Official 4-table row counts identical (4791/219/14655/4655); sha256 drift only from VPS-side natural cascade between live syncs (hash double-check on static DB = identical 4/4). MT protect preserved. Natural cascade verify after MN scrape ~16:30 VN today.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
@@ -38,6 +38,12 @@
       "title": "V105.29 — Total Force No-Miss Control + Lose-Carryover Signal Layer + Runtime Stability (2026-05-12)",
       "id": "35d1d385-9bf8-81d7-b08e-ce1b0628cf4b",
       "url": "https://www.notion.so/V105-29-Total-Force-No-Miss-Control-Lose-Carryover-Signal-Layer-Runtime-Stability-2026-05-12-35d1d3859bf881d7b08ece1b0628cf4b"
+    },
+    {
+      "version": "V105.30",
+      "title": "V105.30 — Total Force Finalization: _safe_stdio_ctx VPS Deploy + Rule105 Strict Shadow + SSOT V105.29 Public Live (2026-05-12)",
+      "id": "TO_BE_FILLED_BY_NEXT_NOTION_CALL",
+      "url": "TO_BE_FILLED"
     }
   ],
   "hard_locks": [
@@ -59,6 +65,11 @@
     "OWNER_CONFIRMED_REGION_ONLY_FREEZE": true
   },
   "read_order": [
+    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",
+    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
+    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_master_audit.json",
+    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_preflight.json",
+    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_hash_double_check.json",
     "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/README.md",
     "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_REPORT.md",
     "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/_v10529_DEPLOY_SAFE_STDIO_VPS.md",

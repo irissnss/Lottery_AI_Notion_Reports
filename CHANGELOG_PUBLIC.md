@@ -1,3 +1,19 @@
+## V105.30 — TOTAL FORCE FINALIZATION: SAFE_STDIO VPS DEPLOY + RULE105 STRICT SHADOW + SSOT V105.29 PUBLIC LIVE (2026-05-12 01:48 VN)
+
+- Owner approval string `A,A,A,A,A,A,A,A,A,A,A,B,A,A,A` executed.
+- **LANE 1 (P0)**: `_safe_stdio_ctx` wide DEPLOYED LIVE to VPS. `scheduler.py` md5 `9c17595d3dd5c0fa323bbaf4bf221f34` (= local). Service active. 6/6 endpoints 200. Journal 5-min: closed_file_count=0, provider_call_count=0. Backup `/root/Lottery_AI_Test/backups/v105_30_safe_stdio_20260512_012511/scheduler.py.bak`.
+- **LANE 2**: SSH deploy key generated; public key ready (ed25519 admin@lottery-ai). VPS SSH works (vietnix). GitHub SSH pending owner UI add. HTTPS push fallback still operational via cached GCM.
+- **LANE 3**: Public raw `LATEST_REPORT.json` advanced **V105.27 → V105.29** in commit `18ddf38`. 27 files / 9933 insertions / 119 deletions. desktop.ini + transcripts + commit helpers now gitignored.
+- **LANE 4 (#12 B)**: Rule105 strict shadow re-mine built. `v10530_rule105_strict_remine_shadow=105` (75 kept + 30 quarantine-recommended). `v10530_rule105_prize_violation_audit=30` (MB:13, MN:6, MT:11). `v10530_rule105_old_vs_strict_compare=21` buckets — 0 bucket collapsed, 19/21 buckets top5 incomplete. Verdict: `QUARANTINE_INVALID_RECOMMENDED` + `PRODUCTION_REPLACE_NOT_ALLOWED_YET`.
+- **LANE 5**: `docs/SIGNAL_LAYER_REGISTRY.md` created with 13 canonical signal layers.
+- **LANE 6**: Region/Weekday/Station_set independence matrix verified. MT D-2 leak 7d = 0; MB D-2 leak 7d = 0.
+- **LANE 7-11**: All experiment lanes HOLD: lose-carryover (DO_NOT_PROMOTE), Top2/Bundler (shadow), MB_D_v2 (Option A REJECTED), V102 relaxed (HOLD), AI strongest-first (shadow 7d).
+- **LANE 12**: Official 4-table row counts identical pre/post (4791/219/14655/4655). sha256 drift only from VPS-side natural cascade between live syncs (hash double-check on static DB = identical 4/4). Provider call count = 0. MT protect preserved.
+- **LANE 13**: Governance updated (CHANGELOG, SSOT, FU, AUTOMATION seq 68→69). Notion V105.30 page pending in next call.
+- Final verdict: `V105_30_STABILITY_PASS_FOR_SAFE_STDIO` + `DEPLOYED_PENDING_NATURAL_VERIFY` (chờ MN cascade ~16:30 VN). Toàn cục `PARTIAL_NOT_PASS` cho prediction quality lanes (vẫn `DO_NOT_PROMOTE`).
+
+---
+
 ## V105.29 — TOTAL FORCE NO-MISS CONTROL + LOSE-CARRYOVER SIGNAL LAYER + RUNTIME STABILITY (2026-05-12 00:55 VN)
 
 - 20 LANE audit V105.23→V105.29; 14 lanes PASS, 2 lanes open (`_safe_stdio_ctx` VPS deploy + AI priority reorder), 1 governance gate (PRIZE_SOURCE_VIOLATION).

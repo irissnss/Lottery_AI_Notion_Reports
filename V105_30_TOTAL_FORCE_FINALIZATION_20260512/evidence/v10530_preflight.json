@@ -1,0 +1,97 @@
+{
+  "schema_version": "v10530_preflight_v1",
+  "generated_at_vn": "2026-05-12T01:26:28.428331+07:00",
+  "db": {
+    "path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+    "size_bytes": 254177280,
+    "mtime_vn": "2026-05-12T01:26:21.317222+07:00",
+    "file_sha256": "acd760e57a9ac54b1f8883130f3cd249f506dc0e0bf2cf78f8cb97ac1f9a6c68"
+  },
+  "official_tables": [
+    {
+      "table": "predictions",
+      "pre_row_count": 4791,
+      "pre_sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea"
+    },
+    {
+      "table": "final_bundles",
+      "pre_row_count": 219,
+      "pre_sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130"
+    },
+    {
+      "table": "lottery_results",
+      "pre_row_count": 14655,
+      "pre_sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6"
+    },
+    {
+      "table": "model_daily_eval",
+      "pre_row_count": 4655,
+      "pre_sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79"
+    }
+  ],
+  "git": {
+    "head": "e626ba74d968b38479e1d261c9ea56029704c361",
+    "branch": "master",
+    "short_status_line_count": 816
+  },
+  "env_flag_presence": {
+    "OWNER_MANUAL_PROVIDER_CALLS_ENABLED": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "OWNER_AI_TOKEN_ONCE_DAILY_ONLY": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "OWNER_AI_TOKEN_DUPLICATE_SAVE_BLOCK": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "OWNER_CONFIRMED_PAT_REVOKED": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "AI_MODEL_SOFT_CONTINUE_SEC": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "AI_MODEL_HARD_TIMEOUT_SEC": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "TEST_LANE_FULL_BUDGET_TARGET": {
+      "present_in_dotenv": false,
+      "present_in_process_env": false,
+      "process_value_redacted": null
+    },
+    "__code_defaults__": {
+      "AI_MODEL_SOFT_CONTINUE_SEC": 90,
+      "AI_MODEL_HARD_TIMEOUT_SEC": 300,
+      "OWNER_MANUAL_PROVIDER_CALLS_ENABLED": false,
+      "OWNER_STARTUP_SHADOW_CATCHUP_PROVIDER_ENABLED": false,
+      "OWNER_AI_TOKEN_ONCE_DAILY_ONLY": true
+    }
+  },
+  "latest_live_sync_manifest": "E:\\Lottery_AI_Test\\artifacts\\live_sync\\20260512_012606\\manifest.json",
+  "contracts": {
+    "no_provider_manual_ai_called_by_this_script": true,
+    "official_tables_never_written_by_this_script": [
+      "predictions",
+      "final_bundles",
+      "lottery_results",
+      "model_daily_eval"
+    ],
+    "shadow_only_read": true
+  }
+}

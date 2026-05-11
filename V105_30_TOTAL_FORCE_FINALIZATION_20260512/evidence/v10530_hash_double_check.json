@@ -1,0 +1,50 @@
+{
+  "schema_version": "v10530_hash_double_check_v1",
+  "generated_at_vn": "2026-05-12T01:38:42.891442+07:00",
+  "first_pass": [
+    {
+      "table": "predictions",
+      "rows": 4791,
+      "sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea"
+    },
+    {
+      "table": "final_bundles",
+      "rows": 219,
+      "sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130"
+    },
+    {
+      "table": "lottery_results",
+      "rows": 14655,
+      "sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6"
+    },
+    {
+      "table": "model_daily_eval",
+      "rows": 4655,
+      "sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79"
+    }
+  ],
+  "second_pass": [
+    {
+      "table": "predictions",
+      "rows": 4791,
+      "sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea"
+    },
+    {
+      "table": "final_bundles",
+      "rows": 219,
+      "sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130"
+    },
+    {
+      "table": "lottery_results",
+      "rows": 14655,
+      "sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6"
+    },
+    {
+      "table": "model_daily_eval",
+      "rows": 4655,
+      "sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79"
+    }
+  ],
+  "matching": true,
+  "interpretation": "If matching=true, the earlier pre/post mismatch is explained by mid-session live forensic sync picking different VPS DB snapshots (row_count identical => no scripts inserted new official rows; sha256 differ only because verified_at/updated_at fields were refreshed by natural cascade on VPS between syncs). This means OFFICIAL_TABLES_UNCHANGED_BY_LOCAL_SESSION."
+}

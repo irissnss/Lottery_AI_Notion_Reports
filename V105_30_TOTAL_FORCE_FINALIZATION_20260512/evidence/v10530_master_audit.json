@@ -1,0 +1,212 @@
+{
+  "schema_version": "v10530_master_audit_v1",
+  "generated_at_vn": "2026-05-12T01:37:02.771888+07:00",
+  "owner_decision_string": "A,A,A,A,A,A,A,A,A,A,A,B,A,A,A",
+  "owner_approvals_acknowledged": [
+    "#9 SSH migrate (key pending owner add to GitHub UI)",
+    "#10 deploy _safe_stdio_ctx (DEPLOYED VPS commit-md5=9c17595d…)",
+    "#12 B re-mine strict shadow (LANE 4 done, 0 bucket collapsed, 30 violators quarantine-recommended)",
+    "#14 B hold AI strongest-first shadow 7d",
+    "All other layers HOLD shadow / DO_NOT_PROMOTE"
+  ],
+  "no_provider_manual_ai_called": true,
+  "lane1_p0_deploy": {
+    "deploy_target": "vietnix:/root/Lottery_AI_Test/web/backend/scheduler.py",
+    "deploy_timestamp": "2026-05-12 01:25 VN",
+    "backup_path": "/root/Lottery_AI_Test/backups/v105_30_safe_stdio_20260512_012511/scheduler.py.bak",
+    "local_md5_uploaded": "9c17595d3dd5c0fa323bbaf4bf221f34",
+    "vps_md5_after_scp": "9c17595d3dd5c0fa323bbaf4bf221f34",
+    "vps_md5_before": "3bb649aa185bdfb5a2c53b2b11cc1467",
+    "py_compile_after_deploy": "PY_COMPILE_OK",
+    "service_status_post_restart": "active",
+    "endpoints_health": {
+      "/api/health": 200,
+      "/api/status": 200,
+      "/du-doan": 200,
+      "/api/final-bundle?region=MN": 200,
+      "/api/final-bundle?region=MT": 200,
+      "/api/final-bundle?region=MB": 200
+    },
+    "closed_file_count_5min_post_restart": 0,
+    "provider_call_count_5min_post_restart": 0,
+    "closed_file_count_since_deploy_24h_local_snapshot": 86,
+    "verdict": "SAFE_STDIO_DEPLOYED_LIVE + CLOSED_FILE_FIXED_LIVE_5MIN + DEPLOYED_PENDING_NATURAL_VERIFY (next MN scrape 16:30 VN)"
+  },
+  "lane2_ssh": {
+    "private_repo_remote_first_line": "origin\thttps://github.com/irissnss/Lottery_AI_Test.git (fetch)",
+    "public_repo_remote_first_line": "origin\thttps://github.com/irissnss/Lottery_AI_Notion_Reports.git (fetch)",
+    "owner_confirmed_pat_revoked": true,
+    "local_ssh_public_key_present": true,
+    "local_ssh_public_key_fingerprint_path": "C:/Users/Admin/.ssh/id_ed25519.pub",
+    "github_ssh_test_result": "Permission denied (publickey) — owner must add public key to GitHub deploy keys",
+    "vietnix_vps_ssh_test_result": "OK (hostname lotteryai-aulb)",
+    "https_push_attempt_v105_30": "SUCCESS — commit 18ddf38 pushed via cached Git Credential Manager (not via PAT in env)",
+    "verdict": "HTTPS_REMOTE_STILL_ACTIVE_VIA_GCM_CACHE + SSH_DEPLOY_KEY_PENDING_OWNER_UI"
+  },
+  "lane3_public_ssot": {
+    "public_raw_latest_version_observed": "V105.29",
+    "public_raw_url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json",
+    "public_commit_advance": "e4b8711 -> 18ddf38",
+    "local_mirror_latest": "V105.29",
+    "notion_pages_recorded": 5,
+    "drive_status": "owner upload step (no Drive API tool)",
+    "verdict": "SSOT_ALIGNED (Drive owner step pending) + PUBLIC_RAW_AT_V105_29"
+  },
+  "lane4_rule105_strict": {
+    "strict_kept_by_region": [
+      {
+        "target_region": "MB",
+        "n": 22
+      },
+      {
+        "target_region": "MN",
+        "n": 29
+      },
+      {
+        "target_region": "MT",
+        "n": 24
+      }
+    ],
+    "violation_by_region": [
+      {
+        "target_region": "MB",
+        "n": 13
+      },
+      {
+        "target_region": "MN",
+        "n": 6
+      },
+      {
+        "target_region": "MT",
+        "n": 11
+      }
+    ],
+    "bucket_severity_distribution": [
+      {
+        "collapse_severity": "NONE",
+        "n": 2
+      },
+      {
+        "collapse_severity": "TOP5_INCOMPLETE",
+        "n": 19
+      }
+    ],
+    "verdict": "PRIZE_SOURCE_VIOLATION_CONFIRMED + STRICT_REMINE_SHADOW_CREATED + STRICT_COVERAGE_OK + QUARANTINE_INVALID_RECOMMENDED + PRODUCTION_REPLACE_NOT_ALLOWED_YET"
+  },
+  "lane5_signal_registry": {
+    "registry_path": "E:\\Lottery_AI_Test\\docs\\SIGNAL_LAYER_REGISTRY.md",
+    "registry_present": true,
+    "layers_documented": 13,
+    "verdict": "SIGNAL_REGISTRY_CREATED"
+  },
+  "lane6_isolation": {
+    "mt_d2_leak_7d": 0,
+    "mb_d2_leak_7d": 0,
+    "matrix": [
+      {
+        "layer": "V101_SOURCE_POOL_TOP5",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "low"
+      },
+      {
+        "layer": "RULE105_MINED_RULE_TOP5",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "low"
+      },
+      {
+        "layer": "V10527_MN_D2_RANKED",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "low (MN only)"
+      },
+      {
+        "layer": "V10529_LOSE_CARRYOVER",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": false,
+        "risk": "low — supporting context only"
+      },
+      {
+        "layer": "TOP2_BUNDLER_AB",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "low — shadow"
+      },
+      {
+        "layer": "MB_D_V2",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "MB only — A REJECTED"
+      },
+      {
+        "layer": "V102_RELAXED",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "HOLD"
+      },
+      {
+        "layer": "AI_PRIORITY",
+        "region_iso": true,
+        "weekday_iso": true,
+        "station_iso": true,
+        "risk": "shadow only"
+      }
+    ],
+    "verdict": "REGION_ISOLATION_OK + WEEKDAY_ISOLATION_OK + STATION_SET_ISOLATION_OK + MT_PROTECT_OVERRIDE_REQUIRED_OBSERVED"
+  },
+  "lane7_to_11_holds": {
+    "lane7_lose_carryover": "LOSE_CARRYOVER_DO_NOT_PROMOTE + LOSE_CARRYOVER_PROMPT_SUPPORT_ONLY + MULTI_LAYER_CONFIRMATION_REQUIRED",
+    "lane8_top2_bundler": "TOP2_AB_SHADOW_CONTINUES + BUNDLER_DROP_MEASURE_ONLY + TOP2_DO_NOT_PROMOTE",
+    "lane9_mb_d_v2": "MB_D_V2_OPTION_A_REJECTED + MB_D_V2_C_D_SHADOW_ONLY + MB_PRIMARY_UNCHANGED + MB_D_V2_DO_NOT_PROMOTE",
+    "lane10_v102_relaxed": "V102_RELAXED_HOLD + NEED_14D_WATCH + V103_SUPPLY_CLASS_DEPENDENCY + V102_DO_NOT_PROMOTE",
+    "lane11_ai_priority": "AI_PRIORITY_SHADOW_7D + AI_RUNTIME_REORDER_HOLD + STRENGTH_TENSOR_REFRESH_REQUIRED"
+  },
+  "lane12_post_hash": {
+    "official_tables": [
+      {
+        "table": "predictions",
+        "pre_row_count": 4791,
+        "post_row_count": 4791,
+        "pre_sha256": "a50f257db00acb36e4aef91d62955cdce2a8a6ed9845d7fe23dcb8d0a600e6ea",
+        "post_sha256": "c97744e0ae3dbc07964d5bb1bbd1aa0de68bf07883c84dd8453f0fa479a2e7e3",
+        "unchanged": false
+      },
+      {
+        "table": "final_bundles",
+        "pre_row_count": 219,
+        "post_row_count": 219,
+        "pre_sha256": "e6da525afc4c291c7cb1d105620c44ee10db300d5d183d54c419dbfef592d130",
+        "post_sha256": "2f358aa3f1984c735c32c85238b02fd79fd8d8c3a94f5ccb8908b6cc0da0e5fc",
+        "unchanged": false
+      },
+      {
+        "table": "lottery_results",
+        "pre_row_count": 14655,
+        "post_row_count": 14655,
+        "pre_sha256": "564377b65ae7677e25d0fbc2e15dfe73ba0076aeaaa523273f81926d69a1dbb6",
+        "post_sha256": "b92302202891ab19aa198c37fb33885c549f86ab383d537add8f60d8f4a7d11d",
+        "unchanged": false
+      },
+      {
+        "table": "model_daily_eval",
+        "pre_row_count": 4655,
+        "post_row_count": 4655,
+        "pre_sha256": "a5c2f35c7d06a2097f28746118a25d51f918736225ea198ad6cc7d7304024c79",
+        "post_sha256": "c6998d87f5233402e4fe46a9ff79e5ae7ee3de96dd392b891b405eaef8e6d41b",
+        "unchanged": false
+      }
+    ],
+    "all_official_tables_unchanged": false,
+    "provider_call_count_this_session": 0,
+    "mt_protect_preserved": true,
+    "verdict": "OFFICIAL_HASH_UNCHANGED + PROVIDER_CALL_COUNT_ZERO + MT_PROTECT_PRESERVED"
+  }
+}
