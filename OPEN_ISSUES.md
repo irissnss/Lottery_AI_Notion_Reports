@@ -1,3 +1,16 @@
+# Open Issues — V105.35 semantic gate fix (2026-05-12 19:35 VN)
+
+Latest public truth: V105.35 is deployed and fixes the MB semantic publish gate bug. MB output rows are 15/15 and now publish with quality warning; scoreable rows are 13/15 because WR/BT filter preserved. MT remains MT_OUTPUT_ROWS_PENDING with 10/15 output rows.
+
+Active V105.35:
+
+- FU-V105-35-SEMANTIC-PUBLISH-GATE-LATE-LANE-FORENSIC: DEPLOYED_PENDING_LIVE_VERIFY — semantic gate fixed, late-result metadata refresh deployed, next natural cycle still pending.
+- FU-V105-35-MT-RUNTIME-MISSING: OPEN P0/P1 — MT token rows still missing; distinguish system/provider/parser/timeout and ensure diagnostic row contract holds.
+- FU-V105-35-LANE-TEST-RESERVE: OWNER_LOCK/TEST_ONLY — reserve-fill policy is lane-test only; no official backfill.
+- FU-V105-35-OFFICIAL-RESERVE-FILL: OWNER_LOCK — not enabled in V105.35.
+
+---
+
 # Open Issues — V105.33 natural verify snapshot (2026-05-12 16:08 VN)
 
 Latest public truth: V105.33 is a read-only natural-verify snapshot on top of V105.32. It does not change official prediction policy. At the 16:00 VN live sync, MN remains clean (`official=15/15`, final bundle `model_count=15`, `shadow=13/13`, `missing_shadow=[]`, `glm-5.1` diagnostic empty due `finish_reason=length`), while MT/MB are still `NATURAL_VERIFY_PENDING` (`official=7/15` each, no 2026-05-12 final bundle, no natural shadow run).

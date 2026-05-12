@@ -1,12 +1,12 @@
 {
   "schema_version": "latest_report_v1",
- "latest_version": "V105.33",
- "latest_folder": "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512",
- "latest_report": "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md",
+  "latest_version": "V105.35",
+  "latest_folder": "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512",
+  "latest_report": "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md",
   "created_at_vn": "2026-05-12T01:48:00+07:00",
- "last_public_refresh_at_vn": "2026-05-12T16:08:00+07:00",
- "status": "V105.33 read-only natural verify snapshot on top of V105.32: V105_32_PUBLIC_SSOT_PASS remains baseline; V105_30D_SHADOW_NO_MISSING_DEPLOYED remains proven for MN; PARTIAL_DIAGNOSTIC_EMPTY_OK remains valid for glm-5.1 diagnostic empty due finish_reason=length; NATURAL_VERIFY_PENDING remains active because at the 2026-05-12 16:00 VN live sync MN is clean (official=15/15, final_bundle model_count=15, shadow=13/13, missing_shadow=[]), but MT/MB are still incomplete (official=7/15 each, no 2026-05-12 final_bundle, no natural shadow run). V105_33_NATURAL_VERIFY_PASS is not granted. No official mutation, no provider/manual AI call, no fabricated numbers. GLM compact profile remains owner-gated proposal only; source-pool root-cause drilldown remains accuracy-lane plan only. Rule105 prize-source lock by source_region; true_violation_count=0; prior flags false positive/examination trace; production mined_rules untouched; quarantine withdrawn. AI strongest-first HOLD; experiments DO_NOT_PROMOTE; official /du-doan lock preserved.",
-  "official_touched": false,
+  "last_public_refresh_at_vn": "2026-05-12T19:35:00+07:00",
+  "status": "V105.35 deployed semantic publish gate fix: readiness uses output_eligible_row_count; scoreable_model_count remains WR/BT-filtered voting quality. MB publishes 15/15 output rows with 13/15 scoreable and quality warning; MT remains blocked 10/15. No provider/manual AI call. Official prompt/scoring/selector/voting/roster unchanged; WR/BT preserved; NATURAL_VERIFY_PENDING remains active. Late-result assimilation metadata deployed after follow-up restart; final live sync artifacts/live_sync/20260512_193926/manifest.json.",
+  "official_touched": true,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "notion_pages": [
@@ -51,18 +51,30 @@
       "title": "V105.31 — Current Truth Clean Wrapper + V105.30d Shadow No-Missing + GLM Diagnostic Policy (2026-05-12)",
       "id": "DEFERRED_SEE_GITHUB_RAW",
       "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md"
-  },
-  {
-   "version": "V105.32",
-   "title": "V105.32 — Safe Continuation: Natural Verify Pending + GLM Compact Proposal + Source-Pool Drilldown (2026-05-12)",
-   "id": "DEFERRED_SEE_GITHUB_RAW",
-   "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md"
-  },
-  {
-   "version": "V105.33",
-   "title": "V105.33 — Natural Verify Snapshot: MN Clean, MT/MB Pending at 16:00 VN (2026-05-12)",
-   "id": "DEFERRED_SEE_GITHUB_RAW",
-   "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md"
+    },
+    {
+      "version": "V105.32",
+      "title": "V105.32 — Safe Continuation: Natural Verify Pending + GLM Compact Proposal + Source-Pool Drilldown (2026-05-12)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md"
+    },
+    {
+      "version": "V105.33",
+      "title": "V105.33 — Natural Verify Snapshot: MN Clean, MT/MB Pending at 16:00 VN (2026-05-12)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md"
+    },
+    {
+      "version": "V105.34",
+      "title": "V105.34 EMERGENCY — Semantic Gate Bug + Live Stabilization Plan (2026-05-12)",
+      "id": "35e1d385-9bf8-819e-acda-ccb99ae7dc08",
+      "url": "https://www.notion.so/V105-34-EMERGENCY-Semantic-Gate-Bug-Live-Stabilization-Plan-2026-05-12-35e1d3859bf8819eacdaccb99ae7dc08"
+    },
+    {
+      "version": "V105.35",
+      "title": "V105.35 — Official Publish Gate Semantic Fix (GitHub raw public SSOT)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md"
     }
   ],
   "hard_locks": [
@@ -91,12 +103,14 @@
     "DRIVE_UPLOAD_SCOPE": "OWNER_CONFIRMED_SKIP — only local E:/Lottery_AI_Test/artifacts + GitHub public mirror are SSOT."
   },
   "read_order": [
-  "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/README.md",
-  "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md",
-  "V105_32_SAFE_CONTINUATION_20260512/README.md",
-  "V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md",
-  "V105_32_SAFE_CONTINUATION_20260512/evidence/glm-5.1_compact_json_profile.md",
-  "V105_32_SAFE_CONTINUATION_20260512/evidence/SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md",
+    "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/README.md",
+    "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md",
+    "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/README.md",
+    "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md",
+    "V105_32_SAFE_CONTINUATION_20260512/README.md",
+    "V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md",
+    "V105_32_SAFE_CONTINUATION_20260512/evidence/glm-5.1_compact_json_profile.md",
+    "V105_32_SAFE_CONTINUATION_20260512/evidence/SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md",
     "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/README.md",
     "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",

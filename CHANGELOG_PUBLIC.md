@@ -1,3 +1,12 @@
+## V105.35 — OFFICIAL PUBLISH GATE SEMANTIC FIX (2026-05-12 19:35 VN)
+
+- Created V105.35 public report and advanced latest pointer.
+- MB now publishes by output rows 15/15 while scoreable remains 13/15 with WR/BT quality warning.
+- MT remains blocked 10/15; no fake publish; no provider/manual AI call.
+- Prompt/scoring/selector/voting/roster unchanged; WR/BT filter preserved.
+
+---
+
 ## V105.33 — NATURAL VERIFY SNAPSHOT: MN CLEAN, MT/MB PENDING (2026-05-12 16:08 VN)
 
 - Created `V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/` with `V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md`.

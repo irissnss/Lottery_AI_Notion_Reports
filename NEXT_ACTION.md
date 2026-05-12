@@ -1,3 +1,16 @@
+# NEXT ACTION (V105.35 — 2026-05-12 19:35 VN)
+
+Latest public truth: V105.35 semantic publish gate fix is deployed. MB /du-doan can publish when output rows are complete even if WR/BT filter leaves only 13 scoreable contributors. MT remains blocked because output rows are still below 15. Do not call NATURAL_VERIFY_PASS.
+
+Priority:
+
+1. Watch next natural MN/MT/MB cycle and verify closed_file=0, diagnostic rows for non-timeout failures, and no manual provider calls.
+2. MT forensic follow-up: token model rows missing from 2026-05-12 need runtime classification; no fake publish.
+3. Lane-test reserve-fill remains test-only; official reserve-fill remains HOLD pending explicit owner policy.
+4. Keep Rule105 wording by source_region; true violation count remains 0.
+
+---
+
 # NEXT ACTION (V105.33 — 2026-05-12 16:08 VN, natural verify snapshot)
 
 Trạng thái: **V105_32_PUBLIC_SSOT_PASS** vẫn là baseline current truth; **V105_30D_SHADOW_NO_MISSING_DEPLOYED** giữ nguyên cho MN proof; **NATURAL_VERIFY_PENDING** vẫn active vì tại live sync 16:00 VN, MT/MB chưa đủ chu kỳ thật (`official=7/15` mỗi miền, chưa có final bundle 2026-05-12, chưa có shadow natural run). GitHub raw là SSOT công khai; Notion V105.30/V105.31/V105.32 tạm deferred theo owner. Official `/du-doan` giữ hard-lock.

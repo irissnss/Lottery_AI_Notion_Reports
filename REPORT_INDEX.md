@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V105.35** — `V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/` (semantic official publish gate fix: MB output rows ready, MT pending, WR/BT preserved).
+
+## Quick links — V105.35 (read first)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md)
+3. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md)
+4. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md)
+
+---
+
+## Previous reports
+
 Latest: **V105.33** — `V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/` (read-only natural-verify snapshot after V105.32: 16:00 VN keeps `NATURAL_VERIFY_PENDING`; MN remains official 15/15, final bundle model_count 15, shadow 13/13, `missing_shadow=[]`; MT/MB remain incomplete with official 7/15 each, no 2026-05-12 final bundle, no natural shadow run; no official mutation, no provider/manual AI call).
 
 ## Quick links — V105.33 (read first)

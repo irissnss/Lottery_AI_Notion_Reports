@@ -1,0 +1,2364 @@
+{
+  "forensic_version": "v10535_mb_mt_forensic",
+  "date": "2026-05-12",
+  "db_path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+  "mb": {
+    "actual_tails": {
+      "all": [
+        "04",
+        "27",
+        "28",
+        "31",
+        "32",
+        "33",
+        "34",
+        "35",
+        "40",
+        "47",
+        "48",
+        "51",
+        "52",
+        "58",
+        "62",
+        "64",
+        "71",
+        "77",
+        "81",
+        "91",
+        "93"
+      ],
+      "by_station": {
+        "Quảng Ninh": [
+          "04",
+          "27",
+          "28",
+          "31",
+          "32",
+          "33",
+          "34",
+          "35",
+          "40",
+          "47",
+          "48",
+          "51",
+          "52",
+          "58",
+          "62",
+          "64",
+          "71",
+          "77",
+          "81",
+          "91",
+          "93"
+        ]
+      }
+    },
+    "official": {
+      "bt": "34",
+      "bt_hit": true,
+      "lo2": [
+        "34",
+        "36"
+      ],
+      "scoreable_model_count": 13,
+      "quality_filtered_models": [
+        "claude-opus-4-20250514",
+        "smart-ensemble"
+      ],
+      "top5": [
+        {
+          "number": "34",
+          "score": 0.1169,
+          "voters": [
+            "random-forest",
+            "xgboost",
+            "meta-learning",
+            "combo-no-token",
+            "smart-ml"
+          ]
+        },
+        {
+          "number": "36",
+          "score": 0.0768,
+          "voters": [
+            "deepseek-reasoner",
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
+            "gpt-5-mini"
+          ]
+        },
+        {
+          "number": "50",
+          "score": 0.0707,
+          "voters": [
+            "xgboost",
+            "combo-no-token",
+            "smart-ml"
+          ]
+        },
+        {
+          "number": "71",
+          "score": 0.0568,
+          "voters": [
+            "gpt-5.4",
+            "gpt-5-mini"
+          ]
+        },
+        {
+          "number": "09",
+          "score": 0.0373,
+          "voters": [
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
+            "claude-sonnet-4-6"
+          ]
+        }
+      ]
+    },
+    "lane_test_rows": [
+      {
+        "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+        "candidate_bt": "34",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "official_baseline_control",
+        "created_at": "2026-05-12T17:45:02.813023+07:00",
+        "candidate_lo2": [
+          "34",
+          "36"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "random-forest",
+          "xgboost",
+          "meta-learning",
+          "combo-no-token",
+          "smart-ml"
+        ]
+      },
+      {
+        "experiment_name": "MB_COMPOSITE_CHALLENGER_V2",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "composite_v2=0.2245;rank=2;score=0.0768;ai_chain=4;rerun=0;voters=4;prior=True;source_resolved=True",
+        "created_at": "2026-05-12T17:45:02.813449+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_TIER_AWARE_BUNDLE_SHADOW_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "tier_aware_adjusted=0.1808;rank=2;ai_chain=4;rerun=0;voters=4",
+        "created_at": "2026-05-12T17:45:02.813592+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "ai_chain_preserve;rank=2;ai_chain=4;ai_models=4;score=0.0768",
+        "created_at": "2026-05-12T17:45:02.813721+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_SPECIALIST_ROSTER_V1",
+        "candidate_bt": null,
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "no_specialist_vote",
+        "created_at": "2026-05-12T17:45:02.813845+07:00",
+        "candidate_lo2": [
+          "34",
+          "36"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": []
+      },
+      {
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "prior_region_safe_support;rank=2;tail=36;ai_chain=4",
+        "created_at": "2026-05-12T17:45:02.813991+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "no_token_herd_reduction_adjusted=0.1248;rank=2;rerun=0;ai_chain=4",
+        "created_at": "2026-05-12T17:45:02.814174+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      }
+    ],
+    "official_win_lane_lose_rows": [
+      {
+        "experiment_name": "MB_COMPOSITE_CHALLENGER_V2",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "composite_v2=0.2245;rank=2;score=0.0768;ai_chain=4;rerun=0;voters=4;prior=True;source_resolved=True",
+        "created_at": "2026-05-12T17:45:02.813449+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_TIER_AWARE_BUNDLE_SHADOW_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "tier_aware_adjusted=0.1808;rank=2;ai_chain=4;rerun=0;voters=4",
+        "created_at": "2026-05-12T17:45:02.813592+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_AI_CHAIN_PRESERVATION_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "ai_chain_preserve;rank=2;ai_chain=4;ai_models=4;score=0.0768",
+        "created_at": "2026-05-12T17:45:02.813721+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "prior_region_safe_support;rank=2;tail=36;ai_chain=4",
+        "created_at": "2026-05-12T17:45:02.813991+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      },
+      {
+        "experiment_name": "MB_NO_TOKEN_HERD_REDUCTION_V1",
+        "candidate_bt": "36",
+        "baseline_bt": "34",
+        "baseline_bt_status": "PENDING",
+        "model_count": 20,
+        "shadow_model_count": 5,
+        "actual_known": 0,
+        "candidate_bt_hit": 0,
+        "candidate_lo2_status": "PENDING",
+        "would_flip_baseline_to_win": 0,
+        "would_flip_baseline_to_lose": 0,
+        "false_promotion": 0,
+        "selection_basis": "no_token_herd_reduction_adjusted=0.1248;rank=2;rerun=0;ai_chain=4",
+        "created_at": "2026-05-12T17:45:02.814174+07:00",
+        "candidate_lo2": [
+          "36",
+          "34"
+        ],
+        "candidate_ranked_top5": [
+          {
+            "rank": 1,
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 5,
+            "lane_votes": {
+              "rerun_post_mt": 5
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 5,
+            "ai_model_votes": 0,
+            "no_token_votes": 5
+          },
+          {
+            "rank": 2,
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ],
+            "voter_count": 4,
+            "lane_votes": {
+              "ai_chain": 4
+            },
+            "ai_chain_votes": 4,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 4,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 3,
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "rerun_post_mt": 3
+            },
+            "ai_chain_votes": 0,
+            "rerun_post_mt_votes": 3,
+            "ai_model_votes": 0,
+            "no_token_votes": 3
+          },
+          {
+            "rank": 4,
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ],
+            "voter_count": 2,
+            "lane_votes": {
+              "ai_chain": 2
+            },
+            "ai_chain_votes": 2,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 2,
+            "no_token_votes": 0
+          },
+          {
+            "rank": 5,
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ],
+            "voter_count": 3,
+            "lane_votes": {
+              "ai_chain": 3
+            },
+            "ai_chain_votes": 3,
+            "rerun_post_mt_votes": 0,
+            "ai_model_votes": 3,
+            "no_token_votes": 0
+          }
+        ],
+        "source_models": [
+          "deepseek-reasoner",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash",
+          "gpt-5-mini"
+        ]
+      }
+    ],
+    "layer_matrix": [
+      {
+        "layer": "actual_tail",
+        "official": "34",
+        "lane_test": [
+          "36",
+          "36",
+          "36",
+          "36",
+          "36"
+        ],
+        "difference": "official tail hit, selected lane BT did not",
+        "drop_reason": "lane rank/selection chose different BT"
+      },
+      {
+        "layer": "source_pool",
+        "official": "top5 contains official BT",
+        "lane_test": "candidate_ranked_top5 recorded per row",
+        "difference": "see lane_test_rows.candidate_ranked_top5",
+        "drop_reason": "candidate pool/ranking differs by experiment"
+      },
+      {
+        "layer": "ranking",
+        "official": [
+          {
+            "number": "34",
+            "score": 0.1169,
+            "voters": [
+              "random-forest",
+              "xgboost",
+              "meta-learning",
+              "combo-no-token",
+              "smart-ml"
+            ]
+          },
+          {
+            "number": "36",
+            "score": 0.0768,
+            "voters": [
+              "deepseek-reasoner",
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "gpt-5-mini"
+            ]
+          },
+          {
+            "number": "50",
+            "score": 0.0707,
+            "voters": [
+              "xgboost",
+              "combo-no-token",
+              "smart-ml"
+            ]
+          },
+          {
+            "number": "71",
+            "score": 0.0568,
+            "voters": [
+              "gpt-5.4",
+              "gpt-5-mini"
+            ]
+          },
+          {
+            "number": "09",
+            "score": 0.0373,
+            "voters": [
+              "gemini-2.5-pro",
+              "gemini-2.5-flash",
+              "claude-sonnet-4-6"
+            ]
+          }
+        ],
+        "lane_test": [
+          [
+            {
+              "rank": 1,
+              "number": "34",
+              "score": 0.1169,
+              "voters": [
+                "random-forest",
+                "xgboost",
+                "meta-learning",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 5,
+              "lane_votes": {
+                "rerun_post_mt": 5
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 5,
+              "ai_model_votes": 0,
+              "no_token_votes": 5
+            },
+            {
+              "rank": 2,
+              "number": "36",
+              "score": 0.0768,
+              "voters": [
+                "deepseek-reasoner",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gpt-5-mini"
+              ],
+              "voter_count": 4,
+              "lane_votes": {
+                "ai_chain": 4
+              },
+              "ai_chain_votes": 4,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 4,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 3,
+              "number": "50",
+              "score": 0.0707,
+              "voters": [
+                "xgboost",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "rerun_post_mt": 3
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 3,
+              "ai_model_votes": 0,
+              "no_token_votes": 3
+            },
+            {
+              "rank": 4,
+              "number": "71",
+              "score": 0.0568,
+              "voters": [
+                "gpt-5.4",
+                "gpt-5-mini"
+              ],
+              "voter_count": 2,
+              "lane_votes": {
+                "ai_chain": 2
+              },
+              "ai_chain_votes": 2,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 2,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 5,
+              "number": "09",
+              "score": 0.0373,
+              "voters": [
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "claude-sonnet-4-6"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "ai_chain": 3
+              },
+              "ai_chain_votes": 3,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 3,
+              "no_token_votes": 0
+            }
+          ],
+          [
+            {
+              "rank": 1,
+              "number": "34",
+              "score": 0.1169,
+              "voters": [
+                "random-forest",
+                "xgboost",
+                "meta-learning",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 5,
+              "lane_votes": {
+                "rerun_post_mt": 5
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 5,
+              "ai_model_votes": 0,
+              "no_token_votes": 5
+            },
+            {
+              "rank": 2,
+              "number": "36",
+              "score": 0.0768,
+              "voters": [
+                "deepseek-reasoner",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gpt-5-mini"
+              ],
+              "voter_count": 4,
+              "lane_votes": {
+                "ai_chain": 4
+              },
+              "ai_chain_votes": 4,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 4,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 3,
+              "number": "50",
+              "score": 0.0707,
+              "voters": [
+                "xgboost",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "rerun_post_mt": 3
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 3,
+              "ai_model_votes": 0,
+              "no_token_votes": 3
+            },
+            {
+              "rank": 4,
+              "number": "71",
+              "score": 0.0568,
+              "voters": [
+                "gpt-5.4",
+                "gpt-5-mini"
+              ],
+              "voter_count": 2,
+              "lane_votes": {
+                "ai_chain": 2
+              },
+              "ai_chain_votes": 2,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 2,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 5,
+              "number": "09",
+              "score": 0.0373,
+              "voters": [
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "claude-sonnet-4-6"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "ai_chain": 3
+              },
+              "ai_chain_votes": 3,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 3,
+              "no_token_votes": 0
+            }
+          ],
+          [
+            {
+              "rank": 1,
+              "number": "34",
+              "score": 0.1169,
+              "voters": [
+                "random-forest",
+                "xgboost",
+                "meta-learning",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 5,
+              "lane_votes": {
+                "rerun_post_mt": 5
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 5,
+              "ai_model_votes": 0,
+              "no_token_votes": 5
+            },
+            {
+              "rank": 2,
+              "number": "36",
+              "score": 0.0768,
+              "voters": [
+                "deepseek-reasoner",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gpt-5-mini"
+              ],
+              "voter_count": 4,
+              "lane_votes": {
+                "ai_chain": 4
+              },
+              "ai_chain_votes": 4,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 4,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 3,
+              "number": "50",
+              "score": 0.0707,
+              "voters": [
+                "xgboost",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "rerun_post_mt": 3
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 3,
+              "ai_model_votes": 0,
+              "no_token_votes": 3
+            },
+            {
+              "rank": 4,
+              "number": "71",
+              "score": 0.0568,
+              "voters": [
+                "gpt-5.4",
+                "gpt-5-mini"
+              ],
+              "voter_count": 2,
+              "lane_votes": {
+                "ai_chain": 2
+              },
+              "ai_chain_votes": 2,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 2,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 5,
+              "number": "09",
+              "score": 0.0373,
+              "voters": [
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "claude-sonnet-4-6"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "ai_chain": 3
+              },
+              "ai_chain_votes": 3,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 3,
+              "no_token_votes": 0
+            }
+          ],
+          [
+            {
+              "rank": 1,
+              "number": "34",
+              "score": 0.1169,
+              "voters": [
+                "random-forest",
+                "xgboost",
+                "meta-learning",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 5,
+              "lane_votes": {
+                "rerun_post_mt": 5
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 5,
+              "ai_model_votes": 0,
+              "no_token_votes": 5
+            },
+            {
+              "rank": 2,
+              "number": "36",
+              "score": 0.0768,
+              "voters": [
+                "deepseek-reasoner",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gpt-5-mini"
+              ],
+              "voter_count": 4,
+              "lane_votes": {
+                "ai_chain": 4
+              },
+              "ai_chain_votes": 4,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 4,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 3,
+              "number": "50",
+              "score": 0.0707,
+              "voters": [
+                "xgboost",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "rerun_post_mt": 3
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 3,
+              "ai_model_votes": 0,
+              "no_token_votes": 3
+            },
+            {
+              "rank": 4,
+              "number": "71",
+              "score": 0.0568,
+              "voters": [
+                "gpt-5.4",
+                "gpt-5-mini"
+              ],
+              "voter_count": 2,
+              "lane_votes": {
+                "ai_chain": 2
+              },
+              "ai_chain_votes": 2,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 2,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 5,
+              "number": "09",
+              "score": 0.0373,
+              "voters": [
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "claude-sonnet-4-6"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "ai_chain": 3
+              },
+              "ai_chain_votes": 3,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 3,
+              "no_token_votes": 0
+            }
+          ],
+          [
+            {
+              "rank": 1,
+              "number": "34",
+              "score": 0.1169,
+              "voters": [
+                "random-forest",
+                "xgboost",
+                "meta-learning",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 5,
+              "lane_votes": {
+                "rerun_post_mt": 5
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 5,
+              "ai_model_votes": 0,
+              "no_token_votes": 5
+            },
+            {
+              "rank": 2,
+              "number": "36",
+              "score": 0.0768,
+              "voters": [
+                "deepseek-reasoner",
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gpt-5-mini"
+              ],
+              "voter_count": 4,
+              "lane_votes": {
+                "ai_chain": 4
+              },
+              "ai_chain_votes": 4,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 4,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 3,
+              "number": "50",
+              "score": 0.0707,
+              "voters": [
+                "xgboost",
+                "combo-no-token",
+                "smart-ml"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "rerun_post_mt": 3
+              },
+              "ai_chain_votes": 0,
+              "rerun_post_mt_votes": 3,
+              "ai_model_votes": 0,
+              "no_token_votes": 3
+            },
+            {
+              "rank": 4,
+              "number": "71",
+              "score": 0.0568,
+              "voters": [
+                "gpt-5.4",
+                "gpt-5-mini"
+              ],
+              "voter_count": 2,
+              "lane_votes": {
+                "ai_chain": 2
+              },
+              "ai_chain_votes": 2,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 2,
+              "no_token_votes": 0
+            },
+            {
+              "rank": 5,
+              "number": "09",
+              "score": 0.0373,
+              "voters": [
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "claude-sonnet-4-6"
+              ],
+              "voter_count": 3,
+              "lane_votes": {
+                "ai_chain": 3
+              },
+              "ai_chain_votes": 3,
+              "rerun_post_mt_votes": 0,
+              "ai_model_votes": 3,
+              "no_token_votes": 0
+            }
+          ]
+        ],
+        "difference": "test challengers ranked another BT first",
+        "drop_reason": "shadow method selection"
+      },
+      {
+        "layer": "bundle/UI",
+        "official": {
+          "bt": "34",
+          "visible_after_v10535": true
+        },
+        "lane_test": {
+          "status": "SHADOW_ONLY",
+          "promoted": false
+        },
+        "difference": "official published, lane-test remains diagnostic",
+        "drop_reason": "no promotion"
+      }
+    ]
+  },
+  "mt": {
+    "actual_tails": {
+      "all": [
+        "00",
+        "02",
+        "07",
+        "14",
+        "19",
+        "20",
+        "21",
+        "23",
+        "25",
+        "26",
+        "31",
+        "32",
+        "45",
+        "54",
+        "63",
+        "66",
+        "69",
+        "70",
+        "72",
+        "78",
+        "79",
+        "85",
+        "87",
+        "88",
+        "91",
+        "98"
+      ],
+      "by_station": {
+        "Quảng Nam": [
+          "14",
+          "20",
+          "21",
+          "23",
+          "25",
+          "26",
+          "69",
+          "70",
+          "72",
+          "78",
+          "79",
+          "87",
+          "88",
+          "91"
+        ],
+        "Đắk Lắk": [
+          "00",
+          "02",
+          "07",
+          "14",
+          "19",
+          "23",
+          "31",
+          "32",
+          "45",
+          "54",
+          "63",
+          "66",
+          "85",
+          "98"
+        ]
+      }
+    },
+    "official": {
+      "bt": "40",
+      "lo2": [
+        "40",
+        "27"
+      ],
+      "scoreable_model_count": 9,
+      "verified_at": "2026-05-12 17:31:02"
+    },
+    "runtime_model_matrix": [
+      {
+        "model": "gpt-5-mini",
+        "row": false,
+        "numbers": [],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=gpt-5-mini region=MT status=EXCEPTION duration=58.4s [MODEL_CALL_START] model=gpt-5-mini region=MT attempt=1 [AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_e"
+      },
+      {
+        "model": "claude-sonnet-4-6",
+        "row": false,
+        "numbers": [],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=claude-sonnet-4-6 region=MT status=EXCEPTION duration=43.4s [MODEL_CALL_START] model=claude-sonnet-4-6 region=MT attempt=1"
+      },
+      {
+        "model": "gemini-2.5-flash",
+        "row": false,
+        "numbers": [],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=gemini-2.5-flash region=MT status=EXCEPTION duration=39.6s [MODEL_CALL_START] model=gemini-2.5-flash region=MT attempt=1 [AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2."
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "row": false,
+        "numbers": [],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=claude-opus-4-20250514 region=MT status=EXCEPTION duration=40.6s [MODEL_CALL_START] model=claude-opus-4-20250514 region=MT attempt=1"
+      },
+      {
+        "model": "deepseek-reasoner",
+        "row": false,
+        "numbers": [],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=deepseek-reasoner region=MT status=EXCEPTION_AFTER_SOFT_CONTINUE duration=190.8s ⏭️ [SOFT_CONTINUE_90S] deepseek-reasoner → MT: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn [MODEL_CA"
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "row": true,
+        "numbers": [
+          "02",
+          "37"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=gemini-2.5-pro region=MT status=OK duration=39.9s [MODEL_CALL_START] model=gemini-2.5-pro region=MT attempt=1 [AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_"
+      },
+      {
+        "model": "gpt-5.4",
+        "row": true,
+        "numbers": [
+          "02",
+          "23"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[MODEL_CALL_END] model=gpt-5.4 region=MT status=OK duration=23.5s [MODEL_CALL_START] model=gpt-5.4 region=MT attempt=1 [AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_env_drift:goog"
+      },
+      {
+        "model": "meta-learning",
+        "row": true,
+        "numbers": [
+          "69",
+          "70"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "lstm",
+        "row": true,
+        "numbers": [
+          "10",
+          "48"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "xgboost",
+        "row": true,
+        "numbers": [
+          "27",
+          "98"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "random-forest",
+        "row": true,
+        "numbers": [
+          "50",
+          "69"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "smart-ensemble",
+        "row": true,
+        "numbers": [
+          "27",
+          "40"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "smart-ml",
+        "row": true,
+        "numbers": [
+          "58",
+          "40"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "combo-no-token",
+        "row": true,
+        "numbers": [
+          "40",
+          "50"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": ""
+      },
+      {
+        "model": "combo-super",
+        "row": true,
+        "numbers": [
+          "07",
+          "10"
+        ],
+        "timeout": false,
+        "diagnostic": false,
+        "late": false,
+        "log_hint": "[AI_PREFLIGHT] ✅ MT checked=8 warnings=['gpt-5-mini:db_env_drift:openai:selected_db', 'gemini-2.5-flash:db_env_drift:google:selected_db', 'gemini-2.5-pro:db_env_drift:google:selected_db', 'gpt-5.4:db_env_drift:openai:selected_db', 'combo-su"
+      }
+    ],
+    "accuracy_drop_rows": [],
+    "d2_leak_check": "MT formula uses D-1 all regions + MN D only; no D-2 claim made by V105.35."
+  }
+}
