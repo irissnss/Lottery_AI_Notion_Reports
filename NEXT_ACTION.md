@@ -1,13 +1,14 @@
-# NEXT ACTION (V105.31 — 2026-05-12 11:35 VN, current truth refresh)
+# NEXT ACTION (V105.32 — 2026-05-12 12:18 VN, safe continuation)
 
-Trạng thái: **V105_31_PUBLIC_SSOT_PASS** cho public raw current truth; **V105_30D_SHADOW_NO_MISSING_DEPLOYED** cho MN proof; **NATURAL_VERIFY_PENDING** cho full MN/MT/MB cycle. GitHub raw là SSOT công khai; Notion V105.30 tạm deferred theo owner. Official `/du-doan` giữ hard-lock.
+Trạng thái: **V105_31_PUBLIC_SSOT_PASS** vẫn là baseline current truth; **V105_30D_SHADOW_NO_MISSING_DEPLOYED** giữ nguyên cho MN proof; **NATURAL_VERIFY_PENDING** vẫn active vì tại live sync 12:09 VN, MT/MB chưa đủ chu kỳ thật. GitHub raw là SSOT công khai; Notion V105.30/V105.31 tạm deferred theo owner. Official `/du-doan` giữ hard-lock.
 
 Việc tiếp theo (ưu tiên):
 
-1. **Natural verify MT/MB** — chỉ quan sát/sync/audit sau chu kỳ thật: `closed_file=0`, official `15/15`, shadow expected/persisted/missing đúng contract, không `SYSTEM_MISSING`, không manual provider call.
-2. **GLM-5.1 compact shadow profile (owner-gated)** — đề xuất `glm-5.1_compact_json_profile`: prompt cực ngắn, JSON-only, no explanation/CoT, max 2 tails, strict schema. Không gọi provider để test nếu chưa owner OK.
-3. **`FU-V105-28-AI-PRIORITY-ORDER` (P1)** — vẫn HOLD: reorder strongest-first theo region×weekday cần owner OK; tensor strength refresh cron 19:30 VN chỉ là proposal.
-4. **Rule105 wording discipline** — dùng `prize_source_lock_by_source_region`, `true_violation_count=0`, `prior_flagged_rows_false_positive`, `production_mined_rules_untouched`, `quarantine_withdrawn`.
-5. **Notion** — optional pointer page later; not blocking while GitHub raw exists.
+1. **Natural verify MT/MB sau chu kỳ thật** — chỉ quan sát/sync/audit: `closed_file=0`, official `15/15`, shadow expected/persisted/missing đúng contract, không `SYSTEM_MISSING`, không manual provider call. Chỉ gọi `NATURAL_VERIFY_PASS` khi MN/MT/MB đều đủ.
+2. **GLM-5.1 compact shadow profile (owner-gated)** — proposal `glm-5.1_compact_json_profile` đã được tạo: JSON-only, no explanation/CoT, max 2 tails, strict schema. Không gọi provider để test nếu chưa owner OK.
+3. **Source-pool root-cause drilldown (accuracy lane)** — đo actual tail rớt ở tầng nào: `source_pool -> prompt -> rank -> top5 -> top2 -> bundle -> UI`, theo `region + weekday + station_set`, không đổi official.
+4. **`FU-V105-28-AI-PRIORITY-ORDER` (P1)** — vẫn `AI_PRIORITY_HOLD`: reorder strongest-first theo region×weekday cần owner OK; tensor strength refresh cron 19:30 VN chỉ là proposal.
+5. **Rule105 wording discipline** — dùng `prize_source_lock_by_source_region`, `true_violation_count=0`, `prior_flagged_rows_false_positive`, `production_mined_rules_untouched`, `quarantine_withdrawn`. Không dùng lại wording “30 violation” như current truth.
+6. **Notion** — optional pointer page later; not blocking while GitHub raw exists.
 
-Evidence mới: `V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md`, plus V105.30 evidence folder and live sync manifest `artifacts/live_sync/20260512_112202/manifest.json` in the private repo.
+Evidence mới: `V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md`, `glm-5.1_compact_json_profile.md`, `SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md`, plus private live sync manifest `artifacts/live_sync/20260512_120935/manifest.json`.

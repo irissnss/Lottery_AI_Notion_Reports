@@ -1,11 +1,11 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.31",
-  "latest_folder": "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512",
-  "latest_report": "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
+ "latest_version": "V105.32",
+ "latest_folder": "V105_32_SAFE_CONTINUATION_20260512",
+ "latest_report": "V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md",
   "created_at_vn": "2026-05-12T01:48:00+07:00",
-  "last_public_refresh_at_vn": "2026-05-12T11:35:00+07:00",
-  "status": "V105_31_PUBLIC_SSOT_PASS + V105_30D_SHADOW_NO_MISSING_DEPLOYED + PARTIAL_DIAGNOSTIC_EMPTY_OK + NATURAL_VERIFY_PENDING — public raw now reflects V105.30d/e current truth: scheduler.py + database.py shadow no-missing contract deployed; MN 2026-05-12 official auto_daily=15/15; MN shadow_auto_eval=13/13; missing_shadow=[]; glm-5.1 persisted diagnostic empty row due finish_reason=length (no fabricated numbers). Only HARD_TIMEOUT/WAITING_TIMEOUT may remain truly missing. Rule105 prize-source lock by source_region; true_violation_count=0; 30 prior flags are false positives/examination trace only; production mined_rules untouched; quarantine withdrawn. GitHub account SSH OK; Notion V105.30 deferred by owner; experiments DO_NOT_PROMOTE; AI strongest-first HOLD; official /du-doan lock preserved.",
+ "last_public_refresh_at_vn": "2026-05-12T12:18:00+07:00",
+ "status": "V105.32 safe continuation on top of V105.31: V105_31_PUBLIC_SSOT_PASS remains the baseline; V105_30D_SHADOW_NO_MISSING_DEPLOYED remains proven for MN; PARTIAL_DIAGNOSTIC_EMPTY_OK remains valid for glm-5.1 diagnostic empty due finish_reason=length; NATURAL_VERIFY_PENDING remains active because MT/MB were not complete at the 2026-05-12 12:09 VN live sync (MT official=7/15, MB official=7/15, shadow MT/MB not yet naturally run). No official mutation, no provider/manual AI call, no fabricated numbers. Added owner-gated glm-5.1_compact_json_profile proposal and source-pool root-cause drilldown plan. Rule105 prize-source lock by source_region; true_violation_count=0; 30 prior flags are false positives/examination trace only; production mined_rules untouched; quarantine withdrawn. AI strongest-first HOLD; experiments DO_NOT_PROMOTE; official /du-doan lock preserved.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
@@ -51,6 +51,12 @@
       "title": "V105.31 — Current Truth Clean Wrapper + V105.30d Shadow No-Missing + GLM Diagnostic Policy (2026-05-12)",
       "id": "DEFERRED_SEE_GITHUB_RAW",
       "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md"
+  },
+  {
+   "version": "V105.32",
+   "title": "V105.32 — Safe Continuation: Natural Verify Pending + GLM Compact Proposal + Source-Pool Drilldown (2026-05-12)",
+   "id": "DEFERRED_SEE_GITHUB_RAW",
+   "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md"
     }
   ],
   "hard_locks": [
@@ -79,6 +85,10 @@
     "DRIVE_UPLOAD_SCOPE": "OWNER_CONFIRMED_SKIP — only local E:/Lottery_AI_Test/artifacts + GitHub public mirror are SSOT."
   },
   "read_order": [
+  "V105_32_SAFE_CONTINUATION_20260512/README.md",
+  "V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md",
+  "V105_32_SAFE_CONTINUATION_20260512/evidence/glm-5.1_compact_json_profile.md",
+  "V105_32_SAFE_CONTINUATION_20260512/evidence/SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md",
     "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/README.md",
     "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",

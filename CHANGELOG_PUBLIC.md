@@ -1,3 +1,12 @@
+## V105.32 — SAFE CONTINUATION: NATURAL VERIFY PENDING + GLM COMPACT PROFILE + SOURCE-POOL DRILLDOWN (2026-05-12 12:18 VN)
+
+- Created `V105_32_SAFE_CONTINUATION_20260512/` with `V105_32_SAFE_CONTINUATION_REPORT.md`, `glm-5.1_compact_json_profile.md`, and `SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md`.
+- Live sync snapshot `artifacts/live_sync/20260512_120935/manifest.json` confirms the honest status: MN remains official `15/15`, shadow `13/13`, `missing_shadow=[]`, diagnostic empty `glm-5.1`; MT/MB were not complete at 12:09 VN (`official=7/15`, shadow not yet naturally run), so `NATURAL_VERIFY_PENDING` stays active.
+- Public `OPEN_ISSUES.md` and `NEXT_ACTION.md` updated to V105.32 wording: no stale SSH pending, no current “30 Rule105 violation” claim, GLM compact profile is owner-gated, source-pool root-cause is an accuracy lane.
+- No official `/du-doan` mutation, no production prediction policy change, no provider/manual AI call, no fabricated numbers.
+
+---
+
 ## V105.31 — CURRENT TRUTH CLEAN WRAPPER + SHADOW NO-MISSING PUBLIC SSOT (2026-05-12 11:35 VN)
 
 - Created `V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/` and `evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md` as the clean public current truth after V105.30d/e.

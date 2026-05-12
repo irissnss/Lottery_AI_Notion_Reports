@@ -1,6 +1,17 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.31** — `V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/` (clean current truth after V105.30d/e: shadow no-missing contract deployed, MN 2026-05-12 official 15/15, shadow 13/13, `glm-5.1` diagnostic empty due `finish_reason=length`, Rule105 lock by `source_region`, natural verify still pending for full MN/MT/MB cycle).
+Latest: **V105.32** — `V105_32_SAFE_CONTINUATION_20260512/evidence/` (safe continuation after V105.31: 12:09 VN natural-verify snapshot keeps `NATURAL_VERIFY_PENDING` because MT/MB were not complete; MN remains official 15/15 and shadow 13/13; `glm-5.1_compact_json_profile` proposal and source-pool root-cause drilldown plan added; no official mutation, no provider/manual AI call).
+
+## Quick links — V105.32 (read first)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + latest status.
+2. [V105_32_SAFE_CONTINUATION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/V105_32_SAFE_CONTINUATION_REPORT.md) — natural verify snapshot, open gates, public cleanup.
+3. [glm-5.1_compact_json_profile.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/glm-5.1_compact_json_profile.md) — owner-gated GLM compact profile proposal.
+4. [SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_32_SAFE_CONTINUATION_20260512/evidence/SOURCE_POOL_ROOT_CAUSE_DRILLDOWN_PLAN.md) — accuracy root-cause plan.
+5. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md) — active open items after V105.32.
+6. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md) — next owner/runtime actions.
+
+Current override: V105.32 does not supersede V105.31 truth; it extends it with a newer read-only snapshot and proposals. `NATURAL_VERIFY_PASS` is still not allowed until MN/MT/MB all complete natural cycles cleanly.
 
 ## Quick links — V105.31 (read first)
 
