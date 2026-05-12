@@ -1,6 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.32** — `V105_32_SAFE_CONTINUATION_20260512/evidence/` (safe continuation after V105.31: 12:09 VN natural-verify snapshot keeps `NATURAL_VERIFY_PENDING` because MT/MB were not complete; MN remains official 15/15 and shadow 13/13; `glm-5.1_compact_json_profile` proposal and source-pool root-cause drilldown plan added; no official mutation, no provider/manual AI call).
+Latest: **V105.33** — `V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/` (read-only natural-verify snapshot after V105.32: 16:00 VN keeps `NATURAL_VERIFY_PENDING`; MN remains official 15/15, final bundle model_count 15, shadow 13/13, `missing_shadow=[]`; MT/MB remain incomplete with official 7/15 each, no 2026-05-12 final bundle, no natural shadow run; no official mutation, no provider/manual AI call).
+
+## Quick links — V105.33 (read first)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + latest status.
+2. [V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/V105_33_NATURAL_VERIFY_SNAPSHOT_REPORT.md) — 16:00 VN natural verify snapshot.
+3. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md) — active open items after V105.33.
+4. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md) — next owner/runtime actions.
+
+Current override: V105.33 does not supersede V105.32 truth; it extends it with a newer read-only snapshot. `V105_33_NATURAL_VERIFY_PASS` is still not allowed until MN/MT/MB all complete natural cycles cleanly.
 
 ## Quick links — V105.32 (read first)
 
