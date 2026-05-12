@@ -1,3 +1,14 @@
+## V105.31 — CURRENT TRUTH CLEAN WRAPPER + SHADOW NO-MISSING PUBLIC SSOT (2026-05-12 11:35 VN)
+
+- Created `V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/` and `evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md` as the clean public current truth after V105.30d/e.
+- Public SSOT now explicitly states: MN 2026-05-12 official `auto_daily=15/15`; shadow `shadow_auto_eval=13/13`; `missing_shadow=[]`; `glm-5.1` is a persisted diagnostic empty row due `finish_reason=length`, with no fabricated numbers.
+- Shadow no-missing contract wording added: only `HARD_TIMEOUT` / `WAITING_TIMEOUT` may remain truly missing; non-timeout system/provider/parser/empty-output failures must persist diagnostic rows.
+- GLM policy added as owner-gated proposal: `glm-5.1_compact_json_profile`, JSON-only, no explanation/CoT, max 2 tails, reduced context; no provider/manual re-call without owner OK.
+- Rule105 terminology normalized: prize-source lock applies by `source_region`; `true_violation_count=0`; 30 prior flags are false positives / examination trace only; production `mined_rules` untouched; quarantine withdrawn.
+- Natural verify remains `NATURAL_VERIFY_PENDING` until MT/MB complete naturally. Experiments remain HOLD / DO_NOT_PROMOTE; AI strongest-first remains HOLD.
+
+---
+
 ## V105.30c — PUBLIC REPORT REFRESH / STALE WORDING CLEANUP (2026-05-12 10:08 VN)
 
 - Rà lại `README.md` + `V105_30_FINALIZATION_REPORT.md`: thêm **READ THIS FIRST** để override các dòng cũ về `SSH_DEPLOY_KEY_PENDING`, `HTTPS_REMOTE_STILL_ACTIVE`, `QUARANTINE_INVALID_RECOMMENDED`.

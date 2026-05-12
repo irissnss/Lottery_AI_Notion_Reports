@@ -1,6 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.30c** — `V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/` (finalization: `_safe_stdio_ctx` VPS, Rule105 strict shadow + **V105.30b/c** owner recheck prize-source per source_region and stale wording cleanup, `SIGNAL_LAYER_REGISTRY`, public SSOT; Notion page optional — owner dùng GitHub raw).
+Latest: **V105.31** — `V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/` (clean current truth after V105.30d/e: shadow no-missing contract deployed, MN 2026-05-12 official 15/15, shadow 13/13, `glm-5.1` diagnostic empty due `finish_reason=length`, Rule105 lock by `source_region`, natural verify still pending for full MN/MT/MB cycle).
+
+## Quick links — V105.31 (read first)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + latest status.
+2. [V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md) — current truth wrapper, including GLM policy and natural verify status.
+3. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md) — active open items after V105.31.
+4. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md) — next owner/runtime actions.
+
+Current override: V105.31 supersedes V105.30/V105.30b/V105.30c stale wording where it conflicts. In particular: only timeout/waiting-timeout may remain truly missing; non-timeout shadow failures must persist diagnostic rows; Rule105 prize lock is by `source_region`.
 
 ## Quick links — V105.30 (read in order)
 

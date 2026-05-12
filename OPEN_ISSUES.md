@@ -1,4 +1,4 @@
-# Open Issues — as of V105.30 report refresh (2026-05-12 10:08 VN)
+# Open Issues — as of V105.31 current truth refresh (2026-05-12 11:35 VN)
 
 ## V105.30 / V105.28 follow-up
 
@@ -8,6 +8,8 @@
 - `FU-V105-28-TENSOR-REFRESH-CRON`: **OPEN P1** — materialize `model_strength_by_region_weekday_station_daily` định kỳ (đề xuất 19:30 VN).
 - `FU-V105-30-NOTION-PAGE`: **DEFERRED** — owner ưu tiên GitHub raw thay vì Notion (page ID có thể bổ sung sau).
 - `FU-V105-30B-RULE105-PRIZE-SOURCE`: **CLOSED / CORRECTED** — source lock theo `source_region`; 0 true violation; 30 prior flags are false positives.
+- `FU-V105-30D-SHADOW-NO-MISSING-CONTRACT`: **DEPLOYED_PENDING_FULL_NATURAL_VERIFY** — V105.30d scheduler/database hardening deployed; MN 2026-05-12 proves shadow `13/13`, `missing_shadow=[]`; `glm-5.1` diagnostic empty row is valid non-timeout diagnostic, not missing. Full MT/MB natural-cycle verification remains pending.
+- `FU-V105-31-GLM51-COMPACT-PROFILE`: **OPEN P1 / OWNER_GATE** — `glm-5.1` full-context shadow run returned empty content with `finish_reason=length`; propose shadow-only compact JSON profile. No provider/manual re-call without owner OK.
 
 ## V105.27 carry-over
 

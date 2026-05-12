@@ -1,11 +1,11 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.30",
-  "latest_folder": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512",
-  "latest_report": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
+  "latest_version": "V105.31",
+  "latest_folder": "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512",
+  "latest_report": "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
   "created_at_vn": "2026-05-12T01:48:00+07:00",
-  "last_public_refresh_at_vn": "2026-05-12T10:08:00+07:00",
-  "status": "V105_30_STABILITY_PASS_FOR_SAFE_STDIO + DEPLOYED_PENDING_NATURAL_VERIFY + V105.30b RULE105 PRIZE-SOURCE AUDIT CORRECTED — (#10) _safe_stdio_ctx wide DEPLOYED LIVE to VPS; (#9) GitHub account SSH OK (Hi irissnss!) — public mirror push SSH; (#12 B) Rule105: lock prize-source per source_region — true violations = 0; 30 prior flags false positive; mined_rules UNTOUCHED; quarantine WITHDRAWN; Notion V105.30 DEFERRED_BY_OWNER — SSOT = raw GitHub REPORT_INDEX + LATEST_REPORT; (#14 B) AI strongest-first HOLD. SIGNAL_LAYER_REGISTRY 13 layers. Experiments DO_NOT_PROMOTE. Official 4-table rows 4791/219/14655/4655. MT protect preserved.",
+  "last_public_refresh_at_vn": "2026-05-12T11:35:00+07:00",
+  "status": "V105_31_PUBLIC_SSOT_PASS + V105_30D_SHADOW_NO_MISSING_DEPLOYED + PARTIAL_DIAGNOSTIC_EMPTY_OK + NATURAL_VERIFY_PENDING — public raw now reflects V105.30d/e current truth: scheduler.py + database.py shadow no-missing contract deployed; MN 2026-05-12 official auto_daily=15/15; MN shadow_auto_eval=13/13; missing_shadow=[]; glm-5.1 persisted diagnostic empty row due finish_reason=length (no fabricated numbers). Only HARD_TIMEOUT/WAITING_TIMEOUT may remain truly missing. Rule105 prize-source lock by source_region; true_violation_count=0; 30 prior flags are false positives/examination trace only; production mined_rules untouched; quarantine withdrawn. GitHub account SSH OK; Notion V105.30 deferred by owner; experiments DO_NOT_PROMOTE; AI strongest-first HOLD; official /du-doan lock preserved.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
@@ -45,6 +45,12 @@
       "title": "V105.30 — Total Force Finalization: _safe_stdio_ctx VPS Deploy + Rule105 Strict Shadow + SSOT V105.29 Public Live (2026-05-12)",
       "id": "DEFERRED_SEE_GITHUB_RAW",
       "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md"
+    },
+    {
+      "version": "V105.31",
+      "title": "V105.31 — Current Truth Clean Wrapper + V105.30d Shadow No-Missing + GLM Diagnostic Policy (2026-05-12)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md"
     }
   ],
   "hard_locks": [
@@ -73,6 +79,8 @@
     "DRIVE_UPLOAD_SCOPE": "OWNER_CONFIRMED_SKIP — only local E:/Lottery_AI_Test/artifacts + GitHub public mirror are SSOT."
   },
   "read_order": [
+    "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/README.md",
+    "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_master_audit.json",
