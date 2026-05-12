@@ -1,6 +1,6 @@
-# NEXT ACTION (V105.30 — 2026-05-12, total-force finalization)
+# NEXT ACTION (V105.30 — 2026-05-12 10:08 VN, report refresh)
 
-Trạng thái: **STABILITY_PASS** cho `_safe_stdio_ctx` wide trên VPS; thí nghiệm dự báo vẫn **HOLD / DO_NOT_PROMOTE**. Tra cứu công khai: GitHub raw `irissnss/Lottery_AI_Notion_Reports` (Notion tạm không ưu tiên).
+Trạng thái: **STABILITY_PASS** cho `_safe_stdio_ctx` wide trên VPS; thí nghiệm dự báo vẫn **HOLD / DO_NOT_PROMOTE**. GitHub account-level SSH đã OK; public mirror đã push qua SSH. Tra cứu công khai: GitHub raw `irissnss/Lottery_AI_Notion_Reports` (Notion tạm không ưu tiên).
 
 Việc tiếp theo (ưu tiên):
 

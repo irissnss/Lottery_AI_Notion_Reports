@@ -4,6 +4,7 @@
   "latest_folder": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512",
   "latest_report": "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
   "created_at_vn": "2026-05-12T01:48:00+07:00",
+  "last_public_refresh_at_vn": "2026-05-12T10:08:00+07:00",
   "status": "V105_30_STABILITY_PASS_FOR_SAFE_STDIO + DEPLOYED_PENDING_NATURAL_VERIFY + V105.30b RULE105 PRIZE-SOURCE AUDIT CORRECTED — (#10) _safe_stdio_ctx wide DEPLOYED LIVE to VPS; (#9) GitHub account SSH OK (Hi irissnss!) — public mirror push SSH; (#12 B) Rule105: lock prize-source per source_region — true violations = 0; 30 prior flags false positive; mined_rules UNTOUCHED; quarantine WITHDRAWN; Notion V105.30 DEFERRED_BY_OWNER — SSOT = raw GitHub REPORT_INDEX + LATEST_REPORT; (#14 B) AI strongest-first HOLD. SIGNAL_LAYER_REGISTRY 13 layers. Experiments DO_NOT_PROMOTE. Official 4-table rows 4791/219/14655/4655. MT protect preserved.",
   "official_touched": false,
   "provider_manual_ai_called": false,

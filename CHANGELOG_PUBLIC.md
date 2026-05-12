@@ -1,3 +1,12 @@
+## V105.30c — PUBLIC REPORT REFRESH / STALE WORDING CLEANUP (2026-05-12 10:08 VN)
+
+- Rà lại `README.md` + `V105_30_FINALIZATION_REPORT.md`: thêm **READ THIS FIRST** để override các dòng cũ về `SSH_DEPLOY_KEY_PENDING`, `HTTPS_REMOTE_STILL_ACTIVE`, `QUARANTINE_INVALID_RECOMMENDED`.
+- Chốt public truth hiện tại: GitHub account-level SSH OK; public mirror push SSH; Notion V105.30 deferred; GitHub raw là SSOT public.
+- Rule105: `source_region` lock → **0 true violations**; 30 prior flags are false positives, historical examination trace only.
+- Còn mở thật sự: natural MN cascade verify, AI strongest-first runtime reorder, strength tensor/runtime manifest cron decisions; all prediction experiments remain HOLD / DO_NOT_PROMOTE.
+
+---
+
 ## V105.30b — RULE105 PRIZE-SOURCE RECHECK + PUBLIC MIRROR ONLY (2026-05-12)
 
 - **Owner correction (prize-source lock):** áp dụng theo **source_region** (đài nguồn rule), không phải `target_region`. Audit lại: **0** vi phạm thật trên 105 rules đang active; 30 cờ cũ trong shadow audit là **false positive** (ví dụ MN khai thác từ nguồn MB vẫn được phép dùng prize kiểu MB). Không cách ly `mined_rules` production.

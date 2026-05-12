@@ -1,12 +1,14 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.30** — `V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/` (finalization: `_safe_stdio_ctx` VPS, Rule105 strict shadow + **V105.30b** owner recheck prize-source per source_region, `SIGNAL_LAYER_REGISTRY`, public SSOT; Notion page optional — owner dùng GitHub raw).
+Latest: **V105.30c** — `V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/` (finalization: `_safe_stdio_ctx` VPS, Rule105 strict shadow + **V105.30b/c** owner recheck prize-source per source_region and stale wording cleanup, `SIGNAL_LAYER_REGISTRY`, public SSOT; Notion page optional — owner dùng GitHub raw).
 
 ## Quick links — V105.30 (read in order)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + status one-liner.
 2. [V105_30_FINALIZATION_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md) — báo cáo đầy đủ (tiếng Việt).
 3. [v10530_rule105_recheck.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_rule105_recheck.json) — **0** true violations after source_region correction.
+
+Current override: read the top **READ THIS FIRST** block in `V105_30_FINALIZATION_REPORT.md`; it supersedes older lines inside the original audit body about SSH pending and Rule105 quarantine.
 
 ## Latest evidence (V105.30)
 

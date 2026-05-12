@@ -1,5 +1,14 @@
 # V105.30 — TOTAL FORCE FINALIZATION REPORT (2026-05-12, 01:48 VN)
 
+> ## READ THIS FIRST — PUBLIC STATUS REFRESH 2026-05-12 10:08 VN
+>
+> Bản báo cáo gốc bên dưới được giữ nguyên để audit trail minh bạch, nhưng các kết luận sau đã được **override** bởi V105.30b và cập nhật SSH sau đó:
+>
+> - **SSH/GitHub:** account-level SSH đã xác thực OK (`Hi irissnss! You've successfully authenticated`) và public mirror `Lottery_AI_Notion_Reports` đã push qua SSH. Các dòng cũ kiểu `SSH_DEPLOY_KEY_PENDING_OWNER_UI`, `HTTPS_REMOTE_STILL_ACTIVE_VIA_GCM_CACHE`, hoặc "owner cần add deploy key" chỉ là lịch sử trước khi anh add key.
+> - **Rule105:** lock prize-source áp dụng theo **source_region**, không phải `target_region`. Recheck `v10530_rule105_recheck.json`: **105 active rules, 0 true violation**. 30 cờ cũ là **false positive**, không quarantine production `mined_rules`, không cần re-mine production vì lý do này.
+> - **Notion V105.30:** tạm **deferred by owner**. SSOT công khai hiện là GitHub raw: `REPORT_INDEX.md`, `LATEST_REPORT.json`, và báo cáo này.
+> - **Còn mở thật sự:** natural MN cascade verify cho `_safe_stdio_ctx`, `AI_PRIORITY_ORDER` strongest-first, strength tensor refresh cron, và các experiment lanes vẫn HOLD/DO_NOT_PROMOTE.
+
 > ## 🛑 ADDENDUM 2026-05-12 02:30 VN — RULE105 PRIZE-SOURCE AUDIT CORRECTION (V105.30b)
 >
 > Owner pointed out em đã sai logic LANE 4. Em đã re-check (`v10530_rule105_recheck.json`):
@@ -36,14 +45,14 @@
 | Khía cạnh | Verdict | Ghi chú |
 |---|---|---|
 | LANE 1 — `_safe_stdio_ctx` VPS deploy | ✅ `SAFE_STDIO_DEPLOYED_LIVE` + `CLOSED_FILE_FIXED_LIVE_5MIN` + `DEPLOYED_PENDING_NATURAL_VERIFY` | scheduler.py md5 trên VPS = local md5; service active; 6/6 endpoints 200; journal 5 min không có `I/O operation on closed file`; natural MN cascade kế tiếp (16:30 VN) sẽ là proof cuối |
-| LANE 2 — SSH deploy key | 🟡 `HTTPS_REMOTE_STILL_ACTIVE_VIA_GCM_CACHE` + `SSH_DEPLOY_KEY_PENDING_OWNER_UI` | Owner cần add public key vào GitHub UI; private key KHÔNG bao giờ được in |
+| LANE 2 — SSH deploy key | ✅ `GITHUB_ACCOUNT_SSH_VERIFIED` + `PUBLIC_MIRROR_PUSHED_VIA_SSH` | V105.30 public mirror push completed on SSH; older deploy-key pending language is superseded |
 | LANE 3 — Public SSOT V105.29 | ✅ `SSOT_ALIGNED` + `PUBLIC_RAW_AT_V105_29` | GitHub raw đã trả V105.29; commit `18ddf38` đẩy 27 files |
-| LANE 4 — Rule105 strict re-mine | ✅ `PRIZE_SOURCE_VIOLATION_CONFIRMED` + `STRICT_REMINE_SHADOW_CREATED` + `STRICT_COVERAGE_OK` + `QUARANTINE_INVALID_RECOMMENDED` + `PRODUCTION_REPLACE_NOT_ALLOWED_YET` | 0 bucket collapsed; 19/21 bucket top5_incomplete; 30 violation rules ghi vào quarantine audit shadow |
+| LANE 4 — Rule105 strict re-mine | ✅ `PRIZE_SOURCE_NO_REAL_VIOLATION_OBSERVED` + `EM_AUDIT_LOGIC_CORRECTED` + `PRODUCTION_RULE105_DOCTRINE_OK` | V105.30b recheck: 0 true violations; 30 prior flags were target/source-region false positives |
 | LANE 5 — SIGNAL_LAYER_REGISTRY | ✅ `SIGNAL_REGISTRY_CREATED` | `docs/SIGNAL_LAYER_REGISTRY.md` 13 layers chuẩn hóa |
 | LANE 6 — Region/Weekday/Station isolation | ✅ `REGION_ISOLATION_OK` + `WEEKDAY_ISOLATION_OK` + `STATION_SET_ISOLATION_OK` + `MT_PROTECT_OVERRIDE_REQUIRED_OBSERVED` | MT D-2 leak 7d = 0; MB D-2 leak 7d = 0 |
 | LANE 7-11 — HOLD shadow | ✅ Tất cả `DO_NOT_PROMOTE` | Lose-carryover / Top2 / MB_D_v2 / V102 / AI priority giữ shadow |
 | LANE 12 — Official hash | ✅ `OFFICIAL_ROWS_UNCHANGED_BY_SESSION` + `PROVIDER_CALL_COUNT_ZERO` + `MT_PROTECT_PRESERVED` (sha256 drift hợp lý do VPS-side natural runtime giữa 2 sync, không phải session em mutate) | Row counts 4791/219/14655/4655 không đổi trên mọi sync |
-| LANE 13 — Governance / Notion / public | ✅ updated | CHANGELOG, SSOT, FU tracker, AUTOMATION (seq 68→69), Notion V105.30 page sẽ tạo |
+| LANE 13 — Governance / Notion / public | ✅ `PUBLIC_RAW_UPDATED` + `NOTION_DEFERRED_BY_OWNER` | CHANGELOG, SSOT, FU tracker, AUTOMATION updated; V105.30 public GitHub raw is the active SSOT |
 
 **Final verdict V105.30**: `V105_30_STABILITY_PASS_FOR_SAFE_STDIO` (deploy + 5-min stability proof) + `DEPLOYED_PENDING_NATURAL_VERIFY` (chờ MN cascade 16:30 VN hôm nay).  
 **Toàn cục**: vẫn `PARTIAL_NOT_PASS` cho prediction experiment lanes (Lose-carryover / Top2 / MB_D_v2 / V102 / AI priority) — tất cả giữ `DO_NOT_PROMOTE`.
@@ -53,9 +62,9 @@
 ## 2. OWNER APPROVAL SUMMARY
 
 Owner đã đồng ý:
-- #9 YES — SSH migration (key đã tạo local; chờ owner add public key vào GitHub UI deploy keys).
+- #9 YES — SSH migration DONE for GitHub account-level SSH; public mirror push verified via `git@github.com`.
 - #10 YES — `_safe_stdio_ctx` deploy lên VPS đã DONE (`scheduler.py` md5 `9c17595d3dd5c0fa323bbaf4bf221f34`).
-- #12 B — Rule105 re-mine strict shadow đã DONE (`v10530_rule105_strict_remine_shadow` 105 rows = 75 kept + 30 violation; bucket collapse = 0).
+- #12 B — Rule105 strict shadow audit DONE, then V105.30b correction confirms **0 true violation** because the lock is by `source_region`.
 - #14 B — AI strongest-first HOLD shadow 7d (proposal `v10528_ai_priority_order_proposal` giữ nguyên).
 - Lose-carryover / Top2/Bundler / MB_D_v2 / V102 relaxed giữ shadow/HOLD; không promote.
 
@@ -132,6 +141,8 @@ Expected after MN cascade: MT/MB `rerun_post_mn` no-token success 7/7+7/7, `clos
 
 ## 7. SSH DEPLOY KEY MIGRATION STATUS
 
+> **Status refresh 10:08 VN:** GitHub account-level SSH đã OK và public mirror đã push qua SSH. Bảng gốc dưới đây là trạng thái trước khi anh add key.
+
 | Item | Status |
 |---|---|
 | Owner confirmed PAT revoked | ✅ |
@@ -139,24 +150,24 @@ Expected after MN cascade: MT/MB `rerun_post_mn` no-token success 7/7+7/7, `clos
 | Local SSH public key | ✅ `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIgOYWncuh8DIID0vHOhOuiY0Kx7sVjtYF5hAXKXIAnw admin@lottery-ai` |
 | SSH config vietnix | ✅ map `vietnix` → `root@14.225.224.89` |
 | Test `ssh vietnix` | ✅ OK (hostname `lotteryai-aulb`, uptime 24 days) |
-| Test `ssh -T git@github.com` | ❌ `Permission denied (publickey)` |
-| Owner action next | Add public key vào **GitHub → Settings → Deploy keys** cho 2 repos: `Lottery_AI_Test` + `Lottery_AI_Notion_Reports` (allow write) → em set remote SSH + verify |
-| HTTPS push fallback | Vẫn hoạt động qua Git Credential Manager cache (commit `18ddf38` push thành công) |
+| Test `ssh -T git@github.com` | ✅ `Hi irissnss! You've successfully authenticated` |
+| Owner action next | Không còn cần cho public mirror; account-level SSH đã đủ để push `Lottery_AI_Notion_Reports` |
+| HTTPS push fallback | Không còn là luồng chính cho public mirror |
 
-→ `HTTPS_REMOTE_STILL_ACTIVE_VIA_GCM_CACHE` + `SSH_DEPLOY_KEY_PENDING_OWNER_UI`. Push tạm thời chưa fail vì GCM cache PAT cũ.
+→ `GITHUB_ACCOUNT_SSH_VERIFIED` + `PUBLIC_MIRROR_PUSHED_VIA_SSH`.
 
 ---
 
-## 8. PUBLIC GITHUB RAW V105.29 VERIFICATION
+## 8. PUBLIC GITHUB RAW VERIFICATION
 
 | URL | Expected | Actual |
 |---|---|---|
-| `LATEST_REPORT.json` | V105.29 | ✅ V105.29 (`latest_version`) |
-| Commit | `18ddf38` | ✅ |
-| Files mới | V105_28_RUNTIME_CONTRACT_VERIFY + V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY folders | ✅ 27 files pushed |
+| `LATEST_REPORT.json` | V105.30 | ✅ V105.30 (`latest_version`) |
+| Latest public commit | V105.30b report refresh | ✅ `ea83f03` initially, followed by this status-refresh update |
+| Files mới | V105_28 / V105_29 / V105_30 folders + `v10530_rule105_recheck.json` | ✅ pushed |
 | `.gitignore` mới | desktop.ini + transcripts + commit-helpers | ✅ |
 
-→ `SSOT_ALIGNED` (Drive owner step pending). V105.30 sẽ là push tiếp theo.
+→ `SSOT_ALIGNED_PUBLIC_RAW`. Notion is deferred by owner; GitHub raw is the active public SSOT.
 
 ---
 
@@ -164,16 +175,18 @@ Expected after MN cascade: MT/MB `rerun_post_mn` no-token success 7/7+7/7, `clos
 
 | Surface | Expected | Actual | Status |
 |---|---|---|---|
-| Drive folder 1 (manual upload) | V105.29 | owner step | OWNER_PENDING |
-| Drive public folder | V105_29 | owner step | OWNER_PENDING |
-| GitHub raw `LATEST_REPORT.json` | V105.29 | V105.29 (commit 18ddf38) | ✅ ALIGNED |
-| Local mirror `E:/Lottery_AI_Notion_Reports` | V105.29+V105.30 | V105.30 staged | ✅ AHEAD_FOR_V105_30 |
-| Notion | V105.29 page exists | V105.29 = `35d1d385-9bf8-81d7-b08e-ce1b0628cf4b` | ✅ EXISTS |
+| Drive folder 1 (manual upload) | Optional | owner confirmed skip for this flow | DEFERRED |
+| Drive public folder | Optional | owner confirmed skip for this flow | DEFERRED |
+| GitHub raw `LATEST_REPORT.json` | V105.30 | V105.30 | ✅ ALIGNED |
+| Local mirror `E:/Lottery_AI_Notion_Reports` | V105.30b | V105.30b | ✅ ALIGNED |
+| Notion | Optional short pointer page | deferred by owner | DEFERRED |
 | Runtime VPS | scheduler.py refactor live | ✅ md5 = local | ✅ |
 
 ---
 
 ## 10. RULE105 PRIZE-SOURCE VIOLATION AUDIT
+
+> **V105.30b correction:** Section 10 and 11 are historical trace from the first pass. The first pass checked `allowed[target_region]`; owner clarified the correct lock is `allowed[source_region]`. Recheck file `v10530_rule105_recheck.json` shows **0 true violations**. Keep these rows only as `EXAMINATION_TRACE`, not as production risk.
 
 `v10530_rule105_prize_violation_audit` (30 rows):
 
@@ -183,15 +196,15 @@ Expected after MN cascade: MT/MB `rerun_post_mn` no-token success 7/7+7/7, `clos
 | MN | ĐB, G1, G2, G5, G7, G8 | **6** | G6+G7 (5), GĐB+G6 (1) |
 | MT | ĐB, G1, G2, G5, G7, G8 | **11** | G6+G7 (7), GĐB+G6 (3), G6 (1) |
 
-`quarantine_action` cho 30 rules: `QUARANTINE_FROM_PROMPT_CONTEXT` nếu rule là `READY_STRONG`/`READY_WITH_CAUTION`; còn lại `EXCLUDE_FROM_STRICT_SHADOW`.
+Historical `quarantine_action` values are overruled by V105.30b. No production quarantine is required.
 
 ---
 
 ## 11. RULE105 STRICT SHADOW RE-MINE RESULT
 
 `v10530_rule105_strict_remine_shadow` (105 rows):
-- `kept_strict=1` count: 75.
-- `kept_strict=0` count: 30 (= violators).
+- `kept_strict=1` count in first pass: 75.
+- `kept_strict=0` count in first pass: 30 (all false positives after source_region correction).
 
 `v10530_rule105_old_vs_strict_compare` (21 buckets = 3 region × 7 weekday):
 - `bucket_collapsed=1` (toàn collapse, n_strict=0): **0**.
@@ -199,7 +212,7 @@ Expected after MN cascade: MT/MB `rerun_post_mn` no-token success 7/7+7/7, `clos
 - `collapse_severity=MORE_THAN_HALF_DROPPED`: 0.
 - `collapse_severity=NONE`: 2.
 
-→ **`STRICT_COVERAGE_OK`** (không bucket nào trắng tay) + **`QUARANTINE_INVALID_RECOMMENDED`** (chỉ loại 30 vi phạm khỏi prompt context) + **`PRODUCTION_REPLACE_NOT_ALLOWED_YET`** (vì 19/21 bucket top5 không đủ 5 sau strict → cần re-mine production từ raw lottery_results với strict config, deferred owner gate).
+→ Final corrected verdict: **`PRIZE_SOURCE_NO_REAL_VIOLATION_OBSERVED`** + **`PRODUCTION_RULE105_DOCTRINE_OK`**. No production re-mine is needed for this prize-source issue.
 
 ---
 

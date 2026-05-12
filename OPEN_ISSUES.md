@@ -1,4 +1,4 @@
-# Open Issues — as of V105.30 (2026-05-12 VN)
+# Open Issues — as of V105.30 report refresh (2026-05-12 10:08 VN)
 
 ## V105.30 / V105.28 follow-up
 
@@ -7,6 +7,7 @@
 - `FU-V105-28-SSH-DEPLOY-KEY`: **CLOSED (account SSH)** — GitHub: `Hi irissnss! You've successfully authenticated`; mirror public push SSH.
 - `FU-V105-28-TENSOR-REFRESH-CRON`: **OPEN P1** — materialize `model_strength_by_region_weekday_station_daily` định kỳ (đề xuất 19:30 VN).
 - `FU-V105-30-NOTION-PAGE`: **DEFERRED** — owner ưu tiên GitHub raw thay vì Notion (page ID có thể bổ sung sau).
+- `FU-V105-30B-RULE105-PRIZE-SOURCE`: **CLOSED / CORRECTED** — source lock theo `source_region`; 0 true violation; 30 prior flags are false positives.
 
 ## V105.27 carry-over
 
