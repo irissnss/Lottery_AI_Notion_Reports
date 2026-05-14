@@ -1,9 +1,21 @@
-## V105.35 — OFFICIAL PUBLISH GATE SEMANTIC FIX (2026-05-12 19:35 VN)
+## V105.41 — MORNING COMPREHENSIVE AUDIT (2026-05-14 09:25 VN)
 
-- Created V105.35 public report and advanced latest pointer.
-- MB now publishes by output rows 15/15 while scoreable remains 13/15 with WR/BT quality warning.
-- MT remains blocked 10/15; no fake publish; no provider/manual AI call.
-- Prompt/scoring/selector/voting/roster unchanged; WR/BT filter preserved.
+- Created `V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/` with `README.md`, `evidence/V105_41_MORNING_COMPREHENSIVE_REPORT.md`, `evidence/V105_41_MODEL_HEALTH_AND_METHODOLOGY_DEEP_DIVE.md`, and `evidence/V105_41_RUNTIME_STABILITY_AND_GOVERNANCE.md`.
+- Yesterday 2026-05-13 cycles closed naturally: MN id=301 BT=23 LOSE / lo2 PARTIAL (Wednesday MN weakest as predicted); MT id=302 BT=92 **WIN** BT/lo2/xien2 (Đà Nẵng tail=92); MB id=303 BT=32 LOSE all lanes with no challenger divergence across 7 MB lane-test experiments. MT 5-model token watch recovered fully in the 16:30 cycle.
+- Today 2026-05-14 MN 04:15 cycle is clean: auto_daily 15/15 valid, final bundle id=304 ACTIVE strong consensus BT=16 lo2=[16,35] lo3=616 xien2=[16,35] xien3=[16,35,04].
+- Closed-file regression scope confirmed wider than V105.40 first scoped. 14 events on 2026-05-13 across 7 source paths: Excel update writer, verify final bundle MN/MT/MB, Pattern Tracker, Shadow Daily Comparison, Shadow Rule D1 measurement, token AI provider wrapper, shadow eval provider wrapper.
+- V105.30d diagnostic-row contract absorbed every event — official prediction path UNAFFECTED. Service uptime 26 days 8 hours; no restart since V105.35 deploy.
+- V105.40 expansion patch remains owner-gated; deploy gate set for after MB 17:35 cycle close (~19:00 VN).
+- Public mirror cleaned in this release. V105.36 closeout wrapper + V105.41 morning audit + deep-dive analytical reports publish alongside each other; remaining V105.37/V105.38/V105.39/V105.40 evidence stays private + Notion mirrored.
+- No official mutation, no provider/manual AI call, no fabricated numbers. `NATURAL_VERIFY_PARTIAL_PASS_NOT_FULL_PASS` preserved.
+
+---
+
+## V105.36 — CLOSEOUT AUDIT ONLY (2026-05-12, published 2026-05-14 with V105.41)
+
+- Created `V105_36_CLOSEOUT_AUDIT_ONLY_20260512/` with `README.md`, `evidence/V105_36_CLOSEOUT_AUDIT_ONLY_REPORT.md`, `evidence/V105_36_V105_37_FINAL_SAFE_CLOSEOUT_REPORT.md`, `evidence/V105_38_TIMEOUT_EXTENDED_GRACE_PROPOSAL_ONLY.md`.
+- Closeout audit on top of V105.35 semantic gate fix. No natural verify pass declared.
+- Includes V105.38 timeout extended-grace 500 s proposal-only design (not deployed).
 
 ---
 

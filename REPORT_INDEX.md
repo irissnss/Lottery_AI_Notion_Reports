@@ -1,19 +1,21 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V105.35** — `V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/` (semantic official publish gate fix: MB output rows ready, MT pending, WR/BT preserved).
+Latest: **V105.41** — `V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/` (comprehensive morning audit at the start of 2026-05-14 live cycle; yesterday MN/MT/MB closed naturally with MT BT=92 WIN; today MN BT=16 ACTIVE strong; closed-file regression scope confirmed wider — 14 events across 7 source paths; V105.40 expansion patch owner-gated; official prediction path unaffected; NATURAL_VERIFY_PARTIAL_PASS_NOT_FULL_PASS preserved).
 
-## Quick links — V105.35 (read first)
+## Quick links — V105.41 (read first)
 
-1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. [V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md)
-3. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md)
-4. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md)
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) — machine pointer + latest status.
+2. [V105.41 README](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/README.md) — overview of the V105.41 wrapper.
+3. [V105.41 Morning Comprehensive Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MORNING_COMPREHENSIVE_REPORT.md) — day-control audit, yesterday closeout, today MN cycle, regression scope.
+4. [V105.41 Model Health and Methodology Deep Dive](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MODEL_HEALTH_AND_METHODOLOGY_DEEP_DIVE.md) — 30-day per-model scoreboard, prompt mechanism, ML pipeline, rule engine, scoring/voting, recommendations.
+5. [V105.41 Runtime Stability and Governance](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_RUNTIME_STABILITY_AND_GOVERNANCE.md) — runtime timeline V105.30d → V105.41, closed-file regression map, governance locks, owner decisions queue.
+6. [V105.36 Closeout Audit Only](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_36_CLOSEOUT_AUDIT_ONLY_REPORT.md) — closeout audit baseline (no natural verify pass).
+7. [V105.36 Final Safe Closeout Combined Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_36_V105_37_FINAL_SAFE_CLOSEOUT_REPORT.md) — combined V105.36 + V105.37 closeout with timeline.
+8. [V105.38 Timeout Extended Grace Proposal Only](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_38_TIMEOUT_EXTENDED_GRACE_PROPOSAL_ONLY.md) — 500s proposal design (not deployed).
+9. [OPEN_ISSUES.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/OPEN_ISSUES.md) — active open items after V105.41.
+10. [NEXT_ACTION.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/NEXT_ACTION.md) — next owner / runtime actions.
 
----
-
-## Previous reports
-
-Latest: **V105.33** — `V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/evidence/` (read-only natural-verify snapshot after V105.32: 16:00 VN keeps `NATURAL_VERIFY_PENDING`; MN remains official 15/15, final bundle model_count 15, shadow 13/13, `missing_shadow=[]`; MT/MB remain incomplete with official 7/15 each, no 2026-05-12 final bundle, no natural shadow run; no official mutation, no provider/manual AI call).
+Current override: V105.41 supersedes the public-side narrative for V105.36..V105.40 by publishing the closeout wrapper and deep-dive analytical reports alongside today's morning audit. Official `/du-doan` lock remains intact.
 
 ## Quick links — V105.33 (read first)
 

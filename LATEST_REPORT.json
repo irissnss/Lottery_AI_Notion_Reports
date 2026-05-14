@@ -1,12 +1,12 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.35",
-  "latest_folder": "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512",
-  "latest_report": "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md",
-  "created_at_vn": "2026-05-12T01:48:00+07:00",
-  "last_public_refresh_at_vn": "2026-05-12T19:35:00+07:00",
-  "status": "V105.35 deployed semantic publish gate fix: readiness uses output_eligible_row_count; scoreable_model_count remains WR/BT-filtered voting quality. MB publishes 15/15 output rows with 13/15 scoreable and quality warning; MT remains blocked 10/15. No provider/manual AI call. Official prompt/scoring/selector/voting/roster unchanged; WR/BT preserved; NATURAL_VERIFY_PENDING remains active. Late-result assimilation metadata deployed after follow-up restart; final live sync artifacts/live_sync/20260512_193926/manifest.json.",
-  "official_touched": true,
+  "latest_version": "V105.41",
+  "latest_folder": "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514",
+  "latest_report": "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MORNING_COMPREHENSIVE_REPORT.md",
+  "created_at_vn": "2026-05-14T09:25:00+07:00",
+  "last_public_refresh_at_vn": "2026-05-14T11:30:00+07:00",
+  "status": "V105.41 morning comprehensive audit at the start of the 2026-05-14 live cycle. Read-only mode: no deploy, no restart, no provider/manual AI call, no trigger change. Yesterday 2026-05-13 cycles closed naturally — MN id=301 BT=23 LOSE/PARTIAL (Wednesday MN weakest weekday as predicted); MT id=302 BT=92 WIN BT/lo2/xien2 (Da Nang tail=92); MB id=303 BT=32 LOSE all lanes with no challenger divergence across 7 lane-test experiments. MT 5-model token watch recovered fully in the 16:30 ai_chain cycle. Today 2026-05-14 MN 04:15 cycle clean — auto_daily 15/15 valid, final bundle id=304 ACTIVE strong consensus BT=16 lo2=[16,35]. MN shadow today 12 SUCCESS + 1 ERROR (gpt-oss-120b closed-file). MT/MB cycles pending cron 16:30/17:35. Closed-file regression confirmed wider than V105.40 first scoped — 14 events in 24 hours across 7 source paths (Excel writer, verify final bundle, Pattern Tracker, Shadow Daily Comparison, Shadow Rule D1, token AI provider wrapper, shadow eval provider wrapper). Official prediction path UNAFFECTED — V105.30d diagnostic-row contract absorbed every event. Service uptime 26d 8h, NO restart since V105.35 deploy. /api/review-hub/filter still returns 500 with closed-file detail. V105.40 expansion patch still owner-gated. Public mirror cleaned in this release (backlog line-ending reverts removed). This release publishes V105.36 closeout audit wrapper + V105.41 comprehensive audit + deep-dive analytical reports alongside each other. NATURAL_VERIFY_PARTIAL_PASS_NOT_FULL_PASS preserved.",
+  "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "notion_pages": [
@@ -75,6 +75,18 @@
       "title": "V105.35 — Official Publish Gate Semantic Fix (GitHub raw public SSOT)",
       "id": "DEFERRED_SEE_GITHUB_RAW",
       "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md"
+    },
+    {
+      "version": "V105.36",
+      "title": "V105.36 — Closeout Audit Only (no natural verify pass)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_36_CLOSEOUT_AUDIT_ONLY_REPORT.md"
+    },
+    {
+      "version": "V105.41",
+      "title": "V105.41 — Morning Comprehensive Audit (2026-05-14)",
+      "id": "DEFERRED_SEE_GITHUB_RAW",
+      "url": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MORNING_COMPREHENSIVE_REPORT.md"
     }
   ],
   "hard_locks": [
@@ -83,9 +95,14 @@
     "generate_final_bundle()",
     "official scoring/selector/voting",
     "production prompt",
-    "official model roster",
+    "official model roster (15)",
     "production bundle voting",
-    "MT source formula"
+    "MT source formula",
+    "WR/BT quality filter",
+    "AI_MODEL_SOFT_CONTINUE_SEC=90",
+    "AI_MODEL_HARD_TIMEOUT_SEC=300",
+    "cron timings (04:00 ML, 04:15 MN AI, 16:30 MT, 17:35 MB, 18:30 MB scrape+verify)",
+    "Rule105 prize-source lock by source_region"
   ],
   "owner_confirmations": {
     "OWNER_CONFIRMED_PAT_REVOKED": true,
@@ -96,13 +113,17 @@
     "OWNER_CONFIRMED_REGION_ONLY_FREEZE": true,
     "OWNER_ADDED_SSH_DEPLOY_KEY_2026_05_12": true,
     "OWNER_GITHUB_ACCOUNT_SSH_VERIFIED_2026_05_12": true,
-    "GIT_REMOTES_MIGRATED_TO_SSH": {
-      "Lottery_AI_Test": "git@github.com:irissnss/Lottery_AI_Test.git",
-      "Lottery_AI_Notion_Reports": "git@github.com:irissnss/Lottery_AI_Notion_Reports.git"
-    },
-    "DRIVE_UPLOAD_SCOPE": "OWNER_CONFIRMED_SKIP — only local E:/Lottery_AI_Test/artifacts + GitHub public mirror are SSOT."
+    "OWNER_GATE_V10540_DEPLOY_AFTER_MB_CYCLE": "PENDING_2026_05_14"
   },
   "read_order": [
+    "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/README.md",
+    "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MORNING_COMPREHENSIVE_REPORT.md",
+    "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_MODEL_HEALTH_AND_METHODOLOGY_DEEP_DIVE.md",
+    "V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/V105_41_RUNTIME_STABILITY_AND_GOVERNANCE.md",
+    "V105_36_CLOSEOUT_AUDIT_ONLY_20260512/README.md",
+    "V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_36_CLOSEOUT_AUDIT_ONLY_REPORT.md",
+    "V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_36_V105_37_FINAL_SAFE_CLOSEOUT_REPORT.md",
+    "V105_36_CLOSEOUT_AUDIT_ONLY_20260512/evidence/V105_38_TIMEOUT_EXTENDED_GRACE_PROPOSAL_ONLY.md",
     "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/README.md",
     "V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_20260512/evidence/V105_35_OFFICIAL_PUBLISH_GATE_SEMANTIC_FIX_REPORT.md",
     "V105_33_NATURAL_VERIFY_SNAPSHOT_20260512/README.md",
@@ -115,26 +136,8 @@
     "V105_31_CURRENT_TRUTH_CLEAN_WRAPPER_20260512/evidence/V105_31_CURRENT_TRUTH_CLEAN_WRAPPER.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/README.md",
     "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/V105_30_FINALIZATION_REPORT.md",
-    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_master_audit.json",
-    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_preflight.json",
-    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_hash_double_check.json",
-    "V105_30_FINALIZATION_SAFE_STDIO_DEPLOY_20260512/evidence/v10530_rule105_recheck.json",
     "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/README.md",
     "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_REPORT.md",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/_v10529_DEPLOY_SAFE_STDIO_VPS.md",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/v10529_preflight.json",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/v10529_master_audit.json",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/v10529_safe_stdio_smoke.json",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/v10529_drilldown.json",
-    "V105_29_LOSE_CARRYOVER_RUNTIME_STABILITY_20260512/evidence/v10529_post_hash.json",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/README.md",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/V105_28_RUNTIME_CONTRACT_REPORT.md",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_preflight.json",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_runtime_contract_audit.json",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_deep_probes.json",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_security_and_rules.json",
-    "V105_28_RUNTIME_CONTRACT_VERIFY_20260511/evidence/v10528_post_hash.json",
-    "V105_27_TOTAL_FORCE_CONTROL_20260511/README.md",
     "OPEN_ISSUES.md",
     "NEXT_ACTION.md"
   ]
