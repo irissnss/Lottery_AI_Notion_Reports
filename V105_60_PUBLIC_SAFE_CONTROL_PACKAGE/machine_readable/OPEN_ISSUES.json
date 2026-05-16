@@ -1,0 +1,75 @@
+[
+  {
+    "id": "H-01",
+    "priority": "P0",
+    "title": "Cost persistence diagnostic table",
+    "owner_ok_required": true,
+    "official_mutation": false
+  },
+  {
+    "id": "H-02",
+    "priority": "P0",
+    "title": "final_bundles schema doc fix",
+    "owner_ok_required": false,
+    "official_mutation": false,
+    "status": "APPLIED"
+  },
+  {
+    "id": "H-03",
+    "priority": "P0",
+    "title": "Rules vs prompt doc fix",
+    "owner_ok_required": false,
+    "official_mutation": false,
+    "status": "APPLIED"
+  },
+  {
+    "id": "H-04",
+    "priority": "P1",
+    "title": "Selector rank 3-5 trace",
+    "owner_ok_required": true,
+    "official_mutation": false
+  },
+  {
+    "id": "H-05",
+    "priority": "P1",
+    "title": "MT lane weight asymmetry replay",
+    "owner_ok_required": true,
+    "official_mutation": false
+  },
+  {
+    "id": "H-06",
+    "priority": "P1",
+    "title": "MN D-2 shadow reactivation",
+    "owner_ok_required": true,
+    "official_mutation": false
+  },
+  {
+    "id": "H-07",
+    "priority": "P2",
+    "title": "Prompt herding A/B diagnostic",
+    "owner_ok_required": true,
+    "official_mutation": false
+  },
+  {
+    "id": "H-08",
+    "priority": "P2",
+    "title": "PP-1 convergence dampener audit",
+    "owner_ok_required": false,
+    "official_mutation": false
+  },
+  {
+    "id": "H-09",
+    "priority": "P1",
+    "title": "MB probation day 2 observer",
+    "owner_ok_required": false,
+    "official_mutation": false
+  },
+  {
+    "id": "H-10",
+    "priority": "P3",
+    "title": "Doc index / Notion HOME routing",
+    "owner_ok_required": false,
+    "official_mutation": false,
+    "status": "APPLIED"
+  }
+]

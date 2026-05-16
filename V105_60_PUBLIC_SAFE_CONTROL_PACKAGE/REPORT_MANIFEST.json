@@ -1,0 +1,42 @@
+{
+  "generated_at_vn": "2026-05-16T23:19:04+07:00",
+  "package_dir": "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE",
+  "files": [
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\LATEST_REPORT.json",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\NEXT_ACTION.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\OPEN_ISSUES.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\README.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\evidence\\V10558_ROOT_CAUSE_PUBLIC.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\evidence\\V10559_FIX_READINESS_PUBLIC.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\evidence\\V10560_OWNER_DECISION_TABLE_PUBLIC.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\evidence\\V10560_OWNER_REPORT_VN_PUBLIC.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\evidence\\V10560_TRUTH_RECONCILIATION_PUBLIC.md",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\machine_readable\\DECISION_TABLE.json",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\machine_readable\\OPEN_ISSUES.json",
+    "artifacts\\v105_55_safe_quality\\V105_60_PUBLIC_SAFE_CONTROL_PACKAGE\\machine_readable\\SUMMARY.json"
+  ],
+  "secret_scan_status": "PASS_NO_FINDINGS",
+  "secret_scan_findings": [],
+  "redactions_applied": [
+    "14.225.224.89",
+    "/root/Lottery_AI_Test",
+    "/Users/Admin",
+    "E:\\Lottery_AI_Test",
+    "E:/Lottery_AI_Test",
+    "C:\\Users\\Admin"
+  ],
+  "claim_scan_status": "PASS_NO_AFFIRMATIVE_FORBIDDEN_LABEL",
+  "claim_scan_violations": [],
+  "status": "PREPARED_FOR_OWNER_APPROVED_PUSH",
+  "owner_approval_required": true,
+  "owner_approval_present": true,
+  "owner_approval_token": "OK PUBLIC PUSH CLEANROOM V105.60",
+  "scope_locks": [
+    "No official prompt/scoring/selector/voting/roster/cron/timeout change",
+    "No provider/manual AI call",
+    "No accuracy/promotion claim",
+    "No raw DB in package",
+    "No VPS paths",
+    "No secrets"
+  ]
+}

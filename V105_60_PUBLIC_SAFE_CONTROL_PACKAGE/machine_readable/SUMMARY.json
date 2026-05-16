@@ -1,0 +1,30 @@
+{
+  "generated_at_vn": "2026-05-16T23:19:04+07:00",
+  "latest_version": "V105.60",
+  "previous_public_latest_version_pre_push": "V105.41",
+  "official_protected": true,
+  "provider_manual_call_count": 0,
+  "diagnostic_only": true,
+  "labels_allowed": [
+    "ROOT_CAUSE_CONFIRMED",
+    "DIAGNOSTIC_FIXES_READY_FOR_OWNER_GATE",
+    "PUBLIC_SAFE_FINAL_CHECK_PASS",
+    "OWNER_APPROVAL_REQUIRED_FOR_PUBLIC_PUSH",
+    "OFFICIAL_PROTECTED",
+    "NO_PROVIDER_MANUAL_CALL"
+  ],
+  "labels_forbidden": [
+    "DEPLOYED_LIVE_VERIFIED",
+    "NATURAL_VERIFY_PASS",
+    "ACCURACY_READY",
+    "PROMOTION_READY",
+    "OFFICIAL_IMPROVED"
+  ],
+  "verdicts_current": [
+    "ROOT_CAUSE_CONFIRMED",
+    "DIAGNOSTIC_FIXES_READY_FOR_OWNER_GATE",
+    "PUBLIC_SAFE_FINAL_CHECK_PASS",
+    "OFFICIAL_PROTECTED",
+    "NO_PROVIDER_MANUAL_CALL"
+  ]
+}

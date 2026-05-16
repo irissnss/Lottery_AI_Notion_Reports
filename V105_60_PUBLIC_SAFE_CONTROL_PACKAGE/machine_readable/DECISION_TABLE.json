@@ -1,0 +1,56 @@
+[
+  {
+    "decision_id": "D1",
+    "action": "Apply H-02/H-03/H-10 doc fixes",
+    "owner_ok_required": false,
+    "status": "APPLIED"
+  },
+  {
+    "decision_id": "D2",
+    "action": "Run H-08 PP-1 dampener audit",
+    "owner_ok_required": false,
+    "status": "READY"
+  },
+  {
+    "decision_id": "D3",
+    "action": "Run H-09 MB probation day 2 observer",
+    "owner_ok_required": false,
+    "status": "READY"
+  },
+  {
+    "decision_id": "D4",
+    "action": "Approve H-01 cost persistence",
+    "owner_ok_required": true,
+    "status": "PENDING"
+  },
+  {
+    "decision_id": "D5",
+    "action": "Approve H-04 selector rank 3-5 trace",
+    "owner_ok_required": true,
+    "status": "PENDING"
+  },
+  {
+    "decision_id": "D6",
+    "action": "Approve H-05 MT lane weight replay",
+    "owner_ok_required": true,
+    "status": "PENDING"
+  },
+  {
+    "decision_id": "D7",
+    "action": "Approve H-06 MN D-2 shadow reactivation",
+    "owner_ok_required": true,
+    "status": "PENDING"
+  },
+  {
+    "decision_id": "D8",
+    "action": "Approve H-07 prompt herding A/B",
+    "owner_ok_required": true,
+    "status": "PENDING"
+  },
+  {
+    "decision_id": "D9",
+    "action": "Public push V105.60 cleanroom",
+    "owner_ok_required": true,
+    "status": "APPROVED_BY_OWNER_THIS_RELEASE"
+  }
+]
