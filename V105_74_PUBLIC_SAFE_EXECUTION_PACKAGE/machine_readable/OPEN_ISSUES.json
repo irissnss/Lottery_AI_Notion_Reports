@@ -1,0 +1,17 @@
+[
+  {
+    "id": "PNL_DEPLOY",
+    "title": "Deploy PnL lane-test verify UI/API to live host",
+    "status": "READY_FOR_SAFE_ADMIN_DEPLOY"
+  },
+  {
+    "id": "MN_QC",
+    "title": "Continue MN strongest-to-final lane monitoring",
+    "status": "WATCH_ONLY"
+  },
+  {
+    "id": "MT_QC",
+    "title": "MT regression guard active; no official anti-herd hotfix",
+    "status": "MONITOR_ONLY"
+  }
+]

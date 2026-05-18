@@ -1,0 +1,17 @@
+[
+  {
+    "id": "D-PNL",
+    "decision": "Use official/lane_test/both source selector for PnL verify",
+    "default": "official"
+  },
+  {
+    "id": "D-MB",
+    "decision": "Keep MB out of active owner scope",
+    "default": "MN_MT_ONLY"
+  },
+  {
+    "id": "D-OFFICIAL",
+    "decision": "Do not mutate official prediction logic",
+    "default": "PROTECT"
+  }
+]

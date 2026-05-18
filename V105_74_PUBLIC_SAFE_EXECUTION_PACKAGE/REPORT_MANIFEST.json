@@ -1,0 +1,18 @@
+{
+  "version": "V105.74",
+  "files": [
+    "README.md",
+    "OPEN_ISSUES.md",
+    "NEXT_ACTION.md",
+    "REPORT_MANIFEST.json",
+    "CHANGELOG_PUBLIC.md",
+    "evidence/V10574_OWNER_REPORT_VN_PUBLIC.md",
+    "evidence/V10574_PUBLIC_TRUTH_RECONCILIATION.md",
+    "evidence/V10574_PNL_TRACKER_LANE_TEST_VERIFY_PUBLIC.md",
+    "evidence/V10574_MN_MT_QUALITY_CONTROL_PUBLIC.md",
+    "evidence/V10574_DO_NOT_MUTATE_OFFICIAL_PUBLIC.md",
+    "machine_readable/SUMMARY.json",
+    "machine_readable/OPEN_ISSUES.json",
+    "machine_readable/DECISION_TABLE.json"
+  ]
+}
