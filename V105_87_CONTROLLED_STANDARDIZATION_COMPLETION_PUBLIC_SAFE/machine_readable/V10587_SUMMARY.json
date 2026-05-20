@@ -27,6 +27,8 @@
   "provider_manual_ai_called": false,
   "lane_test_promoted": false,
   "public_safe_scan_pass": true,
-  "public_commit": "b91e221",
-  "public_raw_verified": true
+  "public_commit": "55590d1",
+  "public_raw_verified": true,
+  "public_commit_initial": "b91e221",
+  "public_commit_latest": "55590d1"
 }
