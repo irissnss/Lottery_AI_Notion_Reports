@@ -1,0 +1,32 @@
+{
+  "version": "V105.89",
+  "generated_at": "2026-05-20T12:25:40+07:00",
+  "fresh_sync": "PASS",
+  "v10588_blocker_loaded": "YES",
+  "ml_collision_root_cause": "TRUE_ALIAS_DUPLICATE",
+  "ml_collision_resolution": "VERIFIED_RESOLVED_DRYRUN",
+  "unresolved_collision_count_after": 0,
+  "production_ml_switched": "NO",
+  "official_immutability": "PASS",
+  "lane_test_promotion": "NO",
+  "provider_manual_ai_call": "NO",
+  "station_set_closure": "DRYRUN",
+  "trace_final_bundle_closure": "DRYRUN",
+  "prompt_identity_closure": "SHADOW_ONLY",
+  "pnl_ux": "OPEN_WITH_PLAN",
+  "public_report": "PENDING",
+  "labels": [
+    "V10589_ML_ALIAS_COLLISION_ANALYZED",
+    "V10589_ML_ALIAS_COLLISION_RESOLVED_DRYRUN",
+    "IDENTITY_LINEAGE_PRESERVED",
+    "OFFICIAL_PROTECTED",
+    "LANE_TEST_NOT_PROMOTED",
+    "NO_PROVIDER_MANUAL_CALL",
+    "PRODUCTION_ML_NOT_SWITCHED"
+  ],
+  "latest_version": "V105.89",
+  "official_touched": false,
+  "provider_manual_ai_called": false,
+  "lane_test_promoted": false,
+  "public_safe_scan_pass": true
+}

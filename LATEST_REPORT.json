@@ -1,18 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.87",
-  "latest_folder": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE",
-  "latest_report": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE/V10587_OWNER_REPORT_VN_PUBLIC.md",
-  "created_at_vn": "2026-05-20T11:55:02+07:00",
-  "status": "V105.87 public-safe report is latest; V105.88 reconciled stale V10587_SUMMARY commit metadata before closure dry-runs.",
+  "latest_version": "V105.89",
+  "latest_folder": "V105_89_TOTAL_FORCE_STANDARDIZATION_CLEANUP_PUBLIC_SAFE",
+  "latest_report": "V105_89_TOTAL_FORCE_STANDARDIZATION_CLEANUP_PUBLIC_SAFE/V10589_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V105_89_TOTAL_FORCE_STANDARDIZATION_CLEANUP_PUBLIC_SAFE/machine_readable/V10589_SUMMARY.json",
+  "created_at_vn": "2026-05-20T12:25:40+07:00",
+  "status": "V105.89 public-safe report: ML alias collision resolved in dry-run; production ML inference not switched. Official protected, lane-test not promoted, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "inventory_register_governance_only",
-  "public_safe_scan_pass": true,
-  "latest_summary": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE/machine_readable/V10587_SUMMARY.json",
-  "public_metadata_reconciled_in": "V105.88",
-  "v10587_expected_public_commit_latest": "a6a46c5"
+  "patch_scope": "dryrun_policy_only",
+  "public_safe_scan_pass": true
 }
