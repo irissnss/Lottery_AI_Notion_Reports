@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.91",
-  "latest_folder": "V105_91_FINAL_CONSISTENCY_HARDENING_PUBLIC_SAFE",
-  "latest_report": "V105_91_FINAL_CONSISTENCY_HARDENING_PUBLIC_SAFE/V10591_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V105_91_FINAL_CONSISTENCY_HARDENING_PUBLIC_SAFE/machine_readable/V10591_SUMMARY.json",
-  "created_at_vn": "2026-05-20T13:16:47+07:00",
-  "status": "V105.91 public-safe report: passive identity implemented; zero decision drift. Production ML/prompt not switched. Official protected, lane-test not promoted, no provider/manual AI call.",
+  "latest_version": "V105.92",
+  "latest_folder": "V105_92_FINAL_CLEANROOM_CONSISTENCY_CLOSURE_PUBLIC_SAFE",
+  "latest_report": "V105_92_FINAL_CLEANROOM_CONSISTENCY_CLOSURE_PUBLIC_SAFE/V10592_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V105_92_FINAL_CLEANROOM_CONSISTENCY_CLOSURE_PUBLIC_SAFE/machine_readable/V10592_SUMMARY.json",
+  "created_at_vn": "2026-05-20T13:29:36+07:00",
+  "status": "V105.92 public-safe report: repo hygiene pass; station_set passive dualwrite implemented artifact-only; owner gates packed. Official protected, lane-test not promoted, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "passive_identity_artifacts_only",
+  "patch_scope": "artifact_only_station_set_passive_dualwrite",
   "public_safe_scan_pass": true
 }
