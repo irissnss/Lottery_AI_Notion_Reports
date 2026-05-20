@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.94",
-  "latest_folder": "V105_94_OWNER_GATE_CONTROLLED_EXECUTION_PUBLIC_SAFE",
-  "latest_report": "V105_94_OWNER_GATE_CONTROLLED_EXECUTION_PUBLIC_SAFE/V10594_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V105_94_OWNER_GATE_CONTROLLED_EXECUTION_PUBLIC_SAFE/machine_readable/V10594_SUMMARY.json",
-  "created_at_vn": "2026-05-20T14:21:14+07:00",
-  "status": "V105.94 public-safe report: station_set dryrun, trace diagnostic dryrun, ML dual-read shadow, prompt shadow-only all pass. Production ML/prompt not switched.",
+  "latest_version": "V105.95",
+  "latest_folder": "V105_95_LANE_TEST_CONTROLLED_CHALLENGER_PUBLIC_SAFE",
+  "latest_report": "V105_95_LANE_TEST_CONTROLLED_CHALLENGER_PUBLIC_SAFE/V10595_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V105_95_LANE_TEST_CONTROLLED_CHALLENGER_PUBLIC_SAFE/machine_readable/V10595_SUMMARY.json",
+  "created_at_vn": "2026-05-20T14:38:42+07:00",
+  "status": "V105.95 public-safe report: lane-test challengers created for measurement only. Official unchanged, lane-test not promoted, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "safe_gate_dryrun_shadow_only",
+  "patch_scope": "artifact_only_lane_test_measurement",
   "public_safe_scan_pass": true
 }
