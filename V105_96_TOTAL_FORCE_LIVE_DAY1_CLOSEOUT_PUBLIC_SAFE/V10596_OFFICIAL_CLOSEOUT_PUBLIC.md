@@ -1,0 +1,3 @@
+# Official Closeout Public
+
+MN 56 LOSE / 56,49 LOSE. MT 22 WIN / 22,74 PARTIAL. MB 60 LOSE / 60,78 PARTIAL.
