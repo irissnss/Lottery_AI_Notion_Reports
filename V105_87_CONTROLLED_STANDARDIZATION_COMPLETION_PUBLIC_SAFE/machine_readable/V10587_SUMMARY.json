@@ -1,0 +1,30 @@
+{
+  "version": "V105.87",
+  "generated_at": "2026-05-20T11:55:02+07:00",
+  "fresh_sync": "PASS",
+  "micro_action_ledger": "CREATED",
+  "identity_inventory": "COMPLETE",
+  "safe_patches": 0,
+  "safe_patches_verified": 0,
+  "official_immutability": "PASS",
+  "lane_test_promotion": "NO",
+  "provider_manual_ai_call": "NO",
+  "owner_gated_items": 4,
+  "open_items": 1,
+  "public_report": "PENDING",
+  "artifact_root": "artifacts/v105_55_safe_quality/v10587_controlled_standardization_completion",
+  "labels": [
+    "V10587_CONTROLLED_STANDARDIZATION_PASS_DONE",
+    "IDENTITY_SURFACE_INVENTORY_COMPLETE",
+    "MICRO_ACTION_LEDGER_CREATED",
+    "OFFICIAL_PROTECTED",
+    "LANE_TEST_NOT_PROMOTED",
+    "OWNER_GATE_ITEMS_REGISTERED",
+    "PNL_MOBILE_UX_OPEN"
+  ],
+  "latest_version": "V105.87",
+  "official_touched": false,
+  "provider_manual_ai_called": false,
+  "lane_test_promoted": false,
+  "public_safe_scan_pass": true
+}
