@@ -20,14 +20,14 @@ V105.96 Verdict:
 - production ML switched: NO
 - production prompt switched: NO
 - zero official drift: PASS
-- public report: PENDING
+- public report: PUSHED
 - remaining P0: 0
 - remaining P1: 2 (MN lose/lose; MT regression watch)
 - owner decisions needed: 2 (MB wallet scope/cost; production ML/prompt gates)
-- exact next action: theo d?i 1d -> 3d -> 7d challenger matrix, kh?ng promote t? m?t ng?y.
+- exact next action: theo dõi 1d -> 3d -> 7d challenger matrix, không promote từ một ngày.
 
-## K?t lu?n nhanh
-Ng?y 2026-05-20 official c? MN thua, MT th?ng BT, MB thua BT nh?ng LO2 partial. V105.95 challengers ?? ???c ?o b?ng artifact/DB lane surfaces, kh?ng ghi official, kh?ng v?, kh?ng provider.
+## Kết luận nhanh
+Ngày 2026-05-20 official có MN thua, MT thắng BT, MB thua BT nhưng LO2 partial. V105.95 challengers đã được đo bằng artifact/DB lane surfaces, không ghi official, không ví, không provider.
 
-## Vi?c kh?ng l?m
-Kh?ng ??i official BT/LO2. Kh?ng switch ML/prompt production. Kh?ng promote lane-test. Kh?ng mutate wallet/settlement.
+## Việc không làm
+Không đổi official BT/LO2. Không switch ML/prompt production. Không promote lane-test. Không mutate wallet/settlement.
