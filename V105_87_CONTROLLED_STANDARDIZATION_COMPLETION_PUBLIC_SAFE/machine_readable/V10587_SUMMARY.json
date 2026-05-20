@@ -27,8 +27,10 @@
   "provider_manual_ai_called": false,
   "lane_test_promoted": false,
   "public_safe_scan_pass": true,
-  "public_commit": "55590d1",
+  "public_commit": "a6a46c5",
   "public_raw_verified": true,
   "public_commit_initial": "b91e221",
-  "public_commit_latest": "55590d1"
+  "public_commit_latest": "a6a46c5",
+  "public_metadata_reconciled_in": "V105.88",
+  "public_metadata_reconciliation_action": "V10588-P0-REPORT-METADATA-CORRECTION"
 }

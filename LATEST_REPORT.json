@@ -4,7 +4,7 @@
   "latest_folder": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE",
   "latest_report": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE/V10587_OWNER_REPORT_VN_PUBLIC.md",
   "created_at_vn": "2026-05-20T11:55:02+07:00",
-  "status": "V105.87 public-safe report prepared: controlled standardization completion, no code deploy, official protected, lane-test not promoted, owner-gated items registered.",
+  "status": "V105.87 public-safe report is latest; V105.88 reconciled stale V10587_SUMMARY commit metadata before closure dry-runs.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
@@ -12,5 +12,7 @@
   "diagnostic_only": true,
   "patch_scope": "inventory_register_governance_only",
   "public_safe_scan_pass": true,
-  "latest_summary": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE/machine_readable/V10587_SUMMARY.json"
+  "latest_summary": "V105_87_CONTROLLED_STANDARDIZATION_COMPLETION_PUBLIC_SAFE/machine_readable/V10587_SUMMARY.json",
+  "public_metadata_reconciled_in": "V105.88",
+  "v10587_expected_public_commit_latest": "a6a46c5"
 }
