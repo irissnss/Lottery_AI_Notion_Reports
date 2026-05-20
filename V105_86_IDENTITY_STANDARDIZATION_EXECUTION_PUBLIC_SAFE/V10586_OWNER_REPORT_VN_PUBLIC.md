@@ -1,7 +1,7 @@
 ## 1. Executive verdict
-- ?? chu?n h?a read-time station alias, station_slot_key, rule tail lookup v? UI empty-tail reason.
-- Ch?a x? l? prompt production, ML feature migration, trace additive fields, station_set schema migration: gi? OWNER_GATE.
-- Kh?ng ??i official selector/scoring/prompt/Rule105 weight/final bundle output.
+- Đã chuẩn hóa read-time station alias, station_slot_key, rule tail lookup và UI empty-tail reason.
+- Chưa xử lý prompt production, ML feature migration, trace additive fields, station_set schema migration: giữ OWNER_GATE.
+- Không đổi official selector/scoring/prompt/Rule105 weight/final bundle output.
 
 ## 2. Fresh sync
 - Manifest: `artifacts/live_sync/20260520_105403/manifest.json`
@@ -17,8 +17,8 @@
 ## 4. Issues resolved
 - `ID-STATION-ALIAS-HCM-001`: `TP. TP. HCM` now canonicalizes to `TP. HCM`; R1339/R1356 verified.
 - `ID-STATION-SLOT-HCM-001`: HCM T2/T7 slot keys separated.
-- `ID-STATION-SLOT-HANOI-001`: H? N?i T2/T5 slot keys separated.
-- `ID-STATION-ALIAS-DAKLAK-001`: DakLak variants canonicalize to `??k L?k`.
+- `ID-STATION-SLOT-HANOI-001`: Hà Nội T2/T5 slot keys separated.
+- `ID-STATION-ALIAS-DAKLAK-001`: DakLak variants canonicalize to `Đắk Lắk`.
 
 ## 5. Issues still open
 - Prompt identity fields: OWNER_GATE.
@@ -37,12 +37,12 @@
 - R1356 2026-05-16: before `[]`, after `41,72`.
 - R1356 2026-05-09: before `[]`, after `59,74`.
 - HCM slot keys: `MN:D-1:T2:TP. HCM`, `MN:D:T7:TP. HCM`.
-- H? N?i T2/T5: distinct unit test pass.
-- ??k L?k aliases: unit test pass.
+- Hà Nội T2/T5: distinct unit test pass.
+- Đắk Lắk aliases: unit test pass.
 
 ## 8. UI verification
-- Display label uses `HCM T2`, `HCM T7`, `H? N?i T5` style.
-- Empty tails show reason (`Ngu?n ch?a x?`, `Alias ch?a match`, `Thi?u prize key`, `Kh?ng c? k?t qu? ngu?n`).
+- Display label uses `HCM T2`, `HCM T7`, `Hà Nội T5` style.
+- Empty tails show reason (`Nguồn chưa xổ`, `Alias chưa match`, `Thiếu prize key`, `Không có kết quả nguồn`).
 - Raw source value is diagnostic only.
 
 ## 9. Immutability
@@ -52,14 +52,14 @@
 - `lottery_results`: `14707` rows, hash unchanged.
 
 ## 10. Public/Governance
-- Governance docs/register updated locally.
-- Public package prepared under `artifacts/public_repo/V105_86_IDENTITY_STANDARDIZATION_EXECUTION_PUBLIC_SAFE`.
+- Governance docs/register updated.
+- Public package pushed after cleanroom scan at commit `42d607d`; raw `LATEST_REPORT.json` verifies `V105.86`.
 
 ## 11. Safe action table
 | Item | Before | Action | After | Status | Evidence |
 |---|---|---|---|---|---|
 | HCM alias | Header-only rule tails | Read-time alias | R1339/R1356 tails verified | VERIFIED | `V10586_LAYER2_RULE_BEFORE_AFTER_VERIFY.json` |
-| Slot key | Weekday not explicit everywhere | Added helper/payload | HCM/H? N?i slots separated | VERIFIED | `V10586_LAYER1_UNIT_TEST_REPORT.json` |
+| Slot key | Weekday not explicit everywhere | Added helper/payload | HCM/Hà Nội slots separated | VERIFIED | `V10586_LAYER1_UNIT_TEST_REPORT.json` |
 | UI empty tail | Generic/no reason | Render reason | Owner sees reason | VERIFIED | `V10586_LAYER3_UI_SMOKE_REPORT.json` |
 | Official tables | Protected | Hash before/after | Unchanged | VERIFIED | `V10586_OFFICIAL_IMMUTABILITY_VERIFY.json` |
 
