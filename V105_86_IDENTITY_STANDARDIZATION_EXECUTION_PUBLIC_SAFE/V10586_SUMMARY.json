@@ -1,0 +1,154 @@
+{
+  "version": "V105.86",
+  "generated_at": "2026-05-20T11:04:21+07:00",
+  "label": "V10586_IDENTITY_STANDARDIZATION_EXECUTED",
+  "fresh_sync": {
+    "manifest": "artifacts/live_sync/20260520_105403/manifest.json",
+    "db_remote_sha": "1849151cb795a01277a67d93e619ea371050e4243c05127f2e6eba3797d1abdc",
+    "db_local_sha": "1849151cb795a01277a67d93e619ea371050e4243c05127f2e6eba3797d1abdc",
+    "trace_remote_sha": "b8f46614deb6914991853f158ec9f166fbb58f16c204cf4269abf903137c4fe3",
+    "trace_local_sha": "b8f46614deb6914991853f158ec9f166fbb58f16c204cf4269abf903137c4fe3",
+    "pass": true
+  },
+  "files_patched": [
+    "web/backend/station_identity.py",
+    "web/backend/main.py",
+    "web/frontend/app.js"
+  ],
+  "patch_scope": "read_time_identity_only",
+  "official_touched": false,
+  "provider_manual_ai_called": false,
+  "lane_test_promoted": false,
+  "official_tables_unchanged": true,
+  "rule_verify": [
+    {
+      "rule_id": 1339,
+      "target_date": "2026-05-19",
+      "source_date": "2026-05-18",
+      "raw": "TP. TP. HCM",
+      "canonical": "TP. HCM",
+      "station_slot_key": "MN:D-1:T2:TP. HCM",
+      "display_label": "HCM T2",
+      "before": [],
+      "after": [
+        "42",
+        "80"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "rule_id": 1339,
+      "target_date": "2026-05-12",
+      "source_date": "2026-05-11",
+      "raw": "TP. TP. HCM",
+      "canonical": "TP. HCM",
+      "station_slot_key": "MN:D-1:T2:TP. HCM",
+      "display_label": "HCM T2",
+      "before": [],
+      "after": [
+        "27",
+        "80"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "rule_id": 1356,
+      "target_date": "2026-05-16",
+      "source_date": "2026-05-16",
+      "raw": "TP. TP. HCM",
+      "canonical": "TP. HCM",
+      "station_slot_key": "MN:D:T7:TP. HCM",
+      "display_label": "HCM T7",
+      "before": [],
+      "after": [
+        "41",
+        "72"
+      ],
+      "status": "VERIFIED"
+    },
+    {
+      "rule_id": 1356,
+      "target_date": "2026-05-09",
+      "source_date": "2026-05-09",
+      "raw": "TP. TP. HCM",
+      "canonical": "TP. HCM",
+      "station_slot_key": "MN:D:T7:TP. HCM",
+      "display_label": "HCM T7",
+      "before": [],
+      "after": [
+        "59",
+        "74"
+      ],
+      "status": "VERIFIED"
+    }
+  ],
+  "smoke": [
+    {
+      "url": "https://xs.io.vn/api/health",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://xs.io.vn/du-doan",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://xs.io.vn/du-doan-test",
+      "status": 401,
+      "ok": true,
+      "note": "admin protected"
+    },
+    {
+      "url": "https://xs.io.vn/api/final-bundle?region=MN",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://xs.io.vn/api/final-bundle?region=MT",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://xs.io.vn/api/final-bundle?region=MB",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "https://xs.io.vn/pnl-tracker",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "url": "/api/admin/pnl/verify-preview source=official unauth",
+      "status": 401,
+      "ok": true
+    },
+    {
+      "url": "/api/admin/pnl/verify-preview source=lane_test unauth",
+      "status": 401,
+      "ok": true
+    },
+    {
+      "url": "/api/admin/pnl/verify-preview source=both unauth",
+      "status": 401,
+      "ok": true
+    }
+  ],
+  "public_safe_scan_pass": true,
+  "labels": [
+    "V10586_IDENTITY_STANDARDIZATION_EXECUTED",
+    "CANONICAL_HELPER_STANDARDIZED",
+    "STATION_SLOT_KEY_STANDARDIZED",
+    "RULE_TAIL_LOOKUP_STANDARDIZED",
+    "UI_EMPTY_TAIL_REASON_ADDED",
+    "OFFICIAL_LANE_TEST_PATHS_SEPARATED",
+    "PERSISTENT_IDENTITY_CONTROL_REGISTER_CREATED",
+    "DOCS_GOVERNANCE_SYNCED",
+    "OFFICIAL_PROTECTED",
+    "LANE_TEST_NOT_PROMOTED",
+    "NO_PROVIDER_MANUAL_CALL",
+    "ROLLBACK_READY_NOT_EXECUTED"
+  ],
+  "latest_version": "V105.86"
+}

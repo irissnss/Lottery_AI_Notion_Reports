@@ -1,26 +1,30 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.84",
-  "latest_folder": "V105_84_RULE_SOURCE_ALIAS_AUDIT_PUBLIC_SAFE",
-  "latest_report": "V105_84_RULE_SOURCE_ALIAS_AUDIT_PUBLIC_SAFE/evidence/V10584_OWNER_REPORT_VN_PUBLIC.md",
-  "created_at_vn": "2026-05-20T10:10:13+07:00",
-  "status": "V105.84 public-safe report: rule source alias audit found TP. TP. HCM should normalize to TP. HCM for read-time rule tail extraction. Diagnostic/report only. Official prediction logic untouched. No provider/manual AI call. No lane promotion. No accuracy/promotion claim.",
+  "latest_version": "V105.86",
+  "latest_folder": "V105_86_IDENTITY_STANDARDIZATION_EXECUTION_PUBLIC_SAFE",
+  "latest_report": "V105_86_IDENTITY_STANDARDIZATION_EXECUTION_PUBLIC_SAFE/V10586_OWNER_REPORT_VN_PUBLIC.md",
+  "created_at_vn": "2026-05-20T11:04:21+07:00",
+  "status": "V105.86 public-safe report: read-time identity standardization executed. Canonical helper/slot key/rule tail lookup/UI empty-tail reason standardized. Official selector/scoring/prompt/Rule105 weight untouched. No DB historical mutation. No provider/manual AI call. No lane promotion. Prompt/ML/trace/station_set remain owner-gated.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
-  "diagnostic_only": true,
+  "diagnostic_only": false,
+  "patch_scope": "read_time_identity_only",
   "public_safe_scan_pass": true,
   "labels_allowed": [
-    "V10584_TOTAL_FORCE_ANALYSIS_DONE",
-    "RULE_SOURCE_ALIAS_AUDITED",
-    "RULE_SOURCE_ALIAS_MISMATCH_CONFIRMED",
-    "RULE_ALIAS_READTIME_FIX_PROPOSED",
-    "RULE105_TRUST_LIMITS_MAPPED",
+    "V10586_IDENTITY_STANDARDIZATION_EXECUTED",
+    "CANONICAL_HELPER_STANDARDIZED",
+    "STATION_SLOT_KEY_STANDARDIZED",
+    "RULE_TAIL_LOOKUP_STANDARDIZED",
+    "UI_EMPTY_TAIL_REASON_ADDED",
+    "OFFICIAL_LANE_TEST_PATHS_SEPARATED",
+    "PERSISTENT_IDENTITY_CONTROL_REGISTER_CREATED",
+    "DOCS_GOVERNANCE_SYNCED",
     "OFFICIAL_PROTECTED",
     "LANE_TEST_NOT_PROMOTED",
     "NO_PROVIDER_MANUAL_CALL",
-    "PUBLIC_REPORT_PUSHED_AFTER_CLEANROOM"
+    "ROLLBACK_READY_NOT_EXECUTED"
   ],
   "labels_forbidden": [
     "ACCURACY_READY",
@@ -31,6 +35,11 @@
     "SELECTOR_FIXED",
     "PROMPT_FIXED",
     "RULE105_IMPROVED_OFFICIAL",
-    "LANE_TEST_PROMOTED"
+    "MN_FIXED",
+    "MT_FIXED",
+    "MB_FIXED",
+    "LANE_TEST_PROMOTED",
+    "MB_AI_DISABLED",
+    "74_REPLACED_BY_60"
   ]
 }
