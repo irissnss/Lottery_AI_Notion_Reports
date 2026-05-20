@@ -29,8 +29,6 @@
   "provider_manual_ai_called": false,
   "lane_test_promoted": false,
   "public_safe_scan_pass": true,
-  "public_commit": "0c83f54",
   "public_raw_verified": true,
-  "public_commit_initial": "b266097",
-  "public_commit_latest": "0c83f54"
+  "public_commit_note": "Commit hash intentionally omitted from machine summary to avoid self-referential stale metadata; verify with git remote HEAD."
 }
