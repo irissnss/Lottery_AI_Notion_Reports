@@ -15,15 +15,15 @@ V105.95 Verdict:
 - MB board: READY
 - PNL preview join: READY
 - zero official drift: PASS
-- public report: PENDING
+- public report: PUSHED
 - next exact measurement window: 1d/3d/7d/14d/30d
-- exact next action: theo d?i c?c challenger qua 1 ng?y ??ng k?t qu? ??u ti?n, sau ?? c?p nh?t matrix 3d/7d.
+- exact next action: theo dõi các challenger qua 1 ngày đóng kết quả đầu tiên, sau đó cập nhật matrix 3d/7d.
 
-## ?? l?m
-- T?o 5 challenger profiles, t?t c? `output_eligible=false`, `promotion_allowed=false`, `wallet_impact=false`, `provider_call=false`.
-- Sinh comparison matrix official vs lane/challenger t? d? li?u lane-test hi?n c?.
-- T?o MN/MT/MB boards ri?ng. MT board c? regression focus; MB board read-only wallet scope.
-- PNL preview join l? plan/preview only, kh?ng mutate wallet.
+## Đã làm
+- Tạo 5 challenger profiles, tất cả `output_eligible=false`, `promotion_allowed=false`, `wallet_impact=false`, `provider_call=false`.
+- Sinh comparison matrix official vs lane/challenger từ dữ liệu lane-test hiện có.
+- Tạo MN/MT/MB boards riêng. MT board có regression focus; MB board read-only wallet scope.
+- PNL preview join là plan/preview only, không mutate wallet.
 
-## Kh?ng l?m
-Kh?ng ??i official BT/LO2. Kh?ng switch ML/prompt production. Kh?ng g?i provider/manual AI. Kh?ng ghi lane-test v?o official.
+## Không làm
+Không đổi official BT/LO2. Không switch ML/prompt production. Không gọi provider/manual AI. Không ghi lane-test vào official.
