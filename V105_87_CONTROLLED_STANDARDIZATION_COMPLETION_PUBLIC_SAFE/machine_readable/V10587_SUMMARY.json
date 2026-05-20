@@ -11,7 +11,7 @@
   "provider_manual_ai_call": "NO",
   "owner_gated_items": 4,
   "open_items": 1,
-  "public_report": "PENDING",
+  "public_report": "PUSHED",
   "artifact_root": "artifacts/v105_55_safe_quality/v10587_controlled_standardization_completion",
   "labels": [
     "V10587_CONTROLLED_STANDARDIZATION_PASS_DONE",
@@ -26,5 +26,7 @@
   "official_touched": false,
   "provider_manual_ai_called": false,
   "lane_test_promoted": false,
-  "public_safe_scan_pass": true
+  "public_safe_scan_pass": true,
+  "public_commit": "b91e221",
+  "public_raw_verified": true
 }
