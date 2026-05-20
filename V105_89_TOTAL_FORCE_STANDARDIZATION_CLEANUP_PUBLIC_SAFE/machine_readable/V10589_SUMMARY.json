@@ -14,7 +14,7 @@
   "trace_final_bundle_closure": "DRYRUN",
   "prompt_identity_closure": "SHADOW_ONLY",
   "pnl_ux": "OPEN_WITH_PLAN",
-  "public_report": "PENDING",
+  "public_report": "PUSHED",
   "labels": [
     "V10589_ML_ALIAS_COLLISION_ANALYZED",
     "V10589_ML_ALIAS_COLLISION_RESOLVED_DRYRUN",
@@ -28,5 +28,7 @@
   "official_touched": false,
   "provider_manual_ai_called": false,
   "lane_test_promoted": false,
-  "public_safe_scan_pass": true
+  "public_safe_scan_pass": true,
+  "public_commit": "b266097",
+  "public_raw_verified": true
 }
