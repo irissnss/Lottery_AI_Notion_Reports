@@ -1,3 +1,5 @@
 # Lottery AI Notion Reports
 
-Latest public-safe package: `V105_84_RULE_SOURCE_ALIAS_AUDIT_PUBLIC_SAFE`.
+Latest public-safe package: `V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE`.
+
+Latest report: `V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_OWNER_REPORT_VN_PUBLIC.md`.

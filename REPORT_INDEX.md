@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.03** ? `V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_OWNER_REPORT_VN_PUBLIC.md` (public-safe analysis of MB Gi?i nh? both-number D-1/D-2/D-3 recurrence into MN D; D-2 recommended as primary no-token source-pool feature; official unchanged).
+
+## Quick links ? V106.03 (read first)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json) ? machine pointer + latest status.
+2. [V106.03 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_OWNER_REPORT_VN_PUBLIC.md) ? detailed Vietnamese report.
+3. [V106.03 Methodology](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_METHODOLOGY_PUBLIC.md) ? extraction and baseline notes.
+4. [V106.03 Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/machine_readable/V10603_SUMMARY.json) ? machine-readable summary.
+
+
 Latest: **V105.41** — `V105_41_MORNING_COMPREHENSIVE_AUDIT_20260514/evidence/` (comprehensive morning audit at the start of 2026-05-14 live cycle; yesterday MN/MT/MB closed naturally with MT BT=92 WIN; today MN BT=16 ACTIVE strong; closed-file regression scope confirmed wider — 14 events across 7 source paths; V105.40 expansion patch owner-gated; official prediction path unaffected; NATURAL_VERIFY_PARTIAL_PASS_NOT_FULL_PASS preserved).
 
 ## Quick links — V105.41 (read first)

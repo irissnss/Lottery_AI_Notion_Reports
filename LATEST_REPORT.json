@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V106.02",
-  "latest_folder": "V106_02_MT_NO_TOKEN_CAP_CLOSE_SCORE_GUARD_PUBLIC_SAFE",
-  "latest_report": "V106_02_MT_NO_TOKEN_CAP_CLOSE_SCORE_GUARD_PUBLIC_SAFE/V10602_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V106_02_MT_NO_TOKEN_CAP_CLOSE_SCORE_GUARD_PUBLIC_SAFE/machine_readable/V10602_SUMMARY.json",
-  "created_at_vn": "2026-05-21T21:35:11+07:00",
-  "status": "V106.02 public-safe report: MT no-token cap and close-score guard shadow replay ready. Official unchanged, lane-test not promoted, no provider/manual AI call.",
+  "latest_version": "V106.03",
+  "latest_folder": "V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE",
+  "latest_report": "V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/machine_readable/V10603_SUMMARY.json",
+  "created_at_vn": "2026-05-21T22:07:00+07:00",
+  "status": "V106.03 public-safe report: MB Giai nhi both-number lag recurrence analysis. D-2 recommended as primary no-token feature; D-3 recall-only; D-1 gated. Official unchanged, no lane-test promotion, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "artifact_only_mt_shadow_replay",
+  "patch_scope": "artifact_only_public_analysis",
   "public_safe_scan_pass": true
 }

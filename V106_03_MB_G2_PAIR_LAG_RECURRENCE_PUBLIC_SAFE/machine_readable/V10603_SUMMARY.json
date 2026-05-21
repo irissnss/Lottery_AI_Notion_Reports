@@ -1,0 +1,83 @@
+{
+  "version": "V106.03",
+  "generated_at": "2026-05-21T22:07:00+07:00",
+  "live_sync_manifest": "artifacts/live_sync/20260521_220205/manifest.json",
+  "scope": "public_safe_analysis_only",
+  "analysis_subject": "MB Giai nhi both numbers D-1/D-2/D-3 to MN D",
+  "official_output_changed": false,
+  "lane_test_promoted": false,
+  "provider_manual_ai_called": false,
+  "production_ml_switched": false,
+  "production_prompt_switched": false,
+  "public_safe_scan_pass": true,
+  "headline": "D-2 is the best no-token feature candidate; D-3 is recall-only unless DB lift is stable; D-1 must be station-set/weekday gated.",
+  "windows": {
+    "30d": {
+      "D-1": {
+        "any_mn_prize": 0.667,
+        "any_lift_pp": -0.3,
+        "candidate_rate": 0.433,
+        "candidate_lift_pp": 0.8,
+        "any_db_day": 0.1,
+        "db_lift_pp": 3.8
+      },
+      "D-2": {
+        "any_mn_prize": 0.733,
+        "any_lift_pp": 6.3,
+        "candidate_rate": 0.483,
+        "candidate_lift_pp": 5.8,
+        "any_db_day": 0.133,
+        "db_lift_pp": 7.1
+      },
+      "D-3": {
+        "any_mn_prize": 0.8,
+        "any_lift_pp": 13.0,
+        "candidate_rate": 0.5,
+        "candidate_lift_pp": 7.5,
+        "any_db_day": 0.067,
+        "db_lift_pp": 0.5
+      }
+    },
+    "90d": {
+      "D-1": {
+        "any_mn_prize": 0.722,
+        "any_lift_pp": 4.7,
+        "candidate_rate": 0.464,
+        "candidate_lift_pp": 3.1,
+        "any_db_day": 0.056,
+        "db_lift_pp": -0.6
+      },
+      "D-2": {
+        "any_mn_prize": 0.674,
+        "any_lift_pp": 0.0,
+        "candidate_rate": 0.475,
+        "candidate_lift_pp": 4.3,
+        "any_db_day": 0.079,
+        "db_lift_pp": 1.7
+      },
+      "D-3": {
+        "any_mn_prize": 0.739,
+        "any_lift_pp": 6.5,
+        "candidate_rate": 0.446,
+        "candidate_lift_pp": 1.5,
+        "any_db_day": 0.023,
+        "db_lift_pp": -3.9
+      }
+    }
+  },
+  "recommended_no_token_feature": "MB_G2_PAIR_LAG_RECURRENCE_V1",
+  "recommended_policy": {
+    "D-2": "primary boost when station_set/weekday lift gate passes",
+    "D-3": "recall/source-pool only unless DB lift becomes stable",
+    "D-1": "station-set/weekday gated only"
+  },
+  "labels": [
+    "PUBLIC_SAFE_ANALYSIS_ONLY",
+    "MB_G2_PAIR_LAG_RECURRENCE_V1_RECOMMENDED",
+    "D2_PRIMARY_FEATURE",
+    "D3_RECALL_ONLY",
+    "D1_CONDITIONAL_ONLY",
+    "OFFICIAL_UNCHANGED",
+    "NO_PROVIDER_MANUAL_CALL"
+  ]
+}
