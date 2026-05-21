@@ -21,10 +21,10 @@ V105.98 Verdict:
 - Production ML switched: NO
 - Production prompt switched: NO
 - Zero official drift: PASS
-- Public report: PENDING
-- Exact next action: ch?n 1 lane-test-only experiment ho?c ch? 3D closeout t?y anh mu?n ?u ti?n t?c ?? hay th?m b?ng ch?ng.
+- Public report: PUSHED
+- Exact next action: chọn 1 lane-test-only experiment hoặc chờ 3D closeout tùy anh muốn ưu tiên tốc độ hay thêm bằng chứng.
 
-## K?t lu?n nhanh
-21/05 l? ng?y fail c? 3 mi?n theo BT official. MN l? AI/token false consensus candidate; MT t?i di?n LO2_PRESENT_BUT_BT_WRONG v?i 60 hit nh?ng 76 top1 thua; MB no-token-after ch?n 07/51 thua, AI 10 rank3 c?n ??nh gi? nh?ng MB v?n read-only.
+## Kết luận nhanh
+21/05 là ngày fail cả 3 miền theo BT official. MN là AI/token false consensus candidate; MT tái diễn LO2_PRESENT_BUT_BT_WRONG với 60 hit nhưng 76 top1 thua; MB no-token-after chọn 07/51 thua, AI 10 rank3 cần đánh giá nhưng MB vẫn read-only.
 
-Kh?ng c? official mutation trong pass n?y.
+Không có official mutation trong pass này.
