@@ -11,10 +11,10 @@ V106.01 Verdict:
 - Provider/manual AI call: NO
 - Wallet mutated: NO
 - Zero official drift: PASS
-- Public report: PENDING
+- Public report: PUSHED
 
-## K?t qu?
-?? replay rank 1-5 theo MN/MT/MB, t?ch rank-N-as-BT v? top-N capture. ??y l? measurement-only, kh?ng m? r?ng output official.
+## Kết quả
+Đã replay rank 1-5 theo MN/MT/MB, tách rank-N-as-BT và top-N capture. Đây là measurement-only, không mở rộng output official.
 
 ## Stop condition
-Kh?ng ???c promote n?u ch?a c? 7d/14d net_save d??ng, false_promo=0, would_break ???c ki?m so?t v? owner approve.
+Không được promote nếu chưa có 7d/14d net_save dương, false_promo=0, would_break được kiểm soát và owner approve.
