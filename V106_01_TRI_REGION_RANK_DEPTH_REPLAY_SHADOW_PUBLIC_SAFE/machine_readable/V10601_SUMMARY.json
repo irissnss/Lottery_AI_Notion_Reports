@@ -1,0 +1,72 @@
+{
+  "version": "V106.01",
+  "generated_at": "2026-05-21T21:15:35+07:00",
+  "fresh_sync": "PASS",
+  "public_truth": "PASS",
+  "shadow_experiment": "TRI_REGION_RANK_DEPTH_REPLAY_SHADOW",
+  "shadow_status": "EXECUTED_ARTIFACT_ONLY",
+  "latest_closed_date": "2026-05-21",
+  "rank_depth_replay_rows": 450,
+  "windows_ready": "1d/3d/7d/14d/30d",
+  "official_output_changed": "NO",
+  "lane_test_promoted": false,
+  "provider_manual_ai_call": "NO",
+  "wallet_mutated": false,
+  "zero_official_drift": "PASS",
+  "public_report": "PUSHED",
+  "best_shadow_candidates_preview": [
+    {
+      "window": "30d",
+      "region": "MB",
+      "rank": 5,
+      "days": 30,
+      "candidate_bt_win": 10,
+      "would_save": 10,
+      "would_break": 5,
+      "false_promo_risk": 5,
+      "same_as_official": 0,
+      "independent_count": 30,
+      "net_save": 5
+    },
+    {
+      "window": "14d",
+      "region": "MB",
+      "rank": 4,
+      "days": 14,
+      "candidate_bt_win": 5,
+      "would_save": 4,
+      "would_break": 0,
+      "false_promo_risk": 0,
+      "same_as_official": 0,
+      "independent_count": 14,
+      "net_save": 4
+    },
+    {
+      "window": "14d",
+      "region": "MB",
+      "rank": 5,
+      "days": 14,
+      "candidate_bt_win": 5,
+      "would_save": 5,
+      "would_break": 1,
+      "false_promo_risk": 1,
+      "same_as_official": 0,
+      "independent_count": 14,
+      "net_save": 4
+    }
+  ],
+  "labels": [
+    "V10601_TRI_REGION_RANK_DEPTH_REPLAY_SHADOW_DONE",
+    "OFFICIAL_PROTECTED",
+    "LANE_TEST_NOT_PROMOTED",
+    "NO_PROVIDER_MANUAL_CALL",
+    "WALLET_NOT_MUTATED",
+    "ZERO_OFFICIAL_DRIFT_PASS"
+  ],
+  "latest_version": "V106.01",
+  "official_touched": false,
+  "provider_manual_ai_called": false,
+  "public_safe_scan_pass": true,
+  "public_commit_note": "verify by git remote HEAD, commit hash intentionally omitted from summary",
+  "public_raw_verified": true
+}

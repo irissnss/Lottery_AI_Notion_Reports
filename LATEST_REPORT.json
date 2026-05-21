@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V106.00",
-  "latest_folder": "V106_00_TOTAL_OUTPUT_ROOT_FIX_CONTROL_PUBLIC_SAFE",
-  "latest_report": "V106_00_TOTAL_OUTPUT_ROOT_FIX_CONTROL_PUBLIC_SAFE/V10600_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V106_00_TOTAL_OUTPUT_ROOT_FIX_CONTROL_PUBLIC_SAFE/machine_readable/V10600_SUMMARY.json",
-  "created_at_vn": "2026-05-21T21:07:30+07:00",
-  "status": "V106.00 public-safe report: total output root-fix control and safe shadow profiles ready. Official unchanged, lane-test not promoted, no provider/manual AI call.",
+  "latest_version": "V106.01",
+  "latest_folder": "V106_01_TRI_REGION_RANK_DEPTH_REPLAY_SHADOW_PUBLIC_SAFE",
+  "latest_report": "V106_01_TRI_REGION_RANK_DEPTH_REPLAY_SHADOW_PUBLIC_SAFE/V10601_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V106_01_TRI_REGION_RANK_DEPTH_REPLAY_SHADOW_PUBLIC_SAFE/machine_readable/V10601_SUMMARY.json",
+  "created_at_vn": "2026-05-21T21:15:35+07:00",
+  "status": "V106.01 public-safe report: tri-region rank-depth replay shadow executed artifact-only. Official unchanged, lane-test not promoted, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "artifact_shadow_specs_only",
+  "patch_scope": "artifact_only_rank_depth_replay",
   "public_safe_scan_pass": true
 }
