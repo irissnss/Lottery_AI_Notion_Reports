@@ -3,7 +3,7 @@
 ## 1. MN c? t?n hi?u win nh?ng v? sao b?c lose?
 Official b?c 58/71 do total aggregation/vote consensus nh?ng c?c s? n?y kh?ng tr?ng. 58 l? false consensus candidate, c?n dampener shadow; kh?ng ?? c? s? s?a official.
 
-## 2. MN gan ?B 4?5 ng?y c? b?ng ch?ng kh?ng?
+## 2. MN gan ?B 4-5 ng?y c? b?ng ch?ng kh?ng?
 ?? c? audit DB-only cho MN ?B tail. ??y l? t?n hi?u shadow/filter, kh?ng official.
 
 ## 3. MT v? sao 60 nhi?u vote v?n thua BT?
@@ -32,4 +32,4 @@ V106.00 Verdict:
 - Provider/manual AI call: NO
 - Wallet mutated: NO
 - Safe shadow profiles: READY
-- Public report: PENDING
+- Public report: PUSHED
