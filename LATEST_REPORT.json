@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V105.98",
-  "latest_folder": "V105_98_TOTAL_FAILURE_LIVE_CLOSEOUT_20260521_PUBLIC_SAFE",
-  "latest_report": "V105_98_TOTAL_FAILURE_LIVE_CLOSEOUT_20260521_PUBLIC_SAFE/V10598_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V105_98_TOTAL_FAILURE_LIVE_CLOSEOUT_20260521_PUBLIC_SAFE/machine_readable/V10598_SUMMARY.json",
-  "created_at_vn": "2026-05-21T19:00:52+07:00",
-  "status": "V105.98 public-safe report: 2026-05-21 tri-region failure closeout and root-cause controls. Official unchanged, lane-test not promoted, no provider/manual AI call.",
+  "latest_version": "V105.99",
+  "latest_folder": "V105_99_TOTAL_FORCE_SAFE_IMPROVEMENT_PUBLIC_SAFE",
+  "latest_report": "V105_99_TOTAL_FORCE_SAFE_IMPROVEMENT_PUBLIC_SAFE/V10599_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V105_99_TOTAL_FORCE_SAFE_IMPROVEMENT_PUBLIC_SAFE/machine_readable/V10599_SUMMARY.json",
+  "created_at_vn": "2026-05-21T20:26:20+07:00",
+  "status": "V105.99 public-safe report: tri-region failure recovery audit and safe shadow experiments ready. Official unchanged, lane-test not promoted, no provider/manual AI call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "report_artifact_only",
+  "patch_scope": "report_artifact_shadow_specs_only",
   "public_safe_scan_pass": true
 }
