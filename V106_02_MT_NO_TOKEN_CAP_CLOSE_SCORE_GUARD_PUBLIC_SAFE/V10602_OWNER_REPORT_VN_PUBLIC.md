@@ -13,13 +13,13 @@ V106.02 Verdict:
 - Production ML switched: NO
 - Production prompt switched: NO
 - Zero official drift: PASS
-- Public report: PENDING
+- Public report: PUSHED
 
-## V? sao 60 nhi?u vote v?n thua 76?
-76 c? score 0.262 v? 7 voters; 60 c? score 0.2467 v? 5 voters. Gap r?t s?t, nh?ng arbitration v?n ch?n top1 76. 60 ? LO2 v? hit partial.
+## Vì sao 60 nhiều vote vẫn thua 76?
+76 có score 0.262 và 7 voters; 60 có score 0.2467 và 5 voters. Gap rất sát, nhưng arbitration vẫn chọn top1 76. 60 ở LO2 và hit partial.
 
-## No-token-after cap / close-score guard c? c?u ???c kh?ng?
-?? replay artifact-only tr?n 1d/3d/7d/14d/30d. Ch? ???c xem l? shadow; kh?ng ?? ?i?u ki?n official n?u would_break/false_promo ch?a ki?m so?t.
+## No-token-after cap / close-score guard có cứu được không?
+Replay artifact-only cho thấy cap threshold 0.05 có 7d/14d net_save +4, would_break 0, false_promo 0 trong mẫu hiện tại. Đây vẫn chỉ là shadow, không phải official gate.
 
-## C? ?? ?i?u ki?n official kh?ng?
-NO. C?n 7d/14d net_save d??ng, false_promo=0, would_break ki?m so?t v? owner approve.
+## Có đủ điều kiện official không?
+NO. Cần owner approve, tiếp tục theo dõi 7d/14d, và kiểm soát false_promo/would_break trước khi bàn official.
