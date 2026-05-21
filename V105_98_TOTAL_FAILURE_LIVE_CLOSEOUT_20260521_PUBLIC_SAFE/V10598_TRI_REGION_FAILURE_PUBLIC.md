@@ -1,0 +1,3 @@
+# Tri-region Failure Public
+
+MN 58 LOSE / 58,71 LOSE. MT 76 LOSE / 76,60 PARTIAL. MB 07 LOSE / 07,51 LOSE.
