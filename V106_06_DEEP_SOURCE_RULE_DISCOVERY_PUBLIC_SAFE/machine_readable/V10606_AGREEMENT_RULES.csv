@@ -1,0 +1,4 @@
+target_region,opportunities_2plus,hits_2plus,hit_rate_2plus,baseline_any,lift_2plus_pp,db_2plus,db_rate_2plus,baseline_db_unique,opportunities_3plus,hits_3plus,hit_rate_3plus,db_3plus,db_rate_3plus,note
+MN,17193,7641,0.4444,0.4328,1.16,552,0.0321,0.0312,16105,7353,0.4566,533,0.0331,
+MT,17008,6170,0.3628,0.3508,1.19,425,0.025,0.0242,15758,5927,0.3761,406,0.0258,
+MB,16859,4171,0.2474,0.2389,0.85,175,0.0104,0.0099,15765,4100,0.2601,172,0.0109,

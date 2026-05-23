@@ -1,0 +1,307 @@
+[
+  {
+    "target_region": "MN",
+    "opportunities_2plus": 17193,
+    "hits_2plus": 7641,
+    "hit_rate_2plus": 0.4444,
+    "baseline_any": 0.4328,
+    "lift_2plus_pp": 1.16,
+    "db_2plus": 552,
+    "db_rate_2plus": 0.0321,
+    "baseline_db_unique": 0.0312,
+    "opportunities_3plus": 16105,
+    "hits_3plus": 7353,
+    "hit_rate_3plus": 0.4566,
+    "db_3plus": 533,
+    "db_rate_3plus": 0.0331,
+    "examples": [
+      {
+        "date": "2025-11-29",
+        "tail": "34",
+        "n_rules": 8,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G1#1:P2P3",
+          "MB:MB_BOARD:G1#1:P5P3",
+          "MB:MB_BOARD:G2#2:HEAD_TAIL"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-29",
+        "tail": "27",
+        "n_rules": 5,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:P5P3",
+          "MB:MB_BOARD:G2#1:P4P1",
+          "MT:Quảng Ngãi:G2#1:HEAD_TAIL"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-29",
+        "tail": "97",
+        "n_rules": 14,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P2P5",
+          "MB:MB_BOARD:DB#1:P3P2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:P5P2"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-29",
+        "tail": "79",
+        "n_rules": 9,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:TAIL_SUM_UNIT",
+          "MB:MB_BOARD:G2#1:P3P4",
+          "MB:MB_BOARD:G2#2:LAST2_REV"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-29",
+        "tail": "92",
+        "n_rules": 13,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:P5P1",
+          "MB:MB_BOARD:DB#1:TAIL_HEAD",
+          "MB:MB_BOARD:G1#1:HEAD_SECOND_LAST"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-29",
+        "tail": "43",
+        "n_rules": 10,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2_REV",
+          "MB:MB_BOARD:DB#1:P2P4",
+          "MB:MB_BOARD:DB#1:P5P4",
+          "MB:MB_BOARD:DB#1:SUM_UNIT_HEAD",
+          "MB:MB_BOARD:G1#1:LAST2"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      }
+    ]
+  },
+  {
+    "target_region": "MT",
+    "opportunities_2plus": 17008,
+    "hits_2plus": 6170,
+    "hit_rate_2plus": 0.3628,
+    "baseline_any": 0.3508,
+    "lift_2plus_pp": 1.19,
+    "db_2plus": 425,
+    "db_rate_2plus": 0.025,
+    "baseline_db_unique": 0.0242,
+    "opportunities_3plus": 15758,
+    "hits_3plus": 5927,
+    "hit_rate_3plus": 0.3761,
+    "db_3plus": 406,
+    "db_rate_3plus": 0.0258,
+    "examples": [
+      {
+        "date": "2025-11-27",
+        "tail": "38",
+        "n_rules": 6,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G2#2:P4P2",
+          "MB:MB_BOARD:G2#2:P4P3",
+          "MN:An Giang:G2#2:FIRST2_REV"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-27",
+        "tail": "39",
+        "n_rules": 4,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:SUM_LAST2",
+          "MB:MB_BOARD:G2#1:P5P2"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-27",
+        "tail": "02",
+        "n_rules": 13,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:FIRST2",
+          "MB:MB_BOARD:DB#1:HEAD_TAIL",
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P1P2",
+          "MB:MB_BOARD:DB#1:P1P5"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-27",
+        "tail": "88",
+        "n_rules": 12,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G1#1:SUM_UNIT_HEAD",
+          "MB:MB_BOARD:G2#1:P5P1",
+          "MB:MB_BOARD:G2#1:TAIL_HEAD"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-27",
+        "tail": "30",
+        "n_rules": 9,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:HEAD_TAIL",
+          "MB:MB_BOARD:DB#1:LAST2_REV",
+          "MB:MB_BOARD:DB#1:P1P5",
+          "MB:MB_BOARD:DB#1:P4P1",
+          "MB:MB_BOARD:DB#1:P4P2"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-27",
+        "tail": "34",
+        "n_rules": 11,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2_REV",
+          "MB:MB_BOARD:DB#1:P4P3",
+          "MB:MB_BOARD:DB#1:P5P4",
+          "MB:MB_BOARD:DB#1:SUM_LAST2",
+          "MB:MB_BOARD:G2#1:P2P4"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      }
+    ]
+  },
+  {
+    "target_region": "MB",
+    "opportunities_2plus": 16859,
+    "hits_2plus": 4171,
+    "hit_rate_2plus": 0.2474,
+    "baseline_any": 0.2389,
+    "lift_2plus_pp": 0.85,
+    "db_2plus": 175,
+    "db_rate_2plus": 0.0104,
+    "baseline_db_unique": 0.0099,
+    "opportunities_3plus": 15765,
+    "hits_3plus": 4100,
+    "hit_rate_3plus": 0.2601,
+    "db_3plus": 172,
+    "db_rate_3plus": 0.0109,
+    "examples": [
+      {
+        "date": "2025-11-25",
+        "tail": "39",
+        "n_rules": 5,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G1#1:P2P4",
+          "MB:MB_BOARD:G2#2:P5P2",
+          "MB:MB_BOARD:G2#2:SUM_UNIT_TAIL"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-25",
+        "tail": "03",
+        "n_rules": 7,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:HEAD_SECOND_LAST",
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P1P4",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:DB#1:SUM_UNIT_TAIL"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-25",
+        "tail": "86",
+        "n_rules": 11,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P3",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G1#1:HEAD_SECOND_LAST",
+          "MB:MB_BOARD:G1#1:LAST2_REV"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-25",
+        "tail": "08",
+        "n_rules": 9,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2",
+          "MB:MB_BOARD:DB#1:P4P5",
+          "MB:MB_BOARD:G2#1:P2P3",
+          "MB:MB_BOARD:G2#1:SUM_UNIT_TAIL",
+          "MB:MB_BOARD:G2#2:SUM_UNIT_HEAD"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-25",
+        "tail": "93",
+        "n_rules": 7,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2_REV",
+          "MB:MB_BOARD:DB#1:P5P4",
+          "MB:MB_BOARD:G1#1:LAST2",
+          "MB:MB_BOARD:G1#1:P4P5",
+          "MB:MB_BOARD:G2#2:P2P3"
+        ],
+        "any_hit": 0,
+        "db_hit": 0
+      },
+      {
+        "date": "2025-11-25",
+        "tail": "40",
+        "n_rules": 10,
+        "sample_rules": [
+          "MB:MB_BOARD:DB#1:LAST2_REV",
+          "MB:MB_BOARD:DB#1:P5P4",
+          "MN:Bình Dương:G2#1:LAST2_REV",
+          "MN:Bình Dương:G2#2:P4P1",
+          "MN:Bình Dương:G2#2:TAIL_HEAD"
+        ],
+        "any_hit": 1,
+        "db_hit": 0
+      }
+    ]
+  }
+]

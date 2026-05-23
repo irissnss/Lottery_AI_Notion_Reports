@@ -1,5 +1,20 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.06** - `V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_OWNER_REPORT_VN_PUBLIC.md` (deep source-rule discovery for MN/MT/MB; 153,228 rules tested, full Vietnamese owner report; recommends shadow modules; no official change).
+
+## Quick links - V106.06
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V106.06 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_OWNER_REPORT_VN_PUBLIC.md)
+3. [V106.06 Methodology](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_METHODOLOGY_PUBLIC.md)
+4. [V106.06 Manifest](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_MANIFEST.md)
+5. [V106.06 Overfit Warning Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_OVERFIT_WARNING_REPORT.md)
+6. [V106.06 Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/machine_readable/V10606_SUMMARY.json)
+7. [V106.06 Top Rules By Target Region](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/machine_readable/V10606_TOP_RULES_BY_TARGET_REGION.json)
+8. [V106.06 Top 600 Rules CSV](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/machine_readable/V10606_TOP_600_RULES.csv)
+9. [V106.06 Agreement Rules JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/machine_readable/V10606_AGREEMENT_RULES.json)
+
+
 Latest: **V106.05** ? `V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE/V10605_OWNER_REPORT_VN_PUBLIC.md` (MT target from MB D-1/D-2/D-3 low-prize digit-transform analysis; recommends measurement-only shadow module).
 
 ## Quick links ? V106.05
