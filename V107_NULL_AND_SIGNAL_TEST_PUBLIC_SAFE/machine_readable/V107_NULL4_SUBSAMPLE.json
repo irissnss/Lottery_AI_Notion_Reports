@@ -1,0 +1,16 @@
+{
+  "live_sync_manifest": "artifacts/live_sync/20260523_233622/manifest.json",
+  "lift_threshold_pp": 15.0,
+  "window_days": 180,
+  "n_panel_evaluated": 389,
+  "n_pass_odd_only": 331,
+  "n_pass_even_only": 308,
+  "n_pass_both_halves": 254,
+  "rate_odd_pass15": 0.8509,
+  "rate_even_pass15": 0.7918,
+  "rate_both_observed": 0.653,
+  "rate_both_expected_under_independence": 0.6737,
+  "replication_excess": -0.0208,
+  "verdict": "FAIL_REPLICATION_BELOW_INDEPENDENCE",
+  "note": "Rule replicates if lift_pp >= +15 in BOTH odd-DOY and even-DOY halves of last 180d. Under no signal, replication rate ≈ rate_odd × rate_even (independence). PASS if observed > 1.5× expected."
+}

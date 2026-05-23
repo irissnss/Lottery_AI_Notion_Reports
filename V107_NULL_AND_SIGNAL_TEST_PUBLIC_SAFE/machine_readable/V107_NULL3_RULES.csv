@@ -1,0 +1,543 @@
+rule_key,target,axis,window,weekday,station_set,tier_v106,days,hits,hit_lift_pp,baseline,raw_p,family,family_n,bonferroni_p,bonferroni_p_full,bh_q,survives_q05,survives_q01,survives_bonferroni,survives_bonferroni_full,status
+MN:Bến Tre:DB#1:LAST2,MT,D-6,180,,Phú Yên|Thừa Thiên Huế,C,12,11,61.42,0.3025,1.6831525422510312e-05,tail,23770,0.4000853592930701,1.0,0.4000853592930701,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MT,D-3,180,1,ALL,B,26,17,34.96,0.3042,0.00024730609391744097,head_secondlast_cross,4688,1.0,1.0,0.5796854841424817,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MT,D-3,180,,Quảng Nam|Đắk Lắk,B,26,17,34.96,0.3042,0.00024730609391744097,head_secondlast_cross,4688,1.0,1.0,0.5796854841424817,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_LAST2,MN,D-2,180,4,ALL,B,25,20,37.52,0.4248,0.00016352910779361237,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_LAST2,MN,D-2,180,,Bình Dương|Trà Vinh|Vĩnh Long,B,25,20,37.52,0.4248,0.00016352910779361237,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MB,D-7,180,2,ALL,B,24,14,34.5,0.2383,0.00030726135176987915,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MB,D-7,180,,Bắc Ninh,B,24,14,34.5,0.2383,0.00030726135176987915,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MB,D-7,180,2,ALL,B,24,14,34.5,0.2383,0.00030726135176987915,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MB,D-7,180,,Bắc Ninh,B,24,14,34.5,0.2383,0.00030726135176987915,digit_sum,11720,1.0,1.0,0.6001838404571639,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_HEAD,MB,D-2,180,4,ALL,B,25,14,31.72,0.2428,0.0006683360835728897,digit_sum,11720,1.0,1.0,0.6584254025854414,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_HEAD,MB,D-2,180,,Hải Phòng,B,25,14,31.72,0.2428,0.0006683360835728897,digit_sum,11720,1.0,1.0,0.6584254025854414,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MN,W-3,180,5,ALL,B,26,22,33.35,0.5127,0.0006741557023059127,digit_sum,11720,1.0,1.0,0.6584254025854414,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MN,W-3,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,22,33.35,0.5127,0.0006741557023059127,digit_sum,11720,1.0,1.0,0.6584254025854414,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MT,W-3,180,4,ALL,B,26,16,31.04,0.305,0.0010393969544834345,head_secondlast_cross,4688,1.0,1.0,0.6649333600001942,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MT,W-3,180,,Gia Lai|Ninh Thuận,B,26,16,31.04,0.305,0.0010393969544834345,head_secondlast_cross,4688,1.0,1.0,0.6649333600001942,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MN,D-4,180,1,ALL,B,26,19,31.92,0.4115,0.0009389559475320596,head_secondlast_cross,4688,1.0,1.0,0.6649333600001942,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MN,D-4,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,19,31.92,0.4115,0.0009389559475320596,head_secondlast_cross,4688,1.0,1.0,0.6649333600001942,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:HEAD_SUM_UNIT,MB,D-7,180,3,ALL,B,24,13,30.67,0.235,0.0011366200084457544,digit_sum,11720,1.0,1.0,0.778676726336767,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:HEAD_SUM_UNIT,MB,D-7,180,3,ALL,B,24,13,30.67,0.235,0.0011366200084457544,digit_sum,11720,1.0,1.0,0.778676726336767,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_LAST2,MB,D-5,180,1,ALL,B,24,13,30.54,0.2362,0.0011959198868653417,digit_sum,11720,1.0,1.0,0.778676726336767,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_LAST2,MB,D-5,180,,Quảng Ninh,B,24,13,30.54,0.2362,0.0011959198868653417,digit_sum,11720,1.0,1.0,0.778676726336767,False,False,False,False,accepted
+MN:Cà Mau:DB#1:FIRST2,MT,D-7,180,,Phú Yên|Thừa Thiên Huế,C,12,10,53.08,0.3025,0.00022284050423436967,head,23770,1.0,1.0,0.9759044572714357,False,False,False,False,accepted
+MN:Cà Mau:DB#1:FIRST2,MT,D-7,180,,Phú Yên|Thừa Thiên Huế,C,12,10,53.08,0.3025,0.00022284050423436967,head,23770,1.0,1.0,0.9759044572714357,False,False,False,False,accepted
+MN:Vĩnh Long:G2#2:FIRST2_REV,MT,D-3,180,,Huế|Phú Yên,C,12,10,52.75,0.3058,0.00024633684239077047,head,23770,1.0,1.0,0.9759044572714357,False,False,False,False,accepted
+MN:Sóc Trăng:G2#1:FIRST2_REV,MT,W-2,180,2,ALL,A,26,17,35.38,0.3,0.0002050891790635999,head,23770,1.0,1.0,0.9759044572714357,False,False,False,False,accepted
+MN:Sóc Trăng:G2#1:FIRST2_REV,MT,W-2,180,,Khánh Hòa|Đà Nẵng,A,26,17,35.38,0.3,0.0002050891790635999,head,23770,1.0,1.0,0.9759044572714357,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MB,D-4,180,2,ALL,B,25,15,36.12,0.2388,0.00012334302733455879,head_tail_cross,23770,1.0,1.0,0.9772879199141541,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MB,D-4,180,,Bắc Ninh,B,25,15,36.12,0.2388,0.00012334302733455879,head_tail_cross,23770,1.0,1.0,0.9772879199141541,False,False,False,False,accepted
+MN:TP. HCM:G1#1:P4P1,MB,D-5,180,3,ALL,C,12,9,51.58,0.2342,0.00022974655004565737,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G1#1:P4P1,MB,D-5,180,,Hà Nội,C,12,9,51.58,0.2342,0.00022974655004565737,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vĩnh Long:G2#2:FIRST2_REV,MT,D-3,180,0,ALL,C,13,10,46.38,0.3054,0.000763753535215225,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:G1#1:FIRST2,MT,D-1,180,,Phú Yên|Thừa Thiên Huế,C,12,9,44.75,0.3025,0.0018062153000610605,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#2:LAST2_REV,MT,D-6,180,6,ALL,C,12,9,33.75,0.4125,0.01911475794739692,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#2:P4P3,MT,D-6,180,6,ALL,C,12,9,33.75,0.4125,0.01911475794739692,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G1#1:TAIL_HEAD,MT,D-5,180,,Huế|Phú Yên,C,13,10,46.54,0.3038,0.0007290172094404929,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:LAST2_REV,MT,D-1,180,1,ALL,C,12,8,36.08,0.3058,0.010758572848956174,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:LAST2_REV,MT,D-1,180,,Quảng Nam|Đắk Lắk,C,12,8,36.08,0.3058,0.010758572848956174,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P3,MT,D-1,180,1,ALL,C,12,8,36.08,0.3058,0.010758572848956174,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P3,MT,D-1,180,,Quảng Nam|Đắk Lắk,C,12,8,36.08,0.3058,0.010758572848956174,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P4,MT,D-1,180,,Huế|Khánh Hòa|Kon Tum,C,16,12,34.19,0.4081,0.005942298007947275,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đà Lạt:G2#2:P3P2,MT,W-2,180,6,ALL,C,14,11,37.71,0.4086,0.004756641342697854,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P4,MT,D-1,180,6,ALL,A,25,19,35.16,0.4084,0.0003716519564693797,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P3,MT,D-6,180,2,ALL,B,24,15,32.58,0.2992,0.0009535894761926709,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P3,MT,D-6,180,,Khánh Hòa|Đà Nẵng,B,24,15,32.58,0.2992,0.0009535894761926709,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:TAIL_HEAD,MB,W-4,180,5,ALL,C,17,10,34.82,0.24,0.002233680733696228,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:TAIL_HEAD,MB,W-4,180,,Nam Định,C,17,10,34.82,0.24,0.002233680733696228,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P1,MB,W-4,180,5,ALL,C,17,10,34.82,0.24,0.002233680733696228,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P1,MB,W-4,180,,Nam Định,C,17,10,34.82,0.24,0.002233680733696228,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đà Lạt:G2#2:P3P2,MT,W-2,180,,Huế|Khánh Hòa|Kon Tum,C,12,9,34.0,0.41,0.01828822107748318,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#2:FIRST2_REV,MT,D-5,180,5,ALL,C,12,10,41.58,0.4175,0.004100915820922176,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#2:FIRST2_REV,MT,D-5,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,C,12,10,41.58,0.4175,0.004100915820922176,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:TAIL_HEAD,MT,D-3,180,1,ALL,C,14,9,33.71,0.3057,0.009485796986117885,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:TAIL_HEAD,MT,D-3,180,,Quảng Nam|Đắk Lắk,C,14,9,33.71,0.3057,0.009485796986117885,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P1,MT,D-3,180,1,ALL,C,14,9,33.71,0.3057,0.009485796986117885,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:P4P1,MT,D-3,180,,Quảng Nam|Đắk Lắk,C,14,9,33.71,0.3057,0.009485796986117885,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Dương:G2#2:LAST2_REV,MB,D-5,180,2,ALL,C,13,8,37.92,0.2362,0.0038731303174926765,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Dương:G2#2:LAST2_REV,MB,D-5,180,,Bắc Ninh,C,13,8,37.92,0.2362,0.0038731303174926765,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Dương:G2#2:P4P3,MB,D-5,180,2,ALL,C,13,8,37.92,0.2362,0.0038731303174926765,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Dương:G2#2:P4P3,MB,D-5,180,,Bắc Ninh,C,13,8,37.92,0.2362,0.0038731303174926765,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:P5P4,MB,D-3,180,5,ALL,C,13,8,37.0,0.2454,0.004996204438704952,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:P5P4,MB,D-3,180,,Nam Định,C,13,8,37.0,0.2454,0.004996204438704952,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MT,D-6,180,,Huế|Phú Yên,C,13,7,23.46,0.3038,0.06637554577572198,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P3P4,MT,D-5,180,,Huế|Phú Yên,C,13,9,38.85,0.3038,0.004431832456350186,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:DB#1:FIRST2_REV,MT,D-6,180,,Huế|Phú Yên,C,13,9,38.85,0.3038,0.004431832456350186,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#2:FIRST2_REV,MT,D-3,180,1,ALL,C,13,9,38.62,0.3062,0.0047016881529440505,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#2:FIRST2_REV,MT,D-3,180,,Quảng Nam|Đắk Lắk,C,13,9,38.62,0.3062,0.0047016881529440505,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#2:FIRST2,MT,D-6,180,4,ALL,C,13,9,38.31,0.3092,0.005058072461759018,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#2:FIRST2,MT,D-6,180,,Gia Lai|Ninh Thuận,C,13,9,38.31,0.3092,0.005058072461759018,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:P3P2,MB,W-3,180,2,ALL,C,15,8,29.4,0.2393,0.013241168926835464,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:P3P2,MB,W-3,180,,Bắc Ninh,C,15,8,29.4,0.2393,0.013241168926835464,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Tháp:G2#2:FIRST2,MB,D-3,180,3,ALL,C,12,6,26.75,0.2325,0.039260823770045465,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Tháp:G2#2:FIRST2,MB,D-3,180,,Hà Nội,C,12,6,26.75,0.2325,0.039260823770045465,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#2:FIRST2,MN,W-4,180,4,ALL,C,19,14,31.26,0.4242,0.005832476997632972,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#2:FIRST2,MN,W-4,180,,Bình Dương|Trà Vinh|Vĩnh Long,C,19,14,31.26,0.4242,0.005832476997632972,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G2#1:FIRST2_REV,MT,D-5,180,,Huế|Khánh Hòa|Kon Tum,C,16,13,40.44,0.4081,0.0011750923797113938,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:LAST2,MT,D-4,180,,Huế|Khánh Hòa|Kon Tum,C,16,11,27.94,0.4081,0.022536519098971003,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:FIRST2,MT,D-2,180,2,ALL,C,12,8,36.75,0.2992,0.00932418826388231,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#2:FIRST2,MT,D-2,180,,Khánh Hòa|Đà Nẵng,C,12,8,36.75,0.2992,0.00932418826388231,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MB,W-3,180,2,ALL,C,15,9,36.07,0.2393,0.0030415474690706425,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MB,W-3,180,,Bắc Ninh,C,15,9,36.07,0.2393,0.0030415474690706425,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G2#2:FIRST2,MT,W-4,180,5,ALL,C,17,11,23.12,0.4159,0.04673013214919801,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G2#2:FIRST2,MT,W-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,C,17,11,23.12,0.4159,0.04673013214919801,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P3,MT,D-3,180,,Phú Yên|Thừa Thiên Huế,C,12,8,36.42,0.3025,0.010020789912294178,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P3,MT,D-2,180,,Phú Yên|Thừa Thiên Huế,C,12,8,36.42,0.3025,0.010020789912294178,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MT,D-1,180,,Phú Yên|Thừa Thiên Huế,C,12,8,36.42,0.3025,0.010020789912294178,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:LAST2_REV,MT,D-2,180,,Phú Yên|Thừa Thiên Huế,C,12,9,44.75,0.3025,0.0018062153000610605,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:DB#1:FIRST2,MT,D-2,180,,Phú Yên|Thừa Thiên Huế,C,12,8,36.42,0.3025,0.010020789912294178,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G1#1:HEAD_TAIL,MB,W-3,180,3,ALL,A,25,13,28.6,0.234,0.0017851163224032569,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G1#1:HEAD_TAIL,MB,W-3,180,,Hà Nội,A,25,13,28.6,0.234,0.0017851163224032569,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:An Giang:G2#2:P3P2,MB,W-4,180,3,ALL,C,15,10,43.4,0.2327,0.0004286479434581788,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:An Giang:G2#2:P3P2,MB,W-4,180,,Hà Nội,C,15,10,43.4,0.2327,0.0004286479434581788,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G2#2:LAST2,MN,W-2,180,3,ALL,C,16,12,32.94,0.4206,0.007931323276114257,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G2#2:LAST2,MN,W-2,180,,An Giang|Bình Thuận|Tây Ninh,C,16,12,32.94,0.4206,0.007931323276114257,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:P6P5,MB,D-5,180,3,ALL,C,12,8,43.25,0.2342,0.0017706015532502957,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:P6P5,MB,D-5,180,,Hà Nội,C,12,8,43.25,0.2342,0.0017706015532502957,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:LAST2_REV,MB,D-7,180,1,ALL,C,14,7,26.29,0.2371,0.029095966636017708,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:LAST2_REV,MB,D-7,180,,Quảng Ninh,C,14,7,26.29,0.2371,0.029095966636017708,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:LAST2_REV,MB,D-7,180,1,ALL,C,14,7,26.29,0.2371,0.029095966636017708,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:LAST2_REV,MB,D-7,180,,Quảng Ninh,C,14,7,26.29,0.2371,0.029095966636017708,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:P4P3,MB,D-7,180,1,ALL,C,14,7,26.29,0.2371,0.029095966636017708,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:P4P3,MB,D-7,180,,Quảng Ninh,C,14,7,26.29,0.2371,0.029095966636017708,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:P4P3,MB,D-7,180,1,ALL,C,14,7,26.29,0.2371,0.029095966636017708,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G2#2:P4P3,MB,D-7,180,,Quảng Ninh,C,14,7,26.29,0.2371,0.029095966636017708,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:P5P2,MB,D-4,180,6,ALL,C,12,8,42.58,0.2408,0.0021474815744833985,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:P5P2,MB,D-4,180,,Thái Bình,C,12,8,42.58,0.2408,0.0021474815744833985,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:DB#1:FIRST2_REV,MN,D-3,180,1,ALL,A,26,19,31.92,0.4115,0.0009389559475320596,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:DB#1:FIRST2_REV,MN,D-3,180,,Bạc Liêu|Bến Tre|Vũng Tàu,A,26,19,31.92,0.4115,0.0009389559475320596,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Kon Tum:G2#2:FIRST2,MN,D-1,180,0,ALL,C,15,11,30.93,0.424,0.015452256417770236,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Kon Tum:G2#2:FIRST2,MN,D-1,180,,Cà Mau|TP. HCM|Đồng Tháp,C,15,11,30.93,0.424,0.015452256417770236,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P1,MT,D-3,180,4,ALL,A,25,15,29.52,0.3048,0.002122183319376564,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P1,MT,D-3,180,,Gia Lai|Ninh Thuận,A,25,15,29.52,0.3048,0.002122183319376564,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P5P3,MT,D-6,180,1,ALL,A,25,13,21.56,0.3044,0.019770400198775757,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P5P3,MT,D-6,180,,Quảng Nam|Đắk Lắk,A,25,13,21.56,0.3044,0.019770400198775757,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:FIRST2,MN,D-1,180,0,ALL,C,15,10,24.27,0.424,0.05120639468016965,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:FIRST2,MN,D-1,180,,Cà Mau|TP. HCM|Đồng Tháp,C,15,10,24.27,0.424,0.05120639468016965,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:LAST2_REV,MB,D-1,180,1,ALL,C,14,8,33.07,0.2407,0.008098636632006972,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:LAST2_REV,MB,D-1,180,,Quảng Ninh,C,14,8,33.07,0.2407,0.008098636632006972,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:P4P3,MB,D-1,180,1,ALL,C,14,8,33.07,0.2407,0.008098636632006972,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:P4P3,MB,D-1,180,,Quảng Ninh,C,14,8,33.07,0.2407,0.008098636632006972,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:TAIL_HEAD,MN,D-6,180,2,ALL,A,26,19,31.04,0.4204,0.001317478430571993,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:TAIL_HEAD,MN,D-6,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,26,19,31.04,0.4204,0.001317478430571993,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P1P3,MT,D-1,180,6,ALL,A,25,16,23.16,0.4084,0.015681813543212193,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#2:FIRST2_REV,MB,D-3,180,0,ALL,C,14,8,32.79,0.2436,0.008743075094455825,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#2:FIRST2_REV,MB,D-3,180,,Hà Nội,C,14,8,32.79,0.2436,0.008743075094455825,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:DB#1:P6P3,MN,D-1,180,3,ALL,C,13,10,35.54,0.4138,0.010315357184562156,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:DB#1:P6P3,MN,D-1,180,,An Giang|Bình Thuận|Tây Ninh,C,13,10,35.54,0.4138,0.010315357184562156,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,D-7,180,3,ALL,A,25,19,34.24,0.4176,0.0005402276519693937,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,A,25,19,34.24,0.4176,0.0005402276519693937,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,D-7,180,3,ALL,A,25,19,34.24,0.4176,0.0005402276519693937,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,A,25,19,34.24,0.4176,0.0005402276519693937,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P1,MN,D-7,180,4,ALL,A,26,19,30.62,0.4246,0.0015378956132816978,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P1,MN,D-7,180,,Bình Dương|Trà Vinh|Vĩnh Long,A,26,19,30.62,0.4246,0.0015378956132816978,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P1,MN,D-7,180,4,ALL,A,26,19,30.62,0.4246,0.0015378956132816978,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P1,MN,D-7,180,,Bình Dương|Trà Vinh|Vĩnh Long,A,26,19,30.62,0.4246,0.0015378956132816978,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#2:LAST2_REV,MN,D-4,180,0,ALL,C,14,9,22.21,0.4207,0.07971551789753108,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#2:LAST2_REV,MN,D-4,180,,Cà Mau|TP. HCM|Đồng Tháp,C,14,9,22.21,0.4207,0.07971551789753108,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#2:P4P3,MN,D-4,180,0,ALL,C,14,9,22.21,0.4207,0.07971551789753108,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#2:P4P3,MN,D-4,180,,Cà Mau|TP. HCM|Đồng Tháp,C,14,9,22.21,0.4207,0.07971551789753108,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-7,180,6,ALL,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-7,180,,Kiên Giang|Tiền Giang|Đà Lạt,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-7,180,6,ALL,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-7,180,,Kiên Giang|Tiền Giang|Đà Lạt,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:P5P4,MN,D-6,180,1,ALL,C,12,9,34.5,0.405,0.016722221958904295,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:P5P4,MN,D-6,180,,Bạc Liêu|Bến Tre|Vũng Tàu,C,12,9,34.5,0.405,0.016722221958904295,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:FIRST2_REV,MB,D-5,180,5,ALL,C,14,9,40.5,0.2379,0.0014764002147334588,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:G2#1:FIRST2_REV,MB,D-5,180,,Nam Định,C,14,9,40.5,0.2379,0.0014764002147334588,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P2,MN,W-4,180,2,ALL,A,25,17,26.0,0.42,0.007521904665765749,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P2,MN,W-4,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,17,26.0,0.42,0.007521904665765749,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:TAIL_SUM_UNIT,MT,D-2,180,3,ALL,A,25,15,18.32,0.4168,0.048954693964799754,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:TAIL_SUM_UNIT,MT,D-2,180,,Bình Định|Quảng Bình|Quảng Trị,A,25,15,18.32,0.4168,0.048954693964799754,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:DB#1:P4P1,MN,D-6,180,1,ALL,C,12,8,26.17,0.405,0.061629139698283555,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:DB#1:P4P1,MN,D-6,180,,Bạc Liêu|Bến Tre|Vũng Tàu,C,12,8,26.17,0.405,0.061629139698283555,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-7,180,2,ALL,A,25,15,18.0,0.42,0.05252149573266283,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,15,18.0,0.42,0.05252149573266283,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-7,180,2,ALL,A,25,15,18.0,0.42,0.05252149573266283,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,15,18.0,0.42,0.05252149573266283,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P1,MN,W-2,180,0,ALL,B,24,16,24.58,0.4208,0.012772504194265538,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P1,MN,W-2,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.58,0.4208,0.012772504194265538,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MN,D-7,180,5,ALL,C,15,12,29.33,0.5067,0.019933974328438745,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MN,D-7,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,C,15,12,29.33,0.5067,0.019933974328438745,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MN,D-7,180,5,ALL,C,15,12,29.33,0.5067,0.019933974328438745,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#2:P3P2,MN,D-7,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,C,15,12,29.33,0.5067,0.019933974328438745,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Thừa Thiên Huế:DB#1:HEAD_TAIL,MN,D-4,180,4,ALL,C,12,8,25.25,0.4142,0.07019299848874373,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Thừa Thiên Huế:DB#1:HEAD_TAIL,MN,D-4,180,,Bình Dương|Trà Vinh|Vĩnh Long,C,12,8,25.25,0.4142,0.07019299848874373,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:HEAD_TAIL,MB,W-2,180,2,ALL,A,25,13,28.12,0.2388,0.0021739711489893363,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:HEAD_TAIL,MB,W-2,180,,Bắc Ninh,A,25,13,28.12,0.2388,0.0021739711489893363,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G1#1:HEAD_TAIL,MN,W-3,180,5,ALL,A,26,19,21.81,0.5127,0.021258862270509493,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G1#1:HEAD_TAIL,MN,W-3,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,A,26,19,21.81,0.5127,0.021258862270509493,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:HEAD_SECOND_LAST,MB,D-1,180,4,ALL,A,25,13,27.72,0.2428,0.0025510682089348053,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:HEAD_SECOND_LAST,MB,D-1,180,,Hải Phòng,A,25,13,27.72,0.2428,0.0025510682089348053,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P1P4,MB,D-1,180,4,ALL,A,25,13,27.72,0.2428,0.0025510682089348053,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P1P4,MB,D-1,180,,Hải Phòng,A,25,13,27.72,0.2428,0.0025510682089348053,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:LAST2_REV,MN,W-2,180,6,ALL,C,17,12,28.18,0.4241,0.017948411294010768,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:LAST2_REV,MN,W-2,180,,Kiên Giang|Tiền Giang|Đà Lạt,C,17,12,28.18,0.4241,0.017948411294010768,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:FIRST2_REV,MN,W-2,180,6,ALL,C,17,12,28.18,0.4241,0.017948411294010768,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:FIRST2_REV,MN,W-2,180,,Kiên Giang|Tiền Giang|Đà Lạt,C,17,12,28.18,0.4241,0.017948411294010768,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:TAIL_HEAD,MN,W-2,180,6,ALL,C,17,12,28.18,0.4241,0.017948411294010768,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Huế:DB#1:TAIL_HEAD,MN,W-2,180,,Kiên Giang|Tiền Giang|Đà Lạt,C,17,12,28.18,0.4241,0.017948411294010768,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đà Lạt:DB#1:TAIL_HEAD,MT,W-2,180,6,ALL,A,25,17,27.16,0.4084,0.005243937523660801,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:TAIL_HEAD,MB,D-7,180,2,ALL,B,25,14,32.12,0.2388,0.0005579019773296717,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:TAIL_HEAD,MB,D-7,180,,Bắc Ninh,B,25,14,32.12,0.2388,0.0005579019773296717,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:TAIL_HEAD,MB,D-7,180,2,ALL,B,25,14,32.12,0.2388,0.0005579019773296717,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:TAIL_HEAD,MB,D-7,180,,Bắc Ninh,B,25,14,32.12,0.2388,0.0005579019773296717,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P2P4,MN,W-3,180,1,ALL,A,25,18,30.88,0.4112,0.0016696050345604463,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P2P4,MN,W-3,180,,Bạc Liêu|Bến Tre|Vũng Tàu,A,25,18,30.88,0.4112,0.0016696050345604463,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G1#1:LAST2,MT,W-2,180,5,ALL,B,26,19,31.08,0.42,0.0012979914535684392,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G1#1:LAST2,MT,W-2,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,19,31.08,0.42,0.0012979914535684392,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:FIRST2,MT,W-2,180,5,ALL,B,26,19,31.08,0.42,0.0012979914535684392,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:FIRST2,MT,W-2,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,19,31.08,0.42,0.0012979914535684392,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P2,MB,W-2,180,1,ALL,B,24,11,22.12,0.2371,0.014413327970247018,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P2,MB,W-2,180,,Quảng Ninh,B,24,11,22.12,0.2371,0.014413327970247018,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:G2#1:LAST2,MT,W-4,180,6,ALL,A,25,16,23.16,0.4084,0.015681813543212193,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:G2#1:HEAD_TAIL,MT,D-2,180,3,ALL,A,26,16,20.0,0.4154,0.03072099641613353,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:G2#1:HEAD_TAIL,MT,D-2,180,,Bình Định|Quảng Bình|Quảng Trị,A,26,16,20.0,0.4154,0.03072099641613353,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:LAST2_REV,MN,D-6,180,2,ALL,A,26,18,27.19,0.4204,0.0045258225261204914,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:LAST2_REV,MN,D-6,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,26,18,27.19,0.4204,0.0045258225261204914,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P3,MN,D-1,180,1,ALL,A,25,17,26.84,0.4116,0.005805403591546138,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P3,MN,D-1,180,,Bạc Liêu|Bến Tre|Vũng Tàu,A,25,17,26.84,0.4116,0.005805403591546138,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Bình:G2#1:HEAD_TAIL,MN,D-7,180,3,ALL,A,26,17,23.5,0.4188,0.012857013220813234,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Bình:G2#1:HEAD_TAIL,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,A,26,17,23.5,0.4188,0.012857013220813234,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Bình:G2#1:HEAD_TAIL,MN,D-7,180,3,ALL,A,26,17,23.5,0.4188,0.012857013220813234,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Bình:G2#1:HEAD_TAIL,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,A,26,17,23.5,0.4188,0.012857013220813234,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P1P3,MN,D-6,180,1,ALL,A,25,17,26.76,0.4124,0.005953336672323632,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P1P3,MN,D-6,180,,Bạc Liêu|Bến Tre|Vũng Tàu,A,25,17,26.76,0.4124,0.005953336672323632,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P3,MN,D-5,180,1,ALL,A,25,17,26.76,0.4124,0.005953336672323632,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P3,MN,D-5,180,,Bạc Liêu|Bến Tre|Vũng Tàu,A,25,17,26.76,0.4124,0.005953336672323632,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2_REV,MT,D-5,180,3,ALL,A,26,15,16.15,0.4154,0.07046576304934948,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2_REV,MT,D-5,180,,Bình Định|Quảng Bình|Quảng Trị,A,26,15,16.15,0.4154,0.07046576304934948,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:FIRST2_REV,MN,D-4,180,3,ALL,C,16,12,32.75,0.4225,0.008278402622410532,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#2:FIRST2_REV,MN,D-4,180,,An Giang|Bình Thuận|Tây Ninh,C,16,12,32.75,0.4225,0.008278402622410532,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:P4P3,MN,D-3,180,5,ALL,C,13,11,32.54,0.5208,0.0163810287779551,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G1#1:P4P3,MN,D-3,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,C,13,11,32.54,0.5208,0.0163810287779551,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,W-2,180,2,ALL,B,25,19,33.92,0.4208,0.0006128862913276073,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MN,W-2,180,,Cần Thơ|Sóc Trăng|Đồng Nai,B,25,19,33.92,0.4208,0.0006128862913276073,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#2:HEAD_TAIL,MN,D-5,180,2,ALL,C,16,11,26.62,0.4213,0.02909822679975338,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#2:HEAD_TAIL,MN,D-5,180,,Cần Thơ|Sóc Trăng|Đồng Nai,C,16,11,26.62,0.4213,0.02909822679975338,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:G2#2:P3P2,MN,W-3,180,0,ALL,C,16,11,26.56,0.4219,0.029429338879570662,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:G2#2:P3P2,MN,W-3,180,,Cà Mau|TP. HCM|Đồng Tháp,C,16,11,26.56,0.4219,0.029429338879570662,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:TAIL_HEAD,MT,W-4,180,5,ALL,A,26,15,15.69,0.42,0.07743799334893292,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:TAIL_HEAD,MT,W-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,A,26,15,15.69,0.42,0.07743799334893292,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MN,W-2,180,3,ALL,A,25,17,26.16,0.4184,0.007166024523669468,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MN,W-2,180,,An Giang|Bình Thuận|Tây Ninh,A,25,17,26.16,0.4184,0.007166024523669468,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:FIRST2_REV,MT,D-3,180,6,ALL,B,24,16,25.67,0.41,0.009905533286470139,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P2P1,MT,D-3,180,6,ALL,B,24,16,25.67,0.41,0.009905533286470139,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P2,MN,D-3,180,3,ALL,A,25,17,26.0,0.42,0.007521904665765749,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P2,MN,D-3,180,,An Giang|Bình Thuận|Tây Ninh,A,25,17,26.0,0.42,0.007521904665765749,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_HEAD,MN,D-3,180,0,ALL,A,25,17,25.92,0.4208,0.007705258442591051,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_HEAD,MN,D-3,180,,Cà Mau|TP. HCM|Đồng Tháp,A,25,17,25.92,0.4208,0.007705258442591051,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_TAIL,MN,D-2,180,0,ALL,A,25,17,25.92,0.4208,0.007705258442591051,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_TAIL,MN,D-2,180,,Cà Mau|TP. HCM|Đồng Tháp,A,25,17,25.92,0.4208,0.007705258442591051,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P1,MN,D-3,180,0,ALL,A,25,17,25.92,0.4208,0.007705258442591051,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P1,MN,D-3,180,,Cà Mau|TP. HCM|Đồng Tháp,A,25,17,25.92,0.4208,0.007705258442591051,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#1:P4P1,MN,D-3,180,0,ALL,A,25,17,25.92,0.4208,0.007705258442591051,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#1:P4P1,MN,D-3,180,,Cà Mau|TP. HCM|Đồng Tháp,A,25,17,25.92,0.4208,0.007705258442591051,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MT,D-6,180,0,ALL,B,24,12,19.79,0.3021,0.03309906421573342,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MN,D-7,180,2,ALL,A,25,16,22.0,0.42,0.021377153988760677,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,16,22.0,0.42,0.021377153988760677,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MN,D-7,180,2,ALL,A,25,16,22.0,0.42,0.021377153988760677,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,16,22.0,0.42,0.021377153988760677,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MN,D-7,180,2,ALL,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MN,D-7,180,2,ALL,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MN,D-7,180,,Cần Thơ|Sóc Trăng|Đồng Nai,A,25,16,22.0,0.42,0.021377153988760677,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#2:TAIL_HEAD,MN,D-2,180,6,ALL,C,15,10,24.53,0.4213,0.04896790427284924,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Gia Lai:G2#2:TAIL_HEAD,MN,D-2,180,,Kiên Giang|Tiền Giang|Đà Lạt,C,15,10,24.53,0.4213,0.04896790427284924,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-4,180,4,ALL,A,25,18,29.52,0.4248,0.002687437914294121,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-4,180,,Bình Dương|Trà Vinh|Vĩnh Long,A,25,18,29.52,0.4248,0.002687437914294121,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#1:P4P3,MT,D-4,180,4,ALL,B,26,16,31.04,0.305,0.0010393969544834345,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#1:P4P3,MT,D-4,180,,Gia Lai|Ninh Thuận,B,26,16,31.04,0.305,0.0010393969544834345,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P3,MB,D-5,180,4,ALL,A,26,13,25.73,0.2427,0.003961431624731499,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P3,MB,D-5,180,,Hải Phòng,A,26,13,25.73,0.2427,0.003961431624731499,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_LAST2,MB,W-4,180,4,ALL,A,26,13,25.73,0.2427,0.003961431624731499,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_LAST2,MB,W-4,180,,Hải Phòng,A,26,13,25.73,0.2427,0.003961431624731499,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:HEAD_TAIL,MT,D-2,180,2,ALL,A,26,15,27.69,0.3,0.0030430796843855887,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:HEAD_TAIL,MT,D-2,180,,Khánh Hòa|Đà Nẵng,A,26,15,27.69,0.3,0.0030430796843855887,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bạc Liêu:DB#1:FIRST2_REV,MB,W-2,180,1,ALL,A,25,11,20.32,0.2368,0.020133629682697524,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bạc Liêu:DB#1:FIRST2_REV,MB,W-2,180,,Quảng Ninh,A,25,11,20.32,0.2368,0.020133629682697524,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:TAIL_HEAD,MT,D-4,180,1,ALL,A,26,15,27.27,0.3042,0.003534419389390872,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:TAIL_HEAD,MT,D-4,180,,Quảng Nam|Đắk Lắk,A,26,15,27.27,0.3042,0.003534419389390872,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MT,D-3,180,1,ALL,B,26,17,34.96,0.3042,0.00024730609391744097,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MT,D-3,180,,Quảng Nam|Đắk Lắk,B,26,17,34.96,0.3042,0.00024730609391744097,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P5P1,MT,D-4,180,1,ALL,A,26,15,27.27,0.3042,0.003534419389390872,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P5P1,MT,D-4,180,,Quảng Nam|Đắk Lắk,A,26,15,27.27,0.3042,0.003534419389390872,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:SUM_LAST2,MT,D-4,180,1,ALL,A,26,15,27.27,0.3042,0.003534419389390872,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:SUM_LAST2,MT,D-4,180,,Quảng Nam|Đắk Lắk,A,26,15,27.27,0.3042,0.003534419389390872,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2,MT,D-3,180,1,ALL,A,26,15,27.27,0.3042,0.003534419389390872,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2,MT,D-3,180,,Quảng Nam|Đắk Lắk,A,26,15,27.27,0.3042,0.003534419389390872,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MT,W-3,180,4,ALL,B,26,16,31.04,0.305,0.0010393969544834345,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MT,W-3,180,,Gia Lai|Ninh Thuận,B,26,16,31.04,0.305,0.0010393969544834345,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Tây Ninh:G1#1:P3P2,MB,D-1,180,4,ALL,B,26,14,29.58,0.2427,0.0011205775563065685,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Tây Ninh:G1#1:P3P2,MB,D-1,180,,Hải Phòng,B,26,14,29.58,0.2427,0.0011205775563065685,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G1#1:LAST2,MB,D-5,180,3,ALL,A,25,12,24.6,0.234,0.006166312423472465,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G1#1:LAST2,MB,D-5,180,,Hà Nội,A,25,12,24.6,0.234,0.006166312423472465,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_SECOND_LAST,MN,D-3,180,5,ALL,B,25,20,28.72,0.5128,0.003760202257468687,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_SECOND_LAST,MN,D-3,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,25,20,28.72,0.5128,0.003760202257468687,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P4,MN,D-3,180,5,ALL,B,25,20,28.72,0.5128,0.003760202257468687,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P4,MN,D-3,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,25,20,28.72,0.5128,0.003760202257468687,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SUM_UNIT_TAIL,MT,D-5,180,0,ALL,B,24,12,19.79,0.3021,0.03309906421573342,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#1:LAST2,MN,D-5,180,1,ALL,B,26,18,28.08,0.4115,0.003360449543186824,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#1:LAST2,MN,D-5,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,18,28.08,0.4115,0.003360449543186824,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vĩnh Long:G1#1:LAST2,MB,D-5,180,2,ALL,A,25,12,24.12,0.2388,0.007325360820125575,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vĩnh Long:G1#1:LAST2,MB,D-5,180,,Bắc Ninh,A,25,12,24.12,0.2388,0.007325360820125575,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SUM_UNIT_HEAD,MB,D-7,180,6,ALL,A,25,12,24.0,0.24,0.0076414464718749285,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SUM_UNIT_HEAD,MB,D-7,180,,Thái Bình,A,25,12,24.0,0.24,0.0076414464718749285,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SUM_UNIT_HEAD,MB,D-7,180,6,ALL,A,25,12,24.0,0.24,0.0076414464718749285,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SUM_UNIT_HEAD,MB,D-7,180,,Thái Bình,A,25,12,24.0,0.24,0.0076414464718749285,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-7,180,2,ALL,B,25,15,30.08,0.2992,0.0017260904840460504,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-7,180,,Khánh Hòa|Đà Nẵng,B,25,15,30.08,0.2992,0.0017260904840460504,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-7,180,2,ALL,B,25,15,30.08,0.2992,0.0017260904840460504,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-7,180,,Khánh Hòa|Đà Nẵng,B,25,15,30.08,0.2992,0.0017260904840460504,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MT,W-4,180,5,ALL,B,26,19,31.08,0.42,0.0012979914535684392,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MT,W-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,19,31.08,0.42,0.0012979914535684392,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MT,W-4,180,5,ALL,B,26,19,31.08,0.42,0.0012979914535684392,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MT,W-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,19,31.08,0.42,0.0012979914535684392,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#1:FIRST2,MT,W-4,180,5,ALL,B,26,19,31.08,0.42,0.0012979914535684392,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#1:FIRST2,MT,W-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,19,31.08,0.42,0.0012979914535684392,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-6,180,3,ALL,B,26,18,27.35,0.4188,0.004294263736311915,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P2,MN,D-6,180,,An Giang|Bình Thuận|Tây Ninh,B,26,18,27.35,0.4188,0.004294263736311915,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G2#1:FIRST2_REV,MN,W-4,180,3,ALL,B,26,18,27.35,0.4188,0.004294263736311915,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G2#1:FIRST2_REV,MN,W-4,180,,An Giang|Bình Thuận|Tây Ninh,B,26,18,27.35,0.4188,0.004294263736311915,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P3,MT,D-4,180,3,ALL,A,26,16,20.0,0.4154,0.03072099641613353,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P3,MT,D-4,180,,Bình Định|Quảng Bình|Quảng Trị,A,26,16,20.0,0.4154,0.03072099641613353,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#1:FIRST2_REV,MN,D-5,180,2,ALL,B,26,18,27.19,0.4204,0.0045258225261204914,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Ninh Thuận:G2#1:FIRST2_REV,MN,D-5,180,,Cần Thơ|Sóc Trăng|Đồng Nai,B,26,18,27.19,0.4204,0.0045258225261204914,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Ngãi:G2#1:HEAD_TAIL,MN,D-4,180,2,ALL,B,26,18,27.19,0.4204,0.0045258225261204914,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Ngãi:G2#1:HEAD_TAIL,MN,D-4,180,,Cần Thơ|Sóc Trăng|Đồng Nai,B,26,18,27.19,0.4204,0.0045258225261204914,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:DB#1:TAIL_HEAD,MT,W-2,180,5,ALL,B,26,18,27.23,0.42,0.0044669686485189495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:DB#1:TAIL_HEAD,MT,W-2,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,18,27.23,0.42,0.0044669686485189495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G2#1:HEAD_TAIL,MT,D-4,180,5,ALL,B,26,18,27.23,0.42,0.0044669686485189495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G2#1:HEAD_TAIL,MT,D-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,18,27.23,0.42,0.0044669686485189495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SECOND_LAST,MT,D-2,180,0,ALL,A,25,13,21.68,0.3032,0.01912023556694211,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P1P4,MT,D-2,180,0,ALL,A,25,13,21.68,0.3032,0.01912023556694211,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P4P3,MT,D-3,180,0,ALL,A,25,14,25.68,0.3032,0.006651980940786851,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:LAST2_REV,MT,D-2,180,0,ALL,B,25,16,33.68,0.3032,0.0005177997113746747,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:HEAD_TAIL,MT,W-4,180,0,ALL,A,25,13,21.68,0.3032,0.01912023556694211,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:LAST2,MT,D-4,180,6,ALL,A,25,16,23.16,0.4084,0.015681813543212193,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G2#1:HEAD_TAIL,MT,D-3,180,5,ALL,A,26,17,23.38,0.42,0.013304014106485173,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G2#1:HEAD_TAIL,MT,D-3,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,A,26,17,23.38,0.42,0.013304014106485173,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:FIRST2_REV,MB,D-4,180,6,ALL,B,25,13,28.0,0.24,0.002281752431827763,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:FIRST2_REV,MB,D-4,180,,Thái Bình,B,25,13,28.0,0.24,0.002281752431827763,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P3,MB,D-6,180,0,ALL,B,23,13,32.74,0.2378,0.0007488308275931074,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P4,MB,D-2,180,2,ALL,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P4,MB,D-2,180,,Bắc Ninh,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G1#1:HEAD_TAIL,MN,D-3,180,4,ALL,B,26,18,26.77,0.4246,0.00518426422558484,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Lắk:G1#1:HEAD_TAIL,MN,D-3,180,,Bình Dương|Trà Vinh|Vĩnh Long,B,26,18,26.77,0.4246,0.00518426422558484,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bạc Liêu:G1#1:TAIL_HEAD,MB,D-2,180,3,ALL,A,25,12,24.6,0.234,0.006166312423472465,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bạc Liêu:G1#1:TAIL_HEAD,MB,D-2,180,,Hà Nội,A,25,12,24.6,0.234,0.006166312423472465,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P2,MN,W-2,180,6,ALL,B,25,18,30.0,0.42,0.002280240810900021,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P2,MN,W-2,180,,Kiên Giang|Tiền Giang|Đà Lạt,B,25,18,30.0,0.42,0.002280240810900021,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MT,D-5,180,5,ALL,B,25,18,30.04,0.4196,0.0022488306521157766,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:HEAD_TAIL,MT,D-5,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,25,18,30.04,0.4196,0.0022488306521157766,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MT,D-5,180,5,ALL,B,25,18,30.04,0.4196,0.0022488306521157766,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P1P5,MT,D-5,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,25,18,30.04,0.4196,0.0022488306521157766,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-3,180,0,ALL,B,25,18,29.92,0.4208,0.00234418862874893,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MN,D-3,180,,Cà Mau|TP. HCM|Đồng Tháp,B,25,18,29.92,0.4208,0.00234418862874893,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G1#1:TAIL_HEAD,MN,D-4,180,0,ALL,B,25,18,29.92,0.4208,0.00234418862874893,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:G1#1:TAIL_HEAD,MN,D-4,180,,Cà Mau|TP. HCM|Đồng Tháp,B,25,18,29.92,0.4208,0.00234418862874893,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:TAIL_HEAD,MB,W-3,180,6,ALL,B,25,14,32.0,0.24,0.0005892174718128663,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:TAIL_HEAD,MB,W-3,180,,Thái Bình,B,25,14,32.0,0.24,0.0005892174718128663,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:DB#1:TAIL_HEAD,MB,D-6,180,6,ALL,B,25,14,32.0,0.24,0.0005892174718128663,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:DB#1:TAIL_HEAD,MB,D-6,180,,Thái Bình,B,25,14,32.0,0.24,0.0005892174718128663,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P1,MT,D-4,180,5,ALL,A,25,17,26.04,0.4196,0.00743159150915259,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P1,MT,D-4,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,A,25,17,26.04,0.4196,0.00743159150915259,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MB,W-2,180,1,ALL,B,24,11,22.12,0.2371,0.014413327970247018,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MB,W-2,180,,Quảng Ninh,B,24,11,22.12,0.2371,0.014413327970247018,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:P3P2,MB,W-3,180,6,ALL,A,25,12,24.0,0.24,0.0076414464718749285,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Khánh Hòa:G2#1:P3P2,MB,W-3,180,,Thái Bình,A,25,12,24.0,0.24,0.0076414464718749285,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P5,MT,W-3,180,0,ALL,B,24,13,23.83,0.3033,0.012673612854933956,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Tiền Giang:DB#1:FIRST2_REV,MT,W-2,180,6,ALL,A,25,16,23.16,0.4084,0.015681813543212193,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:LAST2,MB,W-4,180,1,ALL,B,24,12,26.25,0.2375,0.004627286353605055,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:LAST2,MB,W-4,180,,Quảng Ninh,B,24,12,26.25,0.2375,0.004627286353605055,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P5,MB,W-4,180,1,ALL,B,24,12,26.25,0.2375,0.004627286353605055,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P5,MB,W-4,180,,Quảng Ninh,B,24,12,26.25,0.2375,0.004627286353605055,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MB,D-3,180,0,ALL,B,24,12,26.12,0.2388,0.004852693777980188,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:DB#1:FIRST2,MB,D-5,180,0,ALL,B,24,12,26.12,0.2388,0.004852693777980188,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P1,MT,D-5,180,2,ALL,B,26,15,27.69,0.3,0.0030430796843855887,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P1,MT,D-5,180,,Khánh Hòa|Đà Nẵng,B,26,15,27.69,0.3,0.0030430796843855887,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P2P3,MT,D-3,180,2,ALL,A,26,14,23.85,0.3,0.009436713466490297,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P2P3,MT,D-3,180,,Khánh Hòa|Đà Nẵng,A,26,14,23.85,0.3,0.009436713466490297,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G2#1:FIRST2_REV,MT,W-4,180,2,ALL,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G2#1:FIRST2_REV,MT,W-4,180,,Khánh Hòa|Đà Nẵng,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:FIRST2_REV,MT,D-7,180,2,ALL,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:FIRST2_REV,MT,D-7,180,,Khánh Hòa|Đà Nẵng,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:FIRST2_REV,MT,D-7,180,2,ALL,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G2#1:FIRST2_REV,MT,D-7,180,,Khánh Hòa|Đà Nẵng,A,26,14,23.85,0.3,0.009436713466490297,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G1#1:HEAD_TAIL,MT,W-3,180,2,ALL,A,26,14,23.85,0.3,0.009436713466490297,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G1#1:HEAD_TAIL,MT,W-3,180,,Khánh Hòa|Đà Nẵng,A,26,14,23.85,0.3,0.009436713466490297,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:DB#1:LAST2_REV,MT,D-4,180,2,ALL,B,26,16,31.54,0.3,0.0008509766733782565,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:DB#1:LAST2_REV,MT,D-4,180,,Khánh Hòa|Đà Nẵng,B,26,16,31.54,0.3,0.0008509766733782565,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:HEAD_TAIL,MB,D-3,180,2,ALL,A,25,9,12.12,0.2388,0.11984800981108422,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:HEAD_TAIL,MB,D-3,180,,Bắc Ninh,A,25,9,12.12,0.2388,0.11984800981108422,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P1P5,MB,D-3,180,2,ALL,A,25,9,12.12,0.2388,0.11984800981108422,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P1P5,MB,D-3,180,,Bắc Ninh,A,25,9,12.12,0.2388,0.11984800981108422,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-7,180,3,ALL,B,24,15,20.71,0.4179,0.032146323107913204,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,B,24,15,20.71,0.4179,0.032146323107913204,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-7,180,3,ALL,B,24,15,20.71,0.4179,0.032146323107913204,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:FIRST2_REV,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,B,24,15,20.71,0.4179,0.032146323107913204,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P1,MN,D-7,180,3,ALL,B,24,15,20.71,0.4179,0.032146323107913204,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P1,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,B,24,15,20.71,0.4179,0.032146323107913204,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P1,MN,D-7,180,3,ALL,B,24,15,20.71,0.4179,0.032146323107913204,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P1,MN,D-7,180,,An Giang|Bình Thuận|Tây Ninh,B,24,15,20.71,0.4179,0.032146323107913204,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SECOND_HEAD_TAIL,MN,D-4,180,0,ALL,B,24,16,24.62,0.4204,0.012632698560149088,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SECOND_HEAD_TAIL,MN,D-4,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.62,0.4204,0.012632698560149088,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P2P5,MN,D-4,180,0,ALL,B,24,16,24.62,0.4204,0.012632698560149088,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P2P5,MN,D-4,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.62,0.4204,0.012632698560149088,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:TAIL_HEAD,MN,W-4,180,0,ALL,B,24,16,24.58,0.4208,0.012772504194265538,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:TAIL_HEAD,MN,W-4,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.58,0.4208,0.012772504194265538,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P1,MN,W-4,180,0,ALL,B,24,16,24.58,0.4208,0.012772504194265538,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P1,MN,W-4,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.58,0.4208,0.012772504194265538,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2,MN,W-2,180,0,ALL,B,24,16,24.58,0.4208,0.012772504194265538,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2,MN,W-2,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.58,0.4208,0.012772504194265538,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P5,MN,W-2,180,0,ALL,B,24,16,24.58,0.4208,0.012772504194265538,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P5,MN,W-2,180,,Cà Mau|TP. HCM|Đồng Tháp,B,24,16,24.58,0.4208,0.012772504194265538,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:LAST2,MN,D-1,180,5,ALL,B,26,21,29.5,0.5127,0.002453055970519973,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:LAST2,MN,D-1,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,21,29.5,0.5127,0.002453055970519973,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P5,MN,D-1,180,5,ALL,B,26,21,29.5,0.5127,0.002453055970519973,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P5,MN,D-1,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,21,29.5,0.5127,0.002453055970519973,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SUM_UNIT,MT,D-3,180,6,ALL,B,23,14,20.0,0.4087,0.042182995247394384,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2_REV,MB,W-2,180,5,ALL,B,26,13,25.88,0.2412,0.003738636235697084,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Hậu Giang:G2#1:FIRST2_REV,MB,W-2,180,,Nam Định,B,26,13,25.88,0.2412,0.003738636235697084,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:P4P3,MB,D-5,180,5,ALL,B,26,13,25.88,0.2412,0.003738636235697084,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:P4P3,MB,D-5,180,,Nam Định,B,26,13,25.88,0.2412,0.003738636235697084,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-3,180,1,ALL,B,26,15,27.27,0.3042,0.003534419389390872,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P2,MT,D-3,180,,Quảng Nam|Đắk Lắk,B,26,15,27.27,0.3042,0.003534419389390872,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G1#1:TAIL_HEAD,MT,D-6,180,1,ALL,A,26,14,23.42,0.3042,0.010760715267554375,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:G1#1:TAIL_HEAD,MT,D-6,180,,Quảng Nam|Đắk Lắk,A,26,14,23.42,0.3042,0.010760715267554375,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MT,D-7,180,1,ALL,B,26,15,27.27,0.3042,0.003534419389390872,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MT,D-7,180,,Quảng Nam|Đắk Lắk,B,26,15,27.27,0.3042,0.003534419389390872,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MT,D-7,180,1,ALL,B,26,15,27.27,0.3042,0.003534419389390872,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MT,D-7,180,,Quảng Nam|Đắk Lắk,B,26,15,27.27,0.3042,0.003534419389390872,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:DB#1:LAST2_REV,MT,W-2,180,1,ALL,A,26,13,19.58,0.3042,0.028560946241196778,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:DB#1:LAST2_REV,MT,W-2,180,,Quảng Nam|Đắk Lắk,A,26,13,19.58,0.3042,0.028560946241196778,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:DB#1:TAIL_HEAD,MT,W-2,180,1,ALL,A,26,14,23.42,0.3042,0.010760715267554375,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vũng Tàu:DB#1:TAIL_HEAD,MT,W-2,180,,Quảng Nam|Đắk Lắk,A,26,14,23.42,0.3042,0.010760715267554375,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P2,MN,D-1,180,5,ALL,B,26,20,25.65,0.5127,0.0077437154930107225,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P2,MN,D-1,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,20,25.65,0.5127,0.0077437154930107225,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MN,D-7,180,5,ALL,B,26,20,25.65,0.5127,0.0077437154930107225,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MN,D-7,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,20,25.65,0.5127,0.0077437154930107225,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MN,D-7,180,5,ALL,B,26,20,25.65,0.5127,0.0077437154930107225,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G2#1:TAIL_HEAD,MN,D-7,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,26,20,25.65,0.5127,0.0077437154930107225,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:TAIL_SUM_UNIT,MT,D-6,180,4,ALL,B,26,15,27.19,0.305,0.0036353338937777212,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:TAIL_SUM_UNIT,MT,D-6,180,,Gia Lai|Ninh Thuận,B,26,15,27.19,0.305,0.0036353338937777212,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MT,W-2,180,4,ALL,A,26,13,19.5,0.305,0.02917457343507801,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_SUM_UNIT,MT,W-2,180,,Gia Lai|Ninh Thuận,A,26,13,19.5,0.305,0.02917457343507801,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:TAIL_HEAD,MT,D-2,180,4,ALL,A,26,14,23.35,0.305,0.011029498536439692,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cần Thơ:G1#1:TAIL_HEAD,MT,D-2,180,,Gia Lai|Ninh Thuận,A,26,14,23.35,0.305,0.011029498536439692,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:An Giang:G1#1:HEAD_TAIL,MT,D-1,180,4,ALL,B,26,16,31.04,0.305,0.0010393969544834345,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:An Giang:G1#1:HEAD_TAIL,MT,D-1,180,,Gia Lai|Ninh Thuận,B,26,16,31.04,0.305,0.0010393969544834345,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MN,D-4,180,1,ALL,B,26,19,31.92,0.4115,0.0009389559475320596,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MN,D-4,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,19,31.92,0.4115,0.0009389559475320596,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:P4P3,MN,D-3,180,1,ALL,B,26,19,31.92,0.4115,0.0009389559475320596,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:P4P3,MN,D-3,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,19,31.92,0.4115,0.0009389559475320596,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Thuận:G2#1:FIRST2_REV,MB,D-5,180,1,ALL,A,25,10,16.32,0.2368,0.05159484107244965,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Thuận:G2#1:FIRST2_REV,MB,D-5,180,,Quảng Ninh,A,25,10,16.32,0.2368,0.05159484107244965,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vĩnh Long:G1#1:TAIL_HEAD,MB,W-2,180,4,ALL,B,26,13,25.73,0.2427,0.003961431624731499,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Vĩnh Long:G1#1:TAIL_HEAD,MB,W-2,180,,Hải Phòng,B,26,13,25.73,0.2427,0.003961431624731499,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G1#1:FIRST2,MB,D-2,180,0,ALL,B,24,13,30.29,0.2388,0.0013336151797263152,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:G1#1:FIRST2,MB,D-2,180,,Hà Nội,B,24,13,30.29,0.2388,0.0013336151797263152,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:G2#1:FIRST2_REV,MB,D-1,180,0,ALL,B,24,13,30.29,0.2388,0.0013336151797263152,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:G2#1:FIRST2_REV,MB,D-1,180,,Hà Nội,B,24,13,30.29,0.2388,0.0013336151797263152,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:DB#1:TAIL_HEAD,MB,D-1,180,0,ALL,B,24,13,30.29,0.2388,0.0013336151797263152,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Kiên Giang:DB#1:TAIL_HEAD,MB,D-1,180,,Hà Nội,B,24,13,30.29,0.2388,0.0013336151797263152,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MB,D-5,180,1,ALL,B,24,11,22.21,0.2362,0.014006524610897275,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MB,D-5,180,,Quảng Ninh,B,24,11,22.21,0.2362,0.014006524610897275,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MB,D-5,180,1,ALL,B,24,11,22.21,0.2362,0.014006524610897275,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MB,D-5,180,,Quảng Ninh,B,24,11,22.21,0.2362,0.014006524610897275,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P3P1,MN,D-2,180,1,ALL,B,26,17,24.23,0.4115,0.010393212305009489,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P3P1,MN,D-2,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,17,24.23,0.4115,0.010393212305009489,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:TAIL_HEAD,MN,D-5,180,1,ALL,B,26,17,24.23,0.4115,0.010393212305009489,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Bình Định:DB#1:TAIL_HEAD,MN,D-5,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,17,24.23,0.4115,0.010393212305009489,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#1:FIRST2,MN,D-5,180,1,ALL,B,26,17,24.23,0.4115,0.010393212305009489,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Trị:G2#1:FIRST2,MN,D-5,180,,Bạc Liêu|Bến Tre|Vũng Tàu,B,26,17,24.23,0.4115,0.010393212305009489,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:LAST2_REV,MT,D-5,180,3,ALL,B,26,18,27.69,0.4154,0.0038352239994504495,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:LAST2_REV,MT,D-5,180,,Bình Định|Quảng Bình|Quảng Trị,B,26,18,27.69,0.4154,0.0038352239994504495,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P4,MT,D-5,180,3,ALL,B,26,18,27.69,0.4154,0.0038352239994504495,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P5P4,MT,D-5,180,,Bình Định|Quảng Bình|Quảng Trị,B,26,18,27.69,0.4154,0.0038352239994504495,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Long An:DB#1:HEAD_TAIL,MT,D-5,180,3,ALL,B,26,18,27.69,0.4154,0.0038352239994504495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Long An:DB#1:HEAD_TAIL,MT,D-5,180,,Bình Định|Quảng Bình|Quảng Trị,B,26,18,27.69,0.4154,0.0038352239994504495,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P5,MN,D-2,180,5,ALL,B,25,19,24.72,0.5128,0.011520779952988806,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P3P5,MN,D-2,180,,Bình Phước|Hậu Giang|Long An|TP. HCM,B,25,19,24.72,0.5128,0.011520779952988806,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:SECOND_HEAD_TAIL,MB,W-4,180,0,ALL,B,23,10,19.61,0.2387,0.030251958770157156,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P2P5,MB,W-4,180,0,ALL,B,23,10,19.61,0.2387,0.030251958770157156,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:DB#1:TAIL_HEAD,MT,D-1,180,3,ALL,B,26,17,23.85,0.4154,0.011656329371855944,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Nai:DB#1:TAIL_HEAD,MT,D-1,180,,Bình Định|Quảng Bình|Quảng Trị,B,26,17,23.85,0.4154,0.011656329371855944,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MB,D-2,180,2,ALL,A,25,11,20.12,0.2388,0.021400155571270302,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:LAST2_REV,MB,D-2,180,,Bắc Ninh,A,25,11,20.12,0.2388,0.021400155571270302,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MB,D-2,180,2,ALL,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P4,MB,D-2,180,,Bắc Ninh,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G1#1:P3P2,MB,W-2,180,2,ALL,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G1#1:P3P2,MB,W-2,180,,Bắc Ninh,A,25,11,20.12,0.2388,0.021400155571270302,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P1,MN,D-6,180,3,ALL,B,26,18,27.35,0.4188,0.004294263736311915,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P3P1,MN,D-6,180,,An Giang|Bình Thuận|Tây Ninh,B,26,18,27.35,0.4188,0.004294263736311915,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MB,D-2,180,3,ALL,B,25,12,24.6,0.234,0.006166312423472465,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bến Tre:G1#1:LAST2,MB,D-2,180,,Hà Nội,B,25,12,24.6,0.234,0.006166312423472465,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MB,W-2,180,6,ALL,A,25,11,20.0,0.24,0.02218918743771727,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P3,MB,W-2,180,,Thái Bình,A,25,11,20.0,0.24,0.02218918743771727,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:LAST2,MT,W-2,180,5,ALL,B,26,18,27.23,0.42,0.0044669686485189495,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:DB#1:LAST2,MT,W-2,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,18,27.23,0.42,0.0044669686485189495,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MN,D-4,180,2,ALL,B,26,18,27.19,0.4204,0.0045258225261204914,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:SECOND_HEAD_TAIL,MN,D-4,180,,Cần Thơ|Sóc Trăng|Đồng Nai,B,26,18,27.19,0.4204,0.0045258225261204914,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MN,D-4,180,2,ALL,B,26,18,27.19,0.4204,0.0045258225261204914,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P2P5,MN,D-4,180,,Cần Thơ|Sóc Trăng|Đồng Nai,B,26,18,27.19,0.4204,0.0045258225261204914,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:SECOND_HEAD_TAIL,MT,W-4,180,6,ALL,B,25,17,27.16,0.4084,0.005243937523660801,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P2P5,MT,W-4,180,6,ALL,B,25,17,27.16,0.4084,0.005243937523660801,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Dương:G1#1:TAIL_HEAD,MT,D-2,180,6,ALL,B,25,17,27.16,0.4084,0.005243937523660801,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:TP. HCM:G2#1:P4P1,MT,D-1,180,6,ALL,B,25,17,27.16,0.4084,0.005243937523660801,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SECOND_LAST,MB,D-2,180,3,ALL,A,25,10,16.6,0.234,0.04796960683438565,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P1P4,MB,D-2,180,3,ALL,A,25,10,16.6,0.234,0.04796960683438565,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P3,MT,D-7,180,5,ALL,B,26,17,23.38,0.42,0.013304014106485173,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P3,MT,D-7,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,17,23.38,0.42,0.013304014106485173,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P3,MT,D-7,180,5,ALL,B,26,17,23.38,0.42,0.013304014106485173,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P3,MT,D-7,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,17,23.38,0.42,0.013304014106485173,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:TAIL_HEAD,MT,W-2,180,5,ALL,B,26,17,23.38,0.42,0.013304014106485173,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:G1#1:TAIL_HEAD,MT,W-2,180,,Quảng Ngãi|Đà Nẵng|Đắk Nông,B,26,17,23.38,0.42,0.013304014106485173,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Phước:DB#1:FIRST2,MT,D-2,180,0,ALL,B,25,14,25.68,0.3032,0.006651980940786851,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Long An:G1#1:FIRST2_REV,MT,D-2,180,0,ALL,B,25,14,25.68,0.3032,0.006651980940786851,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Cà Mau:G2#1:LAST2_REV,MT,W-3,180,0,ALL,B,25,14,25.68,0.3032,0.006651980940786851,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Đồng Tháp:G1#1:TAIL_HEAD,MT,W-2,180,0,ALL,B,25,14,25.68,0.3032,0.006651980940786851,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P3P5,MB,W-4,180,3,ALL,B,24,9,14.08,0.2342,0.08699900676186945,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P5P2,MB,D-3,180,2,ALL,B,25,12,24.12,0.2388,0.007325360820125575,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P5P2,MB,D-3,180,,Bắc Ninh,B,25,12,24.12,0.2388,0.007325360820125575,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P3,MB,D-2,180,2,ALL,B,25,12,24.12,0.2388,0.007325360820125575,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P4P3,MB,D-2,180,,Bắc Ninh,B,25,12,24.12,0.2388,0.007325360820125575,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:DB#1:FIRST2_REV,MB,D-7,180,2,ALL,B,25,12,24.12,0.2388,0.007325360820125575,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:DB#1:FIRST2_REV,MB,D-7,180,,Bắc Ninh,B,25,12,24.12,0.2388,0.007325360820125575,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:DB#1:FIRST2_REV,MB,D-7,180,2,ALL,B,25,12,24.12,0.2388,0.007325360820125575,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:DB#1:FIRST2_REV,MB,D-7,180,,Bắc Ninh,B,25,12,24.12,0.2388,0.007325360820125575,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MT,D-1,180,4,ALL,B,25,15,29.52,0.3048,0.002122183319376564,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:DB#1:FIRST2_REV,MB,D-6,180,6,ALL,B,25,12,24.0,0.24,0.0076414464718749285,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Phú Yên:DB#1:FIRST2_REV,MB,D-6,180,,Thái Bình,B,25,12,24.0,0.24,0.0076414464718749285,head,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P3P5,MB,D-4,180,5,ALL,B,25,12,23.88,0.2412,0.00796861854448659,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P3P5,MB,D-4,180,,Nam Định,B,25,12,23.88,0.2412,0.00796861854448659,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_TAIL,MB,D-5,180,5,ALL,B,25,12,23.88,0.2412,0.00796861854448659,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:SUM_UNIT_TAIL,MB,D-5,180,,Nam Định,B,25,12,23.88,0.2412,0.00796861854448659,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_HEAD,MB,D-1,180,4,ALL,B,25,12,23.72,0.2428,0.008422587011752122,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:TAIL_HEAD,MB,D-1,180,,Hải Phòng,B,25,12,23.72,0.2428,0.008422587011752122,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P1,MB,D-1,180,4,ALL,B,25,12,23.72,0.2428,0.008422587011752122,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#2:P5P1,MB,D-1,180,,Hải Phòng,B,25,12,23.72,0.2428,0.008422587011752122,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P1P3,MB,D-4,180,2,ALL,B,25,13,28.12,0.2388,0.0021739711489893363,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P1P3,MB,D-4,180,,Bắc Ninh,B,25,13,28.12,0.2388,0.0021739711489893363,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P1,MB,D-1,180,2,ALL,B,25,13,28.12,0.2388,0.0021739711489893363,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P1,MB,D-1,180,,Bắc Ninh,B,25,13,28.12,0.2388,0.0021739711489893363,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G1#1:TAIL_HEAD,MB,W-3,180,2,ALL,B,25,13,28.12,0.2388,0.0021739711489893363,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Sóc Trăng:G1#1:TAIL_HEAD,MB,W-3,180,,Bắc Ninh,B,25,13,28.12,0.2388,0.0021739711489893363,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Long An:DB#1:TAIL_HEAD,MB,D-6,180,4,ALL,A,26,10,14.19,0.2427,0.07681767895707026,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Long An:DB#1:TAIL_HEAD,MB,D-6,180,,Hải Phòng,A,26,10,14.19,0.2427,0.07681767895707026,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:LAST2,MB,W-3,180,5,ALL,A,26,11,18.19,0.2412,0.031365100649875716,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đà Nẵng:G2#1:LAST2,MB,W-3,180,,Nam Định,A,26,11,18.19,0.2412,0.031365100649875716,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Ngãi:G1#1:P3P2,MB,W-2,180,5,ALL,A,26,11,18.19,0.2412,0.031365100649875716,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Quảng Ngãi:G1#1:P3P2,MB,W-2,180,,Nam Định,A,26,11,18.19,0.2412,0.031365100649875716,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:DB#1:HEAD_TAIL,MB,W-3,180,5,ALL,A,26,11,18.19,0.2412,0.031365100649875716,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MT:Đắk Nông:DB#1:HEAD_TAIL,MB,W-3,180,,Nam Định,A,26,11,18.19,0.2412,0.031365100649875716,head_tail_cross,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MB,D-6,180,4,ALL,A,26,11,18.04,0.2427,0.03273972035643602,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:SUM_UNIT_HEAD,MB,D-6,180,,Hải Phòng,A,26,11,18.04,0.2427,0.03273972035643602,digit_sum,11720,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:HEAD_SECOND_LAST,MB,D-2,180,,Hà Nội,A,49,20,17.18,0.2363,0.0038629241117697295,head_secondlast_cross,4688,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P1P4,MB,D-2,180,,Hà Nội,A,49,20,17.18,0.2363,0.0038629241117697295,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P3,MB,D-4,180,1,ALL,A,25,9,12.32,0.2368,0.11496898732630033,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:DB#1:P4P3,MB,D-4,180,,Quảng Ninh,A,25,9,12.32,0.2368,0.11496898732630033,adjacent_pair,31651,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Thuận:DB#1:LAST2_REV,MB,D-5,180,1,ALL,A,25,9,12.32,0.2368,0.11496898732630033,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MN:Bình Thuận:DB#1:LAST2_REV,MB,D-5,180,,Quảng Ninh,A,25,9,12.32,0.2368,0.11496898732630033,tail,23770,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G2#1:P4P1,MT,D-1,90,,ALL,A,90,45,14.92,0.3508,0.002148061309472745,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted
+MB:MB_BOARD:G1#1:P5P2,MT,D-1,90,,ALL,A,90,42,11.59,0.3508,0.014156812364267813,position_pair,33859,1.0,1.0,1.0,False,False,False,False,accepted

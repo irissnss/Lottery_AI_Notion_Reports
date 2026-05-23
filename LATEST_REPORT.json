@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V106.06",
-  "latest_folder": "V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE",
-  "latest_report": "V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/machine_readable/V10606_SUMMARY.json",
-  "created_at_vn": "2026-05-23T23:34:13",
-  "status": "V106.06 public-safe report: deep source-rule discovery for MN/MT/MB. 153228 rules tested, 54924 accepted (1263 Tier A). Recommends DEEP_SOURCE_RULE_SHADOW_V1 + AGREEMENT_FAMILY_DIVERSE_RANKER_V1 + MT_MB_LOW_PRIZE_DIGIT_TRANSFORM_V1 modules. Official unchanged, no lane-test promotion, no provider/manual AI call.",
+  "latest_version": "V107",
+  "latest_folder": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE",
+  "latest_report": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL3_CORRECTION.json",
+  "created_at_vn": "2026-05-24T06:56:04",
+  "status": "V107 null-hypothesis stress test on V106.x framework: 5 null tests + 2 integrity families. 0/153228 rules survive BH q<0.05 within family. Sub-sample replication below independence. Forward 90d insufficient (V106.05 just published). Recommendation: pre-register <50 rules, wait actual 90d, evaluate with strict correction. Official unchanged.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "artifact_only_public_analysis",
+  "patch_scope": "artifact_only_null_test",
   "public_safe_scan_pass": true
 }

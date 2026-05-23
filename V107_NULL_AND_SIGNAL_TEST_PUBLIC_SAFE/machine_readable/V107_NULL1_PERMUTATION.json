@@ -1,0 +1,23 @@
+{
+  "live_sync_manifest": "artifacts/live_sync/20260523_233622/manifest.json",
+  "panel_size": 498,
+  "n_permutations": 500,
+  "permutation_window_days": 365,
+  "seed": 20260524,
+  "real_best_lift_pp": 61.4167,
+  "real_top10_mean_lift_pp": 49.624,
+  "permuted_best_lift_distribution": {
+    "min": 21.2,
+    "p05": 24.52,
+    "p25": 27.92,
+    "median": 31.25,
+    "mean": 31.7357,
+    "p75": 34.2308,
+    "p95": 41.1667,
+    "max": 51.25
+  },
+  "p_empirical_best_lift": 0.0,
+  "p_empirical_top10_mean": 0.0,
+  "verdict": "PASS",
+  "note": "Permutation shuffles target-date <-> target-tail mapping within last 365 days, keeping source side fixed. Tracks best_lift across the V107 panel. Stopping criterion: p_empirical > 0.20 -> FAIL."
+}

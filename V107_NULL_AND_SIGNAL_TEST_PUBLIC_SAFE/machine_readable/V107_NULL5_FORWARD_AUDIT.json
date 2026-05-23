@@ -1,0 +1,171 @@
+{
+  "live_sync_manifest": "artifacts/live_sync/20260523_233622/manifest.json",
+  "last_db_date": "2026-05-23",
+  "note": "V106.03 published 2026-05-21, V106.04 2026-05-22, V106.05 2026-05-23. Locked DB last_date 2026-05-23 -> forward window <= 2 days. A true 90-day forward audit is INSUFFICIENT. We additionally run a 30-day holdout proxy: leave the most recent 30 days out of training, evaluate panel rules on those 30 days only.",
+  "reports": [
+    {
+      "report": "V106.03",
+      "rules": [
+        {
+          "rule_lineage": "MB:MB_BOARD:G2#1:LAST2 D-2",
+          "target": "MN",
+          "pre_registered_at": "2026-05-21",
+          "reported_lift_pp": 14.1,
+          "forward_window_start": "2026-05-22",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 2,
+          "forward_result": {
+            "days": 2,
+            "hits": 2,
+            "hit_rate": 1.0,
+            "baseline": 0.48,
+            "lift_pp": 52.0,
+            "db_day_rate": 0.0,
+            "db_day_baseline": 0.035,
+            "db_day_lift_pp": -3.5000000000000004,
+            "raw_p": 0.2304,
+            "ci95": [
+              0.3423802275066531,
+              1.0
+            ]
+          }
+        },
+        {
+          "rule_lineage": "MB:MB_BOARD:G2#2:LAST2 D-2",
+          "target": "MN",
+          "pre_registered_at": "2026-05-21",
+          "reported_lift_pp": 5.8,
+          "forward_window_start": "2026-05-22",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 2,
+          "forward_result": {
+            "days": 2,
+            "hits": 0,
+            "hit_rate": 0.0,
+            "baseline": 0.48,
+            "lift_pp": -48.0,
+            "db_day_rate": 0.0,
+            "db_day_baseline": 0.035,
+            "db_day_lift_pp": -3.5000000000000004,
+            "raw_p": 1.0,
+            "ci95": [
+              0.0,
+              0.6576197724933469
+            ]
+          }
+        },
+        {
+          "rule_lineage": "MB:MB_BOARD:G2#1:LAST2 D-1",
+          "target": "MN",
+          "pre_registered_at": "2026-05-21",
+          "reported_lift_pp": 0.8,
+          "forward_window_start": "2026-05-22",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 2,
+          "forward_result": {
+            "days": 2,
+            "hits": 1,
+            "hit_rate": 0.5,
+            "baseline": 0.48,
+            "lift_pp": 2.0000000000000018,
+            "db_day_rate": 0.0,
+            "db_day_baseline": 0.035,
+            "db_day_lift_pp": -3.5000000000000004,
+            "raw_p": 0.7296,
+            "ci95": [
+              0.09453120573423071,
+              0.9054687942657693
+            ]
+          }
+        }
+      ],
+      "fisher_combined_p": 0.7351162840815161,
+      "fisher_n_rules": 3,
+      "stopping_check": "FAIL_STOPPING_CRITERION"
+    },
+    {
+      "report": "V106.05",
+      "rules": [
+        {
+          "rule_lineage": "MB:MB_BOARD:G2#1:P4P1 D-1",
+          "target": "MT",
+          "pre_registered_at": "2026-05-23",
+          "reported_lift_pp": 14.9,
+          "forward_window_start": "2026-05-24",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 0,
+          "forward_result": null
+        },
+        {
+          "rule_lineage": "MB:MB_BOARD:G1#1:P5P2 D-1",
+          "target": "MT",
+          "pre_registered_at": "2026-05-23",
+          "reported_lift_pp": 11.6,
+          "forward_window_start": "2026-05-24",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 0,
+          "forward_result": null
+        }
+      ],
+      "fisher_combined_p": null,
+      "fisher_n_rules": 0,
+      "stopping_check": "INSUFFICIENT_DATA"
+    },
+    {
+      "report": "V106.06",
+      "rules": [
+        {
+          "rule_lineage": "MB:MB_BOARD:DB#1:P2P4 D-1",
+          "target": "MT",
+          "pre_registered_at": "2026-05-23",
+          "reported_lift_pp": 35.2,
+          "forward_window_start": "2026-05-24",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 0,
+          "forward_result": null
+        },
+        {
+          "rule_lineage": "MT:Đắk Nông:DB#1:FIRST2_REV D-3",
+          "target": "MN",
+          "pre_registered_at": "2026-05-23",
+          "reported_lift_pp": 31.9,
+          "forward_window_start": "2026-05-24",
+          "forward_window_end": "2026-05-23",
+          "forward_days_available": 0,
+          "forward_result": null
+        }
+      ],
+      "fisher_combined_p": null,
+      "fisher_n_rules": 0,
+      "stopping_check": "INSUFFICIENT_DATA"
+    }
+  ],
+  "holdout_30d_proxy": {
+    "train_window_start": "2025-11-25",
+    "train_window_end": "2026-04-23",
+    "holdout_window_start": "2026-04-24",
+    "holdout_window_end": "2026-05-23",
+    "rules_evaluated": 119,
+    "n_lift_positive": 108,
+    "rate_lift_positive": 0.9076,
+    "n_lift_significant_p05": 17,
+    "rate_lift_significant_p05": 0.1429,
+    "mean_holdout_lift_pp": 24.233,
+    "fisher_combined_p_aggregate": 5.308403844765045e-10,
+    "fisher_n_rules": 119,
+    "top10_holdout_lift_pp": [
+      60.8,
+      60.8,
+      57.8,
+      57.8,
+      56.2,
+      56.2,
+      49.4,
+      49.4,
+      49.4,
+      49.4
+    ],
+    "verdict": "PASS_PRELIMINARY",
+    "note": "Honest holdout proxy: train rule selection on first 150 days, evaluate on last 30 days. rate_lift_positive should be > 0.5 if rules have stable forward signal. Stopping criterion: aggregate p >= 0.5 -> FAIL."
+  }
+}

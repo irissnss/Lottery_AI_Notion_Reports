@@ -1,5 +1,21 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V107** - `V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_OWNER_REPORT_VN_PUBLIC.md` (null-hypothesis stress test on V106.x framework; 5 null tests + 2 integrity families; 0/153228 rules survive multiple-testing correction; recommends pre-register <50 rules and wait actual 90d).
+
+## Quick links - V107
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V107 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_OWNER_REPORT_VN_PUBLIC.md)
+3. [V107 Methodology](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_METHODOLOGY_PUBLIC.md)
+4. [V107 Null Test 1 Permutation](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL1_PERMUTATION.json)
+5. [V107 Null Test 2 Negative Control](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL2_NEGATIVE_CONTROL.json)
+6. [V107 Null Test 3 Multiple Testing Correction](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL3_CORRECTION.json)
+7. [V107 Null Test 4 Sub-sample Replication](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL4_SUBSAMPLE.json)
+8. [V107 Null Test 5 Forward Audit](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL5_FORWARD_AUDIT.json)
+9. [V107 Family A Autocorrelation](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_FAMILY_A_AUTOCORR.json)
+10. [V107 Family D Reverse Causality](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_FAMILY_D_REVERSE_CAUSALITY.json)
+
+
 Latest: **V106.06** - `V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE/V10606_OWNER_REPORT_VN_PUBLIC.md` (deep source-rule discovery for MN/MT/MB; 153,228 rules tested, full Vietnamese owner report; recommends shadow modules; no official change).
 
 ## Quick links - V106.06
