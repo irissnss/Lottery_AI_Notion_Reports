@@ -1,0 +1,105 @@
+{
+  "version": "V106.05",
+  "generated_at_vn": "2026-05-23T22:35:17+07:00",
+  "live_sync_manifest": "artifacts/live_sync/20260523_223517/manifest.json",
+  "target": "MT",
+  "source": "MB_BOARD",
+  "source_lags": [
+    "D-1",
+    "D-2",
+    "D-3"
+  ],
+  "allowed_source_prizes": [
+    "DB#1",
+    "G1#1",
+    "G2#1",
+    "G2#2"
+  ],
+  "rules_found": 804,
+  "official_output_changed": false,
+  "lane_test_promoted": false,
+  "provider_manual_ai_called": false,
+  "diagnostic_only": true,
+  "recommended_shadow_module": "MT_MB_LOW_PRIZE_DIGIT_TRANSFORM_V1",
+  "best_global_rules": [
+    {
+      "rule": "MB:G2#1:P4P1 D-1",
+      "window": "90d",
+      "days": 90,
+      "hit_rate_pct": 50.0,
+      "hit_lift_pp": 14.9,
+      "db_day_pct": 6.7,
+      "db_lift_pp": 4.2,
+      "tier": "A"
+    },
+    {
+      "rule": "MB:G1#1:P5P2 D-1",
+      "window": "90d",
+      "days": 90,
+      "hit_rate_pct": 46.7,
+      "hit_lift_pp": 11.6,
+      "db_day_pct": 7.8,
+      "db_lift_pp": 5.4,
+      "tier": "A"
+    },
+    {
+      "rule": "MB:G2#1:P1P4 D-1",
+      "window": "90d",
+      "days": 90,
+      "hit_rate_pct": 50.0,
+      "hit_lift_pp": 14.9,
+      "db_day_pct": 4.4,
+      "db_lift_pp": 2.0,
+      "tier": "B"
+    },
+    {
+      "rule": "MB:G2#1:P4P2 D-3",
+      "window": "60d",
+      "days": 60,
+      "hit_rate_pct": 48.3,
+      "hit_lift_pp": 13.0,
+      "db_day_pct": 5.0,
+      "db_lift_pp": 2.6,
+      "tier": "B"
+    }
+  ],
+  "best_scoped_rules": [
+    {
+      "scope": "CN",
+      "rule": "MB:DB#1:P2P4 D-1",
+      "days": 25,
+      "hit_rate_pct": 76.0,
+      "hit_lift_pp": 35.2,
+      "db_day_pct": 16.0,
+      "db_lift_pp": 13.0
+    },
+    {
+      "scope": "CN",
+      "rule": "MB:G2#1:P1P3 D-1",
+      "days": 25,
+      "hit_rate_pct": 64.0,
+      "hit_lift_pp": 23.2,
+      "db_day_pct": 20.0,
+      "db_lift_pp": 17.0
+    },
+    {
+      "scope": "T5 / Binh Dinh, Quang Binh, Quang Tri",
+      "rule": "MB:G2#1:P4P3 D-1",
+      "days": 25,
+      "hit_rate_pct": 56.0,
+      "hit_lift_pp": 14.3,
+      "db_day_pct": 20.0,
+      "db_lift_pp": 17.0
+    },
+    {
+      "scope": "T7 / Quang Ngai, Da Nang, Dak Nong",
+      "rule": "MB:G2#1:LAST2 D-2",
+      "days": 25,
+      "hit_rate_pct": 64.0,
+      "hit_lift_pp": 22.0,
+      "db_day_pct": 8.0,
+      "db_lift_pp": 5.0
+    }
+  ],
+  "public_safe_scan_pass": true
+}

@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.05** ? `V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE/V10605_OWNER_REPORT_VN_PUBLIC.md` (MT target from MB D-1/D-2/D-3 low-prize digit-transform analysis; recommends measurement-only shadow module).
+
+## Quick links ? V106.05
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V106.05 Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE/V10605_OWNER_REPORT_VN_PUBLIC.md)
+3. [V106.05 Methodology](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE/V10605_METHODOLOGY_PUBLIC.md)
+4. [V106.05 Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE/machine_readable/V10605_SUMMARY.json)
+
+
 Latest: **V106.03** ? `V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE/V10603_OWNER_REPORT_VN_PUBLIC.md` (public-safe analysis of MB Gi?i nh? both-number D-1/D-2/D-3 recurrence into MN D; D-2 recommended as primary no-token source-pool feature; official unchanged).
 
 ## Quick links ? V106.03 (read first)
