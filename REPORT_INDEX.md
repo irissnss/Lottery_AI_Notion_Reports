@@ -1,5 +1,19 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.26.2** - `V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU4_OWNER_SCHEMA_REPORT_VN_PUBLIC.md` (FU4 OWNER_SCHEMA_FIX: 2026-05-25 owner image confirmed MB low-prize source set includes G.4/G.6/G.7 — missed by FU3. Full rescan: 20,843 positive rules (+3,220 NEW from MB G4/G6/G7). Stability w60/w90/w180 audit -> 13 STABLE_ALL added to pre-register panel. Combined panel: 58 baseline + 13 addendum = 71 PRE_REGISTER_ONLY total. live_eligible=0.).
+
+## Quick links - V106.26.2 FU4
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V10626 FU4 Owner-Schema Report VN (NEWEST MAIN)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU4_OWNER_SCHEMA_REPORT_VN_PUBLIC.md)
+3. [V10626 FU4 Pre-Register Addendum Summary JSON (13 NEW STABLE_ALL)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_PRE_REGISTER_ADDENDUM_SUMMARY.json)
+4. [V10626 FU4 Pre-Register Addendum MB CSV (4 self-lag NEW)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_PRE_REGISTER_ADDENDUM_MB.csv)
+5. [V10626 FU4 Pre-Register Addendum MN CSV (3 cross MB->MN NEW)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_PRE_REGISTER_ADDENDUM_MN.csv)
+6. [V10626 FU4 Pre-Register Addendum MT CSV (6 cross MB->MT NEW)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_PRE_REGISTER_ADDENDUM_MT.csv)
+7. [V10626 FU4 Stability Audit w60/w90/w180 JSON (24 candidates classified)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_NEW_MB_CANDIDATES_STABILITY.json)
+8. [V10626 FU4 Owner-Schema Scan Summary JSON (full 20,843 rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU4_OWNER_SCHEMA_SUMMARY.json)
+
+
 Latest: **V106.26** - `V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_FULL_REPORT_VN_PUBLIC.md` (total source rule verify + FU1/FU2/FU3 comprehensive cross-source for MN/MT/MB; 55,546 main inventory rules + 12,966 new low-prize positive rules; 19 PRE_REGISTER_ONLY candidates).
 
 ## Quick links - V106.26

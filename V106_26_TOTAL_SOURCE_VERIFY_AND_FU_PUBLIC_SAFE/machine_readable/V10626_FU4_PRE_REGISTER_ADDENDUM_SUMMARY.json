@@ -1,0 +1,61 @@
+{
+  "live_sync_manifest": "artifacts/live_sync/20260524_221208/manifest.json",
+  "observed_at": "2026-05-25T00:59:57",
+  "schema_source": "OWNER_IMAGE_2026-05-25 (xosodaiphat.com)",
+  "mb_low_prize_set_v3": [
+    "DB#1",
+    "G1#1",
+    "G2#1",
+    "G2#2",
+    "G4#1",
+    "G4#2",
+    "G4#3",
+    "G4#4",
+    "G6#1",
+    "G6#2",
+    "G6#3",
+    "G7#1",
+    "G7#2",
+    "G7#3",
+    "G7#4"
+  ],
+  "mb_new_keys_added_vs_v2": [
+    "G4#1",
+    "G4#2",
+    "G4#3",
+    "G4#4",
+    "G6#1",
+    "G6#2",
+    "G6#3",
+    "G7#1",
+    "G7#2",
+    "G7#3",
+    "G7#4"
+  ],
+  "mnmt_low_prize_set": [
+    "G8#1",
+    "G7#1",
+    "G5#1",
+    "G2#1",
+    "G1#1",
+    "DB#1"
+  ],
+  "addendum_panels": {
+    "MB": 4,
+    "MN": 3,
+    "MT": 6
+  },
+  "addendum_total": 13,
+  "baseline_panel_total": 58,
+  "combined_pre_register_total": 71,
+  "forbidden_status_present": 0,
+  "live_eligible_count": 0,
+  "status_policy": "PRE_REGISTER_ONLY for all addendum entries; no COMMIT_ELIGIBLE_SHADOW, no OUTPUT_ELIGIBLE, no PROMOTION_READY.",
+  "v107_risk_overlay": [
+    "BH_FAIL_GLOBAL",
+    "SELECTION_BIAS_RISK",
+    "FORWARD_90D_INSUFFICIENT",
+    "NEW_FU4_SCHEMA_EXPANSION"
+  ],
+  "forward_audit_baseline_anchor": "2026-05-25"
+}
