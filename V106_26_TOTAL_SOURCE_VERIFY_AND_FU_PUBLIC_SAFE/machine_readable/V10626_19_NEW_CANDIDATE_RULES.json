@@ -1,0 +1,165 @@
+{
+  "status": "PRE_REGISTER_ONLY_PROPOSAL",
+  "live_eligible": false,
+  "requires_owner_approval": true,
+  "count": 19,
+  "breakdown": {
+    "MN": 6,
+    "MT": 8,
+    "MB": 5
+  },
+  "rules": [
+    {
+      "target": "MN",
+      "rule": "MN<-MT:Đà Nẵng:G1#1:SECOND_HEAD_TAIL:D-2",
+      "days": 51,
+      "h1_lift_pp": 10.7,
+      "h2_lift_pp": 12.69,
+      "rationale": "DOUBLE-STRONG, MT Đà Nẵng G1 D-2 cross-region"
+    },
+    {
+      "target": "MN",
+      "rule": "MN<-MT:Đà Nẵng:G1#1:P2P5:D-2",
+      "days": 51,
+      "h1_lift_pp": 10.7,
+      "h2_lift_pp": 12.69,
+      "rationale": "Same value as SECOND_HEAD_TAIL"
+    },
+    {
+      "target": "MN",
+      "rule": "MN<-MN:TP. HCM:G7#1:FIRST2_REV:W-4",
+      "days": 51,
+      "h1_lift_pp": 10.1,
+      "h2_lift_pp": 8.29,
+      "rationale": "TP.HCM W-4 cycle"
+    },
+    {
+      "target": "MN",
+      "rule": "MN<-MT:Khánh Hòa:G7#1:LAST2:D-5",
+      "days": 51,
+      "h1_lift_pp": 8.7,
+      "h2_lift_pp": 8.76,
+      "rationale": "MT Khánh Hòa G7 D-5"
+    },
+    {
+      "target": "MN",
+      "rule": "MN<-MT:Đà Nẵng:DB#1:P5P2:W-1",
+      "days": 52,
+      "h1_lift_pp": 1.4,
+      "h2_lift_pp": 10.02,
+      "rationale": "DB-strict W-1 from MT Đà Nẵng"
+    },
+    {
+      "target": "MN",
+      "rule": "MN<-MN:TP. HCM:G5#1:TAIL_HEAD:D-1",
+      "days": 51,
+      "h1_lift_pp": -0.4,
+      "h2_lift_pp": 8.8,
+      "rationale": "TP.HCM G5 D-1 DB-strict"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Đà Nẵng:G1#1:P3P4:D-2",
+      "days": 51,
+      "h1_lift_pp": 14.7,
+      "h2_lift_pp": 9.8,
+      "rationale": "DOUBLE-STRONG strongest MT"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Khánh Hòa:DB#1:LAST2:W-4",
+      "days": 52,
+      "h1_lift_pp": 8.8,
+      "h2_lift_pp": 10.96,
+      "rationale": "DB W-4 LAST2 strongest H2"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Huế:DB#1:LAST2_REV:D-3",
+      "days": 31,
+      "h1_lift_pp": 0.5,
+      "h2_lift_pp": 10.45,
+      "rationale": "Huế DB D-3 reversed"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Huế:G1#1:SECOND_HEAD_TAIL:W-4",
+      "days": 36,
+      "h1_lift_pp": 14.1,
+      "h2_lift_pp": 8.58,
+      "rationale": "Huế G1 W-4 DOUBLE-STRONG"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Huế:G8#1:LAST2:W-4",
+      "days": 36,
+      "h1_lift_pp": 19.7,
+      "h2_lift_pp": 0.25,
+      "rationale": "Huế G8 W-4 recall"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Đà Nẵng:G8#1:LAST2_REV:W-4",
+      "days": 52,
+      "h1_lift_pp": 14.0,
+      "h2_lift_pp": 5.19,
+      "rationale": "Đà Nẵng G8 W-4 reverse"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Huế:G7#1:LAST2_REV:D-3",
+      "days": 31,
+      "h1_lift_pp": 23.1,
+      "h2_lift_pp": -2.45,
+      "rationale": "Huế G7 D-3 reverse highest recall"
+    },
+    {
+      "target": "MT",
+      "rule": "MT<-MT:Khánh Hòa:G7#1:LAST2:D-3",
+      "days": 52,
+      "h1_lift_pp": 21.7,
+      "h2_lift_pp": -2.5,
+      "rationale": "Khánh Hòa G7 D-3 recall"
+    },
+    {
+      "target": "MB",
+      "rule": "MB<-MT:Khánh Hòa:DB#1:P3P4:D-1",
+      "days": 49,
+      "h1_lift_pp": 7.0,
+      "h2_lift_pp": 7.18,
+      "rationale": "Khánh Hòa DB D-1 cross-region"
+    },
+    {
+      "target": "MB",
+      "rule": "MB<-MT:Đà Nẵng:G2#1:TAIL_HEAD:D-5",
+      "days": 49,
+      "h1_lift_pp": 4.9,
+      "h2_lift_pp": 7.18,
+      "rationale": "Đà Nẵng G2 D-5"
+    },
+    {
+      "target": "MB",
+      "rule": "MB<-MT:Khánh Hòa:G1#1:P2P1:W-2",
+      "days": 51,
+      "h1_lift_pp": 7.5,
+      "h2_lift_pp": 6.84,
+      "rationale": "Khánh Hòa G1 W-2"
+    },
+    {
+      "target": "MB",
+      "rule": "MB<-MB:MB_BOARD:DB#1:P1P3:D-1",
+      "days": 60,
+      "h1_lift_pp": 1.4,
+      "h2_lift_pp": 5.67,
+      "rationale": "MB self-lag DB D-1"
+    },
+    {
+      "target": "MB",
+      "rule": "MB<-MB:MB_BOARD:G2#1:P3P5:W-4",
+      "days": 60,
+      "h1_lift_pp": 8.0,
+      "h2_lift_pp": 5.67,
+      "rationale": "MB self-lag G2 W-4"
+    }
+  ]
+}

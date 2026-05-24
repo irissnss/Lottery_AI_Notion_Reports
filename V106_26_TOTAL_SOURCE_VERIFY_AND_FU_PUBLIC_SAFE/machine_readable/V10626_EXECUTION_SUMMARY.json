@@ -1,0 +1,72 @@
+{
+  "version": "V20.3.37.106.26",
+  "observed_at": "2026-05-24T22:21:22",
+  "live_sync_manifest": "artifacts/live_sync/20260524_221208/manifest.json",
+  "db_sha256": "dc3cfc95ae381786818df29062bd5c323a1a5d78224edfa609ca1929cd88f219",
+  "private_commit_hash": "PENDING_COMMIT",
+  "public_push": "NO",
+  "rule_inventory_total": 55546,
+  "rule_rejected_no_lineage": 0,
+  "source_report_breakdown": {
+    "V10605": 120,
+    "V10606": 54924,
+    "V107_PANEL": 498,
+    "V10603": 4
+  },
+  "coverage_matrix_summary": {
+    "MT_from_MB": 8747,
+    "MT_from_MN": 8274,
+    "MT_self": 0,
+    "MN_from_MB": 9441,
+    "MN_from_MT": 7519,
+    "MN_self": 0,
+    "MB_from_MT": 6282,
+    "MB_from_MN": 7512,
+    "MB_self": 7771
+  },
+  "v107_risk_distribution": {
+    "BH_FAIL_GLOBAL": 55546,
+    "SELECTION_BIAS_RISK": 55546,
+    "PRE_REGISTER_ONLY": 55546,
+    "FORWARD_90D_INSUFFICIENT": 55546,
+    "SMALL_SAMPLE_RISK": 1540,
+    "REPLICATION_FAIL_RISK": 5969
+  },
+  "rules_live_eligible": 0,
+  "rules_pre_register_only": 55546,
+  "pre_register_panels": {
+    "MT": {
+      "size": 20,
+      "cap": 20
+    },
+    "MN": {
+      "size": 15,
+      "cap": 15
+    },
+    "MB": {
+      "size": 15,
+      "cap": 15
+    }
+  },
+  "pre_register_controls": 3,
+  "pre_register_negatives": 5,
+  "pre_register_total": 58,
+  "official_mutation": 0,
+  "strict_official_drift_detected": false,
+  "db_hash_unchanged_mid_pass": true,
+  "safety_gate": {
+    "official_mutation": 0,
+    "provider_manual_ai_call": 0,
+    "wallet": 0,
+    "lane_promotion": 0,
+    "production_prompt_switch": 0,
+    "production_selector_scoring_voting_roster_switch": 0,
+    "public_push": "NO",
+    "cron_install": 0,
+    "live_candidate_generation": 0,
+    "board_application": 0,
+    "production_hard_block": 0,
+    "broad_selector_used": 0,
+    "prompt108_v107_role": "SUPPORT_ONLY"
+  }
+}

@@ -1,16 +1,16 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V107",
-  "latest_folder": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE",
-  "latest_report": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/machine_readable/V107_NULL3_CORRECTION.json",
-  "created_at_vn": "2026-05-24T06:56:04",
-  "status": "V107 null-hypothesis stress test on V106.x framework: 5 null tests + 2 integrity families. 0/153228 rules survive BH q<0.05 within family. Sub-sample replication below independence. Forward 90d insufficient (V106.05 just published). Recommendation: pre-register <50 rules, wait actual 90d, evaluate with strict correction. Official unchanged.",
+  "latest_version": "V106.26",
+  "latest_folder": "V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE",
+  "latest_report": "V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_FULL_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_EXECUTION_SUMMARY.json",
+  "created_at_vn": "2026-05-25T00:27:49",
+  "status": "V106.26 + FU1/FU2/FU3 comprehensive cross-source verify: 55,546 rules inventoried, 12,966 new positive low-prize rules with schema-safe key-name extractor (G8/G7/G5/G2/G1/DB), 19 new candidates proposed PRE_REGISTER_ONLY. Owner hypothesis MB DB D-2 NOT verified. V107 risk overlay active. Official unchanged, no lane promotion, no provider call.",
   "official_touched": false,
   "provider_manual_ai_called": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "diagnostic_only": true,
-  "patch_scope": "artifact_only_null_test",
+  "patch_scope": "artifact_only_total_source_verify_and_fu",
   "public_safe_scan_pass": true
 }

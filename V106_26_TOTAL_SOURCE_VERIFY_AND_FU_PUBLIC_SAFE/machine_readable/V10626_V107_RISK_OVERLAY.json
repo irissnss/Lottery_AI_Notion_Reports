@@ -1,0 +1,14 @@
+{
+  "total_rules": 55546,
+  "risk_distribution": {
+    "BH_FAIL_GLOBAL": 55546,
+    "SELECTION_BIAS_RISK": 55546,
+    "PRE_REGISTER_ONLY": 55546,
+    "FORWARD_90D_INSUFFICIENT": 55546,
+    "SMALL_SAMPLE_RISK": 1540,
+    "REPLICATION_FAIL_RISK": 5969
+  },
+  "rules_live_eligible": 0,
+  "rules_pre_register_only": 55546,
+  "note": "Per V107 verdict (WEAK SIGNAL / mostly selection bias), every rule from V10605/V10606/V107/V10603 inherits BH_FAIL_GLOBAL and FORWARD_90D_INSUFFICIENT. PRE_REGISTER_ONLY is the only allowed status."
+}

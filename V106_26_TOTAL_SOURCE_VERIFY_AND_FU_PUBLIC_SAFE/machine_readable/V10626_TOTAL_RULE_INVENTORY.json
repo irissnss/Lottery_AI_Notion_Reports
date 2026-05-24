@@ -1,0 +1,52 @@
+{
+  "inventory_count": 55546,
+  "rejected_count": 0,
+  "source_report_breakdown": {
+    "V10605": 120,
+    "V10606": 54924,
+    "V107_PANEL": 498,
+    "V10603": 4
+  },
+  "target_source_distribution": {
+    "MT<-MB": 8747,
+    "MT<-MN": 8274,
+    "MB<-MN": 7512,
+    "MB<-MT": 6282,
+    "MN<-MT": 7519,
+    "MN<-MB": 9441,
+    "MB<-MB": 7771
+  },
+  "target_axis_distribution": {
+    "MT|D-1": 1550,
+    "MT|D-3": 1580,
+    "MT|D-2": 1687,
+    "MT|W-1": 2993,
+    "MT|D-6": 1539,
+    "MB|D-5": 2040,
+    "MT|D-5": 1447,
+    "MT|W-2": 1580,
+    "MB|W-4": 1871,
+    "MB|D-3": 2056,
+    "MB|W-3": 1878,
+    "MN|W-4": 1411,
+    "MT|D-4": 1586,
+    "MT|W-4": 1460,
+    "MN|W-2": 1504,
+    "MB|W-1": 3701,
+    "MB|D-4": 2101,
+    "MN|D-3": 1765,
+    "MN|D-1": 1569,
+    "MB|D-1": 2043,
+    "MN|D-6": 1466,
+    "MN|W-1": 3292,
+    "MN|D-4": 1486,
+    "MN|D-2": 1593,
+    "MB|D-6": 1944,
+    "MT|W-3": 1599,
+    "MB|D-2": 2039,
+    "MB|W-2": 1892,
+    "MN|W-3": 1396,
+    "MN|D-5": 1478
+  },
+  "broad_selector_rejected_count": 0
+}

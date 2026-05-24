@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-05-24T22:15:10",
+  "live_sync_manifest": "artifacts/live_sync/20260524_221208/manifest.json",
+  "db_sha256": "dc3cfc95ae381786818df29062bd5c323a1a5d78224edfa609ca1929cd88f219",
+  "packages_local": {
+    "V10603": {
+      "path": "artifacts\\public_repo\\V106_03_MB_G2_PAIR_LAG_RECURRENCE_PUBLIC_SAFE",
+      "exists": true,
+      "file_count": 9
+    },
+    "V10605": {
+      "path": "artifacts\\public_repo\\V106_05_MT_FROM_MB_D1D3_PUBLIC_SAFE",
+      "exists": true,
+      "file_count": 10
+    },
+    "V10606": {
+      "path": "artifacts\\public_repo\\V106_06_DEEP_SOURCE_RULE_DISCOVERY_PUBLIC_SAFE",
+      "exists": true,
+      "file_count": 15
+    },
+    "V107": {
+      "path": "artifacts\\public_repo\\V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE",
+      "exists": true,
+      "file_count": 27
+    }
+  },
+  "expected_private_commits": {
+    "V10622_R1": "bd39f44",
+    "V10623": "89ecf70",
+    "V10624": "93af45b",
+    "V10625": "692ee0f"
+  },
+  "private_commits_present": {
+    "V10622_R1": true,
+    "V10623": true,
+    "V10624": true,
+    "V10625": true
+  },
+  "expected_public_commits": {
+    "V10603": "19902db",
+    "V10605": "eafb733",
+    "V10606": "9795186",
+    "V107": "3dacb95"
+  },
+  "public_commits_present": {
+    "V10603": true,
+    "V10605": true,
+    "V10606": true,
+    "V107": true
+  },
+  "v107_null_warnings": {
+    "bh_q05_survivors_global": 0,
+    "bh_q05_survivors_per_family": 0,
+    "odd_even_replication": "BELOW_INDEPENDENCE",
+    "forward_90d_window": "INSUFFICIENT (V10605/V10606 published 2026-05-23)",
+    "panel_size_v107": 498,
+    "aggregate_verdict": "WEAK_SIGNAL_MOSTLY_SELECTION_BIAS"
+  },
+  "hard_locks_active": [
+    "NO_OFFICIAL_MUTATION",
+    "NO_LANE_PROMOTION",
+    "NO_PRODUCTION_PROMPT_SWITCH",
+    "NO_PRODUCTION_SELECTOR_SWITCH",
+    "NO_PROVIDER_MANUAL_AI",
+    "NO_WALLET",
+    "NO_MB_EXPANSION",
+    "NO_PUBLIC_PUSH_WITHOUT_OWNER",
+    "NO_CRON_INSTALL",
+    "NO_BROAD_SELECTOR",
+    "NO_APPLY_TO_LIVE_BOARD"
+  ]
+}

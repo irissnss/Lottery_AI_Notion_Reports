@@ -1,5 +1,24 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.26** - `V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_FULL_REPORT_VN_PUBLIC.md` (total source rule verify + FU1/FU2/FU3 comprehensive cross-source for MN/MT/MB; 55,546 main inventory rules + 12,966 new low-prize positive rules; 19 PRE_REGISTER_ONLY candidates).
+
+## Quick links - V106.26
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V10626 FU Full Report VN (MAIN)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_FULL_REPORT_VN_PUBLIC.md)
+3. [V10626 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_OWNER_REPORT_VN_PUBLIC.md)
+4. [V10626 FU MB DB D-2 Verify](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_OWNER_REPORT_VN_PUBLIC.md)
+5. [V10626 FU Comprehensive (pre-schema-fix)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU_COMPREHENSIVE_REPORT_VN_PUBLIC.md)
+6. [V10626 Methodology](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_METHODOLOGY_PUBLIC.md)
+7. [V10626 Target-Source Coverage Matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_TARGET_SOURCE_COVERAGE_MATRIX_PUBLIC.md)
+8. [V10626 Pre-Register Panel Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_PRE_REGISTER_PANEL_SUMMARY_PUBLIC.md)
+9. [V10626 V107 Overfit Warning](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_OVERFIT_WARNING_PUBLIC.md)
+10. [V10626 FU3 Low Prize Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU3_KEYNAME_LOW_PRIZE_SUMMARY.json)
+11. [V10626 FU3 Top-600 Rules CSV](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_FU3_TOP_600_RULES.csv)
+12. [V10626 19 New Candidate Rules JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_19_NEW_CANDIDATE_RULES.json)
+13. [V10626 Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/machine_readable/V10626_EXECUTION_SUMMARY.json)
+
+
 Latest: **V107** - `V107_NULL_AND_SIGNAL_TEST_PUBLIC_SAFE/V107_OWNER_REPORT_VN_PUBLIC.md` (null-hypothesis stress test on V106.x framework; 5 null tests + 2 integrity families; 0/153228 rules survive multiple-testing correction; recommends pre-register <50 rules and wait actual 90d).
 
 ## Quick links - V107

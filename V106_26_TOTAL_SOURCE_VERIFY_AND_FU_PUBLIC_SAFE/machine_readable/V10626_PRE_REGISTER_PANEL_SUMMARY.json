@@ -1,0 +1,78 @@
+{
+  "target_panels": {
+    "MT": {
+      "size": 20,
+      "cap": 20
+    },
+    "MN": {
+      "size": 15,
+      "cap": 15
+    },
+    "MB": {
+      "size": 15,
+      "cap": 15
+    }
+  },
+  "controls": {
+    "count": 3,
+    "cap": 10,
+    "rules": [
+      {
+        "control_type": "SELF_LAG_AUTOCORR",
+        "rule_lineage": "MB:MB_BOARD:G1#1:LAST2",
+        "target_region": "MB",
+        "axis": "W-2",
+        "lift_pp": 1.17
+      },
+      {
+        "control_type": "SELF_LAG_AUTOCORR",
+        "rule_lineage": "MB:MB_BOARD:G1#1:LAST2",
+        "target_region": "MB",
+        "axis": "W-2",
+        "lift_pp": 1.17
+      },
+      {
+        "control_type": "SELF_LAG_AUTOCORR",
+        "rule_lineage": "MB:MB_BOARD:G2#1:LAST2",
+        "target_region": "MB",
+        "axis": "W-2",
+        "lift_pp": -2.13
+      }
+    ]
+  },
+  "negative_controls": {
+    "count": 5,
+    "cap": 5,
+    "rules": [
+      {
+        "control_type": "NEGATIVE_RANDOM_00_99_SEED42",
+        "rule_lineage": "SYNTHETIC:RANDOM_00_99_SEED42",
+        "expected_lift_pp": 0
+      },
+      {
+        "control_type": "NEGATIVE_MOON_PHASE_28D",
+        "rule_lineage": "SYNTHETIC:MOON_PHASE_28DAY",
+        "expected_lift_pp": 0
+      },
+      {
+        "control_type": "NEGATIVE_LUNAR_DAY_30",
+        "rule_lineage": "SYNTHETIC:LUNAR_DAY_30",
+        "expected_lift_pp": 0
+      },
+      {
+        "control_type": "NEGATIVE_DAY_OF_YEAR_TAIL",
+        "rule_lineage": "SYNTHETIC:DAY_OF_YEAR_TAIL",
+        "expected_lift_pp": 0
+      },
+      {
+        "control_type": "NEGATIVE_SINE_PERIOD_27",
+        "rule_lineage": "SYNTHETIC:SINE_PERIOD_27",
+        "expected_lift_pp": 0
+      }
+    ]
+  },
+  "total_pre_register_count": 58,
+  "forbidden_status_present": 0,
+  "live_eligible_count": 0,
+  "status_policy": "PRE_REGISTER_ONLY for all entries; no COMMIT_ELIGIBLE_SHADOW, no OUTPUT_ELIGIBLE, no PROMOTION_READY."
+}

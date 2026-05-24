@@ -1,0 +1,195 @@
+{
+  "matrix": [
+    {
+      "target": "MT",
+      "source": "MB",
+      "total_rules": 8747,
+      "complete_lineage": 8747,
+      "verified_backtest": 7223,
+      "best_lift_pp": 38.85,
+      "best_db_day_lift_pp": 21.08,
+      "tier_breakdown": {
+        "WATCH": 4525,
+        "C": 905,
+        "A": 329,
+        "B": 2988
+      },
+      "v107_quarantined": 8747,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MT",
+      "source": "MN",
+      "total_rules": 8274,
+      "complete_lineage": 8274,
+      "verified_backtest": 5061,
+      "best_lift_pp": 61.42,
+      "best_db_day_lift_pp": 23.0,
+      "tier_breakdown": {
+        "C": 1094,
+        "A": 154,
+        "WATCH": 5731,
+        "B": 1295
+      },
+      "v107_quarantined": 8274,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MT",
+      "source": "MT",
+      "total_rules": 0,
+      "complete_lineage": 0,
+      "verified_backtest": 0,
+      "best_lift_pp": null,
+      "best_db_day_lift_pp": null,
+      "tier_breakdown": {},
+      "v107_quarantined": 0,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MN",
+      "source": "MB",
+      "total_rules": 9441,
+      "complete_lineage": 9441,
+      "verified_backtest": 9441,
+      "best_lift_pp": 37.52,
+      "best_db_day_lift_pp": 21.04,
+      "tier_breakdown": {
+        "A": 562,
+        "B": 4264,
+        "C": 367,
+        "WATCH": 4244,
+        "V10603_OWNER_REPORT": 4
+      },
+      "v107_quarantined": 9441,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MN",
+      "source": "MN",
+      "total_rules": 0,
+      "complete_lineage": 0,
+      "verified_backtest": 0,
+      "best_lift_pp": null,
+      "best_db_day_lift_pp": null,
+      "tier_breakdown": {},
+      "v107_quarantined": 0,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MN",
+      "source": "MT",
+      "total_rules": 7519,
+      "complete_lineage": 7519,
+      "verified_backtest": 4955,
+      "best_lift_pp": 35.54,
+      "best_db_day_lift_pp": 22.0,
+      "tier_breakdown": {
+        "C": 1069,
+        "A": 118,
+        "WATCH": 5084,
+        "B": 1248
+      },
+      "v107_quarantined": 7519,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MB",
+      "source": "MB",
+      "total_rules": 7771,
+      "complete_lineage": 7771,
+      "verified_backtest": 7771,
+      "best_lift_pp": 34.5,
+      "best_db_day_lift_pp": 15.0,
+      "tier_breakdown": {
+        "A": 115,
+        "B": 2783,
+        "C": 256,
+        "WATCH": 4617
+      },
+      "v107_quarantined": 7771,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MB",
+      "source": "MN",
+      "total_rules": 7512,
+      "complete_lineage": 7512,
+      "verified_backtest": 5816,
+      "best_lift_pp": 51.58,
+      "best_db_day_lift_pp": 15.75,
+      "tier_breakdown": {
+        "C": 551,
+        "A": 86,
+        "WATCH": 5675,
+        "B": 1200
+      },
+      "v107_quarantined": 7512,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    },
+    {
+      "target": "MB",
+      "source": "MT",
+      "total_rules": 6282,
+      "complete_lineage": 6282,
+      "verified_backtest": 4282,
+      "best_lift_pp": 42.58,
+      "best_db_day_lift_pp": 19.0,
+      "tier_breakdown": {
+        "C": 646,
+        "A": 64,
+        "WATCH": 4599,
+        "B": 973
+      },
+      "v107_quarantined": 6282,
+      "recommended_action": "PRE_REGISTER_ONLY",
+      "live_eligible": false
+    }
+  ],
+  "axis_distribution": {
+    "MT": {
+      "D-1": 1550,
+      "D-3": 1580,
+      "D-2": 1687,
+      "W-1": 2993,
+      "D-6": 1539,
+      "D-5": 1447,
+      "W-2": 1580,
+      "D-4": 1586,
+      "W-4": 1460,
+      "W-3": 1599
+    },
+    "MB": {
+      "D-5": 2040,
+      "W-4": 1871,
+      "D-3": 2056,
+      "W-3": 1878,
+      "W-1": 3701,
+      "D-4": 2101,
+      "D-1": 2043,
+      "D-6": 1944,
+      "D-2": 2039,
+      "W-2": 1892
+    },
+    "MN": {
+      "W-4": 1411,
+      "W-2": 1504,
+      "D-3": 1765,
+      "D-1": 1569,
+      "D-6": 1466,
+      "W-1": 3292,
+      "D-4": 1486,
+      "D-2": 1593,
+      "W-3": 1396,
+      "D-5": 1478
+    }
+  }
+}
