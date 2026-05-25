@@ -1,0 +1,25 @@
+{
+  "schema_version": "v10628r0a_public_manifest_v1",
+  "version": "V106.28R0A-TOTAL-2",
+  "package": "V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T13:14:39+07:00",
+  "files": [
+    "V10628R0A_OWNER_REPORT_VN_PUBLIC.md",
+    "V10628R0A_READ_THIS_FIRST.md",
+    "V10628R0A_VERSION_TRUTH_PUBLIC.md",
+    "V10628R0A_MASTER_ISSUE_MATRIX_PUBLIC.md",
+    "V10628R0A_SCHEMA_EXTRACTOR_AUDIT_PUBLIC.md",
+    "V10628R0A_V108_BLOCKER_PUBLIC.md",
+    "V10628R0A_NEXT_LIVE_RUNBOOK_PUBLIC.md",
+    "V10628R0A_SAFETY_GATE_PUBLIC.md",
+    "V10628R0A_ZERO_OFFICIAL_DRIFT_PUBLIC.md",
+    "machine_readable/V10628R0A_EXECUTION_SUMMARY.json",
+    "machine_readable/V10628R0A_OWNER_DECISION_MATRIX.json",
+    "machine_readable/V10628R0A_MASTER_ISSUE_MATRIX.json",
+    "machine_readable/V10628R0A_PUBLIC_MANIFEST.json"
+  ],
+  "public_safe_scan_pass": true,
+  "raw_db_published": false,
+  "raw_jsonl_published": false,
+  "secrets_published": false
+}

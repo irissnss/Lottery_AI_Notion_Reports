@@ -1,0 +1,37 @@
+[
+  {
+    "decision_id": "DEPLOY_READ_ONLY_BOARD",
+    "owner_question": "Deploy read-only board?",
+    "default": "NO",
+    "current_status": "LOCAL_ARTIFACT_ONLY",
+    "required_proof": "owner approval + smoke tests + hash compare"
+  },
+  {
+    "decision_id": "INSTALL_ARTIFACT_CRON",
+    "owner_question": "Install artifact-only cron?",
+    "default": "NO",
+    "current_status": "MANUAL_ONLY",
+    "required_proof": "owner approval + cron log + no official drift"
+  },
+  {
+    "decision_id": "FIX_V108_CODE",
+    "owner_question": "Fix V108 schema query in separate code conversation?",
+    "default": "SEPARATE",
+    "current_status": "BLOCKED_BACH_THU_COLUMN",
+    "required_proof": "unit/smoke against lane schema"
+  },
+  {
+    "decision_id": "RUN_V10628R1",
+    "owner_question": "Run V106.28R1 rule import/materializer continuation?",
+    "default": "NO",
+    "current_status": "BLOCKED_ON_SCHEMA_AUDIT_AND_OWNER_GATE",
+    "required_proof": "schema safe + owner approval"
+  },
+  {
+    "decision_id": "PRODUCTION_CHANGE",
+    "owner_question": "Any production prompt/selector/scoring change?",
+    "default": "NO",
+    "current_status": "NOT_ALLOWED",
+    "required_proof": "separate owner-approved deploy plan"
+  }
+]

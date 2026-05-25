@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.28R0A-TOTAL-2** - `V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_OWNER_REPORT_VN_PUBLIC.md` (post-V106.29 total-control public-safe package; V106.28R1 not run; V108 partial blocked; no official/provider/cron/deploy/lane promotion/rule import).
+
+## Quick links - V106.28R0A-TOTAL-2
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_OWNER_REPORT_VN_PUBLIC.md)
+3. [Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/machine_readable/V10628R0A_EXECUTION_SUMMARY.json)
+4. [Master Issue Matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_MASTER_ISSUE_MATRIX_PUBLIC.md)
+5. [Schema Extractor Audit](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_SCHEMA_EXTRACTOR_AUDIT_PUBLIC.md)
+6. [V108 Blocker](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_V108_BLOCKER_PUBLIC.md)
+7. [Next Live Runbook](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_NEXT_LIVE_RUNBOOK_PUBLIC.md)
+8. [Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_SAFETY_GATE_PUBLIC.md)
+
 Latest: **V106.29** - `V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_OWNER_REPORT_VN_PUBLIC.md` (one-pass live readiness public-safe package; diagnostic-only; V106.28R1 not run; schema/extractor gate blocks rule import; official/provider/wallet/cron/deploy all false).
 
 ## Quick links - V106.29
