@@ -1,0 +1,20 @@
+{
+  "schema_version": "v10628r0c_public_manifest_v1",
+  "version": "V106.28R0C",
+  "package": "V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T15:12:12+07:00",
+  "files": [
+    "V10628R0C_OWNER_REPORT_VN_PUBLIC.md",
+    "V10628R0C_RUNTIME_CLOSEOUT_PUBLIC.md",
+    "V10628R0C_MT_CONVERSION_GATE_PUBLIC.md",
+    "V10628R0C_MN_MB_G2_PUBLIC.md",
+    "V10628R0C_MB_READ_ONLY_PUBLIC.md",
+    "V10628R0C_UI_SEMANTICS_PUBLIC.md",
+    "V10628R0C_SAFETY_GATE_PUBLIC.md",
+    "machine_readable/V10628R0C_EXECUTION_SUMMARY.json"
+  ],
+  "raw_db_published": false,
+  "raw_jsonl_published": false,
+  "secrets_published": false,
+  "public_safe_scan_pass": true
+}

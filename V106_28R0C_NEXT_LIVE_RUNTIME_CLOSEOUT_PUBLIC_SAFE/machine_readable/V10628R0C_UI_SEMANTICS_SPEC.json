@@ -1,0 +1,16 @@
+{
+  "labels": [
+    "OFFICIAL_COMMITTED",
+    "LANE_TEST_MEASURE_ONLY",
+    "SHADOW_DIAGNOSTIC_ONLY",
+    "WATCH_ONLY",
+    "CONFIRM_ONLY",
+    "STRICT_SHADOW_BLOCK",
+    "BOOST_CONFLICT_REVIEW",
+    "READ_ONLY_COMPARE",
+    "OWNER_GATE_REQUIRED"
+  ],
+  "deploy": false,
+  "semantics_only": true,
+  "description": "Read-only UI labels; no deploy without owner approval."
+}

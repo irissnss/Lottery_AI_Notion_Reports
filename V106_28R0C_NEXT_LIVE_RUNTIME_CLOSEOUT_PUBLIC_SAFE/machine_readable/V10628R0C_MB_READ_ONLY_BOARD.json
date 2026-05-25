@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "region": "MB",
+      "candidate": "63",
+      "rank": 3,
+      "votes": 5,
+      "current_support": "{\"rerun_post_mt\": 4, \"ai_chain\": 1}",
+      "actual_hit": false,
+      "read_only": true,
+      "value_cost": "diagnostic_only_no_wallet",
+      "action": "READ_ONLY_COMPARE",
+      "owner_gate": "OWNER_GATE_REQUIRED",
+      "forbidden_action": "wallet / expansion / promotion"
+    },
+    {
+      "region": "MB",
+      "candidate": "79",
+      "rank": 2,
+      "votes": 7,
+      "current_support": "{\"ai_chain\": 5, \"shadow_auto_eval\": 2}",
+      "actual_hit": false,
+      "read_only": true,
+      "value_cost": "diagnostic_only_no_wallet",
+      "action": "READ_ONLY_COMPARE",
+      "owner_gate": "OWNER_GATE_REQUIRED",
+      "forbidden_action": "wallet / expansion / promotion"
+    },
+    {
+      "region": "MB",
+      "candidate": "16",
+      "rank": 1,
+      "votes": 17,
+      "current_support": "{\"ai_chain\": 7, \"shadow_auto_eval\": 10}",
+      "actual_hit": false,
+      "read_only": true,
+      "value_cost": "diagnostic_only_no_wallet",
+      "action": "READ_ONLY_COMPARE",
+      "owner_gate": "OWNER_GATE_REQUIRED",
+      "forbidden_action": "wallet / expansion / promotion"
+    },
+    {
+      "region": "MB",
+      "candidate": "FU4_MB_G4_G6_G7",
+      "rank": "pre_register",
+      "votes": "n/a",
+      "current_support": "13 STABLE_ALL addendum; live_eligible=0",
+      "actual_hit": "n/a",
+      "read_only": true,
+      "value_cost": "watch_only_forward_audit",
+      "action": "WATCH_ONLY",
+      "owner_gate": "90d forward audit",
+      "forbidden_action": "live apply / wallet / expansion"
+    }
+  ],
+  "verdict": "con cho"
+}

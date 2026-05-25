@@ -1,0 +1,68 @@
+{
+  "schema_version": "v10628r0c_safety_v1",
+  "observed_at_vn": "2026-05-25T15:12:12+07:00",
+  "official_mutation": false,
+  "provider_call_count": 0,
+  "lane_test_promoted": false,
+  "production_switch": false,
+  "rule_import": false,
+  "cron": false,
+  "deploy": false,
+  "v10628r1_ran": false,
+  "public_safe_scan_pass": "pending",
+  "official_pre": [
+    {
+      "table": "predictions",
+      "row_count": 5907,
+      "rowid_sum": 53217944,
+      "rowid_max": 15161
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 259,
+      "rowid_sum": 41833,
+      "rowid_max": 337
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14741,
+      "rowid_sum": 109443676,
+      "rowid_max": 14845
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729
+    }
+  ],
+  "official_post": [
+    {
+      "table": "predictions",
+      "row_count": 5907,
+      "rowid_sum": 53217944,
+      "rowid_max": 15161
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 259,
+      "rowid_sum": 41833,
+      "rowid_max": 337
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14741,
+      "rowid_sum": 109443676,
+      "rowid_max": 14845
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729
+    }
+  ],
+  "strict_official_drift_detected": false,
+  "db_sha256": "23f3283db81dfb4f3bc0590fe2022dc503eedc6b65dab31c194386030dcf6fdd",
+  "trace_sha256": "bf76a61eef6941d706ad8ea09b759785d9118fcf3d0f21737e5fa232cd1a5cef"
+}

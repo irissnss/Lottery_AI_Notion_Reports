@@ -1,5 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.28R0C** - `V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/V10628R0C_OWNER_REPORT_VN_PUBLIC.md` (next-live runtime closeout + MT conversion gate + UI semantics lock; no official/provider/cron/deploy/lane promotion/rule import).
+
+## Quick links - V106.28R0C
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/V10628R0C_OWNER_REPORT_VN_PUBLIC.md)
+3. [Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/machine_readable/V10628R0C_EXECUTION_SUMMARY.json)
+4. [Runtime Closeout](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/V10628R0C_RUNTIME_CLOSEOUT_PUBLIC.md)
+5. [MT Conversion Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/V10628R0C_MT_CONVERSION_GATE_PUBLIC.md)
+6. [UI Semantics](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE/V10628R0C_UI_SEMANTICS_PUBLIC.md)
+
 Latest: **V106.28R0B** - `V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_OWNER_REPORT_VN_PUBLIC.md` (V108 adapter fix + live measurement closeout; no official/provider/cron/deploy/lane promotion/rule import).
 
 ## Quick links - V106.28R0B
