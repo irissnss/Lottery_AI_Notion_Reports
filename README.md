@@ -1,15 +1,13 @@
 # Lottery AI Notion Reports
 
-Latest public-safe package: `V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE` (V106.28R0A-TOTAL-2).
+Latest public-safe package: `V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE` (V106.28R0B).
 
-Latest report: `V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_OWNER_REPORT_VN_PUBLIC.md`.
+Latest report: `V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_OWNER_REPORT_VN_PUBLIC.md`.
 
-## Latest update (2026-05-25 - V106.28R0A-TOTAL-2)
+## Latest update (2026-05-25 - V106.28R0B)
 
-- Post-V106.29 total-control public-safe package.
-- V106.29 was public-safe only; V106.28R1 did not run.
-- Schema/extractor audited with no rule import.
-- V108 remains partial and blocked by `bach_thu` lane-table query bug.
-- Official/provider/cron/deploy/lane promotion all false.
+- V108 adapter fix + Phase 2 live measurement closeout.
+- Official/provider/cron/deploy/lane promotion/rule import all false.
+- MN watch/confirm/rerank only; MT strict shadow block only; MB read-only/no-wallet/no-expansion.
 
 For previous versions, see `REPORT_INDEX.md`.

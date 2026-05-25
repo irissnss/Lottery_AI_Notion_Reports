@@ -1,0 +1,20 @@
+{
+  "schema_version": "v10628r0b_public_manifest_v1",
+  "version": "V106.28R0B",
+  "package": "V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T14:42:49+07:00",
+  "files": [
+    "V10628R0B_OWNER_REPORT_VN_PUBLIC.md",
+    "V10628R0B_V108_ADAPTER_FIX_PUBLIC.md",
+    "V10628R0B_LIVE_MEASUREMENT_CLOSEOUT_PUBLIC.md",
+    "V10628R0B_MT_CONVERSION_CLOSEOUT_PUBLIC.md",
+    "V10628R0B_MN_MB_G2_CLOSEOUT_PUBLIC.md",
+    "V10628R0B_MB_READ_ONLY_CLOSEOUT_PUBLIC.md",
+    "V10628R0B_SAFETY_GATE_PUBLIC.md",
+    "machine_readable/V10628R0B_EXECUTION_SUMMARY.json"
+  ],
+  "public_safe_scan_pass": true,
+  "raw_db_published": false,
+  "raw_jsonl_published": false,
+  "secrets_published": false
+}

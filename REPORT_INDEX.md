@@ -1,5 +1,17 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.28R0B** - `V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_OWNER_REPORT_VN_PUBLIC.md` (V108 adapter fix + live measurement closeout; no official/provider/cron/deploy/lane promotion/rule import).
+
+## Quick links - V106.28R0B
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_OWNER_REPORT_VN_PUBLIC.md)
+3. [Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/machine_readable/V10628R0B_EXECUTION_SUMMARY.json)
+4. [V108 Adapter Fix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_V108_ADAPTER_FIX_PUBLIC.md)
+5. [Live Measurement Closeout](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_LIVE_MEASUREMENT_CLOSEOUT_PUBLIC.md)
+6. [MT Conversion Closeout](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_MT_CONVERSION_CLOSEOUT_PUBLIC.md)
+7. [Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE/V10628R0B_SAFETY_GATE_PUBLIC.md)
+
 Latest: **V106.28R0A-TOTAL-2** - `V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE/V10628R0A_OWNER_REPORT_VN_PUBLIC.md` (post-V106.29 total-control public-safe package; V106.28R1 not run; V108 partial blocked; no official/provider/cron/deploy/lane promotion/rule import).
 
 ## Quick links - V106.28R0A-TOTAL-2

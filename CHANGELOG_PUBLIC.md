@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.28R0B - 2026-05-25T14:42:49+07:00
+
+- Published public-safe V108 adapter fix and live measurement closeout package `V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, lane promotion, production switch, cron, deploy, and rule import false.
+
 ## V106.28R0A-TOTAL-2 - 2026-05-25T13:14:39+07:00
 
 - Published public-safe post-V106.29 total-control package `V106_28R0A_TOTAL_2_POST_V10629_CONTROL_PUBLIC_SAFE`.

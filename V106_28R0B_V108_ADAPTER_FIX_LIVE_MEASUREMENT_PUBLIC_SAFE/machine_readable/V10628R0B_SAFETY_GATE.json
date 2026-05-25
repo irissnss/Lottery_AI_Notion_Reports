@@ -1,0 +1,66 @@
+{
+  "schema_version": "v10628r0b_safety_v1",
+  "observed_at_vn": "2026-05-25T14:42:49+07:00",
+  "official_mutation": false,
+  "provider_call_count": 0,
+  "lane_test_promoted": false,
+  "production_switch": false,
+  "cron_installed": false,
+  "deploy": false,
+  "rule_import": false,
+  "official_post": [
+    {
+      "table": "predictions",
+      "row_count": 5907,
+      "rowid_sum": 53217944,
+      "rowid_max": 15161
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 259,
+      "rowid_sum": 41833,
+      "rowid_max": 337
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14741,
+      "rowid_sum": 109443676,
+      "rowid_max": 14845
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729
+    }
+  ],
+  "db_sha256": "2dd05938b0ac77e61ca275f4ad27ab542d22d2767f4112030162ff578e41178d",
+  "trace_sha256": "bf76a61eef6941d706ad8ea09b759785d9118fcf3d0f21737e5fa232cd1a5cef",
+  "official_pre": [
+    {
+      "table": "predictions",
+      "row_count": 5907,
+      "rowid_sum": 53217944,
+      "rowid_max": 15161
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 259,
+      "rowid_sum": 41833,
+      "rowid_max": 337
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14741,
+      "rowid_sum": 109443676,
+      "rowid_max": 14845
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729
+    }
+  ],
+  "strict_official_drift_detected": false
+}
