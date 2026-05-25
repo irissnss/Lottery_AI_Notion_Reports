@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.29** - `V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_OWNER_REPORT_VN_PUBLIC.md` (one-pass live readiness public-safe package; diagnostic-only; V106.28R1 not run; schema/extractor gate blocks rule import; official/provider/wallet/cron/deploy all false).
+
+## Quick links - V106.29
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V106.29 Owner Report VN Public](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_OWNER_REPORT_VN_PUBLIC.md)
+3. [V106.29 Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/machine_readable/V10629_EXECUTION_SUMMARY.json)
+4. [V106.29 Master Issue Matrix](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_MASTER_ISSUE_MATRIX_PUBLIC.md)
+5. [V106.29 Next Live Runbook](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_NEXT_LIVE_RUNBOOK_PUBLIC.md)
+6. [V106.29 Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_SAFETY_GATE_PUBLIC.md)
+7. [V106.29 Zero Official Drift](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_ZERO_OFFICIAL_DRIFT_PUBLIC.md)
+8. [V106.29 Schema Extractor Audit](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_SCHEMA_EXTRACTOR_AUDIT_PUBLIC.md)
+
 Latest: **V106.26.2** - `V106_26_TOTAL_SOURCE_VERIFY_AND_FU_PUBLIC_SAFE/V10626_FU4_OWNER_SCHEMA_REPORT_VN_PUBLIC.md` (FU4 OWNER_SCHEMA_FIX: 2026-05-25 owner image confirmed MB low-prize source set includes G.4/G.6/G.7 — missed by FU3. Full rescan: 20,843 positive rules (+3,220 NEW from MB G4/G6/G7). Stability w60/w90/w180 audit -> 13 STABLE_ALL added to pre-register panel. Combined panel: 58 baseline + 13 addendum = 71 PRE_REGISTER_ONLY total. live_eligible=0.).
 
 ## Quick links - V106.26.2 FU4

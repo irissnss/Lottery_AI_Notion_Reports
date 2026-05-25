@@ -1,0 +1,28 @@
+{
+  "schema_version": "v10629_public_manifest_v1",
+  "version": "V106.29",
+  "package": "V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T12:53:21+07:00",
+  "files": [
+    "V10629_OWNER_REPORT_VN_PUBLIC.md",
+    "V10629_EXECUTION_SUMMARY_PUBLIC.json",
+    "V10629_MASTER_ISSUE_MATRIX_PUBLIC.md",
+    "V10629_NEXT_LIVE_RUNBOOK_PUBLIC.md",
+    "V10629_SAFETY_GATE_PUBLIC.md",
+    "V10629_ZERO_OFFICIAL_DRIFT_PUBLIC.md",
+    "V10629_SCHEMA_EXTRACTOR_AUDIT_PUBLIC.md",
+    "V10629_PUBLIC_MANIFEST.json",
+    "machine_readable/V10629_EXECUTION_SUMMARY.json",
+    "machine_readable/V10629_OWNER_DECISION_TABLE.json"
+  ],
+  "public_safe_rules": {
+    "raw_db_published": false,
+    "raw_runtime_trace_published": false,
+    "secrets_or_env_published": false,
+    "private_raw_artifacts_published": false,
+    "absolute_private_paths_published": false
+  },
+  "latest_report": "V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/V10629_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE/machine_readable/V10629_EXECUTION_SUMMARY.json",
+  "public_safe_scan_pass": true
+}

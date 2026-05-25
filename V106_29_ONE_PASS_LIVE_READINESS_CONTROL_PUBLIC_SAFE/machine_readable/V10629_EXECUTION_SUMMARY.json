@@ -1,0 +1,43 @@
+{
+  "schema_version": "v10629_execution_summary_public_v1",
+  "latest_version": "V106.29",
+  "package": "V106_29_ONE_PASS_LIVE_READINESS_CONTROL_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T12:53:21+07:00",
+  "diagnostic_only": true,
+  "patch_scope": "artifact_only_live_readiness_control",
+  "source_private_artifacts": {
+    "v10628_owner_report": "artifacts/v105_55_safe_quality/v10628_total_shadow_lane_application/V10628_OWNER_REPORT_VN.md",
+    "v10628_summary": "artifacts/v105_55_safe_quality/v10628_total_shadow_lane_application/V10628_EXECUTION_SUMMARY.json",
+    "v10628_safety": "artifacts/v105_55_safe_quality/v10628_total_shadow_lane_application/V10628_SAFETY_GATE.json",
+    "v10628_zero_drift": "artifacts/v105_55_safe_quality/v10628_total_shadow_lane_application/V10628_ZERO_OFFICIAL_DRIFT_PROOF.json",
+    "v10625_runbook_source": "artifacts/v105_55_safe_quality/v10625_next_live_execution_control_board_runtime_gate/V10625_OWNER_REPORT_VN.md",
+    "v10624_comparison_source": "artifacts/v105_55_safe_quality/v10624_official_lane_shadow_comparison_region_isolation_guard/V10624_OWNER_REPORT_VN.md"
+  },
+  "live_sync_manifest_relative": "artifacts/live_sync/20260525_125055/manifest.json",
+  "official_touched": false,
+  "official_mutation": false,
+  "provider_manual_ai_called": false,
+  "provider_call_count": 0,
+  "wallet_impact": false,
+  "lane_test_promoted": false,
+  "production_prompt_switched": false,
+  "selector_switched": false,
+  "cron_installed": false,
+  "deployed_live_verified": false,
+  "public_safe_scan_pass": true,
+  "v10629_ran": true,
+  "v10628r1_ran": false,
+  "rule_imported_into_v10628": false,
+  "v10628_materializer_rows": {
+    "mt": 20,
+    "mb": 15,
+    "combined": 35
+  },
+  "board_runtime_state": {
+    "v10625_board_status": "ARTIFACT_ONLY_LOCAL_ONLY",
+    "v10625_cron_status": "MANUAL_ONLY_SCHEDULE",
+    "v10624_contamination_found": false
+  },
+  "readiness_gate": "MANUAL_ONLY_ARTIFACT_ONLY_UNTIL_OWNER_APPROVES_DEPLOY_OR_CRON",
+  "schema_extractor_gate": "BLOCK_V10628R1_UNTIL_PRIVATE_SCHEMA_EXTRACTOR_AUDIT_PASS"
+}

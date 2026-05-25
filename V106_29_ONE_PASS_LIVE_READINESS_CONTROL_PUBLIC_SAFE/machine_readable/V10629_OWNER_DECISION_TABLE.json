@@ -1,0 +1,36 @@
+{
+  "schema_version": "v10629_owner_decision_table_public_v1",
+  "version": "V106.29",
+  "decisions": [
+    {
+      "decision": "Deploy read-only board to VPS",
+      "default": "NO",
+      "status": "OWNER_APPROVAL_REQUIRED",
+      "current_public_state": "not live-verified"
+    },
+    {
+      "decision": "Install artifact-only cron",
+      "default": "NO",
+      "status": "OWNER_APPROVAL_REQUIRED",
+      "current_public_state": "manual-only schedule"
+    },
+    {
+      "decision": "Run V106.28R1 rule import/materializer continuation",
+      "default": "NO",
+      "status": "BLOCKED_ON_SCHEMA_EXTRACTOR_AUDIT",
+      "current_public_state": "v10628r1_ran=false"
+    },
+    {
+      "decision": "Promote lane/shadow output to official",
+      "default": "NO",
+      "status": "NOT_ALLOWED",
+      "current_public_state": "lane_test_promoted=false"
+    },
+    {
+      "decision": "Switch production prompt/selector/scoring",
+      "default": "NO",
+      "status": "NOT_ALLOWED",
+      "current_public_state": "production_prompt_switched=false; selector_switched=false"
+    }
+  ]
+}
