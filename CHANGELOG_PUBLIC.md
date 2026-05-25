@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.30B - 2026-05-25T22:27:21+07:00
+
+- Published final tomorrow live lock package `V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE`.
+- No mining, no official mutation, no V106.28R1, no deploy/cron.
+
 ## V106.30A - 2026-05-25T20:15:10+07:00
 
 - Published detailed public-safe evidence package for V106.30.

@@ -1,5 +1,14 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.30B** - `V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE/V10630B_OWNER_REPORT_VN_PUBLIC.md` (final tomorrow live lock; owner can rest; no mining/no official mutation).
+
+## Quick links - V106.30B
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE/V10630B_OWNER_REPORT_VN_PUBLIC.md)
+3. [Sleep Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE/V10630B_OWNER_SLEEP_SUMMARY_VN_PUBLIC.md)
+4. [Checkpoint Lock](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE/V10630B_TOMORROW_LIVE_CHECKPOINT_LOCK_PUBLIC.md)
+
 Latest: **V106.30A** - `V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_OWNER_REPORT_VN_PUBLIC.md` (detailed evidence package for V106.30; public-safe; official protected).
 
 ## Quick links - V106.30A

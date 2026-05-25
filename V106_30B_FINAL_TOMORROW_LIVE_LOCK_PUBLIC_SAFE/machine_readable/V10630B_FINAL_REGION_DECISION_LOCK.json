@@ -1,0 +1,43 @@
+{
+  "schema_version": "v10630b_final_region_decision_lock_v1",
+  "created_at_vn": "2026-05-25T22:27:21+07:00",
+  "MB": {
+    "verdict": "CHUA_ON_CAN_OWNER_XAC_NHAN",
+    "status": "COST_WASTE_CANDIDATE",
+    "action_tomorrow": "RULE_ONLY_READ_ONLY_MEASUREMENT",
+    "MB_AI_MODEL_FREEZE_RECOMMENDED": true,
+    "MB_PROVIDER_CALL_BLOCK_RECOMMENDED": true,
+    "MB_WALLET_REMAIN_ZERO": true,
+    "MB_NO_IMPACT_ON_MN_MT": true,
+    "production_disable_done": false,
+    "owner_gate_required": true,
+    "MB_AI_MODEL_FREEZE_STATUS": "RECOMMENDED_OWNER_GATE_REQUIRED",
+    "MB_PROVIDER_CALL_BLOCK": "RECOMMENDED_OWNER_GATE_REQUIRED",
+    "MB_RULE_ONLY_READ_ONLY_MODE": "RECOMMENDED_OWNER_GATE_REQUIRED"
+  },
+  "MN": {
+    "verdict": "CON_CHO",
+    "action_tomorrow": "CLEAN_LANE_ONLY / WATCH_ONLY / CONFIRM_ONLY / RERANK_ONLY",
+    "clean_lane_cap": 8,
+    "clone_official_check": true,
+    "false_consensus_check": true,
+    "selector_gap_check": true,
+    "force_bt_lo2": false,
+    "pair_promotion": false
+  },
+  "MT": {
+    "verdict": "CON_CHO_CO_TIN_HIEU",
+    "action_tomorrow": "SHADOW_CONVERSION_GATE_ONLY",
+    "check_91_97_current_support": true,
+    "check_full_spent": true,
+    "check_rerun_dominance": true,
+    "production_hard_block": false
+  },
+  "GLOBAL": {
+    "run_v10628r1": false,
+    "promote_rules": false,
+    "official_mutation": false,
+    "deploy": false,
+    "cron": false
+  }
+}

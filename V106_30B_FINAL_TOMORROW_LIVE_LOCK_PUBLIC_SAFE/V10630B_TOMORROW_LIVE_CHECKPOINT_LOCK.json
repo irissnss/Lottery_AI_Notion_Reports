@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "checkpoint": "PRE_MN_BUNDLE",
+      "inspect": "official MN BT/LO2; MN clean lane <=8; clone_official_flag; false_consensus_flag; selector_gap_flag",
+      "compute": "MN_PRE_BUNDLE_STATUS",
+      "decision": "WATCH_ONLY / CONFIRM_ONLY / RERANK_ONLY"
+    },
+    {
+      "checkpoint": "POST_MN_RESULT",
+      "inspect": "MN result closeout",
+      "compute": "would_save; would_break; false_promotion; net_effect",
+      "decision": "if net > 0 keep measuring no promotion; if net <= 0 tighten clean lane no promotion"
+    },
+    {
+      "checkpoint": "PRE_MT_BUNDLE",
+      "inspect": "official MT BT/LO2; 91/97 current support; conversion gate; FULL_SPENT/rerun dominance",
+      "compute": "MT_PRE_BUNDLE_STATUS",
+      "decision": "STRICT_SHADOW_BLOCK / BOOST_CONFLICT_REVIEW / CONFIRM_ONLY"
+    },
+    {
+      "checkpoint": "POST_MT_RESULT",
+      "inspect": "MT result closeout",
+      "compute": "lane win root cause; boost conflict; would_save/would_break/false_promotion/net_effect",
+      "decision": "no production hard-block"
+    },
+    {
+      "checkpoint": "PRE_MB_BUNDLE",
+      "inspect": "official MB; strategic rule fired rows; model diagnostic lane; high-support miss risk",
+      "compute": "MB_PRE_BUNDLE_STATUS",
+      "decision": "RULE_ONLY_READ_ONLY_MEASUREMENT"
+    },
+    {
+      "checkpoint": "POST_MB_RESULT",
+      "inspect": "MB result closeout",
+      "compute": "MB net_effect; false_promotion; high_support_miss",
+      "decision": "if net <= 0 keep freeze recommendation no provider/no wallet; if net > 0 read-only continue one more measurement"
+    },
+    {
+      "checkpoint": "EOD_CLOSEOUT",
+      "inspect": "EOD artifact closeout",
+      "compute": "public-safe summary if scan passes",
+      "decision": "do not include DB/raw/private traces"
+    }
+  ]
+}
