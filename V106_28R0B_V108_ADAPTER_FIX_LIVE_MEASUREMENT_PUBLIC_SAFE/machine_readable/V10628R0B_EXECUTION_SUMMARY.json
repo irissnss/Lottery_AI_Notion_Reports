@@ -18,9 +18,9 @@
   "cron_installed": false,
   "deployed_live_verified": false,
   "rule_import": false,
-  "mn_verdict": "c?n ch?",
-  "mt_verdict": "ch?a ?n",
-  "mb_verdict": "c?n ch?",
+  "mn_verdict": "con cho",
+  "mt_verdict": "chua on",
+  "mb_verdict": "con cho",
   "public_safe_scan_pass": true,
   "artifact_dir": "artifacts/v105_55_safe_quality/v10628r0b_v108_adapter_fix_live_measurement",
   "public_package": "V106_28R0B_V108_ADAPTER_FIX_LIVE_MEASUREMENT_PUBLIC_SAFE"
