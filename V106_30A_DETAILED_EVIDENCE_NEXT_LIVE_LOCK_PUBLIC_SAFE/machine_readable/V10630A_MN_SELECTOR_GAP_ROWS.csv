@@ -1,0 +1,9 @@
+candidate_tail,rank,top5,top10,source_pool_present,lost_layer,action
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT
+,,False,False,False,source_pool,REJECT_NO_CURRENT_SUPPORT

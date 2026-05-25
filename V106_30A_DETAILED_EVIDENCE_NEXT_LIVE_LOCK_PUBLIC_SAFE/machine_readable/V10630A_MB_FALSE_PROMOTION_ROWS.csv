@@ -1,0 +1,13 @@
+region,date,lane_name,candidate_tail,votes,hit,high_support_miss,would_save,would_break,false_promotion,net_effect,source_family,why_failed,origin_type
+MB,2026-05-11,MB_LANE_B_MODEL_DIAGNOSTIC,39,9,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-12,MB_LANE_B_MODEL_DIAGNOSTIC,36,11,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-13,MB_LANE_B_MODEL_DIAGNOSTIC,32,8,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-15,MB_LANE_B_MODEL_DIAGNOSTIC,72,12,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-16,MB_LANE_B_MODEL_DIAGNOSTIC,16,14,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-17,MB_LANE_B_MODEL_DIAGNOSTIC,81,11,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-19,MB_LANE_B_MODEL_DIAGNOSTIC,36,8,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-20,MB_LANE_B_MODEL_DIAGNOSTIC,79,12,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-21,MB_LANE_B_MODEL_DIAGNOSTIC,10,6,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-22,MB_LANE_B_MODEL_DIAGNOSTIC,38,8,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-24,MB_LANE_B_MODEL_DIAGNOSTIC,16,17,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model
+MB,2026-05-25,MB_LANE_B_MODEL_DIAGNOSTIC,38,18,False,True,False,False,True,-1,model_diagnostic,candidate_tail did not hit actual results,AI/model

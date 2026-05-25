@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.30A - 2026-05-25T20:15:10+07:00
+
+- Published detailed public-safe evidence package for V106.30.
+- Included MB/MN/MT row-level evidence, tri-region board, next-live safety plan, safety/zero-drift proof.
+
 ## V106.30 - 2026-05-25T20:02:04+07:00
 
 - Published tri-region shadow/lane intervention and MB cost kill gate public-safe package `V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE`.

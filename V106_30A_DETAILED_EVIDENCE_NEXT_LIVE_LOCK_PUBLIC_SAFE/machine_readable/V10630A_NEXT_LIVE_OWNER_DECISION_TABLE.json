@@ -1,0 +1,22 @@
+[
+  {
+    "decision": "freeze_mb_ai_model",
+    "default": "OWNER_GATE_REQUIRED",
+    "recommendation": true
+  },
+  {
+    "decision": "deploy_read_only_board",
+    "default": "NO",
+    "recommendation": false
+  },
+  {
+    "decision": "continue_one_more_live",
+    "default": "YES_FOR_MEASUREMENT_ONLY",
+    "recommendation": true
+  },
+  {
+    "decision": "run_v10628r1",
+    "default": "NO",
+    "recommendation": false
+  }
+]

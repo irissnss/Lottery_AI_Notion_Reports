@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.30A** - `V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_OWNER_REPORT_VN_PUBLIC.md` (detailed evidence package for V106.30; public-safe; official protected).
+
+## Quick links - V106.30A
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_OWNER_REPORT_VN_PUBLIC.md)
+3. [Tri-region Board](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_TRI_REGION_MASTER_BOARD_PUBLIC.md)
+4. [MB Cost Detail](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_MB_COST_WASTE_DETAIL_PUBLIC.md)
+5. [Next Live Plan](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30A_DETAILED_EVIDENCE_NEXT_LIVE_LOCK_PUBLIC_SAFE/V10630A_NEXT_LIVE_SAFE_PLAN_VN.md)
+
 Latest: **V106.30** - `V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/V10630_OWNER_REPORT_VN_PUBLIC.md` (tri-region shadow/lane intervention + MB cost kill gate; official protected).
 
 ## Quick links - V106.30

@@ -1,0 +1,6 @@
+region,lane_name,source_family,fired_count,hit_count,would_save,would_break,false_promotion,net_effect,high_support_miss_count,clone_official_flag,clean_signal_flag,cost_value_status,recommended_action,owner_gate_required,official_touched
+MB,MB_LANE_A_RULE_STRATEGIC,mixed,0,0,0,0,0,0,12,False,False,COST_WASTE_CANDIDATE,FREEZE_AI_COST_OWNER_GATE,True,False
+MB,MB_LANE_B_MODEL_DIAGNOSTIC,mixed,15,3,0,0,12,-9,12,False,False,COST_WASTE_CANDIDATE,FREEZE_AI_COST_OWNER_GATE,True,False
+MB,MB_LANE_C_HYBRID_SHADOW,mixed,15,3,0,0,12,-9,12,False,False,COST_WASTE_CANDIDATE,FREEZE_AI_COST_OWNER_GATE,True,False
+MN,MN_LANE_B_CLEAN_SIGNAL_ONLY,mixed,0,0,0,0,0,0,0,False,True,VALUE_NEUTRAL,CLEAN_LANE_ONLY,True,False
+MT,MT_LANE_A_CONVERSION_GATE,mixed,0,0,0,0,0,0,0,False,False,VALUE_NEUTRAL,STRICT_SHADOW_BLOCK,True,False
