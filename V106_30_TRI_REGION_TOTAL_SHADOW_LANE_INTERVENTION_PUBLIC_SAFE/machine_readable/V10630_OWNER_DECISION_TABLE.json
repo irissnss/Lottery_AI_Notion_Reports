@@ -1,0 +1,22 @@
+[
+  {
+    "decision": "Freeze MB AI/model cost",
+    "default": "OWNER_GATE_REQUIRED",
+    "recommendation": true
+  },
+  {
+    "decision": "Deploy read-only board",
+    "default": "NO",
+    "recommendation": false
+  },
+  {
+    "decision": "Run V10628R1",
+    "default": "NO",
+    "recommendation": false
+  },
+  {
+    "decision": "Continue one more live",
+    "default": "YES_FOR_MEASUREMENT_ONLY",
+    "recommendation": true
+  }
+]

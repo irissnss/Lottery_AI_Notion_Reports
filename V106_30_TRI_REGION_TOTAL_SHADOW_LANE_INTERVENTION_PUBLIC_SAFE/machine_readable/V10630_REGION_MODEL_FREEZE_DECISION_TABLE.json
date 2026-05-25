@@ -1,0 +1,23 @@
+[
+  {
+    "region": "MN",
+    "positive_days": 7,
+    "negative_days": 8,
+    "decision_status": "REDUCE_AI_MODEL_WEIGHT_SHADOW_ONLY",
+    "owner_gate_required": false
+  },
+  {
+    "region": "MT",
+    "positive_days": 2,
+    "negative_days": 13,
+    "decision_status": "REDUCE_AI_MODEL_WEIGHT_SHADOW_ONLY",
+    "owner_gate_required": false
+  },
+  {
+    "region": "MB",
+    "positive_days": 3,
+    "negative_days": 12,
+    "decision_status": "FREEZE_AI_MODEL_OWNER_GATE_REQUIRED",
+    "owner_gate_required": true
+  }
+]

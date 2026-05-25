@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.30** - `V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/V10630_OWNER_REPORT_VN_PUBLIC.md` (tri-region shadow/lane intervention + MB cost kill gate; official protected).
+
+## Quick links - V106.30
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/V10630_OWNER_REPORT_VN_PUBLIC.md)
+3. [Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/machine_readable/V10630_EXECUTION_SUMMARY.json)
+4. [Tri-region Board](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/V10630_TRI_REGION_BOARD_PUBLIC.md)
+5. [AI Cost Value](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE/V10630_AI_COST_VALUE_PUBLIC.md)
+
 Latest: **V106.29R1** - `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_OWNER_REPORT_VN_PUBLIC.md` (region-isolated rule shadow import; official protected; no deploy/cron/provider/rule import official).
 
 ## Quick links - V106.29R1

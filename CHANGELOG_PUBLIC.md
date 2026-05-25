@@ -1,5 +1,15 @@
 # Public Changelog
 
+## V106.30 - 2026-05-25T20:02:04+07:00
+
+- Published tri-region shadow/lane intervention and MB cost kill gate public-safe package `V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, wallet, lane promotion, production switch, cron, deploy, and official rule import false.
+
+## V106.30 - 2026-05-25T20:00:07+07:00
+
+- Published tri-region shadow/lane intervention and MB cost kill gate public-safe package `V106_30_TRI_REGION_TOTAL_SHADOW_LANE_INTERVENTION_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, wallet, lane promotion, production switch, cron, deploy, and official rule import false.
+
 ## V106.29R1 - 2026-05-25T19:32:26+07:00
 
 - Published region-isolated rule shadow import public-safe package `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE`.
