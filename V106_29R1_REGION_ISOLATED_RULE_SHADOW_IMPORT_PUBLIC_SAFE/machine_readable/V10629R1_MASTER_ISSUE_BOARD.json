@@ -1,0 +1,30 @@
+[
+  {
+    "issue_id": "V10629R1-OFFICIAL-LOCK",
+    "severity": "P0",
+    "status": "PASS",
+    "safe_action": "artifact-only shadow import",
+    "blocked_action": "official import"
+  },
+  {
+    "issue_id": "MB-READONLY-PRIORITY",
+    "severity": "P1",
+    "status": "DONE_ARTIFACT_ONLY",
+    "safe_action": "read-only compare",
+    "blocked_action": "wallet/expansion"
+  },
+  {
+    "issue_id": "REGION-ISOLATION",
+    "severity": "P0",
+    "status": "PASS",
+    "safe_action": "target stack only",
+    "blocked_action": "cross-region contamination"
+  },
+  {
+    "issue_id": "DEPLOY-GATE",
+    "severity": "P1",
+    "status": "OWNER_GATE_REQUIRED",
+    "safe_action": "keep local artifacts",
+    "blocked_action": "deploy without approval"
+  }
+]

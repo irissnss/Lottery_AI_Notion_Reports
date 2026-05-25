@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "check": "target_region_equals_region",
+      "status": "PASS",
+      "violation_count": 0
+    },
+    {
+      "check": "cross_region_sources_read_only",
+      "status": "PASS",
+      "violation_count": 0
+    },
+    {
+      "check": "mb_no_write_to_mn_mt",
+      "status": "PASS",
+      "violation_count": 0
+    }
+  ],
+  "violations": []
+}

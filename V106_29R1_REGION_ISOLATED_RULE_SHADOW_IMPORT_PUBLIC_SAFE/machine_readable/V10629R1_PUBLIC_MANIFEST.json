@@ -1,0 +1,17 @@
+{
+  "schema_version": "v10629r1_public_manifest_v1",
+  "version": "V106.29R1",
+  "package": "V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T19:32:26+07:00",
+  "files": [
+    "V10629R1_OWNER_REPORT_VN_PUBLIC.md",
+    "V10629R1_REGION_ISOLATION_PUBLIC.md",
+    "V10629R1_NEXT_LIVE_BOARD_PUBLIC.md",
+    "V10629R1_SAFETY_GATE_PUBLIC.md",
+    "machine_readable/V10629R1_EXECUTION_SUMMARY.json"
+  ],
+  "public_safe_scan_pass": true,
+  "raw_db_published": false,
+  "raw_jsonl_published": false,
+  "secrets_published": false
+}

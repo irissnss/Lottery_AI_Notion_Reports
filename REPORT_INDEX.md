@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.29R1** - `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_OWNER_REPORT_VN_PUBLIC.md` (region-isolated rule shadow import; official protected; no deploy/cron/provider/rule import official).
+
+## Quick links - V106.29R1
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_OWNER_REPORT_VN_PUBLIC.md)
+3. [Execution Summary JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/machine_readable/V10629R1_EXECUTION_SUMMARY.json)
+4. [Region Isolation](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_REGION_ISOLATION_PUBLIC.md)
+5. [Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_SAFETY_GATE_PUBLIC.md)
+
 Latest: **V106.28R0D** - `V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE/V10628R0D_OWNER_REPORT_VN_PUBLIC.md` (post-live tri-region forensic + rule overlay; no official/provider/cron/deploy/lane promotion/rule import).
 
 ## Quick links - V106.28R0D

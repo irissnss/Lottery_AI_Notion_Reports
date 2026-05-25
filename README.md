@@ -1,12 +1,12 @@
 # Lottery AI Notion Reports
 
-Latest public-safe package: `V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE` (V106.28R0D).
+Latest public-safe package: `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE` (V106.29R1).
 
-Latest report: `V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE/V10628R0D_OWNER_REPORT_VN_PUBLIC.md`.
+Latest report: `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE/V10629R1_OWNER_REPORT_VN_PUBLIC.md`.
 
-## Latest update (2026-05-25 - V106.28R0D)
+## Latest update (2026-05-25 - V106.29R1)
 
-- Post-live tri-region forensic and rule overlay.
-- Official/provider/cron/deploy/lane promotion/rule import all false.
+- Region-isolated rule shadow/lane import for next live.
+- Official/provider/cron/deploy/wallet/lane promotion/rule import official all false.
 
 For previous versions, see `REPORT_INDEX.md`.

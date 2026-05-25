@@ -1,0 +1,6 @@
+{
+  "mb_rows_total": 24,
+  "mb_rows_with_target_mn_mt": 0,
+  "violations": [],
+  "proof": "Every MB stack row has target_region=MB and isolation_tag=MB_ONLY_STACK. Cross-region references are read-only features only."
+}

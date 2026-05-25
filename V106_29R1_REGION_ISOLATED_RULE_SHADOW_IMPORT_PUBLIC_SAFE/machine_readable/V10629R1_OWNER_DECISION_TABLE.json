@@ -1,0 +1,22 @@
+[
+  {
+    "decision": "Deploy read-only board",
+    "default": "NO",
+    "status": "OWNER_GATE_REQUIRED"
+  },
+  {
+    "decision": "Install cron",
+    "default": "NO",
+    "status": "OWNER_GATE_REQUIRED"
+  },
+  {
+    "decision": "Promote any rule",
+    "default": "NO",
+    "status": "NOT_ALLOWED"
+  },
+  {
+    "decision": "Run V106.28R1",
+    "default": "NO",
+    "status": "NOT_RUN"
+  }
+]

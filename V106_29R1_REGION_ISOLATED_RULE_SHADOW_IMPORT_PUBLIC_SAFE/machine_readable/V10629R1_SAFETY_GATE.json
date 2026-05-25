@@ -1,0 +1,120 @@
+{
+  "schema_version": "v10629r1_safety_v1",
+  "observed_at_vn": "2026-05-25T19:32:26+07:00",
+  "official_mutation": 0,
+  "provider_call_count": 0,
+  "wallet": 0,
+  "lane_test_promoted": false,
+  "rule_import_official": false,
+  "v10628r1_ran": false,
+  "live_eligible_count": 0,
+  "cron_installed": false,
+  "deployed_live_verified": false,
+  "production_switch": false,
+  "cross_region_contamination": 0,
+  "official_pre": [
+    {
+      "table": "predictions",
+      "row_count": 5949,
+      "rowid_sum": 53858477,
+      "rowid_max": 15254,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 261,
+      "rowid_sum": 42510,
+      "rowid_max": 339,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14747,
+      "rowid_sum": 109532767,
+      "rowid_max": 14851,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729,
+      "max_date": "2026-05-24"
+    },
+    {
+      "table": "du_doan_test_bundles",
+      "row_count": 1408,
+      "rowid_sum": 991936,
+      "rowid_max": 1408,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "du_doan_test_results",
+      "row_count": 1408,
+      "rowid_sum": 991936,
+      "rowid_max": 1408,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "experimental_preview_shadow",
+      "row_count": 1777,
+      "rowid_sum": 2215044,
+      "rowid_max": 4467,
+      "max_date": "2026-05-25"
+    }
+  ],
+  "official_post": [
+    {
+      "table": "predictions",
+      "row_count": 5949,
+      "rowid_sum": 53858477,
+      "rowid_max": 15254,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "final_bundles",
+      "row_count": 261,
+      "rowid_sum": 42510,
+      "rowid_max": 339,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "lottery_results",
+      "row_count": 14747,
+      "rowid_sum": 109532767,
+      "rowid_max": 14851,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "model_daily_eval",
+      "row_count": 5729,
+      "rowid_sum": 16413585,
+      "rowid_max": 5729,
+      "max_date": "2026-05-24"
+    },
+    {
+      "table": "du_doan_test_bundles",
+      "row_count": 1408,
+      "rowid_sum": 991936,
+      "rowid_max": 1408,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "du_doan_test_results",
+      "row_count": 1408,
+      "rowid_sum": 991936,
+      "rowid_max": 1408,
+      "max_date": "2026-05-25"
+    },
+    {
+      "table": "experimental_preview_shadow",
+      "row_count": 1777,
+      "rowid_sum": 2215044,
+      "rowid_max": 4467,
+      "max_date": "2026-05-25"
+    }
+  ],
+  "strict_official_drift_detected": false,
+  "db_sha256": "c4df4a03e6fde50a10f93b35311559a8274e2ff808f8a4220b2b33b17044b398",
+  "public_safe_scan_pass": true
+}

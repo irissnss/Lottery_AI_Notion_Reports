@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.29R1 - 2026-05-25T19:32:26+07:00
+
+- Published region-isolated rule shadow import public-safe package `V106_29R1_REGION_ISOLATED_RULE_SHADOW_IMPORT_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, lane promotion, wallet, production switch, cron, deploy, and official rule import false.
+
 ## V106.28R0D - 2026-05-25T19:04:00+07:00
 
 - Published post-live tri-region forensic public-safe package `V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE`.
