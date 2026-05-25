@@ -2,11 +2,11 @@
 
 Compiled: 2026-05-25T14:42:49+07:00
 
-## Ket luan nhanh
+## K?t lu?n nhanh
 
-V106.28R0B da fix V108 lane closeout adapter va rerun Phase 2 thanh cong. Latest truoc pass la V106.28R0A-TOTAL-2. V106.28R1 van chua chay.
+V106.28R0B ?? fix V108 lane closeout adapter v? rerun Phase 2 th?nh c?ng. Latest tr??c pass l? V106.28R0A-TOTAL-2. V106.28R1 v?n ch?a ch?y.
 
-## Trang thai
+## Tr?ng th?i
 
 - V108 Phase 2: PASS_AFTER_ADAPTER_FIX.
 - Official mutation: false.
@@ -15,7 +15,7 @@ V106.28R0B da fix V108 lane closeout adapter va rerun Phase 2 thanh cong. Latest
 - Cron/deploy: false.
 - Rule import: false.
 
-## Verdict theo mien
+## Verdict theo mi?n
 
 - MN: c?n ch? / c?n owner x?c nh?n. Action: WATCH_ONLY / CONFIRM_ONLY / RERANK_ONLY.
 - MT: ch?a ?n. Action: STRICT_SHADOW_BLOCK_ONLY; 3d/7d/14d gate negative.
