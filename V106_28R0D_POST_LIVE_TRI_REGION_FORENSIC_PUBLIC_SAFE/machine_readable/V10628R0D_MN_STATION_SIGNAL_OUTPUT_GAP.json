@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "station": "Cà Mau",
+      "actual_db": "59",
+      "actual_tail_count": 18,
+      "official_bt": "54",
+      "official_bt_hit_station": false,
+      "lane_candidate_sample": "54|54|61|61|54",
+      "shadow_candidate_sample": "54|61|54|54|61",
+      "model_top3": "[[\"40\", 14], [\"14\", 8], [\"54\", 6]]",
+      "rule_overlay_hit_count": 0,
+      "correct_signal_existed": false,
+      "lost_at_layer": "none_or_unknown",
+      "classification": "SIGNAL_ABSENT"
+    },
+    {
+      "station": "TP. HCM",
+      "actual_db": "79",
+      "actual_tail_count": 17,
+      "official_bt": "54",
+      "official_bt_hit_station": false,
+      "lane_candidate_sample": "54|54|61|61|54",
+      "shadow_candidate_sample": "54|61|54|54|61",
+      "model_top3": "[[\"40\", 14], [\"14\", 8], [\"54\", 6]]",
+      "rule_overlay_hit_count": 0,
+      "correct_signal_existed": false,
+      "lost_at_layer": "none_or_unknown",
+      "classification": "SIGNAL_ABSENT"
+    },
+    {
+      "station": "Đồng Tháp",
+      "actual_db": "30",
+      "actual_tail_count": 16,
+      "official_bt": "54",
+      "official_bt_hit_station": false,
+      "lane_candidate_sample": "54|54|61|61|54",
+      "shadow_candidate_sample": "54|61|54|54|61",
+      "model_top3": "[[\"40\", 14], [\"14\", 8], [\"54\", 6]]",
+      "rule_overlay_hit_count": 0,
+      "correct_signal_existed": false,
+      "lost_at_layer": "none_or_unknown",
+      "classification": "SIGNAL_ABSENT"
+    }
+  ]
+}

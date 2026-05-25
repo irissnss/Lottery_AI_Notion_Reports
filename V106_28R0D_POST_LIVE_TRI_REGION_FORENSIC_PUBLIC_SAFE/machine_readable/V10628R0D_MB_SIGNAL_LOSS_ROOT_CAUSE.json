@@ -1,0 +1,169 @@
+{
+  "rows": [
+    {
+      "date": "2026-05-25",
+      "official_bt": "04",
+      "official_bt_hit": false,
+      "official_lo2": "04|41",
+      "best_model_tail": "38",
+      "best_model_votes": 18,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "54|20",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-24",
+      "official_bt": "63",
+      "official_bt_hit": false,
+      "official_lo2": "63|79",
+      "best_model_tail": "16",
+      "best_model_votes": 17,
+      "correct_tail_in_model_pool": false,
+      "correct_tail_sample": "",
+      "classification": "SIGNAL_ABSENT"
+    },
+    {
+      "date": "2026-05-23",
+      "official_bt": "91",
+      "official_bt_hit": false,
+      "official_lo2": "91|84",
+      "best_model_tail": "31",
+      "best_model_votes": 15,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "31|84|05|36",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-22",
+      "official_bt": "97",
+      "official_bt_hit": true,
+      "official_lo2": "97|01",
+      "best_model_tail": "38",
+      "best_model_votes": 8,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "00|97|01|26",
+      "classification": "READ_ONLY_WATCH"
+    },
+    {
+      "date": "2026-05-21",
+      "official_bt": "07",
+      "official_bt_hit": false,
+      "official_lo2": "07|51",
+      "best_model_tail": "10",
+      "best_model_votes": 6,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "13|86|28|16|61",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-20",
+      "official_bt": "60",
+      "official_bt_hit": false,
+      "official_lo2": "60|78",
+      "best_model_tail": "79",
+      "best_model_votes": 12,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "13|78|36|94",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-19",
+      "official_bt": "58",
+      "official_bt_hit": false,
+      "official_lo2": "58|09",
+      "best_model_tail": "36",
+      "best_model_votes": 8,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "31|40",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-18",
+      "official_bt": "80",
+      "official_bt_hit": false,
+      "official_lo2": "80|58",
+      "best_model_tail": "51",
+      "best_model_votes": 12,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "51|97",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-17",
+      "official_bt": "58",
+      "official_bt_hit": false,
+      "official_lo2": "58|48",
+      "best_model_tail": "81",
+      "best_model_votes": 11,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "93|88|19|35|16",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-16",
+      "official_bt": "43",
+      "official_bt_hit": false,
+      "official_lo2": "43|58",
+      "best_model_tail": "16",
+      "best_model_votes": 14,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "81|48|91|80|70",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-15",
+      "official_bt": "36",
+      "official_bt_hit": false,
+      "official_lo2": "36|64",
+      "best_model_tail": "72",
+      "best_model_votes": 12,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "92|46",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-14",
+      "official_bt": "86",
+      "official_bt_hit": false,
+      "official_lo2": "86|08",
+      "best_model_tail": "04",
+      "best_model_votes": 8,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "43|04|75|94|72",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-13",
+      "official_bt": "32",
+      "official_bt_hit": false,
+      "official_lo2": "32|02",
+      "best_model_tail": "32",
+      "best_model_votes": 8,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "49|14|91|61",
+      "classification": "SIGNAL_PRESENT_NOT_SELECTED"
+    },
+    {
+      "date": "2026-05-12",
+      "official_bt": "34",
+      "official_bt_hit": true,
+      "official_lo2": "34|36",
+      "best_model_tail": "36",
+      "best_model_votes": 11,
+      "correct_tail_in_model_pool": true,
+      "correct_tail_sample": "34|91|71|32|31",
+      "classification": "READ_ONLY_WATCH"
+    },
+    {
+      "date": "2026-05-25",
+      "official_bt": "FU4_OVERLAY",
+      "official_bt_hit": "n/a",
+      "official_lo2": "n/a",
+      "best_model_tail": "FU4_MB_G4_G6_G7",
+      "best_model_votes": 4,
+      "correct_tail_in_model_pool": 0,
+      "correct_tail_sample": "|||",
+      "classification": "READ_ONLY_WATCH"
+    }
+  ]
+}

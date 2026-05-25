@@ -1,0 +1,23 @@
+{
+  "schema_version": "v10628r0d_summary_v1",
+  "latest_version": "V106.28R0D",
+  "observed_at_vn": "2026-05-25T19:04:00+07:00",
+  "target_date": "2026-05-25",
+  "fresh_sync_manifest": "artifacts/live_sync/20260525_190132/manifest.json",
+  "db_sha256": "c4df4a03e6fde50a10f93b35311559a8274e2ff808f8a4220b2b33b17044b398",
+  "v10628r1_ran": false,
+  "live_eligible_count": 0,
+  "official_mutation": false,
+  "provider_call_count": 0,
+  "lane_test_promoted": false,
+  "rule_import": false,
+  "cron_installed": false,
+  "deployed_live_verified": false,
+  "public_safe_scan_pass": true,
+  "mn_status": "needs_review",
+  "mt_lane_win_count": 10,
+  "mb_status": "poor_read_only_watch",
+  "artifact_dir": "artifacts/v105_55_safe_quality/v10628r0d_post_live_tri_region_forensic",
+  "rule_overlay_count": 71,
+  "rule_overlay_note": "50 target panel + 13 FU4 + 8 controls = 71"
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "v10628r0d_public_manifest_v1",
+  "version": "V106.28R0D",
+  "package": "V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE",
+  "created_at_vn": "2026-05-25T19:04:00+07:00",
+  "files": [
+    "V10628R0D_OWNER_REPORT_VN_PUBLIC.md",
+    "V10628R0D_CLOSEOUT_PUBLIC.md",
+    "V10628R0D_RULE_OVERLAY_PUBLIC.md",
+    "V10628R0D_ROOT_CAUSE_PUBLIC.md",
+    "V10628R0D_SAFETY_GATE_PUBLIC.md",
+    "machine_readable/V10628R0D_EXECUTION_SUMMARY.json"
+  ],
+  "public_safe_scan_pass": true,
+  "raw_db_published": false,
+  "raw_jsonl_published": false,
+  "secrets_published": false
+}

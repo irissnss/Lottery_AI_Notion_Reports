@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "REGION": "MN",
+      "STATION": "region_aggregate",
+      "OFFICIAL_OUTPUT": "54",
+      "ACTUAL_HIT": false,
+      "BEST_AVAILABLE_SIGNAL": "14",
+      "BEST_SIGNAL_SOURCE": "model_daily_eval/predictions",
+      "LOST_AT_LAYER": "final_bundle/selector",
+      "ROOT_CAUSE": "good signal not selected",
+      "SAFE_ACTION": "watch/confirm/rerank only; no production mutation"
+    },
+    {
+      "REGION": "MT",
+      "STATION": "region_aggregate",
+      "OFFICIAL_OUTPUT": "07",
+      "ACTUAL_HIT": false,
+      "BEST_AVAILABLE_SIGNAL": "97",
+      "BEST_SIGNAL_SOURCE": "model_daily_eval/predictions",
+      "LOST_AT_LAYER": "final_bundle/selector",
+      "ROOT_CAUSE": "good signal not selected",
+      "SAFE_ACTION": "watch/confirm/rerank only; no production mutation"
+    },
+    {
+      "REGION": "MB",
+      "STATION": "region_aggregate",
+      "OFFICIAL_OUTPUT": "04",
+      "ACTUAL_HIT": false,
+      "BEST_AVAILABLE_SIGNAL": "54",
+      "BEST_SIGNAL_SOURCE": "model_daily_eval/predictions",
+      "LOST_AT_LAYER": "final_bundle/selector",
+      "ROOT_CAUSE": "good signal not selected",
+      "SAFE_ACTION": "watch/confirm/rerank only; no production mutation"
+    }
+  ]
+}

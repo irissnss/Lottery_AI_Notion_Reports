@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.28R0D - 2026-05-25T19:04:00+07:00
+
+- Published post-live tri-region forensic public-safe package `V106_28R0D_POST_LIVE_TRI_REGION_FORENSIC_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, lane promotion, production switch, cron, deploy, and rule import false.
+
 ## V106.28R0C - 2026-05-25T15:12:12+07:00
 
 - Published next-live runtime closeout public-safe package `V106_28R0C_NEXT_LIVE_RUNTIME_CLOSEOUT_PUBLIC_SAFE`.
