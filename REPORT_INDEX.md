@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.31** - `V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_OWNER_REPORT_VN_PUBLIC.md` (tri-region post-live closeout + MB cost forensic; official protected).
+
+## Quick links - V106.31
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_OWNER_REPORT_VN_PUBLIC.md)
+3. [Closeout Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_TRI_REGION_CLOSEOUT_SUMMARY_PUBLIC.md)
+4. [MB Cost Waste](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_MB_COST_WASTE_PUBLIC.md)
+5. [Next Live Plan](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_NEXT_LIVE_PLAN_PUBLIC.md)
+
 Latest: **V106.30B** - `V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE/V10630B_OWNER_REPORT_VN_PUBLIC.md` (final tomorrow live lock; owner can rest; no mining/no official mutation).
 
 ## Quick links - V106.30B

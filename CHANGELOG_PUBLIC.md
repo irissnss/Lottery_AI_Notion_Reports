@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.31 - 2026-05-26T21:12:33+07:00
+
+- Published tri-region post-live closeout and MB cost-waste forensic public-safe package `V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE`.
+- Kept official mutation, provider calls, wallet, lane promotion, production switch, cron, deploy, and official rule import false.
+
 ## V106.30B - 2026-05-25T22:27:21+07:00
 
 - Published final tomorrow live lock package `V106_30B_FINAL_TOMORROW_LIVE_LOCK_PUBLIC_SAFE`.

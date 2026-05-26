@@ -1,0 +1,6 @@
+issue_id,severity,region,first_seen,current_status,evidence,root_cause,safe_action,blocked_action,owner_gate,next_checkpoint
+V10614-INCOMPLETE,P2,ALL,V10614,OPEN,historical,closure incomplete,track,claim closed,NO,future cleanup
+BOARD-DEPLOY,P1,ALL,V10622,BOARD_DEPLOY_OWNER_GATE_REQUIRED,V10622/V10630B,no owner approval,artifact-only,deploy,YES,owner decision
+V10628R1-NOT-RUN,P0,ALL,V10628,NOT_RUN,public latest,blocked by gates,do not run,rule import,YES,none
+MB-COST-WASTE,P0,MB,V10630,COST_WASTE_CANDIDATE,V10631_MB_COST_WASTE_SCORECARD,false promotions/high support misses,freeze recommendation owner-gated,auto-disable production,YES,owner decision
+CP-66.7,P2,ALL,2026-05-21,OVERDUE_WAITING_ROWS,ACTIVE_ROADMAP,live rows not closed enough,surface reminder,ignore,NO,2026-06-03

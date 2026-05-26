@@ -1,0 +1,23 @@
+{
+  "schema_version": "v10631_summary_v1",
+  "latest_version": "V106.31",
+  "observed_at_vn": "2026-05-26T21:12:33+07:00",
+  "target_date": "2026-05-26",
+  "fresh_sync_manifest": "artifacts/live_sync/20260526_210928/manifest.json",
+  "artifact_dir": "artifacts/v105_55_safe_quality/v10631_tri_region_post_live_closeout_mb_cost_forensic",
+  "official_mutation": false,
+  "provider_call_count": 0,
+  "wallet": 0,
+  "lane_test_promoted": false,
+  "rule_import_official": false,
+  "v10628r1_ran": false,
+  "production_switch": false,
+  "cron_installed": false,
+  "deployed_live_verified": false,
+  "mn_labels": "MN_SIGNAL_PRESENT|MN_SLIGHT_PROGRESS|MN_SELECTOR_GAP_REMAINS|MN_FALSE_CONSENSUS_RISK|MN_CLEAN_LANE_ONLY|MN_WATCH_CONFIRM_RERANK_ONLY",
+  "mt_labels": "MT_SIGNAL_PRESENT|MT_SLIGHT_PROGRESS|MT_CONVERSION_GATE_SHADOW_ONLY|MT_BOOST_CONFLICT_REVIEW|MT_FULL_SPENT_GUARD|MT_CONFIRM_ONLY|MT_NO_PRODUCTION_HARD_BLOCK",
+  "mb_cost_status": "COST_WASTE_CANDIDATE",
+  "mb_freeze_recommended": true,
+  "public_safe_scan_pass": true,
+  "public_package": "V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE"
+}

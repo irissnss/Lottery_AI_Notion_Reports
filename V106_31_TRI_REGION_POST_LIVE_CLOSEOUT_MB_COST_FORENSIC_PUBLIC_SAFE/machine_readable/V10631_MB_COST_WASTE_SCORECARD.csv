@@ -1,0 +1,15 @@
+date,candidate_tail,votes,hit,false_promotion,high_support_miss,net
+2026-05-13,32,8,False,True,True,-1
+2026-05-14,04,8,True,False,False,1
+2026-05-15,72,12,False,True,True,-1
+2026-05-16,16,14,False,True,True,-1
+2026-05-17,81,11,False,True,True,-1
+2026-05-18,51,12,True,False,False,1
+2026-05-19,36,8,False,True,True,-1
+2026-05-20,79,12,False,True,True,-1
+2026-05-21,10,6,False,True,True,-1
+2026-05-22,38,8,False,True,True,-1
+2026-05-23,31,15,True,False,False,1
+2026-05-24,16,17,False,True,True,-1
+2026-05-25,38,18,False,True,True,-1
+2026-05-26,36,13,False,True,True,-1
