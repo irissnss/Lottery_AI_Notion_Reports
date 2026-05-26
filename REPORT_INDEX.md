@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.32** - `V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_OWNER_REPORT_VN_PUBLIC.md` (total-force prelive control + MB independent shadow repair; official protected).
+
+## Quick links - V106.32
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_OWNER_REPORT_VN_PUBLIC.md)
+3. [Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_SAFETY_GATE_PUBLIC.md)
+4. [MB Cost Kill](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_MB_COST_KILL_PUBLIC.md)
+5. [Next Live Runbook](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_NEXT_LIVE_RUNBOOK_PUBLIC.md)
+
 Latest: **V106.31** - `V106_31_TRI_REGION_POST_LIVE_CLOSEOUT_MB_COST_FORENSIC_PUBLIC_SAFE/V10631_OWNER_REPORT_VN_PUBLIC.md` (tri-region post-live closeout + MB cost forensic; official protected).
 
 ## Quick links - V106.31

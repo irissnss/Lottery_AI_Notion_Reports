@@ -1,0 +1,23 @@
+{
+  "schema_version": "v10632_summary_v1",
+  "latest_version": "V106.32",
+  "plan_id": "PLAN-20260526-V10632-total-force-prelive-control",
+  "observed_at_vn": "2026-05-26T22:01:57+07:00",
+  "fresh_sync_manifest": "artifacts/live_sync/20260526_220033/manifest.json",
+  "official_mutation": false,
+  "provider_call_count": 0,
+  "wallet": 0,
+  "lane_test_promoted": false,
+  "rule_import_official": false,
+  "v10628r1_ran": false,
+  "live_eligible_count": 0,
+  "cron_installed": false,
+  "deployed_live_verified": false,
+  "mb_cost_value_status": "COST_WASTE_CANDIDATE",
+  "mb_aggressive_shadow_created": true,
+  "mb_no_impact_mn_mt": true,
+  "mn_trace_created": true,
+  "mt_trace_created": true,
+  "public_safe_scan_pass": true,
+  "artifact_dir": "artifacts/v105_55_safe_quality/v10632_total_force_prelive_control_mb_independent_shadow"
+}
