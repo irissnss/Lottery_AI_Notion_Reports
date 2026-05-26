@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.33** - `V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_OWNER_REPORT_VN_PUBLIC.md` (live control semantic reconciliation; report-only; no public code deploy).
+
+## Quick links - V106.33
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [Owner Report](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_OWNER_REPORT_VN_PUBLIC.md)
+3. [Semantic Reconciliation](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_SEMANTIC_RECONCILIATION_PUBLIC.md)
+4. [Risk Deep Dive](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_RISK_DEEP_DIVE_PUBLIC.md)
+5. [Runbook](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_LIVE_20260527_RUNBOOK_PUBLIC.md)
+
 Latest: **V106.32** - `V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_OWNER_REPORT_VN_PUBLIC.md` (total-force prelive control + MB independent shadow repair; official protected).
 
 ## Quick links - V106.32

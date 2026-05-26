@@ -1,16 +1,17 @@
 {
   "schema_version": "latest_report_v1",
-  "latest_version": "V106.32",
-  "latest_folder": "V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE",
-  "latest_report": "V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/V10632_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE/machine_readable/V10632_EXECUTION_SUMMARY.json",
-  "created_at_vn": "2026-05-26T22:01:57+07:00",
-  "previous_latest_version": "V106.31",
+  "latest_version": "V106.33",
+  "latest_folder": "V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE",
+  "latest_report": "V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_OWNER_REPORT_VN_PUBLIC.md",
+  "latest_summary": "V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/machine_readable/V10633_EXECUTION_SUMMARY.json",
+  "created_at_vn": "2026-05-26T22:31:55+07:00",
+  "previous_latest_version": "V106.32",
   "official_touched": false,
   "provider_call_count": 0,
   "lane_test_promoted": false,
   "live_eligible_count": 0,
   "v10628r1_ran": false,
   "public_safe_scan_pass": true,
-  "mb_cost_value_status": "COST_WASTE_CANDIDATE"
+  "mb_cost_value_status": "COST_WASTE_CANDIDATE",
+  "public_code_deploy": false
 }

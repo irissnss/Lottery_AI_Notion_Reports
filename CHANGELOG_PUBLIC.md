@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V106.33 - 2026-05-26T22:31:55+07:00
+
+- Published report-only live control semantic reconciliation package `V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE`.
+- No public code deploy, no official mutation, no provider, no wallet, no deploy/cron.
+
 ## V106.32 - 2026-05-26T22:01:57+07:00
 
 - Published total-force prelive control and MB independent shadow repair public-safe package `V106_32_TOTAL_FORCE_PRELIVE_CONTROL_MB_INDEPENDENT_SHADOW_PUBLIC_SAFE`.
