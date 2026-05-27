@@ -1,0 +1,139 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.36",
+  "title": "FULL DEBT CLOSEOUT + REGION-INDEPENDENT LANE EXECUTION",
+  "ts_vn": "2026-05-27T23:12:46",
+  "phases_completed": [
+    "PHASE 0 — SSOT pointer audit",
+    "PHASE 1 — fresh sync + safety freeze",
+    "PHASE 2 — today tri-region closeout 2026-05-27",
+    "PHASE 3 — single model + method value audit + Cohere",
+    "PHASE 4 — 105 Rules independent query V2",
+    "PHASE 5 — top rules tier gate + lane-test wire plan",
+    "PHASE 6 — region-independent lane execution (dry-run)",
+    "PHASE 7 — UI/API/board audit + deploy gate",
+    "PHASE 8 — full debt ledger V1.0 → V106.35",
+    "PHASE 9 — safety / drift proof",
+    "PHASE 10 — public-safe package"
+  ],
+  "today_outcomes": {
+    "MN": {
+      "bt": "58",
+      "status": "WIN",
+      "drop_stage": "NO_GAP"
+    },
+    "MT": {
+      "bt": "77",
+      "status": "LOSE",
+      "drop_stage": "BUNDLE_SKEW",
+      "strongest_candidate": "56",
+      "strongest_hit": true
+    },
+    "MB": {
+      "bt": "08",
+      "status": "LOSE",
+      "drop_stage": "BUNDLE_SKEW",
+      "strongest_candidate": "13",
+      "strongest_hit": true
+    }
+  },
+  "model_method_summary_30d": {
+    "MN": {
+      "ai_token_hit": 0.464,
+      "ai_token_contribution": 0.274,
+      "no_token_hit": 0.333,
+      "combo_hit": 0.397
+    },
+    "MT": {
+      "ai_token_hit": 0.324,
+      "ai_token_contribution": 0.014,
+      "no_token_hit": 0.448,
+      "combo_contribution": 0.643
+    },
+    "MB": {
+      "ai_token_hit": 0.204,
+      "ai_token_contribution": 0.044,
+      "no_token_hit": 0.264,
+      "no_token_contribution": 0.333
+    }
+  },
+  "cohere": {
+    "verdict_30d_all_regions": "COHERE_NO_EFFECT_DOMINANT_30d",
+    "helped_minus_hurt_all_zero": true,
+    "cost_usd_sum_30d": 0.0
+  },
+  "rule105": {
+    "tier_distribution": {
+      "MN_A": 26,
+      "MN_B": 9,
+      "MN_C": 0,
+      "MT_A": 18,
+      "MT_B": 14,
+      "MT_C": 3,
+      "MB_A": 4,
+      "MB_B": 26,
+      "MB_C": 5
+    },
+    "weekday_gap": {
+      "MN": "missing weekday 6",
+      "MT": "missing weekday 2",
+      "MB": "missing weekday 2,3,4,6"
+    }
+  },
+  "lane_execution_today": {
+    "MN": {
+      "rules_eligible": 5,
+      "lane_bt": "39",
+      "lane_vs_official_match": false,
+      "lane_hit_db": 0,
+      "false_consensus_observed": true
+    },
+    "MT": {
+      "rules_eligible": 0,
+      "lane_bt": null,
+      "reason": "no TIER_A rule for Wed (weekday=2)"
+    },
+    "MB": {
+      "rules_eligible": 0,
+      "lane_bt": null,
+      "reason": "no TIER_A rule for Wed (weekday=2); coverage gap 4/7 weekdays"
+    }
+  },
+  "debt_ledger_severity": {
+    "P0": 3,
+    "P_LOCK": 1,
+    "P_GUARD": 1,
+    "P1": 10,
+    "P2": 1,
+    "CLOSED": 2,
+    "CLOSED_NOT_VALIDATED": 1,
+    "P0_THIS_PASS_NOW_RESOLVED_BY_V10636": 1
+  },
+  "safety": {
+    "official_mutation": false,
+    "provider_call_count": 0,
+    "wallet": 0,
+    "lane_promotion": false,
+    "mined_rules_official_import": false,
+    "production_prompt_switch": false,
+    "production_selector_switch": false,
+    "v10628r1_run": false,
+    "cron_install": false,
+    "deploy": false,
+    "public_code_deploy": false,
+    "cross_region_contamination": 0,
+    "drift_detected": false
+  },
+  "public_safe_scan": {
+    "findings": [
+      "V10636_PHASE1_FRESH_SYNC_FREEZE.md: pattern=\\\\Lottery_AI_Test\\\\ match='\\Lottery_AI_Test\\'",
+      "V10636_PHASE1_FRESH_SYNC_FREEZE.json: pattern=\\\\Lottery_AI_Test\\\\ match='\\Lottery_AI_Test\\'",
+      "V10636_PHASE1_FRESH_SYNC_FREEZE.json: pattern=\\\\Lottery_AI_Test\\\\ match='\\Lottery_AI_Test\\'"
+    ],
+    "findings_count": 3
+  },
+  "previous_latest_version": "V106.35",
+  "latest_version": "V106.36",
+  "live_eligible_changes": 0,
+  "official_table_writes": 0
+}

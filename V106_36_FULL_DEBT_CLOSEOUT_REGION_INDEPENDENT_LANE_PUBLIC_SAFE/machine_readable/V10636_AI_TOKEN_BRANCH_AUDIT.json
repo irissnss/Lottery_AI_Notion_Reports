@@ -1,0 +1,53 @@
+[
+  {
+    "region": "MB",
+    "group": "ai_token",
+    "window": "30d",
+    "n_models": 16,
+    "bt_hits": 91,
+    "n_days_total": 445,
+    "pick_count_sum": 864,
+    "hit_count_sum": 179,
+    "avg_strength_avg": 5.333,
+    "contribution_to_winning_days_sum": 2,
+    "winning_days_in_window_sum": 45,
+    "no_commit_total": 0,
+    "avg_latency_ms": 107163.7,
+    "bt_hit_rate_avg": 0.204,
+    "contribution_to_winning_rate": 0.044
+  },
+  {
+    "region": "MN",
+    "group": "ai_token",
+    "window": "30d",
+    "n_models": 16,
+    "bt_hits": 209,
+    "n_days_total": 450,
+    "pick_count_sum": 881,
+    "hit_count_sum": 383,
+    "avg_strength_avg": 6.47,
+    "contribution_to_winning_days_sum": 46,
+    "winning_days_in_window_sum": 168,
+    "no_commit_total": 0,
+    "avg_latency_ms": 121630.7,
+    "bt_hit_rate_avg": 0.464,
+    "contribution_to_winning_rate": 0.274
+  },
+  {
+    "region": "MT",
+    "group": "ai_token",
+    "window": "30d",
+    "n_models": 16,
+    "bt_hits": 143,
+    "n_days_total": 441,
+    "pick_count_sum": 857,
+    "hit_count_sum": 284,
+    "avg_strength_avg": 5.764,
+    "contribution_to_winning_days_sum": 3,
+    "winning_days_in_window_sum": 208,
+    "no_commit_total": 0,
+    "avg_latency_ms": 106312.0,
+    "bt_hit_rate_avg": 0.324,
+    "contribution_to_winning_rate": 0.014
+  }
+]

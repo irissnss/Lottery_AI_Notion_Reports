@@ -1,5 +1,30 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.36** - `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md` (Full debt closeout pass + region-independent lane execution dry-run. Tri-region closeout 2026-05-27 with selector_gap / bundle_skew root-cause for MT/MB. Model/method 30d audit shows MB AI-token cost-waste (contribution 4.4% on 45 winning days), MT combo dominates contribution 64%, MN AI-token healthy. Cohere ZERO_VALUE_PROOF 30d all regions. Rule105 V2 tier gate: MN 26/35 TIER_A, MT 18/35 TIER_A, MB 4/35 TIER_A with weekday coverage gap. Lane dry-run today: MN 5 rules→lane=39 vs official=58 WIN (false_consensus), MT/MB 0 rules eligible Wed. Master debt ledger V1.0→V106.35: 3 P0 + 10 P1; CP-66.7 still overdue. Safety: official_mutation=0, drift_detected=False).
+
+## Quick links - V106.36 Full Debt Closeout + Region-Independent Lane Execution
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V10636 Owner Report VN (NEWEST MAIN)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md)
+3. [V10636 Tri-Region Closeout 2026-05-27](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TRI_REGION_CLOSEOUT_PUBLIC.md)
+4. [V10636 Model × Method Scorecard](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MODEL_METHOD_SCORECARD_PUBLIC.md)
+5. [V10636 AI-Token Branch Audit (region-specific verdict)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_AI_TOKEN_BRANCH_AUDIT_PUBLIC.md)
+6. [V10636 No-Token Baseline Audit](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_NO_TOKEN_BASELINE_AUDIT_PUBLIC.md)
+7. [V10636 Cohere Value Audit](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_COHERE_VALUE_AUDIT_PUBLIC.md)
+8. [V10636 Rule105 Independent Query V2](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_RULE105_INDEPENDENT_QUERY_PUBLIC.md)
+9. [V10636 Rule105 Window Sensitivity](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_RULE105_WINDOW_SENSITIVITY_PUBLIC.md)
+10. [V10636 Rule105 Dampener Plan](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_RULE105_DAMPENER_PLAN_PUBLIC.md)
+11. [V10636 Top Rules Tier Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TOP_RULES_TIER_GATE_PUBLIC.md)
+12. [V10636 MN Lane Execution (dry-run)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MN_LANE_EXECUTION_PUBLIC.md)
+13. [V10636 MT Lane Execution (dry-run)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MT_LANE_EXECUTION_PUBLIC.md)
+14. [V10636 MB Lane Execution (dry-run)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MB_LANE_EXECUTION_PUBLIC.md)
+15. [V10636 Master Debt Ledger V1.0→V106.35](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MASTER_DEBT_LEDGER_PUBLIC.md)
+16. [V10636 P0/P1 Action Board](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_P0_P1_ACTION_BOARD_PUBLIC.md)
+17. [V10636 Owner Decision Table](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_DECISION_TABLE_PUBLIC.md)
+18. [V10636 Safety Gate](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_SAFETY_GATE_PUBLIC.md)
+19. [V10636 Zero Official Drift Proof](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_ZERO_OFFICIAL_DRIFT_PROOF_PUBLIC.md)
+20. [V10636 Execution Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/machine_readable/V10636_EXECUTION_SUMMARY.json)
+
 Latest: **V106.35** - `V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/V10635_MB_DB_D2_DEEP_DIVE_REPORT_VN_PUBLIC.md` (Deep-dive audit of owner hypothesis "MB target D = MB GĐB at D-2 often repeats". Tested 2,338 MB days × 28 transforms × 6 windows × 7 weekdays. **HYPOTHESIS NOT VALIDATED**: H1 loose 22-25% (baseline ~24%, lift −3.78 to +1.65pp), H2 strict 0-1.12% (baseline 1%, lift −1 to +1pp). Recent 60-90d shows NEGATIVE lift. Recommends do NOT add to any pipeline tier. Owner observation likely selection bias.).
 
 ## Quick links - V106.35 MB DB D-2 Deep-Dive

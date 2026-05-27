@@ -1,0 +1,53 @@
+{
+  "version": "V106.36",
+  "phase": "PHASE6_REGION_ISOLATION_PROOF",
+  "ts_vn": "2026-05-27T23:03:25",
+  "regions_analyzed": [
+    "MN",
+    "MT",
+    "MB"
+  ],
+  "per_region_rules_pool_size": {
+    "MN": 26,
+    "MT": 18,
+    "MB": 4
+  },
+  "cross_region_table_touched": false,
+  "official_table_writes": 0,
+  "official_table_mutations": 0,
+  "lane_test_table_writes": 0,
+  "shared_state_writes": 0,
+  "region_specific_dampener": {
+    "MN": {
+      "max_pool": 8,
+      "max_rule_share": 0.3,
+      "dampener": {
+        "false_consensus_dampener": true,
+        "selector_gap_rescue": true
+      }
+    },
+    "MT": {
+      "max_pool": 8,
+      "max_rule_share": 0.3,
+      "dampener": {
+        "boost_dominance_cap": true,
+        "full_spent_block": true
+      }
+    },
+    "MB": {
+      "max_pool": 8,
+      "max_rule_share": 0.3,
+      "dampener": {
+        "require_n_independent_evidence": 2,
+        "high_support_miss_suppressor": true,
+        "ceiling_pct": 55
+      }
+    }
+  },
+  "dampeners_applied_per_region": {
+    "MN": [],
+    "MT": [],
+    "MB": []
+  },
+  "proof_method": "All lane computations are in-memory Python dicts. No `INSERT/UPDATE/DELETE` to any DB table; only SELECT from lottery_results, final_bundles, mined_rules."
+}

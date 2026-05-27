@@ -1,0 +1,64 @@
+{
+  "version": "V106.36",
+  "phase": "PHASE5_WIRE_TO_LANE_TEST_PLAN",
+  "ts_vn": "2026-05-27T23:00:43",
+  "scope": "lane-test only; no official mutation; region-isolated; per-rule rank contribution cap 30%",
+  "per_region": {
+    "MN": {
+      "tier_a_count": 26,
+      "lane_name": "MN_INDEPENDENT_LANE_V1",
+      "must_include_families": [
+        "MB G2 D-2 first/both tails → MN D (owner observation)",
+        "MB G4#2 → MN",
+        "TP.HCM W-4 GĐB/low-card",
+        "MT Đà Nẵng / Khánh Hòa → MN if double-strong"
+      ],
+      "max_candidate_pool": 8,
+      "false_consensus_dampener": true,
+      "selector_gap_rescue": true,
+      "max_per_rule_rank_contribution_pct": 30
+    },
+    "MT": {
+      "tier_a_count": 18,
+      "lane_name": "MT_CONVERSION_GATE_LANE_V1",
+      "must_include_families": [
+        "MT Huế",
+        "MT Khánh Hòa",
+        "MT Đà Nẵng G1 D-2 P3P4",
+        "MB G7 precision → MT",
+        "91/97 style current support"
+      ],
+      "full_spent_block_in_lane": true,
+      "boost_dominance_cap": true,
+      "rerun_post_mn_dominance_cap": true,
+      "max_per_rule_rank_contribution_pct": 30
+    },
+    "MB": {
+      "tier_a_count": 4,
+      "lane_name": "MB_COST_CONTROL_LANE_V1",
+      "must_include_families": [
+        "MB G4/G6/G7 self-lag",
+        "MB G4#3 P2P3 D-6",
+        "MB G6#2 D-4",
+        "MT Khánh Hòa / Đà Nẵng → MB"
+      ],
+      "must_exclude_unless_lag_passes": [
+        "MB GĐB D-2 LAST2 (V10635 NOT_VALIDATED)"
+      ],
+      "ai_token_branch_freeze_candidate": true,
+      "no_token_baseline_first": true,
+      "high_support_miss_suppressor": true,
+      "max_per_rule_rank_contribution_pct": 30,
+      "ceiling_pct": 55,
+      "require_n_independent_evidence": 2
+    }
+  },
+  "safety": {
+    "official_mutation": false,
+    "lane_promotion": false,
+    "wallet": 0,
+    "provider_call": 0,
+    "deploy": false,
+    "cron": false
+  }
+}

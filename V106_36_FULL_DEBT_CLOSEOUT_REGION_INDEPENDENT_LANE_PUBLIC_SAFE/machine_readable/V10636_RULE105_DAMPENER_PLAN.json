@@ -1,0 +1,41 @@
+{
+  "version": "V106.36",
+  "phase": "PHASE4_RULE105_DAMPENER_PLAN",
+  "ts_vn": "2026-05-27T22:58:52",
+  "summary": "Apply region-specific dampeners to mined_rules during lane-test ranking (no official mutation).",
+  "regions": {
+    "MN": {
+      "threshold": 50,
+      "ceiling": 0.7,
+      "confirm_only_share": 30,
+      "ready_strong_share": 3,
+      "false_consensus_dampener": true,
+      "selector_gap_rescue": true,
+      "max_candidate_pool": 8
+    },
+    "MT": {
+      "threshold": 60,
+      "ceiling": 0.7,
+      "weak_buckets_suppress_weekdays": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "boost_dominance_cap": true,
+      "rerun_post_mn_dominance_cap": true,
+      "ninetyone_ninety_seven_current_support_required": true
+    },
+    "MB": {
+      "threshold": 50,
+      "ceiling": 0.55,
+      "require_n_evidence": 2,
+      "no_single_rule_overclaim": true,
+      "no_token_baseline_first": true,
+      "high_support_miss_suppressor": true,
+      "ai_token_branch_freeze_candidate": true
+    }
+  }
+}

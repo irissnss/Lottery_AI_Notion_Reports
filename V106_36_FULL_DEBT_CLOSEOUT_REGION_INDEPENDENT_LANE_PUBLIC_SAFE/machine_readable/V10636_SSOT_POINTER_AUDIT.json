@@ -1,0 +1,50 @@
+{
+  "version": "V106.36",
+  "phase": "PHASE0_SSOT_POINTER_AUDIT",
+  "ts_vn": "2026-05-27T22:50:00+07:00",
+  "public": {
+    "latest_report_json": "https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json",
+    "latest_version": "V106.35",
+    "latest_folder": "V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE",
+    "created_at_vn": "2026-05-27T22:07:00+07:00",
+    "previous_latest_version": "V106.34",
+    "public_safe_scan_pass": true,
+    "official_touched": false,
+    "provider_manual_ai_called": false
+  },
+  "private": {
+    "changelog_head_version": "V20.3.37.106.35",
+    "changelog_head_ts": "2026-05-27T22:07:00+07:00",
+    "current_truth_ssot_head_version": "V106.35",
+    "follow_up_tracker_head_issue": "FU-V106-35-MB-DB-D2-HYPOTHESIS-DEEP-DIVE",
+    "automation_state_governance_seq": 175,
+    "automation_state_latest_event": "v10635_mb_db_d2_hypothesis_deep_dive_and_public_push"
+  },
+  "drive": {
+    "owner_managed": true,
+    "agent_visibility": "UNKNOWN_BY_AGENT",
+    "files": ["Báo Cáo 34 Update Liên Tục", "Phân Tích Đào Rules 2", "Phân Tích Đánh Giá 13"]
+  },
+  "notion_mcp": {
+    "agent_visibility": "OWNER_WORKSPACE",
+    "no_v10636_yet": true
+  },
+  "ui_api": {
+    "domain": "xs.io.vn",
+    "phase0_status": "PENDING_LIVE_AUDIT",
+    "deferred_to_phase": "PHASE7"
+  },
+  "mismatch_matrix": [
+    {"source": "public_latest_report_json", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "public_report_index_md", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "private_changelog_md", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "private_current_truth_ssot_md", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "private_follow_up_tracker_md", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "private_automation_state_json", "version": "V106.35", "class": "CURRENT_TRUTH"},
+    {"source": "drive", "version": "owner_managed", "class": "UNKNOWN_BY_AGENT"},
+    {"source": "notion_mcp", "version": "owner_workspace", "class": "UNKNOWN_BY_AGENT"},
+    {"source": "ui_api_xs_io_vn", "version": "live", "class": "PENDING_LIVE_AUDIT"},
+    {"source": "v10636_this_pass", "version": "V106.36", "class": "IN_PROGRESS"}
+  ],
+  "conclusion": "No blocker SSOT mismatch. V106.36 begins from V106.35 cleanly."
+}

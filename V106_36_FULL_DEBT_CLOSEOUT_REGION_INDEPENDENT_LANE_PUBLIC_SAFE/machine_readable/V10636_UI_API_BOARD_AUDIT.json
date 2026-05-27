@@ -1,0 +1,33 @@
+{
+  "version": "V106.36",
+  "phase": "PHASE7_UI_API_BOARD_AUDIT",
+  "ts_vn": "2026-05-27T23:05:00+07:00",
+  "endpoints": [
+    {"url": "https://xs.io.vn/monitoring", "http_status": 401, "class": "OK_AS_DESIGNED", "note": "admin-only auth required"},
+    {"url": "https://xs.io.vn/accuracy", "http_status": "timeout", "class": "SLOW_PROBE"},
+    {"url": "https://xs.io.vn/app", "http_status": 200, "class": "OK_NEEDS_JS"},
+    {"url": "https://xs.io.vn/du-doan", "http_status": 200, "class": "OK_NEEDS_JS"},
+    {"url": "https://xs.io.vn/du-doan-test", "http_status": "timeout", "class": "SLOW_PROBE"},
+    {"url": "https://xs.io.vn/api/prediction-quality", "http_status": "timeout", "class": "SLOW_PROBE"},
+    {"url": "https://xs.io.vn/api/final-bundle?region=MN", "http_status": "timeout", "class": "SLOW_PROBE"},
+    {"url": "https://xs.io.vn/api/admin/v10622-parallel-live-board", "http_status": "not_probed", "class": "DEPLOY_GATE_REQUIRED"}
+  ],
+  "owner_browser_confirm_items": [
+    "/accuracy render",
+    "/du-doan-test render",
+    "/api/prediction-quality latency",
+    "/api/final-bundle?region=MN response",
+    "/monitoring auth"
+  ],
+  "board_deploy": {
+    "owner_approved": false,
+    "decision": "BOARD_DEPLOY_OWNER_GATE_REQUIRED",
+    "exact_blocker": "Owner has not explicitly approved deploy of new admin-only read-only board in this session. /du-doan unchanged, official tables unchanged."
+  },
+  "safety": {
+    "ui_mutation": false,
+    "official_mutation": false,
+    "deploy": false,
+    "cron": false
+  }
+}

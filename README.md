@@ -1,30 +1,28 @@
 # Lottery AI Notion Reports
 
-Latest public-safe package: `V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE` (V106.35).
+Public-safe report mirror for the internal Lottery AI Test system.
 
-Latest report: `V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/V10635_MB_DB_D2_DEEP_DIVE_REPORT_VN_PUBLIC.md`.
+- Latest: **V106.36** — `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE`
+- Owner report: `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md`
+- Pointer JSON: `LATEST_REPORT.json`
+- Index: `REPORT_INDEX.md`
 
-## Latest update (2026-05-27 — V106.35 MB DB D-2 Deep-Dive)
+## Policies
 
-Owner hypothesis: "MB target date D = MB Giải Đặc Biệt at D-2 — anh nhận thấy cũng thường xuyên về lại".
+- Public reports do NOT contain private code, DB rows, provider API keys, or raw VPS internals.
+- All `LATEST_REPORT.json` updates are paired with a public-safe scan pass.
+- No claim of ACCURACY_READY / OFFICIAL_IMPROVED / SELECTOR_FIXED / MN_FIXED / MT_FIXED / MB_FIXED / LANE_TEST_PROMOTED.
 
-Tested across 2,338 days of MB history (2020-01-01 → 2026-05-26), 28 transforms × 6 windows × 7 weekday breakdown.
+## Quick links — V106.36
 
-**Result: HYPOTHESIS NOT VALIDATED.**
-
-| Window | H1 LOOSE (LAST2 in any MB tail) | H2 STRICT (GĐB → GĐB) |
-|---|---|---|
-| 60d | 20.00% (lift −3.70pp) | 0.00% (lift −1.00pp) |
-| 90d | 20.00% (lift −3.78pp) | 0.00% (lift −1.00pp) |
-| 180d | 25.00% (lift +1.10pp) | 0.58% (lift −0.42pp) |
-| 365d | 22.97% (lift −0.91pp) | 1.12% (lift +0.12pp) |
-| 730d | 24.72% (lift +0.87pp) | 1.12% (lift +0.12pp) |
-| ALL (2,268d) | 25.44% (lift +1.65pp) | 0.97% (lift −0.03pp) |
-
-H1 baseline ~24% (random expectation). H2 baseline 1% (uniform random).
-
-Recent 60-90 days show **NEGATIVE lift** −3.7 to −3.78pp — hypothesis worse than random in current regime.
-
-**Recommendation**: do NOT add this rule to any pipeline tier (including SHADOW/PRE_REGISTER). Owner observation likely caused by selection bias and confusion between H1 LOOSE (always sits ~24% by construction) and H2 STRICT (true random 1%).
-
-For previous versions (V106.34 rule pipeline mechanism, V106.33 live control reconcile, ..., V106.26.2 FU4, V107, V106.06, ...), see `REPORT_INDEX.md`.
+- [V10636 Owner Report VN](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md)
+- [V10636 Tri-Region Closeout](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TRI_REGION_CLOSEOUT_PUBLIC.md)
+- [V10636 Model × Method Scorecard](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MODEL_METHOD_SCORECARD_PUBLIC.md)
+- [V10636 Cohere Value Audit](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_COHERE_VALUE_AUDIT_PUBLIC.md)
+- [V10636 Rule105 Independent Query V2](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_RULE105_INDEPENDENT_QUERY_PUBLIC.md)
+- [V10636 Top Rules Tier Gate](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TOP_RULES_TIER_GATE_PUBLIC.md)
+- [V10636 Master Debt Ledger](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MASTER_DEBT_LEDGER_PUBLIC.md)
+- [V10636 P0/P1 Action Board](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_P0_P1_ACTION_BOARD_PUBLIC.md)
+- [V10636 Safety Gate](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_SAFETY_GATE_PUBLIC.md)
+- [V10636 Zero Official Drift Proof](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_ZERO_OFFICIAL_DRIFT_PROOF_PUBLIC.md)
+- [V10636 Execution Summary (JSON)](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/machine_readable/V10636_EXECUTION_SUMMARY.json)
