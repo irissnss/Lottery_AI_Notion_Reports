@@ -1,0 +1,318 @@
+{
+  "audit_timestamp_vn": "2026-05-27T22:07:03+07:00",
+  "window": "180d",
+  "transform": "LAST2",
+  "days_evaluated": 172,
+  "h1_loose_hits": 43,
+  "h1_loose_rate_pct": 25.0,
+  "h2_strict_db_hits": 1,
+  "h2_strict_db_rate_pct": 0.58,
+  "h1_max_streak": 5,
+  "h1_max_gap": 20,
+  "h1_current_streak_at_latest": 0,
+  "h2_max_streak": 1,
+  "h2_max_gap": 119,
+  "h2_current_streak_at_latest": 0,
+  "last_30_entries": [
+    {
+      "date": "2026-04-27",
+      "weekday": "T2 (Mon)",
+      "src_date_d2": "2026-04-25",
+      "src_mb_db_last2": "17",
+      "tgt_mb_db_last2": "59",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-04-28",
+      "weekday": "T3 (Tue)",
+      "src_date_d2": "2026-04-26",
+      "src_mb_db_last2": "28",
+      "tgt_mb_db_last2": "54",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-04-29",
+      "weekday": "T4 (Wed)",
+      "src_date_d2": "2026-04-27",
+      "src_mb_db_last2": "59",
+      "tgt_mb_db_last2": "69",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-04-30",
+      "weekday": "T5 (Thu)",
+      "src_date_d2": "2026-04-28",
+      "src_mb_db_last2": "54",
+      "tgt_mb_db_last2": "75",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 22
+    },
+    {
+      "date": "2026-05-01",
+      "weekday": "T6 (Fri)",
+      "src_date_d2": "2026-04-29",
+      "src_mb_db_last2": "69",
+      "tgt_mb_db_last2": "37",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-05-02",
+      "weekday": "T7 (Sat)",
+      "src_date_d2": "2026-04-30",
+      "src_mb_db_last2": "75",
+      "tgt_mb_db_last2": "32",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-03",
+      "weekday": "CN (Sun)",
+      "src_date_d2": "2026-05-01",
+      "src_mb_db_last2": "37",
+      "tgt_mb_db_last2": "64",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-04",
+      "weekday": "T2 (Mon)",
+      "src_date_d2": "2026-05-02",
+      "src_mb_db_last2": "32",
+      "tgt_mb_db_last2": "51",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 22
+    },
+    {
+      "date": "2026-05-05",
+      "weekday": "T3 (Tue)",
+      "src_date_d2": "2026-05-03",
+      "src_mb_db_last2": "64",
+      "tgt_mb_db_last2": "12",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 22
+    },
+    {
+      "date": "2026-05-06",
+      "weekday": "T4 (Wed)",
+      "src_date_d2": "2026-05-04",
+      "src_mb_db_last2": "51",
+      "tgt_mb_db_last2": "41",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-07",
+      "weekday": "T5 (Thu)",
+      "src_date_d2": "2026-05-05",
+      "src_mb_db_last2": "12",
+      "tgt_mb_db_last2": "40",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-08",
+      "weekday": "T6 (Fri)",
+      "src_date_d2": "2026-05-06",
+      "src_mb_db_last2": "41",
+      "tgt_mb_db_last2": "47",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-05-09",
+      "weekday": "T7 (Sat)",
+      "src_date_d2": "2026-05-07",
+      "src_mb_db_last2": "40",
+      "tgt_mb_db_last2": "92",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-10",
+      "weekday": "CN (Sun)",
+      "src_date_d2": "2026-05-08",
+      "src_mb_db_last2": "47",
+      "tgt_mb_db_last2": "23",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 23
+    },
+    {
+      "date": "2026-05-11",
+      "weekday": "T2 (Mon)",
+      "src_date_d2": "2026-05-09",
+      "src_mb_db_last2": "92",
+      "tgt_mb_db_last2": "17",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 23
+    },
+    {
+      "date": "2026-05-12",
+      "weekday": "T3 (Tue)",
+      "src_date_d2": "2026-05-10",
+      "src_mb_db_last2": "23",
+      "tgt_mb_db_last2": "33",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 21
+    },
+    {
+      "date": "2026-05-13",
+      "weekday": "T4 (Wed)",
+      "src_date_d2": "2026-05-11",
+      "src_mb_db_last2": "17",
+      "tgt_mb_db_last2": "38",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 26
+    },
+    {
+      "date": "2026-05-14",
+      "weekday": "T5 (Thu)",
+      "src_date_d2": "2026-05-12",
+      "src_mb_db_last2": "33",
+      "tgt_mb_db_last2": "69",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-05-15",
+      "weekday": "T6 (Fri)",
+      "src_date_d2": "2026-05-13",
+      "src_mb_db_last2": "38",
+      "tgt_mb_db_last2": "94",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-16",
+      "weekday": "T7 (Sat)",
+      "src_date_d2": "2026-05-14",
+      "src_mb_db_last2": "69",
+      "tgt_mb_db_last2": "04",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 23
+    },
+    {
+      "date": "2026-05-17",
+      "weekday": "CN (Sun)",
+      "src_date_d2": "2026-05-15",
+      "src_mb_db_last2": "94",
+      "tgt_mb_db_last2": "84",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-05-18",
+      "weekday": "T2 (Mon)",
+      "src_date_d2": "2026-05-16",
+      "src_mb_db_last2": "04",
+      "tgt_mb_db_last2": "61",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-19",
+      "weekday": "T3 (Tue)",
+      "src_date_d2": "2026-05-17",
+      "src_mb_db_last2": "84",
+      "tgt_mb_db_last2": "54",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    },
+    {
+      "date": "2026-05-20",
+      "weekday": "T4 (Wed)",
+      "src_date_d2": "2026-05-18",
+      "src_mb_db_last2": "61",
+      "tgt_mb_db_last2": "68",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 23
+    },
+    {
+      "date": "2026-05-21",
+      "weekday": "T5 (Thu)",
+      "src_date_d2": "2026-05-19",
+      "src_mb_db_last2": "54",
+      "tgt_mb_db_last2": "85",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 22
+    },
+    {
+      "date": "2026-05-22",
+      "weekday": "T6 (Fri)",
+      "src_date_d2": "2026-05-20",
+      "src_mb_db_last2": "68",
+      "tgt_mb_db_last2": "39",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-23",
+      "weekday": "T7 (Sat)",
+      "src_date_d2": "2026-05-21",
+      "src_mb_db_last2": "85",
+      "tgt_mb_db_last2": "21",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 24
+    },
+    {
+      "date": "2026-05-24",
+      "weekday": "CN (Sun)",
+      "src_date_d2": "2026-05-22",
+      "src_mb_db_last2": "39",
+      "tgt_mb_db_last2": "04",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 22
+    },
+    {
+      "date": "2026-05-25",
+      "weekday": "T2 (Mon)",
+      "src_date_d2": "2026-05-23",
+      "src_mb_db_last2": "21",
+      "tgt_mb_db_last2": "81",
+      "h1_loose_hit": true,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 26
+    },
+    {
+      "date": "2026-05-26",
+      "weekday": "T3 (Tue)",
+      "src_date_d2": "2026-05-24",
+      "src_mb_db_last2": "04",
+      "tgt_mb_db_last2": "11",
+      "h1_loose_hit": false,
+      "h2_strict_db_hit": false,
+      "tgt_all_tails_count": 25
+    }
+  ]
+}

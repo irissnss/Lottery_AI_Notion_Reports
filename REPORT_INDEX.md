@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.35** - `V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/V10635_MB_DB_D2_DEEP_DIVE_REPORT_VN_PUBLIC.md` (Deep-dive audit of owner hypothesis "MB target D = MB GĐB at D-2 often repeats". Tested 2,338 MB days × 28 transforms × 6 windows × 7 weekdays. **HYPOTHESIS NOT VALIDATED**: H1 loose 22-25% (baseline ~24%, lift −3.78 to +1.65pp), H2 strict 0-1.12% (baseline 1%, lift −1 to +1pp). Recent 60-90d shows NEGATIVE lift. Recommends do NOT add to any pipeline tier. Owner observation likely selection bias.).
+
+## Quick links - V106.35 MB DB D-2 Deep-Dive
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V10635 MB DB D-2 Deep-Dive Report VN (NEWEST MAIN)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/V10635_MB_DB_D2_DEEP_DIVE_REPORT_VN_PUBLIC.md)
+3. [V10635 Hypothesis Results Grid (168 rows: 28 transforms × 6 windows)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/machine_readable/V10635_HYPOTHESIS_RESULTS.json)
+4. [V10635 Top Transforms (28 ranked by composite score)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/machine_readable/V10635_TOP_TRANSFORMS.json)
+5. [V10635 Weekday Breakdown (LAST2 transform, 365d, 7 weekdays)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/machine_readable/V10635_WEEKDAY_BREAKDOWN.json)
+6. [V10635 Recent 180d Timeline (hit/miss + streak/gap)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/machine_readable/V10635_RECENT_TIMELINE.json)
+7. [V10635 Execution Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_35_MB_DB_D2_DEEP_DIVE_PUBLIC_SAFE/machine_readable/V10635_EXECUTION_SUMMARY.json)
+
+
 Latest: **V106.34** - `V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/V10634_RULE_PIPELINE_MECHANISM_REPORT_VN_PUBLIC.md` (Read-only investigation of the production rule pipeline behind xs.io.vn/app UI. Answers three owner questions: rules are statistical lift mining (NOT ML); axis is region+weekday with 21 buckets; weekly mining + daily eval + real-time UI render. Confirms owner correction: MN/MT/MB independent across 8 dimensions vs 7 items fixed. Live DB audit covers 105 active rules. Includes source-file line references for every claim.).
 
 ## Quick links - V106.34 Rule Pipeline Mechanism
