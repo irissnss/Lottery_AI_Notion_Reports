@@ -1,0 +1,593 @@
+{
+  "audit_timestamp_vn": "2026-05-27T21:57:23+07:00",
+  "audit_kind": "live_db_readonly_no_mutation",
+  "per_bucket_metrics": [
+    {
+      "target_region": "MB",
+      "target_weekday": 0,
+      "n": 5,
+      "avg_hr365": 76.3,
+      "avg_hr4w": 95.0,
+      "avg_hr8w": 86.7,
+      "avg_hr12w": 78.3,
+      "avg_hr16w": 77.9,
+      "avg_n365": 42.0,
+      "min_n365": 6,
+      "max_n365": 51,
+      "avg_comp": 80.4,
+      "avg_cum": 100.9
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 1,
+      "n": 5,
+      "avg_hr365": 69.0,
+      "avg_hr4w": 65.0,
+      "avg_hr8w": 70.0,
+      "avg_hr12w": 73.3,
+      "avg_hr16w": 73.8,
+      "avg_n365": 40.8,
+      "min_n365": 25,
+      "max_n365": 51,
+      "avg_comp": 74.0,
+      "avg_cum": 94.7
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 2,
+      "n": 5,
+      "avg_hr365": 64.5,
+      "avg_hr4w": 80.0,
+      "avg_hr8w": 70.0,
+      "avg_hr12w": 71.7,
+      "avg_hr16w": 71.3,
+      "avg_n365": 35.6,
+      "min_n365": 25,
+      "max_n365": 51,
+      "avg_comp": 73.8,
+      "avg_cum": 95.2
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 3,
+      "n": 5,
+      "avg_hr365": 52.5,
+      "avg_hr4w": 70.0,
+      "avg_hr8w": 72.5,
+      "avg_hr12w": 70.0,
+      "avg_hr16w": 70.0,
+      "avg_n365": 51.0,
+      "min_n365": 51,
+      "max_n365": 51,
+      "avg_comp": 71.5,
+      "avg_cum": 93.2
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 4,
+      "n": 5,
+      "avg_hr365": 55.9,
+      "avg_hr4w": 75.0,
+      "avg_hr8w": 67.5,
+      "avg_hr12w": 66.7,
+      "avg_hr16w": 68.8,
+      "avg_n365": 51.6,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 69.9,
+      "avg_cum": 89.9
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 5,
+      "n": 5,
+      "avg_hr365": 55.5,
+      "avg_hr4w": 90.0,
+      "avg_hr8w": 80.0,
+      "avg_hr12w": 78.3,
+      "avg_hr16w": 73.8,
+      "avg_n365": 48.0,
+      "min_n365": 28,
+      "max_n365": 53,
+      "avg_comp": 79.0,
+      "avg_cum": 100.2
+    },
+    {
+      "target_region": "MB",
+      "target_weekday": 6,
+      "n": 5,
+      "avg_hr365": 71.7,
+      "avg_hr4w": 85.0,
+      "avg_hr8w": 90.0,
+      "avg_hr12w": 91.7,
+      "avg_hr16w": 83.8,
+      "avg_n365": 53.0,
+      "min_n365": 53,
+      "max_n365": 53,
+      "avg_comp": 88.7,
+      "avg_cum": 108.2
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 0,
+      "n": 5,
+      "avg_hr365": 81.2,
+      "avg_hr4w": 100.0,
+      "avg_hr8w": 95.0,
+      "avg_hr12w": 96.7,
+      "avg_hr16w": 95.0,
+      "avg_n365": 52.0,
+      "min_n365": 52,
+      "max_n365": 52,
+      "avg_comp": 96.6,
+      "avg_cum": 118.1
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 1,
+      "n": 5,
+      "avg_hr365": 91.9,
+      "avg_hr4w": 100.0,
+      "avg_hr8w": 92.5,
+      "avg_hr12w": 95.0,
+      "avg_hr16w": 96.3,
+      "avg_n365": 51.2,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 96.2,
+      "avg_cum": 116.2
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 2,
+      "n": 5,
+      "avg_hr365": 93.4,
+      "avg_hr4w": 95.0,
+      "avg_hr8w": 97.5,
+      "avg_hr12w": 98.3,
+      "avg_hr16w": 98.8,
+      "avg_n365": 51.2,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 98.2,
+      "avg_cum": 118.5
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 3,
+      "n": 5,
+      "avg_hr365": 85.3,
+      "avg_hr4w": 95.0,
+      "avg_hr8w": 92.5,
+      "avg_hr12w": 91.7,
+      "avg_hr16w": 91.3,
+      "avg_n365": 51.4,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 92.3,
+      "avg_cum": 113.2
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 4,
+      "n": 5,
+      "avg_hr365": 87.8,
+      "avg_hr4w": 100.0,
+      "avg_hr8w": 100.0,
+      "avg_hr12w": 96.7,
+      "avg_hr16w": 97.5,
+      "avg_n365": 51.0,
+      "min_n365": 51,
+      "max_n365": 51,
+      "avg_comp": 97.4,
+      "avg_cum": 117.3
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 5,
+      "n": 5,
+      "avg_hr365": 93.2,
+      "avg_hr4w": 100.0,
+      "avg_hr8w": 100.0,
+      "avg_hr12w": 100.0,
+      "avg_hr16w": 100.0,
+      "avg_n365": 53.0,
+      "min_n365": 53,
+      "max_n365": 53,
+      "avg_comp": 100.0,
+      "avg_cum": 121.3
+    },
+    {
+      "target_region": "MN",
+      "target_weekday": 6,
+      "n": 5,
+      "avg_hr365": 87.8,
+      "avg_hr4w": 90.0,
+      "avg_hr8w": 90.0,
+      "avg_hr12w": 93.3,
+      "avg_hr16w": 87.5,
+      "avg_n365": 48.0,
+      "min_n365": 28,
+      "max_n365": 53,
+      "avg_comp": 91.3,
+      "avg_cum": 111.2
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 0,
+      "n": 5,
+      "avg_hr365": 82.5,
+      "avg_hr4w": 100.0,
+      "avg_hr8w": 97.1,
+      "avg_hr12w": 92.1,
+      "avg_hr16w": 89.6,
+      "avg_n365": 43.0,
+      "min_n365": 7,
+      "max_n365": 52,
+      "avg_comp": 92.1,
+      "avg_cum": 111.7
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 1,
+      "n": 5,
+      "avg_hr365": 91.0,
+      "avg_hr4w": 75.0,
+      "avg_hr8w": 82.5,
+      "avg_hr12w": 88.3,
+      "avg_hr16w": 91.3,
+      "avg_n365": 51.0,
+      "min_n365": 51,
+      "max_n365": 51,
+      "avg_comp": 88.6,
+      "avg_cum": 108.8
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 2,
+      "n": 5,
+      "avg_hr365": 72.4,
+      "avg_hr4w": 70.0,
+      "avg_hr8w": 80.0,
+      "avg_hr12w": 78.3,
+      "avg_hr16w": 78.8,
+      "avg_n365": 51.4,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 78.7,
+      "avg_cum": 99.0
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 3,
+      "n": 5,
+      "avg_hr365": 84.2,
+      "avg_hr4w": 95.0,
+      "avg_hr8w": 97.5,
+      "avg_hr12w": 96.7,
+      "avg_hr16w": 92.5,
+      "avg_n365": 51.4,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 95.2,
+      "avg_cum": 115.3
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 4,
+      "n": 5,
+      "avg_hr365": 79.7,
+      "avg_hr4w": 90.0,
+      "avg_hr8w": 82.5,
+      "avg_hr12w": 88.3,
+      "avg_hr16w": 83.8,
+      "avg_n365": 51.2,
+      "min_n365": 51,
+      "max_n365": 52,
+      "avg_comp": 87.5,
+      "avg_cum": 107.1
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 5,
+      "n": 5,
+      "avg_hr365": 83.6,
+      "avg_hr4w": 95.0,
+      "avg_hr8w": 90.0,
+      "avg_hr12w": 91.7,
+      "avg_hr16w": 87.5,
+      "avg_n365": 47.4,
+      "min_n365": 25,
+      "max_n365": 53,
+      "avg_comp": 91.0,
+      "avg_cum": 113.0
+    },
+    {
+      "target_region": "MT",
+      "target_weekday": 6,
+      "n": 5,
+      "avg_hr365": 82.8,
+      "avg_hr4w": 90.0,
+      "avg_hr8w": 87.5,
+      "avg_hr12w": 91.7,
+      "avg_hr16w": 91.3,
+      "avg_n365": 43.0,
+      "min_n365": 28,
+      "max_n365": 53,
+      "avg_comp": 91.8,
+      "avg_cum": 113.9
+    }
+  ],
+  "per_region_totals": [
+    {
+      "target_region": "MB",
+      "n": 35,
+      "avg_hr365": 63.6,
+      "avg_hr12w": 75.7,
+      "avg_hr16w": 74.2,
+      "avg_n365": 46.0,
+      "min_n365": 6,
+      "max_n365": 53,
+      "avg_comp": 76.8,
+      "avg_cum": 97.5
+    },
+    {
+      "target_region": "MN",
+      "n": 35,
+      "avg_hr365": 88.6,
+      "avg_hr12w": 96.0,
+      "avg_hr16w": 95.2,
+      "avg_n365": 51.1,
+      "min_n365": 28,
+      "max_n365": 53,
+      "avg_comp": 96.0,
+      "avg_cum": 116.5
+    },
+    {
+      "target_region": "MT",
+      "n": 35,
+      "avg_hr365": 82.3,
+      "avg_hr12w": 89.6,
+      "avg_hr16w": 87.8,
+      "avg_n365": 48.3,
+      "min_n365": 7,
+      "max_n365": 53,
+      "avg_comp": 89.3,
+      "avg_cum": 109.8
+    }
+  ],
+  "source_config_diversity": [
+    {
+      "target_region": "MB",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "n": 12
+    },
+    {
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D",
+      "n": 3
+    },
+    {
+      "target_region": "MB",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "n": 7
+    },
+    {
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D",
+      "n": 5
+    },
+    {
+      "target_region": "MB",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "n": 8
+    },
+    {
+      "target_region": "MN",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "n": 24
+    },
+    {
+      "target_region": "MN",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "n": 8
+    },
+    {
+      "target_region": "MN",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "n": 3
+    },
+    {
+      "target_region": "MT",
+      "source_region": "MB",
+      "source_offset": "D-1",
+      "n": 23
+    },
+    {
+      "target_region": "MT",
+      "source_region": "MN",
+      "source_offset": "D",
+      "n": 4
+    },
+    {
+      "target_region": "MT",
+      "source_region": "MN",
+      "source_offset": "D-1",
+      "n": 5
+    },
+    {
+      "target_region": "MT",
+      "source_region": "MT",
+      "source_offset": "D-1",
+      "n": 3
+    }
+  ],
+  "tier_distribution_per_region": [
+    {
+      "target_region": "MB",
+      "production_tier": "LIMITED_WEIGHT",
+      "n": 18
+    },
+    {
+      "target_region": "MB",
+      "production_tier": "READY_WITH_CAUTION",
+      "n": 14
+    },
+    {
+      "target_region": "MB",
+      "production_tier": "READY_STRONG",
+      "n": 3
+    },
+    {
+      "target_region": "MN",
+      "production_tier": "LIMITED_WEIGHT",
+      "n": 21
+    },
+    {
+      "target_region": "MN",
+      "production_tier": "READY_WITH_CAUTION",
+      "n": 11
+    },
+    {
+      "target_region": "MN",
+      "production_tier": "READY_STRONG",
+      "n": 3
+    },
+    {
+      "target_region": "MT",
+      "production_tier": "LIMITED_WEIGHT",
+      "n": 20
+    },
+    {
+      "target_region": "MT",
+      "production_tier": "READY_WITH_CAUTION",
+      "n": 11
+    },
+    {
+      "target_region": "MT",
+      "production_tier": "READY_STRONG",
+      "n": 4
+    }
+  ],
+  "recent_mining_log": [
+    {
+      "run_date": "2026-05-04",
+      "rule_version": "v2026W19",
+      "n_rules_total": 105,
+      "n_ready_strong": 10,
+      "n_ready_caution": 36,
+      "duration_seconds": 14.07,
+      "status": "SUCCESS",
+      "schedule_slot": "auto",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W19"
+    },
+    {
+      "run_date": "2026-05-04",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 10,
+      "n_ready_caution": 36,
+      "duration_seconds": 13.2,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-27",
+      "rule_version": "v2026W18",
+      "n_rules_total": 105,
+      "n_ready_strong": 14,
+      "n_ready_caution": 32,
+      "duration_seconds": 12.99,
+      "status": "SUCCESS",
+      "schedule_slot": "auto",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W18"
+    },
+    {
+      "run_date": "2026-04-27",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 14,
+      "n_ready_caution": 32,
+      "duration_seconds": 12.4,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-26",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 12,
+      "n_ready_caution": 35,
+      "duration_seconds": 12.9,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-26",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 12,
+      "n_ready_caution": 35,
+      "duration_seconds": 12.7,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-20",
+      "rule_version": "v2026W17",
+      "n_rules_total": 105,
+      "n_ready_strong": 45,
+      "n_ready_caution": 47,
+      "duration_seconds": 12.79,
+      "status": "SUCCESS",
+      "schedule_slot": "auto",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W17"
+    },
+    {
+      "run_date": "2026-04-20",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 45,
+      "n_ready_caution": 47,
+      "duration_seconds": 12.0,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-16",
+      "rule_version": null,
+      "n_rules_total": 105,
+      "n_ready_strong": 47,
+      "n_ready_caution": 43,
+      "duration_seconds": 12.7,
+      "status": "SUCCESS",
+      "schedule_slot": null,
+      "status_detail": null
+    },
+    {
+      "run_date": "2026-04-13",
+      "rule_version": "v2026W16",
+      "n_rules_total": 105,
+      "n_ready_strong": 39,
+      "n_ready_caution": 42,
+      "duration_seconds": 13.56,
+      "status": "SUCCESS",
+      "schedule_slot": "auto",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W16"
+    }
+  ],
+  "legacy_pattern_rules_distribution": []
+}

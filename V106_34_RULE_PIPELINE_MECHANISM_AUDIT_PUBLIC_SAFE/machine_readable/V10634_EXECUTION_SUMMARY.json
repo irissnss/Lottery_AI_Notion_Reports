@@ -1,0 +1,52 @@
+{
+  "audit_timestamp_vn": "2026-05-27T21:57:23+07:00",
+  "audit_id": "V10634_RULE_PIPELINE_MECHANISM_AUDIT",
+  "scope": "Read-only investigation of mined_rules pipeline; no official mutation, no provider call, no live result change.",
+  "evidence_files": [
+    "V10634_DB_AUDIT_LIVE_DATA.json",
+    "V10634_PER_REGION_INDEPENDENCE_MATRIX.json",
+    "V10634_BUCKET_QUALITY_TABLE_AUDIT.json",
+    "V10634_RULE_PIPELINE_FLOW.json"
+  ],
+  "top_level_findings": {
+    "mining_cadence": "weekly (Monday 00:30 VN) + daily eval 20:15 VN",
+    "mining_method": "statistical lift mining (NOT machine learning)",
+    "ui_real_time": true,
+    "cache_header_api_prediction_quality": "NO_STORE_REALTIME",
+    "fixed_across_regions_count": 7,
+    "independent_per_region_count": 8,
+    "per_region_data_sample": {
+      "MB": {
+        "rule_count": 35,
+        "avg_hr365_pct": 63.6,
+        "avg_hr12w_pct": 75.7,
+        "avg_cumulative_rank_score": 97.5,
+        "n_365_range": "6-53"
+      },
+      "MN": {
+        "rule_count": 35,
+        "avg_hr365_pct": 88.6,
+        "avg_hr12w_pct": 96.0,
+        "avg_cumulative_rank_score": 116.5,
+        "n_365_range": "28-53"
+      },
+      "MT": {
+        "rule_count": 35,
+        "avg_hr365_pct": 82.3,
+        "avg_hr12w_pct": 89.6,
+        "avg_cumulative_rank_score": 109.8,
+        "n_365_range": "7-53"
+      }
+    }
+  },
+  "safety": {
+    "official_mutation": 0,
+    "provider_call": 0,
+    "manual_ai_call": 0,
+    "wallet_change": 0,
+    "lane_promotion": 0,
+    "cron_install": 0,
+    "deploy": 0,
+    "read_only": true
+  }
+}

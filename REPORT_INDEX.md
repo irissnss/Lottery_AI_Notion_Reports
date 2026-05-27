@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.34** - `V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/V10634_RULE_PIPELINE_MECHANISM_REPORT_VN_PUBLIC.md` (Read-only investigation of the production rule pipeline behind xs.io.vn/app UI. Answers three owner questions: rules are statistical lift mining (NOT ML); axis is region+weekday with 21 buckets; weekly mining + daily eval + real-time UI render. Confirms owner correction: MN/MT/MB independent across 8 dimensions vs 7 items fixed. Live DB audit covers 105 active rules. Includes source-file line references for every claim.).
+
+## Quick links - V106.34 Rule Pipeline Mechanism
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. [V10634 Rule Pipeline Mechanism Report VN (NEWEST MAIN)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/V10634_RULE_PIPELINE_MECHANISM_REPORT_VN_PUBLIC.md)
+3. [V10634 Per-Region Independence Matrix (7 fixed + 8 independent)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/machine_readable/V10634_PER_REGION_INDEPENDENCE_MATRIX.json)
+4. [V10634 Bucket Quality Table Audit (21 entries + per-region suppression)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/machine_readable/V10634_BUCKET_QUALITY_TABLE_AUDIT.json)
+5. [V10634 Rule Pipeline Flow (12-stage DAG with source-file refs)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/machine_readable/V10634_RULE_PIPELINE_FLOW.json)
+6. [V10634 DB Audit Live Data (105 rules across 21 buckets)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/machine_readable/V10634_DB_AUDIT_LIVE_DATA.json)
+7. [V10634 Execution Summary](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_34_RULE_PIPELINE_MECHANISM_AUDIT_PUBLIC_SAFE/machine_readable/V10634_EXECUTION_SUMMARY.json)
+
+
 Latest: **V106.33** - `V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE/V10633_OWNER_REPORT_VN_PUBLIC.md` (live control semantic reconciliation; report-only; no public code deploy).
 
 ## Quick links - V106.33

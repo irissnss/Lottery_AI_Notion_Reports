@@ -1,0 +1,90 @@
+{
+  "audit_timestamp_vn": "2026-05-27T21:57:23+07:00",
+  "snapshot_date": "2026-03-22",
+  "snapshot_source": "verified_bucket_rules (weekly mining run)",
+  "source_file": "web/backend/rule_engine.py line 108-116",
+  "table_raw": {
+    "MN_T2": 70,
+    "MN_T3": 61,
+    "MN_T4": 55,
+    "MN_T5": 53,
+    "MN_T6": 72,
+    "MN_T7": 59,
+    "MN_CN": 67,
+    "MT_T2": 58,
+    "MT_T3": 51,
+    "MT_T4": 73,
+    "MT_T5": 51,
+    "MT_T6": 76,
+    "MT_T7": 74,
+    "MT_CN": 49,
+    "MB_T2": 63,
+    "MB_T3": 59,
+    "MB_T4": 64,
+    "MB_T5": 51,
+    "MB_T6": 64,
+    "MB_T7": 63,
+    "MB_CN": 65
+  },
+  "table_by_region": {
+    "MN": {
+      "T2": 70,
+      "T3": 61,
+      "T4": 55,
+      "T5": 53,
+      "T6": 72,
+      "T7": 59,
+      "CN": 67
+    },
+    "MT": {
+      "T2": 58,
+      "T3": 51,
+      "T4": 73,
+      "T5": 51,
+      "T6": 76,
+      "T7": 74,
+      "CN": 49
+    },
+    "MB": {
+      "T2": 63,
+      "T3": 59,
+      "T4": 64,
+      "T5": 51,
+      "T6": 64,
+      "T7": 63,
+      "CN": 65
+    }
+  },
+  "suppress_threshold_per_region": {
+    "MN": 50,
+    "MT": 60,
+    "MB": 50
+  },
+  "effect_per_region": {
+    "MN": {
+      "threshold": 50,
+      "suppressed_weekdays": [],
+      "suppression_ratio_pct": 0.0
+    },
+    "MT": {
+      "threshold": 60,
+      "suppressed_weekdays": [
+        "T2",
+        "T3",
+        "T5",
+        "CN"
+      ],
+      "suppression_ratio_pct": 57.1
+    },
+    "MB": {
+      "threshold": 50,
+      "suppressed_weekdays": [],
+      "suppression_ratio_pct": 0.0
+    }
+  },
+  "interpretation": {
+    "MN": "1/7 weekdays below threshold (T5=53>50): no suppression. MN bucket quality is healthy across the week.",
+    "MT": "3/7 weekdays below threshold (T2=58, T3=51, T5=51, CN=49 < 60). Note threshold is 60, so MT has 4 suppressed weekdays. MT is the most heavily gated region.",
+    "MB": "1/7 weekdays below threshold (T5=51, barely above 50). Bucket quality moderate."
+  }
+}

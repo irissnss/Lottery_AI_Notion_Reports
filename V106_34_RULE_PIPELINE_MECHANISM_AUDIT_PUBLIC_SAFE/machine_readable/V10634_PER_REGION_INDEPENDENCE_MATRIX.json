@@ -1,0 +1,149 @@
+{
+  "audit_timestamp_vn": "2026-05-27T21:57:23+07:00",
+  "source_files_referenced": [
+    "web/backend/_seed_rules.py",
+    "web/backend/weekly_rule_miner.py",
+    "web/backend/rule_engine.py",
+    "web/backend/gpt_analyzer.py",
+    "web/backend/main.py"
+  ],
+  "fixed_across_regions": [
+    {
+      "item": "Window sizes",
+      "value": "4W / 8W / 12W / 16W",
+      "source": "_seed_rules.py::_compute_window_hrs (line 151)",
+      "note": "Hardcoded list [(4w,4),(8w,8),(12w,12),(16w,16)]. Same for MN/MT/MB."
+    },
+    {
+      "item": "Composite score weights",
+      "value": "0.50 * hr_12w + 0.35 * hr_16w + 0.10 * hr_4w + 0.05 * confidence",
+      "source": "_seed_rules.py::_compute_composite_score (line 182-188)",
+      "note": "Hardcoded. Same weight blend for all 3 regions."
+    },
+    {
+      "item": "Window verdict thresholds",
+      "value": "HIGH_CONF: h12>=50 & h16>=50 & h4>=50; EXECUTION_READY: h12>=50 & h16>=45 & h4>=40; STABLE_BUT_STALE: h16>=50 & h4<30; RECENT_SPIKE: h4>=60 & h16<35; DROP: h12<35 & h16<35",
+      "source": "_seed_rules.py::_compute_window_verdict (line 165-176)",
+      "note": "Hardcoded percentage gates. Identical 3 regions."
+    },
+    {
+      "item": "Lifecycle promotion gate",
+      "value": "hit_rate >= 55% AND evaluated samples >= 8",
+      "source": "weekly_rule_miner.py::auto_promote_eligible_rules (line 243)",
+      "note": "Same gate for all regions to flip shadow -> active."
+    },
+    {
+      "item": "Lifecycle demotion gate",
+      "value": "recent hit_rate < 25% AND samples >= 8 AND active >= 14 days",
+      "source": "weekly_rule_miner.py::demote_stale_rules (line 328)",
+      "note": "Same demotion threshold for all regions."
+    },
+    {
+      "item": "Boost table (runtime)",
+      "value": "soft: RS+CORE=0.15, RS+EXT=0.08, RWC+CORE=0.10, RWC+EXT=0.05, LW+CORE=0.05, LW+SR=0.01",
+      "source": "rule_engine.py::BOOST_TABLE (line 49-72)",
+      "note": "Single table, looked up by (tier, prediction_use). No per-region branch in the lookup."
+    },
+    {
+      "item": "Convergence bonus and cap",
+      "value": "soft: +0.10, active: +0.20; CONV_x2 cap 0.50, CONV_x3+ cap 0.40",
+      "source": "rule_engine.py::CONVERGENCE_BONUS, CONV_BOOST_CAP (line 74-84)",
+      "note": "Same anti-herding cap applied to all 3 regions equally."
+    }
+  ],
+  "independent_per_region": [
+    {
+      "item": "Source pool (cross-region directions)",
+      "mn": "3 sources: MT D-1, MN D-1, MB D-1",
+      "mt": "4 sources: MN D=0 (same-day), MT D-1, MN D-1, MB D-1",
+      "mb": "5 sources: MT D=0, MN D=0, MT D-1, MN D-1, MB D-1",
+      "source": "_seed_rules.py::src_cfgs (line 94-97)",
+      "note": "Completely different cross-region candidate origins per target."
+    },
+    {
+      "item": "Prize key set used as source",
+      "mn_mt": "[g8, g7, db, g1, g2, g5] — 6 prize tiers",
+      "mb": "[db, g6, g7, g1, g2] — 5 prize tiers (no g8 because MB does not have it)",
+      "source": "_seed_rules.py::SRC_MNMT, SRC_MB (line 26-27)",
+      "note": "Different number of tail digits extracted when each region is used as source."
+    },
+    {
+      "item": "Baseline probability p",
+      "value": "Calculated separately per target region from average tail count over last 365 days. Used in lift formula: lift = hr / (1 - (1-p_region)^avg_src_tails)",
+      "source": "_seed_rules.py::main (line 359-368)",
+      "note": "Different p_region means same hit_rate yields different lift across regions."
+    },
+    {
+      "item": "BUCKET_QUALITY_TABLE",
+      "mn": {
+        "T2": 70,
+        "T3": 61,
+        "T4": 55,
+        "T5": 53,
+        "T6": 72,
+        "T7": 59,
+        "CN": 67
+      },
+      "mt": {
+        "T2": 58,
+        "T3": 51,
+        "T4": 73,
+        "T5": 51,
+        "T6": 76,
+        "T7": 74,
+        "CN": 49
+      },
+      "mb": {
+        "T2": 63,
+        "T3": 59,
+        "T4": 64,
+        "T5": 51,
+        "T6": 64,
+        "T7": 63,
+        "CN": 65
+      },
+      "source": "rule_engine.py::BUCKET_QUALITY_TABLE (line 108-115)",
+      "snapshot_date": "2026-03-22",
+      "note": "21 independent quality scores, one per (region × weekday) combination."
+    },
+    {
+      "item": "BUCKET_SUPPRESS_THRESHOLD",
+      "mn": 50,
+      "mt": 60,
+      "mb": 50,
+      "source": "rule_engine.py::BUCKET_SUPPRESS_THRESHOLD (line 116)",
+      "note": "MT has higher gate (60) — rules below 60 quality auto-suppress to READY_STRONG only. MN/MB only suppress below 50."
+    },
+    {
+      "item": "MB CALIBRATION V10.3 (prompt-level)",
+      "mn_mt": {
+        "base_confidence_ceiling_pct": 70,
+        "rule_evidence_penalty_pct": 0,
+        "independent_evidence_required": false
+      },
+      "mb": {
+        "base_confidence_ceiling_pct": 55,
+        "rule_evidence_penalty_pct": 20,
+        "independent_evidence_required": true,
+        "min_independent_sources": 2,
+        "reason": "MB = 1 station/day -> evidence 3-4x thinner than MN/MT"
+      },
+      "source": "gpt_analyzer.py V10.3 MB CALIBRATION block (line 4534-4547)",
+      "note": "AI prompt explicitly downweights MB rule confidence."
+    },
+    {
+      "item": "Station-per-day count (structural)",
+      "mn": "3-4 stations/day rotating across weekdays",
+      "mt": "2 stations/day rotating across weekdays",
+      "mb": "1 station/day (single Northern lottery board)",
+      "source": "gpt_analyzer.py V10.3 calibration commentary",
+      "note": "Why MB sample size is structurally thinner; affects evidence weight."
+    },
+    {
+      "item": "Per-region effective sample sizes",
+      "description": "Even though target windows are 4/8/12/16 weeks fixed, the actual n_365 sample range per region differs because cross-region source rotation + station-per-day differs.",
+      "source": "Live DB audit in V10634_DB_AUDIT_LIVE_DATA.json",
+      "note": "See per_region_totals.min_n365 / max_n365 ranges for details."
+    }
+  ]
+}

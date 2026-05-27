@@ -1,0 +1,161 @@
+{
+  "audit_timestamp_vn": "2026-05-27T21:57:23+07:00",
+  "rule_pipeline_stages": [
+    {
+      "stage": 1,
+      "name": "Data load",
+      "frequency": "on each weekly mining run",
+      "source": "lottery_results table (live VPS DB)",
+      "output": "in-memory dict[date][region] = [(station, prizes_json)]",
+      "file": "_seed_rules.py::load"
+    },
+    {
+      "stage": 2,
+      "name": "Baseline computation",
+      "frequency": "on each weekly mining run",
+      "method": "Per region: avg tail count over 365d / 100 -> probability p_region",
+      "output": "baselines[MN/MT/MB] = {avg, p}",
+      "file": "_seed_rules.py::main line 359-368",
+      "region_independent": true
+    },
+    {
+      "stage": 3,
+      "name": "Rule enumeration",
+      "frequency": "on each weekly mining run",
+      "method": "For each (target_region, target_weekday) in 21 buckets: enumerate (source_region, source_offset, station, prize_key) from region-specific src_cfgs.",
+      "output": "~6000 raw rule candidates before filter",
+      "file": "_seed_rules.py::src_cfgs + eval_rule",
+      "region_independent": true
+    },
+    {
+      "stage": 4,
+      "name": "Statistical metrics",
+      "frequency": "on each weekly mining run",
+      "method": "For each rule: compute hit_rate_365, hr_4w/8w/12w/16w, lift_365 (= hr/baseline), streak, gap, stability.",
+      "output": "per-rule dict with all metrics",
+      "file": "_seed_rules.py::build_rule, _compute_window_hrs",
+      "region_independent": false,
+      "why": "Windows 4/8/12/16W fixed BUT baseline used in lift is per-region."
+    },
+    {
+      "stage": 5,
+      "name": "Scoring + tier classification",
+      "frequency": "on each weekly mining run",
+      "method": "score_rule() applies threshold-based bumps. composite_score = 0.50*hr12w + 0.35*hr16w + 0.10*hr4w + 0.05*confidence. cumulative_rank_score = composite + verdict_bonus + stability_bonus + evidence_bonus + use_bonus + legacy_bonus - living_penalty.",
+      "output": "tier in {READY_STRONG, READY_WITH_CAUTION, LIMITED_WEIGHT, REFERENCE_ONLY}",
+      "file": "_seed_rules.py::score_rule, _compute_composite_score, _compute_cumulative_rank_score",
+      "region_independent": true,
+      "why": "Coefficients same, but rule input features differ per region."
+    },
+    {
+      "stage": 6,
+      "name": "Top-5 selection per bucket",
+      "frequency": "on each weekly mining run",
+      "method": "For each of 21 buckets: rank by cumulative_rank_score DESC, keep top 5.",
+      "output": "~105 rules persisted to mined_rules table",
+      "file": "_seed_rules.py::main loop"
+    },
+    {
+      "stage": 7,
+      "name": "DB persist + version tag",
+      "frequency": "on each weekly mining run",
+      "method": "DELETE FROM mined_rules; INSERT new top-5 per bucket; tag rule_version = v{ISO_YEAR}W{ISO_WEEK}; activation_status = shadow.",
+      "output": "mined_rules table refreshed",
+      "file": "weekly_rule_miner.py::run_weekly_mining"
+    },
+    {
+      "stage": 8,
+      "name": "Daily MRE evaluation",
+      "frequency": "daily 20:15 VN (after results closeout)",
+      "method": "For each active rule, look up source date data and check if predicted tails appear in target region results.",
+      "output": "mined_rule_effectiveness rows",
+      "file": "mined_rule_eval.py"
+    },
+    {
+      "stage": 9,
+      "name": "Lifecycle (promote/demote)",
+      "frequency": "weekly after mining + ad hoc",
+      "method": "Promote shadow -> active if hit_rate>=55% & samples>=8. Demote active -> shadow if recent_hit_rate<25% & samples>=8.",
+      "output": "activation_status updated",
+      "file": "weekly_rule_miner.py::auto_promote_eligible_rules / demote_stale_rules"
+    },
+    {
+      "stage": 10,
+      "name": "Runtime rule lookup",
+      "frequency": "per prediction cycle",
+      "method": "get_active_rules(target_region, target_date) filters by region + weekday + tier. Apply BUCKET_QUALITY_TABLE suppression.",
+      "output": "list of rules for current bucket",
+      "file": "rule_engine.py::get_active_rules, extract_rule_candidates_v2",
+      "region_independent": false,
+      "why": "BUCKET_QUALITY_TABLE and BUCKET_SUPPRESS_THRESHOLD differ per region."
+    },
+    {
+      "stage": 11,
+      "name": "Boost computation",
+      "frequency": "per prediction cycle",
+      "method": "For each rule produce 2-digit tails from source date. Apply BOOST_TABLE[(tier, prediction_use)]. Apply DH_MULTIPLIER. Apply livingness-weighted boost (84d). Apply convergence cap.",
+      "output": "candidate_tails dict[tail -> boost]",
+      "file": "rule_engine.py::extract_rule_candidates_v2",
+      "region_independent": true,
+      "why": "Same BOOST_TABLE for all regions, but list of rules going in differs."
+    },
+    {
+      "stage": 12,
+      "name": "Display in UI",
+      "frequency": "on every panel open (real-time)",
+      "method": "GET /api/prediction-quality computes recommendation per region. Live SQL for WR 14-day. Live lookup for predicted_tails.",
+      "output": "JSON for app.js Quality Panel",
+      "file": "main.py::api_prediction_quality",
+      "caching": "NO_STORE_REALTIME (no cache header)",
+      "region_independent": false,
+      "why": "Per-region MB CALIBRATION ceiling (55 vs 70) applied at prompt level."
+    }
+  ],
+  "real_time_evidence": {
+    "api_prediction_quality": {
+      "cache_header": "NO_STORE_REALTIME",
+      "wr_14d_source": "live SQL on predictions table at every request",
+      "predicted_tails_source": "live SQL on lottery_results at every request",
+      "rules_list_source": "cached weekly in mined_rules table",
+      "effectiveness_source": "daily MRE evaluation, updates lifecycle gates"
+    }
+  },
+  "distinction_rules_vs_models": {
+    "rules": {
+      "method": "Statistical lift mining (NOT machine learning)",
+      "output": "Source -> target mapping with hit_rate, tier",
+      "examples": [
+        "R1271 MBĐD-1/T(Thứ 3) Quảng Ninh -> MN"
+      ],
+      "files": [
+        "_seed_rules.py",
+        "rule_engine.py",
+        "mined_rule_eval.py"
+      ]
+    },
+    "models": {
+      "method": "Machine Learning + AI providers",
+      "output": "Per-region predicted numbers with confidence",
+      "examples": [
+        "GLMS5.1 (GLM transformer, SHADOW_AUTO)",
+        "DeepSeek R1 (LLM, ACTIVE)",
+        "Opus 4.6 (Claude, ACTIVE)",
+        "RF (RandomForest local ML)",
+        "XGB+RF (smart-ml ensemble)",
+        "COMBO (combo-no-token ensemble)",
+        "Meta-Learn (local ML)",
+        "Gemini 2.5 / 3.x (LLM)",
+        "gpt-5.5 (LLM via OpenRouter)"
+      ],
+      "files": [
+        "model_registry.py",
+        "gpt_analyzer.py",
+        "_materialize_*.py"
+      ]
+    },
+    "integration": {
+      "formula": "rec_score = 60% * model_WR_14d + 25% * rule_avg_score + 15% * diversity_bonus",
+      "file": "main.py api_prediction_quality line ~4580"
+    }
+  }
+}
