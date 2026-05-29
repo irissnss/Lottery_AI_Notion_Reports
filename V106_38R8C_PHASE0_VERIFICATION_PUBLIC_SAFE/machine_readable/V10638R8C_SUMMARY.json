@@ -1,0 +1,48 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8C",
+  "title": "Phase 0 full verification gate (public-safe)",
+  "parent_reports": [
+    "V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md",
+    "V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/V10638R8B_PHASE0_OWNER_REPORT_VN_PUBLIC.md"
+  ],
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-29T21:48:00",
+  "scope": "read_only_verification_gate",
+  "model_clarification": {
+    "registry_count": 41,
+    "db_models_2026": 48,
+    "active_recent_7d": 28,
+    "removed_or_idle": 13,
+    "historical_orphans_not_in_registry": 13,
+    "decision": "DO_NOT_MERGE_model_names_or_values; registry is SSOT; keep historical rows",
+    "shared_keys_by_provider": {"google": 5, "openrouter": 21, "deepseek": 3, "anthropic": 2, "openai": 2, "local_free": 7}
+  },
+  "station_matrix": {
+    "HCM_MN_weekdays": ["T2", "T7"],
+    "HCM_MN_has_sunday": false,
+    "note": "HCM runs Mon(T2)+Sat(T7); MN Sunday = Kien Giang/Tien Giang/Da Lat",
+    "ha_noi_mb_weekdays": ["T2", "T5"],
+    "thua_thien_hue_mt_weekdays": ["T2", "CN"],
+    "da_nang_mt_weekdays": ["T4", "T7"],
+    "khanh_hoa_mt_weekdays": ["T4", "CN"],
+    "canonical_station_aliases": {"HCM": ["HCM", "TP. HCM"], "Thua Thien Hue": ["Hue", "Thua Thien Hue"], "Dak Lak": ["Dac Lac", "Dak Lak"], "Dak Nong": ["Dac Nong", "Dak Nong"]},
+    "per_slice_key": "(flow, region, station_canonical, weekday) -- multi-weekday station = separate slots"
+  },
+  "merge_verification": {
+    "true_duplicate_pairs": 1,
+    "region_subset_pairs": 2,
+    "version_pairs": 1,
+    "pairs": {
+      "experimental_preview_shadow|mb_experimental_preview_shadow": "B_is_MB_subset_of_A",
+      "v101_region_source_pool_shadow|v101_mn_cross_region_rule_shadow": "B_is_MN_subset_of_A",
+      "tier2_replay_v2_shadow|tier2_replay_shadow": "version_pair_keep_v2",
+      "ai_prompt_context_audit_shadow|ai_region_specialist_prompt_shadow_results": "true_duplicate_75rows_identical"
+    },
+    "next_step": "row-level identity verification before any merge"
+  },
+  "rule_features_drop": {"rows": 0, "code_refs": 0, "verdict": "SAFE_after_backup"},
+  "gate_status": "verification in progress; row-level merge check pending; awaiting owner approval of canonical column names before Phase 1 (views)",
+  "safety": {"official_touched": false, "production_mutation": false, "deploy": false, "ai_still_running": true},
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

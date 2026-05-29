@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8C** - `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/V10638R8C_PHASE0_VERIFICATION_OWNER_REPORT_VN_PUBLIC.md` (Phase 0 verification gate. Models clarified: 28 active / 13 removed-idle / 13 historical-orphans, NOT merged, registry is SSOT, keys shared by provider. Full station x weekday matrix verified: HCM_MN runs T2+T7 (Saturday) NOT Sunday; Ha Noi_MB T2+T5; Thua Thien Hue_MT T2+CN; Da Nang/Khanh Hoa multi-weekday. Merge verify of 6 schema-duplicate pairs: only 1 true duplicate, 2 region-subset, 1 version -> row-level check before any merge. rule_features SAFE to drop (0 rows/0 refs). Awaiting owner approval of canonical column names before Phase 1 views. Read-only; 0 production change; AI running. Parents: R8 truth + R8B dependency).
+
+## Quick links - V106.38-R8C Phase 0 verification
+1. [V10638R8C Verification Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/V10638R8C_PHASE0_VERIFICATION_OWNER_REPORT_VN_PUBLIC.md)
+2. [V10638R8C Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/machine_readable/V10638R8C_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8B** - `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/V10638R8B_PHASE0_OWNER_REPORT_VN_PUBLIC.md` (Phase 0 of 6-phase standardization. Inventory 163 tables (100 with non-canonical columns, 126 lint findings); dependency scan of 351 source files: only rule_features safe to drop (8 empty tables still code-referenced -> keep), 4 of 6 duplicate pairs are true merge candidates (2 same-schema-different-semantics -> keep both), column rename too risky (target_region in 153 files) -> canonical VIEW layer. Data Dictionary proposed v0.1; awaiting owner approval. Read-only; 0 production change; AI still running. Parent: V106.38-R8 total-truth report).
 
 ## Quick links - V106.38-R8B Phase 0

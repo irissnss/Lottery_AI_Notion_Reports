@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V106.38-R8B** — `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE` (Phase 0 standardization + dependency map)
-- Owner report: `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/V10638R8B_PHASE0_OWNER_REPORT_VN_PUBLIC.md`
-- Parent (R8 master truth): `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md`
+- Latest package: **V106.38-R8C** — `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE` (Phase 0 verification gate: models clarified, full station×weekday matrix, merge verification)
+- Owner report: `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/V10638R8C_PHASE0_VERIFICATION_OWNER_REPORT_VN_PUBLIC.md`
+- Prev: `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE` (Phase 0 + dependency); master `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE`
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies
