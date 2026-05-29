@@ -1,0 +1,56 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8",
+  "title": "Total truth + standardization + flow separation (public-safe)",
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-29T20:42:00",
+  "scope": "read_only_forensic_and_backtest",
+  "live_window_days": 91,
+  "live_window": "2026-02-28..2026-05-29",
+  "regions": ["MN", "MT", "MB"],
+  "headline_findings": {
+    "win_metric_is_lo_toan_mien_near_random": true,
+    "ceiling_low_lottery_near_random": true,
+    "only_significant_edge": "MB frequency (hot numbers), +~0.4 hits/day, p~0.004 (borderline)",
+    "ai_token_models_no_significant_edge": true,
+    "single_models_are_weekday_station_specialists": true,
+    "model_weighting_currently_region_global_not_per_slice": true
+  },
+  "standardization": {
+    "total_tables": 163,
+    "station_name_duplicates": {"MN": ["HCM|TP. HCM"], "MT": ["Hue|Thua Thien Hue", "Dac Lac|Dak Lak", "Dac Nong|Dak Nong"], "MB": []},
+    "multi_weekday_stations": {"MN": ["HCM:T2,T7"], "MT": ["Da Nang:T4,T7", "Khanh Hoa:T4,CN", "Hue:T2,CN"], "MB": ["Ha Noi:T2,T5"]},
+    "column_concept_name_variants": {"model": 4, "date": 3, "region": 3, "weekday": 3, "station": 3, "bach_thu": 3, "hit": 6, "strength": 5, "status": 4},
+    "near_duplicate_table_pairs": 6,
+    "dead_tables_0_rows": 9,
+    "backend_scripts_estimate": 100
+  },
+  "flow_separation": {
+    "official_tables": 10,
+    "lane_test_tables": 24,
+    "shadow_tables": 62,
+    "measurement_daily_tables": 38,
+    "ambiguous_tables": 29,
+    "physically_separated_by_name": true,
+    "per_slice_axis_mostly_missing": true
+  },
+  "safety": {
+    "official_touched": false,
+    "official_table_writes": 0,
+    "provider_manual_ai_called": false,
+    "provider_call_count": 0,
+    "lane_test_promoted": false,
+    "deploy": false,
+    "drift_detected": false,
+    "diagnostic_only": true,
+    "claims_fixed": false,
+    "names_only_no_numbers_changed_proposal": true
+  },
+  "next_steps": [
+    "Phase 0 standardization (data dictionary + alias table + lint) - risk 0",
+    "Forward-validate MB frequency (free, daily, parallel)",
+    "Per-slice model weighting + shrinkage (foundation)",
+    "Keep AI running 7 days to 2026-06-03 then re-measure"
+  ],
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

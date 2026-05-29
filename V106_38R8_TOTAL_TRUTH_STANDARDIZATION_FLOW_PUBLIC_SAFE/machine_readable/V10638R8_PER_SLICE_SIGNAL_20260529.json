@@ -1,0 +1,584 @@
+{
+  "generated_at": "2026-05-29T20:09:55+07:00",
+  "regions": {
+    "MN": {
+      "station_map_per_weekday": {
+        "T2": [
+          "TP. HCM",
+          "Đồng Tháp",
+          "Cà Mau"
+        ],
+        "T3": [
+          "Vũng Tàu",
+          "Bạc Liêu",
+          "Bến Tre"
+        ],
+        "T4": [
+          "Cần Thơ",
+          "Đồng Nai",
+          "Sóc Trăng"
+        ],
+        "T5": [
+          "Tây Ninh",
+          "Bình Thuận",
+          "An Giang"
+        ],
+        "T6": [
+          "Vĩnh Long",
+          "Bình Dương",
+          "Trà Vinh"
+        ],
+        "T7": [
+          "Hậu Giang",
+          "TP. HCM",
+          "Long An",
+          "Bình Phước"
+        ],
+        "CN": [
+          "Đà Lạt",
+          "Tiền Giang",
+          "Kiên Giang"
+        ]
+      },
+      "global_best_models": [
+        {
+          "model": "gpt-5.5",
+          "hit_pct": 58.1,
+          "n": 31
+        },
+        {
+          "model": "qwen3.6-plus",
+          "hit_pct": 55.9,
+          "n": 34
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "hit_pct": 54.7,
+          "n": 86
+        }
+      ],
+      "best_models_per_weekday": {
+        "T2": [
+          {
+            "model": "gemini-2.5-flash",
+            "hit_pct": 69.2,
+            "n": 13
+          },
+          {
+            "model": "smart-ensemble",
+            "hit_pct": 69.2,
+            "n": 13
+          },
+          {
+            "model": "kimi-k2.5",
+            "hit_pct": 66.7,
+            "n": 6
+          }
+        ],
+        "T3": [
+          {
+            "model": "grok-4.20-multi-agent",
+            "hit_pct": 85.7,
+            "n": 7
+          },
+          {
+            "model": "gpt-5.5",
+            "hit_pct": 80.0,
+            "n": 5
+          },
+          {
+            "model": "gpt-5.4",
+            "hit_pct": 70.0,
+            "n": 10
+          }
+        ],
+        "T4": [
+          {
+            "model": "kimi-k2.5",
+            "hit_pct": 60.0,
+            "n": 5
+          },
+          {
+            "model": "qwen3-coder",
+            "hit_pct": 57.1,
+            "n": 7
+          },
+          {
+            "model": "gpt-oss-120b",
+            "hit_pct": 50.0,
+            "n": 6
+          }
+        ],
+        "T5": [
+          {
+            "model": "gpt-oss-120b",
+            "hit_pct": 80.0,
+            "n": 5
+          },
+          {
+            "model": "gemini-2.5-pro",
+            "hit_pct": 76.9,
+            "n": 13
+          },
+          {
+            "model": "qwen3-max-thinking",
+            "hit_pct": 71.4,
+            "n": 7
+          }
+        ],
+        "T6": [
+          {
+            "model": "meta-learning",
+            "hit_pct": 58.3,
+            "n": 12
+          },
+          {
+            "model": "smart-ml",
+            "hit_pct": 50.0,
+            "n": 12
+          },
+          {
+            "model": "kimi-k2.5",
+            "hit_pct": 50.0,
+            "n": 6
+          }
+        ],
+        "T7": [
+          {
+            "model": "gemini-2.5-pro",
+            "hit_pct": 81.8,
+            "n": 11
+          },
+          {
+            "model": "gemini-2.5-flash",
+            "hit_pct": 75.0,
+            "n": 12
+          },
+          {
+            "model": "lstm",
+            "hit_pct": 66.7,
+            "n": 12
+          }
+        ],
+        "CN": [
+          {
+            "model": "claude-sonnet-4-6",
+            "hit_pct": 61.5,
+            "n": 13
+          },
+          {
+            "model": "claude-opus-4-20250514",
+            "hit_pct": 58.3,
+            "n": 12
+          },
+          {
+            "model": "gpt-5.4",
+            "hit_pct": 55.6,
+            "n": 9
+          }
+        ]
+      },
+      "distinct_top_model_across_weekdays": 7,
+      "dan_per_weekday": {
+        "days": 77,
+        "avg_hits": 3.34,
+        "random": 3.19,
+        "lift": 0.15,
+        "beat_pct": 51.9,
+        "z": 0.97,
+        "p": 0.3338,
+        "sig": false
+      },
+      "dan_global": {
+        "days": 77,
+        "avg_hits": 2.81,
+        "random": 2.71,
+        "lift": 0.1,
+        "beat_pct": 55.8,
+        "z": 0.71,
+        "p": 0.4784,
+        "sig": false
+      }
+    },
+    "MT": {
+      "station_map_per_weekday": {
+        "T2": [
+          "Phú Yên",
+          "Thừa Thiên Huế",
+          "Huế"
+        ],
+        "T3": [
+          "Quảng Nam",
+          "Đắk Lắk"
+        ],
+        "T4": [
+          "Đà Nẵng",
+          "Khánh Hòa"
+        ],
+        "T5": [
+          "Quảng Trị",
+          "Quảng Bình",
+          "Bình Định"
+        ],
+        "T6": [
+          "Ninh Thuận",
+          "Gia Lai"
+        ],
+        "T7": [
+          "Quảng Ngãi",
+          "Đà Nẵng",
+          "Đắk Nông"
+        ],
+        "CN": [
+          "Kon Tum",
+          "Khánh Hòa",
+          "Thừa Thiên Huế",
+          "Huế"
+        ]
+      },
+      "global_best_models": [
+        {
+          "model": "meta-learning",
+          "hit_pct": 50.6,
+          "n": 89
+        },
+        {
+          "model": "xgboost",
+          "hit_pct": 50.6,
+          "n": 89
+        },
+        {
+          "model": "combo-no-token",
+          "hit_pct": 47.2,
+          "n": 89
+        }
+      ],
+      "best_models_per_weekday": {
+        "T2": [
+          {
+            "model": "claude-sonnet-4-6",
+            "hit_pct": 53.8,
+            "n": 13
+          },
+          {
+            "model": "smart-ml",
+            "hit_pct": 53.8,
+            "n": 13
+          },
+          {
+            "model": "xgboost",
+            "hit_pct": 53.8,
+            "n": 13
+          }
+        ],
+        "T3": [
+          {
+            "model": "deepseek-v4-flash",
+            "hit_pct": 60.0,
+            "n": 5
+          },
+          {
+            "model": "gpt-5-mini",
+            "hit_pct": 54.5,
+            "n": 11
+          },
+          {
+            "model": "meta-learning",
+            "hit_pct": 53.8,
+            "n": 13
+          }
+        ],
+        "T4": [
+          {
+            "model": "deepseek-v4-flash",
+            "hit_pct": 80.0,
+            "n": 5
+          },
+          {
+            "model": "deepseek-v4-pro",
+            "hit_pct": 80.0,
+            "n": 5
+          },
+          {
+            "model": "qwen3-coder",
+            "hit_pct": 57.1,
+            "n": 7
+          }
+        ],
+        "T5": [
+          {
+            "model": "combo-no-token",
+            "hit_pct": 84.6,
+            "n": 13
+          },
+          {
+            "model": "random-forest",
+            "hit_pct": 84.6,
+            "n": 13
+          },
+          {
+            "model": "meta-learning",
+            "hit_pct": 76.9,
+            "n": 13
+          }
+        ],
+        "T6": [
+          {
+            "model": "meta-learning",
+            "hit_pct": 41.7,
+            "n": 12
+          },
+          {
+            "model": "smart-ensemble",
+            "hit_pct": 41.7,
+            "n": 12
+          },
+          {
+            "model": "claude-opus-4-20250514",
+            "hit_pct": 40.0,
+            "n": 10
+          }
+        ],
+        "T7": [
+          {
+            "model": "claude-opus-4-20250514",
+            "hit_pct": 54.5,
+            "n": 11
+          },
+          {
+            "model": "xgboost",
+            "hit_pct": 50.0,
+            "n": 12
+          },
+          {
+            "model": "gpt-5-mini",
+            "hit_pct": 45.5,
+            "n": 11
+          }
+        ],
+        "CN": [
+          {
+            "model": "glm-5.1",
+            "hit_pct": 66.7,
+            "n": 6
+          },
+          {
+            "model": "grok-4.20-multi-agent",
+            "hit_pct": 66.7,
+            "n": 6
+          },
+          {
+            "model": "combo-no-token",
+            "hit_pct": 61.5,
+            "n": 13
+          }
+        ]
+      },
+      "distinct_top_model_across_weekdays": 6,
+      "dan_per_weekday": {
+        "days": 77,
+        "avg_hits": 2.99,
+        "random": 2.8,
+        "lift": 0.19,
+        "beat_pct": 51.9,
+        "z": 1.25,
+        "p": 0.213,
+        "sig": false
+      },
+      "dan_global": {
+        "days": 77,
+        "avg_hits": 2.71,
+        "random": 2.51,
+        "lift": 0.2,
+        "beat_pct": 53.2,
+        "z": 1.39,
+        "p": 0.1642,
+        "sig": false
+      }
+    },
+    "MB": {
+      "station_map_per_weekday": {
+        "T2": [
+          "Hà Nội"
+        ],
+        "T3": [
+          "Quảng Ninh"
+        ],
+        "T4": [
+          "Bắc Ninh"
+        ],
+        "T5": [
+          "Hà Nội"
+        ],
+        "T6": [
+          "Hải Phòng"
+        ],
+        "T7": [
+          "Nam Định"
+        ],
+        "CN": [
+          "Thái Bình"
+        ]
+      },
+      "global_best_models": [
+        {
+          "model": "gpt-5.5",
+          "hit_pct": 36.7,
+          "n": 30
+        },
+        {
+          "model": "gpt-5.4",
+          "hit_pct": 27.7,
+          "n": 65
+        },
+        {
+          "model": "gemini-3.1-pro",
+          "hit_pct": 27.3,
+          "n": 22
+        }
+      ],
+      "best_models_per_weekday": {
+        "T2": [
+          {
+            "model": "deepseek-reasoner",
+            "hit_pct": 45.5,
+            "n": 11
+          },
+          {
+            "model": "deepseek-v4-pro",
+            "hit_pct": 40.0,
+            "n": 5
+          },
+          {
+            "model": "gpt-5.5",
+            "hit_pct": 40.0,
+            "n": 5
+          }
+        ],
+        "T3": [
+          {
+            "model": "gpt-5.5",
+            "hit_pct": 60.0,
+            "n": 5
+          },
+          {
+            "model": "meta-learning",
+            "hit_pct": 46.2,
+            "n": 13
+          },
+          {
+            "model": "grok-4.20-multi-agent",
+            "hit_pct": 42.9,
+            "n": 7
+          }
+        ],
+        "T4": [
+          {
+            "model": "gpt-5.5",
+            "hit_pct": 40.0,
+            "n": 5
+          },
+          {
+            "model": "random-forest",
+            "hit_pct": 38.5,
+            "n": 13
+          },
+          {
+            "model": "glm-5.1",
+            "hit_pct": 28.6,
+            "n": 7
+          }
+        ],
+        "T5": [
+          {
+            "model": "claude-opus-4-20250514",
+            "hit_pct": 50.0,
+            "n": 12
+          },
+          {
+            "model": "deepseek-reasoner",
+            "hit_pct": 36.4,
+            "n": 11
+          },
+          {
+            "model": "claude-sonnet-4-6",
+            "hit_pct": 33.3,
+            "n": 12
+          }
+        ],
+        "T6": [
+          {
+            "model": "combo-no-token",
+            "hit_pct": 25.0,
+            "n": 12
+          },
+          {
+            "model": "combo-super",
+            "hit_pct": 16.7,
+            "n": 12
+          },
+          {
+            "model": "lstm",
+            "hit_pct": 16.7,
+            "n": 12
+          }
+        ],
+        "T7": [
+          {
+            "model": "gpt-5.4",
+            "hit_pct": 75.0,
+            "n": 8
+          },
+          {
+            "model": "claude-sonnet-4-6",
+            "hit_pct": 58.3,
+            "n": 12
+          },
+          {
+            "model": "claude-opus-4-20250514",
+            "hit_pct": 45.5,
+            "n": 11
+          }
+        ],
+        "CN": [
+          {
+            "model": "smart-ml",
+            "hit_pct": 38.5,
+            "n": 13
+          },
+          {
+            "model": "xgboost",
+            "hit_pct": 38.5,
+            "n": 13
+          },
+          {
+            "model": "qwen3-coder",
+            "hit_pct": 33.3,
+            "n": 6
+          }
+        ]
+      },
+      "distinct_top_model_across_weekdays": 6,
+      "dan_per_weekday": {
+        "days": 78,
+        "avg_hits": 1.77,
+        "random": 1.85,
+        "lift": -0.08,
+        "beat_pct": 42.3,
+        "z": -0.57,
+        "p": 0.5694,
+        "sig": false
+      },
+      "dan_global": {
+        "days": 78,
+        "avg_hits": 1.83,
+        "random": 1.77,
+        "lift": 0.06,
+        "beat_pct": 57.7,
+        "z": 0.47,
+        "p": 0.635,
+        "sig": false
+      }
+    }
+  }
+}

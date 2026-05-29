@@ -1,0 +1,249 @@
+{
+  "generated_at": "2026-05-29T20:25:39+07:00",
+  "regions": {
+    "MN": {
+      "distinct_raw_names": 22,
+      "distinct_canonical": 21,
+      "duplicate_groups": {
+        "hcm": [
+          "HCM",
+          "TP. HCM"
+        ]
+      },
+      "raw_name_counts": {
+        "TP. HCM": 62,
+        "Bình Dương": 44,
+        "Trà Vinh": 44,
+        "Vĩnh Long": 44,
+        "Bình Phước": 43,
+        "Hậu Giang": 43,
+        "Long An": 43,
+        "Kiên Giang": 43,
+        "Tiền Giang": 43,
+        "Đà Lạt": 43,
+        "Cà Mau": 43,
+        "Đồng Tháp": 43,
+        "Bạc Liêu": 43,
+        "Bến Tre": 43,
+        "Vũng Tàu": 43,
+        "Cần Thơ": 43,
+        "Sóc Trăng": 43,
+        "Đồng Nai": 43,
+        "An Giang": 43,
+        "Bình Thuận": 43,
+        "Tây Ninh": 43,
+        "HCM": 24
+      },
+      "canonical_weekday_map": {
+        "binhduong": [
+          "T6"
+        ],
+        "travinh": [
+          "T6"
+        ],
+        "vinhlong": [
+          "T6"
+        ],
+        "binhphuoc": [
+          "T7"
+        ],
+        "hcm": [
+          "T2",
+          "T7"
+        ],
+        "haugiang": [
+          "T7"
+        ],
+        "longan": [
+          "T7"
+        ],
+        "kiengiang": [
+          "CN"
+        ],
+        "tiengiang": [
+          "CN"
+        ],
+        "dalat": [
+          "CN"
+        ],
+        "camau": [
+          "T2"
+        ],
+        "dongthap": [
+          "T2"
+        ],
+        "baclieu": [
+          "T3"
+        ],
+        "bentre": [
+          "T3"
+        ],
+        "vungtau": [
+          "T3"
+        ],
+        "cantho": [
+          "T4"
+        ],
+        "soctrang": [
+          "T4"
+        ],
+        "dongnai": [
+          "T4"
+        ],
+        "angiang": [
+          "T5"
+        ],
+        "binhthuan": [
+          "T5"
+        ],
+        "tayninh": [
+          "T5"
+        ]
+      },
+      "multi_weekday_stations": {
+        "hcm": {
+          "T7": 43,
+          "T2": 43
+        }
+      }
+    },
+    "MT": {
+      "distinct_raw_names": 17,
+      "distinct_canonical": 14,
+      "duplicate_groups": {
+        "daknong": [
+          "Đắc Nông",
+          "Đắk Nông"
+        ],
+        "thuathienhue": [
+          "Huế",
+          "Thừa Thiên Huế"
+        ],
+        "daklak": [
+          "Đắc Lắc",
+          "Đắk Lắk"
+        ]
+      },
+      "raw_name_counts": {
+        "Đà Nẵng": 86,
+        "Khánh Hòa": 86,
+        "Gia Lai": 44,
+        "Ninh Thuận": 44,
+        "Quảng Ngãi": 43,
+        "Kon Tum": 43,
+        "Phú Yên": 43,
+        "Quảng Nam": 43,
+        "Bình Định": 43,
+        "Quảng Bình": 43,
+        "Quảng Trị": 43,
+        "Huế": 39,
+        "Thừa Thiên Huế": 35,
+        "Đắk Nông": 31,
+        "Đắk Lắk": 31,
+        "Đắc Nông": 12,
+        "Đắc Lắc": 12
+      },
+      "canonical_weekday_map": {
+        "gialai": [
+          "T6"
+        ],
+        "ninhthuan": [
+          "T6"
+        ],
+        "quangngai": [
+          "T7"
+        ],
+        "danang": [
+          "T4",
+          "T7"
+        ],
+        "daknong": [
+          "T7"
+        ],
+        "khanhhoa": [
+          "CN",
+          "T4"
+        ],
+        "kontum": [
+          "CN"
+        ],
+        "phuyen": [
+          "T2"
+        ],
+        "thuathienhue": [
+          "CN",
+          "T2"
+        ],
+        "quangnam": [
+          "T3"
+        ],
+        "daklak": [
+          "T3"
+        ],
+        "binhdinh": [
+          "T5"
+        ],
+        "quangbinh": [
+          "T5"
+        ],
+        "quangtri": [
+          "T5"
+        ]
+      },
+      "multi_weekday_stations": {
+        "danang": {
+          "T7": 43,
+          "T4": 43
+        },
+        "khanhhoa": {
+          "CN": 43,
+          "T4": 43
+        },
+        "thuathienhue": {
+          "T2": 43,
+          "CN": 31
+        }
+      }
+    },
+    "MB": {
+      "distinct_raw_names": 6,
+      "distinct_canonical": 6,
+      "duplicate_groups": {},
+      "raw_name_counts": {
+        "Hà Nội": 84,
+        "Hải Phòng": 44,
+        "Nam Định": 43,
+        "Thái Bình": 43,
+        "Quảng Ninh": 42,
+        "Bắc Ninh": 42
+      },
+      "canonical_weekday_map": {
+        "haiphong": [
+          "T6"
+        ],
+        "namdinh": [
+          "T7"
+        ],
+        "thaibinh": [
+          "CN"
+        ],
+        "hanoi": [
+          "T2",
+          "T5"
+        ],
+        "quangninh": [
+          "T3"
+        ],
+        "bacninh": [
+          "T4"
+        ]
+      },
+      "multi_weekday_stations": {
+        "hanoi": {
+          "T2": 42,
+          "T5": 42
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1608 @@
+{
+  "generated_at": "2026-05-29T20:33:51+07:00",
+  "total_tables": 163,
+  "concept_inconsistencies": {
+    "DATE": {
+      "date": [
+        "ai_primary_gate_daily",
+        "ai_reasoning_contract_daily",
+        "bundle_family_contribution_daily",
+        "bundle_readiness_gate_daily",
+        "bundle_replay_compare_daily",
+        "bundle_universe_coverage_shadow",
+        "candidate_drop_stage_daily",
+        "cohere_effectiveness_daily",
+        "cohere_rerank_log",
+        "convergence_cluster_pattern_daily",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "cross_region_spillover_shadow",
+        "daily_eval_log",
+        "daily_stats",
+        "data_preservation_manifest_daily",
+        "day_governance",
+        "draw_availability_daily",
+        "experimental_preview_shadow",
+        "final_bundles",
+        "freshness_chain_daily",
+        "lane_test_active_challenger_scoreboard",
+        "lottery_results",
+        "loz_selector_shadow",
+        "loz_stage_trace_shadow",
+        "main_vs_secondary_quality_daily",
+        "mb_experimental_preview_shadow",
+        "mb_structural_drilldown_shadow",
+        "mined_rule_effectiveness",
+        "model_cross_region_dup_shadow",
+        "model_daily_eval",
+        "model_latency_cost_audit_daily",
+        "mt_model_hit_output_drop_shadow",
+        "no_token_drift_shadow",
+        "output_eligible_completion_daily",
+        "output_policy_replay_daily",
+        "pnl_daily_bets",
+        "pnl_daily_settlements",
+        "pnl_daily_summary",
+        "pp1_live_watch_daily",
+        "pre_partial_post_lose_daily",
+        "pre_vs_post_rerun_effect_daily",
+        "pre_win_post_lose_daily",
+        "predictions",
+        "prompt_pressure_daily",
+        "prompt_section_breakdown_daily",
+        "public_bundle_publish_audit_daily",
+        "reasoning_layer_penetration_daily",
+        "rule_conversion_loss_stage_daily",
+        "rule_features",
+        "rule_phase_evidence_shadow",
+        "runtime_reliability_daily",
+        "runtime_reliability_model_daily",
+        "shadow_candidates",
+        "shadow_daily_comparison",
+        "shadow_feature_snapshots",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "shadow_rule_d1_comparison",
+        "signal_governance_ledger",
+        "single_vote_rescue_replay_shadow",
+        "source_prize_effectiveness_daily",
+        "strength_skip_calibration_replay_shadow",
+        "strongest_candidate_escape_daily",
+        "strongest_vs_final_conversion_daily",
+        "strongest_vs_final_shadow",
+        "sync_parity_audit_daily",
+        "system_alerts",
+        "tier2_replay_shadow",
+        "tier2_replay_v2_shadow",
+        "trace_field_completeness_daily",
+        "training_history",
+        "verdict_distribution_daily",
+        "weekday_rule_strength_daily"
+      ],
+      "target_date": [
+        "adaptive_exploit_v67_candidate_trace",
+        "ai_herding_failure_daily",
+        "ai_no_token_cross_verification_shadow",
+        "ai_prompt_context_audit_shadow",
+        "ai_region_specialist_prompt_shadow_results",
+        "ai_region_specialist_provider_shadow_results",
+        "bundle_universe_coverage_daily",
+        "candidate_drop_stage_daily",
+        "cluster_weighted_consensus_shadow",
+        "consensus_v1_trace",
+        "cross_region_spillover_shadow",
+        "digit_transform_source_rule_shadow_v10610",
+        "exact_position_source_rule_shadow_v10610",
+        "hybrid_v1_trace",
+        "lane_test_lose_only_audit_daily",
+        "mb_ai_chain_preservation_v1",
+        "mb_regime_shift_shadow",
+        "method_cluster_performance_daily",
+        "mn_ai_herd_vs_v67_save_daily",
+        "mn_mb_failure_streak_daily",
+        "no_token_rule_aware_pack_shadow",
+        "official_vs_testlane_rescue_daily",
+        "rule_injection_contract",
+        "rule_phase_synthesis_shadow",
+        "source_prize_strong_coverage",
+        "test_lane_fast_incident_monitor",
+        "v101_mn_cross_region_rule_shadow",
+        "v101_region_prompt_context_shadow",
+        "v101_region_source_pool_evidence_shadow",
+        "v101_region_source_pool_shadow",
+        "v101_region_source_pool_top5_shadow",
+        "v102_candidate_recurrence_context_shadow",
+        "v103_candidate_supply_shadow",
+        "v103_prompt_candidate_gate_shadow",
+        "v104_shadow_prompt_candidate_injection",
+        "v104_shadow_prompt_model_decision",
+        "v10522_v102_strong_selector_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_shadow",
+        "v93_mn_save_signal_per_method_shadow",
+        "v93_verdict_weight_recalibration_shadow",
+        "v93_wr_gate_filter_audit_shadow",
+        "v94_cross_region_leakage_continuous_monitor",
+        "v94_cross_region_spillover_aware_shadow",
+        "v94_no_token_first_simulation_shadow",
+        "v95_ai_context_completeness_shadow",
+        "v95_data_freshness_audit_shadow",
+        "v99_exact_evaluator_results"
+      ],
+      "run_date": [
+        "du_doan_test_ai_predictions",
+        "du_doan_test_bundles",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_daily_summary",
+        "du_doan_test_latency_daily",
+        "du_doan_test_leakage_audit",
+        "du_doan_test_model_budget_daily",
+        "du_doan_test_model_skip_reason",
+        "du_doan_test_results",
+        "du_doan_test_runs",
+        "du_doan_test_selected_voters",
+        "mining_log"
+      ]
+    },
+    "REGION": {
+      "region": [
+        "adaptive_exploit_v67_candidate_trace",
+        "ai_herding_failure_daily",
+        "ai_no_token_cross_verification_shadow",
+        "ai_primary_gate_daily",
+        "ai_prompt_context_audit_shadow",
+        "ai_reasoning_contract_daily",
+        "ai_region_specialist_prompt_shadow_results",
+        "ai_region_specialist_provider_shadow_results",
+        "bundle_family_contribution_daily",
+        "bundle_readiness_gate_daily",
+        "bundle_replay_compare_daily",
+        "bundle_universe_coverage_daily",
+        "bundle_universe_coverage_shadow",
+        "candidate_drop_stage_daily",
+        "cluster_weighted_consensus_shadow",
+        "cohere_effectiveness_daily",
+        "cohere_rerank_log",
+        "consensus_v1_trace",
+        "convergence_cluster_pattern_daily",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "daily_eval_log",
+        "day_governance",
+        "draw_availability_daily",
+        "du_doan_test_ai_predictions",
+        "du_doan_test_bundles",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_daily_summary",
+        "du_doan_test_experiment_scoreboard",
+        "du_doan_test_experiments",
+        "du_doan_test_latency_daily",
+        "du_doan_test_leakage_audit",
+        "du_doan_test_method_scoreboard",
+        "du_doan_test_model_budget_daily",
+        "du_doan_test_model_contribution",
+        "du_doan_test_model_scoreboard",
+        "du_doan_test_model_skip_reason",
+        "du_doan_test_results",
+        "du_doan_test_runs",
+        "du_doan_test_selected_voters",
+        "experimental_preview_shadow",
+        "final_bundles",
+        "freshness_chain_daily",
+        "gan_signal_shadow_v100",
+        "hybrid_v1_trace",
+        "lag1_adaptive_exploit_signal_shadow",
+        "lane_test_active_challenger_scoreboard",
+        "lane_test_lose_only_audit_daily",
+        "lane_test_region_profiles",
+        "lottery_results",
+        "loz_selector_shadow",
+        "loz_stage_trace_shadow",
+        "main_vs_secondary_quality_daily",
+        "mb_experimental_preview_shadow",
+        "method_cluster_performance_daily",
+        "mn_mb_failure_streak_daily",
+        "model_daily_eval",
+        "model_latency_cost_audit_daily",
+        "model_strength_by_region_weekday_station_daily",
+        "mt_model_hit_output_drop_shadow",
+        "no_token_drift_shadow",
+        "no_token_rule_aware_pack_shadow",
+        "official_vs_testlane_rescue_daily",
+        "output_eligible_completion_daily",
+        "output_policy_replay_daily",
+        "pattern_effectiveness",
+        "pattern_rules",
+        "pnl_daily_bets",
+        "pnl_daily_settlements",
+        "pp1_live_watch_daily",
+        "pre_partial_post_lose_daily",
+        "pre_vs_post_rerun_effect_daily",
+        "pre_win_post_lose_daily",
+        "prompt_pressure_daily",
+        "prompt_section_breakdown_daily",
+        "public_bundle_publish_audit_daily",
+        "reasoning_layer_penetration_daily",
+        "rule_conversion_loss_stage_daily",
+        "rule_effectiveness",
+        "rule_injection_contract",
+        "rule_phase_evidence_shadow",
+        "rule_phase_synthesis_shadow",
+        "runtime_reliability_daily",
+        "runtime_reliability_model_daily",
+        "scheduler_logs",
+        "shadow_candidates",
+        "shadow_daily_comparison",
+        "shadow_feature_snapshots",
+        "shadow_method_scoreboard",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "signal_governance_ledger",
+        "single_vote_rescue_replay_shadow",
+        "source_prize_effectiveness_daily",
+        "source_prize_strong_coverage",
+        "strength_skip_calibration_replay_shadow",
+        "strongest_candidate_escape_daily",
+        "strongest_vs_final_conversion_daily",
+        "strongest_vs_final_shadow",
+        "test_lane_fast_incident_monitor",
+        "test_lane_signal_drift_monitor",
+        "tier2_replay_shadow",
+        "tier2_replay_v2_shadow",
+        "trace_field_completeness_daily",
+        "training_history",
+        "training_records",
+        "v101_mn_cross_region_rule_shadow",
+        "v101_region_prompt_context_shadow",
+        "v101_region_source_pool_evidence_shadow",
+        "v101_region_source_pool_shadow",
+        "v101_region_source_pool_top5_shadow",
+        "v102_candidate_recurrence_context_shadow",
+        "v103_candidate_supply_shadow",
+        "v103_prompt_candidate_gate_shadow",
+        "v104_shadow_prompt_candidate_injection",
+        "v104_shadow_prompt_model_decision",
+        "v10522_v102_strong_selector_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_scoreboard",
+        "v105_no_token_independent_shadow",
+        "v93_mn_save_signal_per_method_shadow",
+        "v93_verdict_weight_recalibration_shadow",
+        "v93_wr_gate_filter_audit_shadow",
+        "v94_no_token_first_simulation_shadow",
+        "v95_ai_context_completeness_shadow",
+        "v95_data_freshness_audit_shadow",
+        "v99_exact_evaluator_results",
+        "verdict_distribution_daily",
+        "weekday_blackspot_shadow",
+        "weekday_rule_strength_daily"
+      ],
+      "source_region": [
+        "cross_region_spillover_shadow",
+        "digit_transform_source_rule_shadow_v10610",
+        "exact_position_source_rule_shadow_v10610",
+        "mined_rule_effectiveness",
+        "mined_rules",
+        "model_cross_region_dup_shadow",
+        "pattern_rules",
+        "rule_phase_evidence_shadow",
+        "signal_governance_ledger",
+        "v101_region_source_pool_evidence_shadow",
+        "v102_recurrence_stats_shadow",
+        "verified_bucket_rules"
+      ],
+      "target_region": [
+        "cross_region_spillover_shadow",
+        "digit_transform_source_rule_shadow_v10610",
+        "exact_position_source_rule_shadow_v10610",
+        "mined_rule_effectiveness",
+        "mined_rules",
+        "model_cross_region_dup_shadow",
+        "predictions",
+        "rule_features",
+        "v102_recurrence_stats_shadow",
+        "v94_cross_region_spillover_aware_shadow",
+        "verified_bucket_rules"
+      ]
+    },
+    "MODEL": {
+      "ai_model": [
+        "model_daily_eval",
+        "no_token_drift_shadow",
+        "pre_partial_post_lose_daily",
+        "pre_win_post_lose_daily",
+        "predictions",
+        "runtime_reliability_model_daily",
+        "shadow_model_promotion_scorecard_daily"
+      ],
+      "model_id": [
+        "ai_region_specialist_provider_shadow_results",
+        "bundle_universe_coverage_daily",
+        "v104_shadow_prompt_model_decision",
+        "v105_ai_shadow_decision_independent",
+        "v93_wr_gate_filter_audit_shadow",
+        "v95_ai_context_completeness_shadow",
+        "v95_data_freshness_audit_shadow"
+      ],
+      "model": [
+        "cross_region_spillover_shadow",
+        "daily_eval_log",
+        "model_cross_region_dup_shadow",
+        "prompt_section_breakdown_daily",
+        "training_records",
+        "verdict_distribution_daily"
+      ],
+      "model_name": [
+        "ai_prompt_context_audit_shadow",
+        "ai_region_specialist_prompt_shadow_results",
+        "du_doan_test_ai_predictions",
+        "du_doan_test_candidates",
+        "du_doan_test_latency_daily",
+        "du_doan_test_model_contribution",
+        "du_doan_test_model_scoreboard",
+        "du_doan_test_model_skip_reason",
+        "du_doan_test_selected_voters",
+        "freshness_chain_daily",
+        "loz_selector_shadow",
+        "model_latency_cost_audit_daily",
+        "model_strength_by_region_weekday_station_daily",
+        "prompt_pressure_daily"
+      ]
+    },
+    "WEEKDAY": {
+      "weekday": [
+        "bundle_universe_coverage_daily",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "du_doan_test_candidates",
+        "du_doan_test_model_budget_daily",
+        "du_doan_test_model_contribution",
+        "du_doan_test_model_scoreboard",
+        "lag1_adaptive_exploit_signal_shadow",
+        "loz_selector_shadow",
+        "mb_structural_drilldown_shadow",
+        "mined_rule_effectiveness",
+        "model_strength_by_region_weekday_station_daily",
+        "no_token_drift_shadow",
+        "output_policy_replay_daily",
+        "rule_features",
+        "rule_phase_evidence_shadow",
+        "rule_phase_synthesis_shadow",
+        "shadow_candidates",
+        "shadow_feature_snapshots",
+        "shadow_method_scoreboard",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "signal_governance_ledger",
+        "strongest_vs_final_shadow",
+        "v101_region_source_pool_top5_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_scoreboard",
+        "v105_no_token_independent_shadow",
+        "weekday_blackspot_shadow"
+      ],
+      "day_of_week": [
+        "pattern_effectiveness",
+        "pattern_rules",
+        "rule_effectiveness"
+      ],
+      "target_weekday": [
+        "mined_rules",
+        "verified_bucket_rules"
+      ]
+    },
+    "STATION": {
+      "station": [
+        "bundle_universe_coverage_daily",
+        "du_doan_test_candidates",
+        "du_doan_test_model_contribution",
+        "gan_signal_shadow_v100",
+        "lottery_results",
+        "model_strength_by_region_weekday_station_daily",
+        "mt_model_hit_output_drop_shadow",
+        "pattern_rules",
+        "pnl_daily_settlements",
+        "v101_region_source_pool_evidence_shadow",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_scoreboard",
+        "v105_no_token_independent_shadow"
+      ],
+      "station_set": [
+        "counterfactual_decision_audit_shadow",
+        "loz_selector_shadow",
+        "no_token_drift_shadow",
+        "output_policy_replay_daily",
+        "rule_phase_evidence_shadow",
+        "shadow_candidates",
+        "shadow_feature_snapshots",
+        "shadow_method_scoreboard",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "signal_governance_ledger",
+        "strongest_vs_final_shadow"
+      ],
+      "source_station": [
+        "digit_transform_source_rule_shadow_v10610",
+        "exact_position_source_rule_shadow_v10610",
+        "mined_rule_effectiveness",
+        "mined_rules",
+        "pattern_rules",
+        "rule_phase_evidence_shadow",
+        "signal_governance_ledger",
+        "verified_bucket_rules"
+      ]
+    },
+    "BACHTHU/NUMBER": {
+      "tails_produced": [
+        "mined_rule_effectiveness"
+      ],
+      "bt_number": [
+        "model_daily_eval",
+        "pnl_daily_settlements"
+      ],
+      "bach_thu": [
+        "final_bundles"
+      ],
+      "main_numbers": [
+        "model_daily_eval",
+        "predictions"
+      ]
+    },
+    "STATUS": {
+      "outcome_status": [
+        "runtime_reliability_model_daily"
+      ],
+      "status": [
+        "ai_prompt_context_audit_shadow",
+        "ai_region_specialist_prompt_shadow_results",
+        "daily_eval_log",
+        "du_doan_test_daily_summary",
+        "du_doan_test_experiment_scoreboard",
+        "du_doan_test_experiments",
+        "du_doan_test_method_scoreboard",
+        "du_doan_test_model_scoreboard",
+        "final_bundles",
+        "mining_log",
+        "model_daily_eval",
+        "no_token_rule_aware_pack_shadow",
+        "predictions",
+        "runtime_reliability_daily",
+        "training_history",
+        "v105_context_completeness_audit"
+      ],
+      "lo2_status": [
+        "final_bundles",
+        "mb_ai_chain_preservation_v1"
+      ],
+      "bach_thu_status": [
+        "final_bundles"
+      ]
+    },
+    "HIT": {
+      "hit_numbers": [
+        "model_daily_eval",
+        "predictions"
+      ],
+      "bt_hit": [
+        "model_daily_eval",
+        "shadow_results"
+      ],
+      "hit_any": [
+        "mined_rule_effectiveness"
+      ],
+      "tails_hit": [
+        "mined_rule_effectiveness"
+      ],
+      "hit_level": [
+        "mined_rule_effectiveness",
+        "predictions"
+      ],
+      "hit_count": [
+        "daily_eval_log",
+        "method_cluster_performance_daily",
+        "mined_rule_effectiveness",
+        "model_daily_eval",
+        "pnl_daily_settlements",
+        "predictions"
+      ]
+    },
+    "STRENGTH/SCORE": {
+      "confidence": [
+        "ai_no_token_cross_verification_shadow",
+        "ai_prompt_context_audit_shadow",
+        "ai_region_specialist_prompt_shadow_results",
+        "v104_shadow_prompt_model_decision",
+        "v105_ai_shadow_decision_independent"
+      ],
+      "score": [
+        "adaptive_exploit_v67_candidate_trace",
+        "mined_rules",
+        "shadow_candidates",
+        "v101_mn_cross_region_rule_shadow",
+        "v101_region_source_pool_shadow",
+        "verified_bucket_rules"
+      ],
+      "strength_score": [
+        "du_doan_test_selected_voters"
+      ],
+      "strength": [
+        "du_doan_test_ai_predictions",
+        "du_doan_test_candidates",
+        "model_daily_eval",
+        "predictions",
+        "runtime_reliability_model_daily"
+      ],
+      "top_score": [
+        "final_bundles"
+      ]
+    },
+    "RUN_SOURCE": {
+      "run_source": [
+        "cross_region_spillover_shadow",
+        "du_doan_test_candidates",
+        "du_doan_test_model_contribution",
+        "du_doan_test_model_scoreboard",
+        "freshness_chain_daily",
+        "loz_selector_shadow",
+        "model_daily_eval",
+        "model_latency_cost_audit_daily",
+        "model_strength_by_region_weekday_station_daily",
+        "no_token_drift_shadow",
+        "predictions",
+        "shadow_candidates",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "v95_data_freshness_audit_shadow"
+      ],
+      "phase_type": [
+        "predictions"
+      ],
+      "run_id": [
+        "du_doan_test_bundles",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_leakage_audit",
+        "du_doan_test_model_contribution",
+        "du_doan_test_results",
+        "predictions"
+      ]
+    },
+    "VERDICT": {
+      "decision": [
+        "v104_shadow_prompt_model_decision",
+        "v105_ai_shadow_decision_independent"
+      ],
+      "verdict": [
+        "bundle_replay_compare_daily",
+        "du_doan_test_ai_predictions",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_leakage_audit",
+        "predictions"
+      ],
+      "verdict_reason": [
+        "predictions"
+      ]
+    },
+    "CREATED/UPDATED": {
+      "timestamp": [
+        "du_doan_test_audit_log",
+        "training_records"
+      ],
+      "created_at": [
+        "ai_herding_failure_daily",
+        "ai_primary_gate_daily",
+        "ai_prompt_context_audit_shadow",
+        "ai_reasoning_contract_daily",
+        "ai_region_specialist_prompt_shadow_results",
+        "bundle_family_contribution_daily",
+        "bundle_readiness_gate_daily",
+        "bundle_replay_compare_daily",
+        "bundle_universe_coverage_shadow",
+        "candidate_drop_stage_daily",
+        "cohere_effectiveness_daily",
+        "cohere_rerank_log",
+        "convergence_cluster_pattern_daily",
+        "corrected_rescue_replay_shadow",
+        "counterfactual_decision_audit_shadow",
+        "cross_region_spillover_shadow",
+        "daily_eval_log",
+        "daily_stats",
+        "data_preservation_manifest_daily",
+        "digit_transform_source_rule_shadow_v10610",
+        "draw_availability_daily",
+        "du_doan_test_ai_predictions",
+        "du_doan_test_bundles",
+        "du_doan_test_candidates",
+        "du_doan_test_conversion_trace",
+        "du_doan_test_daily_summary",
+        "du_doan_test_experiments",
+        "du_doan_test_latency_daily",
+        "du_doan_test_leakage_audit",
+        "du_doan_test_model_budget_daily",
+        "du_doan_test_model_skip_reason",
+        "du_doan_test_selected_voters",
+        "exact_position_source_rule_shadow_v10610",
+        "experimental_preview_shadow",
+        "final_bundles",
+        "freshness_chain_daily",
+        "lane_test_active_challenger_scoreboard",
+        "lottery_results",
+        "loz_selector_shadow",
+        "loz_stage_trace_shadow",
+        "main_vs_secondary_quality_daily",
+        "mb_experimental_preview_shadow",
+        "mb_structural_drilldown_shadow",
+        "method_cluster_performance_daily",
+        "mined_rule_effectiveness",
+        "mn_mb_failure_streak_daily",
+        "model_cross_region_dup_shadow",
+        "model_daily_eval",
+        "model_latency_cost_audit_daily",
+        "mt_model_hit_output_drop_shadow",
+        "no_token_drift_shadow",
+        "official_vs_testlane_rescue_daily",
+        "output_eligible_completion_daily",
+        "output_policy_replay_daily",
+        "pattern_rules",
+        "pp1_live_watch_daily",
+        "pre_partial_post_lose_daily",
+        "pre_vs_post_rerun_effect_daily",
+        "pre_win_post_lose_daily",
+        "prediction_policies",
+        "predictions",
+        "prompt_pressure_daily",
+        "prompt_section_breakdown_daily",
+        "public_bundle_publish_audit_daily",
+        "reasoning_layer_penetration_daily",
+        "rule_conversion_loss_stage_daily",
+        "rule_phase_evidence_shadow",
+        "runtime_reliability_daily",
+        "runtime_reliability_model_daily",
+        "shadow_activation_registry",
+        "shadow_candidates",
+        "shadow_daily_comparison",
+        "shadow_feature_snapshots",
+        "shadow_method_scoreboard",
+        "shadow_model_promotion_scorecard_daily",
+        "shadow_results",
+        "shadow_rule_d1_comparison",
+        "signal_governance_ledger",
+        "single_vote_rescue_replay_shadow",
+        "source_prize_effectiveness_daily",
+        "strength_skip_calibration_replay_shadow",
+        "strongest_candidate_escape_daily",
+        "strongest_vs_final_conversion_daily",
+        "strongest_vs_final_shadow",
+        "sync_parity_audit_daily",
+        "system_alerts",
+        "tier2_replay_shadow",
+        "tier2_replay_v2_shadow",
+        "trace_field_completeness_daily",
+        "training_history",
+        "users",
+        "v105_ai_shadow_decision_independent",
+        "v105_context_completeness_audit",
+        "v105_no_token_independent_shadow",
+        "verdict_distribution_daily",
+        "weekday_blackspot_shadow",
+        "weekday_rule_strength_daily"
+      ],
+      "updated_at": [
+        "app_settings",
+        "draw_availability_daily",
+        "du_doan_test_experiments",
+        "final_bundles",
+        "lane_test_region_profiles",
+        "pattern_rules",
+        "prediction_policies",
+        "shadow_activation_registry"
+      ],
+      "mined_at": [
+        "mined_rules"
+      ]
+    }
+  },
+  "same_name_diff_type": {
+    "score": [
+      {
+        "table": "adaptive_exploit_v67_candidate_trace",
+        "type": "REAL"
+      },
+      {
+        "table": "mined_rules",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_candidates",
+        "type": "REAL"
+      },
+      {
+        "table": "v101_mn_cross_region_rule_shadow",
+        "type": "REAL"
+      },
+      {
+        "table": "v101_region_source_pool_shadow",
+        "type": "REAL"
+      },
+      {
+        "table": "verified_bucket_rules",
+        "type": "INTEGER"
+      }
+    ],
+    "official_bt": [
+      {
+        "table": "ai_herding_failure_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_prompt_context_audit_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_region_specialist_prompt_shadow_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_region_specialist_provider_shadow_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_bundles",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_daily_summary",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "lane_test_active_challenger_scoreboard",
+        "type": "TEXT"
+      },
+      {
+        "table": "loz_selector_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "loz_stage_trace_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "mb_ai_chain_preservation_v1",
+        "type": "TEXT"
+      },
+      {
+        "table": "mt_model_hit_output_drop_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "official_vs_testlane_rescue_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "v103_candidate_supply_shadow",
+        "type": "INTEGER"
+      }
+    ],
+    "created_at": [
+      {
+        "table": "ai_herding_failure_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_primary_gate_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_prompt_context_audit_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_reasoning_contract_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "ai_region_specialist_prompt_shadow_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "bundle_family_contribution_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "bundle_readiness_gate_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "bundle_replay_compare_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "bundle_universe_coverage_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "candidate_drop_stage_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "cohere_effectiveness_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "cohere_rerank_log",
+        "type": "TIMESTAMP"
+      },
+      {
+        "table": "convergence_cluster_pattern_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "corrected_rescue_replay_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "counterfactual_decision_audit_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "cross_region_spillover_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "daily_eval_log",
+        "type": "TEXT"
+      },
+      {
+        "table": "daily_stats",
+        "type": "TEXT"
+      },
+      {
+        "table": "data_preservation_manifest_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "digit_transform_source_rule_shadow_v10610",
+        "type": "TEXT"
+      },
+      {
+        "table": "draw_availability_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_ai_predictions",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_bundles",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_candidates",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_conversion_trace",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_daily_summary",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_experiments",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_latency_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_leakage_audit",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_model_budget_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_model_skip_reason",
+        "type": "TEXT"
+      },
+      {
+        "table": "du_doan_test_selected_voters",
+        "type": "TEXT"
+      },
+      {
+        "table": "exact_position_source_rule_shadow_v10610",
+        "type": "TEXT"
+      },
+      {
+        "table": "experimental_preview_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "final_bundles",
+        "type": "TEXT"
+      },
+      {
+        "table": "freshness_chain_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "lane_test_active_challenger_scoreboard",
+        "type": "TEXT"
+      },
+      {
+        "table": "lottery_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "loz_selector_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "loz_stage_trace_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "main_vs_secondary_quality_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "mb_experimental_preview_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "mb_structural_drilldown_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "method_cluster_performance_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "mined_rule_effectiveness",
+        "type": "TEXT"
+      },
+      {
+        "table": "mn_mb_failure_streak_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "model_cross_region_dup_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "model_daily_eval",
+        "type": "TEXT"
+      },
+      {
+        "table": "model_latency_cost_audit_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "mt_model_hit_output_drop_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "no_token_drift_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "official_vs_testlane_rescue_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "output_eligible_completion_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "output_policy_replay_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "pattern_rules",
+        "type": "TEXT"
+      },
+      {
+        "table": "pp1_live_watch_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "pre_partial_post_lose_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "pre_vs_post_rerun_effect_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "pre_win_post_lose_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "prediction_policies",
+        "type": "TEXT"
+      },
+      {
+        "table": "predictions",
+        "type": "TEXT"
+      },
+      {
+        "table": "prompt_pressure_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "prompt_section_breakdown_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "public_bundle_publish_audit_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "reasoning_layer_penetration_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "rule_conversion_loss_stage_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "rule_phase_evidence_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "runtime_reliability_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "runtime_reliability_model_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_activation_registry",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_candidates",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_daily_comparison",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_feature_snapshots",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_method_scoreboard",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_model_promotion_scorecard_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_results",
+        "type": "TEXT"
+      },
+      {
+        "table": "shadow_rule_d1_comparison",
+        "type": "TEXT"
+      },
+      {
+        "table": "signal_governance_ledger",
+        "type": "TEXT"
+      },
+      {
+        "table": "single_vote_rescue_replay_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "source_prize_effectiveness_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "strength_skip_calibration_replay_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "strongest_candidate_escape_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "strongest_vs_final_conversion_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "strongest_vs_final_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "sync_parity_audit_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "system_alerts",
+        "type": "TEXT"
+      },
+      {
+        "table": "tier2_replay_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "tier2_replay_v2_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "trace_field_completeness_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "training_history",
+        "type": "TEXT"
+      },
+      {
+        "table": "users",
+        "type": "TEXT"
+      },
+      {
+        "table": "v105_ai_shadow_decision_independent",
+        "type": "TEXT"
+      },
+      {
+        "table": "v105_context_completeness_audit",
+        "type": "TEXT"
+      },
+      {
+        "table": "v105_no_token_independent_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "verdict_distribution_daily",
+        "type": "TEXT"
+      },
+      {
+        "table": "weekday_blackspot_shadow",
+        "type": "TEXT"
+      },
+      {
+        "table": "weekday_rule_strength_daily",
+        "type": "TEXT"
+      }
+    ],
+    "weekday": [
+      {
+        "table": "bundle_universe_coverage_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "corrected_rescue_replay_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "counterfactual_decision_audit_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_candidates",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_model_budget_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_model_contribution",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_model_scoreboard",
+        "type": "INTEGER"
+      },
+      {
+        "table": "lag1_adaptive_exploit_signal_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "loz_selector_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "mb_structural_drilldown_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "mined_rule_effectiveness",
+        "type": "INTEGER"
+      },
+      {
+        "table": "model_strength_by_region_weekday_station_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "no_token_drift_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "output_policy_replay_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "rule_features",
+        "type": "INTEGER"
+      },
+      {
+        "table": "rule_phase_evidence_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "rule_phase_synthesis_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_candidates",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_feature_snapshots",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_method_scoreboard",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_model_promotion_scorecard_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "shadow_results",
+        "type": "INTEGER"
+      },
+      {
+        "table": "signal_governance_ledger",
+        "type": "TEXT"
+      },
+      {
+        "table": "strongest_vs_final_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "v101_region_source_pool_top5_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "v105_ai_shadow_decision_independent",
+        "type": "INTEGER"
+      },
+      {
+        "table": "v105_context_completeness_audit",
+        "type": "INTEGER"
+      },
+      {
+        "table": "v105_no_token_independent_scoreboard",
+        "type": "INTEGER"
+      },
+      {
+        "table": "v105_no_token_independent_shadow",
+        "type": "INTEGER"
+      },
+      {
+        "table": "weekday_blackspot_shadow",
+        "type": "INTEGER"
+      }
+    ],
+    "cycle": [
+      {
+        "table": "cohere_effectiveness_daily",
+        "type": "INTEGER"
+      },
+      {
+        "table": "cohere_rerank_log",
+        "type": "TEXT"
+      }
+    ],
+    "hits": [
+      {
+        "table": "daily_eval_log",
+        "type": "TEXT"
+      },
+      {
+        "table": "v102_recurrence_stats_shadow",
+        "type": "INTEGER"
+      }
+    ],
+    "run_id": [
+      {
+        "table": "du_doan_test_bundles",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_candidates",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_conversion_trace",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_leakage_audit",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_model_contribution",
+        "type": "INTEGER"
+      },
+      {
+        "table": "du_doan_test_results",
+        "type": "INTEGER"
+      },
+      {
+        "table": "predictions",
+        "type": "TEXT"
+      }
+    ],
+    "official_lo2": [
+      {
+        "table": "du_doan_test_daily_summary",
+        "type": "TEXT"
+      },
+      {
+        "table": "lane_test_active_challenger_scoreboard",
+        "type": "TEXT"
+      },
+      {
+        "table": "v103_candidate_supply_shadow",
+        "type": "INTEGER"
+      }
+    ],
+    "day_of_week": [
+      {
+        "table": "pattern_effectiveness",
+        "type": "INTEGER"
+      },
+      {
+        "table": "pattern_rules",
+        "type": "TEXT"
+      },
+      {
+        "table": "rule_effectiveness",
+        "type": "TEXT"
+      }
+    ]
+  },
+  "near_duplicate_tables": [
+    {
+      "t1": "ai_prompt_context_audit_shadow",
+      "t2": "ai_region_specialist_prompt_shadow_results",
+      "jaccard": 1.0,
+      "rows1": 75,
+      "rows2": 75
+    },
+    {
+      "t1": "digit_transform_source_rule_shadow_v10610",
+      "t2": "exact_position_source_rule_shadow_v10610",
+      "jaccard": 1.0,
+      "rows1": 9211,
+      "rows2": 240
+    },
+    {
+      "t1": "pre_partial_post_lose_daily",
+      "t2": "pre_win_post_lose_daily",
+      "jaccard": 1.0,
+      "rows1": 721,
+      "rows2": 721
+    },
+    {
+      "t1": "tier2_replay_shadow",
+      "t2": "tier2_replay_v2_shadow",
+      "jaccard": 0.93,
+      "rows1": 192,
+      "rows2": 558
+    },
+    {
+      "t1": "experimental_preview_shadow",
+      "t2": "mb_experimental_preview_shadow",
+      "jaccard": 0.92,
+      "rows1": 1893,
+      "rows2": 203
+    },
+    {
+      "t1": "v101_mn_cross_region_rule_shadow",
+      "t2": "v101_region_source_pool_shadow",
+      "jaccard": 0.82,
+      "rows1": 3390,
+      "rows2": 10170
+    }
+  ],
+  "dead_tables_0_rows": [
+    "bundle_replay_compare_daily",
+    "data_preservation_manifest_daily",
+    "du_doan_test_ai_predictions",
+    "du_doan_test_latency_daily",
+    "rule_effectiveness",
+    "rule_features",
+    "sync_parity_audit_daily",
+    "training_records",
+    "v10522_v102_strong_selector_shadow"
+  ],
+  "rowcounts": {
+    "adaptive_exploit_v67_candidate_trace": 308,
+    "ai_herding_failure_daily": 150,
+    "ai_no_token_cross_verification_shadow": 75,
+    "ai_primary_gate_daily": 100,
+    "ai_prompt_context_audit_shadow": 75,
+    "ai_reasoning_contract_daily": 100,
+    "ai_region_specialist_prompt_shadow_results": 75,
+    "ai_region_specialist_provider_shadow_results": 201,
+    "app_settings": 296,
+    "bundle_family_contribution_daily": 103,
+    "bundle_readiness_gate_daily": 100,
+    "bundle_replay_compare_daily": 0,
+    "bundle_universe_coverage_daily": 3076,
+    "bundle_universe_coverage_shadow": 96,
+    "candidate_drop_stage_daily": 149,
+    "cluster_weighted_consensus_shadow": 868,
+    "cohere_effectiveness_daily": 127,
+    "cohere_rerank_log": 127,
+    "consensus_v1_trace": 232,
+    "convergence_cluster_pattern_daily": 422,
+    "corrected_rescue_replay_shadow": 900,
+    "counterfactual_decision_audit_shadow": 917,
+    "cross_region_spillover_shadow": 11283,
+    "daily_eval_log": 290,
+    "daily_stats": 124,
+    "data_preservation_manifest_daily": 0,
+    "day_governance": 272,
+    "digit_transform_source_rule_shadow_v10610": 9211,
+    "draw_availability_daily": 92,
+    "du_doan_test_ai_predictions": 0,
+    "du_doan_test_audit_log": 470,
+    "du_doan_test_bundles": 1576,
+    "du_doan_test_candidates": 33406,
+    "du_doan_test_conversion_trace": 1576,
+    "du_doan_test_daily_summary": 62,
+    "du_doan_test_experiment_scoreboard": 81,
+    "du_doan_test_experiments": 31,
+    "du_doan_test_latency_daily": 0,
+    "du_doan_test_leakage_audit": 1576,
+    "du_doan_test_method_scoreboard": 81,
+    "du_doan_test_model_budget_daily": 75,
+    "du_doan_test_model_contribution": 33406,
+    "du_doan_test_model_scoreboard": 8509,
+    "du_doan_test_model_skip_reason": 209,
+    "du_doan_test_results": 1576,
+    "du_doan_test_runs": 1576,
+    "du_doan_test_selected_voters": 2175,
+    "exact_position_source_rule_shadow_v10610": 240,
+    "experimental_preview_shadow": 1893,
+    "final_bundles": 273,
+    "freshness_chain_daily": 749,
+    "gan_signal_shadow_v100": 246000,
+    "hybrid_v1_trace": 111,
+    "lag1_adaptive_exploit_signal_shadow": 12484,
+    "lane_test_active_challenger_scoreboard": 1557,
+    "lane_test_lose_only_audit_daily": 90,
+    "lane_test_region_profiles": 3,
+    "lottery_results": 14772,
+    "loz_selector_shadow": 4033,
+    "loz_stage_trace_shadow": 6356,
+    "main_vs_secondary_quality_daily": 103,
+    "mb_ai_chain_preservation_v1": 30,
+    "mb_experimental_preview_shadow": 203,
+    "mb_regime_shift_shadow": 25,
+    "mb_structural_drilldown_shadow": 62,
+    "method_cluster_performance_daily": 150,
+    "mined_rule_effectiveness": 2157,
+    "mined_rules": 105,
+    "mining_log": 22,
+    "mn_ai_herd_vs_v67_save_daily": 25,
+    "mn_mb_failure_streak_daily": 2,
+    "model_cross_region_dup_shadow": 662,
+    "model_daily_eval": 6064,
+    "model_latency_cost_audit_daily": 4033,
+    "model_strength_by_region_weekday_station_daily": 17815,
+    "mt_model_hit_output_drop_shadow": 365,
+    "no_token_drift_shadow": 427,
+    "no_token_rule_aware_pack_shadow": 75,
+    "official_vs_testlane_rescue_daily": 75,
+    "output_eligible_completion_daily": 100,
+    "output_policy_replay_daily": 700,
+    "pattern_effectiveness": 92,
+    "pattern_rules": 160,
+    "pnl_capital_events": 2,
+    "pnl_daily_bets": 28,
+    "pnl_daily_settlements": 76,
+    "pnl_daily_summary": 14,
+    "pp1_live_watch_daily": 54,
+    "pre_partial_post_lose_daily": 721,
+    "pre_vs_post_rerun_effect_daily": 309,
+    "pre_win_post_lose_daily": 721,
+    "prediction_policies": 6,
+    "predictions": 6282,
+    "prompt_pressure_daily": 1881,
+    "prompt_section_breakdown_daily": 12339,
+    "public_bundle_publish_audit_daily": 100,
+    "reasoning_layer_penetration_daily": 100,
+    "rule_conversion_loss_stage_daily": 103,
+    "rule_effectiveness": 0,
+    "rule_features": 0,
+    "rule_injection_contract": 3076,
+    "rule_phase_evidence_shadow": 1668,
+    "rule_phase_synthesis_shadow": 75,
+    "runtime_reliability_daily": 270,
+    "runtime_reliability_model_daily": 1792,
+    "scheduler_logs": 146397,
+    "shadow_activation_registry": 18,
+    "shadow_candidates": 8269,
+    "shadow_daily_comparison": 225,
+    "shadow_feature_snapshots": 1515,
+    "shadow_method_scoreboard": 32892,
+    "shadow_model_promotion_scorecard_daily": 1140,
+    "shadow_results": 8269,
+    "shadow_rule_d1_comparison": 124,
+    "signal_governance_ledger": 10317,
+    "single_vote_rescue_replay_shadow": 540,
+    "source_prize_effectiveness_daily": 2611,
+    "source_prize_strong_coverage": 3076,
+    "station_identity_runtime_audit": 69,
+    "strength_skip_calibration_replay_shadow": 865,
+    "strongest_candidate_escape_daily": 100,
+    "strongest_vs_final_conversion_daily": 149,
+    "strongest_vs_final_shadow": 87,
+    "sync_parity_audit_daily": 0,
+    "system_alerts": 9,
+    "test_lane_fast_incident_monitor": 315,
+    "test_lane_signal_drift_monitor": 264,
+    "tier2_replay_shadow": 192,
+    "tier2_replay_v2_shadow": 558,
+    "trace_field_completeness_daily": 103,
+    "training_history": 108,
+    "training_records": 0,
+    "users": 2,
+    "v101_mn_cross_region_rule_shadow": 3390,
+    "v101_region_prompt_context_shadow": 339,
+    "v101_region_source_pool_evidence_shadow": 263,
+    "v101_region_source_pool_shadow": 10170,
+    "v101_region_source_pool_top5_shadow": 1695,
+    "v102_candidate_recurrence_context_shadow": 61,
+    "v102_recurrence_stats_shadow": 666,
+    "v103_candidate_supply_shadow": 8743,
+    "v103_prompt_candidate_gate_shadow": 8743,
+    "v104_shadow_prompt_candidate_injection": 1823,
+    "v104_shadow_prompt_model_decision": 93,
+    "v10522_v102_strong_selector_shadow": 0,
+    "v105_ai_shadow_decision_independent": 93,
+    "v105_context_completeness_audit": 7219,
+    "v105_no_token_independent_scoreboard": 7126,
+    "v105_no_token_independent_shadow": 7126,
+    "v93_mn_save_signal_per_method_shadow": 741,
+    "v93_verdict_weight_recalibration_shadow": 1643,
+    "v93_wr_gate_filter_audit_shadow": 3682,
+    "v94_cross_region_leakage_continuous_monitor": 900,
+    "v94_cross_region_spillover_aware_shadow": 5398,
+    "v94_no_token_first_simulation_shadow": 25,
+    "v95_ai_context_completeness_shadow": 2514,
+    "v95_data_freshness_audit_shadow": 3684,
+    "v96_master_tracker_daily_snapshot": 21,
+    "v99_exact_evaluator_results": 747,
+    "verdict_distribution_daily": 2859,
+    "verified_bucket_rules": 105,
+    "weekday_blackspot_shadow": 42,
+    "weekday_rule_strength_daily": 100
+  }
+}

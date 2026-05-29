@@ -1,0 +1,319 @@
+{
+  "generated_at": "2026-05-29T20:20:39+07:00",
+  "region": "MB",
+  "mode": "ARTIFACT_ONLY_RECOMMENDATION",
+  "param_sweep": [
+    {
+      "window": 15,
+      "K": 8,
+      "days": 91,
+      "avg_hits": 1.99,
+      "random": 1.9,
+      "lift": 0.09,
+      "beat_pct": 53.8,
+      "z": 0.69,
+      "p": 0.4925,
+      "sig": false
+    },
+    {
+      "window": 15,
+      "K": 10,
+      "days": 91,
+      "avg_hits": 2.44,
+      "random": 2.38,
+      "lift": 0.06,
+      "beat_pct": 44.0,
+      "z": 0.44,
+      "p": 0.6626,
+      "sig": false
+    },
+    {
+      "window": 15,
+      "K": 12,
+      "days": 91,
+      "avg_hits": 2.85,
+      "random": 2.85,
+      "lift": -0.01,
+      "beat_pct": 42.9,
+      "z": -0.05,
+      "p": 0.9614,
+      "sig": false
+    },
+    {
+      "window": 15,
+      "K": 15,
+      "days": 91,
+      "avg_hits": 3.51,
+      "random": 3.57,
+      "lift": -0.06,
+      "beat_pct": 45.1,
+      "z": -0.36,
+      "p": 0.7217,
+      "sig": false
+    },
+    {
+      "window": 20,
+      "K": 8,
+      "days": 91,
+      "avg_hits": 1.98,
+      "random": 1.9,
+      "lift": 0.08,
+      "beat_pct": 53.8,
+      "z": 0.6,
+      "p": 0.549,
+      "sig": false
+    },
+    {
+      "window": 20,
+      "K": 10,
+      "days": 91,
+      "avg_hits": 2.55,
+      "random": 2.38,
+      "lift": 0.17,
+      "beat_pct": 48.4,
+      "z": 1.22,
+      "p": 0.2242,
+      "sig": false
+    },
+    {
+      "window": 20,
+      "K": 12,
+      "days": 91,
+      "avg_hits": 2.9,
+      "random": 2.85,
+      "lift": 0.05,
+      "beat_pct": 51.6,
+      "z": 0.31,
+      "p": 0.7587,
+      "sig": false
+    },
+    {
+      "window": 20,
+      "K": 15,
+      "days": 91,
+      "avg_hits": 3.57,
+      "random": 3.57,
+      "lift": 0.0,
+      "beat_pct": 48.4,
+      "z": 0.03,
+      "p": 0.9797,
+      "sig": false
+    },
+    {
+      "window": 30,
+      "K": 8,
+      "days": 91,
+      "avg_hits": 2.08,
+      "random": 1.9,
+      "lift": 0.17,
+      "beat_pct": 58.2,
+      "z": 1.38,
+      "p": 0.1666,
+      "sig": false
+    },
+    {
+      "window": 30,
+      "K": 10,
+      "days": 91,
+      "avg_hits": 2.78,
+      "random": 2.38,
+      "lift": 0.4,
+      "beat_pct": 54.9,
+      "z": 2.85,
+      "p": 0.0044,
+      "sig": true
+    },
+    {
+      "window": 30,
+      "K": 12,
+      "days": 91,
+      "avg_hits": 3.23,
+      "random": 2.85,
+      "lift": 0.38,
+      "beat_pct": 59.3,
+      "z": 2.44,
+      "p": 0.0147,
+      "sig": true
+    },
+    {
+      "window": 30,
+      "K": 15,
+      "days": 91,
+      "avg_hits": 3.85,
+      "random": 3.57,
+      "lift": 0.28,
+      "beat_pct": 54.9,
+      "z": 1.62,
+      "p": 0.1062,
+      "sig": false
+    },
+    {
+      "window": 45,
+      "K": 8,
+      "days": 91,
+      "avg_hits": 2.09,
+      "random": 1.9,
+      "lift": 0.19,
+      "beat_pct": 57.1,
+      "z": 1.47,
+      "p": 0.1415,
+      "sig": false
+    },
+    {
+      "window": 45,
+      "K": 10,
+      "days": 91,
+      "avg_hits": 2.64,
+      "random": 2.38,
+      "lift": 0.26,
+      "beat_pct": 52.7,
+      "z": 1.84,
+      "p": 0.066,
+      "sig": false
+    },
+    {
+      "window": 45,
+      "K": 12,
+      "days": 91,
+      "avg_hits": 3.11,
+      "random": 2.85,
+      "lift": 0.26,
+      "beat_pct": 60.4,
+      "z": 1.66,
+      "p": 0.0972,
+      "sig": false
+    },
+    {
+      "window": 45,
+      "K": 15,
+      "days": 91,
+      "avg_hits": 3.76,
+      "random": 3.57,
+      "lift": 0.19,
+      "beat_pct": 57.1,
+      "z": 1.11,
+      "p": 0.2684,
+      "sig": false
+    },
+    {
+      "window": 60,
+      "K": 8,
+      "days": 91,
+      "avg_hits": 2.01,
+      "random": 1.9,
+      "lift": 0.11,
+      "beat_pct": 59.3,
+      "z": 0.86,
+      "p": 0.3895,
+      "sig": false
+    },
+    {
+      "window": 60,
+      "K": 10,
+      "days": 91,
+      "avg_hits": 2.62,
+      "random": 2.38,
+      "lift": 0.24,
+      "beat_pct": 52.7,
+      "z": 1.68,
+      "p": 0.0924,
+      "sig": false
+    },
+    {
+      "window": 60,
+      "K": 12,
+      "days": 91,
+      "avg_hits": 2.9,
+      "random": 2.85,
+      "lift": 0.05,
+      "beat_pct": 52.7,
+      "z": 0.31,
+      "p": 0.7587,
+      "sig": false
+    },
+    {
+      "window": 60,
+      "K": 15,
+      "days": 91,
+      "avg_hits": 3.56,
+      "random": 3.57,
+      "lift": -0.01,
+      "beat_pct": 47.3,
+      "z": -0.04,
+      "p": 0.9696,
+      "sig": false
+    }
+  ],
+  "best_params": {
+    "window": 30,
+    "K": 10,
+    "days": 91,
+    "avg_hits": 2.78,
+    "random": 2.38,
+    "lift": 0.4,
+    "beat_pct": 54.9,
+    "z": 2.85,
+    "p": 0.0044,
+    "sig": true
+  },
+  "recommended": {
+    "for_date": "2026-05-30",
+    "weekday": "T7",
+    "as_of": "2026-05-29",
+    "dan": [
+      "14",
+      "91",
+      "51",
+      "54",
+      "83",
+      "46",
+      "12",
+      "92",
+      "73",
+      "97"
+    ],
+    "detail": [
+      {
+        "tail": "14",
+        "freq_in_window": 14
+      },
+      {
+        "tail": "91",
+        "freq_in_window": 13
+      },
+      {
+        "tail": "51",
+        "freq_in_window": 12
+      },
+      {
+        "tail": "54",
+        "freq_in_window": 11
+      },
+      {
+        "tail": "83",
+        "freq_in_window": 11
+      },
+      {
+        "tail": "46",
+        "freq_in_window": 11
+      },
+      {
+        "tail": "12",
+        "freq_in_window": 11
+      },
+      {
+        "tail": "92",
+        "freq_in_window": 10
+      },
+      {
+        "tail": "73",
+        "freq_in_window": 10
+      },
+      {
+        "tail": "97",
+        "freq_in_window": 10
+      }
+    ]
+  },
+  "disclaimer": "Lottery near-random. Edge is small (~+0.4 hits/day on 10-num dan). NOT a guarantee. Forward-validate before any production use."
+}

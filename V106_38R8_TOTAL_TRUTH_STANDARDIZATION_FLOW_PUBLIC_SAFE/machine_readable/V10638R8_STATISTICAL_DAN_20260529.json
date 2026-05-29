@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-05-29T20:03:19+07:00",
+  "regions": {
+    "MN": {
+      "freq_hot": {
+        "6": {
+          "avg_hits": 2.49,
+          "random": 2.58,
+          "lift": -0.09,
+          "beat_pct": 39.6,
+          "precision_pct": 41.6
+        },
+        "10": {
+          "avg_hits": 4.24,
+          "random": 4.31,
+          "lift": -0.07,
+          "beat_pct": 42.9,
+          "precision_pct": 42.4
+        },
+        "15": {
+          "avg_hits": 6.36,
+          "random": 6.46,
+          "lift": -0.1,
+          "beat_pct": 44.0,
+          "precision_pct": 42.4
+        }
+      },
+      "gan_overdue": {
+        "6": {
+          "avg_hits": 2.54,
+          "random": 2.58,
+          "lift": -0.05,
+          "beat_pct": 49.5,
+          "precision_pct": 42.3
+        },
+        "10": {
+          "avg_hits": 4.16,
+          "random": 4.31,
+          "lift": -0.14,
+          "beat_pct": 47.3,
+          "precision_pct": 41.6
+        },
+        "15": {
+          "avg_hits": 6.3,
+          "random": 6.46,
+          "lift": -0.16,
+          "beat_pct": 44.0,
+          "precision_pct": 42.0
+        }
+      },
+      "lo_roi": {
+        "lo_roi_1d": {
+          "avg_size": 43.1,
+          "avg_hits": 18.74,
+          "random": 18.56,
+          "lift": 0.18,
+          "beat_pct": 48.4,
+          "precision_pct": 43.5
+        },
+        "lo_roi_2d": {
+          "avg_size": 67.5,
+          "avg_hits": 29.11,
+          "random": 29.07,
+          "lift": 0.04,
+          "beat_pct": 53.8,
+          "precision_pct": 43.1
+        }
+      }
+    },
+    "MT": {
+      "freq_hot": {
+        "6": {
+          "avg_hits": 2.03,
+          "random": 2.11,
+          "lift": -0.08,
+          "beat_pct": 51.6,
+          "precision_pct": 33.9
+        },
+        "10": {
+          "avg_hits": 3.33,
+          "random": 3.52,
+          "lift": -0.19,
+          "beat_pct": 36.3,
+          "precision_pct": 33.3
+        },
+        "15": {
+          "avg_hits": 5.22,
+          "random": 5.28,
+          "lift": -0.06,
+          "beat_pct": 45.1,
+          "precision_pct": 34.8
+        }
+      },
+      "gan_overdue": {
+        "6": {
+          "avg_hits": 2.12,
+          "random": 2.11,
+          "lift": 0.01,
+          "beat_pct": 53.8,
+          "precision_pct": 35.3
+        },
+        "10": {
+          "avg_hits": 3.56,
+          "random": 3.52,
+          "lift": 0.04,
+          "beat_pct": 46.2,
+          "precision_pct": 35.6
+        },
+        "15": {
+          "avg_hits": 5.22,
+          "random": 5.28,
+          "lift": -0.06,
+          "beat_pct": 44.0,
+          "precision_pct": 34.8
+        }
+      },
+      "lo_roi": {
+        "lo_roi_1d": {
+          "avg_size": 35.2,
+          "avg_hits": 12.11,
+          "random": 12.33,
+          "lift": -0.22,
+          "beat_pct": 45.1,
+          "precision_pct": 34.4
+        },
+        "lo_roi_2d": {
+          "avg_size": 58.3,
+          "avg_hits": 20.32,
+          "random": 20.47,
+          "lift": -0.15,
+          "beat_pct": 49.5,
+          "precision_pct": 34.8
+        }
+      }
+    },
+    "MB": {
+      "freq_hot": {
+        "6": {
+          "avg_hits": 1.66,
+          "random": 1.43,
+          "lift": 0.23,
+          "beat_pct": 50.5,
+          "precision_pct": 27.7
+        },
+        "10": {
+          "avg_hits": 2.74,
+          "random": 2.38,
+          "lift": 0.36,
+          "beat_pct": 54.9,
+          "precision_pct": 27.4
+        },
+        "15": {
+          "avg_hits": 3.89,
+          "random": 3.57,
+          "lift": 0.32,
+          "beat_pct": 57.1,
+          "precision_pct": 25.9
+        }
+      },
+      "gan_overdue": {
+        "6": {
+          "avg_hits": 1.44,
+          "random": 1.43,
+          "lift": 0.01,
+          "beat_pct": 46.2,
+          "precision_pct": 24.0
+        },
+        "10": {
+          "avg_hits": 2.22,
+          "random": 2.38,
+          "lift": -0.16,
+          "beat_pct": 36.3,
+          "precision_pct": 22.2
+        },
+        "15": {
+          "avg_hits": 3.44,
+          "random": 3.57,
+          "lift": -0.13,
+          "beat_pct": 49.5,
+          "precision_pct": 22.9
+        }
+      },
+      "lo_roi": {
+        "lo_roi_1d": {
+          "avg_size": 23.8,
+          "avg_hits": 5.47,
+          "random": 5.65,
+          "lift": -0.18,
+          "beat_pct": 39.6,
+          "precision_pct": 23.0
+        },
+        "lo_roi_2d": {
+          "avg_size": 42.1,
+          "avg_hits": 9.9,
+          "random": 10.01,
+          "lift": -0.11,
+          "beat_pct": 48.4,
+          "precision_pct": 23.5
+        }
+      }
+    }
+  }
+}

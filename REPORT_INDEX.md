@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8** - `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md` (Total-truth + standardization + flow-separation audit, 91-day. Only statistically significant edge = MB frequency hot-numbers +~0.4 hits/day p~0.004 borderline; AI token models show no significant edge; "win 44%" metric is near-random lo-toan-mien; single models are weekday/station specialists but weighting is region-global; schema chaos 163 tables + station/column-name inconsistencies + 6 duplicate table pairs + 9 dead tables + ~100 scripts; 3 flows separated by name but per-slice axis missing. Standardization master plan: canonical Data Dictionary -> views -> name-only normalization -> per-slice weighting + shrinkage. Read-only; 0 production change; AI still running).
+
+## Quick links - V106.38-R8
+1. [V10638R8 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md)
+2. [V10638R8 Execution Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/machine_readable/V10638R8_EXECUTION_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.36** - `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md` (Full debt closeout pass + region-independent lane execution dry-run. Tri-region closeout 2026-05-27 with selector_gap / bundle_skew root-cause for MT/MB. Model/method 30d audit shows MB AI-token cost-waste (contribution 4.4% on 45 winning days), MT combo dominates contribution 64%, MN AI-token healthy. Cohere ZERO_VALUE_PROOF 30d all regions. Rule105 V2 tier gate: MN 26/35 TIER_A, MT 18/35 TIER_A, MB 4/35 TIER_A with weekday coverage gap. Lane dry-run today: MN 5 rules→lane=39 vs official=58 WIN (false_consensus), MT/MB 0 rules eligible Wed. Master debt ledger V1.0→V106.35: 3 P0 + 10 P1; CP-66.7 still overdue. Safety: official_mutation=0, drift_detected=False).
 
 ## Quick links - V106.36 Full Debt Closeout + Region-Independent Lane Execution

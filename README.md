@@ -1,28 +1,20 @@
 # Lottery AI Notion Reports
 
-Public-safe report mirror for the internal Lottery AI Test system.
-
-- Latest: **V106.36** — `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE`
-- Owner report: `V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md`
-- Pointer JSON: `LATEST_REPORT.json`
-- Index: `REPORT_INDEX.md`
+- Latest package: **V106.38-R8** — `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE`
+- Owner report: `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md`
+- Summary JSON: `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/machine_readable/V10638R8_EXECUTION_SUMMARY.json`
+- Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies
-
 - Public reports do NOT contain private code, DB rows, provider API keys, or raw VPS internals.
-- All `LATEST_REPORT.json` updates are paired with a public-safe scan pass.
 - No claim of ACCURACY_READY / OFFICIAL_IMPROVED / SELECTOR_FIXED / MN_FIXED / MT_FIXED / MB_FIXED / LANE_TEST_PROMOTED.
+- Read-only forensic + backtest. 0 production change.
 
-## Quick links — V106.36
-
-- [V10636 Owner Report VN](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_OWNER_REPORT_VN_PUBLIC.md)
-- [V10636 Tri-Region Closeout](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TRI_REGION_CLOSEOUT_PUBLIC.md)
-- [V10636 Model × Method Scorecard](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MODEL_METHOD_SCORECARD_PUBLIC.md)
-- [V10636 Cohere Value Audit](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_COHERE_VALUE_AUDIT_PUBLIC.md)
-- [V10636 Rule105 Independent Query V2](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_RULE105_INDEPENDENT_QUERY_PUBLIC.md)
-- [V10636 Top Rules Tier Gate](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_TOP_RULES_TIER_GATE_PUBLIC.md)
-- [V10636 Master Debt Ledger](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_MASTER_DEBT_LEDGER_PUBLIC.md)
-- [V10636 P0/P1 Action Board](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_P0_P1_ACTION_BOARD_PUBLIC.md)
-- [V10636 Safety Gate](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_SAFETY_GATE_PUBLIC.md)
-- [V10636 Zero Official Drift Proof](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/V10636_ZERO_OFFICIAL_DRIFT_PROOF_PUBLIC.md)
-- [V10636 Execution Summary (JSON)](V106_36_FULL_DEBT_CLOSEOUT_REGION_INDEPENDENT_LANE_PUBLIC_SAFE/machine_readable/V10636_EXECUTION_SUMMARY.json)
+## V106.38-R8 highlights (91-day audit)
+- "win ~44%" metric = lo-toan-mien, near-random for MN/MB.
+- Only statistically significant edge: MB frequency (hot numbers), +~0.4 hits/day, p~0.004 (borderline, needs forward proof).
+- AI token models: no significant edge anywhere.
+- Single models are weekday/station specialists; current weighting is region-global (root of "chaos").
+- Standardization: 163 tables, station-name + column-name inconsistencies, 6 duplicate table pairs, 9 dead tables, ~100 backend scripts.
+- 3 flows (official/lane-test/shadow) separated by name but per-slice axis mostly missing.
+- Proposal: canonical Data Dictionary -> views -> name-only normalization -> per-slice weighting + shrinkage.
