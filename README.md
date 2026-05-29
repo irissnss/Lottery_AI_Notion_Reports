@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V106.38-R8C** — `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE` (Phase 0 verification gate: models clarified, full station×weekday matrix, merge verification)
-- Owner report: `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/V10638R8C_PHASE0_VERIFICATION_OWNER_REPORT_VN_PUBLIC.md`
-- Prev: `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE` (Phase 0 + dependency); master `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE`
+- Latest package: **V106.38-R8D** — `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE` (Phase 1: 5 canonical VIEWs tested PASS, Data Dictionary v1.0 SSOT, Phase B drop/merge SQL prepared)
+- Owner report: `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/V10638R8D_PHASE1_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: R8 (truth) -> R8B (dependency) -> R8C (verify) -> R8D (Phase 1)
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies

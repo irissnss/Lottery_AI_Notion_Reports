@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8D** - `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/V10638R8D_PHASE1_OWNER_REPORT_VN_PUBLIC.md` (Phase 1 executed safely after owner approval of gói A+B. 5 canonical VIEWs (v_predictions/v_model_daily_eval/v_mined_rules/v_final_bundles/v_lottery_results) generated + tested PASS via read-only ATTACH — 0 write to real DB, 0 numbers changed; code reads 1 canonical name without breaking 153 files. Data Dictionary v1.0 promoted to docs/ as SSOT (canonical cols, flow labels, per-slice key, station aliases, model=no-merge). Phase B drop/merge SQL prepared (drop rule_features + merge true-dup pair #4 after materializer consolidation) but NOT executed - awaiting backup + button + deploy gate. AI still running to 2026-06-03. Chain R8->R8B->R8C->R8D).
+
+## Quick links - V106.38-R8D Phase 1
+1. [V10638R8D Phase 1 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/V10638R8D_PHASE1_OWNER_REPORT_VN_PUBLIC.md)
+2. [Data Dictionary v1.0 (SSOT)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/DATA_DICTIONARY_v1.0.md)
+3. [Phase 1 canonical views SQL](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/phase1_canonical_views.sql)
+4. [Phase B drop/merge SQL (prepared)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/phase_b_drop_merge.sql)
+5. [V10638R8D Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/machine_readable/V10638R8D_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8C** - `V106_38R8C_PHASE0_VERIFICATION_PUBLIC_SAFE/V10638R8C_PHASE0_VERIFICATION_OWNER_REPORT_VN_PUBLIC.md` (Phase 0 verification gate. Models clarified: 28 active / 13 removed-idle / 13 historical-orphans, NOT merged, registry is SSOT, keys shared by provider. Full station x weekday matrix verified: HCM_MN runs T2+T7 (Saturday) NOT Sunday; Ha Noi_MB T2+T5; Thua Thien Hue_MT T2+CN; Da Nang/Khanh Hoa multi-weekday. Merge verify of 6 schema-duplicate pairs: only 1 true duplicate, 2 region-subset, 1 version -> row-level check before any merge. rule_features SAFE to drop (0 rows/0 refs). Awaiting owner approval of canonical column names before Phase 1 views. Read-only; 0 production change; AI running. Parents: R8 truth + R8B dependency).
 
 ## Quick links - V106.38-R8C Phase 0 verification

@@ -1,0 +1,51 @@
+-- ============================================================
+-- PHASE B — DROP / MERGE (READY ARTIFACT — DO NOT RUN AUTOMATICALLY)
+-- ============================================================
+-- Owner approved the PLAN. Actual execution requires:
+--   (1) Full DB backup taken first.
+--   (2) Owner explicit "execute" button.
+--   (3) Run on the correct DB (VPS production via deploy gate, NOT local forensic copy).
+-- Standardization changes STRUCTURE only — never changes prediction NUMBERS.
+-- Generated 2026-05-29 by Opus 4.7 (Phase 0/1 verification).
+-- ============================================================
+
+-- ------------------------------------------------------------
+-- STEP 0 — MANDATORY BACKUP (run before anything)
+-- ------------------------------------------------------------
+-- sqlite3 lottery_ai.db ".backup 'lottery_ai_BACKUP_pre_phaseB_20260529.db'"
+-- (verify backup row counts match before proceeding)
+
+-- ------------------------------------------------------------
+-- ACTION 1 — DROP dead table rule_features
+--   Verified: 0 rows, 0 code references (P0_DEPENDENCY_MAP + P0_MERGE_VERIFICATION).
+--   Risk: minimal. Safe after backup.
+-- ------------------------------------------------------------
+-- DROP TABLE IF EXISTS rule_features;
+
+-- ------------------------------------------------------------
+-- ACTION 2 — MERGE true-duplicate pair #4
+--   ai_region_specialist_prompt_shadow_results  (drop, redundant)
+--   -> keep canonical: ai_prompt_context_audit_shadow
+--   Verified: 75 rows each, content 100% identical (P0_ROWLEVEL_VERIFY_PAIR4).
+--
+--   ⚠️ NOT a pure DROP. Two materializers currently write the SAME data to BOTH:
+--       - web/backend/_v96_master_tracker.py
+--       - web/backend/_materialize_ai_region_prompt_shadow_audit.py
+--   REQUIRED ORDER (Phase 3 code refactor, owner-gated):
+--     a) Repoint both files to read/write only `ai_prompt_context_audit_shadow`.
+--     b) Confirm no other reader of the dropped table (re-grep).
+--     c) THEN: DROP TABLE IF EXISTS ai_region_specialist_prompt_shadow_results;
+--   DO NOT drop before (a)+(b) or the audit materializer will break.
+-- ------------------------------------------------------------
+-- (after code repoint + re-verify)
+-- DROP TABLE IF EXISTS ai_region_specialist_prompt_shadow_results;
+
+-- ------------------------------------------------------------
+-- KEEP (DO NOT TOUCH) — verified NOT true duplicates
+--   experimental_preview_shadow / mb_experimental_preview_shadow  (B = MB region-subset)
+--   v101_region_source_pool_shadow / v101_mn_cross_region_rule_shadow  (B = MN region-subset)
+--   tier2_replay_v2_shadow / tier2_replay_shadow  (version pair: keep v2, archive v1 only if owner OK)
+--   pre_partial_post_lose_daily / pre_win_post_lose_daily  (different semantics: partial vs win)
+--   digit_transform_source_rule_shadow_v10610 / exact_position_source_rule_shadow_v10610 (different rule types)
+--   + 8 empty-but-code-referenced tables (bundle_replay_compare_daily, etc.) — keep.
+-- ============================================================

@@ -1,0 +1,31 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8D",
+  "title": "Phase 1 canonical views + Data Dictionary v1.0 (public-safe)",
+  "parent_chain": ["V106.38-R8", "V106.38-R8B", "V106.38-R8C"],
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-29T22:12:00",
+  "owner_approved": "gói A (canonical names via VIEW) + gói B (drop rule_features + merge pair #4)",
+  "phase1_views": {
+    "generated": ["v_predictions", "v_model_daily_eval", "v_mined_rules", "v_final_bundles", "v_lottery_results"],
+    "test": "PASS (all 5, rows match base)",
+    "real_db_written": false,
+    "test_method": "ATTACH real DB read-only, validate SELECT body; no write",
+    "aliases": {"v_predictions": "target_region->region", "v_model_daily_eval": "bt_number->bach_thu", "v_mined_rules": "target_region->region, target_weekday->weekday"}
+  },
+  "data_dictionary": {"version": "1.0", "promoted_to": "docs/DATA_DICTIONARY.md", "status": "SSOT"},
+  "phase_b_prepared": {
+    "drop": ["rule_features"],
+    "merge_true_dup": "ai_region_specialist_prompt_shadow_results -> ai_prompt_context_audit_shadow (75 rows identical)",
+    "merge_requires": "consolidate 2 materializers (code) before DROP",
+    "keep_not_merged": ["2 region-subset pairs", "1 version pair", "1 different-semantics pair", "8 empty-but-referenced tables"],
+    "sql_file": "phase_b_drop_merge.sql",
+    "executed": false,
+    "gate": "owner button + DB backup + deploy gate"
+  },
+  "safety": {
+    "official_touched": false, "production_table_writes": 0, "numbers_changed": false,
+    "real_db_written_by_phase1": false, "phase_b_executed": false, "deploy": false, "ai_still_running": true
+  },
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}
