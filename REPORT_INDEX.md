@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8B** - `V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/V10638R8B_PHASE0_OWNER_REPORT_VN_PUBLIC.md` (Phase 0 of 6-phase standardization. Inventory 163 tables (100 with non-canonical columns, 126 lint findings); dependency scan of 351 source files: only rule_features safe to drop (8 empty tables still code-referenced -> keep), 4 of 6 duplicate pairs are true merge candidates (2 same-schema-different-semantics -> keep both), column rename too risky (target_region in 153 files) -> canonical VIEW layer. Data Dictionary proposed v0.1; awaiting owner approval. Read-only; 0 production change; AI still running. Parent: V106.38-R8 total-truth report).
+
+## Quick links - V106.38-R8B Phase 0
+1. [V10638R8B Phase 0 Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/V10638R8B_PHASE0_OWNER_REPORT_VN_PUBLIC.md)
+2. [Data Dictionary proposed v0.1](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/DATA_DICTIONARY_PROPOSED_v0.1.md)
+3. [Table inventory map](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/P0_TABLE_INVENTORY_MAP.md)
+4. [Dependency-aware action plan](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/P0_DEPENDENCY_AWARE_ACTION_PLAN.md)
+5. [Phase 0 Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8B_PHASE0_STANDARDIZATION_DEPENDENCY_PUBLIC_SAFE/machine_readable/V10638R8B_PHASE0_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8** - `V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md` (Total-truth + standardization + flow-separation audit, 91-day. Only statistically significant edge = MB frequency hot-numbers +~0.4 hits/day p~0.004 borderline; AI token models show no significant edge; "win 44%" metric is near-random lo-toan-mien; single models are weekday/station specialists but weighting is region-global; schema chaos 163 tables + station/column-name inconsistencies + 6 duplicate table pairs + 9 dead tables + ~100 scripts; 3 flows separated by name but per-slice axis missing. Standardization master plan: canonical Data Dictionary -> views -> name-only normalization -> per-slice weighting + shrinkage. Read-only; 0 production change; AI still running).
 
 ## Quick links - V106.38-R8

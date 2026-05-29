@@ -1,0 +1,35 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8B",
+  "title": "Phase 0 standardization + dependency map (public-safe)",
+  "parent_report": "V106_38R8_TOTAL_TRUTH_STANDARDIZATION_FLOW_PUBLIC_SAFE/V10638R8_OWNER_REPORT_VN_PUBLIC.md",
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-29T21:31:00",
+  "scope": "read_only_documentation_and_dependency_scan",
+  "phase_plan_total": 6,
+  "phase_plan": ["P0 docs+map+lint", "P1 canonical views", "P2 write-point normalize", "P3 safe drop+merge", "P4 file cleanup", "P5 governance hook"],
+  "inventory": {"total_tables": 163, "tables_with_noncanonical_columns": 100, "dead_tables_0_rows": 9, "duplicate_pairs_by_schema": 6},
+  "lint_baseline_noncanonical_occurrences": 126,
+  "dependency_scan": {
+    "source_files_scanned": 351,
+    "dead_tables_safe_to_drop": ["rule_features"],
+    "dead_tables_keep_referenced_by_code": 8,
+    "duplicate_pairs_true_merge_candidates": 4,
+    "duplicate_pairs_keep_both_different_semantics": ["pre_partial_post_lose_daily|pre_win_post_lose_daily", "digit_transform_source_rule_shadow_v10610|exact_position_source_rule_shadow_v10610"],
+    "column_rename_impact_files": {"target_region": 153, "target_date": 73, "model_id": 32, "model_name": 25, "day_of_week": 23, "run_date": 18, "target_weekday": 13, "bt_number": 10, "strength_score": 10, "phase_type": 6},
+    "verdict": "physical column rename too risky; use canonical VIEW layer (Phase 1) for zero breakage"
+  },
+  "safe_actions_identified": [
+    "DROP rule_features only (0 code refs) after backup",
+    "MERGE 4 true-duplicate pairs after content-identity verification",
+    "DO NOT merge 2 same-schema-different-semantics pairs",
+    "Column standardization via VIEW (not physical rename)"
+  ],
+  "safety": {
+    "official_touched": false, "production_mutation": false, "deploy": false,
+    "provider_call_count": 0, "lane_test_promoted": false, "drift_detected": false,
+    "names_only_no_numbers_changed": true, "ai_still_running": true
+  },
+  "needs_owner_approval": ["canonical column names", "station alias table", "safe drop/merge list"],
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}
