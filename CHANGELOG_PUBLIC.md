@@ -1,5 +1,13 @@
 # Public Changelog
 
+## V10641 - 2026-05-30T23:40:00+07:00
+
+- Published `V10641_RECHECK_BY_CODE` — READ-ONLY re-verification of 5 disputed points (A: MB G2 D-2→MN; B: MN override V10640; C: MT lane→official + the live MT override V10640D; D: MB freq_hot; E: doctrine) by CODE + real DATA, per-slice (region×weekday), no-lookahead, with per-slice BASE-RATE anchor + binomial p-value. NO deploy / NO official change / NO code-private push / NO provider / NO wallet.
+- KEY framework: base-rate per slice = E[#distinct winning tails/day]/100. MN ~42% (so official 45% = only +3pp over random), MT ~30%/42%, MB ~24% (official ~24% = random, lift~0).
+- VERDICTS: **A=KILL** (MB G2→MN broad lift +0.0pp p=1.000 = coverage illusion). **B=HOLD-LANE** (MN override +5.4pp vs official holds but vs base p=0.111, per-weekday n<30, weak-weekday negative; live-but-counterfactual). **C1=HOLD-LANE** (MT lane +8.8pp vs official but p=0.070, n<30, no-lookahead PARTIAL). **C2=UNVERIFIED→NARROW** (live MT override: +16.5pp region p=0.0002 but per-weekday n<30, T6/T7/CN recently negative, family-classifier bug; recommend disable T7/CN keep T3/T4/T5, NOT full-rollback). **D=HOLD-LANE** (MB freq_hot +15.7pp is an artifact = recent-hot minus official-cold; structural lift ~0; recent W60 only, not the published W30 dan).
+- CORE TRUTH: nothing meets strict PROMOTE (n≥30/slice + lift≥+5pp vs base + p<0.05 + no-lookahead). The 2 live agent overrides (MN, MT) are reasonable lane-bets but NOT per-slice significant.
+- Self-audit: V10640 (MN) + V10640D (MT, agent-enabled) both held to the strict bar honestly; flagged where they fall short. Overdue CP-66.7 surfaced (recheck 2026-06-03). All numbers reproducible via read-only scripts.
+
 ## V10640 - 2026-05-30T21:25:00+07:00
 
 - Published `V10640_OFFICIAL_MN_PERSLICE_OVERRIDE_PUBLIC_SAFE` — **first production change** in this public chain.

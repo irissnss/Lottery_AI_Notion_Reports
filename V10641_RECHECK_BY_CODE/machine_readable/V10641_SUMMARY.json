@@ -1,0 +1,36 @@
+{
+  "schema_version": "v10641_summary_v1",
+  "version": "V10641",
+  "title": "Recheck-by-code of 5 disputed points using per-slice base-rate + binomial p-value (read-only)",
+  "created_at_vn": "2026-05-30T23:40:00",
+  "mode": "READ_ONLY",
+  "official_touched": false,
+  "code_private_pushed": false,
+  "provider_called": false,
+  "wallet_touched": false,
+  "framework": {
+    "hit_function": "database.py:4648 verify_final_bundle (bach_thu in actual tails)",
+    "base_rate_def": "mean(distinct winning tails per day)/100 per region x weekday",
+    "base_rate": {"MN": "~42% (T7 ~52%)", "MT": "~30% (T2/T3/T4/T6), ~42% (T5/T7/CN)", "MB": "~24% all"},
+    "promote_threshold": "n>=30 AND lift_vs_base>=+5pp AND p<0.05 AND no_lookahead PASS"
+  },
+  "verdicts": {
+    "A_MB_G2_D2_to_MN": {"verdict": "KILL", "lift_vs_base_pp": 0.0, "p": 1.000, "n": 115, "no_lookahead": "PASS", "note": "broad overlap 100% but base 100% -> coverage illusion; not a signal"},
+    "B_MN_override_live": {"verdict": "HOLD-LANE", "lift_vs_official_pp": 5.43, "lift_vs_base_pp": 6.9, "p_vs_base": 0.111, "n": 92, "override_days": 13, "net_flip": 5, "no_lookahead": "PASS", "per_weekday_n": "13-14 (<30)", "weak_weekday_negative_vs_base": {"T7": -16.1, "T6": -10.8, "T4": -3.5}, "note": "live but counterfactual (0 stored bundles changed); reversible; NOT statistically promotable"},
+    "C1_MT_lane_to_official": {"verdict": "HOLD-LANE", "lift_vs_official_pp": 8.8, "lift_vs_base_pp": 10.3, "p_region": 0.070, "n": 57, "per_weekday_n": "8 (<30)", "no_lookahead": "PARTIAL (199/596 backfilled 2026-05-03)", "note": "corroborates +8.5pp claim but fails p + n + lookahead"},
+    "C2_MT_override_live_V10640D": {"verdict": "UNVERIFIED", "recommendation": "NARROW (disable T7/CN, keep T3/T4/T5); NOT full-rollback", "lift_vs_official_pp_90d": 4.5, "lift_vs_base_pp_region": 16.5, "p_region": 0.0002, "n": 118, "per_weekday_n": "16-18 (<30)", "midweek_pass": {"T3": 0.027, "T4": 0.042, "T5": 0.030}, "recent_negative": {"T7": "-5..-17", "CN": "-4..-17"}, "no_lookahead": "PASS", "classifier_bug": "random-forest/glm-5.1 wrongly EXCLUDED; nemotron-3-super wrongly INCLUDED (matches 'super')", "rollback_lever": "OVERRIDE_CONFIG['MT']['enabled']=False"},
+    "D_MB_freq_hot": {"verdict": "HOLD-LANE", "claim_15_7pp": "ARTIFACT = freq_hot recent-hot 34.3% minus official recent-COLD 18.6% (=trailing-70d, -5.1pp BELOW base)", "structural_lift_vs_base_pp": {"W30": 0.5, "W60": 0.0}, "p_structural": {"W30": 0.30, "W60": 0.51}, "recent_W60_last90": {"lift_pp": 15.1, "p": 0.001, "durable": false, "is_published_config": false}, "token_free": true, "MB_STRENGTH_CAP": "6.0 (database.py:2428) verified live, orthogonal to freq_hot", "dan_2026_05_30": {"config": "W30 BT=14", "bt_hit": true, "dan_hits": "5/10 (n=1 day, not significant)"}, "note": "no structural edge; recent W60 signal only -> forward-monitor, do NOT promote"}
+  },
+  "core_truth": "No signal meets the strict PROMOTE bar (per-slice n>=30 + lift>=+5pp vs base + p<0.05 + no-lookahead). The two LIVE agent overrides (MN, MT) are reasonable lane bets but NOT per-slice significant. Official MN ~45% is only +3pp over random; MB ~ random.",
+  "priority_actions_owner_gated": [
+    "NARROW MT override (disable T7/CN, keep T3/T4/T5) + fix family-classifier bug",
+    "Keep MN override as lane; do not claim 'proven'; watch T4/T6/T7",
+    "Re-anchor MB freq_hot docs to base-rate; lock one W window; forward-monitor",
+    "KILL MB G2->MN from all docs/decisions",
+    "CP-66.7 recheck 2026-06-03 (data-blocked)"
+  ],
+  "overdue": ["CP-66.7 (ACTIVE_ROADMAP_LAG1_ADAPTIVE_EXPLOIT) due 2026-05-21, data-blocked, recheck 2026-06-03"],
+  "cross_ref": ["V10640 (the per-slice override being audited)"],
+  "public_safe_scan_pass": true,
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

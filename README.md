@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V10640** — `V10640_OFFICIAL_MN_PERSLICE_OVERRIDE_PUBLIC_SAFE` (FIRST production change: reversible MN specialist BT override into official; no-lookahead backtest +5.4pp; forward-pending; MT/MB NOT enabled = noise-level)
-- Owner report: `V10640_OFFICIAL_MN_PERSLICE_OVERRIDE_PUBLIC_SAFE/V10640_OWNER_REPORT_VN_PUBLIC.md`
-- Chain: R8 -> R8B -> R8C -> R8D -> R8E -> R8F -> R8G -> **V10640**
+- Latest package: **V10641** — `V10641_RECHECK_BY_CODE` (READ-ONLY recheck of 5 disputed points via per-slice base-rate + binomial p. Verdicts: A=KILL, B=HOLD-LANE, C1=HOLD-LANE, C2(live MT)=UNVERIFIED→NARROW, D=HOLD-LANE. NOTHING meets strict PROMOTE bar; base-rate shows MN official only +3pp over random, MB ~random.)
+- Owner report: `V10641_RECHECK_BY_CODE/V10641_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: … -> R8G -> V10640 -> **V10641**
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies
