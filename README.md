@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V106.38-R8D** — `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE` (Phase 1: 5 canonical VIEWs tested PASS, Data Dictionary v1.0 SSOT, Phase B drop/merge SQL prepared)
-- Owner report: `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/V10638R8D_PHASE1_OWNER_REPORT_VN_PUBLIC.md`
-- Chain: R8 (truth) -> R8B (dependency) -> R8C (verify) -> R8D (Phase 1)
+- Latest package: **V106.38-R8E** — `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE` (night run 6/6 PASS + Dot1 shadow lanes: MB freq lane p=0.0089, MT.T5 strong via free ML, MN.T7 selection bug)
+- Owner report: `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/V10638R8E_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: R8 (truth) -> R8B (dependency) -> R8C (verify) -> R8D (Phase 1) -> R8E (night run + Dot1)
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies

@@ -1,0 +1,27 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8E",
+  "title": "Night run P0-P5 + Dot1 shadow lanes (public-safe)",
+  "parent_chain": ["R8", "R8B", "R8C", "R8D"],
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-30T09:30:00",
+  "environment": "local IDE + forensic DB copy (NOT VPS shell)",
+  "night_run": {"phases_pass": "6/6", "official_writes": 0, "db_access": "mode=ro"},
+  "kpi_findings": {
+    "MT_T5_official_bt_winpct": 76.9, "MT_T5_pvalue": 0.013, "MT_T5_significant": true,
+    "MN_T7_official_bt_winpct": 23.1, "MN_T7_random_pct": 52.0, "MN_T7_status": "below_random_selection_bug",
+    "MB_freq_lift_per_day": 0.37, "MB_freq_pvalue": 0.0089, "MB_freq_token_cost": "zero"
+  },
+  "dot1": {
+    "A1_mb_freq_lane": {"next_draw": "2026-05-30", "weekday": "T7", "dan10": ["14","91","51","83","54","46","12","84","73","97"], "backtest_p": 0.0089, "token": "zero", "forward_log_seeded": true},
+    "A3_MT_T5_top_models": ["combo-no-token 84.6%", "random-forest 84.6%", "meta-learning 76.9%"],
+    "A3_MT_T5_insight": "strength from FREE ML, not token",
+    "A3_MN_T7_top_models": ["gemini-2.5-pro 81.8%", "gemini-2.5-flash 75%"],
+    "A3_MN_T7_insight": "good models exist but official bundle ignores them -> SELECTION bug, not signal scarcity"
+  },
+  "token_limit_candidates_mb": ["claude-opus-4-20250514","gpt-5-mini","qwen3-max-thinking","gemini-3-flash","glm-5.1","gemini-2.5-pro","qwen3-coder","deepseek-v4-pro","combo-super","gemini-2.5-flash","gemma-4-31b","kimi-k2.5"],
+  "roadmap": "docs/ACTIVE_ROADMAP_STANDARDIZATION_ACCURACY.md (4 dot sequential)",
+  "owner_gated": ["Phase B drop/merge", "deploy 5 views", "station backfill official", "MB cap forward (token)", "LIMIT weight", "cron"],
+  "safety": {"official_touched": false, "official_writes": 0, "lane_promoted": false, "provider_calls": 0, "deploy": false},
+  "public_push_status": "PUSHED_OWNER_STANDING_INSTRUCTION"
+}

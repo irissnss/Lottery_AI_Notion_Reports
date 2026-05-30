@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8E** - `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/V10638R8E_OWNER_REPORT_VN_PUBLIC.md` (Night run 6/6 PASS P0-P5 + Dot1 shadow lanes. KPI per-slice: MT.T5 official BT 76.9% p=0.013 sig; MN.T7 23% vs random 52% = SELECTION bug (gemini-2.5-pro hits 82% on T7 but bundle ignores it, not signal scarcity); MB freq_hot lane backtest +0.37 hits/day p=0.0089 token-FREE, next-draw dan seeded + forward-log; MT.T5 strength from FREE ML (combo-no-token/random-forest 84.6%); 12 MB token-AI no-lift LIMIT candidates. Master sequential roadmap (4 dot). Official 0 writes mode=ro. Production drop/merge/deploy/token = owner-gated. AI running to 2026-06-03. Chain R8->R8E).
+
+## Quick links - V106.38-R8E
+1. [V10638R8E Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/V10638R8E_OWNER_REPORT_VN_PUBLIC.md)
+2. [V10638R8E Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/machine_readable/V10638R8E_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8D** - `V106_38R8D_PHASE1_CANONICAL_VIEWS_PUBLIC_SAFE/V10638R8D_PHASE1_OWNER_REPORT_VN_PUBLIC.md` (Phase 1 executed safely after owner approval of gói A+B. 5 canonical VIEWs (v_predictions/v_model_daily_eval/v_mined_rules/v_final_bundles/v_lottery_results) generated + tested PASS via read-only ATTACH — 0 write to real DB, 0 numbers changed; code reads 1 canonical name without breaking 153 files. Data Dictionary v1.0 promoted to docs/ as SSOT (canonical cols, flow labels, per-slice key, station aliases, model=no-merge). Phase B drop/merge SQL prepared (drop rule_features + merge true-dup pair #4 after materializer consolidation) but NOT executed - awaiting backup + button + deploy gate. AI still running to 2026-06-03. Chain R8->R8B->R8C->R8D).
 
 ## Quick links - V106.38-R8D Phase 1
