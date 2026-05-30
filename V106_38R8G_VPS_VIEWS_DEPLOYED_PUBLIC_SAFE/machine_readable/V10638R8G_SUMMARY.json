@@ -1,0 +1,25 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8G",
+  "title": "Deploy 5 canonical VIEWs to VPS (public-safe)",
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-30T10:08:00",
+  "deploy": {
+    "target": "VPS production DB (additive views overlay)",
+    "backup_taken": true,
+    "views_created": ["v_predictions", "v_final_bundles", "v_model_daily_eval", "v_mined_rules", "v_lottery_results"],
+    "official_unchanged": true,
+    "official_counts_after": {"predictions": 6323, "final_bundles": 274, "lottery_results": 14772, "model_daily_eval": 6146},
+    "total_views_now": 13,
+    "smoke_health": "200 V20.3.36 active",
+    "reversible": "DROP VIEW"
+  },
+  "findings": {
+    "local_vps_divergent": "VPS=master/164 tables/uncommitted; local=main/163 tables -> no blind code deploy",
+    "security_pat_exposed": "GitHub PAT embedded in VPS git remote (redacted) -> rotate"
+  },
+  "not_deployed_owner_gated": ["Phase B drop/merge", "MB freq lane runtime + cron", "per-slice weighting (scoring)", "MB cap", "token LIMIT"],
+  "safety": {"official_numbers_changed": false, "wallet_touched": false, "lane_promoted": false, "provider_calls": 0},
+  "data_bound_milestone": "2026-06-03",
+  "public_push_status": "PUSHED"
+}

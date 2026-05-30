@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8G** - `V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE/V10638R8G_OWNER_REPORT_VN_PUBLIC.md` (DEPLOYED 5 canonical VIEWs to VPS production: backup taken, official table counts unchanged before==after, 13 views total, smoke /api/health 200 V20.3.36 — standardization now LIVE, reversible. Findings: local<->VPS divergent (VPS master/164 tables vs local main/163, VPS uncommitted) -> no blind code deploy; GitHub PAT exposed in VPS git remote -> rotate. NOT deployed (owner-gated, divergent code/behavior): Phase B drop/merge, MB freq lane runtime+cron, per-slice weighting, MB cap, token LIMIT. Official numbers unchanged; wallet untouched. Chain R8->R8G).
+
+## Quick links - V106.38-R8G
+1. [V10638R8G Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE/V10638R8G_OWNER_REPORT_VN_PUBLIC.md)
+2. [V10638R8G Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE/machine_readable/V10638R8G_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8F** - `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/V10638R8F_OWNER_REPORT_VN_PUBLIC.md` (Ranking audit: current model weight is region-30d near-uniform NOISE (not per-slice) + includes stale models; A2 shadow fix = flexible-by-weekday active-only ranking. B1 unified per-slice shadow predictor backtest 70d BT lo-hit: MB freq_hot 34.3% vs official 18.6% (+15.7pp, token-FREE, strongest); MT ml-free +2.9pp; MN per-slice ranking -2.9pp (MN AI already good). Forward-log seeded 3 regions (only MB freq forward-able from IDE). Honest: n=70 low ceiling, NOT improved-claim, needs forward proof + lane/shadow live before deploy. Official 0 writes. 14 owner-gated remain; milestone 2026-06-03. Chain R8->R8F).
 
 ## Quick links - V106.38-R8F

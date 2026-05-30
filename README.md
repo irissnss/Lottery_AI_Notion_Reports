@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V106.38-R8F** — `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE` (ranking audit + unified per-slice shadow predictor: MB freq +15.7pp vs official token-free)
-- Owner report: `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/V10638R8F_OWNER_REPORT_VN_PUBLIC.md`
-- Chain: R8 -> R8B -> R8C -> R8D -> R8E -> R8F
+- Latest package: **V106.38-R8G** — `V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE` (DEPLOYED 5 canonical VIEWs to VPS, official unchanged, smoke 200; local<->VPS divergence + PAT-exposure findings)
+- Owner report: `V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE/V10638R8G_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: R8 -> R8B -> R8C -> R8D -> R8E -> R8F -> R8G
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies
