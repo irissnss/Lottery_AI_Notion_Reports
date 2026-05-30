@@ -1,5 +1,15 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V106.38-R8F** - `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/V10638R8F_OWNER_REPORT_VN_PUBLIC.md` (Ranking audit: current model weight is region-30d near-uniform NOISE (not per-slice) + includes stale models; A2 shadow fix = flexible-by-weekday active-only ranking. B1 unified per-slice shadow predictor backtest 70d BT lo-hit: MB freq_hot 34.3% vs official 18.6% (+15.7pp, token-FREE, strongest); MT ml-free +2.9pp; MN per-slice ranking -2.9pp (MN AI already good). Forward-log seeded 3 regions (only MB freq forward-able from IDE). Honest: n=70 low ceiling, NOT improved-claim, needs forward proof + lane/shadow live before deploy. Official 0 writes. 14 owner-gated remain; milestone 2026-06-03. Chain R8->R8F).
+
+## Quick links - V106.38-R8F
+1. [V10638R8F Owner Report VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/V10638R8F_OWNER_REPORT_VN_PUBLIC.md)
+2. [V10638R8F Summary (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/machine_readable/V10638R8F_SUMMARY.json)
+
+---
+
+# REPORT INDEX (auto-discovery)
+
 Latest: **V106.38-R8E** - `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/V10638R8E_OWNER_REPORT_VN_PUBLIC.md` (Night run 6/6 PASS P0-P5 + Dot1 shadow lanes. KPI per-slice: MT.T5 official BT 76.9% p=0.013 sig; MN.T7 23% vs random 52% = SELECTION bug (gemini-2.5-pro hits 82% on T7 but bundle ignores it, not signal scarcity); MB freq_hot lane backtest +0.37 hits/day p=0.0089 token-FREE, next-draw dan seeded + forward-log; MT.T5 strength from FREE ML (combo-no-token/random-forest 84.6%); 12 MB token-AI no-lift LIMIT candidates. Master sequential roadmap (4 dot). Official 0 writes mode=ro. Production drop/merge/deploy/token = owner-gated. AI running to 2026-06-03. Chain R8->R8E).
 
 ## Quick links - V106.38-R8E

@@ -1,0 +1,24 @@
+{
+  "schema_version": "execution_summary_v1",
+  "version": "V106.38-R8F",
+  "title": "Unified per-slice shadow predictor + ranking audit (public-safe)",
+  "parent_chain": ["R8", "R8B", "R8C", "R8D", "R8E"],
+  "auditor": "Opus 4.7",
+  "generated_at_vn": "2026-05-30T09:53:00",
+  "ranking_audit": {
+    "current_weight": "region-level + 30d window + lo-near-random base -> near-uniform weights (noise), not per-slice, includes stale models",
+    "per_weekday_wr_spread_example": "33%..58% (thrown away by region weight)",
+    "A2_fix_shadow": "per-slice ranking flexible by weekday (MN top1 differs 6/7), active-only"
+  },
+  "B1_unified_backtest_bt_lo_hit_70d": {
+    "MB_freq_hot": {"unified": 34.3, "official": 18.6, "delta_pp": 15.7, "token": "free"},
+    "MT_ml_free": {"unified": 24.3, "official": 21.4, "delta_pp": 2.9},
+    "MN_per_slice_ranking": {"unified": 20.0, "official": 22.9, "delta_pp": -2.9}
+  },
+  "next_draw_forward": {"MB": {"date": "2026-05-30", "weekday": "T7", "bt": "14", "dan10": ["14","91","51","83","54","46","12","97","73","92"]}, "MN_MT": "needs model pipeline (not forward-able from IDE)"},
+  "honest": "n=70, low ceiling, NOT 'improved' claim; MB freq is strongest token-free candidate -> lane/shadow live before deploy; MN ranking does not beat official.",
+  "safety": {"official_writes": 0, "token": 0, "deploy": false, "lane_promoted": false},
+  "remaining_owner_gated_count": 14,
+  "data_bound_milestone": "2026-06-03",
+  "public_push_status": "PUSHED"
+}

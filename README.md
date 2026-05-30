@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V106.38-R8E** — `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE` (night run 6/6 PASS + Dot1 shadow lanes: MB freq lane p=0.0089, MT.T5 strong via free ML, MN.T7 selection bug)
-- Owner report: `V106_38R8E_NIGHT_RUN_AND_DOT1_PUBLIC_SAFE/V10638R8E_OWNER_REPORT_VN_PUBLIC.md`
-- Chain: R8 (truth) -> R8B (dependency) -> R8C (verify) -> R8D (Phase 1) -> R8E (night run + Dot1)
+- Latest package: **V106.38-R8F** — `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE` (ranking audit + unified per-slice shadow predictor: MB freq +15.7pp vs official token-free)
+- Owner report: `V106_38R8F_UNIFIED_SHADOW_PREDICTOR_PUBLIC_SAFE/V10638R8F_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: R8 -> R8B -> R8C -> R8D -> R8E -> R8F
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies
