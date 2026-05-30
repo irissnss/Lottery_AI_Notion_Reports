@@ -1,0 +1,39 @@
+{
+  "schema_version": "v10640_summary_v1",
+  "version": "V10640",
+  "title": "MN per-slice BT override into OFFICIAL (reversible) + honest re-assessment",
+  "created_at_vn": "2026-05-30T21:25:00",
+  "first_production_change": true,
+  "official_touched": true,
+  "official_change_scope": "MN bach_thu selection only; specialist-roster override after vote-top1; reversible per-region flag (MN on, MT/MB off); lo2 leads with chosen BT; byte-identical to legacy when flag off",
+  "reversible": true,
+  "provider_manual_ai_called": false,
+  "provider_call_count": 0,
+  "wallet_touched": false,
+  "lane_test_promoted": false,
+  "claims_made": [],
+  "claims_explicitly_avoided": ["OFFICIAL_IMPROVED", "MN_FIXED", "ACCURACY_READY", "SELECTOR_FIXED"],
+  "evidence": {
+    "method": "no_lookahead_backtest_91d_specialists_strict_date_lt_today",
+    "MN_specialist": {"official_pct": 45.1, "override_pct": 50.5, "delta_pp": 5.4, "net_saves": 5, "override_days": 13, "verdict": "PASS"},
+    "MT_ai_chain": {"official_pct": 45.1, "override_pct": 41.8, "delta_pp": -3.3, "verdict": "REJECT_WORSE"},
+    "MT_no_token_herd": {"official_pct": 45.1, "override_pct": 47.3, "delta_pp": 2.2, "verdict": "NOISE_NOT_ENABLED"},
+    "MB_specialist": {"official_pct": 24.2, "override_pct": 25.3, "delta_pp": 1.1, "verdict": "NOISE_NOT_ENABLED"}
+  },
+  "weekday_bleed_map_official_90d": {
+    "MN": {"weak": {"T4": 23, "T6": 31, "T7": 31}, "strong": {"CN": 62, "T2": 62, "T3": 62}},
+    "MT": {"weak": {"T6": 23, "T2": 31}, "strong": {"T5": 77}},
+    "MB": {"weak_all": "15-31"}
+  },
+  "self_corrections": [
+    "earlier +8~16pp lane edge was OVERSTATED (mixed experiments/artifact); clean per-chooser is +2.5~7.7pp",
+    "earlier oracle 90-100% headroom is HINDSIGHT, not ex-ante achievable"
+  ],
+  "domain_truth": "lottery near-random; modest small-sample edges only; AI-token models no accuracy edge; root = region-global weighting vs weekday/station specialists (per 91-day audit)",
+  "deploy_safety": "backup -> py_compile -> dry-run verify -> restart -> health 200 -> rollback-ready; defensive fallback to official on any error",
+  "pending_sequenced": ["monitor_MN_10-14d", "refresh_rules_stale_26d", "MB_AI_freeze_token_save", "3way_untracked_dependency", "MT_MB_override_retest"],
+  "public_safe_scan_pass": true,
+  "public_safe_findings_count": 0,
+  "previous_latest_version": "V106.38-R8G",
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

@@ -1,5 +1,14 @@
 # Public Changelog
 
+## V10640 - 2026-05-30T21:25:00+07:00
+
+- Published `V10640_OFFICIAL_MN_PERSLICE_OVERRIDE_PUBLIC_SAFE` — **first production change** in this public chain.
+- Deployed a REVERSIBLE MN bach-thu override into official (specialist-roster selection after vote-top1), gated by a per-region flag (MN ON, MT/MB OFF). Fully revertible by one flag; defensive fallback to official on any error; lo2 leads with the chosen BT (byte-identical to legacy when flag OFF).
+- Evidence: NO-LOOKAHEAD backtest 91d (specialists strict date<today). MN specialist 45.1%->50.5% (+5.4pp, net +5, overrides only 13/91 days) = PASS. MT ai_chain -3.3pp (worse), MT no_token_herd +2.2pp, MB specialist +1.1pp = NOISE -> NOT enabled (gate caught MT ai_chain would HURT official).
+- NO claim of OFFICIAL_IMPROVED / MN_FIXED — backtest only, forward unproven; monitoring 10-14 live days.
+- Self-corrections vs earlier claims: "+8~16pp lane edge" overstated (real +2.5~7.7pp); "oracle 90-100% headroom" is hindsight, not ex-ante achievable.
+- Also: fixed half-baked per-region lane v2 (broken import, never ran) -> now a comparison challenger (measured NOT better than official). Wallet untouched, provider calls 0.
+
 ## V106.33 - 2026-05-26T22:31:55+07:00
 
 - Published report-only live control semantic reconciliation package `V106_33_LIVE_CONTROL_SEMANTIC_RECONCILE_PUBLIC_SAFE`.
