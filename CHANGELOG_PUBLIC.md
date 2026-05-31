@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10647 - 2026-05-31T14:00:00+07:00
+
+- System Health Monitor + RED alert banner (owner: system was paralyzed 21-22 days with NO alert). New `_v10647_system_health.py` + table + `/api/system-health` + red/yellow banner on /monitoring + HOURLY cron. 14 checks (ml_retrain age, daily bundle per region, scrape per region, predictions_today, mined_rules, slice_health/model_progress/shadow_scoreboard/weakest_watch freshness, retrain_guard). Had this existed, the 21-day retrain+shadow outage would have shown CRITICAL from day 8. First run: 13 OK + 1 WARN (mined_rules stale since 05-04).
+- Verified today's MN prediction concern: BT=13 is AI-consensus-driven (16 AI models picked 13); stale ML models did NOT win the vote → today's official BT is sound, no re-run needed (fresh retrained models auto-apply next cycle). No-lookahead respected (MN undrawn at check).
+- Published full ML/learning mechanisms inventory (7 learning/accumulation jobs + aggregation + monitoring), and OPEN_ITEMS_REGISTER (anti-drop ledger) so nothing is forgotten. Identified 2026-05-10 as the single incident that silently broke retrain + shadow chain + V101 together.
+
 ## V10646 - 2026-05-31T13:30:00+07:00
 
 - ML model forensic (all 3 regions). Root cause of ML decline = TWO layers: (1) OPERATIONAL — the weekly Sunday-02:00 auto-retrain stopped after 2026-05-10, leaving meta/xgboost/random-forest/LSTM models 21 days stale (same breakpoint that killed the V102-V105 shadow chain). Data collection/load tested fine → not a data bug, the scheduled run wasn't completing. (2) FUNDAMENTAL — even freshly retrained, ML models are ~random on lottery: AUC rf 0.49-0.55, xgb 0.50-0.55; LSTM MB precision@10 0.202 vs random 0.238 (lift 0.85, worse than random). Lottery tails ~random → ML has no real edge; weakness is by nature, not a code bug.
