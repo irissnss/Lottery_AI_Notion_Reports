@@ -35,6 +35,23 @@ Nguyên nhân gốc lặp lại = **ảo do nhìn trước / in-sample**. Nên g
 | R3 | (nếu chọn ex-ante) pilot | 1 model (gemini-3-flash) MN, gọi ~15:30 trước xổ, đo 3-4 tuần xem có edge thật |
 | R5 | Selector per-slice | chọn theo (miền×thứ×đài) dùng model_progress, validate ex-ante qua harness |
 
+## Audit TOÀN BỘ lớp shadow (không chỉ shadow-first)
+
+Giờ xổ: MN 16:30, MT 17:30, MB 18:30. Dự đoán chính chạy TRƯỚC xổ (MN 04:15, MT 16:42, MB 17:42 ✓). Phân loại ~60 bảng shadow + ~19 cron:
+
+| Nhóm | Phán quyết |
+|---|---|
+| Official pre-draw (G1) | ĐÚNG — forward thật, trước xổ |
+| Eval/score sau settle (G2) | ĐÚNG — chấm điểm dự đoán đã chốt trước xổ (đây là "nhãn Eval" của model, KHÔNG phải lookahead) |
+| **Generate sau xổ (G3)** | **SAI** — V81 (19:14) + V77 re-run: sinh số sau khi biết kết quả = ảo |
+| **Zombie (G4)** | Chuỗi V102→V105 (gồm upstream của shadow-prompt) **đã CHẾT từ 09/05** nhưng cron vẫn chạy 19:23-19:34 → V81 đốt token 22 ngày với nguồn đã chết |
+| Bảng chết (G5) | ~15 bảng stale 20-31 ngày = nhiễu |
+| Live hữu ích (G6) | experimental_preview (lane thắng), v93/v94/v95 audit, v101, slice_health/model_progress — GIỮ |
+
+**Làm rõ cho owner:** "model có nhãn Eval" thuộc nhóm G2 = chấm điểm SAU kết quả → **hợp lệ** (phải có kết quả mới chấm được; dự đoán đã làm trước xổ). Chỉ nhóm G3 (sinh số sau xổ) mới sai.
+
+**Kế hoạch dọn (cần owner OK vì chạm scheduler live):** tắt V81+V104B (lưu ~20K+ token/ngày), gỡ job zombie V102-V105, archive+drop ~15 bảng chết, gom về 1 surface "đo lường+xếp hạng realtime per miền×thứ×đài×model cho tuần hiện tại".
+
 Nền đã vững (V10642/B): nhãn per-ĐÀI, model_progress (RECOVERING), slice_policy REDUCE, UI per-đài.
 
 *Public-safe: không chứa code private / DB rows / IP / path nội bộ. Tên model công khai.*
