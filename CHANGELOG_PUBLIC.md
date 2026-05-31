@@ -1,5 +1,13 @@
 # Public Changelog
 
+## V10642 - 2026-05-31T11:05:00+07:00
+
+- Published `V10642_PER_SLICE_HEALTH_AND_POLICY` — per-slice architecture P1+P2 (owner: independent per region×weekday×station; weak slices keep running WITH realtime warning label; cut no-edge AI models to save tokens). Backup taken first.
+- P1 DONE (shadow, live): `slice_health` table + daily-cron materializer = realtime per-slice label STRONG/WATCH/WEAK (rolling official BT hit-rate vs base-rate). Weak slices (MT T7/CN, MN T4/T6/T7, MB mostly) flagged "WEAK — consider not playing"; auto-updates. Read-only, no official change.
+- P2 DONE (config only, reversible, enabled=0): `slice_policy` table with data-driven per-slice AI-model cut lists (AI-token, n≥30, hit90 < base-rate): MN block 1 (keep AI-token), MT block 8, MB block 10. NOT wired to official yet.
+- P3 (wire to model-CALLING path = token saving) + P4 (UI labels on /du-doan, /du-doan-test, /monitoring) = deliberately deferred careful next steps (touch live money/provider/UI; not rushed per backup+caution).
+- Total-output after cut: BT recomputes from remaining models per slice; MT already AI-token-free via override (cut=token-saving, BT unchanged); MB ~neutral. No official-number change, no wallet, no provider.
+
 ## V10641 - 2026-05-30T23:40:00+07:00
 
 - Published `V10641_RECHECK_BY_CODE` — READ-ONLY re-verification of 5 disputed points (A: MB G2 D-2→MN; B: MN override V10640; C: MT lane→official + the live MT override V10640D; D: MB freq_hot; E: doctrine) by CODE + real DATA, per-slice (region×weekday), no-lookahead, with per-slice BASE-RATE anchor + binomial p-value. NO deploy / NO official change / NO code-private push / NO provider / NO wallet.

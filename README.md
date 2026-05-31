@@ -1,8 +1,8 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V10641** — `V10641_RECHECK_BY_CODE` (READ-ONLY recheck of 5 disputed points via per-slice base-rate + binomial p. Verdicts: A=KILL, B=HOLD-LANE, C1=HOLD-LANE, C2(live MT)=UNVERIFIED→NARROW, D=HOLD-LANE. NOTHING meets strict PROMOTE bar; base-rate shows MN official only +3pp over random, MB ~random.)
-- Owner report: `V10641_RECHECK_BY_CODE/V10641_OWNER_REPORT_VN_PUBLIC.md`
-- Chain: … -> R8G -> V10640 -> **V10641**
+- Latest package: **V10642** — `V10642_PER_SLICE_HEALTH_AND_POLICY` (Per-slice architecture: P1 realtime health labels per region×weekday LIVE shadow [STRONG/WATCH/WEAK, weak slices keep running WITH warning], P2 slice_policy config with data-driven per-slice AI-model cut lists [enabled=0, reversible]. P3 token-call-saving + P4 UI labels = careful next. Backup taken. Official unchanged.)
+- Owner report: `V10642_PER_SLICE_HEALTH_AND_POLICY/V10642_OWNER_REPORT_VN_PUBLIC.md`
+- Chain: … -> V10640 -> V10641 -> **V10642**
 - Public push status: **PUSHED (owner requested for AI analysis)**
 
 ## Policies

@@ -1,0 +1,39 @@
+{
+  "schema_version": "v10642_summary_v1",
+  "version": "V10642",
+  "title": "Per-slice architecture P1 (realtime health labels) + P2 (slice_policy config), reversible",
+  "created_at_vn": "2026-05-31T11:05:00",
+  "backup_taken": "slice_arch_predeploy_20260531_105620 (DB 327M integrity ok + main.py + override module + git HEAD)",
+  "official_touched": false,
+  "provider_called": false,
+  "wallet_touched": false,
+  "P1_slice_health": {
+    "status": "DONE_SHADOW_LIVE",
+    "table": "slice_health",
+    "materializer": "web/backend/_v10642_slice_health.py",
+    "cron": "0 9 * * * daily refresh",
+    "metric": "rolling last-6-same-weekday official BT hit-rate vs base-rate (region x weekday)",
+    "labels": "STRONG (>=base+8pp) / WATCH / WEAK (<base = below random)",
+    "current": {"MT": {"T7": "WEAK", "CN": "WEAK", "T3T4T5": "STRONG"}, "MN": {"T4T6T7": "WEAK", "CNT2T3": "STRONG"}, "MB": "mostly WEAK"}
+  },
+  "P2_slice_policy": {
+    "status": "DONE_CONFIG_ONLY_NOT_WIRED_REVERSIBLE",
+    "table": "slice_policy",
+    "enabled": 0,
+    "cut_config_data_driven": {
+      "criterion": "AI-token, n>=30, hit90 < region base-rate",
+      "MN": {"base": 42, "block": ["gpt-5-mini"], "selector": "specialist", "note": "MN AI-token mostly above base -> keep"},
+      "MT": {"base": 33, "block": ["gpt-5-mini","kimi-k2.5","gpt-5.5","grok-4.20-multi-agent","gpt-oss-120b","qwen3-coder","deepseek-v4-pro","qwen3.6-plus"], "selector": "no_token_combo_main"},
+      "MB": {"base": 24, "block": ["deepseek-reasoner","grok-4.20-multi-agent","gpt-5-mini","qwen3-coder","gpt-oss-120b","gemini-2.5-pro","gemini-2.5-flash","deepseek-v4-pro","qwen3-max-thinking","kimi-k2.5"], "selector": "vote_sum"}
+    }
+  },
+  "total_output_after_cut": "BT recomputes from remaining models per slice; MT already AI-token-free via override (cut = token saving, BT unchanged); MB ~neutral (near-random)",
+  "P3_P4_next_careful": {
+    "P3": "wire slice_policy into model-CALLING path to skip blocked models per slice = TOKEN SAVING (needs per-slice no-lookahead validation + reversible flag)",
+    "P4": "surface slice_health labels on /du-doan, /du-doan-test, /monitoring",
+    "reason_deferred": "touch LIVE money/provider/official-UI -> not rushed per backup+caution principle"
+  },
+  "key_principle": "independent per region x weekday x station; weak slices keep running WITH realtime WEAK label; nothing meets strict promote bar (V10641); changes reversible + backed up",
+  "public_safe_scan_pass": true,
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

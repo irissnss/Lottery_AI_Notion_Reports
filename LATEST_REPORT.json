@@ -1,19 +1,12 @@
 {
-  "schema_version": "latest_report_v1",
-  "latest_version": "V10641",
-  "latest_folder": "V10641_RECHECK_BY_CODE",
-  "latest_report": "V10641_RECHECK_BY_CODE/V10641_OWNER_REPORT_VN_PUBLIC.md",
-  "latest_summary": "V10641_RECHECK_BY_CODE/machine_readable/V10641_SUMMARY.json",
-  "parent_reports": ["V10640_OFFICIAL_MN_PERSLICE_OVERRIDE_PUBLIC_SAFE"],
-  "created_at_vn": "2026-05-30T23:40:00",
-  "mode": "READ_ONLY",
-  "status": "V10641 = READ-ONLY recheck-by-code of 5 disputed points with per-slice BASE-RATE anchor + binomial p-value + no-lookahead. VERDICTS: A(MB G2->MN)=KILL (lift +0.0pp p=1.000, coverage illusion); B(MN override live)=HOLD-LANE (+5.4pp vs official holds, but vs base p=0.111, per-weekday n<30, weak-weekday negative; live-but-counterfactual, reversible); C1(MT lane->official)=HOLD-LANE (+8.8pp vs official, p=0.070, n<30, no-lookahead PARTIAL); C2(MT override live V10640D)=UNVERIFIED->NARROW (region +16.5pp p=0.0002 but per-weekday n<30, T6/T7/CN recently negative, family-classifier bug; disable T7/CN keep T3/T4/T5, NOT full-rollback); D(MB freq_hot)=HOLD-LANE (+15.7pp is artifact = recent-hot minus official-cold; structural lift ~0). CORE: nothing meets strict PROMOTE bar; base-rate shows MN official only +3pp over random, MB ~random. No deploy/official-change/code-private-push/provider/wallet.",
+  "latest_version": "V10642",
+  "package": "V10642_PER_SLICE_HEALTH_AND_POLICY",
+  "owner_report": "V10642_PER_SLICE_HEALTH_AND_POLICY/V10642_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10642_PER_SLICE_HEALTH_AND_POLICY/machine_readable/V10642_SUMMARY.json",
+  "created_at_vn": "2026-05-31T11:05:00",
+  "chain": "... -> V10640 -> V10641 -> V10642",
+  "headline": "Per-slice architecture P1 (realtime health labels, LIVE shadow) + P2 (slice_policy cut config, reversible enabled=0). P3 token-saving + P4 UI = careful next. Backup taken. Official unchanged.",
   "official_touched": false,
-  "code_private_pushed": false,
-  "provider_called": false,
-  "wallet_touched": false,
-  "previous_latest_version": "V10640",
-  "overdue": ["CP-66.7 due 2026-05-21, data-blocked, recheck 2026-06-03"],
-  "public_safe_scan_pass": true,
-  "public_push_status": "PUSHED_OWNER_REQUESTED"
+  "backup_taken": true,
+  "public_push_status": "PUSHED (owner requested)"
 }
