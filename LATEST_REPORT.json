@@ -1,13 +1,13 @@
 {
-  "latest_version": "V10660",
-  "package": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE",
-  "owner_report": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE/V10660_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE/machine_readable/V10660_SUMMARY.json",
-  "created_at_vn": "2026-05-31T21:40:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660",
-  "headline": "Opus follow-up execution: no-lookahead CP-R2 harness wired to lane-v2 (EX_ANTE / HINDSIGHT / UNKNOWN), live_edge_monitor for deployed BT overrides (MN specialist / MT nt_consensus / MB hot30), reduce_cadence_plan surface from model_progress (no scheduler wiring), and CP-66.7 evidence scaffold. No official prediction logic change. No provider call. No DB drop.",
+  "latest_version": "V10662",
+  "package": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE",
+  "owner_report": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE/V10662_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE/machine_readable/V10662_SUMMARY.json",
+  "created_at_vn": "2026-06-01T00:20:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662",
+  "headline": "Owner OK execution after V10661 control audit: VPS git HEAD reset (zero official drift), public LATEST_REPORT pointer fixed, CP-R1 shadow-prompt RETIRED with watch period, 12 V105.2x local-only files purged with backup, MB AI LIMIT plan surface (12 LIMIT mult 0.5, NOT wired into vote), Cohere KEEP_MEASURE. Three-way private/GitHub/VPS now identical.",
   "official_touched": false,
   "read_only_forensic": false,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10643"
+  "supersedes": "V10660"
 }

@@ -1,5 +1,17 @@
 # Public Changelog
 
+## V10662 - 2026-06-01T00:20:00+07:00
+
+- Owner OK execution after V10661 audit. Six items done sequentially with backup, verify, and reversibility.
+- P0 #1: VPS git HEAD reset to private GitHub. Four official table sha256 identical pre/post = zero drift. Service active.
+- P0 #2: Public `LATEST_REPORT.json` pointer fixed (was stale).
+- CP-R1 shadow-prompt: confirmed RETIRED. All five post-draw writers (V81 19:14, V104B 19:30, V101 19:23, V104 materializer 19:24, V105 19:34) off. History tables kept for UI.
+- O10: 12 V105.2x local-only files purged (backup kept). VPS unaffected.
+- O19 MB AI LIMIT: new `mb_ai_limit_plan` table (12 LIMIT, 5 RELEASE, 2 KEEP, 16 THIN). NOT wired into official vote yet (surface only, daily auto-refresh).
+- D2 Cohere: KEEP_MEASURE confirmed. Already shadow-only. Review in ~14 days.
+- Three-way private local + private GitHub + VPS now at identical commit.
+- No official prediction logic change. No provider call. No DB table dropped. No wallet impact.
+
 ## V10660 - 2026-05-31T21:40:00+07:00
 
 - Executed the Opus follow-up plan: live safety verify first, then no-lookahead guardrails and monitoring surfaces.

@@ -1,0 +1,84 @@
+{
+  "version": "V10662",
+  "title": "Owner OK execution after V10661 control audit",
+  "date_vn": "2026-06-01T00:20:00+07:00",
+  "public_safe": true,
+  "private_commit_short": "9758253",
+  "public_commit_short_for_latest_report_fix": "4f5d1b1",
+  "official_table_drift": false,
+  "provider_call": false,
+  "wallet_impact": false,
+  "db_table_drop": false,
+  "official_prediction_logic_changed": false,
+  "owner_approved_items_executed": [
+    {
+      "id": "P0-1",
+      "name": "VPS_GIT_HEAD_RESET",
+      "from": "stale_commit",
+      "to": "matches_private_github",
+      "rollback": "backup_under_backups_v10662_git_head_reset"
+    },
+    {
+      "id": "P0-2",
+      "name": "PUBLIC_LATEST_REPORT_UPDATED",
+      "from": "V10643",
+      "to": "V10660",
+      "verify": "public_repo_pushed_main_4f5d1b1"
+    },
+    {
+      "id": "CP-R1",
+      "name": "SHADOW_PROMPT_RETIRED",
+      "writers_off": ["V81_19_14", "V104_PHASE_B_19_30", "V101_19_23", "V104_MATERIALIZER_19_24", "V105_LANE_TEST_CONTROL_19_34"],
+      "history_tables_policy": "KEEP_UI_HISTORY",
+      "watch_days_before_ex_ante_pilot": 14
+    },
+    {
+      "id": "O10",
+      "name": "V105_2X_LOCAL_PURGED",
+      "files_purged": 12,
+      "files_kept_live_on_vps": ["_v10522_live_prep.py"],
+      "lazy_import_endpoints": ["/api/admin/v10524-source-pool-gap", "/api/admin/v10524-source-pool-gap/refresh"],
+      "endpoints_status": "graceful_try_except_unchanged",
+      "rollback": "artifacts_v10662_o10_purge_backup"
+    },
+    {
+      "id": "O19",
+      "name": "MB_AI_LIMIT_PLAN_SURFACE_ONLY",
+      "table_added": "mb_ai_limit_plan",
+      "module_added": "_v10662_mb_ai_limit.py",
+      "cron_vn": "09:30",
+      "classification": {"LIMIT": 12, "RELEASE": 5, "KEEP": 2, "THIN": 16, "total": 35},
+      "wired_into_vote": false,
+      "slice_policy_enabled": 0,
+      "vote_weight_multiplier_when_wired": 0.5,
+      "rollback": "set_slice_policy_enabled_0_or_delete_mb_ai_limit_plan_rows"
+    },
+    {
+      "id": "D2",
+      "name": "COHERE_KEEP_MEASURE",
+      "current_status": "rerank_measurement_count_1_shadow_only",
+      "predictions_last_7d": 0,
+      "review_after_days": 14
+    }
+  ],
+  "three_way_consistency": {
+    "private_local_head_short": "9758253",
+    "private_github_head_short": "9758253",
+    "vps_git_head_short": "9758253",
+    "match": true
+  },
+  "live_verification": {
+    "service": "active",
+    "login": 200,
+    "du_doan_test_unauthenticated": 401,
+    "monitoring_unauthenticated": 401,
+    "health": 200,
+    "system_health_ok": "15/15"
+  },
+  "next_review_points": [
+    "Daily natural fire for slice_health, model_progress, mb_ai_limit_plan",
+    "MN/MT/MB BT override 10-14 day live monitor",
+    "CP-66.7 data-bound recheck 2026-06-03",
+    "MB AI LIMIT plan stability ~7 days before discussing wiring"
+  ]
+}
