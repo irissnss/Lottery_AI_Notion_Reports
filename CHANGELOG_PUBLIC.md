@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10644-V10645 - 2026-05-31T13:00:00+07:00
+
+- V10644 Shadow scoreboard ("brain"): auto-scores all 61 shadow lanes daily → DEAD=22, LOOKAHEAD_INVALID=3, NO_EDGE=2, HINDSIGHT_HEADROOM=5, EVAL/KEEP=29. Flags waste EARLY (no more 22-day blind spots). Surfaced on /monitoring + /api/shadow-scoreboard.
+- Disabled the 2 post-draw provider pilots (V81 19:14, V104B 19:30) that ran AFTER results (lookahead + token waste) — reversible guard. Token burn stopped.
+- V10645 Weakest-model watch (ZERO extra tokens): the weakest models already predict pre-draw daily, so we lock the 3 weakest per region on flag date and track forward progress (IMPROVING/WORSENING). MN weakest = ML models (lstm/random-forest/meta-learning, tanking) NOT AI-token; MT = qwen3.6-plus/kimi-k2.5/gemini-3.1-pro; MB = kimi-k2.5/deepseek-v4-pro/glm-5.1. All shadow/read-only, official numbers unchanged. Backups taken.
+
 ## V10643 - 2026-05-31T12:30:00+07:00
 
 - Forensic on "Prompt shadow-first" (V81 provider shadow pilot, 3 models × 3 regions, daily 19:14, real provider calls with shadow V104 prompt). Read-only, no code/official change.
