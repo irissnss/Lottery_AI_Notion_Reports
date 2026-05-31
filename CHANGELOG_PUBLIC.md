@@ -1,5 +1,12 @@
 # Public Changelog
 
+## V10653 - 2026-05-31T19:30:00+07:00
+
+- Post-draw eval (all 3 BT LOSE). Owner 'models have signal but TOTAL wrong' CONFIRMED for MT: 4 models had a winning special (2 as top1) but the official vote-sum ranked the winner 54 at #10 while the herd-favorite 80 ranked #1. The 2 models that nailed it are the weakest (likely luck).
+- Coverage illusion: the 28 models cluster on only 14-17 distinct numbers (herd) while the winning union spans 39-40 -> the random de usually sits outside the cluster -> loss. 'Some model had it' = coverage/luck, not ex-ante skill.
+- 45-day method compare (strict de-hit): official vote-sum hits the exact de ~0% (it optimizes union/any-prize ~40%, not the de); top3/single hit 2-7% (noise-level, not robust). Root: de is ~random; ex-ante unpredictable.
+- Plan: report de-hit metric explicitly; rigorous ex-ante test of de-selectors (top3/single/specialist) with n>=30 + p<0.05 + lift>=5pp before any official change; realistic framing (focus per-station health + lo). No official change.
+
 ## V10652 - 2026-05-31T15:50:00+07:00
 
 - O16 MN recency shadow test (owner Cach A): reused the system backtest engine to compare MN recency weight 0.50 vs 0.25 over 61 no-lookahead days. Result: BT(top1) unchanged (36.07% both, NEUTRAL); lo(top3) -3.28pp (HURTS). Verdict: reducing recency does NOT help and slightly hurts -> DO NOT apply to official; keep recency=0.5. The 'echo yesterday' is cosmetic/harmless (lottery random). Shadow lane prevented a useless official change. No official-number change.
