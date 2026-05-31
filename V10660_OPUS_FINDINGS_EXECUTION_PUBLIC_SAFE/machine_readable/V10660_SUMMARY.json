@@ -1,0 +1,47 @@
+{
+  "version": "V10660",
+  "title": "Opus findings execution: no-lookahead harness and monitoring surfaces",
+  "date": "2026-05-31T21:40:00+07:00",
+  "public_safe": true,
+  "private_commit": "baecf6a",
+  "implemented": [
+    "Live read-only verification",
+    "No-lookahead harness with EX_ANTE/HINDSIGHT/UNKNOWN statuses",
+    "Lane V2 no-lookahead proof wiring",
+    "Live edge monitor for deployed BT overrides",
+    "Reduce-cadence plan surface from model_progress",
+    "CP-66.7/P1 evidence scaffold"
+  ],
+  "verification": {
+    "system_health": "15/15 OK",
+    "login": 200,
+    "du_doan_test_unauthenticated": 401,
+    "monitoring_unauthenticated": 401,
+    "private_compile": "PASS",
+    "vps_compile": "PASS",
+    "vps_service": "active"
+  },
+  "initial_counts": {
+    "no_lookahead_audit_rows": 143,
+    "no_lookahead_ex_ante": 90,
+    "no_lookahead_hindsight": 53,
+    "live_edge_monitor_rows": 42,
+    "live_edge_monitor_wins": 10,
+    "reduce_cadence_plan_rows": 138,
+    "adaptive_exploit_rows_in_scaffold": 32,
+    "adaptive_exploit_closed_dates_in_scaffold": 0
+  },
+  "safety": {
+    "official_prediction_logic_changed": false,
+    "provider_calls": false,
+    "db_table_drops": false,
+    "root_cleanup": false
+  },
+  "next_steps": [
+    "Watch natural cron fires for new monitors",
+    "Use live_edge_monitor for 10-14 day override/recommendation evaluation",
+    "Use reduce_cadence_plan only after owner-reviewed wiring decision",
+    "Re-run CP-66.7 scaffold on 2026-06-03"
+  ]
+}
+

@@ -1,5 +1,13 @@
 # Public Changelog
 
+## V10660 - 2026-05-31T21:40:00+07:00
+
+- Executed the Opus follow-up plan: live safety verify first, then no-lookahead guardrails and monitoring surfaces.
+- Added private no-lookahead audit for shadow/lane rows (`EX_ANTE` / `HINDSIGHT` / `UNKNOWN`) and wired Lane V2 future rows to record proof.
+- Added private monitor surfaces for deployed BT overrides, recommendation tier mix, model-progress mix, and reduce-cadence planning. These are measurement/planning only; no official prediction logic changed.
+- Prepared CP-66.7/P1 evidence scaffold. Current read remains data-blocked: adaptive exploit rows exist but closed dates are still insufficient.
+- Safety: no provider calls, no DB table drops, no root cleanup, no official mutation.
+
 ## V10659 - 2026-05-31T21:10:00+07:00
 
 - Protected `/du-doan-test` and `/monitoring` measurement history: cleanup must be endpoint/table dependency-first, not based on stale/DEAD labels alone.
