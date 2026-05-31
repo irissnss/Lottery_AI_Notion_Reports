@@ -1,5 +1,13 @@
 # Public Changelog
 
+## V10642B - 2026-05-31T11:55:00+07:00
+
+- Per-ĐÀI granularity + model progress tracker (all shadow, official numbers unchanged). Owner feedback: labels must be per region×weekday×STATION realtime (not just weekday); we REDUCE not turn OFF; measure if reduced models improve.
+- (A) slice_health v2 → per (region×weekday×STATION/đài), 67 rows. Data truth: official BT is per-region verified on UNION of đài → region base ~42% inflated; per-đài base ~16-18% (MN/MT), ~23% (MB) honest. Reveals đài hidden by region label: MN CN ALL=STRONG(67%) but Kiên Giang=WEAK(0%), Đà Lạt=STRONG(50%).
+- (B) model_progress tracker (138 rows, cron 09:05): per region×model top1 rec30 vs prev30 trend vs base + reduced flag + status. Finding: reduced candidates already RECOVERING (MT gpt-5-mini +14.7pp, gpt-5.5 +37.9pp, gpt-oss-120b +26.7pp) → static cut list stale, keep-measuring mandatory.
+- (C) slice_policy mode=REDUCE (giảm = drop from official vote, NOT stop running); reduced models keep scored → re-promote on recovery. enabled=0.
+- (D) New read-only /api/model-progress; du-doan + du-doan-test per-ĐÀI pills + region rollup; monitoring per-đài + model-progress panels. git d49068a (3-way), verified.
+
 ## V10642 - 2026-05-31T11:05:00+07:00
 
 - Published `V10642_PER_SLICE_HEALTH_AND_POLICY` — per-slice architecture P1+P2 (owner: independent per region×weekday×station; weak slices keep running WITH realtime warning label; cut no-edge AI models to save tokens). Backup taken first.

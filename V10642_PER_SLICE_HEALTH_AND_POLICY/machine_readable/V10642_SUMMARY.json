@@ -39,7 +39,25 @@
     "P3": "wire slice_policy into model-CALLING path to skip blocked models per slice = TOKEN SAVING (needs per-slice no-lookahead validation + reversible flag)",
     "reason_deferred": "touches LIVE money/provider; owner deferred to after watching labels live a few days; not rushed per backup+caution"
   },
-  "key_principle": "independent per region x weekday x station; weak slices keep running WITH realtime WEAK label; nothing meets strict promote bar (V10641); changes reversible + backed up",
+  "v10642b_per_dai_and_model_progress": {
+    "status": "DONE_LIVE",
+    "deploy": "git d49068a (3-way), service active, both endpoints verified",
+    "A_slice_health_v2": {
+      "granularity": "region x weekday x STATION (đài)",
+      "rows": 67,
+      "data_truth": "official BT per-region, verified on UNION of region's đài -> region base ~42% inflated; per-đài base ~16-18% (MN/MT), ~23% (MB) is honest play-one-đài rate",
+      "example": "MN CN: ALL=STRONG(67%) hides Kiên Giang=WEAK(0%), Đà Lạt=STRONG(50%); MT T5 ALL=STRONG hides 2/3 đài WEAK"
+    },
+    "B_model_progress": {
+      "table": "model_progress", "rows": 138, "cron": "09:05",
+      "metric": "per region x model: top1 hit recent30 vs prev30 (trend) vs base + reduced flag",
+      "status_set": ["KEEP","RECOVERING","REDUCED_WATCHING","WATCH_CUT","WATCH","THIN"],
+      "recovering_finding": "reduced candidates already recovering: MT gpt-5-mini (41.4% > base 35%, +14.7pp), gpt-5.5 (+37.9pp), gpt-oss-120b (+26.7pp) -> static 90d cut list stale; keep-measuring mandatory"
+    },
+    "C_giam_khong_tat": "slice_policy mode='REDUCE' (drop from official vote, NOT stop running); reduced models keep scored in model_progress; re-promote on RECOVERING; enabled=0",
+    "D_ui": "GET /api/model-progress (read-only); du-doan + du-doan-test per-ĐÀI pills + region rollup; monitoring per-đài panel + model-progress panel (60s)"
+  },
+  "key_principle": "independent per region x weekday x STATION(đài); weak slices keep running WITH realtime label; REDUCE not OFF (keep measuring -> detect recovery); nothing meets strict promote bar (V10641); reversible + backed up",
   "public_safe_scan_pass": true,
   "public_push_status": "PUSHED_OWNER_REQUESTED"
 }

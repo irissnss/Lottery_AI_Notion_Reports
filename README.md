@@ -1,6 +1,6 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V10642** — `V10642_PER_SLICE_HEALTH_AND_POLICY` (Per-slice architecture: P1 realtime health labels per region×weekday LIVE shadow [STRONG/WATCH/WEAK, weak slices keep running WITH warning], P2 slice_policy config with data-driven per-slice AI-model cut lists [enabled=0, reversible], P4 UI labels LIVE on du-doan + du-doan-test + monitoring via read-only /api/slice-health. P3 token-call-saving = careful next (owner deferred). Backup taken. Official numbers unchanged.)
+- Latest package: **V10642 (+V10642B)** — `V10642_PER_SLICE_HEALTH_AND_POLICY` (Per-slice architecture. P1+P2+P4 + V10642B: realtime health labels now per region×weekday×STATION(đài) LIVE shadow [reveals đài truth hidden by region label, e.g. MN CN ALL=STRONG but Kiên Giang=WEAK 0% / Đà Lạt=STRONG 50%]; model_progress tracker [per-model rec30 vs prev30 trend, RECOVERING detection — some reduced models already recovering] answering "measure if reduced models improve"; slice_policy mode=REDUCE [giảm≠tắt, keep measuring]; UI per-đài badges + model panel via /api/slice-health + /api/model-progress. P3 token-saving = careful next [reduce-cadence not hard-skip]. Backup taken. Official numbers unchanged.)
 - Owner report: `V10642_PER_SLICE_HEALTH_AND_POLICY/V10642_OWNER_REPORT_VN_PUBLIC.md`
 - Chain: … -> V10640 -> V10641 -> **V10642**
 - Public push status: **PUSHED (owner requested for AI analysis)**

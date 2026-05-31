@@ -4,6 +4,22 @@
 
 Mục tiêu (owner): mọi thứ ĐỘC LẬP theo miền×thứ×đài (chỉnh 1 lát không ảnh hưởng lát khác); lát yếu VẪN chạy nhưng có NHÃN + cảnh báo realtime (cập nhật thường xuyên); cắt model AI vô-edge để đỡ đốt token; total-output sau cắt phải rõ.
 
+---
+
+## 🆕 CẬP NHẬT V10642B — nhãn tới cấp ĐÀI + đo tiến bộ model (giảm≠tắt) [đã LIVE]
+
+Owner phản hồi: nhãn phải tới **từng ĐÀI** realtime (đừng chỉ T7/CN); ta đang **GIẢM chứ chưa TẮT HẲN**; làm sao **đo model bị giảm có tiến bộ tương lai**. 3 việc đã làm (đều shadow, official KHÔNG đổi):
+
+**(A) Nhãn per-ĐÀI** (region×thứ×đài). Sự thật về dữ liệu: BT là per-MIỀN, verify trên GỘP các đài → base miền ~42% bị "ảo" cao; chơi 1 đài thì base thật ~16-18% (MN/MT), ~23% (MB). Tính lại: BT miền có rơi vào tails của ĐÀI đó không, so với base của đài. → **67 dòng** (per-đài + rollup ALL). Lộ ra điều nhãn miền che giấu:
+- **MN CN**: gộp=STRONG(67%) nhưng **Kiên Giang=WEAK(0%)**, Tiền Giang=WATCH, **Đà Lạt=STRONG(50%)**.
+- **MT T5**: gộp=STRONG nhưng Bình Định/Quảng Bình=WEAK, chỉ **Quảng Trị=STRONG**.
+
+**(B) Đo tiến bộ model** — bảng `model_progress` (138 dòng, cron 09:05). Mỗi (miền×model): top1 hit 30 ngày gần vs 30 ngày trước (xu hướng) vs nền, cờ "đã giảm", trạng thái KEEP/RECOVERING/REDUCED_WATCHING/WATCH_CUT. **Phát hiện:** vài model trong danh sách giảm đang **HỒI PHỤC** → MT gpt-5-mini (41% > nền 35%, +14.7pp), gpt-5.5 (+37.9pp), gpt-oss-120b (+26.7pp). ⇒ danh sách cắt tĩnh 90 ngày đã cũ; **bắt buộc giảm + tiếp tục đo, không tắt hẳn**.
+
+**(C) Semantic GIẢM≠TẮT**: slice_policy `mode='REDUCE'` (loại khỏi vote official, KHÔNG ngừng chạy). Model bị giảm vẫn chạy + được chấm điểm → BẬT LẠI khi RECOVERING. enabled=0 (chưa wire official).
+
+**(D) UI**: thêm `GET /api/model-progress` (read-only). `/du-doan` + `/du-doan-test` hiện **pill theo từng ĐÀI hôm nay** + gộp miền. `/monitoring`: panel per-đài + panel "Tiến bộ model (GIẢM≠TẮT)" (refresh 60s). Deploy git `d49068a` 3-way, service active, 2 endpoint verified.
+
 ## ✅ P1 — Nhãn sức khỏe REALTIME per (miền×thứ) [SHADOW, an toàn, đã LIVE]
 Bảng `slice_health` + materializer (cron mỗi ngày 09:00): mỗi lát tính **rolling hit-rate (6 lần gần nhất của thứ đó) vs BASE-RATE** → nhãn:
 - 🟢 STRONG (≥ base+8pp) · 🟡 WATCH · 🔴 WEAK (< base = dưới ngẫu nhiên → "cân nhắc KHÔNG chơi").
