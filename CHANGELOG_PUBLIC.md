@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10646 - 2026-05-31T13:30:00+07:00
+
+- ML model forensic (all 3 regions). Root cause of ML decline = TWO layers: (1) OPERATIONAL — the weekly Sunday-02:00 auto-retrain stopped after 2026-05-10, leaving meta/xgboost/random-forest/LSTM models 21 days stale (same breakpoint that killed the V102-V105 shadow chain). Data collection/load tested fine → not a data bug, the scheduled run wasn't completing. (2) FUNDAMENTAL — even freshly retrained, ML models are ~random on lottery: AUC rf 0.49-0.55, xgb 0.50-0.55; LSTM MB precision@10 0.202 vs random 0.238 (lift 0.85, worse than random). Lottery tails ~random → ML has no real edge; weakness is by nature, not a code bug.
+- FIX: retrained all models (now current 2026-05-31). PREVENTION: self-healing guard (daily cron) auto-retrains if newest model > 8 days old → never silently rots again.
+- Created OPEN_ITEMS_REGISTER (anti-drop ledger) tracking all 13 pending items so nothing is forgotten across sessions.
+
 ## V10644-V10645 - 2026-05-31T13:00:00+07:00
 
 - V10644 Shadow scoreboard ("brain"): auto-scores all 61 shadow lanes daily → DEAD=22, LOOKAHEAD_INVALID=3, NO_EDGE=2, HINDSIGHT_HEADROOM=5, EVAL/KEEP=29. Flags waste EARLY (no more 22-day blind spots). Surfaced on /monitoring + /api/shadow-scoreboard.
