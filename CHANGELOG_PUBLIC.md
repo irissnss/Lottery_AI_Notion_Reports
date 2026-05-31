@@ -1,5 +1,12 @@
 # Public Changelog
 
+## V10648 - 2026-05-31T15:10:00+07:00
+
+- Day-lag forensic (owner intuition "lose region-before/win region-after, lose today/win tomorrow"). CONFIRMED for MN on 90d live: MN BT hits same-day 44.4% but matches PRIOR-day pool 73.3% (base 43%) → MN echoes yesterday's numbers with no today-edge. MT/MB show no lag. Cross-region inverse confirmed: when MN LOSE, MT win=50% vs 38% when MN WIN. Cause: MN draws FIRST (predicts 04:15, blind to same-day) → anchors D-1 via gan/frequency features; MT/MB predict after prior region draws (fresh cross-region signal).
+- Time-config audit (from settings): scrape/predict/cascade timings are structurally SOUND (MN 16:30, MT 17:30, MB 18:30; AI MN 04:15 D-1-only, MT 16:42/MB 17:42 after prior draws). The MN-blind asymmetry is inherent to draw order, not a timing bug.
+- Systemic pattern: retrain + weight_optimizer + weekly rule-mining + shadow chain all silently stopped early-mid May (unreliable in-app weekly scheduler). 
+- FIXED: mined_rules refreshed (105 rules, fresh) → system_health now 14/14 OK. FLAGGED with refs: weight_optimizer heavy/uncertain, MN D-1 anchoring (prediction-logic, needs owner OK), extend self-heal guard to mining+optimizer.
+
 ## V10647 - 2026-05-31T14:00:00+07:00
 
 - System Health Monitor + RED alert banner (owner: system was paralyzed 21-22 days with NO alert). New `_v10647_system_health.py` + table + `/api/system-health` + red/yellow banner on /monitoring + HOURLY cron. 14 checks (ml_retrain age, daily bundle per region, scrape per region, predictions_today, mined_rules, slice_health/model_progress/shadow_scoreboard/weakest_watch freshness, retrain_guard). Had this existed, the 21-day retrain+shadow outage would have shown CRITICAL from day 8. First run: 13 OK + 1 WARN (mined_rules stale since 05-04).
