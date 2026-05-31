@@ -1,0 +1,36 @@
+{
+  "schema_version": "v10643_summary_v1",
+  "version": "V10643",
+  "title": "Forensic: Prompt shadow-first (V81 provider pilot) = LOOKAHEAD illusion + redesign roadmap",
+  "created_at_vn": "2026-05-31T12:30:00",
+  "type": "read_only_forensic_plus_plan",
+  "official_touched": false,
+  "provider_called_by_this_work": false,
+  "subject": {
+    "name": "V81 provider shadow pilot",
+    "what": "3 models (claude-sonnet-4-6, deepseek-chat, gemini-3-flash) x 3 regions, real provider calls with *_SHADOW_V104.md prompt, scheduler cron 19:14 VN daily -> ai_region_specialist_provider_shadow_results; output_eligible=0, diagnostic_only=1",
+    "window": "2026-05-06..2026-05-30 (216 OK calls)"
+  },
+  "surface_result": {"MN": {"shadow": 64.4, "official": 41.1, "delta_pp": 23.3}, "MT": {"shadow": 45.2, "official": 38.4, "delta_pp": 6.8}, "MB": {"shadow": 15.1, "official": 4.1, "delta_pp": 11.0}},
+  "lookahead_evidence": {
+    "call_time": "19:14 VN",
+    "results_available_before": {"MN": "16:38", "MT": "17:32", "MB": "18:32"},
+    "context_leaks": ["actual_known:true", "official_status:WIN", "winner tail present in v67/v73 (e.g. 76 on 2026-05-30)"],
+    "models_converge_same_number_per_day": true,
+    "scheduler_comment": "19:14 after V80 to leverage post-cascade data (intentional post-draw)"
+  },
+  "verdict": "+23pp is ILLUSION (hindsight), NOT ex-ante edge. Isolated (output_eligible=0) so does not corrupt official, BUT burns ~20K tokens/day + dangerous false-savior impression -> 'pha' (misleading+cost), not usable 'cuu'. Same illusion family as V10641 oracle-headroom.",
+  "root_cause": "system lacks enforced no-lookahead; recurring in-sample/hindsight illusions",
+  "redesign_roadmap": {
+    "doc": "docs/ACTIVE_ROADMAP_REDESIGN_20260531.md",
+    "principle": "no-lookahead BY CONSTRUCTION (predicted_at < region draw cutoff)",
+    "CP_R1_owner_decision_due_2026-06-03": "RETIRE V81 (save tokens) vs re-architect EX-ANTE (call before draw, clean context)",
+    "CP_R2": "no-lookahead harness (predicted_at + cutoff, HINDSIGHT flag)",
+    "CP_R4": "P3 reduce-cadence (token saving + keep measuring)",
+    "CP_R3": "ex-ante shadow-prompt pilot (1 model MN ~15:30) if re-arch chosen",
+    "CP_R5": "per-slice selector validated ex-ante"
+  },
+  "foundation_done": "V10642/B: per-DAI slice_health, model_progress (RECOVERING), slice_policy REDUCE, UI per-dai + model panel (git d49068a)",
+  "public_safe_scan_pass": true,
+  "public_push_status": "PUSHED_OWNER_REQUESTED"
+}

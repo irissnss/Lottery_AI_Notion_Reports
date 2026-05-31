@@ -1,5 +1,13 @@
 # Public Changelog
 
+## V10643 - 2026-05-31T12:30:00+07:00
+
+- Forensic on "Prompt shadow-first" (V81 provider shadow pilot, 3 models × 3 regions, daily 19:14, real provider calls with shadow V104 prompt). Read-only, no code/official change.
+- Surface: shadow BT beats official — MN 64.4% vs 41.1% (+23.3pp), MT +6.8pp, MB +11pp.
+- PROVEN LOOKAHEAD: runs 19:14 AFTER all draws+scrape (MN 16:38/MT 17:32/MB 18:32); context_json carries actual_known:true, official_status, and winner tail in signals (v67/v73=76 on 05-30 = winner); 3 models converge same number/day; scheduler comment confirms intentional post-draw.
+- Verdict: +23pp is ILLUSION (hindsight), not ex-ante edge. Isolated (output_eligible=0) so doesn't corrupt official, but burns ~20K tokens/day + false-savior impression → misleading/cost ("phá"), not usable "cứu". Same family as V10641 oracle illusion.
+- Redesign roadmap published: no-lookahead BY CONSTRUCTION. Owner decision (due 2026-06-03): RETIRE V81 vs re-architect EX-ANTE (call before draw, clean context). Then no-lookahead harness, P3 reduce-cadence, per-slice selector.
+
 ## V10642B - 2026-05-31T11:55:00+07:00
 
 - Per-ĐÀI granularity + model progress tracker (all shadow, official numbers unchanged). Owner feedback: labels must be per region×weekday×STATION realtime (not just weekday); we REDUCE not turn OFF; measure if reduced models improve.
