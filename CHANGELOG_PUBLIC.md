@@ -4,7 +4,7 @@
 
 - V10644 Shadow scoreboard ("brain"): auto-scores all 61 shadow lanes daily → DEAD=22, LOOKAHEAD_INVALID=3, NO_EDGE=2, HINDSIGHT_HEADROOM=5, EVAL/KEEP=29. Flags waste EARLY (no more 22-day blind spots). Surfaced on /monitoring + /api/shadow-scoreboard.
 - Disabled the 2 post-draw provider pilots (V81 19:14, V104B 19:30) that ran AFTER results (lookahead + token waste) — reversible guard. Token burn stopped.
-- V10645 Weakest-model watch (ZERO extra tokens): the weakest models already predict pre-draw daily, so we lock the 3 weakest per region on flag date and track forward progress (IMPROVING/WORSENING). MN weakest = ML models (lstm/random-forest/meta-learning, tanking) NOT AI-token; MT = qwen3.6-plus/kimi-k2.5/gemini-3.1-pro; MB = kimi-k2.5/deepseek-v4-pro/glm-5.1. All shadow/read-only, official numbers unchanged. Backups taken.
+- V10645 Weakest-model watch — TYPE-AWARE (ZERO extra tokens). A model is either "ngữ cảnh" (AI/LLM, uses a prompt) or "số học" (ML/statistical, no prompt). Shadow-PROMPT applies ONLY to AI. Lock 3 weakest AI per region (→ shadow-prompt track) + 2 weakest ML per region (→ numerical retrain track), track forward progress. AI: MN gpt-5.4/qwen3-max-thinking/qwen3-coder, MT qwen3.6-plus/kimi-k2.5/gemini-3.1-pro, MB kimi-k2.5/deepseek-v4-pro/glm-5.1. ML (retrain, not prompt): MN lstm/random-forest (the absolute worst), MB random-forest/smart-ml, MT lstm/smart-ml. All already predict pre-draw daily → no new calls. Shadow/read-only, official unchanged.
 
 ## V10643 - 2026-05-31T12:30:00+07:00
 
