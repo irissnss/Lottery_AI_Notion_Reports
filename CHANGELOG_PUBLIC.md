@@ -5,7 +5,8 @@
 - Published `V10642_PER_SLICE_HEALTH_AND_POLICY` — per-slice architecture P1+P2 (owner: independent per region×weekday×station; weak slices keep running WITH realtime warning label; cut no-edge AI models to save tokens). Backup taken first.
 - P1 DONE (shadow, live): `slice_health` table + daily-cron materializer = realtime per-slice label STRONG/WATCH/WEAK (rolling official BT hit-rate vs base-rate). Weak slices (MT T7/CN, MN T4/T6/T7, MB mostly) flagged "WEAK — consider not playing"; auto-updates. Read-only, no official change.
 - P2 DONE (config only, reversible, enabled=0): `slice_policy` table with data-driven per-slice AI-model cut lists (AI-token, n≥30, hit90 < base-rate): MN block 1 (keep AI-token), MT block 8, MB block 10. NOT wired to official yet.
-- P3 (wire to model-CALLING path = token saving) + P4 (UI labels on /du-doan, /du-doan-test, /monitoring) = deliberately deferred careful next steps (touch live money/provider/UI; not rushed per backup+caution).
+- P4 DONE (owner chose P4-first, safer): read-only public `GET /api/slice-health` (defensive) + realtime badge on /du-doan (per region×weekday), /du-doan-test, and full region×weekday panel on /monitoring (60s refresh). Deployed git HEAD 5fc8e54 (3-way), service active, verified. Weak slices show red WEAK label but keep running.
+- P3 (wire slice_policy to model-CALLING path = token saving) = deferred careful next (owner waits to watch live labels first; touches live money/provider, not rushed).
 - Total-output after cut: BT recomputes from remaining models per slice; MT already AI-token-free via override (cut=token-saving, BT unchanged); MB ~neutral. No official-number change, no wallet, no provider.
 
 ## V10641 - 2026-05-30T23:40:00+07:00

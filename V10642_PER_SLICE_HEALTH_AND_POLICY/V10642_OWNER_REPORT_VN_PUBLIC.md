@@ -24,10 +24,14 @@ Bảng `slice_policy(region, weekday, selector, blocked_models, enabled, reason)
 ## TOTAL OUTPUT sau cắt (đã trả lời)
 BT tính lại từ model CÒN LẠI của lát. **MT:** BT vốn đã bỏ AI-token qua override → cắt = **tiết kiệm token, BT không đổi**. **MB:** ~trung tính (gần ngẫu nhiên). Không đổi số official phiên này.
 
-## ⏳ P3/P4 — bước kế (CỐ Ý chưa làm phiên này vì đụng LIVE tiền/provider/UI — đúng tinh thần backup+cẩn thận)
-- **P3:** wire `slice_policy` vào đường GỌI model → bỏ gọi model bị block per-slice = **tiết kiệm token thật** (cần validate no-lookahead per-slice + cờ reversible).
-- **P4:** hiện nhãn `slice_health` lên `/du-doan`, `/du-doan-test`, `/monitoring` (cảnh báo realtime cho người dùng).
+## ✅ P4 — UI nhãn cảnh báo realtime [đã LIVE, owner chọn làm P4 trước cho an toàn]
+- Endpoint read-only `GET /api/slice-health` (defensive: lỗi/thiếu bảng → ẩn badge, không bao giờ throw/mutate, không provider/ví).
+- **`/du-doan`** (trang chính): badge dưới tên miền, đúng (miền hiện tại × thứ hôm nay). VD: 🔴 T7: YẾU · trúng gần đây 33% (nền 51%) · cân nhắc không chơi.
+- **`/du-doan-test`**: badge dưới header.
+- **`/monitoring`**: bảng đầy đủ miền×thứ + auto-refresh 60s.
+- Deploy qua git (HEAD `5fc8e54`, 3-way nhất quán) + restart service (active, /login 200, endpoint trả nhãn OK). Lát YẾU vẫn chạy, chỉ hiện cảnh báo.
 
-Nguyên tắc: KHÔNG rush sửa đường gọi-provider/UI-tiền-thật trong 1 đêm — làm careful, có backup + validate + reversible từng bước.
+## ⏳ P3 — bước kế (owner hoãn tới khi xem nhãn live vài ngày; đụng LIVE tiền/provider → không rush)
+wire `slice_policy` vào đường GỌI model → bỏ gọi model bị block per-slice = **tiết kiệm token thật** (cần validate no-lookahead per-slice + cờ reversible). Nguyên tắc: careful, backup + validate + reversible từng bước.
 
 *Public-safe: không chứa code private / DB rows / API keys / VPS internals. Tên model là công khai.*

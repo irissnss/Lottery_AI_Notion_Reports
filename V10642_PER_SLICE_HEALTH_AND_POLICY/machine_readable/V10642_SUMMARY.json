@@ -28,10 +28,16 @@
     }
   },
   "total_output_after_cut": "BT recomputes from remaining models per slice; MT already AI-token-free via override (cut = token saving, BT unchanged); MB ~neutral (near-random)",
-  "P3_P4_next_careful": {
+  "P4_ui_labels": {
+    "status": "DONE_LIVE",
+    "endpoint": "GET /api/slice-health (read-only, defensive, public)",
+    "pages": ["/du-doan (badge per region x weekday)", "/du-doan-test (badge under header)", "/monitoring (full region x weekday panel, 60s refresh)"],
+    "deploy": "git HEAD 5fc8e54 (3-way), service active, /login 200, endpoint returns labels",
+    "note": "weak slices show red WEAK label but keep running; owner chose P4-first for safety"
+  },
+  "P3_next_careful": {
     "P3": "wire slice_policy into model-CALLING path to skip blocked models per slice = TOKEN SAVING (needs per-slice no-lookahead validation + reversible flag)",
-    "P4": "surface slice_health labels on /du-doan, /du-doan-test, /monitoring",
-    "reason_deferred": "touch LIVE money/provider/official-UI -> not rushed per backup+caution principle"
+    "reason_deferred": "touches LIVE money/provider; owner deferred to after watching labels live a few days; not rushed per backup+caution"
   },
   "key_principle": "independent per region x weekday x station; weak slices keep running WITH realtime WEAK label; nothing meets strict promote bar (V10641); changes reversible + backed up",
   "public_safe_scan_pass": true,

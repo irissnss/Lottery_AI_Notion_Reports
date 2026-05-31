@@ -5,7 +5,7 @@
   "machine_readable": "V10642_PER_SLICE_HEALTH_AND_POLICY/machine_readable/V10642_SUMMARY.json",
   "created_at_vn": "2026-05-31T11:05:00",
   "chain": "... -> V10640 -> V10641 -> V10642",
-  "headline": "Per-slice architecture P1 (realtime health labels, LIVE shadow) + P2 (slice_policy cut config, reversible enabled=0). P3 token-saving + P4 UI = careful next. Backup taken. Official unchanged.",
+  "headline": "Per-slice architecture P1 (realtime health labels, LIVE shadow) + P2 (slice_policy cut config, reversible) + P4 (UI labels LIVE on du-doan/du-doan-test/monitoring via /api/slice-health). P3 token-saving = careful next (owner deferred). Backup taken. Official numbers unchanged.",
   "official_touched": false,
   "backup_taken": true,
   "public_push_status": "PUSHED (owner requested)"

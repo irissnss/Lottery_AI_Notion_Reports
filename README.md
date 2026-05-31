@@ -1,6 +1,6 @@
 # Lottery AI Notion Reports
 
-- Latest package: **V10642** — `V10642_PER_SLICE_HEALTH_AND_POLICY` (Per-slice architecture: P1 realtime health labels per region×weekday LIVE shadow [STRONG/WATCH/WEAK, weak slices keep running WITH warning], P2 slice_policy config with data-driven per-slice AI-model cut lists [enabled=0, reversible]. P3 token-call-saving + P4 UI labels = careful next. Backup taken. Official unchanged.)
+- Latest package: **V10642** — `V10642_PER_SLICE_HEALTH_AND_POLICY` (Per-slice architecture: P1 realtime health labels per region×weekday LIVE shadow [STRONG/WATCH/WEAK, weak slices keep running WITH warning], P2 slice_policy config with data-driven per-slice AI-model cut lists [enabled=0, reversible], P4 UI labels LIVE on du-doan + du-doan-test + monitoring via read-only /api/slice-health. P3 token-call-saving = careful next (owner deferred). Backup taken. Official numbers unchanged.)
 - Owner report: `V10642_PER_SLICE_HEALTH_AND_POLICY/V10642_OWNER_REPORT_VN_PUBLIC.md`
 - Chain: … -> V10640 -> V10641 -> **V10642**
 - Public push status: **PUSHED (owner requested for AI analysis)**
