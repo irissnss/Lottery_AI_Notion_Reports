@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V10655 - 2026-05-31T20:10:00+07:00
+
+- Found a STRONGER single bach-thu (player bets ONE number). Walk-forward ex-ante (no-lookahead, lo metric, strength=win-rate x avg-occurrences), robust across 2 windows: MT no-token-consensus 52-53% vs official vote-sum 38-41% (+11-15pp); MB hot30 (hottest trailing-30d number) 40% vs official 16-19% (+18-22pp); MN official already near-best (keep). Unlike the in-sample best-model illusion, these are ex-ante + stable + large lift.
+- Proposed: deploy MT->nt_consensus + MB->hot30 as REVERSIBLE per-slice bach-thu overrides + monitor live; MN unchanged. Awaiting owner OK (changes official MT/MB single number). Rejected adding a 3rd lo number (spreading != profit).
+
 ## V10654 - 2026-05-31T19:55:00+07:00
 
 - Corrected scoring metric to LO (a number wins if it appears in ANY prize; more occurrences better) - not the special/de. Real official lo-win (75d): BT(1#) MN48/MT43/MB19%, lo2(2#) MN71/MT69/MB40%.
