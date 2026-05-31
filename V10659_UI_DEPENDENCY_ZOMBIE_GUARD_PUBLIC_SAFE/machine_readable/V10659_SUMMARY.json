@@ -1,0 +1,42 @@
+{
+  "version": "V10659",
+  "title": "UI dependency guard and zombie post-draw writers disabled",
+  "date": "2026-05-31T21:10:00+07:00",
+  "public_safe": true,
+  "private_commit": "a3620b9",
+  "owner_requirements_addressed": [
+    "Do not leave code/report local-only",
+    "Private repo is for runtime code; public repo is for reports",
+    "Do not drop measurement tables blindly",
+    "Protect /du-doan-test and /monitoring",
+    "Stop post-draw zombie writers while preserving UI history",
+    "Verify before changing live behavior"
+  ],
+  "changes": [
+    "Restored 9 accidentally dropped historical shadow tables from backup",
+    "Marked UI-dependent measurement tables as KEEP_UI_HISTORY",
+    "Added private UI dependency map",
+    "Added private read-only smoke script",
+    "Disabled V101 19:23, V104 materializer 19:24, and V105 19:34 post-draw writers",
+    "Kept historical rows readable for /du-doan-test and /monitoring"
+  ],
+  "verification": {
+    "private_compile": "PASS",
+    "vps_scheduler_compile": "PASS",
+    "vps_service": "active",
+    "live_public_smoke": {
+      "login": 200,
+      "du_doan_test": 401,
+      "monitoring": 401,
+      "note": "401 is expected for admin-protected pages when unauthenticated"
+    }
+  },
+  "no_go": [
+    "No DB table drop after restore",
+    "No root cleanup move/delete",
+    "No official prediction logic change",
+    "No secrets or live data included in public report"
+  ],
+  "next_safe_step": "Authenticated smoke-check of JSON APIs behind /du-doan-test and /monitoring using local admin credentials only."
+}
+

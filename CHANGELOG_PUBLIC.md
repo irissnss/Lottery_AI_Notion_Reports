@@ -1,5 +1,12 @@
 # Public Changelog
 
+## V10659 - 2026-05-31T21:10:00+07:00
+
+- Protected `/du-doan-test` and `/monitoring` measurement history: cleanup must be endpoint/table dependency-first, not based on stale/DEAD labels alone.
+- Restored 9 accidentally dropped historical shadow tables from backup (15,158 rows) and marked UI-dependent measurement history as KEEP_UI_HISTORY.
+- Added private dependency map + read-only UI smoke script; live unauthenticated smoke passed (`/login=200`, admin pages `401` expected).
+- Disabled remaining post-draw zombie writers (V101 19:23, V104 materializer 19:24, V105 19:34) while preserving historical tables. No official prediction logic change; no DB table dropped after restore.
+
 ## V10658 - 2026-05-31T21:10:00+07:00
 
 - Built an ONLINE slice recommendation layer: per (region x weekday x station) it gives a confidence score + a CLEAR intensity recommendation (play strong / medium / light-probe) and NEVER 'avoid/skip' - every slice still runs. Reasons + per-region reliability shown transparently.
@@ -46,7 +53,7 @@
 ## V10649 - 2026-05-31T15:35:00+07:00
 
 - O17 (self-heal weekly jobs): new daily guard re-runs rule-mining + weight-optimizer when stale (>9d), no double-run; combined with the ML retrain guard, all 3 weekly jobs (retrain/mining/optimizer) now self-heal regardless of the unreliable in-app weekly scheduler. system_health extended to monitor the optimizer too (now 15/15 green).
-- O14 (weight optimizer): confirmed it is a heavy grid-search backtest (minutes/region) — likely why the Sunday 03:00 job times out. Ran it in background for all regions. Revealed MN learned weights have recency=0.5 (highest) = the source of MN's day-lag echo (ties to the day-lag forensic).
+- O14 (weight optimizer): confirmed it is a heavy grid-search backtest (minutes/region) ï¿½ likely why the Sunday 03:00 job times out. Ran it in background for all regions. Revealed MN learned weights have recency=0.5 (highest) = the source of MN's day-lag echo (ties to the day-lag forensic).
 - No official-number change; all measurement/ops + self-heal.
 
 ## V10648 - 2026-05-31T15:10:00+07:00
