@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10658 - 2026-05-31T21:10:00+07:00
+
+- Built an ONLINE slice recommendation layer: per (region x weekday x station) it gives a confidence score + a CLEAR intensity recommendation (play strong / medium / light-probe) and NEVER 'avoid/skip' - every slice still runs. Reasons + per-region reliability shown transparently.
+- Validated first (not arbitrary): official BT top_score predicts lo-win for MN +10pp, MT inverted (so MT uses station-health), MB weak; consensus_level was useless. Confidence built only from the signal that actually works per region.
+- Surfaced on /monitoring (tracking dashboard) + /du-doan (user-facing badge) + endpoint + daily cron + slice_recommendation table. Honest: confidence is advisory (MN strongest), table accumulates and re-validates. No official-number change.
+
 ## V10657 - 2026-05-31T20:45:00+07:00
 
 - Deep backtest of the TOTAL aggregation per (region x WEEKDAY), ~95d walk-forward (no-lookahead). Finding (supports owner): the strongest single-number selector VARIES by weekday (e.g. MN T4/T6 favor hot-number +42-50pp, MT mostly no-token-consensus but T5 favors official 83%, MB mostly hot-number but T7 favors AI-consensus +42pp).
