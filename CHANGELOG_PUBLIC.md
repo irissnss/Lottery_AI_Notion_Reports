@@ -1,5 +1,9 @@
 # Public Changelog
 
+## V10656 - 2026-05-31T20:25:00+07:00
+
+- DEPLOYED (owner-approved, reversible) the stronger single bach-thu per-region: MT = no-token model consensus, MB = hottest trailing-30d number; MN unchanged (already near-best). Reuses the existing per-slice override mechanism (flip a flag to revert), defensive (any error -> keep official), read-only DB. Verified live: MT/MB choosers fire correctly, service healthy. Applies from next cycle; monitor MT/MB win-rate ~2 weeks, rollback if it fades. Backtest basis (ex-ante, 2 windows): MT +11-15pp, MB +18-22pp vs vote-sum.
+
 ## V10655 - 2026-05-31T20:10:00+07:00
 
 - Found a STRONGER single bach-thu (player bets ONE number). Walk-forward ex-ante (no-lookahead, lo metric, strength=win-rate x avg-occurrences), robust across 2 windows: MT no-token-consensus 52-53% vs official vote-sum 38-41% (+11-15pp); MB hot30 (hottest trailing-30d number) 40% vs official 16-19% (+18-22pp); MN official already near-best (keep). Unlike the in-sample best-model illusion, these are ex-ante + stable + large lift.
