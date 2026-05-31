@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10649 - 2026-05-31T15:35:00+07:00
+
+- O17 (self-heal weekly jobs): new daily guard re-runs rule-mining + weight-optimizer when stale (>9d), no double-run; combined with the ML retrain guard, all 3 weekly jobs (retrain/mining/optimizer) now self-heal regardless of the unreliable in-app weekly scheduler. system_health extended to monitor the optimizer too (now 15/15 green).
+- O14 (weight optimizer): confirmed it is a heavy grid-search backtest (minutes/region) � likely why the Sunday 03:00 job times out. Ran it in background for all regions. Revealed MN learned weights have recency=0.5 (highest) = the source of MN's day-lag echo (ties to the day-lag forensic).
+- No official-number change; all measurement/ops + self-heal.
+
 ## V10648 - 2026-05-31T15:10:00+07:00
 
 - Day-lag forensic (owner intuition "lose region-before/win region-after, lose today/win tomorrow"). CONFIRMED for MN on 90d live: MN BT hits same-day 44.4% but matches PRIOR-day pool 73.3% (base 43%) → MN echoes yesterday's numbers with no today-edge. MT/MB show no lag. Cross-region inverse confirmed: when MN LOSE, MT win=50% vs 38% when MN WIN. Cause: MN draws FIRST (predicts 04:15, blind to same-day) → anchors D-1 via gan/frequency features; MT/MB predict after prior region draws (fresh cross-region signal).
