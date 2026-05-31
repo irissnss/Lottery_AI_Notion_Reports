@@ -1,12 +1,13 @@
 {
-  "latest_version": "V10643",
-  "package": "V10643_SHADOW_PROMPT_FORENSIC_AND_REDESIGN",
-  "owner_report": "V10643_SHADOW_PROMPT_FORENSIC_AND_REDESIGN/V10643_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10643_SHADOW_PROMPT_FORENSIC_AND_REDESIGN/machine_readable/V10643_SUMMARY.json",
-  "created_at_vn": "2026-05-31T12:30:00",
-  "chain": "... -> V10642 -> V10642B -> V10643",
-  "headline": "Forensic: 'Prompt shadow-first' (V81 provider pilot) shows MN shadow +23pp over official, but PROVEN LOOKAHEAD illusion (runs 19:14 post-draw, context leaks actual_known/official_status/winner-tail, 3 models converge). Not usable; burns ~20K tokens/day. Redesign roadmap = no-lookahead by construction; owner decision RETIRE vs re-architect EX-ANTE.",
+  "latest_version": "V10660",
+  "package": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE",
+  "owner_report": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE/V10660_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10660_OPUS_FINDINGS_EXECUTION_PUBLIC_SAFE/machine_readable/V10660_SUMMARY.json",
+  "created_at_vn": "2026-05-31T21:40:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660",
+  "headline": "Opus follow-up execution: no-lookahead CP-R2 harness wired to lane-v2 (EX_ANTE / HINDSIGHT / UNKNOWN), live_edge_monitor for deployed BT overrides (MN specialist / MT nt_consensus / MB hot30), reduce_cadence_plan surface from model_progress (no scheduler wiring), and CP-66.7 evidence scaffold. No official prediction logic change. No provider call. No DB drop.",
   "official_touched": false,
-  "read_only_forensic": true,
-  "public_push_status": "PUSHED (owner requested)"
+  "read_only_forensic": false,
+  "public_push_status": "PUSHED (owner OK)",
+  "supersedes": "V10643"
 }
