@@ -52,6 +52,20 @@ Giờ xổ: MN 16:30, MT 17:30, MB 18:30. Dự đoán chính chạy TRƯỚC x�
 
 **Kế hoạch dọn (cần owner OK vì chạm scheduler live):** tắt V81+V104B (lưu ~20K+ token/ngày), gỡ job zombie V102-V105, archive+drop ~15 bảng chết, gom về 1 surface "đo lường+xếp hạng realtime per miền×thứ×đài×model cho tuần hiện tại".
 
+## ĐÍNH CHÍNH: KHÔNG làm lại từ đầu (sau khi đọc lại toàn bộ tài liệu)
+
+Tách 2 thứ bị gộp:
+- **Đo model AI yếu để giảm — KHÔNG mất.** `predictions` chạy 31/31 ngày (01→31/05 liên tục), `model_daily_eval` 6229 dòng. `model_progress` (hôm nay) đã rank model yếu + hồi phục từ data này. → Quyết "giảm model nào" làm được NGAY.
+- **Mất 22 ngày = CHỈ thí nghiệm shadow-PROMPT** (Track A nhồi candidate vào prompt) vì materializer ngừng ~10/05 + V81 chạy sau xổ. Là 1 thí nghiệm con, không phải lõi.
+
+**Thiết kế shadow vốn ĐÚNG** (tài liệu có vòng đời 6 pha + cổng promote G1–G13: ≥14 ngày, Wilson CI lift, would_save≥would_break, false_promo<10%, owner OK). **Lỗi chỉ ở vận hành**: chạy provider SAU xổ thay vì trước, + cron zombie. Sửa 2 lỗi này là đủ.
+
+**Kế hoạch áp shadow đúng:**
+1. Dùng NGAY eval đang sống (model_daily_eval + model_progress) để quyết giảm model — không chờ chuỗi đã chết.
+2. Dọn: tắt V81/V104B (sau xổ) + gỡ zombie + dọn ~15 bảng chết.
+3. Nếu test shadow-PROMPT: làm lại EX-ANTE (trước xổ) đúng vòng đời 6 pha + cổng G1–G13.
+4. Harness no-lookahead bắt buộc.
+
 Nền đã vững (V10642/B): nhãn per-ĐÀI, model_progress (RECOVERING), slice_policy REDUCE, UI per-đài.
 
 *Public-safe: không chứa code private / DB rows / IP / path nội bộ. Tên model công khai.*
