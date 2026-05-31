@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10654 - 2026-05-31T19:55:00+07:00
+
+- Corrected scoring metric to LO (a number wins if it appears in ANY prize; more occurrences better) - not the special/de. Real official lo-win (75d): BT(1#) MN48/MT43/MB19%, lo2(2#) MN71/MT69/MB40%.
+- 'Single models beat the total' is TRUE ex-post (best models 56/52/32% vs BT; 95% of lose-days a model hit) BUT ex-ante walk-forward (no-lookahead) shows it is mostly hindsight: rolling-best-model 1-number only modest for MB; 3-number basket merely matches official lo2 (2-number) -> no robust edge. Aggregation not badly broken.
+- Plan: report honest lo metric at BT+lo2; add a 3rd lo number (lo3 empty -> ~75-80% coverage = 'more hits'); focus MB (genuinely weakest); don't chase the de or in-sample best-model illusion. No official change.
+
 ## V10653 - 2026-05-31T19:30:00+07:00
 
 - Post-draw eval (all 3 BT LOSE). Owner 'models have signal but TOTAL wrong' CONFIRMED for MT: 4 models had a winning special (2 as top1) but the official vote-sum ranked the winner 54 at #10 while the herd-favorite 80 ranked #1. The 2 models that nailed it are the weakest (likely luck).
