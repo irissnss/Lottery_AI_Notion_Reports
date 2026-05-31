@@ -1,5 +1,9 @@
 # Public Changelog
 
+## V10652 - 2026-05-31T15:50:00+07:00
+
+- O16 MN recency shadow test (owner Cach A): reused the system backtest engine to compare MN recency weight 0.50 vs 0.25 over 61 no-lookahead days. Result: BT(top1) unchanged (36.07% both, NEUTRAL); lo(top3) -3.28pp (HURTS). Verdict: reducing recency does NOT help and slightly hurts -> DO NOT apply to official; keep recency=0.5. The 'echo yesterday' is cosmetic/harmless (lottery random). Shadow lane prevented a useless official change. No official-number change.
+
 ## V10650 - 2026-05-31T15:30:00+07:00
 
 - Pre-draw full-force readiness verified (before MN 16:30 draw): service active, 0 errors, system_health 15/15 green, MN bundle ready, all ML models have predictions for all 3 regions, freshly-retrained models load OK. Killed the heavy background weight-optimizer to protect the 16:30-17:42 prediction window (re-run off-peak after perf-tuning). 7 monitor/guard crons active.
