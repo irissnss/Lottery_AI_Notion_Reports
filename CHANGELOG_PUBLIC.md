@@ -1,5 +1,11 @@
 # Public Changelog
 
+## V10657 - 2026-05-31T20:45:00+07:00
+
+- Deep backtest of the TOTAL aggregation per (region x WEEKDAY), ~95d walk-forward (no-lookahead). Finding (supports owner): the strongest single-number selector VARIES by weekday (e.g. MN T4/T6 favor hot-number +42-50pp, MT mostly no-token-consensus but T5 favors official 83%, MB mostly hot-number but T7 favors AI-consensus +42pp).
+- HONEST caveat: n~12/slice over 95d -> a +8pp delta is literally 1 day = noise; only large deltas (+25-50pp) are suggestive and still risky at n=12. Per-weekday is too thin to deploy confidently (overfit risk). The per-REGION override (n~50-70) stays the robust choice.
+- Plan: keep per-region override; accumulate per-weekday data weekly; refine to per-(region x weekday) only when a slice reaches n>=30 + robust edge (override is already keyed by region x weekday). No official change.
+
 ## V10656 - 2026-05-31T20:25:00+07:00
 
 - DEPLOYED (owner-approved, reversible) the stronger single bach-thu per-region: MT = no-token model consensus, MB = hottest trailing-30d number; MN unchanged (already near-best). Reuses the existing per-slice override mechanism (flip a flag to revert), defensive (any error -> keep official), read-only DB. Verified live: MT/MB choosers fire correctly, service healthy. Applies from next cycle; monitor MT/MB win-rate ~2 weeks, rollback if it fades. Backtest basis (ex-ante, 2 windows): MT +11-15pp, MB +18-22pp vs vote-sum.
