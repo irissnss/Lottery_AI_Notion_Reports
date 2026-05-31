@@ -1,5 +1,10 @@
 # Public Changelog
 
+## V10650 - 2026-05-31T15:30:00+07:00
+
+- Pre-draw full-force readiness verified (before MN 16:30 draw): service active, 0 errors, system_health 15/15 green, MN bundle ready, all ML models have predictions for all 3 regions, freshly-retrained models load OK. Killed the heavy background weight-optimizer to protect the 16:30-17:42 prediction window (re-run off-peak after perf-tuning). 7 monitor/guard crons active.
+- Consolidated EVERY open issue into a single anti-drop register: 14 done this session, 3 wait-confirm (MN recency tuning, ex-ante shadow-prompt, per-slice cuts), 2 wait-live, technical-pending + security items, all with concrete status. Nothing dropped. No official-number change.
+
 ## V10649 - 2026-05-31T15:35:00+07:00
 
 - O17 (self-heal weekly jobs): new daily guard re-runs rule-mining + weight-optimizer when stale (>9d), no double-run; combined with the ML retrain guard, all 3 weekly jobs (retrain/mining/optimizer) now self-heal regardless of the unreliable in-app weekly scheduler. system_health extended to monitor the optimizer too (now 15/15 green).
