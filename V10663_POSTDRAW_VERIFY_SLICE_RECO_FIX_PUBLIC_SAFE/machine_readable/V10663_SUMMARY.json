@@ -1,0 +1,69 @@
+{
+  "version": "V10663",
+  "package": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE",
+  "created_at_vn": "2026-06-01T21:15:00+07:00",
+  "type": "post_draw_verification + ui_surface_fix",
+  "official_touched": false,
+  "code_change": false,
+  "schedule_change": true,
+  "schedule_change_note": "added 2 cron lines for slice_recommendation at 16:55 and 17:55 to cover MT and MB bundles; no logic / code edit",
+  "todays_predictions": {
+    "date": "2026-06-01",
+    "weekday": "T2",
+    "MN": {"bt": "73", "strategy": "specialist_override", "result": "WIN", "models_top1": 10, "total_models": 28},
+    "MT": {"bt": "83", "strategy": "nt_consensus_override", "result": "WIN", "models_top1": 3, "total_models": 28},
+    "MB": {"bt": "64", "strategy": "hot30_override", "result": "LOSE", "models_top1": 1, "total_models": 25},
+    "hit_rate_day": "2/3 = 66.7%"
+  },
+  "override_track_record_forward": {
+    "MN": {"hits": 8, "n": 15, "rate_pct": 53.3, "baseline_90d_pct": 45.1, "delta_pp": 8.2, "verdict": "keep"},
+    "MT": {"hits": 1, "n": 2, "rate_pct": 50.0, "baseline_90d_pct": 45.1, "verdict": "watch_more_days"},
+    "MB": {"hits": 0, "n": 2, "rate_pct": 0.0, "baseline_90d_pct": 23.1, "verdict": "watch_more_days"}
+  },
+  "prior_fixes_verified": [
+    "D1 slice_health 46 stations alive",
+    "D2 model_progress 138 rows with 4 RECOVERING MT models",
+    "D3+D5+CP-R1 V81 retired and 4 disabled-marker guards fired today",
+    "D4 shadow_scoreboard 62 lanes with verdicts",
+    "D6 weakest_model_watch 19 type-aware rows",
+    "D7 ml_retrain_guard FRESH_SKIP today, all models age 1 day",
+    "D8 system_health 15 of 15 OK",
+    "D11/D12 mined_rules v2026W22 fresh",
+    "D13 weekly_guard FRESH today",
+    "D14 weight_optimizer off during predict window",
+    "O17/O18 12 cron logs all fired today",
+    "O30 no_lookahead_audit 525 rows",
+    "O19 mb_ai_limit plan surface only"
+  ],
+  "new_bug_found_and_fixed": {
+    "title": "slice_recommendation missing MT and MB today",
+    "root_cause": "cron at 09:35 fires before MT bundle (16:46) and MB bundle (17:37) are created",
+    "fix": "added 2 cron lines: one at 16:55 for MT, one at 17:55 for MB; PK (date, region, station) already supports upsert",
+    "code_change": false,
+    "manual_backfill_today": "6 rows now present: MN 3 TRUNG_BINH, MT 2 (Hue TRUNG_BINH conf 50, Phu Yen THAN_TRONG conf 25), MB 1 (Ha Noi THAN_TRONG conf 18)",
+    "consistency_check": "MB Ha Noi THAN_TRONG label correctly warned light play before draw, matched LOSE outcome"
+  },
+  "new_finding_not_actioned": {
+    "title": "4 MT models RECOVERING strongly",
+    "models": ["gpt-5.5", "gpt-oss-120b", "gpt-5-mini", "qwen3-coder"],
+    "trend_pp": [37.9, 27.6, 18.2, 14.7],
+    "implication": "exclude from future blocked-list wiring"
+  },
+  "watch_items": [
+    "MT/MB override forward 5-7 more days",
+    "CP-66.7 self-run on 2026-06-03",
+    "wire reduce-cadence after 14 days of stable plan",
+    "CP-R5 selector per-slice (no deadline pressure)",
+    "weight_optimizer grid optimization off-peak"
+  ],
+  "deferred_by_owner": [
+    "API key encryption rotation",
+    "lottery_results dup 2021-08-21 MT prizes_json choice"
+  ],
+  "reversibility": {
+    "crontab_backup_present": true,
+    "code_change": false,
+    "db_table_create_or_drop": false
+  },
+  "supersedes": "V10662"
+}

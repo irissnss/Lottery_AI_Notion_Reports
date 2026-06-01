@@ -1,13 +1,13 @@
 {
-  "latest_version": "V10662",
-  "package": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE",
-  "owner_report": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE/V10662_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10662_OWNER_OK_EXECUTION_PUBLIC_SAFE/machine_readable/V10662_SUMMARY.json",
-  "created_at_vn": "2026-06-01T00:20:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662",
-  "headline": "Owner OK execution after V10661 control audit: VPS git HEAD reset (zero official drift), public LATEST_REPORT pointer fixed, CP-R1 shadow-prompt RETIRED with watch period, 12 V105.2x local-only files purged with backup, MB AI LIMIT plan surface (12 LIMIT mult 0.5, NOT wired into vote), Cohere KEEP_MEASURE. Three-way private/GitHub/VPS now identical.",
+  "latest_version": "V10663",
+  "package": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE",
+  "owner_report": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE/V10663_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE/machine_readable/V10663_SUMMARY.json",
+  "created_at_vn": "2026-06-01T21:15:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663",
+  "headline": "Post-draw verification on 2026-06-01: MN BT=73 WIN + MT BT=83 WIN + MB BT=64 LOSE = 2 of 3 hit. 13 prior fixes (V10640..V10662) all verified working as designed on production today. NEW BUG FIX: slice_recommendation was missing MT and MB rows because the single 09:35 cron fires before MT bundle (16:46) and MB bundle (17:37) are created; added 2 extra cron lines at 16:55 and 17:55, no code change, manual back-fill ran. MB Ha Noi tier THAN_TRONG conf 18 correctly warned light play matching the LOSE outcome. 4 MT models detected RECOVERING strongly (potential future re-promotion). Owner chose 'safest path' for remaining items - keep tracking.",
   "official_touched": false,
   "read_only_forensic": false,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10660"
+  "supersedes": "V10662"
 }
