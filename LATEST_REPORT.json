@@ -1,13 +1,13 @@
 {
-  "latest_version": "V10664",
-  "package": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE",
-  "owner_report": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE/V10664_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE/machine_readable/V10664_SUMMARY.json",
-  "created_at_vn": "2026-06-01T22:25:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664",
-  "headline": "Owner asked whether 4 MT RECOVERING models had been removed from blocked list. They had not. Owner chose both A and B: (A) manual cleanse - backup, removed 4 RECOVERING models from slice_policy.MT.blocked_models_json (8 to 4), 4 official tables hash IDENTICAL pre/post, enabled=0 preserved; (B) new _v10664_mt_ai_limit.py mirror of MB pattern, daily auto-exclude RECOVERING/RELEASE/KEEP from blocked list, cron 09:31. First run: 7 LIMIT, 12 RELEASE incl all 4 RECOVERING, 1 KEEP, 15 THIN. Auto refresh improved on manual list by detecting 3 new WATCH edge-negative models. Data-driven > manual.",
+  "latest_version": "V10665",
+  "package": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE",
+  "owner_report": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE/V10665_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE/machine_readable/V10665_SUMMARY.json",
+  "created_at_vn": "2026-06-01T22:40:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664 -> V10665",
+  "headline": "Completed the 3-region AI LIMIT triad. Verified MB already running auto at 09:30 (V10662, blocked_count=12, 0 RECOVERING). Added new _v10665_mn_ai_limit.py mirror for MN, cron 09:32. First run: 33 MN AI models -> 5 LIMIT (gpt-5-mini, gpt-5.4, grok-4.20-multi-agent, kimi-k2.5, qwen3-max-thinking), 12 RELEASE incl all KEEP healthy, 3 KEEP marginal, 13 THIN. slice_policy.MN.blocked_models_json 1 -> 5 (auto-detect 4 new edge-negative). 0 RECOVERING in blocked. enabled=0 preserved. Per-region independence: 3 files + 3 cron + 3 tables. 4 official tables hash IDENTICAL pre/post.",
   "official_touched": false,
   "read_only_forensic": false,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10663"
+  "supersedes": "V10664"
 }

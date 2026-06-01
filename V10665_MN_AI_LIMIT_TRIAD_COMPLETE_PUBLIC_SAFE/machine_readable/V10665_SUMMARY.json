@@ -1,0 +1,47 @@
+{
+  "version": "V10665",
+  "package": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE",
+  "created_at_vn": "2026-06-01T22:40:00+07:00",
+  "type": "mn_ai_limit_planner + 3_region_triad_complete",
+  "official_touched": false,
+  "code_change": "new file _v10665_mn_ai_limit.py (no edit to official code path)",
+  "schedule_change": "added 1 cron at 09:32 for MN AI LIMIT planner",
+  "triad_state": {
+    "MB": {"planner_version": "V10662", "cron": "09:30 daily", "blocked_count": 12, "enabled": 0},
+    "MT": {"planner_version": "V10664", "cron": "09:31 daily", "blocked_count": 7, "enabled": 0},
+    "MN": {"planner_version": "V10665", "cron": "09:32 daily", "blocked_count": 5, "enabled": 0}
+  },
+  "mn_first_run": {
+    "total_ai_models": 33,
+    "LIMIT": 5,
+    "RELEASE": 12,
+    "KEEP": 3,
+    "THIN": 13,
+    "LIMIT_models": [
+      {"model": "gpt-5-mini", "edge_pp": -3.3, "status": "REDUCED_WATCHING"},
+      {"model": "gpt-5.4", "edge_pp": -6.6, "status": "WATCH_CUT"},
+      {"model": "grok-4.20-multi-agent", "edge_pp": -3.3, "status": "WATCH_CUT"},
+      {"model": "kimi-k2.5", "edge_pp": -4.0, "status": "WATCH_CUT"},
+      {"model": "qwen3-max-thinking", "edge_pp": -5.3, "status": "WATCH_CUT"}
+    ],
+    "RELEASE_top_keep_examples": [
+      {"model": "gpt-5.5", "edge_pp": 13.4, "status": "KEEP"},
+      {"model": "qwen3.6-plus", "edge_pp": 13.4, "status": "KEEP"},
+      {"model": "claude-opus-4-20250514", "edge_pp": 6.7, "status": "KEEP"},
+      {"model": "gemini-2.5-flash", "edge_pp": 6.7, "status": "KEEP"}
+    ],
+    "slice_policy_MN_blocked_before": 1,
+    "slice_policy_MN_blocked_after": 5,
+    "recovering_in_blocked": 0
+  },
+  "rationale": "Owner directive: extend the MT auto-cron pattern to MN (and confirm MB already running). Per-region independence preserved: 3 separate planner files + 3 cron + 3 tables. MN currently uses specialist override (V10640), so slice_policy.MN advisory list does not impact voting today; will be useful only if override is rolled back or policy is wired.",
+  "watch_plan": "Daily auto-refresh self-maintains across all 3 regions. After ~14 days of stable plans, owner may decide whether to wire enabled=1 for any region.",
+  "reversibility": {
+    "manual_changes_backup": "BEFORE + AFTER snapshot saved to backup folder",
+    "crontab_backup": true,
+    "code_change_official_path": false,
+    "db_ddl_official_table": false,
+    "official_tables_drift": "ZERO (4 official sha256 identical pre/post)"
+  },
+  "supersedes": "V10664"
+}
