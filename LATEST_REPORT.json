@@ -1,13 +1,13 @@
 {
-  "latest_version": "V10663",
-  "package": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE",
-  "owner_report": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE/V10663_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10663_POSTDRAW_VERIFY_SLICE_RECO_FIX_PUBLIC_SAFE/machine_readable/V10663_SUMMARY.json",
-  "created_at_vn": "2026-06-01T21:15:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663",
-  "headline": "Post-draw verification on 2026-06-01: MN BT=73 WIN + MT BT=83 WIN + MB BT=64 LOSE = 2 of 3 hit. 13 prior fixes (V10640..V10662) all verified working as designed on production today. NEW BUG FIX: slice_recommendation was missing MT and MB rows because the single 09:35 cron fires before MT bundle (16:46) and MB bundle (17:37) are created; added 2 extra cron lines at 16:55 and 17:55, no code change, manual back-fill ran. MB Ha Noi tier THAN_TRONG conf 18 correctly warned light play matching the LOSE outcome. 4 MT models detected RECOVERING strongly (potential future re-promotion). Owner chose 'safest path' for remaining items - keep tracking.",
+  "latest_version": "V10664",
+  "package": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE",
+  "owner_report": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE/V10664_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE/machine_readable/V10664_SUMMARY.json",
+  "created_at_vn": "2026-06-01T22:25:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664",
+  "headline": "Owner asked whether 4 MT RECOVERING models had been removed from blocked list. They had not. Owner chose both A and B: (A) manual cleanse - backup, removed 4 RECOVERING models from slice_policy.MT.blocked_models_json (8 to 4), 4 official tables hash IDENTICAL pre/post, enabled=0 preserved; (B) new _v10664_mt_ai_limit.py mirror of MB pattern, daily auto-exclude RECOVERING/RELEASE/KEEP from blocked list, cron 09:31. First run: 7 LIMIT, 12 RELEASE incl all 4 RECOVERING, 1 KEEP, 15 THIN. Auto refresh improved on manual list by detecting 3 new WATCH edge-negative models. Data-driven > manual.",
   "official_touched": false,
   "read_only_forensic": false,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10662"
+  "supersedes": "V10663"
 }

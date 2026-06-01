@@ -1,0 +1,40 @@
+{
+  "version": "V10664",
+  "package": "V10664_MT_AI_LIMIT_PLANNER_PUBLIC_SAFE",
+  "created_at_vn": "2026-06-01T22:25:00+07:00",
+  "type": "mt_ai_limit_planner + manual_cleanse_recovering",
+  "official_touched": false,
+  "code_change": "new file _v10664_mt_ai_limit.py (no edit to official code path)",
+  "schedule_change": "added 1 cron at 09:31 for MT AI LIMIT planner",
+  "manual_cleanse": {
+    "scope": "slice_policy.MT.blocked_models_json",
+    "before_count": 8,
+    "after_count": 4,
+    "removed_models": ["gpt-5.5", "gpt-oss-120b", "gpt-5-mini", "qwen3-coder"],
+    "remaining_models": ["deepseek-v4-pro", "grok-4.20-multi-agent", "kimi-k2.5", "qwen3.6-plus"],
+    "policy_enabled_before": 0,
+    "policy_enabled_after": 0,
+    "official_tables_drift": "ZERO (4 official table sha256 identical pre/post)"
+  },
+  "auto_planner_first_run": {
+    "total_mt_ai_models": 35,
+    "LIMIT": 7,
+    "RELEASE": 12,
+    "KEEP": 1,
+    "THIN": 15,
+    "LIMIT_models": ["deepseek-v4-pro", "gemini-3-flash", "gemini-3.1-pro", "gemma-4-31b", "grok-4.20-multi-agent", "kimi-k2.5", "qwen3.6-plus"],
+    "RELEASE_includes_4_RECOVERING": true,
+    "auto_added_3_new_WATCH_negative_edge": ["gemini-3-flash", "gemini-3.1-pro", "gemma-4-31b"],
+    "final_slice_policy_MT_enabled": 0,
+    "final_slice_policy_MT_blocked_count": 7
+  },
+  "rationale": "Owner asked whether 4 MT RECOVERING models had been removed from blocked list. They had not; they were still in slice_policy.MT.blocked_models_json. Owner chose both A (manual cleanse for safety now) and B (auto code fix mirroring MB pattern for daily self-maintenance). Data-driven auto refresh proved more accurate than manual list.",
+  "watch_plan": "Daily auto-refresh self-maintains. After 7-14 days of stable LIMIT list, owner may decide to wire slice_policy.MT.enabled=1. Pattern extensible to MN if needed.",
+  "reversibility": {
+    "manual_cleanse_backup": "snapshot BEFORE + AFTER saved to backup folder",
+    "code_change_official_path": false,
+    "db_ddl_official_table": false,
+    "auto_refresh_idempotent": true
+  },
+  "supersedes": "V10663"
+}
