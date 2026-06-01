@@ -1,6 +1,10 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10667 (Detailed Per-Region Rules)**
+**Latest version: V10667.1 (Detailed Per-Region Rules + Bộ Numbering Legend)**
+
+## ⚠️ Read first
+
+[**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md) — explains how `Giải X bộ Y` notation maps to positions on lottery result board. Owner explicitly marked G.4 MB (4 bộ) — `Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right`.
 
 ## Quick navigation — per region rule docs
 

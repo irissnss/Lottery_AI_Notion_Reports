@@ -6,7 +6,21 @@ Tài liệu chi tiết cho 3 miền target (MN, MT, MB) với:
 - Worked examples (3 ngày gần nhất rule trúng)
 - Strength classification (BH-pass, STRONG, MODERATE, MARGINAL, WEAK)
 
-## Read first
+## ⚠️ Read first — Bộ Numbering Convention
+
+**[📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)** — quy ước đánh số bộ cho mỗi giải (G2/G4/G6/G7 MB, G3 MN/MT).
+
+Owner 02/06/2026 đã bổ sung G.4 MB làm nguồn rules. Mỗi bộ được đánh số rõ ràng theo position:
+
+**G.4 MB (4 bộ):**
+```
+Bộ 1 [top-left]    Bộ 2 [top-right]
+Bộ 3 [bottom-left] Bộ 4 [bottom-right]
+```
+
+Ví dụ verify MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559.
+
+## Read next
 
 [`V10667_RULES_INDEX.md`](./V10667_RULES_INDEX.md) — hub navigation.
 

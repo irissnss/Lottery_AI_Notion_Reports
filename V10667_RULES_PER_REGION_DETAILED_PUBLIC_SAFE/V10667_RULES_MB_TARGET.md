@@ -4,6 +4,22 @@
 > **Target region**: MB
 > **Audit window**: Forward 90d, anchor 2026-06-02 → earliest closeout 2026-08-31
 
+## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+
+Rule sử dụng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Owner đánh dấu G.4 MB rõ ràng:
+
+**MB sources có nhiều bộ**: G2 (2 bộ), **G4 (4 bộ — owner mới bổ sung ⭐)**, G6 (3 bộ), G7 (4 bộ).
+
+**G.4 MB (4 bộ) — quy ước vị trí**:
+```
+Giải 4 bộ 1 [top-left]    Giải 4 bộ 2 [top-right]
+Giải 4 bộ 3 [bottom-left] Giải 4 bộ 4 [bottom-right]
+```
+
+Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559.
+
+**Xem đầy đủ legend**: [📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)
+
 ## Giới thiệu — MB
 
 Miền Bắc (1 đài duy nhất MB_BOARD). Mỗi ngày 1 kết quả. Vì 1 đài/ngày nên evidence mỏng hơn MN/MT ~3-4 lần — V10.3 MB CALIBRATION giảm trần confidence từ 70% xuống 55%.

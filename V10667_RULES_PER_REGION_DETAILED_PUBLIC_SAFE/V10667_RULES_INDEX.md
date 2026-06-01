@@ -5,6 +5,18 @@
 > **BH-pass FDR α=0.05**: 268 cells (gold standard)
 > **Forward audit window**: 90 ngày, anchor 2026-06-02 → closeout 2026-08-31
 
+## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+
+Tất cả rule dùng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Bộ được đếm theo vị trí trên bảng kết quả (trái → phải, trên → dưới). Owner đã đánh dấu G.4 MB rõ ràng:
+
+**G.4 MB (4 bộ)**:
+```
+Bộ 1 [top-left]    Bộ 2 [top-right]
+Bộ 3 [bottom-left] Bộ 4 [bottom-right]
+```
+
+**Xem chi tiết đầy đủ**: [**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_BO_NUMBERING_LEGEND.md) — đánh dấu rõ vị trí từng bộ cho G2/G4/G6/G7 MB, G3 MN/MT, với ví dụ verify trên kết quả 31/05/2026.
+
 ## Tài liệu rule theo từng miền target
 
 | Target | Tài liệu | Số rule active | Note |

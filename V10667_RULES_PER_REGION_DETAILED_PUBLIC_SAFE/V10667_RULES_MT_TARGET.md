@@ -4,6 +4,21 @@
 > **Target region**: MT
 > **Audit window**: Forward 90d, anchor 2026-06-02 → earliest closeout 2026-08-31
 
+## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+
+Rule sử dụng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Bộ được đếm theo vị trí trên bảng kết quả.
+
+**Nguồn MB cho rule này** (có nhiều bộ): G2 (2), **G4 (4 — owner mới bổ sung ⭐)**, G6 (3), G7 (4).
+**Nguồn MN/MT G3 (source-only, 2 bộ)**: G3 bộ 1 (trái) + G3 bộ 2 (phải).
+
+**G.4 MB position map** (4 bộ):
+```
+Giải 4 bộ 1 [top-left]    Giải 4 bộ 2 [top-right]
+Giải 4 bộ 3 [bottom-left] Giải 4 bộ 4 [bottom-right]
+```
+
+**Xem đầy đủ legend**: [📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)
+
 ## Giới thiệu — MT
 
 Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và MB về số stations. Avg ~34 tail/ngày. T5 Thursday và T7 Saturday là 2 "hot days" với rất nhiều BH-pass rule.

@@ -1,17 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10667** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (Detailed per-region rule reference: 3 separate docs MB/MN/MT covering all 7 weekdays, per-station hit-rate breakdown, worked examples, 3,696 unique cells aggregated from V10636 series, 268 BH-pass gold-standard rules, 35 in 90d forward audit anchor 2026-06-02).
+Latest: **V10667.1** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` + new `V10667_BO_NUMBERING_LEGEND.md` (Detailed per-region rule reference + explicit bộ-numbering legend per owner 02/06/2026: G.4 MB 4 bộ position map + G.6/G.7/G.2 MB + G.3 MN/MT documented with verified array-index convention).
 
-## Quick links - V10667 per region
+## Quick links - V10667.1 per region
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
-3. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc 1,711 lines
-4. **[MN Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md)** — Miền Nam 2,061 lines
-5. **[MT Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md)** — Miền Trung 2,150 lines
-6. [Flat Ranking (all 3 in one)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_FLAT_RANKING.md)
-7. [Raw JSON (structured per-station data)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json)
-8. [Forward Audit Registry (35 BH-pass rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json)
+2. ⭐ **[BỘ NUMBERING LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md)** — read first to understand `Giải X bộ Y` notation
+3. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
+4. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc 1,711+ lines
+5. **[MN Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md)** — Miền Nam 2,061+ lines
+6. **[MT Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md)** — Miền Trung 2,150+ lines
+7. [Flat Ranking (all 3 in one)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_FLAT_RANKING.md)
+8. [Raw JSON (structured per-station data)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json)
+9. [Forward Audit Registry (35 BH-pass rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json)
 
 ---
 
