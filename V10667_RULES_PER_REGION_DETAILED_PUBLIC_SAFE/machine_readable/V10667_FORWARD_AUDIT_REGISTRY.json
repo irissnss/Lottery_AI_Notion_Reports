@@ -1,0 +1,1888 @@
+{
+  "audit_id": "V10636_FORWARD_AUDIT_90D",
+  "created_at_vn": "2026-06-02T00:27:41+07:00",
+  "anchor_date": "2026-06-02",
+  "window_days": 90,
+  "earliest_closeout": "2026-08-31",
+  "owner_decision_date": "2026-06-02",
+  "owner_decision_text": "Forward audit 90 ngày cho top BH-pass rules từ V10636-CROSS. MN/MT G3 = source only, MB source = DB/G1/G2/G4/G6/G7 (NO G3). Kiểm tra signal có sống sót regime shift không.",
+  "total_rules_registered": 35,
+  "selection_criteria": {
+    "bh_pass": true,
+    "p_value_threshold": "< 0.01 (strict)",
+    "lift_pp_threshold": ">= 8.0pp",
+    "days_evaluated_threshold": ">= 100",
+    "dedup": "unique (source_region, target_region, source_prize, source_lag, target_weekday)",
+    "max_rules": 35
+  },
+  "direction_distribution": {
+    "MB->MN": 5,
+    "MT->MT": 12,
+    "MB->MT": 14,
+    "MN->MT": 4
+  },
+  "baseline_summary": {
+    "avg_lift_pp": 13.03,
+    "min_lift_pp": 11.93,
+    "max_lift_pp": 16.68,
+    "avg_baseline_pct": 48.04,
+    "avg_hit_rate_pct": 61.07
+  },
+  "rules": [
+    {
+      "rule_id": "V10636_FA01_MB_G7_1_D_MN_T7",
+      "rule_lineage": "MB:G7#1:D->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G7#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 194,
+        "hit_rate_pct": 59.51,
+        "expected_baseline_pct": 42.83,
+        "lift_pp": 16.68,
+        "ci95_pct": [
+          54.1,
+          64.7
+        ],
+        "p_value": 0.0,
+        "bh_rank": 40,
+        "bh_threshold": 0.000838,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 45.83,
+        "pass_condition_observed_rate_pct_target": 59.51,
+        "fail_condition_observed_rate_pct_maximum": 40.83,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA02_MT_G2_1_DM2_MT_T7",
+      "rule_lineage": "MT:G2#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G2#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 284,
+        "hit_rate_pct": 86.32,
+        "expected_baseline_pct": 70.82,
+        "lift_pp": 15.5,
+        "ci95_pct": [
+          82.19,
+          89.62
+        ],
+        "p_value": 0.0,
+        "bh_rank": 17,
+        "bh_threshold": 0.000356,
+        "avg_src_size": 2.99
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 73.82,
+        "pass_condition_observed_rate_pct_target": 86.32,
+        "fail_condition_observed_rate_pct_maximum": 68.82,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA03_MT_G2_1_DM2_MT_T5",
+      "rule_lineage": "MT:G2#1:D-2->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G2#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 330,
+        "hits": 233,
+        "hit_rate_pct": 70.61,
+        "expected_baseline_pct": 55.78,
+        "lift_pp": 14.82,
+        "ci95_pct": [
+          65.48,
+          75.26
+        ],
+        "p_value": 0.0,
+        "bh_rank": 16,
+        "bh_threshold": 0.000335,
+        "avg_src_size": 1.98
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.78,
+        "pass_condition_observed_rate_pct_target": 70.61,
+        "fail_condition_observed_rate_pct_maximum": 53.78,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA04_MB_G4_2_DM1_MT_T5",
+      "rule_lineage": "MB:G4#2:D-1->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G4#2",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 328,
+        "hits": 158,
+        "hit_rate_pct": 48.17,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 14.42,
+        "ci95_pct": [
+          42.82,
+          53.57
+        ],
+        "p_value": 0.0,
+        "bh_rank": 35,
+        "bh_threshold": 0.000733,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 48.17,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA05_MB_G7_3_D_MT_T5",
+      "rule_lineage": "MB:G7#3:D->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G7#3",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 327,
+        "hits": 157,
+        "hit_rate_pct": 48.01,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 14.26,
+        "ci95_pct": [
+          42.65,
+          53.42
+        ],
+        "p_value": 0.0,
+        "bh_rank": 42,
+        "bh_threshold": 0.00088,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 48.01,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA06_MN_G5_1_D_MT_T5",
+      "rule_lineage": "MN:G5#1:D->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G5#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 332,
+        "hits": 280,
+        "hit_rate_pct": 84.34,
+        "expected_baseline_pct": 70.49,
+        "lift_pp": 13.85,
+        "ci95_pct": [
+          80.04,
+          87.85
+        ],
+        "p_value": 0.0,
+        "bh_rank": 3,
+        "bh_threshold": 6.3e-05,
+        "avg_src_size": 2.96
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 73.49,
+        "pass_condition_observed_rate_pct_target": 84.34,
+        "fail_condition_observed_rate_pct_maximum": 68.49,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA07_MB_G4_2_DM3_MT_T7",
+      "rule_lineage": "MB:G4#2:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G4#2",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 155,
+        "hit_rate_pct": 47.55,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 13.79,
+        "ci95_pct": [
+          42.19,
+          52.96
+        ],
+        "p_value": 0.0,
+        "bh_rank": 36,
+        "bh_threshold": 0.000754,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 47.55,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA08_MT_DB_1_DM1_MT_T5",
+      "rule_lineage": "MT:DB#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 229,
+        "hit_rate_pct": 69.6,
+        "expected_baseline_pct": 56.0,
+        "lift_pp": 13.6,
+        "ci95_pct": [
+          64.43,
+          74.33
+        ],
+        "p_value": 0.0,
+        "bh_rank": 20,
+        "bh_threshold": 0.000419,
+        "avg_src_size": 1.99
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 59.0,
+        "pass_condition_observed_rate_pct_target": 69.6,
+        "fail_condition_observed_rate_pct_maximum": 54.0,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA09_MT_G5_1_DM2_MT_T7",
+      "rule_lineage": "MT:G5#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 276,
+        "hit_rate_pct": 83.89,
+        "expected_baseline_pct": 70.52,
+        "lift_pp": 13.37,
+        "ci95_pct": [
+          79.53,
+          87.47
+        ],
+        "p_value": 0.0,
+        "bh_rank": 14,
+        "bh_threshold": 0.000293,
+        "avg_src_size": 2.97
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 73.52,
+        "pass_condition_observed_rate_pct_target": 83.89,
+        "fail_condition_observed_rate_pct_maximum": 68.52,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA10_MB_G1_1_DM3_MN_T7",
+      "rule_lineage": "MB:G1#1:D-3->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G1#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 183,
+        "hit_rate_pct": 56.13,
+        "expected_baseline_pct": 42.83,
+        "lift_pp": 13.31,
+        "ci95_pct": [
+          50.71,
+          61.42
+        ],
+        "p_value": 0.0,
+        "bh_rank": 26,
+        "bh_threshold": 0.000545,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 45.83,
+        "pass_condition_observed_rate_pct_target": 56.13,
+        "fail_condition_observed_rate_pct_maximum": 40.83,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA11_MB_G2_2_DM3_MT_T7",
+      "rule_lineage": "MB:G2#2:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#2",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 153,
+        "hit_rate_pct": 46.93,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 13.18,
+        "ci95_pct": [
+          41.58,
+          52.35
+        ],
+        "p_value": 0.0,
+        "bh_rank": 31,
+        "bh_threshold": 0.000649,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.93,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA12_MB_G6_3_DM3_MT_T7",
+      "rule_lineage": "MB:G6#3:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G6#3",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 153,
+        "hit_rate_pct": 46.93,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 13.18,
+        "ci95_pct": [
+          41.58,
+          52.35
+        ],
+        "p_value": 0.0,
+        "bh_rank": 39,
+        "bh_threshold": 0.000817,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.93,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA13_MN_G3_2_DM3_MT_T5",
+      "rule_lineage": "MN:G3#2:D-3->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G3#2",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 274,
+        "hit_rate_pct": 83.28,
+        "expected_baseline_pct": 70.12,
+        "lift_pp": 13.17,
+        "ci95_pct": [
+          78.87,
+          86.93
+        ],
+        "p_value": 0.0,
+        "bh_rank": 7,
+        "bh_threshold": 0.000147,
+        "avg_src_size": 2.93
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 73.12,
+        "pass_condition_observed_rate_pct_target": 83.28,
+        "fail_condition_observed_rate_pct_maximum": 68.12,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA14_MB_G2_1_DM3_MT_T5",
+      "rule_lineage": "MB:G2#1:D-3->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G2#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 325,
+        "hits": 152,
+        "hit_rate_pct": 46.77,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 13.02,
+        "ci95_pct": [
+          41.41,
+          52.2
+        ],
+        "p_value": 0.0,
+        "bh_rank": 28,
+        "bh_threshold": 0.000587,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.77,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA15_MB_G2_2_DM1_MN_T7",
+      "rule_lineage": "MB:G2#2:D-1->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#2",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 182,
+        "hit_rate_pct": 55.83,
+        "expected_baseline_pct": 42.83,
+        "lift_pp": 13.0,
+        "ci95_pct": [
+          50.4,
+          61.12
+        ],
+        "p_value": 0.0,
+        "bh_rank": 30,
+        "bh_threshold": 0.000628,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 45.83,
+        "pass_condition_observed_rate_pct_target": 55.83,
+        "fail_condition_observed_rate_pct_maximum": 40.83,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA16_MB_G4_1_D_MN_T7",
+      "rule_lineage": "MB:G4#1:D->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G4#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 182,
+        "hit_rate_pct": 55.83,
+        "expected_baseline_pct": 42.83,
+        "lift_pp": 13.0,
+        "ci95_pct": [
+          50.4,
+          61.12
+        ],
+        "p_value": 0.0,
+        "bh_rank": 32,
+        "bh_threshold": 0.00067,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 45.83,
+        "pass_condition_observed_rate_pct_target": 55.83,
+        "fail_condition_observed_rate_pct_maximum": 40.83,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA17_MB_G2_1_D_MT_T7",
+      "rule_lineage": "MB:G2#1:D->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 152,
+        "hit_rate_pct": 46.63,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 12.87,
+        "ci95_pct": [
+          41.28,
+          52.05
+        ],
+        "p_value": 0.0,
+        "bh_rank": 27,
+        "bh_threshold": 0.000566,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.63,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA18_MT_G7_1_DM3_MT_T5",
+      "rule_lineage": "MT:G7#1:D-3->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G7#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 226,
+        "hit_rate_pct": 68.69,
+        "expected_baseline_pct": 55.84,
+        "lift_pp": 12.85,
+        "ci95_pct": [
+          63.49,
+          73.46
+        ],
+        "p_value": 0.0,
+        "bh_rank": 11,
+        "bh_threshold": 0.00023,
+        "avg_src_size": 1.98
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.84,
+        "pass_condition_observed_rate_pct_target": 68.69,
+        "fail_condition_observed_rate_pct_maximum": 53.84,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA19_MT_G5_1_DM1_MT_T5",
+      "rule_lineage": "MT:G5#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 225,
+        "hit_rate_pct": 68.39,
+        "expected_baseline_pct": 55.56,
+        "lift_pp": 12.83,
+        "ci95_pct": [
+          63.18,
+          73.18
+        ],
+        "p_value": 0.0,
+        "bh_rank": 12,
+        "bh_threshold": 0.000251,
+        "avg_src_size": 1.97
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.56,
+        "pass_condition_observed_rate_pct_target": 68.39,
+        "fail_condition_observed_rate_pct_maximum": 53.56,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA20_MT_G1_1_DM1_MT_T5",
+      "rule_lineage": "MT:G1#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G1#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 225,
+        "hit_rate_pct": 68.39,
+        "expected_baseline_pct": 55.73,
+        "lift_pp": 12.66,
+        "ci95_pct": [
+          63.18,
+          73.18
+        ],
+        "p_value": 0.0,
+        "bh_rank": 18,
+        "bh_threshold": 0.000377,
+        "avg_src_size": 1.98
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.73,
+        "pass_condition_observed_rate_pct_target": 68.39,
+        "fail_condition_observed_rate_pct_maximum": 53.73,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA21_MB_G4_1_D_MT_T7",
+      "rule_lineage": "MB:G4#1:D->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G4#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 151,
+        "hit_rate_pct": 46.32,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 12.57,
+        "ci95_pct": [
+          40.98,
+          51.74
+        ],
+        "p_value": 0.0,
+        "bh_rank": 34,
+        "bh_threshold": 0.000712,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.32,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA22_MN_G8_1_DM3_MT_T7",
+      "rule_lineage": "MN:G8#1:D-3->(MT,T7)",
+      "source_region": "MN",
+      "source_prize": "G8#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 271,
+        "hit_rate_pct": 82.37,
+        "expected_baseline_pct": 69.93,
+        "lift_pp": 12.44,
+        "ci95_pct": [
+          77.89,
+          86.11
+        ],
+        "p_value": 0.0,
+        "bh_rank": 2,
+        "bh_threshold": 4.2e-05,
+        "avg_src_size": 2.92
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 72.93,
+        "pass_condition_observed_rate_pct_target": 82.37,
+        "fail_condition_observed_rate_pct_maximum": 67.93,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA23_MT_DB_1_DM3_MT_T7",
+      "rule_lineage": "MT:DB#1:D-3->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 225,
+        "hit_rate_pct": 68.39,
+        "expected_baseline_pct": 56.0,
+        "lift_pp": 12.39,
+        "ci95_pct": [
+          63.18,
+          73.18
+        ],
+        "p_value": 0.0,
+        "bh_rank": 23,
+        "bh_threshold": 0.000482,
+        "avg_src_size": 1.99
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 59.0,
+        "pass_condition_observed_rate_pct_target": 68.39,
+        "fail_condition_observed_rate_pct_maximum": 54.0,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA24_MT_G5_1_DM2_MT_T5",
+      "rule_lineage": "MT:G5#1:D-2->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 330,
+        "hits": 225,
+        "hit_rate_pct": 68.18,
+        "expected_baseline_pct": 55.89,
+        "lift_pp": 12.29,
+        "ci95_pct": [
+          62.97,
+          72.97
+        ],
+        "p_value": 0.0,
+        "bh_rank": 13,
+        "bh_threshold": 0.000272,
+        "avg_src_size": 1.99
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.89,
+        "pass_condition_observed_rate_pct_target": 68.18,
+        "fail_condition_observed_rate_pct_maximum": 53.89,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA25_MB_G1_1_DM2_MT_T7",
+      "rule_lineage": "MB:G1#1:D-2->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G1#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 150,
+        "hit_rate_pct": 46.01,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 12.26,
+        "ci95_pct": [
+          40.68,
+          51.44
+        ],
+        "p_value": 0.0,
+        "bh_rank": 25,
+        "bh_threshold": 0.000524,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.01,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA26_MB_G6_1_D_MT_T7",
+      "rule_lineage": "MB:G6#1:D->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G6#1",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 150,
+        "hit_rate_pct": 46.01,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 12.26,
+        "ci95_pct": [
+          40.68,
+          51.44
+        ],
+        "p_value": 0.0,
+        "bh_rank": 37,
+        "bh_threshold": 0.000775,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 46.01,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA27_MT_G5_1_DM3_MT_T7",
+      "rule_lineage": "MT:G5#1:D-3->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 223,
+        "hit_rate_pct": 67.78,
+        "expected_baseline_pct": 55.56,
+        "lift_pp": 12.22,
+        "ci95_pct": [
+          62.55,
+          72.6
+        ],
+        "p_value": 1e-05,
+        "bh_rank": 52,
+        "bh_threshold": 0.001089,
+        "avg_src_size": 1.97
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.56,
+        "pass_condition_observed_rate_pct_target": 67.78,
+        "fail_condition_observed_rate_pct_maximum": 53.56,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA28_MN_G8_1_DM1_MT_T5",
+      "rule_lineage": "MN:G8#1:D-1->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G8#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 270,
+        "hit_rate_pct": 82.07,
+        "expected_baseline_pct": 69.93,
+        "lift_pp": 12.14,
+        "ci95_pct": [
+          77.56,
+          85.83
+        ],
+        "p_value": 0.0,
+        "bh_rank": 1,
+        "bh_threshold": 2.1e-05,
+        "avg_src_size": 2.92
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 72.93,
+        "pass_condition_observed_rate_pct_target": 82.07,
+        "fail_condition_observed_rate_pct_maximum": 67.93,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA29_MB_G7_1_DM3_MT_T5",
+      "rule_lineage": "MB:G7#1:D-3->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G7#1",
+      "source_lag": "D-3",
+      "lag_days": 3,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 325,
+        "hits": 149,
+        "hit_rate_pct": 45.85,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 12.09,
+        "ci95_pct": [
+          40.51,
+          51.28
+        ],
+        "p_value": 0.0,
+        "bh_rank": 41,
+        "bh_threshold": 0.000859,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 45.85,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA30_MB_G6_1_DM2_MN_T7",
+      "rule_lineage": "MB:G6#1:D-2->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G6#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 179,
+        "hit_rate_pct": 54.91,
+        "expected_baseline_pct": 42.83,
+        "lift_pp": 12.08,
+        "ci95_pct": [
+          49.48,
+          60.22
+        ],
+        "p_value": 1e-05,
+        "bh_rank": 58,
+        "bh_threshold": 0.001215,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 45.83,
+        "pass_condition_observed_rate_pct_target": 54.91,
+        "fail_condition_observed_rate_pct_maximum": 40.83,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA31_MT_DB_1_DM2_MT_T7",
+      "rule_lineage": "MT:DB#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_lag": "D-2",
+      "lag_days": 2,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 329,
+        "hits": 272,
+        "hit_rate_pct": 82.67,
+        "expected_baseline_pct": 70.63,
+        "lift_pp": 12.04,
+        "ci95_pct": [
+          78.21,
+          86.38
+        ],
+        "p_value": 0.0,
+        "bh_rank": 22,
+        "bh_threshold": 0.000461,
+        "avg_src_size": 2.98
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 73.63,
+        "pass_condition_observed_rate_pct_target": 82.67,
+        "fail_condition_observed_rate_pct_maximum": 68.63,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA32_MB_G6_1_DM1_MT_T5",
+      "rule_lineage": "MB:G6#1:D-1->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G6#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "target_weekday_idx": 3,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 328,
+        "hits": 150,
+        "hit_rate_pct": 45.73,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 11.98,
+        "ci95_pct": [
+          40.42,
+          51.14
+        ],
+        "p_value": 0.0,
+        "bh_rank": 38,
+        "bh_threshold": 0.000796,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 45.73,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA33_MB_DB_1_DM1_MT_T7",
+      "rule_lineage": "MB:DB#1:D-1->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "DB#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 149,
+        "hit_rate_pct": 45.71,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 11.95,
+        "ci95_pct": [
+          40.38,
+          51.13
+        ],
+        "p_value": 0.0,
+        "bh_rank": 24,
+        "bh_threshold": 0.000503,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 45.71,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA34_MB_G2_2_D_MT_T7",
+      "rule_lineage": "MB:G2#2:D->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#2",
+      "source_lag": "D",
+      "lag_days": 0,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 326,
+        "hits": 149,
+        "hit_rate_pct": 45.71,
+        "expected_baseline_pct": 33.75,
+        "lift_pp": 11.95,
+        "ci95_pct": [
+          40.38,
+          51.13
+        ],
+        "p_value": 0.0,
+        "bh_rank": 29,
+        "bh_threshold": 0.000607,
+        "avg_src_size": 1.0
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 36.75,
+        "pass_condition_observed_rate_pct_target": 45.71,
+        "fail_condition_observed_rate_pct_maximum": 31.75,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    },
+    {
+      "rule_id": "V10636_FA35_MT_G8_1_DM1_MT_T7",
+      "rule_lineage": "MT:G8#1:D-1->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G8#1",
+      "source_lag": "D-1",
+      "lag_days": 1,
+      "transform": "LAST2",
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "target_weekday_idx": 5,
+      "source_aggregation": "ANY_STATION_OR_BO",
+      "historical_baseline": {
+        "days_evaluated": 330,
+        "hits": 224,
+        "hit_rate_pct": 67.88,
+        "expected_baseline_pct": 55.95,
+        "lift_pp": 11.93,
+        "ci95_pct": [
+          62.66,
+          72.69
+        ],
+        "p_value": 1e-05,
+        "bh_rank": 50,
+        "bh_threshold": 0.001047,
+        "avg_src_size": 1.99
+      },
+      "forward_audit_meta": {
+        "anchor_date": "2026-06-02",
+        "window_days": 90,
+        "earliest_closeout": "2026-08-31",
+        "expected_days_in_window": 13,
+        "pass_condition_observed_rate_pct_minimum": 58.95,
+        "pass_condition_observed_rate_pct_target": 67.88,
+        "fail_condition_observed_rate_pct_maximum": 53.95,
+        "classification_rules": {
+          "STRONG_SURVIVE": "observed_lift >= +50% of historical lift",
+          "MODERATE_SURVIVE": "+25% to +50% of historical lift",
+          "MARGINAL_SURVIVE": "0 to +25% of historical lift",
+          "NULL_REGIME_SHIFT": "observed_lift <= 0",
+          "NEGATIVE_REGIME_SHIFT": "observed_lift < -baseline/2"
+        }
+      },
+      "status": "PRE_REGISTER_FORWARD_AUDIT",
+      "live_eligible": false,
+      "v107_risk": [
+        "BH_PASS_HISTORICAL",
+        "FORWARD_90D_AUDIT_IN_PROGRESS",
+        "REGIME_SHIFT_RISK_PENDING",
+        "BROAD_ANY_HIT_NOT_STRICT"
+      ],
+      "source_report": "V10636_CROSS_FULL_GRID"
+    }
+  ]
+}

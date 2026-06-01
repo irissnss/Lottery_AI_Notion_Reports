@@ -1,5 +1,22 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10667** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (Detailed per-region rule reference: 3 separate docs MB/MN/MT covering all 7 weekdays, per-station hit-rate breakdown, worked examples, 3,696 unique cells aggregated from V10636 series, 268 BH-pass gold-standard rules, 35 in 90d forward audit anchor 2026-06-02).
+
+## Quick links - V10667 per region
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
+3. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc 1,711 lines
+4. **[MN Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md)** — Miền Nam 2,061 lines
+5. **[MT Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md)** — Miền Trung 2,150 lines
+6. [Flat Ranking (all 3 in one)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_FLAT_RANKING.md)
+7. [Raw JSON (structured per-station data)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json)
+8. [Forward Audit Registry (35 BH-pass rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json)
+
+---
+
+# REPORT INDEX (legacy auto-discovery)
+
 Latest: **V106.38-R8G** - `V106_38R8G_VPS_VIEWS_DEPLOYED_PUBLIC_SAFE/V10638R8G_OWNER_REPORT_VN_PUBLIC.md` (DEPLOYED 5 canonical VIEWs to VPS production: backup taken, official table counts unchanged before==after, 13 views total, smoke /api/health 200 V20.3.36 — standardization now LIVE, reversible. Findings: local<->VPS divergent (VPS master/164 tables vs local main/163, VPS uncommitted) -> no blind code deploy; GitHub PAT exposed in VPS git remote -> rotate. NOT deployed (owner-gated, divergent code/behavior): Phase B drop/merge, MB freq lane runtime+cron, per-slice weighting, MB cap, token LIMIT. Official numbers unchanged; wallet untouched. Chain R8->R8G).
 
 ## Quick links - V106.38-R8G

@@ -1,13 +1,28 @@
 {
-  "latest_version": "V10666",
-  "package": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE",
-  "owner_report": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE/V10666_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE/machine_readable/V10666_SUMMARY.json",
-  "created_at_vn": "2026-06-01T23:30:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664 -> V10665 -> V10666",
-  "headline": "Owner raised 3 deep questions after V10665. Verified: vote does NOT read slice_policy (zero impact); lane test uses 23 not 25 models, also does NOT read slice_policy; 200 sample 0 timezone mismatch; 408 LOSE no-token analysis = 56% cross-region echo, 42% lag+1, 12.8% pure LOSE = natural lottery characteristic, NOT bug. Actions: moved cron MN AI LIMIT 09:32 to 03:50 (10min before MN predict at 04:00); added safety guard to all 3 planners (refuse refresh when enabled=1, simulated test passed); created docs/TIMEZONE_AND_DATE_SEMANTICS.md as SSOT for D/D-1/D-2 + timezone rules. Did NOT do full fix of 40+ SQL date('now') usages — regression risk too high vs marginal gain.",
+  "latest_version": "V10667",
+  "package": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE",
+  "owner_report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md",
+  "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json",
+  "created_at_vn": "2026-06-02T01:30:00+07:00",
+  "chain": "... -> V10665 -> V10666 -> V10667",
+  "headline": "Detailed per-region rule reference for owner: 3 separate docs (MB, MN, MT) covering all 7 weekdays each with active stations, per-station hit-rate breakdown (which station contributes most), 3 most-recent worked examples per rule, BH-pass classification (268 gold-standard cells out of 3,696 unique combinations). 35 best BH-pass cells in 90-day forward audit (anchor 2026-06-02, closeout 2026-08-31). Owner constraints applied: MN/MT G3 = source only, MB source = DB/G1/G2/G4/G6/G7 only. All rules PRE_REGISTER_FORWARD_AUDIT, live_eligible=False. Includes per-region URLs for external AI tool consumption.",
   "official_touched": false,
-  "read_only_forensic": false,
+  "read_only_forensic": true,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10665"
+  "supersedes": "V10666",
+  "per_region_urls": {
+    "MB": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md",
+    "MN": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md",
+    "MT": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md",
+    "INDEX": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md"
+  },
+  "rules_stats": {
+    "total_unique_cells": 3696,
+    "p_lt_05_raw": 431,
+    "bh_pass_fdr_05": 268,
+    "lift_geq_5pp": 357,
+    "forward_audit_rules": 35,
+    "forward_audit_anchor": "2026-06-02",
+    "forward_audit_earliest_closeout": "2026-08-31"
+  }
 }
