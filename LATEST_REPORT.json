@@ -1,13 +1,13 @@
 {
-  "latest_version": "V10665",
-  "package": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE",
-  "owner_report": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE/V10665_OWNER_REPORT_VN_PUBLIC.md",
-  "machine_readable": "V10665_MN_AI_LIMIT_TRIAD_COMPLETE_PUBLIC_SAFE/machine_readable/V10665_SUMMARY.json",
-  "created_at_vn": "2026-06-01T22:40:00+07:00",
-  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664 -> V10665",
-  "headline": "Completed the 3-region AI LIMIT triad. Verified MB already running auto at 09:30 (V10662, blocked_count=12, 0 RECOVERING). Added new _v10665_mn_ai_limit.py mirror for MN, cron 09:32. First run: 33 MN AI models -> 5 LIMIT (gpt-5-mini, gpt-5.4, grok-4.20-multi-agent, kimi-k2.5, qwen3-max-thinking), 12 RELEASE incl all KEEP healthy, 3 KEEP marginal, 13 THIN. slice_policy.MN.blocked_models_json 1 -> 5 (auto-detect 4 new edge-negative). 0 RECOVERING in blocked. enabled=0 preserved. Per-region independence: 3 files + 3 cron + 3 tables. 4 official tables hash IDENTICAL pre/post.",
+  "latest_version": "V10666",
+  "package": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE",
+  "owner_report": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE/V10666_OWNER_REPORT_VN_PUBLIC.md",
+  "machine_readable": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE/machine_readable/V10666_SUMMARY.json",
+  "created_at_vn": "2026-06-01T23:30:00+07:00",
+  "chain": "... -> V10643 -> V10656 -> V10658 -> V10659 -> V10660 -> V10662 -> V10663 -> V10664 -> V10665 -> V10666",
+  "headline": "Owner raised 3 deep questions after V10665. Verified: vote does NOT read slice_policy (zero impact); lane test uses 23 not 25 models, also does NOT read slice_policy; 200 sample 0 timezone mismatch; 408 LOSE no-token analysis = 56% cross-region echo, 42% lag+1, 12.8% pure LOSE = natural lottery characteristic, NOT bug. Actions: moved cron MN AI LIMIT 09:32 to 03:50 (10min before MN predict at 04:00); added safety guard to all 3 planners (refuse refresh when enabled=1, simulated test passed); created docs/TIMEZONE_AND_DATE_SEMANTICS.md as SSOT for D/D-1/D-2 + timezone rules. Did NOT do full fix of 40+ SQL date('now') usages — regression risk too high vs marginal gain.",
   "official_touched": false,
   "read_only_forensic": false,
   "public_push_status": "PUSHED (owner OK)",
-  "supersedes": "V10664"
+  "supersedes": "V10665"
 }

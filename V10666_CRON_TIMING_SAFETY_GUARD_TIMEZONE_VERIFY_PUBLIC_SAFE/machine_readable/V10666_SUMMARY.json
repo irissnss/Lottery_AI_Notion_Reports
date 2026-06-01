@@ -1,0 +1,62 @@
+{
+  "version": "V10666",
+  "package": "V10666_CRON_TIMING_SAFETY_GUARD_TIMEZONE_VERIFY_PUBLIC_SAFE",
+  "created_at_vn": "2026-06-01T23:30:00+07:00",
+  "type": "cron_timing_fix + safety_guard + timezone_audit + doc_ssot",
+  "official_touched": false,
+  "code_change": "safety_guard added to 3 planners (refuse refresh when enabled=1); no official path change",
+  "schedule_change": "moved MN AI LIMIT cron 09:32 -> 03:50 (10min before MN predict)",
+  "owner_concerns_addressed": [
+    {
+      "concern": "auto-cron limit could break total output if vote reads slice_policy",
+      "verified": "vote does NOT read slice_policy",
+      "evidence": "grep main.py + model_registry.py + _du_doan_test_engine.py = no read on slice_policy",
+      "verdict": "zero impact on vote"
+    },
+    {
+      "concern": "cron MN AI LIMIT 09:32 too late vs predict 04:00",
+      "action": "moved 09:32 -> 03:50",
+      "verdict": "fixed"
+    },
+    {
+      "concern": "D/D-1/D-2 semantics ambiguous + LOSE region A win region B / LOSE D win D+1",
+      "investigated": "200 sample 0 timezone mismatch + 408 LOSE no-token analysis",
+      "findings": {
+        "WIN_total": 80,
+        "WIN_pct": 19.6,
+        "LOSE_total": 328,
+        "LOSE_pct": 80.4,
+        "of_LOSE_cross_region_echo_pct": 56.4,
+        "of_LOSE_lag1_echo_pct": 42.4,
+        "of_LOSE_lag2_echo_pct": 15.5,
+        "of_LOSE_pure_no_echo_pct": 12.8
+      },
+      "verdict": "natural lottery characteristic (autocorrelation + cross-region cascade), NOT a bug. Pure LOSE 12.8% matches random null hypothesis."
+    }
+  ],
+  "verifications": {
+    "vote_reads_slice_policy": false,
+    "lane_test_reads_slice_policy": false,
+    "lane_test_distinct_real_models_3d": 23,
+    "lane_test_model_count_owner_remembered_25": "likely confusion with ~24 method count",
+    "timezone_mismatch_in_200_samples": 0,
+    "cron_in_risk_window_using_sql_date_now": 0
+  },
+  "actions_taken": [
+    "moved cron MN AI LIMIT 09:32 -> 03:50",
+    "added safety guard to _v10662_mb_ai_limit.py / _v10664_mt_ai_limit.py / _v10665_mn_ai_limit.py (refuse refresh when enabled=1)",
+    "simulated test: MB enabled=1 + manual list -> planner skip -> list preserved -> restored",
+    "created docs/TIMEZONE_AND_DATE_SEMANTICS.md as SSOT for D/D-1/D-2 + timezone risk window + code style guide"
+  ],
+  "actions_NOT_taken": [
+    "full fix of 40+ SQL date('now') usages - high regression risk vs marginal gain (0 cron in risk window actually uses SQL date(now))",
+    "spot fix final_bundles.created_at missing timezone marker - cosmetic, low priority"
+  ],
+  "reversibility": {
+    "crontab_backup_present": true,
+    "code_change_official_path": false,
+    "db_ddl_official_table": false,
+    "safety_guard_test_passed_and_restored": true
+  },
+  "supersedes": "V10665"
+}
