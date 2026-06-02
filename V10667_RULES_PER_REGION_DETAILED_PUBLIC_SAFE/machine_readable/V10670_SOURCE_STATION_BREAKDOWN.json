@@ -1,0 +1,1129 @@
+{
+  "audit_id": "V10670_SOURCE_STATION_BREAKDOWN",
+  "timestamp_vn": "2026-06-02T11:24:11+07:00",
+  "explanation": "Mỗi rule cross-region: source notation \"Miền:Giải#Bộ:Lag\" với Bộ = vị trí bộ trong giải (KHÔNG phải đài). Khi miền source có nhiều đài cùng ngày, rule GOM (union) giá trị Giải#Bộ của TẤT CẢ đài đó. Bảng per_source_station cho biết đài nào đóng góp giá trị trúng nhiều nhất.",
+  "rules_count": 28,
+  "breakdowns": [
+    {
+      "rule_id": "V10668_FA01_MT_G2_1_DM2_MT_T7",
+      "rule_lineage": "MT:G2#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G2#1",
+      "source_prize_vn": "Giải 2 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Bình Định",
+        "Quảng Trị",
+        "Quảng Bình"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 329,
+      "aggregate_hits": 284,
+      "aggregate_hit_rate_pct": 86.32,
+      "per_source_station": [
+        {
+          "source_station": "Bình Định",
+          "n": 329,
+          "hits": 154,
+          "hit_rate_pct": 46.81,
+          "ci95_pct": [
+            41.48,
+            52.21
+          ]
+        },
+        {
+          "source_station": "Quảng Trị",
+          "n": 329,
+          "hits": 145,
+          "hit_rate_pct": 44.07,
+          "ci95_pct": [
+            38.81,
+            49.48
+          ]
+        },
+        {
+          "source_station": "Quảng Bình",
+          "n": 329,
+          "hits": 135,
+          "hit_rate_pct": 41.03,
+          "ci95_pct": [
+            35.85,
+            46.42
+          ]
+        }
+      ],
+      "best_source_station": "Bình Định"
+    },
+    {
+      "rule_id": "V10668_FA02_MT_G2_1_DM2_MT_T5",
+      "rule_lineage": "MT:G2#1:D-2->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G2#1",
+      "source_prize_vn": "Giải 2 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T3",
+      "source_stations_that_weekday": [
+        "Đắk Lắk",
+        "Quảng Nam"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 330,
+      "aggregate_hits": 233,
+      "aggregate_hit_rate_pct": 70.61,
+      "per_source_station": [
+        {
+          "source_station": "Quảng Nam",
+          "n": 330,
+          "hits": 155,
+          "hit_rate_pct": 46.97,
+          "ci95_pct": [
+            41.65,
+            52.36
+          ]
+        },
+        {
+          "source_station": "Đắk Lắk",
+          "n": 328,
+          "hits": 152,
+          "hit_rate_pct": 46.34,
+          "ci95_pct": [
+            41.02,
+            51.75
+          ]
+        }
+      ],
+      "best_source_station": "Quảng Nam"
+    },
+    {
+      "rule_id": "V10668_FA03_MB_G4_2_DM1_MT_T5",
+      "rule_lineage": "MB:G4#2:D-1->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G4#2",
+      "source_prize_vn": "Giải 4 bộ 2",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 328,
+      "aggregate_hits": 158,
+      "aggregate_hit_rate_pct": 48.17,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 328,
+          "hits": 158,
+          "hit_rate_pct": 48.17,
+          "ci95_pct": [
+            42.82,
+            53.57
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA04_MN_G5_1_D_MT_T5",
+      "rule_lineage": "MN:G5#1:D->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G5#1",
+      "source_prize_vn": "Giải 5 bộ 1",
+      "source_lag": "D",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Tây Ninh",
+        "An Giang",
+        "Bình Thuận"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 316,
+      "aggregate_hits": 264,
+      "aggregate_hit_rate_pct": 83.54,
+      "per_source_station": [
+        {
+          "source_station": "Bình Thuận",
+          "n": 316,
+          "hits": 148,
+          "hit_rate_pct": 46.84,
+          "ci95_pct": [
+            41.4,
+            52.34
+          ]
+        },
+        {
+          "source_station": "Tây Ninh",
+          "n": 316,
+          "hits": 147,
+          "hit_rate_pct": 46.52,
+          "ci95_pct": [
+            41.09,
+            52.03
+          ]
+        },
+        {
+          "source_station": "An Giang",
+          "n": 316,
+          "hits": 138,
+          "hit_rate_pct": 43.67,
+          "ci95_pct": [
+            38.31,
+            49.18
+          ]
+        }
+      ],
+      "best_source_station": "Bình Thuận"
+    },
+    {
+      "rule_id": "V10668_FA05_MB_G4_2_DM3_MT_T7",
+      "rule_lineage": "MB:G4#2:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G4#2",
+      "source_prize_vn": "Giải 4 bộ 2",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 155,
+      "aggregate_hit_rate_pct": 47.55,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 326,
+          "hits": 155,
+          "hit_rate_pct": 47.55,
+          "ci95_pct": [
+            42.19,
+            52.96
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA06_MT_DB_1_DM1_MT_T5",
+      "rule_lineage": "MT:DB#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_prize_vn": "Giải ĐB bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đà Nẵng",
+        "Khánh Hòa"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 329,
+      "aggregate_hits": 229,
+      "aggregate_hit_rate_pct": 69.6,
+      "per_source_station": [
+        {
+          "source_station": "Khánh Hòa",
+          "n": 329,
+          "hits": 155,
+          "hit_rate_pct": 47.11,
+          "ci95_pct": [
+            41.78,
+            52.51
+          ]
+        },
+        {
+          "source_station": "Đà Nẵng",
+          "n": 328,
+          "hits": 133,
+          "hit_rate_pct": 40.55,
+          "ci95_pct": [
+            35.37,
+            45.94
+          ]
+        }
+      ],
+      "best_source_station": "Khánh Hòa"
+    },
+    {
+      "rule_id": "V10668_FA07_MT_G5_1_DM2_MT_T7",
+      "rule_lineage": "MT:G5#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_prize_vn": "Giải 5 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Bình Định",
+        "Quảng Trị",
+        "Quảng Bình"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 329,
+      "aggregate_hits": 276,
+      "aggregate_hit_rate_pct": 83.89,
+      "per_source_station": [
+        {
+          "source_station": "Quảng Bình",
+          "n": 329,
+          "hits": 151,
+          "hit_rate_pct": 45.9,
+          "ci95_pct": [
+            40.59,
+            51.3
+          ]
+        },
+        {
+          "source_station": "Bình Định",
+          "n": 329,
+          "hits": 144,
+          "hit_rate_pct": 43.77,
+          "ci95_pct": [
+            38.51,
+            49.17
+          ]
+        },
+        {
+          "source_station": "Quảng Trị",
+          "n": 329,
+          "hits": 132,
+          "hit_rate_pct": 40.12,
+          "ci95_pct": [
+            34.97,
+            45.5
+          ]
+        }
+      ],
+      "best_source_station": "Quảng Bình"
+    },
+    {
+      "rule_id": "V10668_FA08_MB_G1_1_DM3_MN_T7",
+      "rule_lineage": "MB:G1#1:D-3->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G1#1",
+      "source_prize_vn": "Giải 1 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 183,
+      "aggregate_hit_rate_pct": 56.13,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 326,
+          "hits": 183,
+          "hit_rate_pct": 56.13,
+          "ci95_pct": [
+            50.71,
+            61.42
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA09_MB_G2_2_DM3_MT_T7",
+      "rule_lineage": "MB:G2#2:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#2",
+      "source_prize_vn": "Giải 2 bộ 2",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 153,
+      "aggregate_hit_rate_pct": 46.93,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 326,
+          "hits": 153,
+          "hit_rate_pct": 46.93,
+          "ci95_pct": [
+            41.58,
+            52.35
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA10_MB_G6_3_DM3_MT_T7",
+      "rule_lineage": "MB:G6#3:D-3->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G6#3",
+      "source_prize_vn": "Giải 6 bộ 3",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 153,
+      "aggregate_hit_rate_pct": 46.93,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 326,
+          "hits": 153,
+          "hit_rate_pct": 46.93,
+          "ci95_pct": [
+            41.58,
+            52.35
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA11_MN_G3_2_DM3_MT_T5",
+      "rule_lineage": "MN:G3#2:D-3->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G3#2",
+      "source_prize_vn": "Giải 3 bộ 2",
+      "source_lag": "D-3",
+      "source_weekday": "T2",
+      "source_stations_that_weekday": [
+        "TP. HCM",
+        "Đồng Tháp",
+        "Cà Mau"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 314,
+      "aggregate_hits": 264,
+      "aggregate_hit_rate_pct": 84.08,
+      "per_source_station": [
+        {
+          "source_station": "Đồng Tháp",
+          "n": 314,
+          "hits": 139,
+          "hit_rate_pct": 44.27,
+          "ci95_pct": [
+            38.88,
+            49.8
+          ]
+        },
+        {
+          "source_station": "TP. HCM",
+          "n": 314,
+          "hits": 136,
+          "hit_rate_pct": 43.31,
+          "ci95_pct": [
+            37.94,
+            48.84
+          ]
+        },
+        {
+          "source_station": "Cà Mau",
+          "n": 314,
+          "hits": 129,
+          "hit_rate_pct": 41.08,
+          "ci95_pct": [
+            35.78,
+            46.6
+          ]
+        }
+      ],
+      "best_source_station": "Đồng Tháp"
+    },
+    {
+      "rule_id": "V10668_FA12_MB_G2_1_DM3_MT_T5",
+      "rule_lineage": "MB:G2#1:D-3->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G2#1",
+      "source_prize_vn": "Giải 2 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T2",
+      "source_stations_that_weekday": [
+        "Hà Nội"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 325,
+      "aggregate_hits": 152,
+      "aggregate_hit_rate_pct": 46.77,
+      "per_source_station": [
+        {
+          "source_station": "Hà Nội",
+          "n": 325,
+          "hits": 152,
+          "hit_rate_pct": 46.77,
+          "ci95_pct": [
+            41.41,
+            52.2
+          ]
+        }
+      ],
+      "best_source_station": "Hà Nội"
+    },
+    {
+      "rule_id": "V10668_FA13_MB_G2_2_DM1_MN_T7",
+      "rule_lineage": "MB:G2#2:D-1->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G2#2",
+      "source_prize_vn": "Giải 2 bộ 2",
+      "source_lag": "D-1",
+      "source_weekday": "T6",
+      "source_stations_that_weekday": [
+        "Hải Phòng"
+      ],
+      "source_station_count": 1,
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 182,
+      "aggregate_hit_rate_pct": 55.83,
+      "per_source_station": [
+        {
+          "source_station": "Hải Phòng",
+          "n": 326,
+          "hits": 182,
+          "hit_rate_pct": 55.83,
+          "ci95_pct": [
+            50.4,
+            61.12
+          ]
+        }
+      ],
+      "best_source_station": "Hải Phòng"
+    },
+    {
+      "rule_id": "V10668_FA14_MT_G7_1_DM3_MT_T5",
+      "rule_lineage": "MT:G7#1:D-3->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G7#1",
+      "source_prize_vn": "Giải 7 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T2",
+      "source_stations_that_weekday": [
+        "Thừa Thiên Huế",
+        "Phú Yên"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 329,
+      "aggregate_hits": 226,
+      "aggregate_hit_rate_pct": 68.69,
+      "per_source_station": [
+        {
+          "source_station": "Phú Yên",
+          "n": 329,
+          "hits": 152,
+          "hit_rate_pct": 46.2,
+          "ci95_pct": [
+            40.89,
+            51.6
+          ]
+        },
+        {
+          "source_station": "Thừa Thiên Huế",
+          "n": 329,
+          "hits": 131,
+          "hit_rate_pct": 39.82,
+          "ci95_pct": [
+            34.67,
+            45.2
+          ]
+        }
+      ],
+      "best_source_station": "Phú Yên"
+    },
+    {
+      "rule_id": "V10668_FA15_MT_G5_1_DM1_MT_T5",
+      "rule_lineage": "MT:G5#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_prize_vn": "Giải 5 bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đà Nẵng",
+        "Khánh Hòa"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 329,
+      "aggregate_hits": 225,
+      "aggregate_hit_rate_pct": 68.39,
+      "per_source_station": [
+        {
+          "source_station": "Đà Nẵng",
+          "n": 328,
+          "hits": 151,
+          "hit_rate_pct": 46.04,
+          "ci95_pct": [
+            40.72,
+            51.45
+          ]
+        },
+        {
+          "source_station": "Khánh Hòa",
+          "n": 329,
+          "hits": 149,
+          "hit_rate_pct": 45.29,
+          "ci95_pct": [
+            40.0,
+            50.69
+          ]
+        }
+      ],
+      "best_source_station": "Đà Nẵng"
+    },
+    {
+      "rule_id": "V10668_FA16_MT_G1_1_DM1_MT_T5",
+      "rule_lineage": "MT:G1#1:D-1->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G1#1",
+      "source_prize_vn": "Giải 1 bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đà Nẵng",
+        "Khánh Hòa"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 329,
+      "aggregate_hits": 225,
+      "aggregate_hit_rate_pct": 68.39,
+      "per_source_station": [
+        {
+          "source_station": "Đà Nẵng",
+          "n": 328,
+          "hits": 150,
+          "hit_rate_pct": 45.73,
+          "ci95_pct": [
+            40.42,
+            51.14
+          ]
+        },
+        {
+          "source_station": "Khánh Hòa",
+          "n": 329,
+          "hits": 143,
+          "hit_rate_pct": 43.47,
+          "ci95_pct": [
+            38.21,
+            48.87
+          ]
+        }
+      ],
+      "best_source_station": "Đà Nẵng"
+    },
+    {
+      "rule_id": "V10668_FA17_MN_G8_1_DM3_MT_T7",
+      "rule_lineage": "MN:G8#1:D-3->(MT,T7)",
+      "source_region": "MN",
+      "source_prize": "G8#1",
+      "source_prize_vn": "Giải 8 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đồng Nai",
+        "Cần Thơ",
+        "Sóc Trăng"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 316,
+      "aggregate_hits": 263,
+      "aggregate_hit_rate_pct": 83.23,
+      "per_source_station": [
+        {
+          "source_station": "Sóc Trăng",
+          "n": 316,
+          "hits": 145,
+          "hit_rate_pct": 45.89,
+          "ci95_pct": [
+            40.47,
+            51.4
+          ]
+        },
+        {
+          "source_station": "Cần Thơ",
+          "n": 316,
+          "hits": 140,
+          "hit_rate_pct": 44.3,
+          "ci95_pct": [
+            38.93,
+            49.82
+          ]
+        },
+        {
+          "source_station": "Đồng Nai",
+          "n": 316,
+          "hits": 129,
+          "hit_rate_pct": 40.82,
+          "ci95_pct": [
+            35.55,
+            46.32
+          ]
+        }
+      ],
+      "best_source_station": "Sóc Trăng"
+    },
+    {
+      "rule_id": "V10668_FA18_MT_DB_1_DM3_MT_T7",
+      "rule_lineage": "MT:DB#1:D-3->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_prize_vn": "Giải ĐB bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đà Nẵng",
+        "Khánh Hòa"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 329,
+      "aggregate_hits": 225,
+      "aggregate_hit_rate_pct": 68.39,
+      "per_source_station": [
+        {
+          "source_station": "Khánh Hòa",
+          "n": 329,
+          "hits": 143,
+          "hit_rate_pct": 43.47,
+          "ci95_pct": [
+            38.21,
+            48.87
+          ]
+        },
+        {
+          "source_station": "Đà Nẵng",
+          "n": 328,
+          "hits": 139,
+          "hit_rate_pct": 42.38,
+          "ci95_pct": [
+            37.15,
+            47.78
+          ]
+        }
+      ],
+      "best_source_station": "Khánh Hòa"
+    },
+    {
+      "rule_id": "V10668_FA19_MT_G5_1_DM2_MT_T5",
+      "rule_lineage": "MT:G5#1:D-2->(MT,T5)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_prize_vn": "Giải 5 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T3",
+      "source_stations_that_weekday": [
+        "Đắk Lắk",
+        "Quảng Nam"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 330,
+      "aggregate_hits": 225,
+      "aggregate_hit_rate_pct": 68.18,
+      "per_source_station": [
+        {
+          "source_station": "Quảng Nam",
+          "n": 330,
+          "hits": 145,
+          "hit_rate_pct": 43.94,
+          "ci95_pct": [
+            38.68,
+            49.33
+          ]
+        },
+        {
+          "source_station": "Đắk Lắk",
+          "n": 328,
+          "hits": 137,
+          "hit_rate_pct": 41.77,
+          "ci95_pct": [
+            36.56,
+            47.17
+          ]
+        }
+      ],
+      "best_source_station": "Quảng Nam"
+    },
+    {
+      "rule_id": "V10668_FA20_MB_G1_1_DM2_MT_T7",
+      "rule_lineage": "MB:G1#1:D-2->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "G1#1",
+      "source_prize_vn": "Giải 1 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Hà Nội"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 150,
+      "aggregate_hit_rate_pct": 46.01,
+      "per_source_station": [
+        {
+          "source_station": "Hà Nội",
+          "n": 326,
+          "hits": 150,
+          "hit_rate_pct": 46.01,
+          "ci95_pct": [
+            40.68,
+            51.44
+          ]
+        }
+      ],
+      "best_source_station": "Hà Nội"
+    },
+    {
+      "rule_id": "V10668_FA21_MT_G5_1_DM3_MT_T7",
+      "rule_lineage": "MT:G5#1:D-3->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G5#1",
+      "source_prize_vn": "Giải 5 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đà Nẵng",
+        "Khánh Hòa"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 329,
+      "aggregate_hits": 223,
+      "aggregate_hit_rate_pct": 67.78,
+      "per_source_station": [
+        {
+          "source_station": "Khánh Hòa",
+          "n": 329,
+          "hits": 141,
+          "hit_rate_pct": 42.86,
+          "ci95_pct": [
+            37.62,
+            48.26
+          ]
+        },
+        {
+          "source_station": "Đà Nẵng",
+          "n": 328,
+          "hits": 136,
+          "hit_rate_pct": 41.46,
+          "ci95_pct": [
+            36.26,
+            46.86
+          ]
+        }
+      ],
+      "best_source_station": "Khánh Hòa"
+    },
+    {
+      "rule_id": "V10668_FA22_MN_G8_1_DM1_MT_T5",
+      "rule_lineage": "MN:G8#1:D-1->(MT,T5)",
+      "source_region": "MN",
+      "source_prize": "G8#1",
+      "source_prize_vn": "Giải 8 bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Đồng Nai",
+        "Cần Thơ",
+        "Sóc Trăng"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 316,
+      "aggregate_hits": 262,
+      "aggregate_hit_rate_pct": 82.91,
+      "per_source_station": [
+        {
+          "source_station": "Sóc Trăng",
+          "n": 316,
+          "hits": 151,
+          "hit_rate_pct": 47.78,
+          "ci95_pct": [
+            42.34,
+            53.29
+          ]
+        },
+        {
+          "source_station": "Cần Thơ",
+          "n": 316,
+          "hits": 139,
+          "hit_rate_pct": 43.99,
+          "ci95_pct": [
+            38.62,
+            49.5
+          ]
+        },
+        {
+          "source_station": "Đồng Nai",
+          "n": 316,
+          "hits": 126,
+          "hit_rate_pct": 39.87,
+          "ci95_pct": [
+            34.63,
+            45.36
+          ]
+        }
+      ],
+      "best_source_station": "Sóc Trăng"
+    },
+    {
+      "rule_id": "V10668_FA23_MB_G7_1_DM3_MT_T5",
+      "rule_lineage": "MB:G7#1:D-3->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G7#1",
+      "source_prize_vn": "Giải 7 bộ 1",
+      "source_lag": "D-3",
+      "source_weekday": "T2",
+      "source_stations_that_weekday": [
+        "Hà Nội"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 325,
+      "aggregate_hits": 149,
+      "aggregate_hit_rate_pct": 45.85,
+      "per_source_station": [
+        {
+          "source_station": "Hà Nội",
+          "n": 325,
+          "hits": 149,
+          "hit_rate_pct": 45.85,
+          "ci95_pct": [
+            40.51,
+            51.28
+          ]
+        }
+      ],
+      "best_source_station": "Hà Nội"
+    },
+    {
+      "rule_id": "V10668_FA24_MB_G6_1_DM2_MN_T7",
+      "rule_lineage": "MB:G6#1:D-2->(MN,T7)",
+      "source_region": "MB",
+      "source_prize": "G6#1",
+      "source_prize_vn": "Giải 6 bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Hà Nội"
+      ],
+      "source_station_count": 1,
+      "target_region": "MN",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 179,
+      "aggregate_hit_rate_pct": 54.91,
+      "per_source_station": [
+        {
+          "source_station": "Hà Nội",
+          "n": 326,
+          "hits": 179,
+          "hit_rate_pct": 54.91,
+          "ci95_pct": [
+            49.48,
+            60.22
+          ]
+        }
+      ],
+      "best_source_station": "Hà Nội"
+    },
+    {
+      "rule_id": "V10668_FA25_MT_DB_1_DM2_MT_T7",
+      "rule_lineage": "MT:DB#1:D-2->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "DB#1",
+      "source_prize_vn": "Giải ĐB bộ 1",
+      "source_lag": "D-2",
+      "source_weekday": "T5",
+      "source_stations_that_weekday": [
+        "Bình Định",
+        "Quảng Trị",
+        "Quảng Bình"
+      ],
+      "source_station_count": 3,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 329,
+      "aggregate_hits": 272,
+      "aggregate_hit_rate_pct": 82.67,
+      "per_source_station": [
+        {
+          "source_station": "Bình Định",
+          "n": 329,
+          "hits": 142,
+          "hit_rate_pct": 43.16,
+          "ci95_pct": [
+            37.92,
+            48.56
+          ]
+        },
+        {
+          "source_station": "Quảng Bình",
+          "n": 329,
+          "hits": 136,
+          "hit_rate_pct": 41.34,
+          "ci95_pct": [
+            36.15,
+            46.73
+          ]
+        },
+        {
+          "source_station": "Quảng Trị",
+          "n": 329,
+          "hits": 133,
+          "hit_rate_pct": 40.43,
+          "ci95_pct": [
+            35.26,
+            45.81
+          ]
+        }
+      ],
+      "best_source_station": "Bình Định"
+    },
+    {
+      "rule_id": "V10668_FA26_MB_G6_1_DM1_MT_T5",
+      "rule_lineage": "MB:G6#1:D-1->(MT,T5)",
+      "source_region": "MB",
+      "source_prize": "G6#1",
+      "source_prize_vn": "Giải 6 bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T4",
+      "source_stations_that_weekday": [
+        "Bắc Ninh"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T5",
+      "aggregate_n": 328,
+      "aggregate_hits": 150,
+      "aggregate_hit_rate_pct": 45.73,
+      "per_source_station": [
+        {
+          "source_station": "Bắc Ninh",
+          "n": 328,
+          "hits": 150,
+          "hit_rate_pct": 45.73,
+          "ci95_pct": [
+            40.42,
+            51.14
+          ]
+        }
+      ],
+      "best_source_station": "Bắc Ninh"
+    },
+    {
+      "rule_id": "V10668_FA27_MB_DB_1_DM1_MT_T7",
+      "rule_lineage": "MB:DB#1:D-1->(MT,T7)",
+      "source_region": "MB",
+      "source_prize": "DB#1",
+      "source_prize_vn": "Giải ĐB bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T6",
+      "source_stations_that_weekday": [
+        "Hải Phòng"
+      ],
+      "source_station_count": 1,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 326,
+      "aggregate_hits": 149,
+      "aggregate_hit_rate_pct": 45.71,
+      "per_source_station": [
+        {
+          "source_station": "Hải Phòng",
+          "n": 326,
+          "hits": 149,
+          "hit_rate_pct": 45.71,
+          "ci95_pct": [
+            40.38,
+            51.13
+          ]
+        }
+      ],
+      "best_source_station": "Hải Phòng"
+    },
+    {
+      "rule_id": "V10668_FA28_MT_G8_1_DM1_MT_T7",
+      "rule_lineage": "MT:G8#1:D-1->(MT,T7)",
+      "source_region": "MT",
+      "source_prize": "G8#1",
+      "source_prize_vn": "Giải 8 bộ 1",
+      "source_lag": "D-1",
+      "source_weekday": "T6",
+      "source_stations_that_weekday": [
+        "Gia Lai",
+        "Ninh Thuận"
+      ],
+      "source_station_count": 2,
+      "target_region": "MT",
+      "target_weekday": "T7",
+      "aggregate_n": 330,
+      "aggregate_hits": 224,
+      "aggregate_hit_rate_pct": 67.88,
+      "per_source_station": [
+        {
+          "source_station": "Ninh Thuận",
+          "n": 330,
+          "hits": 156,
+          "hit_rate_pct": 47.27,
+          "ci95_pct": [
+            41.95,
+            52.66
+          ]
+        },
+        {
+          "source_station": "Gia Lai",
+          "n": 330,
+          "hits": 146,
+          "hit_rate_pct": 44.24,
+          "ci95_pct": [
+            38.98,
+            49.64
+          ]
+        }
+      ],
+      "best_source_station": "Ninh Thuận"
+    }
+  ]
+}

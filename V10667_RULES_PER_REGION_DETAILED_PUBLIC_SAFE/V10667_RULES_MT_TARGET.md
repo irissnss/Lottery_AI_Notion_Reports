@@ -1,6 +1,6 @@
 # V10668 Rules cho TARGET = MT (Đích = Miền MT)
 
-> **Generated**: 2026-06-02T10:32:49+07:00
+> **Generated**: 2026-06-02T11:28:25+07:00
 > **Target region**: MT
 > **Audit window**: Forward 90d, anchor 2026-06-02 → earliest closeout 2026-08-31
 > **Patch**: V10668 TEMPORAL CAUSALITY FIX (đã loại rule vi phạm thứ tự xổ)
@@ -15,7 +15,11 @@ Các rule "nguồn xổ SAU đích cùng ngày" (vd MT(D)→MN(D), MB(D)→MN(D)
 
 ## ⚠️ QUAN TRỌNG 2 — Quy ước Đánh Số Bộ Số
 
-Ký hiệu `Giải X bộ Y` (hoặc `GX#Y`): bộ đếm theo vị trí trên bảng kết quả. Owner đánh dấu G.4 MB (4 bộ): Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right. Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559. Xem đầy đủ: `V10667_BO_NUMBERING_LEGEND.md`.
+Ký hiệu `Giải X bộ Y` (hoặc `GX#Y`): **bộ = vị trí trên bảng kết quả, KHÔNG phải đài**. Owner đánh dấu G.4 MB (4 bộ): Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right. Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559. Xem đầy đủ: `V10667_BO_NUMBERING_LEGEND.md`.
+
+## ⚠️ QUAN TRỌNG 3 — Nguồn nhiều đài (GOM/union)
+
+Khi miền nguồn có nhiều đài cùng ngày, rule **GOM (union)** giá trị của TẤT CẢ đài đó. Mỗi rule dưới đây đã ghi rõ đài nguồn cụ thể trong phần "Mô tả". Lưu ý MB mỗi thứ là 1 đài tỉnh khác nhau (T2=Hà Nội, T3=Quảng Ninh, T4=Bắc Ninh, T5=Hà Nội, T6=Hải Phòng, T7=Nam Định, CN=Thái Bình). Xem đầy đủ lịch đài + cách resolve: `V10670_SOURCE_SEMANTICS_LEGEND.md`.
 
 ## Giới thiệu — MT
 
@@ -44,7 +48,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 ## MT × Thứ Hai (T2)
 
 **Đài hoạt động ngày này**:
-- Huế
+- Thừa Thiên Huế
 - Phú Yên
 
 **Coverage trong cell này**: 101 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
@@ -53,7 +57,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 2 đài MT xổ T6 (**Gia Lai, Ninh Thuận**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **331**
@@ -63,20 +67,20 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.47pp**
 - p-value: 0.1980
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 331 | 117 | 35.35% | [30.4-40.6]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 331 | 112 | 33.84% | [28.9-39.1]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
 | Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
 |---|---|---|---|
+| 2026-06-01 | 2026-05-29 | 02, 45 | Thừa Thiên Huế |
+| 2026-05-25 | 2026-05-22 | 48, 67 | Thừa Thiên Huế |
 | 2026-05-18 | 2026-05-15 | 18, 98 | Phú Yên |
-| 2026-04-13 | 2026-04-10 | 59, 62 | Phú Yên |
-| 2026-04-06 | 2026-04-03 | 15, 83 | Phú Yên |
 
 ---
 
@@ -84,7 +88,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ đài **Thái Bình** (đài MB xổ CN), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:DB#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -94,12 +98,12 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.03pp**
 - p-value: 0.2369
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
+| Thừa Thiên Huế | 327 | 72 | 22.02% | [17.9-26.8]% |
 | Phú Yên | 327 | 57 | 17.43% | [13.7-21.9]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
@@ -107,7 +111,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 |---|---|---|---|
 | 2026-06-01 | 2026-05-31 | 42 | Phú Yên |
 | 2026-05-25 | 2026-05-24 | 04 | Phú Yên |
-| 2026-04-20 | 2026-04-19 | 25 | Phú Yên |
+| 2026-04-27 | 2026-04-26 | 28 | Thừa Thiên Huế |
 
 ---
 
@@ -115,7 +119,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 4 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 4** từ đài **Nam Định** (đài MB xổ T7), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#4:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -125,12 +129,12 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.72pp**
 - p-value: 0.2744
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 327 | 67 | 20.49% | [16.5-25.2]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 327 | 63 | 19.27% | [15.4-23.9]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
@@ -146,7 +150,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ đài **Hải Phòng** (đài MB xổ T6), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:DB#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -156,18 +160,18 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.11pp**
 - p-value: 0.3573
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
+| Thừa Thiên Huế | 327 | 66 | 20.18% | [16.2-24.9]% |
 | Phú Yên | 327 | 61 | 18.65% | [14.8-23.2]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
 | Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
 |---|---|---|---|
-| 2026-05-25 | 2026-05-22 | 39 | Phú Yên |
+| 2026-05-25 | 2026-05-22 | 39 | Thừa Thiên Huế, Phú Yên |
 | 2026-05-18 | 2026-05-15 | 94 | Phú Yên |
 | 2026-05-04 | 2026-05-01 | 37 | Phú Yên |
 
@@ -177,7 +181,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1** từ đài **Hải Phòng** (đài MB xổ T6), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G6#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -187,12 +191,12 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.11pp**
 - p-value: 0.3573
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 327 | 66 | 20.18% | [16.2-24.9]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 327 | 58 | 17.74% | [14.0-22.2]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
@@ -208,7 +212,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ đài **Nam Định** (đài MB xổ T7), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -218,20 +222,20 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.80pp**
 - p-value: 0.4018
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 327 | 70 | 21.41% | [17.3-26.2]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 327 | 61 | 18.65% | [14.8-23.2]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
 | Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
 |---|---|---|---|
-| 2026-05-18 | 2026-05-16 | 24 | Phú Yên |
+| 2026-05-18 | 2026-05-16 | 24 | Thừa Thiên Huế, Phú Yên |
 | 2026-04-27 | 2026-04-25 | 96 | Phú Yên |
-| 2026-04-06 | 2026-04-04 | 16 | Phú Yên |
+| 2026-04-13 | 2026-04-11 | 33 | Thừa Thiên Huế |
 
 ---
 
@@ -239,7 +243,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 3 đài MT xổ CN (**Khánh Hòa, Kon Tum, Thừa Thiên Huế**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G2#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -249,20 +253,20 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.46pp**
 - p-value: 0.4555
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 330 | 115 | 34.85% | [29.9-40.1]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 330 | 113 | 34.24% | [29.3-39.5]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
 | Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
 |---|---|---|---|
-| 2026-05-25 | 2026-05-24 | 00, 06, 11 | Phú Yên |
-| 2026-04-20 | 2026-04-19 | 70, 73, 78 | Phú Yên |
-| 2026-03-23 | 2026-03-22 | 47, 85, 87 | Phú Yên |
+| 2026-06-01 | 2026-05-31 | 55, 95, 97 | Thừa Thiên Huế |
+| 2026-05-25 | 2026-05-24 | 00, 06, 11 | Thừa Thiên Huế, Phú Yên |
+| 2026-05-18 | 2026-05-17 | 01, 79, 90 | Thừa Thiên Huế |
 
 ---
 
@@ -270,7 +274,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Hai (T2) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2** từ đài **Nam Định** (đài MB xổ T7), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#2:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -280,20 +284,20 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.11pp**
 - p-value: 0.5407
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
 | Phú Yên | 327 | 62 | 18.96% | [15.1-23.6]% |
-| Huế | 0 | 0 | 0.00% | [0.0-0.0]% |
+| Thừa Thiên Huế | 327 | 55 | 16.82% | [13.2-21.2]% |
 
 **3 ngày gần nhất rule trúng** (worked examples):
 
 | Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
 |---|---|---|---|
-| 2026-03-30 | 2026-03-28 | 61 | Phú Yên |
-| 2026-02-09 | 2026-02-07 | 17 | Phú Yên |
-| 2026-02-02 | 2026-01-31 | 51 | Phú Yên |
+| 2026-03-30 | 2026-03-28 | 61 | Thừa Thiên Huế, Phú Yên |
+| 2026-03-16 | 2026-03-14 | 55 | Thừa Thiên Huế |
+| 2026-02-16 | 2026-02-14 | 09 | Thừa Thiên Huế |
 
 ---
 
@@ -310,7 +314,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: MODERATE
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 3 đài MT xổ CN (**Khánh Hòa, Kon Tum, Thừa Thiên Huế**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -320,7 +324,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +5.54pp**
 - p-value: 0.0239
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -341,7 +345,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ đài **Hà Nội** (đài MB xổ T2), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -351,7 +355,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +3.98pp**
 - p-value: 0.0722
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -372,7 +376,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3** từ đài **Hà Nội** (đài MB xổ T2), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#3:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -382,7 +386,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.44pp**
 - p-value: 0.1910
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -403,7 +407,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2** từ đài **Nam Định** (đài MB xổ T7), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -413,7 +417,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.33pp**
 - p-value: 0.2023
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -434,7 +438,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1** từ đài **Thái Bình** (đài MB xổ CN), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -444,7 +448,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.03pp**
 - p-value: 0.2369
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -465,7 +469,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 3 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 3** từ đài **Nam Định** (đài MB xổ T7), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#3:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -475,7 +479,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.72pp**
 - p-value: 0.2744
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -496,7 +500,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 3 đài MN xổ T3 (**Bến Tre, Vũng Tàu, Bạc Liêu**), ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G2#1:D, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **331**
@@ -506,7 +510,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.48pp**
 - p-value: 0.2995
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -527,7 +531,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Ba (T3) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1** từ đài **Thái Bình** (đài MB xổ CN), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -537,7 +541,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.11pp**
 - p-value: 0.3573
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -567,7 +571,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MN** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ GOM tất cả 3 đài MN xổ T3 (**Bến Tre, Vũng Tàu, Bạc Liêu**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:DB#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **328**
@@ -577,7 +581,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.33pp**
 - p-value: 0.1947
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -598,7 +602,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 4 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 4** từ đài **Quảng Ninh** (đài MB xổ T3), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#4:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **324**
@@ -608,7 +612,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.74pp**
 - p-value: 0.2730
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -629,7 +633,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MN** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1** từ GOM tất cả 3 đài MN xổ CN (**Tiền Giang, Kiên Giang, Đà Lạt**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G7#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **327**
@@ -639,7 +643,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.65pp**
 - p-value: 0.4230
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -660,7 +664,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2** từ đài **Thái Bình** (đài MB xổ CN), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **324**
@@ -670,7 +674,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.51pp**
 - p-value: 0.4468
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -691,7 +695,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MN** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2** từ GOM tất cả 3 đài MN xổ T2 (**TP. HCM, Đồng Tháp, Cà Mau**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G3#2:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **328**
@@ -701,7 +705,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.28pp**
 - p-value: 0.4804
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -722,7 +726,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 3 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 3** từ đài **Thái Bình** (đài MB xổ CN), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#3:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **324**
@@ -732,7 +736,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.11pp**
 - p-value: 0.5403
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -753,7 +757,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 2 đài MT xổ T2 (**Thừa Thiên Huế, Phú Yên**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **328**
@@ -763,7 +767,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.27pp**
 - p-value: 0.5607
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -784,7 +788,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 3 đài MN xổ T4 (**Đồng Nai, Cần Thơ, Sóc Trăng**), ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G2#1:D, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -794,7 +798,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.28pp**
 - p-value: 0.5682
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -825,7 +829,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 2 đài MT xổ T3 (**Đắk Lắk, Quảng Nam**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G2#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -836,7 +840,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -858,7 +862,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 2 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 2** từ đài **Bắc Ninh** (đài MB xổ T4), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#2:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **328**
@@ -869,7 +873,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -891,7 +895,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 3 đài MN xổ T5 (**Tây Ninh, An Giang, Bình Thuận**), ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G5#1:D, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **332**
@@ -902,7 +906,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -924,7 +928,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:DB#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -935,7 +939,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -957,7 +961,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MN** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2** từ GOM tất cả 3 đài MN xổ T2 (**TP. HCM, Đồng Tháp, Cà Mau**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G3#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -968,7 +972,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -990,7 +994,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ đài **Hà Nội** (đài MB xổ T2), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **325**
@@ -1001,7 +1005,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1023,7 +1027,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1** từ GOM tất cả 2 đài MT xổ T2 (**Thừa Thiên Huế, Phú Yên**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G7#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1034,7 +1038,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1056,7 +1060,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G5#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1067,7 +1071,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1089,7 +1093,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1100,7 +1104,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1122,7 +1126,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 2 đài MT xổ T3 (**Đắk Lắk, Quảng Nam**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G5#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1133,7 +1137,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1155,7 +1159,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MN** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1** từ GOM tất cả 3 đài MN xổ T4 (**Đồng Nai, Cần Thơ, Sóc Trăng**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G8#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1166,7 +1170,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1188,7 +1192,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1** từ đài **Hà Nội** (đài MB xổ T2), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **325**
@@ -1199,7 +1203,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1230,7 +1234,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 3 đài MN xổ T6 (**Vĩnh Long, Bình Dương, Trà Vinh**), ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G5#1:D, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **332**
@@ -1240,7 +1244,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.75pp**
 - p-value: 0.2625
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1261,7 +1265,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 3 đài MN xổ T6 (**Vĩnh Long, Bình Dương, Trà Vinh**), ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G1#1:D, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **332**
@@ -1271,7 +1275,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.55pp**
 - p-value: 0.4377
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1292,7 +1296,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1** từ GOM tất cả 2 đài MT xổ T3 (**Đắk Lắk, Quảng Nam**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G3#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1302,7 +1306,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +0.52pp**
 - p-value: 0.4457
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1323,7 +1327,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3** từ đài **Quảng Ninh** (đài MB xổ T3), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#3:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1333,7 +1337,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.01pp**
 - p-value: 0.5250
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1354,7 +1358,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1364,7 +1368,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.10pp**
 - p-value: 0.5373
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1385,7 +1389,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1** từ GOM tất cả 3 đài MT xổ T5 (**Bình Định, Quảng Trị, Quảng Bình**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G3#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **331**
@@ -1395,7 +1399,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.47pp**
 - p-value: 0.5982
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1416,7 +1420,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G8#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1426,7 +1430,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.63pp**
 - p-value: 0.6124
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1447,7 +1451,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2** từ GOM tất cả 2 đài MT xổ T3 (**Đắk Lắk, Quảng Nam**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G3#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1457,7 +1461,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +-0.69pp**
 - p-value: 0.6206
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1488,7 +1492,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 3 đài MT xổ T5 (**Bình Định, Quảng Trị, Quảng Bình**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G2#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1499,7 +1503,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1521,7 +1525,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 2 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 2** từ đài **Bắc Ninh** (đài MB xổ T4), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G4#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1532,7 +1536,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1554,7 +1558,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 3 đài MT xổ T5 (**Bình Định, Quảng Trị, Quảng Bình**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G5#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1565,7 +1569,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1587,7 +1591,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2** từ đài **Bắc Ninh** (đài MB xổ T4), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#2:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1598,7 +1602,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1620,7 +1624,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3** từ đài **Bắc Ninh** (đài MB xổ T4), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G6#3:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1631,7 +1635,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1653,7 +1657,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MN** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1** từ GOM tất cả 3 đài MN xổ T4 (**Đồng Nai, Cần Thơ, Sóc Trăng**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G8#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1664,7 +1668,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1686,7 +1690,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:DB#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1697,7 +1701,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1719,7 +1723,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ đài **Hà Nội** (đài MB xổ T5), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G1#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1730,7 +1734,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1752,7 +1756,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 2 đài MT xổ T4 (**Đà Nẵng, Khánh Hòa**), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G5#1:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1763,7 +1767,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1785,7 +1789,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ GOM tất cả 3 đài MT xổ T5 (**Bình Định, Quảng Trị, Quảng Bình**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:DB#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **329**
@@ -1796,7 +1800,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1818,7 +1822,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1** từ đài **Hải Phòng** (đài MB xổ T6), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:DB#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1829,7 +1833,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1851,7 +1855,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: ⭐ STRONG (BH-pass)
 
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1** từ GOM tất cả 2 đài MT xổ T6 (**Gia Lai, Ninh Thuận**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G8#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1862,7 +1866,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - p-value: 0.0000
 - BH-pass FDR α=0.05: ✓ PASS (gold standard)
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1894,7 +1898,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1** từ GOM tất cả 3 đài MT xổ T7 (**Đà Nẵng, Quảng Ngãi, Đắk Nông**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G5#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1904,7 +1908,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +4.10pp**
 - p-value: 0.0573
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1926,7 +1930,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 4 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 4** từ đài **Hà Nội** (đài MB xổ T5), ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#4:D-3, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -1936,7 +1940,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +3.98pp**
 - p-value: 0.0722
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1958,7 +1962,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1** từ GOM tất cả 2 đài MT xổ T6 (**Gia Lai, Ninh Thuận**), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MT:G1#1:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -1968,7 +1972,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +3.80pp**
 - p-value: 0.0908
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -1990,7 +1994,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2** từ đài **Hải Phòng** (đài MB xổ T6), ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G7#2:D-2, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -2000,7 +2004,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +3.06pp**
 - p-value: 0.1338
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -2022,7 +2026,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3** từ đài **Nam Định** (đài MB xổ T7), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G6#3:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -2032,7 +2036,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.44pp**
 - p-value: 0.1910
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -2054,7 +2058,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 2** từ đài **Nam Định** (đài MB xổ T7), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G2#2:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -2064,7 +2068,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +2.14pp**
 - p-value: 0.2245
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -2086,7 +2090,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MN** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1** từ GOM tất cả 4 đài MN xổ T7 (**TP. HCM, Long An, Bình Phước, Hậu Giang**), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MN:G2#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **330**
@@ -2096,7 +2100,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.33pp**
 - p-value: 0.2964
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|
@@ -2118,7 +2122,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 **Strength**: WEAK
 
-**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+**Mô tả**: Khi xổ Chủ Nhật (CN) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1** từ đài **Nam Định** (đài MB xổ T7), ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D. (Nguồn = MB:G6#1:D-1, đếm union nếu nhiều đài.)
 
 **Số liệu lịch sử**:
 - Số ngày đánh giá: **326**
@@ -2128,7 +2132,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - **LIFT: +1.22pp**
 - p-value: 0.3425
 
-**Per-station breakdown** (đài nào contribute nhiều nhất):
+**Per-station breakdown — đài ĐÍCH (MT) nào trúng nhiều nhất** (source đài đã ghi trong Mô tả; source breakdown chi tiết: `V10670_SOURCE_STATION_BREAKDOWN.json`):
 
 | Đài | n eval | Hits | Hit rate | CI95 |
 |---|---|---|---|---|

@@ -1,6 +1,6 @@
 # V10668 — Rules per Region — Index Hub (TEMPORAL-FIXED)
 
-> **Generated**: 2026-06-02T10:32:49+07:00
+> **Generated**: 2026-06-02T11:28:25+07:00
 > **Patch**: V10668 TEMPORAL CAUSALITY FIX — đã loại 266 cells vi phạm thứ tự xổ
 > **BH-pass valid (sau fix)**: 232 cells (đã loại 36 BH-pass temporal-invalid)
 > **Forward audit window**: 90 ngày, anchor 2026-06-02 → closeout 2026-08-31 (28 rule valid)

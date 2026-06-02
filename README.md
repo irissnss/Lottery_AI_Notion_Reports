@@ -1,12 +1,13 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10669 (Per-Region Rules — TEMPORAL CAUSALITY FULLY VERIFIED)**
+**Latest version: V10670 (Per-Region Rules — SOURCE SEMANTICS CLARIFIED)**
 
-## ⚠️ Read first (3 critical notes)
+## ⚠️ Read first (4 critical notes)
 
-1. [**✅ V10669_TEMPORAL_VERIFICATION_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10669_TEMPORAL_VERIFICATION_REPORT_VN.md) — comprehensive verification: ALL artifacts scanned, OVERALL CLEAN=True. 232 BH-pass valid cells + 28 forward audit rules remain.
-2. [**🕐 V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md) — **CRITICAL**: Vietnam draws sequentially MN(16:10) → MT(17:10) → MB(18:15). Same-day rule where source draws AFTER target (e.g. MT(D)→MN(D)) is TEMPORAL VIOLATION and removed. 266 invalid cells filtered.
-3. [**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md) — `Giải X bộ Y` notation. G.4 MB (4 bộ): `Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right`.
+1. [**🎯 V10670_SOURCE_SEMANTICS_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10670_SOURCE_SEMANTICS_LEGEND.md) — **NEW**: how source notation works. `#Bộ` = position-in-prize NOT station. Multi-station source = UNION of all stations that weekday. Full station-by-weekday map (MB is per-province: T2=Hà Nội, T3=Quảng Ninh, T4=Bắc Ninh, T5=Hà Nội, T6=Hải Phòng, T7=Nam Định, CN=Thái Bình).
+2. [**✅ V10669_TEMPORAL_VERIFICATION_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10669_TEMPORAL_VERIFICATION_REPORT_VN.md) — comprehensive verification: OVERALL CLEAN=True. 232 BH-pass valid + 28 forward audit rules.
+3. [**🕐 V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md) — draw order MN(16:10)→MT(17:10)→MB(18:15); same-day source-after-target removed.
+4. [**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md) — `Giải X bộ Y` notation. G.4 MB (4 bộ): `Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right`.
 
 ## Quick navigation — per region rule docs
 
