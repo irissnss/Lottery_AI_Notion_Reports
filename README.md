@@ -1,10 +1,11 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10667.1 (Detailed Per-Region Rules + Bộ Numbering Legend)**
+**Latest version: V10668 (Per-Region Rules — TEMPORAL CAUSALITY FIXED)**
 
-## ⚠️ Read first
+## ⚠️ Read first (2 critical notes)
 
-[**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md) — explains how `Giải X bộ Y` notation maps to positions on lottery result board. Owner explicitly marked G.4 MB (4 bộ) — `Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right`.
+1. [**🕐 V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md) — **CRITICAL**: Vietnam draws sequentially MN(16:10) → MT(17:10) → MB(18:15). Same-day rule where source draws AFTER target (e.g. MT(D)→MN(D)) is TEMPORAL VIOLATION and removed. 266 invalid cells filtered.
+2. [**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md) — `Giải X bộ Y` notation. G.4 MB (4 bộ): `Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right`.
 
 ## Quick navigation — per region rule docs
 

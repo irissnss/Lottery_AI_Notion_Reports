@@ -1,23 +1,21 @@
-# V10667 Rules cho TARGET = MT (Đích = Miền MT)
+# V10668 Rules cho TARGET = MT (Đích = Miền MT)
 
-> **Generated**: 2026-06-02T01:27:09+07:00
+> **Generated**: 2026-06-02T10:32:49+07:00
 > **Target region**: MT
 > **Audit window**: Forward 90d, anchor 2026-06-02 → earliest closeout 2026-08-31
+> **Patch**: V10668 TEMPORAL CAUSALITY FIX (đã loại rule vi phạm thứ tự xổ)
 
-## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+## ⚠️ QUAN TRỌNG 1 — Thứ tự xổ & Temporal Causality
 
-Rule sử dụng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Bộ được đếm theo vị trí trên bảng kết quả.
+Thứ tự xổ Việt Nam: **MN (~16:10) → MT (~17:10) → MB (~18:15)**.
 
-**Nguồn MB cho rule này** (có nhiều bộ): G2 (2), **G4 (4 — owner mới bổ sung ⭐)**, G6 (3), G7 (4).
-**Nguồn MN/MT G3 (source-only, 2 bộ)**: G3 bộ 1 (trái) + G3 bộ 2 (phải).
+**MT target**: MT xổ THỨ HAI trong ngày (~17:10, sau MN ~16:10). Rule cho MT target được dùng MN(D) same-day (MN đã xổ trước) + mọi nguồn lag ≥ 1. KHÔNG dùng MB(D) same-day vì MB xổ sau MT.
 
-**G.4 MB position map** (4 bộ):
-```
-Giải 4 bộ 1 [top-left]    Giải 4 bộ 2 [top-right]
-Giải 4 bộ 3 [bottom-left] Giải 4 bộ 4 [bottom-right]
-```
+Các rule "nguồn xổ SAU đích cùng ngày" (vd MT(D)→MN(D), MB(D)→MN(D), MB(D)→MT(D)) đã được **LOẠI BỎ** khỏi tài liệu này vì không thể dùng để dự đoán forward (data từ tương lai). Xem chi tiết: `V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md`.
 
-**Xem đầy đủ legend**: [📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)
+## ⚠️ QUAN TRỌNG 2 — Quy ước Đánh Số Bộ Số
+
+Ký hiệu `Giải X bộ Y` (hoặc `GX#Y`): bộ đếm theo vị trí trên bảng kết quả. Owner đánh dấu G.4 MB (4 bộ): Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right. Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559. Xem đầy đủ: `V10667_BO_NUMBERING_LEGEND.md`.
 
 ## Giới thiệu — MT
 
@@ -49,7 +47,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Huế
 - Phú Yên
 
-**Coverage trong cell này**: 116 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
 
 ### Rule #1 — `MT:G1#1:D-3`
 
@@ -306,7 +304,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Đắk Lắk
 - Quảng Nam
 
-**Coverage trong cell này**: 116 rule có data, **1 đạt p<0.05**, **0 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **1 đạt p<0.05**, **0 BH-pass** ⭐.
 
 ### Rule #1 — `MT:G1#1:D-2`
 
@@ -563,7 +561,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Đà Nẵng
 - Khánh Hòa
 
-**Coverage trong cell này**: 116 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
 
 ### Rule #1 — `MN:DB#1:D-1`
 
@@ -627,38 +625,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #3 — `MB:G1#1:D`
-
-**Strength**: WEAK
-
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **326**
-- Số ngày trúng (ANY station of MT): **115**
-- Hit rate: **35.28%**
-- Baseline (random): **33.75%**
-- **LIFT: +1.52pp**
-- p-value: 0.3005
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Khánh Hòa | 326 | 68 | 20.86% | [16.8-25.6]% |
-| Đà Nẵng | 325 | 66 | 20.31% | [16.3-25.0]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-13 | 2026-05-13 | 61 | Khánh Hòa |
-| 2026-04-08 | 2026-04-08 | 35 | Đà Nẵng |
-| 2026-03-25 | 2026-03-25 | 66 | Khánh Hòa |
-
----
-
-### Rule #4 — `MN:G7#1:D-3`
+### Rule #3 — `MN:G7#1:D-3`
 
 **Strength**: WEAK
 
@@ -689,7 +656,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #5 — `MB:G7#2:D-3`
+### Rule #4 — `MB:G7#2:D-3`
 
 **Strength**: WEAK
 
@@ -720,7 +687,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #6 — `MN:G3#2:D-2`
+### Rule #5 — `MN:G3#2:D-2`
 
 **Strength**: WEAK
 
@@ -751,38 +718,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #7 — `MB:G7#2:D`
-
-**Strength**: WEAK
-
-**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **326**
-- Số ngày trúng (ANY station of MT): **110**
-- Hit rate: **33.74%**
-- Baseline (random): **33.75%**
-- **LIFT: +-0.01pp**
-- p-value: 0.5250
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Đà Nẵng | 325 | 66 | 20.31% | [16.3-25.0]% |
-| Khánh Hòa | 326 | 61 | 18.71% | [14.8-23.3]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-13 | 2026-05-13 | 90 | Đà Nẵng |
-| 2026-05-06 | 2026-05-06 | 50 | Khánh Hòa |
-| 2026-04-29 | 2026-04-29 | 46 | Đà Nẵng, Khánh Hòa |
-
----
-
-### Rule #8 — `MB:G4#3:D-3`
+### Rule #6 — `MB:G4#3:D-3`
 
 **Strength**: WEAK
 
@@ -813,6 +749,68 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
+### Rule #7 — `MT:G1#1:D-2`
+
+**Strength**: WEAK
+
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **328**
+- Số ngày trúng (ANY station of MT): **183**
+- Hit rate: **55.79%**
+- Baseline (random): **56.06%**
+- **LIFT: +-0.27pp**
+- p-value: 0.5607
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Khánh Hòa | 328 | 112 | 34.15% | [29.2-39.4]% |
+| Đà Nẵng | 327 | 107 | 32.72% | [27.9-38.0]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-27 | 2026-05-25 | 22, 93 | Khánh Hòa |
+| 2026-05-20 | 2026-05-18 | 18, 76 | Đà Nẵng, Khánh Hòa |
+| 2026-05-13 | 2026-05-11 | 32, 44 | Đà Nẵng |
+
+---
+
+### Rule #8 — `MN:G2#1:D`
+
+**Strength**: WEAK
+
+**Mô tả**: Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **329**
+- Số ngày trúng (ANY station of MT): **230**
+- Hit rate: **69.91%**
+- Baseline (random): **70.19%**
+- **LIFT: +-0.28pp**
+- p-value: 0.5682
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Đà Nẵng | 328 | 160 | 48.78% | [43.4-54.2]% |
+| Khánh Hòa | 329 | 145 | 44.07% | [38.8-49.5]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-20 | 2026-05-20 | 15, 29, 90 | Đà Nẵng |
+| 2026-05-13 | 2026-05-13 | 09, 47, 58 | Khánh Hòa |
+| 2026-04-22 | 2026-04-22 | 19, 46, 75 | Khánh Hòa |
+
+---
+
 
 ## MT × Thứ Năm (T5)
 
@@ -821,7 +819,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Quảng Trị
 - Quảng Bình
 
-**Coverage trong cell này**: 116 rule có data, **109 đạt p<0.05**, **85 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **97 đạt p<0.05**, **77 BH-pass** ⭐.
 
 ### Rule #1 ⭐ — `MT:G2#1:D-2`
 
@@ -889,40 +887,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #3 ⭐ — `MB:G7#3:D`
-
-**Strength**: ⭐ STRONG (BH-pass)
-
-**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **327**
-- Số ngày trúng (ANY station of MT): **157**
-- Hit rate: **48.01%**
-- Baseline (random): **33.75%**
-- **LIFT: +14.26pp**
-- p-value: 0.0000
-- BH-pass FDR α=0.05: ✓ PASS (gold standard)
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Bình Định | 327 | 66 | 20.18% | [16.2-24.9]% |
-| Quảng Trị | 327 | 64 | 19.57% | [15.6-24.2]% |
-| Quảng Bình | 327 | 62 | 18.96% | [15.1-23.6]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-07 | 2026-05-07 | 45 | Quảng Bình |
-| 2026-04-30 | 2026-04-30 | 98 | Quảng Bình |
-| 2026-04-16 | 2026-04-16 | 33 | Quảng Trị |
-
----
-
-### Rule #4 ⭐ — `MN:G5#1:D`
+### Rule #3 ⭐ — `MN:G5#1:D`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -955,7 +920,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #5 ⭐ — `MT:DB#1:D-1`
+### Rule #4 ⭐ — `MT:DB#1:D-1`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -988,7 +953,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #6 ⭐ — `MN:G3#2:D-3`
+### Rule #5 ⭐ — `MN:G3#2:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1021,7 +986,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #7 ⭐ — `MB:G2#1:D-3`
+### Rule #6 ⭐ — `MB:G2#1:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1054,7 +1019,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #8 ⭐ — `MT:G7#1:D-3`
+### Rule #7 ⭐ — `MT:G7#1:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1087,7 +1052,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #9 ⭐ — `MT:G5#1:D-1`
+### Rule #8 ⭐ — `MT:G5#1:D-1`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1120,7 +1085,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #10 ⭐ — `MT:G1#1:D-1`
+### Rule #9 ⭐ — `MT:G1#1:D-1`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1153,7 +1118,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #11 ⭐ — `MT:G5#1:D-2`
+### Rule #10 ⭐ — `MT:G5#1:D-2`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1186,7 +1151,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #12 ⭐ — `MN:G8#1:D-1`
+### Rule #11 ⭐ — `MN:G8#1:D-1`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1219,6 +1184,39 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
+### Rule #12 ⭐ — `MB:G7#1:D-3`
+
+**Strength**: ⭐ STRONG (BH-pass)
+
+**Mô tả**: Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **325**
+- Số ngày trúng (ANY station of MT): **149**
+- Hit rate: **45.85%**
+- Baseline (random): **33.75%**
+- **LIFT: +12.09pp**
+- p-value: 0.0000
+- BH-pass FDR α=0.05: ✓ PASS (gold standard)
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Quảng Trị | 325 | 60 | 18.46% | [14.6-23.0]% |
+| Bình Định | 325 | 58 | 17.85% | [14.1-22.4]% |
+| Quảng Bình | 325 | 57 | 17.54% | [13.8-22.1]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-28 | 2026-05-25 | 90 | Quảng Bình |
+| 2026-05-21 | 2026-05-18 | 11 | Quảng Bình |
+| 2026-04-30 | 2026-04-27 | 34 | Bình Định |
+
+---
+
 
 ## MT × Thứ Sáu (T6)
 
@@ -1226,7 +1224,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Gia Lai
 - Ninh Thuận
 
-**Coverage trong cell này**: 116 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
 
 ### Rule #1 — `MN:G5#1:D`
 
@@ -1321,38 +1319,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #4 — `MB:G6#2:D`
-
-**Strength**: WEAK
-
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **328**
-- Số ngày trúng (ANY station of MT): **111**
-- Hit rate: **33.84%**
-- Baseline (random): **33.75%**
-- **LIFT: +0.09pp**
-- p-value: 0.5098
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Gia Lai | 328 | 65 | 19.82% | [15.9-24.5]% |
-| Ninh Thuận | 327 | 56 | 17.13% | [13.4-21.6]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-29 | 2026-05-29 | 78 | Gia Lai |
-| 2026-05-15 | 2026-05-15 | 14 | Ninh Thuận |
-| 2026-04-24 | 2026-04-24 | 34 | Gia Lai |
-
----
-
-### Rule #5 — `MB:G7#3:D-3`
+### Rule #4 — `MB:G7#3:D-3`
 
 **Strength**: WEAK
 
@@ -1383,7 +1350,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #6 — `MT:G1#1:D-2`
+### Rule #5 — `MT:G1#1:D-2`
 
 **Strength**: WEAK
 
@@ -1414,38 +1381,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #7 — `MB:G7#2:D`
-
-**Strength**: WEAK
-
-**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **328**
-- Số ngày trúng (ANY station of MT): **110**
-- Hit rate: **33.54%**
-- Baseline (random): **33.75%**
-- **LIFT: +-0.22pp**
-- p-value: 0.5562
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Ninh Thuận | 327 | 63 | 19.27% | [15.4-23.9]% |
-| Gia Lai | 328 | 56 | 17.07% | [13.4-21.5]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-08 | 2026-05-08 | 25 | Ninh Thuận |
-| 2026-04-17 | 2026-04-17 | 27 | Gia Lai |
-| 2026-04-10 | 2026-04-10 | 37 | Ninh Thuận |
-
----
-
-### Rule #8 — `MT:G3#1:D-1`
+### Rule #6 — `MT:G3#1:D-1`
 
 **Strength**: WEAK
 
@@ -1476,6 +1412,68 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
+### Rule #7 — `MT:G8#1:D-2`
+
+**Strength**: WEAK
+
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **329**
+- Số ngày trúng (ANY station of MT): **182**
+- Hit rate: **55.32%**
+- Baseline (random): **55.95%**
+- **LIFT: +-0.63pp**
+- p-value: 0.6124
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Gia Lai | 329 | 105 | 31.91% | [27.1-37.1]% |
+| Ninh Thuận | 329 | 94 | 28.57% | [24.0-33.7]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-29 | 2026-05-27 | 31, 66 | Gia Lai |
+| 2026-05-22 | 2026-05-20 | 28, 81 | Gia Lai |
+| 2026-05-15 | 2026-05-13 | 06, 58 | Gia Lai |
+
+---
+
+### Rule #8 — `MT:G3#2:D-3`
+
+**Strength**: WEAK
+
+**Mô tả**: Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **330**
+- Số ngày trúng (ANY station of MT): **182**
+- Hit rate: **55.15%**
+- Baseline (random): **55.84%**
+- **LIFT: +-0.69pp**
+- p-value: 0.6206
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Gia Lai | 330 | 107 | 32.42% | [27.6-37.6]% |
+| Ninh Thuận | 329 | 104 | 31.61% | [26.8-36.8]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-08 | 2026-05-05 | 33, 46 | Gia Lai |
+| 2026-04-24 | 2026-04-21 | 77, 99 | Ninh Thuận |
+| 2026-04-03 | 2026-03-31 | 08, 14 | Gia Lai |
+
+---
+
 
 ## MT × Thứ Bảy (T7)
 
@@ -1484,7 +1482,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Quảng Ngãi
 - Đắk Nông
 
-**Coverage trong cell này**: 116 rule có data, **107 đạt p<0.05**, **90 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **94 đạt p<0.05**, **81 BH-pass** ⭐.
 
 ### Rule #1 ⭐ — `MT:G2#1:D-2`
 
@@ -1651,73 +1649,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #6 ⭐ — `MB:G2#1:D`
-
-**Strength**: ⭐ STRONG (BH-pass)
-
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **326**
-- Số ngày trúng (ANY station of MT): **152**
-- Hit rate: **46.63%**
-- Baseline (random): **33.75%**
-- **LIFT: +12.87pp**
-- p-value: 0.0000
-- BH-pass FDR α=0.05: ✓ PASS (gold standard)
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Quảng Ngãi | 325 | 65 | 20.00% | [16.0-24.7]% |
-| Đắk Nông | 326 | 61 | 18.71% | [14.8-23.3]% |
-| Đà Nẵng | 325 | 55 | 16.92% | [13.2-21.4]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-23 | 2026-05-23 | 31 | Quảng Ngãi |
-| 2026-05-16 | 2026-05-16 | 24 | Đà Nẵng |
-| 2026-04-04 | 2026-04-04 | 16 | Đắk Nông |
-
----
-
-### Rule #7 ⭐ — `MB:G4#1:D`
-
-**Strength**: ⭐ STRONG (BH-pass)
-
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **326**
-- Số ngày trúng (ANY station of MT): **151**
-- Hit rate: **46.32%**
-- Baseline (random): **33.75%**
-- **LIFT: +12.57pp**
-- p-value: 0.0000
-- BH-pass FDR α=0.05: ✓ PASS (gold standard)
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Đắk Nông | 326 | 63 | 19.33% | [15.4-24.0]% |
-| Quảng Ngãi | 325 | 61 | 18.77% | [14.9-23.4]% |
-| Đà Nẵng | 325 | 52 | 16.00% | [12.4-20.4]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-30 | 2026-05-30 | 59 | Đà Nẵng |
-| 2026-04-25 | 2026-04-25 | 90 | Quảng Ngãi |
-| 2026-04-11 | 2026-04-11 | 68 | Đắk Nông |
-
----
-
-### Rule #8 ⭐ — `MN:G8#1:D-3`
+### Rule #6 ⭐ — `MN:G8#1:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1750,7 +1682,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #9 ⭐ — `MT:DB#1:D-3`
+### Rule #7 ⭐ — `MT:DB#1:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1783,7 +1715,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #10 ⭐ — `MB:G1#1:D-2`
+### Rule #8 ⭐ — `MB:G1#1:D-2`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1816,40 +1748,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
-### Rule #11 ⭐ — `MB:G6#1:D`
-
-**Strength**: ⭐ STRONG (BH-pass)
-
-**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
-
-**Số liệu lịch sử**:
-- Số ngày đánh giá: **326**
-- Số ngày trúng (ANY station of MT): **150**
-- Hit rate: **46.01%**
-- Baseline (random): **33.75%**
-- **LIFT: +12.26pp**
-- p-value: 0.0000
-- BH-pass FDR α=0.05: ✓ PASS (gold standard)
-
-**Per-station breakdown** (đài nào contribute nhiều nhất):
-
-| Đài | n eval | Hits | Hit rate | CI95 |
-|---|---|---|---|---|
-| Đà Nẵng | 325 | 64 | 19.69% | [15.7-24.4]% |
-| Đắk Nông | 326 | 64 | 19.63% | [15.7-24.3]% |
-| Quảng Ngãi | 325 | 57 | 17.54% | [13.8-22.1]% |
-
-**3 ngày gần nhất rule trúng** (worked examples):
-
-| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
-|---|---|---|---|
-| 2026-05-23 | 2026-05-23 | 72 | Quảng Ngãi |
-| 2026-04-25 | 2026-04-25 | 30 | Đà Nẵng, Đắk Nông |
-| 2026-04-18 | 2026-04-18 | 72 | Đắk Nông |
-
----
-
-### Rule #12 ⭐ — `MT:G5#1:D-3`
+### Rule #9 ⭐ — `MT:G5#1:D-3`
 
 **Strength**: ⭐ STRONG (BH-pass)
 
@@ -1882,6 +1781,105 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 
 ---
 
+### Rule #10 ⭐ — `MT:DB#1:D-2`
+
+**Strength**: ⭐ STRONG (BH-pass)
+
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **329**
+- Số ngày trúng (ANY station of MT): **272**
+- Hit rate: **82.67%**
+- Baseline (random): **70.63%**
+- **LIFT: +12.04pp**
+- p-value: 0.0000
+- BH-pass FDR α=0.05: ✓ PASS (gold standard)
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Quảng Ngãi | 328 | 156 | 47.56% | [42.2-53.0]% |
+| Đà Nẵng | 328 | 134 | 40.85% | [35.7-46.2]% |
+| Đắk Nông | 329 | 132 | 40.12% | [35.0-45.5]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-30 | 2026-05-28 | 15, 85, 86 | Quảng Ngãi |
+| 2026-05-23 | 2026-05-21 | 20, 51, 86 | Quảng Ngãi |
+| 2026-05-16 | 2026-05-14 | 30, 31, 64 | Đà Nẵng, Quảng Ngãi, Đắk Nông |
+
+---
+
+### Rule #11 ⭐ — `MB:DB#1:D-1`
+
+**Strength**: ⭐ STRONG (BH-pass)
+
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **326**
+- Số ngày trúng (ANY station of MT): **149**
+- Hit rate: **45.71%**
+- Baseline (random): **33.75%**
+- **LIFT: +11.95pp**
+- p-value: 0.0000
+- BH-pass FDR α=0.05: ✓ PASS (gold standard)
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Đắk Nông | 326 | 65 | 19.94% | [16.0-24.6]% |
+| Đà Nẵng | 325 | 56 | 17.23% | [13.5-21.7]% |
+| Quảng Ngãi | 325 | 55 | 16.92% | [13.2-21.4]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-30 | 2026-05-29 | 54 | Quảng Ngãi |
+| 2026-05-23 | 2026-05-22 | 39 | Đà Nẵng |
+| 2026-05-16 | 2026-05-15 | 94 | Đà Nẵng, Đắk Nông |
+
+---
+
+### Rule #12 ⭐ — `MT:G8#1:D-1`
+
+**Strength**: ⭐ STRONG (BH-pass)
+
+**Mô tả**: Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.
+
+**Số liệu lịch sử**:
+- Số ngày đánh giá: **330**
+- Số ngày trúng (ANY station of MT): **224**
+- Hit rate: **67.88%**
+- Baseline (random): **55.95%**
+- **LIFT: +11.93pp**
+- p-value: 0.0000
+- BH-pass FDR α=0.05: ✓ PASS (gold standard)
+
+**Per-station breakdown** (đài nào contribute nhiều nhất):
+
+| Đài | n eval | Hits | Hit rate | CI95 |
+|---|---|---|---|---|
+| Đắk Nông | 330 | 124 | 37.58% | [32.5-42.9]% |
+| Quảng Ngãi | 329 | 110 | 33.43% | [28.6-38.7]% |
+| Đà Nẵng | 329 | 95 | 28.88% | [24.2-34.0]% |
+
+**3 ngày gần nhất rule trúng** (worked examples):
+
+| Ngày D | Source date D-lag | Source LAST2 set | Trúng ở đài |
+|---|---|---|---|
+| 2026-05-23 | 2026-05-22 | 31, 81 | Quảng Ngãi |
+| 2026-05-09 | 2026-05-08 | 10, 70 | Quảng Ngãi |
+| 2026-05-02 | 2026-05-01 | 17, 23 | Đà Nẵng, Đắk Nông |
+
+---
+
 
 ## MT × Chủ Nhật (CN)
 
@@ -1890,7 +1888,7 @@ Miền Trung (2-3 đài/ngày luân phiên theo thứ). Trung gian giữa MN và
 - Kon Tum
 - Thừa Thiên Huế
 
-**Coverage trong cell này**: 116 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
+**Coverage trong cell này**: 101 rule có data, **0 đạt p<0.05**, **0 BH-pass** ⭐.
 
 ### Rule #1 — `MT:G5#1:D-1`
 

@@ -1,5 +1,5 @@
 {
-  "audit_timestamp_vn": "2026-06-02T01:27:09+07:00",
+  "audit_timestamp_vn": "2026-06-02T10:32:49+07:00",
   "audit_id": "V10667_RULES_PER_REGION_DETAILED",
   "description": "Detailed per-region rule reference with per-station breakdown",
   "baseline_avg_tails": {
@@ -127,109 +127,6 @@
           {
             "rank": 2,
             "source_region": "MT",
-            "source_prize": "G1#1",
-            "source_prize_vn": "Giải 1 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 331,
-            "hits": 237,
-            "hit_rate_pct": 71.6,
-            "baseline_pct": 67.26,
-            "lift_pp": 4.34,
-            "ci95_pct": [
-              66.52,
-              76.19
-            ],
-            "p_value": 0.05213,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T2",
-            "vn_description": "Khi xổ Thứ Hai (T2) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "TP. HCM",
-                "n_eval": 316,
-                "hits": 94,
-                "hit_rate_pct": 29.75,
-                "ci95_pct": [
-                  24.97,
-                  35.01
-                ]
-              },
-              {
-                "station": "Đồng Tháp",
-                "n_eval": 316,
-                "hits": 106,
-                "hit_rate_pct": 33.54,
-                "ci95_pct": [
-                  28.56,
-                  38.92
-                ]
-              },
-              {
-                "station": "Cà Mau",
-                "n_eval": 316,
-                "hits": 108,
-                "hit_rate_pct": 34.18,
-                "ci95_pct": [
-                  29.17,
-                  39.57
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-06-01",
-                "source_date": "2026-06-01",
-                "source_set": [
-                  "18",
-                  "93"
-                ],
-                "hit_in_stations": [
-                  "Đồng Tháp"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-25",
-                "source_date": "2026-05-25",
-                "source_set": [
-                  "22",
-                  "93"
-                ],
-                "hit_in_stations": [
-                  "TP. HCM",
-                  "Đồng Tháp"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-11",
-                "source_date": "2026-05-11",
-                "source_set": [
-                  "32",
-                  "44"
-                ],
-                "hit_in_stations": [
-                  "TP. HCM",
-                  "Cà Mau"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-06-01",
-              "2026-05-25",
-              "2026-05-11"
-            ],
-            "total_hits_verified": 222,
-            "total_n_verified": 331
-          },
-          {
-            "rank": 3,
-            "source_region": "MT",
             "source_prize": "G3#2",
             "source_prize_vn": "Giải 3 bộ 2",
             "source_lag": "D-1",
@@ -333,7 +230,7 @@
             "total_n_verified": 330
           },
           {
-            "rank": 4,
+            "rank": 3,
             "source_region": "MB",
             "source_prize": "G6#2",
             "source_prize_vn": "Giải 6 bộ 2",
@@ -433,110 +330,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 5,
-            "source_region": "MT",
-            "source_prize": "G5#1",
-            "source_prize_vn": "Giải 5 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 331,
-            "hits": 233,
-            "hit_rate_pct": 70.39,
-            "baseline_pct": 67.15,
-            "lift_pp": 3.24,
-            "ci95_pct": [
-              65.26,
-              75.05
-            ],
-            "p_value": 0.11547,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T2",
-            "vn_description": "Khi xổ Thứ Hai (T2) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "TP. HCM",
-                "n_eval": 316,
-                "hits": 110,
-                "hit_rate_pct": 34.81,
-                "ci95_pct": [
-                  29.77,
-                  40.22
-                ]
-              },
-              {
-                "station": "Đồng Tháp",
-                "n_eval": 316,
-                "hits": 85,
-                "hit_rate_pct": 26.9,
-                "ci95_pct": [
-                  22.31,
-                  32.04
-                ]
-              },
-              {
-                "station": "Cà Mau",
-                "n_eval": 316,
-                "hits": 99,
-                "hit_rate_pct": 31.33,
-                "ci95_pct": [
-                  26.47,
-                  36.64
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-06-01",
-                "source_date": "2026-06-01",
-                "source_set": [
-                  "28",
-                  "95"
-                ],
-                "hit_in_stations": [
-                  "Đồng Tháp"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-25",
-                "source_date": "2026-05-25",
-                "source_set": [
-                  "01",
-                  "14"
-                ],
-                "hit_in_stations": [
-                  "TP. HCM",
-                  "Cà Mau"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-18",
-                "source_date": "2026-05-18",
-                "source_set": [
-                  "17",
-                  "24"
-                ],
-                "hit_in_stations": [
-                  "TP. HCM",
-                  "Cà Mau"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-06-01",
-              "2026-05-25",
-              "2026-05-18"
-            ],
-            "total_hits_verified": 218,
-            "total_n_verified": 331
-          },
-          {
-            "rank": 6,
+            "rank": 4,
             "source_region": "MB",
             "source_prize": "G7#3",
             "source_prize_vn": "Giải 7 bộ 3",
@@ -635,7 +429,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 7,
+            "rank": 5,
             "source_region": "MB",
             "source_prize": "G7#4",
             "source_prize_vn": "Giải 7 bộ 4",
@@ -735,7 +529,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MN",
             "source_prize": "G3#2",
             "source_prize_vn": "Giải 3 bộ 2",
@@ -836,11 +630,208 @@
             ],
             "total_hits_verified": 267,
             "total_n_verified": 330
+          },
+          {
+            "rank": 7,
+            "source_region": "MB",
+            "source_prize": "G4#1",
+            "source_prize_vn": "Giải 4 bộ 1",
+            "source_lag": "D-3",
+            "transform": "LAST2",
+            "days_evaluated": 327,
+            "hits": 149,
+            "hit_rate_pct": 45.57,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.74,
+            "ci95_pct": [
+              40.25,
+              50.98
+            ],
+            "p_value": 0.17256,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T2",
+            "vn_description": "Khi xổ Thứ Hai (T2) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "TP. HCM",
+                "n_eval": 312,
+                "hits": 58,
+                "hit_rate_pct": 18.59,
+                "ci95_pct": [
+                  14.66,
+                  23.28
+                ]
+              },
+              {
+                "station": "Đồng Tháp",
+                "n_eval": 312,
+                "hits": 67,
+                "hit_rate_pct": 21.47,
+                "ci95_pct": [
+                  17.28,
+                  26.36
+                ]
+              },
+              {
+                "station": "Cà Mau",
+                "n_eval": 312,
+                "hits": 54,
+                "hit_rate_pct": 17.31,
+                "ci95_pct": [
+                  13.51,
+                  21.9
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-06-01",
+                "source_date": "2026-05-29",
+                "source_set": [
+                  "10"
+                ],
+                "hit_in_stations": [
+                  "TP. HCM"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-25",
+                "source_date": "2026-05-22",
+                "source_set": [
+                  "73"
+                ],
+                "hit_in_stations": [
+                  "TP. HCM",
+                  "Đồng Tháp"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-18",
+                "source_date": "2026-05-15",
+                "source_set": [
+                  "50"
+                ],
+                "hit_in_stations": [
+                  "Đồng Tháp"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-06-01",
+              "2026-05-25",
+              "2026-05-18"
+            ],
+            "total_hits_verified": 144,
+            "total_n_verified": 328
+          },
+          {
+            "rank": 8,
+            "source_region": "MB",
+            "source_prize": "G7#2",
+            "source_prize_vn": "Giải 7 bộ 2",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 327,
+            "hits": 147,
+            "hit_rate_pct": 44.95,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.12,
+            "ci95_pct": [
+              39.65,
+              50.37
+            ],
+            "p_value": 0.23558,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T2",
+            "vn_description": "Khi xổ Thứ Hai (T2) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "TP. HCM",
+                "n_eval": 312,
+                "hits": 57,
+                "hit_rate_pct": 18.27,
+                "ci95_pct": [
+                  14.38,
+                  22.93
+                ]
+              },
+              {
+                "station": "Đồng Tháp",
+                "n_eval": 312,
+                "hits": 58,
+                "hit_rate_pct": 18.59,
+                "ci95_pct": [
+                  14.66,
+                  23.28
+                ]
+              },
+              {
+                "station": "Cà Mau",
+                "n_eval": 312,
+                "hits": 56,
+                "hit_rate_pct": 17.95,
+                "ci95_pct": [
+                  14.09,
+                  22.59
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-18",
+                "source_date": "2026-05-16",
+                "source_set": [
+                  "60"
+                ],
+                "hit_in_stations": [
+                  "TP. HCM"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-11",
+                "source_date": "2026-05-09",
+                "source_set": [
+                  "96"
+                ],
+                "hit_in_stations": [
+                  "Đồng Tháp"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-04",
+                "source_date": "2026-05-02",
+                "source_set": [
+                  "14"
+                ],
+                "hit_in_stations": [
+                  "Đồng Tháp"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-18",
+              "2026-05-11",
+              "2026-05-04"
+            ],
+            "total_hits_verified": 141,
+            "total_n_verified": 328
           }
         ],
         "p_lt_05_count": 1,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 93
       },
       "T3": {
         "weekday_full": "Thứ Ba (T3)",
@@ -852,108 +843,6 @@
         "enriched_rules": [
           {
             "rank": 1,
-            "source_region": "MT",
-            "source_prize": "DB#1",
-            "source_prize_vn": "Giải ĐB bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 331,
-            "hits": 246,
-            "hit_rate_pct": 74.32,
-            "baseline_pct": 67.04,
-            "lift_pp": 7.28,
-            "ci95_pct": [
-              69.35,
-              78.73
-            ],
-            "p_value": 0.00289,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MN",
-            "target_weekday": "T3",
-            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Bến Tre",
-                "n_eval": 315,
-                "hits": 94,
-                "hit_rate_pct": 29.84,
-                "ci95_pct": [
-                  25.06,
-                  35.11
-                ]
-              },
-              {
-                "station": "Vũng Tàu",
-                "n_eval": 315,
-                "hits": 100,
-                "hit_rate_pct": 31.75,
-                "ci95_pct": [
-                  26.85,
-                  37.08
-                ]
-              },
-              {
-                "station": "Bạc Liêu",
-                "n_eval": 315,
-                "hits": 113,
-                "hit_rate_pct": 35.87,
-                "ci95_pct": [
-                  30.78,
-                  41.31
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-26",
-                "source_date": "2026-05-26",
-                "source_set": [
-                  "27",
-                  "90"
-                ],
-                "hit_in_stations": [
-                  "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-19",
-                "source_date": "2026-05-19",
-                "source_set": [
-                  "60",
-                  "89"
-                ],
-                "hit_in_stations": [
-                  "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-12",
-                "source_date": "2026-05-12",
-                "source_set": [
-                  "25",
-                  "32"
-                ],
-                "hit_in_stations": [
-                  "Bến Tre",
-                  "Vũng Tàu"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-26",
-              "2026-05-19",
-              "2026-05-12"
-            ],
-            "total_hits_verified": 230,
-            "total_n_verified": 331
-          },
-          {
-            "rank": 2,
             "source_region": "MB",
             "source_prize": "G4#1",
             "source_prize_vn": "Giải 4 bộ 1",
@@ -1051,7 +940,7 @@
             "total_n_verified": 326
           },
           {
-            "rank": 3,
+            "rank": 2,
             "source_region": "MB",
             "source_prize": "G4#4",
             "source_prize_vn": "Giải 4 bộ 4",
@@ -1149,106 +1038,7 @@
             "total_n_verified": 327
           },
           {
-            "rank": 4,
-            "source_region": "MB",
-            "source_prize": "G6#1",
-            "source_prize_vn": "Giải 6 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 327,
-            "hits": 149,
-            "hit_rate_pct": 45.57,
-            "baseline_pct": 42.83,
-            "lift_pp": 2.74,
-            "ci95_pct": [
-              40.25,
-              50.98
-            ],
-            "p_value": 0.17256,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T3",
-            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Bến Tre",
-                "n_eval": 311,
-                "hits": 52,
-                "hit_rate_pct": 16.72,
-                "ci95_pct": [
-                  12.98,
-                  21.27
-                ]
-              },
-              {
-                "station": "Vũng Tàu",
-                "n_eval": 311,
-                "hits": 58,
-                "hit_rate_pct": 18.65,
-                "ci95_pct": [
-                  14.71,
-                  23.35
-                ]
-              },
-              {
-                "station": "Bạc Liêu",
-                "n_eval": 311,
-                "hits": 57,
-                "hit_rate_pct": 18.33,
-                "ci95_pct": [
-                  14.42,
-                  23.01
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-26",
-                "source_date": "2026-05-26",
-                "source_set": [
-                  "54"
-                ],
-                "hit_in_stations": [
-                  "Bến Tre",
-                  "Vũng Tàu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-19",
-                "source_date": "2026-05-19",
-                "source_set": [
-                  "92"
-                ],
-                "hit_in_stations": [
-                  "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-05",
-                "source_date": "2026-05-05",
-                "source_set": [
-                  "68"
-                ],
-                "hit_in_stations": [
-                  "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-26",
-              "2026-05-19",
-              "2026-05-05"
-            ],
-            "total_hits_verified": 144,
-            "total_n_verified": 327
-          },
-          {
-            "rank": 5,
+            "rank": 3,
             "source_region": "MB",
             "source_prize": "G2#2",
             "source_prize_vn": "Giải 2 bộ 2",
@@ -1346,7 +1136,7 @@
             "total_n_verified": 327
           },
           {
-            "rank": 6,
+            "rank": 4,
             "source_region": "MT",
             "source_prize": "G3#1",
             "source_prize_vn": "Giải 3 bộ 1",
@@ -1447,56 +1237,56 @@
             "total_n_verified": 330
           },
           {
-            "rank": 7,
+            "rank": 5,
             "source_region": "MT",
-            "source_prize": "G1#1",
-            "source_prize_vn": "Giải 1 bộ 1",
-            "source_lag": "D",
+            "source_prize": "G5#1",
+            "source_prize_vn": "Giải 5 bộ 1",
+            "source_lag": "D-2",
             "transform": "LAST2",
-            "days_evaluated": 331,
-            "hits": 229,
-            "hit_rate_pct": 69.18,
-            "baseline_pct": 67.09,
-            "lift_pp": 2.09,
+            "days_evaluated": 329,
+            "hits": 233,
+            "hit_rate_pct": 70.82,
+            "baseline_pct": 68.94,
+            "lift_pp": 1.88,
             "ci95_pct": [
-              64.01,
-              73.91
+              65.69,
+              75.47
             ],
-            "p_value": 0.22632,
+            "p_value": 0.24899,
             "bh_pass": false,
             "strength": "WEAK",
             "target_region": "MN",
             "target_weekday": "T3",
-            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
             "per_station_breakdown": [
               {
                 "station": "Bến Tre",
                 "n_eval": 315,
-                "hits": 92,
-                "hit_rate_pct": 29.21,
+                "hits": 98,
+                "hit_rate_pct": 31.11,
                 "ci95_pct": [
-                  24.46,
-                  34.45
+                  26.25,
+                  36.43
                 ]
               },
               {
                 "station": "Vũng Tàu",
                 "n_eval": 315,
-                "hits": 112,
-                "hit_rate_pct": 35.56,
+                "hits": 97,
+                "hit_rate_pct": 30.79,
                 "ci95_pct": [
-                  30.47,
-                  40.99
+                  25.95,
+                  36.1
                 ]
               },
               {
                 "station": "Bạc Liêu",
                 "n_eval": 315,
-                "hits": 96,
-                "hit_rate_pct": 30.48,
+                "hits": 113,
+                "hit_rate_pct": 35.87,
                 "ci95_pct": [
-                  25.65,
-                  35.77
+                  30.78,
+                  41.31
                 ]
               }
             ],
@@ -1504,143 +1294,42 @@
             "recent_3_hits": [
               {
                 "target_date": "2026-05-26",
-                "source_date": "2026-05-26",
+                "source_date": "2026-05-24",
                 "source_set": [
-                  "47",
-                  "59"
+                  "74",
+                  "78",
+                  "82"
                 ],
                 "hit_in_stations": [
                   "Bến Tre",
                   "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-12",
-                "source_date": "2026-05-12",
-                "source_set": [
-                  "21",
-                  "85"
-                ],
-                "hit_in_stations": [
-                  "Vũng Tàu"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-05",
-                "source_date": "2026-05-05",
-                "source_set": [
-                  "32",
-                  "93"
-                ],
-                "hit_in_stations": [
-                  "Bến Tre",
-                  "Vũng Tàu",
-                  "Bạc Liêu"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-26",
-              "2026-05-12",
-              "2026-05-05"
-            ],
-            "total_hits_verified": 213,
-            "total_n_verified": 331
-          },
-          {
-            "rank": 8,
-            "source_region": "MT",
-            "source_prize": "G2#1",
-            "source_prize_vn": "Giải 2 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 331,
-            "hits": 228,
-            "hit_rate_pct": 68.88,
-            "baseline_pct": 66.98,
-            "lift_pp": 1.9,
-            "ci95_pct": [
-              63.7,
-              73.63
-            ],
-            "p_value": 0.24934,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T3",
-            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Bến Tre",
-                "n_eval": 315,
-                "hits": 105,
-                "hit_rate_pct": 33.33,
-                "ci95_pct": [
-                  28.36,
-                  38.71
-                ]
-              },
-              {
-                "station": "Vũng Tàu",
-                "n_eval": 315,
-                "hits": 111,
-                "hit_rate_pct": 35.24,
-                "ci95_pct": [
-                  30.17,
-                  40.66
-                ]
-              },
-              {
-                "station": "Bạc Liêu",
-                "n_eval": 315,
-                "hits": 80,
-                "hit_rate_pct": 25.4,
-                "ci95_pct": [
-                  20.91,
-                  30.48
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-26",
-                "source_date": "2026-05-26",
-                "source_set": [
-                  "07",
-                  "69"
-                ],
-                "hit_in_stations": [
-                  "Bến Tre"
                 ],
                 "all_stations_count": 3
               },
               {
                 "target_date": "2026-05-19",
-                "source_date": "2026-05-19",
+                "source_date": "2026-05-17",
                 "source_set": [
-                  "45",
-                  "69"
+                  "22",
+                  "34",
+                  "53"
                 ],
                 "hit_in_stations": [
-                  "Bến Tre",
-                  "Vũng Tàu"
+                  "Vũng Tàu",
+                  "Bạc Liêu"
                 ],
                 "all_stations_count": 3
               },
               {
                 "target_date": "2026-05-12",
-                "source_date": "2026-05-12",
+                "source_date": "2026-05-10",
                 "source_set": [
-                  "00",
-                  "20"
+                  "45",
+                  "54",
+                  "91"
                 ],
                 "hit_in_stations": [
-                  "Bến Tre",
-                  "Bạc Liêu"
+                  "Vũng Tàu"
                 ],
                 "all_stations_count": 3
               }
@@ -1650,13 +1339,309 @@
               "2026-05-19",
               "2026-05-12"
             ],
-            "total_hits_verified": 212,
-            "total_n_verified": 331
+            "total_hits_verified": 227,
+            "total_n_verified": 329
+          },
+          {
+            "rank": 6,
+            "source_region": "MB",
+            "source_prize": "G4#2",
+            "source_prize_vn": "Giải 4 bộ 2",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 327,
+            "hits": 146,
+            "hit_rate_pct": 44.65,
+            "baseline_pct": 42.83,
+            "lift_pp": 1.82,
+            "ci95_pct": [
+              39.35,
+              50.07
+            ],
+            "p_value": 0.27132,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T3",
+            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 2 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Bến Tre",
+                "n_eval": 311,
+                "hits": 51,
+                "hit_rate_pct": 16.4,
+                "ci95_pct": [
+                  12.7,
+                  20.92
+                ]
+              },
+              {
+                "station": "Vũng Tàu",
+                "n_eval": 311,
+                "hits": 60,
+                "hit_rate_pct": 19.29,
+                "ci95_pct": [
+                  15.29,
+                  24.04
+                ]
+              },
+              {
+                "station": "Bạc Liêu",
+                "n_eval": 311,
+                "hits": 56,
+                "hit_rate_pct": 18.01,
+                "ci95_pct": [
+                  14.13,
+                  22.66
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-19",
+                "source_date": "2026-05-17",
+                "source_set": [
+                  "12"
+                ],
+                "hit_in_stations": [
+                  "Bạc Liêu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-05",
+                "source_date": "2026-05-03",
+                "source_set": [
+                  "32"
+                ],
+                "hit_in_stations": [
+                  "Bến Tre",
+                  "Vũng Tàu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-14",
+                "source_date": "2026-04-12",
+                "source_set": [
+                  "99"
+                ],
+                "hit_in_stations": [
+                  "Bạc Liêu"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-19",
+              "2026-05-05",
+              "2026-04-14"
+            ],
+            "total_hits_verified": 143,
+            "total_n_verified": 327
+          },
+          {
+            "rank": 7,
+            "source_region": "MB",
+            "source_prize": "G7#1",
+            "source_prize_vn": "Giải 7 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 326,
+            "hits": 145,
+            "hit_rate_pct": 44.48,
+            "baseline_pct": 42.83,
+            "lift_pp": 1.65,
+            "ci95_pct": [
+              39.18,
+              49.91
+            ],
+            "p_value": 0.29261,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T3",
+            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Bến Tre",
+                "n_eval": 310,
+                "hits": 55,
+                "hit_rate_pct": 17.74,
+                "ci95_pct": [
+                  13.89,
+                  22.38
+                ]
+              },
+              {
+                "station": "Vũng Tàu",
+                "n_eval": 310,
+                "hits": 53,
+                "hit_rate_pct": 17.1,
+                "ci95_pct": [
+                  13.31,
+                  21.68
+                ]
+              },
+              {
+                "station": "Bạc Liêu",
+                "n_eval": 310,
+                "hits": 57,
+                "hit_rate_pct": 18.39,
+                "ci95_pct": [
+                  14.47,
+                  23.08
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-26",
+                "source_date": "2026-05-25",
+                "source_set": [
+                  "90"
+                ],
+                "hit_in_stations": [
+                  "Bạc Liêu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-21",
+                "source_date": "2026-04-20",
+                "source_set": [
+                  "34"
+                ],
+                "hit_in_stations": [
+                  "Bến Tre",
+                  "Vũng Tàu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-14",
+                "source_date": "2026-04-13",
+                "source_set": [
+                  "20"
+                ],
+                "hit_in_stations": [
+                  "Vũng Tàu"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-26",
+              "2026-04-21",
+              "2026-04-14"
+            ],
+            "total_hits_verified": 141,
+            "total_n_verified": 326
+          },
+          {
+            "rank": 8,
+            "source_region": "MB",
+            "source_prize": "G6#3",
+            "source_prize_vn": "Giải 6 bộ 3",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 327,
+            "hits": 145,
+            "hit_rate_pct": 44.34,
+            "baseline_pct": 42.83,
+            "lift_pp": 1.51,
+            "ci95_pct": [
+              39.05,
+              49.76
+            ],
+            "p_value": 0.30957,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T3",
+            "vn_description": "Khi xổ Thứ Ba (T3) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Bến Tre",
+                "n_eval": 311,
+                "hits": 63,
+                "hit_rate_pct": 20.26,
+                "ci95_pct": [
+                  16.17,
+                  25.07
+                ]
+              },
+              {
+                "station": "Vũng Tàu",
+                "n_eval": 311,
+                "hits": 55,
+                "hit_rate_pct": 17.68,
+                "ci95_pct": [
+                  13.85,
+                  22.31
+                ]
+              },
+              {
+                "station": "Bạc Liêu",
+                "n_eval": 311,
+                "hits": 46,
+                "hit_rate_pct": 14.79,
+                "ci95_pct": [
+                  11.28,
+                  19.17
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-19",
+                "source_date": "2026-05-17",
+                "source_set": [
+                  "83"
+                ],
+                "hit_in_stations": [
+                  "Vũng Tàu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-12",
+                "source_date": "2026-05-10",
+                "source_set": [
+                  "62"
+                ],
+                "hit_in_stations": [
+                  "Vũng Tàu"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-28",
+                "source_date": "2026-04-26",
+                "source_set": [
+                  "05"
+                ],
+                "hit_in_stations": [
+                  "Bến Tre"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-19",
+              "2026-05-12",
+              "2026-04-28"
+            ],
+            "total_hits_verified": 142,
+            "total_n_verified": 327
           }
         ],
-        "p_lt_05_count": 2,
-        "bh_pass_count": 1,
-        "total_cells_in_bucket": 116
+        "p_lt_05_count": 1,
+        "bh_pass_count": 0,
+        "total_cells_in_bucket": 93
       },
       "T4": {
         "weekday_full": "Thứ Tư (T4)",
@@ -1968,108 +1953,6 @@
           },
           {
             "rank": 4,
-            "source_region": "MT",
-            "source_prize": "G7#1",
-            "source_prize_vn": "Giải 7 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 329,
-            "hits": 233,
-            "hit_rate_pct": 70.82,
-            "baseline_pct": 67.04,
-            "lift_pp": 3.78,
-            "ci95_pct": [
-              65.69,
-              75.47
-            ],
-            "p_value": 0.08052,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T4",
-            "vn_description": "Khi xổ Thứ Tư (T4) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đồng Nai",
-                "n_eval": 316,
-                "hits": 95,
-                "hit_rate_pct": 30.06,
-                "ci95_pct": [
-                  25.27,
-                  35.33
-                ]
-              },
-              {
-                "station": "Cần Thơ",
-                "n_eval": 316,
-                "hits": 96,
-                "hit_rate_pct": 30.38,
-                "ci95_pct": [
-                  25.57,
-                  35.66
-                ]
-              },
-              {
-                "station": "Sóc Trăng",
-                "n_eval": 316,
-                "hits": 100,
-                "hit_rate_pct": 31.65,
-                "ci95_pct": [
-                  26.76,
-                  36.97
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-20",
-                "source_date": "2026-05-20",
-                "source_set": [
-                  "15",
-                  "87"
-                ],
-                "hit_in_stations": [
-                  "Đồng Nai",
-                  "Sóc Trăng"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-06",
-                "source_date": "2026-05-06",
-                "source_set": [
-                  "38",
-                  "78"
-                ],
-                "hit_in_stations": [
-                  "Sóc Trăng"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-29",
-                "source_date": "2026-04-29",
-                "source_set": [
-                  "35",
-                  "39"
-                ],
-                "hit_in_stations": [
-                  "Đồng Nai"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-20",
-              "2026-05-06",
-              "2026-04-29"
-            ],
-            "total_hits_verified": 220,
-            "total_n_verified": 329
-          },
-          {
-            "rank": 5,
             "source_region": "MB",
             "source_prize": "G6#1",
             "source_prize_vn": "Giải 6 bộ 1",
@@ -2168,7 +2051,7 @@
             "total_n_verified": 326
           },
           {
-            "rank": 6,
+            "rank": 5,
             "source_region": "MB",
             "source_prize": "DB#1",
             "source_prize_vn": "Giải ĐB bộ 1",
@@ -2266,109 +2149,7 @@
             "total_n_verified": 326
           },
           {
-            "rank": 7,
-            "source_region": "MT",
-            "source_prize": "G3#2",
-            "source_prize_vn": "Giải 3 bộ 2",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 329,
-            "hits": 232,
-            "hit_rate_pct": 70.52,
-            "baseline_pct": 67.09,
-            "lift_pp": 3.42,
-            "ci95_pct": [
-              65.38,
-              75.18
-            ],
-            "p_value": 0.10325,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T4",
-            "vn_description": "Khi xổ Thứ Tư (T4) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đồng Nai",
-                "n_eval": 316,
-                "hits": 107,
-                "hit_rate_pct": 33.86,
-                "ci95_pct": [
-                  28.86,
-                  39.24
-                ]
-              },
-              {
-                "station": "Cần Thơ",
-                "n_eval": 316,
-                "hits": 90,
-                "hit_rate_pct": 28.48,
-                "ci95_pct": [
-                  23.79,
-                  33.69
-                ]
-              },
-              {
-                "station": "Sóc Trăng",
-                "n_eval": 316,
-                "hits": 105,
-                "hit_rate_pct": 33.23,
-                "ci95_pct": [
-                  28.26,
-                  38.6
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-20",
-                "source_date": "2026-05-20",
-                "source_set": [
-                  "89",
-                  "94"
-                ],
-                "hit_in_stations": [
-                  "Cần Thơ",
-                  "Sóc Trăng"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-13",
-                "source_date": "2026-05-13",
-                "source_set": [
-                  "60",
-                  "85"
-                ],
-                "hit_in_stations": [
-                  "Đồng Nai"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-06",
-                "source_date": "2026-05-06",
-                "source_set": [
-                  "34",
-                  "59"
-                ],
-                "hit_in_stations": [
-                  "Sóc Trăng"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-20",
-              "2026-05-13",
-              "2026-05-06"
-            ],
-            "total_hits_verified": 219,
-            "total_n_verified": 329
-          },
-          {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MB",
             "source_prize": "G7#2",
             "source_prize_vn": "Giải 7 bộ 2",
@@ -2464,11 +2245,210 @@
             ],
             "total_hits_verified": 145,
             "total_n_verified": 325
+          },
+          {
+            "rank": 7,
+            "source_region": "MB",
+            "source_prize": "G7#4",
+            "source_prize_vn": "Giải 7 bộ 4",
+            "source_lag": "D-3",
+            "transform": "LAST2",
+            "days_evaluated": 324,
+            "hits": 149,
+            "hit_rate_pct": 45.99,
+            "baseline_pct": 42.83,
+            "lift_pp": 3.16,
+            "ci95_pct": [
+              40.64,
+              51.43
+            ],
+            "p_value": 0.13726,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T4",
+            "vn_description": "Khi xổ Thứ Tư (T4) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 4 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đồng Nai",
+                "n_eval": 311,
+                "hits": 52,
+                "hit_rate_pct": 16.72,
+                "ci95_pct": [
+                  12.98,
+                  21.27
+                ]
+              },
+              {
+                "station": "Cần Thơ",
+                "n_eval": 311,
+                "hits": 51,
+                "hit_rate_pct": 16.4,
+                "ci95_pct": [
+                  12.7,
+                  20.92
+                ]
+              },
+              {
+                "station": "Sóc Trăng",
+                "n_eval": 311,
+                "hits": 64,
+                "hit_rate_pct": 20.58,
+                "ci95_pct": [
+                  16.46,
+                  25.42
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-20",
+                "source_date": "2026-05-17",
+                "source_set": [
+                  "93"
+                ],
+                "hit_in_stations": [
+                  "Đồng Nai",
+                  "Cần Thơ"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-06",
+                "source_date": "2026-05-03",
+                "source_set": [
+                  "59"
+                ],
+                "hit_in_stations": [
+                  "Sóc Trăng"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-29",
+                "source_date": "2026-04-26",
+                "source_set": [
+                  "77"
+                ],
+                "hit_in_stations": [
+                  "Đồng Nai",
+                  "Sóc Trăng"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-20",
+              "2026-05-06",
+              "2026-04-29"
+            ],
+            "total_hits_verified": 142,
+            "total_n_verified": 326
+          },
+          {
+            "rank": 8,
+            "source_region": "MB",
+            "source_prize": "G6#3",
+            "source_prize_vn": "Giải 6 bộ 3",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 324,
+            "hits": 147,
+            "hit_rate_pct": 45.37,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.54,
+            "ci95_pct": [
+              40.04,
+              50.81
+            ],
+            "p_value": 0.19265,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T4",
+            "vn_description": "Khi xổ Thứ Tư (T4) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đồng Nai",
+                "n_eval": 311,
+                "hits": 50,
+                "hit_rate_pct": 16.08,
+                "ci95_pct": [
+                  12.41,
+                  20.57
+                ]
+              },
+              {
+                "station": "Cần Thơ",
+                "n_eval": 311,
+                "hits": 70,
+                "hit_rate_pct": 22.51,
+                "ci95_pct": [
+                  18.22,
+                  27.47
+                ]
+              },
+              {
+                "station": "Sóc Trăng",
+                "n_eval": 311,
+                "hits": 60,
+                "hit_rate_pct": 19.29,
+                "ci95_pct": [
+                  15.29,
+                  24.04
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-20",
+                "source_date": "2026-05-19",
+                "source_set": [
+                  "46"
+                ],
+                "hit_in_stations": [
+                  "Sóc Trăng"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-13",
+                "source_date": "2026-05-12",
+                "source_set": [
+                  "91"
+                ],
+                "hit_in_stations": [
+                  "Đồng Nai",
+                  "Cần Thơ"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-15",
+                "source_date": "2026-04-14",
+                "source_set": [
+                  "12"
+                ],
+                "hit_in_stations": [
+                  "Sóc Trăng"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-20",
+              "2026-05-13",
+              "2026-04-15"
+            ],
+            "total_hits_verified": 144,
+            "total_n_verified": 326
           }
         ],
         "p_lt_05_count": 2,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 93
       },
       "T5": {
         "weekday_full": "Thứ Năm (T5)",
@@ -2583,310 +2563,6 @@
           {
             "rank": 2,
             "source_region": "MB",
-            "source_prize": "G6#3",
-            "source_prize_vn": "Giải 6 bộ 3",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 327,
-            "hits": 159,
-            "hit_rate_pct": 48.62,
-            "baseline_pct": 42.83,
-            "lift_pp": 5.79,
-            "ci95_pct": [
-              43.25,
-              54.03
-            ],
-            "p_value": 0.01962,
-            "bh_pass": false,
-            "strength": "MODERATE",
-            "target_region": "MN",
-            "target_weekday": "T5",
-            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 3 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tây Ninh",
-                "n_eval": 312,
-                "hits": 58,
-                "hit_rate_pct": 18.59,
-                "ci95_pct": [
-                  14.66,
-                  23.28
-                ]
-              },
-              {
-                "station": "An Giang",
-                "n_eval": 312,
-                "hits": 62,
-                "hit_rate_pct": 19.87,
-                "ci95_pct": [
-                  15.82,
-                  24.65
-                ]
-              },
-              {
-                "station": "Bình Thuận",
-                "n_eval": 312,
-                "hits": 67,
-                "hit_rate_pct": 21.47,
-                "ci95_pct": [
-                  17.28,
-                  26.36
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-14",
-                "source_date": "2026-05-14",
-                "source_set": [
-                  "75"
-                ],
-                "hit_in_stations": [
-                  "An Giang"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-02",
-                "source_date": "2026-04-02",
-                "source_set": [
-                  "34"
-                ],
-                "hit_in_stations": [
-                  "Bình Thuận"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-03-26",
-                "source_date": "2026-03-26",
-                "source_set": [
-                  "36"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh",
-                  "An Giang",
-                  "Bình Thuận"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-14",
-              "2026-04-02",
-              "2026-03-26"
-            ],
-            "total_hits_verified": 153,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 3,
-            "source_region": "MB",
-            "source_prize": "G6#1",
-            "source_prize_vn": "Giải 6 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 327,
-            "hits": 155,
-            "hit_rate_pct": 47.4,
-            "baseline_pct": 42.83,
-            "lift_pp": 4.57,
-            "ci95_pct": [
-              42.05,
-              52.81
-            ],
-            "p_value": 0.05319,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T5",
-            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tây Ninh",
-                "n_eval": 312,
-                "hits": 64,
-                "hit_rate_pct": 20.51,
-                "ci95_pct": [
-                  16.4,
-                  25.34
-                ]
-              },
-              {
-                "station": "An Giang",
-                "n_eval": 312,
-                "hits": 59,
-                "hit_rate_pct": 18.91,
-                "ci95_pct": [
-                  14.95,
-                  23.62
-                ]
-              },
-              {
-                "station": "Bình Thuận",
-                "n_eval": 312,
-                "hits": 64,
-                "hit_rate_pct": 20.51,
-                "ci95_pct": [
-                  16.4,
-                  25.34
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-21",
-                "source_date": "2026-05-21",
-                "source_set": [
-                  "30"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-07",
-                "source_date": "2026-05-07",
-                "source_set": [
-                  "56"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-30",
-                "source_date": "2026-04-30",
-                "source_set": [
-                  "06"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-21",
-              "2026-05-07",
-              "2026-04-30"
-            ],
-            "total_hits_verified": 152,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 4,
-            "source_region": "MT",
-            "source_prize": "G5#1",
-            "source_prize_vn": "Giải 5 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 332,
-            "hits": 282,
-            "hit_rate_pct": 84.94,
-            "baseline_pct": 80.93,
-            "lift_pp": 4.01,
-            "ci95_pct": [
-              80.69,
-              88.39
-            ],
-            "p_value": 0.03682,
-            "bh_pass": false,
-            "strength": "MODERATE",
-            "target_region": "MN",
-            "target_weekday": "T5",
-            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tây Ninh",
-                "n_eval": 316,
-                "hits": 152,
-                "hit_rate_pct": 48.1,
-                "ci95_pct": [
-                  42.65,
-                  53.6
-                ]
-              },
-              {
-                "station": "An Giang",
-                "n_eval": 316,
-                "hits": 142,
-                "hit_rate_pct": 44.94,
-                "ci95_pct": [
-                  39.55,
-                  50.45
-                ]
-              },
-              {
-                "station": "Bình Thuận",
-                "n_eval": 316,
-                "hits": 136,
-                "hit_rate_pct": 43.04,
-                "ci95_pct": [
-                  37.69,
-                  48.55
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-28",
-                "source_date": "2026-05-28",
-                "source_set": [
-                  "03",
-                  "77",
-                  "83"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh",
-                  "An Giang"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-14",
-                "source_date": "2026-05-14",
-                "source_set": [
-                  "10",
-                  "22",
-                  "69"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh",
-                  "An Giang"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-07",
-                "source_date": "2026-05-07",
-                "source_set": [
-                  "56",
-                  "75",
-                  "89"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-28",
-              "2026-05-14",
-              "2026-05-07"
-            ],
-            "total_hits_verified": 266,
-            "total_n_verified": 332
-          },
-          {
-            "rank": 5,
-            "source_region": "MB",
             "source_prize": "G4#4",
             "source_prize_vn": "Giải 4 bộ 4",
             "source_lag": "D-3",
@@ -2983,7 +2659,7 @@
             "total_n_verified": 325
           },
           {
-            "rank": 6,
+            "rank": 3,
             "source_region": "MB",
             "source_prize": "G2#2",
             "source_prize_vn": "Giải 2 bộ 2",
@@ -3082,107 +2758,7 @@
             "total_n_verified": 325
           },
           {
-            "rank": 7,
-            "source_region": "MB",
-            "source_prize": "G7#3",
-            "source_prize_vn": "Giải 7 bộ 3",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 327,
-            "hits": 151,
-            "hit_rate_pct": 46.18,
-            "baseline_pct": 42.83,
-            "lift_pp": 3.35,
-            "ci95_pct": [
-              40.85,
-              51.59
-            ],
-            "p_value": 0.12148,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T5",
-            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tây Ninh",
-                "n_eval": 312,
-                "hits": 66,
-                "hit_rate_pct": 21.15,
-                "ci95_pct": [
-                  16.99,
-                  26.02
-                ]
-              },
-              {
-                "station": "An Giang",
-                "n_eval": 312,
-                "hits": 56,
-                "hit_rate_pct": 17.95,
-                "ci95_pct": [
-                  14.09,
-                  22.59
-                ]
-              },
-              {
-                "station": "Bình Thuận",
-                "n_eval": 312,
-                "hits": 52,
-                "hit_rate_pct": 16.67,
-                "ci95_pct": [
-                  12.94,
-                  21.2
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-28",
-                "source_date": "2026-05-28",
-                "source_set": [
-                  "51"
-                ],
-                "hit_in_stations": [
-                  "Tây Ninh",
-                  "Bình Thuận"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-14",
-                "source_date": "2026-05-14",
-                "source_set": [
-                  "62"
-                ],
-                "hit_in_stations": [
-                  "An Giang",
-                  "Bình Thuận"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-30",
-                "source_date": "2026-04-30",
-                "source_set": [
-                  "98"
-                ],
-                "hit_in_stations": [
-                  "An Giang"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-28",
-              "2026-05-14",
-              "2026-04-30"
-            ],
-            "total_hits_verified": 146,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 8,
+            "rank": 4,
             "source_region": "MN",
             "source_prize": "DB#1",
             "source_prize_vn": "Giải ĐB bộ 1",
@@ -3288,11 +2864,417 @@
             ],
             "total_hits_verified": 266,
             "total_n_verified": 329
+          },
+          {
+            "rank": 5,
+            "source_region": "MN",
+            "source_prize": "G3#1",
+            "source_prize_vn": "Giải 3 bộ 1",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 330,
+            "hits": 275,
+            "hit_rate_pct": 83.33,
+            "baseline_pct": 80.37,
+            "lift_pp": 2.96,
+            "ci95_pct": [
+              78.93,
+              86.97
+            ],
+            "p_value": 0.09944,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T5",
+            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1 miền MN** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tây Ninh",
+                "n_eval": 315,
+                "hits": 139,
+                "hit_rate_pct": 44.13,
+                "ci95_pct": [
+                  38.75,
+                  49.65
+                ]
+              },
+              {
+                "station": "An Giang",
+                "n_eval": 315,
+                "hits": 136,
+                "hit_rate_pct": 43.17,
+                "ci95_pct": [
+                  37.82,
+                  48.69
+                ]
+              },
+              {
+                "station": "Bình Thuận",
+                "n_eval": 315,
+                "hits": 135,
+                "hit_rate_pct": 42.86,
+                "ci95_pct": [
+                  37.51,
+                  48.38
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-28",
+                "source_date": "2026-05-26",
+                "source_set": [
+                  "16",
+                  "45",
+                  "82"
+                ],
+                "hit_in_stations": [
+                  "An Giang",
+                  "Bình Thuận"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-21",
+                "source_date": "2026-05-19",
+                "source_set": [
+                  "87",
+                  "89",
+                  "99"
+                ],
+                "hit_in_stations": [
+                  "Tây Ninh",
+                  "An Giang",
+                  "Bình Thuận"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-14",
+                "source_date": "2026-05-12",
+                "source_set": [
+                  "02",
+                  "45",
+                  "97"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-28",
+              "2026-05-21",
+              "2026-05-14"
+            ],
+            "total_hits_verified": 265,
+            "total_n_verified": 330
+          },
+          {
+            "rank": 6,
+            "source_region": "MB",
+            "source_prize": "G2#1",
+            "source_prize_vn": "Giải 2 bộ 1",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 326,
+            "hits": 148,
+            "hit_rate_pct": 45.4,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.57,
+            "ci95_pct": [
+              40.08,
+              50.83
+            ],
+            "p_value": 0.18901,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T5",
+            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tây Ninh",
+                "n_eval": 311,
+                "hits": 53,
+                "hit_rate_pct": 17.04,
+                "ci95_pct": [
+                  13.27,
+                  21.62
+                ]
+              },
+              {
+                "station": "An Giang",
+                "n_eval": 311,
+                "hits": 55,
+                "hit_rate_pct": 17.68,
+                "ci95_pct": [
+                  13.85,
+                  22.31
+                ]
+              },
+              {
+                "station": "Bình Thuận",
+                "n_eval": 311,
+                "hits": 62,
+                "hit_rate_pct": 19.94,
+                "ci95_pct": [
+                  15.87,
+                  24.73
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-21",
+                "source_date": "2026-05-19",
+                "source_set": [
+                  "23"
+                ],
+                "hit_in_stations": [
+                  "Tây Ninh",
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-30",
+                "source_date": "2026-04-28",
+                "source_set": [
+                  "44"
+                ],
+                "hit_in_stations": [
+                  "Tây Ninh",
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-16",
+                "source_date": "2026-04-14",
+                "source_set": [
+                  "33"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-21",
+              "2026-04-30",
+              "2026-04-16"
+            ],
+            "total_hits_verified": 142,
+            "total_n_verified": 326
+          },
+          {
+            "rank": 7,
+            "source_region": "MB",
+            "source_prize": "G6#1",
+            "source_prize_vn": "Giải 6 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 328,
+            "hits": 147,
+            "hit_rate_pct": 44.82,
+            "baseline_pct": 42.83,
+            "lift_pp": 1.99,
+            "ci95_pct": [
+              39.53,
+              50.23
+            ],
+            "p_value": 0.25089,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T5",
+            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tây Ninh",
+                "n_eval": 313,
+                "hits": 48,
+                "hit_rate_pct": 15.34,
+                "ci95_pct": [
+                  11.77,
+                  19.75
+                ]
+              },
+              {
+                "station": "An Giang",
+                "n_eval": 313,
+                "hits": 53,
+                "hit_rate_pct": 16.93,
+                "ci95_pct": [
+                  13.18,
+                  21.48
+                ]
+              },
+              {
+                "station": "Bình Thuận",
+                "n_eval": 313,
+                "hits": 56,
+                "hit_rate_pct": 17.89,
+                "ci95_pct": [
+                  14.04,
+                  22.52
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-28",
+                "source_date": "2026-05-27",
+                "source_set": [
+                  "40"
+                ],
+                "hit_in_stations": [
+                  "Bình Thuận"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-07",
+                "source_date": "2026-05-06",
+                "source_set": [
+                  "01"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-30",
+                "source_date": "2026-04-29",
+                "source_set": [
+                  "77"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-28",
+              "2026-05-07",
+              "2026-04-30"
+            ],
+            "total_hits_verified": 138,
+            "total_n_verified": 328
+          },
+          {
+            "rank": 8,
+            "source_region": "MT",
+            "source_prize": "G8#1",
+            "source_prize_vn": "Giải 8 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 329,
+            "hits": 227,
+            "hit_rate_pct": 69.0,
+            "baseline_pct": 67.15,
+            "lift_pp": 1.85,
+            "ci95_pct": [
+              63.8,
+              73.75
+            ],
+            "p_value": 0.25613,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T5",
+            "vn_description": "Khi xổ Thứ Năm (T5) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tây Ninh",
+                "n_eval": 316,
+                "hits": 103,
+                "hit_rate_pct": 32.59,
+                "ci95_pct": [
+                  27.66,
+                  37.95
+                ]
+              },
+              {
+                "station": "An Giang",
+                "n_eval": 316,
+                "hits": 96,
+                "hit_rate_pct": 30.38,
+                "ci95_pct": [
+                  25.57,
+                  35.66
+                ]
+              },
+              {
+                "station": "Bình Thuận",
+                "n_eval": 316,
+                "hits": 91,
+                "hit_rate_pct": 28.8,
+                "ci95_pct": [
+                  24.08,
+                  34.02
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-28",
+                "source_date": "2026-05-27",
+                "source_set": [
+                  "31",
+                  "66"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-21",
+                "source_date": "2026-05-20",
+                "source_set": [
+                  "28",
+                  "81"
+                ],
+                "hit_in_stations": [
+                  "Bình Thuận"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-14",
+                "source_date": "2026-05-13",
+                "source_set": [
+                  "06",
+                  "58"
+                ],
+                "hit_in_stations": [
+                  "An Giang"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-28",
+              "2026-05-21",
+              "2026-05-14"
+            ],
+            "total_hits_verified": 219,
+            "total_n_verified": 329
           }
         ],
-        "p_lt_05_count": 3,
+        "p_lt_05_count": 1,
         "bh_pass_count": 1,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 93
       },
       "T6": {
         "weekday_full": "Thứ Sáu (T6)",
@@ -3708,110 +3690,6 @@
           },
           {
             "rank": 5,
-            "source_region": "MT",
-            "source_prize": "G5#1",
-            "source_prize_vn": "Giải 5 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 332,
-            "hits": 234,
-            "hit_rate_pct": 70.48,
-            "baseline_pct": 67.15,
-            "lift_pp": 3.33,
-            "ci95_pct": [
-              65.36,
-              75.13
-            ],
-            "p_value": 0.10854,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "T6",
-            "vn_description": "Khi xổ Thứ Sáu (T6) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 5 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Vĩnh Long",
-                "n_eval": 316,
-                "hits": 91,
-                "hit_rate_pct": 28.8,
-                "ci95_pct": [
-                  24.08,
-                  34.02
-                ]
-              },
-              {
-                "station": "Bình Dương",
-                "n_eval": 316,
-                "hits": 98,
-                "hit_rate_pct": 31.01,
-                "ci95_pct": [
-                  26.17,
-                  36.32
-                ]
-              },
-              {
-                "station": "Trà Vinh",
-                "n_eval": 316,
-                "hits": 107,
-                "hit_rate_pct": 33.86,
-                "ci95_pct": [
-                  28.86,
-                  39.24
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-29",
-                "source_date": "2026-05-29",
-                "source_set": [
-                  "40",
-                  "80"
-                ],
-                "hit_in_stations": [
-                  "Trà Vinh"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-15",
-                "source_date": "2026-05-15",
-                "source_set": [
-                  "85",
-                  "99"
-                ],
-                "hit_in_stations": [
-                  "Vĩnh Long",
-                  "Bình Dương"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-08",
-                "source_date": "2026-05-08",
-                "source_set": [
-                  "10",
-                  "98"
-                ],
-                "hit_in_stations": [
-                  "Vĩnh Long",
-                  "Bình Dương",
-                  "Trà Vinh"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-29",
-              "2026-05-15",
-              "2026-05-08"
-            ],
-            "total_hits_verified": 218,
-            "total_n_verified": 332
-          },
-          {
-            "rank": 6,
             "source_region": "MB",
             "source_prize": "DB#1",
             "source_prize_vn": "Giải ĐB bộ 1",
@@ -3910,7 +3788,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 7,
+            "rank": 6,
             "source_region": "MT",
             "source_prize": "G8#1",
             "source_prize_vn": "Giải 8 bộ 1",
@@ -4011,7 +3889,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 8,
+            "rank": 7,
             "source_region": "MB",
             "source_prize": "G2#1",
             "source_prize_vn": "Giải 2 bộ 1",
@@ -4107,11 +3985,109 @@
             ],
             "total_hits_verified": 141,
             "total_n_verified": 326
+          },
+          {
+            "rank": 8,
+            "source_region": "MB",
+            "source_prize": "G1#1",
+            "source_prize_vn": "Giải 1 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 328,
+            "hits": 149,
+            "hit_rate_pct": 45.43,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.6,
+            "ci95_pct": [
+              40.12,
+              50.84
+            ],
+            "p_value": 0.18543,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "T6",
+            "vn_description": "Khi xổ Thứ Sáu (T6) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Vĩnh Long",
+                "n_eval": 312,
+                "hits": 52,
+                "hit_rate_pct": 16.67,
+                "ci95_pct": [
+                  12.94,
+                  21.2
+                ]
+              },
+              {
+                "station": "Bình Dương",
+                "n_eval": 312,
+                "hits": 57,
+                "hit_rate_pct": 18.27,
+                "ci95_pct": [
+                  14.38,
+                  22.93
+                ]
+              },
+              {
+                "station": "Trà Vinh",
+                "n_eval": 312,
+                "hits": 60,
+                "hit_rate_pct": 19.23,
+                "ci95_pct": [
+                  15.24,
+                  23.97
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-22",
+                "source_date": "2026-05-21",
+                "source_set": [
+                  "60"
+                ],
+                "hit_in_stations": [
+                  "Vĩnh Long"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-15",
+                "source_date": "2026-05-14",
+                "source_set": [
+                  "24"
+                ],
+                "hit_in_stations": [
+                  "Bình Dương"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-01",
+                "source_date": "2026-04-30",
+                "source_set": [
+                  "57"
+                ],
+                "hit_in_stations": [
+                  "Trà Vinh"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-22",
+              "2026-05-15",
+              "2026-05-01"
+            ],
+            "total_hits_verified": 146,
+            "total_n_verified": 328
           }
         ],
         "p_lt_05_count": 1,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 93
       },
       "T7": {
         "weekday_full": "Thứ Bảy (T7)",
@@ -4124,114 +4100,6 @@
         "enriched_rules": [
           {
             "rank": 1,
-            "source_region": "MB",
-            "source_prize": "G7#1",
-            "source_prize_vn": "Giải 7 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 194,
-            "hit_rate_pct": 59.51,
-            "baseline_pct": 42.83,
-            "lift_pp": 16.68,
-            "ci95_pct": [
-              54.1,
-              64.7
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MN",
-            "target_weekday": "T7",
-            "vn_description": "Khi xổ Thứ Bảy (T7) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "TP. HCM",
-                "n_eval": 312,
-                "hits": 56,
-                "hit_rate_pct": 17.95,
-                "ci95_pct": [
-                  14.09,
-                  22.59
-                ]
-              },
-              {
-                "station": "Long An",
-                "n_eval": 312,
-                "hits": 60,
-                "hit_rate_pct": 19.23,
-                "ci95_pct": [
-                  15.24,
-                  23.97
-                ]
-              },
-              {
-                "station": "Bình Phước",
-                "n_eval": 312,
-                "hits": 66,
-                "hit_rate_pct": 21.15,
-                "ci95_pct": [
-                  16.99,
-                  26.02
-                ]
-              },
-              {
-                "station": "Hậu Giang",
-                "n_eval": 312,
-                "hits": 57,
-                "hit_rate_pct": 18.27,
-                "ci95_pct": [
-                  14.38,
-                  22.93
-                ]
-              }
-            ],
-            "station_count": 4,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-30",
-                "source_date": "2026-05-30",
-                "source_set": [
-                  "51"
-                ],
-                "hit_in_stations": [
-                  "Hậu Giang"
-                ],
-                "all_stations_count": 4
-              },
-              {
-                "target_date": "2026-05-23",
-                "source_date": "2026-05-23",
-                "source_set": [
-                  "84"
-                ],
-                "hit_in_stations": [
-                  "Hậu Giang"
-                ],
-                "all_stations_count": 4
-              },
-              {
-                "target_date": "2026-04-25",
-                "source_date": "2026-04-25",
-                "source_set": [
-                  "27"
-                ],
-                "hit_in_stations": [
-                  "TP. HCM"
-                ],
-                "all_stations_count": 4
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-30",
-              "2026-05-23",
-              "2026-04-25"
-            ],
-            "total_hits_verified": 186,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 2,
             "source_region": "MB",
             "source_prize": "G1#1",
             "source_prize_vn": "Giải 1 bộ 1",
@@ -4340,7 +4208,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 3,
+            "rank": 2,
             "source_region": "MB",
             "source_prize": "G2#2",
             "source_prize_vn": "Giải 2 bộ 2",
@@ -4449,117 +4317,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 4,
-            "source_region": "MB",
-            "source_prize": "G4#1",
-            "source_prize_vn": "Giải 4 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 182,
-            "hit_rate_pct": 55.83,
-            "baseline_pct": 42.83,
-            "lift_pp": 13.0,
-            "ci95_pct": [
-              50.4,
-              61.12
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MN",
-            "target_weekday": "T7",
-            "vn_description": "Khi xổ Thứ Bảy (T7) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "TP. HCM",
-                "n_eval": 312,
-                "hits": 45,
-                "hit_rate_pct": 14.42,
-                "ci95_pct": [
-                  10.96,
-                  18.75
-                ]
-              },
-              {
-                "station": "Long An",
-                "n_eval": 312,
-                "hits": 67,
-                "hit_rate_pct": 21.47,
-                "ci95_pct": [
-                  17.28,
-                  26.36
-                ]
-              },
-              {
-                "station": "Bình Phước",
-                "n_eval": 312,
-                "hits": 60,
-                "hit_rate_pct": 19.23,
-                "ci95_pct": [
-                  15.24,
-                  23.97
-                ]
-              },
-              {
-                "station": "Hậu Giang",
-                "n_eval": 312,
-                "hits": 56,
-                "hit_rate_pct": 17.95,
-                "ci95_pct": [
-                  14.09,
-                  22.59
-                ]
-              }
-            ],
-            "station_count": 4,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-30",
-                "source_date": "2026-05-30",
-                "source_set": [
-                  "59"
-                ],
-                "hit_in_stations": [
-                  "Long An",
-                  "Bình Phước"
-                ],
-                "all_stations_count": 4
-              },
-              {
-                "target_date": "2026-05-23",
-                "source_date": "2026-05-23",
-                "source_set": [
-                  "36"
-                ],
-                "hit_in_stations": [
-                  "Long An"
-                ],
-                "all_stations_count": 4
-              },
-              {
-                "target_date": "2026-05-09",
-                "source_date": "2026-05-09",
-                "source_set": [
-                  "96"
-                ],
-                "hit_in_stations": [
-                  "Long An",
-                  "Hậu Giang"
-                ],
-                "all_stations_count": 4
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-30",
-              "2026-05-23",
-              "2026-05-09"
-            ],
-            "total_hits_verified": 175,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 5,
+            "rank": 3,
             "source_region": "MB",
             "source_prize": "G6#1",
             "source_prize_vn": "Giải 6 bộ 1",
@@ -4668,7 +4426,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 6,
+            "rank": 4,
             "source_region": "MB",
             "source_prize": "G2#1",
             "source_prize_vn": "Giải 2 bộ 1",
@@ -4776,7 +4534,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 7,
+            "rank": 5,
             "source_region": "MB",
             "source_prize": "G4#1",
             "source_prize_vn": "Giải 4 bộ 1",
@@ -4884,7 +4642,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MT",
             "source_prize": "G3#1",
             "source_prize_vn": "Giải 3 bộ 1",
@@ -4999,7 +4757,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 9,
+            "rank": 7,
             "source_region": "MB",
             "source_prize": "G7#3",
             "source_prize_vn": "Giải 7 bộ 3",
@@ -5107,7 +4865,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 10,
+            "rank": 8,
             "source_region": "MB",
             "source_prize": "G4#3",
             "source_prize_vn": "Giải 4 bộ 3",
@@ -5216,7 +4974,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 11,
+            "rank": 9,
             "source_region": "MB",
             "source_prize": "G6#1",
             "source_prize_vn": "Giải 6 bộ 1",
@@ -5324,7 +5082,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 12,
+            "rank": 10,
             "source_region": "MT",
             "source_prize": "G1#1",
             "source_prize_vn": "Giải 1 bộ 1",
@@ -5435,11 +5193,230 @@
             ],
             "total_hits_verified": 249,
             "total_n_verified": 329
+          },
+          {
+            "rank": 11,
+            "source_region": "MB",
+            "source_prize": "G6#2",
+            "source_prize_vn": "Giải 6 bộ 2",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 326,
+            "hits": 175,
+            "hit_rate_pct": 53.68,
+            "baseline_pct": 42.83,
+            "lift_pp": 10.85,
+            "ci95_pct": [
+              48.26,
+              59.02
+            ],
+            "p_value": 5e-05,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MN",
+            "target_weekday": "T7",
+            "vn_description": "Khi xổ Thứ Bảy (T7) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 2 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "TP. HCM",
+                "n_eval": 312,
+                "hits": 49,
+                "hit_rate_pct": 15.71,
+                "ci95_pct": [
+                  12.09,
+                  20.16
+                ]
+              },
+              {
+                "station": "Long An",
+                "n_eval": 312,
+                "hits": 46,
+                "hit_rate_pct": 14.74,
+                "ci95_pct": [
+                  11.24,
+                  19.11
+                ]
+              },
+              {
+                "station": "Bình Phước",
+                "n_eval": 312,
+                "hits": 61,
+                "hit_rate_pct": 19.55,
+                "ci95_pct": [
+                  15.53,
+                  24.31
+                ]
+              },
+              {
+                "station": "Hậu Giang",
+                "n_eval": 312,
+                "hits": 56,
+                "hit_rate_pct": 17.95,
+                "ci95_pct": [
+                  14.09,
+                  22.59
+                ]
+              }
+            ],
+            "station_count": 4,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-16",
+                "source_date": "2026-05-15",
+                "source_set": [
+                  "14"
+                ],
+                "hit_in_stations": [
+                  "Hậu Giang"
+                ],
+                "all_stations_count": 4
+              },
+              {
+                "target_date": "2026-03-28",
+                "source_date": "2026-03-27",
+                "source_set": [
+                  "24"
+                ],
+                "hit_in_stations": [
+                  "TP. HCM"
+                ],
+                "all_stations_count": 4
+              },
+              {
+                "target_date": "2026-03-14",
+                "source_date": "2026-03-13",
+                "source_set": [
+                  "89"
+                ],
+                "hit_in_stations": [
+                  "Bình Phước"
+                ],
+                "all_stations_count": 4
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-16",
+              "2026-03-28",
+              "2026-03-14"
+            ],
+            "total_hits_verified": 167,
+            "total_n_verified": 328
+          },
+          {
+            "rank": 12,
+            "source_region": "MT",
+            "source_prize": "G3#2",
+            "source_prize_vn": "Giải 3 bộ 2",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 330,
+            "hits": 257,
+            "hit_rate_pct": 77.88,
+            "baseline_pct": 67.09,
+            "lift_pp": 10.79,
+            "ci95_pct": [
+              73.09,
+              82.02
+            ],
+            "p_value": 2e-05,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MN",
+            "target_weekday": "T7",
+            "vn_description": "Khi xổ Thứ Bảy (T7) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "TP. HCM",
+                "n_eval": 316,
+                "hits": 96,
+                "hit_rate_pct": 30.38,
+                "ci95_pct": [
+                  25.57,
+                  35.66
+                ]
+              },
+              {
+                "station": "Long An",
+                "n_eval": 316,
+                "hits": 88,
+                "hit_rate_pct": 27.85,
+                "ci95_pct": [
+                  23.19,
+                  33.03
+                ]
+              },
+              {
+                "station": "Bình Phước",
+                "n_eval": 316,
+                "hits": 107,
+                "hit_rate_pct": 33.86,
+                "ci95_pct": [
+                  28.86,
+                  39.24
+                ]
+              },
+              {
+                "station": "Hậu Giang",
+                "n_eval": 316,
+                "hits": 91,
+                "hit_rate_pct": 28.8,
+                "ci95_pct": [
+                  24.08,
+                  34.02
+                ]
+              }
+            ],
+            "station_count": 4,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-30",
+                "source_date": "2026-05-29",
+                "source_set": [
+                  "05",
+                  "19"
+                ],
+                "hit_in_stations": [
+                  "Long An"
+                ],
+                "all_stations_count": 4
+              },
+              {
+                "target_date": "2026-05-23",
+                "source_date": "2026-05-22",
+                "source_set": [
+                  "57",
+                  "59"
+                ],
+                "hit_in_stations": [
+                  "Bình Phước"
+                ],
+                "all_stations_count": 4
+              },
+              {
+                "target_date": "2026-05-16",
+                "source_date": "2026-05-15",
+                "source_set": [
+                  "04",
+                  "91"
+                ],
+                "hit_in_stations": [
+                  "Bình Phước"
+                ],
+                "all_stations_count": 4
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-30",
+              "2026-05-23",
+              "2026-05-16"
+            ],
+            "total_hits_verified": 247,
+            "total_n_verified": 332
           }
         ],
-        "p_lt_05_count": 106,
-        "bh_pass_count": 86,
-        "total_cells_in_bucket": 116
+        "p_lt_05_count": 86,
+        "bh_pass_count": 68,
+        "total_cells_in_bucket": 93
       },
       "CN": {
         "weekday_full": "Chủ Nhật (CN)",
@@ -5550,110 +5527,6 @@
           },
           {
             "rank": 2,
-            "source_region": "MT",
-            "source_prize": "G3#1",
-            "source_prize_vn": "Giải 3 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 330,
-            "hits": 239,
-            "hit_rate_pct": 72.42,
-            "baseline_pct": 68.72,
-            "lift_pp": 3.7,
-            "ci95_pct": [
-              67.37,
-              76.97
-            ],
-            "p_value": 0.08218,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "CN",
-            "vn_description": "Khi xổ Chủ Nhật (CN) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 1 miền MT** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tiền Giang",
-                "n_eval": 316,
-                "hits": 96,
-                "hit_rate_pct": 30.38,
-                "ci95_pct": [
-                  25.57,
-                  35.66
-                ]
-              },
-              {
-                "station": "Kiên Giang",
-                "n_eval": 316,
-                "hits": 106,
-                "hit_rate_pct": 33.54,
-                "ci95_pct": [
-                  28.56,
-                  38.92
-                ]
-              },
-              {
-                "station": "Đà Lạt",
-                "n_eval": 316,
-                "hits": 100,
-                "hit_rate_pct": 31.65,
-                "ci95_pct": [
-                  26.76,
-                  36.97
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-31",
-                "source_date": "2026-05-31",
-                "source_set": [
-                  "13",
-                  "76",
-                  "82"
-                ],
-                "hit_in_stations": [
-                  "Kiên Giang"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-24",
-                "source_date": "2026-05-24",
-                "source_set": [
-                  "55",
-                  "71",
-                  "95"
-                ],
-                "hit_in_stations": [
-                  "Tiền Giang"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-17",
-                "source_date": "2026-05-17",
-                "source_set": [
-                  "15",
-                  "95",
-                  "97"
-                ],
-                "hit_in_stations": [
-                  "Đà Lạt"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-31",
-              "2026-05-24",
-              "2026-05-17"
-            ],
-            "total_hits_verified": 225,
-            "total_n_verified": 330
-          },
-          {
-            "rank": 3,
             "source_region": "MB",
             "source_prize": "G6#2",
             "source_prize_vn": "Giải 6 bộ 2",
@@ -5751,106 +5624,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 4,
-            "source_region": "MB",
-            "source_prize": "G7#2",
-            "source_prize_vn": "Giải 7 bộ 2",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 149,
-            "hit_rate_pct": 45.71,
-            "baseline_pct": 42.83,
-            "lift_pp": 2.88,
-            "ci95_pct": [
-              40.38,
-              51.13
-            ],
-            "p_value": 0.16024,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MN",
-            "target_weekday": "CN",
-            "vn_description": "Khi xổ Chủ Nhật (CN) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Tiền Giang",
-                "n_eval": 312,
-                "hits": 55,
-                "hit_rate_pct": 17.63,
-                "ci95_pct": [
-                  13.8,
-                  22.24
-                ]
-              },
-              {
-                "station": "Kiên Giang",
-                "n_eval": 312,
-                "hits": 51,
-                "hit_rate_pct": 16.35,
-                "ci95_pct": [
-                  12.66,
-                  20.85
-                ]
-              },
-              {
-                "station": "Đà Lạt",
-                "n_eval": 312,
-                "hits": 61,
-                "hit_rate_pct": 19.55,
-                "ci95_pct": [
-                  15.53,
-                  24.31
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-17",
-                "source_date": "2026-05-17",
-                "source_set": [
-                  "51"
-                ],
-                "hit_in_stations": [
-                  "Tiền Giang",
-                  "Đà Lạt"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-03",
-                "source_date": "2026-05-03",
-                "source_set": [
-                  "88"
-                ],
-                "hit_in_stations": [
-                  "Đà Lạt"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-26",
-                "source_date": "2026-04-26",
-                "source_set": [
-                  "86"
-                ],
-                "hit_in_stations": [
-                  "Tiền Giang"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-17",
-              "2026-05-03",
-              "2026-04-26"
-            ],
-            "total_hits_verified": 145,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 5,
+            "rank": 3,
             "source_region": "MB",
             "source_prize": "G4#3",
             "source_prize_vn": "Giải 4 bộ 3",
@@ -5950,7 +5724,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 6,
+            "rank": 4,
             "source_region": "MB",
             "source_prize": "G6#1",
             "source_prize_vn": "Giải 6 bộ 1",
@@ -6048,7 +5822,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 7,
+            "rank": 5,
             "source_region": "MT",
             "source_prize": "G5#1",
             "source_prize_vn": "Giải 5 bộ 1",
@@ -6156,7 +5930,7 @@
             "total_n_verified": 330
           },
           {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MT",
             "source_prize": "G8#1",
             "source_prize_vn": "Giải 8 bộ 1",
@@ -6259,11 +6033,215 @@
             ],
             "total_hits_verified": 265,
             "total_n_verified": 331
+          },
+          {
+            "rank": 7,
+            "source_region": "MB",
+            "source_prize": "G1#1",
+            "source_prize_vn": "Giải 1 bộ 1",
+            "source_lag": "D-3",
+            "transform": "LAST2",
+            "days_evaluated": 326,
+            "hits": 147,
+            "hit_rate_pct": 45.09,
+            "baseline_pct": 42.83,
+            "lift_pp": 2.26,
+            "ci95_pct": [
+              39.78,
+              50.52
+            ],
+            "p_value": 0.22076,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "CN",
+            "vn_description": "Khi xổ Chủ Nhật (CN) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tiền Giang",
+                "n_eval": 312,
+                "hits": 55,
+                "hit_rate_pct": 17.63,
+                "ci95_pct": [
+                  13.8,
+                  22.24
+                ]
+              },
+              {
+                "station": "Kiên Giang",
+                "n_eval": 312,
+                "hits": 61,
+                "hit_rate_pct": 19.55,
+                "ci95_pct": [
+                  15.53,
+                  24.31
+                ]
+              },
+              {
+                "station": "Đà Lạt",
+                "n_eval": 312,
+                "hits": 60,
+                "hit_rate_pct": 19.23,
+                "ci95_pct": [
+                  15.24,
+                  23.97
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-31",
+                "source_date": "2026-05-28",
+                "source_set": [
+                  "10"
+                ],
+                "hit_in_stations": [
+                  "Đà Lạt"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-24",
+                "source_date": "2026-05-21",
+                "source_set": [
+                  "60"
+                ],
+                "hit_in_stations": [
+                  "Tiền Giang",
+                  "Kiên Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-17",
+                "source_date": "2026-05-14",
+                "source_set": [
+                  "24"
+                ],
+                "hit_in_stations": [
+                  "Đà Lạt"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-31",
+              "2026-05-24",
+              "2026-05-17"
+            ],
+            "total_hits_verified": 141,
+            "total_n_verified": 328
+          },
+          {
+            "rank": 8,
+            "source_region": "MT",
+            "source_prize": "G7#1",
+            "source_prize_vn": "Giải 7 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 330,
+            "hits": 274,
+            "hit_rate_pct": 83.03,
+            "baseline_pct": 80.93,
+            "lift_pp": 2.1,
+            "ci95_pct": [
+              78.61,
+              86.69
+            ],
+            "p_value": 0.18377,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MN",
+            "target_weekday": "CN",
+            "vn_description": "Khi xổ Chủ Nhật (CN) miền MN: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MN ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Tiền Giang",
+                "n_eval": 316,
+                "hits": 121,
+                "hit_rate_pct": 38.29,
+                "ci95_pct": [
+                  33.1,
+                  43.76
+                ]
+              },
+              {
+                "station": "Kiên Giang",
+                "n_eval": 316,
+                "hits": 141,
+                "hit_rate_pct": 44.62,
+                "ci95_pct": [
+                  39.24,
+                  50.13
+                ]
+              },
+              {
+                "station": "Đà Lạt",
+                "n_eval": 316,
+                "hits": 135,
+                "hit_rate_pct": 42.72,
+                "ci95_pct": [
+                  37.39,
+                  48.23
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-17",
+                "source_date": "2026-05-16",
+                "source_set": [
+                  "24",
+                  "42",
+                  "94"
+                ],
+                "hit_in_stations": [
+                  "Tiền Giang",
+                  "Đà Lạt"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-10",
+                "source_date": "2026-05-09",
+                "source_set": [
+                  "19",
+                  "38",
+                  "55"
+                ],
+                "hit_in_stations": [
+                  "Kiên Giang"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-03",
+                "source_date": "2026-05-02",
+                "source_set": [
+                  "28",
+                  "51",
+                  "80"
+                ],
+                "hit_in_stations": [
+                  "Đà Lạt"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-17",
+              "2026-05-10",
+              "2026-05-03"
+            ],
+            "total_hits_verified": 264,
+            "total_n_verified": 330
           }
         ],
         "p_lt_05_count": 1,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 93
       }
     },
     "MT": {
@@ -6990,7 +6968,7 @@
         ],
         "p_lt_05_count": 0,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 101
       },
       "T3": {
         "weekday_full": "Thứ Ba (T3)",
@@ -7720,7 +7698,7 @@
         ],
         "p_lt_05_count": 1,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 101
       },
       "T4": {
         "weekday_full": "Thứ Tư (T4)",
@@ -7914,94 +7892,6 @@
           },
           {
             "rank": 3,
-            "source_region": "MB",
-            "source_prize": "G1#1",
-            "source_prize_vn": "Giải 1 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 115,
-            "hit_rate_pct": 35.28,
-            "baseline_pct": 33.75,
-            "lift_pp": 1.52,
-            "ci95_pct": [
-              30.29,
-              40.61
-            ],
-            "p_value": 0.30054,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MT",
-            "target_weekday": "T4",
-            "vn_description": "Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đà Nẵng",
-                "n_eval": 325,
-                "hits": 66,
-                "hit_rate_pct": 20.31,
-                "ci95_pct": [
-                  16.29,
-                  25.02
-                ]
-              },
-              {
-                "station": "Khánh Hòa",
-                "n_eval": 326,
-                "hits": 68,
-                "hit_rate_pct": 20.86,
-                "ci95_pct": [
-                  16.8,
-                  25.6
-                ]
-              }
-            ],
-            "station_count": 2,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-13",
-                "source_date": "2026-05-13",
-                "source_set": [
-                  "61"
-                ],
-                "hit_in_stations": [
-                  "Khánh Hòa"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-04-08",
-                "source_date": "2026-04-08",
-                "source_set": [
-                  "35"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-03-25",
-                "source_date": "2026-03-25",
-                "source_set": [
-                  "66"
-                ],
-                "hit_in_stations": [
-                  "Khánh Hòa"
-                ],
-                "all_stations_count": 2
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-13",
-              "2026-04-08",
-              "2026-03-25"
-            ],
-            "total_hits_verified": 115,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 4,
             "source_region": "MN",
             "source_prize": "G7#1",
             "source_prize_vn": "Giải 7 bộ 1",
@@ -8095,7 +7985,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 5,
+            "rank": 4,
             "source_region": "MB",
             "source_prize": "G7#2",
             "source_prize_vn": "Giải 7 bộ 2",
@@ -8183,7 +8073,7 @@
             "total_n_verified": 326
           },
           {
-            "rank": 6,
+            "rank": 5,
             "source_region": "MN",
             "source_prize": "G3#2",
             "source_prize_vn": "Giải 3 bộ 2",
@@ -8277,96 +8167,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 7,
-            "source_region": "MB",
-            "source_prize": "G7#2",
-            "source_prize_vn": "Giải 7 bộ 2",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 110,
-            "hit_rate_pct": 33.74,
-            "baseline_pct": 33.75,
-            "lift_pp": -0.01,
-            "ci95_pct": [
-              28.83,
-              39.04
-            ],
-            "p_value": 0.52502,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MT",
-            "target_weekday": "T4",
-            "vn_description": "Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đà Nẵng",
-                "n_eval": 325,
-                "hits": 66,
-                "hit_rate_pct": 20.31,
-                "ci95_pct": [
-                  16.29,
-                  25.02
-                ]
-              },
-              {
-                "station": "Khánh Hòa",
-                "n_eval": 326,
-                "hits": 61,
-                "hit_rate_pct": 18.71,
-                "ci95_pct": [
-                  14.85,
-                  23.3
-                ]
-              }
-            ],
-            "station_count": 2,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-13",
-                "source_date": "2026-05-13",
-                "source_set": [
-                  "90"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-05-06",
-                "source_date": "2026-05-06",
-                "source_set": [
-                  "50"
-                ],
-                "hit_in_stations": [
-                  "Khánh Hòa"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-04-29",
-                "source_date": "2026-04-29",
-                "source_set": [
-                  "46"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng",
-                  "Khánh Hòa"
-                ],
-                "all_stations_count": 2
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-13",
-              "2026-05-06",
-              "2026-04-29"
-            ],
-            "total_hits_verified": 110,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MB",
             "source_prize": "G4#3",
             "source_prize_vn": "Giải 4 bộ 3",
@@ -8452,11 +8253,197 @@
             ],
             "total_hits_verified": 109,
             "total_n_verified": 326
+          },
+          {
+            "rank": 7,
+            "source_region": "MT",
+            "source_prize": "G1#1",
+            "source_prize_vn": "Giải 1 bộ 1",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 328,
+            "hits": 183,
+            "hit_rate_pct": 55.79,
+            "baseline_pct": 56.06,
+            "lift_pp": -0.27,
+            "ci95_pct": [
+              50.38,
+              61.07
+            ],
+            "p_value": 0.56068,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MT",
+            "target_weekday": "T4",
+            "vn_description": "Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 1 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đà Nẵng",
+                "n_eval": 327,
+                "hits": 107,
+                "hit_rate_pct": 32.72,
+                "ci95_pct": [
+                  27.86,
+                  37.98
+                ]
+              },
+              {
+                "station": "Khánh Hòa",
+                "n_eval": 328,
+                "hits": 112,
+                "hit_rate_pct": 34.15,
+                "ci95_pct": [
+                  29.22,
+                  39.44
+                ]
+              }
+            ],
+            "station_count": 2,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-27",
+                "source_date": "2026-05-25",
+                "source_set": [
+                  "22",
+                  "93"
+                ],
+                "hit_in_stations": [
+                  "Khánh Hòa"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-05-20",
+                "source_date": "2026-05-18",
+                "source_set": [
+                  "18",
+                  "76"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng",
+                  "Khánh Hòa"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-05-13",
+                "source_date": "2026-05-11",
+                "source_set": [
+                  "32",
+                  "44"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng"
+                ],
+                "all_stations_count": 2
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-27",
+              "2026-05-20",
+              "2026-05-13"
+            ],
+            "total_hits_verified": 183,
+            "total_n_verified": 329
+          },
+          {
+            "rank": 8,
+            "source_region": "MN",
+            "source_prize": "G2#1",
+            "source_prize_vn": "Giải 2 bộ 1",
+            "source_lag": "D",
+            "transform": "LAST2",
+            "days_evaluated": 329,
+            "hits": 230,
+            "hit_rate_pct": 69.91,
+            "baseline_pct": 70.19,
+            "lift_pp": -0.28,
+            "ci95_pct": [
+              64.75,
+              74.61
+            ],
+            "p_value": 0.56817,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MT",
+            "target_weekday": "T4",
+            "vn_description": "Khi xổ Thứ Tư (T4) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MN** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đà Nẵng",
+                "n_eval": 328,
+                "hits": 160,
+                "hit_rate_pct": 48.78,
+                "ci95_pct": [
+                  43.42,
+                  54.17
+                ]
+              },
+              {
+                "station": "Khánh Hòa",
+                "n_eval": 329,
+                "hits": 145,
+                "hit_rate_pct": 44.07,
+                "ci95_pct": [
+                  38.81,
+                  49.48
+                ]
+              }
+            ],
+            "station_count": 2,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-20",
+                "source_date": "2026-05-20",
+                "source_set": [
+                  "15",
+                  "29",
+                  "90"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-05-13",
+                "source_date": "2026-05-13",
+                "source_set": [
+                  "09",
+                  "47",
+                  "58"
+                ],
+                "hit_in_stations": [
+                  "Khánh Hòa"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-04-22",
+                "source_date": "2026-04-22",
+                "source_set": [
+                  "19",
+                  "46",
+                  "75"
+                ],
+                "hit_in_stations": [
+                  "Khánh Hòa"
+                ],
+                "all_stations_count": 2
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-20",
+              "2026-05-13",
+              "2026-04-22"
+            ],
+            "total_hits_verified": 230,
+            "total_n_verified": 329
           }
         ],
         "p_lt_05_count": 0,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 101
       },
       "T5": {
         "weekday_full": "Thứ Năm (T5)",
@@ -8667,104 +8654,6 @@
           },
           {
             "rank": 3,
-            "source_region": "MB",
-            "source_prize": "G7#3",
-            "source_prize_vn": "Giải 7 bộ 3",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 327,
-            "hits": 157,
-            "hit_rate_pct": 48.01,
-            "baseline_pct": 33.75,
-            "lift_pp": 14.26,
-            "ci95_pct": [
-              42.65,
-              53.42
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MT",
-            "target_weekday": "T5",
-            "vn_description": "Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 3 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Bình Định",
-                "n_eval": 327,
-                "hits": 66,
-                "hit_rate_pct": 20.18,
-                "ci95_pct": [
-                  16.19,
-                  24.87
-                ]
-              },
-              {
-                "station": "Quảng Trị",
-                "n_eval": 327,
-                "hits": 64,
-                "hit_rate_pct": 19.57,
-                "ci95_pct": [
-                  15.64,
-                  24.22
-                ]
-              },
-              {
-                "station": "Quảng Bình",
-                "n_eval": 327,
-                "hits": 62,
-                "hit_rate_pct": 18.96,
-                "ci95_pct": [
-                  15.08,
-                  23.56
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-07",
-                "source_date": "2026-05-07",
-                "source_set": [
-                  "45"
-                ],
-                "hit_in_stations": [
-                  "Quảng Bình"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-30",
-                "source_date": "2026-04-30",
-                "source_set": [
-                  "98"
-                ],
-                "hit_in_stations": [
-                  "Quảng Bình"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-16",
-                "source_date": "2026-04-16",
-                "source_set": [
-                  "33"
-                ],
-                "hit_in_stations": [
-                  "Quảng Trị"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-07",
-              "2026-04-30",
-              "2026-04-16"
-            ],
-            "total_hits_verified": 157,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 4,
             "source_region": "MN",
             "source_prize": "G5#1",
             "source_prize_vn": "Giải 5 bộ 1",
@@ -8869,7 +8758,7 @@
             "total_n_verified": 332
           },
           {
-            "rank": 5,
+            "rank": 4,
             "source_region": "MT",
             "source_prize": "DB#1",
             "source_prize_vn": "Giải ĐB bộ 1",
@@ -8973,7 +8862,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 6,
+            "rank": 5,
             "source_region": "MN",
             "source_prize": "G3#2",
             "source_prize_vn": "Giải 3 bộ 2",
@@ -9078,7 +8967,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 7,
+            "rank": 6,
             "source_region": "MB",
             "source_prize": "G2#1",
             "source_prize_vn": "Giải 2 bộ 1",
@@ -9177,7 +9066,7 @@
             "total_n_verified": 325
           },
           {
-            "rank": 8,
+            "rank": 7,
             "source_region": "MT",
             "source_prize": "G7#1",
             "source_prize_vn": "Giải 7 bộ 1",
@@ -9280,7 +9169,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 9,
+            "rank": 8,
             "source_region": "MT",
             "source_prize": "G5#1",
             "source_prize_vn": "Giải 5 bộ 1",
@@ -9381,7 +9270,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 10,
+            "rank": 9,
             "source_region": "MT",
             "source_prize": "G1#1",
             "source_prize_vn": "Giải 1 bộ 1",
@@ -9482,7 +9371,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 11,
+            "rank": 10,
             "source_region": "MT",
             "source_prize": "G5#1",
             "source_prize_vn": "Giải 5 bộ 1",
@@ -9586,7 +9475,7 @@
             "total_n_verified": 330
           },
           {
-            "rank": 12,
+            "rank": 11,
             "source_region": "MN",
             "source_prize": "G8#1",
             "source_prize_vn": "Giải 8 bộ 1",
@@ -9688,11 +9577,109 @@
             ],
             "total_hits_verified": 270,
             "total_n_verified": 329
+          },
+          {
+            "rank": 12,
+            "source_region": "MB",
+            "source_prize": "G7#1",
+            "source_prize_vn": "Giải 7 bộ 1",
+            "source_lag": "D-3",
+            "transform": "LAST2",
+            "days_evaluated": 325,
+            "hits": 149,
+            "hit_rate_pct": 45.85,
+            "baseline_pct": 33.75,
+            "lift_pp": 12.09,
+            "ci95_pct": [
+              40.51,
+              51.28
+            ],
+            "p_value": 0.0,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MT",
+            "target_weekday": "T5",
+            "vn_description": "Khi xổ Thứ Năm (T5) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 1 miền MB** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Bình Định",
+                "n_eval": 325,
+                "hits": 58,
+                "hit_rate_pct": 17.85,
+                "ci95_pct": [
+                  14.07,
+                  22.38
+                ]
+              },
+              {
+                "station": "Quảng Trị",
+                "n_eval": 325,
+                "hits": 60,
+                "hit_rate_pct": 18.46,
+                "ci95_pct": [
+                  14.62,
+                  23.04
+                ]
+              },
+              {
+                "station": "Quảng Bình",
+                "n_eval": 325,
+                "hits": 57,
+                "hit_rate_pct": 17.54,
+                "ci95_pct": [
+                  13.79,
+                  22.05
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-28",
+                "source_date": "2026-05-25",
+                "source_set": [
+                  "90"
+                ],
+                "hit_in_stations": [
+                  "Quảng Bình"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-21",
+                "source_date": "2026-05-18",
+                "source_set": [
+                  "11"
+                ],
+                "hit_in_stations": [
+                  "Quảng Bình"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-04-30",
+                "source_date": "2026-04-27",
+                "source_set": [
+                  "34"
+                ],
+                "hit_in_stations": [
+                  "Bình Định"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-28",
+              "2026-05-21",
+              "2026-04-30"
+            ],
+            "total_hits_verified": 149,
+            "total_n_verified": 325
           }
         ],
-        "p_lt_05_count": 109,
-        "bh_pass_count": 85,
-        "total_cells_in_bucket": 116
+        "p_lt_05_count": 97,
+        "bh_pass_count": 77,
+        "total_cells_in_bucket": 101
       },
       "T6": {
         "weekday_full": "Thứ Sáu (T6)",
@@ -9986,94 +9973,6 @@
           {
             "rank": 4,
             "source_region": "MB",
-            "source_prize": "G6#2",
-            "source_prize_vn": "Giải 6 bộ 2",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 328,
-            "hits": 111,
-            "hit_rate_pct": 33.84,
-            "baseline_pct": 33.75,
-            "lift_pp": 0.09,
-            "ci95_pct": [
-              28.93,
-              39.12
-            ],
-            "p_value": 0.50983,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MT",
-            "target_weekday": "T6",
-            "vn_description": "Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Gia Lai",
-                "n_eval": 328,
-                "hits": 65,
-                "hit_rate_pct": 19.82,
-                "ci95_pct": [
-                  15.86,
-                  24.47
-                ]
-              },
-              {
-                "station": "Ninh Thuận",
-                "n_eval": 327,
-                "hits": 56,
-                "hit_rate_pct": 17.13,
-                "ci95_pct": [
-                  13.43,
-                  21.58
-                ]
-              }
-            ],
-            "station_count": 2,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-29",
-                "source_date": "2026-05-29",
-                "source_set": [
-                  "78"
-                ],
-                "hit_in_stations": [
-                  "Gia Lai"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-05-15",
-                "source_date": "2026-05-15",
-                "source_set": [
-                  "14"
-                ],
-                "hit_in_stations": [
-                  "Ninh Thuận"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-04-24",
-                "source_date": "2026-04-24",
-                "source_set": [
-                  "34"
-                ],
-                "hit_in_stations": [
-                  "Gia Lai"
-                ],
-                "all_stations_count": 2
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-29",
-              "2026-05-15",
-              "2026-04-24"
-            ],
-            "total_hits_verified": 111,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 5,
-            "source_region": "MB",
             "source_prize": "G7#3",
             "source_prize_vn": "Giải 7 bộ 3",
             "source_lag": "D-3",
@@ -10161,7 +10060,7 @@
             "total_n_verified": 326
           },
           {
-            "rank": 6,
+            "rank": 5,
             "source_region": "MT",
             "source_prize": "G1#1",
             "source_prize_vn": "Giải 1 bộ 1",
@@ -10252,95 +10151,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 7,
-            "source_region": "MB",
-            "source_prize": "G7#2",
-            "source_prize_vn": "Giải 7 bộ 2",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 328,
-            "hits": 110,
-            "hit_rate_pct": 33.54,
-            "baseline_pct": 33.75,
-            "lift_pp": -0.22,
-            "ci95_pct": [
-              28.64,
-              38.81
-            ],
-            "p_value": 0.55622,
-            "bh_pass": false,
-            "strength": "WEAK",
-            "target_region": "MT",
-            "target_weekday": "T6",
-            "vn_description": "Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 7 bộ 2 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Gia Lai",
-                "n_eval": 328,
-                "hits": 56,
-                "hit_rate_pct": 17.07,
-                "ci95_pct": [
-                  13.39,
-                  21.52
-                ]
-              },
-              {
-                "station": "Ninh Thuận",
-                "n_eval": 327,
-                "hits": 63,
-                "hit_rate_pct": 19.27,
-                "ci95_pct": [
-                  15.36,
-                  23.89
-                ]
-              }
-            ],
-            "station_count": 2,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-08",
-                "source_date": "2026-05-08",
-                "source_set": [
-                  "25"
-                ],
-                "hit_in_stations": [
-                  "Ninh Thuận"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-04-17",
-                "source_date": "2026-04-17",
-                "source_set": [
-                  "27"
-                ],
-                "hit_in_stations": [
-                  "Gia Lai"
-                ],
-                "all_stations_count": 2
-              },
-              {
-                "target_date": "2026-04-10",
-                "source_date": "2026-04-10",
-                "source_set": [
-                  "37"
-                ],
-                "hit_in_stations": [
-                  "Ninh Thuận"
-                ],
-                "all_stations_count": 2
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-08",
-              "2026-04-17",
-              "2026-04-10"
-            ],
-            "total_hits_verified": 110,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 8,
+            "rank": 6,
             "source_region": "MT",
             "source_prize": "G3#1",
             "source_prize_vn": "Giải 3 bộ 1",
@@ -10434,11 +10245,193 @@
             ],
             "total_hits_verified": 232,
             "total_n_verified": 331
+          },
+          {
+            "rank": 7,
+            "source_region": "MT",
+            "source_prize": "G8#1",
+            "source_prize_vn": "Giải 8 bộ 1",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 329,
+            "hits": 182,
+            "hit_rate_pct": 55.32,
+            "baseline_pct": 55.95,
+            "lift_pp": -0.63,
+            "ci95_pct": [
+              49.92,
+              60.6
+            ],
+            "p_value": 0.61239,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MT",
+            "target_weekday": "T6",
+            "vn_description": "Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Gia Lai",
+                "n_eval": 329,
+                "hits": 105,
+                "hit_rate_pct": 31.91,
+                "ci95_pct": [
+                  27.11,
+                  37.14
+                ]
+              },
+              {
+                "station": "Ninh Thuận",
+                "n_eval": 329,
+                "hits": 94,
+                "hit_rate_pct": 28.57,
+                "ci95_pct": [
+                  23.96,
+                  33.68
+                ]
+              }
+            ],
+            "station_count": 2,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-29",
+                "source_date": "2026-05-27",
+                "source_set": [
+                  "31",
+                  "66"
+                ],
+                "hit_in_stations": [
+                  "Gia Lai"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-05-22",
+                "source_date": "2026-05-20",
+                "source_set": [
+                  "28",
+                  "81"
+                ],
+                "hit_in_stations": [
+                  "Gia Lai"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-05-15",
+                "source_date": "2026-05-13",
+                "source_set": [
+                  "06",
+                  "58"
+                ],
+                "hit_in_stations": [
+                  "Gia Lai"
+                ],
+                "all_stations_count": 2
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-29",
+              "2026-05-22",
+              "2026-05-15"
+            ],
+            "total_hits_verified": 182,
+            "total_n_verified": 329
+          },
+          {
+            "rank": 8,
+            "source_region": "MT",
+            "source_prize": "G3#2",
+            "source_prize_vn": "Giải 3 bộ 2",
+            "source_lag": "D-3",
+            "transform": "LAST2",
+            "days_evaluated": 330,
+            "hits": 182,
+            "hit_rate_pct": 55.15,
+            "baseline_pct": 55.84,
+            "lift_pp": -0.69,
+            "ci95_pct": [
+              49.76,
+              60.43
+            ],
+            "p_value": 0.62057,
+            "bh_pass": false,
+            "strength": "WEAK",
+            "target_region": "MT",
+            "target_weekday": "T6",
+            "vn_description": "Khi xổ Thứ Sáu (T6) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 3 bộ 2 miền MT** ngày D-3 (trước 3 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Gia Lai",
+                "n_eval": 330,
+                "hits": 107,
+                "hit_rate_pct": 32.42,
+                "ci95_pct": [
+                  27.6,
+                  37.65
+                ]
+              },
+              {
+                "station": "Ninh Thuận",
+                "n_eval": 329,
+                "hits": 104,
+                "hit_rate_pct": 31.61,
+                "ci95_pct": [
+                  26.82,
+                  36.82
+                ]
+              }
+            ],
+            "station_count": 2,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-08",
+                "source_date": "2026-05-05",
+                "source_set": [
+                  "33",
+                  "46"
+                ],
+                "hit_in_stations": [
+                  "Gia Lai"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-04-24",
+                "source_date": "2026-04-21",
+                "source_set": [
+                  "77",
+                  "99"
+                ],
+                "hit_in_stations": [
+                  "Ninh Thuận"
+                ],
+                "all_stations_count": 2
+              },
+              {
+                "target_date": "2026-04-03",
+                "source_date": "2026-03-31",
+                "source_set": [
+                  "08",
+                  "14"
+                ],
+                "hit_in_stations": [
+                  "Gia Lai"
+                ],
+                "all_stations_count": 2
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-08",
+              "2026-04-24",
+              "2026-04-03"
+            ],
+            "total_hits_verified": 182,
+            "total_n_verified": 330
           }
         ],
         "p_lt_05_count": 0,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 101
       },
       "T7": {
         "weekday_full": "Thứ Bảy (T7)",
@@ -10957,202 +10950,6 @@
           },
           {
             "rank": 6,
-            "source_region": "MB",
-            "source_prize": "G2#1",
-            "source_prize_vn": "Giải 2 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 152,
-            "hit_rate_pct": 46.63,
-            "baseline_pct": 33.75,
-            "lift_pp": 12.87,
-            "ci95_pct": [
-              41.28,
-              52.05
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MT",
-            "target_weekday": "T7",
-            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 2 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đà Nẵng",
-                "n_eval": 325,
-                "hits": 55,
-                "hit_rate_pct": 16.92,
-                "ci95_pct": [
-                  13.24,
-                  21.38
-                ]
-              },
-              {
-                "station": "Quảng Ngãi",
-                "n_eval": 325,
-                "hits": 65,
-                "hit_rate_pct": 20.0,
-                "ci95_pct": [
-                  16.01,
-                  24.69
-                ]
-              },
-              {
-                "station": "Đắk Nông",
-                "n_eval": 326,
-                "hits": 61,
-                "hit_rate_pct": 18.71,
-                "ci95_pct": [
-                  14.85,
-                  23.3
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-23",
-                "source_date": "2026-05-23",
-                "source_set": [
-                  "31"
-                ],
-                "hit_in_stations": [
-                  "Quảng Ngãi"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-05-16",
-                "source_date": "2026-05-16",
-                "source_set": [
-                  "24"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-04",
-                "source_date": "2026-04-04",
-                "source_set": [
-                  "16"
-                ],
-                "hit_in_stations": [
-                  "Đắk Nông"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-23",
-              "2026-05-16",
-              "2026-04-04"
-            ],
-            "total_hits_verified": 152,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 7,
-            "source_region": "MB",
-            "source_prize": "G4#1",
-            "source_prize_vn": "Giải 4 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 151,
-            "hit_rate_pct": 46.32,
-            "baseline_pct": 33.75,
-            "lift_pp": 12.57,
-            "ci95_pct": [
-              40.98,
-              51.74
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MT",
-            "target_weekday": "T7",
-            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 4 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đà Nẵng",
-                "n_eval": 325,
-                "hits": 52,
-                "hit_rate_pct": 16.0,
-                "ci95_pct": [
-                  12.41,
-                  20.38
-                ]
-              },
-              {
-                "station": "Quảng Ngãi",
-                "n_eval": 325,
-                "hits": 61,
-                "hit_rate_pct": 18.77,
-                "ci95_pct": [
-                  14.9,
-                  23.37
-                ]
-              },
-              {
-                "station": "Đắk Nông",
-                "n_eval": 326,
-                "hits": 63,
-                "hit_rate_pct": 19.33,
-                "ci95_pct": [
-                  15.41,
-                  23.96
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-30",
-                "source_date": "2026-05-30",
-                "source_set": [
-                  "59"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-25",
-                "source_date": "2026-04-25",
-                "source_set": [
-                  "90"
-                ],
-                "hit_in_stations": [
-                  "Quảng Ngãi"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-11",
-                "source_date": "2026-04-11",
-                "source_set": [
-                  "68"
-                ],
-                "hit_in_stations": [
-                  "Đắk Nông"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-30",
-              "2026-04-25",
-              "2026-04-11"
-            ],
-            "total_hits_verified": 151,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 8,
             "source_region": "MN",
             "source_prize": "G8#1",
             "source_prize_vn": "Giải 8 bộ 1",
@@ -11258,7 +11055,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 9,
+            "rank": 7,
             "source_region": "MT",
             "source_prize": "DB#1",
             "source_prize_vn": "Giải ĐB bộ 1",
@@ -11362,7 +11159,7 @@
             "total_n_verified": 329
           },
           {
-            "rank": 10,
+            "rank": 8,
             "source_region": "MB",
             "source_prize": "G1#1",
             "source_prize_vn": "Giải 1 bộ 1",
@@ -11460,106 +11257,7 @@
             "total_n_verified": 328
           },
           {
-            "rank": 11,
-            "source_region": "MB",
-            "source_prize": "G6#1",
-            "source_prize_vn": "Giải 6 bộ 1",
-            "source_lag": "D",
-            "transform": "LAST2",
-            "days_evaluated": 326,
-            "hits": 150,
-            "hit_rate_pct": 46.01,
-            "baseline_pct": 33.75,
-            "lift_pp": 12.26,
-            "ci95_pct": [
-              40.68,
-              51.44
-            ],
-            "p_value": 0.0,
-            "bh_pass": true,
-            "strength": "STRONG (BH-pass)",
-            "target_region": "MT",
-            "target_weekday": "T7",
-            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 6 bộ 1 miền MB** ngày cùng ngày → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
-            "per_station_breakdown": [
-              {
-                "station": "Đà Nẵng",
-                "n_eval": 325,
-                "hits": 64,
-                "hit_rate_pct": 19.69,
-                "ci95_pct": [
-                  15.73,
-                  24.36
-                ]
-              },
-              {
-                "station": "Quảng Ngãi",
-                "n_eval": 325,
-                "hits": 57,
-                "hit_rate_pct": 17.54,
-                "ci95_pct": [
-                  13.79,
-                  22.05
-                ]
-              },
-              {
-                "station": "Đắk Nông",
-                "n_eval": 326,
-                "hits": 64,
-                "hit_rate_pct": 19.63,
-                "ci95_pct": [
-                  15.68,
-                  24.29
-                ]
-              }
-            ],
-            "station_count": 3,
-            "recent_3_hits": [
-              {
-                "target_date": "2026-05-23",
-                "source_date": "2026-05-23",
-                "source_set": [
-                  "72"
-                ],
-                "hit_in_stations": [
-                  "Quảng Ngãi"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-25",
-                "source_date": "2026-04-25",
-                "source_set": [
-                  "30"
-                ],
-                "hit_in_stations": [
-                  "Đà Nẵng",
-                  "Đắk Nông"
-                ],
-                "all_stations_count": 3
-              },
-              {
-                "target_date": "2026-04-18",
-                "source_date": "2026-04-18",
-                "source_set": [
-                  "72"
-                ],
-                "hit_in_stations": [
-                  "Đắk Nông"
-                ],
-                "all_stations_count": 3
-              }
-            ],
-            "recent_3_hits_dates": [
-              "2026-05-23",
-              "2026-04-25",
-              "2026-04-18"
-            ],
-            "total_hits_verified": 150,
-            "total_n_verified": 328
-          },
-          {
-            "rank": 12,
+            "rank": 9,
             "source_region": "MT",
             "source_prize": "G5#1",
             "source_prize_vn": "Giải 5 bộ 1",
@@ -11659,11 +11357,318 @@
             ],
             "total_hits_verified": 223,
             "total_n_verified": 329
+          },
+          {
+            "rank": 10,
+            "source_region": "MT",
+            "source_prize": "DB#1",
+            "source_prize_vn": "Giải ĐB bộ 1",
+            "source_lag": "D-2",
+            "transform": "LAST2",
+            "days_evaluated": 329,
+            "hits": 272,
+            "hit_rate_pct": 82.67,
+            "baseline_pct": 70.63,
+            "lift_pp": 12.04,
+            "ci95_pct": [
+              78.21,
+              86.38
+            ],
+            "p_value": 0.0,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MT",
+            "target_weekday": "T7",
+            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MT** ngày D-2 (trước 2 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đà Nẵng",
+                "n_eval": 328,
+                "hits": 134,
+                "hit_rate_pct": 40.85,
+                "ci95_pct": [
+                  35.67,
+                  46.25
+                ]
+              },
+              {
+                "station": "Quảng Ngãi",
+                "n_eval": 328,
+                "hits": 156,
+                "hit_rate_pct": 47.56,
+                "ci95_pct": [
+                  42.22,
+                  52.96
+                ]
+              },
+              {
+                "station": "Đắk Nông",
+                "n_eval": 329,
+                "hits": 132,
+                "hit_rate_pct": 40.12,
+                "ci95_pct": [
+                  34.97,
+                  45.5
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-30",
+                "source_date": "2026-05-28",
+                "source_set": [
+                  "15",
+                  "85",
+                  "86"
+                ],
+                "hit_in_stations": [
+                  "Quảng Ngãi"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-23",
+                "source_date": "2026-05-21",
+                "source_set": [
+                  "20",
+                  "51",
+                  "86"
+                ],
+                "hit_in_stations": [
+                  "Quảng Ngãi"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-16",
+                "source_date": "2026-05-14",
+                "source_set": [
+                  "30",
+                  "31",
+                  "64"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng",
+                  "Quảng Ngãi",
+                  "Đắk Nông"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-30",
+              "2026-05-23",
+              "2026-05-16"
+            ],
+            "total_hits_verified": 272,
+            "total_n_verified": 331
+          },
+          {
+            "rank": 11,
+            "source_region": "MB",
+            "source_prize": "DB#1",
+            "source_prize_vn": "Giải ĐB bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 326,
+            "hits": 149,
+            "hit_rate_pct": 45.71,
+            "baseline_pct": 33.75,
+            "lift_pp": 11.95,
+            "ci95_pct": [
+              40.38,
+              51.13
+            ],
+            "p_value": 0.0,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MT",
+            "target_weekday": "T7",
+            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải ĐB bộ 1 miền MB** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đà Nẵng",
+                "n_eval": 325,
+                "hits": 56,
+                "hit_rate_pct": 17.23,
+                "ci95_pct": [
+                  13.51,
+                  21.71
+                ]
+              },
+              {
+                "station": "Quảng Ngãi",
+                "n_eval": 325,
+                "hits": 55,
+                "hit_rate_pct": 16.92,
+                "ci95_pct": [
+                  13.24,
+                  21.38
+                ]
+              },
+              {
+                "station": "Đắk Nông",
+                "n_eval": 326,
+                "hits": 65,
+                "hit_rate_pct": 19.94,
+                "ci95_pct": [
+                  15.96,
+                  24.61
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-30",
+                "source_date": "2026-05-29",
+                "source_set": [
+                  "54"
+                ],
+                "hit_in_stations": [
+                  "Quảng Ngãi"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-23",
+                "source_date": "2026-05-22",
+                "source_set": [
+                  "39"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-16",
+                "source_date": "2026-05-15",
+                "source_set": [
+                  "94"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng",
+                  "Đắk Nông"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-30",
+              "2026-05-23",
+              "2026-05-16"
+            ],
+            "total_hits_verified": 149,
+            "total_n_verified": 328
+          },
+          {
+            "rank": 12,
+            "source_region": "MT",
+            "source_prize": "G8#1",
+            "source_prize_vn": "Giải 8 bộ 1",
+            "source_lag": "D-1",
+            "transform": "LAST2",
+            "days_evaluated": 330,
+            "hits": 224,
+            "hit_rate_pct": 67.88,
+            "baseline_pct": 55.95,
+            "lift_pp": 11.93,
+            "ci95_pct": [
+              62.66,
+              72.69
+            ],
+            "p_value": 1e-05,
+            "bh_pass": true,
+            "strength": "STRONG (BH-pass)",
+            "target_region": "MT",
+            "target_weekday": "T7",
+            "vn_description": "Khi xổ Thứ Bảy (T7) miền MT: lấy LAST2 (2 chữ số cuối) của **Giải 8 bộ 1 miền MT** ngày D-1 (trước 1 ngày) → kỳ vọng xuất hiện trong các đuôi giải miền MT ngày D.",
+            "per_station_breakdown": [
+              {
+                "station": "Đà Nẵng",
+                "n_eval": 329,
+                "hits": 95,
+                "hit_rate_pct": 28.88,
+                "ci95_pct": [
+                  24.24,
+                  33.99
+                ]
+              },
+              {
+                "station": "Quảng Ngãi",
+                "n_eval": 329,
+                "hits": 110,
+                "hit_rate_pct": 33.43,
+                "ci95_pct": [
+                  28.55,
+                  38.7
+                ]
+              },
+              {
+                "station": "Đắk Nông",
+                "n_eval": 330,
+                "hits": 124,
+                "hit_rate_pct": 37.58,
+                "ci95_pct": [
+                  32.52,
+                  42.92
+                ]
+              }
+            ],
+            "station_count": 3,
+            "recent_3_hits": [
+              {
+                "target_date": "2026-05-23",
+                "source_date": "2026-05-22",
+                "source_set": [
+                  "31",
+                  "81"
+                ],
+                "hit_in_stations": [
+                  "Quảng Ngãi"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-09",
+                "source_date": "2026-05-08",
+                "source_set": [
+                  "10",
+                  "70"
+                ],
+                "hit_in_stations": [
+                  "Quảng Ngãi"
+                ],
+                "all_stations_count": 3
+              },
+              {
+                "target_date": "2026-05-02",
+                "source_date": "2026-05-01",
+                "source_set": [
+                  "17",
+                  "23"
+                ],
+                "hit_in_stations": [
+                  "Đà Nẵng",
+                  "Đắk Nông"
+                ],
+                "all_stations_count": 3
+              }
+            ],
+            "recent_3_hits_dates": [
+              "2026-05-23",
+              "2026-05-09",
+              "2026-05-02"
+            ],
+            "total_hits_verified": 224,
+            "total_n_verified": 332
           }
         ],
-        "p_lt_05_count": 107,
-        "bh_pass_count": 90,
-        "total_cells_in_bucket": 116
+        "p_lt_05_count": 94,
+        "bh_pass_count": 81,
+        "total_cells_in_bucket": 101
       },
       "CN": {
         "weekday_full": "Chủ Nhật (CN)",
@@ -12483,7 +12488,7 @@
         ],
         "p_lt_05_count": 0,
         "bh_pass_count": 0,
-        "total_cells_in_bucket": 116
+        "total_cells_in_bucket": 101
       }
     },
     "MB": {

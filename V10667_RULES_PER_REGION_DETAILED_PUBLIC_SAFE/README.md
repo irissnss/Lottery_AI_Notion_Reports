@@ -6,7 +6,18 @@ Tài liệu chi tiết cho 3 miền target (MN, MT, MB) với:
 - Worked examples (3 ngày gần nhất rule trúng)
 - Strength classification (BH-pass, STRONG, MODERATE, MARGINAL, WEAK)
 
-## ⚠️ Read first — Bộ Numbering Convention
+## 🕐 Read first #1 — TEMPORAL CAUSALITY (CRITICAL)
+
+**[V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md](./V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)**
+
+Vietnam draws sequentially: **MN (~16:10) → MT (~17:10) → MB (~18:15)**.
+
+A same-day cross-region rule where the source draws AFTER the target (MT(D)→MN(D), MB(D)→MN(D), MB(D)→MT(D)) is a TEMPORAL CAUSALITY VIOLATION — you'd be using data from the future. These 266 invalid cells (36 BH-pass) have been **removed**. Per region:
+- **MN target** (draws first): only lag≥1 sources or MN self-lag
+- **MT target** (draws 2nd): MN(D) same-day OK, MB(D) removed
+- **MB target** (draws last): no same-day temporal limit
+
+## ⚠️ Read first #2 — Bộ Numbering Convention
 
 **[📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)** — quy ước đánh số bộ cho mỗi giải (G2/G4/G6/G7 MB, G3 MN/MT).
 

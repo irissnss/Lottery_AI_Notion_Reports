@@ -1,29 +1,25 @@
-# V10667 — Rules per Region — Index Hub
+# V10668 — Rules per Region — Index Hub (TEMPORAL-FIXED)
 
-> **Generated**: 2026-06-02T01:27:09+07:00
-> **Total rules**: 3,696 unique cells aggregated từ V10636 series
-> **BH-pass FDR α=0.05**: 268 cells (gold standard)
-> **Forward audit window**: 90 ngày, anchor 2026-06-02 → closeout 2026-08-31
+> **Generated**: 2026-06-02T10:32:49+07:00
+> **Patch**: V10668 TEMPORAL CAUSALITY FIX — đã loại 266 cells vi phạm thứ tự xổ
+> **BH-pass valid (sau fix)**: 232 cells (đã loại 36 BH-pass temporal-invalid)
+> **Forward audit window**: 90 ngày, anchor 2026-06-02 → closeout 2026-08-31 (28 rule valid)
 
-## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+## ⚠️ Temporal Causality (đọc trước)
 
-Tất cả rule dùng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Bộ được đếm theo vị trí trên bảng kết quả (trái → phải, trên → dưới). Owner đã đánh dấu G.4 MB rõ ràng:
+Thứ tự xổ: **MN (~16:10) → MT (~17:10) → MB (~18:15)**. Rule "nguồn xổ SAU đích cùng ngày" đã bị loại (MT(D)→MN(D), MB(D)→MN(D), MB(D)→MT(D)). Chi tiết: [V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md](./V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md).
 
-**G.4 MB (4 bộ)**:
-```
-Bộ 1 [top-left]    Bộ 2 [top-right]
-Bộ 3 [bottom-left] Bộ 4 [bottom-right]
-```
+## ⚠️ Bộ Numbering (đọc trước)
 
-**Xem chi tiết đầy đủ**: [**📖 V10667_BO_NUMBERING_LEGEND.md**](./V10667_BO_NUMBERING_LEGEND.md) — đánh dấu rõ vị trí từng bộ cho G2/G4/G6/G7 MB, G3 MN/MT, với ví dụ verify trên kết quả 31/05/2026.
+Ký hiệu `Giải X bộ Y`: xem [V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md).
 
 ## Tài liệu rule theo từng miền target
 
-| Target | Tài liệu | Số rule active | Note |
-|---|---|---|---|
-| **MB** | [V10667_RULES_MB_TARGET.md](./V10667_RULES_MB_TARGET.md) | 7 weekday cells | 1 đài MB_BOARD, evidence mỏng, V10.3 calibration ceiling 55% |
-| **MN** | [V10667_RULES_MN_TARGET.md](./V10667_RULES_MN_TARGET.md) | 7 weekday cells | 3-4 đài/ngày, T7 Saturday = "hot day" 86 BH-pass |
-| **MT** | [V10667_RULES_MT_TARGET.md](./V10667_RULES_MT_TARGET.md) | 7 weekday cells | 2-3 đài/ngày, T5 Thu + T7 Sat = "hot days" 175 BH-pass tổng |
+| Target | Tài liệu | Note |
+|---|---|---|
+| **MB** | [V10667_RULES_MB_TARGET.md](./V10667_RULES_MB_TARGET.md) | 1 đài, xổ cuối → KHÔNG bị giới hạn temporal same-day |
+| **MN** | [V10667_RULES_MN_TARGET.md](./V10667_RULES_MN_TARGET.md) | xổ đầu → CHỈ dùng lag≥1 hoặc MN self-lag |
+| **MT** | [V10667_RULES_MT_TARGET.md](./V10667_RULES_MT_TARGET.md) | xổ giữa → dùng MN(D) same-day OK, MB(D) bị loại |
 
 ## Owner constraints applied
 

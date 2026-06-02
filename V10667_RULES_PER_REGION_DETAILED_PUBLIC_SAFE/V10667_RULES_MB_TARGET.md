@@ -1,24 +1,21 @@
-# V10667 Rules cho TARGET = MB (Đích = Miền MB)
+# V10668 Rules cho TARGET = MB (Đích = Miền MB)
 
-> **Generated**: 2026-06-02T01:27:09+07:00
+> **Generated**: 2026-06-02T10:32:49+07:00
 > **Target region**: MB
 > **Audit window**: Forward 90d, anchor 2026-06-02 → earliest closeout 2026-08-31
+> **Patch**: V10668 TEMPORAL CAUSALITY FIX (đã loại rule vi phạm thứ tự xổ)
 
-## ⚠️ Đọc trước: Quy ước Đánh Số Bộ Số
+## ⚠️ QUAN TRỌNG 1 — Thứ tự xổ & Temporal Causality
 
-Rule sử dụng ký hiệu `Giải X bộ Y` (hoặc `GX#Y`). Owner đánh dấu G.4 MB rõ ràng:
+Thứ tự xổ Việt Nam: **MN (~16:10) → MT (~17:10) → MB (~18:15)**.
 
-**MB sources có nhiều bộ**: G2 (2 bộ), **G4 (4 bộ — owner mới bổ sung ⭐)**, G6 (3 bộ), G7 (4 bộ).
+**MB target**: MB xổ CUỐI CÙNG trong ngày (~18:15). Rule cho MB target được dùng MN(D) và MT(D) same-day (cả 2 đã xổ trước MB) + mọi nguồn lag ≥ 1. MB không bị giới hạn temporal nào với same-day source.
 
-**G.4 MB (4 bộ) — quy ước vị trí**:
-```
-Giải 4 bộ 1 [top-left]    Giải 4 bộ 2 [top-right]
-Giải 4 bộ 3 [bottom-left] Giải 4 bộ 4 [bottom-right]
-```
+Các rule "nguồn xổ SAU đích cùng ngày" (vd MT(D)→MN(D), MB(D)→MN(D), MB(D)→MT(D)) đã được **LOẠI BỎ** khỏi tài liệu này vì không thể dùng để dự đoán forward (data từ tương lai). Xem chi tiết: `V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md`.
 
-Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559.
+## ⚠️ QUAN TRỌNG 2 — Quy ước Đánh Số Bộ Số
 
-**Xem đầy đủ legend**: [📖 V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NUMBERING_LEGEND.md)
+Ký hiệu `Giải X bộ Y` (hoặc `GX#Y`): bộ đếm theo vị trí trên bảng kết quả. Owner đánh dấu G.4 MB (4 bộ): Bộ 1=top-left, Bộ 2=top-right, Bộ 3=bottom-left, Bộ 4=bottom-right. Ví dụ MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4=4559. Xem đầy đủ: `V10667_BO_NUMBERING_LEGEND.md`.
 
 ## Giới thiệu — MB
 

@@ -1,18 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10667.1** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` + new `V10667_BO_NUMBERING_LEGEND.md` (Detailed per-region rule reference + explicit bộ-numbering legend per owner 02/06/2026: G.4 MB 4 bộ position map + G.6/G.7/G.2 MB + G.3 MN/MT documented with verified array-index convention).
+Latest: **V10668** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (TEMPORAL CAUSALITY FIX: owner phát hiện rule lag=D 'nguồn xổ SAU đích' vi phạm thứ tự xổ MN→MT→MB. Removed 266 violating cells / 36 BH-pass invalid. Forward audit 35→28. Docs rebuilt with temporal + bộ-numbering banners).
 
-## Quick links - V10667.1 per region
+## Quick links - V10668 per region (TEMPORAL-FIXED)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. ⭐ **[BỘ NUMBERING LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md)** — read first to understand `Giải X bộ Y` notation
-3. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
-4. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc 1,711+ lines
-5. **[MN Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md)** — Miền Nam 2,061+ lines
-6. **[MT Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md)** — Miền Trung 2,150+ lines
-7. [Flat Ranking (all 3 in one)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_FLAT_RANKING.md)
-8. [Raw JSON (structured per-station data)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json)
-9. [Forward Audit Registry (35 BH-pass rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json)
+2. 🕐 **[TEMPORAL CAUSALITY PATCH NOTICE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)** — CRITICAL: read first (draw order MN→MT→MB)
+3. ⭐ **[BỘ NUMBERING LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md)** — `Giải X bộ Y` notation
+4. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
+5. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc (xổ cuối, no temporal limit)
+6. **[MN Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MN_TARGET.md)** — Miền Nam (xổ đầu, chỉ lag≥1)
+7. **[MT Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MT_TARGET.md)** — Miền Trung (MN(D) OK, MB(D) loại)
+8. [Forward Audit Registry FIXED (28 valid rules)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json)
+9. [Temporal Violation Audit (full map)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10668_TEMPORAL_VIOLATION_AUDIT.json)
 
 ---
 
