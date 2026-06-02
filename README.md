@@ -1,6 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10670 (Per-Region Rules — SOURCE SEMANTICS CLARIFIED)**
+**Latest version: V10680 (MB Rule Stack Clarification — report-only, no code deploy)**
+
+## Latest report for AI tools
+
+- [**V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md)
+  - Corrects V10679-R3: UI official already has xiên 2/3; separate MB xiên aggregator was rolled back/removed.
+  - Clarifies MB rule tiers: T1 drive, T2 confirm, T3 watch.
+  - Clarifies prompt context, MB official gates/blockers, and `/du-doan-test` as the safe next lane.
+  - **No code deployed. Official path untouched.**
 
 ## ⚠️ Read first (4 critical notes)
 

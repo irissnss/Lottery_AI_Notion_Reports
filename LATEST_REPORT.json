@@ -1,5 +1,13 @@
 {
-  "latest_version": "V10677",
+  "latest_version": "V10680",
+  "v10680_mb_rule_stack_clarification": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md",
+    "note": "Report-only/public-safe clarification for owner AI tools. Corrects V10679-R3 misunderstanding: UI already has xiên 2/3 in generate_final_bundle, so separate MB xiên aggregator was rolled back/removed. Clarifies 3 rule tiers (T1 drive / T2 confirm / T3 watch), exact MB-target counts (T1=35, T2=77 after V10636-DIG/LAGS merge, T3=19), how context enters AI prompt, what gates/blockers affect MB official (REGION_GATE_OVERRIDE MB min_bt=12/min_wr=26, d_w06 override, CP-66.7 MB adaptive exploit weak 23%), and why /du-doan-test is the correct next shadow lane before any live deploy. No code deployed; official untouched.",
+    "created_at_vn": "2026-06-03T00:45:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "supersedes": "V10679 R3 xiên aggregator note"
+  },
   "v10677_dot1": {
     "package": "V10677_DOT1_CAP_MB_SETTLE_PUBLIC_SAFE",
     "owner_report": "V10677_DOT1_CAP_MB_SETTLE_PUBLIC_SAFE/V10677_OWNER_REPORT_VN_PUBLIC.md",
