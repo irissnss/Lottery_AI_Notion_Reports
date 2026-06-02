@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10685 (Naming consistency PROD/MANUAL/PREREG — report-only)**
+**Latest version: V10686 (Technical design V10684 + V10683 — owner OK D / 1-week pre-req / thresholds)**
 
 ## Latest report for AI tools
 
-- [**V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md) — **NEW**
+- [**V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md) — **NEW**
+  - Owner confirmed 3 decisions: D (all 3 shadow experiments), V10684 rolling re-measure pre-req 1 week before, 30d PASS/FAIL thresholds OK.
+  - Technical design: `mb_manual_rolling_eval` schema, function signatures for V10684 + V10683 (3 chooser), cron 20:25 + 23:50, hard contract, verify checklist, risk matrix, rollback paths.
+  - Code NOT written yet. Awaiting owner explicit "code đi" to begin V10684 local build.
+- [V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md)
   - Owner caught: if MANUAL drives in shadow lane but is still called "T2", code/docs conflate ID with role.
   - Rename T1/T2/T3 → PRODUCTION/MANUAL/PREREG before any V10683 code is written. IDs now follow source; drive/confirm role lives in description/log.
   - 55/55 full verify PASS, 18/18 isolation matrix PASS, MN/MT 108/108 IDENTICAL.

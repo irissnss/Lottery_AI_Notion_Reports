@@ -1,5 +1,19 @@
 {
-  "latest_version": "V10685",
+  "latest_version": "V10686",
+  "v10686_technical_design_v10684_v10683": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md",
+    "note": "Owner confirmed 3 decisions: D = all 3 shadow experiments, V10684 rolling re-measure 1 week before experiments OK, 30d PASS/FAIL thresholds OK. V10686 = technical design (schema + function signatures + cron + verify checklist + risk matrix) for V10684 (rolling re-measure 77 MANUAL rules into mb_manual_rolling_eval table) and V10683 (3 shadow experiments MB_MANUAL_DRIVE_SHADOW_V1, MB_MANUAL_BHPASS_DRIVE_SHADOW_V1, MB_BLEND_PROD_MANUAL_SHADOW_V1). Hard contract: write-only to mb_manual_rolling_eval + mb_experimental_preview_shadow + du_doan_test_experiments; never touches mined_rules/final_bundles/predictions/MN-MT. Cron schedule: V10684 at 20:25 (after MRE 20:15, before MB ranker 20:30); V10683 at 23:50 (after V66/V67/V70/V71). Rollback path documented. Code NOT yet written; awaiting owner explicit 'code đi' to begin V10684 local build.",
+    "created_at_vn": "2026-06-03T02:10:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "code_written": false,
+    "owner_decisions_locked_in": {
+      "experiment_set": "D = all 3",
+      "rolling_remeasure_pre_req": true,
+      "thresholds_30d": "OK as proposed"
+    },
+    "next_step_after_owner_ok": "Code _v10684_mb_manual_rolling_remeasure.py local + verify + backup, then 1 week later code _v10683_mb_manual_drive_shadow.py + 3 chooser + register experiments."
+  },
   "v10685_naming_consistency_prod_manual": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md",
     "note": "Owner caught a naming-consistency risk: V10683 plan called the manual-drive shadow experiment 'MB_T2_MANUAL_DRIVE_SHADOW_V1' but T2 had been defined as CONFIRM-only — having T2 'drive' in shadow would conflate ID with role. Renamed BEFORE writing experiment code (still pre-deploy): T1/T2/T3 -> PROD/MANUAL/PREREG. ID now ties to fixed SOURCE; drive/confirm role is per-lane and lives in description/log. Backward-compat aliases (MECH_T1/T2/T3) kept. DB table names kept (rename = migration risk). V10683 experiment names will use MB_MANUAL_*/MB_BLEND_* when code is written. Full verify 55/55 PASS, isolation matrix 18/18 PASS, MN/MT invariance 108/108 IDENTICAL, ReadLints 0. Code-only edits local; nothing deployed; official path untouched.",
