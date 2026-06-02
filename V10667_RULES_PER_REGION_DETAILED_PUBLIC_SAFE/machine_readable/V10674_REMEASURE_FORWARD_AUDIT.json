@@ -1,0 +1,1822 @@
+{
+  "audit_id": "V10674_REMEASURE_FORWARD_AUDIT_CURRENT_DB",
+  "timestamp_vn": "2026-06-02T13:31:46",
+  "db_max_date": "2026-06-01",
+  "registry_created": "2026-06-02T00:27:41+07:00",
+  "method": "exact replica of V10636-CROSS eval on current VPS-synced DB",
+  "grid_cells": 2387,
+  "grid_bh_pass": 268,
+  "grid_bh_pass_temporal_clean": 232,
+  "baseline_avg_tails": {
+    "MN": 42.83,
+    "MT": 33.75,
+    "MB": 23.79
+  },
+  "registry_rules": 28,
+  "comparison_summary": {
+    "vs_registry_value": {
+      "GREW": 0,
+      "STABLE": 28,
+      "SHRANK": 0,
+      "FLIPPED_NEGATIVE": 0
+    },
+    "time_trend_first_vs_second_half": {
+      "STRENGTHENING": 12,
+      "STABLE_OVER_TIME": 8,
+      "WEAKENING": 8
+    },
+    "temporal_violations_in_28": 0
+  },
+  "comparisons": [
+    {
+      "rule_id": "V10668_FA01_MT_G2_1_DM2_MT_T7",
+      "lineage": "MT:G2#1:D-2->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 15.5,
+      "fresh_lift_pp": 15.5,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 86.32,
+      "fresh_hit_rate": 86.32,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 15.05,
+      "first_half_n": 164,
+      "second_half_lift_pp": 15.96,
+      "second_half_n": 165,
+      "recent60_lift_pp": 22.41,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA02_MT_G2_1_DM2_MT_T5",
+      "lineage": "MT:G2#1:D-2->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 14.82,
+      "fresh_lift_pp": 14.82,
+      "delta_lift_pp": 0.0,
+      "old_days": 330,
+      "fresh_days": 330,
+      "delta_days": 0,
+      "old_hit_rate": 70.61,
+      "fresh_hit_rate": 70.61,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 9.17,
+      "first_half_n": 165,
+      "second_half_lift_pp": 20.47,
+      "second_half_n": 165,
+      "recent60_lift_pp": 20.86,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA03_MB_G4_2_DM1_MT_T5",
+      "lineage": "MB:G4#2:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 14.42,
+      "fresh_lift_pp": 14.42,
+      "delta_lift_pp": 0.0,
+      "old_days": 328,
+      "fresh_days": 328,
+      "delta_days": 0,
+      "old_hit_rate": 48.17,
+      "fresh_hit_rate": 48.17,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 13.81,
+      "first_half_n": 164,
+      "second_half_lift_pp": 15.03,
+      "second_half_n": 164,
+      "recent60_lift_pp": 14.58,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA04_MN_G5_1_D_MT_T5",
+      "lineage": "MN:G5#1:D->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.85,
+      "fresh_lift_pp": 13.85,
+      "delta_lift_pp": 0.0,
+      "old_days": 332,
+      "fresh_days": 332,
+      "delta_days": 0,
+      "old_hit_rate": 84.34,
+      "fresh_hit_rate": 84.34,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 15.05,
+      "first_half_n": 166,
+      "second_half_lift_pp": 12.64,
+      "second_half_n": 166,
+      "recent60_lift_pp": 11.34,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA05_MB_G4_2_DM3_MT_T7",
+      "lineage": "MB:G4#2:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.79,
+      "fresh_lift_pp": 13.79,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 47.55,
+      "fresh_hit_rate": 47.55,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 15.94,
+      "first_half_n": 163,
+      "second_half_lift_pp": 11.65,
+      "second_half_n": 163,
+      "recent60_lift_pp": 16.25,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA06_MT_DB_1_DM1_MT_T5",
+      "lineage": "MT:DB#1:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.6,
+      "fresh_lift_pp": 13.6,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 69.6,
+      "fresh_hit_rate": 69.6,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 14.73,
+      "first_half_n": 164,
+      "second_half_lift_pp": 12.48,
+      "second_half_n": 165,
+      "recent60_lift_pp": 13.89,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA07_MT_G5_1_DM2_MT_T7",
+      "lineage": "MT:G5#1:D-2->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.37,
+      "fresh_lift_pp": 13.37,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 83.89,
+      "fresh_hit_rate": 83.89,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 12.29,
+      "first_half_n": 164,
+      "second_half_lift_pp": 14.43,
+      "second_half_n": 165,
+      "recent60_lift_pp": 21.14,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA08_MB_G1_1_DM3_MN_T7",
+      "lineage": "MB:G1#1:D-3->(MN,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.31,
+      "fresh_lift_pp": 13.31,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 56.13,
+      "fresh_hit_rate": 56.13,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 13.61,
+      "first_half_n": 163,
+      "second_half_lift_pp": 13.0,
+      "second_half_n": 163,
+      "recent60_lift_pp": 8.84,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA09_MB_G2_2_DM3_MT_T7",
+      "lineage": "MB:G2#2:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.18,
+      "fresh_lift_pp": 13.18,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 46.93,
+      "fresh_hit_rate": 46.93,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 18.39,
+      "first_half_n": 163,
+      "second_half_lift_pp": 7.96,
+      "second_half_n": 163,
+      "recent60_lift_pp": 2.91,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA10_MB_G6_3_DM3_MT_T7",
+      "lineage": "MB:G6#3:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.18,
+      "fresh_lift_pp": 13.18,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 46.93,
+      "fresh_hit_rate": 46.93,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 10.42,
+      "first_half_n": 163,
+      "second_half_lift_pp": 15.94,
+      "second_half_n": 163,
+      "recent60_lift_pp": 17.91,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA11_MN_G3_2_DM3_MT_T5",
+      "lineage": "MN:G3#2:D-3->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.17,
+      "fresh_lift_pp": 13.17,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 83.28,
+      "fresh_hit_rate": 83.28,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 12.89,
+      "first_half_n": 164,
+      "second_half_lift_pp": 13.46,
+      "second_half_n": 165,
+      "recent60_lift_pp": 15.74,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA12_MB_G2_1_DM3_MT_T5",
+      "lineage": "MB:G2#1:D-3->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.02,
+      "fresh_lift_pp": 13.02,
+      "delta_lift_pp": 0.0,
+      "old_days": 325,
+      "fresh_days": 325,
+      "delta_days": 0,
+      "old_hit_rate": 46.77,
+      "fresh_hit_rate": 46.77,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 11.31,
+      "first_half_n": 162,
+      "second_half_lift_pp": 14.71,
+      "second_half_n": 163,
+      "recent60_lift_pp": 16.25,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA13_MB_G2_2_DM1_MN_T7",
+      "lineage": "MB:G2#2:D-1->(MN,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 13.0,
+      "fresh_lift_pp": 13.0,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 55.83,
+      "fresh_hit_rate": 55.83,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 4.41,
+      "first_half_n": 163,
+      "second_half_lift_pp": 21.59,
+      "second_half_n": 163,
+      "recent60_lift_pp": 12.17,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA14_MT_G7_1_DM3_MT_T5",
+      "lineage": "MT:G7#1:D-3->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.85,
+      "fresh_lift_pp": 12.85,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 68.69,
+      "fresh_hit_rate": 68.69,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 5.19,
+      "first_half_n": 164,
+      "second_half_lift_pp": 20.47,
+      "second_half_n": 165,
+      "recent60_lift_pp": 15.86,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA15_MT_G5_1_DM1_MT_T5",
+      "lineage": "MT:G5#1:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.83,
+      "fresh_lift_pp": 12.83,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 68.39,
+      "fresh_hit_rate": 68.39,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 7.36,
+      "first_half_n": 164,
+      "second_half_lift_pp": 18.27,
+      "second_half_n": 165,
+      "recent60_lift_pp": 16.16,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA16_MT_G1_1_DM1_MT_T5",
+      "lineage": "MT:G1#1:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.66,
+      "fresh_lift_pp": 12.66,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 68.39,
+      "fresh_hit_rate": 68.39,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 14.45,
+      "first_half_n": 164,
+      "second_half_lift_pp": 10.88,
+      "second_half_n": 165,
+      "recent60_lift_pp": 15.55,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA17_MN_G8_1_DM3_MT_T7",
+      "lineage": "MN:G8#1:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.44,
+      "fresh_lift_pp": 12.44,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 82.37,
+      "fresh_hit_rate": 82.37,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 11.67,
+      "first_half_n": 164,
+      "second_half_lift_pp": 13.22,
+      "second_half_n": 165,
+      "recent60_lift_pp": 14.68,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA18_MT_DB_1_DM3_MT_T7",
+      "lineage": "MT:DB#1:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.39,
+      "fresh_lift_pp": 12.39,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 68.39,
+      "fresh_hit_rate": 68.39,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 10.46,
+      "first_half_n": 164,
+      "second_half_lift_pp": 14.3,
+      "second_half_n": 165,
+      "recent60_lift_pp": 7.22,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA19_MT_G5_1_DM2_MT_T5",
+      "lineage": "MT:G5#1:D-2->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.29,
+      "fresh_lift_pp": 12.29,
+      "delta_lift_pp": 0.0,
+      "old_days": 330,
+      "fresh_days": 330,
+      "delta_days": 0,
+      "old_hit_rate": 68.18,
+      "fresh_hit_rate": 68.18,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 8.95,
+      "first_half_n": 165,
+      "second_half_lift_pp": 15.62,
+      "second_half_n": 165,
+      "recent60_lift_pp": 22.22,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA20_MB_G1_1_DM2_MT_T7",
+      "lineage": "MB:G1#1:D-2->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.26,
+      "fresh_lift_pp": 12.26,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 46.01,
+      "fresh_hit_rate": 46.01,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 14.1,
+      "first_half_n": 163,
+      "second_half_lift_pp": 10.42,
+      "second_half_n": 163,
+      "recent60_lift_pp": 9.58,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA21_MT_G5_1_DM3_MT_T7",
+      "lineage": "MT:G5#1:D-3->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.22,
+      "fresh_lift_pp": 12.22,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 67.78,
+      "fresh_hit_rate": 67.78,
+      "fresh_bh_pass": true,
+      "fresh_p": 1e-05,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 7.97,
+      "first_half_n": 164,
+      "second_half_lift_pp": 16.45,
+      "second_half_n": 165,
+      "recent60_lift_pp": 19.49,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA22_MN_G8_1_DM1_MT_T5",
+      "lineage": "MN:G8#1:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.14,
+      "fresh_lift_pp": 12.14,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 82.07,
+      "fresh_hit_rate": 82.07,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 15.33,
+      "first_half_n": 164,
+      "second_half_lift_pp": 8.98,
+      "second_half_n": 165,
+      "recent60_lift_pp": 4.68,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA23_MB_G7_1_DM3_MT_T5",
+      "lineage": "MB:G7#1:D-3->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.09,
+      "fresh_lift_pp": 12.09,
+      "delta_lift_pp": 0.0,
+      "old_days": 325,
+      "fresh_days": 325,
+      "delta_days": 0,
+      "old_hit_rate": 45.85,
+      "fresh_hit_rate": 45.85,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 11.31,
+      "first_half_n": 162,
+      "second_half_lift_pp": 12.87,
+      "second_half_n": 163,
+      "recent60_lift_pp": 2.91,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA24_MB_G6_1_DM2_MN_T7",
+      "lineage": "MB:G6#1:D-2->(MN,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.08,
+      "fresh_lift_pp": 12.08,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 54.91,
+      "fresh_hit_rate": 54.91,
+      "fresh_bh_pass": true,
+      "fresh_p": 1e-05,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 9.32,
+      "first_half_n": 163,
+      "second_half_lift_pp": 14.84,
+      "second_half_n": 163,
+      "recent60_lift_pp": 12.17,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA25_MT_DB_1_DM2_MT_T7",
+      "lineage": "MT:DB#1:D-2->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 12.04,
+      "fresh_lift_pp": 12.04,
+      "delta_lift_pp": 0.0,
+      "old_days": 329,
+      "fresh_days": 329,
+      "delta_days": 0,
+      "old_hit_rate": 82.67,
+      "fresh_hit_rate": 82.67,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 11.07,
+      "first_half_n": 164,
+      "second_half_lift_pp": 13.0,
+      "second_half_n": 165,
+      "recent60_lift_pp": 15.94,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA26_MB_G6_1_DM1_MT_T5",
+      "lineage": "MB:G6#1:D-1->(MT,T5)",
+      "temporal_violation": false,
+      "old_lift_pp": 11.98,
+      "fresh_lift_pp": 11.98,
+      "delta_lift_pp": 0.0,
+      "old_days": 328,
+      "fresh_days": 328,
+      "delta_days": 0,
+      "old_hit_rate": 45.73,
+      "fresh_hit_rate": 45.73,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 12.59,
+      "first_half_n": 164,
+      "second_half_lift_pp": 11.37,
+      "second_half_n": 164,
+      "recent60_lift_pp": 11.25,
+      "recent60_n": 60,
+      "time_trend": "STABLE_OVER_TIME",
+      "last_date_evaluated": "2026-05-28"
+    },
+    {
+      "rule_id": "V10668_FA27_MB_DB_1_DM1_MT_T7",
+      "lineage": "MB:DB#1:D-1->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 11.95,
+      "fresh_lift_pp": 11.95,
+      "delta_lift_pp": 0.0,
+      "old_days": 326,
+      "fresh_days": 326,
+      "delta_days": 0,
+      "old_hit_rate": 45.71,
+      "fresh_hit_rate": 45.71,
+      "fresh_bh_pass": true,
+      "fresh_p": 0.0,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 13.49,
+      "first_half_n": 163,
+      "second_half_lift_pp": 10.42,
+      "second_half_n": 163,
+      "recent60_lift_pp": 12.91,
+      "recent60_n": 60,
+      "time_trend": "WEAKENING",
+      "last_date_evaluated": "2026-05-30"
+    },
+    {
+      "rule_id": "V10668_FA28_MT_G8_1_DM1_MT_T7",
+      "lineage": "MT:G8#1:D-1->(MT,T7)",
+      "temporal_violation": false,
+      "old_lift_pp": 11.93,
+      "fresh_lift_pp": 11.93,
+      "delta_lift_pp": 0.0,
+      "old_days": 330,
+      "fresh_days": 330,
+      "delta_days": 0,
+      "old_hit_rate": 67.88,
+      "fresh_hit_rate": 67.88,
+      "fresh_bh_pass": true,
+      "fresh_p": 1e-05,
+      "change_class": "STABLE",
+      "first_half_lift_pp": 8.84,
+      "first_half_n": 165,
+      "second_half_lift_pp": 15.01,
+      "second_half_n": 165,
+      "recent60_lift_pp": 18.89,
+      "recent60_n": 60,
+      "time_trend": "STRENGTHENING",
+      "last_date_evaluated": "2026-05-30"
+    }
+  ],
+  "fresh_qualifying_total": 183,
+  "new_qualifying_rules_added": [
+    {
+      "lineage": "MN:G1#1:D-3->(MT,T5)",
+      "lift_pp": 11.91,
+      "days": 329,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#1:D-2->(MN,T7)",
+      "lift_pp": 11.77,
+      "days": 326,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-2->(MN,T7)",
+      "lift_pp": 11.77,
+      "days": 326,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G1#1:D-2->(MT,T7)",
+      "lift_pp": 11.7,
+      "days": 329,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-3->(MN,T7)",
+      "lift_pp": 11.63,
+      "days": 329,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D->(MT,T5)",
+      "lift_pp": 11.59,
+      "days": 332,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-1->(MT,T5)",
+      "lift_pp": 11.53,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#3:D-1->(MN,T7)",
+      "lift_pp": 11.47,
+      "days": 326,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D-2->(MT,T5)",
+      "lift_pp": 11.36,
+      "days": 330,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-3->(MT,T7)",
+      "lift_pp": 11.28,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G1#1:D-3->(MT,T5)",
+      "lift_pp": 11.17,
+      "days": 325,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#3:D-2->(MN,T7)",
+      "lift_pp": 11.16,
+      "days": 326,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#1:D-1->(MN,T7)",
+      "lift_pp": 11.16,
+      "days": 326,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-1->(MT,T5)",
+      "lift_pp": 11.04,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D->(MT,T7)",
+      "lift_pp": 11.03,
+      "days": 330,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D-2->(MT,T7)",
+      "lift_pp": 10.97,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D-3->(MT,T7)",
+      "lift_pp": 10.89,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G1#1:D-3->(MN,T7)",
+      "lift_pp": 10.89,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#2:D-3->(MT,T5)",
+      "lift_pp": 10.86,
+      "days": 325,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#2:D-1->(MN,T7)",
+      "lift_pp": 10.85,
+      "days": 326,
+      "p": 5e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-2->(MT,T5)",
+      "lift_pp": 10.83,
+      "days": 330,
+      "p": 5e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-2->(MT,T5)",
+      "lift_pp": 10.83,
+      "days": 330,
+      "p": 5e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-2->(MT,T7)",
+      "lift_pp": 10.82,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-1->(MN,T7)",
+      "lift_pp": 10.79,
+      "days": 330,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#1:D-1->(MT,T5)",
+      "lift_pp": 10.77,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G5#1:D-3->(MN,T7)",
+      "lift_pp": 10.75,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#1:D-2->(MT,T7)",
+      "lift_pp": 10.74,
+      "days": 329,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-1->(MT,T5)",
+      "lift_pp": 10.73,
+      "days": 329,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G2#1:D-3->(MT,T5)",
+      "lift_pp": 10.73,
+      "days": 329,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G2#1:D-3->(MT,T7)",
+      "lift_pp": 10.73,
+      "days": 329,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-2->(MT,T5)",
+      "lift_pp": 10.73,
+      "days": 326,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:DB#1:D-2->(MN,T7)",
+      "lift_pp": 10.71,
+      "days": 325,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-1->(MT,T5)",
+      "lift_pp": 10.67,
+      "days": 329,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-2->(MT,T7)",
+      "lift_pp": 10.66,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G1#1:D-2->(MT,T7)",
+      "lift_pp": 10.63,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-3->(MT,T5)",
+      "lift_pp": 10.56,
+      "days": 329,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:DB#1:D-1->(MN,T7)",
+      "lift_pp": 10.54,
+      "days": 326,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#2:D-2->(MN,T7)",
+      "lift_pp": 10.54,
+      "days": 326,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D-2->(MT,T7)",
+      "lift_pp": 10.52,
+      "days": 329,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-1->(MT,T7)",
+      "lift_pp": 10.42,
+      "days": 326,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#3:D-1->(MT,T7)",
+      "lift_pp": 10.42,
+      "days": 326,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-1->(MN,T7)",
+      "lift_pp": 10.37,
+      "days": 330,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-2->(MT,T7)",
+      "lift_pp": 10.33,
+      "days": 329,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G5#1:D-3->(MT,T5)",
+      "lift_pp": 10.31,
+      "days": 329,
+      "p": 0.0001,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G1#1:D-1->(MT,T7)",
+      "lift_pp": 10.26,
+      "days": 330,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-2->(MT,T7)",
+      "lift_pp": 10.25,
+      "days": 329,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-3->(MN,T7)",
+      "lift_pp": 10.24,
+      "days": 326,
+      "p": 0.00012,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-2->(MT,T5)",
+      "lift_pp": 10.22,
+      "days": 330,
+      "p": 0.00011,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D->(MT,T7)",
+      "lift_pp": 10.17,
+      "days": 330,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#2:D-1->(MT,T5)",
+      "lift_pp": 10.15,
+      "days": 328,
+      "p": 6e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#2:D-2->(MT,T7)",
+      "lift_pp": 10.11,
+      "days": 326,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-2->(MT,T7)",
+      "lift_pp": 10.11,
+      "days": 326,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#2:D-2->(MT,T5)",
+      "lift_pp": 10.11,
+      "days": 326,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-2->(MT,T7)",
+      "lift_pp": 10.1,
+      "days": 329,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D->(MT,T5)",
+      "lift_pp": 10.09,
+      "days": 332,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-3->(MT,T7)",
+      "lift_pp": 10.05,
+      "days": 329,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#1:D->(MT,T5)",
+      "lift_pp": 10.0,
+      "days": 332,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#2:D-3->(MN,T7)",
+      "lift_pp": 9.93,
+      "days": 326,
+      "p": 0.00018,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-3->(MT,T5)",
+      "lift_pp": 9.87,
+      "days": 329,
+      "p": 0.00019,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-2->(MN,T7)",
+      "lift_pp": 9.82,
+      "days": 329,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-2->(MN,T7)",
+      "lift_pp": 9.82,
+      "days": 329,
+      "p": 0.0,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G1#1:D-1->(MT,T7)",
+      "lift_pp": 9.8,
+      "days": 326,
+      "p": 0.00011,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D-3->(MT,T7)",
+      "lift_pp": 9.75,
+      "days": 329,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-1->(MT,T7)",
+      "lift_pp": 9.75,
+      "days": 330,
+      "p": 0.00022,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G8#1:D-1->(MN,T7)",
+      "lift_pp": 9.7,
+      "days": 330,
+      "p": 1e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-3->(MT,T7)",
+      "lift_pp": 9.7,
+      "days": 329,
+      "p": 0.00024,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-2->(MT,T5)",
+      "lift_pp": 9.69,
+      "days": 330,
+      "p": 8e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G8#1:D-2->(MT,T7)",
+      "lift_pp": 9.68,
+      "days": 329,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-1->(MT,T7)",
+      "lift_pp": 9.67,
+      "days": 330,
+      "p": 0.00025,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-2->(MT,T7)",
+      "lift_pp": 9.61,
+      "days": 329,
+      "p": 8e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G1#1:D->(MT,T5)",
+      "lift_pp": 9.59,
+      "days": 332,
+      "p": 8e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#1:D-1->(MT,T5)",
+      "lift_pp": 9.54,
+      "days": 328,
+      "p": 0.00016,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#4:D-1->(MT,T5)",
+      "lift_pp": 9.54,
+      "days": 328,
+      "p": 0.00016,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-1->(MT,T5)",
+      "lift_pp": 9.52,
+      "days": 329,
+      "p": 0.0001,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G2#1:D-1->(MT,T5)",
+      "lift_pp": 9.51,
+      "days": 329,
+      "p": 0.00031,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#1:D-2->(MT,T7)",
+      "lift_pp": 9.5,
+      "days": 326,
+      "p": 0.00018,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#4:D-1->(MT,T7)",
+      "lift_pp": 9.5,
+      "days": 326,
+      "p": 0.00018,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#1:D-3->(MT,T7)",
+      "lift_pp": 9.5,
+      "days": 326,
+      "p": 0.00018,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-1->(MT,T7)",
+      "lift_pp": 9.35,
+      "days": 330,
+      "p": 0.00013,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#1:D-1->(MN,T7)",
+      "lift_pp": 9.32,
+      "days": 326,
+      "p": 0.00041,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#4:D-2->(MN,T7)",
+      "lift_pp": 9.32,
+      "days": 326,
+      "p": 0.00041,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#3:D-3->(MT,T5)",
+      "lift_pp": 9.32,
+      "days": 325,
+      "p": 0.00024,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D->(MT,T5)",
+      "lift_pp": 9.29,
+      "days": 332,
+      "p": 0.00013,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-3->(MT,T5)",
+      "lift_pp": 9.29,
+      "days": 329,
+      "p": 0.00015,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G1#1:D-1->(MT,T7)",
+      "lift_pp": 9.26,
+      "days": 330,
+      "p": 0.00043,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-1->(MT,T5)",
+      "lift_pp": 9.23,
+      "days": 328,
+      "p": 0.00025,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-2->(MT,T5)",
+      "lift_pp": 9.2,
+      "days": 330,
+      "p": 0.00046,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#1:D-3->(MT,T5)",
+      "lift_pp": 9.18,
+      "days": 329,
+      "p": 0.00017,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-1->(MT,T7)",
+      "lift_pp": 9.16,
+      "days": 330,
+      "p": 0.00018,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-1->(MT,T5)",
+      "lift_pp": 9.15,
+      "days": 329,
+      "p": 0.0005,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-1->(MN,T7)",
+      "lift_pp": 9.09,
+      "days": 330,
+      "p": 2e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-3->(MN,T7)",
+      "lift_pp": 9.09,
+      "days": 329,
+      "p": 0.00028,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#3:D-3->(MT,T5)",
+      "lift_pp": 9.02,
+      "days": 325,
+      "p": 0.00036,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#2:D-1->(MN,T7)",
+      "lift_pp": 9.01,
+      "days": 326,
+      "p": 0.00061,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#2:D-3->(MN,T7)",
+      "lift_pp": 9.01,
+      "days": 326,
+      "p": 0.00061,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#2:D-1->(MN,T7)",
+      "lift_pp": 9.01,
+      "days": 326,
+      "p": 0.00061,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D->(MT,T7)",
+      "lift_pp": 8.98,
+      "days": 330,
+      "p": 3e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#1:D-1->(MT,T7)",
+      "lift_pp": 8.97,
+      "days": 330,
+      "p": 0.00023,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G7#1:D-3->(MN,T7)",
+      "lift_pp": 8.95,
+      "days": 329,
+      "p": 0.00034,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-3->(MT,T7)",
+      "lift_pp": 8.91,
+      "days": 329,
+      "p": 0.00026,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-3->(MT,T7)",
+      "lift_pp": 8.91,
+      "days": 329,
+      "p": 0.00026,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G1#1:D-2->(MT,T5)",
+      "lift_pp": 8.88,
+      "days": 326,
+      "p": 0.00043,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#4:D-2->(MT,T5)",
+      "lift_pp": 8.88,
+      "days": 326,
+      "p": 0.00043,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#1:D-2->(MT,T7)",
+      "lift_pp": 8.88,
+      "days": 326,
+      "p": 0.00043,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#1:D-1->(MT,T7)",
+      "lift_pp": 8.88,
+      "days": 326,
+      "p": 0.00043,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G7#1:D-1->(MT,T5)",
+      "lift_pp": 8.84,
+      "days": 329,
+      "p": 0.00029,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G8#1:D-3->(MN,T7)",
+      "lift_pp": 8.84,
+      "days": 329,
+      "p": 0.0004,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-3->(MN,T7)",
+      "lift_pp": 8.76,
+      "days": 329,
+      "p": 4e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#4:D-3->(MT,T5)",
+      "lift_pp": 8.71,
+      "days": 325,
+      "p": 0.00055,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-2->(MT,T5)",
+      "lift_pp": 8.7,
+      "days": 330,
+      "p": 0.00036,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G1#1:D-2->(MN,T7)",
+      "lift_pp": 8.7,
+      "days": 326,
+      "p": 0.0009,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-2->(MN,T7)",
+      "lift_pp": 8.7,
+      "days": 326,
+      "p": 0.0009,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D-1->(MT,T7)",
+      "lift_pp": 8.67,
+      "days": 330,
+      "p": 0.00036,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-1->(MT,T7)",
+      "lift_pp": 8.65,
+      "days": 330,
+      "p": 0.00094,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G1#1:D-2->(MT,T5)",
+      "lift_pp": 8.65,
+      "days": 330,
+      "p": 0.00094,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-1->(MT,T5)",
+      "lift_pp": 8.62,
+      "days": 328,
+      "p": 0.00059,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-2->(MN,T7)",
+      "lift_pp": 8.61,
+      "days": 329,
+      "p": 5e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D->(MT,T5)",
+      "lift_pp": 8.58,
+      "days": 332,
+      "p": 0.00037,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#1:D-2->(MT,T5)",
+      "lift_pp": 8.58,
+      "days": 326,
+      "p": 0.00065,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#1:D-3->(MT,T7)",
+      "lift_pp": 8.58,
+      "days": 326,
+      "p": 0.00065,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#3:D-3->(MT,T7)",
+      "lift_pp": 8.58,
+      "days": 326,
+      "p": 0.00065,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#2:D-2->(MT,T7)",
+      "lift_pp": 8.58,
+      "days": 326,
+      "p": 0.00065,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-1->(MN,T7)",
+      "lift_pp": 8.47,
+      "days": 330,
+      "p": 0.00065,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:DB#1:D->(MB,T2)",
+      "lift_pp": 8.43,
+      "days": 326,
+      "p": 0.00134,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-3->(MT,T5)",
+      "lift_pp": 8.43,
+      "days": 329,
+      "p": 0.00124,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G1#1:D-2->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 329,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G4#4:D-3->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#1:D-3->(MT,T5)",
+      "lift_pp": 8.4,
+      "days": 325,
+      "p": 0.00083,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#2:D-2->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-1->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#2:D-3->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#3:D-2->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#4:D-1->(MN,T7)",
+      "lift_pp": 8.4,
+      "days": 326,
+      "p": 0.00131,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-2->(MN,T7)",
+      "lift_pp": 8.37,
+      "days": 329,
+      "p": 7e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G1#1:D-2->(MT,T5)",
+      "lift_pp": 8.33,
+      "days": 330,
+      "p": 0.00061,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D-3->(MN,T7)",
+      "lift_pp": 8.32,
+      "days": 329,
+      "p": 9e-05,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G2#1:D-1->(MT,T5)",
+      "lift_pp": 8.32,
+      "days": 328,
+      "p": 0.00088,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D-3->(MT,T5)",
+      "lift_pp": 8.3,
+      "days": 329,
+      "p": 0.00062,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-2->(MT,T5)",
+      "lift_pp": 8.29,
+      "days": 330,
+      "p": 0.00064,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#2:D-1->(MT,T7)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-2->(MT,T5)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G6#3:D-2->(MT,T7)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#1:D-2->(MT,T7)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#3:D-2->(MT,T7)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#4:D-3->(MT,T7)",
+      "lift_pp": 8.27,
+      "days": 326,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G3#2:D-1->(MN,T7)",
+      "lift_pp": 8.25,
+      "days": 330,
+      "p": 0.0001,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G2#1:D-1->(MT,T7)",
+      "lift_pp": 8.24,
+      "days": 330,
+      "p": 0.00154,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G8#1:D->(MT,T7)",
+      "lift_pp": 8.23,
+      "days": 330,
+      "p": 0.00012,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G2#1:D-1->(MT,T7)",
+      "lift_pp": 8.21,
+      "days": 330,
+      "p": 0.0007,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:DB#1:D-1->(MN,T5)",
+      "lift_pp": 8.18,
+      "days": 329,
+      "p": 0.00097,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D-1->(MT,T5)",
+      "lift_pp": 8.16,
+      "days": 329,
+      "p": 0.00075,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#1:D-2->(MT,T7)",
+      "lift_pp": 8.16,
+      "days": 329,
+      "p": 0.00072,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MT:G3#2:D-2->(MN,T7)",
+      "lift_pp": 8.16,
+      "days": 329,
+      "p": 0.00011,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MN:G5#1:D->(MT,T7)",
+      "lift_pp": 8.1,
+      "days": 330,
+      "p": 0.00016,
+      "temporal_violation": false
+    },
+    {
+      "lineage": "MB:G7#2:D-3->(MT,T5)",
+      "lift_pp": 8.09,
+      "days": 325,
+      "p": 0.00124,
+      "temporal_violation": false
+    }
+  ],
+  "dropped_from_qualifying": [],
+  "temporal_violation_cells_total": 266,
+  "temporal_violation_cells_bh_pass": 36,
+  "top5_violation_cells_by_lift": [
+    {
+      "lineage": "MB:G7#1:D->(MN,T7)",
+      "lift_pp": 16.68,
+      "bh_pass": true
+    },
+    {
+      "lineage": "MB:G7#3:D->(MT,T5)",
+      "lift_pp": 14.26,
+      "bh_pass": true
+    },
+    {
+      "lineage": "MB:G4#1:D->(MN,T7)",
+      "lift_pp": 13.0,
+      "bh_pass": true
+    },
+    {
+      "lineage": "MB:G2#1:D->(MT,T7)",
+      "lift_pp": 12.87,
+      "bh_pass": true
+    },
+    {
+      "lineage": "MB:G4#1:D->(MT,T7)",
+      "lift_pp": 12.57,
+      "bh_pass": true
+    }
+  ]
+}

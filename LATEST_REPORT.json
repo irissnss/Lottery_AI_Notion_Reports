@@ -1,5 +1,11 @@
 {
-  "latest_version": "V10673",
+  "latest_version": "V10674",
+  "v10674_rule_strength_remeasure": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10674_RULE_STRENGTH_REMEASURE_VN.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10674_REMEASURE_FORWARD_AUDIT.json",
+    "note": "EMPIRICAL re-measurement of the 28 forward-audit rules on the current VPS-synced DB (max date 2026-06-01), exact replica of V10636-CROSS method. Findings: (1) vs registry = 28/28 STABLE (delta 0.00pp) because DB has no data past the 02/06 anchor -> 100% reproducible, forward-audit not yet accumulating out-of-sample days; (2) historical time-trend (1st vs 2nd half) = 12 STRENGTHENING / 8 STABLE / 8 WEAKENING, 3 rules recent-60 <5pp flagged to watch; (3) 0/28 carry any temporal (draw-order/day) violation; 266 violation cells still correctly excluded (strongest MB:G7#1:D->MN +16.68pp); (4) 155 additional cells meet the same threshold (supplementary pool, mostly correlated families, NOT new-data signals). Next real change measurable only after post-02/06 data (mid-audit 02/07, closeout 31/08).",
+    "created_at_vn": "2026-06-02T13:40:00+07:00"
+  },
   "v10673_session_journey": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10673_SESSION_RULE_DIGGING_JOURNEY_VN.md",
     "note": "Consolidated master index of ALL rule-digging in this conversation (owner: 'da tong hop het chua?'). 38 hypothesis episodes / 10 version packages (V106.03 -> V10672) from 21/05 to 02/06 in one place, each with verdict (validated/pre-register/weak/rejected) + link. KEY: only V10636-CROSS yielded trustworthy rules (268 BH-pass -> 28 forward-audit, 90d, NOT live); V106.04/05/06 = weak (V107 null-test 0/153k BH); MB D-2 self = rejected (FU1+V10635); 71 V10626 pre-register pending. Production mined_rules independent + verified clean (V10672).",
