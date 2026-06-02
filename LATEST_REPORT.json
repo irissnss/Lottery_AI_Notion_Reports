@@ -1,5 +1,11 @@
 {
-  "latest_version": "V10670",
+  "latest_version": "V10671",
+  "v10671_addendum": {
+    "package": "V10671_CROSS_REGION_MOMENTUM_GUARD_PUBLIC_SAFE",
+    "owner_report": "V10671_CROSS_REGION_MOMENTUM_GUARD_PUBLIC_SAFE/V10671_OWNER_REPORT_VN_PUBLIC.md",
+    "note": "ADDITIVE to V10668/V10670 (rule registry causality). V10671 fixes the no-token ML cross_region_momentum FEATURE adjacency with a DRAW-ORDER guard: earlier-drawing region may contribute same-day, later-drawing region forced to previous-day only (enforced by code, not timing). Verified behavior-neutral + wrong-direction blocked + valid-direction preserved. Private commit f196f09 (was mislabeled V10667, renamed V10671 to avoid collision with this chat's V10667-V10670 rule work). No official logic changed.",
+    "created_at_vn": "2026-06-02T11:55:00+07:00"
+  },
   "package": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE",
   "patch_note": "V10670 SOURCE SEMANTICS CLARIFICATION (owner: 'MT D-1 có 3 đài thì làm sao? b1 là gì? phải rõ ràng nhất quán'). Clarified: #Bộ = position-in-prize (NOT station); multi-station source = UNION of all stations that weekday. Verified station-by-weekday from DB: MB is per-province per-weekday (T2=Hà Nội, T3=Quảng Ninh, T4=Bắc Ninh, T5=Hà Nội, T6=Hải Phòng, T7=Nam Định, CN=Thái Bình) — old 'MB_BOARD' label was wrong. Fixed MT T2 'Thừa Thiên Huế' (not 'Huế'). Every rule description now names exact source station(s). Added V10670_SOURCE_SEMANTICS_LEGEND.md + per-source-station breakdown JSON.",
   "source_semantics_legend": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10670_SOURCE_SEMANTICS_LEGEND.md",
