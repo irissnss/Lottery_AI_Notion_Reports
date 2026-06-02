@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10682",
+  "latest_version": "V10683",
+  "v10683_mb_t2_drive_shadow_lane_plan": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md",
+    "note": "Owner correction: production already drives T1 (35 MB rules in mined_rules). Owner asked to swap T1<->T2 inside the test lane (/du-doan-test) to compare safely. Lane test currently has 10 registered MB experiments + 7 active in materializer; ALL pick BT from candidates pool already scored by T1 — none recompute scores via T2. Plan to add MB_T2_MANUAL_DRIVE_SHADOW_V1 (and optionally BH-pass-only and blend variants) so that T2 axes drive a parallel score, written to mb_experimental_preview_shadow then surfaced via _du_doan_test_mb_engine into du_doan_test_*. Hard contract: NO touch on mined_rules/final_bundles/predictions/MN-MT. Pre-requisite = V10684 rolling re-measure for 73 manual T2 (since current T2 was measured once). Acceptance criteria 30d: would_flip_to_win >=8/30 + false_promotion <=5/30 + delta BT >=+5pp. PLAN-ONLY, no code yet, awaiting owner decision on which variants to build.",
+    "created_at_vn": "2026-06-03T01:50:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "code_written": false,
+    "owner_decision_needed": "Choose experiment set: A=MB_T2_MANUAL_DRIVE_SHADOW_V1 only / B=add BH-pass-only / C=add blend 0.7-0.3 / D=all three. Plus approve V10684 rolling re-measure pre-requisite."
+  },
   "v10682_t1_vs_t2_swap_analysis": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md",
     "note": "Owner asked: would swapping manual T2 (77 rules) up to drive (where T1 production 35 lives now) and pushing T1 down to confirm be more stable? Empirical analysis from live DB: T1∩T2=0 axes overlap (fully complementary, not competing). T2 has 5 BH-pass FDR-gold + 12 p<.01 but measured ONCE (not rolling), no DH/livingness/spike-risk/anti-herding safety chain runtime, V10668 forward-audit registry has 0 MB-target rules registered (closeout 2026-08-31), and T6/T7/CN have 0 BH-pass coverage. Verdict: do NOT swap (option C rejected). Recommended path = keep T1 drive + T2 CONFIRM (option A) for now; eventually shadow-promote 5 BH-pass T2 into /du-doan-test for 30d + parallel rolling re-measure (option B). Verify before publish: 108/108 MN/MT invariance, 54/54 full verify PASS. Code-only edits local; no VPS deploy; no official touched.",

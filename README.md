@@ -1,13 +1,17 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10682 (T1 ↔ T2 swap analysis — report-only, no code deploy)**
+**Latest version: V10683 (MB T2-drive shadow lane plan — report-only, plan-only, no code yet)**
 
 ## Latest report for AI tools
 
-- [**V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md) — **NEW**
-  - Owner asked: should manual T2 (77 rules) be swapped up to drive, with production T1 (35 rules) demoted to confirm?
-  - Empirical analysis from live DB: T1∩T2 = 0 axes overlap (fully complementary), but T2 was measured once (not rolling), lacks DH/livingness/spike-risk/anti-herding runtime safety chain, V10668 forward-audit has 0 MB-target rules registered, and T6/T7/CN have zero BH-pass coverage.
-  - Recommendation: keep T1 drive + T2 CONFIRM (option A) for now; eventually shadow-promote 5 BH-pass T2 into `/du-doan-test` for 30d (option B). Do NOT fully swap (option C rejected).
+- [**V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md) — **NEW**
+  - Owner correction: production already drives T1; owner asked to swap T1↔T2 INSIDE `/du-doan-test`, not on official.
+  - Lane test currently has 10 MB experiments registered + 7 active, all picking from T1-scored pool — none recompute via T2.
+  - Plan: add `MB_T2_MANUAL_DRIVE_SHADOW_V1` (+ optionally BH-pass-only and blend variants), pre-requisite V10684 rolling re-measure for the 73 manual T2 rules.
+  - Hard contract preserved (no mined_rules / final_bundles / predictions touched). PLAN-ONLY, awaiting owner choice.
+- [V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md)
+  - Empirical analysis: T1∩T2 = 0 axes overlap; T2 measured once; T6/T7/CN have zero BH-pass.
+  - Verdict for OFFICIAL: do not fully swap. Confirms why test-lane swap (V10683) is the right place to try.
 - [V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md)
   - Owner-decision: drop Tier-3 (V10626 pre-register, 19 MB rules) — they all fail BH_FDR, lack `target_weekday`, contain duplicates, and have no rolling re-measure.
   - 2-tier weekday-bound cross-verify = T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only).
