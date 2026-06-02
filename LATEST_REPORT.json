@@ -1,5 +1,11 @@
 {
-  "latest_version": "V10676",
+  "latest_version": "V10677",
+  "v10677_dot1": {
+    "package": "V10677_DOT1_CAP_MB_SETTLE_PUBLIC_SAFE",
+    "owner_report": "V10677_DOT1_CAP_MB_SETTLE_PUBLIC_SAFE/V10677_OWNER_REPORT_VN_PUBLIC.md",
+    "note": "Owner OK Đợt 1 lúc 22:30. 3 việc theo thứ tự rủi ro tăng dần C→B→A: (C) cap CAO->TRUNG_BINH khi region 10d BT<35% (UI only, MB+MT đúng cap hôm nay). (B) MB chooser hot30->d_w06 (backtest 30d +13pp recent, reuse V10672 file). (A) new _v10677_postdraw_settle.py + cron 19:00 → CP-66.7 unblocked. First settle run: 503 rows / 0 errors. ADAPTIVE_EXPLOIT_V1 evidence: MN 54% / MT 43% / MB 21% hit. CP-66.8 evidence pack có thể build. 4 official tables zero drift. Service healthy. Backup + history full.",
+    "created_at_vn": "2026-06-02T22:50:00+07:00"
+  },
   "v10676_mn_d_w06_bt_chooser": {
     "package": "V10676_MN_D_W06_BT_CHOOSER_PUBLIC_SAFE",
     "owner_report": "V10676_MN_D_W06_BT_CHOOSER_PUBLIC_SAFE/V10676_OWNER_REPORT_VN_PUBLIC.md",
