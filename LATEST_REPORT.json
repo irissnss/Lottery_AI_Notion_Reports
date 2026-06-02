@@ -1,5 +1,13 @@
 {
-  "latest_version": "V10681",
+  "latest_version": "V10682",
+  "v10682_t1_vs_t2_swap_analysis": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md",
+    "note": "Owner asked: would swapping manual T2 (77 rules) up to drive (where T1 production 35 lives now) and pushing T1 down to confirm be more stable? Empirical analysis from live DB: T1∩T2=0 axes overlap (fully complementary, not competing). T2 has 5 BH-pass FDR-gold + 12 p<.01 but measured ONCE (not rolling), no DH/livingness/spike-risk/anti-herding safety chain runtime, V10668 forward-audit registry has 0 MB-target rules registered (closeout 2026-08-31), and T6/T7/CN have 0 BH-pass coverage. Verdict: do NOT swap (option C rejected). Recommended path = keep T1 drive + T2 CONFIRM (option A) for now; eventually shadow-promote 5 BH-pass T2 into /du-doan-test for 30d + parallel rolling re-measure (option B). Verify before publish: 108/108 MN/MT invariance, 54/54 full verify PASS. Code-only edits local; no VPS deploy; no official touched.",
+    "created_at_vn": "2026-06-03T01:30:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "follow_up": "V10681"
+  },
   "v10681_drop_tier3_t1_t2_cross_verify": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md",
     "note": "Owner-decision correction to V10680: Tier-3 (V10626 pre-register, 19 MB rules) DROPPED from runtime. Reasons: 19/19 carry BH_FAIL_GLOBAL+SELECTION_BIAS_RISK+FORWARD_90D_INSUFFICIENT, CSV has no target_weekday column (cannot cross-verify per weekday), 5 duplicate rows, no rolling re-measure. New design = 2-tier weekday-bound cross-verify: T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only) — both weekday-bound and dynamic. Code-only edits local; full verify 54/54 PASS; MN/MT invariance 108/108 IDENTICAL; no VPS deploy; no official touched. _rerank_tier3 + mb_t3_prereg_daily kept in code/DB for forensic audit but never invoked or surfaced.",

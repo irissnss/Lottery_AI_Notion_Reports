@@ -1,12 +1,16 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10681 (Drop Tier-3, T1+T2 cross-verify per weekday — report-only, no code deploy)**
+**Latest version: V10682 (T1 ↔ T2 swap analysis — report-only, no code deploy)**
 
 ## Latest report for AI tools
 
-- [**V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md) — **NEW**
+- [**V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10682_T1_VS_T2_SWAP_ANALYSIS_VN.md) — **NEW**
+  - Owner asked: should manual T2 (77 rules) be swapped up to drive, with production T1 (35 rules) demoted to confirm?
+  - Empirical analysis from live DB: T1∩T2 = 0 axes overlap (fully complementary), but T2 was measured once (not rolling), lacks DH/livingness/spike-risk/anti-herding runtime safety chain, V10668 forward-audit has 0 MB-target rules registered, and T6/T7/CN have zero BH-pass coverage.
+  - Recommendation: keep T1 drive + T2 CONFIRM (option A) for now; eventually shadow-promote 5 BH-pass T2 into `/du-doan-test` for 30d (option B). Do NOT fully swap (option C rejected).
+- [V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md)
   - Owner-decision: drop Tier-3 (V10626 pre-register, 19 MB rules) — they all fail BH_FDR, lack `target_weekday`, contain duplicates, and have no rolling re-measure.
-  - New design: **2-tier weekday-bound cross-verify** = T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only).
+  - 2-tier weekday-bound cross-verify = T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only).
   - Verify 54/54 PASS, MN/MT invariance 108/108 IDENTICAL, no VPS deploy.
 - [V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md) — preceding clarification (T3 sections superseded by V10681; T1/T2/gates/test-lane sections still valid).
 
