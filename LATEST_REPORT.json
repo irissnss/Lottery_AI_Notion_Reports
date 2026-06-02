@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10683",
+  "latest_version": "V10684",
+  "v10684_isolation_matrix_and_full_backup": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md",
+    "note": "Owner-asked: ensure MN/MT isolation in BOTH official and lane test, plus full backup before any code work on V10683 begins. Verified 18/18 PASS isolation matrix: (A) lane-test multi-region engines (_materialize_experimental_preview_shadow + _du_doan_test_engine + _du_doan_test_daily_runner) have ZERO MB-only symbol leak; (B) mb_rule_ranker writes only to mb_* tables and rule_engine MB-daily branch is gated by target_region=='MB'; (C) frozen-DB harness = 108/108 MN/MT signatures IDENTICAL; (D) mined_rules MN/MT count + row hash IDENTICAL to backup; (E) 4 official tables (predictions, final_bundles, lottery_results, model_daily_eval) hash IDENTICAL = zero drift; (F) multi-region engines load fine and SUPPORTED_REGIONS=('MN','MT','MB'). Full backup written to backups/v10684_full_isolation_backup_20260603_014605/ with 5 MB-edited code files .v10684.pre, 11 official-critical reference files, 22 in-DB snapshot tables _bak_v10684_*, 4 official table hashes baseline, plus MANIFEST.json with restore instructions. Code-only edits remain local; nothing deployed; official path untouched. When V10683 code work begins, it will live in a NEW file (_v10683_mb_t2_drive_shadow.py) and add only one row to the registry — multi-region files stay untouched.",
+    "created_at_vn": "2026-06-03T01:50:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "isolation_pass": "18/18",
+    "backup_dir": "backups/v10684_full_isolation_backup_20260603_014605"
+  },
   "v10683_mb_t2_drive_shadow_lane_plan": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md",
     "note": "Owner correction: production already drives T1 (35 MB rules in mined_rules). Owner asked to swap T1<->T2 inside the test lane (/du-doan-test) to compare safely. Lane test currently has 10 registered MB experiments + 7 active in materializer; ALL pick BT from candidates pool already scored by T1 — none recompute scores via T2. Plan to add MB_T2_MANUAL_DRIVE_SHADOW_V1 (and optionally BH-pass-only and blend variants) so that T2 axes drive a parallel score, written to mb_experimental_preview_shadow then surfaced via _du_doan_test_mb_engine into du_doan_test_*. Hard contract: NO touch on mined_rules/final_bundles/predictions/MN-MT. Pre-requisite = V10684 rolling re-measure for 73 manual T2 (since current T2 was measured once). Acceptance criteria 30d: would_flip_to_win >=8/30 + false_promotion <=5/30 + delta BT >=+5pp. PLAN-ONLY, no code yet, awaiting owner decision on which variants to build.",

@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10683 (MB T2-drive shadow lane plan — report-only, plan-only, no code yet)**
+**Latest version: V10684 (Isolation matrix MN/MT both lanes + full backup — report-only)**
 
 ## Latest report for AI tools
 
-- [**V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md) — **NEW**
+- [**V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md) — **NEW**
+  - Owner-asked: ensure MN/MT isolation in BOTH official and `/du-doan-test`, plus full backup before any code work begins.
+  - Result: 18/18 PASS isolation matrix (static + runtime + DB hash). Multi-region lane-test engines have ZERO MB-only symbol leaks. 4 official tables hash zero-drift. Frozen-DB harness 108/108 IDENTICAL.
+  - Backup: 5 MB-edited code files .v10684.pre + 11 official-critical references + 22 in-DB snapshot tables _bak_v10684_* + 4 baseline hashes + MANIFEST.json with restore instructions.
+- [V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10683_MB_T2_DRIVE_SHADOW_LANE_PLAN_VN.md)
   - Owner correction: production already drives T1; owner asked to swap T1↔T2 INSIDE `/du-doan-test`, not on official.
   - Lane test currently has 10 MB experiments registered + 7 active, all picking from T1-scored pool — none recompute via T2.
   - Plan: add `MB_T2_MANUAL_DRIVE_SHADOW_V1` (+ optionally BH-pass-only and blend variants), pre-requisite V10684 rolling re-measure for the 73 manual T2 rules.
