@@ -1,5 +1,7 @@
 # V10680 — MB Rule Stack Clarification + Official/Test Lane Questions + Next Steps
 
+> **⚠️ ĐÍNH CHÍNH 2026-06-03 01:15**: Tầng 3 (V10626 pre-register, 19 rule MB) đã được BỎ khỏi runtime — xem [V10681](V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md). Cấu trúc mới là **2 tầng cross-verify** T1 + T2 (cả hai đều weekday-bound + dynamic). Các phần khác của V10680 (T1, T2, gates, /du-doan-test) vẫn còn hiệu lực.
+>
 > **Generated**: 2026-06-03 00:45 VN  
 > **Scope**: PUBLIC-SAFE report only. **Không deploy code. Không bật VPS. Không đổi official.**  
 > **Purpose**: làm rõ chức năng từng tầng, prompt AI nhận ngữ cảnh gì, MB official đang bị chặn bởi cơ chế nào, `/du-doan-test` có dùng được không, và bước tiếp theo nên làm gì.

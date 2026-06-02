@@ -1,14 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10680 (MB Rule Stack Clarification — report-only, no code deploy)**
+**Latest version: V10681 (Drop Tier-3, T1+T2 cross-verify per weekday — report-only, no code deploy)**
 
 ## Latest report for AI tools
 
-- [**V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md)
-  - Corrects V10679-R3: UI official already has xiên 2/3; separate MB xiên aggregator was rolled back/removed.
-  - Clarifies MB rule tiers: T1 drive, T2 confirm, T3 watch.
-  - Clarifies prompt context, MB official gates/blockers, and `/du-doan-test` as the safe next lane.
-  - **No code deployed. Official path untouched.**
+- [**V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md) — **NEW**
+  - Owner-decision: drop Tier-3 (V10626 pre-register, 19 MB rules) — they all fail BH_FDR, lack `target_weekday`, contain duplicates, and have no rolling re-measure.
+  - New design: **2-tier weekday-bound cross-verify** = T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only).
+  - Verify 54/54 PASS, MN/MT invariance 108/108 IDENTICAL, no VPS deploy.
+- [V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md) — preceding clarification (T3 sections superseded by V10681; T1/T2/gates/test-lane sections still valid).
 
 ## ⚠️ Read first (4 critical notes)
 

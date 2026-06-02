@@ -1,5 +1,13 @@
 {
-  "latest_version": "V10680",
+  "latest_version": "V10681",
+  "v10681_drop_tier3_t1_t2_cross_verify": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10681_DROP_TIER3_T1_T2_CROSS_VERIFY_VN.md",
+    "note": "Owner-decision correction to V10680: Tier-3 (V10626 pre-register, 19 MB rules) DROPPED from runtime. Reasons: 19/19 carry BH_FAIL_GLOBAL+SELECTION_BIAS_RISK+FORWARD_90D_INSUFFICIENT, CSV has no target_weekday column (cannot cross-verify per weekday), 5 duplicate rows, no rolling re-measure. New design = 2-tier weekday-bound cross-verify: T1 (35 production, drives score) + T2 (77 manual MB-target, CONFIRM-only) — both weekday-bound and dynamic. Code-only edits local; full verify 54/54 PASS; MN/MT invariance 108/108 IDENTICAL; no VPS deploy; no official touched. _rerank_tier3 + mb_t3_prereg_daily kept in code/DB for forensic audit but never invoked or surfaced.",
+    "created_at_vn": "2026-06-03T01:15:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "supersedes_partial": "V10680 Tier-3 sections only; V10680 T1/T2/gates/test-lane sections still valid"
+  },
   "v10680_mb_rule_stack_clarification": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10680_MB_RULE_STACK_CLARIFICATION_AND_NEXT_STEPS_VN.md",
     "note": "Report-only/public-safe clarification for owner AI tools. Corrects V10679-R3 misunderstanding: UI already has xiên 2/3 in generate_final_bundle, so separate MB xiên aggregator was rolled back/removed. Clarifies 3 rule tiers (T1 drive / T2 confirm / T3 watch), exact MB-target counts (T1=35, T2=77 after V10636-DIG/LAGS merge, T3=19), how context enters AI prompt, what gates/blockers affect MB official (REGION_GATE_OVERRIDE MB min_bt=12/min_wr=26, d_w06 override, CP-66.7 MB adaptive exploit weak 23%), and why /du-doan-test is the correct next shadow lane before any live deploy. No code deployed; official untouched.",
