@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10684 (Isolation matrix MN/MT both lanes + full backup — report-only)**
+**Latest version: V10685 (Naming consistency PROD/MANUAL/PREREG — report-only)**
 
 ## Latest report for AI tools
 
-- [**V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md) — **NEW**
+- [**V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10685_NAMING_CONSISTENCY_PROD_MANUAL_VN.md) — **NEW**
+  - Owner caught: if MANUAL drives in shadow lane but is still called "T2", code/docs conflate ID with role.
+  - Rename T1/T2/T3 → PRODUCTION/MANUAL/PREREG before any V10683 code is written. IDs now follow source; drive/confirm role lives in description/log.
+  - 55/55 full verify PASS, 18/18 isolation matrix PASS, MN/MT 108/108 IDENTICAL.
+- [V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10684_ISOLATION_MATRIX_AND_FULL_BACKUP_VN.md)
   - Owner-asked: ensure MN/MT isolation in BOTH official and `/du-doan-test`, plus full backup before any code work begins.
   - Result: 18/18 PASS isolation matrix (static + runtime + DB hash). Multi-region lane-test engines have ZERO MB-only symbol leaks. 4 official tables hash zero-drift. Frozen-DB harness 108/108 IDENTICAL.
   - Backup: 5 MB-edited code files .v10684.pre + 11 official-critical references + 22 in-DB snapshot tables _bak_v10684_* + 4 baseline hashes + MANIFEST.json with restore instructions.
