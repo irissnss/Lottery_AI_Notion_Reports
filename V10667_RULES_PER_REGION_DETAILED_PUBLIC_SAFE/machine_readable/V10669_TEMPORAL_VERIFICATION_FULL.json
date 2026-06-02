@@ -1,0 +1,115 @@
+{
+  "audit_id": "V10669_TEMPORAL_VERIFICATION_FULL",
+  "audit_timestamp_vn": "2026-06-02T10:44:05+07:00",
+  "draw_order": "MN (16:10) < MT (17:10) < MB (18:15)",
+  "violation_rule": "lag=0 (same-day) AND DRAW_ORDER[source] > DRAW_ORDER[target]",
+  "files_scanned": [
+    {
+      "file": "V10636_CROSS_FULL_GRID.json",
+      "exists": true,
+      "total_cells": 2387,
+      "violations": 266,
+      "violation_samples": [
+        "MB:G7#1:D->MN:T7",
+        "MB:G7#3:D->MT:T5",
+        "MB:G4#1:D->MN:T7",
+        "MB:G2#1:D->MT:T7",
+        "MB:G4#1:D->MT:T7"
+      ],
+      "status": "RAW_ANNOTATED_ACCEPTABLE",
+      "note": "Raw grid retains all cells but every violation is flagged temporal_violation=true + annotation block present"
+    },
+    {
+      "file": "V10636_LP_PER_STATION_PRIZE.json",
+      "exists": true,
+      "note": "MB GĐB D-1 source (lag>=1), no same-day cross-region",
+      "violations": 0,
+      "total_cells": 210
+    },
+    {
+      "file": "V10636_EXT_FULL_GRID.json",
+      "exists": true,
+      "total_cells": 288,
+      "violations": 0,
+      "violation_samples": []
+    },
+    {
+      "file": "V10636_DIG_FULL_GRID.json",
+      "exists": true,
+      "note": "MB self-lag D-1 only (same region), no cross-region",
+      "violations": 0,
+      "total_cells": 784
+    },
+    {
+      "file": "V10636_LAGS_FULL_GRID.json",
+      "exists": true,
+      "total_cells": 180,
+      "violations": 0,
+      "violation_samples": []
+    },
+    {
+      "file": "V10636_FORWARD_AUDIT_REGISTRY.json",
+      "exists": true,
+      "total_rules": 35,
+      "violations": 7,
+      "violation_lineages": [
+        "MB:G7#1:D->(MN,T7)",
+        "MB:G7#3:D->(MT,T5)",
+        "MB:G4#1:D->(MN,T7)",
+        "MB:G2#1:D->(MT,T7)",
+        "MB:G4#1:D->(MT,T7)",
+        "MB:G6#1:D->(MT,T7)",
+        "MB:G2#2:D->(MT,T7)"
+      ],
+      "is_fixed_registry": false,
+      "is_deprecated": true,
+      "status": "DEPRECATED_ACCEPTABLE",
+      "note": "ORIGINAL registry marked _DEPRECATED, superseded by FIXED, not used by harness"
+    },
+    {
+      "file": "V10668_FORWARD_AUDIT_REGISTRY_FIXED.json",
+      "exists": true,
+      "total_rules": 28,
+      "violations": 0,
+      "violation_lineages": [],
+      "is_fixed_registry": true,
+      "is_deprecated": false
+    },
+    {
+      "file": "V10636_OWNER_REFERENCE_RANKING.json",
+      "exists": true,
+      "total_rules": 197,
+      "violations": 0,
+      "violation_samples": []
+    },
+    {
+      "file": "V10667_RULES_PER_REGION_RAW.json",
+      "exists": true,
+      "total_rules": 197,
+      "violations": 0,
+      "violation_samples": []
+    }
+  ],
+  "overall_clean": true,
+  "region_md_scan": {
+    "MB": {
+      "exists": true,
+      "total_rules_in_doc": 37,
+      "violations": 0,
+      "violation_lineages": []
+    },
+    "MN": {
+      "exists": true,
+      "total_rules_in_doc": 30,
+      "violations": 0,
+      "violation_lineages": []
+    },
+    "MT": {
+      "exists": true,
+      "total_rules_in_doc": 32,
+      "violations": 0,
+      "violation_lineages": []
+    }
+  },
+  "harness_uses_fixed_registry": true
+}

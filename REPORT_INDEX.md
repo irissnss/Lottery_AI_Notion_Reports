@@ -1,11 +1,12 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10668** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (TEMPORAL CAUSALITY FIX: owner phát hiện rule lag=D 'nguồn xổ SAU đích' vi phạm thứ tự xổ MN→MT→MB. Removed 266 violating cells / 36 BH-pass invalid. Forward audit 35→28. Docs rebuilt with temporal + bộ-numbering banners).
+Latest: **V10669** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (COMPREHENSIVE TEMPORAL VERIFICATION: scanned ALL session artifacts, OVERALL CLEAN=True. Bug only in V10636-CROSS; other passes clean. Old registry deprecated+removed, harness uses FIXED 28-rule registry. 232 BH-pass valid cells + 28 forward audit rules remain. Draw order MN→MT→MB enforced).
 
-## Quick links - V10668 per region (TEMPORAL-FIXED)
+## Quick links - V10669 per region (TEMPORAL-VERIFIED)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. 🕐 **[TEMPORAL CAUSALITY PATCH NOTICE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)** — CRITICAL: read first (draw order MN→MT→MB)
+2. ✅ **[TEMPORAL VERIFICATION REPORT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10669_TEMPORAL_VERIFICATION_REPORT_VN.md)** — full verify, OVERALL CLEAN=True
+3. 🕐 **[TEMPORAL CAUSALITY PATCH NOTICE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)** — CRITICAL: draw order MN→MT→MB
 3. ⭐ **[BỘ NUMBERING LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md)** — `Giải X bộ Y` notation
 4. **[Index Hub](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md)**
 5. **[MB Target Rules](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_MB_TARGET.md)** — Miền Bắc (xổ cuối, no temporal limit)
