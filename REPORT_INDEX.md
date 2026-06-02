@@ -1,11 +1,12 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10674** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10674_RULE_STRENGTH_REMEASURE_VN.md` (EMPIRICAL RE-MEASURE on current VPS-synced DB: 28/28 forward-audit rules reproduce exactly Δ=0, 0 temporal violations; time-trend 12 strengthening / 8 stable / 8 weakening; 155 supplementary qualifying pool; 266 violation cells still excluded. No change vs registry because DB has no data past 02/06 anchor. Plus V10673 journey + V10672 verify + all prior).
+Latest: **V10675** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md` (MASTER LABELED TABLE: every one of 183 qualifying rules labeled 🟢strengthening/🟡stable/🔴weakening (+⚠️recent-decay), 266 excluded temporal cells, 71 pre-register + weak/rejected referenced. Totals 69↑/56=/58↓/39⚠️. No rule omitted, auto-generated from data. Plus V10674 re-measure + V10673 journey + V10672 verify).
 
-## Quick links - V10674 (RULE STRENGTH RE-MEASURED)
+## Quick links - V10675 (ALL RULES LABELED)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. 📈 **[RULE STRENGTH RE-MEASUREMENT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10674_RULE_STRENGTH_REMEASURE_VN.md)** — NEW: empirical re-measure, strength trend, temporal re-check
+2. 🏷️ **[ALL RULES LABELED (master)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md)** — NEW: every rule + strength label, nothing omitted
+3. 📈 **[RULE STRENGTH RE-MEASUREMENT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10674_RULE_STRENGTH_REMEASURE_VN.md)** — empirical re-measure, strength trend, temporal re-check
 3. 🗺️ **[SESSION RULE-DIGGING JOURNEY](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10673_SESSION_RULE_DIGGING_JOURNEY_VN.md)** — all 38 digging episodes + verdicts in one index
 3. ✅ **[MASTER VERIFICATION REPORT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10672_MASTER_VERIFICATION_REPORT_VN.md)** — production LIVE + all reports temporal-clean (286k rules verified)
 3. 🎯 **[SOURCE SEMANTICS LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10670_SOURCE_SEMANTICS_LEGEND.md)** — #Bộ vs đài, multi-station union, station-by-weekday map

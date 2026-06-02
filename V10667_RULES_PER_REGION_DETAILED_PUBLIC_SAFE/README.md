@@ -6,7 +6,11 @@ Tài liệu chi tiết cho 3 miền target (MN, MT, MB) với:
 - Worked examples (3 ngày gần nhất rule trúng)
 - Strength classification (BH-pass, STRONG, MODERATE, MARGINAL, WEAK)
 
-## 📈 Read first #000 — THỰC NGHIỆM ĐO LẠI ĐỘ MẠNH (V10674, mới nhất)
+## 🏷️ Read first #0000 — BẢNG TỔNG HỢP TOÀN BỘ RULES + NHÃN (V10675, mới nhất)
+
+**[V10675_ALL_RULES_LABELED_VN.md](./V10675_ALL_RULES_LABELED_VN.md)** — gắn nhãn trạng thái từng rule, KHÔNG bỏ sót: **183 rule qualifying** (28 forward-audit + 155 pool) mỗi cái có nhãn 🟢 mạnh lên / 🟡 ổn định / 🔴 yếu đi (+ ⚠️ recent decay), **266 cell bị loại** (vi phạm thứ tự xổ), + tham chiếu 71 pre-register / weak / rejected. Tổng: 🟢69 / 🟡56 / 🔴58 / ⚠️39. Sinh tự động từ dữ liệu.
+
+## 📈 Read first #000 — THỰC NGHIỆM ĐO LẠI ĐỘ MẠNH (V10674)
 
 **[V10674_RULE_STRENGTH_REMEASURE_VN.md](./V10674_RULE_STRENGTH_REMEASURE_VN.md)** — đo lại 28 rule forward-audit trên DB hiện tại (sync VPS). **28/28 tái hiện chính xác (Δ=0, 0 vướng bug temporal)**; xu hướng lịch sử: 12 rule mạnh lên, 8 ổn định, 8 yếu đi (3 cái recent-60 <5pp cần canh); 155 cell pool bổ sung; 266 cell vi phạm vẫn loại đúng. Chưa đổi vs đăng ký vì DB chưa có data sau mốc 02/06.
 

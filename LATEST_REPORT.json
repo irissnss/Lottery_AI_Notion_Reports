@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10674",
+  "latest_version": "V10675",
+  "v10675_all_rules_labeled": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10675_ALL_RULES_LABELED.json",
+    "note": "Master labeled table (owner: 'tong hop tong luc, khong bo sot, gan nhan manh len/yeu xuong'). Auto-generated from data. Every one of 183 qualifying rules (28 registered forward-audit + 155 supplementary pool) labeled by historical time-trend: STRENGTHENING 69, STABLE 56, WEAKENING 58, recent-decay-watch 39. Plus 266 excluded temporal-violation cells listed, and 71 V10626 pre-register + V106.04/05/06 weak + MB-D2 rejected + 105 production referenced. Trend = 1st-half vs 2nd-half lift (vs-registry change still 0 because DB has no data past 02/06 anchor). No rule omitted.",
+    "totals": {"qualifying": 183, "registered": 28, "pool": 155,
+               "strengthening": 69, "stable": 56, "weakening": 58,
+               "recent_decay_watch": 39, "excluded_temporal": 266},
+    "created_at_vn": "2026-06-02T13:55:00+07:00"
+  },
   "v10674_rule_strength_remeasure": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10674_RULE_STRENGTH_REMEASURE_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10674_REMEASURE_FORWARD_AUDIT.json",
