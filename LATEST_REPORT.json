@@ -1,5 +1,12 @@
 {
-  "latest_version": "V10675",
+  "latest_version": "V10676",
+  "v10676_mn_d_w06_bt_chooser": {
+    "package": "V10676_MN_D_W06_BT_CHOOSER_PUBLIC_SAFE",
+    "owner_report": "V10676_MN_D_W06_BT_CHOOSER_PUBLIC_SAFE/V10676_OWNER_REPORT_VN_PUBLIC.md",
+    "note": "Owner approved Phương án 2 sau khi 3/3 miền miss BT hôm nay 2026-06-02. Switched MN BT chooser specialist -> D_w06 (top1*1.0 + top2*0.6 aggregator) to leverage số phụ. 92d ex-ante backtest: D_w06 90d=48% vs specialist 45%, 30d=52% vs 42%. New standalone file _v10672_mn_d_w06_override.py (defensive, returns None on any error). V10640 OVERRIDE_CONFIG MN chooser switched + 1 branch added; specialist code path KEPT (rollback 1 line). MT (nt_consensus) and MB (hot30) UNCHANGED. Verification: py_compile PASS local+VPS, service active, /login+/api/health 200, 4 official tables hash IDENTICAL pre/post (zero drift), journalctl errors empty, dry-run 3 regions OK. Backup folder + history doc saved. First live run T4 2026-06-03 04:00 sáng. 7-day watch plan with auto-thresholds (rollback if <35%, keep if >=50%, extend if 35-50%).",
+    "created_at_vn": "2026-06-02T22:00:00+07:00",
+    "supersedes_aggregator_for_mn": "V10640 specialist (kept inactive in code, ready for instant rollback)"
+  },
   "v10675_all_rules_labeled": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10675_ALL_RULES_LABELED.json",
