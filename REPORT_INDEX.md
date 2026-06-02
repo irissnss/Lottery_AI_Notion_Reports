@@ -1,11 +1,12 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10670** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_RULES_INDEX.md` (SOURCE SEMANTICS CLARIFIED: #Bộ = position-in-prize NOT station; multi-station source = union of all stations that weekday; MB per-province per-weekday verified; every rule names exact source station(s). Plus all prior: temporal causality fix, bộ numbering, comprehensive verify).
+Latest: **V10672** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10672_MASTER_VERIFICATION_REPORT_VN.md` (SYSTEM-WIDE MASTER VERIFY: production LIVE mined_rules 105 + generator + pre-register 63 + 11 research mines ~286,000 rule, 234,040 cross-region rows lag0=0 = ALL temporal-clean; bug isolated to V10636-CROSS only; fixed 3 stale public links to deprecated 35-rule registry. Plus all prior: source semantics, temporal causality fix, bộ numbering).
 
-## Quick links - V10670 per region (SOURCE-SEMANTICS-CLARIFIED)
+## Quick links - V10672 per region (SYSTEM-WIDE-VERIFIED)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. 🎯 **[SOURCE SEMANTICS LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10670_SOURCE_SEMANTICS_LEGEND.md)** — NEW: #Bộ vs đài, multi-station union, station-by-weekday map
+2. ✅ **[MASTER VERIFICATION REPORT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10672_MASTER_VERIFICATION_REPORT_VN.md)** — NEW: production LIVE + all reports temporal-clean (286k rules verified)
+3. 🎯 **[SOURCE SEMANTICS LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10670_SOURCE_SEMANTICS_LEGEND.md)** — #Bộ vs đài, multi-station union, station-by-weekday map
 3. ✅ **[TEMPORAL VERIFICATION REPORT](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10669_TEMPORAL_VERIFICATION_REPORT_VN.md)** — OVERALL CLEAN=True
 4. 🕐 **[TEMPORAL CAUSALITY PATCH NOTICE](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)** — draw order MN→MT→MB
 3. ⭐ **[BỘ NUMBERING LEGEND](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10667_BO_NUMBERING_LEGEND.md)** — `Giải X bộ Y` notation

@@ -37,7 +37,7 @@ Ký hiệu `Giải X bộ Y`: xem [V10667_BO_NUMBERING_LEGEND.md](./V10667_BO_NU
 
 ## Forward audit tracking
 
-35 best BH-pass cells from V10636-CROSS được register vào 90-day forward audit (V10636_FORWARD_AUDIT_REGISTRY.json). Sau 90 ngày em sẽ classify:
+**28** temporal-valid BH-pass cells được register vào 90-day forward audit (`machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json`). Bản gốc 35-rule đã DEPRECATED do chứa 7 cell vi phạm thứ tự xổ (same-day MT/MB→MN, MB→MT). Verify toàn hệ thống: [V10672_MASTER_VERIFICATION_REPORT_VN.md](./V10672_MASTER_VERIFICATION_REPORT_VN.md). Sau 90 ngày em sẽ classify:
 
 - STRONG_SURVIVE (≥50% historical lift) → đáng promote COMMIT_ELIGIBLE_SHADOW (cần owner OK)
 - MODERATE_SURVIVE (25-50%) → continue audit

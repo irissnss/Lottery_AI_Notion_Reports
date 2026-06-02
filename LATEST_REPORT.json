@@ -1,5 +1,11 @@
 {
-  "latest_version": "V10671",
+  "latest_version": "V10672",
+  "v10672_master_verification": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10672_MASTER_VERIFICATION_REPORT_VN.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10672_ALL_ARTIFACTS_TEMPORAL_VERIFY.json",
+    "note": "SYSTEM-WIDE rule verification (owner: 'verify lại toàn bộ, tránh bỏ sót'). Extended beyond V10636 session to EVERY rule artifact + LIVE production. Production mined_rules (105, DB synced from VPS) = 0 temporal violations; _seed_rules generator temporal-safe by construction; pre-register 63 = 0; 11 research mines 285,696 rules with 234,040 cross-region rows lag0=0 absolute. Bug isolated to V10636-CROSS only (fixed V10668/69). Fixed 3 stale public links (README/INDEX/BO_NUMBERING) pointing to removed 35-rule registry. v10605 flagged UNVERIFIABLE honestly (no region columns; valid by design).",
+    "created_at_vn": "2026-06-02T12:30:00+07:00"
+  },
   "v10671_addendum": {
     "package": "V10671_CROSS_REGION_MOMENTUM_GUARD_PUBLIC_SAFE",
     "owner_report": "V10671_CROSS_REGION_MOMENTUM_GUARD_PUBLIC_SAFE/V10671_OWNER_REPORT_VN_PUBLIC.md",
@@ -18,7 +24,7 @@
   "forward_audit_registry_fixed": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json",
   "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10667_RULES_PER_REGION_RAW.json",
   "created_at_vn": "2026-06-02T11:20:00+07:00",
-  "chain": "... -> V10667.1 (bo-numbering) -> V10668 (temporal-fix) -> V10669 (full-verify) -> V10670 (source-semantics)",
+  "chain": "... -> V10667.1 (bo-numbering) -> V10668 (temporal-fix) -> V10669 (session full-verify) -> V10670 (source-semantics) -> V10671 (momentum-guard runtime, separate) -> V10672 (SYSTEM-WIDE master verify)",
   "headline": "V10668 TEMPORAL CAUSALITY FIX: owner phát hiện bug — rule 'MT(D) làm nguồn cho MN(D)' vi phạm thứ tự xổ (MT xổ SAU MN cùng ngày = data từ tương lai, không dùng được). Audit 2,387 cross-region cells: 266 (11.14%) violating, 36/268 BH-pass invalid. Đã loại toàn bộ violations khỏi docs + registry. Forward audit 35->28 valid rules. MN target chỉ dùng lag>=1 hoặc MN self-lag; MT dùng MN(D) OK, MB(D) loại; MB không bị giới hạn (xổ cuối). All 3 region docs có temporal banner.",
   "temporal_fix_stats": {
     "total_cells": 2387,
@@ -45,7 +51,7 @@
     "p_lt_05_raw": 431,
     "bh_pass_fdr_05": 268,
     "lift_geq_5pp": 357,
-    "forward_audit_rules": 35,
+    "forward_audit_rules": 28,
     "forward_audit_anchor": "2026-06-02",
     "forward_audit_earliest_closeout": "2026-08-31"
   }

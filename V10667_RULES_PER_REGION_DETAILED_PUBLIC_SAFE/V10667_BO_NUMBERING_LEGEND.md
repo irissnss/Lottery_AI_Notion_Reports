@@ -297,7 +297,8 @@ Anh đánh số `1, 2, 3, 4` rõ ràng cạnh các bộ G.4:
   - [V10667_RULES_MN_TARGET.md](./V10667_RULES_MN_TARGET.md) — Miền Nam
   - [V10667_RULES_MT_TARGET.md](./V10667_RULES_MT_TARGET.md) — Miền Trung
 - **Index hub**: [V10667_RULES_INDEX.md](./V10667_RULES_INDEX.md)
-- **Forward audit (35 BH-pass rules)**: [machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json](./machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json)
+- **Forward audit (28 temporal-valid BH-pass rules)**: [machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json](./machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json) — bản 35-rule cũ đã DEPRECATED (7 cell vi phạm thứ tự xổ).
+- **Master verification**: [V10672_MASTER_VERIFICATION_REPORT_VN.md](./V10672_MASTER_VERIFICATION_REPORT_VN.md)
 - **Owner image gốc**: `assets/c__Users_Admin_..._image-4e73e7a8-...png` (MB 24/05) + `assets/...-image-b513c887-840a-498b-a15c-9c5893172a52.png` (MB 31/05)
 
 ---

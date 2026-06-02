@@ -6,6 +6,12 @@ Tài liệu chi tiết cho 3 miền target (MN, MT, MB) với:
 - Worked examples (3 ngày gần nhất rule trúng)
 - Strength classification (BH-pass, STRONG, MODERATE, MARGINAL, WEAK)
 
+## ✅ Read first #0 — MASTER VERIFICATION (V10672, 2026-06-02)
+
+**[V10672_MASTER_VERIFICATION_REPORT_VN.md](./V10672_MASTER_VERIFICATION_REPORT_VN.md)** — verify TOÀN BỘ rules trong hệ thống (không chỉ session này): production LIVE (105 rule) + máy sinh rule `_seed_rules` + pre-register (63) + 11 research mine (~286,000 rule, 234,040 dòng cross-region).
+
+**Kết luận:** PRODUCTION SẠCH 100% · pipeline khai thác chuẩn chỉ sinh lag≥1 (lag0=0 tuyệt đối) → bug temporal CHỈ tồn tại trong 1 grid thử nghiệm (V10636-CROSS) và đã xử lý trọn vẹn. Dữ liệu máy đọc: [machine_readable/V10672_ALL_ARTIFACTS_TEMPORAL_VERIFY.json](./machine_readable/V10672_ALL_ARTIFACTS_TEMPORAL_VERIFY.json).
+
 ## 🕐 Read first #1 — TEMPORAL CAUSALITY (CRITICAL)
 
 **[V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md](./V10668_TEMPORAL_CAUSALITY_PATCH_NOTICE.md)**
@@ -47,14 +53,15 @@ Ví dụ verify MB 31/05/2026: G.4 bộ 1=7717, bộ 2=7829, bộ 3=5183, bộ 4
 
 - [V10667_RULES_FLAT_RANKING.md](./V10667_RULES_FLAT_RANKING.md) — flat ranking (all 3 regions in one MD)
 - [machine_readable/V10667_RULES_PER_REGION_RAW.json](./machine_readable/V10667_RULES_PER_REGION_RAW.json) — structured per-station data
-- [machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json](./machine_readable/V10667_FORWARD_AUDIT_REGISTRY.json) — 35 BH-pass rules in forward audit
+- [machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json](./machine_readable/V10668_FORWARD_AUDIT_REGISTRY_FIXED.json) — **28 BH-pass rules (temporal-clean, 7 invalid removed)**. Bản 35-rule cũ đã DEPRECATED + gỡ khỏi public.
+- [V10672_MASTER_VERIFICATION_REPORT_VN.md](./V10672_MASTER_VERIFICATION_REPORT_VN.md) + [V10669_TEMPORAL_VERIFICATION_REPORT_VN.md](./V10669_TEMPORAL_VERIFICATION_REPORT_VN.md) + [V10670_SOURCE_SEMANTICS_LEGEND.md](./V10670_SOURCE_SEMANTICS_LEGEND.md) — verification + source semantics
 
 ## Methodology summary
 
 - **Data source**: V10636 series audit (CROSS + DIG + LAGS + MBSELF)
 - **Total unique cells**: 3,696
 - **p<0.05 raw**: 431
-- **BH-pass FDR α=0.05**: 268 ⭐ (gold standard, survives multiple-testing correction)
+- **BH-pass FDR α=0.05**: 268 raw → **232 temporal-valid** ⭐ (36 same-day violations removed; gold standard, survives multiple-testing correction)
 - **Lift ≥ +5pp**: 357
 
 ## Owner constraints (applied)
