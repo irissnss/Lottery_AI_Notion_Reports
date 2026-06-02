@@ -1,5 +1,10 @@
 {
-  "latest_version": "V10672",
+  "latest_version": "V10673",
+  "v10673_session_journey": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10673_SESSION_RULE_DIGGING_JOURNEY_VN.md",
+    "note": "Consolidated master index of ALL rule-digging in this conversation (owner: 'da tong hop het chua?'). 38 hypothesis episodes / 10 version packages (V106.03 -> V10672) from 21/05 to 02/06 in one place, each with verdict (validated/pre-register/weak/rejected) + link. KEY: only V10636-CROSS yielded trustworthy rules (268 BH-pass -> 28 forward-audit, 90d, NOT live); V106.04/05/06 = weak (V107 null-test 0/153k BH); MB D-2 self = rejected (FU1+V10635); 71 V10626 pre-register pending. Production mined_rules independent + verified clean (V10672).",
+    "created_at_vn": "2026-06-02T13:15:00+07:00"
+  },
   "v10672_master_verification": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10672_MASTER_VERIFICATION_REPORT_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10672_ALL_ARTIFACTS_TEMPORAL_VERIFY.json",

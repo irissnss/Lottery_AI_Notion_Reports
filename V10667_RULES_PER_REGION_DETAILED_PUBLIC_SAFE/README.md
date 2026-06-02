@@ -6,6 +6,10 @@ Tài liệu chi tiết cho 3 miền target (MN, MT, MB) với:
 - Worked examples (3 ngày gần nhất rule trúng)
 - Strength classification (BH-pass, STRONG, MODERATE, MARGINAL, WEAK)
 
+## 🗺️ Read first #00 — TỔNG HỢP CẢ HÀNH TRÌNH ĐÀO RULES (V10673)
+
+**[V10673_SESSION_RULE_DIGGING_JOURNEY_VN.md](./V10673_SESSION_RULE_DIGGING_JOURNEY_VN.md)** — gom 38 đợt đào (21/05→02/06, 10 nhóm phiên bản V106.03→V10672) vào 1 index: đào gì · kết quả (validated/pre-register/yếu/bác bỏ) · link. Trả lời "đã tổng hợp hết chưa". **Chỉ V10636-CROSS cho rule đáng tin (28 forward-audit); còn lại yếu/bác bỏ/pre-register.**
+
 ## ✅ Read first #0 — MASTER VERIFICATION (V10672, 2026-06-02)
 
 **[V10672_MASTER_VERIFICATION_REPORT_VN.md](./V10672_MASTER_VERIFICATION_REPORT_VN.md)** — verify TOÀN BỘ rules trong hệ thống (không chỉ session này): production LIVE (105 rule) + máy sinh rule `_seed_rules` + pre-register (63) + 11 research mine (~286,000 rule, 234,040 dòng cross-region).
