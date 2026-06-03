@@ -55,6 +55,29 @@ Thuật toán **độc lập theo miền**: MN giữ rộng 25 model (model MN �
 - Theo dõi live 7–14 ngày, báo cáo hàng tuần.
 - Owner chọn sau: mỗi miền nên lấy hướng nào làm ứng viên chính (tùy khẩu vị: 1 số chắc vs 2-3 số phủ rộng).
 
-## 7. Trạng thái
+## 7. Cập nhật V10692.1 — Output gom: Bạch Thủ + số phụ 1 + số phụ 2
 
-`PUBLIC_SAFE` — chỉ luồng lane-test; official và MB không bị đụng.
+Owner chốt: MB tạm ngưng (không chạy song song), output cần gom lại thành **1 output 3 số có nhãn**:
+- **Bạch Thủ** = đuôi mạnh nhất
+- **Số phụ 1** = đuôi mạnh nhì
+- **Số phụ 2** = đuôi mạnh ba
+
+Thêm output chuẩn `{MN,MT}_OUTPUT_V1` (vẫn giữ 3 hướng đo riêng để theo dõi). Config độc lập theo miền: MN gom 25 model, MT gom 10 model.
+
+Hôm nay 2026-06-03:
+| Miền | Bạch Thủ | Số phụ 1 | Số phụ 2 |
+|---|---|---|---|
+| MN | 47 | 87 | 52 |
+| MT | 21 | 63 | 18 |
+
+Đối chiếu 30 ngày đã xổ:
+| Miền | Bạch Thủ trúng | Trúng ≥1 trong 3 số |
+|---|---|---|
+| MN | 43% | **73%** |
+| MT | 47% | **77%** |
+
+Bổ sung chống chạy trùng (idempotency): chạy lại trong ngày → báo "đã chạy hôm nay", không tạo dữ liệu trùng, không báo lỗi giả.
+
+## 8. Trạng thái
+
+`PUBLIC_SAFE` — chỉ luồng lane-test; official và MB không bị đụng. 4 bảng official hash giống hệt trước/sau. Theo dõi sức khỏe 16/16 OK.
