@@ -1,5 +1,15 @@
 {
-  "latest_version": "V10690_PHASE4_PLAN",
+  "latest_version": "V10690_BACKTEST",
+  "v10690_backtest_and_deploy_review": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10690_BACKTEST_WALKFORWARD.json",
+    "note": "Owner asked: run backtest + review deploy script, push to GitHub for analysis BEFORE deploying. Walk-forward 30d (HONEST, no look-ahead: drive_weight as-of each date): CONTROL official BT hit 6.7% (weak, matches MB problem). All 3 branches beat control: A full-swap 16.7% (+10.0pp, 1 false-promo, 18/30 churn), B BH-pass 13.3% (+6.7pp, 0 false-promo, 8/30), C blend 10.0% (+3.3pp, 0 false-promo, 4/30). Verdicts all NEUTRAL (positive dBT + low false-promo but flip_win<8/30). Caveat: small noisy sample (BT hit 2-5), rule set=today, true test=live 30d forward shadow. Deploy script reviewed: custom _v10690_deploy_lane_only.py deploys ONLY 6 safe files (never rule_engine/gpt_analyzer/prompt_registry), hash before/after + auto-rollback, default dry-run. Recommendation: deploy all 3 shadow branches (no official impact) to accumulate out-of-sample forward data. NOT deployed yet; awaiting owner go.",
+    "created_at_vn": "2026-06-03T14:25:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "backtest_30d": {"control_bt_pct": 6.7, "A_bt_pct": 16.7, "A_dbt_pp": 10.0, "B_bt_pct": 13.3, "B_dbt_pp": 6.7, "C_bt_pct": 10.0, "C_dbt_pp": 3.3, "verdict": "all NEUTRAL"},
+    "owner_decision_needed": "Deploy all 3 shadow branches / only B / wait"
+  },
   "v10690_phase4_deploy_plan": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE4_DEPLOY_PLAN_VN.md",
     "gate": "READY_AWAITING_OWNER_DEPLOY",

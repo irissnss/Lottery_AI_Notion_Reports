@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10690 PHASE 4 PLAN (custom lane-only deploy ready — awaiting owner go)**
+**Latest version: V10690 BACKTEST + DEPLOY REVIEW (walk-forward 30d — all branches beat control)**
 
 ## Latest report for AI tools
 
-- [**V10690_PHASE4_DEPLOY_PLAN_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE4_DEPLOY_PLAN_VN.md) — **NEW (Phase 4/5)**
+- [**V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md) — **NEW**
+  - Walk-forward 30d (no look-ahead): control BT 6.7% (weak); A 16.7% (+10pp), B 13.3% (+6.7pp, 0 false-promo), C 10.0% (+3.3pp, 0 false-promo). All NEUTRAL (small noisy sample; true test = live 30d shadow).
+  - Deploy script reviewed: custom, 6 safe files only, never touches official code, hash+auto-rollback, dry-run default.
+  - Recommendation: deploy all 3 shadow branches (no official impact) for out-of-sample forward data. Awaiting owner go.
+- [V10690_PHASE4_DEPLOY_PLAN_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE4_DEPLOY_PLAN_VN.md) — Phase 4 deploy plan
   - CRITICAL: standard orchestrator would deploy gpt_analyzer.py (changes official) → NOT used. Custom `_v10690_deploy_lane_only.py` deploys ONLY safe lane-test files, never official-facing code.
   - Procedure with official hash before/after + auto-rollback. Default dry-run; --live to execute.
   - Gates 1+2+3 GREEN. Paused at production boundary (real-money VPS) awaiting owner 'deploy' confirmation.

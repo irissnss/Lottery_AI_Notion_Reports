@@ -1,0 +1,667 @@
+{
+  "days": 30,
+  "n_days": 30,
+  "control_hit_rate_pct": 6.7,
+  "verdicts": {
+    "A": {
+      "verdict": "NEUTRAL",
+      "hit_rate_pct": 16.7,
+      "delta_bt_pp": 10.0,
+      "flip_win": 4,
+      "false_promo": 1,
+      "changed": 18,
+      "n": 30
+    },
+    "B": {
+      "verdict": "NEUTRAL",
+      "hit_rate_pct": 13.3,
+      "delta_bt_pp": 6.7,
+      "flip_win": 2,
+      "false_promo": 0,
+      "changed": 8,
+      "n": 30
+    },
+    "C": {
+      "verdict": "NEUTRAL",
+      "hit_rate_pct": 10.0,
+      "delta_bt_pp": 3.3,
+      "flip_win": 1,
+      "false_promo": 0,
+      "changed": 4,
+      "n": 30
+    }
+  },
+  "per_day": [
+    {
+      "date": "2026-05-04",
+      "wd": "T2",
+      "base": "09",
+      "base_hit": 0,
+      "A": {
+        "bt": "00",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "09",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "09",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "wd": "T3",
+      "base": "83",
+      "base_hit": 0,
+      "A": {
+        "bt": "76",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "83",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "83",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-06",
+      "wd": "T4",
+      "base": "79",
+      "base_hit": 0,
+      "A": {
+        "bt": "19",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "50",
+        "hit": 1,
+        "changed": true
+      },
+      "C": {
+        "bt": "79",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-07",
+      "wd": "T5",
+      "base": "20",
+      "base_hit": 0,
+      "A": {
+        "bt": "13",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "31",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "20",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-08",
+      "wd": "T6",
+      "base": "37",
+      "base_hit": 0,
+      "A": {
+        "bt": "37",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "37",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "37",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "wd": "T7",
+      "base": "78",
+      "base_hit": 0,
+      "A": {
+        "bt": "78",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "78",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "78",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-10",
+      "wd": "CN",
+      "base": "13",
+      "base_hit": 0,
+      "A": {
+        "bt": "13",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "13",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "13",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-11",
+      "wd": "T2",
+      "base": "31",
+      "base_hit": 0,
+      "A": {
+        "bt": "46",
+        "hit": 1,
+        "changed": true
+      },
+      "B": {
+        "bt": "31",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "29",
+        "hit": 0,
+        "changed": true
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "wd": "T3",
+      "base": "34",
+      "base_hit": 1,
+      "A": {
+        "bt": "65",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "34",
+        "hit": 1,
+        "changed": false
+      },
+      "C": {
+        "bt": "34",
+        "hit": 1,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "wd": "T4",
+      "base": "32",
+      "base_hit": 0,
+      "A": {
+        "bt": "01",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "58",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "32",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-14",
+      "wd": "T5",
+      "base": "86",
+      "base_hit": 0,
+      "A": {
+        "bt": "96",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "14",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "86",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-15",
+      "wd": "T6",
+      "base": "36",
+      "base_hit": 0,
+      "A": {
+        "bt": "36",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "36",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "36",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-16",
+      "wd": "T7",
+      "base": "43",
+      "base_hit": 0,
+      "A": {
+        "bt": "43",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "43",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "43",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-17",
+      "wd": "CN",
+      "base": "58",
+      "base_hit": 0,
+      "A": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-18",
+      "wd": "T2",
+      "base": "80",
+      "base_hit": 0,
+      "A": {
+        "bt": "14",
+        "hit": 1,
+        "changed": true
+      },
+      "B": {
+        "bt": "80",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "51",
+        "hit": 1,
+        "changed": true
+      }
+    },
+    {
+      "date": "2026-05-19",
+      "wd": "T3",
+      "base": "58",
+      "base_hit": 0,
+      "A": {
+        "bt": "55",
+        "hit": 1,
+        "changed": true
+      },
+      "B": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "wd": "T4",
+      "base": "60",
+      "base_hit": 0,
+      "A": {
+        "bt": "42",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "87",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "60",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "wd": "T5",
+      "base": "07",
+      "base_hit": 0,
+      "A": {
+        "bt": "51",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "36",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "51",
+        "hit": 0,
+        "changed": true
+      }
+    },
+    {
+      "date": "2026-05-22",
+      "wd": "T6",
+      "base": "97",
+      "base_hit": 1,
+      "A": {
+        "bt": "97",
+        "hit": 1,
+        "changed": false
+      },
+      "B": {
+        "bt": "97",
+        "hit": 1,
+        "changed": false
+      },
+      "C": {
+        "bt": "97",
+        "hit": 1,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-23",
+      "wd": "T7",
+      "base": "91",
+      "base_hit": 0,
+      "A": {
+        "bt": "91",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "91",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "91",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-24",
+      "wd": "CN",
+      "base": "63",
+      "base_hit": 0,
+      "A": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-25",
+      "wd": "T2",
+      "base": "04",
+      "base_hit": 0,
+      "A": {
+        "bt": "16",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "04",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "04",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-26",
+      "wd": "T3",
+      "base": "08",
+      "base_hit": 0,
+      "A": {
+        "bt": "69",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "08",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "08",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-27",
+      "wd": "T4",
+      "base": "08",
+      "base_hit": 0,
+      "A": {
+        "bt": "64",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "81",
+        "hit": 1,
+        "changed": true
+      },
+      "C": {
+        "bt": "08",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "wd": "T5",
+      "base": "68",
+      "base_hit": 0,
+      "A": {
+        "bt": "92",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "93",
+        "hit": 0,
+        "changed": true
+      },
+      "C": {
+        "bt": "68",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-29",
+      "wd": "T6",
+      "base": "58",
+      "base_hit": 0,
+      "A": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "58",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-30",
+      "wd": "T7",
+      "base": "63",
+      "base_hit": 0,
+      "A": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "63",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-05-31",
+      "wd": "CN",
+      "base": "82",
+      "base_hit": 0,
+      "A": {
+        "bt": "82",
+        "hit": 0,
+        "changed": false
+      },
+      "B": {
+        "bt": "82",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "82",
+        "hit": 0,
+        "changed": false
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "wd": "T2",
+      "base": "64",
+      "base_hit": 0,
+      "A": {
+        "bt": "46",
+        "hit": 0,
+        "changed": true
+      },
+      "B": {
+        "bt": "64",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "46",
+        "hit": 0,
+        "changed": true
+      }
+    },
+    {
+      "date": "2026-06-02",
+      "wd": "T3",
+      "base": "24",
+      "base_hit": 0,
+      "A": {
+        "bt": "26",
+        "hit": 1,
+        "changed": true
+      },
+      "B": {
+        "bt": "24",
+        "hit": 0,
+        "changed": false
+      },
+      "C": {
+        "bt": "24",
+        "hit": 0,
+        "changed": false
+      }
+    }
+  ],
+  "caveat": "Walk-forward of drive decision; rule SET = today 77, drive_weight as-of each date; true out-of-sample = live 30d forward shadow."
+}
