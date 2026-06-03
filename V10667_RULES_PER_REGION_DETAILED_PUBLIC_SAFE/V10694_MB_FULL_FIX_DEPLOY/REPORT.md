@@ -86,6 +86,19 @@
 
 ---
 
+## E2. UI /du-doan-test MB — HIỂN THỊ BT + Số phụ 1/2 + XIÊN 2/3/4 (đã deploy, owner yêu cầu)
+
+Owner: "UI MB cần giống MN/MT, hiển thị BT, số phụ 1, 2 + bổ sung bộ xiên 2,3,4 (cái cần nhất)."
+
+**Cách làm AN TOÀN (đúng cảnh báo ghi đè VPS):**
+- `main.py` local LỆCH VPS ~680 dòng + VPS giữ thay đổi MN/MT hôm nay → **KHÔNG deploy main.py local**. Em **pull bản VPS thật về**, chỉ thêm khối MB isolated, rồi upload lại (giữ nguyên MN/MT).
+- Tận dụng hàm có sẵn của owner `_build_lane_canonical_output` (V10692, đang phục vụ MN/MT): **mở rộng cho MB** (đọc branch `MB_PERPOS_RULEDRIVEN_V2` → `candidate_ranked_json`) + thêm `xien2/xien3/xien4`; gắn `lane_canonical_output` vào response MB; UI `renderLaneCanonicalOutput` thêm card xiên 2/3/4.
+- Deploy `_v10694_deploy_ui.py`: backup `.pre_v10694ui` → upload 2 file (main.py + du-doan-test.html bản VPS+edit) → py_compile → restart → `/api/health` 200 → hash official BEFORE/AFTER **IDENTICAL** → rollback nếu lỗi.
+
+**Verify VPS:** canonical MB 06-03 = BT 14 / số phụ 1 = 81 / số phụ 2 = 38 / xiên2 14-81 / xiên3 14-81-38 / xiên4 14-81-38-52. journalctl 0 lỗi. service active. **OFFICIAL ZERO-DRIFT PASS.** MN/MT giữ nguyên.
+
+**Lưu ý:** `n_voted` hiện = 0 (method dùng RULE, không phải phiếu model — nhãn "gom model" mang tính cosmetic, sẽ tinh chỉnh). E7 `clone_warning` CHƯA gộp vào deploy UI này (giữ tối thiểu). `main.py` local divergent — KHÔNG deploy.
+
 ## F. SAU 2 TUẦN LIVE — TIÊU CHÍ (scoreboard E6)
 - PASS nếu: top1 ≥ official AND top1 ≥ ~random AND top2 ≥ ~random AND xiên2 ≥ 2× official.
 - Nếu PASS bền 2 tuần out-of-sample → cân nhắc nâng V2 thành nguồn chính / blend với official. CHƯA làm bây giờ.
