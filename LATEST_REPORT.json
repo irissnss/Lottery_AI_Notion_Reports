@@ -4,7 +4,7 @@
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md",
     "evidence": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/EVIDENCE_QUERIES.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/V7_PER_POSITION_METRICS.json",
-    "phase": "VERIFY_DONE + FIX_DONE_LOCAL_LANE (awaiting VPS deploy confirm)",
+    "phase": "VERIFY_DONE + FIX_DONE_LOCAL_LANE; owner chose KEEP LOCAL + push detailed report for AI review before deploy",
     "note": "MASTER TASK MB TOTAL FORCE pha VERIFY+BAO CAO (chua sua code). Data as-of 2026-06-03, live sync 20260603_223215. Official 4-table hash IDENTICAL truoc&sau verify (ZERO-DRIFT PASS); moi script chi READ. KET LUAN: MB khong thieu budget (20/20 SELECTED moi ngay, bao cu 5/20 PREVIEW_BELOW_BUDGET da loi thoi nho adaptive selector c16) va khong thieu nguon (v101 gom du MT(D-1)=99/MN(D)=98/MN(D-1)=98/MT(D)=97/MB(D-1)=95 duoi rieng biet) -- MB thieu CACH CHOT SO. V7 per-position 30d: MB top1 6.7% (vs random 23.7% = duoi NN 3.5x; 7d truot 0/7), top2 20%, top3 20%, xien2 3.3%, xien3 0%; MN top1 36.7%, MT top1 40%. Ceiling: MB plurality consensus 10% < random 23.7% => dong thuan model MB PHAN TAC DUNG (herd vao so sai); d_w06 khuech dai => 6.7%. V2: BUNDLE_SKEW 17/28 ngay (so trung co trong vote nhung bundle chot khac, co ngay 18 model trung top1 van LOSE), v104 REQUIRED_IN_PROMPT=0 (126 candidate deu OPTIONAL_REVIEW). V3: per-number method KHONG ton tai (1 ranked list + BT-only override _v10640). V4: OVERRIDE_CONFIG MN=d_w06 MT=nt_consensus MB=d_w06 (deu enabled; header MB-OFF/hot30 la stale). V5: MAIN_TEST_EQUALS_OFFICIAL tinh trong main.py nhung chua wire vao /api/du-doan-test/* (chi admin API); isolation enforced. V6: VPS head 94242fb branch master, runtime AHEAD of git (main.py mtime 06-03 15:49 > commit 05-31), co drift can dong bo. V7: metric hien chi do BT 1 so; report bo sung per-position+xien2/3/4+coverage. De xuat fix V1-V7 + xien a-f (per-position method, co-occurrence miner, expected-set-coverage, anti-herding, bom MN(D)/MT(D) same-day + REQUIRED_IN_PROMPT, 77 MANUAL confirm-only) -- CHO DUYET de lam 1 LUOT tren lane /du-doan-test. Nothing deployed; official untouched.",
     "created_at_vn": "2026-06-03T22:45:00+07:00",
     "official_touched": false,
@@ -55,7 +55,19 @@
       "isolation": "official 4-table ZERO-DRIFT PASS; mined_rules MN/MT/MB base + predictions MN/MT unchanged; no shared-runtime files modified this phase; writes only lane shadow + experiment + MB-only ranker.",
       "vps_deploy": "NOT deployed; lane-only safe deploy ready (_v10690_deploy_lane_only.py + add _v10693), hash before/after + auto-rollback; awaiting owner confirm (real-money VPS boundary).",
       "lane_rows": 60,
-      "experiment": "MB_PERPOS_RULEDRIVEN_V1"
+      "experiment": "MB_PERPOS_RULEDRIVEN_V1",
+      "analysis_for_ai": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/ANALYSIS_FOR_AI_REVIEW.md",
+      "walkforward_detail": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/V10693_WALKFORWARD_DETAIL.json",
+      "walkforward_90d_honest": {
+        "top1": 22.2,
+        "top2": 25.6,
+        "top3": 18.9,
+        "xien2": 8.9,
+        "control_top1": 21.1,
+        "random_1num": 23.7
+      },
+      "honest_caveat": "60d top1 25% vs official 13.3% (+11.7pp) BUT 90d top1 22.2% vs official 21.1% (+1.1pp, ~TIE) — 60d window had official unusually bad. Method is at-parity/slightly-better on top1 over 90d, with a stable independent top2 (25.6%). NOT a blowout win. top3 weak (15-19%). Needs 2-week live shadow + AI review before deploy decision.",
+      "owner_decision": "KEEP LOCAL; push full detailed report public for AI tools to analyze before deploy"
     }
   },
   "v10690_backtest_and_deploy_review": {

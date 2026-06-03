@@ -23,21 +23,18 @@ Xây **per-position predictor cho MB** (`_v10693_mb_perpos_predictor.py`) — KH
 
 > Tính lại `drive_weight` bằng **chỉ dữ liệu TRƯỚC mỗi ngày** (no look-ahead) → con số thật, không tô hồng.
 
-| Vị trí | Per-position MỚI | Official (control) | random 1-số |
-|---|---|---|---|
-| **top1 (BT)** | **25.0%** | 13.3% | 23.7% |
-| top2 (số phụ 1) | **26.7%** | — | 23.7% |
-| top3 (số phụ 2) | 15.0% | — | 23.7% |
-| **xiên2 (top1+top2)** | **11.7%** | 5.0% | — |
-| xiên3 | 1.7% | — | — |
-| coverage top-4 | 63.3% | — | — |
+| Cửa sổ | top1 (BT) mới | top2 | top3 | xiên2 | **official top1** | random |
+|---|---|---|---|---|---|---|
+| **60 ngày** | **25.0%** | 26.7% | 15.0% | **11.7%** | 13.3% | 23.7% |
+| **90 ngày** | **22.2%** | 25.6% | 18.9% | 8.9% | **21.1%** | 23.7% |
 
-**Diễn giải trung thực:**
-- BT **gấp ~1.9 lần** official (13.3% → 25.0%) → đã **hết "dưới ngẫu nhiên"**, đạt ngưỡng ngẫu nhiên trở lên.
-- xiên2 **gấp ~2.3 lần** (5.0% → 11.7%); top2 mạnh (26.7%, trên ngẫu nhiên).
-- `control_top1 = 13.3%` khớp official 60d đo độc lập → cross-validate phương pháp đo đúng.
-- **top3 còn yếu (15%)** — là điểm cần theo dõi/cải thiện sau (forward-watch).
-- ⚠️ Số as-of (dùng weight hôm nay) cho top1 = 40% nhưng đó là **overfit/look-ahead**; con số CHUẨN để kỳ vọng live là **walk-forward 25%**.
+**Diễn giải TRUNG THỰC (không tô hồng):**
+- 60d: BT gấp ~1.9 lần official (13.3%→25%); xiên2 gấp ~2.3 lần (5%→11.7%).
+- **90d: top1 method 22.2% ≈ official 21.1% (chỉ +1.1pp — gần như HÒA).** Cửa sổ 60d official rơi giai đoạn đặc biệt tệ; mở 90d thì official hồi phục → **method KHÔNG thắng áp đảo**, chỉ ngang/nhỉnh.
+- Giá trị thật: tín hiệu **độc lập, rule-based, anti-herd** + **top2 ổn định 25.6%** cho xiên. top3 còn yếu (15-19%).
+- `control_top1` (13.3%/60d, 21.1%/90d) khớp official đo độc lập → cross-validate đúng.
+- ⚠️ Số as-of (weight hôm nay) = top1 40% là **overfit/look-ahead**; số CHUẨN là walk-forward (22-25%).
+- 👉 Chi tiết phân tích + per-weekday + câu hỏi mở: **`ANALYSIS_FOR_AI_REVIEW.md`**.
 
 ---
 
