@@ -1,0 +1,56 @@
+{
+  "scoreboard": [
+    {
+      "window_days": 60,
+      "method": "V1_perpos",
+      "n": 60,
+      "top1_pct": 25.0,
+      "top2_pct": 26.7,
+      "top3_pct": 15.0,
+      "xien2_pct": 11.7,
+      "xien3_pct": 1.7,
+      "cover_top4_pct": 63.3,
+      "control_top1_pct": 13.3,
+      "verdict": "PASS"
+    },
+    {
+      "window_days": 60,
+      "method": "V2_perpos_board",
+      "n": 60,
+      "top1_pct": 28.3,
+      "top2_pct": 30.0,
+      "top3_pct": 23.3,
+      "xien2_pct": 11.7,
+      "xien3_pct": 5.0,
+      "cover_top4_pct": 71.7,
+      "control_top1_pct": 13.3,
+      "verdict": "PASS"
+    },
+    {
+      "window_days": 90,
+      "method": "V1_perpos",
+      "n": 90,
+      "top1_pct": 22.2,
+      "top2_pct": 25.6,
+      "top3_pct": 18.9,
+      "xien2_pct": 8.9,
+      "xien3_pct": 1.1,
+      "cover_top4_pct": 66.7,
+      "control_top1_pct": 21.1,
+      "verdict": "NEUTRAL"
+    },
+    {
+      "window_days": 90,
+      "method": "V2_perpos_board",
+      "n": 90,
+      "top1_pct": 24.4,
+      "top2_pct": 27.8,
+      "top3_pct": 23.3,
+      "xien2_pct": 8.9,
+      "xien3_pct": 3.3,
+      "cover_top4_pct": 67.8,
+      "control_top1_pct": 21.1,
+      "verdict": "PASS"
+    }
+  ]
+}

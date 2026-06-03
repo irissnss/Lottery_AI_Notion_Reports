@@ -1,5 +1,38 @@
 {
-  "latest_version": "V10693_MB_TOTAL_FORCE_VERIFY",
+  "latest_version": "V10694_MB_FULL_FIX_DEPLOY",
+  "v10694_mb_full_fix_deploy": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/REPORT.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/evidence/V10694_SCOREBOARD.json",
+    "phase": "CODE E1-E8 -> VERIFY -> DEPLOY LANE (done); official ZERO-DRIFT local+VPS",
+    "note": "MB FULL FIX E1-E8 master task. Built on V10693 per-position rule-driven. KEY WIN: E3 same-day MN(D)/MT(D) FULL board injection (board_bonus=0.12) = V2 method. Honest walk-forward (no look-ahead): 90d top3 18.9->23.3, xien3 1.1->3.3, top1 22.2->24.4, top2 25.6->27.8 (top3/xien3 FIXED, top1/top2 not hurt); 60d top3 15->23.3, xien3 1.7->5.0, top1 25->28.3. E2 co-occurrence rerank TESTED but REJECTED (hurt top2/xien2) -- honest. E6 scoreboard mb_perpos_scoreboard (V2 PASS 60d+90d, V1 90d NEUTRAL). DEPLOYED to VPS lane: 3 new MB files (_v10693/_v10689/mb_rule_ranker, all ABSENT before) + 3 rule artifact JSONs (manual_count 9->86) + root crontab 23:55 VN daily (NOT scheduler.py). 3-way reconcile: main.py VPS(d1514ece,MN/MT today)!=git!=local -> NOT uploaded (E7 deferred); scheduler.py not uploaded (cron via root crontab). OFFICIAL 4-table ZERO-DRIFT PASS on BOTH local and VPS (before+after). MN/MT mined_rules+predictions unchanged. liên-đới proven: VPS rule_engine/gpt_analyzer/scheduler have 0 refs to MB-only tables -> creating them cannot change official. 2-week live shadow clock starts 2026-06-04. 90d top1 V2 (24.4%) ~= official (21.1%) -> V2 = independent source + top2/xien supplement, NOT replacing official BT yet. Deferred (reported, not guessed): E7 main.py merge, commit VPS MN/MT runtime to git.",
+    "created_at_vn": "2026-06-04T00:20:00+07:00",
+    "official_touched": false,
+    "official_zero_drift": "PASS (local+VPS, before+after)",
+    "code_deployed": "LANE-ONLY (VPS): 3 MB files + 3 artifacts + root cron; NO official/MN-MT files",
+    "walkforward_90d": {
+      "V1": {
+        "top1": 22.2,
+        "top2": 25.6,
+        "top3": 18.9,
+        "xien2": 8.9,
+        "xien3": 1.1
+      },
+      "V2_board": {
+        "top1": 24.4,
+        "top2": 27.8,
+        "top3": 23.3,
+        "xien2": 8.9,
+        "xien3": 3.3
+      },
+      "official_top1": 21.1,
+      "random_1num": 23.7
+    },
+    "deferred": [
+      "E7 main.py field (3-way conflict)",
+      "commit VPS MN/MT runtime to git (owner)"
+    ],
+    "live_clock_start": "2026-06-04"
+  },
   "v10693_mb_total_force_verify": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md",
     "evidence": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/EVIDENCE_QUERIES.md",

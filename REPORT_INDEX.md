@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10694** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/REPORT.md` (MB FULL FIX E1-E8 → VERIFY → DEPLOY LANE. KEY WIN: E3 same-day MN(D)/MT(D) FULL board injection (V2). Honest walk-forward 90d: top3 18.9→23.3, xien3 1.1→3.3, top1 22.2→24.4, top2 25.6→27.8 (top3/xien3 FIXED, top1/top2 not hurt); 60d top3 15→23.3, xien3 1.7→5.0. E2 co-occurrence rerank TESTED+REJECTED (hurt top2/xien2, honest). DEPLOYED VPS lane: 3 new MB files + 3 rule artifacts (manual 9→86) + root crontab 23:55 (NOT scheduler.py). 3-way reconcile: main.py VPS(MN/MT today)≠git≠local → NOT uploaded (E7 deferred). OFFICIAL 4-table ZERO-DRIFT PASS local+VPS before+after. MN/MT unchanged. liên-đới proven: VPS official code 0 refs to MB-only tables. 2-week live shadow starts 2026-06-04. 90d top1 V2 24.4%≈official 21.1% → independent source + top2/xien supplement, NOT replacing official BT yet).
+
+## Quick links - V10694 (MB FULL FIX DEPLOY)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🎯 **[REPORT (MB FULL FIX E1-E8 + DEPLOY)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/REPORT.md)**
+3. 📊 **[Scoreboard per-position+xiên (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/evidence/V10694_SCOREBOARD.json)**
+4. 🔍 [V10693 prior verify + AI review](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/ANALYSIS_FOR_AI_REVIEW.md)
+
+---
+
+# REPORT INDEX (prior)
+
 Latest: **V10693** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md` (MB TOTAL FORCE — VERIFY-ONLY, CHỜ DUYỆT. Data as-of 2026-06-03, official 4-table ZERO-DRIFT. KEY: MB không thiếu budget (20/20 SELECTED, báo "5/20" đã cũ) và không thiếu nguồn (v101 gom đủ 95-99 đuôi/nguồn) — MB thiếu CÁCH CHỐT SỐ. Bạch thủ MB 6.7%/30d < random 23.7% (3.5× dưới ngẫu nhiên, 7d trượt 0/7). Đồng thuận model MB phản tác dụng (plurality 10% < random) → d_w06 khuếch đại chốt sai. BUNDLE_SKEW 17/28 ngày (số trúng có trong vote nhưng bundle chốt khác, có ngày 18 model trúng top1 vẫn LOSE). v104 REQUIRED_IN_PROMPT=0. Per-position method KHÔNG tồn tại (1 ranked list + BT-only override). Đề xuất V1-V7 + xiên a-f chờ duyệt làm 1 lượt trên lane /du-doan-test. Nothing deployed; official untouched).
 
 ## Quick links - V10693 (MB TOTAL FORCE VERIFY)
