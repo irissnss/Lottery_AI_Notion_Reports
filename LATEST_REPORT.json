@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10687",
+  "latest_version": "V10688",
+  "v10688_master_consolidation": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md",
+    "note": "Master single-source-of-truth consolidation requested by owner before proceeding. Resolves: (1) NAMING — T1/T2/T3 finalized as PRODUCTION(MB-PROD-DYN8W, 35, drives official)/MANUAL(MB-MANUAL-SOI, 77, confirm)/PREREG(cancelled V10681); names follow SOURCE not role. (2) SWAP CLARITY — 'đảo T2<->T1' after rename is NOT a rename, it is a ROLE swap (who DRIVES the score) tested in /du-doan-test via 3 experiments (MB_MANUAL_DRIVE_SHADOW_V1, MB_MANUAL_BHPASS_DRIVE_SHADOW_V1, MB_BLEND_PROD_MANUAL_SHADOW_V1), never on official. (3) VERSION COLLISION FIX — V10684 was used for both the isolation report AND the planned rolling-remeasure code file; code features are now decoupled: rolling re-measure = V10689 (_v10689_mb_manual_rolling_remeasure.py), 3 experiments = V10690 (_v10690_mb_manual_drive_shadow.py); old _v10684_/_v10683_ code filenames superseded. Plus full decisions ledger (V10679->V10688), pending-items list, verification status (verified: 108/108 MN/MT, 18/18 isolation, 55/55 full, 4 official tables zero-drift, T3 purged, T6/T7/CN no-gold; not-yet: rolling/experiments code). GATE: no further code/dig until owner confirms T6/T7/CN choice (A/B/C) + naming/swap + version-fix. Report-only; nothing deployed; official untouched.",
+    "created_at_vn": "2026-06-03T12:50:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "version_fix": {"rolling_remeasure": "V10684 -> V10689", "experiments": "V10683 code -> V10690"},
+    "owner_decision_needed": "1) T6/T7/CN A/B/C  2) confirm naming+swap  3) confirm version-fix V10689/V10690"
+  },
   "v10687_dig_t6t7cn_strong_candidates": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10687_T6T7CN_STRONG_CANDIDATES.json",

@@ -1,10 +1,15 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10687 (Dig T6/T7/CN for gold rules — honest: no gold, STRONG candidates found)**
+**Latest version: V10688 (MASTER consolidation — naming, swap clarity, ledger, pending, version-fix)**
 
 ## Latest report for AI tools
 
-- [**V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md) — **NEW**
+- [**V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md) — **NEW (single source of truth)**
+  - NAMING final: PRODUCTION (35, drives) / MANUAL (77, confirm) / PREREG (cancelled). Names follow source, not role.
+  - SWAP clarity: "đảo T2↔T1" = a ROLE swap (who drives the score), tested in `/du-doan-test` via 3 experiments — NOT a rename, never on official.
+  - VERSION-FIX: V10684 collision resolved — rolling re-measure = V10689, experiments = V10690.
+  - Full decisions ledger (V10679→V10688), pending-items list, verification status, and a hard GATE: no further code/dig until owner confirms T6/T7/CN (A/B/C) + naming/swap + version-fix.
+- [V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md)
   - Owner asked to dig gold (BH-pass) rules for MB weekdays T6/T7/CN (had 0 BH-pass).
   - Honest result: NO gold exists even after expanded dig (~322 samples/cell over ~6 years). Modest effect size (+5 to +11pp) vs strict FDR; strongest T6 MN:G1#1:FIRST2:D-4 (+10.9pp, p=4.9e-5) just barely fails focused-BH.
   - STRONG (p<.01) candidates listed for 90d forward-audit (NOT gold, selection-bias flagged). Owner to choose A=forward-audit / B=MANUAL CONFIRM-only / C=skip.
