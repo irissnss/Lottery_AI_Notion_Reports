@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10690 PHASE 3 (T6/T7/CN forward-audit CONFIRM-only — GATE 3 GREEN 16/16)**
+**Latest version: V10690 PHASE 4 PLAN (custom lane-only deploy ready — awaiting owner go)**
 
 ## Latest report for AI tools
 
-- [**V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md) — **NEW (Phase 3/5)**
+- [**V10690_PHASE4_DEPLOY_PLAN_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE4_DEPLOY_PLAN_VN.md) — **NEW (Phase 4/5)**
+  - CRITICAL: standard orchestrator would deploy gpt_analyzer.py (changes official) → NOT used. Custom `_v10690_deploy_lane_only.py` deploys ONLY safe lane-test files, never official-facing code.
+  - Procedure with official hash before/after + auto-rollback. Default dry-run; --live to execute.
+  - Gates 1+2+3 GREEN. Paused at production boundary (real-money VPS) awaiting owner 'deploy' confirmation.
+- [V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md) — Phase 3/5 (forward-audit, GATE 3 GREEN)
   - 9 T6/T7/CN STRONG candidates loaded as CONFIRM-only forward-audit (drive_weight=0, never drive). Triple safety: drive_weight=0 + confirm_only filter + weekday gate.
   - GATE 3 = 16/16 PASS. Phases 1+2+3 all GREEN. Ready for Phase 4 VPS deploy (awaits owner).
   - harness 108/108, full 55/55, isolation 18/18, official zero-drift.

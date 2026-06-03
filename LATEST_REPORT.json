@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10690_PHASE3",
+  "latest_version": "V10690_PHASE4_PLAN",
+  "v10690_phase4_deploy_plan": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE4_DEPLOY_PLAN_VN.md",
+    "gate": "READY_AWAITING_OWNER_DEPLOY",
+    "note": "PHASE 4/5 deploy plan. CRITICAL finding: standard _deploy_orchestrator.py hardcodes gpt_analyzer.py in DEPLOY_FILES (would change official MB) and omits the experiment files -> NOT usable. Wrote a custom _v10690_deploy_lane_only.py that deploys ONLY the safe lane-test set (mb_rule_ranker.py, _v10689_*, _v10690_*, _v10690_register_experiments.py, scheduler.py, main.py) and NEVER rule_engine.py/gpt_analyzer.py/prompt_registry.py. Procedure: hash official 4 tables BEFORE -> SFTP upload (+.bak) -> enable flag on VPS only (sed) -> py_compile -> register+smoke -> restart+health -> hash AFTER (must be IDENTICAL else auto-rollback .bak). Default DRY-RUN; --live to execute. Gates 1+2+3 all GREEN. Paused at production boundary (real-money VPS + custom deploy path) awaiting owner explicit 'deploy' confirmation. Nothing deployed yet; official untouched.",
+    "created_at_vn": "2026-06-03T14:10:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "owner_decision_needed": "Confirm running _v10690_deploy_lane_only.py --live to deploy to VPS lane test"
+  },
   "v10690_phase3_t6t7cn_forward_audit": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md",
     "gate": "GREEN_16_16",
