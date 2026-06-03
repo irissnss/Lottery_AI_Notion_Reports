@@ -1,0 +1,41 @@
+{
+  "method": "MB per-position rule-driven (V10693)",
+  "data_asof": "2026-06-03",
+  "snapshot": "2026-06-03",
+  "evaluation": "HONEST walk-forward, drive_weight recomputed using ONLY data before each target date (no look-ahead)",
+  "hit_definition": "number in day winning 2-digit tail-set (all MB prizes)",
+  "window_days": 60,
+  "n_days": 60,
+  "perposition_pct": {
+    "top1_bt": 25.0,
+    "top2_so_phu_1": 26.7,
+    "top3_so_phu_2": 15.0,
+    "xien2": 11.7,
+    "xien3": 1.7,
+    "coverage_top4": 63.3
+  },
+  "control_official_pct": {
+    "top1_bt": 13.3
+  },
+  "random_baseline_1num_pct": 23.7,
+  "interpretation": {
+    "top1": "25.0% vs official 13.3% = ~1.9x, no longer below random (23.7%)",
+    "xien2": "11.7% vs official 5.0% = ~2.3x",
+    "top2": "26.7% (above random)",
+    "top3": "15.0% (still weak, forward-watch)",
+    "cross_validation": "control_top1 13.3% matches independent official 60d measure"
+  },
+  "as_of_weights_caveat_pct": {
+    "top1_with_today_weights": 40.0,
+    "note": "look-ahead/overfit; walk-forward 25.0% is the honest expectation for live"
+  },
+  "isolation": {
+    "official_4table_zero_drift": "PASS (IDENTICAL before & after)",
+    "mined_rules_MN_MT_MB_base": "unchanged",
+    "predictions_MN_MT": "unchanged",
+    "shared_runtime_files_modified_this_phase": false,
+    "writes": ["mb_experimental_preview_shadow(MB_PERPOS_RULEDRIVEN_V1)", "du_doan_test_experiments", "mined_rules_mb_daily", "mb_t2_manual_daily"]
+  },
+  "vps_deploy": "NOT deployed; lane-only safe deploy ready, awaiting owner confirm",
+  "code_private": "web/backend/_v10693_mb_perpos_predictor.py"
+}
