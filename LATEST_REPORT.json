@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10688",
+  "latest_version": "V10689_PHASE1",
+  "v10689_phase1_rolling_remeasure": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md",
+    "gate": "GREEN",
+    "note": "PHASE 1/5 of MB MANUAL-drive experiment master plan. Coded _v10689_mb_manual_rolling_remeasure.py: re-measures 77 MANUAL rules on freshest lottery_results over rolling 4W/8W windows, split-half trend, recent-decay, confidence -> drive_weight in [0,1] + lifecycle + static_caveat; EXCLUDES mining gap W20/W21 (2026-05-04..05-31). 7 transforms (LAST2/FIRST2/HEAD_TAIL/LAST2_REV/SECOND_HEAD_TAIL/FIRST2_REV/TAIL_HEAD) -> 77/77 parsed, 0 skip. Writes only mb_t2_manual_daily. Cron 20:25 added GATED behind MB_MANUAL_EXPERIMENT_ENABLE=False ('written but not enabled'). GATE 1 results: official 4-table hash ZERO-DRIFT, MN/MT mined_rules IDENTICAL, harness 108/108, full verify 55/55, isolation 18/18, py_compile+ReadLints clean. drive_weight distribution: TANG_TRUONG 23 (avg 0.969), MANH 4 (1.0), XUONG_CAP 4 (0.78), YEU 46 (0.037); 55/77 have drive_weight>0. Key finding: static-gold rule MN:DB#1:D shows rolling 8W lift -18.3pp -> drive_weight 0 (decay caught). No VPS deploy; official untouched.",
+    "created_at_vn": "2026-06-03T13:38:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "next": "PHASE 2 — code _v10690 experiments (4 branches) + register + cron 23:50"
+  },
   "v10688_master_consolidation": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md",
     "note": "Master single-source-of-truth consolidation requested by owner before proceeding. Resolves: (1) NAMING — T1/T2/T3 finalized as PRODUCTION(MB-PROD-DYN8W, 35, drives official)/MANUAL(MB-MANUAL-SOI, 77, confirm)/PREREG(cancelled V10681); names follow SOURCE not role. (2) SWAP CLARITY — 'đảo T2<->T1' after rename is NOT a rename, it is a ROLE swap (who DRIVES the score) tested in /du-doan-test via 3 experiments (MB_MANUAL_DRIVE_SHADOW_V1, MB_MANUAL_BHPASS_DRIVE_SHADOW_V1, MB_BLEND_PROD_MANUAL_SHADOW_V1), never on official. (3) VERSION COLLISION FIX — V10684 was used for both the isolation report AND the planned rolling-remeasure code file; code features are now decoupled: rolling re-measure = V10689 (_v10689_mb_manual_rolling_remeasure.py), 3 experiments = V10690 (_v10690_mb_manual_drive_shadow.py); old _v10684_/_v10683_ code filenames superseded. Plus full decisions ledger (V10679->V10688), pending-items list, verification status (verified: 108/108 MN/MT, 18/18 isolation, 55/55 full, 4 official tables zero-drift, T3 purged, T6/T7/CN no-gold; not-yet: rolling/experiments code). GATE: no further code/dig until owner confirms T6/T7/CN choice (A/B/C) + naming/swap + version-fix. Report-only; nothing deployed; official untouched.",

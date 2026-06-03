@@ -1,10 +1,15 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10688 (MASTER consolidation — naming, swap clarity, ledger, pending, version-fix)**
+**Latest version: V10689 PHASE 1 (rolling re-measure 77 MANUAL — GATE 1 GREEN)**
 
 ## Latest report for AI tools
 
-- [**V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md) — **NEW (single source of truth)**
+- [**V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md) — **NEW (Phase 1/5)**
+  - Coded V10689 rolling re-measure of 77 MANUAL rules → drive_weight (excludes mining gap W20/W21). Cron 20:25 written but gated OFF.
+  - GATE 1 GREEN: official 4-table zero-drift, MN/MT mined_rules identical, harness 108/108, full 55/55, isolation 18/18.
+  - drive_weight: 55/77 rules > 0 (TANG_TRUONG 23, MANH 4); static-gold MN:DB#1:D now shows rolling decay → drive_weight 0.
+  - No VPS deploy; official untouched. Next: Phase 2 experiments.
+- [V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10688_MASTER_CONSOLIDATION_NAMING_SWAP_LEDGER_VN.md) — single source of truth (naming/swap/ledger)
   - NAMING final: PRODUCTION (35, drives) / MANUAL (77, confirm) / PREREG (cancelled). Names follow source, not role.
   - SWAP clarity: "đảo T2↔T1" = a ROLE swap (who drives the score), tested in `/du-doan-test` via 3 experiments — NOT a rename, never on official.
   - VERSION-FIX: V10684 collision resolved — rolling re-measure = V10689, experiments = V10690.
