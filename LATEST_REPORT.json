@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10690_PHASE2",
+  "latest_version": "V10690_PHASE3",
+  "v10690_phase3_t6t7cn_forward_audit": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE3_T6T7CN_FORWARD_AUDIT_REPORT_VN.md",
+    "gate": "GREEN_16_16",
+    "note": "PHASE 3/5. Loaded the 9 T6/T7/CN STRONG candidates (V10687) into the MANUAL pool as CONFIRM-only forward-audit rows: drive_weight=0, confirm_only=1, live_eligible=0, status PRE_REGISTER_FORWARD_AUDIT (90d), SELECTION_BIAS_RISK, NOT gold. Integrated into mb_rule_ranker._rerank_tier2 (T2 pool 77->86 = 77 driving + 9 forward-audit). V10689 force-zeros drive_weight for confirm_only; V10690 excludes confirm_only from drivers (double guard); T6/T7/CN weekday gate also blocks MANUAL-alone-lead (triple safety). GATE 3 = 16/16 PASS (9 rows verified dw=0/confirm=1/live=0/bh=0; 0 leaked into drivers; A->blend B->control on T6/T7/CN). System verify after ranker change: harness 108/108, full 55/55, isolation 18/18, official zero-drift. No official touched. Phases 1+2+3 all GREEN -> ready for Phase 4 VPS deploy (awaits owner 'deploy').",
+    "created_at_vn": "2026-06-03T14:00:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "next": "PHASE 4 — deploy VPS /du-doan-test (gated crons) + smoke + official zero-drift (owner OK needed)"
+  },
   "v10690_phase2_experiments": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE2_EXPERIMENTS_REPORT_VN.md",
     "gate": "GREEN",
