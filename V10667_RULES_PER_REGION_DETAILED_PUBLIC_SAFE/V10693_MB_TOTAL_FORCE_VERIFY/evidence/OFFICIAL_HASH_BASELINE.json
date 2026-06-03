@@ -1,0 +1,18 @@
+{
+  "predictions": {
+    "sha256": "6c8b7d1d636810d8aabdef83605999e3513854c65affbc208c67dc215ad085b7",
+    "rows": 6695
+  },
+  "final_bundles": {
+    "sha256": "7c6b8d4303105da100b01ac0c5413eb6f8a311bc2a2894d264ff5303c80215d5",
+    "rows": 288
+  },
+  "lottery_results": {
+    "sha256": "c477f9082ccf956ccb538d1ceed5bd40e892776e53feb7797d022a27fd16070d",
+    "rows": 14805
+  },
+  "model_daily_eval": {
+    "sha256": "569424e8be469e2ace42f2a373ee3b58e99232636808881543577266c4609bef",
+    "rows": 6559
+  }
+}

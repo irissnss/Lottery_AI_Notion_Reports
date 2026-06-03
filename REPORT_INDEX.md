@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10693** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md` (MB TOTAL FORCE — VERIFY-ONLY, CHỜ DUYỆT. Data as-of 2026-06-03, official 4-table ZERO-DRIFT. KEY: MB không thiếu budget (20/20 SELECTED, báo "5/20" đã cũ) và không thiếu nguồn (v101 gom đủ 95-99 đuôi/nguồn) — MB thiếu CÁCH CHỐT SỐ. Bạch thủ MB 6.7%/30d < random 23.7% (3.5× dưới ngẫu nhiên, 7d trượt 0/7). Đồng thuận model MB phản tác dụng (plurality 10% < random) → d_w06 khuếch đại chốt sai. BUNDLE_SKEW 17/28 ngày (số trúng có trong vote nhưng bundle chốt khác, có ngày 18 model trúng top1 vẫn LOSE). v104 REQUIRED_IN_PROMPT=0. Per-position method KHÔNG tồn tại (1 ranked list + BT-only override). Đề xuất V1-V7 + xiên a-f chờ duyệt làm 1 lượt trên lane /du-doan-test. Nothing deployed; official untouched).
+
+## Quick links - V10693 (MB TOTAL FORCE VERIFY)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🎯 **[REPORT (MB TOTAL FORCE VERIFY)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md)** — V1-V7 verify + xiên a-f, CHỜ DUYỆT
+3. 📊 **[EVIDENCE (số liệu thô)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/EVIDENCE_QUERIES.md)** — zero-drift, baseline, per-position, ceiling, budget, drop-stage, injection, traceability
+4. 🔢 **[V7 per-position metrics (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/V7_PER_POSITION_METRICS.json)**
+
+---
+
+# REPORT INDEX (prior)
+
 Latest: **V10675** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md` (MASTER LABELED TABLE: every one of 183 qualifying rules labeled 🟢strengthening/🟡stable/🔴weakening (+⚠️recent-decay), 266 excluded temporal cells, 71 pre-register + weak/rejected referenced. Totals 69↑/56=/58↓/39⚠️. No rule omitted, auto-generated from data. Plus V10674 re-measure + V10673 journey + V10672 verify).
 
 ## Quick links - V10675 (ALL RULES LABELED)

@@ -1,5 +1,41 @@
 {
-  "latest_version": "V10690_BACKTEST",
+  "latest_version": "V10693_MB_TOTAL_FORCE_VERIFY",
+  "v10693_mb_total_force_verify": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/REPORT.md",
+    "evidence": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/EVIDENCE_QUERIES.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10693_MB_TOTAL_FORCE_VERIFY/evidence/V7_PER_POSITION_METRICS.json",
+    "phase": "VERIFY_ONLY_AWAITING_APPROVAL",
+    "note": "MASTER TASK MB TOTAL FORCE pha VERIFY+BAO CAO (chua sua code). Data as-of 2026-06-03, live sync 20260603_223215. Official 4-table hash IDENTICAL truoc&sau verify (ZERO-DRIFT PASS); moi script chi READ. KET LUAN: MB khong thieu budget (20/20 SELECTED moi ngay, bao cu 5/20 PREVIEW_BELOW_BUDGET da loi thoi nho adaptive selector c16) va khong thieu nguon (v101 gom du MT(D-1)=99/MN(D)=98/MN(D-1)=98/MT(D)=97/MB(D-1)=95 duoi rieng biet) -- MB thieu CACH CHOT SO. V7 per-position 30d: MB top1 6.7% (vs random 23.7% = duoi NN 3.5x; 7d truot 0/7), top2 20%, top3 20%, xien2 3.3%, xien3 0%; MN top1 36.7%, MT top1 40%. Ceiling: MB plurality consensus 10% < random 23.7% => dong thuan model MB PHAN TAC DUNG (herd vao so sai); d_w06 khuech dai => 6.7%. V2: BUNDLE_SKEW 17/28 ngay (so trung co trong vote nhung bundle chot khac, co ngay 18 model trung top1 van LOSE), v104 REQUIRED_IN_PROMPT=0 (126 candidate deu OPTIONAL_REVIEW). V3: per-number method KHONG ton tai (1 ranked list + BT-only override _v10640). V4: OVERRIDE_CONFIG MN=d_w06 MT=nt_consensus MB=d_w06 (deu enabled; header MB-OFF/hot30 la stale). V5: MAIN_TEST_EQUALS_OFFICIAL tinh trong main.py nhung chua wire vao /api/du-doan-test/* (chi admin API); isolation enforced. V6: VPS head 94242fb branch master, runtime AHEAD of git (main.py mtime 06-03 15:49 > commit 05-31), co drift can dong bo. V7: metric hien chi do BT 1 so; report bo sung per-position+xien2/3/4+coverage. De xuat fix V1-V7 + xien a-f (per-position method, co-occurrence miner, expected-set-coverage, anti-herding, bom MN(D)/MT(D) same-day + REQUIRED_IN_PROMPT, 77 MANUAL confirm-only) -- CHO DUYET de lam 1 LUOT tren lane /du-doan-test. Nothing deployed; official untouched.",
+    "created_at_vn": "2026-06-03T22:45:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "data_asof": "2026-06-03",
+    "official_zero_drift": "PASS",
+    "metrics_30d": {
+      "MB": {
+        "top1": 6.7,
+        "top2": 20.0,
+        "top3": 20.0,
+        "xien2": 3.3,
+        "xien3": 0.0,
+        "random_1num": 23.7,
+        "plurality_consensus": 10.0
+      },
+      "MN": {
+        "top1": 36.7,
+        "top2": 26.7,
+        "top3": 31.0,
+        "random_1num": 42.4
+      },
+      "MT": {
+        "top1": 40.0,
+        "top2": 43.3,
+        "top3": 50.0,
+        "random_1num": 34.8
+      }
+    },
+    "owner_decision_needed": "Duyet danh sach fix muc E (V1-V7 + xien a-f) de thuc hien 1 LUOT tren lane /du-doan-test"
+  },
   "v10690_backtest_and_deploy_review": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10690_BACKTEST_WALKFORWARD.json",
@@ -7,7 +43,16 @@
     "created_at_vn": "2026-06-03T14:25:00+07:00",
     "official_touched": false,
     "code_deployed": false,
-    "backtest_30d": {"control_bt_pct": 6.7, "A_bt_pct": 16.7, "A_dbt_pp": 10.0, "B_bt_pct": 13.3, "B_dbt_pp": 6.7, "C_bt_pct": 10.0, "C_dbt_pp": 3.3, "verdict": "all NEUTRAL"},
+    "backtest_30d": {
+      "control_bt_pct": 6.7,
+      "A_bt_pct": 16.7,
+      "A_dbt_pp": 10.0,
+      "B_bt_pct": 13.3,
+      "B_dbt_pp": 6.7,
+      "C_bt_pct": 10.0,
+      "C_dbt_pp": 3.3,
+      "verdict": "all NEUTRAL"
+    },
     "owner_decision_needed": "Deploy all 3 shadow branches / only B / wait"
   },
   "v10690_phase4_deploy_plan": {
@@ -52,7 +97,10 @@
     "created_at_vn": "2026-06-03T12:50:00+07:00",
     "official_touched": false,
     "code_deployed": false,
-    "version_fix": {"rolling_remeasure": "V10684 -> V10689", "experiments": "V10683 code -> V10690"},
+    "version_fix": {
+      "rolling_remeasure": "V10684 -> V10689",
+      "experiments": "V10683 code -> V10690"
+    },
     "owner_decision_needed": "1) T6/T7/CN A/B/C  2) confirm naming+swap  3) confirm version-fix V10689/V10690"
   },
   "v10687_dig_t6t7cn_strong_candidates": {
@@ -151,9 +199,16 @@
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10675_ALL_RULES_LABELED_VN.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10675_ALL_RULES_LABELED.json",
     "note": "Master labeled table (owner: 'tong hop tong luc, khong bo sot, gan nhan manh len/yeu xuong'). Auto-generated from data. Every one of 183 qualifying rules (28 registered forward-audit + 155 supplementary pool) labeled by historical time-trend: STRENGTHENING 69, STABLE 56, WEAKENING 58, recent-decay-watch 39. Plus 266 excluded temporal-violation cells listed, and 71 V10626 pre-register + V106.04/05/06 weak + MB-D2 rejected + 105 production referenced. Trend = 1st-half vs 2nd-half lift (vs-registry change still 0 because DB has no data past 02/06 anchor). No rule omitted.",
-    "totals": {"qualifying": 183, "registered": 28, "pool": 155,
-               "strengthening": 69, "stable": 56, "weakening": 58,
-               "recent_decay_watch": 39, "excluded_temporal": 266},
+    "totals": {
+      "qualifying": 183,
+      "registered": 28,
+      "pool": 155,
+      "strengthening": 69,
+      "stable": 56,
+      "weakening": 58,
+      "recent_decay_watch": 39,
+      "excluded_temporal": 266
+    },
     "created_at_vn": "2026-06-02T13:55:00+07:00"
   },
   "v10674_rule_strength_remeasure": {
