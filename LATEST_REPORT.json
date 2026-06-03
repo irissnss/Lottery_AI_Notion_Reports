@@ -1,5 +1,14 @@
 {
-  "latest_version": "V10689_PHASE1",
+  "latest_version": "V10690_PHASE2",
+  "v10690_phase2_experiments": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE2_EXPERIMENTS_REPORT_VN.md",
+    "gate": "GREEN",
+    "note": "PHASE 2/5. Coded _v10690_register_experiments.py (3 experiments registered, idempotent) + _v10690_mb_manual_drive_shadow.py (4 branches: A=MB_MANUAL_DRIVE_SHADOW_V1 full swap MANUAL decides over all MANUAL-predicted tails, B=MB_MANUAL_BHPASS_DRIVE_SHADOW_V1 BH-pass only, C=MB_BLEND_PROD_MANUAL_SHADOW_V1 0.7*model+0.30*manual, CTRL existing). Cron 23:50 added gated behind MB_MANUAL_EXPERIMENT_ENABLE. Weekday gate verified: T2-T5 MANUAL may lead; T6/T7/CN A->blend, B->control (no MANUAL-alone-lead). GATE 2 GREEN: dry-run printed 4 branches + gate log (T3 2026-06-02 A picked 26 outside model pool=genuine full swap; T6/T7/CN gate blocked correctly), official 4-table ZERO-DRIFT after writing 3 lane rows, harness 108/108, full 55/55, isolation 18/18. Writes only mb_experimental_preview_shadow + du_doan_test_experiments. No official touched.",
+    "created_at_vn": "2026-06-03T13:50:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "next": "PHASE 3 — load 9 T6/T7/CN STRONG candidates CONFIRM-only drive_weight=0 (forward-audit)"
+  },
   "v10689_phase1_rolling_remeasure": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md",
     "gate": "GREEN",

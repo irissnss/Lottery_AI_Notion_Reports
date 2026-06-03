@@ -1,10 +1,14 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10689 PHASE 1 (rolling re-measure 77 MANUAL — GATE 1 GREEN)**
+**Latest version: V10690 PHASE 2 (4 MANUAL-drive shadow branches — GATE 2 GREEN)**
 
 ## Latest report for AI tools
 
-- [**V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md) — **NEW (Phase 1/5)**
+- [**V10690_PHASE2_EXPERIMENTS_REPORT_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_PHASE2_EXPERIMENTS_REPORT_VN.md) — **NEW (Phase 2/5)**
+  - 3 experiments registered + materializer for 4 branches (A full-swap, B BH-pass, C blend, CTRL). Cron 23:50 gated OFF.
+  - Weekday gate verified: T6/T7/CN block MANUAL-alone-lead (A→blend, B→control).
+  - GATE 2 GREEN: official 4-table zero-drift after lane write, harness 108/108, full 55/55, isolation 18/18.
+- [V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10689_PHASE1_ROLLING_REMEASURE_REPORT_VN.md) — Phase 1/5 (rolling re-measure, GATE 1 GREEN)
   - Coded V10689 rolling re-measure of 77 MANUAL rules → drive_weight (excludes mining gap W20/W21). Cron 20:25 written but gated OFF.
   - GATE 1 GREEN: official 4-table zero-drift, MN/MT mined_rules identical, harness 108/108, full 55/55, isolation 18/18.
   - drive_weight: 55/77 rules > 0 (TANG_TRUONG 23, MANH 4); static-gold MN:DB#1:D now shows rolling decay → drive_weight 0.
