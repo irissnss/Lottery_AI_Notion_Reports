@@ -1,5 +1,15 @@
 {
-  "latest_version": "V10686",
+  "latest_version": "V10687",
+  "v10687_dig_t6t7cn_strong_candidates": {
+    "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md",
+    "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/machine_readable/V10687_T6T7CN_STRONG_CANDIDATES.json",
+    "note": "Owner asked to dig for GOLD (BH-pass) rules for MB weekdays T6/T7/CN which had 0 BH-pass. Honest result after expanded dig (MN/MT/MB sources, lags D..D-7, LAST2 + FIRST2 + HEAD_TAIL transforms, ~322-328 samples per cell over ~6 years): NO BH-pass gold exists for T6/T7/CN even within the focused family. Reason = modest effect size (lift +5 to +11pp) vs strict FDR threshold (rank-1 needs p<2.76e-5 in 1809-cell family); strongest candidate T6 MN:G1#1:FIRST2:D-4 lift +10.9pp p=4.9e-5 just barely fails. STRONG (p<.01) candidates DO exist and are listed for 90d forward-audit (live_eligible=False, SELECTION_BIAS_RISK flagged): T6 best MN:G1#1:FIRST2:D-4 (+10.9pp), T7 best MB:G6#3:LAST2:D-7 (+7.27pp), CN best MN:G2#1:HEAD_TAIL:D-2 (+9.45pp). All temporally valid (lag>=2). Also confirmed PRE-REGISTER (old T3) fully purged from mb_rule_context (V10686.1 self-heal). Owner to choose: A=forward-audit STRONG, B=MANUAL CONFIRM-only now, C=skip. Report-only; no code deployed; official untouched.",
+    "created_at_vn": "2026-06-03T12:40:00+07:00",
+    "gold_bh_pass_found": 0,
+    "official_touched": false,
+    "code_deployed": false,
+    "owner_decision_needed": "T6/T7/CN: A (forward-audit STRONG) / B (MANUAL CONFIRM-only now) / C (skip)"
+  },
   "v10686_technical_design_v10684_v10683": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md",
     "note": "Owner confirmed 3 decisions: D = all 3 shadow experiments, V10684 rolling re-measure 1 week before experiments OK, 30d PASS/FAIL thresholds OK. V10686 = technical design (schema + function signatures + cron + verify checklist + risk matrix) for V10684 (rolling re-measure 77 MANUAL rules into mb_manual_rolling_eval table) and V10683 (3 shadow experiments MB_MANUAL_DRIVE_SHADOW_V1, MB_MANUAL_BHPASS_DRIVE_SHADOW_V1, MB_BLEND_PROD_MANUAL_SHADOW_V1). Hard contract: write-only to mb_manual_rolling_eval + mb_experimental_preview_shadow + du_doan_test_experiments; never touches mined_rules/final_bundles/predictions/MN-MT. Cron schedule: V10684 at 20:25 (after MRE 20:15, before MB ranker 20:30); V10683 at 23:50 (after V66/V67/V70/V71). Rollback path documented. Code NOT yet written; awaiting owner explicit 'code đi' to begin V10684 local build.",

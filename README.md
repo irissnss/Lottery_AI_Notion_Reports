@@ -1,10 +1,15 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10686 (Technical design V10684 + V10683 — owner OK D / 1-week pre-req / thresholds)**
+**Latest version: V10687 (Dig T6/T7/CN for gold rules — honest: no gold, STRONG candidates found)**
 
 ## Latest report for AI tools
 
-- [**V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md) — **NEW**
+- [**V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10687_DIG_T6T7CN_STRONG_CANDIDATES_VN.md) — **NEW**
+  - Owner asked to dig gold (BH-pass) rules for MB weekdays T6/T7/CN (had 0 BH-pass).
+  - Honest result: NO gold exists even after expanded dig (~322 samples/cell over ~6 years). Modest effect size (+5 to +11pp) vs strict FDR; strongest T6 MN:G1#1:FIRST2:D-4 (+10.9pp, p=4.9e-5) just barely fails focused-BH.
+  - STRONG (p<.01) candidates listed for 90d forward-audit (NOT gold, selection-bias flagged). Owner to choose A=forward-audit / B=MANUAL CONFIRM-only / C=skip.
+  - Also confirmed PRE-REGISTER (old T3) fully purged.
+- [V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10686_TECHNICAL_DESIGN_V10684_V10683_VN.md)
   - Owner confirmed 3 decisions: D (all 3 shadow experiments), V10684 rolling re-measure pre-req 1 week before, 30d PASS/FAIL thresholds OK.
   - Technical design: `mb_manual_rolling_eval` schema, function signatures for V10684 + V10683 (3 chooser), cron 20:25 + 23:50, hard contract, verify checklist, risk matrix, rollback paths.
   - Code NOT written yet. Awaiting owner explicit "code đi" to begin V10684 local build.

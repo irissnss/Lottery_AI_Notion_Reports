@@ -1,0 +1,366 @@
+{
+  "audit_id": "V10687_T6T7CN_STRONG_CANDIDATES",
+  "db_max_date": "2026-06-02",
+  "gold_bh_pass_found": 0,
+  "doctrine": "No BH-pass (gold) rule exists for T6/T7/CN even after expanded dig. These are STRONG (p<.01) candidates from a wide search → carry selection-bias risk → must enter 90d forward-audit (live_eligible=False) before any promote. NOT labelled gold.",
+  "candidates": {
+    "T6": [
+      {
+        "lineage": "MN:G7#1:LAST2:D-4",
+        "target_region": "MB",
+        "target_weekday": "T6",
+        "source_region": "MN",
+        "prize": "G7#1",
+        "transform": "LAST2",
+        "lag": 4,
+        "n_eval": 325,
+        "hits": 206,
+        "hit_rate_pct": 63.38,
+        "baseline_pct": 54.83,
+        "lift_pp": 8.55,
+        "ci95_pct": [
+          58.02,
+          68.44
+        ],
+        "p_value": 0.001174,
+        "recent_hits": [
+          "2026-05-08",
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 1,
+        "bh_focused_threshold": 8.29e-05,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MB:DB#1:LAST2:D-4",
+        "target_region": "MB",
+        "target_weekday": "T6",
+        "source_region": "MB",
+        "prize": "DB#1",
+        "transform": "LAST2",
+        "lag": 4,
+        "n_eval": 321,
+        "hits": 94,
+        "hit_rate_pct": 29.28,
+        "baseline_pct": 23.79,
+        "lift_pp": 5.5,
+        "ci95_pct": [
+          24.57,
+          34.48
+        ],
+        "p_value": 0.012283,
+        "recent_hits": [
+          "2026-02-13",
+          "2026-03-27",
+          "2026-05-01"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 6,
+        "bh_focused_threshold": 0.0004975,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "MODERATE",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MN:G1#1:FIRST2:D-4",
+        "target_region": "MB",
+        "target_weekday": "T6",
+        "source_region": "MN",
+        "prize": "G1#1",
+        "transform": "FIRST2",
+        "lag": 4,
+        "n_eval": 325,
+        "hits": 214,
+        "hit_rate_pct": 65.85,
+        "baseline_pct": 54.95,
+        "lift_pp": 10.9,
+        "ci95_pct": [
+          60.53,
+          70.79
+        ],
+        "p_value": 4.9e-05,
+        "recent_hits": [
+          "2026-05-15",
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 1,
+        "bh_focused_threshold": 2.76e-05,
+        "discovery_set": "WIDE_EXPLORATORY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MT:DB#1:FIRST2:D-6",
+        "target_region": "MB",
+        "target_weekday": "T6",
+        "source_region": "MT",
+        "prize": "DB#1",
+        "transform": "FIRST2",
+        "lag": 6,
+        "n_eval": 324,
+        "hits": 208,
+        "hit_rate_pct": 64.2,
+        "baseline_pct": 55.47,
+        "lift_pp": 8.73,
+        "ci95_pct": [
+          58.84,
+          69.22
+        ],
+        "p_value": 0.00095,
+        "recent_hits": [
+          "2026-05-01",
+          "2026-05-22",
+          "2026-05-29"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 3,
+        "bh_focused_threshold": 8.29e-05,
+        "discovery_set": "WIDE_EXPLORATORY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      }
+    ],
+    "T7": [
+      {
+        "lineage": "MB:G6#3:LAST2:D-7",
+        "target_region": "MB",
+        "target_weekday": "T7",
+        "source_region": "MB",
+        "prize": "G6#3",
+        "transform": "LAST2",
+        "lag": 7,
+        "n_eval": 322,
+        "hits": 100,
+        "hit_rate_pct": 31.06,
+        "baseline_pct": 23.79,
+        "lift_pp": 7.27,
+        "ci95_pct": [
+          26.25,
+          36.31
+        ],
+        "p_value": 0.001355,
+        "recent_hits": [
+          "2025-12-06",
+          "2025-12-13",
+          "2026-01-03"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 2,
+        "bh_focused_threshold": 0.0001658,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MN:G2#1:LAST2:D-5",
+        "target_region": "MB",
+        "target_weekday": "T7",
+        "source_region": "MN",
+        "prize": "G2#1",
+        "transform": "LAST2",
+        "lag": 5,
+        "n_eval": 325,
+        "hits": 200,
+        "hit_rate_pct": 61.54,
+        "baseline_pct": 54.91,
+        "lift_pp": 6.63,
+        "ci95_pct": [
+          56.14,
+          66.66
+        ],
+        "p_value": 0.009472,
+        "recent_hits": [
+          "2026-05-16",
+          "2026-05-23",
+          "2026-05-30"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 5,
+        "bh_focused_threshold": 0.0004146,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MT:G5#1:HEAD_TAIL:D-4",
+        "target_region": "MB",
+        "target_weekday": "T7",
+        "source_region": "MT",
+        "prize": "G5#1",
+        "transform": "HEAD_TAIL",
+        "lag": 4,
+        "n_eval": 326,
+        "hits": 159,
+        "hit_rate_pct": 48.77,
+        "baseline_pct": 41.57,
+        "lift_pp": 7.2,
+        "ci95_pct": [
+          43.39,
+          54.18
+        ],
+        "p_value": 0.004919,
+        "recent_hits": [
+          "2026-05-09",
+          "2026-05-16",
+          "2026-05-30"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 11,
+        "bh_focused_threshold": 0.000304,
+        "discovery_set": "WIDE_EXPLORATORY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      }
+    ],
+    "CN": [
+      {
+        "lineage": "MB:G7#2:LAST2:D-7",
+        "target_region": "MB",
+        "target_weekday": "CN",
+        "source_region": "MB",
+        "prize": "G7#2",
+        "transform": "LAST2",
+        "lag": 7,
+        "n_eval": 322,
+        "hits": 98,
+        "hit_rate_pct": 30.43,
+        "baseline_pct": 23.79,
+        "lift_pp": 6.65,
+        "ci95_pct": [
+          25.66,
+          35.67
+        ],
+        "p_value": 0.003099,
+        "recent_hits": [
+          "2026-02-22",
+          "2026-03-29",
+          "2026-04-12"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 3,
+        "bh_focused_threshold": 0.0002488,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MB:G2#1:LAST2:D-4",
+        "target_region": "MB",
+        "target_weekday": "CN",
+        "source_region": "MB",
+        "prize": "G2#1",
+        "transform": "LAST2",
+        "lag": 4,
+        "n_eval": 324,
+        "hits": 96,
+        "hit_rate_pct": 29.63,
+        "baseline_pct": 23.79,
+        "lift_pp": 5.84,
+        "ci95_pct": [
+          24.92,
+          34.82
+        ],
+        "p_value": 0.008073,
+        "recent_hits": [
+          "2026-04-26",
+          "2026-05-03",
+          "2026-05-31"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 4,
+        "bh_focused_threshold": 0.0003317,
+        "discovery_set": "LAST2_PRIMARY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MN:G2#1:HEAD_TAIL:D-2",
+        "target_region": "MB",
+        "target_weekday": "CN",
+        "source_region": "MN",
+        "prize": "G2#1",
+        "transform": "HEAD_TAIL",
+        "lag": 2,
+        "n_eval": 328,
+        "hits": 211,
+        "hit_rate_pct": 64.33,
+        "baseline_pct": 54.88,
+        "lift_pp": 9.45,
+        "ci95_pct": [
+          59.01,
+          69.32
+        ],
+        "p_value": 0.000357,
+        "recent_hits": [
+          "2026-05-03",
+          "2026-05-17",
+          "2026-05-24"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 2,
+        "bh_focused_threshold": 5.53e-05,
+        "discovery_set": "WIDE_EXPLORATORY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      },
+      {
+        "lineage": "MT:G7#1:HEAD_TAIL:D-7",
+        "target_region": "MB",
+        "target_weekday": "CN",
+        "source_region": "MT",
+        "prize": "G7#1",
+        "transform": "HEAD_TAIL",
+        "lag": 7,
+        "n_eval": 324,
+        "hits": 168,
+        "hit_rate_pct": 51.85,
+        "baseline_pct": 43.21,
+        "lift_pp": 8.64,
+        "ci95_pct": [
+          46.42,
+          57.24
+        ],
+        "p_value": 0.001025,
+        "recent_hits": [
+          "2026-05-10",
+          "2026-05-24",
+          "2026-05-31"
+        ],
+        "bh_focused_pass": false,
+        "bh_focused_rank": 4,
+        "bh_focused_threshold": 0.0001106,
+        "discovery_set": "WIDE_EXPLORATORY",
+        "status": "PRE_REGISTER_FORWARD_AUDIT",
+        "live_eligible": false,
+        "tier": "STRONG",
+        "v107_risk": "SELECTION_BIAS_RISK|WIDE_SEARCH|FORWARD_AUDIT_REQUIRED"
+      }
+    ]
+  }
+}
