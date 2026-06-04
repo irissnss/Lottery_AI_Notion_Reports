@@ -1,5 +1,17 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10699** — `V10699_POST_LIVE_T5_PUBLIC_SAFE/V10699_POST_LIVE_T5_20260604_VN_PUBLIC.md` (Post-live T5 04/06. UI /du-doan-test "không hoạt động" → backend 100% healthy, JS 0 errors, route no-store cache → ROOT CAUSE likely owner session expired (re-login). Predictions HONEST: BT 1/3 (MB win 94 + lane 16/24/46 all 3 hit; MN+MT both lanes LOSE). §36G FULL_CLOSURE_PASS 04/06 (4/4). READ-ONLY official untouched).
+
+## Quick links — V10699 (POST-LIVE T5)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🎯 **[REPORT V10699 VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10699_POST_LIVE_T5_PUBLIC_SAFE/V10699_POST_LIVE_T5_20260604_VN_PUBLIC.md)**
+3. 🔍 [Prior V10698 dig+propose](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md)
+
+---
+
+# REPORT INDEX (V10698 prior)
+
 Latest: **V10698** — `V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md` (READ-ONLY follow-up V10697. Dug 5 open items: F1 clock-drift classified 3 axes; main.py E7 3-way CONFIRMED CLEAN (sha256=c81ab73644aa8238); 14/14 contract matrix PASS with file:line evidence; leakage scan 0 violations; §36G C3+C4 04/06 self-verify scheduled. Owner needed: F1 A/B/C. READ-ONLY, official untouched, MN/MT invariant, MB lane V10694 not touched).
 
 ## Quick links — V10698 (DIG & PROPOSE)
