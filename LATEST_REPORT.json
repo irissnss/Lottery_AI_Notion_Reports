@@ -1,5 +1,25 @@
 {
-  "latest_version": "V10694_MB_FULL_FIX_DEPLOY",
+  "latest_version": "V10698_DIG_PROPOSE",
+  "v10698_dig_propose": {
+    "report": "V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md",
+    "machine_readable": "V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/evidence/V10698_CONTRACT_MATRIX.json",
+    "note": "READ-ONLY follow-up V10697. Dug 5 open items: (1) F1 clock-drift classified into 3 axes (draw_time 16:10/17:10/18:15, done-flag 16:36/17:36/18:36, cron anchor 16:30/17:30/18:30 + fallback 16:42/17:42); 6 legacy spots in main.py + 1 in gpt_analyzer.py show 16:38/17:38/18:38 — cosmetic only, logic correct. (2) main.py E7 3-way conflict CONFIRMED CLEAN: local sha256=VPS sha256=c81ab73644aa8238, bytes=770390, VPS==origin/master HEAD 94242fb. (3) 14/14 contract matrix PASS with file:line evidence in evidence/V10698_CONTRACT_MATRIX.json. (4) Leakage scan: 0 violations — MB(D)→MN/MT(D)=0, MT(D)→MN(D)=0, same-day matrix only has valid order (MN→MT, MN→MB, MT→MB). (5) §36G C3+C4 04/06 will self-verify after MT 17:30 + MB 18:30, push V10697.1. RECOMMENDATION: F1 use Plan B (batch with next main.py touch) to avoid risky standalone deploy on 770KB shared file. Owner needed: F1 choice (A/B/C). READ-ONLY, official untouched, MN/MT invariant, MB lane V10694 not touched.",
+    "created_at_vn": "2026-06-04T11:35:00+07:00",
+    "official_touched": false,
+    "mn_mt_invariant": true,
+    "mb_lane_v10694_untouched": true,
+    "contract_matrix_pass_count": "14/14",
+    "leakage_violations": 0,
+    "owner_decision_needed": "F1: A (fix standalone now) / B (batch with next main.py touch — recommended) / C (skip, cosmetic only)",
+    "self_verify_schedule_today": ["17:45 §36G C3 rerun_post_mt MB 04/06", "18:35 §36G C4 no-token pre_result MB 04/06", "18:40 push V10697.1 declaring FULL_CLOSURE_PASS or PARTIAL_READY for 04/06"]
+  },
+  "v10697_audit_details": {
+    "report": "V10697_REGION_DAY_AUDIT_PUBLIC_SAFE/V10697_AUDIT_DETAILS_VN_PUBLIC.md",
+    "note": "Region-Day audit READ-ONLY V10697. 14/14 contract PASS. 03/06 cycle proved §36G 4 conditions PASS. F1 cosmetic clock drift + 2 §36G items deferred to live cycle. Superseded by V10698 dig-propose deeper analysis.",
+    "created_at_vn": "2026-06-04T11:00:00+07:00",
+    "official_touched": false,
+    "superseded_by": "V10698_DIG_PROPOSE"
+  },
   "v10694_mb_full_fix_deploy": {
     "report": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/REPORT.md",
     "machine_readable": "V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/evidence/V10694_SCOREBOARD.json",

@@ -1,5 +1,18 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10698** — `V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md` (READ-ONLY follow-up V10697. Dug 5 open items: F1 clock-drift classified 3 axes; main.py E7 3-way CONFIRMED CLEAN (sha256=c81ab73644aa8238); 14/14 contract matrix PASS with file:line evidence; leakage scan 0 violations; §36G C3+C4 04/06 self-verify scheduled. Owner needed: F1 A/B/C. READ-ONLY, official untouched, MN/MT invariant, MB lane V10694 not touched).
+
+## Quick links — V10698 (DIG & PROPOSE)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🎯 **[REPORT V10698 VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md)**
+3. 📊 **[Contract Matrix JSON](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/evidence/V10698_CONTRACT_MATRIX.json)**
+4. 🔍 [Prior V10697 audit details](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10697_REGION_DAY_AUDIT_PUBLIC_SAFE/V10697_AUDIT_DETAILS_VN_PUBLIC.md)
+
+---
+
+# REPORT INDEX (prior)
+
 Latest: **V10694** - `V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10694_MB_FULL_FIX_DEPLOY/REPORT.md` (MB FULL FIX E1-E8 → VERIFY → DEPLOY LANE. KEY WIN: E3 same-day MN(D)/MT(D) FULL board injection (V2). Honest walk-forward 90d: top3 18.9→23.3, xien3 1.1→3.3, top1 22.2→24.4, top2 25.6→27.8 (top3/xien3 FIXED, top1/top2 not hurt); 60d top3 15→23.3, xien3 1.7→5.0. E2 co-occurrence rerank TESTED+REJECTED (hurt top2/xien2, honest). DEPLOYED VPS lane: 3 new MB files + 3 rule artifacts (manual 9→86) + root crontab 23:55 (NOT scheduler.py). 3-way reconcile: main.py VPS(MN/MT today)≠git≠local → NOT uploaded (E7 deferred). OFFICIAL 4-table ZERO-DRIFT PASS local+VPS before+after. MN/MT unchanged. liên-đới proven: VPS official code 0 refs to MB-only tables. 2-week live shadow starts 2026-06-04. 90d top1 V2 24.4%≈official 21.1% → independent source + top2/xien supplement, NOT replacing official BT yet).
 
 ## Quick links - V10694 (MB FULL FIX DEPLOY)

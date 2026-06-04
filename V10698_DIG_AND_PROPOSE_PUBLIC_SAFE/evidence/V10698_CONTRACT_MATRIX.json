@@ -1,0 +1,179 @@
+{
+  "audit_id": "V10698_DIG_PROPOSE",
+  "anchor_date_vn": "2026-06-04",
+  "audit_time_vn": "11:30",
+  "mode": "READ_ONLY",
+  "official_touched": false,
+  "mn_mt_invariant": true,
+  "mb_lane_v10694_untouched": true,
+  "db_source": "VPS_LIVE",
+  "main_py_3way_status": "PASS",
+  "main_py_local_sha256_16": "c81ab73644aa8238",
+  "main_py_vps_sha256_16": "c81ab73644aa8238",
+  "main_py_local_vps_match": true,
+  "main_py_vps_eq_origin_master": true,
+  "git_head_short": "94242fb",
+  "contract_matrix": [
+    {
+      "id": "C1",
+      "item": "predictions.date == target_date_vn",
+      "expected": "Same date field used for predict + eval; no separate target_date column",
+      "code_evidence": "web/backend/database.py PRAGMA table_info(predictions): only 'date' column, no 'target_date'",
+      "doc_evidence": ".Antigravityrules.md INTER-REGION DATA line 351",
+      "status": "PASS"
+    },
+    {
+      "id": "C2",
+      "item": "MN target uses D-1 only (NO same-day MT/MB)",
+      "expected": "_PRIOR_REGIONS['MN']=[]",
+      "code_evidence": "web/backend/gpt_analyzer.py L5080: \"MN\": []",
+      "doc_evidence": ".Antigravityrules.md INTER-REGION DATA line 352",
+      "status": "PASS",
+      "live_verification_04_06": "MN 04/06: 28 predict models, source_regions field shows 'MB,MT,MN' as label pool, analysis_text contains no 'MT(D)' or 'MB(D)' tags"
+    },
+    {
+      "id": "C3",
+      "item": "MT target uses D-1 + MN(D)",
+      "expected": "_PRIOR_REGIONS['MT']=['MN'] + scheduler MN_trigger→[MT,MB] phase",
+      "code_evidence": "gpt_analyzer.py L5081 + scheduler.py L5674-5676",
+      "doc_evidence": ".Antigravityrules.md INTER-REGION DATA line 353",
+      "status": "PASS"
+    },
+    {
+      "id": "C4",
+      "item": "MB target uses D-1 + MN(D) + MT(D)",
+      "expected": "_PRIOR_REGIONS['MB']=['MN','MT'] + scheduler MT_trigger→[MB] phase",
+      "code_evidence": "gpt_analyzer.py L5082 + scheduler.py L5677-5681",
+      "doc_evidence": ".Antigravityrules.md INTER-REGION DATA line 354",
+      "status": "PASS"
+    },
+    {
+      "id": "C5",
+      "item": "ML cross-region momentum draw-order guard",
+      "expected": "_DRAW_ORDER split earlier_src vs later_src; later regions forced to date<target",
+      "code_evidence": "meta_data_collector.py L231-254 (V10671 DRAW-ORDER GUARD)",
+      "doc_evidence": "docs/CAUSALITY_AUDIT_MN_MT_MB_20260602.md",
+      "status": "PASS",
+      "behavior_neutral": true
+    },
+    {
+      "id": "C6",
+      "item": "mined_rules same-day matrix valid direction only",
+      "expected": "MN→MT, MN→MB, MT→MB only (NO MT→MN, MB→MN, MB→MT) when source_offset='D'",
+      "code_evidence": "weekly_rule_miner.py respects causal order; V10668 cleanup removed 266 violations",
+      "doc_evidence": "INTER-REGION + V10668 fix",
+      "status": "PASS",
+      "live_check_query": "SELECT source_region, target_region, COUNT(*) FROM mined_rules WHERE source_offset='D' GROUP BY 1,2",
+      "live_result_04_06": {
+        "MN_to_MT_D": 4,
+        "MN_to_MB_D": 6,
+        "MT_to_MB_D": 3,
+        "MB_to_MN_D": 0,
+        "MB_to_MT_D": 0,
+        "MT_to_MN_D": 0
+      }
+    },
+    {
+      "id": "C7",
+      "item": "mined_rules self-D = invalid",
+      "expected": "0 rows with source_region == target_region AND source_offset='D'",
+      "code_evidence": "weekly_rule_miner.py self-D filter",
+      "doc_evidence": "INTER-REGION implicit",
+      "status": "PASS",
+      "live_result_04_06": "0 self-D rows"
+    },
+    {
+      "id": "C8",
+      "item": "Verified does NOT shift D to D-1 within same target_date",
+      "expected": "predictions.date and final_bundles.date remain stable post-verify; verified_at is separate column",
+      "code_evidence": "daily_evaluation.py L113-141 JOIN day_governance without re-labeling date; final_bundles schema has date + verified_at columns separately",
+      "doc_evidence": "INTER-REGION + §36F (skip/freeze cycle law)",
+      "status": "PASS"
+    },
+    {
+      "id": "C9",
+      "item": "Preview state machine 4 states + VERIFIED",
+      "expected": "PREVIEW_FULL → PREVIEW_MN_DONE → PREVIEW_MT_DONE → PREVIEW_CLOSING → VERIFIED",
+      "code_evidence": "main.py L3755-3819 /api/mined-rules/preview-state",
+      "doc_evidence": ".Antigravityrules.md PREVIEW-DAY GOVERNANCE L156-164",
+      "status": "PASS",
+      "note": "F1 cosmetic drift in docstring/UI labels (16:38 vs 16:36 logic) — see F1 separately"
+    },
+    {
+      "id": "C10",
+      "item": "KPI/hit-rate uses verified-only data",
+      "expected": "evaluation queries JOIN day_governance and filter EXCLUDE_PRIMARY/EXCLUDE_ALL",
+      "code_evidence": "daily_evaluation.py L113-141 (V17.3)",
+      "doc_evidence": ".Antigravityrules.md VERIFIED VS PREVIEW SEPARATION L167-176",
+      "status": "PASS"
+    },
+    {
+      "id": "C11",
+      "item": "context_integrity tag on predictions (clean vs provisional)",
+      "expected": "auto_daily (pre-verify) = provisional; ai_chain/rerun_post_* (post-verify) = clean",
+      "code_evidence": "predictions.context_integrity column; scheduler.py L5788 sets 'clean' for rerun",
+      "doc_evidence": "§38 + V17.11",
+      "status": "PASS",
+      "live_result_03_06": "MN auto_daily=provisional; MT/MB rerun_post_*=clean (verified)"
+    },
+    {
+      "id": "C12",
+      "item": "day_governance per-region lifecycle (preview→verified)",
+      "expected": "14-column schema with day_status (VALID/DEGRADED/EXCLUDED), publication_status, evaluation_policy per (date,region)",
+      "code_evidence": "PRAGMA table_info(day_governance): 14 columns; database.py + scheduler.py populate",
+      "doc_evidence": "§52F deliverable chain",
+      "status": "PASS",
+      "live_result_03_06": "MN+MT VALID_LIVE_DAY/OFFICIAL/INCLUDE; MB DEGRADED_LIVE_DAY/EXCLUDE_PRIMARY (14/15 models)"
+    },
+    {
+      "id": "C13",
+      "item": "Backtest walk-forward simulates draw order",
+      "expected": "Train window + test window non-overlapping, actual_known gate before scoring",
+      "code_evidence": "_v10680_topk_strength_lane.py train 60d→30d test 30d→0d; _v10677_postdraw_settle.py date<today guard",
+      "doc_evidence": "FORENSIC ROOT-CAUSE AUDIT STANDARD",
+      "status": "PASS"
+    },
+    {
+      "id": "C14",
+      "item": "source_offset values constrained to D or D-1",
+      "expected": "No source_offset > D-1 in production mined_rules",
+      "code_evidence": "weekly_rule_miner.py emits only D/D-1",
+      "doc_evidence": "§36 + V10668",
+      "status": "PASS",
+      "live_result_04_06": "DISTINCT source_offset = ['D', 'D-1'] only"
+    }
+  ],
+  "leakage_audit": {
+    "id_3_1": {
+      "question": "Eval/backtest uses source_lag=0 only when source region draws BEFORE target region in simulation",
+      "code_evidence": "mined_rule_eval.py L68-72 _get_source_date returns target_date if 'D' else -1; same-day data filtered by region order in mined_rules (no MB→MN/MT D rows exist)",
+      "status": "PASS"
+    },
+    "id_3_2": {
+      "question": "V10693 MB walk-forward: same-day enters only after MN/MT verified before MB on that day",
+      "code_evidence": "_v10693_mb_perpos_predictor.py STRUCT_REGIONS=('MN','MT'); BOARD_REGIONS=('MN','MT'); comment L97 'causal: drawn before MB 18:15'",
+      "status": "PASS"
+    },
+    "id_3_3_mbd_to_mn_mt": {
+      "question": "MB D used to predict MN D or MT D anywhere",
+      "live_query": "SELECT COUNT(*) FROM mined_rules WHERE source_offset='D' AND source_region='MB' AND target_region IN ('MN','MT')",
+      "live_result": 0,
+      "status": "PASS"
+    },
+    "id_3_3_mtd_to_mn": {
+      "question": "MT D used to predict MN D",
+      "live_query": "SELECT COUNT(*) FROM mined_rules WHERE source_offset='D' AND source_region='MT' AND target_region='MN'",
+      "live_result": 0,
+      "status": "PASS"
+    }
+  },
+  "summary": {
+    "total_items": 14,
+    "pass": 14,
+    "fail": 0,
+    "partial": 0,
+    "unknown": 0,
+    "leakage_findings": 0,
+    "verdict": "CANONICAL_REGION_DAY_CONTRACT_COMPLIANT"
+  }
+}
