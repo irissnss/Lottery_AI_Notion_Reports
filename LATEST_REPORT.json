@@ -12,9 +12,19 @@
     "leakage_violations": 0,
     "owner_decision_needed": "RESOLVED 2026-06-04 12:18: Owner chose PLAN B (batch with next main.py touch). Logged in DECISION_LOG.md.",
     "owner_decision_resolved": {
-      "choice": "B",
-      "resolved_at_vn": "2026-06-04T12:18:00+07:00",
-      "next_steps": "When next main.py edit batch happens: StrReplace 7 spots (6 main.py + 1 gpt_analyzer.py), 16:38/17:38/18:38 → 16:36/17:36/18:36. Plus advance VPS git HEAD via 'git reset --soft origin/master' (HEAD pointer drift finding). Pre/post 4-table zero-drift required."
+      "choice": "B (clock-drift) + A (MT materializer fix)",
+      "resolved_at_vn": "2026-06-04T12:18:00+07:00 (clock) / 2026-06-04T17:22:00+07:00 (MT materializer)",
+      "next_steps": "Plan B batch (chờ owner OK thời điểm deploy): 8 items - (1-6) F1 clock-drift StrReplace 7 spots (6 main.py + 1 gpt_analyzer.py), 16:38/17:38/18:38 → 16:36/17:36/18:36. (7) Fix scheduler.py:6740-6776 logic - chỉ skip materialize_for nếu 7 experiment chính đã có (không phải chỉ ADAPTIVE_EXPLOIT) để khôi phục 7 experiment cũ MT mất từ 03/06. (8) Advance VPS git HEAD via 'git reset --soft origin/master'. Pre/post 4-table zero-drift required. Rollback: git revert + service restart."
+    },
+    "additional_finding_mt_materializer_bug": {
+      "discovered_at_vn": "2026-06-04T17:18:00+07:00",
+      "owner_choice": "A (batch with Plan B)",
+      "symptom": "Panel 'Test Challenger' trống cho MT trên /du-doan-test, NO_PRIMARY mode",
+      "root_cause": "scheduler.py:6754 'if existing: skip' - ADAPTIVE_EXPLOIT materialize trước (line 6741-6748) tạo row → existing=True → skip _run_test materialize 7 experiment chính",
+      "impact_to_live": "NONE for predictions/final_bundles/V10692-lane-cards. Only UX panel Test Challenger empty",
+      "mn_unaffected": true,
+      "mt_last_full_materialize": "2026-06-02",
+      "fix_path": "Refactor logic in scheduler.py line 6740-6776: check if 7 main experiments exist before skip, not just adaptive_exploit"
     },
     "vps_git_pointer_drift_finding": {
       "discovered_at_vn": "2026-06-04T12:25:00+07:00",
