@@ -10,7 +10,21 @@
     "mb_lane_v10694_untouched": true,
     "contract_matrix_pass_count": "14/14",
     "leakage_violations": 0,
-    "owner_decision_needed": "F1: A (fix standalone now) / B (batch with next main.py touch — recommended) / C (skip, cosmetic only)",
+    "owner_decision_needed": "RESOLVED 2026-06-04 12:18: Owner chose PLAN B (batch with next main.py touch). Logged in DECISION_LOG.md.",
+    "owner_decision_resolved": {
+      "choice": "B",
+      "resolved_at_vn": "2026-06-04T12:18:00+07:00",
+      "next_steps": "When next main.py edit batch happens: StrReplace 7 spots (6 main.py + 1 gpt_analyzer.py), 16:38/17:38/18:38 → 16:36/17:36/18:36. Plus advance VPS git HEAD via 'git reset --soft origin/master' (HEAD pointer drift finding). Pre/post 4-table zero-drift required."
+    },
+    "vps_git_pointer_drift_finding": {
+      "discovered_at_vn": "2026-06-04T12:25:00+07:00",
+      "vps_head": "94242fb",
+      "origin_master": "715ce32",
+      "lag_commits": 4,
+      "working_tree_files_correct": true,
+      "runtime_impact": "NONE",
+      "fix_plan": "Batch with Plan B F1: git reset --soft origin/master on VPS (advance HEAD only, no working-tree change)"
+    },
     "self_verify_schedule_today": ["17:45 §36G C3 rerun_post_mt MB 04/06", "18:35 §36G C4 no-token pre_result MB 04/06", "18:40 push V10697.1 declaring FULL_CLOSURE_PASS or PARTIAL_READY for 04/06"]
   },
   "v10697_audit_details": {
