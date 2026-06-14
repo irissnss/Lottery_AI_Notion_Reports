@@ -1,0 +1,60 @@
+{
+  "report": "V10709 MN/MT vs MB lane mechanism + MB-rules-method application audit",
+  "data_asof": "2026-06-13",
+  "measured_on": "live VPS DB (read-only audit, official untouched)",
+  "hit_definition": "number in day winning 2-digit tail-set (all prizes)",
+  "random_baseline_1num_pct": {"MB": 23.7, "MN": 42.4, "MT": 34.8},
+
+  "mechanism": {
+    "MN": {"type": "model-AI-driven", "method": "D_w06 vote over predictions + per-region TOP-K (K=25/22)", "uses_model_votes": true, "anti_herd": false},
+    "MT": {"type": "model-AI-driven", "method": "D_w06 vote over predictions + TOP-K (K=10, stricter)", "uses_model_votes": true, "anti_herd": false},
+    "MB": {"type": "rule-driven", "method": "MANUAL soi-cau drive_weight + same-day MN/MT board injection (V10693/V2)", "uses_model_votes": false, "anti_herd": true}
+  },
+
+  "live_since_2026-06-04": {
+    "n_days": 10,
+    "MB_V2_rule":   {"top1": 30.0, "top2": 20.0, "top3": 0.0,  "xien2": 0.0,  "xien3": 0.0,  "official_top1": 40.0},
+    "MN_OUTPUT_model": {"top1": 30.0, "top2": 30.0, "top3": 50.0, "xien2": 20.0, "xien3": 20.0, "official_top1": 50.0},
+    "MT_OUTPUT_model": {"top1": 40.0, "top2": 10.0, "top3": 30.0, "xien2": 0.0,  "xien3": 0.0,  "official_top1": 40.0}
+  },
+  "last_30d": {
+    "n_days": 30,
+    "MB_V2_rule":   {"top1": 23.3, "top2": 16.7, "top3": 20.0, "xien2": 6.7,  "xien3": 3.3,  "official_top1": 16.7},
+    "MN_OUTPUT_model": {"top1": 43.3, "top2": 30.0, "top3": 53.3, "xien2": 16.7, "xien3": 13.3, "official_top1": 46.7},
+    "MT_OUTPUT_model": {"top1": 36.7, "top2": 33.3, "top3": 30.0, "xien2": 6.7,  "xien3": 3.3,  "official_top1": 30.0}
+  },
+
+  "mb_method_applied_to_mnmt": {
+    "applied": true,
+    "since": "2026-06-10",
+    "components": {
+      "V10707_doctrine_shadow": {
+        "what": "A/B: TREATMENT re-calls 7 LLMs with MB-style rule DOCTRINE in prompt; CONTROL = same models official picks (no doctrine)",
+        "style": "HYBRID (model votes + rule doctrine in prompt), NOT pure rule-driven (because model consensus HELPS MN/MT)",
+        "cron": "MN 05:00, MT 16:50 VN",
+        "region_independent": true,
+        "window_doctrine": "MN/MT emphasize 12W/16W (vs MB 8W)"
+      },
+      "V10708_rule_ranker": {
+        "what": "daily cumulative learning + lifecycle + ranking for MN/MT (mirror mb_rule_ranker), writes mined_rules_mn_daily/mt_daily",
+        "cron": "04:40 VN",
+        "snapshots_so_far": 5,
+        "feeds": "mn_rule_context (10 rows), mt_rule_context (8 rows) -> doctrine prompt"
+      }
+    },
+    "ab_result_so_far": {
+      "MN": {"settled_days": 4, "treatment_doctrine_top1_pct": 75.0, "control_no_doctrine_top1_pct": 75.0, "days_doctrine_changed_bt": 0, "verdict": "no effect yet (doctrine == control every day)"},
+      "MT": {"settled_days": 3, "treatment_doctrine_top1_pct": 33.3, "control_no_doctrine_top1_pct": 66.7, "days_doctrine_changed_bt": 1, "verdict": "slightly worse so far (1 change hurt: 06-11 doctrine 16 miss vs control 54 hit)"},
+      "caveat": "Sample TOO SMALL (~4-5 days since 06-10). Owner accepted ~2 weeks API cost. Conclusion only after full 2 weeks (~2026-06-24)."
+    }
+  },
+
+  "branch_presence": {
+    "MB_PERPOS_RULEDRIVEN_V2": "10 days (06-04..06-13)",
+    "MN_OUTPUT_V1": "11 days", "MT_OUTPUT_V1": "10 days",
+    "MN_DOCTRINE_AB_V1": "6 rows", "MT_DOCTRINE_AB_V1": "4 rows"
+  },
+
+  "official_integrity": "READ-ONLY audit; official 4 tables not written; no code changed this session.",
+  "honest_summary": "MN/MT lane = model-AI-driven (NOT same as MB rule-driven anti-herd) by design. MB rules method WAS applied to MN/MT (V10707 doctrine A/B + V10708 ranker, hybrid, since 06-10) but improvement NOT yet proven (MN no effect, MT slightly worse, tiny sample). MB V2 beats weak official MB over 30d (23.3% vs 16.7%) but in strict 10-day live is ~parity (30% vs 40%) with xien weak (0%). MN lane strongest (xien2/3 16.7/13.3% 30d)."
+}

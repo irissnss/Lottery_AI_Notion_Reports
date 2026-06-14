@@ -1,14 +1,44 @@
 {
-  "latest_version": "V10699_POST_LIVE_T5",
+  "latest_version": "V10709_MNMT_MB_METHOD_AUDIT",
+  "v10709_mnmt_mb_method_audit": {
+    "report": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md",
+    "machine_readable": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json",
+    "type": "READ-ONLY audit (no code change, official untouched)",
+    "data_asof": "2026-06-13",
+    "note": "Owner 14/06 hoi: MN/MT lane co co che giong MB (model AI) khong + da ap dung phuong phap rules MB chua, co cai tien khong. KET QUA: (1) MN/MT = MODEL-AI-driven (D_w06 vote + TOP-K K=25/22 MN, K=10 MT) -- KHAC MB rule-driven anti-herd (V10693/V2 bo model vi dong thuan model hai MB). (2) Phuong phap rules MB DA AP DUNG cho MN/MT tu 10/06 dang HYBRID (model + doctrine rules trong prompt, giu model vi model giup MN/MT): V10707 doctrine A/B (treat=LLM co doctrine vs ctrl=official khong doctrine; cron MN 05:00/MT 16:50) + V10708 rule-ranker (hoc tich luy + lifecycle, cua so 12W/16W khac MB 8W, ghi mined_rules_mn/mt_daily, 5 snapshots, cron 04:40). (3) CAI TIEN CHUA KET LUAN -- mau qua nho: MN doctrine 0 thay doi (=control 4/4 ngay), MT doi 1 ngay va THUA (06-11). Can du ~2 tuan (~24/06). Live 10d per-position: MB V2 top1 30%/xien 0% (official 40%), MN top1 30%/xien2 20%/xien3 20% (official 50%), MT top1 40% (official 40%). 30d: MB V2 23.3% vs official 16.7% (vuot official MB yeu); MN 43.3% xien2/3 16.7/13.3; MT 36.7% vs official 30%. MN lane manh nhat; MB V2 ~parity + xien live yeu.",
+    "created_at_vn": "2026-06-14T10:45:00+07:00",
+    "official_touched": false,
+    "code_deployed": false,
+    "mn_mt_mb_mechanism": {
+      "MN": "model-AI (D_w06+TOPK)",
+      "MT": "model-AI (D_w06+TOPK K=10)",
+      "MB": "rule-driven anti-herd (V2)"
+    },
+    "mb_method_applied_to_mnmt": {
+      "applied": true,
+      "since": "2026-06-10",
+      "form": "HYBRID (model + doctrine rules)",
+      "improvement": "NOT_PROVEN_YET_small_sample"
+    }
+  },
   "v10699_post_live_t5": {
     "report": "V10699_POST_LIVE_T5_PUBLIC_SAFE/V10699_POST_LIVE_T5_20260604_VN_PUBLIC.md",
     "note": "Post-live T5 04/06. Owner reported UI /du-doan-test 3 regions not working + predictions bad. UI diagnosis: backend 100% healthy (all 3 regions build success=True, JS syntax 0 errors, route has Cache-Control no-store so NOT stale cache, requires admin auth). auth/check returns authenticated=false without session → ROOT CAUSE likely OWNER SESSION EXPIRED → owner must re-login + hard refresh; if still broken send F12 console error (no blind code fix since server-side all healthy). Predictions 04/06 HONEST: official BT 1/3 win (MB=94 WIN, MN=10 LOSE, MT=42 LOSE); lane OUTPUT BT 1/3 (MB 3/3 numbers hit 16/24/46, MT 1/3, MN 0/3). MN+MT genuinely bad today both lanes; MB excellent. §36G FULL_CLOSURE_PASS=TRUE for 04/06 (C1-C4 all pass: MB rerun_post_mt 7 models @17:30 clean + 7/7 no-token pre_result non-empty clean). Pipeline ran correctly (PASS pipeline != prediction win). Scrape FAIL warnings at 16:30/18:30 were retry-before-source-update, actual came in OK (MN 16:36, MT 17:30, MB 18:32). READ-ONLY, official untouched.",
     "created_at_vn": "2026-06-04T21:45:00+07:00",
     "official_touched": false,
     "ui_root_cause": "OWNER_SESSION_EXPIRED (backend healthy, no-store cache, JS ok) — re-login required",
-    "predictions_04_06": {"official_bt_win": "1/3 (MB only)", "lane_output_bt_win": "1/3 (MB 3/3 numbers)", "mn_mt": "both lanes LOSE", "mb": "excellent both lanes"},
+    "predictions_04_06": {
+      "official_bt_win": "1/3 (MB only)",
+      "lane_output_bt_win": "1/3 (MB 3/3 numbers)",
+      "mn_mt": "both lanes LOSE",
+      "mb": "excellent both lanes"
+    },
     "s36g_full_closure_04_06": "PASS (4/4 conditions)",
-    "pending_plan_b_batch": ["F1 clock-drift", "MT materializer scheduler:6740-6776", "VPS git HEAD advance"]
+    "pending_plan_b_batch": [
+      "F1 clock-drift",
+      "MT materializer scheduler:6740-6776",
+      "VPS git HEAD advance"
+    ]
   },
   "v10698_dig_propose": {
     "report": "V10698_DIG_AND_PROPOSE_PUBLIC_SAFE/V10698_DIG_AND_PROPOSE_VN_PUBLIC.md",
@@ -45,7 +75,11 @@
       "runtime_impact": "NONE",
       "fix_plan": "Batch with Plan B F1: git reset --soft origin/master on VPS (advance HEAD only, no working-tree change)"
     },
-    "self_verify_schedule_today": ["17:45 §36G C3 rerun_post_mt MB 04/06", "18:35 §36G C4 no-token pre_result MB 04/06", "18:40 push V10697.1 declaring FULL_CLOSURE_PASS or PARTIAL_READY for 04/06"]
+    "self_verify_schedule_today": [
+      "17:45 §36G C3 rerun_post_mt MB 04/06",
+      "18:35 §36G C4 no-token pre_result MB 04/06",
+      "18:40 push V10697.1 declaring FULL_CLOSURE_PASS or PARTIAL_READY for 04/06"
+    ]
   },
   "v10697_audit_details": {
     "report": "V10697_REGION_DAY_AUDIT_PUBLIC_SAFE/V10697_AUDIT_DETAILS_VN_PUBLIC.md",

@@ -1,5 +1,17 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10709** — `V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md` (READ-ONLY audit 14/06, official untouched. Owner hỏi MN/MT lane có giống MB về model AI + đã áp dụng phương pháp rules MB chưa. KẾT QUẢ: MN/MT = MODEL-AI-driven (D_w06+TOP-K) ≠ MB rule-driven anti-herd (V2 bỏ model vì đồng thuận hại MB). Phương pháp rules MB ĐÃ áp dụng cho MN/MT từ 10/06 dạng HYBRID (model + doctrine rules trong prompt): V10707 doctrine A/B + V10708 ranker (cửa sổ 12W/16W, 5 snapshots). CẢI TIẾN CHƯA KẾT LUẬN — mẫu nhỏ: MN doctrine 0 thay đổi (=control), MT đổi 1 ngày & thua. Cần đủ 2 tuần (~24/06). Live 10d: MB V2 top1 30%/xiên 0% (official 40%), MN top1 30%/xiên2-3 = 20% (official 50%), MT 40%. 30d: MB V2 23.3% > official MB yếu 16.7%; MN mạnh nhất 43.3% xiên 16.7/13.3. Data as-of 2026-06-13).
+
+## Quick links — V10709 (MN/MT vs MB METHOD AUDIT)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🔍 **[AUDIT REPORT (MN/MT vs MB + MB-rules application)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md)**
+3. 📊 **[Measurements (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json)**
+
+---
+
+# REPORT INDEX (prior)
+
 Latest: **V10699** — `V10699_POST_LIVE_T5_PUBLIC_SAFE/V10699_POST_LIVE_T5_20260604_VN_PUBLIC.md` (Post-live T5 04/06. UI /du-doan-test "không hoạt động" → backend 100% healthy, JS 0 errors, route no-store cache → ROOT CAUSE likely owner session expired (re-login). Predictions HONEST: BT 1/3 (MB win 94 + lane 16/24/46 all 3 hit; MN+MT both lanes LOSE). §36G FULL_CLOSURE_PASS 04/06 (4/4). READ-ONLY official untouched).
 
 ## Quick links — V10699 (POST-LIVE T5)
