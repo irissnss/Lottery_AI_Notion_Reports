@@ -1,0 +1,41 @@
+{
+  "version": "V10720",
+  "created_at_vn": "2026-06-14T21:30:00+07:00",
+  "type": "READ-ONLY audit + UI lane-test fixes",
+  "official_touched": false,
+  "code_deployed": "UI lane-test only (V10715-V10719); official/predictions/final_bundles untouched",
+  "window": "2026-05-15..2026-06-14",
+  "metric": "test_bt_status (BT lo-style, any-tail), Wilson CI95",
+  "plus299_claim_correction": {
+    "old_claim": "lane test BT +299M vs official -53.8M (1 month)",
+    "verdict": "OVERSTATED (selection bias best-per-region + dropped MT loss + no CI/single-window); NOT fabricated (MN/MB did beat this window) but NOT robust",
+    "causal": "OK (top methods gap=0 created same-day, no backfill)"
+  },
+  "oos_bt_winrate": {
+    "MN": {"official": 48.4, "beats_sure": [{"method": "ADAPTIVE_EXPLOIT/HYBRID", "wr": 64.5, "ci": [52, 75]}]},
+    "MT": {"official": 32.4, "beats_sure": []},
+    "MB": {"official": 12.9, "beats_sure": [{"method": "PRIOR_REGION_CONTEXT", "wr": 29.0, "ci": [16, 47]}]}
+  },
+  "single_model_signal": {
+    "MN": {"official": 48.4, "avg_model": 42.6, "top_model": "gpt-5.5 54.8%", "aggregation": "ADDS_VALUE"},
+    "MT": {"official": 32.3, "avg_model": 37.1, "top_model": "deepseek-reasoner 48.4%", "aggregation": "DRAGS_DOWN"},
+    "MB": {"official": 16.1, "avg_model": 20.1, "top_model": "gpt-5.4 29%", "aggregation": "DRAGS_DOWN_plus_models_weak_rebuilding"}
+  },
+  "ui_design": {
+    "per_number_card": "BT/SP1/SP2 each independent method, chosen by hit-rate per region x weekday, specialist pool (XIEN/OUTPUT excluded)",
+    "applies_to": ["MN", "MT", "MB"],
+    "multidir_output_card": "kept per owner decision (not deleted)"
+  },
+  "candidates_forward_watch": {
+    "MN": "ADAPTIVE_EXPLOIT (+HYBRID)",
+    "MB": "PRIOR_REGION_CONTEXT",
+    "MT": "none (keep official)"
+  },
+  "milestones": {
+    "2026-06-15": "CP-4.0 cross-region leakage TIER-4",
+    "2026-06-19": "A/B doctrine MB evaluation",
+    "2026-06-24": "doctrine MN/MT GO/DROP",
+    "2026-07-12": "confidence layer recheck",
+    "window2_oos": "~mid July (confirm candidates)"
+  }
+}

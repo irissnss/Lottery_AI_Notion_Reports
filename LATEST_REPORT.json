@@ -1,5 +1,17 @@
 {
-  "latest_version": "V10709_MNMT_MB_METHOD_AUDIT",
+  "latest_version": "V10720_OOS_AUDIT_PERMODEL_UI",
+  "v10720_oos_audit_permodel_ui": {
+    "report": "V10720_OOS_AUDIT_PERMODEL_UI_PUBLIC_SAFE/V10720_OOS_AUDIT_PERMODEL_UI_20260614_VN_PUBLIC.md",
+    "machine_readable": "V10720_OOS_AUDIT_PERMODEL_UI_PUBLIC_SAFE/machine_readable/V10720_MEASUREMENTS.json",
+    "type": "READ-ONLY audit + UI lane-test fixes (official untouched)",
+    "data_asof": "2026-06-14",
+    "note": "Owner 'dung hua theo, chung minh bang so lieu' + dao GOC (output bi chan boi tin hieu DON-MODEL). (1) DINH CHINH '+299tr lane BT thang official': NOI QUA (selection bias best-per-mien + bo MT thua + khong CI/1-window). OOS Wilson CI: MN ADAPTIVE_EXPLOIT/HYBRID 64.5% VUOT official 48.4% (chac); MB PRIOR_REGION 29% VUOT 12.9%; MT KHONG method nao vuot. Nhan qua OK (gap=0). Nhung multiple-comparison + 1 window -> ung vien hua hen, CHUA du chac. (2) Tin hieu don-model (28 model/mien): official MN 48.4% > TB-model 42.6% (gop TOT); official MT 32.3% < TB 37.1% + MB 16.1% < 20.1% -> GOP dang KEO MT/MB XUONG (khong phai loi model). MN/MT model manh (top 48-55%), MB con yeu (top 29%, dang xay lai). (3) UI V10715-V10719: card so phu = 3 method doc lap per vi tri, doc lap mien x thu, loai XIEN/OUTPUT. Card multidir GIU NGUYEN theo owner. Ung vien forward: MN ADAPTIVE_EXPLOIT, MB PRIOR_REGION; MT giu official. Gate adopt = 2 window doc lap.",
+    "created_at_vn": "2026-06-14T21:30:00+07:00",
+    "official_touched": false,
+    "plus299_verdict": "OVERSTATED (selection-bias, single-window) — not fabricated, not robust",
+    "single_model_aggregation": {"MN": "adds_value", "MT": "drags_down", "MB": "drags_down + models_weak"},
+    "candidates_forward": {"MN": "ADAPTIVE_EXPLOIT", "MB": "PRIOR_REGION", "MT": "none"}
+  },
   "v10709_mnmt_mb_method_audit": {
     "report": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md",
     "machine_readable": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json",
