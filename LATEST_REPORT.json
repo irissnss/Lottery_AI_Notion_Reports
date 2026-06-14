@@ -1,7 +1,7 @@
 {
   "latest_version": "V10709_MNMT_MB_METHOD_AUDIT",
   "v10709_mnmt_mb_method_audit": {
-    "report": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md",
+    "report": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md",
     "machine_readable": "V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json",
     "type": "READ-ONLY audit (no code change, official untouched)",
     "data_asof": "2026-06-13",

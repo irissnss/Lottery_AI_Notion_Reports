@@ -1,11 +1,23 @@
 # REPORT INDEX (auto-discovery)
 
-Latest: **V10709** — `V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md` (READ-ONLY audit 14/06, official untouched. Owner hỏi MN/MT lane có giống MB về model AI + đã áp dụng phương pháp rules MB chưa. KẾT QUẢ: MN/MT = MODEL-AI-driven (D_w06+TOP-K) ≠ MB rule-driven anti-herd (V2 bỏ model vì đồng thuận hại MB). Phương pháp rules MB ĐÃ áp dụng cho MN/MT từ 10/06 dạng HYBRID (model + doctrine rules trong prompt): V10707 doctrine A/B + V10708 ranker (cửa sổ 12W/16W, 5 snapshots). CẢI TIẾN CHƯA KẾT LUẬN — mẫu nhỏ: MN doctrine 0 thay đổi (=control), MT đổi 1 ngày & thua. Cần đủ 2 tuần (~24/06). Live 10d: MB V2 top1 30%/xiên 0% (official 40%), MN top1 30%/xiên2-3 = 20% (official 50%), MT 40%. 30d: MB V2 23.3% > official MB yếu 16.7%; MN mạnh nhất 43.3% xiên 16.7/13.3. Data as-of 2026-06-13).
+Latest: **V10709** — `V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md` (MN/MT vs MB lane mechanism + MB-rules-method application audit. Read-only; official untouched.)
+
+## Quick links — V10709 (MN/MT vs MB method audit)
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. 🎯 **[REPORT V10709 VN](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md)**
+3. 📊 **[Machine-readable measurements (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json)**
+
+---
+
+# REPORT INDEX (auto-discovery)
+
+Latest: **V10709** — `V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md` (READ-ONLY audit 14/06, official untouched. Owner hỏi MN/MT lane có giống MB về model AI + đã áp dụng phương pháp rules MB chưa. KẾT QUẢ: MN/MT = MODEL-AI-driven (D_w06+TOP-K) ≠ MB rule-driven anti-herd (V2 bỏ model vì đồng thuận hại MB). Phương pháp rules MB ĐÃ áp dụng cho MN/MT từ 10/06 dạng HYBRID (model + doctrine rules trong prompt): V10707 doctrine A/B + V10708 ranker (cửa sổ 12W/16W, 5 snapshots). CẢI TIẾN CHƯA KẾT LUẬN — mẫu nhỏ: MN doctrine 0 thay đổi (=control), MT đổi 1 ngày & thua. Cần đủ 2 tuần (~24/06). Live 10d: MB V2 top1 30%/xiên 0% (official 40%), MN top1 30%/xiên2-3 = 20% (official 50%), MT 40%. 30d: MB V2 23.3% > official MB yếu 16.7%; MN mạnh nhất 43.3% xiên 16.7/13.3. Data as-of 2026-06-13).
 
 ## Quick links — V10709 (MN/MT vs MB METHOD AUDIT)
 
 1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
-2. 🔍 **[AUDIT REPORT (MN/MT vs MB + MB-rules application)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_VN_PUBLIC.md)**
+2. 🔍 **[AUDIT REPORT (MN/MT vs MB + MB-rules application)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md)**
 3. 📊 **[Measurements (JSON)](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/machine_readable/V10709_MEASUREMENTS.json)**
 
 ---
@@ -557,3 +569,4 @@ Current override: read the top **READ THIS FIRST** block in `V105_30_FINALIZATIO
 - [V105.19 Runtime Control Matrix](V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_RUNTIME_CONTROL_MATRIX.md)
 - [V105.19 Lane Test Contract](V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_LANE_TEST_CONTRACT.md)
 - [V105.19 Identity Duplicate Audit](V105_19_HARD_STABILIZATION_20260510/evidence/V105_19_IDENTITY_DUPLICATE_AUDIT.md)
+

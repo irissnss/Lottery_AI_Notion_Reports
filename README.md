@@ -1,8 +1,13 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10690 BACKTEST + DEPLOY REVIEW (walk-forward 30d — all branches beat control)**
+**Latest version: V10709 MN/MT vs MB lane mechanism audit**
 
 ## Latest report for AI tools
+
+- [**V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md**](./V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md) — **NEW**
+  - Read-only audit on live VPS DB (`data_asof=2026-06-13`): MN/MT remain model-driven; MB remains rule-driven.
+  - MB-style doctrine on MN/MT since 2026-06-10 has not yet shown a clear lift: MN unchanged vs control, MT slightly worse, sample still small.
+  - 30d last-window: MB V2 rule 23.3% top1 vs official 16.7%; MN 43.3% top1; MT 36.7% top1.
 
 - [**V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md**](./V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE/V10690_BACKTEST_AND_DEPLOY_REVIEW_VN.md) — **NEW**
   - Walk-forward 30d (no look-ahead): control BT 6.7% (weak); A 16.7% (+10pp), B 13.3% (+6.7pp, 0 false-promo), C 10.0% (+3.3pp, 0 false-promo). All NEUTRAL (small noisy sample; true test = live 30d shadow).
