@@ -41,7 +41,17 @@
 - 4 bảng official hash IDENTICAL pre/post = `5b179fff7dcb7b71`.
 - KHÔNG promote lane→official (evidence không bền).
 
-## 5. Next
+## 5. Cập nhật P1.1 + 1b + 3 (2026-06-18 20:55)
 
-- Live-verify board mỗi ngày 2-3 tuần.
-- Cân nhắc Phase 1b (ẩn frozen khỏi panel lane cũ) + Phase 3 (chọn miền×thứ).
+Owner soi "nên chơi hôm nay hơi tệ, xui hay tính sai?" → verify 18/06 phát hiện **BUG hiển thị**:
+
+- **BUG:** board `today_bt` luôn lấy official kể cả khi play=LANE. MB khuyến cáo LANE chốt **75 = WIN** nhưng board hiện official **57 = LOSE** → tưởng trật. MN/MT OFFICIAL 99/62 LOSE là **xui thật** (variance ~33-45%/miền).
+- **Fix P1.1:** `today_bt` theo đúng luồng (LANE → `du_doan_test_results`; else official) + `today_source` + UI màu WIN/LOSE. VPS: MB src=LANE 75 WIN.
+- **Phase 1b:** board guard KHÔNG khuyến cáo method frozen (ép OFFICIAL) + hiện danh sách đã ẩn (method lane chết không có panel cũ riêng → enforce ở tầng quyết định).
+- **Phase 3:** `GET /api/admin/region-weekday-strength` + panel "SỨC MẠNH MIỀN × THỨ" (90d, tier tương đối). MN khỏe T2/T3/CN (TB 47%), MT đỉnh T5, MB chỉ T3 (TB 22%) → size cược theo miền×thứ (accuracy đã ở trần).
+- **An toàn:** 4 bảng official hash IDENTICAL; health 200; board+rwd 401 unauth; private push 42e2793.
+
+## 6. Next
+
+- Live-verify board + panel miền×thứ mỗi ngày 2-3 tuần.
+- Owner cân nhắc: size cược theo miền×thứ (MN mạnh, MB nhẹ); xét promote khi có bằng chứng settled bền.
