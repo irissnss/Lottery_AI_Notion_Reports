@@ -61,8 +61,15 @@ Owner phản biện đúng: "trần" sai từ — tín hiệu **CÓ**, nằm ở
 - **Caveat:** payout 1-ăn-98 hơi rộng + n~13/thứ → directional. SHADOW (output_eligible=0), chưa đụng ví/official.
 - **An toàn:** 4 bảng official hash IDENTICAL; health 200; ev 401; private push 73101a9.
 
-## 7. Next
+## 7. PA.1 — Gắn cặp SONG THỦ vào bảng NÊN CHƠI (2026-06-18 21:20)
 
-- Forward-track EV + panel miền×thứ 2-3 tuần; cân nhắc cron daily re-seed.
-- Đưa **số phụ + khuyến cáo 1số/song-thủ** lên board NÊN CHƠI (đang chờ owner).
+Owner soi ảnh hỏi "song thủ thì board hiện cặp + khuyến cáo gì" → tích hợp EV vào board.
+
+- Mỗi miền hiện thêm **số phụ + cặp** + dòng "Hôm nay Tx: 🎯 SONG THỦ a–b (ROI...)" hoặc "CHỈ 1 SỐ" theo EV của thứ hôm nay. Nguồn phụ: LANE→`test_lo2_json`, OFFICIAL→`final_bundles.lo2`.
+- **Live T5:** MN SONG THỦ **99–03** (ROI +18.7% / phụ +53.6%); MT **62–73** (+67.5% / +81.5%); MB **75–57** (+109% / +193%).
+- An toàn: 4 bảng official hash IDENTICAL; health 200; board 401; private push f1ee754.
+
+## 8. Next
+
+- Forward-track EV + board song-thủ 2-3 tuần; cân nhắc cron daily re-seed EV.
 - Size cược theo ROI miền×thứ (MB CN, MT T2 ưu tiên).
