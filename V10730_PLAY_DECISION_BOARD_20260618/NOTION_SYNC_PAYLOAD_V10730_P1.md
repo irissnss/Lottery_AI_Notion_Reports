@@ -51,7 +51,18 @@ Owner soi "nên chơi hôm nay hơi tệ, xui hay tính sai?" → verify 18/06 p
 - **Phase 3:** `GET /api/admin/region-weekday-strength` + panel "SỨC MẠNH MIỀN × THỨ" (90d, tier tương đối). MN khỏe T2/T3/CN (TB 47%), MT đỉnh T5, MB chỉ T3 (TB 22%) → size cược theo miền×thứ (accuracy đã ở trần).
 - **An toàn:** 4 bảng official hash IDENTICAL; health 200; board+rwd 401 unauth; private push 42e2793.
 
-## 6. Next
+## 6. Phase A — EV 1 SỐ vs SONG THỦ (khai thác số phụ, 2026-06-18 21:10)
 
-- Live-verify board + panel miền×thứ mỗi ngày 2-3 tuần.
-- Owner cân nhắc: size cược theo miền×thứ (MN mạnh, MB nhẹ); xét promote khi có bằng chứng settled bền.
+Owner phản biện đúng: "trần" sai từ — tín hiệu **CÓ**, nằm ở **số phụ**, bị giấu vì chỉ xuất 1 số.
+
+- **Bằng chứng:** 2-số coverage 30d MB 41.9% / MN 58.1% / MT 58.1% (vs 1-số 22.6/45.2/32.3). "Trần thật" (cả 2 trượt) MN/MT chỉ ~32-42% ngày.
+- **Đo EV** bằng đúng mô hình owner (cost 18k/điểm, payout 98k/điểm/nháy, per-đài): `ev_song_thu_shadow` + `/api/admin/ev-song-thu` + panel /monitoring.
+- **Kết quả 90d (nuanced):** MN T2/T3→1 số (phụ −EV), T5-CN→song thủ; MT T2 phụ +151% / T6T7→1 số; MB T3→1 số (+109%), CN→song thủ +318%, T5/T7 song thủ.
+- **Caveat:** payout 1-ăn-98 hơi rộng + n~13/thứ → directional. SHADOW (output_eligible=0), chưa đụng ví/official.
+- **An toàn:** 4 bảng official hash IDENTICAL; health 200; ev 401; private push 73101a9.
+
+## 7. Next
+
+- Forward-track EV + panel miền×thứ 2-3 tuần; cân nhắc cron daily re-seed.
+- Đưa **số phụ + khuyến cáo 1số/song-thủ** lên board NÊN CHƠI (đang chờ owner).
+- Size cược theo ROI miền×thứ (MB CN, MT T2 ưu tiên).
