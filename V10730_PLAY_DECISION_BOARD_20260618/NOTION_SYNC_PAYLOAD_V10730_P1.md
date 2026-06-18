@@ -69,7 +69,17 @@ Owner soi ảnh hỏi "song thủ thì board hiện cặp + khuyến cáo gì" �
 - **Live T5:** MN SONG THỦ **99–03** (ROI +18.7% / phụ +53.6%); MT **62–73** (+67.5% / +81.5%); MB **75–57** (+109% / +193%).
 - An toàn: 4 bảng official hash IDENTICAL; health 200; board 401; private push f1ee754.
 
-## 8. Next
+## 8. Phase B — Theo dõi P&L FORWARD 2-3 tuần (2026-06-18 21:45)
 
-- Forward-track EV + board song-thủ 2-3 tuần; cân nhắc cron daily re-seed EV.
-- Size cược theo ROI miền×thứ (MB CN, MT T2 ưu tiên).
+Owner: trộn-2-đầu +tiền nhưng không bền → GO dựng tracker. Verify **giá lô ĐÚNG: MB 27k, MN/MT 18k**.
+
+- **Trộn-2-đầu KHÔNG bền** (56d chẻ cửa sổ 14d): ngày lỗ > ngày lãi cả 3 miền; dấu đảo +/−/+/−; MN +tiền chủ yếu do ADAPTIVE leakage ảo + cửa sổ may; MB cả 56d thực ra −1.85M.
+- Dựng `pnl_forward_track_shadow` + `/api/admin/pnl-forward-track` + panel + **cron 22:30**. 6 chiến lược, 50 điểm, giá lô đúng, cờ leakage + max chuỗi lỗ.
+- **Readout 22d:** EV-gate +30M / max chuỗi lỗ 3 / sạch = **tốt nhất**; Song-thủ-LANE +50.3M nhưng **leakage ảo + forward −3.7M**; 1 số −17.9M; Best-flow max chuỗi lỗ 12.
+- Khuyến nghị: **KHÔNG đổi board theo trộn-2-đầu**; theo dõi cột forward 2-3 tuần.
+- An toàn: 4 bảng official hash IDENTICAL; health 200; pnl 401; SHADOW; private push d0f018b.
+
+## 9. Next
+
+- Theo dõi cột "forward" 2-3 tuần (từ 18/06). EV-gate đang dẫn (rủi ro thấp nhất).
+- Sau 2-3 tuần đủ mẫu forward sạch → mới quyết promote chiến lược nào.
