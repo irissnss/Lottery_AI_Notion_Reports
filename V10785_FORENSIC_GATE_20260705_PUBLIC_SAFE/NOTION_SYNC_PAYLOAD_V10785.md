@@ -16,4 +16,4 @@
 
 **GITHUB (chi tiết đầy đủ)**
 - `V10785_FORENSIC_GATE_20260705_PUBLIC_SAFE/BAO_CAO_TONG_V10785.md` (+ PARTIAL1, PARTIAL2)
-- Commits public: 785e544 · 8b76646 · e33af02 · [FILL_PUB_FINAL]. Private: d31b683 + [FILL_PRIV_FINAL].
+- Commits public: 785e544 · 8b76646 · e33af02 · 0dcd27d. Private: d31b683 · 7b05eaf.

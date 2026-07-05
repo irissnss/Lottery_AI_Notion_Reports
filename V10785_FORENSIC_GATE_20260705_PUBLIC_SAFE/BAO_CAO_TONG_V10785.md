@@ -77,7 +77,7 @@ Attribution rows mới 21:26→23:52 (`created_at > 21:26`): ai_chain 16 · auto
 
 ## 8. GOVERNANCE + ARTIFACT INDEX
 
-- Private commits: `d31b683` + commit chốt cuối phiên (board ref fix + scripts + docs). Public: `785e544` (partial#1) · `8b76646` (V10784 final) · `e33af02` (partial#2) · commit final (báo cáo này).
+- Private commits: `d31b683` · `7b05eaf` (chốt phiên: salvage + board ref fix + scripts + docs seq241). Public: `785e544` (partial#1) · `8b76646` (V10784 final) · `e33af02` (partial#2) · `0dcd27d` (final báo cáo này).
 - Docs: CHANGELOG V10785 · SSOT V10785 · FU-V10785-FORENSIC-GATE · AUTOMATION_STATE seq241 (+ Notion pages ghi ID).
 - Notion: V10784 page `3941d385-9bf8-81b6-8cd3-e9d6c42504c9` · V10785 page `3941d385-9bf8-817e-8d93-d53d17472e4d` · AS-BUILT `ea141094…` +7 blocks · HOME snapshot `495fa208…` refresh 21:22.
 - VPS: `/root/sandbox_v10785/` (sandbox_freeze.db, sandbox_b3.db, sandbox_board.db, b3_results.json, b3_d2_prompts.json, b3_run.log, b3_retry.log, b3_salvage.log) · rollback `scheduler.py.bak_v10785` + `model_registry.py.bak_v10785` + `gpt_analyzer.py.bak_v10785` + `_v10759_money_board.py.bak_v10785_p2ref`.
