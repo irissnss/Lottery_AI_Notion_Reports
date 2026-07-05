@@ -1,4 +1,4 @@
-# V10784 — BÁO CÁO PARTIAL #2 (PHẦN 1 + PHẦN 2 + tiến độ P3/P4) — 19:1x 05/07/2026
+# V10784 — BÁO CÁO PARTIAL #2 (PHẦN 1 + PHẦN 2 + tiến độ P3/P4) — 18:4x 05/07/2026
 
 (Nộp sớm trước hạn 21:00 — P1/P2 đã đóng xong, P4 cũng đã xong 4/4.)
 
@@ -59,7 +59,7 @@ Ghi chú trung thực: docstring cũ trong `_call_gemini` nói "thinking_budget=
 
 ## PHẦN 4 — XONG SỚM 4/4 (chi tiết file riêng trong folder này)
 
-- **4.1** History filter + phân trang server-side: API `offset`+`total_count` (verify live total_count=5202), UI index.html thêm lọc LANE (official/shadow) + pager; user-view.js chuyển server-side pagination + mặc định 7 ngày. Deploy 18:09+18:47.
+- **4.1** History filter + phân trang server-side: API `offset`+`total_count` (verify live total_count=5202), UI index.html thêm lọc LANE (official/shadow) + pager; user-view.js chuyển server-side pagination + mặc định 7 ngày. Deploy backend 18:09 + frontend 18:16 (hash VPS = local `18e9def3…` verified).
 - **4.2** Ma trận độc lập miền×thứ×tuần: `P42_MA_TRAN_DOC_LAP_MIEN_THU_TUAN.md` — 5 lớp × ~30 tham số gắn nhãn; 3 đề xuất tách chờ ký (ĐX-1 skip/confirm threshold per miền, ĐX-2 output_eligible per miền qua allowed_regions sẵn có, ĐX-3 reasoning effort GIỮ + đo 14 ngày).
 - **4.3** CYCLE SCAN: bảng `cycle_scan_shadow_v10784` (1,614 cells, 696 đủ mẫu) + API `/api/admin/cycle-scan` (401 unauth ✅) + panel /monitoring (auto-refresh 60s) — deploy 18:57. Sanity: MN D-1 per-day đề∈lô hôm trước = 82.4% (n=369 window dài) / 75.4% (từ 10/05) — khớp mức ~73-82% owner nhớ; per-trial 45.5% vs base 43% (edge mỏng — số liệu trung thực). MB G2: per-day prevG2∈lô lag7=50%/lag28=50% (từ 10/05), lag2=44.9% (window dài) — tín hiệu G2 lag có mặt nhưng cell-level cần thêm mẫu. Top cells OOS-dương ổn định: MT T2 lag7 DB→LO2 +20.6pp (OOS +51pp, n=16), MN T2 lag28 DB→LO2 +25.5pp (OOS +48pp, n=24)... CẤM áp official trước 14/07 (flag trong bảng + API + UI).
 - **4.4** Ma trận trùng lặp: `P44_MA_TRAN_TRUNG_LAP_GIU_HOPNHAT_BO.md` — 7 cụm, ~14 endpoint + ~12 card đề xuất BỎ/HỢP NHẤT, 5 hành động chờ ký S1–S5. KHÔNG xóa gì phiên này.
