@@ -97,6 +97,31 @@ Phương pháp: (a) z-test Poisson-binomial — kỳ vọng trúng ngày d = s�
 
 **Đề xuất K9 (CHỜ KÝ):** lane shadow `HERD_FADE_V1` — khi bầy top1 ≥10 model thì né số đó, thay bằng ứng viên hạng 2 ngoài bầy; đo shadow 14 ngày rồi mới bàn. KHÔNG đụng official voting khi anh chưa ký.
 
+## PHẦN 1E — ĐÍNH CHÍNH + XÁC NHẬN "OUTPUT ĐANG BÁM THEO ML" (owner 18:31)
+
+Anh hỏi "Em có xem kỹ không mà nói thế — output hiện tại đang bám theo ML thì phải, và ML MT đang không ổn". Em tái dựng phiếu bầu official MT từng ngày theo đúng logic production (gate BT≥14%/WR≥28% + cap top-13 theo BT-rate 30 ngày + trọng số BT × strength × verdict):
+
+**ANH ĐÚNG — và em đính chính phần 1D:**
+
+| Ngày | Official BT | Ai bầu số đó |
+|---|---|---|
+| 04/07 | 98 ✓ | 5 ML — 0 AI |
+| 05/07 | 49 ✗ | 6 ML — 0 AI |
+| 06/07 | 76 ✗ | 3 ML + 2 AI |
+| 07/07 | 63 ✗ | 6 ML — 0 AI |
+| 08/07 | 59 ✗ | **6 ML — 0 AI** (điểm vote: 59=0.337 thắng 41=0.283 của claude-opus+gemini-pro) |
+
+- **13/14 ngày gần nhất, số official MT = đúng số khối ML bầu chụm** (match 30 ngày = 82%).
+- Cơ chế: 7/13 ghế voters là ML và khối này **chụm 5-6/7 model vào 1 số** (chung pipeline anh em: random-forest / smart-ml / smart-ensemble / combo-no-token / meta-learning) trong khi 6 model AI tán loạn mỗi con một số → vote trọng số LUÔN nghiêng khối ML. Official MT thực chất là "máy đồng thuận ML".
+- **ĐÍNH CHÍNH:** hôm qua em nói official bị bầy-86 kéo là SAI. Bầy 86 gồm 15/26 model nhưng 3 model mới chỉ chạy shadow (không có quyền vote); official không chọn 86 — nó chọn 59 của khối ML. Em xin lỗi vì kết luận vội.
+- **ML MT không ổn — đúng:** form 7 ngày: meta-learning **0/7** (vẫn giữ ghế vote vì gate dùng BT-rate 30 ngày = trọng số nguội 26.7%) · combo-super, combo-no-token, smart-ensemble 2/7 · random-forest, smart-ml, xgboost 3/7. Ngược đời: lstm 3/7 (nóng nhất khối) bị gate loại (13.3% < 14) và claude-sonnet-4-6 (4/7 = 57% tuần này) bị cap top-13 loại; claude-opus-4-6 đang 6/7 = 86% tuần này có vote nhưng bị khối ML đè.
+
+**Phản chứng (mô phỏng vote, 14 ngày / 35 ngày):** ACTUAL 29%/29% · bỏ-ML 36%/31% · chỉ-ML 36%/37% · trọng-số-recency(7d×60%+30d×40%) 43%/34%. Chênh 1-3 hit = trong nhiễu thống kê → em KHÔNG đề xuất đổi selector từ data này. Chẩn đoán đúng: vấn đề không phải "có ML trong vote" — mà là **khối ML tương quan cao hoạt động như 1 phiếu khổng lồ, và khi khối lạnh thì official chết chùm nguyên chuỗi** (4 ngày).
+
+**Deploy 18:53 (guard: 3 bundle hôm nay xong + qua 18:10):** khối `ml_bloc` trong module + panel **🤝 OFFICIAL bám khối ML** mỗi miền tại /monitoring: % ngày official = phiếu khối (30d), hit khối vs hit official, số khối hôm nay + form 7d từng model ML. Sandbox PASS (MT match 82% · MN match 27% — official MN KHÔNG bám ML và đang khoẻ 45% · MB match 58%) · health 200 · admin 401 · hash 4 bảng IDENTICAL (`8d0ddc04/5243ade7/76af5ec6/59b55081`) · backup `.bak_20260708_185351`.
+
+**Đề xuất K10 (CHỜ KÝ):** lane shadow `ML_BLOC_DEDUP_V1` — de-correlation: khối ML sibling đếm như 1.5 phiếu thay vì 5-6 phiếu, đo shadow 14 ngày song song K9 (K9 đo mặt bầy-26-model, K10 đo mặt khối-ML-trong-13-voter — bổ sung nhau). KHÔNG đụng official khi anh chưa ký.
+
 ## PHẦN 2 — AUDIT LIVE 07-08/07 (cùng phiên, hỏi trước đó)
 
 - **Kết quả 07/07:** BT 3 miền đều LOSE (MN 30 · MT 63 · MB 87). MT lạnh sâu: 0/26 model WIN. MB: doctrine ML-plurality chọn 87 trong khi plain-vote top1=62 TRÚNG (12 model WIN với 62) → **scorecard doctrine 06-07/07: 1W-1L**, backtest owner-ký +30.8M, 1 ngày thua chưa đủ revert — theo dõi hết dom≤10.

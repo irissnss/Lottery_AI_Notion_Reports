@@ -11,7 +11,10 @@ Nguyên văn tin nhắn owner trong phiên (thứ tự thời gian):
 7. "Em phát hiện ra vấn đề gì sau khi anh gợi ý đề xuất là gì em phải chi tiết rõ ràng chứ"
 8. "Ko có output để chơi thật sự ah em, chứ 3 luông cũng đoán mò ah em"
 9. "ML MT có vẻ đang thảm hại khi thay đổi ah em xem thử dùm anh live MT xong rồi , output MT có vẻ cần phải xem lại thật kỹ ah em cả 3 luồng luôn đó em."
+10. "Em có xem kỹ không mà nói thế output hiện tại đang bám theo ML thì phải và ML hiện tại MT đang có vẻ không ổn mà em xem kỹ lại dùm anh thử xem"
 
-Bối cảnh: câu 1-5 → audit live 07-08/07 (kết quả, coverage, model lỗi, method, hạ tầng — phần 2 của BAO_CAO_TONG_V10787). Câu 6 → phần đối chứng 3 mặt + deploy khối ⚔ ĐỐI CHỨNG (phần 1 + 3).
+Bối cảnh: câu 1-5 → audit live 07-08/07 (kết quả, coverage, model lỗi, method, hạ tầng — phần 2 của BAO_CAO_TONG_V10787). Câu 6 → phần đối chứng 3 mặt + deploy khối ⚔ ĐỐI CHỨNG (phần 1 + 3). Câu 8 → V10787-C đo vs random. Câu 9 → V10787-D MT deep-dive + panel 🐑 BẦY. Câu 10 → V10787-E tái dựng phiếu bầu + ĐÍNH CHÍNH.
 
 Trả lời chốt cho câu 6: 3 mặt gần như không trùng số (by design); gộp cặp thua mặt tốt nhất cả 3 miền; điểm mạnh = chọn đúng mặt theo miền qua weekly-lock /choi (lock 06/07 đang khớp data 21d); panel ⚔ ĐỐI CHỨNG live tại /monitoring từ 14:01 08/07 để soi hằng tuần trước khi khóa method.
+
+Trả lời chốt cho câu 10 (V10787-E): Owner ĐÚNG — 13/14 ngày gần nhất số official MT = đúng số khối ML bầu chụm (match 30d 82%); 08/07 BT=59 do 6 ML + 0 AI bầu. Official MT thực chất = máy đồng thuận ML vì 7/13 ghế là ML và khối chụm 5-6/7 cùng 1 số trong khi AI tán loạn. ĐÍNH CHÍNH V10787-D: official không bị bầy-86 kéo (3 model mới shadow-only không có quyền vote). ML MT lạnh thật (meta-learning 0/7 vẫn giữ ghế vote vì gate dùng 30d nguội; lstm nóng nhất khối bị gate loại; claude-opus 6/7 tuần này bị khối đè). Phản chứng bỏ-ML/chỉ-ML/recency = trong nhiễu → không đổi selector, đề xuất K10 ML_BLOC_DEDUP_V1 shadow 14 ngày. Panel 🤝 OFFICIAL-bám-khối-ML live tại /monitoring từ 18:53 08/07.
