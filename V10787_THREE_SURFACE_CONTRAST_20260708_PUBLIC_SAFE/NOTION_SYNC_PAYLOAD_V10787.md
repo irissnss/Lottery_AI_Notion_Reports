@@ -13,6 +13,8 @@ Owner hỏi: "official 1 đường, lane test 1 nẻo, /choi 1 kiểu — mỗi 
 
 **Audit live 07-08/07 cùng phiên:** BT 3 miền LOSE 07/07 (MT 0/26 model WIN) · MB doctrine chọn 87, plain-vote 62 TRÚNG → scorecard 1W-1L, theo dõi hết dom≤10 · coverage 78/78 · late-fill cứu ca 2 (gemma MT 439s) · hạ tầng ALL_GREEN (T-10 đúng giây, watchdog 0 alert, cron gate log OK) · /choi tuần: MN +1.7M · MT -2.8M · MB -3.2M sau 3 ngày.
 
+**Bổ sung 15:xx — owner hỏi "3 luồng cũng đoán mò à?" (V10787-C):** Z-test + Monte Carlo 5000 người mò, 59 ngày: OFFICIAL-BT ≈ đoán mò thật (combined z=-1.12; MB 15.3% vs mò 23.7%, z=-1.53 TỆ hơn mò) — trực giác owner đúng cho mặt này. LANE-AE có edge THẬT khiêm tốn: cùng chiều 3 miền, combined z=+1.78 (p≈0.038); P&L percentile 91/75/89 vs dân mò (dân mò median ÂM). MN BT1 1-số hoà vốn lịch sử (percentile 52) — sống nhờ form 21d, gắn trigger đổi mặt nếu 21d âm. Badge z + mốc "đoán mò" thêm vào khối ⚔ /monitoring (deploy 15:06, hash IDENTICAL).
+
 **Quyết định chờ ký:** K8 gemma MB 429 (K8a slim-context / K8b nâng tier / K8c chấp nhận). Nhắc: CP-L5 hard deadline 09/07 (ngày mai).
 
 **Chi tiết đầy đủ:** GitHub `Lottery_AI_Notion_Reports/V10787_THREE_SURFACE_CONTRAST_20260708_PUBLIC_SAFE/BAO_CAO_TONG_V10787.md`

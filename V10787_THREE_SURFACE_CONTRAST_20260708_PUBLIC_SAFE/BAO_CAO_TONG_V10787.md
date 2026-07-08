@@ -58,6 +58,23 @@ Panel **SO GĂNG 3 TẦNG** tại `/monitoring` giờ có thêm khối **⚔ Đ�
 
 ---
 
+## PHẦN 1B — "3 LUỒNG CŨNG ĐOÁN MÒ À?" (owner hỏi tiếp 14:59 — đo vs random baseline)
+
+Phương pháp: (a) z-test Poisson-binomial — kỳ vọng trúng ngày d = số-đuôi-distinct/100 của chính ngày đó; (b) Monte Carlo 5000 người bốc số ngẫu nhiên 00-99 qua CÙNG kinh tế /choi. Probe: `_v10787_random_baseline.py` (READ-ONLY). 59 ngày từ 10/05.
+
+**Kết quả BT 1 số vs đoán mò:**
+
+| Mặt | MN | MT | MB | Combined 3 miền |
+|---|---|---|---|---|
+| Đoán mò (baseline) | 42.8% | 35.0% | 23.7% | — |
+| OFFICIAL | 44.1% (z=+0.2) | 30.5% (z=-0.73) | **15.3% (z=-1.53)** | **z=-1.12 ≈ MÒ** |
+| LANE AE | 50.9% (z=+1.24) | 39.7% (z=+0.74) | 32.4% (z=+1.18) | **z=+1.78, p≈0.038 — EDGE THẬT** |
+| Top model | 44.8% (z=+0.31) | 44.1% (z=+1.47) | 27.1% (z=+0.61) | z=+1.38 |
+
+**Monte Carlo P&L (dân đoán mò median ÂM vì house edge ~2%):** lane pair thật +47.2/+20.6/+25.8M = percentile **91.2/75.0/89.0** so với 5000 người mò (median mò -8.6/-8.8/-3.6M). Official pair MN percentile 40.8 (thua cả median mò), MB 47.2.
+
+**Kết luận trung thực:** (1) Trực giác anh ĐÚNG cho mặt official-BT — nó không phân biệt được với đoán mò, MB còn TỆ hơn mò (z=-1.53, thêm bằng chứng cho scorecard doctrine). (2) Nhưng KHÔNG phải cả hệ là mò: lane AE có edge thật cùng chiều cả 3 miền (p≈3.8%), P&L top ~10% so với dân mò trong khi dân mò lỗ. (3) Edge là KHIÊM TỐN (+5-9 điểm hit, ~+40-90k/điểm-ngày kỳ vọng) — không phải máy in tiền, phải chơi bằng kỷ luật lock + size. (4) MN BT1-official 1-số: +0.1M/59 ngày = percentile 52 ≈ hoà vốn lịch sử — lock hiện tại sống nhờ form 21d (+8.6M) + chữ ký E5; em gắn trigger: 21d chuyển âm → trình đổi mặt. Badge z + mốc "đoán mò %" đã thêm vào khối ⚔ /monitoring (deploy 15:06, hash IDENTICAL, backup `v10787c_pre_20260708_150608`).
+
 ## PHẦN 2 — AUDIT LIVE 07-08/07 (cùng phiên, hỏi trước đó)
 
 - **Kết quả 07/07:** BT 3 miền đều LOSE (MN 30 · MT 63 · MB 87). MT lạnh sâu: 0/26 model WIN. MB: doctrine ML-plurality chọn 87 trong khi plain-vote top1=62 TRÚNG (12 model WIN với 62) → **scorecard doctrine 06-07/07: 1W-1L**, backtest owner-ký +30.8M, 1 ngày thua chưa đủ revert — theo dõi hết dom≤10.
