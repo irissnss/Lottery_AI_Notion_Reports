@@ -12,6 +12,8 @@ Nguyên văn tin nhắn owner trong phiên (thứ tự thời gian):
 8. "Ko có output để chơi thật sự ah em, chứ 3 luông cũng đoán mò ah em"
 9. "ML MT có vẻ đang thảm hại khi thay đổi ah em xem thử dùm anh live MT xong rồi , output MT có vẻ cần phải xem lại thật kỹ ah em cả 3 luồng luôn đó em."
 10. "Em có xem kỹ không mà nói thế output hiện tại đang bám theo ML thì phải và ML hiện tại MT đang có vẻ không ổn mà em xem kỹ lại dùm anh thử xem"
+11. "MB tín hiệu đầy trời mà total như củ chuối quá chán luôn"
+12. "tiếp đi em sao đứng thế. ANh đang rất bực minh đó. Miền nào cũng có tín hiệu mà output quá chán mà lề mề quá."
 
 Bối cảnh: câu 1-5 → audit live 07-08/07 (kết quả, coverage, model lỗi, method, hạ tầng — phần 2 của BAO_CAO_TONG_V10787). Câu 6 → phần đối chứng 3 mặt + deploy khối ⚔ ĐỐI CHỨNG (phần 1 + 3). Câu 8 → V10787-C đo vs random. Câu 9 → V10787-D MT deep-dive + panel 🐑 BẦY. Câu 10 → V10787-E tái dựng phiếu bầu + ĐÍNH CHÍNH.
 

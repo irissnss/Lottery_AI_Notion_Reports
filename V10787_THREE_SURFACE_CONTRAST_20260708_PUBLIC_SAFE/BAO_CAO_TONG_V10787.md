@@ -122,6 +122,25 @@ Anh hỏi "Em có xem kỹ không mà nói thế — output hiện tại đang b
 
 **Đề xuất K10 (CHỜ KÝ):** lane shadow `ML_BLOC_DEDUP_V1` — de-correlation: khối ML sibling đếm như 1.5 phiếu thay vì 5-6 phiếu, đo shadow 14 ngày song song K9 (K9 đo mặt bầy-26-model, K10 đo mặt khối-ML-trong-13-voter — bổ sung nhau). KHÔNG đụng official khi anh chưa ký.
 
+## PHẦN 1F — "MB TÍN HIỆU ĐẦY TRỜI MÀ TOTAL NHƯ CỦ CHUỐI" (owner 22:26)
+
+**MB tối 08/07 — ca lãng phí điển hình:** 22 đuôi về có 77 và 81.
+- **15 model cầm số trúng ngay top-1**: claude-sonnet=77, claude-opus=77, gemini-flash=77, gemini-pro=77, deepseek=81, combo-super=81 (eligible) + gpt-5-mini/gpt-5.4 có 77 ở top-2 + 9 model shadow.
+- **14/22 lane test chọn BT=77 TRÚNG** (OUTPUT_V1, DIR1/2/3, XIEN, STRENGTH_WEIGHTED, TOPK10, FULL_POOL, SCREEN_WEIGHTED/ADAPTIVE…).
+- Official ra **44 TRƯỢT**. Vì sao: đầu tháng (dom≤10) doctrine V10770 thay BT bằng plurality của **CHỈ 4 model ML** (meta-learning/lstm/xgboost/random-forest) = [44,10]. Tín hiệu của 15 model kia **không có đường nào vào output MB**. Plain-vote (champion trước override) cũng chọn 10 trượt — gate bt≥12 lọc gần hết AI tại MB nên vote còn lại toàn ML.
+
+**Scorecard doctrine (log shadow 9 ngày applied):** doctrine 2/9 = 22% vs plain-vote 1/9 = 11% — doctrine hơn vote +1 trận, **không phải thủ phạm chính**; thủ phạm là CẢ HAI selector đều mù trước cụm AI đang nóng.
+
+**Đo cung-tín-hiệu 30 ngày (panel mới):** ngày có ≥3 model đúng top-1 mà total vẫn trượt (**LÃNG PHÍ**): MN 13/33 · MT 13/33 · MB 12/33 = **36-39% số ngày ở cả 3 miền**. MB: total 15% trong khi 82% số ngày có ≥1 voter cầm số đúng.
+
+**Xếp hạng MB 60 ngày (cùng thước /choi):** official hạng **23/53, -5.2M** · lane `MB_OUTPUT_V1` BT 34.3% **+32.9M BỀN 2 nửa** (hôm nay cũng chọn 77✓) · họ DIR2/DIR3/XIEN +32.9M · đơn model gpt-5.4 +58.5M BỀN.
+
+**Deploy 22:33 (guarded, hash 4 bảng IDENTICAL):** khối `signal_supply` + panel **📡 CUNG TÍN HIỆU vs TOTAL** mỗi miền tại /monitoring — total% vs ≥1/≥3-voter% + đếm ngày lãng phí + ví dụ gần nhất.
+
+**Đề xuất K11 (CHỜ KÝ):**
+- **K11a (khuyến nghị):** sau khi cửa sổ doctrine dom≤10 đóng (hết 10/07), đưa `MB_OUTPUT_V1` làm ứng viên BT official MB — đối chiếu shadow thêm 1 tuần rồi anh ký mới đổi.
+- K11b (không khuyến nghị): tắt doctrine sớm — doctrine vẫn hơn plain-vote và là chữ ký anh (V10770, backtest +30.8M).
+
 ## PHẦN 2 — AUDIT LIVE 07-08/07 (cùng phiên, hỏi trước đó)
 
 - **Kết quả 07/07:** BT 3 miền đều LOSE (MN 30 · MT 63 · MB 87). MT lạnh sâu: 0/26 model WIN. MB: doctrine ML-plurality chọn 87 trong khi plain-vote top1=62 TRÚNG (12 model WIN với 62) → **scorecard doctrine 06-07/07: 1W-1L**, backtest owner-ký +30.8M, 1 ngày thua chưa đủ revert — theo dõi hết dom≤10.
