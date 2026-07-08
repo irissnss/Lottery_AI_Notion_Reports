@@ -1,0 +1,18 @@
+# V10787 — Đối chứng 3 mặt official/lane//choi + audit live 07-08/07 (08/07/2026)
+
+Owner hỏi: "official 1 đường, lane test 1 nẻo, /choi 1 kiểu — mỗi cái trúng mỗi kiểu, điểm mạnh để output hoàn hảo?"
+
+**Kết quả đo (từ 10/05, cùng thước /choi):**
+- 3 mặt gần như KHÔNG trùng số: same-pick MN 0/57 · MT 3/58 · MB 0/34 — khác nhau là THIẾT KẾ (selector khác nhau).
+- Bù trừ có thật: trần chọn-đúng-mặt 75.4% / 56.9% / 47.1% (MN/MT/MB) — nhưng là hindsight.
+- GỘP cặp [off-BT, lane-BT] THUA mặt tốt nhất ở CẢ 3 MIỀN: MN +30.6 vs lane +47.2 · MT +8.2 vs off +31.7 · MB +1.3 vs lane +25.8 (triệu) — tiền cược x2 nuốt hết lợi ích bù trừ.
+- KẾT LUẬN: không có output hoàn hảo bằng trộn. Điểm mạnh = CHỌN ĐÚNG MẶT THEO MIỀN + bám weekly-lock /choi.
+- Lock tuần 06/07 owner ký KHỚP data 21d: MN official +8.6M > lane -6.1M (lane nguội) · MT hoà · MB lane +36.4M >> off -7.7M.
+
+**Deploy:** khối ⚔ ĐỐI CHỨNG official vs lane-AE thêm vào panel SO GĂNG 3 TẦNG `/monitoring` (module `_v10773`, sandbox-first, restart 14:01 ngoài live-window, health 200 · admin 401, hash 4 bảng IDENTICAL). DIAGNOSTIC-ONLY — official/selector không đổi.
+
+**Audit live 07-08/07 cùng phiên:** BT 3 miền LOSE 07/07 (MT 0/26 model WIN) · MB doctrine chọn 87, plain-vote 62 TRÚNG → scorecard 1W-1L, theo dõi hết dom≤10 · coverage 78/78 · late-fill cứu ca 2 (gemma MT 439s) · hạ tầng ALL_GREEN (T-10 đúng giây, watchdog 0 alert, cron gate log OK) · /choi tuần: MN +1.7M · MT -2.8M · MB -3.2M sau 3 ngày.
+
+**Quyết định chờ ký:** K8 gemma MB 429 (K8a slim-context / K8b nâng tier / K8c chấp nhận). Nhắc: CP-L5 hard deadline 09/07 (ngày mai).
+
+**Chi tiết đầy đủ:** GitHub `Lottery_AI_Notion_Reports/V10787_THREE_SURFACE_CONTRAST_20260708_PUBLIC_SAFE/BAO_CAO_TONG_V10787.md`
