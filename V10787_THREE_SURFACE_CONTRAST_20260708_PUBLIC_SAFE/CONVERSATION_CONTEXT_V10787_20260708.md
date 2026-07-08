@@ -10,6 +10,7 @@ Nguyên văn tin nhắn owner trong phiên (thứ tự thời gian):
 6. "Điều lại lùng là office 1 đường , lane test 1 nẻo , và /choi 1 kiểu . Mỗi cái trúng mỗi kiểu. Em không tìm ra được điểm mạnh để có output hoàn hảo nhất ah em"
 7. "Em phát hiện ra vấn đề gì sau khi anh gợi ý đề xuất là gì em phải chi tiết rõ ràng chứ"
 8. "Ko có output để chơi thật sự ah em, chứ 3 luông cũng đoán mò ah em"
+9. "ML MT có vẻ đang thảm hại khi thay đổi ah em xem thử dùm anh live MT xong rồi , output MT có vẻ cần phải xem lại thật kỹ ah em cả 3 luồng luôn đó em."
 
 Bối cảnh: câu 1-5 → audit live 07-08/07 (kết quả, coverage, model lỗi, method, hạ tầng — phần 2 của BAO_CAO_TONG_V10787). Câu 6 → phần đối chứng 3 mặt + deploy khối ⚔ ĐỐI CHỨNG (phần 1 + 3).
 

@@ -75,6 +75,28 @@ Phương pháp: (a) z-test Poisson-binomial — kỳ vọng trúng ngày d = s�
 
 **Kết luận trung thực:** (1) Trực giác anh ĐÚNG cho mặt official-BT — nó không phân biệt được với đoán mò, MB còn TỆ hơn mò (z=-1.53, thêm bằng chứng cho scorecard doctrine). (2) Nhưng KHÔNG phải cả hệ là mò: lane AE có edge thật cùng chiều cả 3 miền (p≈3.8%), P&L top ~10% so với dân mò trong khi dân mò lỗ. (3) Edge là KHIÊM TỐN (+5-9 điểm hit, ~+40-90k/điểm-ngày kỳ vọng) — không phải máy in tiền, phải chơi bằng kỷ luật lock + size. (4) MN BT1-official 1-số: +0.1M/59 ngày = percentile 52 ≈ hoà vốn lịch sử — lock hiện tại sống nhờ form 21d (+8.6M) + chữ ký E5; em gắn trigger: 21d chuyển âm → trình đổi mặt. Badge z + mốc "đoán mò %" đã thêm vào khối ⚔ /monitoring (deploy 15:06, hash IDENTICAL, backup `v10787c_pre_20260708_150608`).
 
+## PHẦN 1C — MT DEEP-DIVE (owner 17:54: "ML MT thảm hại khi thay đổi, xem kỹ output MT cả 3 luồng")
+
+**MT hôm nay 08/07 (Đà Nẵng + Khánh Hòa, 29 đuôi):**
+
+| Luồng | Số | Kết quả |
+|---|---|---|
+| OFFICIAL | BT=59, lo2=[59,41] | ✗✗ — chuỗi thua BT 4 ngày |
+| LANE AE (/choi chơi) | BT=63, lo2=[63,37] | **63 TRÚNG** |
+| /CHOI daily lock | [63,37] khóa 16:40 | **+1.3M** — tuần: +6.2 / -3.6 / +1.3 = **+3.9M** |
+
+→ Mặt tiền thật /choi MT KHÔNG thảm (2/3 ngày ăn từ đổi lock). Thảm là **official** (21d chỉ 4/19 = 21%, DƯỚI mức đoán mò 35%) và **ML**.
+
+**ML MT — kiểm chứng "thảm khi thay đổi":** combo-super 0/3 (nền 49%/35 ngày) · random-forest 1/3 · meta-learning 0/3 · smart-ml 1/3 · ngoại lệ lstm 2/3. Nhưng (a) KHÔNG có thay đổi nào trong ML vào 06/07 — ML chạy nguyên code/data cũ; (b) mẫu 3 ngày quá nhỏ; (c) cả miền lạnh (07/07: 0/26 model trúng). → ML lạnh là triệu chứng, không phải bệnh do "thay đổi".
+
+**Thay đổi THẬT từ 06/07 và phát hiện chính — BẦY ĐÀN:** 3 model mới (gemini-3.5-flash, qwen3.7-max, glm-5.2) vào voting từ 06/07 và bám herd nặng (trùng herd top1 5-6/9 lượt). Concentration top1 MT nổ: 06/07 = 12 model chụm 76✗ (46%) · 07/07 = 11 chụm 37✗ (42%) · 08/07 = **15/26 chụm 86✗ (58%)** — nền cũ ≤31%. Đo 30 ngày: **bầy ≥10 model tại MT chỉ trúng 12% (1/8) = ANTI-SIGNAL** (bầy ≤5 trúng 50-67%; MN 40%, MB 25%). 86 hôm nay thậm chí không phải lô gan (mới về hôm qua) — herd đoán theo nhau, không theo data.
+
+**Lane AE MT bản chất:** lag-1 echo có chủ đích (V66) — 13/23 ngày BT AE = official hôm trước, 5 phiên gần đều echo. Hôm nay ăn 63 = đúng kiểu "số official hôm qua về trễ 1 ngày". Edge này là lý do AE MT z=+0.74 trên mò.
+
+**Deploy 18:05 (guard MB chain xong mới restart):** khối `herd` trong module + panel **🐑 BẦY top-1** mỗi miền tại /monitoring (số bầy hôm nay + hit 30d theo cỡ bầy, cảnh đỏ khi ≥10). Sandbox PASS · health 200 · admin 401 · hash 4 bảng IDENTICAL · backup `v10787d_pre_20260708_180510`.
+
+**Đề xuất K9 (CHỜ KÝ):** lane shadow `HERD_FADE_V1` — khi bầy top1 ≥10 model thì né số đó, thay bằng ứng viên hạng 2 ngoài bầy; đo shadow 14 ngày rồi mới bàn. KHÔNG đụng official voting khi anh chưa ký.
+
 ## PHẦN 2 — AUDIT LIVE 07-08/07 (cùng phiên, hỏi trước đó)
 
 - **Kết quả 07/07:** BT 3 miền đều LOSE (MN 30 · MT 63 · MB 87). MT lạnh sâu: 0/26 model WIN. MB: doctrine ML-plurality chọn 87 trong khi plain-vote top1=62 TRÚNG (12 model WIN với 62) → **scorecard doctrine 06-07/07: 1W-1L**, backtest owner-ký +30.8M, 1 ngày thua chưa đủ revert — theo dõi hết dom≤10.

@@ -15,6 +15,8 @@ Owner hỏi: "official 1 đường, lane test 1 nẻo, /choi 1 kiểu — mỗi 
 
 **Bổ sung 15:xx — owner hỏi "3 luồng cũng đoán mò à?" (V10787-C):** Z-test + Monte Carlo 5000 người mò, 59 ngày: OFFICIAL-BT ≈ đoán mò thật (combined z=-1.12; MB 15.3% vs mò 23.7%, z=-1.53 TỆ hơn mò) — trực giác owner đúng cho mặt này. LANE-AE có edge THẬT khiêm tốn: cùng chiều 3 miền, combined z=+1.78 (p≈0.038); P&L percentile 91/75/89 vs dân mò (dân mò median ÂM). MN BT1 1-số hoà vốn lịch sử (percentile 52) — sống nhờ form 21d, gắn trigger đổi mặt nếu 21d âm. Badge z + mốc "đoán mò" thêm vào khối ⚔ /monitoring (deploy 15:06, hash IDENTICAL).
 
-**Quyết định chờ ký:** K8 gemma MB 429 (K8a slim-context / K8b nâng tier / K8c chấp nhận). Nhắc: CP-L5 hard deadline 09/07 (ngày mai).
+**Bổ sung 18:xx — owner: "ML MT thảm hại khi thay đổi, xem kỹ MT cả 3 luồng" (V10787-D):** MT 08/07: official 59✗ (chuỗi 4L, 21d 4/19=21% DƯỚI mò) · lane AE 63✓ · /choi [63,37] +1.3M → tuần +3.9M, KHÔNG thảm. ML lạnh 0-1/3 sau 06/07 nhưng không có change ML nào — mẫu nhỏ + miền lạnh. Phát hiện chính: HERD — 3 model mới bám bầy 5-6/9 lượt, concentration top1 MT nổ 46/42/58% (15/26 chụm 86✗ hôm nay); đo 30d bầy ≥10 tại MT chỉ trúng 12% = ANTI-SIGNAL. AE MT = lag-1 echo chủ đích (13/23 ngày). Panel 🐑 BẦY deploy 18:05 (guarded, hash IDENTICAL). **K9 chờ ký:** HERD_FADE_V1 shadow 14 ngày.
+
+**Quyết định chờ ký:** K8 gemma MB 429 (K8a slim-context / K8b nâng tier / K8c chấp nhận) · **K9 HERD_FADE_V1** (mới). Nhắc: CP-L5 hard deadline 09/07 (ngày mai).
 
 **Chi tiết đầy đủ:** GitHub `Lottery_AI_Notion_Reports/V10787_THREE_SURFACE_CONTRAST_20260708_PUBLIC_SAFE/BAO_CAO_TONG_V10787.md`
