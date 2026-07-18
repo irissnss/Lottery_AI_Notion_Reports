@@ -19,4 +19,6 @@
 
 **Mốc:** 19/07 rows lane đầu · 28/07 đọc cùng V10820/V10821 · ~12-17/08 lane đủ điều kiện ứng viên khóa tuần /choi.
 
+**Bổ sung 21:44 (owner nhắc backup + lịch sử):** (1) Lane kiêm kênh ĐO: tự chấm + scoreboard 7/14/30d so với 34 lane + baseline control, đọc chốt 28/07. (2) Backup đủ 2 đầu: crontab pre/post, registry, snapshot ngày-0, script quay đầu `_v10822_rollback.py` (dry mặc định). (3) NGÀY-0 18/07 đã ghi vào lane (retro, đánh dấu rõ, /choi + scoreboard tự loại): MN [31,38]✗ · MT [41,46] 46✓phụ · MB [93,86] 86✓phụ = any 2/3. Hash 4 bảng IDENTICAL lần 2.
+
 **Chi tiết:** GitHub `Lottery_AI_Notion_Reports/V10822_TOTAL_V2_LANE_20260718/`

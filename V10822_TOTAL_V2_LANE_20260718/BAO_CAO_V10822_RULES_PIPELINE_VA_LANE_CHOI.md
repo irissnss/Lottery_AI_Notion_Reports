@@ -56,8 +56,25 @@ Trục đo đúng chuẩn bucket-first **miền × thứ** (rule gắn `target_w
 
 ---
 
+## PHẦN 3 — BỔ SUNG 21:44 (owner: "luồng mới cũng để đo so sánh đúng không? backup lane chưa? total lại để có lịch sử từ đây")
+
+### 3.1 Xác nhận: lane vừa CHƠI vừa là kênh ĐO chính thức
+- 3 tầng đo: (i) khối 🚏 tự chấm BT/any mỗi ngày; (ii) evaluator + scoreboard 7/14/30 ngày từ 19/07, so trực tiếp với 34 lane khác + lane đối chứng `{R}_OFFICIAL_BASELINE_CONTROL`; (iii) đọc chốt 28/07 cùng V10820/V10821.
+- Caveat ghi sẵn: lane dùng union LIVE (pre-draw) còn shadow dùng MRE (post-draw) — nếu crawl KQ nguồn trễ thì hai bên có thể lệch nhẹ = train/serve gap ĐO ĐƯỢC (diff nằm sẵn trong risk_flags + so được 2 bảng).
+
+### 3.2 Backup hoàn chỉnh (vá thiếu sót lượt deploy đầu) + rollback
+- Lượt đầu mới backup 2 file code bị sửa; owner nhắc đúng — đã bổ sung: **crontab post + PRE tái dựng** (`crontab_{pre,post}_v10822.txt`), **lane script deployed** copy vào backup dir, **snapshot JSON** (3 registry rows + 3 rows ngày-0 + pre-fix values của row shadow 18/07). Tất cả nằm CẢ 2 ĐẦU: `/root/backups_v10822/` + `backups/v10822_pre/`.
+- **Script quay đầu `_v10822_rollback.py`** (mặc định dry-run in kế hoạch; `--confirm` mới chạy): gỡ 3 cron lane → khôi phục 2 file .pre → xóa lane script → dọn DB lane (results/bundles/runs/registry) → restart + health/admin check → nhắc hash 4 bảng. Mặc định GIỮ cron shadow 20:50 (19:14 là bug); `--restore-cron-bug` nếu owner cần nguyên trạng từng bit.
+
+### 3.3 Ngày-0 (18/07) đã ghi vào lane — lịch sử liền mạch từ hôm nay
+- Run_id **8253-8255**, mode `RETRO_POST_DRAW_BASELINE`, diagnostic_only=1, risk_flags `retro_post_draw=true`: picks tính bằng ĐÚNG code lane với nguồn causal pre-draw (predictions trước freeze + union live từ đài nguồn đã quay) — chỉ THỜI ĐIỂM GHI 21:48 là sau xổ, nên: **/choi tự loại** (cutoff giờ tạo), **scoreboard không tính** (evaluator 18/07 đã chạy xong trước đó), chỉ hiện ở khối 🚏 làm mốc lịch sử.
+- **Số ngày-0: MN [31,38] ✗ · MT [41,46] — 46 VỀ (phụ✓) · MB [93,86] — 86 VỀ (phụ✓) = any 2/3 miền.**
+- Hash 4 bảng official pre/post **IDENTICAL lần 2** (a6a7fa8e / c6bb036d / b080e2cc / b8de7d94).
+
+---
+
 ## ARTIFACTS
 - Lane: `web/backend/_v10822_total_v2_lane.py`; shadow module cập nhật: `web/backend/_v10821_total_v2_shadow.py`; UI: `web/frontend/monitoring.html` (khối 🚏).
 - Probes: `_v10822_rules_pipeline_probe.py`, `probe2`, `_v10822_lane_pattern_probe.py`, `_v10822_lane_schema_probe.py`, `_v10822_scoring_probe.py`, `_v10822_guard_probe.py`, `_v10822_moneyboard_safety_probe.py`, `_v10822_impl_check_probe.py`.
-- Deploy/fix: `_v10822_deploy.py`, `_v10822_cron_fix.py`; backup `backups/v10822_pre/` + VPS `/root/backups_v10822/`.
-- Governance: CHANGELOG V10822 · SSOT V10822 · FU-V10822-TOTAL-V2-LANE · AUTOMATION_STATE seq 283 · HISTORY jsonl · PLAYBOOK §1+§5 · SO_TAY mục 1.3.
+- Deploy/fix: `_v10822_deploy.py`, `_v10822_cron_fix.py`, `_v10822_day0_and_backup.py`, `_v10822_rollback.py`; backup `backups/v10822_pre/` (2 file .pre + crontab pre/post + `v10822_lane_snapshot.json`) + VPS `/root/backups_v10822/`.
+- Governance: CHANGELOG V10822 (+mục 5) · SSOT V10822 (+row bổ sung) · FU-V10822-TOTAL-V2-LANE · AUTOMATION_STATE seq 283 (extended) · HISTORY jsonl (V10822 + V10822b) · PLAYBOOK §1+§5 · SO_TAY mục 1.3.

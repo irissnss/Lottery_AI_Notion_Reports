@@ -20,7 +20,20 @@
 4. Phát hiện + vá bug V10821: cron shadow 19:14 chạy trước MRE 20:15 → rules_active luôn 0 ở ngày mới; dời 20:50 + re-chấm 18/07 (MT bộ2 [41,97]→[41,46] 46✓; M2s any ngày-1 2/3). Preview pre-draw cũng chuyển sang union live.
 5. Chuỗi §52 đầy đủ: backup 2 đầu, sha khớp, compile + node --check, restart lottery.service, health 200/admin 401, journal sạch, hash 4 bảng official IDENTICAL, CHANGELOG/SSOT/FU/STATE/HISTORY/PLAYBOOK/SO_TAY, Notion + 2 push.
 
+## Owner message thứ 2 (verbatim, 21:44)
+
+> Luồng mới cũng dùng để đo để so sánh luôn được mà em đúng không? vấn đề là em thao tác đã backup chưa luồng lane test mặc dù phụ nhưng đừng quên nó nhé em. Chú ý tất cả phải được backup ghi nhận cụ thể tránh không quay đầu được nha em. Ghi nhận tất cả dùm anh nhé , nếu theo luồn mới thì dự đoán hôm nay là bao nhiu em cũng nên total lại luôn để có lịch sử từ đây luôn em. Code fix xong cập nhật ghi nhận tổng lực toàn bộ tránh quên lang , tất cả phải được tuy duy , logic , liên quan , tương thích ,liền mạch nhất quán tránh rơi rớt bỏ sót bất kỳ vấn đề gì nha em
+
+## Việc bổ sung sau message 21:44 (V10822b)
+
+1. Xác nhận lane = kênh ĐO chính thức (tự chấm + scoreboard 7/14/30d vs 34 lane + baseline control; đọc chốt 28/07); caveat union live vs MRE ghi thành train/serve gap đo được.
+2. Vá thiếu sót backup lượt đầu: crontab pre/post tái dựng + lane script deployed + snapshot JSON (registry + ngày-0 + pre-fix values row shadow 18/07) — cả VPS lẫn local.
+3. Viết `_v10822_rollback.py` (dry-run mặc định, --confirm mới chạy): gỡ cron/file/DB lane + restart + verify; mặc định giữ cron 20:50.
+4. Ghi NGÀY-0 18/07 vào lane (run_id 8253-8255, mode RETRO_POST_DRAW_BASELINE, đánh dấu rõ): MN [31,38]✗ · MT [41,46] 46✓phụ · MB [93,86] 86✓phụ = any 2/3 — /choi tự loại (cutoff giờ), scoreboard không tính, chỉ hiện khối 🚏 làm mốc lịch sử.
+5. Hash 4 bảng official IDENTICAL lần 2; cập nhật CHANGELOG mục 5 / SSOT row / FU / STATE / HISTORY V10822b / PLAYBOOK / SO_TAY + Notion patch + 2 push.
+
 ## Trạng thái sau phiên
 
-- Lane ghi số đầu tiên: 19/07 (MN 15:47 · MT 16:56 · MB 17:56) — owner lấy số ở khối 🚏 panel 🧮 /monitoring.
+- Ngày-0 (18/07) đã nằm trong lane (retro, không tính forward); lane ghi số FORWARD đầu tiên: 19/07 (MN 15:47 · MT 16:56 · MB 17:56) — owner lấy số ở khối 🚏 panel 🧮 /monitoring.
 - Đọc chốt 28/07 cùng V10820/V10821; lane đủ điều kiện ứng viên khóa tuần /choi ~12-17/08.
+- Rollback trọn gói: `_v10822_rollback.py` + backup 2 đầu.
