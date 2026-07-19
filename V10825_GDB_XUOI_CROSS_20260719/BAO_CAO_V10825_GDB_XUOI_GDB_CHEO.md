@@ -54,3 +54,13 @@ Theo đúng nguyên tắc V10801 (bằng chứng mâu thuẫn/trong nhiễu → 
 Backup 2 đầu trước sửa (`backups/v10825_pre/` + VPS `/root/backups_v10825/`) · sha khớp 2 file · py_compile + node --check pass · **sandbox /tmp chạy bản mới TRƯỚC deploy** (số khớp probe) · restart 23:20 active · health 200 · chase-bias unauth 401 · view sống (watch cand 46) · **hash 4 bảng official IDENTICAL** (d8785a51/f23cbcc6/42a3d128/d93423b5).
 
 Artifacts: `web/backend/_v10825_gdb_xuoi_probe.py` · `_v10825_sandbox.py` · `_v10825_deploy.py`
+
+## 6. ADDENDUM 23:45 — OWNER QUYẾT CP-L6: CHỜ THÊM + RE-VERIFY TRƯỚC KHI XỬ LÝ
+
+Nguyên văn owner: *"chờ thêm đi em? sau đó trước khi xử lý cầm verify lại để xác thực 1 lần nữa nha em, lỡ dầu prompt mới lại thay đổi kế hoạch, phương án đó em."*
+
+- **KHÔNG flip K11a** — điểm owner bắt rất chuẩn về đo lường: 11 ngày challenger 1/11 vs champion 4/11 đo gần trọn dưới PROMPT CŨ; RULES-FIRST (live 18/07) đổi tín hiệu đơn-model = đổi đầu vào của chính lane → số cũ không còn là căn cứ hợp lệ.
+- Hiện trạng giữ nguyên: lane `MB_OUTPUT_V1` tiếp tục chạy official MB; kill-switch 5-thua-liên-tiếp vẫn tự canh độc lập.
+- Cả gói agenda CP-L6 (K11a · K15 · lean-roster opus/gpt-5.4 · retire glm-5.1 · CP-R4 · 10 món sổ tay mục 5) dời về **28/07**, quyết MỘT buổi cùng chốt trial V10820 + Total-V2 + lane 10 ngày.
+- **Giao thức RE-VERIFY bắt buộc trước mọi xử lý** (ghi tại `ACTIVE_ROADMAP_LEAN_HARVEST_20260619.md` mục 2): chạy lại K-lanes TÁCH 2 ĐOẠN pre-trial (≤17/07) vs in-trial (18/07→27/07) — chỉ đoạn in-trial làm căn cứ; K11a cần ≥6 ngày phân-định; K15 trio 23/07 chỉ đọc-ghi-nhận; trial gia hạn +7 ngày → CP-L6 dời theo.
+- Ghi nhận: `DECISION_LOG.md` 19/07 23:45 · CHANGELOG V10825 addendum 5 · playbook §5 · FU-V10824 · sổ tay mục 3/5/9 · AUTOMATION_STATE seq 287. **Doc-only — zero runtime, zero deploy, hash 4 bảng không đụng.**

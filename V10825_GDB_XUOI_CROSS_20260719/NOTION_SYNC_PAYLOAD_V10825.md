@@ -8,4 +8,5 @@
 - Ngưỡng viết sẵn: ~02/08 X3 ≥6/14 báo sớm; ~18/08 X3 ≥40% (n≥12) trình owner / ≤28% đóng cùng rule đảo.
 - §52: backup 2 đầu, sandbox /tmp trước deploy, sha khớp, restart 23:20 (né miner 00:30), health 200/admin 401, **hash 4 bảng IDENTICAL**.
 - Toàn diện trước 0h: service OK, lane/shadow/AB đủ rows, trial ngày-2 any 27/42=64%, CP-L6 vẫn chờ owner ký 3 mục.
+- **ADDENDUM 23:45 — OWNER QUYẾT CP-L6: CHỜ THÊM.** Không flip K11a (11 ngày đo dưới prompt CŨ = căn cứ lỗi thời khi RULES-FIRST đổi đầu vào lane); cả gói agenda dời **28/07**, kèm **giao thức RE-VERIFY bắt buộc trước mọi xử lý** (tách pre-trial ≤17/07 vs in-trial 18/07→27/07, chỉ in-trial làm căn cứ — roadmap LEAN mục 2 + DECISION_LOG 19/07 23:45). Doc-only, zero runtime.
 - Chi tiết: GitHub public `V10825_GDB_XUOI_CROSS_20260719/BAO_CAO_V10825_GDB_XUOI_GDB_CHEO.md`.
