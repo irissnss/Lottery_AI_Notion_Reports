@@ -1,0 +1,9 @@
+{
+  // V10839b (2026-07-23): tat markdown style-lint cho repo bao cao nay.
+  // Cung ly do voi Lottery_AI_Test/.markdownlint.jsonc (V10839): file .md
+  // o day la bao cao/nhat ky governance, viet theo chuan noi bo; canh bao
+  // style (MD060 style bang, MD034 bare-url, MD032 list...) chi gay nhieu
+  // Problems panel khi mo file trong Cursor/VSCode, khong co gia tri o day.
+  // GitHub van render binh thuong. Muon bat lai: doi "default" thanh true.
+  "default": false
+}
