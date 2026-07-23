@@ -87,7 +87,7 @@ Khuyến nghị của em: **(a) làm sớm được** (rẻ, không đổi hành
 ## 6. GOVERNANCE PHIÊN NÀY
 
 - **FU mới:** `FU-V10838B-BUGBOT-ROUND2` — status `MEASURED_BUT_NOT_FIXED (PENDING_OWNER options a/b/c)`.
-- **Docs cùng phiên:** CHANGELOG V10838b · SSOT block V10838B · FU tracker (item mới + cross-ref FU-V10828) · AUTOMATION_STATE seq 299 · AUTOMATION_HISTORY +1 dòng.
+- **Docs cùng phiên:** CHANGELOG V10838b · SSOT block V10838B · FU tracker (item mới + cross-ref FU-V10828) · AUTOMATION_STATE seq 300 (seq 299 thuộc V10839 markdownlint — phiên song song cùng tối) · AUTOMATION_HISTORY +1 dòng.
 - **Runtime:** ZERO thay đổi (chỉ thêm script read-only `_v10838b_live_check.py` vào repo private).
 - **Roadmap check (rule phiên):** 6 roadmap ACTIVE, **không checkpoint nào quá hạn** tại 23/07; mốc gần: 26/07 (CP-R4 auto-action re-trình + CP-S4 gỡ cron addendum) · 28/07 (CP-L6 RE-VERIFY quyết một buổi: K11a/K15/lean-roster/CP-R4/glm-5.1 + chốt trial V10820 + lane V2/V3) · 04–11/08 (đọc ngưỡng catalog V10829 + nhát cắt source_region FU-V10836).
 - **Commit:** public repo (folder này) + private repo (docs + script) — ID ghi trong AUTOMATION_STATE và message commit.

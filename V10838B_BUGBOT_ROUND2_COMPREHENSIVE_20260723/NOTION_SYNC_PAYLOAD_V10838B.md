@@ -21,4 +21,4 @@
 sha VPS = HEAD `e5a3f062e1380586` khớp · marker `_V10828_CANON` ×2 · service active · health 200 / admin 401 · journal sạch · lock 23/07 nguyên: MN [07] · MT [68,54] · MB trống (gate chặn AE [97,02] — cả 2 số trượt thật = gate cứu tiền ngày 2).
 
 ## Governance
-FU mới `FU-V10838B-BUGBOT-ROUND2` (MEASURED_BUT_NOT_FIXED, PENDING_OWNER) · CHANGELOG V10838b · SSOT · AUTOMATION_STATE seq 299 · ZERO đổi runtime · roadmap không mốc quá hạn (gần nhất 26/07 · 28/07 · 04–11/08).
+FU mới `FU-V10838B-BUGBOT-ROUND2` (MEASURED_BUT_NOT_FIXED, PENDING_OWNER) · CHANGELOG V10838b · SSOT · AUTOMATION_STATE seq 300 (seq 299 = V10839 markdownlint song song) · ZERO đổi runtime · roadmap không mốc quá hạn (gần nhất 26/07 · 28/07 · 04–11/08).
