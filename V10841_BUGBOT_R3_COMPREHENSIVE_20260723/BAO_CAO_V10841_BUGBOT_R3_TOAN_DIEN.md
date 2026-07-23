@@ -58,6 +58,8 @@ Ngoài 5 finding trên, phiên này đóng luôn Bugbot vòng 2 Medium: bộ can
   - lottery_results `066d773b`
   - model_daily_eval `bfb0670f`
 
+Post-deploy sync forensic `artifacts/live_sync/20260723_231209` khớp VPS; chạy lại incidence vẫn **0/225 + 0/6.644**, contract check PASS (pool/canon 15/15).
+
 ## 5. Vì sao audit nhiều vòng vẫn còn finding?
 
 1. V10828 ban đầu là hotfix phản xạ trong đêm; policy bị sao chép ở nhiều module thay vì một SSOT.
