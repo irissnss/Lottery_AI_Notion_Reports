@@ -11,5 +11,6 @@ Owner 21:21 23/07/2026 đưa ảnh Problems panel Cursor: CHANGELOG.md hiện 10
 - Governance: backup backups/v10839_pre/CHANGELOG.md.pre · KHÔNG deploy VPS (không chạm runtime, không phiên ghi DB → hash 4 bảng official không đổi) · private + public push · AUTOMATION_STATE seq 299.
 - Báo cáo đầy đủ (GitHub-first §52G): https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10839_MARKDOWNLINT_NOISE_CLEANUP_20260723
 - Addendum V10839b 21:4x — owner báo còn 36 warning: nằm ở 3 file báo cáo V10839 trong repo public Lottery_AI_Notion_Reports (ngoài cây workspace private nên config V10839 chưa phủ). Fix: thêm .markdownlint.jsonc (default: false) vào root repo public → CLI 1.173 file .md = 0 issues, editor sạch.
+- Addendum V10839c 21:47 — editor vẫn hiện 63 warning trên tab mở từ repo public (extension chỉ đọc config theo thư mục cho file TRONG workspace; file ngoài workspace dùng tầng user settings). Fix dứt điểm: markdownlint.config default:false vào user settings Cursor (%APPDATA%\Cursor\User\settings.json, có backup) — phủ mọi file trên máy; 2 config repo-level giữ nguyên cho CLI.
 
 Notion page: id 3a61d385-9bf8-810b-9827-e4baf9d7d6e0 · https://app.notion.com/p/3a61d3859bf8810b9827e4baf9d7d6e0

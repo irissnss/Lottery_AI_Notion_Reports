@@ -93,3 +93,10 @@ Problems panel trong Cursor sẽ tự sạch khi extension re-scan (config đư�
 - Sau V10839, owner thấy còn **36 warning**: soi lại thì toàn bộ nằm ở chính **3 file báo cáo V10839** trong repo public `E:\Lottery_AI_Notion_Reports` (MD060 style bảng, MD034 bare-URL) — repo này nằm **ngoài cây** `Lottery_AI_Test` nên config V10839 không phủ tới. Repo chính vẫn sạch (fix V10839 đúng, chỉ thiếu phạm vi repo thứ hai).
 - Fix: thêm `.markdownlint.jsonc` (`"default": false`) vào root repo public (file này commit lên GitHub public — chỉ là config tooling, public-safe).
 - Verify: CLI quét toàn repo public **1.173 file .md → `Summary: 0 issues`**; diagnostics editor trên 3 file báo cáo = 0.
+
+## 10. ADDENDUM V10839c (21:47 — owner: "vẫn còn, xử lý dứt điểm")
+
+- Editor VẪN hiện 63 warning trên các tab báo cáo mở từ repo public (V10838B 27+9, V10839 25+2) dù CLI toàn repo = 0. **Root cause chốt:** extension markdownlint (Cursor/VSCode) chỉ tự khám phá config `.markdownlint.jsonc` theo thư mục cho file **nằm trong workspace đang mở** ("any directory of a project" — README DavidAnson/vscode-markdownlint); file mở từ **ngoài workspace** (repo public không thuộc workspace `Lottery_AI_Test`) rơi xuống tầng ưu tiên tiếp theo: **VS Code user/workspace settings**.
+- **Fix dứt điểm:** thêm `"markdownlint.config": { "default": false }` vào user settings Cursor (`%APPDATA%\Cursor\User\settings.json`; backup tại `backups/v10839_pre/settings.json.user.pre` trong repo private) — phủ MỌI file markdown trên máy, bất kể thư mục hay workspace nào.
+- 2 config repo-level (private + public) GIỮ NGUYÊN: bảo đảm CLI (`markdownlint-cli2`) và bất kỳ editor/máy khác clone repo cũng ra cùng kết quả.
+- Tác dụng phụ đã cân nhắc: các project khác trên máy mất style-lint md mặc định; project nào tự có config file thì config đó vẫn override user settings (đúng thứ tự ưu tiên của extension).
