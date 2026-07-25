@@ -1,0 +1,9 @@
+# V10855 — Trước giờ live: Bugbot 0 bug · giảm chói + responsive 14 trang · hệ thống 11/11 · retrain CN 12/12
+
+- Owner 01:58 26/07: "màu chói quá, chưa nhất quán, chưa tương thích thiết bị + kiểm tra tổng thể + /review-bugbot, hoàn hảo để live ngày mai".
+- **Bugbot toàn diện** (lần 1 bị ngắt 27', chạy lại trọn): quét diff gồm giảm-chói + responsive + toàn bộ thay đổi chưa commit — **0 finding**.
+- **Giảm chói (text giữ độ sáng theo yêu cầu owner 25/07):** border 0.28→0.16 · sidebar-border 0.14 · primary bớt gắt · shadow ring 0.03 · badge 0.15. **Responsive ≤720px:** topbar/search/content/heading. Re-inline 14 trang, deploy md5 **14/14**, marker đo lường nguyên, backup `.bak_pre_v10850`.
+- **Phát hiện phiên song song:** Claude Code đã dùng V10850–V10854 (nav drawer 4 nhóm · palette xanh rêu V3 · fix mobile sticky · /app responsive · nginx no-store) → bản Cursor đánh lại **V10855**. **Verify live = TRẠNG THÁI GỘP cả 2, không mất mảnh nào** (rêu V3 thắng tầng màu; soften áp tầng dưới; nav drawer + guard mobile + đo lường V10844/45 nguyên; nginx no-store hoạt động — hết cache cũ).
+- **Hệ thống trước live:** self-check **11/11 PASS** · journal 0 lỗi · **retrain CN 02:00 = 12/12 OK (model age 0.0d)** · optimizer 03:00 theo lịch (verify marker sáng) · hash predictions/final_bundles/lottery_results KHÔNG đổi, MDE tăng tự nhiên.
+- **UI-audit backlog cho Plan giao diện owner:** search+v82 chưa teal thật (reskin từng trang) · chuẩn hoá palette nội bộ từng trang về token · gom nhóm nav/công cụ theo tần suất · khung cuộn ngang cho bảng rộng · monitoring ~470KB nặng trên mobile · expose toggle light-theme.
+- Git private `edb1c17`+`4f78b3d`; Bugbot agent 2911912c. Sáng owner: Ctrl+F5 (dù đã no-store) → duyệt màu rêu V3 + độ dịu; 28/07 đọc promote M2s (+9.5pp đang chạy) + skim rule-cond + lean agenda.
