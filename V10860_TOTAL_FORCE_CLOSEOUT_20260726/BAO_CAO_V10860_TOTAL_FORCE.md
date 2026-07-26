@@ -77,6 +77,7 @@ Ngày 26/07 xấu không phải do “thay áo”.
 - Service active, health 200.
 - Admin endpoint guest 401.
 - Journal error-level: không có entry.
+- Commits gốc: private `800ccca`, public `08680e1`.
 - Hash bốn bảng official giữ nguyên:
   - predictions
   - final_bundles

@@ -16,5 +16,6 @@
 - UI Chromium: 14 trang × 6 viewport = 84 case, 0 FAIL sau fix.
 - Deploy: 7/7 MD5, health 200, admin guest 401, journal sạch, hash 4 bảng official IDENTICAL.
 - Miner W31 27/07 00:30 LIVE_PROVEN: SUCCESS 105 rules / 9 STRONG / 11.45s; weekly lock 3/3; self-check 11/11.
+- Commits: private `800ccca`; public `08680e1`.
 - Mốc kế: gói quyết định lớn 28/07; what-if MB khoảng 01/08.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10860_TOTAL_FORCE_CLOSEOUT_20260726
