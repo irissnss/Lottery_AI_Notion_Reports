@@ -1,5 +1,15 @@
 # Public Changelog
 
+## V10861 - 2026-07-27T01:20:00+07:00
+
+- Confirmed Total/K15/K11 historical Top-K pool holes: MT K10 had only 6 current voters on 26/07.
+- Available-first selection fills K10/K8 and improves 60d BT without any-hit regression.
+- Fixed post-deadline output replacement; owner deadlines MN 15:55, MT 16:55, MB 17:55 are immutable.
+- Split `/choi` raw display output from capital gate; repaired 25–26/07 MB comparison rows.
+- Added 2 shadow tables, admin API, 60-second monitoring panel and 20:45 cron.
+- Fixed dynamic P&L long-model tables on Chromium/WebKit mobile.
+- Deploy passed 8/8 MD5, health 200, self-check 11/11, journal clean and official hash4 identical.
+
 ## V10860 - 2026-07-27T00:25:00+07:00
 
 - Total-force closeout for 26/07: three regions, official + `/choi` + Total-V2 + Total-V3/rule-condition, every output-eligible model, scheduler/learning milestones and 14-page UI.

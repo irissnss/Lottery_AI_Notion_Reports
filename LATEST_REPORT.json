@@ -1,5 +1,17 @@
 {
-  "latest_version": "V10860_TOTAL_FORCE_CLOSEOUT",
+  "latest_version": "V10861_OUTPUT_CONTRACT",
+  "v10861_output_contract": {
+    "report": "V10861_OUTPUT_CONTRACT_20260727/BAO_CAO_V10861_OUTPUT_CONTRACT.md",
+    "notion_payload": "V10861_OUTPUT_CONTRACT_20260727/NOTION_SYNC_PAYLOAD_V10861.md",
+    "conversation_context": "V10861_OUTPUT_CONTRACT_20260727/CONVERSATION_CONTEXT_V10861_20260727.md",
+    "type": "runtime contract bugfix + shadow measurement + dynamic mobile fix",
+    "data_asof": "2026-07-27",
+    "created_at_vn": "2026-07-27T01:20:00+07:00",
+    "official_touched": false,
+    "official_hash4_identical": true,
+    "headline": "Fix stale Top-K pool (MT K10 had 6 voters), freeze outputs at owner deadlines, preserve /choi raw display separately from capital gate, and contain dynamic P&L model tables on mobile.",
+    "next_checkpoint": "2026-07-27 MT 16:53 / MB 17:52 natural live proof"
+  },
   "v10860_total_force_closeout": {
     "report": "V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md",
     "notion_payload": "V10860_TOTAL_FORCE_CLOSEOUT_20260726/NOTION_SYNC_PAYLOAD_V10860.md",

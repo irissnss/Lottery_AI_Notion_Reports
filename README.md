@@ -1,8 +1,16 @@
 # Lottery AI Notion Reports
 
-**Latest version: V10860 total-force closeout 26/07**
+**Latest version: V10861 output/deadline/Top-K contract**
 
 ## Latest report for AI tools
+
+- [**V10861 output contract**](./V10861_OUTPUT_CONTRACT_20260727/BAO_CAO_V10861_OUTPUT_CONTRACT.md) — **NEW**
+  - Fixes stale historical Top-K slots: MT K10 had only 6 real voters on 26/07.
+  - Available-first pool would have selected winning 58 instead of losing 03.
+  - Freezes output at MN 15:55, MT 16:55, MB 17:55.
+  - Separates `/choi` display output from capital gate and repairs NULL measurement days.
+  - Fixes dynamic P&L model-table overflow on Chromium/WebKit mobile.
+  - Official four-table hashes unchanged.
 
 - [**V10860 total-force closeout**](./V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md) — **NEW**
   - Proves the bad day was selection/ranking variance, not the frontend reskin.

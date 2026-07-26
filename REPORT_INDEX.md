@@ -1,5 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10861** — `V10861_OUTPUT_CONTRACT_20260727/BAO_CAO_V10861_OUTPUT_CONTRACT.md` (Top-K đủ model hiện tại; output immutable theo deadline; `/choi` output tách gate vốn; P&L dynamic mobile fixed.)
+
+## Quick links — V10861
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. **[Báo cáo V10861](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10861_OUTPUT_CONTRACT_20260727/BAO_CAO_V10861_OUTPUT_CONTRACT.md)**
+3. [Notion payload](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10861_OUTPUT_CONTRACT_20260727/NOTION_SYNC_PAYLOAD_V10861.md)
+4. [Conversation context](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10861_OUTPUT_CONTRACT_20260727/CONVERSATION_CONTEXT_V10861_20260727.md)
+
+---
+
 Latest: **V10860** — `V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md` (closeout 26/07: ngày xấu do selection/ranking, không do áo; 3 bug rõ fixed; UI 84 case 0 FAIL; official hash unchanged.)
 
 ## Quick links — V10860
