@@ -79,6 +79,7 @@ Fix:
 - 8/8 file MD5 local=VPS.
 - Health 200, guest admin 401, journal error-level 0, self-check 11/11.
 - Bốn official table hashes IDENTICAL.
+- Commits gốc: private `92f5fd1`, public `cf9adf1`.
 
 ## Live gate kế tiếp
 

@@ -16,5 +16,6 @@
 - Measurement: 2 bảng shadow, API admin no-store, panel monitoring 60s, cron 20:45.
 - Deploy: 8/8 MD5, health 200, admin 401, journal 0, self-check 11/11.
 - Hash 4 bảng official IDENTICAL; không đổi prompt/writer/official selector.
+- Commits: private `92f5fd1`; public `cf9adf1`.
 - Live verify 27/07: MT K10 16:53, MB K8 17:52, freeze sau deadline.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10861_OUTPUT_CONTRACT_20260727
