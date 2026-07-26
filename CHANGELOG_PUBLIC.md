@@ -7,7 +7,7 @@
 - Found the decisive MT failure: 14/15 models had an any-hit and champion 58 won, but K15 challenger 03 replaced it and lost. In-trial net is only −1, so the 28/07 gate remains.
 - M2s remains +8.3pp BT and +29.2pp any through n=24; not mature enough for promotion.
 - Fixed pattern-reasoning JSON-null crash, false-positive timing audit, settings/user-view mobile overflow and unsafe `overflow-wrap:anywhere`.
-- Final responsive matrix: 14 pages × 6 widths = 84 cases, 0 layout failures.
+- Final responsive matrix: Chromium + WebKit, 2 engines × 14 pages × 6 widths = 168 cases, 0 layout failures.
 - Production health 200; guest admin 401; journal clean; four official table hashes identical.
 - Weekly miner W31 natural subprocess passed at 00:30 (105 rules, 9 STRONG); weekly lock was materialized 3/3 and final self-check passed 11/11.
 

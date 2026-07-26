@@ -67,8 +67,8 @@ Ngày 26/07 xấu không phải do “thay áo”.
 
 - 14 trang.
 - 6 viewport: 320, 390, 430, 768, 1024, 1366 px.
-- 84 trường hợp.
-- Kết quả cuối: 78 PASS, 6 cảnh báo API giả lập tĩnh ở index, 0 FAIL.
+- 168 trường hợp trên Chromium + WebKit (Safari-like).
+- Kết quả cuối: 0 FAIL; cảnh báo còn lại chỉ là API 404 của static harness.
 - Drawer mobile được kiểm cả trạng thái đóng và mở sau khi transition hoàn tất.
 
 ## An toàn deploy

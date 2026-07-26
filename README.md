@@ -8,7 +8,7 @@
   - Proves the bad day was selection/ranking variance, not the frontend reskin.
   - MT had 14/15 model any-hits but K15 replaced winning champion 58 with losing challenger 03.
   - M2s remains +8.3pp through n=24; PB-18.1 remains improved; no premature production change.
-  - Three clear bugs fixed; 14 pages × 6 viewport responsive audit finished with 0 failures.
+  - Three clear bugs fixed; Chromium + WebKit responsive audit (168 cases) finished with 0 failures.
   - Production health 200 and four official table hashes unchanged.
 
 - [**V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md**](./V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md) — **NEW**
