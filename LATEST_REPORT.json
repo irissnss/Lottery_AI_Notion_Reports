@@ -1,5 +1,17 @@
 {
-  "latest_version": "V10720_OOS_AUDIT_PERMODEL_UI",
+  "latest_version": "V10860_TOTAL_FORCE_CLOSEOUT",
+  "v10860_total_force_closeout": {
+    "report": "V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md",
+    "notion_payload": "V10860_TOTAL_FORCE_CLOSEOUT_20260726/NOTION_SYNC_PAYLOAD_V10860.md",
+    "conversation_context": "V10860_TOTAL_FORCE_CLOSEOUT_20260726/CONVERSATION_CONTEXT_V10860_20260726.md",
+    "type": "total-force closeout + verified bugfix + 14-page device audit",
+    "data_asof": "2026-07-26",
+    "created_at_vn": "2026-07-27T00:25:00+07:00",
+    "official_touched": false,
+    "official_hash4_identical": true,
+    "headline": "Ngày xấu do selection/ranking, không do áo; MT 14/15 model any nhưng K15 đổi 58 thắng thành 03 trượt; M2s vẫn +8.3pp n=24; fix 3 bug rõ; UI 84 case 0 FAIL.",
+    "next_checkpoint": "2026-07-28 PB-18.1 + M2s + K15/K11a + CP-L6/CP-R4"
+  },
   "v10720_oos_audit_permodel_ui": {
     "report": "V10720_OOS_AUDIT_PERMODEL_UI_PUBLIC_SAFE/V10720_OOS_AUDIT_PERMODEL_UI_20260614_VN_PUBLIC.md",
     "machine_readable": "V10720_OOS_AUDIT_PERMODEL_UI_PUBLIC_SAFE/machine_readable/V10720_MEASUREMENTS.json",

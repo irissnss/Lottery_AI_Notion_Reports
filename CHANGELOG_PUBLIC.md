@@ -1,5 +1,16 @@
 # Public Changelog
 
+## V10860 - 2026-07-27T00:25:00+07:00
+
+- Total-force closeout for 26/07: three regions, official + `/choi` + Total-V2 + Total-V3/rule-condition, every output-eligible model, scheduler/learning milestones and 14-page UI.
+- Proved the bad day was not caused by the UI reskin: frontend-only deploy, unchanged backend process/runtime, 72/72 PB-18.1 traces with rules and no official fallback.
+- Found the decisive MT failure: 14/15 models had an any-hit and champion 58 won, but K15 challenger 03 replaced it and lost. In-trial net is only −1, so the 28/07 gate remains.
+- M2s remains +8.3pp BT and +29.2pp any through n=24; not mature enough for promotion.
+- Fixed pattern-reasoning JSON-null crash, false-positive timing audit, settings/user-view mobile overflow and unsafe `overflow-wrap:anywhere`.
+- Final responsive matrix: 14 pages × 6 widths = 84 cases, 0 layout failures.
+- Production health 200; guest admin 401; journal clean; four official table hashes identical.
+- Weekly miner W31 natural subprocess passed at 00:30 (105 rules, 9 STRONG); weekly lock was materialized 3/3 and final self-check passed 11/11.
+
 ## V10662 - 2026-06-01T00:20:00+07:00
 
 - Owner OK execution after V10661 audit. Six items done sequentially with backup, verify, and reversibility.

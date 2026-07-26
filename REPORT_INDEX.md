@@ -1,5 +1,16 @@
 # REPORT INDEX (auto-discovery)
 
+Latest: **V10860** — `V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md` (closeout 26/07: ngày xấu do selection/ranking, không do áo; 3 bug rõ fixed; UI 84 case 0 FAIL; official hash unchanged.)
+
+## Quick links — V10860
+
+1. [LATEST_REPORT.json](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/LATEST_REPORT.json)
+2. **[Báo cáo tổng lực V10860](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10860_TOTAL_FORCE_CLOSEOUT_20260726/BAO_CAO_V10860_TOTAL_FORCE.md)**
+3. [Notion payload ngắn](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10860_TOTAL_FORCE_CLOSEOUT_20260726/NOTION_SYNC_PAYLOAD_V10860.md)
+4. [Conversation context](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V10860_TOTAL_FORCE_CLOSEOUT_20260726/CONVERSATION_CONTEXT_V10860_20260726.md)
+
+---
+
 Latest: **V10709** — `V10709_MNMT_MB_METHOD_AUDIT_PUBLIC_SAFE/V10709_MNMT_MB_METHOD_AUDIT_20260613_VN_PUBLIC.md` (MN/MT vs MB lane mechanism + MB-rules-method application audit. Read-only; official untouched.)
 
 ## Quick links — V10709 (MN/MT vs MB method audit)
