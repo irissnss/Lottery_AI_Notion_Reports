@@ -102,3 +102,5 @@ bằng mắt trên thiết bị thật.
 
 Notion short page: `3aa1d385-9bf8-8138-9bd3-e139596701b9`.
 
+Commits gốc: private `ebf18e1`; public `d88b711`.
+

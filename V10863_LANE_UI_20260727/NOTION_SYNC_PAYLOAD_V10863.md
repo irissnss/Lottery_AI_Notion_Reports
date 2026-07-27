@@ -21,4 +21,5 @@
 - Không đổi `/du-doan`, prompt, writer, selector, scheduler hay lane 20/20.
 - Status: DEPLOYED_PENDING_LIVE_VERIFY — chờ owner xác nhận mắt.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10863_LANE_UI_20260727
+- Commits gốc: private `ebf18e1`; public `d88b711`.
 
