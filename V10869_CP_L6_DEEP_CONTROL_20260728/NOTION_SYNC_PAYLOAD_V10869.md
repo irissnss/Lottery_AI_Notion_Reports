@@ -1,0 +1,23 @@
+# V10869 — CP-L6 model/Total control
+
+- Paired live sync 20260728_001925; selfcheck11/11 and causal timing PASS.
+- 15 official feed M2 directly; 12 shadow do not.
+- K-lane uses shadow indirectly: MN12/25, MT3/10, MB2/8.
+- MT/MB K outputs are promoted, so coarse shadow cuts can change official.
+- 10d estimated cost: official$43.47, shadow$104.52; not provider invoice.
+- Grok4.20 estimate$89.50 needs multi-agent token reconciliation.
+- Global cadence candidate now: gemma-4-31b only.
+- Region candidates: grok4.20-MB, gpt5.5-MT/MB, kimi-MB, gpt-oss-MB, qwen3.7-MT.
+- No official model approved for immediate removal.
+- M2 truth: 11/27 vs M0 10/27, +3.7pp, WAIT_N_LT_30.
+- CP-L6 roster change starts a new M2 cohort/signature.
+- Same-day MT meta+xgb 46.2% vs D1 61.5%; MB23.1 vs26.9.
+- Keep current ML→LLM order; combo-super needs both.
+- Business timezone is Asia/Ho_Chi_Minh.
+- run_date is lane business-date naming, not missing data.
+- `/choi` always displays numbers; warnings refresh60s; USER_DECIDES.
+- Built 81-row shadow table + admin API + monitoring panel + cron21:20.
+- Deploy MD5/health/auth/journal/hash4 PASS; zero production model-policy change.
+- Next: 7–14d per-region parallel lean roster, then owner decision.
+- Full report: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10869_CP_L6_DEEP_CONTROL_20260728
+
