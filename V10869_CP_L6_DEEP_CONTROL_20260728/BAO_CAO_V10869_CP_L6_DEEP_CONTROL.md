@@ -208,3 +208,10 @@ The next action is a reversible 7–14 day parallel lean roster by region. Only 
 forward proof can CP-L6 alter cadence or roster. The natural 28/07 closeout remains the final
 input for the first owner decision.
 
+## Publication references
+
+- Private code/governance: `92cdc9f`.
+- Private report/Notion lineage: `4c54969`.
+- Public report: `b7b9171`.
+- Notion page: `3aa1d385-9bf8-81f1-b83f-fa2d970f8529`.
+
