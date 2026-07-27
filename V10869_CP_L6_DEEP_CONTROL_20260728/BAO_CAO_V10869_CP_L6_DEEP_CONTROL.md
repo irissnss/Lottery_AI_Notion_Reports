@@ -228,4 +228,7 @@ input for the first owner decision.
 - Private report/Notion lineage: `4c54969`.
 - Public report: `b7b9171`.
 - Notion page: `3aa1d385-9bf8-81f1-b83f-fa2d970f8529`.
+- Enhanced private controls: `914106a`.
+- Enhanced private lineage: `caa72ce`.
+- Enhanced public evidence: `5e376bb`.
 
