@@ -24,6 +24,9 @@
 - Added 42 execution-order rows and 240 timezone inventory rows.
 - Runtime timezone migration waits until post-closeout to avoid regime mixing.
 - Enhanced contract/restart/health/hash4 PASS.
+- Readiness check 01:26 28/07: health200, lean401, cron21:20 correct, 6 tables populated, contract PASS.
+- 28/07 still has 0 results/0 predictions/0 bundles; cycle starts 04:00, materialize 21:20.
+- Removed 3 never-deployed duplicate modules that wrote a conflicting arm-C name; one writer remains.
 - Next: 7–14d per-region parallel lean roster, then owner decision.
 - Full report: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10869_CP_L6_DEEP_CONTROL_20260728
 

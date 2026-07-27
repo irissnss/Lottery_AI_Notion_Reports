@@ -222,6 +222,23 @@ input for the first owner decision.
 - Runtime SQL timezone migration remains deferred until after 28/07 closeout so the final
   PB-18.1 trial day is not contaminated by a new ranking/prompt regime.
 
+## Readiness check at 01:26 on 28/07
+
+Live verification passed: health 200, admin lean endpoint 401, service active, cron 21:20 points
+at the consolidated materializer, and all six evidence tables are populated
+(81 / 600 / 81 / 81 / 42 / 240 rows). The cross-module contract passed both locally and on the
+server.
+
+The 28/07 business day itself still has zero results, zero predictions and zero bundles, because
+the daily cycle only begins at 04:00 and the closeout materialization runs at 21:20. The CP-L6
+decision therefore cannot be made before tonight.
+
+One hygiene defect was found and fixed during this check. Three never-deployed local modules
+duplicated the consolidated materializer and wrote a conflicting arm-C name
+(`C_TOP10_TRAILING_BT` instead of `C_TOP10_PRETRIAL_BT`) into the same
+`v10869_m2_roster_ab_daily` table. They were backed up and removed, leaving exactly one
+measurement writer. No production file, table value or hash changed.
+
 ## Publication references
 
 - Private code/governance: `92cdc9f`.
