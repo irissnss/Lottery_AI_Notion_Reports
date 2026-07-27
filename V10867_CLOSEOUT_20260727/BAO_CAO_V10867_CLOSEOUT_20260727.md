@@ -166,3 +166,9 @@ Ngày 28/07 cần quyết bằng dữ liệu corrected:
 
 Notion short page: `3aa1d385-9bf8-81b8-961f-f512561130b3`.
 
+## Publication references
+
+- Private code/governance: `77657a1`.
+- Private report/Notion lineage: `16670b7`.
+- Public report publication: `926af3d`.
+
