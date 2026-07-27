@@ -18,6 +18,12 @@
 - `/choi` always displays numbers; warnings refresh60s; USER_DECIDES.
 - Built 81-row shadow table + admin API + monitoring panel + cron21:20.
 - Deploy MD5/health/auth/journal/hash4 PASS; zero production model-policy change.
+- Enhanced: 600 per-bucket rows + 81 exact participation rows.
+- Five shadow models are visible as indirect MT/MB official dependencies.
+- M2 Arm A is locked to persisted truth 11/27; B/C use honest n16 only.
+- Added 42 execution-order rows and 240 timezone inventory rows.
+- Runtime timezone migration waits until post-closeout to avoid regime mixing.
+- Enhanced contract/restart/health/hash4 PASS.
 - Next: 7–14d per-region parallel lean roster, then owner decision.
 - Full report: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10869_CP_L6_DEEP_CONTROL_20260728
 

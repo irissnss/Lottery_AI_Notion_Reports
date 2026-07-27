@@ -208,6 +208,20 @@ The next action is a reversible 7–14 day parallel lean roster by region. Only 
 forward proof can CP-L6 alter cadence or roster. The natural 28/07 closeout remains the final
 input for the first owner decision.
 
+## V10869c enhanced evidence
+
+- Added 600 scorecard rows on the canonical `region + weekday + station-set` axis.
+- Added 81 exact model→flow participation rows and surfaced five shadow models that can affect
+  official MT/MB indirectly through K-lanes.
+- Added 81 M2 roster A/B rows. Arm A is bound to persisted pre-draw truth: 11/27 versus
+  official 10/27. Arms B/C only score the 16 days whose reconstructed context exactly matches
+  the persisted lane; they are not promotion evidence.
+- Added 42 ML–LLM execution-order rows and 240 timezone inventory rows.
+- Contract check now fails if M2 Arm A drifts from the persisted lane.
+- Enhanced materialization, restart, health, admin auth, journal and hash-4 checks passed.
+- Runtime SQL timezone migration remains deferred until after 28/07 closeout so the final
+  PB-18.1 trial day is not contaminated by a new ranking/prompt regime.
+
 ## Publication references
 
 - Private code/governance: `92cdc9f`.
