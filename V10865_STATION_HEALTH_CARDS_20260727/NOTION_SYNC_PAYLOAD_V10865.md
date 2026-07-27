@@ -19,4 +19,5 @@
 - Không đổi data/API/prompt/writer/selector/scheduler/lane 20/20.
 - Status: DEPLOYED_PENDING_LIVE_VERIFY.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10865_STATION_HEALTH_CARDS_20260727
+- Commits gốc: private `331de77`; public `20350a4`.
 
