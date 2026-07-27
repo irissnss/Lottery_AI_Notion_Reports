@@ -65,3 +65,5 @@ nhóm bốn Governance cards.
 
 Notion short page: `3aa1d385-9bf8-8184-9148-db15b32d4a8f`.
 
+Commits gốc: private `dc43a8b`; public `929a75f`.
+

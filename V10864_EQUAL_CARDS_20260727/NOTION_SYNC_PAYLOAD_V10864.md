@@ -18,4 +18,5 @@
 - Không đổi API/prompt/writer/selector/scheduler/lane 20/20.
 - Status: DEPLOYED_PENDING_LIVE_VERIFY — chờ owner xác nhận mắt.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10864_EQUAL_CARDS_20260727
+- Commits gốc: private `dc43a8b`; public `929a75f`.
 
