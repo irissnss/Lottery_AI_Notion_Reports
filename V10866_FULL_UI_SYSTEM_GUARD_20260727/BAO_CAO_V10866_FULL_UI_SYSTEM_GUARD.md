@@ -107,3 +107,5 @@ Prediction: sạch tại thời điểm deploy; monitor tiếp tục tới 18:05
 
 Notion short page: `3aa1d385-9bf8-81a8-919f-e8890ff57e2d`.
 
+Commits gốc: private `e6c9035`; public `7a8edbd`.
+

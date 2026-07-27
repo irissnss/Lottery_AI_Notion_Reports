@@ -19,4 +19,5 @@
 - Không đổi prompt/scheduler/writer/selector/provider/official/lane20.
 - Status UI: DEPLOYED_PENDING_LIVE_VERIFY; prediction monitor active.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10866_FULL_UI_SYSTEM_GUARD_20260727
+- Commits gốc: private `e6c9035`; public `7a8edbd`.
 
