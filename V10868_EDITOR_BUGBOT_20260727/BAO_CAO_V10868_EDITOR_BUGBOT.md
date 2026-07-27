@@ -42,3 +42,11 @@ uses `date`, not `run_date`. This was corrected and verified from a non-root wor
 
 Bugbot review ID: `10d3dc55-7abe-402c-b429-f756a2a55d29`.
 
+## Publication references
+
+- Private diagnostics/governance: `66a03bf`.
+- Private tracked-helper correction: `4efad1c`.
+- Private report lineage: `926e8c7`.
+- Public report: `537a55b`.
+- Notion page: `3aa1d385-9bf8-812f-949c-e78b20f115e0`.
+
