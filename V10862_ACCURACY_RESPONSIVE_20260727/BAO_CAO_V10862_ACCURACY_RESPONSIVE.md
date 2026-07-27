@@ -74,3 +74,5 @@ Tất cả test dùng trang VPS và production API thật, không dùng dữ li�
 
 Notion short page: `3aa1d385-9bf8-81f7-baf7-e9e93118cb7b`.
 
+Commits gốc: private `2f4dbcb`; public `9c0e7fe`.
+

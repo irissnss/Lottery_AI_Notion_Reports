@@ -18,4 +18,5 @@
 - Bundle MN BT 42 `[42,32]`; trace PB-18.1 27/27, fallback 0.
 - Status: DEPLOYED_PENDING_OWNER_EYE.
 - Báo cáo gốc: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10862_ACCURACY_RESPONSIVE_20260727
+- Commits gốc: private `2f4dbcb`; public `9c0e7fe`.
 
