@@ -1,0 +1,22 @@
+# V10870 — MN rỗng 3 model 28/07
+
+- Ba model rỗng nhưng ba nguyên nhân khác nhau, không phải một sự cố chung.
+- `deepseek-reasoner` OFFICIAL: `finish_reason=length` sau 97.8s, JSON rỗng.
+- Hệ quả: bundle MN còn 14/15, `incomplete_bundle=true`, lần đầu MN gãy 15/15 trong trial.
+- Tần suất deepseek 1/61 = 1.6% trong 21 ngày.
+- `grok-4.3` SHADOW: đã trả số `['05','81']`, `finish_reason=stop`, 20836 token.
+- Nhưng bị cổng PHASE-FIRST loại vì thiếu 6 trường `analysis.*`, kể cả sau repair.
+- Mất 2 lần gọi trả phí; là model duy nhất dính lỗi contract trong 21 ngày.
+- Cổng chỉ còn bật ở nhánh `lane_test_shadow_pack` vì danh sách contract rỗng từ V10750.
+- grok-4.3 nằm trong 5 shadow ảnh hưởng gián tiếp official MT qua K-lane.
+- `gemini-3.5-flash` SHADOW: lỗi `503 UNAVAILABLE` phía Gemini, 2/61 = 3.3%.
+- Hạ tầng sạch: selfcheck 11/11, contract PASS, health 200, scheduler ERROR 0, journal 0.
+- Nền 1–3 model rỗng mỗi ngày là bình thường 14 ngày qua; 25/07 MT cũng rỗng 3.
+- Phát hiện phụ: `gemini-2.5-flash` trả `["96","96"]`, coverage thực chỉ 1 số.
+- MN hôm nay: BT 95 `[95,54]` @04:19, lane 95 @05:01, `/choi` khóa `["95"]` @13:09.
+- MT/MB mới có 7 dòng ML 04:00, đúng lịch vì AI chạy 16:42 và 17:42.
+- Owner ký 13:48 "Ok em theo đề xuất": không sửa runtime trong ngày chốt trial.
+- Tối nay quyết cùng CP-L6: ngân sách output deepseek + alert `finish_reason=length`.
+- Tối nay quyết cùng CP-L6: có giữ contract PHASE-FIRST cho lane-test shadow hay không.
+- Phiên này ZERO thay đổi runtime, prompt, roster, gate hay output.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10870_MN_EMPTY_20260728
