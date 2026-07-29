@@ -1,0 +1,25 @@
+# V10874 — Đấu loại 15 phương pháp Total + lỗi rò rỉ union (29/07)
+
+- Owner nhắc Total nhiều lần và đã hỏi thẳng 18/07: "thử hết phương pháp chưa". Phiên này trả lời bằng bảng.
+- Thử 15 cách gộp: coverage, M2s rules, Borda, Borda theo họ, contrarian, họ mũ 0.25–1.0, trọng số số phụ, họ+rules, họ−herd.
+- Train 01/05–30/06 (n=183), hold-out 01/07–29/07 (n=87).
+- PHÁT HIỆN LỚN NHẤT: bảng `rules_union` dùng để backtest bị RÒ RỈ.
+- Nó materialize lúc 20:50 SAU khi xổ, còn lane thật tính union TRƯỚC khi xổ.
+- Dựng lại M2s bằng union hậu-xổ chỉ khớp lane thật 69,4%.
+- Cùng 33 ngày, cùng công thức: union hậu-xổ 48,5% vs lane thật 36,4% vs official 33,3%.
+- Tức union hậu-xổ thổi phồng khoảng +12 điểm phần trăm.
+- Đây là lời giải cho câu anh đeo đuổi từ 18/07: vì sao backtest hứa +15pp mà forward chỉ ~+3pp.
+- Không phải phương pháp xuống sức — mà backtest được chấm bằng thông tin lane không thể có.
+- Mọi con số backtest có dùng union phải đánh dấu KHÔNG TÁI LẬP ĐƯỢC: M2s 165 ngày, Total V3 180 ngày.
+- Cổng M2s đang giữ ĐÚNG: sự thật pre-draw n=33, M2s 36,4% vs M0 33,3% = +3,1pp, dưới ngưỡng +5pp.
+- Bảng xếp hạng KHÔNG rò rỉ, train: M1 70 · họ^0.75 68 · Borda 67 · DEHERD 66 · họ−herd 63 · M0 57.
+- Hold-out: họ−herd 34 · DEHERD 33 · họ^0.33 32 · họ^0.75 31 · M1 28 · Borda 28 · M0 22.
+- M1 coverage thắng train rồi SỤP hold-out (70 → 28) — quá khớp điển hình, bài học về tin một cửa sổ.
+- DEHERD_V1 (đang chạy) ổn định cả hai cửa sổ. Biến thể −herd hơn đúng 1 sự kiện trên 87 ngày = nhiễu.
+- KHÔNG mở lane mới trên chênh lệch 1 sự kiện. Giữ đúng một biến số.
+- Đã kiểm lane DEHERD không dính lỗi rò rỉ: xâu chuỗi chỉ chạy đúng chiều MN → MT → MB.
+- Giờ ghi tháng 7 đều trước giờ xổ: MN 04:34 (xổ 16:15), MT 17:00 (17:15), MB 17:48 (18:15).
+- Nên +7,9pp trên 267 ngày của DEHERD_V1 vẫn đứng vững.
+- Quyết định: để DEHERD_V1 chạy hết 21 ngày forward tới 19/08 rồi mới tính bước hai.
+- ZERO thay đổi runtime trong phiên này.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10874_TOTAL_BAKEOFF_20260729
