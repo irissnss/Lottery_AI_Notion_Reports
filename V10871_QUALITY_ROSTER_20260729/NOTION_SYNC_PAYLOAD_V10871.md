@@ -1,0 +1,26 @@
+# V10871 — Cắt model yếu theo CHẤT LƯỢNG (29/07)
+
+- Owner chốt trục: giữ model chất, cắt model yếu; giá KHÔNG dùng để xếp hạng.
+- Đầu ngày 29/07 MN đã đủ 15/15, bundle BT 96 `[96,32]` @04:18:51 — không cần chạy lại.
+- Chạy lại lúc này sẽ phá freeze output V10861 nên em không kích hoạt.
+- Closeout 28/07: cả 3 miền trượt BT (MB 55, MN 95, MT 39); `/choi` chỉ MT trúng.
+- 3 bundle "incomplete" nhưng chỉ MN là lỗi thật; MB và MT là cổng chất lượng cố ý.
+- MT 28/07: 8 model để 87 đầu, official chọn 39 do khối 5 model ML tương quan cùng bầu.
+- Đó là lỗi bộ TỔNG HỢP, không phải lỗi model — đã ghi FU riêng, chưa đổi selector.
+- Thước mới: lift ghép cặp theo mặt bằng CÙNG NGÀY CÙNG MIỀN + bootstrap 4000 lần.
+- Nhờ ghép cặp, lane 23 ngày so được với lane 180 ngày và ngày lỗi không làm lệch.
+- Tự kiểm chứng: 3 model owner cắt trước đây đều bị thước này chấm yếu.
+- ĐÃ CẮT `gemma-4-31b`: BT −6.7pp (p=0.004), ANY −8.9pp (p=0.000), 0/4 giai đoạn, lỗi 21.3%.
+- ĐÃ CẮT `kimi-k2.5`: BT −5.0pp (p=0.009), ANY −5.2pp (p=0.023), n=274, 1/5 giai đoạn.
+- Shadow 12 → 10; official giữ nguyên 15; không còn model active nào thuộc nhóm nên cắt.
+- MẠNH NHẤT BỂ lại đang là shadow: `gemini-3.5-flash` BT +8.2pp (p=0.034), dương 2/2.
+- Kế đó `qwen3.7-max` ANY +8.1pp (p=0.029), tỷ lệ lỗi 0%.
+- Trụ official ổn nhất: `gemini-2.5-pro` +3.4pp, dương 5/5 giai đoạn.
+- CHỜ ANH KÝ: đưa `gemini-3.5-flash` (và `qwen3.7-max`) lên official — mở cohort mới.
+- Cảnh báo: `claude-opus-4-6` +15.3pp ở PB-18.0 nhưng −16.6pp ở PB-18.1.
+- Đóng 2 mục V10870: deepseek `max_tokens` 16384→32768 (reasoning peak đo được 13.198).
+- Đóng nốt V10750: bỏ PHASE-FIRST khỏi `lane_test_shadow_pack` đúng như owner đã ký 25/06.
+- Panel mới BẢNG CHẤT LƯỢNG MODEL ở /monitoring, refresh 60s, cron 21:25.
+- Phát hiện: bảng cost chết từ 06/05 và bảng P&L chết từ 20/05 — đã ghi FU.
+- Hash 4 bảng official IDENTICAL trước/sau deploy; self-check 11/11; contract PASS.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10871_QUALITY_ROSTER_20260729
