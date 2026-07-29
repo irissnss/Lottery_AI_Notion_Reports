@@ -1,0 +1,26 @@
+# V10872 — Lane chống bầy đàn chạy thật (29/07)
+
+- Owner: "đo nhiều rồi mà vẫn lẩn quẩn — chạy thật ở 1 luồng đi chứ còn chờ gì nữa". Em làm luôn.
+- Bệnh: 7 lane ML dùng chung feature, trùng nhau 38–49%, bỏ phiếu như MỘT người rất to.
+- Ca MT 28/07: 8 model để 87 đầu, 5 lane ML để 39 — 39 thắng phiếu rồi thua kết quả.
+- Bộ chọn mới: điểm = tổng theo họ model của căn bậc hai trọng số họ đó.
+- Một họ 7 model đồng ý chỉ đáng √7 ≈ 2.6 phiếu; 5 họ khác nhau đồng ý đáng 5 phiếu.
+- Số đầu 1.0 điểm, số phụ 0.5 điểm. Họ: ML, Anthropic, OpenAI, Google, DeepSeek, Hybrid.
+- Em thử 5 biến thể nên phải kiểm trên 2 giai đoạn KHÔNG dùng để chỉnh, tránh khớp nhiễu.
+- Hold-out 01/05–15/06 (n=112): official 32.1% vs lane 36.6%, thắng 15 thua 10.
+- Hold-out 16/06–04/07 (n=38): official 31.6% vs lane 42.1%, thắng 6 thua 2.
+- Backfill đầy đủ 267 region-day: official 29.2% vs lane 37.1% = **+7.9pp**.
+- Thắng 38 thua 17 trên 55 ngày phân định, McNemar p≈0.0035 — có ý nghĩa thống kê.
+- Dương cả 3 miền: MN 43/35 (10 thắng/2 thua), MT 37/30 (16/9), MB 19/13 (12/6).
+- MB cải thiện mạnh nhất: 14.6% → 21.3% — đúng chỗ anh đau nhất.
+- Chạy ở K-lane `{REGION}_DEHERD_V1`, pre-draw, test_only, output_eligible=0.
+- KHÔNG ghi `final_bundles`, KHÔNG đụng `/choi`. Cron 15:51 MN · 17:00 MT · 18:00 MB · 21:15 chấm.
+- Dòng đầu tiên: 29/07 MN BT 96 lo2 [96,00], 15 model / 6 họ — trùng official nên chưa phân định.
+- Ngưỡng promote viết trước: ≥21 ngày forward lane dẫn official và không thua miền nào, rồi anh ký.
+- Phân vai 4 luồng: official = ÁP DỤNG · K-lane = ĐỔI/THỬ · Total = ĐO LƯỜNG · /choi = KHUYÊN CHƠI.
+- Thêm 2 lane shadow cao cấp anh chọn: claude-opus-5-fast và gpt-5.6-sol-pro, chạy từ 30/07.
+- Dò OpenRouter 367 model, lọc reasoning + context ≥200k + chưa từng chạy → 18 ứng viên.
+- Hai con khác họ nhau để không tăng tương quan; shadow 10→12, official vẫn 15, không backfill.
+- Nói thẳng: thêm model chưa kỳ vọng nâng official ngay vì nút thắt nằm ở tầng chọn.
+- Hash 4 bảng official IDENTICAL; contract PASS; health 200; /du-doan 200; 4 dòng cron đã cài.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10872_DEHERD_LANE_20260729
