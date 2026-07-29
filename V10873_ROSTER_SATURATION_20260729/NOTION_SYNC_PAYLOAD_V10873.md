@@ -1,0 +1,23 @@
+# V10873 — Roster đã bão hoà, cắt lane ăn 85% chi phí (29/07)
+
+- Owner lo "model không tham gia Total là lãng phí" — em đo 3 hướng, hai hướng cho kết quả ngược.
+- Không có model nào ăn không ngồi rồi: mọi shadow đều lọt output công bố 64–92%.
+- Lý do: 25 model mà mỗi ngày chỉ 30–40 đuôi khả dĩ, trùng nhau là bình thường.
+- Bỏ-một-model-ra 214 ngày: LLM chịu lực 10–20%, nhóm ML chỉ 1,9–3,7%.
+- Nhìn vậy tưởng ML là gánh nặng, NHƯNG cắt theo nhóm thì càng cắt càng tệ.
+- Giữ 15 = 80 trúng · bỏ lstm = 80 (0) · ML giữ 2 = 76 · bỏ hết ML = 73 (−7).
+- Bỏ gpt-5-mini cũng −7. Bảy model ML dư thừa từng con nhưng chịu lực cả nhóm.
+- ML chạy local $0 nên cắt cũng không tiết kiệm được đồng nào.
+- Thay lstm bằng gemini-3.5-flash (mạnh nhất bể) = 0. Thêm thành 16 model = 0.
+- KẾT LUẬN: bộ chọn ĐÃ BÃO HOÀ ở 15 model, thêm/bớt/thay không dịch chuyển output nữa.
+- Cổng bt_gate loại gpt-5-mini 13% bundle là ĐÚNG: 34 ngày đó nó chỉ trúng 17,6% so với 32% thường.
+- LÃNG PHÍ THẬT nằm ở chi phí: tổng shadow 29 ngày $264,74.
+- Riêng grok-4.20-multi-agent $225,14 = 85%, đơn giá $3,042/lần so với trung vị $0,04 (gấp 130 lần).
+- Vì nó đốt 1,51 triệu token mỗi lần gọi, mà chất lượng chỉ trung bình (34,9%, lift +1,5pp p=0,26).
+- Owner ký CẮT — theo đúng 3 tiêu chí owner: giảm TỔNG chi phí, dễ kiểm soát, không mất chất lượng.
+- Shadow 12 → 11, official giữ 15. Tiền shadow ~$274/tháng xuống ~$41/tháng.
+- Model đáng tiền nhất: glm-5.1 (40,5% ở $0,023) và gemini-3.5-flash (40,0% ở $0,035).
+- Từ nay không đề xuất cắt/thay roster nữa cho tới khi bộ chọn đổi, vì roster tối ưu phụ thuộc bộ chọn.
+- Đòn bẩy còn lại là lane chống bầy đàn, đang chạy forward tới 19/08.
+- Hash 4 bảng official IDENTICAL; contract PASS; health 200; /du-doan 200; official 15 / shadow 11.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10873_ROSTER_SATURATION_20260729
