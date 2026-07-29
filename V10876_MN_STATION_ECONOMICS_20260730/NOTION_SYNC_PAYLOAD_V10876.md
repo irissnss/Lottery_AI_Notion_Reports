@@ -1,0 +1,29 @@
+# V10876 — MN có đường ra + chuẩn đo 1/1 + agenda gộp 19/08 (30/07)
+
+- Owner khóa chuẩn đo: `1/1` (số về tính một lần) là thước ỔN ĐỊNH dùng để quyết định.
+- `Có nháy` (×số nháy) chỉ báo cáo làm phần MAY MẮN, không dùng để quyết định.
+- Lý do owner: "có tháng sẽ tăng trưởng và có tháng ổn định thì hay hơn".
+- Chênh giữa hai lớp là 7–39 điểm — đủ để một phương án lỗ trông như có lãi.
+- Ví dụ: `/choi` MB cả hai số đọc −28,7% ở 1/1 nhưng chỉ −9,3% khi tính nháy.
+- BỆNH CỦA MN: không phải số sai, mà trả tiền cho 3,13 đài trong khi thường một đài về.
+- Cược đặt trên TẤT CẢ đài nên chi phí ×3; điểm hoà mỗi đài là 18,4%.
+- Tỷ lệ trúng từng đài 90 ngày: Bình Thuận 41,7% · Đà Lạt 30,8% · Cần Thơ 30,8%.
+- Nhóm giữa 23,1%: TP.HCM, Bình Dương, Kiên Giang, Tiền Giang, Bến Tre.
+- Bảy đài DƯỚI điểm hoà kéo cả miền xuống; tệ nhất là An Giang 0,0%.
+- CÁCH CHỮA: chỉ đặt 2 đài phong độ tốt nhất 21 ngày trước → +15,7% ở 1/1.
+- So với đặt hết đài chỉ +8,5% — gần gấp đôi. Không nhìn tương lai, hoàn toàn nhân quả.
+- ỔN ĐỊNH THEO THÁNG (ROI 1/1): MT 1 đài phong độ +29,6% / +27,0% / +50,2% = 3/3 THÁNG DƯƠNG.
+- MN 2 đài: +68,5% / +18,0% / −24,9% = 2/3 tháng, tổng +15,7%.
+- MN hết đài: +32,0% / +10,0% / −10,3% = 2/3 tháng, tổng +8,5%.
+- MT hết đài: +17,4% / −1,7% / +1,1% = 2/3 tháng, tổng +4,4%.
+- MB 1 đài: −48,1% / −27,4% / +12,6% = chỉ 1/3 tháng, tổng −18,3%.
+- QUÁN QUÂN: MT + 1 đài theo phong độ — duy nhất dương cả 3 tháng và còn tăng dần.
+- SỬA LẠI: MB +12,6% chỉ là hiệu ứng tháng 7; ba tháng là −18,3% → hạ xuống mức theo dõi.
+- SỬA LẠI: MT số 1 +63,3% là bản có nháy; ở chuẩn 1/1 nó là +24,4%.
+- Official ở chuẩn 1/1: MN −22,2% · MT −37,8% · MB −49,9% — lỗ nặng cả ba miền.
+- GỘP 10 MỤC VÀO MỘT BUỔI 19/08 theo yêu cầu owner, không rải rác.
+- A lane de-herd · B MT 1 số · C MT 1 đài (mạnh nhất) · D MN 2 đài · E MB chơi hay nghỉ.
+- F MB bỏ số 1 (hạ ưu tiên) · G sửa rules_union pre-draw · H bảng /choi theo method.
+- I phục hồi bảng cost + P&L · J chốt 2 model cao cấp sau ≥30 dòng.
+- ZERO thay đổi runtime trong phiên này.
+- Báo cáo: https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10876_MN_STATION_ECONOMICS_20260730
