@@ -4,3 +4,5 @@
 cursor_*.md
 _v*.cmd
 _v*.txt
+# Script deploy thuộc repo private, không phải repo báo cáo
+*.cmd

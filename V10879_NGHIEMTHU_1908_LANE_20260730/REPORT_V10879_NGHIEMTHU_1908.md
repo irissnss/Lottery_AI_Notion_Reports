@@ -77,7 +77,23 @@ model_daily_eval  11111  5f034cce2676713e
 
 `V10841_CONTRACT_PASS` · smoke `/api/health=200` · `/du-doan=200` · endpoint admin `=401`.
 
-## 8. Điều kiện lên official
+## 8. Kiểm chứng trên máy chủ
+
+| Mục | Kết quả |
+|---|---|
+| Lane ghi `du_doan_test_bundles` | 3/3 miền cho 30/07, hiện ở `/du-doan-test` cạnh các luồng khác |
+| Cron | 4 dòng đã cài |
+| Panel `/monitoring` | có trên VPS, đăng ký trong `init()` **và** trong vòng refresh 60 giây |
+| Endpoint admin | 401 khi chưa đăng nhập |
+| Service | `active` |
+
+Hai lỗi trong chính bộ kiểm đã sửa: bộ kiểm panel tìm hàm tên `loadAllSections` trong khi hàm nạp của file này là `init()`, nên panel đăng ký đúng vẫn bị báo thiếu; bộ kiểm lane gọi CLI `sqlite3` vốn không cài trên máy chủ, nên trả về rỗng thay vì báo đúng số dòng đã ghi.
+
+## 9. Notion
+
+Trang tóm tắt: `3ad1d385-9bf8-81a7-a878-f841a94f3192`
+
+## 10. Điều kiện lên official
 
 Chỉ áp vào official khi forward 1/1 **dương** và **vượt official trên cùng cửa sổ**, có chữ ký owner ở mốc 19/08. Không tự động lên.
 
