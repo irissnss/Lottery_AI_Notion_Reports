@@ -265,3 +265,50 @@ theo mất tiền. Thời gian gỡ code ~ vài phút; gỡ model ~ dưới 1 ph
 | **FU-210** (liên quan, từ V10947) | Tháng 6 mất lợi thế tiền thật ở MT | Không bật lại `combo-no-token` vào total dựa trên số gộp 180 ngày | đang mở | owner |
 
 **Không có FU-214** trong phiên này — chỉ mở FU-211, FU-212, FU-213.
+
+---
+
+## Phụ lục V10953 — Xác minh đường chạy tự động 02:00 — ĐẠT
+
+Kiểm lúc **02:18 ngày 02/08/2026** (giờ VN). Không sửa code, không deploy, không đo lại —
+chỉ đối chiếu bảng và nhật ký sau khi job chủ nhật 02:00 chạy qua `scheduler.py`.
+
+Lý do phải kiểm riêng: `scheduler.py` cũng bị sửa trong V10952 (thôi ghi đè 12 dòng 4 cột,
+chỉ ghi bù FAILED cho dòng còn thiếu). Nhánh tự động chưa từng chạy thật lần nào trước đó.
+Lượt 00:02 chỉ là chạy ép bằng tay (`--force`).
+
+### Kết quả
+
+| Mục | Kết quả |
+|---|---|
+| Số dòng ngày 2026-08-02 | 12/12 |
+| Dòng có AUC | 12/12 — **0 dòng rỗng** |
+| Trạng thái khác OK | 0 |
+| Lỗi `I/O operation on closed file` quanh 02:00 | Không có |
+
+### Điểm tinh tế về `old_auc`
+
+Số dòng **không tăng** (vẫn 12) và `created_at` vẫn là 00:03–00:05. Thoạt nhìn tưởng job
+02:00 không chạy. Nhưng bảng dùng ghi đè theo khoá `(date, region, model_type)` — đúng thiết
+kế `_v10952_training_journal.py`. Bằng chứng đã chạy nằm ở cột `old_auc`: mỗi lượt ghi đúng
+giá trị lượt trước.
+
+```
+MT random-forest:  0,5517 (đo 31/05)  →  0,5248 (lượt 00:02)  →  0,5299 (lượt 02:00)
+MN meta-learning:  0,5092            →  0,5115              →  0,4892
+```
+
+### AUC lượt tự động 02:00 ngày 02/08
+
+| miền | meta-learning | xgboost | random-forest | lstm |
+|---|---|---|---|---|
+| MT | 0,5394 | 0,5236 | 0,5299 | 0,5554 |
+| MN | 0,4892 | 0,4993 | 0,5039 | 0,5137 |
+| MB | 0,4768 | 0,4839 | 0,5017 | 0,5106 |
+
+**Cả bốn model ở MT vẫn trên 0,5** sau một lượt huấn luyện hoàn toàn mới. MB ba trên bốn vẫn
+dưới 0,5. Đây là lần xác nhận thứ ba, trên dữ liệu mới, cùng một hướng — củng cố kết luận rằng
+tín hiệu ở MT còn thật và phần mất nằm ở khâu chuyển tín hiệu thành số công bố, không ở tầng
+model.
+
+**FU-211 → `CLOSED_PASS`** (V10953, 02/08 02:18).
