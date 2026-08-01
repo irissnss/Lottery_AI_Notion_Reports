@@ -203,3 +203,47 @@ Hoàn tác: `python web/backend/_v10934_deploy.py --rollback` (~1 phút).
 | V10936 | bộ lọc: bỏ điểm ảo 50%, mở pool 7→9 | ĐÃ DEPLOY |
 | V10937 | hoãn `gemini-3.5-flash`, gọi `gpt-5.4` về thay `combo-no-token` | ĐÃ DEPLOY |
 | V10938 | bộ lọc chấm bạch thủ thay win rate | ĐÃ DEPLOY |
+| V10940 | deploy 17:45 chạm lượt T-chốt 17:55 — số không đổi, sửa cổng an toàn | ĐÃ DEPLOY |
+
+---
+
+## 12. V10940 — một chỗ em nói chưa chính xác, và kết quả đo thật
+
+Em nói *"deploy sau khi MB chốt"* rồi bấm nút lúc 17:45 khi thấy MB tạo bundle lúc 17:39. Nhưng
+**chốt bundle chưa phải là xong ngày**:
+
+```
+17:39   bundle MB được tạo (v1)
+17:45   deploy                    ← nằm giữa
+17:55   job T-chốt dựng lại bundle (v1 → v2)
+17:58   mốc bất động, mới thật sự khoá
+```
+
+Dấu hiệu đáng ra phải thấy ngay trong chính bảng nghiệm thu: MN và MT đã là bản **v2** còn MB
+vẫn **v1** — tức MB chưa qua lượt dựng lại.
+
+### Đã canh và đo, không đoán
+
+| | trước T-chốt | sau T-chốt |
+|---|---|---|
+| bundle_version | 1 | **2** |
+| model_count | 15 | **14** |
+| **bạch thủ** | **90** | **90** — không đổi |
+| lô | 90 / 84 | 90 / 84 — không đổi |
+
+`model_count` giảm 1 đúng như dự đoán: `combo-no-token` vừa rời total nên phiếu bị loại, còn
+`gpt-5.4` tuy đã vào total nhưng tối nay không chạy cho MB nên không có phiếu thay.
+
+### Số không đổi — và điều đó xác nhận lý do cắt
+
+`combo-no-token` gộp cả bốn model ML vốn đã bỏ phiếu riêng. Bỏ phiếu của nó ra mà kết quả y
+nguyên, tức nó **không thêm thông tin gì** — đúng như lập luận khi chọn nó nhường suất.
+
+### Đã sửa cổng an toàn
+
+Cổng cũ chỉ hỏi *"MB chốt bundle chưa"*. Nay đòi **một trong hai**: đã qua mốc bất động 17:58,
+hoặc bundle đã lên bản v2 (dấu hiệu T-chốt đã chạy xong). Đã thử, cổng trả `AN_TOAN` đúng.
+
+**Quy tắc (FU-207):** mốc an toàn để deploy thứ chạm đầu ra là **sau `FREEZE_MARKS` của miền
+cuối cùng** (MN 15:45 · MT 16:58 · MB 17:58), không phải lúc bundle được tạo. Dấu hiệu nhận
+biết nhanh: `bundle_version` v1 = chưa qua T-chốt.
