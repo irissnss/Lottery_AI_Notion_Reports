@@ -6,7 +6,7 @@
 
 ---
 
-## 1. Tóm tắt một đoạn
+## 1. Tóm tắt
 
 Đang chạy bước "thử trên giấy" của kế hoạch cắt model thì phát hiện chuyện lớn hơn: **37% số
 ngày, bạch thủ công bố không phải số thắng cuộc bỏ phiếu của các model.** Có 5 lớp ghi đè chạy
@@ -18,7 +18,23 @@ Kỳ vọng: **28,9% → 35,6%** tỉ lệ trúng, **−96,5tr → −23,0tr** t
 
 ---
 
-## 2. Phát hiện
+## 2. Owner yêu cầu gì (nguyên văn)
+
+**01/08 08:51** — duyệt kế hoạch 5 giai đoạn cắt/thay model, bắt đầu Bước 0:
+
+> *"Rồi làm đi thật cản thận có kiểm soát nha em"*
+
+**01/08 ~10:0x** — sau khi agent trình bằng chứng về 5 lớp ghi đè:
+
+> *"Đừng có D chạy song song nữa, số liệu có rõ ràng rồi mà đo hoài, Xử lý an toàn, cải tiến,
+> cải thiện, tinh gọn, sạch sẽ cho cả 3 miền nha em."*
+
+Owner **từ chối phương án D** (dựng luồng chạy song song đo tiếp 2 tuần) và chọn triển khai
+**"Làm ngay hôm nay, kịp trước mốc chốt MN 15h45"**.
+
+---
+
+## 3. Đào bới / phát hiện
 
 ### 2.1 Hai cổng kiểm tự đặt đều trượt
 
@@ -130,6 +146,24 @@ bản, đây là phép kiểm tự đối chứng). MT và MB đều cải thi�
 
 ---
 
+## 5b. Hướng xử lý và vì sao chọn
+
+Mô phỏng chuỗi cho ra **8 kịch bản**. Owner chọn kịch bản 2 sau khi xem bảng so sánh.
+
+| Phương án | Vì sao chọn / loại |
+|---|---|
+| **Kịch bản 2 — tắt 5 lớp, giữ V10640 MN** | **ĐÃ CHỌN.** Tốt nhất cả về tỉ lệ trúng (35,6%) lẫn tiền (−23,0tr). Giữ đúng lớp duy nhất có lợi |
+| Kịch bản 3 — tắt sạch cả 6 | Loại: mất +14,7tr của lớp MN mà không được gì thêm |
+| Kịch bản 1 — chỉ tắt V10640 cho MB+MT | Loại: bỏ sót V10767/V10789/V10790, chỉ thu hồi 39,2tr thay vì 73,5tr |
+| Kịch bản 6/7 — tắt lẻ từng lớp | Loại: thu hồi ít (14,7–24,5tr) vì các lớp đè lên nhau, tắt lẻ không cắt được chuỗi |
+| **Chạy song song đo tiếp 2 tuần** | **Owner từ chối:** *"Đừng có D chạy song song nữa, số liệu có rõ ràng rồi mà đo hoài"* |
+
+Vì sao **giữ lớp MN** dù nó chưa đạt chuẩn chắc chắn (p=0,754): đây là phương án **đo được tốt
+nhất**, và bỏ nó là chủ động vứt +14,7tr đã quan sát được. Bù lại đặt ngưỡng hành động bằng văn
+bản (rà 31/08, âm tiền thì tắt) thay vì để mở vô thời hạn.
+
+---
+
 ## 6. Đã làm
 
 | Việc | Chi tiết |
@@ -197,6 +231,22 @@ Chính comment trong file đã ghi *"d_w06 had DECAYED to baseline-level"* — t
 ít nhất một lần trước đó mà không ai rút ra luật.
 
 **Luật mới ghi thẳng vào cả 4 file:** *đừng bật lại bằng backtest, chỉ bằng đo tiến.*
+
+---
+
+## 9b. Gỡ về
+
+```
+python web/backend/_v10917_deploy.py --rollback
+```
+
+Đẩy lại 4 file trong `backups/v10917_pre/` (bản VPS chụp **trước** khi sửa), restart service
+`lottery`, so PID trước/sau để chắc đã restart thật. **Mất khoảng 1 phút.**
+
+Gỡ về xong thì cả 6 lớp ghi đè bật lại như trước 01/08: V10640 bật cả ba miền, V10767/V10789/
+V10790 bật. Bảng canh ở `/monitoring` vẫn chạy và sẽ hiện lại các dòng `GHI ĐÈ PHÁ`.
+
+Không cần đụng database — phiên này **không sửa dữ liệu**, hash 4 bảng khoá giữ nguyên.
 
 ---
 

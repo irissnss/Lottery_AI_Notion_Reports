@@ -8,7 +8,33 @@
 
 ---
 
-## 1. Owner nói đúng — bốn việc bắt buộc đầu phiên đã bị bỏ qua
+## 1. Tóm tắt
+
+Owner phê bình agent không tra cứu trước khi hỏi. **Owner nói đúng, và có bằng chứng đo được:**
+phiên sáng 01/08 bỏ qua 4 việc bắt buộc đầu phiên, hậu quả là **CP-L2 đã nằm trong roadmap từ
+25/06** (quá hạn 37 ngày) mà agent vẫn đi hỏi owner lại từ đầu. Phát hiện thêm lỗ thứ năm: cổng
+deploy **bị đi vòng cả phiên**.
+
+Đã dựng: sổ quyết định gắn **mệnh đề máy kiểm được** trên code thật (9 quyết định, 0 mục trôi) ·
+một lệnh kiểm đầu phiên + hook `sessionStart` tự chạy · mở rộng matcher cổng deploy · quy tắc
+**A54** vào cả ba mặt quy tắc.
+
+---
+
+## 2. Owner yêu cầu gì (nguyên văn)
+
+**01/08 10:41:**
+
+> *"Các vấn đề xử lý ghi nhận đào, bới, anh xác nhận, anh chia sẻ, anh chốt và hướng xử lý cũng
+> như vướng vấp, nói chung tất cả cần cập nhật, ghi nhận lại đầy đủ chi tiết rõ ràng tránh quên
+> lãng nha em. Anh không muốn nhắc tới nhắc lui hoài những vấn đề mà em có thể tra ra, có thể
+> kiểm soát được đâu? Em làm quá cẩu thả, em đã tham chiếu với lịch sử, changelog, tài liệu,
+> v.v. để nắm rõ và kiểm tra lại, em phải tư duy để có mối liên hệ chặt chẽ giữa báo cáo, giữa
+> tài liệu, giữa code để kiểm soát chứ em."*
+
+---
+
+## 3. Đào bới / phát hiện — bốn việc bắt buộc đầu phiên đã bị bỏ qua
 
 | Việc bắt buộc | Quy tắc | Phiên sáng 01/08 |
 |---|---|---|
@@ -56,6 +82,18 @@ lệnh: python web/backend/_v10917_deploy.py
 lệnh: git status
 → {"permission": "allow"}
 ```
+
+---
+
+## 3c. Hướng xử lý và vì sao chọn
+
+| Phương án | Vì sao chọn / loại |
+|---|---|
+| **Lệnh chạy được + hook tự kích hoạt** | **ĐÃ CHỌN.** Bài học ngay trong phiên: quy tắc nằm trong tài liệu thì phụ thuộc agent có nhớ đọc hay không — hôm nay agent không nhớ |
+| Chỉ viết thêm quy tắc vào tài liệu | Loại: quy tắc *"soát roadmap đầu phiên"* đã có sẵn và vẫn bị bỏ qua. Thêm chữ không giải quyết |
+| Sổ quyết định chỉ dạng văn bản | Loại: không phát hiện được khi **code trôi khỏi quyết định** — đúng lỗi từng xảy ra (`OUTPUT_DUE` giữ 15:55 nhiều ngày sau khi owner chốt 15:45) |
+| Sổ quyết định gắn **mệnh đề máy kiểm được** | **ĐÃ CHỌN.** Một câu owner nói → nhiều mệnh đề chạy trên nhiều module; module nào trôi là máy báo |
+| Kiểm mọi mệnh đề trên VPS | Chỉnh lại: mệnh đề về **code chạy** kiểm trên VPS, mệnh đề về **file/hook** kiểm ở repo local — kiểm sai chỗ là báo nhầm |
 
 ---
 
@@ -121,7 +159,21 @@ trong `archive/`, md5 giống nhau — kiểm trước khi xoá).
 
 ---
 
-## 7. Bảy chỗ vấp trong phiên — ghi lại để không lặp
+## 6b. Cổng kiểm
+
+| Kiểm | Kết quả |
+|---|---|
+| Sổ quyết định chạy trên hệ thống thật | **9 quyết định · 0 mục trôi** |
+| Hạn FINAL khớp ở bao nhiêu module | **4/4** (`_v10782_freeze`, `_v10759_money_board`, `_v10861_runtime_audit`, `_v10692_multidir_lane`) |
+| Cổng deploy chặn đúng lệnh paramiko | ✓ trả `permission: ask` kèm danh sách tài liệu thiếu |
+| Cổng deploy vẫn cho qua lệnh vô hại | ✓ `git status` → `allow` |
+| Hook `sessionStart` ghi file | ✓ `docs/_BRIEFING_DAU_PHIEN.txt`, 3.572 byte |
+| Ba mặt quy tắc có A54 | ✓ cả ba, mỗi file +3.077 ký tự |
+| Chạy lại bộ kiểm đầu phiên sau khi sửa | CP-L2 **biến khỏi danh sách quá hạn** · roadmap chưa lưu trữ **0** |
+
+---
+
+## 7. Vướng vấp — bảy chỗ vấp trong phiên, ghi lại để không lặp
 
 | # | Vấp | Nếu bỏ qua thì sao |
 |---|---|---|
@@ -147,9 +199,27 @@ mồ côi khỏi checkpoint đã có — nên owner vẫn phải nhắc.
 
 ---
 
-## 9. Theo dõi
+## 8b. Gỡ về
 
-**FU-187** — cơ chế đã dựng, cần dùng thật. Còn 4 checkpoint quá hạn thuộc roadmap cũ chưa rà
-(CP-X.1, CP-2.2, CP-4.0, CP-R4); không xử trong cửa sổ đóng băng FU-186 (01–08/08).
+Phiên này **chỉ thêm** cơ chế kiểm tra, **không đổi đường ra số** và **không đụng database**.
+Muốn gỡ:
+
+```
+git revert 1d36b0c        # bỏ sổ quyết định + kiểm đầu phiên + A54
+```
+
+Hoặc gỡ lẻ: xoá mục `sessionStart` trong `.cursor/hooks.json` (tắt hook đầu phiên) · khôi phục
+`DEPLOY_REGEXES` cũ trong `governance_guard.py` (thu hẹp lại matcher). Gỡ về không ảnh hưởng
+production — Cursor tự nạp lại `hooks.json` khi lưu.
+
+---
+
+## 9. Theo dõi tiếp
+
+**FU-187** — cơ chế đã dựng, cần dùng thật. Ngưỡng: mỗi phiên phải chạy `_v10920_session_start.py`
+và `_v10920_decision_ledger.py`; có mục `TRÔI` là dừng, xử trước khi làm việc mới.
+
+Còn **4 checkpoint quá hạn** thuộc roadmap cũ chưa rà (CP-X.1 92 ngày, CP-2.2 91, CP-4.0 61,
+CP-R4 48); **không xử** trong cửa sổ đóng băng FU-186 (01–08/08), rà sau 08/08.
 
 Nguyên văn lời owner trong phiên: `CONVERSATION_CONTEXT_V10920_20260801.md` cùng thư mục.
