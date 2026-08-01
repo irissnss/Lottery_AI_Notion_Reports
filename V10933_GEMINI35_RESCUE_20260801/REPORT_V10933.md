@@ -141,6 +141,34 @@ Băm 4 bảng: `predictions d455c7c8d8e34332` · `final_bundles cb08373a3b17e00c
 
 ---
 
+## 7b. Chạy thử TRỌN ĐƯỜNG bằng lỗi 503 giả — có nhóm đối chứng
+
+Mục 4 mới chứng minh được hai nửa **rời nhau**: điều kiện kích hoạt tra ra đúng slug, và lệnh
+gọi OpenRouter trả về số. Chỗ **nối** giữa hai nửa thì chưa. Không thể ngồi đợi Google rớt 503
+thật để xem, nên dựng lỗi giả: chặn lời gọi Google trong **một tiến trình thử riêng**, ném đúng
+chuỗi lỗi 503 mà Google hay trả, rồi xem hàm có tự chuyển hướng không. Không sửa file, không
+đụng dịch vụ đang chạy.
+
+Chạy hai model để có đối chứng:
+
+| model | có khai đường thoát? | kết quả khi gặp 503 |
+|---|---|---|
+| `gemini-3.5-flash` | **có** | ✓ **cứu được** — 4,6s, ra số `bach_thu "38"`, đóng dấu `served_by = openrouter:google/gemini-3.5-flash` |
+| `gemini-3.1-pro` | không (đối chứng) | ✗ chờ lại 50 giây rồi vẫn trả lỗi — đúng hành vi cũ |
+
+Hệ in ra đúng chuỗi mong đợi:
+
+```
+[API] ↪ Gemini gemini-3.5-flash: 503 hết chỗ chứa — chuyển sang OpenRouter google/gemini-3.5-flash ngay
+[API] OpenRouter response: 360 chars, tokens: 644, finish: stop
+[API] ✅ OpenRouter cứu được gemini-3.5-flash
+```
+
+Nhóm đối chứng là phần quan trọng nhất của phép thử này: nó chứng minh kết quả tốt đến **từ việc
+khai vào danh sách**, chứ không phải do môi trường thử dễ dãi.
+
+---
+
 ## 8. Chạy song song, chưa vội chọn
 
 Giữ **cả hai** `3.5-flash` và `3.6-flash` chạy shadow để so găng. Lý do: 31/07 thay 3.5 bằng 3.6
