@@ -1,0 +1,131 @@
+{
+  "co_bang_log": {
+    "v10767_mb_prevday_shadow": true,
+    "v10789_mb_lane_promote_log": true,
+    "v10790_mt_lane_promote_log": true
+  },
+  "gen_method": [
+    {
+      "generation_method": "weighted_voting_wr",
+      "n": 181,
+      "tu": "2026-06-02",
+      "den": "2026-08-01"
+    }
+  ],
+  "cua_so": [
+    {
+      "nhan": "MN · chỉ V10640 (specialist)",
+      "n": 60,
+      "ghi_de": 21,
+      "ghi_de_pct": 35.0,
+      "tot": 6,
+      "xau": 4,
+      "hoa": 11,
+      "p_value": 0.7539,
+      "phieu_pct": 36.7,
+      "congbo_pct": 40.0,
+      "lai_phieu_tr": -36.9,
+      "lai_congbo_tr": -22.2,
+      "chenh_tien_tr": 14.7
+    },
+    {
+      "nhan": "MT · chỉ V10640 (trước 10/07)",
+      "n": 38,
+      "ghi_de": 13,
+      "ghi_de_pct": 34.2,
+      "tot": 1,
+      "xau": 3,
+      "hoa": 9,
+      "p_value": 0.625,
+      "phieu_pct": 34.2,
+      "congbo_pct": 28.9,
+      "lai_phieu_tr": -4.4,
+      "lai_congbo_tr": -28.9,
+      "chenh_tien_tr": -24.5
+    },
+    {
+      "nhan": "MT · V10640+V10790 (từ 10/07)",
+      "n": 22,
+      "ghi_de": 8,
+      "ghi_de_pct": 36.4,
+      "tot": 1,
+      "xau": 3,
+      "hoa": 4,
+      "p_value": 0.625,
+      "phieu_pct": 36.4,
+      "congbo_pct": 27.3,
+      "lai_phieu_tr": -8.5,
+      "lai_congbo_tr": -18.3,
+      "chenh_tien_tr": -9.8
+    },
+    {
+      "nhan": "MB · chỉ V10640 (trước 01/07)",
+      "n": 29,
+      "ghi_de": 8,
+      "ghi_de_pct": 27.6,
+      "tot": 0,
+      "xau": 2,
+      "hoa": 6,
+      "p_value": 0.5,
+      "phieu_pct": 27.6,
+      "congbo_pct": 20.7,
+      "lai_phieu_tr": 0.1,
+      "lai_congbo_tr": -9.8,
+      "chenh_tien_tr": -9.8
+    },
+    {
+      "nhan": "MB · +V10767 (01–08/07)",
+      "n": 8,
+      "ghi_de": 7,
+      "ghi_de_pct": 87.5,
+      "tot": 1,
+      "xau": 2,
+      "hoa": 4,
+      "p_value": 1.0,
+      "phieu_pct": 25.0,
+      "congbo_pct": 12.5,
+      "lai_phieu_tr": -1.0,
+      "lai_congbo_tr": -5.9,
+      "chenh_tien_tr": -4.9
+    },
+    {
+      "nhan": "MB · +V10789 (từ 09/07)",
+      "n": 23,
+      "ghi_de": 10,
+      "ghi_de_pct": 43.5,
+      "tot": 0,
+      "xau": 5,
+      "hoa": 5,
+      "p_value": 0.0625,
+      "phieu_pct": 39.1,
+      "congbo_pct": 17.4,
+      "lai_phieu_tr": 13.1,
+      "lai_congbo_tr": -11.4,
+      "chenh_tien_tr": -24.5
+    }
+  ],
+  "tong": {
+    "nhan": "TẤT CẢ",
+    "n": 180,
+    "ghi_de": 67,
+    "ghi_de_pct": 37.2,
+    "tot": 9,
+    "xau": 19,
+    "hoa": 39,
+    "p_value": 0.0872,
+    "phieu_pct": 34.4,
+    "congbo_pct": 28.9,
+    "lai_phieu_tr": -37.7,
+    "lai_congbo_tr": -96.5,
+    "chenh_tien_tr": -58.8
+  },
+  "log_10767": {
+    "loi": "no such column: date"
+  },
+  "log_10789": {
+    "loi": "no such column: date"
+  },
+  "log_10790": {
+    "loi": "no such column: date"
+  }
+}

@@ -1,0 +1,461 @@
+{
+  "theo_mien": {
+    "MB": {
+      "n": 60,
+      "ghi_de": 25,
+      "ghi_de_pct": 41.7,
+      "phieu_trung_pct": 31.7,
+      "congbo_trung_pct": 18.3,
+      "phieu_ci": [
+        21.3,
+        44.2
+      ],
+      "congbo_ci": [
+        10.6,
+        29.9
+      ],
+      "phieu_dai_tb": 0.317,
+      "congbo_dai_tb": 0.183,
+      "lai_phieu_tr": 12.1,
+      "lai_congbo_tr": -27.1,
+      "gd": {
+        "n": 25,
+        "phieu_trung_pct": 44.0,
+        "congbo_trung_pct": 12.0,
+        "phieu_dai": 11,
+        "congbo_dai": 3,
+        "lai_phieu_tr": 20.1,
+        "lai_congbo_tr": -19.1
+      }
+    },
+    "MN": {
+      "n": 60,
+      "ghi_de": 21,
+      "ghi_de_pct": 35.0,
+      "phieu_trung_pct": 36.7,
+      "congbo_trung_pct": 40.0,
+      "phieu_ci": [
+        25.6,
+        49.3
+      ],
+      "congbo_ci": [
+        28.6,
+        52.6
+      ],
+      "phieu_dai_tb": 0.45,
+      "congbo_dai_tb": 0.5,
+      "lai_phieu_tr": -36.9,
+      "lai_congbo_tr": -22.2,
+      "gd": {
+        "n": 21,
+        "phieu_trung_pct": 28.6,
+        "congbo_trung_pct": 38.1,
+        "phieu_dai": 8,
+        "congbo_dai": 11,
+        "lai_phieu_tr": -19.3,
+        "lai_congbo_tr": -4.6
+      }
+    },
+    "MT": {
+      "n": 60,
+      "ghi_de": 21,
+      "ghi_de_pct": 35.0,
+      "phieu_trung_pct": 35.0,
+      "congbo_trung_pct": 28.3,
+      "phieu_ci": [
+        24.2,
+        47.6
+      ],
+      "congbo_ci": [
+        18.5,
+        40.8
+      ],
+      "phieu_dai_tb": 0.4,
+      "congbo_dai_tb": 0.283,
+      "lai_phieu_tr": -12.9,
+      "lai_congbo_tr": -47.2,
+      "gd": {
+        "n": 21,
+        "phieu_trung_pct": 38.1,
+        "congbo_trung_pct": 19.0,
+        "phieu_dai": 11,
+        "congbo_dai": 4,
+        "lai_phieu_tr": 6.2,
+        "lai_congbo_tr": -28.1
+      }
+    }
+  },
+  "tong": {
+    "n": 180,
+    "ghi_de": 67,
+    "ghi_de_pct": 37.2,
+    "phieu_trung_pct": 34.4,
+    "congbo_trung_pct": 28.9,
+    "phieu_ci": [
+      27.9,
+      41.6
+    ],
+    "congbo_ci": [
+      22.8,
+      35.9
+    ],
+    "phieu_dai_tb": 0.389,
+    "congbo_dai_tb": 0.322,
+    "lai_phieu_tr": -37.7,
+    "lai_congbo_tr": -96.5,
+    "gd_n": 67,
+    "gd_phieu_trung_pct": 37.3,
+    "gd_congbo_trung_pct": 22.4,
+    "gd_phieu_dai": 30,
+    "gd_congbo_dai": 18,
+    "gd_lai_phieu_tr": 7.0,
+    "gd_lai_congbo_tr": -51.8
+  },
+  "ket_cuc": [
+    [
+      "HOA",
+      39
+    ],
+    [
+      "GHI_DE_XAU",
+      19
+    ],
+    [
+      "GHI_DE_TOT",
+      9
+    ]
+  ],
+  "ket_theo_mien": {
+    "MN": {
+      "HOA": 11,
+      "GHI_DE_XAU": 4,
+      "GHI_DE_TOT": 6
+    },
+    "MT": {
+      "HOA": 13,
+      "GHI_DE_TOT": 2,
+      "GHI_DE_XAU": 6
+    },
+    "MB": {
+      "HOA": 15,
+      "GHI_DE_XAU": 9,
+      "GHI_DE_TOT": 1
+    }
+  },
+  "mau": [
+    {
+      "date": "2026-06-02",
+      "region": "MN",
+      "phieu": "26",
+      "congbo": "39",
+      "hit_phieu": 0,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-03",
+      "region": "MB",
+      "phieu": "29",
+      "congbo": "40",
+      "hit_phieu": 0,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-03",
+      "region": "MN",
+      "phieu": "53",
+      "congbo": "47",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-04",
+      "region": "MB",
+      "phieu": "16",
+      "congbo": "94",
+      "hit_phieu": 1,
+      "hit_congbo": 1,
+      "n_dai": 1,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-04",
+      "region": "MT",
+      "phieu": "87",
+      "congbo": "42",
+      "hit_phieu": 0,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-05",
+      "region": "MN",
+      "phieu": "16",
+      "congbo": "61",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-06-07",
+      "region": "MB",
+      "phieu": "69",
+      "congbo": "16",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-09",
+      "region": "MB",
+      "phieu": "71",
+      "congbo": "39",
+      "hit_phieu": 1,
+      "hit_congbo": 1,
+      "n_dai": 1,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-09",
+      "region": "MN",
+      "phieu": "94",
+      "congbo": "61",
+      "hit_phieu": 0,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-09",
+      "region": "MT",
+      "phieu": "74",
+      "congbo": "69",
+      "hit_phieu": 0,
+      "hit_congbo": 0,
+      "n_dai": 2,
+      "ket": "HOA"
+    },
+    {
+      "date": "2026-06-11",
+      "region": "MN",
+      "phieu": "18",
+      "congbo": "92",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-06-11",
+      "region": "MT",
+      "phieu": "08",
+      "congbo": "88",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    }
+  ],
+  "mau_xau": [
+    {
+      "date": "2026-06-03",
+      "region": "MN",
+      "phieu": "53",
+      "congbo": "47",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-07",
+      "region": "MB",
+      "phieu": "69",
+      "congbo": "16",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-14",
+      "region": "MB",
+      "phieu": "37",
+      "congbo": "52",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-18",
+      "region": "MN",
+      "phieu": "03",
+      "congbo": "99",
+      "hit_phieu": 2,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-20",
+      "region": "MT",
+      "phieu": "43",
+      "congbo": "55",
+      "hit_phieu": 2,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-21",
+      "region": "MN",
+      "phieu": "60",
+      "congbo": "00",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-21",
+      "region": "MT",
+      "phieu": "81",
+      "congbo": "34",
+      "hit_phieu": 2,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-06-28",
+      "region": "MT",
+      "phieu": "93",
+      "congbo": "34",
+      "hit_phieu": 2,
+      "hit_congbo": 0,
+      "n_dai": 3,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-07-02",
+      "region": "MB",
+      "phieu": "38",
+      "congbo": "56",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "GHI_DE_XAU"
+    },
+    {
+      "date": "2026-07-07",
+      "region": "MB",
+      "phieu": "62",
+      "congbo": "87",
+      "hit_phieu": 1,
+      "hit_congbo": 0,
+      "n_dai": 1,
+      "ket": "GHI_DE_XAU"
+    }
+  ],
+  "mau_tot": [
+    {
+      "date": "2026-06-05",
+      "region": "MN",
+      "phieu": "16",
+      "congbo": "61",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-06-11",
+      "region": "MN",
+      "phieu": "18",
+      "congbo": "92",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-06-11",
+      "region": "MT",
+      "phieu": "08",
+      "congbo": "88",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-06-28",
+      "region": "MN",
+      "phieu": "21",
+      "congbo": "65",
+      "hit_phieu": 0,
+      "hit_congbo": 2,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-07-02",
+      "region": "MN",
+      "phieu": "45",
+      "congbo": "43",
+      "hit_phieu": 0,
+      "hit_congbo": 2,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-07-06",
+      "region": "MB",
+      "phieu": "16",
+      "congbo": "29",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 1,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-07-10",
+      "region": "MN",
+      "phieu": "36",
+      "congbo": "69",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-07-19",
+      "region": "MN",
+      "phieu": "50",
+      "congbo": "90",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 3,
+      "ket": "GHI_DE_TOT"
+    },
+    {
+      "date": "2026-07-20",
+      "region": "MT",
+      "phieu": "58",
+      "congbo": "87",
+      "hit_phieu": 0,
+      "hit_congbo": 1,
+      "n_dai": 2,
+      "ket": "GHI_DE_TOT"
+    }
+  ]
+}

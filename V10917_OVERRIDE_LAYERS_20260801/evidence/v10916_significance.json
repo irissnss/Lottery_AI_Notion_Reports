@@ -1,0 +1,101 @@
+{
+  "n_cap": 180,
+  "mcnemar": {
+    "hien_trung_kb2_truot": 3,
+    "kb2_trung_hien_truot": 15,
+    "n_khac": 18,
+    "p": 0.00754
+  },
+  "bootstrap": {
+    "lan": 20000,
+    "ty_le_kb2_thang": 99.9,
+    "chenh_trung_vi_tr": 73.5,
+    "khoang_95_tr": [
+      29.4,
+      122.5
+    ]
+  },
+  "chia_doi": {
+    "moc": "2026-07-02",
+    "nua_dau": {
+      "n": 90,
+      "pct0": 31.1,
+      "pct2": 35.6,
+      "tien0_tr": -42.9,
+      "tien2_tr": -8.6
+    },
+    "nua_sau": {
+      "n": 90,
+      "pct0": 26.7,
+      "pct2": 35.6,
+      "tien0_tr": -53.6,
+      "tien2_tr": -14.4
+    }
+  },
+  "theo_mien_chia_doi": {
+    "MN": {
+      "nua_dau": {
+        "n": 30,
+        "pct0": 43.3,
+        "pct2": 43.3,
+        "tien0_tr": -11.1,
+        "tien2_tr": -11.1
+      },
+      "nua_sau": {
+        "n": 30,
+        "pct0": 36.7,
+        "pct2": 36.7,
+        "tien0_tr": -11.1,
+        "tien2_tr": -11.1
+      }
+    },
+    "MT": {
+      "nua_dau": {
+        "n": 30,
+        "pct0": 30.0,
+        "pct2": 36.7,
+        "tien0_tr": -20.7,
+        "tien2_tr": 3.8
+      },
+      "nua_sau": {
+        "n": 30,
+        "pct0": 26.7,
+        "pct2": 33.3,
+        "tien0_tr": -26.5,
+        "tien2_tr": -16.7
+      }
+    },
+    "MB": {
+      "nua_dau": {
+        "n": 30,
+        "pct0": 20.0,
+        "pct2": 26.7,
+        "tien0_tr": -11.1,
+        "tien2_tr": -1.3
+      },
+      "nua_sau": {
+        "n": 30,
+        "pct0": 16.7,
+        "pct2": 36.7,
+        "tien0_tr": -16.0,
+        "tien2_tr": 13.4
+      }
+    }
+  },
+  "theo_thang": {
+    "2026-06": {
+      "n": 87,
+      "pct0": 32.2,
+      "pct2": 36.8,
+      "tien0_tr": -37.0,
+      "tien2_tr": -2.8
+    },
+    "2026-07": {
+      "n": 93,
+      "pct0": 25.8,
+      "pct2": 34.4,
+      "tien0_tr": -59.5,
+      "tien2_tr": -20.2
+    }
+  }
+}
