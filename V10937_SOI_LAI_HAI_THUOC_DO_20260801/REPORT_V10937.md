@@ -154,11 +154,52 @@ Kém cả hai thước **và** không có dấu hiệu đi lên mới được c
 
 ---
 
-## 10. Trạng thái deploy
+## 10. ĐÃ DEPLOY lúc 17:45 — sau khi nghiệm thu đêm đầu
 
-**CHƯA DEPLOY.** Đi chung chuyến với V10936 sau khi MB chốt 17:58 tối nay. Cùng lý do: tối nay là
-đêm đầu tiên `glm-5.1` chạy official với hạn mới.
+### Nghiệm thu đêm 01/08 (FU-194) — SẠCH
 
-Tình hình lúc 16:45: MN đã chốt 05:20 đúng hạn (13 model, bạch thủ 16). MT và MB đang chạy.
+| miền | chốt | hạn | dư | model | bạch thủ |
+|---|---|---|---|---|---|
+| MN | 05:20 | 15:45 | 625 phút | 13 | 16 |
+| MT | 16:46 | 16:58 | **12 phút** | 13 | 55 |
+| MB | 17:39 | 17:58 | **19 phút** | **15** | 90 |
+
+**0 lỗi** cả ngày. `glm-5.1` và `gpt-oss-120b` đều góp mặt trong chuỗi MT và MB, không quá giờ.
+Chậm nhất toàn hệ là `gpt-5.5` 643 giây nhưng đó là model shadow, không chạm hạn official.
+
+Đây là đêm đầu tiên hai model chậm chạy official với hạn mới — lo ngại chính đã được gỡ, nên
+bấm nút được.
+
+### Kết quả deploy
+
+```
+md5 hai file                    khớp
+PID dịch vụ                     561685 → 575903   (đổi thật)
+/api/health                     200
+tự kiểm sau deploy              10/10 ĐẠT
+băm 4 bảng trước/sau            Y NGUYÊN
+tự kiểm 16 mục trên VPS         lệch 0
+```
+
+Bộ lọc sau deploy chọn đúng như đã đo trước khi sửa:
+
+```
+MN: ['gpt-oss-120b', 'gemini-2.5-flash']
+MT: ['glm-5.1', 'claude-sonnet-4-6']
+MB: ['gemini-2.5-pro', 'deepseek-reasoner']
+```
 
 Hoàn tác: `python web/backend/_v10934_deploy.py --rollback` (~1 phút).
+
+---
+
+## 11. Tổng kết cả phiên 01/08
+
+| version | nội dung | trạng thái |
+|---|---|---|
+| V10933 | cứu `gemini-3.5-flash` — khai vào đường thoát 503 | ĐÃ DEPLOY |
+| V10933b | chạy thử trọn đường có nhóm đối chứng | ĐÃ DEPLOY |
+| V10934 | định đổi total — **bị thay bởi V10937** | HUỶ |
+| V10936 | bộ lọc: bỏ điểm ảo 50%, mở pool 7→9 | ĐÃ DEPLOY |
+| V10937 | hoãn `gemini-3.5-flash`, gọi `gpt-5.4` về thay `combo-no-token` | ĐÃ DEPLOY |
+| V10938 | bộ lọc chấm bạch thủ thay win rate | ĐÃ DEPLOY |
