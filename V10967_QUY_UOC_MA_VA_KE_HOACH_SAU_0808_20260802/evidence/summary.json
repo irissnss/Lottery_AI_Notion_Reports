@@ -1,0 +1,12 @@
+{
+  "version": "V10967",
+  "date": "2026-08-02",
+  "treo_count": 81,
+  "thieu_ma_doc": 0,
+  "fu225_split_to": "FU-231",
+  "fu222_frontend_to": "FU-222b",
+  "qd_added": ["QD-018", "QD-019"],
+  "fu_added": ["FU-232", "FU-233", "FU-234", "FU-235"],
+  "governance_seq": 385,
+  "vps_deploy": false
+}
