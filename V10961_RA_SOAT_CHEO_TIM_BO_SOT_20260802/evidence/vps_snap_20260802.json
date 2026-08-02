@@ -1,0 +1,32 @@
+{
+  "FREEZE_MARKS": {
+    "MN": "15:45",
+    "MT": "16:58",
+    "MB": "17:58"
+  },
+  "EDGE": {
+    "pp": 3.0,
+    "z": 2.0
+  },
+  "OUTPUT_ELIGIBLE_N": 15,
+  "OUTPUT_ELIGIBLE": [
+    "claude-opus-4-6",
+    "claude-sonnet-4-6",
+    "combo-super",
+    "deepseek-reasoner",
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "glm-5.1",
+    "gpt-5.4",
+    "gpt-oss-120b",
+    "lstm",
+    "meta-learning",
+    "random-forest",
+    "smart-ensemble",
+    "smart-ml",
+    "xgboost"
+  ],
+  "combo_AI_n": 9,
+  "combo_ML_n": 4,
+  "consistency_guard": "16/16 lech 0"
+}
