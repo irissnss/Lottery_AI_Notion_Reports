@@ -1,0 +1,692 @@
+{
+  "gt1": {
+    "bo_ung_vien": {
+      "tb_so_ung_vien_moi_ngay": 40.0,
+      "min_max": [
+        40,
+        40
+      ],
+      "ty_le_so_trung_nam_trong_bo_ung_vien_pct": 40.9,
+      "giai_thich": "Live RF/XGB/meta chi cham top-30 thong ke roi xep lai. Neu so trung nam NGOAI bo ung vien thi model KHONG BAO GIO chon duoc — day la lo hong truoc ca AUC."
+    },
+    "random-forest": {
+      "n_ngay": 60,
+      "top1_he_pct": 14.38,
+      "top1_loi_the_vs_bua100": -2.08,
+      "top1_z": -0.68,
+      "bua_100_pct": 16.47,
+      "bua_pool_pct": 16.89,
+      "trung_vi_hang_so_trung": 21.0,
+      "tong_so_trung_ngoai_pool": 1254,
+      "bang_top_k": {
+        "top1": {
+          "he_pct": 14.38,
+          "loi_the_vs_bua100": -2.08,
+          "loi_the_vs_bua_pool": -2.51,
+          "any_hit_ngay_pct": 30.0,
+          "dat": 146,
+          "trung": 21,
+          "n_ngay": 60,
+          "z_vs_bua100": -0.68
+        },
+        "top3": {
+          "he_pct": 14.61,
+          "loi_the_vs_bua100": -1.85,
+          "loi_the_vs_bua_pool": -2.28,
+          "any_hit_ngay_pct": 66.67,
+          "dat": 438,
+          "trung": 64,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.05
+        },
+        "top5": {
+          "he_pct": 13.97,
+          "loi_the_vs_bua100": -2.49,
+          "loi_the_vs_bua_pool": -2.92,
+          "any_hit_ngay_pct": 85.0,
+          "dat": 730,
+          "trung": 102,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.82
+        },
+        "top10": {
+          "he_pct": 15.21,
+          "loi_the_vs_bua100": -1.26,
+          "loi_the_vs_bua_pool": -1.68,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 1460,
+          "trung": 222,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.3
+        },
+        "top20": {
+          "he_pct": 16.13,
+          "loi_the_vs_bua100": -0.34,
+          "loi_the_vs_bua_pool": -0.76,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 2920,
+          "trung": 471,
+          "n_ngay": 60,
+          "z_vs_bua100": -0.49
+        }
+      },
+      "top1_dat": 146,
+      "top1_trung": 21,
+      "model": "random-forest",
+      "auc_holdout": 0.5299
+    },
+    "xgboost": {
+      "n_ngay": 60,
+      "top1_he_pct": 13.01,
+      "top1_loi_the_vs_bua100": -3.45,
+      "top1_z": -1.12,
+      "bua_100_pct": 16.47,
+      "bua_pool_pct": 16.89,
+      "trung_vi_hang_so_trung": 21.0,
+      "tong_so_trung_ngoai_pool": 1254,
+      "bang_top_k": {
+        "top1": {
+          "he_pct": 13.01,
+          "loi_the_vs_bua100": -3.45,
+          "loi_the_vs_bua_pool": -3.88,
+          "any_hit_ngay_pct": 28.33,
+          "dat": 146,
+          "trung": 19,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.12
+        },
+        "top3": {
+          "he_pct": 15.3,
+          "loi_the_vs_bua100": -1.17,
+          "loi_the_vs_bua_pool": -1.59,
+          "any_hit_ngay_pct": 68.33,
+          "dat": 438,
+          "trung": 67,
+          "n_ngay": 60,
+          "z_vs_bua100": -0.66
+        },
+        "top5": {
+          "he_pct": 13.97,
+          "loi_the_vs_bua100": -2.49,
+          "loi_the_vs_bua_pool": -2.92,
+          "any_hit_ngay_pct": 80.0,
+          "dat": 730,
+          "trung": 102,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.82
+        },
+        "top10": {
+          "he_pct": 16.1,
+          "loi_the_vs_bua100": -0.37,
+          "loi_the_vs_bua_pool": -0.79,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 1460,
+          "trung": 235,
+          "n_ngay": 60,
+          "z_vs_bua100": -0.38
+        },
+        "top20": {
+          "he_pct": 16.64,
+          "loi_the_vs_bua100": 0.18,
+          "loi_the_vs_bua_pool": -0.25,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 2920,
+          "trung": 486,
+          "n_ngay": 60,
+          "z_vs_bua100": 0.26
+        }
+      },
+      "top1_dat": 146,
+      "top1_trung": 19,
+      "model": "xgboost",
+      "auc_holdout": 0.5236
+    },
+    "meta-learning": {
+      "n_ngay": 60,
+      "top1_he_pct": 17.12,
+      "top1_loi_the_vs_bua100": 0.66,
+      "top1_z": 0.21,
+      "bua_100_pct": 16.47,
+      "bua_pool_pct": 16.89,
+      "trung_vi_hang_so_trung": 21.0,
+      "tong_so_trung_ngoai_pool": 1254,
+      "bang_top_k": {
+        "top1": {
+          "he_pct": 17.12,
+          "loi_the_vs_bua100": 0.66,
+          "loi_the_vs_bua_pool": 0.23,
+          "any_hit_ngay_pct": 35.0,
+          "dat": 146,
+          "trung": 25,
+          "n_ngay": 60,
+          "z_vs_bua100": 0.21
+        },
+        "top3": {
+          "he_pct": 14.38,
+          "loi_the_vs_bua100": -2.08,
+          "loi_the_vs_bua_pool": -2.51,
+          "any_hit_ngay_pct": 73.33,
+          "dat": 438,
+          "trung": 63,
+          "n_ngay": 60,
+          "z_vs_bua100": -1.18
+        },
+        "top5": {
+          "he_pct": 16.03,
+          "loi_the_vs_bua100": -0.44,
+          "loi_the_vs_bua_pool": -0.86,
+          "any_hit_ngay_pct": 90.0,
+          "dat": 730,
+          "trung": 117,
+          "n_ngay": 60,
+          "z_vs_bua100": -0.32
+        },
+        "top10": {
+          "he_pct": 16.58,
+          "loi_the_vs_bua100": 0.11,
+          "loi_the_vs_bua_pool": -0.31,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 1460,
+          "trung": 242,
+          "n_ngay": 60,
+          "z_vs_bua100": 0.11
+        },
+        "top20": {
+          "he_pct": 16.78,
+          "loi_the_vs_bua100": 0.31,
+          "loi_the_vs_bua_pool": -0.11,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 2920,
+          "trung": 490,
+          "n_ngay": 60,
+          "z_vs_bua100": 0.46
+        }
+      },
+      "top1_dat": 146,
+      "top1_trung": 25,
+      "model": "meta-learning",
+      "auc_holdout": 0.5394
+    },
+    "lstm": {
+      "n_ngay": 100,
+      "top1_he_pct": 21.4,
+      "top1_loi_the_vs_bua100": 4.94,
+      "top1_z": 2.08,
+      "bua_100_pct": 16.46,
+      "bua_pool_pct": 16.46,
+      "trung_vi_hang_so_trung": 49.0,
+      "tong_so_trung_ngoai_pool": 0,
+      "bang_top_k": {
+        "top1": {
+          "he_pct": 21.4,
+          "loi_the_vs_bua100": 4.94,
+          "loi_the_vs_bua_pool": 4.94,
+          "any_hit_ngay_pct": 39.0,
+          "dat": 243,
+          "trung": 52,
+          "n_ngay": 100,
+          "z_vs_bua100": 2.08
+        },
+        "top3": {
+          "he_pct": 17.56,
+          "loi_the_vs_bua100": 1.1,
+          "loi_the_vs_bua_pool": 1.1,
+          "any_hit_ngay_pct": 73.0,
+          "dat": 729,
+          "trung": 128,
+          "n_ngay": 100,
+          "z_vs_bua100": 0.8
+        },
+        "top5": {
+          "he_pct": 17.78,
+          "loi_the_vs_bua100": 1.32,
+          "loi_the_vs_bua_pool": 1.32,
+          "any_hit_ngay_pct": 88.0,
+          "dat": 1215,
+          "trung": 216,
+          "n_ngay": 100,
+          "z_vs_bua100": 1.24
+        },
+        "top10": {
+          "he_pct": 17.2,
+          "loi_the_vs_bua100": 0.74,
+          "loi_the_vs_bua_pool": 0.74,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 2430,
+          "trung": 418,
+          "n_ngay": 100,
+          "z_vs_bua100": 0.99
+        },
+        "top20": {
+          "he_pct": 16.83,
+          "loi_the_vs_bua100": 0.37,
+          "loi_the_vs_bua_pool": 0.37,
+          "any_hit_ngay_pct": 100.0,
+          "dat": 4860,
+          "trung": 818,
+          "n_ngay": 100,
+          "z_vs_bua100": 0.7
+        }
+      },
+      "top1_dat": 243,
+      "top1_trung": 52,
+      "model": "lstm",
+      "auc_holdout": 0.5554,
+      "ghi_chu": "LSTM cham du 100 so moi ngay — thuoc do top-K sach nhat"
+    }
+  },
+  "gt2": {
+    "n_dong": 368,
+    "khop_main0": 368,
+    "lech_main0": 0,
+    "mau_lech": [],
+    "giai_thich_code": "scheduler ghi bt_number = main_numbers[0]. ml_predict sap xep theo ml_prob giam dan roi lay main_numbers = top_n. Vay bt_number = argmax trong bo ung vien live (thuong top-30 thong ke), KHONG phai argmax tren ca 100 so.",
+    "vs_predictions": {
+      "khop": 368,
+      "lech": 0,
+      "thieu_pred": 0,
+      "mau": []
+    },
+    "ty_le_khop_main0_pct": 100.0
+  },
+  "gt3": {
+    "180_ngay": {
+      "n_ngay": 154,
+      "tung_model": {
+        "random-forest": {
+          "ky": 154,
+          "dat": 374,
+          "trung": 72,
+          "he_pct": 19.25,
+          "bua_pct": 16.5,
+          "loi_the": 2.75,
+          "z": 1.43
+        },
+        "xgboost": {
+          "ky": 154,
+          "dat": 374,
+          "trung": 78,
+          "he_pct": 20.86,
+          "bua_pct": 16.5,
+          "loi_the": 4.36,
+          "z": 2.27
+        },
+        "meta-learning": {
+          "ky": 154,
+          "dat": 374,
+          "trung": 69,
+          "he_pct": 18.45,
+          "bua_pct": 16.5,
+          "loi_the": 1.95,
+          "z": 1.02
+        },
+        "lstm": {
+          "ky": 154,
+          "dat": 374,
+          "trung": 52,
+          "he_pct": 13.9,
+          "bua_pct": 16.5,
+          "loi_the": -2.6,
+          "z": -1.35
+        }
+      },
+      "ml_tot_nhat_co_dinh": {
+        "ten": "xgboost",
+        "ky": 154,
+        "dat": 374,
+        "trung": 78,
+        "he_pct": 20.86,
+        "bua_pct": 16.5,
+        "loi_the": 4.36,
+        "z": 2.27
+      },
+      "oracle_chon_ml_theo_ngay": {
+        "ky": 154,
+        "dat": 374,
+        "trung": 141,
+        "he_pct": 37.7,
+        "bua_pct": 16.5,
+        "loi_the": 21.2,
+        "z": 11.05
+      },
+      "so_cong_bo": {
+        "ky": 154,
+        "dat": 374,
+        "trung": 62,
+        "he_pct": 16.58,
+        "bua_pct": 16.5,
+        "loi_the": 0.08,
+        "z": 0.04
+      },
+      "so_thang_phieu": {
+        "ky": 154,
+        "dat": 374,
+        "trung": 68,
+        "he_pct": 18.18,
+        "bua_pct": 16.5,
+        "loi_the": 1.68,
+        "z": 0.88
+      },
+      "chenh_ml_vs_cong_bo_pp": 4.28
+    },
+    "nua_sau_tu_0506": {
+      "n_ngay": 87,
+      "tung_model": {
+        "random-forest": {
+          "ky": 87,
+          "dat": 211,
+          "trung": 42,
+          "he_pct": 19.91,
+          "bua_pct": 16.48,
+          "loi_the": 3.42,
+          "z": 1.34
+        },
+        "xgboost": {
+          "ky": 87,
+          "dat": 211,
+          "trung": 41,
+          "he_pct": 19.43,
+          "bua_pct": 16.48,
+          "loi_the": 2.95,
+          "z": 1.15
+        },
+        "meta-learning": {
+          "ky": 87,
+          "dat": 211,
+          "trung": 27,
+          "he_pct": 12.8,
+          "bua_pct": 16.48,
+          "loi_the": -3.69,
+          "z": -1.44
+        },
+        "lstm": {
+          "ky": 87,
+          "dat": 211,
+          "trung": 23,
+          "he_pct": 10.9,
+          "bua_pct": 16.48,
+          "loi_the": -5.58,
+          "z": -2.19
+        }
+      },
+      "ml_tot_nhat_co_dinh": {
+        "ten": "random-forest",
+        "ky": 87,
+        "dat": 211,
+        "trung": 42,
+        "he_pct": 19.91,
+        "bua_pct": 16.48,
+        "loi_the": 3.42,
+        "z": 1.34
+      },
+      "oracle_chon_ml_theo_ngay": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 74,
+        "he_pct": 35.07,
+        "bua_pct": 16.48,
+        "loi_the": 18.59,
+        "z": 7.28
+      },
+      "so_cong_bo": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 26,
+        "he_pct": 12.32,
+        "bua_pct": 16.48,
+        "loi_the": -4.16,
+        "z": -1.63
+      },
+      "so_thang_phieu": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 32,
+        "he_pct": 15.17,
+        "bua_pct": 16.48,
+        "loi_the": -1.32,
+        "z": -0.52
+      },
+      "chenh_ml_vs_cong_bo_pp": 7.59
+    },
+    "holdout_gt1": {
+      "n_ngay": 60,
+      "tung_model": {
+        "random-forest": {
+          "ky": 60,
+          "dat": 146,
+          "trung": 26,
+          "he_pct": 17.81,
+          "bua_pct": 16.47,
+          "loi_the": 1.34,
+          "z": 0.44
+        },
+        "xgboost": {
+          "ky": 60,
+          "dat": 146,
+          "trung": 28,
+          "he_pct": 19.18,
+          "bua_pct": 16.47,
+          "loi_the": 2.71,
+          "z": 0.88
+        },
+        "meta-learning": {
+          "ky": 60,
+          "dat": 146,
+          "trung": 16,
+          "he_pct": 10.96,
+          "bua_pct": 16.47,
+          "loi_the": -5.51,
+          "z": -1.8
+        },
+        "lstm": {
+          "ky": 60,
+          "dat": 146,
+          "trung": 12,
+          "he_pct": 8.22,
+          "bua_pct": 16.47,
+          "loi_the": -8.25,
+          "z": -2.69
+        }
+      },
+      "ml_tot_nhat_co_dinh": {
+        "ten": "xgboost",
+        "ky": 60,
+        "dat": 146,
+        "trung": 28,
+        "he_pct": 19.18,
+        "bua_pct": 16.47,
+        "loi_the": 2.71,
+        "z": 0.88
+      },
+      "oracle_chon_ml_theo_ngay": {
+        "ky": 60,
+        "dat": 146,
+        "trung": 47,
+        "he_pct": 32.19,
+        "bua_pct": 16.47,
+        "loi_the": 15.72,
+        "z": 5.12
+      },
+      "so_cong_bo": {
+        "ky": 60,
+        "dat": 146,
+        "trung": 17,
+        "he_pct": 11.64,
+        "bua_pct": 16.47,
+        "loi_the": -4.83,
+        "z": -1.57
+      },
+      "so_thang_phieu": {
+        "ky": 60,
+        "dat": 146,
+        "trung": 24,
+        "he_pct": 16.44,
+        "bua_pct": 16.47,
+        "loi_the": -0.03,
+        "z": -0.01
+      },
+      "chenh_ml_vs_cong_bo_pp": 7.54
+    }
+  },
+  "gt4": {
+    "co_hien_tai": {
+      "V10640_MN_specialist": true,
+      "V10640_MT_nt_consensus": false,
+      "V10640_MB_prior_region": false,
+      "V10767_MB": false,
+      "V10789_MB": false,
+      "V10790_MT": false
+    },
+    "thong_ke": {},
+    "theo_giai_doan": {
+      "180_ngay": {
+        "n": 155,
+        "n_ghi_de": 22,
+        "ty_le_ghi_de_pct": 14.2,
+        "khong_doi": 133,
+        "cuu": 3,
+        "pha": 6,
+        "hoa": 13,
+        "he_phieu_pct": 18.3,
+        "he_cong_bo_pct": 16.71,
+        "chenh_cong_bo_tru_phieu_pp": -1.59
+      },
+      "nua_sau_tu_0506": {
+        "n": 88,
+        "n_ghi_de": 22,
+        "ty_le_ghi_de_pct": 25.0,
+        "khong_doi": 66,
+        "cuu": 3,
+        "pha": 6,
+        "hoa": 13,
+        "he_phieu_pct": 15.42,
+        "he_cong_bo_pct": 12.62,
+        "chenh_cong_bo_tru_phieu_pp": -2.8
+      },
+      "sau_tat_lop_0801": {
+        "n": 1,
+        "n_ghi_de": 0,
+        "ty_le_ghi_de_pct": 0.0,
+        "khong_doi": 1,
+        "cuu": 0,
+        "pha": 0,
+        "hoa": 0,
+        "he_phieu_pct": 0.0,
+        "he_cong_bo_pct": 0.0,
+        "chenh_cong_bo_tru_phieu_pp": 0.0
+      }
+    }
+  },
+  "gt5": {
+    "auc_tham_chieu": 0.5517,
+    "hoa_von_mt_pct": 18.37,
+    "bua_mt_tham_chieu_pct": 16.5,
+    "p_top1_la_so_trung_theo_auc": {
+      "0.5": 0.333,
+      "0.52": 0.3785,
+      "0.55": 0.45,
+      "0.5517": 0.4535,
+      "0.6": 0.563,
+      "0.65": 0.6655
+    },
+    "p_random_la_so_trung": 0.3519,
+    "he_dai_khi_so_la_hit": 0.4817,
+    "he_top1_uoc_luong_pct": {
+      "0.5": {
+        "he_pct": 16.04,
+        "vs_hoa_von_pp": -2.33,
+        "vs_bua_pp": -0.46,
+        "du_hoa_von": false
+      },
+      "0.52": {
+        "he_pct": 18.23,
+        "vs_hoa_von_pp": -0.14,
+        "vs_bua_pp": 1.73,
+        "du_hoa_von": false
+      },
+      "0.55": {
+        "he_pct": 21.68,
+        "vs_hoa_von_pp": 3.31,
+        "vs_bua_pp": 5.18,
+        "du_hoa_von": true
+      },
+      "0.5517": {
+        "he_pct": 21.84,
+        "vs_hoa_von_pp": 3.47,
+        "vs_bua_pp": 5.35,
+        "du_hoa_von": true
+      },
+      "0.6": {
+        "he_pct": 27.12,
+        "vs_hoa_von_pp": 8.75,
+        "vs_bua_pp": 10.62,
+        "du_hoa_von": true
+      },
+      "0.65": {
+        "he_pct": 32.06,
+        "vs_hoa_von_pp": 13.69,
+        "vs_bua_pp": 15.56,
+        "du_hoa_von": true
+      }
+    },
+    "giai_thich": "Mo phong Gaussian matching AUC: moi ngay gan diem N(mu,1) cho so trung, N(0,1) cho so truot, mu=sqrt(2)*Phi^{-1}(AUC). Lay argmax. he_theo_dai ≈ P(top1 la so trung) * he_dai|hit * 100.",
+    "auc_can_de_hoa_von": 0.5135,
+    "he_tai_auc_do": 18.38,
+    "top1_thuc_te_tu_gt1": {
+      "random-forest": {
+        "he": 14.38,
+        "loi_the": -2.08,
+        "auc": 0.5299
+      },
+      "xgboost": {
+        "he": 13.01,
+        "loi_the": -3.45,
+        "auc": 0.5236
+      },
+      "meta-learning": {
+        "he": 17.12,
+        "loi_the": 0.66,
+        "auc": 0.5394
+      },
+      "lstm": {
+        "he": 21.4,
+        "loi_the": 4.94,
+        "auc": 0.5554
+      }
+    }
+  },
+  "ghi_chu": [
+    "CSV MT: 12000 dong, 300 ngay, test 20% cuoi = 60 ngay (2026-06-03 -> 2026-08-01)"
+  ],
+  "auc_doi_chieu": [
+    {
+      "model": "random-forest",
+      "auc": 0.5299,
+      "auc_file": 0.5299,
+      "n": 2400,
+      "ty_le_nhan_hit": 0.3613
+    },
+    {
+      "model": "xgboost",
+      "auc": 0.5236,
+      "auc_file": 0.5236,
+      "n": 2400,
+      "ty_le_nhan_hit": 0.3613
+    },
+    {
+      "model": "meta-learning",
+      "auc": 0.5394,
+      "auc_file": 0.5394,
+      "n": 2400,
+      "ty_le_nhan_hit": 0.3613
+    },
+    {
+      "model": "lstm",
+      "auc": 0.5554,
+      "auc_file": null,
+      "n": 10000,
+      "ty_le_nhan_hit": 0.3518,
+      "so_ngay": 100
+    }
+  ]
+}
