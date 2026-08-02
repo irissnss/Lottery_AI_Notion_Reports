@@ -1,6 +1,6 @@
 # V10969 — Kiểm tổng lực hết live 02/08: ba miền đúng hạn, BT 3/3 WIN, hệ sạch
 
-**Ngày:** 02/08/2026 · **Giờ thu thập VN:** 18:48:25 · **Commit riêng:** `1dd139f` · **Commit công khai:** `fc159b5` · **Trạng thái:** HOÀN TẤT (chỉ đọc + báo cáo; không sửa production)
+**Ngày:** 02/08/2026 · **Giờ thu thập VN:** 18:48:25 · **Commit riêng:** `d65698d` (nội dung chính `1dd139f` + fix gate) · **Commit công khai:** `c8f633e` · **Trạng thái:** HOÀN TẤT (chỉ đọc + báo cáo; không sửa production)
 
 ---
 
