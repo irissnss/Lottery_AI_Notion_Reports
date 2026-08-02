@@ -1,0 +1,80 @@
+{
+  "khan_log_lines_before": 1,
+  "khan_log_lines_after": 2,
+  "khan_log_grew": true,
+  "last_khan_line": "{\"ts_vn\": \"2026-08-02 17:28:00+0700\", \"command\": \"python web/backend/_v10968_deploy.py\", \"reason\": \"DEPLOY_KHAN=1\", \"version\": \"V10968\"}",
+  "results": [
+    {
+      "label": "1_trong_khung_17:28_expect_deny",
+      "env": {
+        "DEPLOY_GUARD_NOW_VN": "17:28"
+      },
+      "returncode": 0,
+      "payload": {
+        "permission": "deny",
+        "user_message": "CHẶN deploy: đang trong khung giờ chạy dự đoán (17:28 giờ Việt Nam). Khung cấm: 05:00–06:30 và 15:30–18:15 giờ Việt Nam. Giờ an toàn gần nhất: 18:15. Nếu thật sự khẩn (lỗi đang chảy), đặt DEPLOY_KHAN=1 rồi chạy lại — sẽ được ghi nhật ký.",
+        "agent_message": "Không deploy/restart trong khung 05:00–06:30 hoặc 15:30–18:15 Asia/Ho_Chi_Minh. Chờ hết khung, hoặc chỉ khi khẩn mới dùng DEPLOY_KHAN=1 (có ghi log artifacts/deploy_khan_overrides.jsonl). Ví dụ suýt hỏng 02/08: restart 17:28 khi MB chain 17:30 (cách 2 phút)."
+      },
+      "stderr": ""
+    },
+    {
+      "label": "2_ngoai_khung_14:00_expect_not_deny_time",
+      "env": {
+        "DEPLOY_GUARD_NOW_VN": "14:00"
+      },
+      "returncode": 0,
+      "payload": {
+        "permission": "ask",
+        "user_message": "Governance deploy guard: deploy/restart command detected, but traceability surfaces are not fully synced. Missing updates: CHANGELOG.md, docs/CHANGELOG_GOVERNANCE_LEDGER.md, docs/DECISION_LOG.md.",
+        "agent_message": "Update the missing docs/rule surfaces before deploy so runtime, changelog, SSOT, tracker, and synced rule surfaces remain consistent."
+      },
+      "stderr": ""
+    },
+    {
+      "label": "3_khan_17:28_expect_pass_time_plus_log",
+      "env": {
+        "DEPLOY_GUARD_NOW_VN": "17:28",
+        "DEPLOY_KHAN": "1"
+      },
+      "returncode": 0,
+      "payload": {
+        "permission": "ask",
+        "user_message": "Governance deploy guard: deploy/restart command detected, but traceability surfaces are not fully synced. Missing updates: CHANGELOG.md, docs/CHANGELOG_GOVERNANCE_LEDGER.md, docs/DECISION_LOG.md.",
+        "agent_message": "Update the missing docs/rule surfaces before deploy so runtime, changelog, SSOT, tracker, and synced rule surfaces remain consistent."
+      },
+      "stderr": ""
+    },
+    {
+      "label": "bonus_sang_05:15_expect_deny",
+      "env": {
+        "DEPLOY_GUARD_NOW_VN": "05:15"
+      },
+      "returncode": 0,
+      "payload": {
+        "permission": "deny",
+        "user_message": "CHẶN deploy: đang trong khung giờ chạy dự đoán (05:15 giờ Việt Nam). Khung cấm: 05:00–06:30 và 15:30–18:15 giờ Việt Nam. Giờ an toàn gần nhất: 06:30. Nếu thật sự khẩn (lỗi đang chảy), đặt DEPLOY_KHAN=1 rồi chạy lại — sẽ được ghi nhật ký.",
+        "agent_message": "Không deploy/restart trong khung 05:00–06:30 hoặc 15:30–18:15 Asia/Ho_Chi_Minh. Chờ hết khung, hoặc chỉ khi khẩn mới dùng DEPLOY_KHAN=1 (có ghi log artifacts/deploy_khan_overrides.jsonl). Ví dụ suýt hỏng 02/08: restart 17:28 khi MB chain 17:30 (cách 2 phút)."
+      },
+      "stderr": ""
+    },
+    {
+      "label": "bonus_het_khung_18:15_expect_not_deny",
+      "env": {
+        "DEPLOY_GUARD_NOW_VN": "18:15"
+      },
+      "returncode": 0,
+      "payload": {
+        "permission": "ask",
+        "user_message": "Governance deploy guard: deploy/restart command detected, but traceability surfaces are not fully synced. Missing updates: CHANGELOG.md, docs/CHANGELOG_GOVERNANCE_LEDGER.md, docs/DECISION_LOG.md.",
+        "agent_message": "Update the missing docs/rule surfaces before deploy so runtime, changelog, SSOT, tracker, and synced rule surfaces remain consistent."
+      },
+      "stderr": ""
+    }
+  ],
+  "verdict": {
+    "test1_deny": true,
+    "test2_not_time_deny": true,
+    "test3_not_time_deny": true,
+    "test3_logged": true
+  }
+}
