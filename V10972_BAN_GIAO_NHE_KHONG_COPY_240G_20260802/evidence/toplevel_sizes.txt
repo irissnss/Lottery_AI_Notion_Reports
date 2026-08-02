@@ -1,0 +1,26 @@
+﻿
+name                       type        bytes      GB       MB category        
+----                       ----        -----      --       -- --------        
+artifacts                  DIR  259778892578 241.938 247744.5 B_runtime       
+backups                    DIR   10382196367   9.669   9901.2 C_backups       
+data                       DIR    1844820875   1.718   1759.4 B_runtime       
+docs                       DIR     492674431   0.459    469.9 A_source_or_docs
+Backup Final 23042026 DDXS DIR     243247906   0.227      232 C_backups       
+.git                       DIR     135259734   0.126      129 A_git_objects   
+web                        DIR      87461399   0.081     83.4 A_source_or_docs
+Minimal_JavaScript_v7.5.0  DIR      41314889   0.038     39.4 OTHER           
+sandbox                    DIR      26275135   0.024     25.1 A_source_or_docs
+share_exports              DIR       7725898   0.007      7.4 D_reports       
+share_exports.rar          FILE      7724755   0.007      7.4 OTHER           
+reports                    DIR       4289822   0.004      4.1 D_reports       
+archive                    DIR       2369388   0.002      2.3 D_reports       
+CHANGELOG.md               FILE      2047983   0.002        2 A_source_or_docs
+scripts                    DIR        341132       0      0.3 A_source_or_docs
+_archive_temp_scripts      DIR        340347       0      0.3 OTHER           
+__pycache__                DIR        181240       0      0.2 OTHER           
+.Antigravityrules.md       FILE       105745       0      0.1 A_source_or_docs
+Lottery_AI_Notion_Reports  DIR         82621       0      0.1 D_reports       
+tools                      DIR         79356       0      0.1 A_source_or_docs
+
+
+
