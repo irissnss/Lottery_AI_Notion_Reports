@@ -1,0 +1,797 @@
+{
+  "window": "20260713-20260802",
+  "count": 116,
+  "folders": [
+    {
+      "date": "20260714",
+      "folder": "V10794_CYCLE_REVIEW_CHOI_COMBO_LOCK_FIX_20260714_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10794_CYCLE_REVIEW_CHOI_COMBO_LOCK_FIX_20260714_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260714",
+      "folder": "V10795_WIN31_FORENSIC_TOTAL_FORCE_20260714_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10795_WIN31_FORENSIC_TOTAL_FORCE_20260714_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260714",
+      "folder": "V10796_COLD_DAY_REVIEW_20260714_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10796_COLD_DAY_REVIEW_20260714_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10797_IMPROVE_PACK_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10797_IMPROVE_PACK_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10798_TCHOT_TIMING_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10798_TCHOT_TIMING_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10799_CONSISTENCY_AUDIT_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10799_CONSISTENCY_AUDIT_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10800_FULL_SYSTEM_TIMETABLE_AUDIT_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10800_FULL_SYSTEM_TIMETABLE_AUDIT_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10801_ML_MARK_AB_SHADOW_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10801_ML_MARK_AB_SHADOW_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10803_CHASE_BIAS_SHADOW_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10803_CHASE_BIAS_SHADOW_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10804_TRACE4_MIGRATION_C16FIX_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10804_TRACE4_MIGRATION_C16FIX_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260715",
+      "folder": "V10805_REVERSE_REPLAY_51_19_RULE_ENGINE_20260715_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10805_REVERSE_REPLAY_51_19_RULE_ENGINE_20260715_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10806_RULE_ROUTING_NHAM_MIEN_ESCAPE_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10806_RULE_ROUTING_NHAM_MIEN_ESCAPE_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10807_SANDBOX_AB_ROUTING_GATE_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10807_SANDBOX_AB_ROUTING_GATE_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10808_BEST_SPOTS_AB48_LABEL_SPEC_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10808_BEST_SPOTS_AB48_LABEL_SPEC_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10809_WINDOW_AUDIT_SHADOW7D_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10809_WINDOW_AUDIT_SHADOW7D_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10810_STATION_MERGE_AUDIT_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10810_STATION_MERGE_AUDIT_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10811_BT_PHU_JS_FIX_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10811_BT_PHU_JS_FIX_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260716",
+      "folder": "V10812_API_KEY_ROTATION_20260716_PUBLIC_SAFE",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10812_API_KEY_ROTATION_20260716_PUBLIC_SAFE"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10813_MORNING_FULL_AUDIT_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10813_MORNING_FULL_AUDIT_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10814_QWEN_FIX_GROK43_ONBOARD_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10814_QWEN_FIX_GROK43_ONBOARD_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10815_TONG_KIEM_CHU_KY_LIVE_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10815_TONG_KIEM_CHU_KY_LIVE_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10816_GDB_DAO_2_SO_DAU_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10816_GDB_DAO_2_SO_DAU_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10817_PHOI_DIEU_KIEN_GDB_DAO_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10817_PHOI_DIEU_KIEN_GDB_DAO_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10818_PROMPT_PHA_VARIANT_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10818_PROMPT_PHA_VARIANT_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10819_RULES_DROP_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10819_RULES_DROP_20260717"
+    },
+    {
+      "date": "20260717",
+      "folder": "V10820_RULES_FIRST_LIVE_20260717",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10820_RULES_FIRST_LIVE_20260717"
+    },
+    {
+      "date": "20260718",
+      "folder": "V10821_TOTAL_V2_20260718",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10821_TOTAL_V2_20260718"
+    },
+    {
+      "date": "20260718",
+      "folder": "V10822_TOTAL_V2_LANE_20260718",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10822_TOTAL_V2_LANE_20260718"
+    },
+    {
+      "date": "20260718",
+      "folder": "V10823_TOTAL10_PANEL_VARIANTS_20260718",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10823_TOTAL10_PANEL_VARIANTS_20260718"
+    },
+    {
+      "date": "20260719",
+      "folder": "V10824_DAY1_FORWARD_READ_20260719",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10824_DAY1_FORWARD_READ_20260719"
+    },
+    {
+      "date": "20260719",
+      "folder": "V10825_GDB_XUOI_CROSS_20260719",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10825_GDB_XUOI_CROSS_20260719"
+    },
+    {
+      "date": "20260720",
+      "folder": "V10826_MINER_FIX_DISPERSION_READOUT_20260720",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10826_MINER_FIX_DISPERSION_READOUT_20260720"
+    },
+    {
+      "date": "20260721",
+      "folder": "V10829_RULE_COND_AB_20260721",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10829_RULE_COND_AB_20260721"
+    },
+    {
+      "date": "20260721",
+      "folder": "V10830_TOTAL_FORCE_RECHECK_20260721",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10830_TOTAL_FORCE_RECHECK_20260721"
+    },
+    {
+      "date": "20260721",
+      "folder": "V10831_DAY_FORENSIC_PROPOSALS_20260721",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10831_DAY_FORENSIC_PROPOSALS_20260721"
+    },
+    {
+      "date": "20260721",
+      "folder": "V10832_COND_LANE_LIVE_20260721",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10832_COND_LANE_LIVE_20260721"
+    },
+    {
+      "date": "20260722",
+      "folder": "V10833_MORNING_CHECK_AE_GATE_FIX_20260722",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10833_MORNING_CHECK_AE_GATE_FIX_20260722"
+    },
+    {
+      "date": "20260722",
+      "folder": "V10834_TIMING_CAUSALITY_AUDIT_20260722",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10834_TIMING_CAUSALITY_AUDIT_20260722"
+    },
+    {
+      "date": "20260722",
+      "folder": "V10835_DAY_FORENSIC_20260722",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10835_DAY_FORENSIC_20260722"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10836_MORNING_CPS3_MBSOURCE_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10836_MORNING_CPS3_MBSOURCE_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10837_DAY_FORENSIC_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10837_DAY_FORENSIC_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10838B_BUGBOT_ROUND2_COMPREHENSIVE_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10838B_BUGBOT_ROUND2_COMPREHENSIVE_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10838_BUGBOT_GATE_HARDENING_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10838_BUGBOT_GATE_HARDENING_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10839_MARKDOWNLINT_NOISE_CLEANUP_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10839_MARKDOWNLINT_NOISE_CLEANUP_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10840_HERD_BYPASS_FIX_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10840_HERD_BYPASS_FIX_20260723"
+    },
+    {
+      "date": "20260723",
+      "folder": "V10841_BUGBOT_R3_COMPREHENSIVE_20260723",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10841_BUGBOT_R3_COMPREHENSIVE_20260723"
+    },
+    {
+      "date": "20260724",
+      "folder": "V10842_MORNING_FULL_CHECK_20260724",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10842_MORNING_FULL_CHECK_20260724"
+    },
+    {
+      "date": "20260724",
+      "folder": "V10843_EOD_FULL_AUDIT_20260724",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10843_EOD_FULL_AUDIT_20260724"
+    },
+    {
+      "date": "20260724",
+      "folder": "V10844_MB_WHATIF_MEASURE_20260724",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10844_MB_WHATIF_MEASURE_20260724"
+    },
+    {
+      "date": "20260725",
+      "folder": "V10845_EOD_CHOI_REALTIME_20260725",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10845_EOD_CHOI_REALTIME_20260725"
+    },
+    {
+      "date": "20260725",
+      "folder": "V10848_DRIFT_AUDIT_TEAL_COMPLETE_20260725",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10848_DRIFT_AUDIT_TEAL_COMPLETE_20260725"
+    },
+    {
+      "date": "20260726",
+      "folder": "V10855_PRELIVE_BUGBOT_SOFTEN_20260726",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10855_PRELIVE_BUGBOT_SOFTEN_20260726"
+    },
+    {
+      "date": "20260726",
+      "folder": "V10860_TOTAL_FORCE_CLOSEOUT_20260726",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10860_TOTAL_FORCE_CLOSEOUT_20260726"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10861_OUTPUT_CONTRACT_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10861_OUTPUT_CONTRACT_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10862_ACCURACY_RESPONSIVE_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10862_ACCURACY_RESPONSIVE_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10863_LANE_UI_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10863_LANE_UI_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10864_EQUAL_CARDS_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10864_EQUAL_CARDS_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10865_STATION_HEALTH_CARDS_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10865_STATION_HEALTH_CARDS_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10866_FULL_UI_SYSTEM_GUARD_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10866_FULL_UI_SYSTEM_GUARD_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10867_CLOSEOUT_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10867_CLOSEOUT_20260727"
+    },
+    {
+      "date": "20260727",
+      "folder": "V10868_EDITOR_BUGBOT_20260727",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10868_EDITOR_BUGBOT_20260727"
+    },
+    {
+      "date": "20260728",
+      "folder": "V10869_CP_L6_DEEP_CONTROL_20260728",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10869_CP_L6_DEEP_CONTROL_20260728"
+    },
+    {
+      "date": "20260728",
+      "folder": "V10870_MN_EMPTY_20260728",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10870_MN_EMPTY_20260728"
+    },
+    {
+      "date": "20260729",
+      "folder": "V10871_QUALITY_ROSTER_20260729",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10871_QUALITY_ROSTER_20260729"
+    },
+    {
+      "date": "20260729",
+      "folder": "V10872_DEHERD_LANE_20260729",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10872_DEHERD_LANE_20260729"
+    },
+    {
+      "date": "20260729",
+      "folder": "V10873_ROSTER_SATURATION_20260729",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10873_ROSTER_SATURATION_20260729"
+    },
+    {
+      "date": "20260729",
+      "folder": "V10874_TOTAL_BAKEOFF_20260729",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10874_TOTAL_BAKEOFF_20260729"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10876_MN_STATION_ECONOMICS_20260730",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10876_MN_STATION_ECONOMICS_20260730"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10877_V10878_CHOI_HISTORY_XIEN_20260730",
+      "reports": [
+        "REPORT_V10877_V10878.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10877_V10878_CHOI_HISTORY_XIEN_20260730"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10879_NGHIEMTHU_1908_LANE_20260730",
+      "reports": [
+        "REPORT_V10879_NGHIEMTHU_1908.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10879_NGHIEMTHU_1908_LANE_20260730"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10880_ROUTING_EARLY_DECISION_20260730",
+      "reports": [
+        "REPORT_V10880.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10880_ROUTING_EARLY_DECISION_20260730"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10882_OFFICIAL_NEW_LANE_20260730",
+      "reports": [
+        "REPORT_V10882.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10882_OFFICIAL_NEW_LANE_20260730"
+    },
+    {
+      "date": "20260730",
+      "folder": "V10883_PAGE_AND_CONNECTOR_20260730",
+      "reports": [
+        "REPORT_V10883.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10883_PAGE_AND_CONNECTOR_20260730"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10884_ACCEPTANCE_AND_LANE_ROOTFIX_20260731",
+      "reports": [
+        "REPORT_V10884.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10884_ACCEPTANCE_AND_LANE_ROOTFIX_20260731"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10885_V10891_DAY_20260731",
+      "reports": [
+        "REPORT_V10885_V10891.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10885_V10891_DAY_20260731"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10892_V10893_MN_AND_FINAL_CUTOFF_20260731",
+      "reports": [
+        "REPORT_V10892_V10893.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10892_V10893_MN_AND_FINAL_CUTOFF_20260731"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10894_FINAL_MEANS_DONE_20260731",
+      "reports": [
+        "REPORT_V10894.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10894_FINAL_MEANS_DONE_20260731"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10895_REGION_MECHANICS_20260731",
+      "reports": [
+        "REPORT_V10895.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10895_REGION_MECHANICS_20260731"
+    },
+    {
+      "date": "20260731",
+      "folder": "V10900_FULL_AUDIT_20260731",
+      "reports": [
+        "REPORT_V10900.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10900_FULL_AUDIT_20260731"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10917_OVERRIDE_LAYERS_20260801",
+      "reports": [
+        "REPORT_V10917.md",
+        "REPORT_V10919_LANE_CLEANUP.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10917_OVERRIDE_LAYERS_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10920_TRACEABILITY_20260801",
+      "reports": [
+        "REPORT_V10920.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10920_TRACEABILITY_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10921_RULE_A55_20260801",
+      "reports": [
+        "REPORT_V10921.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10921_RULE_A55_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10924_CLAUDE_SYNC_IMPACT_20260801",
+      "reports": [
+        "REPORT_V10924.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10924_CLAUDE_SYNC_IMPACT_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10925_RULE_SURFACES_20260801",
+      "reports": [
+        "REPORT_V10925.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10925_RULE_SURFACES_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10928_COMBO_SUPER_SHADOW_20260801",
+      "reports": [
+        "REPORT_V10928.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10928_COMBO_SUPER_SHADOW_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10931_MODEL_SWAP_20260801",
+      "reports": [
+        "REPORT_V10931.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10931_MODEL_SWAP_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10933_GEMINI35_RESCUE_20260801",
+      "reports": [
+        "REPORT_V10933.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10933_GEMINI35_RESCUE_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10934_TINH_LAI_TOTAL_20260801",
+      "reports": [
+        "REPORT_V10934.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10934_TINH_LAI_TOTAL_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10936_BO_LOC_COMBO_SUPER_20260801",
+      "reports": [
+        "REPORT_V10936.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10936_BO_LOC_COMBO_SUPER_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10937_SOI_LAI_HAI_THUOC_DO_20260801",
+      "reports": [
+        "REPORT_V10937.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10937_SOI_LAI_HAI_THUOC_DO_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10945_DUNG_DAT_TIEN_20260801",
+      "reports": [
+        "REPORT_V10945.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10945_DUNG_DAT_TIEN_20260801"
+    },
+    {
+      "date": "20260801",
+      "folder": "V10947_LUONG_NAO_DE_CHOI_20260801",
+      "reports": [
+        "REPORT_V10947.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10947_LUONG_NAO_DE_CHOI_20260801"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10952_SUA_LOI_HUAN_LUYEN_ML_20260802",
+      "reports": [
+        "REPORT_V10952.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10952_SUA_LOI_HUAN_LUYEN_ML_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10952b_CHAY_THAT_RETRAIN_20260802",
+      "reports": [
+        "REPORT_V10952b.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10952b_CHAY_THAT_RETRAIN_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10953_XAC_MINH_JOB_HUAN_LUYEN_20260802",
+      "reports": [
+        "REPORT_V10953.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10953_XAC_MINH_JOB_HUAN_LUYEN_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10954_TONG_HOP_TINH_HINH_20260802",
+      "reports": [
+        "REPORT_V10954.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10954_TONG_HOP_TINH_HINH_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10955_TIN_HIEU_ROI_RUNG_O_DAU_20260802",
+      "reports": [
+        "REPORT_V10955.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10955_TIN_HIEU_ROI_RUNG_O_DAU_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10955b_LAM_RO_HAI_CON_SO_RF_20260802",
+      "reports": [
+        "REPORT_V10955b.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10955b_LAM_RO_HAI_CON_SO_RF_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10956_DON_ROADMAP_VA_DONG_BANG_20260802",
+      "reports": [
+        "REPORT_V10956.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10956_DON_ROADMAP_VA_DONG_BANG_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10957_LOI_LSTM_CHAY_LIVE_20260802",
+      "reports": [
+        "REPORT_V10957.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10957_LOI_LSTM_CHAY_LIVE_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10958_SUA_DOC_NHAM_TRANG_THAI_FU_20260802",
+      "reports": [
+        "REPORT_V10958.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10958_SUA_DOC_NHAM_TRANG_THAI_FU_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10959_PROMPT_EP_MODEL_HOI_TU_20260802",
+      "reports": [
+        "REPORT_V10959.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10959_PROMPT_EP_MODEL_HOI_TU_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10960_RA_SOAT_TRANG_FILTER_20260802",
+      "reports": [
+        "REPORT_V10960.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10960_RA_SOAT_TRANG_FILTER_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10961_RA_SOAT_CHEO_TIM_BO_SOT_20260802",
+      "reports": [
+        "REPORT_V10961.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10961_RA_SOAT_CHEO_TIM_BO_SOT_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10962_GHI_QUYET_DINH_VA_DON_LECH_20260802",
+      "reports": [
+        "REPORT_V10962.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10962_GHI_QUYET_DINH_VA_DON_LECH_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10964_SUA_NEO_NGAY_DU_DOAN_TEST_20260802",
+      "reports": [
+        "REPORT_V10964.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10964_SUA_NEO_NGAY_DU_DOAN_TEST_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10964_SUA_TRANG_DUDOANTEST_VA_FILTER_20260802",
+      "reports": [
+        "REPORT_V10964.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10964_SUA_TRANG_DUDOANTEST_VA_FILTER_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10964b_HOAN_TAT_NEO_NGAY_FILTER_20260802",
+      "reports": [
+        "REPORT_V10964b.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10964b_HOAN_TAT_NEO_NGAY_FILTER_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10965_CO_CHE_HOC_VA_QUY_UOC_MA_20260802",
+      "reports": [
+        "REPORT_V10965.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10965_CO_CHE_HOC_VA_QUY_UOC_MA_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10965_CO_CHE_HOC_VA_XEP_HANG_20260802",
+      "reports": [
+        "REPORT_V10965.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10965_CO_CHE_HOC_VA_XEP_HANG_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10965b_CO_CHE_HOC_DAY_DU_20260802",
+      "reports": [
+        "REPORT_V10965b.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10965b_CO_CHE_HOC_DAY_DU_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10967_QUY_UOC_MA_VA_KE_HOACH_SAU_0808_20260802",
+      "reports": [
+        "REPORT_V10967.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10967_QUY_UOC_MA_VA_KE_HOACH_SAU_0808_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10968_GOP_TAI_LIEU_VA_CHOT_GIO_DEPLOY_20260802",
+      "reports": [
+        "REPORT_V10968.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10968_GOP_TAI_LIEU_VA_CHOT_GIO_DEPLOY_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10969_KIEM_TONG_LUC_HET_LIVE_20260802",
+      "reports": [
+        "REPORT_V10969.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10969_KIEM_TONG_LUC_HET_LIVE_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10970_TONG_HOP_TOAN_PHIEN_DAO_BOI_20260802",
+      "reports": [
+        "REPORT_V10970.md"
+      ],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10970_TONG_HOP_TOAN_PHIEN_DAO_BOI_20260802"
+    },
+    {
+      "date": "20260802",
+      "folder": "V10971_BAN_GIAO_MAY_MOI_20_NGAY_20260802",
+      "reports": [],
+      "url": "https://github.com/irissnss/Lottery_AI_Notion_Reports/tree/main/V10971_BAN_GIAO_MAY_MOI_20_NGAY_20260802"
+    }
+  ]
+}
