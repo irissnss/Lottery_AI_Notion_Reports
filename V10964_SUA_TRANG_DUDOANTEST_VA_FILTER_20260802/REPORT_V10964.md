@@ -1,7 +1,7 @@
 # REPORT V10964 — Sửa trang `/du-doan-test` neo ngày + `/filter` lệch múi giờ
 
 **Phiên bản:** V10964 · **Ngày:** 2026-08-02 · **Giờ VN:** 17:22–17:30  
-**Commit riêng / công khai:** điền sau khi push · **Deploy:** PID 639386 → 641906 · hash 4 bảng y nguyên
+**Commit riêng:** `7f6b9c8` · **Commit công khai:** `f24e1b4` · **Deploy:** PID 639386 → 641906 · hash 4 bảng y nguyên
 
 ---
 
