@@ -1,6 +1,6 @@
 # V10955b — Làm rõ mâu thuẫn hai con số RF (bổ sung vào báo cáo V10955)
 
-**Ngày:** 02/08/2026 · **Phiên bản:** V10955b · **Trạng thái:** ĐẠT (chỉ đọc) · **Commit riêng / công khai:** *(điền sau push)*
+**Ngày:** 02/08/2026 · **Phiên bản:** V10955b · **Trạng thái:** ĐẠT (chỉ đọc) · **Commit riêng:** `a5a5530` · **Commit công khai:** `3a7aeda`
 
 Owner bắt đúng chỗ: bảng chuỗi rơi nói RF +3,42pp trong khi GT-1 nói RF kém đánh bừa 2–3pp. Đo lại. Không sửa code, không deploy.
 
