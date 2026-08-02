@@ -1,0 +1,26 @@
+{
+  "filter_desktop": {
+    "title": "Bảng Review Tổng Hợp — Lottery AI",
+    "pageDate": null,
+    "stickyDisplay": "none",
+    "overviewCards": 2,
+    "topCand": "🔥 Số cần xem trước — MN\ntần suất ≥ 2 và chưa ra hôm nay",
+    "reviewDate": "2026-08-02"
+  },
+  "filter_mobile": {
+    "title": "Bảng Review Tổng Hợp — Lottery AI",
+    "pageDate": null,
+    "stickyDisplay": "none",
+    "overviewCards": 2,
+    "topCand": "🔥 Số cần xem trước — MN\ntần suất ≥ 2 và chưa ra hôm nay",
+    "reviewDate": "2026-08-02"
+  },
+  "filter_candidates": {
+    "title": "Bảng Review Tổng Hợp — Lottery AI",
+    "pageDate": null,
+    "stickyDisplay": "block",
+    "overviewCards": 2,
+    "topCand": "🔥 Số cần xem trước — MN tần suất ≥ 2 và chưa ra hôm nay",
+    "reviewDate": "2026-08-02"
+  }
+}

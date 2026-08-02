@@ -1,0 +1,66 @@
+{
+  "state": {
+    "title": "Bảng Review Tổng Hợp — Lottery AI",
+    "reviewDateValue": "2026-08-03",
+    "computedVNDateBug": "2026-08-03",
+    "realLocalDate": "2026-08-02",
+    "rates": [
+      {
+        "region": "MN",
+        "text": "91.2%"
+      },
+      {
+        "region": "MT",
+        "text": "86%"
+      },
+      {
+        "region": "MB",
+        "text": "67.2%"
+      }
+    ],
+    "contextStrip": "NGÀY XEM NHANH\n03/08/2026\nDỮ LIỆU SỐ NỔI BẬT\nMN T2 · Chưa có KQ\n0 số unique / 0 số gộp\nSỨC KHỎE RULES\nRules tự động đã verify\n91.2% · 1069 lượt tracking · Đã verify đến 01/08/2026\nTIẾN ĐỘ LIVE HÔM NAY\n🟡 MN đã xổ — đang chờ MT, MB\nChỉ để đọc nhanh, không thay cho KPI lịch sử",
+    "sticky": "SỐ UNIQUE\n0\nCHỜ KIỂM\n0\nTRÙNG D-1\n0\nĐÃ RA HÔM NAY\n0\nĐỘ KHỎE RULES\n91.2%",
+    "overview": "🧭 Xem nhanh MN\nSố nổi bật: 03/08/2026 · Rules tự động: rolling đã verify\n🔥 Số gan cần chú ý — MN\nnhìn nhanh các số lâu chưa về lại\n00\n5d\n35\n2d\n39\n1d\n50\n1d\n76\n4d\n57\n1d\nCHẾ ĐỘ XEM\n🟡 MN đã xổ — đang chờ MT, MB\nMiền đang xem: MN T2\nKết quả ngày chọn: Chưa có kết quả\nAn toàn: Chỉ xem, không sửa dự đoán\nTÌNH HÌNH SỐ NỔI BẬT\n0\nChờ kiểm: 0\nTrùng D-1: 0\nĐã ra hôm nay: 0\nSỨC KHỎE RULES TỰ ĐỘNG\n91.2%\nMiền: MN\nTracking: 218 ngày / 3173 lượt\nRules đang chạy: 105\nXEM THEO THỨ TỰ\nBước 1: xem các số cần chú ",
+    "gan": "🔥 Số Gan — MN15 số chưa về lại🎱 Giải 8 — Chưa xổ lại ở bất kỳ giải nào (6 số)764 ngày (07-29)571 ngày (08-01)671 ngày (08-01)120 ngày (08-02)870 ngày (08-02)980 ngày (08-02)🎯 Giải ĐB — Chưa xổ lại ở bất kỳ giải nào (9 số)005 ngày (07-28)352 ngày (07-31)391 ngày (08-01)501 ngày (08-01)691 ngày (08",
+    "loadingVisible": true
+  },
+  "consoleLogs": [],
+  "failed": [],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:8766/filter?tab=overview",
+      "status": 200,
+      "bodyPreview": "<!doctype html> <html lang=\"vi\" data-theme=\"dark\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Bảng Revi"
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/mined-rules/preview-state",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"preview_date\":\"2026-08-02\",\"state\":\"PREVIEW_MN_DONE\",\"state_label\":\"🟡 MN đã xổ — đang chờ MT, MB\",\"current_time\":\"17:25:06\",\"verified_last_date\":\"2026-08-01\",\"reg"
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/mined-rules/overview",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"mode\":\"soft\",\"total_rules\":105,\"active_rules\":105,\"buckets_count\":21,\"tracking\":{\"total_evals\":3173,\"total_hits\":2589,\"hit_rate\":81.6,\"days_tracked\":218,\"status\":\""
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/review-hub/filter?target_region=MN&date=2026-08-03",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"target\":{\"region\":\"MN\",\"date\":\"2026-08-03\",\"day_of_week\":\"0\",\"day_display\":\"T2\",\"has_kq\":false},\"rules\":{\"total_active\":5,\"merged_sources_count\":2,\"cascade_count\":"
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/mined-rules/flow/2026-08-02",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"target_date\":\"2026-08-02\",\"flows\":[]}"
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/mined-rules/split-audit",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"buckets\":[{\"bucket\":\"MN_T7\",\"current_split\":\"KEEP_SINGLE_RULE\",\"hit_rate\":96.3,\"evals\":160,\"evidence_label\":\"STRONG\"},{\"bucket\":\"MN_T6\",\"current_split\":\"USE_WEEK_O"
+    },
+    {
+      "url": "http://127.0.0.1:8766/api/so-gan?target_region=MN",
+      "status": 200,
+      "bodyPreview": "{\"success\":true,\"region\":\"MN\",\"max_gan\":5,\"gan_g8\":[{\"number\":\"76\",\"gan_days\":4,\"source_date\":\"2026-07-29\"},{\"number\":\"57\",\"gan_days\":1,\"source_date\":\"2026-08-01\"},{\"number\":\"67\",\""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "state": {
+    "reviewDateValue": "2026-08-02",
+    "computedFixed": "2026-08-02",
+    "realLocalDate": "2026-08-02",
+    "rates": [
+      "91.2%",
+      "86%",
+      "67.2%"
+    ],
+    "contextStrip": "NGÀY XEM NHANH\n02/08/2026\nDỮ LIỆU SỐ NỔI BẬT\nMN CN · Đã có KQ\n11 số unique / 11 số gộp\nSỨC KHỎE RULES\nRules tự động đã verify\n91.2% · 1069 lượt tracking · Đã verify đến 01/08/2026\nTIẾN ĐỘ LIVE HÔM NAY\n🟡 MN đã xổ — đang chờ MT, MB\nChỉ để đọc nhanh, không thay cho KPI lịch sử",
+    "overviewHead": "🧭 Xem nhanh MN\nSố nổi bật: 02/08/2026 · Rules tự động: rolling đã verify\n🔥 Số gan cần chú ý — MN\nnhìn nhanh các số lâu chưa về lại\n00\n5d\n35\n2d\n39\n1d\n50\n1d\n76\n4d\n57\n1d\nCHẾ ĐỘ XEM\n🟡 MN đã xổ — đang chờ MT, MB\nMiền đang xem: MN CN\nKết quả ngày chọn: "
+  },
+  "consoleLogs": []
+}
