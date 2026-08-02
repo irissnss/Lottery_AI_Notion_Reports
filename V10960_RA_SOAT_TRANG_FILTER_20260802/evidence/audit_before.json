@@ -1,0 +1,845 @@
+{
+  "generated_at": "2026-08-02T09:58:44.125Z",
+  "cases": [
+    {
+      "viewport": "mobile390",
+      "tab": "overview",
+      "url": "http://127.0.0.1:8765/filter?tab=overview",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_overview_before.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.8,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔥 Số gan"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 1.3087788803317535,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2680
+      },
+      "issues": [
+        "tiny_text_lt11px_count=15 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=1.31"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "candidates",
+      "url": "http://127.0.0.1:8765/filter?tab=candidates",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_candidates_before.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.8,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔥 Số gan"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 1.3087788803317535,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2680
+      },
+      "issues": [
+        "tiny_text_lt11px_count=15 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=1.31"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "health",
+      "url": "http://127.0.0.1:8765/filter?tab=health",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_health_before.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.8,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔥 Số gan"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 1.3087788803317535,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2680
+      },
+      "issues": [
+        "tiny_text_lt11px_count=15 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=1.31"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "gan",
+      "url": "http://127.0.0.1:8765/filter?tab=gan",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_gan_before.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.8,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.8,
+            "text": "🔥 Số gan"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 1.3087788803317535,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2680
+      },
+      "issues": [
+        "tiny_text_lt11px_count=15 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=1.31"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "overview",
+      "url": "http://127.0.0.1:8765/filter?tab=overview",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_overview_before.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5565625,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2770
+      },
+      "issues": [
+        "tiny_text_lt11px_count=11 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.56"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "candidates",
+      "url": "http://127.0.0.1:8765/filter?tab=candidates",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_candidates_before.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5565625,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2770
+      },
+      "issues": [
+        "tiny_text_lt11px_count=11 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.56"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "health",
+      "url": "http://127.0.0.1:8765/filter?tab=health",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_health_before.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5565625,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2770
+      },
+      "issues": [
+        "tiny_text_lt11px_count=11 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.56"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "gan",
+      "url": "http://127.0.0.1:8765/filter?tab=gan",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_gan_before.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Số unique"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Chờ kiểm"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Trùng D-1"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Đã ra hôm nay"
+          },
+          {
+            "tag": "DIV",
+            "cls": "sm-label",
+            "fs": 9.75,
+            "text": "Độ khỏe rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Nguồn"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Loại"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Ngày"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Rules"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Số lấy ra"
+          },
+          {
+            "tag": "TH",
+            "cls": "",
+            "fs": 10.2,
+            "text": "Trạng thái"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5565625,
+        "blockCount": 28,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2770
+      },
+      "issues": [
+        "tiny_text_lt11px_count=11 sample=[{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Số unique\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Chờ kiểm\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Trùng D-1\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Đã ra hôm nay\"},{\"tag\":\"DIV\",\"cls\":\"sm-label\",\"fs\":9.75,\"text\":\"Độ khỏe rules\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.56"
+      ]
+    }
+  ]
+}

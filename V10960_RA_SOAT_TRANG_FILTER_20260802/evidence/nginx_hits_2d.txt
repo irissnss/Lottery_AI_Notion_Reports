@@ -1,0 +1,16 @@
+﻿--- nginx page hits (access.log + access.log.1 ~2 days) ---
+     35 /app
+     28 /du-doan
+     21 /choi
+     19 /nghiem-thu
+     16 /login
+     11 /filter
+      9 /monitoring
+      7 /accuracy
+      4 /v82-monitor
+      3 /settings
+      3 /review-dashboard
+      3 /pnl-tracker
+      2 /user-view
+      2 /search
+filter tabs: 8 /filter?tab=overview + 3 /filter

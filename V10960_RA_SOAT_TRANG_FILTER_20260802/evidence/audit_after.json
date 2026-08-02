@@ -1,0 +1,367 @@
+{
+  "generated_at": "2026-08-02T10:01:50.965Z",
+  "cases": [
+    {
+      "viewport": "mobile390",
+      "tab": "overview",
+      "url": "http://127.0.0.1:8765/filter?tab=overview",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_overview_after.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "surface-note",
+            "fs": 10.8,
+            "text": "Link chuẩn `/filter` — chỉ xem"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.5,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔥 Số gan"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.6427725118483413,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2096
+      },
+      "issues": [
+        "tiny_text_lt11px_count=5 sample=[{\"tag\":\"DIV\",\"cls\":\"surface-note\",\"fs\":10.8,\"text\":\"Link chuẩn `/filter` — chỉ xem\"},{\"tag\":\"DIV\",\"cls\":\"tab active\",\"fs\":10.5,\"text\":\"🧭 Xem nhanh\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔎 Nguồn & đối chiếu\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"📐 Rules tự động\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔥 Số gan\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.64"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "candidates",
+      "url": "http://127.0.0.1:8765/filter?tab=candidates",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_candidates_after.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "surface-note",
+            "fs": 10.8,
+            "text": "Link chuẩn `/filter` — chỉ xem"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.5,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔥 Số gan"
+          },
+          {
+            "tag": "DIV",
+            "cls": "rr-rule-hdr",
+            "fs": 10.5,
+            "text": "R101 —\n                    G8,"
+          },
+          {
+            "tag": "SPAN",
+            "cls": "num f4 ",
+            "fs": 10.5,
+            "text": "13"
+          },
+          {
+            "tag": "SPAN",
+            "cls": "num  ",
+            "fs": 10.5,
+            "text": "88"
+          },
+          {
+            "tag": "SPAN",
+            "cls": "num  ",
+            "fs": 10.5,
+            "text": "09"
+          },
+          {
+            "tag": "SPAN",
+            "cls": "num  ",
+            "fs": 10.5,
+            "text": "21"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.6427725118483413,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🔎 Nguồn & đối chiếu",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 1814
+      },
+      "issues": [
+        "tiny_text_lt11px_count=10 sample=[{\"tag\":\"DIV\",\"cls\":\"surface-note\",\"fs\":10.8,\"text\":\"Link chuẩn `/filter` — chỉ xem\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🧭 Xem nhanh\"},{\"tag\":\"DIV\",\"cls\":\"tab active\",\"fs\":10.5,\"text\":\"🔎 Nguồn & đối chiếu\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"📐 Rules tự động\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔥 Số gan\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.64"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "health",
+      "url": "http://127.0.0.1:8765/filter?tab=health",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_health_after.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "surface-note",
+            "fs": 10.8,
+            "text": "Link chuẩn `/filter` — chỉ xem"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.5,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔥 Số gan"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.6427725118483413,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "📐 Rules tự động",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 1897
+      },
+      "issues": [
+        "tiny_text_lt11px_count=5 sample=[{\"tag\":\"DIV\",\"cls\":\"surface-note\",\"fs\":10.8,\"text\":\"Link chuẩn `/filter` — chỉ xem\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🧭 Xem nhanh\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔎 Nguồn & đối chiếu\"},{\"tag\":\"DIV\",\"cls\":\"tab active\",\"fs\":10.5,\"text\":\"📐 Rules tự động\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔥 Số gan\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.64"
+      ]
+    },
+    {
+      "viewport": "mobile390",
+      "tab": "gan",
+      "url": "http://127.0.0.1:8765/filter?tab=gan",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\mobile390_gan_after.png",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "surface-note",
+            "fs": 10.8,
+            "text": "Link chuẩn `/filter` — chỉ xem"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🧭 Xem nhanh"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "🔎 Nguồn & đối chiếu"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab",
+            "fs": 10.5,
+            "text": "📐 Rules tự động"
+          },
+          {
+            "tag": "DIV",
+            "cls": "tab active",
+            "fs": 10.5,
+            "text": "🔥 Số gan"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.6427725118483413,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🔥 Số gan",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 829
+      },
+      "issues": [
+        "tiny_text_lt11px_count=5 sample=[{\"tag\":\"DIV\",\"cls\":\"surface-note\",\"fs\":10.8,\"text\":\"Link chuẩn `/filter` — chỉ xem\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🧭 Xem nhanh\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"🔎 Nguồn & đối chiếu\"},{\"tag\":\"DIV\",\"cls\":\"tab\",\"fs\":10.5,\"text\":\"📐 Rules tự động\"},{\"tag\":\"DIV\",\"cls\":\"tab active\",\"fs\":10.5,\"text\":\"🔥 Số gan\"}]",
+        "loading_spinner_still_visible",
+        "chrome_eats_viewport ratio=0.64"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "overview",
+      "url": "http://127.0.0.1:8765/filter?tab=overview",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_overview_after.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5402430555555555,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🧭 Xem nhanh",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2710
+      },
+      "issues": [
+        "loading_spinner_still_visible"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "candidates",
+      "url": "http://127.0.0.1:8765/filter?tab=candidates",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_candidates_after.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [
+          {
+            "tag": "DIV",
+            "cls": "rr-rule-hdr",
+            "fs": 10.5,
+            "text": "R101 —\n                    G8,"
+          }
+        ],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5402430555555555,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🔎 Nguồn & đối chiếu",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2428
+      },
+      "issues": [
+        "tiny_text_lt11px_count=1 sample=[{\"tag\":\"DIV\",\"cls\":\"rr-rule-hdr\",\"fs\":10.5,\"text\":\"R101 —\\n                    G8,\"}]",
+        "loading_spinner_still_visible"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "health",
+      "url": "http://127.0.0.1:8765/filter?tab=health",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_health_after.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5402430555555555,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "📐 Rules tự động",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 2511
+      },
+      "issues": [
+        "loading_spinner_still_visible"
+      ]
+    },
+    {
+      "viewport": "desktop1440",
+      "tab": "gan",
+      "url": "http://127.0.0.1:8765/filter?tab=gan",
+      "screenshot": "E:\\Lottery_AI_Test\\artifacts\\ui_filter_20260802\\desktop1440_gan_after.png",
+      "metrics": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "overflowingText": [],
+        "tinyText": [],
+        "overlapPairs": [],
+        "loadingVisible": true,
+        "emptyTab": false,
+        "chromeHeightRatio": 0.5402430555555555,
+        "blockCount": 49,
+        "title": "Bảng Review Tổng Hợp — Lottery AI",
+        "activeTab": "🔥 Số gan",
+        "h1": "Bảng Review Tổng Hợp",
+        "bodyTextLen": 1443
+      },
+      "issues": [
+        "loading_spinner_still_visible"
+      ]
+    }
+  ]
+}
