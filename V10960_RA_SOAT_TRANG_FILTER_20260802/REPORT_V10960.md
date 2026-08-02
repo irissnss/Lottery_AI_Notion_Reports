@@ -1,22 +1,22 @@
 # V10960 — Ra soat trang /filter: trung lap tinh nang + sua UI kho xem
 
-**Ngay:** 02/08/2026 · **Commit rieng:** `(dien sau push)` · **Commit cong khai:** `(dien sau push)` · **Trang thai:** DA DEPLOY UI-ONLY.
+**Ngay:** 02/08/2026 · **Commit riêng:** `f275378` · **Commit công khai:** `2a5f94a` · **Trạng thái:** ĐÃ DEPLOY UI-ONLY.
 
 > Bao cao theo khung A55.3. Khong ghi Notion (A55.1). QD-014: khong doi duong ra so.
 
 ---
 
-## 1. Tom tat
+## 1. Tóm tắt
 
 Da ra soat toan bo HTML production trong `web/frontend/` va doi chieu voi route `main.py`. Trang `https://xs.io.vn/filter?tab=overview` la **hub review hop nhat** (`review-dashboard.html`), khong phai trang du doan official. Owner dung khi UI “kho xem” la **dung**: tren mobile chrome (mo ta + thanh dieu khien + context + sticky + tab) chiem **~1.31 viewport** truoc khi thay noi dung; so uu tien nam o duoi. Da sua UI-only: chrome mobile ~**0.64**, dua “So can xem truoc” len dau, chu sticky/tab >=12px, chan crash tab Rules khi thieu field. Deploy VPS PID `597451→639386`, `/api/health=200`, hash 4 bang **y nguyen**. De xuat don trang de FU-224 — **chua xoa/gop**.
 
-## 2. Owner yeu cau gi (nguyen van)
+## 2. Owner yêu cầu gì (nguyên văn)
 
 > *"Xem dum anh https://xs.io.vn/filter?tab=overview — UI cua link nay kho xem qua, va link nay co ve dang trung lap tinh nang, can xem ky lai dum anh."*
 
 Kem nhiem vu: liet ke trang + API, tim trung lap / so tinh 2 kieu, Playwright 390/1440, sua UI ro rang (khong dung QD-014), chi **de xuat** gop/xoa, bao cao cong khai V10960.
 
-## 3. Dao boi / phat hien
+## 3. Đào bới / phát hiện
 
 ### 3.1 Ban do trang production (15 file HTML, loai `_v2_*` preview)
 
@@ -90,13 +90,13 @@ Khong thay `/filter` va `/du-doan` cung tinh 1 con so bang 2 cong thuc tren UI h
 
 Bang chung: `evidence/*_before.png`, `evidence/*_after.png`, `audit_before.json`, `audit_after.json`.
 
-## 4. Huong xu ly va vi sao chon
+## 4. Hướng xử lý và vì sao chọn
 
 1. **Sua UI ngay** (chon): loi ro, khong dung QD-014, owner kho chiu vi dung.
 2. **Gop/xoa trang ngay** (loai): owner yeu cau chi de xuat.
 3. **Xoa `/api/filter-2-so-cuoi`** (hoan): can quet caller server-side truoc; de FU-224.
 
-## 5. Da lam gi
+## 5. Đã làm gì
 
 | File | Thay doi |
 |---|---|
@@ -108,7 +108,7 @@ Bang chung: `evidence/*_before.png`, `evidence/*_after.png`, `audit_before.json`
 
 Deploy: `_v10960_deploy.py` · service `lottery` · PID 597451→639386 · hash 4 bang y nguyen.
 
-## 6. Cong kiem
+## 6. Cổng kiểm
 
 | Muc | Ket qua |
 |---|---|
@@ -119,7 +119,7 @@ Deploy: `_v10960_deploy.py` · service `lottery` · PID 597451→639386 · hash 
 | Playwright tabs overview/candidates/health/gan | load duoc (sau fix) |
 | QD-014 | Khong doi model_registry / combo_super / override |
 
-## 7. Vuong vap
+## 7. Vướng vấp
 
 1. **Health 000 ngay sau restart** — service chua kip bind; doi 2s → 200. Hau qua neu bo qua: bao deploy fail gia.
 2. **Playwright mock schema lech** → PAGEERROR gia; live API du field. Hau qua: sua defensive van can de tranh crash khi API thieu.
@@ -127,7 +127,7 @@ Deploy: `_v10960_deploy.py` · service `lottery` · PID 597451→639386 · hash 
 4. **Agent song song V10959/V10961** ghi cung CHANGELOG/SSOT — da doc lai truoc prepend.
 5. **loading_spinner false positive** trong do (spinner o accordion flow) — khong phai treo that.
 
-## 8. Go ve
+## 8. Gỡ về
 
 ```
 # VPS
@@ -140,7 +140,7 @@ Copy-Item backups\v10960_pre\review-dashboard.html web\frontend\review-dashboard
 
 Mat ~1–2 phut. Quay lai UI truoc V10960; khong anh huong so du doan.
 
-## 9. Theo doi tiep
+## 9. Theo dõi tiếp
 
 | Ma | Nguong / hanh dong | Han |
 |---|---|---|
