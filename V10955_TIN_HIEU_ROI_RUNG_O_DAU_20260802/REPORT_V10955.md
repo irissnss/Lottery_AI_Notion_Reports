@@ -2,6 +2,8 @@
 
 **Ngày:** 02/08/2026 · **Commit riêng:** `0bea9b9` · **Commit công khai:** `07147b4` · **Trạng thái:** ĐẠT (chỉ đọc)
 
+> **V10955b (cùng ngày):** đã làm rõ mâu thuẫn RF +3,42pp vs −2pp — xem [`ADDENDUM_V10955b.md`](./ADDENDUM_V10955b.md). Đề xuất #1 **sửa**: chỉ RF (~3pp), rút XGB; thêm cổng khớp live↔re ≥95% trong 7 ngày đầu sau 08/08.
+
 > Khung A55.3. Phiên **chỉ đo** — không sửa code, không deploy, không huấn luyện lại. Owner đã đóng băng đường ra số tới 08/08.
 
 ---

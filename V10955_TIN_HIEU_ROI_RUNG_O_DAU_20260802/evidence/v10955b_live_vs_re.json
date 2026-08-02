@@ -1,0 +1,407 @@
+{
+  "ghi_chu": [
+    "tai suy luan 87 ngay x 2 model"
+  ],
+  "khop": {
+    "random-forest": {
+      "n_ngay": 87,
+      "khop": 27,
+      "lech": 60,
+      "loi": 0,
+      "ty_le_khop_pct": 31.0,
+      "mau_lech": [
+        {
+          "date": "2026-05-06",
+          "live": "99",
+          "live_main0": "99",
+          "re": "87",
+          "re_top5": [
+            "87",
+            "12",
+            "88",
+            "31",
+            "02"
+          ]
+        },
+        {
+          "date": "2026-05-07",
+          "live": "88",
+          "live_main0": "88",
+          "re": "51",
+          "re_top5": [
+            "51",
+            "94",
+            "88",
+            "03",
+            "74"
+          ]
+        },
+        {
+          "date": "2026-05-10",
+          "live": "76",
+          "live_main0": "76",
+          "re": "03",
+          "re_top5": [
+            "03",
+            "76",
+            "12",
+            "70",
+            "82"
+          ]
+        },
+        {
+          "date": "2026-05-11",
+          "live": "70",
+          "live_main0": "70",
+          "re": "55",
+          "re_top5": [
+            "55",
+            "13",
+            "11",
+            "70",
+            "94"
+          ]
+        },
+        {
+          "date": "2026-05-12",
+          "live": "50",
+          "live_main0": "50",
+          "re": "15",
+          "re_top5": [
+            "15",
+            "39",
+            "31",
+            "78",
+            "54"
+          ]
+        },
+        {
+          "date": "2026-05-13",
+          "live": "92",
+          "live_main0": "92",
+          "re": "15",
+          "re_top5": [
+            "15",
+            "68",
+            "50",
+            "76",
+            "29"
+          ]
+        },
+        {
+          "date": "2026-05-14",
+          "live": "69",
+          "live_main0": "69",
+          "re": "76",
+          "re_top5": [
+            "76",
+            "55",
+            "03",
+            "64",
+            "13"
+          ]
+        },
+        {
+          "date": "2026-05-15",
+          "live": "12",
+          "live_main0": "12",
+          "re": "52",
+          "re_top5": [
+            "52",
+            "85",
+            "35",
+            "00",
+            "06"
+          ]
+        },
+        {
+          "date": "2026-05-17",
+          "live": "76",
+          "live_main0": "76",
+          "re": "60",
+          "re_top5": [
+            "60",
+            "76",
+            "36",
+            "96",
+            "77"
+          ]
+        },
+        {
+          "date": "2026-05-18",
+          "live": "05",
+          "live_main0": "05",
+          "re": "13",
+          "re_top5": [
+            "13",
+            "17",
+            "42",
+            "70",
+            "64"
+          ]
+        }
+      ],
+      "hit_live_cung_ngay": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 42,
+        "he_pct": 19.91,
+        "bua_pct": 16.48,
+        "loi_the": 3.42,
+        "z": 1.34
+      },
+      "hit_tai_suy_luan_cung_ngay": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 41,
+        "he_pct": 19.43,
+        "bua_pct": 16.48,
+        "loi_the": 2.95,
+        "z": 1.15
+      },
+      "live_thang_re_thua_ngay": 13,
+      "re_thang_live_thua_ngay": 12
+    },
+    "xgboost": {
+      "n_ngay": 87,
+      "khop": 18,
+      "lech": 69,
+      "loi": 0,
+      "ty_le_khop_pct": 20.7,
+      "mau_lech": [
+        {
+          "date": "2026-05-06",
+          "live": "87",
+          "live_main0": "87",
+          "re": "12",
+          "re_top5": [
+            "12",
+            "87",
+            "63",
+            "72",
+            "19"
+          ]
+        },
+        {
+          "date": "2026-05-07",
+          "live": "88",
+          "live_main0": "88",
+          "re": "94",
+          "re_top5": [
+            "94",
+            "51",
+            "65",
+            "49",
+            "93"
+          ]
+        },
+        {
+          "date": "2026-05-08",
+          "live": "61",
+          "live_main0": "61",
+          "re": "29",
+          "re_top5": [
+            "29",
+            "61",
+            "80",
+            "85",
+            "59"
+          ]
+        },
+        {
+          "date": "2026-05-10",
+          "live": "76",
+          "live_main0": "76",
+          "re": "03",
+          "re_top5": [
+            "03",
+            "70",
+            "76",
+            "44",
+            "68"
+          ]
+        },
+        {
+          "date": "2026-05-11",
+          "live": "70",
+          "live_main0": "70",
+          "re": "55",
+          "re_top5": [
+            "55",
+            "70",
+            "13",
+            "22",
+            "11"
+          ]
+        },
+        {
+          "date": "2026-05-12",
+          "live": "27",
+          "live_main0": "27",
+          "re": "15",
+          "re_top5": [
+            "15",
+            "50",
+            "31",
+            "39",
+            "68"
+          ]
+        },
+        {
+          "date": "2026-05-13",
+          "live": "92",
+          "live_main0": "92",
+          "re": "15",
+          "re_top5": [
+            "15",
+            "50",
+            "76",
+            "68",
+            "29"
+          ]
+        },
+        {
+          "date": "2026-05-14",
+          "live": "69",
+          "live_main0": "69",
+          "re": "13",
+          "re_top5": [
+            "13",
+            "76",
+            "55",
+            "22",
+            "88"
+          ]
+        },
+        {
+          "date": "2026-05-15",
+          "live": "70",
+          "live_main0": "70",
+          "re": "85",
+          "re_top5": [
+            "85",
+            "35",
+            "15",
+            "90",
+            "58"
+          ]
+        },
+        {
+          "date": "2026-05-16",
+          "live": "36",
+          "live_main0": "36",
+          "re": "76",
+          "re_top5": [
+            "76",
+            "22",
+            "31",
+            "30",
+            "60"
+          ]
+        }
+      ],
+      "hit_live_cung_ngay": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 41,
+        "he_pct": 19.43,
+        "bua_pct": 16.48,
+        "loi_the": 2.95,
+        "z": 1.15
+      },
+      "hit_tai_suy_luan_cung_ngay": {
+        "ky": 87,
+        "dat": 211,
+        "trung": 35,
+        "he_pct": 16.59,
+        "bua_pct": 16.48,
+        "loi_the": 0.1,
+        "z": 0.04
+      },
+      "live_thang_re_thua_ngay": 16,
+      "re_thang_live_thua_ngay": 11
+    }
+  },
+  "cung_cua_so": {},
+  "gt1_cua_so": {
+    "mo_ta": "GT-1: tai cham CSV holdout 20% cuoi, xep hang trong ~40 ung vien/ngay, lay top-1",
+    "n_ngay": 60,
+    "ngay_dau": "2026-06-03",
+    "ngay_cuoi": "2026-08-01",
+    "so_do": "khong phai bt_number live; la argmax tren dong CSV lich su"
+  },
+  "live_cua_so": {
+    "mo_ta": "GT-3: bt_number live trong model_daily_eval tu 2026-05-06",
+    "n_ngay": 87,
+    "ngay_dau": "2026-05-06",
+    "ngay_cuoi": "2026-08-01",
+    "so_do": "bt_number da ghi that luc chay hang ngay"
+  },
+  "live_hit_random-forest": {
+    "ky": 87,
+    "dat": 211,
+    "trung": 42,
+    "he_pct": 19.91,
+    "bua_pct": 16.48,
+    "loi_the": 3.42,
+    "z": 1.34
+  },
+  "live_hit_xgboost": {
+    "ky": 87,
+    "dat": 211,
+    "trung": 41,
+    "he_pct": 19.43,
+    "bua_pct": 16.48,
+    "loi_the": 2.95,
+    "z": 1.15
+  },
+  "live_hit_tren_holdout_random-forest": {
+    "n_co_mde": 60,
+    "ky": 60,
+    "dat": 146,
+    "trung": 26,
+    "he_pct": 17.81,
+    "bua_pct": 16.47,
+    "loi_the": 1.34,
+    "z": 0.44
+  },
+  "live_hit_tren_holdout_xgboost": {
+    "n_co_mde": 60,
+    "ky": 60,
+    "dat": 146,
+    "trung": 28,
+    "he_pct": 19.18,
+    "bua_pct": 16.47,
+    "loi_the": 2.71,
+    "z": 0.88
+  },
+  "csv_holdout_top1_random-forest": {
+    "ky": 60,
+    "dat": 146,
+    "trung": 21,
+    "he_pct": 14.38,
+    "bua_pct": 16.47,
+    "loi_the": -2.09,
+    "z": -0.68,
+    "mo_ta": "argmax tren CSV holdout (khong goi predict_with_* live)",
+    "ngay_dau": "2026-06-03",
+    "ngay_cuoi": "2026-08-01"
+  },
+  "csv_holdout_top1_xgboost": {
+    "ky": 60,
+    "dat": 146,
+    "trung": 19,
+    "he_pct": 13.01,
+    "bua_pct": 16.47,
+    "loi_the": -3.46,
+    "z": -1.13,
+    "mo_ta": "argmax tren CSV holdout (khong goi predict_with_* live)",
+    "ngay_dau": "2026-06-03",
+    "ngay_cuoi": "2026-08-01"
+  },
+  "giao_cua_so": {
+    "n": 60,
+    "ngay_dau": "2026-06-03",
+    "ngay_cuoi": "2026-08-01"
+  }
+}
