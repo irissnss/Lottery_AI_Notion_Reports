@@ -1,6 +1,6 @@
 # V10969 — Kiểm tổng lực hết live 02/08: ba miền đúng hạn, BT 3/3 WIN, hệ sạch
 
-**Ngày:** 02/08/2026 · **Giờ thu thập VN:** 18:48:25 · **Commit riêng / công khai:** điền sau push · **Trạng thái:** HOÀN TẤT (chỉ đọc + báo cáo; không sửa production)
+**Ngày:** 02/08/2026 · **Giờ thu thập VN:** 18:48:25 · **Commit riêng:** `1dd139f` · **Commit công khai:** `fc159b5` · **Trạng thái:** HOÀN TẤT (chỉ đọc + báo cáo; không sửa production)
 
 ---
 
@@ -131,6 +131,7 @@ Một ngày **3/3 WIN** là tin vui ngắn hạn — **không** mở cổng ti�
 ## 7. Vướng vấp
 
 1. **`git fetch` public repo báo `bad object refs/desktop.ini`** — Windows thả `desktop.ini` vào refs. Hậu quả nếu bỏ qua: tưởng remote lệch; đã dùng `git ls-tree origin/main` và status local để đối chiếu.
+5. **Push public lần 1 bị GitHub Push Protection chặn** vì `probe4.json` (V10965b evidence) chứa `anthropic_api_key` dạng base64. Đã REDACTED rồi commit lại `fc159b5`. Hậu quả nếu bỏ qua: không đẩy được báo cáo; hoặc lộ key.
 2. **Bộ đếm journal “error_like=24” dễ gây hoảng** vì khớp chữ `error=0` trong SHADOW_SUMMARY. Hậu quả nếu bỏ qua: báo sai hệ đang lỗi nặng; đã tách traceback=0 và serious=0.
 3. **model_count MT/MB < 15** dù pool eligible=15 — nếu chỉ nhìn pool sẽ tưởng đủ phiếu. Hậu quả: ẩn thiếu model trong bundle ngày.
 4. **V10965b từng nằm dưới tên folder V10965** — cổng A55 không nhận. Hậu quả: tưởng đã báo cáo đủ trong khi version `b` vẫn FAIL.
