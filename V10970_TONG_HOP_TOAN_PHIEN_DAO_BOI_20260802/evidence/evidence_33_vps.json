@@ -1,0 +1,106 @@
+{
+  "collected_at_vn": "2026-08-02 21:16:44",
+  "n_complete_120d": 121,
+  "n_3of3_120d": 2,
+  "rate_3of3_120d_pct": 1.65,
+  "last30": {
+    "complete": 31,
+    "n_3of3": 1,
+    "rate_pct": 3.23,
+    "dates": [
+      "2026-08-02"
+    ]
+  },
+  "last90": {
+    "complete": 91,
+    "n_3of3": 1,
+    "rate_pct": 1.1,
+    "dates": [
+      "2026-08-02"
+    ]
+  },
+  "all_3of3_dates_120d": [
+    "2026-04-23",
+    "2026-08-02"
+  ],
+  "today": {
+    "date": "2026-08-02",
+    "mn": "WIN",
+    "mt": "WIN",
+    "mb": "WIN",
+    "mn_bt": "43",
+    "mt_bt": "69",
+    "mb_bt": "52",
+    "mn_mc": 15,
+    "mt_mc": 13,
+    "mb_mc": 14,
+    "mn_at": "2026-08-02 05:18:43",
+    "mt_at": "2026-08-02 16:41:36",
+    "mb_at": "2026-08-02 17:37:53"
+  },
+  "region_wr_day_90d": {
+    "MN": {
+      "counts": {
+        "LOSE": 54,
+        "WIN": 37
+      },
+      "wr_day_pct": 40.66,
+      "n": 91
+    },
+    "MT": {
+      "counts": {
+        "LOSE": 61,
+        "WIN": 30
+      },
+      "wr_day_pct": 32.97,
+      "n": 91
+    },
+    "MB": {
+      "counts": {
+        "LOSE": 76,
+        "WIN": 15
+      },
+      "wr_day_pct": 16.48,
+      "n": 91
+    }
+  },
+  "p_3of3_indep_system_day_pct": 2.209,
+  "p_3of3_indep_random_union_pct": 5.143,
+  "post_v10939": {
+    "complete": 2,
+    "n_3of3": 1,
+    "dates": [
+      "2026-08-02"
+    ]
+  },
+  "model_attr_today": {
+    "MN": {
+      "bt": "43",
+      "bundle_created": "2026-08-02 05:18:43",
+      "model_count": 15,
+      "models_in_source_mention_bt": [],
+      "predictions_ai_model_with_bt_in_main": []
+    },
+    "MT": {
+      "bt": "69",
+      "bundle_created": "2026-08-02 16:41:36",
+      "model_count": 13,
+      "models_in_source_mention_bt": [],
+      "predictions_ai_model_with_bt_in_main": []
+    },
+    "MB": {
+      "bt": "52",
+      "bundle_created": "2026-08-02 17:37:53",
+      "model_count": 14,
+      "models_in_source_mention_bt": [],
+      "predictions_ai_model_with_bt_in_main": []
+    }
+  },
+  "edge_gate_summary": {
+    "nguong": {
+      "loi_the_pp": 3.0,
+      "z": 2.0
+    },
+    "cong_mo_tong": false
+  }
+}

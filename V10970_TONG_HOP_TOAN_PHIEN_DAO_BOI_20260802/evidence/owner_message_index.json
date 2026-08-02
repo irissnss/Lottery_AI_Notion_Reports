@@ -1,0 +1,997 @@
+[
+  {
+    "i": 1,
+    "line": 1,
+    "preview": "Anh thấy một điểm rất đang xem đối với MB là hầu như hàng đơn vị của các bộ số của các giải đều có số 1 đuôi. Giống 10/07 có 31/61/81 ngày 11/07 có 01/61/31 và ngày 12/07 có 11/71 với 1 khối lượng DB khổng lồ em hãy kiểm tra phân tích tìm một quy luật xác số hàng chục sẽ sảy ra ngày tiếp theo. Ví dụ số 81 ngày  --> ngày hôm sau sẽ ra 01. hoặc 31 ngày trước ngày  hôm sau khả năng  sẽ  là 71 chẳng hạn với khối lượng DB em có thể xem rõ hơn anh tìm được một quy luật có tỷ lệ tốt nhất. Với  các số đ"
+  },
+  {
+    "i": 2,
+    "line": 64,
+    "preview": "ĐÃ HẾT CHU KỲ LIVE RỒI EM TIẾN HÀNH PHÂN TÍCH ĐÁNH GIÁ , ĐÀO SÂU TIẾP TỤC TỪ KẾT QUẢ DỰ ĐOÁN CỦA THỜI GIAN VỪA QUA ĐỀ XUẤT XỬ LÝ HỢP LÝ TIẾP THEO LÀ GÌ EM?"
+  },
+  {
+    "i": 3,
+    "line": 95,
+    "preview": "TIẾP ĐI EM GIÁN RỒI CÔNG VIỆC GIAO PHÓ CHƯA XONG KÌA"
+  },
+  {
+    "i": 4,
+    "line": 142,
+    "preview": "Trước khi fix các đề xuất an toàn, em xem lại 1 lần nữa dùm anh toàn diện tổng lực nhé. Hôm Qua anh mới vừa win 31 ở MB số này từ đâu ra , xuyên suốt trong /choi thì đó là may mắn hay quy luật gì , phương pháp gì nếu ra 89-31 thì quá đẹp luôn em. Xem thử dùm anh tổng lực 3 miền, 3 luồng lane, offical, /choi. Bài học đúc kết và đề xuất chỉnh sửa thật an toàn, cải tiến nâng cao tỷ lệ trúng nha em"
+  },
+  {
+    "i": 5,
+    "line": 175,
+    "preview": "ok em, hiện thì mình đang soi về phương pháp total output đúng không em? do đó các thay đổi có thể áp dụng vì chưa đến giờ live. Hiện đơn model thì chỉ mới chạy cho MN và chúng ta cũng không fix gì cho đơn model nào cả do đóng chắc cũng không ảnh hưởng gì đúng không em?\nViệc tiếp theo là gì"
+  },
+  {
+    "i": 6,
+    "line": 177,
+    "preview": "Anh đang có kế hoạch thay thế toàn bộ API key cho các model AI, em liệt kê toàn bộ key và tên model tương ứng cùng nha cung cấp để anh cung cấp key mới nhé em."
+  },
+  {
+    "i": 7,
+    "line": 195,
+    "preview": "Việc thay thế API Ket để sau rảnh xử lý. Anh cần em kiểm tra toàn diện, phan tích, đào sâu để tiến hành đề xuất phương án xử lý nha em. MB nay tín hiệu tệ thật sự, MN full tín hiệu mà output không khá được, MT trung bình trật luôn  quá chán nhỉ em. Có gì cần xử lý không em?"
+  },
+  {
+    "i": 8,
+    "line": 265,
+    "preview": "17h là khóa xổ MT rồi em dời sang 17h05 sao kịp bó tay bậy ah\nMB khóa xổ 18h - nên 17h56 cũng tương đối tàm tạm\nCP l6 là gì anh ko nhớ nổi sao mà duyệt em. Cái nào từ DB từ live em đề xuất hướng cải tiến , nâng cao dự đoán nha em"
+  },
+  {
+    "i": 9,
+    "line": 299,
+    "preview": "Mốc giờ tối đa để bắt buột hệ thống output dự đoán hoàn hảo là MT 16h55 và MB 17h55 là được, em xem thật kỹ để không bị chồng chéo hoặc ảnh hưởng nha em, các mốc thật logic cái nào cần cho số liệu trước , cần ưu tiên trước phải rà soát lại hết nha em. \ncpl6 theo khuyến nghi nha em"
+  },
+  {
+    "i": 10,
+    "line": 346,
+    "preview": "Làm cho cẩn thận nha em, nhất quán các luồng lane , offical, /choi cũng như các phương pháp đơn model ML mới fix lại cho MT và MB  gì gì đó trong hệ thống em nắm rõ  vấn đề là em đã tư duy liên quan, tương thích, nhất quán hết chưa thôi. chứ anh nhắc cái nào là lòi ra cái đó là sao em? \nSau đó tổng hợp tổng lực toàn bộ dùm anh nha em."
+  },
+  {
+    "i": 11,
+    "line": 432,
+    "preview": "nhất quán hết chưa, chuẩn chưa nhai 1 lượng token khổng lồ mà lúc nào cũng thiếu sót, lỗ hỏng lỗ chỗ , bug tùm lum không hài lòng chút nào cả? Các vấn đề tồn động phát hiện ra có gì mới, có suy luận tương quan, tương thích, liên quan liên đới mật thiệt hết chưa đừng để fix chỗ này lỗi cho kia đó nha mệt rồi . MN anh chả thấy em đề cập gì đã nhắc là toàn bộ 3 miền , 3 luồng rồi mà, rồi các mốc giờ retrain nữa , mốc giờ học tập phân tích , xếp hạng rules , patrten nữa very lại luôn xem mốc giờ và "
+  },
+  {
+    "i": 12,
+    "line": 511,
+    "preview": "Nghĩa là sao em? theo báo cáo của em thì lỗi nghiêm trọng đã fix hết chưa hay sao ? mốc giờ có logic không? có chồng chéo không, cái cần nạp dữ liệu mới đủ điều kiện dự đoán chạy trước chứ em? nhắc lại output cuối cùng của MT là 16h55 và MB là 17h55 nên các mốc giờ cần cân đối hợp lý nhé em, MN thì anh đơn giản do có thời gian dài để chuẩn bị và chạy output nên mốc giờ cũng đỡ mệt hơn , đỡ áp lưc hơn . Xem lại coi còn gì không em? Sao thấy báo cáo mơ hồi quá em nhỉ"
+  },
+  {
+    "i": 13,
+    "line": 513,
+    "preview": "Model ML của MN và MT , MB khác nhau về mốc  dự đoán ah em xem kỹ nha em MN thì đang lấy D-1 của 3 miền , còn miền trung và miền Bắc thì sao? Có cần kiểm tra tới thời điểm này việc setting mốc như thế còn phù hợp không có ổn định không ? MB nữa trước nữa sau gì đó anh không nhớ nổi, kiểm tra backtess lại xem có mốc nào tốt hơn nữa không em? v.v... ví dụ mốc giờ  fix retrain cho MT và hiện tại MT không cần same day thì cũng nên tư duy mà xử lý nha. xem lại vẫn chưa yên tâm luôn em"
+  },
+  {
+    "i": 14,
+    "line": 593,
+    "preview": "Nếu chưa xác định, chưa chắc chắn em nên tổng hợp lại toàn bộ quá trình làm việc hôm nay để các lần sau em có thể làm ngay các việc này một cách nhanh chóng hơn nữa chứ a cứ mãi khơi gợi mất thời gian quá em. Các vấn đề rõ ràng thì fix ngay cho anh nhé"
+  },
+  {
+    "i": 15,
+    "line": 625,
+    "preview": "đã hết chu kỳ live rồi em? tiến hành kiểm tra , đào sâu, phân tích dùm anh tiếp đi MB thật sâu sắc nha em. thật khổ chứ thấy sao sao vậy ? tương tự giống mấy khi quá , sồ MN và MT cũng thế số 51 của dự đoán ngày hôm qua nổ rồi còn đề xuất cho MB nữa thiệt rối quá rối ah em."
+  },
+  {
+    "i": 16,
+    "line": 690,
+    "preview": "Số 51 trật MB hôm qua hôm nay nổ liên tục từ MN tới MT nhìn quá Sướng ==> Em thử xem lại thử xem có phải như thế không thử phân tích theo hướng đó xem dùng cho MN và MT thử xem,  bỏ vào sandbox thử tính toán verify thử xem? và số 51 được output từ model nào phương pháp gì các phương pháp khác ra sao thử mọi giả thuyết xem sao em\nRồi số dự đoán 19 trật cả MN và MT lại nổ ở MB ==> em thử xem lại xem thêm hướng đó thử,  bỏ vào sandbox thử tính toán verify thử xem? và số 19 được output từ model nào "
+  },
+  {
+    "i": 17,
+    "line": 828,
+    "preview": "51 là số của ngày hôm trước thật nhưng anh muốn biết model nào dự đoán ra số đó \n19 là số trượt của miền trước thật nhưng anh muốn biết model  nào dự đoán ra số đó\n==> anh muốn em thử nghiệm ngược với mốc với model , với điều kiện của các model dự đoán ra số đó tại thời điểm của miền trước hoặc của ngày hôm trước thì có nhưng gì dùng lại có ra số đó không để xác định mình đang làm sai chỗ nào , đúng chỗ nào lỗ hỏng là gì v.v... ML thì mốc dữ liệu như nào có chọn sai mốc D không , model Ai thì pr"
+  },
+  {
+    "i": 18,
+    "line": 900,
+    "preview": "tiếp đi em gián đoạn nữa rồi em"
+  },
+  {
+    "i": 19,
+    "line": 912,
+    "preview": "anh chưa hiểu vấn đề với sự giải thích của em? giờ đề xuất an toàn cái tiến là gì còn lạo ghi nhận cập nhật theo dõi chờ live hay sao em?"
+  },
+  {
+    "i": 20,
+    "line": 914,
+    "preview": "anh hiểu rồi vậy em có đặt câu hỏi lại tại sao ? với prompt đó mà 19 lại trung Miền Bắc và 51 lại trúng miền MT và MN mà lại output ngược  ngạo vậy làm cho trật chồng chéo vậy không? rõ ràng còn số 12W=92% nó cũng có lý được rules phân tích học tập và xếp hạng nhưng có lẻ có nhầm lẫn miền thì sao em? rồi tại sao cũng prompt đó mà model Ai khác lại output ra số ổn hơn vượt qua được hoặc hiểu được con số đó nó không nằm trong đề xuất hôm nay ? em phải giải thích được các vấn đề đó đã rồi hãy đề xu"
+  },
+  {
+    "i": 21,
+    "line": 987,
+    "preview": "em đã test thử nghiệm trong sandbox chưa em nó ảnh hưởng đến output của đơn model ai ah em cần thử nghiệm thử dùm anh trong snadbox trong 3-5 model trên 3 miền thử dùm anh với model đang kém và đang mạnh nha em."
+  },
+  {
+    "i": 22,
+    "line": 1032,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 23,
+    "line": 1035,
+    "preview": "Vậy đề xuất tốt nhất hiện tại là gì? nhớ là các chỗ đang khai thác cần ghi nhận và có thể đào bới thêm để tìm ra được chỗ tốt nhất nha em. Hiện sandbox em chạy bao nhiu ngày với 3 miền và 5 model em. Có nên thay thế nhãn nội dung prompt như thế nào em? cần cụ thể rõ ràng hơn chứ anh thật sự khó hiểu quá"
+  },
+  {
+    "i": 24,
+    "line": 1083,
+    "preview": "có em và anh đang đi đúng hướng ah em. Tiếp tục anh cần em xem lại rules đang cập nhật tự động phân tích xếp hạng ở mốc 12 W thì phải , và mỗi miền có hệ số khác nhau như miền nam thì 8w , hay miền trung thì 6-8 w ah em xem kỹ dùm anh chỗ này nữa ah . sẵn xác định những hệ số này còn đúng không em, còn phù hợp không em có điều chỉnh gì không em? sau đó tiếp tục chạy test trong showdow tổng hợp những cái cái em vừa làm rõ mang hướng cải thiện trong 7 ngày với 3 miền và 5 model ai kết hợp tốt và t"
+  },
+  {
+    "i": 25,
+    "line": 1155,
+    "preview": "mốc 8w / 6w / 12 w chỉ là ví dụ khơi gọi để em có thể với tới đúng chỗ chứ anh không biết gọi nó là gì cho cụ thể cả em nên nó có thể sai hehe thông cảm. \nVậy em đã xử lý hết rồi đúng không ? chờ live thôi đúng không em? có backup đầy đủ có deploy hết chưa , có đẩy báo cáo github hết chưa em?"
+  },
+  {
+    "i": 26,
+    "line": 1159,
+    "preview": "Tạm thời như thế nhưng còn 1 điều anh cần kiểm tra kỹ lại lần nữa là sau ngày 1/7 việt nam sáp nhập tỉnh , nên 1 số đài củ cũng được gộp về tỉnh mới nên 1 tuần khả năng đài sổ 2 lần khá nhiều. Xem thật kỹ hệ thống đang ghi nhận như nào có đúng với hiện tại không? em có thể tự kiểm tra đài chính xác hiện hành trên các nền tản so sánh đối chiếu . đài , tên đài, thứ tất cả kiểm tra lại luôn em nhé anh sợ đâu đó còn thiếu sót đó em."
+  },
+  {
+    "i": 27,
+    "line": 1251,
+    "preview": "Tới đâu rồi em ? giờ cần làm gì các vấn đề lỗi, bug đã fix hết chưa , các vấn đề chờ live có ghi nhận hết chưa em"
+  },
+  {
+    "i": 28,
+    "line": 1253,
+    "preview": "list API token đâu em show lại toàn bộ các model tương ứng đang hoạt động để anh tạo API token mới thay thế và nhà cung cấp tương ứng nha em. Anh hỏi 1 câu là anh dùng 1 API Chung cho từng hãng được không em ví dụ gemini anh dùng 1 api của google , rồi Opus thì dùng chung của claude để dễ quản lý và dễ dàng thay thế đó em. xem dùm anh , giờ mọi thứ đã chạy xong rồi ko ảnh hưởng live hôm nay nên thay thế là hợp nhất đó em hãy cung cấp đầy đủ và chi tiết nhát dùm a"
+  },
+  {
+    "i": 29,
+    "line": 1270,
+    "preview": "Tiếp tục ngày buồn em nhỉ, có MN đỡ đỡ xíu. Em xem lại dùm anh tín hiệu trúng đa phần nằm ở số phụ không thế em? kiểm tra đơn model số phụ và bạch thủ luôn em, showdow nay sao rồi? kiểm tra toàn diện các vấn đề đang treo luôn xem nào em API thì tý rảnh anh sẽ xem và tý rảnh a cung cấp sau"
+  },
+  {
+    "i": 30,
+    "line": 1353,
+    "preview": "Giờ anh chốt là 1 key \n- google dùng cho các model thuộc google\n- openai dùng cho các model thuộc openai\n- claudeai dùng cho các model thuộc claudeai\n- deepseek dùng cho các model thuộc deepseek\n- còn lại 1 key openrouter dùng chung được không em? còn gì nữa không em để anh chuẩn bị 1 lần luôn em? Chú ý 1 số model hiện hãng không còn phát hành chỉnh có mỗi openrouter mới cung cấp em xem kỹ nha em"
+  },
+  {
+    "i": 31,
+    "line": 1361,
+    "preview": "Anh gửi em thông tin API key nha em. tiến hành xử lý dùm anh nhé . có vài vấn đề anh nhờ em kiểm tra trong ảnh các key đã dừng sử dụng 12 , 4 ngày trong hệ thống còn hoạt động không em? xem kỹ dùm các model có còn hoạt động thì add bằng key chung không thì clear sạch sẻ dùm anh nhé em.\n- Hiện tại chi phí GPT 5.5 cao quá em cần có kế hoạch thay thế gấp đi em chi phí lớn quá em ơi. Hiện có một số model  mới giá rẻ cũng mạnh mẻ không kém như grok ah, em xem thử model nào phù hợp đề xuất dùm anh nhé"
+  },
+  {
+    "i": 32,
+    "line": 1417,
+    "preview": "sao thế em chạy cho xong đi chứ"
+  },
+  {
+    "i": 33,
+    "line": 1430,
+    "preview": "đầu ngày rôi em , em kierm tra toàn bộ , toàn diện dùm anh đi"
+  },
+  {
+    "i": 34,
+    "line": 1502,
+    "preview": "anh đã disable các API key củ ngoại trừ google. Riêng API google API key củ là tier 2 nhưng hiện tại anh đổi sang tài khoản khác chỉ là tier 1 thôi ah em vì tài khoản tier thuộc doanh nghiệp hiện tại chính xách doanh nghiệp chán quá antigravity không cho dùng nên anh đổi luôn trong đợt này để nâng tier từ từ lại.Muôn lên tier 2 thì anh cần nộp nhiêu tiền là được thì tư vấn thêm. Hình ảnh thì key API củ hôm nay không có phát sinh chắc có lẻ cũng đã được chuyển đổi thành công rồi em nhỉ.\nQuen3 MAx"
+  },
+  {
+    "i": 35,
+    "line": 1585,
+    "preview": "hết chu kỳ live rồi em. kiểm tra toàn diện dùm anh dự đoán hôm nay và tất cả các ngày live vừa qua"
+  },
+  {
+    "i": 36,
+    "line": 1632,
+    "preview": "anh thấy có một sự trùng hợp MB là giải đặt biệt  hàng chục ngàn và hàng ngàn hay đổi đổi vị trị và xổ ở ngày hôm sau ví dụ: ngày 16/06 giải đặt biệt 96763 ==> hôm nay xổ có 69 đó em. xem kỹ dùm anh rules này có mạnh không em? \nCó cái nào rõ ràng và fix sớm hơn không em? thua quá em ơi"
+  },
+  {
+    "i": 37,
+    "line": 1672,
+    "preview": "để nâng tỷ lệ trên nền em phải phối ghép điều kiện nữa mới được anh nghĩ vậy? ví dụ như số đảo đó có xổ ở miền trước như miền nam hoặc miền trung đặt biệt là rơi vào các giải đáng chú ý dùng để soi cầu đó em, hoặc số đảo đó nó nằm trong tóp số nóng lạnh rơi hoặc gan gì đó phối các điều kiện vào nữa để có thể nâng tỷ lệ cao lên và loại bỏ thêm các % ngoài nền ah em. Xem kỹ dùm anh. Rules và partern chắc chắn có lý của nó nhưng thiếu điều kiện em thử bổ sung thêm các điều kiện vào xem có tăng tỷ l"
+  },
+  {
+    "i": 38,
+    "line": 1736,
+    "preview": "Rồi 1 vấn đề nữa là Prompt gốc trong dự án là gì để các model AI đọc và suy luận em, có vẻ như số model AI suy luận luôn lệch +-1 so với số trúng của từng miền thì phải ví dụ miền bắc hôm nay dự đoán 34 số trung 35 , dự đoán 75 số trúng là 85 và đa phần anh thấy điều đó diễn ra, Nếu giả xử trong prompt có thì em có thể phân tích lại nêu bỏ +-1 thì thì lịch sử các ngày live đối với model ai có khả quan hơn không và ngược lại nếu chưa có thì sao em? rồi các yếu tố về đảo pha gì nữa đó em xem thử c"
+  },
+  {
+    "i": 39,
+    "line": 1814,
+    "preview": "Tiếp tục 1 ghi nhận giá trị đúng không em? Còn nữa nè tiếp nè rules thực sự có giá trị mà bị cái số đảo pha hay -+1 gì đó làm rơi rớt mất chứ gì nữa  sô 43 không nằm trong rules mà được đề xuất phi lí thật sự, trong khi 50/27/95/85/58/02 đều nằm rules bốc đại cũng có khả năng trúng luôn đó em, mà model ai đỉnh tư duy suy luận các kiểu mà bốc toàn số trật phi lý, đó là ví dụ ở MB với rules nguồn MN và MT đó em. Tương tự đích MT và MN cũng thế đặt biệt với MN 3 đài min khoảng 54 bộ số mà dự đoán s"
+  },
+  {
+    "i": 40,
+    "line": 1859,
+    "preview": "Trong xuyên suốt buổi tối nay em đã đào bới , phân tích được gì rồi. Tổng hợp lại tổng lực dùm anh đừng để rơi rớt dùm anh, đề xuất an toàn nhất tại thời điểm hiện tại và các vấn đề tồn động chờ live nha nha em"
+  },
+  {
+    "i": 41,
+    "line": 1861,
+    "preview": "Ý anh khác hoàn toàn ý em.\n- Cái phương pháp cái prompt đã chạy rất lâu rồi , đơn tín hiệu không ổn định bữa có , bữa không , bữa dày , bữa mỏng lèo tèo mà total có tốt đến mấy mà đơn model lèo tèo thì làm sao output cho đúng nổi .\n- k11a có như thế nào chưa ổn định vì đơn model tín hiệu kém thôi\n==> tại sao không backup tại thời điểm này và tiến hành điều chỉnh lớn luốn chạy thật luôn trong 7-10 ngày để đo cái cải tiến hành em. Chứ cái hiện tại đã đo lâu quá rồi mà em . Sau 7-10 có live thật lu"
+  },
+  {
+    "i": 42,
+    "line": 1933,
+    "preview": "các vấn đề đo lường , theo dõi đề xuất trước đó thì sao em? có fix không hay để sau? ML bỏ rules là sao em chưa hiểu lắm ah em"
+  },
+  {
+    "i": 43,
+    "line": 1935,
+    "preview": "ok em nha , còn gì nữa không , có gom tổng lực lại hết chưa không còn rơi rớt gì chứ, anh khơi gọi nhiều quá nhưng những cái đó anh ko có tên và không biết hỏi lại em làm sao như thế nào để em nhận định được. anh sợ sẽ quên sau này do đó em cần có một kế hoạch 1 danh sách bài bản từ tên đến mô tả đặt tính cách hoạt động của nó thì càng tốt  . Tổng lực tất cả dùm anh 1 lượt nữa đi nào em"
+  },
+  {
+    "i": 44,
+    "line": 1946,
+    "preview": "Có chắc là không còn gì nữa không em thành thật và trung thực chính xác nha? Tiếp theo là làm gì hay nghi ngơi chờ live ngày mai."
+  },
+  {
+    "i": 45,
+    "line": 1953,
+    "preview": "kiểm tra đầu ngày hôm nay các fix đã hoạt động ổn định chưa em? có chỗ nào lỗi lầm gì không em"
+  },
+  {
+    "i": 46,
+    "line": 1974,
+    "preview": "Hết chu kỳ live MN rồi em, em view sơ qua dùm anh mọi thứ trước thử xem em , anh hồi hộp quá có gì hay ho mới mẻ chuyển biến không em?"
+  },
+  {
+    "i": 47,
+    "line": 1979,
+    "preview": "đã hết chu kỳ live với những thay đổi lớn em hãy kiểm tra phân tích đánh giá toàn diện sau đợt thay đổi lớn này. Total và /choi cần có 1 phương pháp mới với tín hiệu dàn trải ở các model và ở bt và số phụ ah em? cần kiểm tra và có kế hoạch cụ thể dùm anh"
+  },
+  {
+    "i": 48,
+    "line": 2062,
+    "preview": "Có 2 vấn đề anh cần em tìm hiểu kỹ. \n1/ Rules có được tổng hợp phân tích xếp hạng hàng ngày hàng tuần không em?\n2/ Nếu /choi , offical không can thiệp được để vì sẽ phá đo lường không đo được, thế lane test có xử lý được không . anh cũng muốn 1 luồng output mới để chơi 10 ngày tới chứ nhi"
+  },
+  {
+    "i": 49,
+    "line": 2140,
+    "preview": "Luồng mới cũng dùng để đo để so sánh luôn được mà em đúng không? vấn đề là em thao tác đã backup chưa luồng lane test mặc dù phụ nhưng đừng quên nó nhé em. Chú ý tất cả phải được backup ghi nhận cụ thể tránh không quay đầu được nha em. Ghi nhận tất cả dùm anh nhé , nếu theo luồn mới thì dự đoán hôm nay là bao nhiu em cũng nên total lại luôn để có lịch sử từ đây luôn em. Code fix xong cập nhật ghi nhận tổng lực toàn bộ tránh quên lang , tất cả phải được tuy duy , logic , liên quan , tương thích ,"
+  },
+  {
+    "i": 50,
+    "line": 2182,
+    "preview": "Đã backtesst verify kỹ chưa em? Sao số outra 93 là lose ah là trung thực đó hả ? có cách nào làm nổi bật hơn để dễ nhìn hơn không em? Có tìm ra phương pháp nào tối ưu tốt hơn không , đã thử hết các phương pháp các cách chưa ? đặt tên cho Chỗ này là total 10 ngày thay đổi lớn đi . chứ nằm lọt giữ khó xem quá ."
+  },
+  {
+    "i": 51,
+    "line": 2231,
+    "preview": "xong hết chưa hoàn hảo chưa? chuẩn bị tốt cho live ngày mai và 9 ngày tiếp theo chưa ? anh đi ngủ được chưa?"
+  },
+  {
+    "i": 52,
+    "line": 2239,
+    "preview": "Kiêm tra , phân tích đánh giá toàn diện kết quả dự đoán ngày hôm nay dùm anh. MB có rules ngon mà sao không bắt được như là 63,26 ah em, MN hội tụ đông quá , MT cũng yếu ớt\n==> phân tích đánh giá tổng lực dùm anh"
+  },
+  {
+    "i": 53,
+    "line": 2314,
+    "preview": "số 26 nằm ở chố hàng chục nghìn và hàng nghìn không đảo của miền bắc nằm ở giải đặt biệt đó em xẻm điều kiện là kèm là so sánh với các giải đặt biệt dùng để soi cầu của 3 miền trong đó miền nam có giải đặt biệt có 26 đó em.\n==> xem lại dùm anh tất cả toàn diện 1 lần nữa, đề xuất an toàn tổng lực là gì em?"
+  },
+  {
+    "i": 54,
+    "line": 2359,
+    "preview": "ko còn gì nữa đúng ko em? dợi live thôi đúng ko em?"
+  },
+  {
+    "i": 55,
+    "line": 2367,
+    "preview": "chờ thêm đi em? sau đó trước khi xử lý cầm verify lại để xác thực 1 lần nữa nha em , lỡ dầu prompt mới lại thay đổi kế hoạch , phương án đó em"
+  },
+  {
+    "i": 56,
+    "line": 2400,
+    "preview": "xuôi ngược gì nó phải có điều kiện đi kèm mới có khả năng cao và chính xác nha em. Đàu ngày rồi em tiến hành kiểm tra toàn diện dùm anh nha em. Hiện mỗi model ra mỗi số thiết phúc phạp quá total khó mà tóm gọn các số tốt ah em. Xem kỹ thật kỹ tỉ mỉ và phương án thật tối ưu nha em, theo sát dùm anh4"
+  },
+  {
+    "i": 57,
+    "line": 2527,
+    "preview": "hết chu kỳ live cực kỳ thất bại MN, MT thì anh chưa so sánh rules có không nhưng riêng MB thì rules có mà model Ai mốc ố ở đâu anh chả hiểu nổi, ML cũng thế chán ơi là chán luôn kiểm tra tổng lực 3 miền, 4 luông , từng model 1 luôn , từng cơ chế tổng hợp và học tập tích lũy xếp hạng luôn quá chán luôn. có tín hiệu cũng trật và không có thì càng trật sao mà tệ dữ ko biết nữa"
+  },
+  {
+    "i": 58,
+    "line": 2541,
+    "preview": "26 nằm trong rule nào, 46/69 nằm trong rules nào sao vớ vẩn quá em?  LLM gộp là sao? hệ thống ngày càng tệ đỏ rực rỡ chán quán chán luôn đó em. Tự nhiên nhét 26 vô làm gì  46/69 nhét vô làm gì nó chỉ là 1 yếu tố có khả năng cần so sánh với dự đoán hôm nay thật sự trùng , thật sự vote thì đẩy số lên cao tự nhiên cơ sở nào đẩy lên cao là sao ? Các vấn đề này cần kiểm tra xủ lý ngay an toàn hiệu quả tăng nặng lực dự đoán cho anh."
+  },
+  {
+    "i": 59,
+    "line": 2590,
+    "preview": "Anh vẫn chưa hài lòng , tất cả các rules đều có giá trị riêng của nó, phải có điều kiện của nó thì nó mới thực sự là tốt chứ nếu lộ như thế thì nhà cái thua hết sao em? cái em cần làm là điều kiện tốt nhất là gì , phù hợp nhất là gì phối hợp như thế nào để hiệu quả nhất, em cần phải tư duy thêm về phương pháp , phương án, giả thuyết để xác định được các điều kiện tốt nhất nha em. Không phải cứ nói tới là fix , nói tới đâu đào ở đó ,fix ở đó anh không tán thành cách làm việc này đâu"
+  },
+  {
+    "i": 60,
+    "line": 2594,
+    "preview": "C em không đào sâu, tư duy , suy nghĩ thiết lập thử nhiều giả thuyết thực nghiệm trước dùm anh anh ah số liệu, tài liệu, code em nắm cả rồi mà sao hạn chế thế ah em"
+  },
+  {
+    "i": 61,
+    "line": 2597,
+    "preview": "V10829 — Catalog giả thuyết điều kiện RULES (pipeline A→B)\n\nImplement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.\n\nTo-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos."
+  },
+  {
+    "i": 62,
+    "line": 2639,
+    "preview": "Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.\n\nTo-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos."
+  },
+  {
+    "i": 63,
+    "line": 2640,
+    "preview": "chả hiểu mẹ gì luôn, số mỗi ngày có rules và số theo rules khác nhau , nếu thật sự trùng hợp thì vote chứ sao lại đeo mãi số củ để rồi trượt dài thế , em làm cái gi anh chả hiểu gì cả chả diễn giải gì cụ thể là sao em?"
+  },
+  {
+    "i": 64,
+    "line": 2647,
+    "preview": "còn gì nữa không đầu ngày đã ổn chưa em?"
+  },
+  {
+    "i": 65,
+    "line": 2657,
+    "preview": "Anh cần em kiểm tra tổng lực toàn diện các vấn đề anh nhắc bên trên 1 lần nữa anh vẫn chưa yên tâm:\nhết chu kỳ live cực kỳ thất bại MN, MT thì anh chưa so sánh rules có không nhưng riêng MB thì rules có mà model Ai mốc ố ở đâu anh chả hiểu nổi, ML cũng thế chán ơi là chán luôn kiểm tra tổng lực 3 miền, 4 luông , từng model 1 luôn , từng cơ chế tổng hợp và học tập tích lũy xếp hạng luôn quá chán luôn. có tín hiệu cũng trật và không có thì càng trật sao mà tệ dữ ko biết nữa\n26 nằm trong rule nào, "
+  },
+  {
+    "i": 66,
+    "line": 2684,
+    "preview": "không làm gì nữa ah em tiếp tục theo dõi thôi đúng không em?"
+  },
+  {
+    "i": 67,
+    "line": 2686,
+    "preview": "Hết chu kỳ live rồi em . Hiện hôm nay vẫn tệ như củ ah em. MB tín hiệu ngợp trời mà vẫn để lọt lưới trật MN D có 70/84/63/44/97/26 MT D 07/53/53 ML thì thôi tệ quá tệ  chán quá chán. Kiểm tra tổng lực , toàn diện tất cả 3 miền 4 luồng không bỏ sót bất kỳ vấn đề nào. Đề xuất thưc hiện an toàn cải thiện , cải tiến mạnh mẻ đi em ơi"
+  },
+  {
+    "i": 68,
+    "line": 2698,
+    "preview": "P1  an toàn đủ điều kiện thì thực hiện dùm anh đi em"
+  },
+  {
+    "i": 69,
+    "line": 2714,
+    "preview": "Xong rồi ah em? chờ live thôi đúng ko em"
+  },
+  {
+    "i": 70,
+    "line": 2716,
+    "preview": "đầu ngày e kiểm tra phân tích, đanh giá toàn bộ , toàn diện dùm anh nha"
+  },
+  {
+    "i": 71,
+    "line": 2747,
+    "preview": "đúng các mốc thời gian cũng quan trọng không kém nó ảnh hưởng dữ liệu , rules v.v... nên cần phải kiểm tra và tư duy logic thật tương quan , tương ứng phù hợp nha em"
+  },
+  {
+    "i": 72,
+    "line": 2767,
+    "preview": "Đã hết chu kỳ live hôm nay rồi nha em kiểm tra, phân tích, đào sâu toàn diện 3 miền, 4 luồng, tất cả các model, total, phương pháp cơ chế v.v... tất cả mọi thứ không bỏ sót vấn đề nào nha em. MB anh thấy có tín hiệu từ model Ai đều hơn mọi thời gian trước , nhưng ML thì vẫn tệ thi thoảng bắt được và 1 điều là /choi miền bắc chả output nha em. Ngoài ra anh không nhận xét gì chờ em đào bới từng ngóc nghách báo cáo và đề xuất thôi"
+  },
+  {
+    "i": 73,
+    "line": 2778,
+    "preview": "ok a thôi đợi theo khuyến nghị cho đủ chủ kỳ nha em. tieoes theo không còn gì để xử lý ah em?"
+  },
+  {
+    "i": 74,
+    "line": 2785,
+    "preview": "ĐẦU NGÀY EM KIỂM TRA TOÀN DIỆN DÙM ANH ANH NHA EM. ĐỒNG THỜI XEM DÙM ANH RULES ĐÍCH MN và MT  THƯỜNG XUYÊN LẤY NGUỒN TỪ MB GIẢI 1 và giải đặt biệt em xem thử đi trong 30 ngày qua liên tục luôn đó em."
+  },
+  {
+    "i": 75,
+    "line": 2801,
+    "preview": "anh chỉ muốn biết rules có đúng như anh quan sát không em? trong bộ rules có nguồn này không ? tại sao ít thấy đề xuất , có mạnh không sao không thấy đề xuất, về ghi nhập theo dõi cho các lần fix tiếp theo là gì ? v,v,,, chứ anh chưa yêu cầu fix ngay nha em"
+  },
+  {
+    "i": 76,
+    "line": 2808,
+    "preview": "vậy việc đo đạt phân tích tổng hợp xếp hạng không thấy được độ mạnh ah em?"
+  },
+  {
+    "i": 77,
+    "line": 2812,
+    "preview": "đã hết chu kỳ live em tiến hành kiểm tra, đào bới , phân tích  toàn diện dùm anh"
+  },
+  {
+    "i": 78,
+    "line": 2821,
+    "preview": "tại sao output /choi MB lại không có nữa em? có phải lỗi không em  hay là thiết kế nó vậy em?"
+  },
+  {
+    "i": 79,
+    "line": 2823,
+    "preview": "ok anh chấy nhận tạm thời như thế cố gắng đo lường kiểm soát để đưa ra phương pháp an toàn hiệu quả nhất hàng ngày nha em"
+  },
+  {
+    "i": 80,
+    "line": 2826,
+    "preview": "hình ảnh đang nói vấn đề gi em có hiểu và có nắm không em?"
+  },
+  {
+    "i": 81,
+    "line": 2839,
+    "preview": "Xem tiếp đi nó vẫn còn lỗi đó em , em có hiểu , có nắm không xử lý được không em?"
+  },
+  {
+    "i": 82,
+    "line": 2860,
+    "preview": "thế là em làm việc cho dù có bao nhiu vòng audit đào sâu , truy quét vẫn lỗi liên tục làm hệ thống sai lệch là sao em ? \nhãy  tiếp tục /review-bugbot toàn diện 1 lần nữa . Sau đó cập nhật báo cáo đầy đủ chỉ tiết dùm anh , push lên github report luôn nha em.\nCái nào xử lý được xử lý cái nào chờ live thì chờ live . Nhưng tất cả cần cập nhật, ghi nhận đầy đủ chi tieetst nhất quán tránh làm rơi rụng bất kfy vấn đề nào nha em."
+  },
+  {
+    "i": 83,
+    "line": 2869,
+    "preview": "tiếp đi em gián đoạn nữa rồi em"
+  },
+  {
+    "i": 84,
+    "line": 2921,
+    "preview": "Xong triệt để tuyệt đối rồi đúng không em?"
+  },
+  {
+    "i": 85,
+    "line": 2923,
+    "preview": "đầu ngày rồi kiểm tra toàn diện tổng thể dùm anh"
+  },
+  {
+    "i": 86,
+    "line": 2953,
+    "preview": "GIÁN ĐOẠN RỒI EM, TIẾP ĐI CHO XONG"
+  },
+  {
+    "i": 87,
+    "line": 2968,
+    "preview": "hết chu kỳ live rồi em em. Kiểm tra , đào sâu , phân tích, đánh giá dự đoán 3 miền, 4 luồng hôm nay và 15 ngày gần đây. Các vấn đề an toàn , nâng cao khả năng dự đoán code fix ngay đề xuất an toàn là gì em"
+  },
+  {
+    "i": 88,
+    "line": 3023,
+    "preview": "Các vấn đề an toàn , có giá trị nâng cao dự đoán  đã xác thực , đo lường rõ ràng thì tiến hành dùm anh đi em."
+  },
+  {
+    "i": 89,
+    "line": 3058,
+    "preview": "trong  suốt qua trình thay đổi các vấn đề lớn như prompt thì chưa tìm được phương pháp nào total tốt nhất sao em?"
+  },
+  {
+    "i": 90,
+    "line": 3060,
+    "preview": "- Đã hết  chu kỳ live hôm nay em tiến hành kiểm tra toàn diện tổng lực dùm anh tất cả từ đơn model , prompt , rules, đến total ,  cơ chế học tập tích lũy xếp hạng, 3 miền 4 luông tất cả mọi thứ không bỏ sót vấn đề nào nha em\n- về việc output ở /choi anh cần hiển thị số kèm nhãn cảnh báo đừng ẩn nữa , việc chơi hay không do người dùng mình đã cảnh báo rồi nha em. và cảnh báo cũng reltime theo từng ngày , từng tuân , từng thứ mạnh lên rồi mà cứ cho nghĩ hoài, hoặc yếu lại rồi mà cứ bắt chơi hoài t"
+  },
+  {
+    "i": 91,
+    "line": 3112,
+    "preview": "Hệ thống đang được trang bị áo mới nhưng vướng rất nhiều thứ :\n- VPS và local khác nhau ? tại sao trước giờ anh yêu cầu em code fix đều deploy ghi nhận và cập nhật đầy đủ mà giờ lại thiếu sót này sảy ra kiểm tra kiểm soát ngay cho anh\n- Có kiểm soát và đo lường được các tình hướng xấu nhất không đây. anh không muốn công sức của anh và em đổ sông đổ biển , đo lường code fix quá trời giờ hỏng hệ thống là không được đâu đó nhé.\n==> Em phải tổng lực , đầu sâu , phân tích kỹ, tư duy logic, tương quan"
+  },
+  {
+    "i": 92,
+    "line": 3143,
+    "preview": "14/14 trang gồm trang nào em anh chỉ view được vài trang hay dùng còn lại ở đâu? Một số trang anh không thấy thay áo luôn đi em? Rồi UI hiện tại đang lỗi ở vùng header ah em sao có 1 khoảng trống trên đó không ghim header trên cùng rồi còn cuộn bị lọt nội dung qua thanh tìm kiếm em? xem lại dùm anh coi"
+  },
+  {
+    "i": 93,
+    "line": 3163,
+    "preview": "hiện cũng đã thay áo tương đối chỉnh chu rồi đó em. Nhưng thực tế anh vẫn chưa hài lòng về màu sắc chói quá, một số màng hình chưa nhất quán công cụ sắp xếp chưa hợp lý , chưa thực sự tương thích mới mọi thiết bị em cần kiểm tra tổng thể về giao diện trong đợt này.\nĐồng thời kiểm tra tổng thể toàn diện về hoạt động của hệ thống luôn dùm anh\n==> /review-bugbot  lượt này em rà soát tất cả không bỏ sót bất kỳ điểm nào cả giao diện lẫn chức năng hoạt động mọi thứ không bỏ sot 1 vấn đề nào không rơi "
+  },
+  {
+    "i": 94,
+    "line": 3169,
+    "preview": "Tiếp tục quá trình xử lý đi em gián đoạn nữa rồi em"
+  },
+  {
+    "i": 95,
+    "line": 3195,
+    "preview": "Nói vậy thôi chứ 1 số UI nhìn còn tệ lắm em review qua là biết, card cso cài dài ngắn đủ kiểu, chữ rơi rớt xuống dòng nói chung chưa chuẩn chỉnh nhất quán luôn đó em. xem kỹ lại 1 lần nữa\nTổng hợp toàn bộ các vấn đề về dự đoán nha em đừng quên đó nha trôi quên mấy là thua luôn đó em"
+  },
+  {
+    "i": 96,
+    "line": 3208,
+    "preview": "Ngày hôm qua 25/07 dự đoán như thế nào em? anh nhận thấy luồng officel khá khá đúng không em? em đã theo dõi được gì , đã có kế hoạch gì chưa? từ khi có cuộc thay đổi lớn đến giờ có gì thay đổi tỷ lệ dự đoán  ở đơn model khá hơn không ? total có phương pháp mới nào để tối ưu chưa ? chuẩn bị mọi thứ sẵn sàng chưa em"
+  },
+  {
+    "i": 97,
+    "line": 3221,
+    "preview": "xong chưa đầu ngày rồi đó kiểm tra tổng lực toàn diện đi em. giao diện ví P&L và độ chính xác thì chán quá gián chữ nghĩa 1 nơi card 1 nơi tùm lum hết xem lại luôn đi trên mobile đó"
+  },
+  {
+    "i": 98,
+    "line": 3242,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 99,
+    "line": 3246,
+    "preview": "Xong con cái gì mà xong còn nguyên xi cóa fix được đâu lỗi thêm phần sibar trên mobile to đùng ra nữa nữa. ANh cảm thấy em làm việc quá cẩu thả đó nha . Kiểm tra xử lý lại cho thật chỉnh chu , ti mỉ đi"
+  },
+  {
+    "i": 100,
+    "line": 3271,
+    "preview": "đã hết chu kỳ live kiểm tra phân tích , đào sâu từng ngóc nghách, từng chi tiết, từng chức năng, từng phương pháp, từng model, từng cơ chế, từng mốc tổng hợp phân tích xếp hạng, từng giao diện trên tất cả các thiết bị, thật tổng lực toàn diện không bỏ sót, rơi rớt bất kỳ chỗ nào, phải tư duy logic tương quan tương thích phù hợp nhất cho tất cả 3 miền, 4 luồng dùm anh. Đang dự đoán ổn hôm nay tư nhiên tệ là sao do thay đổi áo mới ah hay sao kiểm tra hết cho anh , câc vấn đề rõ ràng , xác thực tiế"
+  },
+  {
+    "i": 101,
+    "line": 3515,
+    "preview": "Anh thấy nghi nghi vấn rồi , hôm qua bảo /choi cho output đầy đủ các ngày không chặn chỉ kèm them cảnh báo , chơi hay không do người dung , output phải đúng với cơ chế của  /choi để có thể đo lường và so sánh nha em. còn chơi hay không là do người dùng , thế làm làm sao hôm nay không hiển thị output MB luôn và còn làm lỗi luôn. Đòng thời xem thời gian output tối đa của mỗi miền như sau : MN 15h55 nhưng miền nam đầu ngày thời gian khá dài nên không đến nổi quan ngại, nhưng MT 16h55 và MB là 17h55"
+  },
+  {
+    "i": 102,
+    "line": 3549,
+    "preview": "Tiếp đi em , bị gián đoạn rồi em. Xử lý cho chuẩn chỉnh vào\nAnh cú có cảm giá số dự đoán ở các luông cứ giao động không ổn định , các phương pháp total như nào có lấy đủ , đúng  đơn model như kế hoạch không mà sao cứ thấy giao động đặt biệt là chuẩn bị sổ mới có output ổn định lại lúc này trễ giờ mất chả biết cái nào đúng sai , số nào chuẩn nữa chán quá chán ah xem đi , nhưng trước tiến đang bị gián đọn xử lý cho xong yêu cầu trên đi đã"
+  },
+  {
+    "i": 103,
+    "line": 3629,
+    "preview": "Xong hết chưa hoàn hảo chủa chứ kiểu này anh phát chán luôn đó em"
+  },
+  {
+    "i": 104,
+    "line": 3631,
+    "preview": "Đầu ngày em có cần kiểm tra lại không em? Link bảng độ chính xác cũng lệch lạc méo mó cả mobile và desktop nha em , chữ gì mà lọt ra ngoài màng hình luôn"
+  },
+  {
+    "i": 105,
+    "line": 3668,
+    "preview": "tiếp đi em gián đoạn nữa rồi em"
+  },
+  {
+    "i": 106,
+    "line": 3710,
+    "preview": "Xem tiếp UI  lane test đi , các card cũng méo mó , lệch lạc tùm lum kìa trên mobile , lấy trang nào chuẩn đồng bộ nhất quán cho chuẩn chỉnh dùm dum anh như trang /choi anh thấy giờ ổn rồi đó ngay ngắn rồi đó. Với hiện tại đang thay áo với template có sibar nên anh nghỉ các nút cho gọn lại thật sự không cần thiết nữa sibar mở ra là có rồi em. cũng tiện lợi và đồng thời giao diện gọn sạch hơn nha em."
+  },
+  {
+    "i": 107,
+    "line": 3801,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 108,
+    "line": 3803,
+    "preview": "Em không canh cho ngay ngắn được ah 4 card mà cũng không chia đều cân chỉnh ngay ngắn được ah ?"
+  },
+  {
+    "i": 109,
+    "line": 3857,
+    "preview": "Xem kỹ lane test đi 4 card  em làm sao tự hiểu ah , chán quá tệ em ơi"
+  },
+  {
+    "i": 110,
+    "line": 3901,
+    "preview": "Được rồi đó thiếu ghim header trên cùng đó em. Rồi kiểm tra xử lý hết các trang còn lại đi. Đông thời kiểm soát hệ thống đừng để lỗi hoạt động dự đoán nha em."
+  },
+  {
+    "i": 111,
+    "line": 3942,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 112,
+    "line": 4013,
+    "preview": "kiểm tra toàn diện dùm anh, hôm nay tình hình dự đoán quá chán nản số má gì mà tệ quá tệ"
+  },
+  {
+    "i": 113,
+    "line": 4033,
+    "preview": "tiếp đi em anh vừa gián đoạn do hết API token em ơi"
+  },
+  {
+    "i": 114,
+    "line": 4140,
+    "preview": "m2 là gì ? sau thời gian 28/07 lộ trình cắt giảm model Ai sẽ tiến hành đúng không em? số lượng model AI đông không giải quyết được vấn đề chỉ cần các model chất lượng nhất để đưa ra dự đoán chính xác thôi chứ hiện tại tiêu tốn thời gian dự đoán và tiền bạc quá rồi"
+  },
+  {
+    "i": 115,
+    "line": 4145,
+    "preview": "lỗi gì đây sẵn kiểm tra xử lý có anh luôn nha em . đồng tời do tìm debug dùm anh /review-bugbot"
+  },
+  {
+    "i": 116,
+    "line": 4198,
+    "preview": "Cắt/giảm cadence các shadow và rerun tốn tiền nhưng không có đóng góp độc nhất. ==> vẫn đang là showdow ah em? chưa đưa vào total dự đoán 1 model nào eval ah em. Thế các model hiện tại đang tham gia trong total có liệt vào danh sách cắt giảm không em? anh chỉ cần các model thực sự tốt nha em đừng bỏ qua điều này nha em. Total vẫn phải hiện số nhưng có cảnh báo cho người dùng chơi hay không do người dùng quyết định cảnh báo realtime nha em. Mọi thử phải được đo lường kỹ lượng xác thực rõ ràng nha"
+  },
+  {
+    "i": 117,
+    "line": 4210,
+    "preview": "CP-L6 Total, roster và thời gian VN\n\nImplement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.\n\nTo-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos."
+  },
+  {
+    "i": 118,
+    "line": 4401,
+    "preview": "Implement the plan as specified, it is attached for your reference. Do NOT edit the plan file itself.\n\nTo-do's from the plan have already been created. Do not create them again. Mark them as in_progress as you work, starting with the first one. Don't stop until you have completed all the to-dos."
+  },
+  {
+    "i": 119,
+    "line": 4402,
+    "preview": "Đã sẵn sàng mọi thứ rồi đúng không em"
+  },
+  {
+    "i": 120,
+    "line": 4426,
+    "preview": "Xem dùm anh hôm nay đầu ngày Miền Nam sao rỗng 3 model nguyên nhân là gì em? Kiểm tra toàn diện dùm anh 1 lượt"
+  },
+  {
+    "i": 121,
+    "line": 4430,
+    "preview": "tiếp đi em gián đoạn do hết api token rồi em"
+  },
+  {
+    "i": 122,
+    "line": 4467,
+    "preview": "Đã hết chu kỳ live rồi em, tiến hành kiểm tra xử lý tổng lực toàn diện dùm anh đi. Đêm qua anh bận việc chưa tương tác với em. Nay xử lý dùm anh, nếu cần thì kích hoạt cho model Ai và model LM chạy lại đầu ngày dùm anh"
+  },
+  {
+    "i": 123,
+    "line": 4641,
+    "preview": "Xong chưa ? giờ nên chơi luồn nào xem luồng nào ? mốc tiếp theo chốt các vấn đề gì ? khuyến cáo ra sao ? xử lý rồi báo cáo mơ hồ khó hiểu quá em"
+  },
+  {
+    "i": 124,
+    "line": 4646,
+    "preview": "vậy nay anh chơi luồng nào cho MN, MB , MN ah em"
+  },
+  {
+    "i": 125,
+    "line": 4649,
+    "preview": "Xong ngày live đầu tiên sau điền chỉnh em kiểm tra toàn diện dùm anh nha em."
+  },
+  {
+    "i": 126,
+    "line": 4673,
+    "preview": "uhm em chú ý các model nhiều mà không tham giá và total thì cũng lãng phí nha em nên kiểm soát tốt để thay thế loại bỏ bớt vừa cắt giảm chi phí vừa tinh gọn nhưng vẫn chính xác nâng cao hiệu quả hơn nha em"
+  },
+  {
+    "i": 127,
+    "line": 4699,
+    "preview": "Ok em thế  không tính toán toán lại total khi cắt bỏ \"grok-4.20-multi-agent\" ah em. Hiện đang total được lấy từ xếp hạng các model ah em? lấy ví dụ lấy 15 model ai mạnh nhất để vào total ah em là tiêu chuẩn nào anh quên mất rồi em?"
+  },
+  {
+    "i": 128,
+    "line": 4704,
+    "preview": "Tiếp tục tìm hiểu kỹ đi , vấn đề total trước giờ anh đã nhắc rất nhiều lần rồi mà em sao anh nhắc lại cứ mở hồ không biết gì ah em? Các phương pháp cơ chế total cần làm rõ đã nhắc nhiều làn và cần tu duy thử các phương pháp khác nhau để đạt hiệu quả nhất rồi mà em"
+  },
+  {
+    "i": 129,
+    "line": 4725,
+    "preview": "Sau một lượt audit em có tìm các phương pháp nào mới chưa được đề xuất hiệu quả hơn không em? Và đề xuất cuối cùng em là gì em"
+  },
+  {
+    "i": 130,
+    "line": 4731,
+    "preview": "ok em tạm thời sau ngày 19/08 thì người chơi dùng luồn nào là ổn nhất me"
+  },
+  {
+    "i": 131,
+    "line": 4734,
+    "preview": "Em có nắm với MB 1 đài nhưng có tới 28 bộ số không em? No gần tương đương miền trung có bữa 2 đài luôn đó em?"
+  },
+  {
+    "i": 132,
+    "line": 4742,
+    "preview": "cách tính anh chia sẻ luôn nhé:\n- quy định 1 điểm = 1k nhé em. nghĩa là 50 điểm = 50k vnđ  và 1 điểm = 18k đối với MN và MT  còn miền bắc là 1 điểm = 27k nha em.\nnghĩa là : ví đụ MN hay MT có 3 đài đầu tư 50 điểm /đài sẽ tính như sau:( 50 x 18k )x 3 nha em. 3 là hệ số tương đương số đài nha em. Miền bắc thì ngày nào cũng 1 đài nên đơn giản 50điểm = 50 x27k là xong nha em\nCòn tỷ lệ ăn thì cứ 1 điểm thu về 98k vnđ nha . em cược 50điểm thì = 50 x 98k = 4tr9 nha em.\nAnh cung cấp cụ thể rồi đó em kiể"
+  },
+  {
+    "i": 133,
+    "line": 4766,
+    "preview": "MT /choi là chơi song thu 2 số đó hả em?"
+  },
+  {
+    "i": 134,
+    "line": 4771,
+    "preview": "MN  thì chả có hiệu qua nào luôn sao em? Hãy phân tích MN luôn chứ em . Tất cả các vấn đề cần được ghi nhận , cập nhật đầy đủ để tránh lãng quên , cập nhật github report dùm anh luôn và tất cả cần đo lường và xử lý trong cùng 1 lượt 19/08 nha em. \nCòn 1 vấn đề anh quên nữa Thu về còn được x với số hit nữa nha em. Xem lại dùm anh 1 lần nữa nha em. Nhưng cái vấn đề này cần để \"\" cái anh vãn xem 1/1 còn tính ổn định chắc chắn, còn số hit là con số may mắn hơn có tháng sẽ tăng trưởng và có tháng ổn "
+  },
+  {
+    "i": 135,
+    "line": 4793,
+    "preview": "Tiếp theo với /choi hiện tại anh không thấy lịch sử dụng đoán đâu cả nha em , MT có thấy loáng thoán nhưng có vẻ tối và không đầy đủ nha em xem xử lý dùm anh.\nNếu tính cả bonus x hit vào thì tỉ lệ lợi nhuận và tiền thu về như thế nào cho 3 miền anh xem thử em. cái này a chỉ xem cho biết thôi đừng kỳ vọng quá nó ảo , cái 1/1 ổn định lâu dài là cái đang quan tâm nhất nha em."
+  },
+  {
+    "i": 136,
+    "line": 4813,
+    "preview": "ok em nha. Cần xem lại phương án xiên 2-ciên  3 và 3 càng dùm anh ở /choi nha em có vẻ chưa thiết kế luôn đó em?"
+  },
+  {
+    "i": 137,
+    "line": 4822,
+    "preview": "Xiên với vốn và thu tỷ lệ anh sẽ update sau. \nVấn đề anh quên là thay vì đợi 19/08 sao em không làm 1 luôn mới với tên  Nghiệm Thu 19/08 để anh xem so sánh trực quan cũng như là live song song luồng Nghiệm Thu 19/08 với các luồng khác luôn em. Ok thì mình áp vào offical cũng nhanh chóng hơn ah em."
+  },
+  {
+    "i": 138,
+    "line": 4894,
+    "preview": "Hi nếu như em đề xuất ban đầu tốn 21 ngày rồi lại live giờ chạy song song mà vẫn báo chưa đủ mẫu , đề xuất của anh còn trung thực còn rút ngắn thời gian live hơn mà chưa ổn nữa ah em. Vậy em đã làm hết chưa  đó , total  MN có vẻ tại thời điểm giờ là đã chốt rồi , còn MT và MB thì phải đợi đúng quy trình mốc giờ để có đủ nhé em. Đầu ngày kiểm tra toàn diện tổng lực dùm anh nhé, các model new mới add hoạt động ổn đúng chưa sao anh chưa thấy báo cáo em?"
+  },
+  {
+    "i": 139,
+    "line": 4961,
+    "preview": "Anh chả hiểu gì cả em làm cái gì thế?\nAnh đang nói vấn đề là xây 1 luồng mới \"Nghiệm Thu 19/08\" chạy song song với 4 luồng hiện tại , áp dụng các phương pháp cơ chế mà em đã đo lường chuẩn bị để áp dụng cho offical . Nghĩa là \"Nghiệm Thu 19/08\" offical New đó em hiểu chứ. EM vừa đo live  \"Nghiệm Thu 19/08\" offical New , vừa so sánh , vừa trực , vừa rút ngắn thời gian kiểm chứng thay vi sau 19/08 em ở áp dụng  \"Nghiệm Thu 19/08\" offical New rồi tiếp tục live để theo dõi tiếp thì giờ mình chạy son"
+  },
+  {
+    "i": 140,
+    "line": 5001,
+    "preview": "Hiểu đúng chưa officel New là cải tiến sau ngày 19/08 áp dụng cho officical hiện tại. chỉ là làm trước để trải nghiệm bằng mắt, để đo lường , trung thực hơn thôi nhé m"
+  },
+  {
+    "i": 141,
+    "line": 5003,
+    "preview": "UI của nó cũng cần làm cho chuẩn chỉnh để anh theo dõi ah em 3 miền rõ ràng. kế hoạch gộp và officical nên là đấu nối tiện lợi đấu nối xong mình cắt bỏ hoặc khởi động qua luồn khác đo khác cho tiện nha em."
+  },
+  {
+    "i": 142,
+    "line": 5085,
+    "preview": "ok tốt giờ anh nghỉ ngơi đợi live được chưa còn gì nữa không ?"
+  },
+  {
+    "i": 143,
+    "line": 5089,
+    "preview": "hãy tiến hành nghiệm thu ngày hôm qua 30/07 và kiểm tra toàn diện ngày hôm nay 31/07 nha em. \nchứ sơ sơ anh thấy là hôm qua quá tệ  , hôm nay thì /nghierem- thu ko có output nha em\n==> kiểm tra tổng lực toàn diện 3 miền 5 luồng luôn"
+  },
+  {
+    "i": 144,
+    "line": 5123,
+    "preview": "hic gemini đang chạy API key chính hãng hả em? sao google rơt hoài em"
+  },
+  {
+    "i": 145,
+    "line": 5163,
+    "preview": "MB và MT chạy có 7 model total thôi ah em? phương pháp là gì ? Anh vẫn chưa hiểu có gì cải tiến cho /nghiem-thu sao anh thấy cả có gì khỏi sắc sao quản thời gian chờ live theo dõi đo lường ,"
+  },
+  {
+    "i": 146,
+    "line": 5181,
+    "preview": "gemini-3.5-flash hoặc 3.6 anh nghĩ do hạng khóa ah em.. Nên em em cần có phương án lấy openrouter . và chạy test thử cũng được em, em đủ công cụ, kiến thức để test thử chờ live chi cho lâu ,"
+  },
+  {
+    "i": 147,
+    "line": 5203,
+    "preview": "Trong quá trình vừa qua có 1 số điều chỉnh nên mất kiểm soát hay sao đó .\n- Nếu có same day hay không có sameday gì vì trong thời gian qua có 1 số chốt sameday được cắt bỏ ở MT thì phải anh không nhớ rõ lắm. ==> thì  các model dự đoán của MT được khởi động chạy dự đoán sau khi cào và verify kết quả MN , MB được khởi động chạy dự đoán sau khi cào và verify kết quả MN , MT nên em ghi là 17h anh thấy có gì đó không đúng rồi. Và đối với các model đang chọn phương pháp chạy 5 model song song 1 lượt c"
+  },
+  {
+    "i": 148,
+    "line": 5223,
+    "preview": "Đó là anh đang mô tả cho offical còn các luồn khác lấy model nào anh không rõ nhé em phải thực sự tư duy logic hơn nữa nha em. Kiểm tra tổng lực 1 lần nữa nhắc lại dự đoán của MT phải có trước 16h55 và MB là 17h55 là giờ muộn nhất đủ thời gian cho người chơi tham gia nha em.\n==> tổng hợp lại và đưa ra đề xuất tối ưu nhất cho anh để xử lý nè"
+  },
+  {
+    "i": 149,
+    "line": 5235,
+    "preview": "Tiếp đi em gián đoạn mất tiêu rồi em"
+  },
+  {
+    "i": 150,
+    "line": 5259,
+    "preview": "Xong hết chưa ? MN thế nào nãy giờ xoáy vào MT và MB MN không xem luôn ah em"
+  },
+  {
+    "i": 151,
+    "line": 5271,
+    "preview": "Mốc chốt cuối total phải có kết quả output đầy đủ dành cho các luồng là 15h45 cho miền nam . anh chốt cuối đó. Xử lý tổng lực toàn lực , cập nhật nhất quán đầy đủ hết đi. Chốt cuối total output MN 15h45 / MT 16h53 / 17h53."
+  },
+  {
+    "i": 152,
+    "line": 5300,
+    "preview": "Em phải rõ ràng chứ em. total output Tối đa MN là 15h45 / MT 16h53 / MB 17h53 thật chuẩn chính chính xác để người dùng còn ra quyết định nữa không rõ ràng gì cả biết lúc nào là cuối cùng là final , còn cập nhật tài liệu chống quên lãng kiểm tra đối chiếu nữa em. Đừng có mơ hồ"
+  },
+  {
+    "i": 153,
+    "line": 5394,
+    "preview": "Điều kiện đắt đầu dự đoán lại cho MT và MB có rồi nha đừng có quên, là sau khi cào và verify dự đoán , còn việc nạp sameday cho từng miền thì hiện tại từng cơ chế 1 mỗi miền mỗi khác phải làm cho rõ cho kỹ nha.  đừng có mơ hồ , các mốc thời gian , tổng hợp học tập tích lũy số liệu điều phải chính xác không mơ hồ nha em. MN thì thời gian dài hơn sau 5h sáng hàng ngày bắt đầu dự đoán cho MN là an toàn nhất giờ đó hệ thống không còn tổng hợp , retrain, gì nữa , là đầy đủ nhất rồi . Hạn total output"
+  },
+  {
+    "i": 154,
+    "line": 5497,
+    "preview": "Tiếp đi em, gián đoạn do hết API token ah em. \nVà 1 điều là Anh hết tin tưởng em rồi quá cẩu thả , chểnh mãng, thiếu tư duy , suy nghĩ v.v... quá chán mọi thứ hầu như ngày nào cũng đào ra lỗi, chả có cái nào mà ổn định chính xác là sao vậy? Em không thấy em làm việc rất vô trách nhiệm ah , làm cho có sao tốn token lãng phí ah. ANh cần em rà soát lại thật kỹ toàn bộ , báo cáo đầy đủ showlisst tất cả dùm anh để a xem lại. quá bực bội rồi đó nha em."
+  },
+  {
+    "i": 155,
+    "line": 5565,
+    "preview": "Về UTC: bốn bảng hash-guard predictions, lottery_results, final_bundles, model_daily_eval đều lưu giờ VN. Nghĩa là mọi phân tích mốc giờ của em hôm nay dựa trên chúng là đúng. 33 bảng còn lại lưu UTC, lớn nhất scheduler_logs 232.154 dòng.\n\nAnh chọn phương án C lúc cả hai còn tưởng chỉ có một bảng training_history. Giờ là 33 bảng, SQLite không cho đổi DEFAULT nên phải dựng lại từng bảng. Em không tự làm — làm 33 lần trong một phiên đúng là cái cẩu thả anh vừa phê. Ba mức rủi ro em đề xuất ở showl"
+  },
+  {
+    "i": 156,
+    "line": 5609,
+    "preview": "Đã xử lý hết chưa ? hoàn hảo chưa , báo cáo chả thấy đề cập gì nói suông không?\nđề xuất là gì? anh anh xác nhận vấn đề gì? v.v... chả thấy nói gì?"
+  },
+  {
+    "i": 157,
+    "line": 5631,
+    "preview": "X1 theo khuyến nghị nhưng nhấn mạnh là phải nhất quán và hệ thống phải hiểu giờ việt nam , hồ chí minh là được , đừng chồng chéo nhầm lẫn qua lại dùm anh\nX2 Vậy biên chốt nhất quán 2 phút hết đi để cho nhất quán dễ nhớ em"
+  },
+  {
+    "i": 158,
+    "line": 5652,
+    "preview": "Xong chưa ổn chưa em? Còn gì nữa không anh nghĩ đợi live được chưa tối nay 20h gặp lại xử lý tiếp sau buổi live"
+  },
+  {
+    "i": 159,
+    "line": 5656,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 160,
+    "line": 5669,
+    "preview": "model mới là model nào sao anh không thấy dự đoán ah em. Kết quả dự đoán quá chán luôn em.\nNgoài trừ 2 model mới em tiến hành đánh giá xếp hạng model Ai dùm anh đi để cắt giảm bớt nữa chán quá chán rồi trật hoài"
+  },
+  {
+    "i": 161,
+    "line": 5684,
+    "preview": "Anh đang nói model AI đang showdow kìa, showdow gì giờ này nữa nó đã live quá lâu còn showdow, rồi prompt new đang áp cho model AI showdow nữa em so với lúc chưa áp prompt mới thì có khá hơn không em? Phải nhìn thẳng vào vấn đề dùm anh, rồi rules hôm nay đúng ra rất nhiều số đúng cả 3 miền mà giờ chả thấy số nào trong rules được đề xuất nữa chứ sao kỳ vậy em?"
+  },
+  {
+    "i": 162,
+    "line": 5692,
+    "preview": "đ 1 / vấn đề này thực sự chưa hiểu, chỉ hiểu là prompt A + Model A không thể so sánh prompt B với Model B được điều này đúng , so sánh được khi prompt A + model A +B và ngược lại prompt A+B với model A. Còn các vấn đề khác anh chưa hiểu em giải thích rõ hơn.\nđ 2 / cắt showdow tệ đi 2 model AI(gemma-4-31b (−8,5pp), kimi-k2.5 (−5,5pp)) cùi quá cùi . Còn 6 offical em vẫn chưa nắm rõ vấn đề thực sự của nó đó nha. Tách biệt cho rõ ràng vào, trong 6 model có 2 dạng model Ai(gpt-5.4 (−3,3 / −10,6), gpt"
+  },
+  {
+    "i": 163,
+    "line": 5704,
+    "preview": "Trước tiến phải xử lý các model tệ trước đi , phương án thay các model đó vào trong combo super và total như thế nào . Kỳ vọng thành tích tốt lên , sau đó mới chốt được số model còn lại không tham gia total mới đem đi chạy chéo prompt chứ em.\nKế hoạch chi tiết bài bản đi, nhăc nhở nhớ rồi, thấy rồi thì vạch ra chi tiết dùm anh để a xem bảng kế hoạch tới đâu"
+  },
+  {
+    "i": 164,
+    "line": 5711,
+    "preview": "Em vẫn báo cáo chuyên sâu , từ ngũ khó hiểu anh chả hiểu gì , cả ?"
+  },
+  {
+    "i": 165,
+    "line": 5713,
+    "preview": "Rồi làm đi thật cản thận có kiểm soát nha em"
+  },
+  {
+    "i": 166,
+    "line": 5882,
+    "preview": "Các vấn đề xử lý ghi nhận đào , bới, anh xác nhận, anh chia sẻ , anh chỗ và hướng xử lý cũng như vướng vấp , nói chung tất cả cần cập nhật , ghi nhận lại đầy đủ chi tiết rõ ràng tránh quên lãng nha em. Anh không muốn nhắc tới nhắc lui hoài những vấn đề mà em có thể tra ra , có thể kiểm soát được đâu?Em làm quá cẩu thả, em đã tham chiếu với lịch sử, changelog , tài liệu, v.v. để nắm rõ và kiêm tra lại , em phải tư duy để có mối liên hệ chặc chẻ giữa báo cáo, giữ tài liệu, giữa code để kierm soát "
+  },
+  {
+    "i": 167,
+    "line": 5931,
+    "preview": "thống nhất quy tắc Mô hình code, fix , audit của dự án anh là  sau khi thực hiện code, fix , audit cần đẩy báo cáo report lên github report public dùm anh, cập nhận , ghi nhận quá trình, yêu cầu thật cụ thể chi tiết để kiểm soát tốt nhất nha em , Notion MCP dùng để tham khảo tài liệu khi cần không được cập nhật vào Notion nha em."
+  },
+  {
+    "i": 168,
+    "line": 5970,
+    "preview": "Cập nhật các quy tắc anh vừa trao đổi với em vào claude.md đồng bộ nhất quán với các file liên quan, tiếp đi em, chắc chăn là do công cụ của cursos làm lỗi chứ gì nữa hiện tại tự nhiên sinh ra 3 tab cùng 1 công việc và đang treo cả chỉ có tab anh đang tương tác với em là  hoàn thành đó em. Kiểm tra lại đi , chắc chắn đang lỗi treo chỗ nào rồi , \nĐồng thời em đã cát giảm thay thay thế hết chưa ? đã thực sự kiểm soát, có tư duy có logic nhất quán chưa hay là thích là cắt bỏ mà không thèm soi tới s"
+  },
+  {
+    "i": 169,
+    "line": 6003,
+    "preview": ".cursorrules.AGENT.md.antigravityrules.Antigravityrules.md.cursorrules và claude.md các file này phục vụ cho các công cụ khác nhau nhưng là quy tắc chung toàn hệ thống và đã yêu cầu cập nhật sync 4-5 chiều gì đó anh quên mất rồi nếu claude.md chưa có thì tạo, cái nào sao tên dư thừa thì clear dùm anh nha, nội dung đảm bảo nhất quán sync đa chiều"
+  },
+  {
+    "i": 170,
+    "line": 6053,
+    "preview": "Xong chưa quá trình xử lý của em tới đâu rồi ? MN hôm nay đã áp các thay đổi luôn chưa ? Hay sao ? chả thấy gì , giờ luồn nào khuyến nghị cho người chơi"
+  },
+  {
+    "i": 171,
+    "line": 6060,
+    "preview": "rồi việc cắt giảm thay thế model AI thì sao? thực hiện tới đâu cắt giảm thế nào?"
+  },
+  {
+    "i": 172,
+    "line": 6070,
+    "preview": "Ôi quá lâu quá mệt mỏi ah em, anh quên nhắc và đã bị trôi sông chứ showdow gì mà lâu quá trời không lấy được model nào tốt nhét vào total offical quả là lãng phí, 1 chú ý là cắt model ảnh hưởng đến combo super mới quan trọng cận thận chỗ này."
+  },
+  {
+    "i": 173,
+    "line": 6125,
+    "preview": "Chỉ có gemini 3.5 flash là anh đang tiết nhất chạy ổn nhưng tự nhiên lỗi làm mất một model tốt tham gia total hi vọng các model thay thế cải có giá trị tương đương hoặc tốt hơn. các model LM mắc gì phải clear đúng không em? đâu ảnh hưởng chi phí đâu , mà cơ chế là filter lấy model mạnh nhất mà tổng hợp output mà em đúng không em? còn total thì anh không rõ đang đang dùng cơ chế nào anh chỉ đang nói ML và combo super thôi nha em."
+  },
+  {
+    "i": 174,
+    "line": 6130,
+    "preview": "gemini-3.5-flash ==> thử lại xem có phương pháp vào vượt qua lỗi này không em?"
+  },
+  {
+    "i": 175,
+    "line": 6185,
+    "preview": "Vậy cứu được rồi thì phải làm lại rồi em? chạy test thử vài đoạn ngắn, kiểm chứng hoạt động, sau đó lên kế hoạch total , filter combo super  v.v... lại theo ah em, Còn gemini 3.6 vẫn giữ nha em."
+  },
+  {
+    "i": 176,
+    "line": 6192,
+    "preview": "sao rồi em anh chưa thấy báo cáo gì là sao em? gián đoạn nưa rồi ah"
+  },
+  {
+    "i": 177,
+    "line": 6237,
+    "preview": "Cơ chế Combo super  anh nói rõ rồi mà , các model được filter auto lấy top nhét vô mà em, còn không top thì vẫn chạy bình thường để đo lường và xếp hạng thường xuyên chứ em?"
+  },
+  {
+    "i": 178,
+    "line": 6284,
+    "preview": "Ui thế gemini-3.5-flash có thực sự tốt không vậy trời? sao làm anh hoan mang quá rồi các model em cắt có rõ ràng không đó em?"
+  },
+  {
+    "i": 179,
+    "line": 6316,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 180,
+    "line": 6353,
+    "preview": "Hết chu kỳ live rồi em ơi? Tiến hành phân tích đánh giá , kiểm tra , đào sâu lên kế hoạch xử lý dứt điểm dùm anh đi em"
+  },
+  {
+    "i": 181,
+    "line": 6386,
+    "preview": "Xogn rồi đung ko giờ làm gì tiếp theo? luồng nào cần tham khảo để chơi?"
+  },
+  {
+    "i": 182,
+    "line": 6401,
+    "preview": "em tìm được nguyên nhân rồi rồi nó đâu rồi ? làm gì tiếp theo em xử lý thế nào em?"
+  },
+  {
+    "i": 183,
+    "line": 6413,
+    "preview": "Ủa sao anh trả lời mà asking questions vẫn đang đợi em xem dùm anh"
+  },
+  {
+    "i": 184,
+    "line": 6416,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 185,
+    "line": 6429,
+    "preview": "Briefly inform the user about the task result and perform any follow-up actions (if needed)."
+  },
+  {
+    "i": 186,
+    "line": 6435,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 187,
+    "line": 6440,
+    "preview": "Tới giờ anh vẫn chưa rõ các vấn đề em phát hiện ra bao gồm những gì tổng hợp thật chi tiết dùm anh anh: Các mục tiến trình chwof xử lý và đợi anh quyết định ra sao ? Nay đã áp dụng total mới offical mới chưa người dùng nên xem ở đâu ? Nguyên nhân giảm sút là gì tại sao ? v.v... anh dường như đã không còn nhớ rõ vì quá nhiều lỗi sảy ra , quá nhiều thiếu sót . Em hãy tổng hợp lại dùm anh"
+  },
+  {
+    "i": 188,
+    "line": 6443,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 189,
+    "line": 6462,
+    "preview": "Còn gì nữa không em? Còn phát hiện nào không? đã tra soát hết chưa còn chỗ nào không? đã đối chiếu với notion chưa kẻo bỏ sót nữa . đồng thời xem dùm anhhttps://xs.io.vn/filter?tab=overview UI của link này khó xem quá , và link này có vẻ đang trùng lặp tính năng cần xem kỹ lại dùm anh. Với việc chạy 2 prompt song song cho cùng 1 model để so sánh như thế nào rồi. sao anh thấy các model eval có kết quả gần gần gióng nhau còn các model trong total ra kết quả gần gần giống nhau có khi nào do prompt "
+  },
+  {
+    "i": 190,
+    "line": 6467,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 191,
+    "line": 6481,
+    "preview": "https://xs.io.vn/du-doan-test có dọn thì gọn cho đàng hoàn nha em MN thì neo dữ liệu hôm qua , cột lane test thì trống, MT neo dự đoán ngày 31/07 cột lane test thì lại có hôm nay , MB thì chưa biết cũng card cũng lưu ngày 31/07 sao mà tùm lum vậy em? \nhttps://xs.io.vn/filter?tab=overview  ==> cũng chưa kiểm tra xử lý dùm a luôn\nRồi các cơ chế như hoạc tập tích lũy  , xếp hạng , retrain , của các model LLM và ML thì sao em đã đào sâu hết cỡ chưa? Viết chi tiết cụ thể tất cả mọi thứ hiện đang code"
+  },
+  {
+    "i": 192,
+    "line": 6485,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 193,
+    "line": 6504,
+    "preview": "Hết live rồi đó em kiểm tra tổng lực toàn diện dùm anh? đẩy toàn bộ các báo cáo chi tiets đầy đủ lên  github report dùm anh nha em"
+  },
+  {
+    "i": 194,
+    "line": 6506,
+    "preview": "<mcp_meta_tools>\nYou have access to MCP (Model Context Protocol) tools through `GetMcpTools` and `CallMcpTool`.\n\n## MCP Tool Discovery and Invocation\n\nUse `GetMcpTools` to discover tool schemas, then `CallMcpTool` to invoke them. Aim to minimize round-trips: ideally one `GetMcpTools` call followed by one `CallMcpTool` call.\n\nIf the user mentions, references, or links to a product or service that corresponds to an available MCP server, and the request likely depends on information from that servi"
+  },
+  {
+    "i": 195,
+    "line": 6507,
+    "preview": "Hết live rồi đó em kiểm tra tổng lực toàn diện dùm anh? đẩy toàn bộ các báo cáo chi tiets đầy đủ lên  github report dùm anh nha em"
+  },
+  {
+    "i": 196,
+    "line": 6510,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 197,
+    "line": 6514,
+    "preview": "Quá nhiều vấn đề anh và em đã đề cập đến và đào bới trong suốt trò chuyện này em có thể tổng hợp lại đầy đủ , chiêt hơn nữa được không em? Đẩy thêm 1 báo cáo thật đầy đủ hơn nữa bao gồm tất cả các vấn đề anh đã đề cập, em đã xử lý , em đã tổng hợp, em đã đào bới, em đã ghi nhận chờ tới hạn , tất cả mọi thứ không bỏ sót bất kỳ nội dung nào trong trò chuyện này ? Đồng thời em đánh live hôm nay thành công nhờ đâu? có thay đổi gì mà tại sao có sự tốt lên là sao em?"
+  },
+  {
+    "i": 198,
+    "line": 6518,
+    "preview": "Perform any necessary follow-up actions in response to the subagent completion above. If no follow-up work is needed, no further action is required. If you mention an agent or subagent in your response, link it with the `[Name](id)` Don't use generic label such as `[agent]`, `[worker]`, or `[subagent]`. For cloud subagents, when the agent has edited code, link to `[Review](bc-id#changes)`, or, if you know the exact added and deleted line counts, `[Review +A −D](bc-id#changes)`, replacing A and D"
+  },
+  {
+    "i": 199,
+    "line": 6525,
+    "preview": "Quá nhiều vấn đề anh và em đã đề cập đến và đào bới trong suốt trò chuyện này em có thể tổng hợp lại đầy đủ , chiêt hơn nữa được không em? Đẩy thêm 1 báo cáo thật đầy đủ hơn nữa bao gồm tất cả các vấn đề anh đã đề cập, em đã xử lý , em đã tổng hợp, em đã đào bới, em đã ghi nhận chờ tới hạn , tất cả mọi thứ không bỏ sót bất kỳ nội dung nào trong trò chuyện này ? Đồng thời em đánh live hôm nay thành công nhờ đâu? có thay đổi gì mà tại sao có sự tốt lên là sao em?"
+  }
+]
