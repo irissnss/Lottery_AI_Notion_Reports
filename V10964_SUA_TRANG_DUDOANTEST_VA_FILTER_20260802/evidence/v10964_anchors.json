@@ -1,0 +1,139 @@
+{
+  "MN": {
+    "requested_date": "2026-08-02",
+    "date": "2026-08-02",
+    "baseline": {
+      "date": "2026-08-02",
+      "bach_thu": "43",
+      "lo2": [
+        "43",
+        "39"
+      ],
+      "lo3": "443",
+      "is_fallback": false
+    },
+    "test_bundle": null,
+    "blocked_test_bundle": {
+      "experiment_name": "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+      "bach_thu": "39",
+      "model_count": 18
+    },
+    "display_date_anchor": {
+      "today_vn": "2026-08-02",
+      "official_date": "2026-08-02",
+      "official_is_today": true,
+      "official_is_fallback": false,
+      "official_not_today_label": null,
+      "test_date": "2026-08-02",
+      "test_has_published": false,
+      "test_has_preview_phu": true,
+      "test_status": "PREVIEW_PHU_BELOW_BUDGET",
+      "test_empty_reason": "Test-lane chưa publish chính: row hiện tại (MN_ADAPTIVE_BUDGET_SELECTOR_V1) chỉ có 18 model, doctrine yêu cầu đúng 20 model strongest. Đây là preview phụ, không phải output chính.",
+      "observed_model_count": 18,
+      "required_model_count": 20,
+      "lane_ready_hhmm": "04:30",
+      "official_due_hhmm": "15:45"
+    },
+    "test_bundle_meta_status": "PREVIEW_PHU_BELOW_BUDGET",
+    "gate": {
+      "surface": "du_doan_test",
+      "ready": false,
+      "observed_model_count": 18,
+      "min_model_count": 20,
+      "max_model_count": 20,
+      "coverage_label": "below_minimum",
+      "reason": "WAITING_MODEL_MINIMUM: 18/20"
+    }
+  },
+  "MT": {
+    "requested_date": "2026-08-02",
+    "date": "2026-08-02",
+    "baseline": {
+      "date": "2026-08-02",
+      "bach_thu": "69",
+      "lo2": [
+        "69",
+        "90"
+      ],
+      "lo3": "069",
+      "is_fallback": false
+    },
+    "test_bundle": {
+      "experiment_name": "MT_AI_CHAIN_PRESERVATION_V1",
+      "bach_thu": "86"
+    },
+    "blocked_test_bundle": null,
+    "display_date_anchor": {
+      "today_vn": "2026-08-02",
+      "official_date": "2026-08-02",
+      "official_is_today": true,
+      "official_is_fallback": false,
+      "official_not_today_label": null,
+      "test_date": "2026-08-02",
+      "test_has_published": true,
+      "test_has_preview_phu": false,
+      "test_status": "LIVE_PARALLEL_V52_5_2",
+      "test_empty_reason": null,
+      "observed_model_count": 20,
+      "required_model_count": 20,
+      "lane_ready_hhmm": "16:42",
+      "official_due_hhmm": "16:58"
+    },
+    "test_bundle_meta_status": "LIVE_PARALLEL_V52_5_2",
+    "gate": {
+      "surface": "du_doan_test",
+      "ready": true,
+      "observed_model_count": 20,
+      "min_model_count": 20,
+      "max_model_count": 20,
+      "coverage_label": "full_or_capped_coverage",
+      "reason": "READY"
+    }
+  },
+  "MB": {
+    "requested_date": "2026-08-02",
+    "date": "2026-08-02",
+    "baseline": {
+      "date": "2026-08-01",
+      "bach_thu": "90",
+      "lo2": [
+        "90",
+        "84"
+      ],
+      "lo3": "490",
+      "is_fallback": true
+    },
+    "test_bundle": null,
+    "blocked_test_bundle": {
+      "experiment_name": "MB_ADAPTIVE_EXPLOIT_V1",
+      "bach_thu": "13",
+      "model_count": 4
+    },
+    "display_date_anchor": {
+      "today_vn": "2026-08-02",
+      "official_date": "2026-08-01",
+      "official_is_today": false,
+      "official_is_fallback": true,
+      "official_not_today_label": "Số ngày 01/08 — KHÔNG phải số hôm nay (hôm nay 02/08 chưa có).",
+      "test_date": "2026-08-02",
+      "test_has_published": false,
+      "test_has_preview_phu": true,
+      "test_status": "PREVIEW_PHU_BELOW_BUDGET",
+      "test_empty_reason": "Test-lane chưa publish chính: row hiện tại (MB_ADAPTIVE_EXPLOIT_V1) chỉ có 4 model, doctrine yêu cầu đúng 20 model strongest. Đây là preview phụ, không phải output chính.",
+      "observed_model_count": 4,
+      "required_model_count": 20,
+      "lane_ready_hhmm": "17:38",
+      "official_due_hhmm": "17:58"
+    },
+    "test_bundle_meta_status": "PREVIEW_PHU_BELOW_BUDGET",
+    "gate": {
+      "surface": "du_doan_test",
+      "ready": false,
+      "observed_model_count": 4,
+      "min_model_count": 20,
+      "max_model_count": 20,
+      "coverage_label": "below_minimum",
+      "reason": "WAITING_MODEL_MINIMUM: 4/20"
+    }
+  }
+}
