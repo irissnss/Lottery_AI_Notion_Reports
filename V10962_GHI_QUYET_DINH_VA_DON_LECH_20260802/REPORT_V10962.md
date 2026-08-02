@@ -1,6 +1,6 @@
 # REPORT V10962 — Ghi quyết định QD-016/QD-017 + dọn lệch mốc giờ + bù báo cáo A55 (02/08/2026)
 
-**Ngày:** 02/08/2026 · **Commit riêng:** *(điền sau push)* · **Commit công khai:** *(điền sau push)* · **Trạng thái:** chỉ tài liệu — không sửa runtime, không deploy
+**Ngày:** 02/08/2026 · **Commit riêng:** `3a9b7ac` · **Commit công khai:** `a49d0d8` · **Trạng thái:** chỉ tài liệu — không sửa runtime, không deploy
 
 ---
 
