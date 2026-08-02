@@ -1,6 +1,6 @@
 # V10970 — Tổng hợp toàn phiên đào bới (arc V10933→V10969) + phân tích live 02/08 3/3
 
-**Ngày:** 02/08/2026 · **Giờ VN thu thập bằng chứng:** ~21:16–21:20 · **Trạng thái:** CHỈ ĐỌC + báo cáo (không sửa production; tôn trọng QD-014)
+**Ngày:** 02/08/2026 · **Giờ VN thu thập bằng chứng:** ~21:16–21:20 · **Commit riêng:** 172796 · **Commit công khai:** 60a9dd2 · **Trạng thái:** CHỈ ĐỌC + báo cáo (không sửa production; tôn trọng QD-014)
 
 ---
 
