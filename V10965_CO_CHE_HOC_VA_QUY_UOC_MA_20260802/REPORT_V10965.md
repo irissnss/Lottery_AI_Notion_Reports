@@ -1,6 +1,6 @@
 # V10965 — Cơ chế học của hệ + đề xuất quy ước mã công việc
 
-**Ngày:** 02/08/2026 · **Commit riêng:** *(điền sau push)* · **Commit công khai:** *(điền sau push)* · **Trạng thái:** chỉ tài liệu, không deploy
+**Ngày:** 02/08/2026 · **Commit riêng:** `ad525ed` · **Commit công khai:** `88f1b68` · **Trạng thái:** chỉ tài liệu, không deploy
 
 ---
 
