@@ -1,0 +1,1311 @@
+{
+  "day": "2026-08-02",
+  "regions": {
+    "MN": {
+      "model_count": 15,
+      "bach_thu": "43",
+      "notes": "v10782_t10_chot",
+      "generation_method": "weighted_voting_wr",
+      "created_at": "2026-08-02 05:18:43",
+      "consensus_level": "strong",
+      "top_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason",
+        "top1_reason",
+        "top2_reason",
+        "dominant_rule_group",
+        "week_phase_score",
+        "week_slot",
+        "main_selection_reason",
+        "dropped_main_candidate_reason",
+        "partial_survival_reason",
+        "main_number_anti_trap",
+        "near_miss_anti_trap",
+        "main_number_anti_trap_warning",
+        "pp1_convergence_dampener",
+        "pp5_family_diversity_bonus"
+      ],
+      "voters_union_from_ranked": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "meta-learning",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml"
+      ],
+      "voters_n": 14,
+      "model_wr_keys": [
+        "claude-opus-4-6",
+        "claude-opus-5-fast",
+        "claude-sonnet-4-6",
+        "combo-no-token",
+        "combo-super",
+        "deepseek-reasoner",
+        "deepseek-v4-flash",
+        "deepseek-v4-pro",
+        "deepseek-v4-pro-real",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-3-flash",
+        "gemini-3.1-pro",
+        "gemini-3.5-flash",
+        "gemini-3.6-flash",
+        "gemma-4-31b",
+        "glm-5.1",
+        "glm-5.2",
+        "gpt-5-mini",
+        "gpt-5.4",
+        "gpt-5.5",
+        "gpt-5.6-sol-pro",
+        "gpt-oss-120b",
+        "grok-4.20-multi-agent",
+        "grok-4.3",
+        "kimi-k2.5",
+        "lstm",
+        "meta-learning",
+        "qwen3-coder",
+        "qwen3-max-thinking",
+        "qwen3.6-plus",
+        "qwen3.7-max",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "model_wr_n": 36,
+      "official_mentioned_in_json": [
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-6",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4",
+        "glm-5.1",
+        "gpt-oss-120b",
+        "meta-learning",
+        "lstm",
+        "xgboost",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "combo-super"
+      ],
+      "official_not_mentioned": [],
+      "interesting_paths": [
+        {
+          "path": "ranked_numbers[0].voters",
+          "type": "list",
+          "sample": [
+            "glm-5.1",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "deepseek-reasoner",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "ranked_numbers[1].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "ranked_numbers[2].voters",
+          "type": "list",
+          "sample": [
+            "lstm",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "ranked_numbers[3].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "ranked_numbers[4].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "meta-learning",
+            "smart-ml"
+          ]
+        },
+        {
+          "path": "ranked_numbers[5].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "glm-5.1"
+          ]
+        },
+        {
+          "path": "ranked_numbers[6].voters",
+          "type": "list",
+          "sample": [
+            "gpt-oss-120b"
+          ]
+        },
+        {
+          "path": "ranked_numbers[7].voters",
+          "type": "list",
+          "sample": [
+            "lstm"
+          ]
+        },
+        {
+          "path": "ranked_numbers[8].voters",
+          "type": "list",
+          "sample": [
+            "gpt-oss-120b"
+          ]
+        },
+        {
+          "path": "ranked_numbers[9].voters",
+          "type": "list",
+          "sample": [
+            "deepseek-reasoner",
+            "claude-opus-4-6"
+          ]
+        },
+        {
+          "path": "model_wr",
+          "type": "dict",
+          "sample": [
+            "claude-opus-4-6",
+            "claude-opus-5-fast",
+            "claude-sonnet-4-6",
+            "combo-no-token",
+            "combo-super",
+            "deepseek-reasoner",
+            "deepseek-v4-flash",
+            "deepseek-v4-pro",
+            "deepseek-v4-pro-real",
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+            "gemini-3-flash",
+            "gemini-3.1-pro",
+            "gemini-3.5-flash",
+            "gemini-3.6-flash",
+            "gemma-4-31b",
+            "glm-5.1",
+            "glm-5.2",
+            "gpt-5-mini",
+            "gpt-5.4"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[0].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "gemini-2.5-flash",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[1].voters",
+          "type": "list",
+          "sample": [
+            "lstm",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[2].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        }
+      ],
+      "top1": {
+        "number": "43",
+        "score": 0.1187,
+        "voters": [
+          "glm-5.1",
+          "gpt-5.4",
+          "gemini-2.5-pro",
+          "deepseek-reasoner",
+          "claude-opus-4-6",
+          "claude-sonnet-4-6"
+        ]
+      },
+      "voters_matched_official": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "meta-learning",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml"
+      ],
+      "missing_vs_pool15": [
+        "xgboost"
+      ],
+      "pred_timeline": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "auto_daily",
+          "t": "05:16:01",
+          "nlen": 12,
+          "head": "[\"43\", \"73\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "auto_daily",
+          "t": "05:16:00",
+          "nlen": 12,
+          "head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "auto_daily",
+          "t": "05:18:43",
+          "nlen": 12,
+          "head": "[\"39\", \"34\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "auto_daily",
+          "t": "05:17:25",
+          "nlen": 12,
+          "head": "[\"73\", \"43\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "auto_daily",
+          "t": "05:16:00",
+          "nlen": 12,
+          "head": "[\"39\", \"97\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "auto_daily",
+          "t": "05:17:25",
+          "nlen": 12,
+          "head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "auto_daily",
+          "t": "05:17:25",
+          "nlen": 12,
+          "head": "[\"43\", \"34\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "auto_daily",
+          "t": "05:17:25",
+          "nlen": 12,
+          "head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "auto_daily",
+          "t": "05:17:38",
+          "nlen": 12,
+          "head": "[\"57\", \"41\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "auto_daily",
+          "t": "05:00:10",
+          "nlen": 12,
+          "head": "[\"11\", \"88\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "auto_daily",
+          "t": "05:00:09",
+          "nlen": 12,
+          "head": "[\"06\", \"14\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "auto_daily",
+          "t": "05:00:10",
+          "nlen": 12,
+          "head": "[\"27\", \"14\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "t": "05:00:08",
+          "nlen": 12,
+          "head": "[\"11\", \"27\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "auto_daily",
+          "t": "05:00:09",
+          "nlen": 12,
+          "head": "[\"27\", \"14\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "auto_daily",
+          "t": "05:00:10",
+          "nlen": 12,
+          "head": "[\"65\", \"54\"]"
+        }
+      ]
+    },
+    "MT": {
+      "model_count": 13,
+      "bach_thu": "69",
+      "notes": "v10782_t10_chot",
+      "generation_method": "weighted_voting_wr",
+      "created_at": "2026-08-02 16:41:36",
+      "consensus_level": "strong",
+      "top_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason",
+        "top1_reason",
+        "top2_reason",
+        "dominant_rule_group",
+        "week_phase_score",
+        "week_slot",
+        "main_selection_reason",
+        "dropped_main_candidate_reason",
+        "partial_survival_reason",
+        "main_number_anti_trap",
+        "near_miss_anti_trap",
+        "main_number_anti_trap_warning",
+        "pp1_convergence_dampener",
+        "pp5_family_diversity_bonus"
+      ],
+      "voters_union_from_ranked": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "voters_n": 13,
+      "model_wr_keys": [
+        "claude-opus-4-6",
+        "claude-opus-5-fast",
+        "claude-sonnet-4-6",
+        "combo-no-token",
+        "combo-super",
+        "deepseek-reasoner",
+        "deepseek-v4-flash",
+        "deepseek-v4-pro",
+        "deepseek-v4-pro-real",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-3-flash",
+        "gemini-3.1-pro",
+        "gemini-3.5-flash",
+        "gemini-3.6-flash",
+        "gemma-4-31b",
+        "glm-5.1",
+        "glm-5.2",
+        "gpt-5-mini",
+        "gpt-5.4",
+        "gpt-5.5",
+        "gpt-5.6-sol-pro",
+        "gpt-oss-120b",
+        "grok-4.20-multi-agent",
+        "grok-4.3",
+        "kimi-k2.5",
+        "lstm",
+        "meta-learning",
+        "qwen3-coder",
+        "qwen3-max-thinking",
+        "qwen3.6-plus",
+        "qwen3.7-max",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "model_wr_n": 36,
+      "official_mentioned_in_json": [
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-6",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4",
+        "glm-5.1",
+        "gpt-oss-120b",
+        "meta-learning",
+        "lstm",
+        "xgboost",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "combo-super"
+      ],
+      "official_not_mentioned": [],
+      "interesting_paths": [
+        {
+          "path": "ranked_numbers[0].voters",
+          "type": "list",
+          "sample": [
+            "glm-5.1",
+            "gpt-5.4",
+            "deepseek-reasoner",
+            "claude-opus-4-6"
+          ]
+        },
+        {
+          "path": "ranked_numbers[1].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "glm-5.1",
+            "gemini-2.5-flash"
+          ]
+        },
+        {
+          "path": "ranked_numbers[2].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "ranked_numbers[3].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-5.4",
+            "deepseek-reasoner",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "ranked_numbers[4].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "xgboost"
+          ]
+        },
+        {
+          "path": "ranked_numbers[5].voters",
+          "type": "list",
+          "sample": [
+            "smart-ml"
+          ]
+        },
+        {
+          "path": "ranked_numbers[6].voters",
+          "type": "list",
+          "sample": [
+            "xgboost"
+          ]
+        },
+        {
+          "path": "ranked_numbers[7].voters",
+          "type": "list",
+          "sample": [
+            "gpt-oss-120b"
+          ]
+        },
+        {
+          "path": "ranked_numbers[8].voters",
+          "type": "list",
+          "sample": [
+            "lstm"
+          ]
+        },
+        {
+          "path": "ranked_numbers[9].voters",
+          "type": "list",
+          "sample": [
+            "gpt-oss-120b"
+          ]
+        },
+        {
+          "path": "model_wr",
+          "type": "dict",
+          "sample": [
+            "claude-opus-4-6",
+            "claude-opus-5-fast",
+            "claude-sonnet-4-6",
+            "combo-no-token",
+            "combo-super",
+            "deepseek-reasoner",
+            "deepseek-v4-flash",
+            "deepseek-v4-pro",
+            "deepseek-v4-pro-real",
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+            "gemini-3-flash",
+            "gemini-3.1-pro",
+            "gemini-3.5-flash",
+            "gemini-3.6-flash",
+            "gemma-4-31b",
+            "glm-5.1",
+            "glm-5.2",
+            "gpt-5-mini",
+            "gpt-5.4"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[0].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "glm-5.1",
+            "gemini-2.5-flash"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[1].voters",
+          "type": "list",
+          "sample": [
+            "random-forest",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[2].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-5.4",
+            "deepseek-reasoner",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6"
+          ]
+        }
+      ],
+      "top1": {
+        "number": "69",
+        "score": 0.0941,
+        "voters": [
+          "glm-5.1",
+          "gpt-5.4",
+          "deepseek-reasoner",
+          "claude-opus-4-6"
+        ]
+      },
+      "voters_matched_official": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "missing_vs_pool15": [
+        "gemini-2.5-pro",
+        "meta-learning"
+      ],
+      "pred_timeline": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "ai_chain",
+          "t": "16:35:58",
+          "nlen": 12,
+          "head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "t": "16:35:52",
+          "nlen": 12,
+          "head": "[\"86\", \"28\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "ai_chain",
+          "t": "16:41:36",
+          "nlen": 12,
+          "head": "[\"86\", \"90\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "t": "16:37:10",
+          "nlen": 12,
+          "head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "t": "16:35:53",
+          "nlen": 12,
+          "head": "[\"90\", \"28\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "t": "16:37:11",
+          "nlen": 12,
+          "head": "[\"69\", \"28\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "ai_chain",
+          "t": "16:37:11",
+          "nlen": 12,
+          "head": "[\"69\", \"90\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "t": "16:37:11",
+          "nlen": 12,
+          "head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "ai_chain",
+          "t": "16:37:11",
+          "nlen": 12,
+          "head": "[\"64\", \"39\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "auto_daily",
+          "t": "05:00:06",
+          "nlen": 12,
+          "head": "[\"96\", \"41\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "auto_daily",
+          "t": "05:00:05",
+          "nlen": 12,
+          "head": "[\"42\", \"55\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "auto_daily",
+          "t": "05:00:06",
+          "nlen": 12,
+          "head": "[\"55\", \"42\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "t": "05:00:04",
+          "nlen": 12,
+          "head": "[\"42\", \"11\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "auto_daily",
+          "t": "05:00:05",
+          "nlen": 12,
+          "head": "[\"59\", \"42\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "auto_daily",
+          "t": "05:00:06",
+          "nlen": 12,
+          "head": "[\"07\", \"55\"]"
+        }
+      ]
+    },
+    "MB": {
+      "model_count": 14,
+      "bach_thu": "52",
+      "notes": "v10782_t10_chot",
+      "generation_method": "weighted_voting_wr",
+      "created_at": "2026-08-02 17:37:53",
+      "consensus_level": "strong",
+      "top_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason",
+        "top1_reason",
+        "top2_reason",
+        "dominant_rule_group",
+        "week_phase_score",
+        "week_slot",
+        "main_selection_reason",
+        "dropped_main_candidate_reason",
+        "partial_survival_reason",
+        "main_number_anti_trap",
+        "near_miss_anti_trap",
+        "main_number_anti_trap_warning",
+        "pp1_convergence_dampener",
+        "pp5_family_diversity_bonus"
+      ],
+      "voters_union_from_ranked": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "meta-learning",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "voters_n": 14,
+      "model_wr_keys": [
+        "claude-opus-4-6",
+        "claude-opus-5-fast",
+        "claude-sonnet-4-6",
+        "combo-no-token",
+        "combo-super",
+        "deepseek-reasoner",
+        "deepseek-v4-flash",
+        "deepseek-v4-pro",
+        "deepseek-v4-pro-real",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "gemini-3-flash",
+        "gemini-3.1-pro",
+        "gemini-3.5-flash",
+        "gemma-4-31b",
+        "glm-5.1",
+        "glm-5.2",
+        "gpt-5-mini",
+        "gpt-5.4",
+        "gpt-5.5",
+        "gpt-5.6-sol-pro",
+        "gpt-oss-120b",
+        "grok-4.20-multi-agent",
+        "grok-4.3",
+        "kimi-k2.5",
+        "lstm",
+        "meta-learning",
+        "qwen3-coder",
+        "qwen3-max-thinking",
+        "qwen3.6-plus",
+        "qwen3.7-max",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "model_wr_n": 35,
+      "official_mentioned_in_json": [
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-6",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4",
+        "glm-5.1",
+        "gpt-oss-120b",
+        "meta-learning",
+        "lstm",
+        "xgboost",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "combo-super"
+      ],
+      "official_not_mentioned": [],
+      "interesting_paths": [
+        {
+          "path": "ranked_numbers[0].voters",
+          "type": "list",
+          "sample": [
+            "deepseek-reasoner",
+            "gpt-oss-120b",
+            "glm-5.1",
+            "gemini-2.5-pro",
+            "gemini-2.5-flash"
+          ]
+        },
+        {
+          "path": "ranked_numbers[1].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "deepseek-reasoner",
+            "glm-5.1",
+            "gpt-5.4",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "ranked_numbers[2].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-oss-120b",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6",
+            "lstm"
+          ]
+        },
+        {
+          "path": "ranked_numbers[3].voters",
+          "type": "list",
+          "sample": [
+            "xgboost",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "ranked_numbers[4].voters",
+          "type": "list",
+          "sample": [
+            "xgboost",
+            "smart-ensemble"
+          ]
+        },
+        {
+          "path": "ranked_numbers[5].voters",
+          "type": "list",
+          "sample": [
+            "gemini-2.5-flash"
+          ]
+        },
+        {
+          "path": "ranked_numbers[6].voters",
+          "type": "list",
+          "sample": [
+            "meta-learning"
+          ]
+        },
+        {
+          "path": "ranked_numbers[7].voters",
+          "type": "list",
+          "sample": [
+            "meta-learning"
+          ]
+        },
+        {
+          "path": "ranked_numbers[8].voters",
+          "type": "list",
+          "sample": [
+            "lstm"
+          ]
+        },
+        {
+          "path": "ranked_numbers[9].voters",
+          "type": "list",
+          "sample": [
+            "smart-ml"
+          ]
+        },
+        {
+          "path": "model_wr",
+          "type": "dict",
+          "sample": [
+            "claude-opus-4-6",
+            "claude-opus-5-fast",
+            "claude-sonnet-4-6",
+            "combo-no-token",
+            "combo-super",
+            "deepseek-reasoner",
+            "deepseek-v4-flash",
+            "deepseek-v4-pro",
+            "deepseek-v4-pro-real",
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+            "gemini-3-flash",
+            "gemini-3.1-pro",
+            "gemini-3.5-flash",
+            "gemma-4-31b",
+            "glm-5.1",
+            "glm-5.2",
+            "gpt-5-mini",
+            "gpt-5.4",
+            "gpt-5.5"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[0].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "deepseek-reasoner",
+            "glm-5.1",
+            "gpt-5.4",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[1].voters",
+          "type": "list",
+          "sample": [
+            "combo-super",
+            "gpt-oss-120b",
+            "gpt-5.4",
+            "gemini-2.5-pro",
+            "claude-opus-4-6",
+            "claude-sonnet-4-6",
+            "lstm"
+          ]
+        },
+        {
+          "path": "dropped_main_candidate_reason[2].voters",
+          "type": "list",
+          "sample": [
+            "xgboost",
+            "smart-ml",
+            "smart-ensemble"
+          ]
+        }
+      ],
+      "top1": {
+        "number": "52",
+        "score": 0.1642,
+        "voters": [
+          "deepseek-reasoner",
+          "gpt-oss-120b",
+          "glm-5.1",
+          "gemini-2.5-pro",
+          "gemini-2.5-flash"
+        ]
+      },
+      "voters_matched_official": [
+        "claude-opus-4-6",
+        "claude-sonnet-4-6",
+        "combo-super",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "gemini-2.5-pro",
+        "glm-5.1",
+        "gpt-5.4",
+        "gpt-oss-120b",
+        "lstm",
+        "meta-learning",
+        "smart-ensemble",
+        "smart-ml",
+        "xgboost"
+      ],
+      "missing_vs_pool15": [
+        "random-forest"
+      ],
+      "pred_timeline": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "ai_chain",
+          "t": "17:31:27",
+          "nlen": 12,
+          "head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "t": "17:31:26",
+          "nlen": 12,
+          "head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "ai_chain",
+          "t": "17:37:53",
+          "nlen": 12,
+          "head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "t": "17:33:09",
+          "nlen": 12,
+          "head": "[\"52\", \"13\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "t": "17:31:26",
+          "nlen": 12,
+          "head": "[\"52\", \"90\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "t": "17:32:57",
+          "nlen": 12,
+          "head": "[\"73\", \"52\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "ai_chain",
+          "t": "17:33:03",
+          "nlen": 12,
+          "head": "[\"52\", \"13\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "t": "17:32:57",
+          "nlen": 12,
+          "head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "ai_chain",
+          "t": "17:33:03",
+          "nlen": 12,
+          "head": "[\"52\", \"73\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:22",
+          "nlen": 12,
+          "head": "[\"73\", \"09\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:22",
+          "nlen": 12,
+          "head": "[\"16\", \"64\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:23",
+          "nlen": 12,
+          "head": "[\"96\", \"91\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:20",
+          "nlen": 12,
+          "head": "[\"96\", \"32\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:21",
+          "nlen": 12,
+          "head": "[\"91\", \"96\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "rerun_post_mt",
+          "t": "17:30:22",
+          "nlen": 12,
+          "head": "[\"96\", \"32\"]"
+        }
+      ]
+    }
+  },
+  "day_governance": [
+    {
+      "id": 467,
+      "date": "2026-08-02",
+      "region": "MB",
+      "day_status": "DEGRADED_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "INCOMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 14,
+      "failed_model_count": 1,
+      "completeness_ratio": 0.9333,
+      "degradation_reason": "Thiếu 1 model (14/15)",
+      "evaluation_policy": "EXCLUDE_PRIMARY",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 18:32:04"
+    },
+    {
+      "id": 465,
+      "date": "2026-08-02",
+      "region": "MN",
+      "day_status": "VALID_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "COMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 15,
+      "failed_model_count": 0,
+      "completeness_ratio": 1.0,
+      "degradation_reason": null,
+      "evaluation_policy": "INCLUDE",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 16:34:35"
+    },
+    {
+      "id": 466,
+      "date": "2026-08-02",
+      "region": "MT",
+      "day_status": "DEGRADED_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "INCOMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 13,
+      "failed_model_count": 2,
+      "completeness_ratio": 0.8667,
+      "degradation_reason": "Thiếu 2 model (13/15)",
+      "evaluation_policy": "EXCLUDE_PRIMARY",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 17:30:01"
+    }
+  ],
+  "tbl_day_governance": [
+    {
+      "id": 467,
+      "date": "2026-08-02",
+      "region": "MB",
+      "day_status": "DEGRADED_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "INCOMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 14,
+      "failed_model_count": 1,
+      "completeness_ratio": 0.9333,
+      "degradation_reason": "Thiếu 1 model (14/15)",
+      "evaluation_policy": "EXCLUDE_PRIMARY",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 18:32:04"
+    },
+    {
+      "id": 465,
+      "date": "2026-08-02",
+      "region": "MN",
+      "day_status": "VALID_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "COMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 15,
+      "failed_model_count": 0,
+      "completeness_ratio": 1.0,
+      "degradation_reason": null,
+      "evaluation_policy": "INCLUDE",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 16:34:35"
+    },
+    {
+      "id": 466,
+      "date": "2026-08-02",
+      "region": "MT",
+      "day_status": "DEGRADED_LIVE_DAY",
+      "publication_status": "OFFICIAL",
+      "bundle_quality": "INCOMPLETE",
+      "expected_model_count": 15,
+      "completed_model_count": 13,
+      "failed_model_count": 2,
+      "completeness_ratio": 0.8667,
+      "degradation_reason": "Thiếu 2 model (13/15)",
+      "evaluation_policy": "EXCLUDE_PRIMARY",
+      "classification_source": "auto_verify",
+      "classified_at": "2026-08-02 17:30:01"
+    }
+  ]
+}

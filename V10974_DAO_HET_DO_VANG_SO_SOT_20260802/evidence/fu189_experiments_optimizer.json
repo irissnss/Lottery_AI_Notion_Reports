@@ -1,0 +1,109 @@
+{
+  "experiment_names_today": [
+    "MB_ADAPTIVE_BUDGET_SELECTOR_V1",
+    "MB_ADAPTIVE_EXPLOIT_V1",
+    "MB_AI_CHAIN_PRESERVATION_V1",
+    "MB_DEHERD_V1",
+    "MB_FULL_POOL_D_W06_V1",
+    "MB_HYBRID_V1",
+    "MB_NGHIEMTHU_1908_V1",
+    "MB_NO_TOKEN_HERD_REDUCTION_V1",
+    "MB_OFFICIAL_BASELINE_CONTROL",
+    "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "MB_SCREEN_ADAPTIVE_V1",
+    "MB_SCREEN_BLEND_V1",
+    "MB_SCREEN_CHAMPION_V1",
+    "MB_SCREEN_LEAN_V1",
+    "MB_SCREEN_RULEBH_V1",
+    "MB_SCREEN_WEIGHTED_V1",
+    "MB_SPECIALIST_ROSTER_V1",
+    "MB_STRENGTH_WEIGHTED_V52_5_2",
+    "MB_TOPK10_W04_V2",
+    "MB_TOTAL_V2_RULES_V1",
+    "MN_ADAPTIVE_BUDGET_SELECTOR_V1",
+    "MN_AI_CHAIN_PRESERVATION_V1",
+    "MN_DEHERD_V1",
+    "MN_NGHIEMTHU_1908_V1",
+    "MN_NO_TOKEN_HERD_REDUCTION_V1",
+    "MN_OFFICIAL_BASELINE_CONTROL",
+    "MN_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "MN_SCREEN_ADAPTIVE_V1",
+    "MN_SCREEN_BLEND_V1",
+    "MN_SCREEN_CHAMPION_V1",
+    "MN_SCREEN_LEAN_V1",
+    "MN_SCREEN_RULEBH_V1",
+    "MN_SCREEN_WEIGHTED_V1",
+    "MN_SPECIALIST_ROSTER_V1",
+    "MN_STRENGTH_WEIGHTED_V52_5_2",
+    "MN_TOTAL_V2_RULES_V1",
+    "MN_TOTAL_V3_COND_V1",
+    "MT_ADAPTIVE_BUDGET_SELECTOR_V1",
+    "MT_ADAPTIVE_EXPLOIT_V1",
+    "MT_AI_CHAIN_PRESERVATION_V1",
+    "MT_DEHERD_V1",
+    "MT_HYBRID_V1",
+    "MT_NGHIEMTHU_1908_V1",
+    "MT_NO_TOKEN_HERD_REDUCTION_V1",
+    "MT_OFFICIAL_BASELINE_CONTROL",
+    "MT_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "MT_SCREEN_ADAPTIVE_V1",
+    "MT_SCREEN_BLEND_V1",
+    "MT_SCREEN_CHAMPION_V1",
+    "MT_SCREEN_LEAN_V1",
+    "MT_SCREEN_RULEBH_V1",
+    "MT_SCREEN_WEIGHTED_V1",
+    "MT_SPECIALIST_ROSTER_V1",
+    "MT_STRENGTH_WEIGHTED_V52_5_2",
+    "MT_TOTAL_V2_RULES_V1",
+    "MT_TOTAL_V3_COND_V1"
+  ],
+  "retired_hits": [
+    "MB_FULL_POOL_D_W06_V1",
+    "MB_TOPK10_W04_V2"
+  ],
+  "n_experiments": 56,
+  "pass_no_retired_experiments": false,
+  "optimizer_settings": "no such table: settings",
+  "fu210_mt_monthly": [
+    {
+      "ym": "2026-04",
+      "n": 30,
+      "wins": 12,
+      "pct": 40.0
+    },
+    {
+      "ym": "2026-05",
+      "n": 31,
+      "wins": 12,
+      "pct": 38.71
+    },
+    {
+      "ym": "2026-06",
+      "n": 30,
+      "wins": 10,
+      "pct": 33.33
+    },
+    {
+      "ym": "2026-07",
+      "n": 31,
+      "wins": 8,
+      "pct": 25.81
+    },
+    {
+      "ym": "2026-08",
+      "n": 2,
+      "wins": 1,
+      "pct": 50.0
+    }
+  ],
+  "wr_vs_bt_sample": "no such column: wr_hit",
+  "filter_html_candidates": [
+    "E:\\Lottery_AI_Test\\artifacts\\v105_40\\filter_probe\\filter_page.html",
+    "E:\\Lottery_AI_Test\\artifacts\\v105_41\\filter_page.html",
+    "E:\\Lottery_AI_Test\\artifacts\\v105_41b\\filter.html",
+    "E:\\Lottery_AI_Test\\artifacts\\v105_41c_live_wait\\filter.html"
+  ],
+  "ui_files": {
+    "web/frontend/du-doan-test.html": "79c59da8c952a4676a7633f8126cc17debea74af9cd10ba395410dbe6b1edf73"
+  }
+}

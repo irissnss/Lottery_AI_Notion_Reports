@@ -1,0 +1,43 @@
+{
+  "version": "V10974",
+  "date_vn": "2026-08-02",
+  "verdict": "Hai đỏ đã đào xong; không còn vàng chưa đào. Hành động production vẫn chờ 08/08 (QD-014).",
+  "red_cleared": true,
+  "yellow_undug_remaining": 0,
+  "bundle_root_cause": {
+    "MT": {
+      "model_count": 13,
+      "missing": [
+        {"model": "meta-learning", "reason": "bt_gate", "detail": "bt<14"},
+        {"model": "gemini-2.5-pro", "reason": "max_voters_cap", "detail": "MT_top13_only_V10752_weakest_dropped"}
+      ],
+      "timeout_empty_provider": false
+    },
+    "MB": {
+      "model_count": 14,
+      "missing": [
+        {"model": "random-forest", "reason": "bt_gate", "detail": "bt<12"}
+      ],
+      "timeout_empty_provider": false
+    },
+    "MN": {"model_count": 15, "incomplete_bundle": false}
+  },
+  "fu_updates": {
+    "FU-184": "CLOSED_PASS",
+    "FU-189": "CLOSED_FAIL",
+    "FU-242": "MEASURED_ROOT_CAUSE",
+    "FU-225": "DEPLOYED_PENDING_OWNER_VERIFY",
+    "FU-217": "MEASURED_BUT_NOT_FIXED (bug still on VPS)",
+    "FU-207": "guard confirmed present; v2 pending"
+  },
+  "transcript_gaps_added": ["T31_gemini35", "T32_live_may", "T33_combo_filter", "T34_240G"],
+  "sync_manifest": "artifacts/live_sync/20260802_224532/manifest.json",
+  "wait_0808_actions_not_dig": [
+    "QD-014 freeze end",
+    "QD-015 RF shadow",
+    "QD-016/017 RULES A/B",
+    "FU-217 LSTM key fix",
+    "FU-233 disable weight optimizer",
+    "FU-216 RF shadow runtime"
+  ]
+}

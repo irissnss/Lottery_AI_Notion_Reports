@@ -1,0 +1,425 @@
+{
+  "day": "2026-08-02",
+  "regions": {
+    "MN": {
+      "bundle": {
+        "id": 631,
+        "date": "2026-08-02",
+        "region": "MN",
+        "bach_thu": "43",
+        "lo2": "[\"43\", \"39\"]",
+        "lo3": "443",
+        "xien2": "[\"43\", \"39\"]",
+        "xien3": null,
+        "policy_version_ref": "v1_aggregated_top1",
+        "source_predictions_json": "<str len=19242>",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "model_count": 15,
+        "top_score": 0.1187,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "notes": "v10782_t10_chot",
+        "created_at": "2026-08-02 05:18:43",
+        "updated_at": "2026-08-02 16:34:35",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "lo3_status": "LOSE",
+        "xien2_status": "LOSE",
+        "xien3_status": "N/A",
+        "verified_at": "2026-08-02 16:34:35",
+        "bundle_version": 2
+      },
+      "preds": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:16:01",
+          "nums_head": "[\"43\", \"73\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:16:00",
+          "nums_head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:18:43",
+          "nums_head": "[\"39\", \"34\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:17:25",
+          "nums_head": "[\"73\", \"43\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:16:00",
+          "nums_head": "[\"39\", \"97\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:17:25",
+          "nums_head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:17:25",
+          "nums_head": "[\"43\", \"34\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:17:25",
+          "nums_head": "[\"39\", \"43\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:17:38",
+          "nums_head": "[\"57\", \"41\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:10",
+          "nums_head": "[\"11\", \"88\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:09",
+          "nums_head": "[\"06\", \"14\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:10",
+          "nums_head": "[\"27\", \"14\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:08",
+          "nums_head": "[\"11\", \"27\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:09",
+          "nums_head": "[\"27\", \"14\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:10",
+          "nums_head": "[\"65\", \"54\"]"
+        }
+      ],
+      "missing": [],
+      "empty": [],
+      "present_n": 15
+    },
+    "MT": {
+      "bundle": {
+        "id": 633,
+        "date": "2026-08-02",
+        "region": "MT",
+        "bach_thu": "69",
+        "lo2": "[\"69\", \"90\"]",
+        "lo3": "069",
+        "xien2": "[\"69\", \"90\"]",
+        "xien3": "[\"69\", \"90\", \"42\"]",
+        "policy_version_ref": "v1_aggregated_top1",
+        "source_predictions_json": "<str len=17922>",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "model_count": 13,
+        "top_score": 0.0941,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "notes": "v10782_t10_chot",
+        "created_at": "2026-08-02 16:41:36",
+        "updated_at": "2026-08-02 17:30:01",
+        "bach_thu_status": "WIN",
+        "lo2_status": "PARTIAL",
+        "lo3_status": "LOSE",
+        "xien2_status": "LOSE",
+        "xien3_status": "LOSE",
+        "verified_at": "2026-08-02 17:30:01",
+        "bundle_version": 2
+      },
+      "preds": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:35:58",
+          "nums_head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:35:52",
+          "nums_head": "[\"86\", \"28\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:41:36",
+          "nums_head": "[\"86\", \"90\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:37:10",
+          "nums_head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:35:53",
+          "nums_head": "[\"90\", \"28\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:37:11",
+          "nums_head": "[\"69\", \"28\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:37:11",
+          "nums_head": "[\"69\", \"90\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:37:11",
+          "nums_head": "[\"69\", \"86\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "16:37:11",
+          "nums_head": "[\"64\", \"39\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:06",
+          "nums_head": "[\"96\", \"41\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:05",
+          "nums_head": "[\"42\", \"55\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:06",
+          "nums_head": "[\"55\", \"42\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:04",
+          "nums_head": "[\"42\", \"11\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:05",
+          "nums_head": "[\"59\", \"42\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "auto_daily",
+          "empty": 0,
+          "t": "05:00:06",
+          "nums_head": "[\"07\", \"55\"]"
+        }
+      ],
+      "missing": [],
+      "empty": [],
+      "present_n": 15
+    },
+    "MB": {
+      "bundle": {
+        "id": 635,
+        "date": "2026-08-02",
+        "region": "MB",
+        "bach_thu": "52",
+        "lo2": "[\"52\", \"13\"]",
+        "lo3": "352",
+        "xien2": "[\"52\", \"13\"]",
+        "xien3": "[\"52\", \"13\", \"73\"]",
+        "policy_version_ref": "v1_aggregated_top1",
+        "source_predictions_json": "<str len=19935>",
+        "generation_method": "weighted_voting_wr",
+        "consensus_level": "strong",
+        "model_count": 14,
+        "top_score": 0.1642,
+        "is_fallback": 0,
+        "status": "ACTIVE",
+        "notes": "v10782_t10_chot",
+        "created_at": "2026-08-02 17:37:53",
+        "updated_at": "2026-08-02 18:32:04",
+        "bach_thu_status": "WIN",
+        "lo2_status": "WIN",
+        "lo3_status": "LOSE",
+        "xien2_status": "WIN",
+        "xien3_status": "LOSE",
+        "verified_at": "2026-08-02 18:32:04",
+        "bundle_version": 2
+      },
+      "preds": [
+        {
+          "ai_model": "claude-opus-4-6",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:31:27",
+          "nums_head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:31:26",
+          "nums_head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "combo-super",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:37:53",
+          "nums_head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:33:09",
+          "nums_head": "[\"52\", \"13\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:31:26",
+          "nums_head": "[\"52\", \"90\"]"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:32:57",
+          "nums_head": "[\"73\", \"52\"]"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:33:03",
+          "nums_head": "[\"52\", \"13\"]"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:32:57",
+          "nums_head": "[\"73\", \"13\"]"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "run_source": "ai_chain",
+          "empty": 0,
+          "t": "17:33:03",
+          "nums_head": "[\"52\", \"73\"]"
+        },
+        {
+          "ai_model": "lstm",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:22",
+          "nums_head": "[\"73\", \"09\"]"
+        },
+        {
+          "ai_model": "meta-learning",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:22",
+          "nums_head": "[\"16\", \"64\"]"
+        },
+        {
+          "ai_model": "random-forest",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:23",
+          "nums_head": "[\"96\", \"91\"]"
+        },
+        {
+          "ai_model": "smart-ensemble",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:20",
+          "nums_head": "[\"96\", \"32\"]"
+        },
+        {
+          "ai_model": "smart-ml",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:21",
+          "nums_head": "[\"91\", \"96\"]"
+        },
+        {
+          "ai_model": "xgboost",
+          "run_source": "rerun_post_mt",
+          "empty": 0,
+          "t": "17:30:22",
+          "nums_head": "[\"96\", \"32\"]"
+        }
+      ],
+      "missing": [],
+      "empty": [],
+      "present_n": 15
+    }
+  }
+}

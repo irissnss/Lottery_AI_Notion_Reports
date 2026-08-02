@@ -1,0 +1,38 @@
+{
+  "retired_experiment_rows": [
+    {
+      "experiment_name": "MB_FULL_POOL_D_W06_V1",
+      "region": "MB",
+      "n": 1,
+      "oe": 0,
+      "diag": 0,
+      "admin": 1,
+      "oo": "false",
+      "t": "2026-08-02T17:43:06.022409+07:00"
+    },
+    {
+      "experiment_name": "MB_TOPK10_W04_V2",
+      "region": "MB",
+      "n": 1,
+      "oe": 0,
+      "diag": 0,
+      "admin": 1,
+      "oo": "false",
+      "t": "2026-08-02T17:43:06.104297+07:00"
+    }
+  ],
+  "all_experiments_n": 56,
+  "cron": {
+    "cron_hits": [
+      "40 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10708_mnmt_rule_ranker.py --region ALL >> /root/Lottery_AI_Test/web/backend/logs/v10708_ranker.log 2>&1  # V10708: MN/MT daily rule rerank (truoc doctrine A/B 05:00)"
+    ],
+    "n": 1
+  },
+  "settings_tables": [
+    "app_settings"
+  ],
+  "optimizer_settings": {
+    "note": "REDACTED_secrets_leaked_from_broad_LIKE_query",
+    "weight_optimizer_via_scheduler": "scheduler.py auto_weight_optimizer CN 03:00; setting weight_optimizer_enabled default 1 in database.py seed"
+  }
+}

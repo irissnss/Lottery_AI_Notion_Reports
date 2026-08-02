@@ -1,0 +1,57 @@
+{
+  "nguong": {
+    "loi_the_pp": 3.0,
+    "z": 2.0
+  },
+  "ket_luan": "CHƯA miền nào đủ điều kiện — owner đã chốt 01/08 dừng đặt tiền thật",
+  "cua_so_90": [
+    {
+      "region": "MB",
+      "cua_so_ngay": 90,
+      "ky": 91,
+      "dai_dat": 91,
+      "dai_trung": 15,
+      "he_pct": 16.48,
+      "bua_pct": 23.69,
+      "loi_the_pp": -7.21,
+      "z": -1.62,
+      "hoa_von_pct": 27.55,
+      "con_thieu_pp": 11.07,
+      "cong_mo": false,
+      "ngay_con_can": 1574,
+      "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -7.21) và z ≥2.0 (đang -1.62)"
+    },
+    {
+      "region": "MN",
+      "cua_so_ngay": 90,
+      "ky": 91,
+      "dai_dat": 286,
+      "dai_trung": 46,
+      "he_pct": 16.08,
+      "bua_pct": 16.47,
+      "loi_the_pp": -0.38,
+      "z": -0.17,
+      "hoa_von_pct": 18.37,
+      "con_thieu_pp": 2.28,
+      "cong_mo": false,
+      "ngay_con_can": 381,
+      "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.38) và z ≥2.0 (đang -0.17)"
+    },
+    {
+      "region": "MT",
+      "cua_so_ngay": 90,
+      "ky": 91,
+      "dai_dat": 221,
+      "dai_trung": 32,
+      "he_pct": 14.48,
+      "bua_pct": 16.5,
+      "loi_the_pp": -2.02,
+      "z": -0.81,
+      "hoa_von_pct": 18.37,
+      "con_thieu_pp": 3.89,
+      "cong_mo": false,
+      "ngay_con_can": 494,
+      "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -2.02) và z ≥2.0 (đang -0.81)"
+    }
+  ]
+}

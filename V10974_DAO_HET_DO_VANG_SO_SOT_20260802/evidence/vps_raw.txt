@@ -1,0 +1,11 @@
+
+
+STDERR:
+Traceback (most recent call last):
+  File "/tmp/_v10974_dig_all.py", line 136, in <module>
+    out["bundle_dig"] = {reg: dig_region(reg) for reg in ("MN", "MT", "MB")}
+  File "/tmp/_v10974_dig_all.py", line 136, in <dictcomp>
+    out["bundle_dig"] = {reg: dig_region(reg) for reg in ("MN", "MT", "MB")}
+  File "/tmp/_v10974_dig_all.py", line 21, in dig_region
+    b = con.execute(
+sqlite3.OperationalError: no such column: analysis_json

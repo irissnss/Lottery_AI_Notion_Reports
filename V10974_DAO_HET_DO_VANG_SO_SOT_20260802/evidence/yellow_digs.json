@@ -1,0 +1,470 @@
+{
+  "day": "2026-08-02",
+  "fu189": {
+    "all_run_sources_today": [
+      "ai_chain",
+      "shadow_auto_eval",
+      "rerun_post_mt",
+      "auto_daily"
+    ],
+    "retired_looking_sources": [],
+    "lane_tables": {
+      "du_doan_test_bundles": {
+        "exists": true,
+        "n_today": 75,
+        "sample": [
+          {
+            "id": 9790,
+            "run_id": "v10879-2026-08-02-MB",
+            "run_date": "2026-08-02",
+            "region": "MB",
+            "experiment_name": "MB_NGHIEMTHU_1908_V1",
+            "mode": "OFFICIAL_NEW_CANDIDATE",
+            "test_bt": "73",
+            "test_lo2_json": "[\"73\", \"52\"]",
+            "official_bt": null,
+            "official_lo2_json": null,
+            "diff_from_official_json": null,
+            "aggregation_method": "deherd_family_sqrt_v10879",
+            "candidate_count": 2,
+            "model_count": 15,
+            "confidence_score": null,
+            "risk_flags_json": "{\"role\": \"official_new\", \"frozen_from\": \"2026-07-30\", \"decision_date\": \"2026-08-19\", \"pool\": 15, \"lo3\": \"473\", \"xien2\": [\"73\", \"52\"], \"xien3\": [\"73\", \"52\", \"13\"]}",
+            "official_output": "0",
+            "output_impact": "0",
+            "admin_only": 1,
+            "test_only": 1,
+            "owner_approved": 0,
+            "created_at": "2026-08-02T17:38:02+07:00",
+            "diagnostic_only": 1,
+            "output_eligible": 0,
+            "output_lock_status": "PRE_DRAW_LANE",
+            "readiness_status": null
+          },
+          {
+            "id": 9791,
+            "run_id": 9765,
+            "run_date": "2026-08-02",
+            "region": "MB",
+            "experiment_name": "MB_ADAPTIVE_EXPLOIT_V1",
+            "mode": "REALTIME_AVAILABLE_ONLY",
+            "test_bt": "13",
+            "test_lo2_json": "[\"13\", \"39\"]",
+            "official_bt": "52",
+            "official_lo2_json": "[\"52\", \"13\"]",
+            "diff_from_official_json": "{\"bt_changed\": true, \"official_bt\": \"52\", \"test_bt\": \"13\", \"official_lo2\": [\"52\", \"13\"], \"test_lo2\": [\"13\", \"39\"]}",
+            "aggregation_method": "MB_ADAPTIVE_EXPLOIT_V1",
+            "candidate_count": 4,
+            "model_count": 4,
+            "confidence_score": 0.65,
+            "risk_flags_json": "[]",
+            "official_output": "false",
+            "output_impact": "false",
+            "admin_only": 1,
+            "test_only": 1,
+            "owner_approved": 0,
+            "created_at": "2026-08-02T17:38:05+07:00",
+            "diagnostic_only": 0,
+            "output_eligible": 0,
+            "output_lock_status": null,
+            "readiness_status": null
+          },
+          {
+            "id": 9792,
+            "run_id": 9766,
+            "run_date": "2026-08-02",
+            "region": "MB",
+            "experiment_name": "MB_HYBRID_V1",
+            "mode": "REALTIME_AVAILABLE_ONLY",
+            "test_bt": "13",
+            "test_lo2_json": "[\"13\"]",
+            "official_bt": "52",
+            "official_lo2_json": "[\"52\", \"13\"]",
+            "diff_from_official_json": "{\"bt_changed\": true, \"official_bt\": \"52\", \"test_bt\": \"13\", \"official_lo2\": [\"52\", \"13\"], \"test_lo2\": [\"13\"]}",
+            "aggregation_method": "MB_HYBRID_V1",
+            "candidate_count": 1,
+            "model_count": 0,
+            "confidence_score": 0.65,
+            "risk_flags_json": "[]",
+            "official_output": "false",
+            "output_impact": "false",
+            "admin_only": 1,
+            "test_only": 1,
+            "owner_approved": 0,
+            "created_at": "2026-08-02T17:38:05+07:00",
+            "diagnostic_only": 0,
+            "output_eligible": 0,
+            "output_lock_status": null,
+            "readiness_status": null
+          },
+          {
+            "id": 9793,
+            "run_id": 9767,
+            "run_date": "2026-08-02",
+            "region": "MB",
+            "experiment_name": "MB_OFFICIAL_BASELINE_CONTROL",
+            "mode": "REALTIME_AVAILABLE_ONLY",
+            "test_bt": "52",
+            "test_lo2_json": "[\"52\", \"13\"]",
+            "official_bt": "52",
+            "official_lo2_json": "[\"52\", \"13\"]",
+            "diff_from_official_json": "{\"bt_changed\": false, \"official_bt\": \"52\", \"test_bt\": \"52\", \"official_lo2\": [\"52\", \"13\"], \"test_lo2\": [\"52\", \"13\"]}",
+            "aggregation_method": "MB_OFFICIAL_BASELINE_CONTROL",
+            "candidate_count": 8,
+            "model_count": 16,
+            "confidence_score": 0.65,
+            "risk_flags_json": "[]",
+            "official_output": "false",
+            "output_impact": "false",
+            "admin_only": 1,
+            "test_only": 1,
+            "owner_approved": 0,
+            "created_at": "2026-08-02T17:38:05+07:00",
+            "diagnostic_only": 0,
+            "output_eligible": 0,
+            "output_lock_status": null,
+            "readiness_status": null
+          },
+          {
+            "id": 9794,
+            "run_id": 9768,
+            "run_date": "2026-08-02",
+            "region": "MB",
+            "experiment_name": "MB_STRENGTH_WEIGHTED_V52_5_2",
+            "mode": "REALTIME_AVAILABLE_ONLY",
+            "test_bt": "52",
+            "test_lo2_json": "[\"52\", \"13\"]",
+            "official_bt": "52",
+            "official_lo2_json": "[\"52\", \"13\"]",
+            "diff_from_official_json": "{\"bt_changed\": false, \"official_bt\": \"52\", \"test_bt\": \"52\", \"official_lo2\": [\"52\", \"13\"], \"test_lo2\": [\"52\", \"13\"]}",
+            "aggregation_method": "MB_STRENGTH_WEIGHTED_V52_5_2",
+            "candidate_count": 8,
+            "model_count": 16,
+            "confidence_score": 0.65,
+            "risk_flags_json": "[]",
+            "official_output": "false",
+            "output_impact": "false",
+            "admin_only": 1,
+            "test_only": 1,
+            "owner_approved": 0,
+            "created_at": "2026-08-02T17:38:05+07:00",
+            "diagnostic_only": 0,
+            "output_eligible": 0,
+            "output_lock_status": null,
+            "readiness_status": null
+          }
+        ]
+      },
+      "lane_v2_daily_shadow": {
+        "exists": true,
+        "n_today": 0,
+        "sample": []
+      },
+      "doctrine_ab_daily": {
+        "exists": false
+      },
+      "prompt_v2_ab_daily": {
+        "exists": false
+      },
+      "mn_mt_multidir_daily": {
+        "exists": false
+      }
+    },
+    "pass_no_retired_sources": true
+  },
+  "frontend_local": {
+    "web/frontend/du-doan-test.html": {
+      "sha256": "79c59da8c952a4676a7633f8126cc17debea74af9cd10ba395410dbe6b1edf73",
+      "size": 217954,
+      "has_no_store": false,
+      "has_requested_date": true,
+      "has_getVNDateISO": false
+    },
+    "web/frontend/app.js": {
+      "sha256": "aa433e984ae60c7d27e51cc3684fd388141f0ed8bcfb7f0f3dd4eaebc31f3d56",
+      "size": 111097,
+      "has_no_store": false,
+      "has_requested_date": false,
+      "has_getVNDateISO": false
+    }
+  },
+  "fu207_deploy_guard": {
+    "file": ".cursor/hooks/governance_guard.py",
+    "has_forbidden_windows": true,
+    "windows_literal": [
+      [
+        "5",
+        "0",
+        "6",
+        "30"
+      ],
+      [
+        "15",
+        "30",
+        "18",
+        "15"
+      ]
+    ],
+    "has_check_deploy_window": true,
+    "mentions_1530_1815": true
+  },
+  "lstm_key_local": {
+    "combo_reads_ml_probability": true,
+    "combo_reads_lstm_probability": false,
+    "hits": [
+      {
+        "line": 947,
+        "text": "ml_probs = [p.get('ml_probability', p.get('probability', 0.5)) for p in preds]"
+      }
+    ],
+    "bug_still_present": true
+  },
+  "edge_gate_local": {
+    "nguong": {
+      "loi_the_pp": 3.0,
+      "z": 2.0
+    },
+    "cua_so": {
+      "30": [
+        {
+          "region": "MB",
+          "cua_so_ngay": 30,
+          "ky": 31,
+          "dai_dat": 31,
+          "dai_trung": 7,
+          "he_pct": 22.58,
+          "bua_pct": 23.52,
+          "loi_the_pp": -0.94,
+          "z": -0.12,
+          "hoa_von_pct": 27.55,
+          "con_thieu_pp": 4.97,
+          "cong_mo": false,
+          "ngay_con_can": 1566,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.94) và z ≥2.0 (đang -0.12)"
+        },
+        {
+          "region": "MN",
+          "cua_so_ngay": 30,
+          "ky": 31,
+          "dai_dat": 98,
+          "dai_trung": 15,
+          "he_pct": 15.31,
+          "bua_pct": 16.34,
+          "loi_the_pp": -1.03,
+          "z": -0.28,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 3.06,
+          "cong_mo": false,
+          "ngay_con_can": 376,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -1.03) và z ≥2.0 (đang -0.28)"
+        },
+        {
+          "region": "MT",
+          "cua_so_ngay": 30,
+          "ky": 31,
+          "dai_dat": 76,
+          "dai_trung": 9,
+          "he_pct": 11.84,
+          "bua_pct": 16.58,
+          "loi_the_pp": -4.74,
+          "z": -1.11,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 6.53,
+          "cong_mo": false,
+          "ngay_con_can": 491,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -4.74) và z ≥2.0 (đang -1.11)"
+        }
+      ],
+      "90": [
+        {
+          "region": "MB",
+          "cua_so_ngay": 90,
+          "ky": 91,
+          "dai_dat": 91,
+          "dai_trung": 15,
+          "he_pct": 16.48,
+          "bua_pct": 23.69,
+          "loi_the_pp": -7.21,
+          "z": -1.62,
+          "hoa_von_pct": 27.55,
+          "con_thieu_pp": 11.07,
+          "cong_mo": false,
+          "ngay_con_can": 1574,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -7.21) và z ≥2.0 (đang -1.62)"
+        },
+        {
+          "region": "MN",
+          "cua_so_ngay": 90,
+          "ky": 91,
+          "dai_dat": 286,
+          "dai_trung": 46,
+          "he_pct": 16.08,
+          "bua_pct": 16.47,
+          "loi_the_pp": -0.38,
+          "z": -0.17,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 2.28,
+          "cong_mo": false,
+          "ngay_con_can": 381,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.38) và z ≥2.0 (đang -0.17)"
+        },
+        {
+          "region": "MT",
+          "cua_so_ngay": 90,
+          "ky": 91,
+          "dai_dat": 221,
+          "dai_trung": 32,
+          "he_pct": 14.48,
+          "bua_pct": 16.5,
+          "loi_the_pp": -2.02,
+          "z": -0.81,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 3.89,
+          "cong_mo": false,
+          "ngay_con_can": 494,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -2.02) và z ≥2.0 (đang -0.81)"
+        }
+      ],
+      "180": [
+        {
+          "region": "MB",
+          "cua_so_ngay": 180,
+          "ky": 156,
+          "dai_dat": 156,
+          "dai_trung": 35,
+          "he_pct": 22.44,
+          "bua_pct": 23.76,
+          "loi_the_pp": -1.32,
+          "z": -0.39,
+          "hoa_von_pct": 27.55,
+          "con_thieu_pp": 5.12,
+          "cong_mo": false,
+          "ngay_con_can": 1577,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -1.32) và z ≥2.0 (đang -0.39)"
+        },
+        {
+          "region": "MN",
+          "cua_so_ngay": 180,
+          "ky": 156,
+          "dai_dat": 491,
+          "dai_trung": 82,
+          "he_pct": 16.7,
+          "bua_pct": 16.55,
+          "loi_the_pp": 0.15,
+          "z": 0.09,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 1.67,
+          "cong_mo": false,
+          "ngay_con_can": 382,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang +0.15) và z ≥2.0 (đang +0.09)"
+        },
+        {
+          "region": "MT",
+          "cua_so_ngay": 180,
+          "ky": 156,
+          "dai_dat": 380,
+          "dai_trung": 65,
+          "he_pct": 17.11,
+          "bua_pct": 16.51,
+          "loi_the_pp": 0.6,
+          "z": 0.31,
+          "hoa_von_pct": 18.37,
+          "con_thieu_pp": 1.26,
+          "cong_mo": false,
+          "ngay_con_can": 492,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang +0.60) và z ≥2.0 (đang +0.31)"
+        }
+      ]
+    },
+    "cong_mo_tong": false,
+    "ket_luan": "CHƯA miền nào đủ điều kiện — owner đã chốt 01/08 dừng đặt tiền thật"
+  },
+  "gemini35_mde": [
+    {
+      "date": "2026-08-02",
+      "region": "MB",
+      "ai_model": "gemini-3.5-flash",
+      "bt_hit": 1,
+      "bt_number": "13"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MN",
+      "ai_model": "gemini-3.5-flash",
+      "bt_hit": 0,
+      "bt_number": "71"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MT",
+      "ai_model": "gemini-3.5-flash",
+      "bt_hit": 1,
+      "bt_number": "74"
+    }
+  ],
+  "gemini35_preds": [
+    {
+      "target_region": "MB",
+      "ai_model": "gemini-3.5-flash",
+      "run_source": "shadow_auto_eval",
+      "empty": 0,
+      "t": "17:48:11"
+    },
+    {
+      "target_region": "MN",
+      "ai_model": "gemini-3.5-flash",
+      "run_source": "shadow_auto_eval",
+      "empty": 0,
+      "t": "05:26:45"
+    },
+    {
+      "target_region": "MT",
+      "ai_model": "gemini-3.5-flash",
+      "run_source": "shadow_auto_eval",
+      "empty": 0,
+      "t": "16:51:27"
+    }
+  ],
+  "vps": {
+    "optimizer_cron": [],
+    "sunday_0300": [
+      "# V10666 2026-06-01 22:55: MN AI LIMIT planner moved 09:32 -> 03:50 (BEFORE MN predict starts at 04:00)",
+      "# V10679 2026-06-03: FULL_POOL_D_W06 lane test for MN+MT (shadow-only, no official impact)",
+      "# V10680 2026-06-03: TOP-K strength-filtered D_w06 lane test for MN+MT (shadow-only)",
+      "# V10692 2026-06-03: 3-direction (BT/Lo2/Lo3) lane test MN+MT shadow-only",
+      "10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10803_chase_bias_shadow.py --catchup 3 >> /root/Lottery_AI_Test/web/backend/logs/v10803_chase_bias.log 2>&1  # V10803: chase-bias shadow (duoi so vua no hom truoc) 3 mien"
+    ],
+    "frontend_vps": {
+      "/root/Lottery_AI_Test/web/frontend/du-doan-test.html": {
+        "sha256": "92f3ffd2645f10cb1e4cc421c6ea125f89a8dba59fdfd8686fe97509d193f30e",
+        "size": 221956,
+        "has_no_store": false,
+        "has_requested_date": true
+      },
+      "/root/Lottery_AI_Test/web/frontend/app.js": {
+        "sha256": "aa433e984ae60c7d27e51cc3684fd388141f0ed8bcfb7f0f3dd4eaebc31f3d56",
+        "size": 111097,
+        "has_no_store": false,
+        "has_requested_date": false
+      }
+    },
+    "lstm_key_vps": {
+      "has_ml_probability": true,
+      "has_lstm_probability": false,
+      "bug_still_present": true
+    },
+    "http": {
+      "/api/health": {
+        "code": 200,
+        "body": "{\"status\":\"running\",\"app\":\"Lottery AI Prediction\",\"version\":\"V20.3.36\",\"time\":\"2026-08-02T22:48:45.138825+07:00\",\"timezone\":\"Asia/Ho_Chi_Minh (UTC+7)\",\"expected_model_count\":15,\"expected_output_model_count\":15,\"runtime_model_count\":26,\"active_measurement_model_count\":26,\"active_shadow_model_count\":11,\"active_rerank_measurement_model_count\":1,\"active_measured_component_count\":27,\"registry_visible_model_count\":30,\"registered_non_active_model_count\":3,\"model_count_semantics\":{\"runtime_model_count\":"
+      },
+      "/api/admin/edge-gate": {
+        "err": "HTTP Error 401: Unauthorized"
+      },
+      "/api/admin/consistency-guard": {
+        "err": "HTTP Error 401: Unauthorized"
+      }
+    },
+    "rules_active": "no such table: learned_rules"
+  }
+}
