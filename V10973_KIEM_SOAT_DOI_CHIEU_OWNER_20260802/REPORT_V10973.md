@@ -91,6 +91,8 @@ Chỉ **đối chiếu + ghi nhận gap**, không sửa runtime (QD-014). Phươ
 | `Lottery_AI_Notion_Reports/V10973_.../` | REPORT + CONTEXT + evidence |
 | `CHANGELOG.md` / `CURRENT_TRUTH_SSOT.md` / `FOLLOW_UP_TRACKER.md` | Prepend V10973 + FU-242 |
 | Production / VPS | **Không đụng** |
+| Commit public | `ccecf1b` (và commit evidence sau) |
+| Commit riêng | `76968ae` |
 | Notion | **Không ghi** |
 
 Backup runtime: không áp dụng. Deploy: không.
