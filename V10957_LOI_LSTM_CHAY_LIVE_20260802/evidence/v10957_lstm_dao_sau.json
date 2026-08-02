@@ -1,0 +1,1574 @@
+{
+  "mau_bundle": [
+    {
+      "date": "2026-08-01",
+      "bach_thu": "55",
+      "ranked0_num": "55",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "deepseek-reasoner",
+        "claude-opus-4-6",
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 7,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "bach_thu": "68",
+      "ranked0_num": "68",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "deepseek-reasoner",
+        "gpt-5-mini",
+        "gemini-2.5-pro",
+        "claude-opus-4-6",
+        "gemini-2.5-flash"
+      ],
+      "n_voters": 6,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "bach_thu": "20",
+      "ranked0_num": "20",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "combo-no-token",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "bach_thu": "15",
+      "ranked0_num": "25",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "bach_thu": "39",
+      "ranked0_num": "39",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "claude-opus-4-6",
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 7,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "bach_thu": "15",
+      "ranked0_num": "15",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "bach_thu": "03",
+      "ranked0_num": "58",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "bach_thu": "02",
+      "ranked0_num": "02",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 6,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "bach_thu": "60",
+      "ranked0_num": "60",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "gpt-5.4",
+        "gemini-2.5-pro",
+        "claude-opus-4-6",
+        "gemini-2.5-flash",
+        "claude-sonnet-4-6"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "bach_thu": "54",
+      "ranked0_num": "54",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "gpt-5-mini",
+        "gpt-5.4",
+        "gemini-2.5-pro",
+        "deepseek-reasoner",
+        "claude-opus-4-6",
+        "claude-sonnet-4-6"
+      ],
+      "n_voters": 7,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "bach_thu": "82",
+      "ranked0_num": "82",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "gemini-2.5-pro",
+        "deepseek-reasoner",
+        "claude-opus-4-6",
+        "gemini-2.5-flash",
+        "claude-sonnet-4-6",
+        "gpt-5-mini"
+      ],
+      "n_voters": 7,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "bach_thu": "42",
+      "ranked0_num": "42",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 6,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "bach_thu": "87",
+      "ranked0_num": "58",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 4,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "bach_thu": "34",
+      "ranked0_num": "88",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-18",
+      "bach_thu": "41",
+      "ranked0_num": "97",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 4,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-17",
+      "bach_thu": "63",
+      "ranked0_num": "84",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-16",
+      "bach_thu": "40",
+      "ranked0_num": "40",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "gemini-2.5-pro",
+        "claude-opus-4-6",
+        "claude-sonnet-4-6"
+      ],
+      "n_voters": 4,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "bach_thu": "19",
+      "ranked0_num": "19",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-super",
+        "gpt-5.4",
+        "gemini-2.5-pro",
+        "deepseek-reasoner",
+        "gemini-2.5-flash",
+        "claude-sonnet-4-6",
+        "gpt-5-mini"
+      ],
+      "n_voters": 7,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "bach_thu": "17",
+      "ranked0_num": "45",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "gemini-2.5-flash",
+        "claude-sonnet-4-6",
+        "combo-no-token",
+        "random-forest",
+        "xgboost"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    },
+    {
+      "date": "2026-07-13",
+      "bach_thu": "31",
+      "ranked0_num": "31",
+      "ranked0_keys": [
+        "number",
+        "score",
+        "voters"
+      ],
+      "voters": [
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ],
+      "n_voters": 5,
+      "keys_co_lstm": [],
+      "lstm_entry": null,
+      "top_level_keys": [
+        "ranked_numbers",
+        "score_breakdown",
+        "model_wr",
+        "model_bt",
+        "total_models",
+        "output_eligible_row_count",
+        "scoreable_model_count",
+        "quality_filtered_model_count",
+        "quality_filtered_models",
+        "diagnostic_empty_models",
+        "hard_timeout_models",
+        "publish_readiness_semantic",
+        "incomplete_bundle",
+        "gate_threshold_xien3",
+        "lo3_method",
+        "bt_gate_threshold",
+        "wr_gate_threshold",
+        "wr_gate_filtered",
+        "gate_diagnostics",
+        "model_exclusion_reasons",
+        "lane_fusion_policy",
+        "shadow_controls",
+        "selected_source_prizes",
+        "source_prizes_status",
+        "source_prizes_reason"
+      ]
+    }
+  ],
+  "voter_names": [
+    [
+      "combo-no-token",
+      14
+    ],
+    [
+      "xgboost",
+      13
+    ],
+    [
+      "smart-ml",
+      13
+    ],
+    [
+      "smart-ensemble",
+      13
+    ],
+    [
+      "random-forest",
+      12
+    ],
+    [
+      "combo-super",
+      9
+    ],
+    [
+      "claude-opus-4-6",
+      7
+    ],
+    [
+      "gemini-2.5-pro",
+      6
+    ],
+    [
+      "claude-sonnet-4-6",
+      6
+    ],
+    [
+      "deepseek-reasoner",
+      5
+    ],
+    [
+      "gemini-2.5-flash",
+      5
+    ],
+    [
+      "gpt-5-mini",
+      4
+    ],
+    [
+      "gpt-5.4",
+      3
+    ]
+  ],
+  "lstm_trong_voters": {
+    "n": 20,
+    "co": 0
+  },
+  "lstm_xuat_hien": {
+    "ngay": 52,
+    "lan_trong_top5": 16,
+    "lan_la_top1": 0,
+    "so_lstm_khac_bundle": 0
+  },
+  "lstm_chi_tiet_mau": [
+    {
+      "date": "2026-08-01",
+      "lstm_nums": [
+        "59",
+        "61"
+      ],
+      "bundle": "55"
+    },
+    {
+      "date": "2026-07-31",
+      "lstm_nums": [
+        "37"
+      ],
+      "bundle": "68"
+    },
+    {
+      "date": "2026-07-30",
+      "lstm_nums": [
+        "61"
+      ],
+      "bundle": "20"
+    },
+    {
+      "date": "2026-07-29",
+      "lstm_nums": [
+        "51",
+        "61"
+      ],
+      "bundle": "15"
+    },
+    {
+      "date": "2026-07-27",
+      "lstm_nums": [
+        "24",
+        "59"
+      ],
+      "bundle": "15"
+    },
+    {
+      "date": "2026-07-23",
+      "lstm_nums": [
+        "45",
+        "96"
+      ],
+      "bundle": "54"
+    },
+    {
+      "date": "2026-07-22",
+      "lstm_nums": [
+        "48",
+        "96"
+      ],
+      "bundle": "82"
+    },
+    {
+      "date": "2026-06-24",
+      "lstm_nums": [
+        "07",
+        "60"
+      ],
+      "bundle": "44"
+    },
+    {
+      "date": "2026-06-23",
+      "lstm_nums": [
+        "15",
+        "47"
+      ],
+      "bundle": "04"
+    },
+    {
+      "date": "2026-06-22",
+      "lstm_nums": [
+        "54"
+      ],
+      "bundle": "81"
+    },
+    {
+      "date": "2026-06-21",
+      "lstm_nums": [
+        "11",
+        "13"
+      ],
+      "bundle": "34"
+    },
+    {
+      "date": "2026-06-20",
+      "lstm_nums": [
+        "33",
+        "90"
+      ],
+      "bundle": "55"
+    },
+    {
+      "date": "2026-06-19",
+      "lstm_nums": [
+        "00"
+      ],
+      "bundle": "24"
+    },
+    {
+      "date": "2026-06-18",
+      "lstm_nums": [
+        "85",
+        "92"
+      ],
+      "bundle": "62"
+    },
+    {
+      "date": "2026-06-16",
+      "lstm_nums": [
+        "86",
+        "92"
+      ],
+      "bundle": "62"
+    }
+  ],
+  "mde_models_mau": [
+    "claude-opus-4-6",
+    "claude-sonnet-4-6",
+    "combo-no-token",
+    "combo-super",
+    "deepseek-reasoner",
+    "deepseek-v4-pro-real",
+    "gemini-2.5-flash",
+    "gemini-2.5-pro",
+    "gemini-3.5-flash",
+    "gemma-4-31b",
+    "glm-5.1",
+    "glm-5.2",
+    "gpt-5-mini",
+    "gpt-5.4",
+    "gpt-5.5",
+    "gpt-oss-120b",
+    "grok-4.20-multi-agent",
+    "grok-4.3",
+    "kimi-k2.5",
+    "lstm",
+    "meta-learning",
+    "qwen3-max-thinking",
+    "qwen3.7-max",
+    "random-forest",
+    "smart-ensemble",
+    "smart-ml",
+    "xgboost"
+  ],
+  "official_models": null,
+  "full_ranked_top3": [
+    {
+      "number": "55",
+      "score": 0.1551,
+      "voters": [
+        "deepseek-reasoner",
+        "claude-opus-4-6",
+        "combo-no-token",
+        "random-forest",
+        "xgboost",
+        "smart-ml",
+        "smart-ensemble"
+      ]
+    },
+    {
+      "number": "35",
+      "score": 0.0739,
+      "voters": [
+        "random-forest",
+        "smart-ml",
+        "smart-ensemble"
+      ]
+    },
+    {
+      "number": "85",
+      "score": 0.0578,
+      "voters": [
+        "combo-no-token",
+        "xgboost"
+      ]
+    }
+  ],
+  "lstm_paths": [
+    {
+      "path": "model_wr.lstm",
+      "type": "dict",
+      "preview": "{'win_rate': 33.3, 'weight': 0.027}"
+    },
+    {
+      "path": "model_bt.lstm",
+      "type": "dict",
+      "preview": "{'bt_rate': 30.0, 'bt_weight': 0.025, 'bt_hits': 9, 'total': 30}"
+    },
+    {
+      "path": "gate_diagnostics.lstm",
+      "type": "dict",
+      "preview": "{'mode': 'bt', 'pass': True, 'reason': 'pass', 'bt_rate': 30.0, 'bt_total': 30, 'wr_pct': 33.3}"
+    }
+  ],
+  "vote_topk5": {
+    "co_lstm": {
+      "n": 87,
+      "pct": 16.59,
+      "bua": 16.48,
+      "loi_the_pp": 0.1,
+      "z": 0.04
+    },
+    "bo_lstm": {
+      "n": 87,
+      "pct": 16.59,
+      "bua": 16.48,
+      "loi_the_pp": 0.1,
+      "z": 0.04
+    },
+    "chenh_pp": 0.0,
+    "chenh_loi_the": 0.0,
+    "cut": "2026-05-06",
+    "k": 5
+  },
+  "vote_topk1": {
+    "co_lstm": {
+      "n": 87,
+      "pct": 15.17,
+      "bua": 16.48,
+      "loi_the_pp": -1.32,
+      "z": -0.52
+    },
+    "bo_lstm": {
+      "n": 87,
+      "pct": 15.17,
+      "bua": 16.48,
+      "loi_the_pp": -1.32,
+      "z": -0.52
+    },
+    "chenh_pp": 0.0,
+    "chenh_loi_the": 0.0,
+    "cut": "2026-05-06",
+    "k": 1
+  },
+  "vote_topk10": {
+    "co_lstm": {
+      "n": 87,
+      "pct": 16.59,
+      "bua": 16.48,
+      "loi_the_pp": 0.1,
+      "z": 0.04
+    },
+    "bo_lstm": {
+      "n": 87,
+      "pct": 16.59,
+      "bua": 16.48,
+      "loi_the_pp": 0.1,
+      "z": 0.04
+    },
+    "chenh_pp": 0.0,
+    "chenh_loi_the": 0.0,
+    "cut": "2026-05-06",
+    "k": 10
+  },
+  "lstm_atk": {
+    "k1": {
+      "k": 1,
+      "n": 87,
+      "pct": 10.9,
+      "bua": 16.48,
+      "loi_the_pp": -5.58
+    },
+    "k3": {
+      "k": 3,
+      "n": 87,
+      "pct": 13.51,
+      "bua": 16.48,
+      "loi_the_pp": -2.98
+    },
+    "k5": {
+      "k": 5,
+      "n": 87,
+      "pct": 13.51,
+      "bua": 16.48,
+      "loi_the_pp": -2.98
+    },
+    "k10": {
+      "k": 10,
+      "n": 87,
+      "pct": 13.51,
+      "bua": 16.48,
+      "loi_the_pp": -2.98
+    }
+  },
+  "backup_lstm_mt": [
+    {
+      "path": "/root/Lottery_AI_Test/data/models/lstm_MT.pt",
+      "mtime": "2026-08-02 02:02",
+      "kb": 899.1
+    },
+    {
+      "path": "/root/Lottery_AI_Test/backups/v10952_models_pre/lstm_MT_metrics.json",
+      "mtime": "2026-07-26 02:02",
+      "kb": 0.2
+    },
+    {
+      "path": "/root/Lottery_AI_Test/backups/v10952_models_pre/lstm_MT.pt",
+      "mtime": "2026-07-26 02:02",
+      "kb": 899.1
+    },
+    {
+      "path": "/root/Lottery_AI_Test/backups/models_predeploy_20260531_132156/lstm_MT_metrics.json",
+      "mtime": "2026-05-10 02:00",
+      "kb": 0.2
+    },
+    {
+      "path": "/root/Lottery_AI_Test/backups/models_predeploy_20260531_132156/lstm_MT.pt",
+      "mtime": "2026-05-10 02:00",
+      "kb": 899.1
+    }
+  ],
+  "val_loss_theo_ngay": [
+    {
+      "date": "2026-07-01",
+      "val_loss": 0.22954928874969482,
+      "main0": "87",
+      "avg_top5": 0.5354098677635193,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-02",
+      "val_loss": 0.22954928874969482,
+      "main0": "96",
+      "avg_top5": 0.5133846402168274,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-03",
+      "val_loss": 0.22954928874969482,
+      "main0": "96",
+      "avg_top5": 0.5178743004798889,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-04",
+      "val_loss": 0.22916767001152039,
+      "main0": "54",
+      "avg_top5": 0.5186331272125244,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-05",
+      "val_loss": 0.22881785035133362,
+      "main0": "03",
+      "avg_top5": 0.5164757370948792,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-06",
+      "val_loss": 0.22881785035133362,
+      "main0": "93",
+      "avg_top5": 0.5169841647148132,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-07",
+      "val_loss": 0.22881785035133362,
+      "main0": "43",
+      "avg_top5": 0.5151664018630981,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-08",
+      "val_loss": 0.22881785035133362,
+      "main0": "96",
+      "avg_top5": 0.5118057131767273,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-09",
+      "val_loss": 0.22881785035133362,
+      "main0": "27",
+      "avg_top5": 0.5155496001243591,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-10",
+      "val_loss": 0.22881785035133362,
+      "main0": "96",
+      "avg_top5": 0.5183449983596802,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-11",
+      "val_loss": 0.22881785035133362,
+      "main0": "96",
+      "avg_top5": 0.5183811783790588,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-12",
+      "val_loss": 0.22881785035133362,
+      "main0": "96",
+      "avg_top5": 0.5193095207214355,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-13",
+      "val_loss": 0.22881785035133362,
+      "main0": "96",
+      "avg_top5": 0.5171188116073608,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-14",
+      "val_loss": 0.22983002662658691,
+      "main0": "96",
+      "avg_top5": 0.5144973993301392,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-15",
+      "val_loss": 0.22983002662658691,
+      "main0": "93",
+      "avg_top5": 0.5146988034248352,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-16",
+      "val_loss": 0.22983002662658691,
+      "main0": "96",
+      "avg_top5": 0.5144073367118835,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-17",
+      "val_loss": 0.22983002662658691,
+      "main0": "96",
+      "avg_top5": 0.5158233642578125,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-18",
+      "val_loss": 0.22983002662658691,
+      "main0": "44",
+      "avg_top5": 0.515849769115448,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-19",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.5194018483161926,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-20",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.5198734402656555,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-21",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.5205132365226746,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-22",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.520950198173523,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-23",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.5196049809455872,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-24",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.5231398344039917,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-25",
+      "val_loss": 0.229469895362854,
+      "main0": "96",
+      "avg_top5": 0.520690381526947,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-26",
+      "val_loss": 0.2289879322052002,
+      "main0": "32",
+      "avg_top5": 0.5155840516090393,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-27",
+      "val_loss": 0.2289879322052002,
+      "main0": "24",
+      "avg_top5": 0.5157721638679504,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-28",
+      "val_loss": 0.2289879322052002,
+      "main0": "61",
+      "avg_top5": 0.5121123194694519,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-29",
+      "val_loss": 0.2289879322052002,
+      "main0": "61",
+      "avg_top5": 0.5146290063858032,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-30",
+      "val_loss": 0.2289879322052002,
+      "main0": "61",
+      "avg_top5": 0.5139848589897156,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-07-31",
+      "val_loss": 0.2289879322052002,
+      "main0": "37",
+      "avg_top5": 0.5201284289360046,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-08-01",
+      "val_loss": 0.2289879322052002,
+      "main0": "59",
+      "avg_top5": 0.5179230570793152,
+      "level": "VERY_LOW"
+    },
+    {
+      "date": "2026-08-02",
+      "val_loss": 0.228246808052063,
+      "main0": "96",
+      "avg_top5": 0.5237574577331543,
+      "level": "VERY_LOW"
+    }
+  ],
+  "val_loss_unique": [
+    "0.228246808052063",
+    "0.22881785035133362",
+    "0.2289879322052002",
+    "0.22916767001152039",
+    "0.229469895362854",
+    "0.22954928874969482",
+    "0.22983002662658691"
+  ]
+}
