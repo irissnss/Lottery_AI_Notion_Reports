@@ -1,6 +1,6 @@
 # REPORT V10954 — Tong hop tinh hinh toan dien (02/08/2026)
 
-## 1. Tom tat mot doan
+## 1. Tóm tắt một đoạn
 
 Viet ban tong hop tinh hinh cho owner (chi doc, khong sua code/deploy). Xac nhan total moi da ap toi 01/08 (V10939): 15 model, gpt-5.4 vao, combo-no-token ra. Cong loi the DONG ca 3 mien. Health 200. File: `docs/TONG_HOP_TINH_HINH_20260802.md`.
 
@@ -16,7 +16,7 @@ Doc CHANGELOG V10933-V10953, SSOT, FOLLOW_UP (ban tren cung), OWNER_DECISION_LED
 
 Chi viet tai lieu tong hop theo 8 muc dung thu tu cau hoi owner. Khong sua code / deploy / do nang — dung yeu cau. Khong dung Notion (A55).
 
-## 5. Da lam gi
+## 5. Đã làm gì
 
 | File | Thay doi |
 |---|---|
