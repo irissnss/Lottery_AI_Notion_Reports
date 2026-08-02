@@ -1,6 +1,6 @@
 # V10955 — Tin hiệu MT rơi rụng ở đâu?
 
-**Ngày:** 02/08/2026 · **Commit riêng:** `0bea9b9` · **Commit công khai:** *(điền sau push)* · **Trạng thái:** ĐẠT (chỉ đọc)
+**Ngày:** 02/08/2026 · **Commit riêng:** `0bea9b9` · **Commit công khai:** `07147b4` · **Trạng thái:** ĐẠT (chỉ đọc)
 
 > Khung A55.3. Phiên **chỉ đo** — không sửa code, không deploy, không huấn luyện lại. Owner đã đóng băng đường ra số tới 08/08.
 
