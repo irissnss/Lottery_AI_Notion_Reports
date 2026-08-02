@@ -1,6 +1,6 @@
 # V10958 — Sửa đọc nhầm trạng thái FU (hết báo động giả FU-194)
 
-**Ngày:** 02/08/2026 · **Commit riêng:** `f2aaa711510e38057624fcec0bf79e7a407ccfd4` · **Commit công khai:** *(điền sau push public)* · **Trạng thái:** ĐẠT — bộ đầu phiên không còn báo FU-194 quá hạn
+**Ngày:** 02/08/2026 · **Commit riêng:** `f2aaa711510e38057624fcec0bf79e7a407ccfd4` · **Commit công khai:** `ecb09b14a6d2366ac7f808bf663993e9b3726256` · **Trạng thái:** ĐẠT — bộ đầu phiên không còn báo FU-194 quá hạn
 
 ---
 
