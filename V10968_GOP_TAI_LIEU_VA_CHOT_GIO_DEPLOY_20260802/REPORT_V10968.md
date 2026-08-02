@@ -1,6 +1,6 @@
 # V10968 — Gộp tài liệu cơ chế học + chốt giờ cấm deploy
 
-**Ngày:** 02/08/2026 · **Commit riêng:** *(điền sau push)* · **Commit công khai:** *(điền sau push)* · **Trạng thái:** HOÀN TẤT (không deploy VPS)
+**Ngày:** 02/08/2026 · **Commit riêng:** `8f49d21` (nội dung chính `4aed49b` + archive/evidence `8f49d21`) · **Commit công khai:** `36385ca` · **Trạng thái:** HOÀN TẤT (không deploy VPS)
 
 ---
 
