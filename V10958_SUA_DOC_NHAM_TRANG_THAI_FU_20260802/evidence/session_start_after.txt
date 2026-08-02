@@ -1,0 +1,33 @@
+﻿==============================================================================================
+  KIß╗éM ─Éß║ªU PHI├èN ΓÇö 2026-08-02   (bß║»t buß╗Öc chß║íy TR╞»ß╗ÜC khi trß║ú lß╗¥i owner)
+==============================================================================================
+
+[1] CHECKPOINT QU├ü Hß║áN: 0
+
+[2] ROADMAP XONG NH╞»NG CH╞»A CHUYß╗éN V├ÇO archive/: 0
+
+[3] Mß╗ñC THEO D├òI C├ÆN TREO: 67 ┬╖ trong ─æ├│ QU├ü Hß║áN 0
+      FU-189 - X├íc minh 02/08: 19 experiment cß╗ºa lane nghß╗ë phß║ú WAIT_LIVE                  hß║ín 2026-08-02
+      FU-184 - X├íc minh live: MT/MB c├│ thß╗▒c sß╗▒ c├┤ng bß╗æ ─æ├║ng sß╗æ WAIT_LIVE                  hß║ín 2026-08-02
+      FU-185 - Tinh gß╗ìn luß╗ông: nhiß╗üu lane hß║┐t hß║ín ─æo m├á vß║½n ch MEASURED_BUT_NOT_FIXED     hß║ín 2026-08-03
+      FU-216 - Shadow MT bach thu = random-forest don (QD-015) OWNER_LOCK                 hß║ín 2026-08-08
+      FU-217 - LSTM live: ket so + lech tai suy luan + sai key MEASURED_BUT_NOT_FIXED     hß║ín 2026-08-08
+      FU-215 - ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ tß╗¢i hß║┐t 08/08 (QD-014)    OWNER_LOCK                 hß║ín 2026-08-08
+      FU-210 - Th├íng 6 ─æ├ú xß║úy ra chuyß╗çn g├¼ l├ám mß║Ñt lß╗úi thß║┐ ß╗ƒ M MEASURED_BUT_NOT_FIXED     hß║ín 2026-08-08
+      FU-207 - Mß╗æc an to├án ─æß╗â deploy thß╗⌐ chß║ím ─æß║ºu ra           MEASURED_BUT_NOT_FIXED     hß║ín 2026-08-08
+
+[4] Sß╗ö QUYß║╛T ─Éß╗èNH Cß╗ªA OWNER
+    15 quyß║┐t ─æß╗ïnh ─æang c├│ hiß╗çu lß╗▒c ┬╖ 0 tß╗¢i hß║ín r├á so├ít
+    ΓåÆ chß║íy `python web/backend/_v10920_decision_ledger.py` ─æß╗â kiß╗âm code c├│ tr├┤i kh├┤ng
+
+[5] PLAYBOOK
+    214 d├▓ng ┬╖ 1 d├▓ng c├│ ng├áy ─æ├ú tß╗¢i/qua
+      2026-07-28 | **28/07 tß╗æi ΓÇö 2 mß╗Ñc V10870 phß║úi ─æß╗ìc c├╣ng CP-L6 (lß╗ïch sß╗¡)** | Owner k├╜ 13:48 ho├ún sß╗¡a trong ng├áy chß╗æt t
+
+[6] BA Mß║╢T QUY Tß║«C
+    lß║ºn sß╗¡a gß║ºn nhß║Ñt: c25f96e 2026-08-01
+    kh├┤ng c├│ thay ─æß╗òi chß╗¥
+
+==============================================================================================
+  Γ£ô kh├┤ng c├│ mß╗Ñc qu├í hß║ín ΓÇö ─æ╞░ß╗úc ph├⌐p v├áo viß╗çc
+==============================================================================================

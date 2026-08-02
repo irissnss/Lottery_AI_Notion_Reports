@@ -1,0 +1,80 @@
+﻿{
+  "total_headings": 101,
+  "unique_ids": 99,
+  "ids_with_duplicates": 2,
+  "extra_old_copies": 2,
+  "status_mismatch_first_vs_last": 2,
+  "false_treo_if_read_old_copy": 1,
+  "duplicates": {
+    "FU-194": [
+      {
+        "pos": 12757,
+        "status": "CLOSED_PASS",
+        "title": "─É├â ─É├ôNG: nghiß╗çm thu ─æ├¬m ─æß║ºu MT 16:58 / MB 17:58 vß╗¢i pool model mß╗¢i"
+      },
+      {
+        "pos": 22185,
+        "status": "WAIT_LIVE",
+        "title": "Canh live tß╗æi 01/08: MT 16:58 v├á MB 17:58 vß╗¢i pool model mß╗¢i"
+      }
+    ],
+    "FU-199": [
+      {
+        "pos": 13224,
+        "status": "CLOSED_PASS",
+        "title": "─É├â ─É├ôNG: bß║Ñm n├║t sau khi MB chß╗æt"
+      },
+      {
+        "pos": 18218,
+        "status": "READY_NOT_DEPLOYED",
+        "title": "Bß║Ñm n├║t V10934 sau khi MB chß╗æt tß╗æi nay"
+      }
+    ]
+  },
+  "mismatches": [
+    {
+      "id": "FU-194",
+      "latest_status": "CLOSED_PASS",
+      "oldest_status": "WAIT_LIVE",
+      "latest_pos": 12757,
+      "oldest_pos": 22185,
+      "n": 2
+    },
+    {
+      "id": "FU-199",
+      "latest_status": "CLOSED_PASS",
+      "oldest_status": "READY_NOT_DEPLOYED",
+      "latest_pos": 13224,
+      "oldest_pos": 18218,
+      "n": 2
+    }
+  ],
+  "false_treo_examples": [
+    {
+      "id": "FU-194",
+      "latest_status": "CLOSED_PASS",
+      "oldest_status": "WAIT_LIVE",
+      "latest_pos": 12757,
+      "oldest_pos": 22185,
+      "n": 2
+    }
+  ]
+}
+--- treo (latest only) ---
+FU-189   WAIT_LIVE                    due=2026-08-02 ok  X├íc minh 02/08: 19 experiment cß╗ºa lane nghß╗ë phß║úi t
+FU-184   WAIT_LIVE                    due=2026-08-02 ok  X├íc minh live: MT/MB c├│ thß╗▒c sß╗▒ c├┤ng bß╗æ ─æ├║ng sß╗æ ph
+FU-185   MEASURED_BUT_NOT_FIXED       due=2026-08-03 ok  Tinh gß╗ìn luß╗ông: nhiß╗üu lane hß║┐t hß║ín ─æo m├á vß║½n chß║íy
+FU-216   OWNER_LOCK                   due=2026-08-08 ok  Shadow MT bach thu = random-forest don (QD-015), t
+FU-217   MEASURED_BUT_NOT_FIXED       due=2026-08-08 ok  LSTM live: ket so + lech tai suy luan + sai key xa
+FU-215   OWNER_LOCK                   due=2026-08-08 ok  ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ tß╗¢i hß║┐t 08/08 (QD-014)
+FU-210   MEASURED_BUT_NOT_FIXED       due=2026-08-08 ok  Th├íng 6 ─æ├ú xß║úy ra chuyß╗çn g├¼ l├ám mß║Ñt lß╗úi thß║┐ ß╗ƒ MT?
+FU-207   MEASURED_BUT_NOT_FIXED       due=2026-08-08 ok  Mß╗æc an to├án ─æß╗â deploy thß╗⌐ chß║ím ─æß║ºu ra
+FU-203   WAIT_LIVE                    due=2026-08-08 ok  gemini-3.5-flash c├│ hß╗ôi phong ─æß╗Ö kh├┤ng
+FU-191   MEASURED_BUT_NOT_FIXED       due=2026-08-08 ok  Nguy├¬n tß║»c cß║»t model an to├án vß╗¢i combo-super
+FU-192   AWAITING_OWNER_OK            due=2026-08-08 ok  Shadow 110 ng├áy, 0 lß║ºn promote ΓÇö l├úng ph├¡
+FU-193   MEASURED_BUT_NOT_FIXED       due=2026-08-08 ok  combo-super kh├┤ng c├│ s├án chß║Ñt l╞░ß╗úng tß╗æi thiß╗âu
+FU-187   DEPLOYED_PENDING_LIVE_VERIFY due=2026-08-08 ok  Tra cß╗⌐u tr╞░ß╗¢c khi hß╗Åi: c╞í chß║┐ ─æ├ú dß╗▒ng, cß║ºn d├╣ng th
+FU-186   WAIT_LIVE                    due=2026-08-08 ok  Theo d├╡i 7 ng├áy sau khi tß║»t lß╗¢p ghi ─æ├¿ + cho 6 lan
+FU-202   WAIT_LIVE                    due=2026-08-09 ok  ─Éo xem gemini-3.5-flash bao giß╗¥ mß╗¢i lß╗ìt top-2 comb
+--- FU-194 ---
+{'id': 'FU-194', 'title': '─É├â ─É├ôNG: nghiß╗çm thu ─æ├¬m ─æß║ºu MT 16:58 / MB 17:58 vß╗¢i pool model mß╗¢i', 'status': 'CLOSED_PASS', 'due': '', 'due_date': None, 'pos': 12757, 'body_start': 12836, 'body_end': 13224, 'heading': '### FU-194 - ─É├â ─É├ôNG: nghiß╗çm thu ─æ├¬m ─æß║ºu MT 16:58 / MB 17:58 vß╗¢i pool model mß╗¢i', 'occurrence_count': 2}
