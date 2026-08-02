@@ -1,0 +1,989 @@
+{
+  "crontab_lien_quan": [
+    "10 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10644_shadow_scoreboard.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log 2>&1",
+    "30 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10646_retrain_guard.py >> /root/Lottery_AI_Test/web/backend/logs/retrain_guard.log 2>&1",
+    "0 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10648_weekly_guard.py >> /root/Lottery_AI_Test/web/backend/logs/weekly_guard.log 2>&1",
+    "44 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10703_output_total_screen.py --region ALL --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10703_screen.log 2>&1  # V10702 CP-OT2: output-total screening shadow (causal, post-predict pre-MB-result)",
+    "40 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10708_mnmt_rule_ranker.py --region ALL >> /root/Lottery_AI_Test/web/backend/logs/v10708_ranker.log 2>&1  # V10708: MN/MT daily rule rerank (truoc doctrine A/B 05:00)",
+    "35 20 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10708_mnmt_rule_ranker.py --region ALL >> /root/Lottery_AI_Test/web/backend/logs/v10708_ranker.log 2>&1  # V10708-EVENING: re-rank NGAY sau MRE 20:15 (du ket qua+verify+cham diem ngay) - snapshot san sang truoc moi luot AI",
+    "25 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10725_champion_selector.py --recommend >> /root/Lottery_AI_Test/web/backend/logs/champion_recommend.log 2>&1",
+    "35 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10733_consensus_freeshadow_shadow.py --days 2 >> /root/Lottery_AI_Test/logs/v10733_consensus.log 2>&1",
+    "40 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 3 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1",
+    "35 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 morning MN live refresh",
+    "55 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MB live refresh",
+    "55 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MT live refresh",
+    "39 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MN pre-draw",
+    "46 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MT pre-draw",
+    "40 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MB >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MB pre-draw",
+    "30 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --settle >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 settle + catchup",
+    "5 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10801_ml_mark_ab_shadow.py --catchup 2 >> /root/Lottery_AI_Test/web/backend/logs/v10801_ml_ab.log 2>&1  # V10801: ML mark A/B shadow (D-1 vs same-day) MT+MB",
+    "10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10803_chase_bias_shadow.py --catchup 3 >> /root/Lottery_AI_Test/web/backend/logs/v10803_chase_bias.log 2>&1  # V10803: chase-bias shadow (duoi so vua no hom truoc) 3 mien",
+    "50 20 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10821_total_v2_shadow.py --catchup 3 >> /root/Lottery_AI_Test/web/backend/logs/v10821_total_v2.log 2>&1  # V10821: total-v2 shadow (coverage+rules) 3 mien",
+    "36 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MN (truoc freeze 15:55 + cutoff /choi 16h)",
+    "46 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MT (sau T-chot 16:54, truoc cutoff 17h)",
+    "40 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MB >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MB (sau T-chot 17:54, truoc cutoff 18h)",
+    "0 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10829_rule_cond_shadow.py --catchup 3 >> /root/Lottery_AI_Test/logs/v10829_rule_cond.log 2>&1  # V10829",
+    "25 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10871_model_quality_ledger.py >> /root/Lottery_AI_Test/logs/v10871_quality_ledger.log 2>&1",
+    "2 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10891_deadline_guard.py >> /root/Lottery_AI_Test/logs/v10891_guard.log 2>&1",
+    "5 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10900_consistency_guard.py >> /root/Lottery_AI_Test/logs/v10900_consistency.log 2>&1"
+  ],
+  "crontab_tong_dong": 71,
+  "training_history_12": [
+    {
+      "date": "2026-08-02",
+      "region": "MB",
+      "model_type": "lstm",
+      "auc": 0.5106,
+      "old_auc": 0.4991,
+      "samples": 100,
+      "status": "OK",
+      "nguon": "guard",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:05:15"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MT",
+      "model_type": "lstm",
+      "auc": 0.5554,
+      "old_auc": 0.5537,
+      "samples": 100,
+      "status": "OK",
+      "nguon": "guard",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:04:57"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MN",
+      "model_type": "lstm",
+      "auc": 0.5137,
+      "old_auc": 0.5095,
+      "samples": 100,
+      "status": "OK",
+      "nguon": "guard",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:04:34"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MB",
+      "model_type": "random-forest",
+      "auc": 0.5017,
+      "old_auc": 0.4883,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:04:04"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MB",
+      "model_type": "xgboost",
+      "auc": 0.4839,
+      "old_auc": 0.4917,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:04:00"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MB",
+      "model_type": "meta-learning",
+      "auc": 0.4768,
+      "old_auc": 0.4769,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:59"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MT",
+      "model_type": "random-forest",
+      "auc": 0.5299,
+      "old_auc": 0.5248,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:40"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MT",
+      "model_type": "xgboost",
+      "auc": 0.5236,
+      "old_auc": 0.5278,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:36"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MT",
+      "model_type": "meta-learning",
+      "auc": 0.5394,
+      "old_auc": 0.5327,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:35"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MN",
+      "model_type": "random-forest",
+      "auc": 0.5039,
+      "old_auc": 0.5041,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:10"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MN",
+      "model_type": "xgboost",
+      "auc": 0.4993,
+      "old_auc": 0.5019,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "",
+      "created_at": "2026-08-02 00:03:07"
+    },
+    {
+      "date": "2026-08-02",
+      "region": "MN",
+      "model_type": "meta-learning",
+      "auc": 0.4892,
+      "old_auc": 0.5115,
+      "samples": 2400,
+      "status": "OK",
+      "nguon": "_retrain_all",
+      "ghi_chu": "AUC TUT: 0.5115 -> 0.4892 (lech -0.0223 < -0.02) — KHONG tu go ve ban cu, cho owner quyet",
+      "created_at": "2026-08-02 00:03:06"
+    }
+  ],
+  "training_theo_ngay": [
+    {
+      "date": "2026-07-05",
+      "n": 12,
+      "ok": 12
+    },
+    {
+      "date": "2026-07-12",
+      "n": 12,
+      "ok": 0
+    },
+    {
+      "date": "2026-07-19",
+      "n": 12,
+      "ok": 12
+    },
+    {
+      "date": "2026-07-26",
+      "n": 12,
+      "ok": 12
+    },
+    {
+      "date": "2026-08-02",
+      "n": 12,
+      "ok": 12
+    }
+  ],
+  "retrain_guard_10": [
+    {
+      "id": 70,
+      "run_at": "2026-08-02T06:30:01.518948+07:00",
+      "newest_model_age_days": 0.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 69,
+      "run_at": "2026-08-02T02:02:38.763822+07:00",
+      "newest_model_age_days": 0.0,
+      "action": "RETRAINED",
+      "detail": "forced: so_model_loi=0/12; retrain_all rc=0; lstm_MN=ok; lstm_MT=ok; lstm_MB=ok"
+    },
+    {
+      "id": 68,
+      "run_at": "2026-08-02T00:05:15.199563+07:00",
+      "newest_model_age_days": 0.0,
+      "action": "RETRAINED",
+      "detail": "forced: so_model_loi=0/12; retrain_all rc=0; lstm_MN=ok; lstm_MT=ok; lstm_MB=ok"
+    },
+    {
+      "id": 67,
+      "run_at": "2026-08-01T23:58:24.440322+07:00",
+      "newest_model_age_days": 6.91,
+      "action": "CHECK_ONLY",
+      "detail": "age report only"
+    },
+    {
+      "id": 66,
+      "run_at": "2026-08-01T06:30:01.706735+07:00",
+      "newest_model_age_days": 6.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 65,
+      "run_at": "2026-07-31T06:30:01.926804+07:00",
+      "newest_model_age_days": 5.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 64,
+      "run_at": "2026-07-30T06:30:01.468937+07:00",
+      "newest_model_age_days": 4.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 63,
+      "run_at": "2026-07-29T06:30:01.845257+07:00",
+      "newest_model_age_days": 3.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 62,
+      "run_at": "2026-07-28T06:30:01.956851+07:00",
+      "newest_model_age_days": 2.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    },
+    {
+      "id": 61,
+      "run_at": "2026-07-27T06:30:01.704157+07:00",
+      "newest_model_age_days": 1.19,
+      "action": "FRESH_SKIP",
+      "detail": "models fresh"
+    }
+  ],
+  "weekly_guard_10": [
+    {
+      "id": 128,
+      "run_at": "2026-08-02T07:00:01.657112+07:00",
+      "job": "optimizer",
+      "age_days": 0.16,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 127,
+      "run_at": "2026-08-02T07:00:01.644231+07:00",
+      "job": "mining",
+      "age_days": 6.27,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 126,
+      "run_at": "2026-08-01T07:00:01.824280+07:00",
+      "job": "optimizer",
+      "age_days": 6.16,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 125,
+      "run_at": "2026-08-01T07:00:01.815399+07:00",
+      "job": "mining",
+      "age_days": 5.27,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 124,
+      "run_at": "2026-07-31T07:00:02.043326+07:00",
+      "job": "optimizer",
+      "age_days": 5.16,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 123,
+      "run_at": "2026-07-31T07:00:02.034676+07:00",
+      "job": "mining",
+      "age_days": 4.27,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 122,
+      "run_at": "2026-07-30T07:00:01.574493+07:00",
+      "job": "optimizer",
+      "age_days": 4.16,
+      "action": "FRESH",
+      "detail": ""
+    },
+    {
+      "id": 121,
+      "run_at": "2026-07-30T07:00:01.565602+07:00",
+      "job": "mining",
+      "age_days": 3.27,
+      "action": "FRESH",
+      "detail": ""
+    }
+  ],
+  "optimizer_marker": {
+    "sua_luc": "2026-08-02 03:15:15",
+    "cu_ngay": 0.6,
+    "noi_dung": "2026-08-02T03:15:15.611466"
+  },
+  "mined_rules_dem": [
+    {
+      "target_region": "MB",
+      "is_active": 1,
+      "n": 35
+    },
+    {
+      "target_region": "MN",
+      "is_active": 1,
+      "n": 35
+    },
+    {
+      "target_region": "MT",
+      "is_active": 1,
+      "n": 35
+    }
+  ],
+  "mined_rules_loi": "no such column: rule_set_version",
+  "mining_log_5": [
+    {
+      "id": 40,
+      "run_date": "2026-07-27",
+      "n_buckets": 21,
+      "n_rules_total": 105,
+      "n_ready_strong": 9,
+      "n_ready_caution": 32,
+      "duration_seconds": 11.45,
+      "status": "SUCCESS",
+      "source_run_id": "run-20260727-003000-e0dcff",
+      "rule_version": "v2026W31",
+      "schedule_slot": "auto",
+      "window_365_end": "2025-07-27",
+      "window_180_end": "2026-01-28",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W31",
+      "n_direct_core": 0,
+      "n_direct_extended": 0,
+      "n_support": 28
+    },
+    {
+      "id": 39,
+      "run_date": "2026-07-27",
+      "n_buckets": 21,
+      "n_rules_total": 105,
+      "n_ready_strong": 9,
+      "n_ready_caution": 32,
+      "duration_seconds": 11.0,
+      "status": "SUCCESS",
+      "source_run_id": null,
+      "rule_version": null,
+      "schedule_slot": null,
+      "window_365_end": null,
+      "window_180_end": null,
+      "status_detail": null,
+      "n_direct_core": 0,
+      "n_direct_extended": 0,
+      "n_support": 0
+    },
+    {
+      "id": 38,
+      "run_date": "2026-07-20",
+      "n_buckets": 21,
+      "n_rules_total": 105,
+      "n_ready_strong": 8,
+      "n_ready_caution": 32,
+      "duration_seconds": 10.73,
+      "status": "SUCCESS",
+      "source_run_id": "run-20260720-113614-9fd597",
+      "rule_version": "v2026W30",
+      "schedule_slot": "manual",
+      "window_365_end": "2025-07-20",
+      "window_180_end": "2026-01-21",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W30",
+      "n_direct_core": 0,
+      "n_direct_extended": 0,
+      "n_support": 25
+    },
+    {
+      "id": 37,
+      "run_date": "2026-07-20",
+      "n_buckets": 21,
+      "n_rules_total": 105,
+      "n_ready_strong": 8,
+      "n_ready_caution": 32,
+      "duration_seconds": 10.3,
+      "status": "SUCCESS",
+      "source_run_id": null,
+      "rule_version": null,
+      "schedule_slot": null,
+      "window_365_end": null,
+      "window_180_end": null,
+      "status_detail": null,
+      "n_direct_core": 0,
+      "n_direct_extended": 0,
+      "n_support": 0
+    },
+    {
+      "id": 36,
+      "run_date": "2026-07-15",
+      "n_buckets": 21,
+      "n_rules_total": 105,
+      "n_ready_strong": 12,
+      "n_ready_caution": 31,
+      "duration_seconds": 12.7,
+      "status": "SUCCESS",
+      "source_run_id": "run-20260715-070001-8cdb7f",
+      "rule_version": "v2026W29",
+      "schedule_slot": "guard",
+      "window_365_end": "2025-07-15",
+      "window_180_end": "2026-01-16",
+      "status_detail": "Tagged 105 rules from _seed_rules as shadow v2026W29",
+      "n_direct_core": 0,
+      "n_direct_extended": 0,
+      "n_support": 27
+    }
+  ],
+  "mined_rule_eff_gan": [
+    {
+      "date": "2026-08-01",
+      "n": 15
+    },
+    {
+      "date": "2026-07-31",
+      "n": 15
+    },
+    {
+      "date": "2026-07-30",
+      "n": 15
+    },
+    {
+      "date": "2026-07-29",
+      "n": 15
+    },
+    {
+      "date": "2026-07-28",
+      "n": 15
+    },
+    {
+      "date": "2026-07-27",
+      "n": 15
+    },
+    {
+      "date": "2026-07-26",
+      "n": 15
+    },
+    {
+      "date": "2026-07-25",
+      "n": 15
+    }
+  ],
+  "mde_ngay": [
+    {
+      "date": "2026-08-01",
+      "n": 71
+    },
+    {
+      "date": "2026-07-31",
+      "n": 74
+    },
+    {
+      "date": "2026-07-30",
+      "n": 78
+    },
+    {
+      "date": "2026-07-29",
+      "n": 77
+    },
+    {
+      "date": "2026-07-28",
+      "n": 81
+    },
+    {
+      "date": "2026-07-27",
+      "n": 81
+    },
+    {
+      "date": "2026-07-26",
+      "n": 80
+    },
+    {
+      "date": "2026-07-25",
+      "n": 81
+    }
+  ],
+  "app_settings_cols": [
+    "id",
+    "category",
+    "setting_key",
+    "setting_value",
+    "description",
+    "updated_at"
+  ],
+  "weights_loi": "no such column: key | no such column: key",
+  "pe_loi": "no such column: date",
+  "re_cols": [
+    "id",
+    "rule_name",
+    "region",
+    "day_of_week",
+    "times_applied",
+    "times_won",
+    "win_rate",
+    "last_applied",
+    "last_updated"
+  ],
+  "rule_eff_dem": {
+    "n": 0
+  },
+  "pattern_rules_dem": [
+    {
+      "is_active": 0,
+      "n": 160
+    }
+  ],
+  "model_progress_cols": [
+    "region",
+    "model",
+    "n_all",
+    "hit_all",
+    "hit_recent30",
+    "hit_prev30",
+    "trend_pp",
+    "base_rate",
+    "edge_pp",
+    "reduced",
+    "status",
+    "note",
+    "updated_at"
+  ],
+  "model_progress_tomtat": {
+    "n": 164
+  },
+  "weakest_model_watch_tomtat": {
+    "n": 57,
+    "maxd": "2026-08-02"
+  },
+  "v10871_model_quality_ledger_cols": [
+    "id",
+    "as_of_date",
+    "model",
+    "roster_kind",
+    "window_start",
+    "n_rows",
+    "n_days",
+    "bt_pct",
+    "pool_bt_pct",
+    "bt_lift_pp",
+    "p_bt",
+    "any_pct",
+    "pool_any_pct",
+    "any_lift_pp",
+    "p_any",
+    "periods_seen",
+    "periods_positive",
+    "period_detail_json",
+    "error_rate_pct",
+    "error_count",
+    "scheduled_count",
+    "avg_latency_sec",
+    "tokens_per_call",
+    "verdict",
+    "verdict_reason",
+    "output_eligible",
+    "diagnostic_only",
+    "owner_approved",
+    "shadow_only",
+    "computed_at_vn"
+  ],
+  "v10871_model_quality_ledger_tomtat": {
+    "n": 175
+  },
+  "edge_gate_daily_cols": [
+    "id",
+    "date",
+    "region",
+    "cua_so_ngay",
+    "dai_dat",
+    "dai_trung",
+    "he_pct",
+    "bua_pct",
+    "loi_the_pp",
+    "z",
+    "hoa_von_pct",
+    "con_thieu_pp",
+    "cong_mo",
+    "ngay_con_can",
+    "output_eligible",
+    "diagnostic_only",
+    "owner_approved",
+    "shadow_only",
+    "created_at"
+  ],
+  "edge_gate_daily_tomtat": {
+    "n": 3
+  },
+  "shadow_scoreboard_cols": [
+    "lane",
+    "rows",
+    "last_date",
+    "days_stale",
+    "alive_status",
+    "generates",
+    "lookahead",
+    "n_settled",
+    "cuu",
+    "pha",
+    "net",
+    "verdict",
+    "note",
+    "updated_at"
+  ],
+  "shadow_scoreboard_tomtat": {
+    "n": 81
+  },
+  "edge_gate_moi": [
+    {
+      "id": 3,
+      "date": "2026-08-01",
+      "region": "MT",
+      "cua_so_ngay": 90,
+      "dai_dat": 221,
+      "dai_trung": 30,
+      "he_pct": 13.57,
+      "bua_pct": 16.49,
+      "loi_the_pp": -2.92,
+      "z": -1.17,
+      "hoa_von_pct": 18.37,
+      "con_thieu_pp": 4.79,
+      "cong_mo": 0,
+      "ngay_con_can": 494,
+      "output_eligible": 0,
+      "diagnostic_only": 1,
+      "owner_approved": 0,
+      "shadow_only": 1,
+      "created_at": "2026-08-01 22:01:25"
+    },
+    {
+      "id": 2,
+      "date": "2026-08-01",
+      "region": "MN",
+      "cua_so_ngay": 90,
+      "dai_dat": 286,
+      "dai_trung": 46,
+      "he_pct": 16.08,
+      "bua_pct": 16.45,
+      "loi_the_pp": -0.36,
+      "z": -0.17,
+      "hoa_von_pct": 18.37,
+      "con_thieu_pp": 2.28,
+      "cong_mo": 0,
+      "ngay_con_can": 380,
+      "output_eligible": 0,
+      "diagnostic_only": 1,
+      "owner_approved": 0,
+      "shadow_only": 1,
+      "created_at": "2026-08-01 22:01:25"
+    },
+    {
+      "id": 1,
+      "date": "2026-08-01",
+      "region": "MB",
+      "cua_so_ngay": 90,
+      "dai_dat": 91,
+      "dai_trung": 15,
+      "he_pct": 16.48,
+      "bua_pct": 23.67,
+      "loi_the_pp": -7.19,
+      "z": -1.61,
+      "hoa_von_pct": 27.55,
+      "con_thieu_pp": 11.07,
+      "cong_mo": 0,
+      "ngay_con_can": 1573,
+      "output_eligible": 0,
+      "diagnostic_only": 1,
+      "owner_approved": 0,
+      "shadow_only": 1,
+      "created_at": "2026-08-01 22:01:25"
+    }
+  ],
+  "ql_loi": "no such column: model_id",
+  "mp_cols": [
+    "region",
+    "model",
+    "n_all",
+    "hit_all",
+    "hit_recent30",
+    "hit_prev30",
+    "trend_pp",
+    "base_rate",
+    "edge_pp",
+    "reduced",
+    "status",
+    "note",
+    "updated_at"
+  ],
+  "mt_loi": "no such column: m.model_id",
+  "wr_loi": "no such column: model",
+  "tuoi_model": [
+    {
+      "file": "_v10952_ket_qua_huan_luyen.json",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MB.pt",
+      "sua_luc": "2026-08-02 02:02",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MB_metrics.json",
+      "sua_luc": "2026-08-02 02:02",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MN.pt",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MN_metrics.json",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MT.pt",
+      "sua_luc": "2026-08-02 02:02",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "lstm_MT_metrics.json",
+      "sua_luc": "2026-08-02 02:02",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "meta_learner_MB.pkl",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "meta_learner_MN.pkl",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "meta_learner_MT.pkl",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MB.joblib",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MB_metrics.json",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MN.joblib",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MN_metrics.json",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MT.joblib",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "random-forest_MT_metrics.json",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MB.joblib",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MB_metrics.json",
+      "sua_luc": "2026-08-02 02:01",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MN.joblib",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MN_metrics.json",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MT.joblib",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    },
+    {
+      "file": "xgboost_MT_metrics.json",
+      "sua_luc": "2026-08-02 02:00",
+      "cu_ngay": 0.65
+    }
+  ],
+  "bang_chet_tomtat": {
+    "model_latency_cost_audit_daily": {
+      "n": 4033,
+      "max_date": "2026-05-06",
+      "cols_date": [
+        "date",
+        "created_at"
+      ]
+    },
+    "pnl_daily_summary": {
+      "n": 14,
+      "max_date": "2026-05-20",
+      "cols_date": [
+        "date",
+        "settled_at"
+      ]
+    },
+    "champion_selector_shadow": {
+      "n": 108,
+      "max_date": "2026-06-15",
+      "cols_date": [
+        "date",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    "v104_shadow_prompt_eval": {
+      "loi": "no such table: v104_shadow_prompt_eval"
+    },
+    "v105_lane_test_control": {
+      "loi": "no such table: v105_lane_test_control"
+    },
+    "money_board_log": {
+      "n": 108,
+      "max_date": "2026-08-02",
+      "cols_date": [
+        "date",
+        "created_at",
+        "scored_at"
+      ]
+    }
+  },
+  "system_health_10": [
+    {
+      "check_name": "postdraw_settle",
+      "category": "MEASURE",
+      "status": "OK",
+      "detail": "V10677 settle 0.9d",
+      "age_hours": 22.1,
+      "last_seen": null,
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "weight_optimizer",
+      "category": "ML",
+      "status": "OK",
+      "detail": "optimizer 0.6d",
+      "age_hours": 13.8,
+      "last_seen": null,
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "retrain_guard",
+      "category": "ML",
+      "status": "OK",
+      "detail": "guard 0.4d",
+      "age_hours": 10.6,
+      "last_seen": "2026-08-02T06:30:01",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "weakest_watch",
+      "category": "MEASURE",
+      "status": "OK",
+      "detail": "weakest_watch 0.3d",
+      "age_hours": 7.8,
+      "last_seen": "2026-08-02T09:15:01",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "shadow_scoreboard",
+      "category": "MEASURE",
+      "status": "OK",
+      "detail": "shadow_scoreboard 0.3d",
+      "age_hours": 7.9,
+      "last_seen": "2026-08-02T09:10:01",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "model_progress",
+      "category": "MEASURE",
+      "status": "OK",
+      "detail": "model_progress 0.3d",
+      "age_hours": 8.0,
+      "last_seen": "2026-08-02T09:05:01",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "slice_health",
+      "category": "MEASURE",
+      "status": "OK",
+      "detail": "slice_health 0.3d",
+      "age_hours": 8.1,
+      "last_seen": "2026-08-02T09:00:02",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "mined_rules",
+      "category": "RULES",
+      "status": "OK",
+      "detail": "mined_rules 7d",
+      "age_hours": 160.6,
+      "last_seen": "2026-07-27T00:30:11",
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "predictions_today",
+      "category": "PREDICT",
+      "status": "OK",
+      "detail": "27 model đã dự đoán",
+      "age_hours": null,
+      "last_seen": null,
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    },
+    {
+      "check_name": "scrape_MB",
+      "category": "DATA",
+      "status": "OK",
+      "detail": "chưa tới giờ xổ",
+      "age_hours": null,
+      "last_seen": null,
+      "updated_at": "2026-08-02T17:05:01.799088+07:00"
+    }
+  ]
+}
