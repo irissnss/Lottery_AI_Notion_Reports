@@ -1,0 +1,484 @@
+{
+  "date": "2026-08-02",
+  "collected_at_vn": "2026-08-02 18:48:25",
+  "sections": {
+    "health": {
+      "vps_now": "2026-08-02 18:48:25",
+      "service_active": "active",
+      "pid": "645169",
+      "active_enter": "Sun 2026-08-02 18:13:33 +07",
+      "api_health_code": "200",
+      "api_health_body": "{\"status\":\"running\",\"app\":\"Lottery AI Prediction\",\"version\":\"V20.3.36\",\"time\":\"2026-08-02T18:48:25.765817+07:00\",\"timezone\":\"Asia/Ho_Chi_Minh (UTC+7)\",\"expected_model_count\":15,\"expected_output_model_count\":15,\"runtime_model_count\":26,\"active_measurement_model_count\":26,\"active_shadow_model_count\":11,\"active_rerank_measurement_model_count\":1,\"active_measured_component_count\":27,\"registry_visible_m"
+    },
+    "journal": {
+      "since": "2026-08-02 05:00:00",
+      "total_lines": 7609,
+      "error_like_count": 24,
+      "traceback_count": 0,
+      "serious_samples": [],
+      "error_samples": [
+        "2026-08-02T10:35:00+0700 lotteryai-aulb python3[597451]: [SCHEDULER] [SHADOW_SUMMARY] MN 2026-08-02: success=11 error=0 persisted=11 missing_rows=[] empty_rows=[]",
+        "2026-08-02T16:30:00+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:30:00,844 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.6s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:30:00+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:30:00,844 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:30:31+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:30:31,823 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.9s) — errors: {'xsdp': '[xsdp] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:30:31+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:30:31,824 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:31:02+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:31:02,331 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:31:02+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:31:02,331 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:31:32+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:31:32,869 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:31:32+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:31:32,870 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:32:03+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:32:03,434 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:32:03+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:32:03,435 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:32:33+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:32:33,957 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:32:33+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:32:33,957 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:33:34+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:33:34,830 - WARNING - [SCRAPE_FAIL] MN 02/08/2026: all concurrent sources empty (0.8s) — errors: {'xsdp': '[xsdp] Không có kết quả MN ngày 02/08/2026",
+        "2026-08-02T16:33:34+0700 lotteryai-aulb python3[597451]: 2026-08-02 16:33:34,830 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MN error=Không thể tải dữ liệu MN ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T16:41:36+0700 lotteryai-aulb python3[597451]: [SCHEDULER] [CASCADE_STAGE_END] region=MT stage=AI_CHAIN done_models=9 success=9 errors=0 duration=400.3s",
+        "2026-08-02T18:30:00+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:30:00,688 - WARNING - [SCRAPE_FAIL] MB 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MB ngày 02/08/2026",
+        "2026-08-02T18:30:00+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:30:00,689 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MB error=Không thể tải dữ liệu MB ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T18:30:31+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:30:31,636 - WARNING - [SCRAPE_FAIL] MB 02/08/2026: all concurrent sources empty (0.9s) — errors: {'xskt': '[xskt] Không có kết quả MB ngày 02/08/2026",
+        "2026-08-02T18:30:31+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:30:31,637 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MB error=Không thể tải dữ liệu MB ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T18:31:02+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:31:02,131 - WARNING - [SCRAPE_FAIL] MB 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xsdp': '[xsdp] Không có kết quả MB ngày 02/08/2026",
+        "2026-08-02T18:31:02+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:31:02,132 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MB error=Không thể tải dữ liệu MB ngày 02/08/2026 (cả 3 nguồn đều thất bại)",
+        "2026-08-02T18:31:32+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:31:32,628 - WARNING - [SCRAPE_FAIL] MB 02/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MB ngày 02/08/2026",
+        "2026-08-02T18:31:32+0700 lotteryai-aulb python3[645169]: 2026-08-02 18:31:32,628 - WARNING - SCRAPE_FAIL date=2026-08-02 region=MB error=Không thể tải dữ liệu MB ngày 02/08/2026 (cả 3 nguồn đều thất bại)"
+      ]
+    },
+    "bundles": [
+      {
+        "region": "MN",
+        "han": "15:45:00",
+        "created_at": "2026-08-02 05:18:43",
+        "gio_chot": "05:18:43",
+        "dung_han": true,
+        "model_count": 15,
+        "bach_thu": "43",
+        "bach_thu_status": "WIN",
+        "lo2": "[\"43\", \"39\"]",
+        "lo2_status": "PARTIAL",
+        "bundle_version": 2,
+        "status": "CHOT"
+      },
+      {
+        "region": "MT",
+        "han": "16:58:00",
+        "created_at": "2026-08-02 16:41:36",
+        "gio_chot": "16:41:36",
+        "dung_han": true,
+        "model_count": 13,
+        "bach_thu": "69",
+        "bach_thu_status": "WIN",
+        "lo2": "[\"69\", \"90\"]",
+        "lo2_status": "PARTIAL",
+        "bundle_version": 2,
+        "status": "CHOT"
+      },
+      {
+        "region": "MB",
+        "han": "17:58:00",
+        "created_at": "2026-08-02 17:37:53",
+        "gio_chot": "17:37:53",
+        "dung_han": true,
+        "model_count": 14,
+        "bach_thu": "52",
+        "bach_thu_status": "WIN",
+        "lo2": "[\"52\", \"13\"]",
+        "lo2_status": "WIN",
+        "bundle_version": 2,
+        "status": "CHOT"
+      }
+    ],
+    "bach_thu_vs_random": [
+      {
+        "region": "MN",
+        "bach_thu": "43",
+        "bach_thu_status": "WIN",
+        "n_stations": 3,
+        "n_unique_tails": 46,
+        "bt_hit_union": true,
+        "bt_hit_any_station": true,
+        "stations_hit": 1,
+        "bua_union_pct": 46.0,
+        "stations": [
+          {
+            "station": "Kiên Giang",
+            "n_tails": 18
+          },
+          {
+            "station": "Tiền Giang",
+            "n_tails": 16
+          },
+          {
+            "station": "Đà Lạt",
+            "n_tails": 17
+          }
+        ],
+        "results_present": true
+      },
+      {
+        "region": "MT",
+        "bach_thu": "69",
+        "bach_thu_status": "WIN",
+        "n_stations": 3,
+        "n_unique_tails": 43,
+        "bt_hit_union": true,
+        "bt_hit_any_station": true,
+        "stations_hit": 2,
+        "bua_union_pct": 43.0,
+        "stations": [
+          {
+            "station": "Khánh Hòa",
+            "n_tails": 18
+          },
+          {
+            "station": "Kon Tum",
+            "n_tails": 17
+          },
+          {
+            "station": "Thừa Thiên Huế",
+            "n_tails": 17
+          }
+        ],
+        "results_present": true
+      },
+      {
+        "region": "MB",
+        "bach_thu": "52",
+        "bach_thu_status": "WIN",
+        "n_stations": 1,
+        "n_unique_tails": 26,
+        "bt_hit_union": true,
+        "bt_hit_any_station": true,
+        "stations_hit": 1,
+        "bua_union_pct": 26.0,
+        "stations": [
+          {
+            "station": "Thái Bình",
+            "n_tails": 26
+          }
+        ],
+        "results_present": true
+      }
+    ],
+    "official_pool": {
+      "ok": true,
+      "ids": [
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-6",
+        "deepseek-reasoner",
+        "gemini-2.5-pro",
+        "gpt-5.4",
+        "glm-5.1",
+        "gpt-oss-120b",
+        "meta-learning",
+        "lstm",
+        "xgboost",
+        "random-forest",
+        "smart-ensemble",
+        "smart-ml",
+        "combo-super"
+      ],
+      "n": 15,
+      "has_gpt54": true,
+      "has_combo_no_token": false,
+      "expected_n": 15,
+      "pass": true
+    },
+    "edge_gate": {
+      "ok": true,
+      "cong_mo_tong": false,
+      "ket_luan": "CHƯA miền nào đủ điều kiện — owner đã chốt 01/08 dừng đặt tiền thật",
+      "nguong": {
+        "loi_the_pp": 3.0,
+        "z": 2.0
+      },
+      "cua_so_90": [
+        {
+          "region": "MB",
+          "ky": 91,
+          "he_pct": 16.48,
+          "bua_pct": 23.69,
+          "loi_the_pp": -7.21,
+          "z": -1.62,
+          "cong_mo": false,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -7.21) và z ≥2.0 (đang -1.62)"
+        },
+        {
+          "region": "MN",
+          "ky": 91,
+          "he_pct": 16.08,
+          "bua_pct": 16.47,
+          "loi_the_pp": -0.38,
+          "z": -0.17,
+          "cong_mo": false,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.38) và z ≥2.0 (đang -0.17)"
+        },
+        {
+          "region": "MT",
+          "ky": 91,
+          "he_pct": 14.48,
+          "bua_pct": 16.5,
+          "loi_the_pp": -2.02,
+          "z": -0.81,
+          "cong_mo": false,
+          "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -2.02) và z ≥2.0 (đang -0.81)"
+        }
+      ]
+    },
+    "training_history": {
+      "date": "2026-08-02",
+      "cols": [
+        "id",
+        "date",
+        "region",
+        "model_type",
+        "auc",
+        "old_auc",
+        "test_loss",
+        "samples",
+        "status",
+        "created_at",
+        "backup_path",
+        "ghi_chu",
+        "nguon"
+      ],
+      "n_rows": 12,
+      "auc_keys": [
+        "auc"
+      ],
+      "auc_present_rows": 12,
+      "auc_missing_rows": 0,
+      "rows": [
+        {
+          "id": 218,
+          "date": "2026-08-02",
+          "region": "MN",
+          "auc": 0.4892,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:06",
+          "backup_path": null
+        },
+        {
+          "id": 219,
+          "date": "2026-08-02",
+          "region": "MN",
+          "auc": 0.4993,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:07",
+          "backup_path": null
+        },
+        {
+          "id": 220,
+          "date": "2026-08-02",
+          "region": "MN",
+          "auc": 0.5039,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:10",
+          "backup_path": null
+        },
+        {
+          "id": 221,
+          "date": "2026-08-02",
+          "region": "MT",
+          "auc": 0.5394,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:35",
+          "backup_path": null
+        },
+        {
+          "id": 222,
+          "date": "2026-08-02",
+          "region": "MT",
+          "auc": 0.5236,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:36",
+          "backup_path": null
+        },
+        {
+          "id": 223,
+          "date": "2026-08-02",
+          "region": "MT",
+          "auc": 0.5299,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:40",
+          "backup_path": null
+        },
+        {
+          "id": 224,
+          "date": "2026-08-02",
+          "region": "MB",
+          "auc": 0.4768,
+          "status": "OK",
+          "created_at": "2026-08-02 00:03:59",
+          "backup_path": null
+        },
+        {
+          "id": 225,
+          "date": "2026-08-02",
+          "region": "MB",
+          "auc": 0.4839,
+          "status": "OK",
+          "created_at": "2026-08-02 00:04:00",
+          "backup_path": null
+        },
+        {
+          "id": 226,
+          "date": "2026-08-02",
+          "region": "MB",
+          "auc": 0.5017,
+          "status": "OK",
+          "created_at": "2026-08-02 00:04:04",
+          "backup_path": null
+        },
+        {
+          "id": 227,
+          "date": "2026-08-02",
+          "region": "MN",
+          "auc": 0.5137,
+          "status": "OK",
+          "created_at": "2026-08-02 00:04:34",
+          "backup_path": null
+        },
+        {
+          "id": 228,
+          "date": "2026-08-02",
+          "region": "MT",
+          "auc": 0.5554,
+          "status": "OK",
+          "created_at": "2026-08-02 00:04:57",
+          "backup_path": null
+        },
+        {
+          "id": 229,
+          "date": "2026-08-02",
+          "region": "MB",
+          "auc": 0.5106,
+          "status": "OK",
+          "created_at": "2026-08-02 00:05:15",
+          "backup_path": null
+        }
+      ]
+    },
+    "consistency_guard": {
+      "ok": true,
+      "n": 16,
+      "summary": {
+        "OK": 16
+      },
+      "rows": [
+        {
+          "check_id": "C1_money_board_output_due",
+          "title": "_v10759_money_board.OUTPUT_DUE khớp mốc FINAL",
+          "status": "OK",
+          "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+          "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+        },
+        {
+          "check_id": "C2_runtime_audit_deadline",
+          "title": "_v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL",
+          "status": "OK",
+          "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+          "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+        },
+        {
+          "check_id": "C3_lane_output_freeze",
+          "title": "_v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL",
+          "status": "OK",
+          "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+          "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+        },
+        {
+          "check_id": "C4_lock_before_final",
+          "title": "khoá /choi chạy trước mốc FINAL",
+          "status": "OK",
+          "expected": "[\"15:43\", \"16:56\", \"17:56\"]",
+          "actual": "[\"15:43\", \"16:56\", \"17:56\"]"
+        },
+        {
+          "check_id": "C5_nghiemthu_lane_time",
+          "title": "giờ lane Nghiệm Thu khai báo khớp crontab",
+          "status": "OK",
+          "expected": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}",
+          "actual": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}"
+        },
+        {
+          "check_id": "C6_lane_slot",
+          "title": "LANE_SLOT khớp crontab lane v10692",
+          "status": "OK",
+          "expected": "\"lane nghỉ từ 01/08 (V10919) — không còn cron\"",
+          "actual": "\"không còn dòng cron nào\""
+        },
+        {
+          "check_id": "C7_settings_vs_seed",
+          "title": "cài đặt đang chạy khớp hạt giống database.py",
+          "status": "OK",
+          "expected": "{}",
+          "actual": "{}"
+        },
+        {
+          "check_id": "C12_bien_2_phut",
+          "title": "khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền",
+          "status": "OK",
+          "expected": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}",
+          "actual": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}"
+        },
+        {
+          "check_id": "C13_lane_bien_bang_khoa",
+          "title": "biên lane bằng đúng giờ khoá /choi",
+          "status": "OK",
+          "expected": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}",
+          "actual": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}"
+        },
+        {
+          "check_id": "C10_freeze_equals_final",
+          "title": "mốc bất động (FREEZE_MARKS) khớp mốc FINAL",
+          "status": "OK",
+          "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+          "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+        },
+        {
+          "check_id": "C11_tchot_before_final",
+          "title": "job T-chốt regen bundle chạy TRƯỚC mốc FINAL",
+          "status": "OK",
+          "expected": "{}",
+          "actual": "{}"
+        },
+        {
+          "check_id": "C8_no_new_utc_table",
+          "title": "không có bảng mới nào lưu UTC ngoài đăng ký",
+          "status": "OK",
+          "expected": "[]",
+          "actual": "[]"
+        },
+        {
+          "check_id": "C9_vn_views_present",
+          "title": "view giờ VN của mọi cột UTC còn nguyên",
+          "status": "OK",
+          "expected": "[]",
+          "actual": "[]"
+        },
+        {
+          "check_id": "C14_tz_khong_chong_cheo",
+          "title": "một cột chỉ được khai MỘT múi giờ trong đăng ký",
+          "status": "OK",
+          "expected": "[]",
+          "actual": "[]"
+        },
+        {
+          "check_id": "C15_cot_khai_VN_dung_khuon",
+          "title": "cột khai giờ VN phải có dấu múi giờ trong dữ liệu",
+          "status": "OK",
+          "expected": "[]",
+          "actual": "[]"
+        },
+        {
+          "check_id": "C16_dang_ky_du",
+          "title": "đăng ký múi giờ có đủ dòng và không rỗng",
+          "status": "OK",
+          "expected": "true",
+          "actual": "true"
+        }
+      ]
+    }
+  }
+}
