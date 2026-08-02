@@ -1,6 +1,6 @@
 # V10957 — LSTM live ket so + lech tai suy luan; QD-015 shadow RF
 
-**Ngày:** 02/08/2026 · **Commit riêng:** `(điền sau push)` · **Commit công khai:** `(điền sau push)` · **Trạng thái:** CHI DOC — không sửa code, không deploy
+**Ngày:** 02/08/2026 · **Commit riêng:** `3ca5d3e` · **Commit công khai:** `7a9d1af` · **Trạng thái:** CHI DOC — không sửa code, không deploy
 
 > Báo cáo theo khung A55.3. Owner ký đóng băng QD-014 tới hết 08/08; phiên này chỉ đọc + ghi quyết định.
 
