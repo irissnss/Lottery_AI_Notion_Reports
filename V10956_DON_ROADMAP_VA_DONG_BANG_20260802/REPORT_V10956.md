@@ -1,14 +1,14 @@
 # V10956 — Dong checkpoint di san + dong bang duong ra so toi 08/08
 
-**Ngay:** 02/08/2026 · **Commit rieng:** eafc33d · **Commit cong khai:** 109d03e · **Trang thai:** CHI TAI LIEU — khong sua code, khong deploy, khong chay phep do
+**Ngay:** 02/08/2026 · **Commit rieng:** eafc33d · **Commit cong khai:** 37250e2 · **Trang thai:** CHI TAI LIEU — khong sua code, khong deploy, khong chay phep do
 
 ---
 
-## 1. Tom tat
+## 1. Tom tat / Tóm tắt
 
 Owner ky hai quyet dinh ngay 02/08: (1) dong het bon checkpoint roadmap qua han (CP-X.1, CP-2.2 + CP-2.3 phu thuoc, CP-4.0, CP-R4) vi da co cong loi the V10945 thay the; (2) dong bang duong ra so cong bo toi het **08/08** (khong doi 15 model official / bo loc combo-super / lop ghi de). Roadmap REDESIGN chuyen archive (`STATUS: CANCELLED`). CROSS_REGION van ACTIVE. Them QD-014 + FU-215. Khong dung Notion.
 
-## 2. Owner yeu cau gi (nguyen van)
+## 2. Owner yêu cầu gì (nguyên văn)
 
 **Quyet dinh 1 — dong bon checkpoint:**
 
@@ -20,7 +20,7 @@ Owner ky hai quyet dinh ngay 02/08: (1) dong het bon checkpoint roadmap qua han 
 
 Ngay ky: 02/08/2026 (gio VN). Boi canh: do 90 ngay he khong hon danh bua o ca ba mien / nam kieu danh, lo 133 trieu tren 579 trieu von; QD-013 dung tien that; cong loi the nguong >=3pp va z>=2.
 
-## 3. Dao boi / phat hien
+## 3. Đào bới / phát hiện
 
 - Bon checkpoint briefing dau phien danh qua han: CP-X.1 (93d), CP-2.2 (92d), CP-4.0 (62d), CP-R4 (49d).
 - CP-2.2 co cong mo "hon +5pp" — thuc te can ~139–180 ngay MN/MT de chung minh 5pp → cong khong bao gio mo noi voi nhip thu thap hien tai.
@@ -33,11 +33,11 @@ Ngay ky: 02/08/2026 (gio VN). Boi canh: do 90 ngay he khong hon danh bua o ca ba
   - CROSS_REGION sau dong: con chuoi CP-2.4→CP-3.x va CP-X.3/X.4/X.7 TIER_3_OWNER_LOCK — owner chua duyet dong.
 - Sau cap nhat: `_v10920_session_start.py` bao **0 checkpoint qua han**.
 
-## 4. Huong xu ly va vi sao chon
+## 4. Hướng xử lý và vì sao chọn
 
 Owner tu chon "Dong het" + "Co" (dong bang). Agent khong de xuat phuong an khac. Thay the do luong: QD-013 + `_v10945_edge_gate.py`. Giu lich su trong file roadmap, chi them trang thai CANCELLED + ly do + ngay 2026-08-02.
 
-## 5. Da lam gi
+## 5. Đã làm gì
 
 | File | Thay doi |
 |---|---|
@@ -52,7 +52,7 @@ Owner tu chon "Dong het" + "Co" (dong bang). Agent khong de xuat phuong an khac.
 
 Backup: lich su giu trong chinh cac file (khong xoa dong cu). Deploy: **khong**. Hash 4 bang khoa: **khong ap dung** (khong dung runtime).
 
-## 6. Cong kiem
+## 6. Cổng kiểm
 
 | Muc | Ket qua |
 |---|---|
@@ -64,7 +64,7 @@ Backup: lich su giu trong chinh cac file (khong xoa dong cu). Deploy: **khong**.
 | governance_seq | **372** |
 | Notion ghi | **Khong dung** (A55.1) |
 
-## 7. Vuong vap
+## 7. Vướng vấp
 
 1. **QD-013 dung schema khac OD** (`owner_noi`/`kiem_code` object) → bo kiem `AttributeError: str has no get`. Xu ly: chuan hoa sang mang + `nguyen_van`/`quyet_dinh`. **Hau qua neu bo qua:** moi lan chay so quyet dinh vo, MD khong co QD-013/014.
 2. **`len()` bi chan trong eval kiem_code** (builtins rong) → doi `OUTPUT_ELIGIBLE_MODELS.__len__() == 15`. **Hau qua neu bo qua:** QD-014 bao TROI oan.
@@ -72,7 +72,7 @@ Backup: lich su giu trong chinh cac file (khong xoa dong cu). Deploy: **khong**.
 4. **OD-20260731-A van TROI 4/4** (moc freeze 15:45/16:53/17:53 vs code 16:58/17:58) — **co san tu truoc**, khong sua code trong phien nay (owner cam).
 5. **Agent song song V10955** — doc lai file truoc khi ghi; dung prepend an toan.
 
-## 8. Go ve
+## 8. Gỡ về
 
 - ROADMAP CROSS_REGION: git checkout ban truoc commit V10956 (dong CANCELLED chi la them chuoi vao o Status).
 - REDESIGN: `move docs/archive/ACTIVE_ROADMAP_REDESIGN_20260531_CANCELLED_20260802.md docs/ACTIVE_ROADMAP_REDESIGN_20260531.md` roi doi STATUS ve ACTIVE + Status CP-R4 cu.
@@ -80,7 +80,7 @@ Backup: lich su giu trong chinh cac file (khong xoa dong cu). Deploy: **khong**.
 - CHANGELOG/SSOT/FU: khong xoa khoi dau — ghi muc "HUY V10956" moi neu can.
 - Thoi gian go: <10 phut (chi tai lieu).
 
-## 9. Theo doi tiep
+## 9. Theo dõi tiếp
 
 | Ma | Viec | Han |
 |---|---|---|
