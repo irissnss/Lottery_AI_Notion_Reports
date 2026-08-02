@@ -1,6 +1,6 @@
 # V10971 — Bàn giao máy mới + tổng hợp ~20 ngày (13/07→02/08) + live 02/08 may vs edge
 
-**Ngày:** 02/08/2026 · **Giờ VN:** ~21:26+ · **Commit riêng / công khai:** điền sau push · **Trạng thái:** CHỈ ĐỌC + báo cáo + gói handoff (không sửa production path chọn số; tôn trọng QD-014)
+**Ngày:** 02/08/2026 · **Giờ VN:** ~21:26+ · **Commit riêng:** 6aca275 · **Commit công khai:** ee75f2c · **Trạng thái:** CHỈ ĐỌC + báo cáo + gói handoff (không sửa production path chọn số; tôn trọng QD-014)
 
 **Nền:** kế thừa V10970 / V10969 — **không** copy nguyên; cửa sổ rộng hơn (~20 ngày) + checklist máy mới.
 
