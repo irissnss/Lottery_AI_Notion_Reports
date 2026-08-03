@@ -1,0 +1,14 @@
+{
+ "edge_fresh": {
+  "out": "{\n \"30\": [\n  {\n   \"region\": \"MB\",\n   \"ky\": 30,\n   \"dai_dat\": 30,\n   \"dai_trung\": 7,\n   \"he_pct\": 23.33,\n   \"bua_pct\": 23.47,\n   \"loi_the_pp\": -0.13,\n   \"z\": -0.02,\n   \"hoa_von_pct\": 27.55,\n   \"con_thieu_pp\": 4.22,\n   \"cong_mo\": false\n  },\n  {\n   \"region\": \"MN\",\n   \"ky\": 30,\n   \"dai_dat\": 95,\n   \"dai_trung\": 15,\n   \"he_pct\": 15.79,\n   \"bua_pct\": 16.32,\n   \"loi_the_pp\": -0.53,\n   \"z\": -0.14,\n   \"hoa_von_pct\": 18.37,\n   \"con_thieu_pp\": 2.58,\n   \"cong_mo\": false\n  },\n  {\n   \"region\": \"MT\",\n   \"ky\": 30,\n   \"dai_dat\": 74,\n   \"dai_trung\": 9,\n   \"he_pct\": 12.16,\n   \"bua_pct\": 16.61,\n   \"loi_the_pp\": -4.45,\n   \"z\": -1.03,\n   \"hoa_von_pct\": 18.37,\n   \"con_thieu_pp\": 6.21,\n   \"cong_mo\": false\n  }\n ],\n \"90\": [\n  {\n   \"region\": \"MB\",\n   \"ky\": 90,\n   \"dai_dat\": 90,\n   \"dai_trung\": 15,\n   \"he_pct\": 16.67,\n   \"bua_pct\": 23.71,\n   \"loi_the_pp\": -7.04,\n   \"z\": -1.57,\n   \"hoa_von_pct\": 27.55,\n   \"con_thieu_pp\": 10.88,\n   \"cong_mo\": false\n  },\n  {\n   \"region\": \"MN\",\n   \"ky\": 90,\n   \"dai_dat\": 283,\n   \"dai_trung\": 46,\n   \"he_pct\": 16.25,\n   \"bua_pct\": 16.46,\n   \"loi_the_pp\": -0.21,\n   \"z\": -0.09,\n   \"hoa_von_pct\": 18.37,\n   \"con_thieu_pp\": 2.11,\n   \"cong_mo\": false\n  },\n  {\n   \"region\": \"MT\",\n   \"ky\": 90,\n   \"dai_dat\": 219,\n   \"dai_trung\": 30,\n   \"he_pct\": 13.7,\n   \"bua_pct\": 16.51,\n   \"loi_the_pp\": -2.81,\n   \"z\": -1.12,\n   \"hoa_von_pct\": 18.37,\n   \"con_thieu_pp\": 4.67,\n   \"cong_mo\": false\n  }\n ]\n}",
+  "err": ""
+ },
+ "lane_scan": {
+  "out": "TONG dong lane het han con ghi tu 01/08: 0",
+  "err": ""
+ },
+ "edge_tbl_after": {
+  "out": "3|2026-08-01|2026-08-01 22:01:25",
+  "err": ""
+ }
+}

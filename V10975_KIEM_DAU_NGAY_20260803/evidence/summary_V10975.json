@@ -1,0 +1,208 @@
+{
+ "phien": "V10975",
+ "ngay": "2026-08-03",
+ "chup_luc": "2026-08-03T08:51:20+07:00",
+ "loai": "kiem/do/tai lieu — khong deploy, khong dung production",
+ "cong_dau_phien": {
+  "checkpoint_qua_han": 0,
+  "roadmap_cho_archive": 0,
+  "fu_treo": 79,
+  "fu_qua_han": 0,
+  "quyet_dinh_toi_han_ra_soat": 0,
+  "quyet_dinh_TROI": 0,
+  "quyet_dinh_hieu_luc": 19,
+  "ba_mat_quy_tac_lech": false
+ },
+ "song": {
+  "health": 200,
+  "version": "V20.3.36",
+  "service": "lottery",
+  "active": true,
+  "pid": 645169,
+  "khoi_dong": "2026-08-02T18:13:33+07:00",
+  "uptime": "14h37m",
+  "journal_traceback_hom_nay": 0,
+  "journal_dong": 181,
+  "scheduler_logs_error_hom_nay": 0,
+  "tu_kiem_nhat_quan": {
+   "ngay": "2026-08-02",
+   "ok": 16,
+   "tong": 16,
+   "luc": "18:05:01"
+  }
+ },
+ "mn_03_08": {
+  "da_chot": true,
+  "gio_chot": "05:20:15",
+  "model_count": 15,
+  "du_15": true,
+  "bach_thu": "64",
+  "lo2": [
+   "64",
+   "25"
+  ],
+  "is_fallback": 0,
+  "generation_method": "weighted_voting_wr",
+  "consensus_level": "strong",
+  "preds_auto_daily_models": 16,
+  "ghi_chu": "16 = 15 official + combo-super (bo gop)"
+ },
+ "mt_mb_03_08": {
+  "models_luc_0500": 7,
+  "ghi_chu": "7 model ML khong ton token; model goi API chay chieu — dung lich, khong thieu"
+ },
+ "ket_qua_02_08": {
+  "lottery_results": {
+   "MN": 3,
+   "MT": 3,
+   "MB": 1
+  },
+  "khop_6_chu_nhat_gan_nhat": true,
+  "model_daily_eval": {
+   "MN": 27,
+   "MT": 27,
+   "MB": 27,
+   "dong_chua_cham": 0,
+   "ghi_luc": "20:20"
+  },
+  "bach_thu": {
+   "MN": {
+    "so": "43",
+    "kq": "WIN"
+   },
+   "MT": {
+    "so": "69",
+    "kq": "WIN"
+   },
+   "MB": {
+    "so": "52",
+    "kq": "WIN"
+   }
+  }
+ },
+ "cong_loi_the": {
+  "nguong_owner": {
+   "loi_the_pp": 3.0,
+   "z": 2.0
+  },
+  "tinh_tuoi_khong_ghi_bang": true,
+  "90": {
+   "MN": {
+    "loi_the_pp": -0.21,
+    "z": -0.09,
+    "cong_mo": false
+   },
+   "MT": {
+    "loi_the_pp": -2.81,
+    "z": -1.12,
+    "cong_mo": false
+   },
+   "MB": {
+    "loi_the_pp": -7.04,
+    "z": -1.57,
+    "cong_mo": false
+   }
+  },
+  "30": {
+   "MN": {
+    "loi_the_pp": -0.53,
+    "z": -0.14,
+    "cong_mo": false
+   },
+   "MT": {
+    "loi_the_pp": -4.45,
+    "z": -1.03,
+    "cong_mo": false
+   },
+   "MB": {
+    "loi_the_pp": -0.13,
+    "z": -0.02,
+    "cong_mo": false
+   }
+  },
+  "bang_edge_gate_daily": {
+   "so_dong": 3,
+   "ngay_moi_nhat": "2026-08-01",
+   "ghi_luc": "2026-08-01 22:01:25",
+   "co_cron": false,
+   "root_cause": "compute_view() chi tinh, chi main() moi ghi()"
+  }
+ },
+ "fu_225": {
+  "diff_dong_khac": 0,
+  "tong_dong": 4002,
+  "byte_vps": 221956,
+  "byte_local": 217954,
+  "giai_thich_lech_byte": "4002 byte = dung so dong -> VPS CRLF, local LF",
+  "marker": {
+   "pageDateAnchor": 2,
+   "blocked_test_bundle": 3,
+   "display_date_anchor": 4
+  },
+  "filter_status": 200,
+  "filter_cache_control": "no-store, no-cache, must-revalidate, max-age=0",
+  "du_doan_test_status": 401,
+  "trang_thai": "DEPLOYED_PENDING_OWNER_VERIFY — chi con cho owner hard-refresh"
+ },
+ "fu_185": {
+  "thu_pham": "web/backend/_mb_advanced_lane_daily.sh",
+  "goi_thang": [
+   "_v10679_full_pool_d_w06_lane.py",
+   "_v10680_topk_strength_lane.py"
+  ],
+  "cron_truc_tiep_da_comment": true,
+  "cron_trung": [
+   "43 17 (dong 52)",
+   "38 17 (dong 66)"
+  ],
+  "xu_huong_dong": {
+   "2026-07-31": 68,
+   "2026-08-01": 19,
+   "2026-08-02": 10,
+   "2026-08-03_toi_0851": 0
+  },
+  "muc_hai": "thap — official_tables_touched=0, output_impact=False, output_eligible=0"
+ },
+ "fu_243": {
+  "MN_03_08_bi_loc_phieu": false,
+  "MN_model_count": 15,
+  "02_08": {
+   "MN": 15,
+   "MT": 13,
+   "MB": 14
+  },
+  "01_08": {
+   "MN": 13,
+   "MT": 13,
+   "MB": 14
+  },
+  "nguong_3_ngay_tuan": "chua cham"
+ },
+ "hash_4_bang_khoa": {
+  "predictions": {
+   "rows": 11592,
+   "sha20": "0b84203853b2aeba70a2"
+  },
+  "final_bundles": {
+   "rows": 469,
+   "sha20": "85dd4a7840a576f7473b"
+  },
+  "lottery_results": {
+   "rows": 15201,
+   "sha20": "06e0bbf0e4da50c8f1bb"
+  },
+  "model_daily_eval": {
+   "rows": 11415,
+   "sha20": "dcfad896d0328071def7"
+  }
+ },
+ "fu_moi": [
+  "FU-244 · KS0810 · Cong loi the khong ghi ngay · han 10/08",
+  "FU-245 · SC0804 · Hook dau phien im 2 ngay · han 04/08"
+ ],
+ "deploy": false,
+ "restart": false,
+ "ghi_db": false,
+ "ghi_notion": false,
+ "redact_count": 0
+}
