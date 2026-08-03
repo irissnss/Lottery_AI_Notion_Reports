@@ -1,0 +1,22 @@
+176:V10879_PREDRAW MT CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này
+227:V10879_PREDRAW MT ĐÃ CHỐT · BT=68 lo2=['68', '95'] lo3=468 xien2=['68', '95'] xien3=None pool=15
+329:V10879_PREDRAW MB ĐÃ CHỐT · BT=19 lo2=['19', '28'] lo3=619 xien2=['19', '28'] xien3=None pool=15
+380:V10879_PREDRAW MB ĐÃ CHỐT TRƯỚC ĐÓ · 19
+554:V10879_PREDRAW MN ĐÃ CHỐT · BT=38 lo2=['38', '16'] lo3=538 xien2=['38', '16'] xien3=['38', '16', '59'] pool=15
+619:V10879_PREDRAW MN ĐÃ CHỐT TRƯỚC ĐÓ · 38
+684:V10879_PREDRAW MT CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này
+749:V10879_PREDRAW MT ĐÃ CHỐT · BT=55 lo2=['55', '15'] lo3=955 xien2=['55', '15'] xien3=['55', '15', '59'] pool=15
+881:V10879_PREDRAW MB CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này
+948:V10879_PREDRAW MB ĐÃ CHỐT · BT=90 lo2=['90', '84'] lo3=490 xien2=['90', '84'] xien3=['90', '84', '52'] pool=15
+1152:V10879_PREDRAW MN ĐÃ CHỐT · BT=39 lo2=['39', '43'] lo3=839 xien2=['39', '43'] xien3=None pool=15
+1221:V10879_PREDRAW MN ĐÃ CHỐT TRƯỚC ĐÓ · 39
+1290:V10879_PREDRAW MT ĐÃ CHỐT · BT=69 lo2=['69', '86'] lo3=069 xien2=['69', '86'] xien3=['69', '86', '90'] pool=15
+1359:V10879_PREDRAW MT ĐÃ CHỐT TRƯỚC ĐÓ · 69
+1497:V10879_PREDRAW MB ĐÃ CHỐT · BT=73 lo2=['73', '52'] lo3=473 xien2=['73', '52'] xien3=['73', '52', '13'] pool=15
+1566:V10879_PREDRAW MB ĐÃ CHỐT TRƯỚC ĐÓ · 73
+1773:V10879_PREDRAW MN ĐÃ CHỐT · BT=64 lo2=['64', '12'] lo3=464 xien2=['64', '12'] xien3=['64', '12', '25'] pool=15
+1842:V10879_PREDRAW MN ĐÃ CHỐT TRƯỚC ĐÓ · 64
+1911:V10879_PREDRAW MT CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này
+1980:V10879_PREDRAW MT ĐÃ CHỐT · BT=64 lo2=['64', '61'] lo3=964 xien2=['64', '61'] xien3=['64', '61', '29'] pool=15
+2118:V10879_PREDRAW MB CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này
+2187:V10879_PREDRAW MB CHƯA ĐỦ ĐIỀU KIỆN · official chưa chốt miền này

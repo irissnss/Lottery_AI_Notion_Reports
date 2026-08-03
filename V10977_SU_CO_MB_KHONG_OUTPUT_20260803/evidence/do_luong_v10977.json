@@ -1,0 +1,1109 @@
+{
+ "gio_may": {
+  "vn": "2026-08-03 19:25:34",
+  "utc": "2026-08-03 12:25:34"
+ },
+ "official_3_mien_0308": [
+  {
+   "id": 641,
+   "date": "2026-08-03",
+   "region": "MB",
+   "bach_thu": "59",
+   "lo2": "[\"59\", \"52\"]",
+   "model_count": 14,
+   "created_at": "2026-08-03 17:44:54"
+  },
+  {
+   "id": 637,
+   "date": "2026-08-03",
+   "region": "MN",
+   "bach_thu": "64",
+   "lo2": "[\"64\", \"25\"]",
+   "model_count": 15,
+   "created_at": "2026-08-03 05:20:15"
+  },
+  {
+   "id": 639,
+   "date": "2026-08-03",
+   "region": "MT",
+   "bach_thu": "64",
+   "lo2": "[\"64\", \"29\"]",
+   "model_count": 13,
+   "created_at": "2026-08-03 16:47:10"
+  }
+ ],
+ "lane_nghiemthu_0308": [
+  {
+   "run_date": "2026-08-03",
+   "region": "MN",
+   "test_bt": "64",
+   "model_count": 15,
+   "created_at": "2026-08-03T06:05:01+07:00"
+  },
+  {
+   "run_date": "2026-08-03",
+   "region": "MT",
+   "test_bt": "64",
+   "model_count": 15,
+   "created_at": "2026-08-03T16:48:01+07:00"
+  }
+ ],
+ "soi_lui_35_ngay": [
+  {
+   "ngay": "2026-06-30",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-01",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-02",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-03",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-04",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-05",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-06",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-07",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-08",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-09",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-10",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-11",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-12",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-13",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-14",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-15",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-16",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-17",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-18",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-19",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-20",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-21",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-22",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-23",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-24",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-25",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-26",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-27",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-28",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-29",
+   "co": [],
+   "thieu": [
+    "MN",
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-30",
+   "co": [
+    "MN"
+   ],
+   "thieu": [
+    "MT",
+    "MB"
+   ]
+  },
+  {
+   "ngay": "2026-07-31",
+   "co": [
+    "MB",
+    "MN",
+    "MT"
+   ],
+   "thieu": []
+  },
+  {
+   "ngay": "2026-08-01",
+   "co": [
+    "MB",
+    "MN",
+    "MT"
+   ],
+   "thieu": []
+  },
+  {
+   "ngay": "2026-08-02",
+   "co": [
+    "MB",
+    "MN",
+    "MT"
+   ],
+   "thieu": []
+  },
+  {
+   "ngay": "2026-08-03",
+   "co": [
+    "MN",
+    "MT"
+   ],
+   "thieu": [
+    "MB"
+   ]
+  }
+ ],
+ "lane_bat_dau_tu": "2026-07-30 (FROZEN_FROM) — truoc do lane chua ton tai",
+ "bien_official_vs_lane": {
+  "MB": [
+   {
+    "ngay": "2026-08-03",
+    "official_chot": "17:44:54",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": -174,
+    "bien_toi_luot_cuoi_MOI_giay": 546
+   },
+   {
+    "ngay": "2026-08-02",
+    "official_chot": "17:37:53",
+    "lane_ghi": "17:38:02",
+    "bien_thuc_te_giay": 9,
+    "bien_toi_luot_cuoi_CU_giay": 247,
+    "bien_toi_luot_cuoi_MOI_giay": 967
+   },
+   {
+    "ngay": "2026-08-01",
+    "official_chot": "17:39:55",
+    "lane_ghi": "17:42:01",
+    "bien_thuc_te_giay": 126,
+    "bien_toi_luot_cuoi_CU_giay": 125,
+    "bien_toi_luot_cuoi_MOI_giay": 845
+   },
+   {
+    "ngay": "2026-07-31",
+    "official_chot": "17:35:27",
+    "lane_ghi": "17:38:01",
+    "bien_thuc_te_giay": 154,
+    "bien_toi_luot_cuoi_CU_giay": 393,
+    "bien_toi_luot_cuoi_MOI_giay": 1113
+   },
+   {
+    "ngay": "2026-07-30",
+    "official_chot": "17:33:40",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 500,
+    "bien_toi_luot_cuoi_MOI_giay": 1220
+   },
+   {
+    "ngay": "2026-07-29",
+    "official_chot": "17:34:26",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 454,
+    "bien_toi_luot_cuoi_MOI_giay": 1174
+   },
+   {
+    "ngay": "2026-07-28",
+    "official_chot": "17:34:37",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 443,
+    "bien_toi_luot_cuoi_MOI_giay": 1163
+   },
+   {
+    "ngay": "2026-07-27",
+    "official_chot": "17:33:53",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 487,
+    "bien_toi_luot_cuoi_MOI_giay": 1207
+   },
+   {
+    "ngay": "2026-07-26",
+    "official_chot": "17:33:44",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 496,
+    "bien_toi_luot_cuoi_MOI_giay": 1216
+   },
+   {
+    "ngay": "2026-07-25",
+    "official_chot": "17:35:35",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 385,
+    "bien_toi_luot_cuoi_MOI_giay": 1105
+   },
+   {
+    "ngay": "2026-07-24",
+    "official_chot": "17:33:57",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 483,
+    "bien_toi_luot_cuoi_MOI_giay": 1203
+   },
+   {
+    "ngay": "2026-07-23",
+    "official_chot": "17:35:41",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 379,
+    "bien_toi_luot_cuoi_MOI_giay": 1099
+   },
+   {
+    "ngay": "2026-07-22",
+    "official_chot": "17:33:25",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 515,
+    "bien_toi_luot_cuoi_MOI_giay": 1235
+   },
+   {
+    "ngay": "2026-07-21",
+    "official_chot": "17:33:39",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 501,
+    "bien_toi_luot_cuoi_MOI_giay": 1221
+   },
+   {
+    "ngay": "2026-07-20",
+    "official_chot": "17:33:23",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 517,
+    "bien_toi_luot_cuoi_MOI_giay": 1237
+   },
+   {
+    "ngay": "2026-07-19",
+    "official_chot": "17:33:00",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 540,
+    "bien_toi_luot_cuoi_MOI_giay": 1260
+   },
+   {
+    "ngay": "2026-07-18",
+    "official_chot": "17:36:39",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 321,
+    "bien_toi_luot_cuoi_MOI_giay": 1041
+   },
+   {
+    "ngay": "2026-07-17",
+    "official_chot": "17:35:22",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 398,
+    "bien_toi_luot_cuoi_MOI_giay": 1118
+   },
+   {
+    "ngay": "2026-07-16",
+    "official_chot": "17:35:15",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 405,
+    "bien_toi_luot_cuoi_MOI_giay": 1125
+   },
+   {
+    "ngay": "2026-07-15",
+    "official_chot": "17:34:44",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 436,
+    "bien_toi_luot_cuoi_MOI_giay": 1156
+   },
+   {
+    "ngay": "2026-07-14",
+    "official_chot": "17:34:40",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 440,
+    "bien_toi_luot_cuoi_MOI_giay": 1160
+   },
+   {
+    "ngay": "2026-07-13",
+    "official_chot": "17:33:52",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 488,
+    "bien_toi_luot_cuoi_MOI_giay": 1208
+   },
+   {
+    "ngay": "2026-07-12",
+    "official_chot": "17:34:59",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 421,
+    "bien_toi_luot_cuoi_MOI_giay": 1141
+   },
+   {
+    "ngay": "2026-07-11",
+    "official_chot": "17:36:46",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 314,
+    "bien_toi_luot_cuoi_MOI_giay": 1034
+   },
+   {
+    "ngay": "2026-07-10",
+    "official_chot": "17:33:34",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 506,
+    "bien_toi_luot_cuoi_MOI_giay": 1226
+   },
+   {
+    "ngay": "2026-07-09",
+    "official_chot": "17:33:19",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 521,
+    "bien_toi_luot_cuoi_MOI_giay": 1241
+   },
+   {
+    "ngay": "2026-07-08",
+    "official_chot": "17:34:18",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 462,
+    "bien_toi_luot_cuoi_MOI_giay": 1182
+   },
+   {
+    "ngay": "2026-07-07",
+    "official_chot": "17:34:12",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 468,
+    "bien_toi_luot_cuoi_MOI_giay": 1188
+   },
+   {
+    "ngay": "2026-07-06",
+    "official_chot": "17:33:59",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 481,
+    "bien_toi_luot_cuoi_MOI_giay": 1201
+   },
+   {
+    "ngay": "2026-07-05",
+    "official_chot": "17:33:28",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 512,
+    "bien_toi_luot_cuoi_MOI_giay": 1232
+   },
+   {
+    "ngay": "2026-07-04",
+    "official_chot": "17:37:39",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 261,
+    "bien_toi_luot_cuoi_MOI_giay": 981
+   },
+   {
+    "ngay": "2026-07-03",
+    "official_chot": "17:33:39",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 501,
+    "bien_toi_luot_cuoi_MOI_giay": 1221
+   },
+   {
+    "ngay": "2026-07-02",
+    "official_chot": "17:34:16",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 464,
+    "bien_toi_luot_cuoi_MOI_giay": 1184
+   },
+   {
+    "ngay": "2026-07-01",
+    "official_chot": "17:34:30",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 450,
+    "bien_toi_luot_cuoi_MOI_giay": 1170
+   },
+   {
+    "ngay": "2026-06-30",
+    "official_chot": "17:35:06",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 414,
+    "bien_toi_luot_cuoi_MOI_giay": 1134
+   }
+  ],
+  "MT": [
+   {
+    "ngay": "2026-08-03",
+    "official_chot": "16:47:10",
+    "lane_ghi": "16:48:01",
+    "bien_thuc_te_giay": 51,
+    "bien_toi_luot_cuoi_CU_giay": 50,
+    "bien_toi_luot_cuoi_MOI_giay": 410
+   },
+   {
+    "ngay": "2026-08-02",
+    "official_chot": "16:41:36",
+    "lane_ghi": "16:44:01",
+    "bien_thuc_te_giay": 145,
+    "bien_toi_luot_cuoi_CU_giay": 384,
+    "bien_toi_luot_cuoi_MOI_giay": 744
+   },
+   {
+    "ngay": "2026-08-01",
+    "official_chot": "16:46:43",
+    "lane_ghi": "16:48:01",
+    "bien_thuc_te_giay": 78,
+    "bien_toi_luot_cuoi_CU_giay": 77,
+    "bien_toi_luot_cuoi_MOI_giay": 437
+   },
+   {
+    "ngay": "2026-07-31",
+    "official_chot": "16:46:52",
+    "lane_ghi": "16:48:01",
+    "bien_thuc_te_giay": 69,
+    "bien_toi_luot_cuoi_CU_giay": 68,
+    "bien_toi_luot_cuoi_MOI_giay": 428
+   },
+   {
+    "ngay": "2026-07-30",
+    "official_chot": "16:39:23",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 517,
+    "bien_toi_luot_cuoi_MOI_giay": 877
+   },
+   {
+    "ngay": "2026-07-29",
+    "official_chot": "16:41:50",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 370,
+    "bien_toi_luot_cuoi_MOI_giay": 730
+   },
+   {
+    "ngay": "2026-07-28",
+    "official_chot": "16:37:23",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 637,
+    "bien_toi_luot_cuoi_MOI_giay": 997
+   },
+   {
+    "ngay": "2026-07-27",
+    "official_chot": "16:42:54",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 306,
+    "bien_toi_luot_cuoi_MOI_giay": 666
+   },
+   {
+    "ngay": "2026-07-26",
+    "official_chot": "16:39:06",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 534,
+    "bien_toi_luot_cuoi_MOI_giay": 894
+   },
+   {
+    "ngay": "2026-07-25",
+    "official_chot": "16:40:50",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 430,
+    "bien_toi_luot_cuoi_MOI_giay": 790
+   },
+   {
+    "ngay": "2026-07-24",
+    "official_chot": "16:43:27",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 273,
+    "bien_toi_luot_cuoi_MOI_giay": 633
+   },
+   {
+    "ngay": "2026-07-23",
+    "official_chot": "16:42:50",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 310,
+    "bien_toi_luot_cuoi_MOI_giay": 670
+   },
+   {
+    "ngay": "2026-07-22",
+    "official_chot": "16:37:25",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 635,
+    "bien_toi_luot_cuoi_MOI_giay": 995
+   },
+   {
+    "ngay": "2026-07-21",
+    "official_chot": "16:39:12",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 528,
+    "bien_toi_luot_cuoi_MOI_giay": 888
+   },
+   {
+    "ngay": "2026-07-20",
+    "official_chot": "16:41:46",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 374,
+    "bien_toi_luot_cuoi_MOI_giay": 734
+   },
+   {
+    "ngay": "2026-07-19",
+    "official_chot": "16:38:47",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 553,
+    "bien_toi_luot_cuoi_MOI_giay": 913
+   },
+   {
+    "ngay": "2026-07-18",
+    "official_chot": "16:43:04",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 296,
+    "bien_toi_luot_cuoi_MOI_giay": 656
+   },
+   {
+    "ngay": "2026-07-17",
+    "official_chot": "16:43:23",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 277,
+    "bien_toi_luot_cuoi_MOI_giay": 637
+   },
+   {
+    "ngay": "2026-07-16",
+    "official_chot": "16:44:32",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 208,
+    "bien_toi_luot_cuoi_MOI_giay": 568
+   },
+   {
+    "ngay": "2026-07-15",
+    "official_chot": "16:39:10",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 530,
+    "bien_toi_luot_cuoi_MOI_giay": 890
+   },
+   {
+    "ngay": "2026-07-14",
+    "official_chot": "16:38:40",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 560,
+    "bien_toi_luot_cuoi_MOI_giay": 920
+   },
+   {
+    "ngay": "2026-07-13",
+    "official_chot": "16:43:50",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 250,
+    "bien_toi_luot_cuoi_MOI_giay": 610
+   },
+   {
+    "ngay": "2026-07-12",
+    "official_chot": "16:38:50",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 550,
+    "bien_toi_luot_cuoi_MOI_giay": 910
+   },
+   {
+    "ngay": "2026-07-11",
+    "official_chot": "16:41:22",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 398,
+    "bien_toi_luot_cuoi_MOI_giay": 758
+   },
+   {
+    "ngay": "2026-07-10",
+    "official_chot": "16:43:29",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 271,
+    "bien_toi_luot_cuoi_MOI_giay": 631
+   },
+   {
+    "ngay": "2026-07-09",
+    "official_chot": "16:40:15",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 465,
+    "bien_toi_luot_cuoi_MOI_giay": 825
+   },
+   {
+    "ngay": "2026-07-08",
+    "official_chot": "16:38:25",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 575,
+    "bien_toi_luot_cuoi_MOI_giay": 935
+   },
+   {
+    "ngay": "2026-07-07",
+    "official_chot": "16:39:24",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 516,
+    "bien_toi_luot_cuoi_MOI_giay": 876
+   },
+   {
+    "ngay": "2026-07-06",
+    "official_chot": "16:42:28",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 332,
+    "bien_toi_luot_cuoi_MOI_giay": 692
+   },
+   {
+    "ngay": "2026-07-05",
+    "official_chot": "16:38:01",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 599,
+    "bien_toi_luot_cuoi_MOI_giay": 959
+   },
+   {
+    "ngay": "2026-07-04",
+    "official_chot": "16:41:17",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 403,
+    "bien_toi_luot_cuoi_MOI_giay": 763
+   },
+   {
+    "ngay": "2026-07-03",
+    "official_chot": "16:40:52",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 428,
+    "bien_toi_luot_cuoi_MOI_giay": 788
+   },
+   {
+    "ngay": "2026-07-02",
+    "official_chot": "16:40:13",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 467,
+    "bien_toi_luot_cuoi_MOI_giay": 827
+   },
+   {
+    "ngay": "2026-07-01",
+    "official_chot": "16:38:32",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 568,
+    "bien_toi_luot_cuoi_MOI_giay": 928
+   },
+   {
+    "ngay": "2026-06-30",
+    "official_chot": "16:37:31",
+    "lane_ghi": null,
+    "bien_thuc_te_giay": null,
+    "bien_toi_luot_cuoi_CU_giay": 629,
+    "bien_toi_luot_cuoi_MOI_giay": 989
+   }
+  ]
+ },
+ "lane_schedule_sau_sua": {
+  "MN": {
+   "runs": "06:05",
+   "last_run": "06:15",
+   "final": "15:45",
+   "draw": "~16:34"
+  },
+  "MT": {
+   "runs": "16:44",
+   "last_run": "16:54",
+   "final": "16:58",
+   "draw": "~17:30"
+  },
+  "MB": {
+   "runs": "17:38",
+   "last_run": "17:54",
+   "final": "17:58",
+   "draw": "~18:31"
+  }
+ },
+ "tu_kiem_18_phep": [
+  {
+   "check_id": "C1_money_board_output_due",
+   "status": "OK",
+   "title": "_v10759_money_board.OUTPUT_DUE khớp mốc FINAL",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C2_runtime_audit_deadline",
+   "status": "OK",
+   "title": "_v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C3_lane_output_freeze",
+   "status": "OK",
+   "title": "_v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C4_lock_before_final",
+   "status": "OK",
+   "title": "khoá /choi chạy trước mốc FINAL",
+   "actual": "[\"15:43\", \"16:56\", \"17:56\"]"
+  },
+  {
+   "check_id": "C5_nghiemthu_lane_time",
+   "status": "OK",
+   "title": "giờ lane Nghiệm Thu khai báo khớp crontab",
+   "actual": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}"
+  },
+  {
+   "check_id": "C17_nghiemthu_co_output",
+   "status": "LECH",
+   "title": "lane Nghiệm Thu ra số ở MỌI miền đã qua mốc FINAL",
+   "actual": "[\"MB: lane trống, official chốt 17:44:54\"]"
+  },
+  {
+   "check_id": "C18_bien_lane_du_rong",
+   "status": "OK",
+   "title": "lượt lane cuối cách giờ official chốt ≥ 300s (7 ngày)",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C6_lane_slot",
+   "status": "OK",
+   "title": "LANE_SLOT khớp crontab lane v10692",
+   "actual": "\"không còn dòng cron nào\""
+  },
+  {
+   "check_id": "C7_settings_vs_seed",
+   "status": "OK",
+   "title": "cài đặt đang chạy khớp hạt giống database.py",
+   "actual": "{}"
+  },
+  {
+   "check_id": "C12_bien_2_phut",
+   "status": "OK",
+   "title": "khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền",
+   "actual": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}"
+  },
+  {
+   "check_id": "C13_lane_bien_bang_khoa",
+   "status": "OK",
+   "title": "biên lane bằng đúng giờ khoá /choi",
+   "actual": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}"
+  },
+  {
+   "check_id": "C10_freeze_equals_final",
+   "status": "OK",
+   "title": "mốc bất động (FREEZE_MARKS) khớp mốc FINAL",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C11_tchot_before_final",
+   "status": "OK",
+   "title": "job T-chốt regen bundle chạy TRƯỚC mốc FINAL",
+   "actual": "{}"
+  },
+  {
+   "check_id": "C8_no_new_utc_table",
+   "status": "OK",
+   "title": "không có bảng mới nào lưu UTC ngoài đăng ký",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C9_vn_views_present",
+   "status": "OK",
+   "title": "view giờ VN của mọi cột UTC còn nguyên",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C14_tz_khong_chong_cheo",
+   "status": "OK",
+   "title": "một cột chỉ được khai MỘT múi giờ trong đăng ký",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C15_cot_khai_VN_dung_khuon",
+   "status": "OK",
+   "title": "cột khai giờ VN phải có dấu múi giờ trong dữ liệu",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C16_dang_ky_du",
+   "status": "OK",
+   "title": "đăng ký múi giờ có đủ dòng và không rỗng",
+   "actual": "true"
+  }
+ ],
+ "khong_sinh_bu": {
+  "so_dong_MB_NGHIEMTHU_0308": 0,
+  "official_MB_nguyen_ven": {
+   "id": 641,
+   "bach_thu": "59",
+   "lo2": "[\"59\", \"52\"]",
+   "model_count": 14,
+   "created_at": "2026-08-03 17:44:54"
+  }
+ },
+ "lane_deherd_0308": [
+  {
+   "run_date": "2026-08-02",
+   "region": "MB",
+   "test_bt": "73",
+   "created_at": "2026-08-02T17:42:01+07:00"
+  },
+  {
+   "run_date": "2026-08-02",
+   "region": "MN",
+   "test_bt": "39",
+   "created_at": "2026-08-02T15:38:01+07:00"
+  },
+  {
+   "run_date": "2026-08-02",
+   "region": "MT",
+   "test_bt": "69",
+   "created_at": "2026-08-02T16:47:02+07:00"
+  },
+  {
+   "run_date": "2026-08-03",
+   "region": "MN",
+   "test_bt": "64",
+   "created_at": "2026-08-03T15:38:01+07:00"
+  },
+  {
+   "run_date": "2026-08-03",
+   "region": "MT",
+   "test_bt": "64",
+   "created_at": "2026-08-03T16:47:01+07:00"
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "truoc": {
+  "predictions": [
+   11632,
+   "b8c9824f4813fe3e"
+  ],
+  "final_bundles": [
+   471,
+   "2daecf094f81b289"
+  ],
+  "lottery_results": [
+   15207,
+   "ad76b64a877ff460"
+  ],
+  "model_daily_eval": [
+   11415,
+   "dae5167c47de30bc"
+  ]
+ },
+ "sau": {
+  "predictions": [
+   11632,
+   "b8c9824f4813fe3e"
+  ],
+  "final_bundles": [
+   471,
+   "2daecf094f81b289"
+  ],
+  "lottery_results": [
+   15207,
+   "ad76b64a877ff460"
+  ],
+  "model_daily_eval": [
+   11415,
+   "dae5167c47de30bc"
+  ]
+ },
+ "pid": "pre_deploy1=645169 post_deploy1=737795 pre_deploy2=737795 post_deploy2=738032",
+ "ghi_chu": "4 bang khoa GIU NGUYEN hoan toan; khong deploy main.py"
+}

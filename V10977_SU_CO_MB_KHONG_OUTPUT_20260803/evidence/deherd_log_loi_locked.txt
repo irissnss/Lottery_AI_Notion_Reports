@@ -1,0 +1,22 @@
+  MT n= 94 official= 31 deherd= 38 wins=16 losses=9
+  MB n= 94 official= 16 deherd= 20 wins=12 losses=8
+V10872_LANE MN {'date': '2026-08-03', 'region': 'MN', 'bt': '64', 'lo2': ['64', '12'], 'official_bt': '64', 'models': 15, 'families': 7}
+V10872_SCOREBOARD n=282 official=30.5% deherd=36.5% wins=38 losses=21 differs=155
+  MN n= 94 official= 39 deherd= 45 wins=10 losses=4
+  MT n= 94 official= 31 deherd= 38 wins=16 losses=9
+  MB n= 94 official= 16 deherd= 20 wins=12 losses=8
+V10872_LANE MT {'date': '2026-08-03', 'region': 'MT', 'bt': '64', 'lo2': ['64', '61'], 'official_bt': None, 'models': 14, 'families': 6}
+V10872_SCOREBOARD n=282 official=30.5% deherd=36.5% wins=38 losses=21 differs=155
+  MN n= 94 official= 39 deherd= 45 wins=10 losses=4
+  MT n= 94 official= 31 deherd= 38 wins=16 losses=9
+  MB n= 94 official= 16 deherd= 20 wins=12 losses=8
+Traceback (most recent call last):
+  File "/root/Lottery_AI_Test/web/backend/_v10872_deherd_selector.py", line 393, in <module>
+    main()
+  File "/root/Lottery_AI_Test/web/backend/_v10872_deherd_selector.py", line 379, in main
+    result = run_day(con, day, region)
+  File "/root/Lottery_AI_Test/web/backend/_v10872_deherd_selector.py", line 255, in run_day
+    _write_lane(con, day, region, bt, lo2, scores,
+  File "/root/Lottery_AI_Test/web/backend/_v10872_deherd_selector.py", line 212, in _write_lane
+    con.execute(
+sqlite3.OperationalError: database is locked
