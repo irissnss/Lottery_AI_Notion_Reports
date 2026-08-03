@@ -518,3 +518,48 @@ tiếp, thì **cảm giác "tuột dần" của owner là có cơ sở vật ch�
 Chỗ cần vá không phải đường ra số — chỗ đó đang tốt. Chỗ cần vá là **cơ chế phát hiện khi một
 phép đo ngừng chạy**. Hiện tại không có cái đó, nên mỗi lần một bảng chết là phải đợi tới khi
 có người ngồi soát tay như phiên này mới lộ ra.
+
+---
+
+## 11. Bổ sung sau khi push — sổ quyết định chuyển từ 0 TRÔI sang 1 TRÔI lúc 19:30
+
+Chạy lại `_v10920_decision_ledger.py` **sau khi** đã push, để xác nhận phiên không làm hỏng gì.
+Kết quả **khác lúc 19:08**:
+
+| lúc | số quyết định | kết quả | exit |
+|---|---|---|---|
+| 19:08 (đầu phiên) | **20** | 0 TRÔI | **0** |
+| 19:30 (cuối phiên) | **21** | **1 TRÔI** | **2** |
+
+**Không phải do phiên này.** Mục mới là **`OD-20260803-B`**, nguyên văn owner ghi trong đó là:
+
+> *"MB /nghiem-thu này không output là sao em? ly do gi sao ma tao lao the em? Riet em mat kiem
+> soat dan thi phai"*
+
+Đây là **việc của phiên V10977** đang chạy song song. Bằng chứng: `git status` cho
+`docs/OWNER_DECISION_LEDGER.json` là **`M` (sửa, chưa commit)** — commit gần nhất chạm file này
+vẫn là `cd95b8f` của V10976 lúc 09:18 sáng. Tức mục đó đang **dở dang trong phiên khác**, chưa
+được commit.
+
+**Phép bị trôi** là mệnh đề số 2 trong 5 mệnh đề của `OD-20260803-B`:
+
+```
+Lane khai lượt chạy CUỐI cho cả ba miền
+LANE_SCHEDULE['MN']['last_run'] == '06:15' and LANE_SCHEDULE['MT']['last_run'] == '16:54'
+  and LANE_SCHEDULE['MB']['last_run'] == '17:54'
+→ LỖI: name 'all' is not defined
+```
+
+Mệnh đề **không chạy được** (môi trường `eval` của bộ kiểm không có sẵn hàm dựng sẵn `all`), và
+bộ kiểm tính "chạy lỗi" = **TRÔI**. Bốn mệnh đề còn lại của mục đó khớp.
+
+**V10978 cố ý KHÔNG sửa:** đây là file đang được phiên V10977 thao tác; sửa vào lúc này là giẫm
+chân và làm mất khả năng quy kết. Ghi nhận lại đúng hiện trạng để phiên V10977 xử trong phiên
+của họ.
+
+**Điều đáng rút ra cho owner:** đây lại đúng một ca *"mệnh đề máy kiểm nhưng không chạy được"* —
+họ hàng gần với loại "xanh giả" mà V10976 vừa dọn sáng nay. Nó **đã bị bắt đúng** (bộ kiểm báo
+đỏ và thoát mã 2 thay vì im lặng), nên lần này cơ chế **hoạt động như thiết kế**.
+
+**Bốn cổng còn lại vẫn nguyên trạng lúc 19:30:** `_v10925_rule_sync_check --check` exit **0** ·
+`_v10921_report_gate.py V10978` exit **0** (đủ 9 phần, đã push). Kết luận ở mục 10 **không đổi**.
