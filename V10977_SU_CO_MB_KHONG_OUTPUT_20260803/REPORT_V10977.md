@@ -284,7 +284,25 @@ vào file log. **Hậu quả nếu bỏ qua:** tưởng hệ mù, đi dựng b�
 thiếu đường phát tín hiệu. Chưa sửa `_v10891` trong phiên này (C17 đã phủ được việc cần kíp) —
 ghi vào FU-252 để cân nhắc cho nó nêu tên mục thay vì chỉ đếm.
 
-### 7.5 Cột `predictions` không có `region`/`model_name`
+### 7.5 Agent tự gây: sổ quyết định TRÔI 1/5 trong ~1 phút, phiên V10978 chạy song song bắt được
+
+Mệnh đề `kiem_code` thứ hai của **OD-20260803-B** viết `all('last_run' in v for v in
+LANE_SCHEDULE.values()) and ...`. Sandbox của `_v10920_decision_ledger.py` **không nạp builtins**,
+nên `all` không tồn tại → `LỖI: name 'all' is not defined` → sổ chuyển từ **0 TRÔI sang 1 TRÔI**
+lúc **19:30**.
+
+Phiên **V10978** (kiểm toán diện cuối ngày, chạy song song) chụp đúng khoảnh khắc đó và đã ghi vào
+báo cáo công khai của họ. Agent tự phát hiện và sửa ngay: đổi sang so sánh trực tiếp ba miền
+(`LANE_SCHEDULE['MN']['last_run'] == '06:15' and ...`), chạy lại lúc **19:31:28** → **khớp 5/5,
+0 TRÔI, exit 0**.
+
+**Hậu quả nếu bỏ qua:** luật nhà nói *"có mục TRÔI thì dừng, xử trước khi làm việc mới"* — để lại
+là chặn phiên sau, và tệ hơn là mệnh đề kiểm không bao giờ chạy được nên quyết định OD-20260803-B
+coi như không có ai canh. **Bài học: mệnh đề `kiem_code` chỉ được dùng toán tử và truy cập thuộc
+tính, không được gọi builtin.** Đã kiểm lại: bốn mệnh đề còn lại của mục này dùng `==`, `and`, và
+một set-comprehension — đều chạy được.
+
+### 7.6 Cột `predictions` không có `region`/`model_name`
 
 Probe đầu tiên chết hai lần vì đoán tên cột. Tên thật là `target_region` và `ai_model`. **Hậu quả
 nếu bỏ qua:** không có — đã bắt ngay tại chỗ. Ghi lại để phiên sau đọc `PRAGMA table_info` trước.
