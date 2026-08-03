@@ -1,0 +1,2218 @@
+{
+ "clock": {
+  "db_localtime": "2026-08-03 19:10:29",
+  "db_utc": "2026-08-03 12:10:29",
+  "shell_vn": "2026-08-03 19:10:29"
+ },
+ "today_vn": "2026-08-03",
+ "service": {
+  "active": "active",
+  "mainpid": "645169",
+  "since": "Sun 2026-08-02 18:13:33 +07",
+  "nrestarts": "0",
+  "health_code": "200",
+  "health_body": "{\"status\":\"running\",\"app\":\"Lottery AI Prediction\",\"version\":\"V20.3.36\",\"time\":\"2026-08-03T19:10:29.202474+07:00\",\"timezone\":\"Asia/Ho_Chi_Minh (UTC+7)\",\"expected_model_count\":15,\"expected_output_model_count\":15,\"runtime_model_count\":26,\"active_measurement_model_count\":26,\"active_shadow_model_count\":11,\"active_rerank_measurement_model_count\":1,\"active_measured_component_count\":27,\"registry_visible_m"
+ },
+ "disk": "/dev/vda1        39G   27G   13G  69% /",
+ "db_bytes": 650698752,
+ "locked_tables": {
+  "predictions": {
+   "rows": 11632,
+   "sha256": "1e11a655e92e3cff219fbd0f046e13c3009d5599e268ed755bc947759d819c19"
+  },
+  "final_bundles": {
+   "rows": 471,
+   "sha256": "8d4606bc1790723d58c00f268a12279dd8d25e2d29036414ab66e3dcce57db76"
+  },
+  "lottery_results": {
+   "rows": 15207,
+   "sha256": "924fd080a0d11f650cf4e5d21dbed415eaf4c5baf2ae4841aa66f1817d5c0163"
+  },
+  "model_daily_eval": {
+   "rows": 11415,
+   "sha256": "4ddf97ab6b682e77bea10ae4e365c2166e43106d3e72da5c7a2c321d80ece286"
+  }
+ },
+ "tz_registry_locked": [
+  {
+   "table_name": "final_bundles",
+   "time_col": "created_at",
+   "stored_tz": "VN",
+   "business_date_col": "date",
+   "vn_view": null
+  },
+  {
+   "table_name": "final_bundles",
+   "time_col": "updated_at",
+   "stored_tz": "VN",
+   "business_date_col": "date",
+   "vn_view": null
+  },
+  {
+   "table_name": "lottery_results",
+   "time_col": "created_at",
+   "stored_tz": "VN",
+   "business_date_col": "date",
+   "vn_view": null
+  },
+  {
+   "table_name": "model_daily_eval",
+   "time_col": "created_at",
+   "stored_tz": "VN",
+   "business_date_col": "date",
+   "vn_view": null
+  },
+  {
+   "table_name": "predictions",
+   "time_col": "created_at",
+   "stored_tz": "VN",
+   "business_date_col": "date",
+   "vn_view": null
+  },
+  {
+   "table_name": "scheduler_logs",
+   "time_col": "log_time",
+   "stored_tz": "UTC",
+   "business_date_col": null,
+   "vn_view": "v_scheduler_logs_vn"
+  }
+ ],
+ "tz_utc_count": 42,
+ "tz_total": 53,
+ "guard": {
+  "last_date": "2026-08-03",
+  "n": 16,
+  "rows": [
+   {
+    "id": 187,
+    "date": "2026-08-03",
+    "check_id": "C10_freeze_equals_final",
+    "title": "mốc bất động (FREEZE_MARKS) khớp mốc FINAL",
+    "status": "OK",
+    "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "note": "lệch nghĩa là mốc FINAL công bố ra ngoài nhưng máy chưa khoá — số còn đổi được",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 188,
+    "date": "2026-08-03",
+    "check_id": "C11_tchot_before_final",
+    "title": "job T-chốt regen bundle chạy TRƯỚC mốc FINAL",
+    "status": "OK",
+    "expected": "{}",
+    "actual": "{}",
+    "note": "T-chốt gọi generate_final_bundle nên có thể ĐỔI SỐ; chạy tại/sau mốc FINAL là phá vỡ lời hứa 'đã xong'",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 185,
+    "date": "2026-08-03",
+    "check_id": "C12_bien_2_phut",
+    "title": "khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền",
+    "status": "OK",
+    "expected": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}",
+    "actual": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}",
+    "note": "owner chốt một con số duy nhất để dễ nhớ; lệch là mất tính nhất quán",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 186,
+    "date": "2026-08-03",
+    "check_id": "C13_lane_bien_bang_khoa",
+    "title": "biên lane bằng đúng giờ khoá /choi",
+    "status": "OK",
+    "expected": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}",
+    "actual": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}",
+    "note": "mọi lane phải xong khi khoá chạy — nếu biên lỏng hơn thì khoá có thể đọc thiếu lane",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 191,
+    "date": "2026-08-03",
+    "check_id": "C14_tz_khong_chong_cheo",
+    "title": "một cột chỉ được khai MỘT múi giờ trong đăng ký",
+    "status": "OK",
+    "expected": "[]",
+    "actual": "[]",
+    "note": "cùng một cột vừa khai UTC vừa khai VN thì mọi chỗ đọc sẽ hiểu khác nhau",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 192,
+    "date": "2026-08-03",
+    "check_id": "C15_cot_khai_VN_dung_khuon",
+    "title": "cột khai giờ VN phải có dấu múi giờ trong dữ liệu",
+    "status": "OK",
+    "expected": "[]",
+    "actual": "[]",
+    "note": "khai VN mà dữ liệu là khuôn SQLite trần thì rất có thể thật ra là UTC — phải kiểm tay bằng mỏ neo trước khi tin",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 193,
+    "date": "2026-08-03",
+    "check_id": "C16_dang_ky_du",
+    "title": "đăng ký múi giờ có đủ dòng và không rỗng",
+    "status": "OK",
+    "expected": "true",
+    "actual": "true",
+    "note": "đăng ký rỗng hoặc thiếu thì không còn nguồn sự thật để tra múi giờ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 178,
+    "date": "2026-08-03",
+    "check_id": "C1_money_board_output_due",
+    "title": "_v10759_money_board.OUTPUT_DUE khớp mốc FINAL",
+    "status": "OK",
+    "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "note": "hạn output phải là một con số duy nhất toàn hệ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 179,
+    "date": "2026-08-03",
+    "check_id": "C2_runtime_audit_deadline",
+    "title": "_v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL",
+    "status": "OK",
+    "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "note": "hạn output phải là một con số duy nhất toàn hệ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 180,
+    "date": "2026-08-03",
+    "check_id": "C3_lane_output_freeze",
+    "title": "_v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL",
+    "status": "OK",
+    "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+    "note": "hạn output phải là một con số duy nhất toàn hệ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 181,
+    "date": "2026-08-03",
+    "check_id": "C4_lock_before_final",
+    "title": "khoá /choi chạy trước mốc FINAL",
+    "status": "OK",
+    "expected": "[\"15:43\", \"16:56\", \"17:56\"]",
+    "actual": "[\"15:43\", \"16:56\", \"17:56\"]",
+    "note": "lệch nghĩa là mốc FINAL mất nghĩa 'đã xong'",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 182,
+    "date": "2026-08-03",
+    "check_id": "C5_nghiemthu_lane_time",
+    "title": "giờ lane Nghiệm Thu khai báo khớp crontab",
+    "status": "OK",
+    "expected": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}",
+    "actual": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}",
+    "note": "trang web lấy giờ từ hằng số này; lệch là nói dối người xem",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 183,
+    "date": "2026-08-03",
+    "check_id": "C6_lane_slot",
+    "title": "LANE_SLOT khớp crontab lane v10692",
+    "status": "OK",
+    "expected": "\"lane nghỉ từ 01/08 (V10919) — không còn cron\"",
+    "actual": "\"không còn dòng cron nào\"",
+    "note": "file giữ lại làm thư viện cho V10861/V10869; phép so giờ không còn đối tượng để so",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 184,
+    "date": "2026-08-03",
+    "check_id": "C7_settings_vs_seed",
+    "title": "cài đặt đang chạy khớp hạt giống database.py",
+    "status": "OK",
+    "expected": "{}",
+    "actual": "{}",
+    "note": "lệch thì lần khởi tạo DB mới sẽ âm thầm quay về giờ cũ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 189,
+    "date": "2026-08-03",
+    "check_id": "C8_no_new_utc_table",
+    "title": "không có bảng mới nào lưu UTC ngoài đăng ký",
+    "status": "OK",
+    "expected": "[]",
+    "actual": "[]",
+    "note": "bảng mới phải dùng DEFAULT (datetime('now','localtime')) hoặc khai vào tz_registry; nếu không thì lại lặp lại lỗi đọc nhầm múi giờ",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   },
+   {
+    "id": 190,
+    "date": "2026-08-03",
+    "check_id": "C9_vn_views_present",
+    "title": "view giờ VN của mọi cột UTC còn nguyên",
+    "status": "OK",
+    "expected": "[]",
+    "actual": "[]",
+    "note": "mất view thì người đọc lại phải tự cộng 7 tiếng và sẽ có lúc quên",
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "computed_at_vn": "2026-08-03T18:05:02+07:00"
+   }
+  ]
+ },
+ "guard_hist": [
+  {
+   "date": "2026-08-03",
+   "ok": 16,
+   "tot": 16
+  },
+  {
+   "date": "2026-08-02",
+   "ok": 16,
+   "tot": 16
+  },
+  {
+   "date": "2026-08-01",
+   "ok": 16,
+   "tot": 16
+  },
+  {
+   "date": "2026-07-31",
+   "ok": 16,
+   "tot": 16
+  }
+ ],
+ "fb_window": {
+  "from": "2026-07-05",
+  "to": "2026-08-03",
+  "n_days": 30
+ },
+ "fb_calendar_days": 30,
+ "chain30": {
+  "matrix": [
+   {
+    "date": "2026-07-05",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-05 04:17:47",
+    "model_count": 15,
+    "bach_thu": "71",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-05",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-05 16:38:01",
+    "model_count": 13,
+    "bach_thu": "49",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-05",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-05 17:33:28",
+    "model_count": 14,
+    "bach_thu": "70",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-06",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-06 04:17:50",
+    "model_count": 15,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-06",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-06 16:42:28",
+    "model_count": 13,
+    "bach_thu": "76",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-06",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-06 17:33:59",
+    "model_count": 14,
+    "bach_thu": "29",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-07",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-07 04:18:46",
+    "model_count": 15,
+    "bach_thu": "30",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-07",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-07 16:39:24",
+    "model_count": 13,
+    "bach_thu": "63",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-07",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-07 17:34:12",
+    "model_count": 14,
+    "bach_thu": "87",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-08",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-08 04:19:33",
+    "model_count": 15,
+    "bach_thu": "61",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-08",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-08 16:38:25",
+    "model_count": 13,
+    "bach_thu": "59",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-08",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-08 17:34:18",
+    "model_count": 14,
+    "bach_thu": "44",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-09",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-09 04:17:42",
+    "model_count": 15,
+    "bach_thu": "13",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-09",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-09 16:40:15",
+    "model_count": 13,
+    "bach_thu": "59",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-09",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-09 17:33:19",
+    "model_count": 14,
+    "bach_thu": "16",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-10",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-10 04:17:30",
+    "model_count": 15,
+    "bach_thu": "69",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-10",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-10 16:43:29",
+    "model_count": 13,
+    "bach_thu": "16",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-10",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-10 17:33:34",
+    "model_count": 12,
+    "bach_thu": "86",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-11",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-11 04:18:39",
+    "model_count": 15,
+    "bach_thu": "75",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-11",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-11 16:41:22",
+    "model_count": 13,
+    "bach_thu": "61",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-11",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-11 17:36:46",
+    "model_count": 12,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-12",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-12 04:19:06",
+    "model_count": 15,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-12",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-12 16:38:50",
+    "model_count": 13,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-12",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-12 17:34:59",
+    "model_count": 12,
+    "bach_thu": "72",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-13",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-13 04:18:54",
+    "model_count": 15,
+    "bach_thu": "94",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-13",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-13 16:43:50",
+    "model_count": 13,
+    "bach_thu": "31",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-13",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-13 17:33:52",
+    "model_count": 13,
+    "bach_thu": "89",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-14",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-14 04:21:46",
+    "model_count": 15,
+    "bach_thu": "12",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-14",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-14 16:38:40",
+    "model_count": 13,
+    "bach_thu": "17",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-14",
+    "region": "MB",
+    "state": "OK",
+    "created_at": "2026-07-14 17:34:40",
+    "model_count": 15,
+    "bach_thu": "51",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-15",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-15 04:17:49",
+    "model_count": 15,
+    "bach_thu": "63",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-15",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-15 16:39:10",
+    "model_count": 13,
+    "bach_thu": "19",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-15",
+    "region": "MB",
+    "state": "OK",
+    "created_at": "2026-07-15 17:34:44",
+    "model_count": 15,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-16",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-16 04:18:40",
+    "model_count": 15,
+    "bach_thu": "72",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-16",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-16 16:44:32",
+    "model_count": 13,
+    "bach_thu": "40",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-16",
+    "region": "MB",
+    "state": "OK",
+    "created_at": "2026-07-16 17:35:15",
+    "model_count": 15,
+    "bach_thu": "69",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-17",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-17 04:18:21",
+    "model_count": 15,
+    "bach_thu": "63",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-17",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-17 16:43:23",
+    "model_count": 13,
+    "bach_thu": "63",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-17",
+    "region": "MB",
+    "state": "OK",
+    "created_at": "2026-07-17 17:35:22",
+    "model_count": 15,
+    "bach_thu": "34",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-18",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-18 04:18:32",
+    "model_count": 15,
+    "bach_thu": "31",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-18",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-18 16:43:04",
+    "model_count": 13,
+    "bach_thu": "41",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-18",
+    "region": "MB",
+    "state": "OK",
+    "created_at": "2026-07-18 17:36:39",
+    "model_count": 15,
+    "bach_thu": "80",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-19",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-19 04:18:41",
+    "model_count": 15,
+    "bach_thu": "90",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-19",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-19 16:38:47",
+    "model_count": 13,
+    "bach_thu": "34",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-19",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-19 17:33:00",
+    "model_count": 14,
+    "bach_thu": "69",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-20",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-20 04:18:21",
+    "model_count": 15,
+    "bach_thu": "26",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-20",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-20 16:41:46",
+    "model_count": 13,
+    "bach_thu": "87",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-20",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-20 17:33:23",
+    "model_count": 14,
+    "bach_thu": "26",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-21",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-21 04:17:53",
+    "model_count": 15,
+    "bach_thu": "04",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-21",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-21 16:39:12",
+    "model_count": 13,
+    "bach_thu": "42",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-21",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-21 17:33:39",
+    "model_count": 14,
+    "bach_thu": "50",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-22",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-22 04:18:26",
+    "model_count": 15,
+    "bach_thu": "70",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-22",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-22 16:37:25",
+    "model_count": 13,
+    "bach_thu": "82",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-22",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-22 17:33:25",
+    "model_count": 14,
+    "bach_thu": "97",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-23",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-23 04:17:23",
+    "model_count": 15,
+    "bach_thu": "07",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-23",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-23 16:42:50",
+    "model_count": 13,
+    "bach_thu": "54",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-23",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-23 17:35:41",
+    "model_count": 14,
+    "bach_thu": "28",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-24",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-24 04:17:23",
+    "model_count": 15,
+    "bach_thu": "08",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-24",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-24 16:43:27",
+    "model_count": 13,
+    "bach_thu": "60",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-24",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-24 17:33:57",
+    "model_count": 13,
+    "bach_thu": "17",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-25",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-25 04:17:48",
+    "model_count": 15,
+    "bach_thu": "92",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-25",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-25 16:40:50",
+    "model_count": 11,
+    "bach_thu": "02",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-25",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-25 17:35:35",
+    "model_count": 13,
+    "bach_thu": "05",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-26",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-26 04:17:29",
+    "model_count": 15,
+    "bach_thu": "50",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-26",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-26 16:39:06",
+    "model_count": 13,
+    "bach_thu": "03",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-26",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-26 17:33:44",
+    "model_count": 14,
+    "bach_thu": "69",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-27",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-27 04:17:41",
+    "model_count": 15,
+    "bach_thu": "42",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-27",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-27 16:42:54",
+    "model_count": 13,
+    "bach_thu": "15",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-27",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-27 17:33:53",
+    "model_count": 14,
+    "bach_thu": "37",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MN",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-28 04:19:04",
+    "model_count": 14,
+    "bach_thu": "95",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-28 16:37:23",
+    "model_count": 13,
+    "bach_thu": "39",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-28 17:34:37",
+    "model_count": 14,
+    "bach_thu": "55",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-29",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-29 04:18:51",
+    "model_count": 15,
+    "bach_thu": "96",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-29",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-29 16:41:50",
+    "model_count": 13,
+    "bach_thu": "15",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-29",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-29 17:34:26",
+    "model_count": 14,
+    "bach_thu": "00",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-30",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-30 04:17:36",
+    "model_count": 15,
+    "bach_thu": "86",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-30",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-30 16:39:23",
+    "model_count": 13,
+    "bach_thu": "20",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-30",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-30 17:33:40",
+    "model_count": 14,
+    "bach_thu": "75",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-31",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-07-31 04:17:57",
+    "model_count": 15,
+    "bach_thu": "09",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-31",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-31 16:46:52",
+    "model_count": 13,
+    "bach_thu": "68",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-07-31",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-07-31 17:35:27",
+    "model_count": 13,
+    "bach_thu": "19",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MN",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-01 05:20:24",
+    "model_count": 13,
+    "bach_thu": "16",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-01 16:46:43",
+    "model_count": 13,
+    "bach_thu": "55",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-01 17:39:55",
+    "model_count": 14,
+    "bach_thu": "90",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-02",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-08-02 05:18:43",
+    "model_count": 15,
+    "bach_thu": "43",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-02",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-02 16:41:36",
+    "model_count": 13,
+    "bach_thu": "69",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-02",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-02 17:37:53",
+    "model_count": 14,
+    "bach_thu": "52",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-03",
+    "region": "MN",
+    "state": "OK",
+    "created_at": "2026-08-03 05:20:15",
+    "model_count": 15,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-03",
+    "region": "MT",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-03 16:47:10",
+    "model_count": 13,
+    "bach_thu": "64",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   },
+   {
+    "date": "2026-08-03",
+    "region": "MB",
+    "state": "THIEUPHIEU",
+    "created_at": "2026-08-03 17:44:54",
+    "model_count": 14,
+    "bach_thu": "59",
+    "lo2_len": 12,
+    "is_fallback": 0,
+    "status": "ACTIVE"
+   }
+  ],
+  "missing": [],
+  "late": [],
+  "thin": [
+   {
+    "date": "2026-07-05",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-05",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-06",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-06",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-07",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-07",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-08",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-08",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-09",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-09",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-10",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-10",
+    "region": "MB",
+    "model_count": 12
+   },
+   {
+    "date": "2026-07-11",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-11",
+    "region": "MB",
+    "model_count": 12
+   },
+   {
+    "date": "2026-07-12",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-12",
+    "region": "MB",
+    "model_count": 12
+   },
+   {
+    "date": "2026-07-13",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-13",
+    "region": "MB",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-14",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-15",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-16",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-17",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-18",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-19",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-19",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-20",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-20",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-21",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-21",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-22",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-22",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-23",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-23",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-24",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-24",
+    "region": "MB",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-25",
+    "region": "MT",
+    "model_count": 11
+   },
+   {
+    "date": "2026-07-25",
+    "region": "MB",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-26",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-26",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-27",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-27",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MN",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-28",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-29",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-29",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-30",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-30",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-07-31",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-07-31",
+    "region": "MB",
+    "model_count": 13
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MN",
+    "model_count": 13
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-08-01",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-08-02",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-08-02",
+    "region": "MB",
+    "model_count": 14
+   },
+   {
+    "date": "2026-08-03",
+    "region": "MT",
+    "model_count": 13
+   },
+   {
+    "date": "2026-08-03",
+    "region": "MB",
+    "model_count": 14
+   }
+  ],
+  "empty": [],
+  "n_cells": 90,
+  "n_missing": 0,
+  "n_late": 0,
+  "n_thin": 57,
+  "n_empty": 0
+ },
+ "model_count_dist": [
+  {
+   "model_count": 11,
+   "n": 1
+  },
+  {
+   "model_count": 12,
+   "n": 3
+  },
+  {
+   "model_count": 13,
+   "n": 34
+  },
+  {
+   "model_count": 14,
+   "n": 19
+  },
+  {
+   "model_count": 15,
+   "n": 33
+  }
+ ],
+ "edge_gate": {
+  "nguong_pp": 3.0,
+  "nguong_z": 2.0,
+  "cua_so": {
+   "30": [
+    {
+     "region": "MB",
+     "cua_so_ngay": 30,
+     "ky": 31,
+     "dai_dat": 31,
+     "dai_trung": 7,
+     "he_pct": 22.58,
+     "bua_pct": 23.45,
+     "loi_the_pp": -0.87,
+     "z": -0.11,
+     "hoa_von_pct": 27.55,
+     "con_thieu_pp": 4.97,
+     "cong_mo": false,
+     "ngay_con_can": 1563,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.87) và z ≥2.0 (đang -0.11)"
+    },
+    {
+     "region": "MN",
+     "cua_so_ngay": 30,
+     "ky": 31,
+     "dai_dat": 98,
+     "dai_trung": 15,
+     "he_pct": 15.31,
+     "bua_pct": 16.31,
+     "loi_the_pp": -1.0,
+     "z": -0.27,
+     "hoa_von_pct": 18.37,
+     "con_thieu_pp": 3.06,
+     "cong_mo": false,
+     "ngay_con_can": 376,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -1.00) và z ≥2.0 (đang -0.27)"
+    },
+    {
+     "region": "MT",
+     "cua_so_ngay": 30,
+     "ky": 31,
+     "dai_dat": 76,
+     "dai_trung": 9,
+     "he_pct": 11.84,
+     "bua_pct": 16.62,
+     "loi_the_pp": -4.78,
+     "z": -1.12,
+     "hoa_von_pct": 18.37,
+     "con_thieu_pp": 6.53,
+     "cong_mo": false,
+     "ngay_con_can": 492,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -4.78) và z ≥2.0 (đang -1.12)"
+    }
+   ],
+   "90": [
+    {
+     "region": "MB",
+     "cua_so_ngay": 90,
+     "ky": 91,
+     "dai_dat": 91,
+     "dai_trung": 15,
+     "he_pct": 16.48,
+     "bua_pct": 23.7,
+     "loi_the_pp": -7.22,
+     "z": -1.62,
+     "hoa_von_pct": 27.55,
+     "con_thieu_pp": 11.07,
+     "cong_mo": false,
+     "ngay_con_can": 1575,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -7.22) và z ≥2.0 (đang -1.62)"
+    },
+    {
+     "region": "MN",
+     "cua_so_ngay": 90,
+     "ky": 91,
+     "dai_dat": 286,
+     "dai_trung": 46,
+     "he_pct": 16.08,
+     "bua_pct": 16.46,
+     "loi_the_pp": -0.37,
+     "z": -0.17,
+     "hoa_von_pct": 18.37,
+     "con_thieu_pp": 2.28,
+     "cong_mo": false,
+     "ngay_con_can": 381,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -0.37) và z ≥2.0 (đang -0.17)"
+    },
+    {
+     "region": "MT",
+     "cua_so_ngay": 90,
+     "ky": 91,
+     "dai_dat": 221,
+     "dai_trung": 30,
+     "he_pct": 13.57,
+     "bua_pct": 16.51,
+     "loi_the_pp": -2.94,
+     "z": -1.18,
+     "hoa_von_pct": 18.37,
+     "con_thieu_pp": 4.79,
+     "cong_mo": false,
+     "ngay_con_can": 494,
+     "ly_do": "chưa đạt: cần hơn bừa ≥3.0pp (đang -2.94) và z ≥2.0 (đang -1.18)"
+    }
+   ]
+  }
+ },
+ "edge_gate_daily_last": [
+  {
+   "id": 1,
+   "date": "2026-08-01",
+   "region": "MB",
+   "cua_so_ngay": 90,
+   "dai_dat": 91,
+   "dai_trung": 15,
+   "he_pct": 16.48,
+   "bua_pct": 23.67,
+   "loi_the_pp": -7.19,
+   "z": -1.61,
+   "hoa_von_pct": 27.55,
+   "con_thieu_pp": 11.07,
+   "cong_mo": 0,
+   "ngay_con_can": 1573,
+   "output_eligible": 0,
+   "diagnostic_only": 1,
+   "owner_approved": 0,
+   "shadow_only": 1,
+   "created_at": "2026-08-01 22:01:25"
+  },
+  {
+   "id": 2,
+   "date": "2026-08-01",
+   "region": "MN",
+   "cua_so_ngay": 90,
+   "dai_dat": 286,
+   "dai_trung": 46,
+   "he_pct": 16.08,
+   "bua_pct": 16.45,
+   "loi_the_pp": -0.36,
+   "z": -0.17,
+   "hoa_von_pct": 18.37,
+   "con_thieu_pp": 2.28,
+   "cong_mo": 0,
+   "ngay_con_can": 380,
+   "output_eligible": 0,
+   "diagnostic_only": 1,
+   "owner_approved": 0,
+   "shadow_only": 1,
+   "created_at": "2026-08-01 22:01:25"
+  },
+  {
+   "id": 3,
+   "date": "2026-08-01",
+   "region": "MT",
+   "cua_so_ngay": 90,
+   "dai_dat": 221,
+   "dai_trung": 30,
+   "he_pct": 13.57,
+   "bua_pct": 16.49,
+   "loi_the_pp": -2.92,
+   "z": -1.17,
+   "hoa_von_pct": 18.37,
+   "con_thieu_pp": 4.79,
+   "cong_mo": 0,
+   "ngay_con_can": 494,
+   "output_eligible": 0,
+   "diagnostic_only": 1,
+   "owner_approved": 0,
+   "shadow_only": 1,
+   "created_at": "2026-08-01 22:01:25"
+  }
+ ],
+ "money_board_log_recent": [
+  {
+   "id": 327,
+   "date": "2026-08-03",
+   "region": "MB",
+   "weekday": 0,
+   "method": "MB_OFFICIAL_BASELINE_CONTROL",
+   "play_style": "song-thủ",
+   "songthu": "null",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "net_long_m": 50.7,
+   "net_older_m": 14.1,
+   "net_recent_m": 36.6,
+   "songthu_pct": 56.0,
+   "n": 52,
+   "stable": 1,
+   "wd_net_m": 0.7,
+   "wd_n": 7,
+   "rec_nhay": null,
+   "official": "[\"59\", \"52\"]",
+   "official_nhay": 0,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-03T18:31:03+07:00",
+   "scored_at": "2026-08-03T18:31:03+07:00"
+  },
+  {
+   "id": 326,
+   "date": "2026-08-03",
+   "region": "MT",
+   "weekday": 0,
+   "method": "MT_ADAPTIVE_EXPLOIT_V1",
+   "play_style": "song-thủ",
+   "songthu": "[\"96\"]",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "net_long_m": 38.5,
+   "net_older_m": 15.6,
+   "net_recent_m": 22.9,
+   "songthu_pct": 59.0,
+   "n": 59,
+   "stable": 1,
+   "wd_net_m": -3.0,
+   "wd_n": 9,
+   "rec_nhay": 0,
+   "official": "[\"64\", \"29\"]",
+   "official_nhay": 0,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-03T18:31:03+07:00",
+   "scored_at": "2026-08-03T18:31:03+07:00"
+  },
+  {
+   "id": 325,
+   "date": "2026-08-03",
+   "region": "MN",
+   "weekday": 0,
+   "method": "MN_BT1_OFFICIAL_V1",
+   "play_style": "bạch-thủ 1 số",
+   "songthu": "[\"64\"]",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "net_long_m": 11.5,
+   "net_older_m": 3.3,
+   "net_recent_m": 8.2,
+   "songthu_pct": 44.0,
+   "n": 52,
+   "stable": 1,
+   "wd_net_m": -19.4,
+   "wd_n": 9,
+   "rec_nhay": 0,
+   "official": "[\"64\", \"25\"]",
+   "official_nhay": 0,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-03T18:31:03+07:00",
+   "scored_at": "2026-08-03T18:31:03+07:00"
+  },
+  {
+   "id": 318,
+   "date": "2026-08-02",
+   "region": "MB",
+   "weekday": 6,
+   "method": "MB_STRENGTH_WEIGHTED_V52_5_2",
+   "play_style": "song-thủ",
+   "songthu": "[\"52\", \"13\"]",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "net_long_m": 45.8,
+   "net_older_m": 16.8,
+   "net_recent_m": 29.0,
+   "songthu_pct": 52.0,
+   "n": 52,
+   "stable": 1,
+   "wd_net_m": 12.7,
+   "wd_n": 8,
+   "rec_nhay": 2,
+   "official": "[\"52\", \"13\"]",
+   "official_nhay": 2,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-02T18:32:05+07:00",
+   "scored_at": "2026-08-02T18:32:05+07:00"
+  },
+  {
+   "id": 317,
+   "date": "2026-08-02",
+   "region": "MT",
+   "weekday": 6,
+   "method": "MT_PRIOR_REGION_CONTEXT_SAFE_V1 + MT_AI_CHAIN_PRESERVATION_V1",
+   "play_style": "song-thủ",
+   "songthu": "[\"64\", \"86\"]",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "net_long_m": -16.4,
+   "net_older_m": -9.8,
+   "net_recent_m": -6.6,
+   "songthu_pct": 58.0,
+   "n": 48,
+   "stable": 0,
+   "wd_net_m": 5.3,
+   "wd_n": 9,
+   "rec_nhay": 1,
+   "official": "[\"69\", \"90\"]",
+   "official_nhay": 1,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-02T18:32:05+07:00",
+   "scored_at": "2026-08-02T18:32:05+07:00"
+  },
+  {
+   "id": 316,
+   "date": "2026-08-02",
+   "region": "MN",
+   "weekday": 6,
+   "method": "MN_BT1_OFFICIAL_V1",
+   "play_style": "bạch-thủ 1 số",
+   "songthu": "[\"43\"]",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "net_long_m": 11.5,
+   "net_older_m": 3.3,
+   "net_recent_m": 8.2,
+   "songthu_pct": 44.0,
+   "n": 52,
+   "stable": 1,
+   "wd_net_m": 19.8,
+   "wd_n": 9,
+   "rec_nhay": 1,
+   "official": "[\"43\", \"39\"]",
+   "official_nhay": 1,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-02T18:32:05+07:00",
+   "scored_at": "2026-08-02T18:32:05+07:00"
+  },
+  {
+   "id": 309,
+   "date": "2026-08-01",
+   "region": "MB",
+   "weekday": 5,
+   "method": "MB_STRENGTH_WEIGHTED_V52_5_2",
+   "play_style": "song-thủ",
+   "songthu": "[\"90\", \"84\"]",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "net_long_m": 38.7,
+   "net_older_m": 9.7,
+   "net_recent_m": 29.0,
+   "songthu_pct": 51.0,
+   "n": 51,
+   "stable": 1,
+   "wd_net_m": 2.9,
+   "wd_n": 8,
+   "rec_nhay": 1,
+   "official": "[\"90\", \"84\"]",
+   "official_nhay": 1,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-01T18:32:04+07:00",
+   "scored_at": "2026-08-01T18:32:04+07:00"
+  },
+  {
+   "id": 308,
+   "date": "2026-08-01",
+   "region": "MT",
+   "weekday": 5,
+   "method": "MT_PRIOR_REGION_CONTEXT_SAFE_V1 + MT_AI_CHAIN_PRESERVATION_V1",
+   "play_style": "song-thủ",
+   "songthu": "[\"55\", \"15\"]",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "net_long_m": -19.5,
+   "net_older_m": -12.9,
+   "net_recent_m": -6.6,
+   "songthu_pct": 56.0,
+   "n": 48,
+   "stable": 0,
+   "wd_net_m": 6.8,
+   "wd_n": 6,
+   "rec_nhay": 0,
+   "official": "[\"55\", \"35\"]",
+   "official_nhay": 0,
+   "drawn": 1,
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "created_at": "2026-08-01T18:32:04+07:00",
+   "scored_at": "2026-08-01T18:32:04+07:00"
+  }
+ ],
+ "money_board_lock_n": 18,
+ "money_board_daily_lock_n": 84,
+ "sched_cols": [
+  "id",
+  "log_time",
+  "log_level",
+  "message",
+  "job_name",
+  "region",
+  "date_str"
+ ],
+ "sched_today": "ERR no such column: status",
+ "journal_lines_today": "341",
+ "journal_traceback": "0",
+ "journal_error": "14",
+ "journal_hit_429": "1",
+ "journal_hit_503": "1",
+ "journal_hit_500": "0",
+ "journal_hit_timeout": "0",
+ "journal_hit_RateLimit": "0",
+ "journal_hit_Overloaded": "0",
+ "journal_tb_sample": "",
+ "journal_err_sample": "Aug 03 16:30:00 lotteryai-aulb python3[645169]: 2026-08-03 16:30:00,797 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:30:31 lotteryai-aulb python3[645169]: 2026-08-03 16:30:31,794 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:31:05 lotteryai-aulb python3[645169]: 2026-08-03 16:31:05,253 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:31:35 lotteryai-aulb python3[645169]: 2026-08-03 16:31:35,804 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:32:06 lotteryai-aulb python3[645169]: 2026-08-03 16:32:06,341 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:32:36 lotteryai-aulb python3[645169]: 2026-08-03 16:32:36,891 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:33:37 lotteryai-aulb python3[645169]: 2026-08-03 16:33:37,731 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:34:38 lotteryai-aulb python3[645169]: 2026-08-03 16:34:38,261 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:35:38 lotteryai-aulb python3[645169]: 2026-08-03 16:35:38,834 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:36:39 lotteryai-aulb python3[645169]: 2026-08-03 16:36:39,428 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:37:40 lotteryai-aulb python3[645169]: 2026-08-03 16:37:40,396 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 16:38:40 lotteryai-aulb python3[645169]: 2026-08-03 16:38:40,937 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 18:30:00 lotteryai-aulb python3[645169]: 2026-08-03 18:30:00,712 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MB error=Không thể tải dữ liệu MB ngày 03",
+ "crontab": "16 0 * * *  /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82 >> /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82.log 2>&1\n# V10919 2026-08-01 owner duyet cho lane nghi: V10637 lane-v2 — không được ai gọi, không UI không API\n# 30 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 -m lane._v10637_lane_v2_daily --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lane_v2_daily.log 2>&1\n0 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_slice_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_health.log 2>&1\n5 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_model_progress.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/model_progress.log 2>&1\n10 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10644_shadow_scoreboard.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log 2>&1\n15 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10645_weakest_watch.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/weakest_watch.log 2>&1\n30 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10646_retrain_guard.py >> /root/Lottery_AI_Test/web/backend/logs/retrain_guard.log 2>&1\n5 * * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10647_system_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/system_health.log 2>&1\n0 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10648_weekly_guard.py >> /root/Lottery_AI_Test/web/backend/logs/weekly_guard.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 20 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10655_bachthu_strength_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10654_lo_selector_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lo_selector.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 30 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10657_total_perweekday_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log 2>&1\n35 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10658_slice_recommendation.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1\n45 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10660_no_lookahead_harness.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 14 >> /root/Lottery_AI_Test/web/backend/logs/no_lookahead.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_reduce_cadence_plan.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/reduce_cadence_plan.log 2>&1\n15 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10661_live_edge_monitor.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 21 >> /root/Lottery_AI_Test/web/backend/logs/live_edge_monitor.log 2>&1\n30 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_mb_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.d",
+ "results_cov": [
+  {
+   "date": "2026-08-03",
+   "n": 6
+  },
+  {
+   "date": "2026-08-02",
+   "n": 7
+  },
+  {
+   "date": "2026-08-01",
+   "n": 8
+  },
+  {
+   "date": "2026-07-31",
+   "n": 6
+  },
+  {
+   "date": "2026-07-30",
+   "n": 7
+  },
+  {
+   "date": "2026-07-29",
+   "n": 6
+  },
+  {
+   "date": "2026-07-28",
+   "n": 6
+  },
+  {
+   "date": "2026-07-27",
+   "n": 6
+  },
+  {
+   "date": "2026-07-26",
+   "n": 7
+  },
+  {
+   "date": "2026-07-25",
+   "n": 8
+  },
+  {
+   "date": "2026-07-24",
+   "n": 6
+  },
+  {
+   "date": "2026-07-23",
+   "n": 7
+  },
+  {
+   "date": "2026-07-22",
+   "n": 6
+  },
+  {
+   "date": "2026-07-21",
+   "n": 6
+  },
+  {
+   "date": "2026-07-20",
+   "n": 6
+  },
+  {
+   "date": "2026-07-19",
+   "n": 7
+  },
+  {
+   "date": "2026-07-18",
+   "n": 8
+  },
+  {
+   "date": "2026-07-17",
+   "n": 6
+  },
+  {
+   "date": "2026-07-16",
+   "n": 7
+  },
+  {
+   "date": "2026-07-15",
+   "n": 6
+  },
+  {
+   "date": "2026-07-14",
+   "n": 6
+  },
+  {
+   "date": "2026-07-13",
+   "n": 6
+  },
+  {
+   "date": "2026-07-12",
+   "n": 7
+  },
+  {
+   "date": "2026-07-11",
+   "n": 8
+  },
+  {
+   "date": "2026-07-10",
+   "n": 6
+  },
+  {
+   "date": "2026-07-09",
+   "n": 7
+  },
+  {
+   "date": "2026-07-08",
+   "n": 6
+  },
+  {
+   "date": "2026-07-07",
+   "n": 6
+  },
+  {
+   "date": "2026-07-06",
+   "n": 6
+  },
+  {
+   "date": "2026-07-05",
+   "n": 7
+  }
+ ]
+}

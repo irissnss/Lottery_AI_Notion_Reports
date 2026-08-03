@@ -1,0 +1,68 @@
+====================================================================================================
+  V10978 — ĐỐI CHIẾU VIỆC TREO (docs/FOLLOW_UP_TRACKER.md)
+====================================================================================================
+
+  tổng FU khác nhau xuất hiện trong tracker: 240
+
+[FU OWNER HỎI ĐÍCH DANH]
+  FU-208   - **Liên quan:** FU-215 · FU-208 · FU-225 · QD-014
+           trạng thái thấy trong khối: (không rõ) | mã đọc: (THIẾU) | hạn: 03/08, 02/08
+  FU-209   | **vi_sao_quan_trong** | Đây là bằng chứng DUY NHẤT trong toàn hệ cho thấy đã từng có lợi thế thật. Nếu tìm được nguyên nhân mất thì có đường khôi ph
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED, OWNER_LOCK | mã đọc: (THIẾU) | hạn: (không ghi)
+  FU-210   ### FU-210 · DO0808-1 · Tháng 6 mất lợi thế MT · hạn 08/08
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED | mã đọc: DO0808-1 | hạn: 08/08
+  FU-213   - **Liên quan:** V10965 · QD-014/016/017 · FU-213 · FU-222
+           trạng thái thấy trong khối: DEPLOYED_PENDING_LIVE_VERIFY, OWNER_LOCK | mã đọc: (THIẾU) | hạn: 03/08, 08/08
+  FU-215   | **lien_ket** | `_v10945_edge_gate.py` · QD-013 · QD-014 · FU-215 |
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED, CLOSED | mã đọc: (THIẾU) | hạn: 03/08
+  FU-216   ### FU-216 · XH0808-1 · Shadow MT RF đơn (QD-015) · hạn 08/08
+           trạng thái thấy trong khối: OWNER_LOCK | mã đọc: XH0808-1 | hạn: 08/08
+  FU-217   ### FU-217 · SC0808-1 · LSTM live lệch suy luận · hạn 08/08
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED | mã đọc: SC0808-1 | hạn: 08/08
+  FU-225   ### FU-225 · UI0803 · Xác minh UI du-doan-test + filter · hạn 03/08 — CẬP NHẬT V10975
+           trạng thái thấy trong khối: CLOSED | mã đọc: UI0803 | hạn: 03/08, 05/08
+  FU-232   ### FU-232 · SC0815-3 · V10938 nửa còn: trọng số số còn WR · hạn 15/08
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED, OWNER_LOCK | mã đọc: SC0815-3 | hạn: 15/08
+  FU-233   ### FU-233 · HT0822-1 · B1 tắt tối ưu trọng số (sau 08/08) · hạn 22/08
+           trạng thái thấy trong khối: OWNER_LOCK | mã đọc: HT0822-1 | hạn: 22/08, 05/09
+  FU-243   ### FU-243 · SC0805 · Canh incomplete bundle do gate · hạn 05/08 — CANH NGÀY 03/08
+           trạng thái thấy trong khối: (không rõ) | mã đọc: SC0805 | hạn: 05/08
+  FU-244   ### FU-244 · KS0810 · Cổng lợi thế không có bản ghi hằng ngày · hạn 10/08
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED | mã đọc: KS0810 | hạn: 10/08, 03/08
+  FU-245   ### FU-245 · SC0804 · Hook đầu phiên im 2 ngày · hạn 04/08
+           trạng thái thấy trong khối: (không rõ) | mã đọc: SC0804 | hạn: 04/08, 10/08
+  FU-250   ### FU-250 · KS0806 · Soát nốt cổng còn thoát 0 khi trượt · hạn 06/08
+           trạng thái thấy trong khối: MEASURED_BUT_NOT_FIXED | mã đọc: KS0806 | hạn: 06/08, 03/08
+
+[ĐẾM THEO DÒNG TIÊU ĐỀ FU]
+  mục TREO (theo dòng tiêu đề)          : 111
+  có mã đọc (§58)                        : 57
+  THIẾU mã đọc (§58)                     : 54
+     FU-001, FU-002, FU-004, FU-026, FU-027, FU-028, FU-029, FU-030, FU-031, FU-033, FU-037, FU-042, FU-043, FU-050, FU-058, FU-069, FU-071, FU-072, FU-073, FU-075, FU-077, FU-084, FU-086, FU-087, FU-088, FU-089, FU-090, FU-094, FU-095, FU-098, FU-145, FU-159, FU-160, FU-163, FU-164, FU-167, FU-170, FU-174, FU-186, FU-194, FU-199, FU-209, FU-211, FU-212, FU-213, FU-215, FU-219, FU-220, FU-222, FU-228, FU-230, FU-231, FU-71, FU-77
+  QUÁ HẠN                                : 1
+     FU-236  hạn 2026-08-02
+  ĐẾN HẠN TRONG 5 NGÀY                   : 13
+     FU-185  hạn 2026-08-03
+     FU-250  hạn 2026-08-06
+     FU-227  hạn 2026-08-08
+     FU-226  hạn 2026-08-08
+     FU-216  hạn 2026-08-08
+     FU-217  hạn 2026-08-08
+     FU-210  hạn 2026-08-08
+     FU-207  hạn 2026-08-08
+     FU-203  hạn 2026-08-08
+     FU-191  hạn 2026-08-08
+     FU-192  hạn 2026-08-08
+     FU-193  hạn 2026-08-08
+     FU-187  hạn 2026-08-08
+
+[ROADMAP CÒN ACTIVE]
+  ACTIVE_ROADMAP_CROSS_REGION_LEAKAGE.md         (không có dòng STATUS)
+      checkpoint có mốc đã qua mà chưa đánh dấu xong: 0
+  ACTIVE_ROADMAP_LEAN_HARVEST_20260619.md        STATUS: ACTIVE
+      checkpoint có mốc đã qua mà chưa đánh dấu xong: 0
+  ACTIVE_ROADMAP_OUTPUT_TOTAL_ADVANCED.md        STATUS: ACTIVE (đợi A/B doctrine MB 19/06; CP-OT3 đã đo âm — KHÔNG đụn
+      checkpoint có mốc đã qua mà chưa đánh dấu xong: 1
+        CP-OT3       2026-06-21  Đo MB 14-30d (BT/lô vs official baseline) | 2026-06-21 | — | nếu net_lift dương 
+  ACTIVE_ROADMAP_STANDARDIZATION_ACCURACY.md     STATUS: ACTIVE
+      checkpoint có mốc đã qua mà chưa đánh dấu xong: 0

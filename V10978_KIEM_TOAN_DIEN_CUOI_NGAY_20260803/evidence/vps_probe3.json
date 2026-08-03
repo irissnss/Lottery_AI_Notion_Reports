@@ -1,0 +1,1111 @@
+{
+ "mb_flags_30d": [
+  {
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "n": 93
+  }
+ ],
+ "mb_flags_all": [
+  {
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "n": 111,
+   "d0": "2026-06-28",
+   "d1": "2026-08-03"
+  }
+ ],
+ "mb_verdict_30d": [
+  {
+   "region": "MB",
+   "verdict": "CHƠI",
+   "n": 16,
+   "stake": 0.0
+  },
+  {
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "n": 15,
+   "stake": 0.0
+  },
+  {
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "n": 16,
+   "stake": 0.0
+  },
+  {
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "n": 11,
+   "stake": 0.0
+  },
+  {
+   "region": "MN",
+   "verdict": "CHƠI",
+   "n": 4,
+   "stake": 0.0
+  },
+  {
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "n": 19,
+   "stake": 0.0
+  },
+  {
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "n": 8,
+   "stake": 0.0
+  },
+  {
+   "region": "MT",
+   "verdict": "CHƠI",
+   "n": 4,
+   "stake": 0.0
+  }
+ ],
+ "mb_30d_rows": [
+  {
+   "date": "2026-08-03",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"59\", \"52\"]"
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"64\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"25\"]"
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"96\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"29\"]"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"52\", \"13\"]",
+   "drawn": 1,
+   "official": "[\"52\", \"13\"]"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MN",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"43\"]",
+   "drawn": 1,
+   "official": "[\"43\", \"39\"]"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"64\", \"86\"]",
+   "drawn": 1,
+   "official": "[\"69\", \"90\"]"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"90\", \"84\"]",
+   "drawn": 1,
+   "official": "[\"90\", \"84\"]"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ Thứ 7 (lock tuần)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"16\", \"38\"]"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"55\", \"15\"]",
+   "drawn": 1,
+   "official": "[\"55\", \"35\"]"
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"19\", \"36\"]",
+   "drawn": 1,
+   "official": "[\"19\", \"28\"]"
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"09\"]",
+   "drawn": 1,
+   "official": "[\"09\", \"64\"]"
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"49\", \"68\"]",
+   "drawn": 1,
+   "official": "[\"68\", \"95\"]"
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"75\", \"86\"]",
+   "drawn": 1,
+   "official": "[\"75\", \"86\"]"
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"86\"]",
+   "drawn": 1,
+   "official": "[\"86\", \"31\"]"
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"20\", \"34\"]",
+   "drawn": 1,
+   "official": "[\"20\", \"54\"]"
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"00\", \"12\"]",
+   "drawn": 1,
+   "official": "[\"00\", \"40\"]"
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"96\"]",
+   "drawn": 1,
+   "official": "[\"96\", \"32\"]"
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"20\", \"32\"]",
+   "drawn": 1,
+   "official": "[\"15\", \"32\"]"
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"05\", \"69\"]",
+   "drawn": 1,
+   "official": "[\"55\", \"05\"]"
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"95\"]",
+   "drawn": 1,
+   "official": "[\"95\", \"54\"]"
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"31\"]",
+   "drawn": 1,
+   "official": "[\"39\", \"87\"]"
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"37\", \"14\"]",
+   "drawn": 1,
+   "official": "[\"37\", \"16\"]"
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"42\"]",
+   "drawn": 1,
+   "official": "[\"42\", \"32\"]"
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"15\", \"32\"]",
+   "drawn": 1,
+   "official": "[\"15\", \"25\"]"
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"69\", \"35\"]"
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"50\"]",
+   "drawn": 1,
+   "official": "[\"50\", \"14\"]"
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"03\", \"40\"]",
+   "drawn": 1,
+   "official": "[\"03\", \"44\"]"
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"05\", \"52\"]"
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ Thứ 7 (lock tuần)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"92\", \"94\"]"
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"74\", \"02\"]",
+   "drawn": 1,
+   "official": "[\"02\", \"39\"]"
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"60\"]",
+   "drawn": 1,
+   "official": "[\"17\", \"75\"]"
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"08\"]",
+   "drawn": 1,
+   "official": "[\"08\", \"54\"]"
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"54\", \"60\"]",
+   "drawn": 1,
+   "official": "[\"60\", \"96\"]"
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"28\", \"32\"]"
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"07\"]",
+   "drawn": 1,
+   "official": "[\"07\", \"12\"]"
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"68\", \"54\"]",
+   "drawn": 1,
+   "official": "[\"54\", \"61\"]"
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"97\", \"82\"]"
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"70\"]",
+   "drawn": 1,
+   "official": "[\"70\", \"20\"]"
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"60\", \"82\"]",
+   "drawn": 1,
+   "official": "[\"82\", \"09\"]"
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"48\", \"57\"]",
+   "drawn": 1,
+   "official": "[\"50\", \"09\"]"
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"04\"]",
+   "drawn": 1,
+   "official": "[\"04\", \"28\"]"
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"36\", \"89\"]",
+   "drawn": 1,
+   "official": "[\"42\", \"89\"]"
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"46\", \"69\"]",
+   "drawn": 1,
+   "official": "[\"26\", \"38\"]"
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"26\"]",
+   "drawn": 1,
+   "official": "[\"26\", \"68\"]"
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"87\", \"81\"]",
+   "drawn": 1,
+   "official": "[\"87\", \"58\"]"
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"69\", \"93\"]",
+   "drawn": 1,
+   "official": "[\"69\", \"46\"]"
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"90\"]",
+   "drawn": 1,
+   "official": "[\"90\", \"50\"]"
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"41\", \"34\"]",
+   "drawn": 1,
+   "official": "[\"34\", \"67\"]"
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"80\", \"34\"]",
+   "drawn": 1,
+   "official": "[\"80\", \"93\"]"
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ Thứ 7 (lock tuần)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"31\", \"67\"]"
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"63\", \"41\"]",
+   "drawn": 1,
+   "official": "[\"41\", \"46\"]"
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"34\", \"75\"]",
+   "drawn": 1,
+   "official": "[\"34\", \"86\"]"
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"63\"]",
+   "drawn": 1,
+   "official": "[\"63\", \"34\"]"
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"94\", \"63\"]",
+   "drawn": 1,
+   "official": "[\"63\", \"84\"]"
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"69\", \"64\"]",
+   "drawn": 1,
+   "official": "[\"69\", \"32\"]"
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"72\"]",
+   "drawn": 1,
+   "official": "[\"72\", \"96\"]"
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"19\", \"40\"]",
+   "drawn": 1,
+   "official": "[\"40\", \"57\"]"
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"64\", \"51\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"92\"]"
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"63\"]",
+   "drawn": 1,
+   "official": "[\"63\", \"19\"]"
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"17\", \"19\"]",
+   "drawn": 1,
+   "official": "[\"19\", \"39\"]"
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"51\", \"16\"]",
+   "drawn": 1,
+   "official": "[\"51\", \"36\"]"
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"12\"]",
+   "drawn": 1,
+   "official": "[\"12\", \"04\"]"
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"31\", \"45\"]",
+   "drawn": 1,
+   "official": "[\"17\", \"59\"]"
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MB",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"41\", \"31\"]",
+   "drawn": 1,
+   "official": "[\"89\", \"44\"]"
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"94\"]",
+   "drawn": 1,
+   "official": "[\"94\", \"65\"]"
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MT",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"39\", \"31\"]",
+   "drawn": 1,
+   "official": "[\"31\", \"97\"]"
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"56\", \"64\"]",
+   "drawn": 1,
+   "official": "[\"72\", \"17\"]"
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"64\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"49\"]"
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MT",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "songthu": "[\"94\", \"63\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"10\"]"
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"86\", \"49\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"38\"]"
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MN",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ Thứ 7 (lock tuần)",
+   "songthu": "null",
+   "drawn": 1,
+   "official": "[\"75\", \"95\"]"
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"16\", \"64\"]",
+   "drawn": 1,
+   "official": "[\"61\", \"63\"]"
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"16\", \"74\"]",
+   "drawn": 1,
+   "official": "[\"86\", \"36\"]"
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MN",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"69\"]",
+   "drawn": 1,
+   "official": "[\"69\", \"36\"]"
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"59\", \"40\"]",
+   "drawn": 1,
+   "official": "[\"16\", \"85\"]"
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"13\", \"64\"]",
+   "drawn": 1,
+   "official": "[\"16\", \"74\"]"
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"13\"]",
+   "drawn": 1,
+   "official": "[\"13\", \"02\"]"
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"59\", \"86\"]",
+   "drawn": 1,
+   "official": "[\"59\", \"40\"]"
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"59\"]",
+   "drawn": 1,
+   "official": "[\"44\", \"10\"]"
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"61\"]",
+   "drawn": 1,
+   "official": "[\"61\", \"42\"]"
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"63\", \"37\"]",
+   "drawn": 1,
+   "official": "[\"59\", \"41\"]"
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"16\", \"59\"]",
+   "drawn": 1,
+   "official": "[\"87\", \"73\"]"
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MN",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"30\"]",
+   "drawn": 1,
+   "official": "[\"30\", \"23\"]"
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MT",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"76\", \"64\"]",
+   "drawn": 1,
+   "official": "[\"63\", \"37\"]"
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"48\", \"87\"]",
+   "drawn": 1,
+   "official": "[\"29\", \"42\"]"
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"64\"]",
+   "drawn": 1,
+   "official": "[\"64\", \"30\"]"
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MT",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"49\", \"65\"]",
+   "drawn": 1,
+   "official": "[\"76\", \"33\"]"
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"68\", \"13\"]",
+   "drawn": 1,
+   "official": "[\"70\", \"61\"]"
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MN",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"65\", \"79\"]",
+   "drawn": 1,
+   "official": "[\"71\", \"96\"]"
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MT",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"68\", \"53\"]",
+   "drawn": 1,
+   "official": "[\"49\", \"53\"]"
+  },
+  {
+   "date": "2026-07-04",
+   "region": "MB",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "songthu": "[\"26\", \"87\"]",
+   "drawn": 1,
+   "official": "[\"29\", \"62\"]"
+  },
+  {
+   "date": "2026-07-04",
+   "region": "MN",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"59\", \"39\"]",
+   "drawn": 1,
+   "official": "[\"68\", \"56\"]"
+  },
+  {
+   "date": "2026-07-04",
+   "region": "MT",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "songthu": "[\"21\", \"34\"]",
+   "drawn": 1,
+   "official": "[\"98\", \"34\"]"
+  }
+ ],
+ "pnl_daily_summary_last": [
+  {
+   "date": "2026-05-20",
+   "mn_cost": 2700000,
+   "mn_payout": 4900000,
+   "mt_cost": 1800000,
+   "mt_payout": 4900000,
+   "total_cost": 4500000,
+   "total_payout": 9800000,
+   "net": 5300000,
+   "wallet_balance_after": 27300000,
+   "settled_at": "2026-05-20T19:10:11.965224+07:00"
+  },
+  {
+   "date": "2026-05-19",
+   "mn_cost": 1800000,
+   "mn_payout": 4900000,
+   "mt_cost": 1800000,
+   "mt_payout": 0,
+   "total_cost": 3600000,
+   "total_payout": 4900000,
+   "net": 1300000,
+   "wallet_balance_after": 22000000,
+   "settled_at": "2026-05-19T20:19:23.231213+07:00"
+  },
+  {
+   "date": "2026-05-18",
+   "mn_cost": 2700000,
+   "mn_payout": 9800000,
+   "mt_cost": 1800000,
+   "mt_payout": 0,
+   "total_cost": 4500000,
+   "total_payout": 9800000,
+   "net": 5300000,
+   "wallet_balance_after": 20700000,
+   "settled_at": "2026-05-19T20:18:13.834503+07:00"
+  },
+  {
+   "date": "2026-05-17",
+   "mn_cost": 2700000,
+   "mn_payout": 4900000,
+   "mt_cost": 2700000,
+   "mt_payout": 0,
+   "total_cost": 5400000,
+   "total_payout": 4900000,
+   "net": -500000,
+   "wallet_balance_after": 15400000,
+   "settled_at": "2026-05-19T20:15:15.703632+07:00"
+  }
+ ],
+ "pnl_daily_summary_span": {
+  "d0": "2026-05-07",
+  "d1": "2026-05-20",
+  "n": 14
+ },
+ "pnl_daily_bets_last": [
+  {
+   "date": "2026-05-20",
+   "region": "MT",
+   "bt_numbers_json": "[\"22\"]",
+   "default_points": 50,
+   "excluded_stations_json": "[]",
+   "station_points_json": "{}",
+   "locked_at": "2026-05-20T19:10:11.901703+07:00",
+   "note": ""
+  },
+  {
+   "date": "2026-05-20",
+   "region": "MN",
+   "bt_numbers_json": "[\"57\"]",
+   "default_points": 50,
+   "excluded_stations_json": "[]",
+   "station_points_json": "{}",
+   "locked_at": "2026-05-20T19:10:01.711375+07:00",
+   "note": ""
+  },
+  {
+   "date": "2026-05-19",
+   "region": "MT",
+   "bt_numbers_json": "[\"74\"]",
+   "default_points": 50,
+   "excluded_stations_json": "[]",
+   "station_points_json": "{}",
+   "locked_at": "2026-05-19T20:19:23.176574+07:00",
+   "note": ""
+  },
+  {
+   "date": "2026-05-19",
+   "region": "MN",
+   "bt_numbers_json": "[\"65\"]",
+   "default_points": 50,
+   "excluded_stations_json": "[\"Bến Tre\"]",
+   "station_points_json": "{}",
+   "locked_at": "2026-05-19T22:43:28.319746+07:00",
+   "note": ""
+  }
+ ],
+ "pnl_daily_bets_span": {
+  "d0": "2026-05-07",
+  "d1": "2026-05-20",
+  "n": 28
+ },
+ "pnl_daily_settlements_last": [
+  {
+   "date": "2026-05-20",
+   "region": "MT",
+   "station": "Đà Nẵng",
+   "bt_number": "22",
+   "points": 50,
+   "hit_count": 1,
+   "cost": 900000,
+   "payout": 4900000,
+   "net": 4000000,
+   "settled_at": "2026-05-20T19:10:11.965022+07:00"
+  },
+  {
+   "date": "2026-05-20",
+   "region": "MT",
+   "station": "Khánh Hòa",
+   "bt_number": "22",
+   "points": 50,
+   "hit_count": 0,
+   "cost": 900000,
+   "payout": 0,
+   "net": -900000,
+   "settled_at": "2026-05-20T19:10:11.964873+07:00"
+  },
+  {
+   "date": "2026-05-20",
+   "region": "MN",
+   "station": "Đồng Nai",
+   "bt_number": "57",
+   "points": 50,
+   "hit_count": 0,
+   "cost": 900000,
+   "payout": 0,
+   "net": -900000,
+   "settled_at": "2026-05-20T19:10:11.958053+07:00"
+  },
+  {
+   "date": "2026-05-20",
+   "region": "MN",
+   "station": "Sóc Trăng",
+   "bt_number": "57",
+   "points": 50,
+   "hit_count": 1,
+   "cost": 900000,
+   "payout": 4900000,
+   "net": 4000000,
+   "settled_at": "2026-05-20T19:10:11.957980+07:00"
+  }
+ ],
+ "pnl_daily_settlements_span": {
+  "d0": "2026-05-07",
+  "d1": "2026-05-20",
+  "n": 76
+ },
+ "cron_pnl": "68:30 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10730_pnl_forward_track.py >> /root/Lottery_AI_Test/web/backend/logs/pnl_forward.log 2>&1  # V10730-PB forward pnl track + EV refresh\n",
+ "cron_alerts": "(KHONG CO)\n",
+ "cron_10945": "0",
+ "writer_sync_parity_audit_daily": "/root/Lottery_AI_Test/web/backend/_v10901_tz_registry.py\n/root/Lottery_AI_Test/web/backend/database.py\n/root/Lottery_AI_Test/web/backend/main.py\n",
+ "cronref_sync_parity_audit_daily": "0",
+ "writer_data_preservation_manifest_daily": "/root/Lottery_AI_Test/web/backend/_v10901_tz_registry.py\n/root/Lottery_AI_Test/web/backend/database.py\n/root/Lottery_AI_Test/web/backend/main.py\n",
+ "cronref_data_preservation_manifest_daily": "0",
+ "writer_bundle_replay_compare_daily": "/root/Lottery_AI_Test/web/backend/_v10901_tz_registry.py\n/root/Lottery_AI_Test/web/backend/database.py\n/root/Lottery_AI_Test/web/backend/main.py\n",
+ "cronref_bundle_replay_compare_daily": "0",
+ "writer_v10883_connector_apply_log": "/root/Lottery_AI_Test/web/backend/_v10883_official_connector.py\n",
+ "cronref_v10883_connector_apply_log": "0",
+ "writer_system_alerts": "/root/Lottery_AI_Test/web/backend/_v10901_tz_registry.py\n/root/Lottery_AI_Test/web/backend/main.py\n/root/Lottery_AI_Test/web/backend/scheduler.py\n",
+ "cronref_system_alerts": "0",
+ "pnl_30d_bachthu": {
+  "MB": {
+   "ngay": 31,
+   "dai": 31,
+   "trung": 7,
+   "von": 837000,
+   "thu": 686000,
+   "lai_lo": -151000
+  },
+  "MN": {
+   "ngay": 31,
+   "dai": 98,
+   "trung": 15,
+   "von": 1764000,
+   "thu": 1470000,
+   "lai_lo": -294000
+  },
+  "MT": {
+   "ngay": 31,
+   "dai": 76,
+   "trung": 9,
+   "von": 1368000,
+   "thu": 882000,
+   "lai_lo": -486000
+  }
+ },
+ "cron_missing_file": "",
+ "logs_stale": "2026-04-16      37925 /root/Lottery_AI_Test/logs/shadow_daily.log\n2026-04-17       3830 /root/Lottery_AI_Test/logs/shadow_d1.log\n2026-06-15       2000 /root/Lottery_AI_Test/web/backend/logs/lo_selector.log\n2026-06-15       2562 /root/Lottery_AI_Test/web/backend/logs/reduce_cadence_plan.log\n2026-06-15       3548 /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log\n2026-06-15       5088 /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log\n2026-07-25       1177 /root/Lottery_AI_Test/logs/v10842_live_verify.log\n2026-07-25    1319848 /root/Lottery_AI_Test/web/backend/logs/v10809_shadow_ab.log\n",
+ "logs_fresh_n": "44",
+ "logs_total_n": "61"
+}

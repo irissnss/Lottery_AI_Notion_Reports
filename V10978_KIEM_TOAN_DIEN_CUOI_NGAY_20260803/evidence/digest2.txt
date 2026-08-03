@@ -1,0 +1,414 @@
+====================================================================================================
+  V10978 — ĐÀO SÂU: cron cổng, model_count, MB trôi giờ
+====================================================================================================
+
+[CRON — cổng lợi thế & consistency guard]
+   dòng cron đang bật: 76
+   grep 'edge_gate'        : (KHONG CO DONG NAO)
+   grep 'consistency_guard': 121:5 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10900_consistency_guard.py >> /root/Lottery_AI_Test/logs/v10900_consistency.log 2>&1
+
+[edge_gate_daily — lịch sử ghi]
+     2026-08-01 → 3 dòng
+
+[HEALTH đầy đủ]
+    {"status":"running","app":"Lottery AI Prediction","version":"V20.3.36","time":"2026-08-03T19:13:01.212169+07:00","timezone":"Asia/Ho_Chi_Minh (UTC+7)","expected_model_count":15,"expected_output_model_count":15,"runtime_model_count":26,"active_measurement_model_count":26,"active_shadow_model_count":11,"active_rerank_measurement_model_count":1,"active_measured_component_count":27,"registry_visible_model_count":30,"registered_non_active_model_count":3,"model_count_semantics":{"runtime_model_count":"active measurement roster = output_eligible + SHADOW_AUTO","active_measured_component_count":"runtime_model_count plus 1 shadow rerank measurement component (Cohere)","expected_output_model_count":"models allowed to affect /du-doan final output","registry_visible_model_count":"ACTIVE + SHADOW_AUTO + REGISTERED inventory, including non-running registered assets"}}
+
+[PREDICTIONS hôm nay theo miền]
+     {'target_region': 'MB', 'nmodel': 27, 'nrow': 27}
+     {'target_region': 'MN', 'nmodel': 27, 'nrow': 27}
+     {'target_region': 'MT', 'nmodel': 27, 'nrow': 27}
+
+[PREDICTIONS — model nào có mặt hôm nay]
+    MB: 27 model → claude-opus-4-6, claude-opus-5-fast, claude-sonnet-4-6, combo-no-token, combo-super, deepseek-reasoner, deepseek-v4-pro-real, gemini-2.5-flash, gemini-2.5-pro, gemini-3.5-flash, gemini-3.6-flash, glm-5.1, glm-5.2, gpt-5-mini, gpt-5.4, gpt-5.5, gpt-5.6-sol-pro, gpt-oss-120b, grok-4.3, lstm, meta-learning, qwen3-max-thinking, qwen3.7-max, random-forest, smart-ensemble, smart-ml, xgboost
+    MN: 27 model → claude-opus-4-6, claude-opus-5-fast, claude-sonnet-4-6, combo-no-token, combo-super, deepseek-reasoner, deepseek-v4-pro-real, gemini-2.5-flash, gemini-2.5-pro, gemini-3.5-flash, gemini-3.6-flash, glm-5.1, glm-5.2, gpt-5-mini, gpt-5.4, gpt-5.5, gpt-5.6-sol-pro, gpt-oss-120b, grok-4.3, lstm, meta-learning, qwen3-max-thinking, qwen3.7-max, random-forest, smart-ensemble, smart-ml, xgboost
+    MT: 27 model → claude-opus-4-6, claude-opus-5-fast, claude-sonnet-4-6, combo-no-token, combo-super, deepseek-reasoner, deepseek-v4-pro-real, gemini-2.5-flash, gemini-2.5-pro, gemini-3.5-flash, gemini-3.6-flash, glm-5.1, glm-5.2, gpt-5-mini, gpt-5.4, gpt-5.5, gpt-5.6-sol-pro, gpt-oss-120b, grok-4.3, lstm, meta-learning, qwen3-max-thinking, qwen3.7-max, random-forest, smart-ensemble, smart-ml, xgboost
+
+[PHỦ MODEL 30 NGÀY]  tổng ngày có predictions = 31
+    model                                 MN    MT    MB  (số NGÀY có mặt / 31)
+    claude-opus-4-6                       31    31    31
+    claude-opus-5-fast                     5     5     4 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    claude-sonnet-4-6                     31    31    31
+    combo-no-token                        31    31    31
+    combo-super                           31    31    31
+    deepseek-reasoner                     31    31    31
+    deepseek-v4-flash                      1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    deepseek-v4-pro                        1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    deepseek-v4-pro-real                  30    29    29
+    gemini-2.5-flash                      31    31    31
+    gemini-2.5-pro                        31    31    31
+    gemini-3-flash                         1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    gemini-3.1-pro                         1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    gemini-3.5-flash                      28    28    27
+    gemini-3.6-flash                       3     3     2 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    gemma-4-31b                           26    25    25
+    glm-5.1                               31    30    31
+    glm-5.2                               30    30    29
+    gpt-5-mini                            31    31    31
+    gpt-5.4                               31    31    31
+    gpt-5.5                               31    31    30
+    gpt-5.6-sol-pro                        5     5     4 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    gpt-oss-120b                          31    31    31
+    grok-4.20-multi-agent                 26    26    26
+    grok-4.3                              17    18    17 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    kimi-k2.5                             26    25    24 ⚠MB-thiếu
+    lstm                                  31    31    31
+    meta-learning                         31    31    31
+    qwen3-coder                            1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    qwen3-max-thinking                    31    31    31
+    qwen3.6-plus                           1     1     1 ⚠MT-thiếu ⚠MB-thiếu ⚠MN-thiếu
+    qwen3.7-max                           30    29    28
+    random-forest                         31    31    31
+    smart-ensemble                        31    31    31
+    smart-ml                              31    31    31
+    xgboost                               31    31    31
+
+[MB / MT — GIỜ TẠO BUNDLE trôi dần?]
+   ── MT (hạn 16:58) ──
+      2026-07-04  16:41  còn   17 phút  mc=13  !!!
+      2026-07-05  16:38  còn   20 phút  mc=13  
+      2026-07-06  16:42  còn   16 phút  mc=13  !!!!
+      2026-07-07  16:39  còn   19 phút  mc=13  !
+      2026-07-08  16:38  còn   20 phút  mc=13  
+      2026-07-09  16:40  còn   18 phút  mc=13  !!
+      2026-07-10  16:43  còn   15 phút  mc=13  !!!!!
+      2026-07-11  16:41  còn   17 phút  mc=13  !!!
+      2026-07-12  16:38  còn   20 phút  mc=13  
+      2026-07-13  16:43  còn   15 phút  mc=13  !!!!!
+      2026-07-14  16:38  còn   20 phút  mc=13  
+      2026-07-15  16:39  còn   19 phút  mc=13  !
+      2026-07-16  16:44  còn   14 phút  mc=13  !!!!!!
+      2026-07-17  16:43  còn   15 phút  mc=13  !!!!!
+      2026-07-18  16:43  còn   15 phút  mc=13  !!!!!
+      2026-07-19  16:38  còn   20 phút  mc=13  
+      2026-07-20  16:41  còn   17 phút  mc=13  !!!
+      2026-07-21  16:39  còn   19 phút  mc=13  !
+      2026-07-22  16:37  còn   21 phút  mc=13  
+      2026-07-23  16:42  còn   16 phút  mc=13  !!!!
+      2026-07-24  16:43  còn   15 phút  mc=13  !!!!!
+      2026-07-25  16:40  còn   18 phút  mc=11  !!
+      2026-07-26  16:39  còn   19 phút  mc=13  !
+      2026-07-27  16:42  còn   16 phút  mc=13  !!!!
+      2026-07-28  16:37  còn   21 phút  mc=13  
+      2026-07-29  16:41  còn   17 phút  mc=13  !!!
+      2026-07-30  16:39  còn   19 phút  mc=13  !
+      2026-07-31  16:46  còn   12 phút  mc=13  !!!!!!!!
+      2026-08-01  16:46  còn   12 phút  mc=13  !!!!!!!!
+      2026-08-02  16:41  còn   17 phút  mc=13  !!!
+      2026-08-03  16:47  còn   11 phút  mc=13  !!!!!!!!!
+   ── MB (hạn 17:58) ──
+      2026-07-04  17:37  còn   21 phút  mc=15  
+      2026-07-05  17:33  còn   25 phút  mc=14  
+      2026-07-06  17:33  còn   25 phút  mc=14  
+      2026-07-07  17:34  còn   24 phút  mc=14  
+      2026-07-08  17:34  còn   24 phút  mc=14  
+      2026-07-09  17:33  còn   25 phút  mc=14  
+      2026-07-10  17:33  còn   25 phút  mc=12  
+      2026-07-11  17:36  còn   22 phút  mc=12  
+      2026-07-12  17:34  còn   24 phút  mc=12  
+      2026-07-13  17:33  còn   25 phút  mc=13  
+      2026-07-14  17:34  còn   24 phút  mc=15  
+      2026-07-15  17:34  còn   24 phút  mc=15  
+      2026-07-16  17:35  còn   23 phút  mc=15  
+      2026-07-17  17:35  còn   23 phút  mc=15  
+      2026-07-18  17:36  còn   22 phút  mc=15  
+      2026-07-19  17:33  còn   25 phút  mc=14  
+      2026-07-20  17:33  còn   25 phút  mc=14  
+      2026-07-21  17:33  còn   25 phút  mc=14  
+      2026-07-22  17:33  còn   25 phút  mc=14  
+      2026-07-23  17:35  còn   23 phút  mc=14  
+      2026-07-24  17:33  còn   25 phút  mc=13  
+      2026-07-25  17:35  còn   23 phút  mc=13  
+      2026-07-26  17:33  còn   25 phút  mc=14  
+      2026-07-27  17:33  còn   25 phút  mc=14  
+      2026-07-28  17:34  còn   24 phút  mc=14  
+      2026-07-29  17:34  còn   24 phút  mc=14  
+      2026-07-30  17:33  còn   25 phút  mc=14  
+      2026-07-31  17:35  còn   23 phút  mc=13  
+      2026-08-01  17:39  còn   19 phút  mc=14  !
+      2026-08-02  17:37  còn   21 phút  mc=14  
+      2026-08-03  17:44  còn   14 phút  mc=14  !!!!!!
+   ── MN (hạn 15:45) ──
+      2026-07-04  04:17  còn  688 phút  mc=15  
+      2026-07-05  04:17  còn  688 phút  mc=15  
+      2026-07-06  04:17  còn  688 phút  mc=15  
+      2026-07-07  04:18  còn  687 phút  mc=15  
+      2026-07-08  04:19  còn  686 phút  mc=15  
+      2026-07-09  04:17  còn  688 phút  mc=15  
+      2026-07-10  04:17  còn  688 phút  mc=15  
+      2026-07-11  04:18  còn  687 phút  mc=15  
+      2026-07-12  04:19  còn  686 phút  mc=15  
+      2026-07-13  04:18  còn  687 phút  mc=15  
+      2026-07-14  04:21  còn  684 phút  mc=15  
+      2026-07-15  04:17  còn  688 phút  mc=15  
+      2026-07-16  04:18  còn  687 phút  mc=15  
+      2026-07-17  04:18  còn  687 phút  mc=15  
+      2026-07-18  04:18  còn  687 phút  mc=15  
+      2026-07-19  04:18  còn  687 phút  mc=15  
+      2026-07-20  04:18  còn  687 phút  mc=15  
+      2026-07-21  04:17  còn  688 phút  mc=15  
+      2026-07-22  04:18  còn  687 phút  mc=15  
+      2026-07-23  04:17  còn  688 phút  mc=15  
+      2026-07-24  04:17  còn  688 phút  mc=15  
+      2026-07-25  04:17  còn  688 phút  mc=15  
+      2026-07-26  04:17  còn  688 phút  mc=15  
+      2026-07-27  04:17  còn  688 phút  mc=15  
+      2026-07-28  04:19  còn  686 phút  mc=14  
+      2026-07-29  04:18  còn  687 phút  mc=15  
+      2026-07-30  04:17  còn  688 phút  mc=15  
+      2026-07-31  04:17  còn  688 phút  mc=15  
+      2026-08-01  05:20  còn  625 phút  mc=13  
+      2026-08-02  05:18  còn  627 phút  mc=15  
+      2026-08-03  05:20  còn  625 phút  mc=15  
+
+[SCHEDULER LOGS hôm nay]
+   theo mức: [{'log_level': 'INFO', 'n': 1003}, {'log_level': 'WARNING', 'n': 23}]
+   dòng WARNING/ERROR: 23
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MB] deepseek-v4-pro-real: chưa có 
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.7-max: chưa có output sa
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.6-sol-pro: chưa có outpu
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.5: chưa có output sau 90
+     x1    WARNING   ai_predict                 | ⏭️ [SOFT_CONTINUE_90S] Combo Super → MB: chưa có output sau 
+     x1    WARNING   ai_predict                 | ⏭️ [SOFT_CONTINUE_90S] glm-5.1 → MB: chưa có output sau 90s;
+     x1    WARNING   ai_predict                 | 🚨 [RULE_QUALITY_ALERT] MB (2026-08-03 wd=0): 0 READY_STRONG 
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] deepseek-v4-pro-real: chưa có 
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] qwen3.7-max: chưa có output sa
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5.6-sol-pro: chưa có outpu
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] glm-5.2: chưa có output sau 90
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5-mini: chưa có output sau
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5.5: chưa có output sau 90
+     x1    WARNING   ai_predict                 | ⏭️ [SOFT_CONTINUE_90S] Combo Super → MT: chưa có output sau 
+     x1    WARNING   ai_predict                 | ⏭️ [SOFT_CONTINUE_90S] deepseek-reasoner → MT: chưa có outpu
+     x1    WARNING   ai_predict                 | 🚫 [AI_ONCE_DAILY_BLOCK] MT (2026-08-03): token/provider AI a
+     x1    WARNING   ai_predict                 | 🚨 [RULE_QUALITY_ALERT] MT (2026-08-03 wd=0): 0 READY_STRONG 
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MN] qwen3.7-max: chưa có output sa
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MN] gpt-5.6-sol-pro: chưa có outpu
+     x1    WARNING   shadow_eval                |   ⏭️ [SOFT_CONTINUE_90S] [MN] gpt-5.5: chưa có output sau 90
+   15 dòng cuối cùng của scheduler_logs:
+     2026-08-03 19:12:00 INFO     v80_shadow_completion    None | [V80_SHADOW_COMPLETION] target=2026-08-03 rows=32 version=v80_shadow_completion_v1
+     2026-08-03 19:10:00 INFO     du_doan_test_auto        MB | [DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock
+     2026-08-03 19:10:00 INFO     du_doan_test_auto        MT | [DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock
+     2026-08-03 19:10:00 INFO     v78_prompt_shadow_audit  None | [V78_PROMPT_SHADOW_AUDIT] target=2026-08-03 rows=74 version=v78_ai_region_specialist_shado
+     2026-08-03 19:10:00 INFO     du_doan_test_auto        MN | [DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock
+     2026-08-03 19:08:00 INFO     v79_ai_no_token_cross_ve None | [V79_AI_NO_TOKEN_CROSS_VERIFY] target=2026-08-03 rows=12 version=v79_ai_no_token_cross_ver
+     2026-08-03 19:05:00 INFO     du_doan_test_auto        MB | [DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock
+     2026-08-03 19:05:00 INFO     du_doan_test_auto        MT | [DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock
+     2026-08-03 19:05:00 INFO     du_doan_test_auto        MN | [DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock
+     2026-08-03 19:05:00 INFO     v77_fast_incident_monito None | [V77_FAST_INCIDENT] target=2026-08-03 alerts={'GREEN': 12, 'BUDGET_FAIL_FAST': 1, 'ORANGE_
+     2026-08-03 19:00:00 INFO     v77_post_cascade_rerun   None | [V77_POST_CASCADE] target=2026-08-03 v70_agree=[4, 4, 1] v73_tier=['HIGH', 'HIGH', 'LOW']
+     2026-08-03 19:00:00 INFO     None                     None | 🐶 [WATCHDOG_OK] mọi milestone đúng nhịp
+     2026-08-03 19:00:00 INFO     du_doan_test_auto        MB | [DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock
+     2026-08-03 19:00:00 INFO     du_doan_test_auto        MT | [DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock
+     2026-08-03 19:00:00 INFO     du_doan_test_auto        MN | [DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock
+
+[KẾT QUẢ XỔ 2 ngày — MN scrape fail?]
+     {'date': '2026-08-03', 'region': 'MB', 'n': 1, 'last': '2026-08-03T18:31:02.182061+07:00'}
+     {'date': '2026-08-03', 'region': 'MN', 'n': 3, 'last': '2026-08-03T16:39:41.748347+07:00'}
+     {'date': '2026-08-03', 'region': 'MT', 'n': 2, 'last': '2026-08-03T17:30:01.099875+07:00'}
+     {'date': '2026-08-02', 'region': 'MB', 'n': 1, 'last': '2026-08-02T18:32:03.930125+07:00'}
+     {'date': '2026-08-02', 'region': 'MN', 'n': 3, 'last': '2026-08-02T16:34:35.440543+07:00'}
+     {'date': '2026-08-02', 'region': 'MT', 'n': 3, 'last': '2026-08-02T17:30:00.913823+07:00'}
+     {'date': '2026-08-01', 'region': 'MB', 'n': 1, 'last': '2026-08-01T18:32:03.134727+07:00'}
+     {'date': '2026-08-01', 'region': 'MN', 'n': 4, 'last': '2026-08-01T16:39:40.304765+07:00'}
+     {'date': '2026-08-01', 'region': 'MT', 'n': 3, 'last': '2026-08-01T17:34:35.082794+07:00'}
+   journal SCRAPE_FAIL hôm nay: 28
+   mẫu SCRAPE cuối:
+Aug 03 17:30:00 lotteryai-aulb python3[645169]: 2026-08-03 17:30:00,593 - INFO - [SCRAPE_OK] MT 03/08/2026: source=minhngoc stations=2 elapsed=0.4s (concurrent first-success)
+Aug 03 18:30:00 lotteryai-aulb python3[645169]: 2026-08-03 18:30:00,711 - WARNING - [SCRAPE_FAIL] MB 03/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MB ngày 03/08/2026', 'xsdp': '[xsdp] Không có kết quả MB ngày 03/08/2026', 'minhngoc': 'no data'}
+Aug 03 18:30:00 lotteryai-aulb python3[645169]: 2026-08-03 18:30:00,712 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MB error=Không thể tải dữ liệu MB ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 18:30:31 lotteryai-aulb python3[645169]: 2026-08-03 18:30:31,677 - WARNING - [SCRAPE_FAIL] MB 03/08/2026: all concurrent sources empty (0.9s) — errors: {'xsdp': '[xsdp] Không có kết quả MB ngày 03/08/2026', 'xskt': '[xskt] Không có kết quả MB ngày 03/08/2026', 'minhngoc': 'no data'}
+Aug 03 18:30:31 lotteryai-aulb python3[645169]: 2026-08-03 18:30:31,678 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MB error=Không thể tải dữ liệu MB ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 18:31:01 lotteryai-aulb python3[645169]: 2026-
+   429:
+Aug 03 17:42:55 lotteryai-aulb python3[645169]: 2026-08-03 17:42:55,429 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+
+   503:
+Aug 03 16:57:45 lotteryai-aulb python3[645169]: 2026-08-03 16:57:45,880 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+
+
+[BẢNG ĐỨNG — có cột date, lần ghi cuối cách hôm nay bao lâu]
+   tổng bảng trong DB: 241 | bảng có cột date: 102
+    ngày đứng  bảng                                        ghi cuối         dòng
+         rỗng  v10883_connector_apply_log                  None                0  ← RỖNG
+         rỗng  sync_parity_audit_daily                     None                0  ← RỖNG
+         rỗng  data_preservation_manifest_daily            None                0  ← RỖNG
+         rỗng  bundle_replay_compare_daily                 None                0  ← RỖNG
+           94  single_vote_rescue_replay_shadow            2026-05-01        540  ← ĐỨNG >7 ngày
+           93  tier2_replay_v2_shadow                      2026-05-02        558  ← ĐỨNG >7 ngày
+           93  tier2_replay_shadow                         2026-05-02        192  ← ĐỨNG >7 ngày
+           93  strength_skip_calibration_replay_shadow     2026-05-02        865  ← ĐỨNG >7 ngày
+           93  model_cross_region_dup_shadow               2026-05-02        662  ← ĐỨNG >7 ngày
+           93  mb_structural_drilldown_shadow              2026-05-02         62  ← ĐỨNG >7 ngày
+           93  cross_region_spillover_shadow               2026-05-02      11283  ← ĐỨNG >7 ngày
+           93  corrected_rescue_replay_shadow              2026-05-02        900  ← ĐỨNG >7 ngày
+           93  bundle_universe_coverage_shadow             2026-05-02         96  ← ĐỨNG >7 ngày
+           90  loz_stage_trace_shadow                      2026-05-05       6356  ← ĐỨNG >7 ngày
+           89  mt_model_hit_output_drop_shadow             2026-05-06        365  ← ĐỨNG >7 ngày
+           89  model_latency_cost_audit_daily              2026-05-06       4033  ← ĐỨNG >7 ngày
+           89  loz_selector_shadow                         2026-05-06       4033  ← ĐỨNG >7 ngày
+           84  system_alerts                               2026-05-11          9  ← ĐỨNG >7 ngày
+           75  pnl_daily_summary                           2026-05-20         14  ← ĐỨNG >7 ngày
+           75  pnl_daily_settlements                       2026-05-20         76  ← ĐỨNG >7 ngày
+           75  pnl_daily_bets                              2026-05-20         28  ← ĐỨNG >7 ngày
+           73  signal_governance_ledger                    2026-05-22      10317  ← ĐỨNG >7 ngày
+           73  lane_test_active_challenger_scoreboard      2026-05-22       1557  ← ĐỨNG >7 ngày
+           49  champion_selector_shadow                    2026-06-15        108  ← ĐỨNG >7 ngày
+           27  v10810_station_repair_backup                2026-07-07          6  ← ĐỨNG >7 ngày
+           25  cohere_rerank_log                           2026-07-09        248  ← ĐỨNG >7 ngày
+           25  cohere_effectiveness_daily                  2026-07-09        247  ← ĐỨNG >7 ngày
+           12  v10809_shadow_ab_daily                      2026-07-22        105  ← ĐỨNG >7 ngày
+            2  edge_gate_daily                             2026-08-01          3
+            1  v10872_deherd_scoreboard                    2026-08-02        282
+            1  v10869_m2_roster_ab_daily                   2026-08-02        135
+            1  v10869_execution_order_audit                2026-08-02         60
+            1  v10861_output_deadline_audit                2026-08-02        201
+            1  v10844_mb_whatif_daily                      2026-08-02         17
+            1  v10829_rule_cond_daily                      2026-08-02         99
+            1  v10821_total_v2_daily                       2026-08-02        516
+            1  training_history                            2026-08-02        228
+            1  shadow_rule_d1_comparison                   2026-08-02        190
+            1  rule_phase_evidence_shadow                  2026-08-02       5313
+            1  rescue_candidate_shadow                     2026-08-02      10981
+            1  pnl_forward_track_shadow                    2026-08-02       1206
+            1  model_daily_eval                            2026-08-02      11415
+            1  mined_rule_effectiveness                    2026-08-02       3173
+            1  live_edge_monitor                           2026-08-02        249
+            1  consensus_freeshadow_shadow                 2026-08-02       1395
+            0  weekday_rule_strength_daily                 2026-08-03        298
+            0  verdict_distribution_daily                  2026-08-03       8209
+            0  v10900_consistency_guard                    2026-08-03         64
+            0  v10891_deadline_guard                       2026-08-03        440
+            0  v10879_nghiemthu_scoreboard                 2026-08-03        147
+            0  v10861_choi_display_output                  2026-08-03        108
+            0  v10803_chase_bias_daily                     2026-08-03        327
+            0  v10801_ml_mark_ab_daily                     2026-08-03        496
+            0  v10789_selector_shadow                      2026-08-03        774
+            0  trace_field_completeness_daily              2026-08-03        301
+            0  strongest_vs_final_shadow                   2026-08-03        285
+            0  strongest_vs_final_conversion_daily         2026-08-03        347
+            0  strongest_candidate_escape_daily            2026-08-03        298
+            0  source_prize_effectiveness_daily            2026-08-03       8830
+            0  slice_recommendation                        2026-08-03        437
+            0  shadow_results                              2026-08-03      27306
+            0  shadow_model_promotion_scorecard_daily      2026-08-03       3573
+            0  shadow_feature_snapshots                    2026-08-03       5079
+            0  shadow_daily_comparison                     2026-08-03        423
+            0  shadow_candidates                           2026-08-03      27306
+            0  runtime_reliability_model_daily             2026-08-03       4220
+            0  runtime_reliability_daily                   2026-08-03        665
+            0  rule_conversion_loss_stage_daily            2026-08-03        301
+            0  reasoning_layer_penetration_daily           2026-08-03        298
+            0  public_bundle_publish_audit_daily           2026-08-03        298
+            0  prompt_section_breakdown_daily              2026-08-03      36733
+            0  prompt_pressure_daily                       2026-08-03       5592
+            0  predictions                                 2026-08-03      11632
+            0  pre_win_post_lose_daily                     2026-08-03       2107
+            0  pre_vs_post_rerun_effect_daily              2026-08-03        903
+            0  pre_partial_post_lose_daily                 2026-08-03       2107
+            0  pp1_live_watch_daily                        2026-08-03        154
+            0  play_recommendation_shadow                  2026-08-03        165
+            0  output_policy_replay_daily                  2026-08-03       2086
+            0  output_final_lab_shadow                     2026-08-03       8949
+            0  output_eligible_completion_daily            2026-08-03        298
+            0  no_token_drift_shadow                       2026-08-03       1219
+            0  money_board_log                             2026-08-03        111
+            0  money_board_daily_lock                      2026-08-03         84
+            0  mb_experimental_preview_shadow              2026-08-03        779
+            0  main_vs_secondary_quality_daily             2026-08-03        301
+            0  lottery_results                             2026-08-03      15207
+            0  freshness_chain_daily                       2026-08-03       2135
+            0  final_bundles                               2026-08-03        471
+            0  experimental_preview_shadow                 2026-08-03       4093
+            0  draw_availability_daily                     2026-08-03        290
+            0  day_governance                              2026-08-03        470
+            0  daily_stats                                 2026-08-03        190
+            0  daily_eval_log                              2026-08-03        392
+            0  counterfactual_decision_audit_shadow        2026-08-03       3017
+            0  convergence_cluster_pattern_daily           2026-08-03       1023
+            0  cau_forward_shadow                          2026-08-03        547
+            0  candidate_drop_stage_daily                  2026-08-03        347
+            0  bundle_readiness_gate_daily                 2026-08-03        298
+            0  bundle_family_contribution_daily            2026-08-03        301
+            0  ai_reasoning_contract_daily                 2026-08-03        298
+            0  ai_primary_gate_daily                       2026-08-03        298
+
+[LOGS THƯ MỤC]
+total 93208
+drwxr-xr-x 2 root root     4096 2026-07-28 .
+drwx---rwx 9 root root    32768 2026-08-01 ..
+-rw-r--r-- 1 root root     3548 2026-06-15 bachthu_strength.log
+-rw-r--r-- 1 root root    20544 2026-08-03 champion_recommend.log
+-rw-r--r-- 1 root root     7732 2026-06-05 crontab.bak_20260605_202718
+-rw-r--r-- 1 root root     8053 2026-06-07 crontab.bak_v10703_20260607_003426
+-rw-r--r-- 1 root root    32506 2026-07-31 lane_v2_daily.log
+-rw-r--r-- 1 root root     2961 2026-08-02 live_edge_monitor.log
+-rw-r--r-- 1 root root     2000 2026-06-15 lo_selector.log
+-rw-r--r-- 1 root root   138139 2026-08-03 mb_advanced_lane.log
+-rw-r--r-- 1 root root     7363 2026-08-03 mb_ai_limit.log
+-rw-r--r-- 1 root root   159042 2026-08-03 mb_perpos_cron.log
+-rw-r--r-- 1 root root     7085 2026-08-03 mn_ai_limit.log
+-rw-r--r-- 1 root root    15233 2026-08-03 model_progress.log
+-rw-r--r-- 1 root root    45999 2026-08-03 mt_advanced_lane.log
+-rw-r--r-- 1 root root     7208 2026-08-03 mt_ai_limit.log
+-rw-r--r-- 1 root root     3264 2026-08-03 no_lookahead.log
+-rw-r--r-- 1 root root 81703053 2026-08-02 optimizer_once.log
+-rw-r--r-- 1 root root   236150 2026-08-03 output_final_lab.log
+-rw-r--r-- 1 root root   227270 2026-08-02 perpos_matrix.log
+-rw-r--r-- 1 root root     3312 2026-08-02 pnl_forward.log
+-rw-r--r-- 1 root root   109843 2026-08-03 postdraw_settle.log
+-rw-r--r-- 1 root root     2562 2026-06-15 reduce_cadence_plan.log
+-rw-r--r-- 1 root root   169826 2026-08-02 rescue_candidate.log
+-rw-r--r-- 1 root root    31316 2026-08-03 retrain_guard.log
+-rw-r--r-- 1 root root     8808 2026-08-03 shadow_scoreboard.log
+-rw-r--r-- 1 root root    12875 2026-08-03 slice_health.log
+-rw-r--r-- 1 root root   162197 2026-08-03 slice_reco.log
+-rw-r--r-- 1 root root    90506 2026-08-03 system_health.log
+-rw-r--r-- 1 root root     2086 2026-08-03 timetable_selfcheck.log
+-rw-r--r-- 1 root root     5088 2026-06-15 total_perweekday.log
+-rw-r--r-- 1 root root    30641 2026-07-31 v10679_lane.log
+-rw-r--r-- 1 root root    32193 2026-07-31 v10680_lane_topk.log
+-rw-r--r-- 1 root root    50272 2026-07-31 v10692_mb_early.log
+-rw-r--r-- 1 root root    51330 2026-08-01 v10692_mn_early.log
+-rw-r--r-- 1 root root    50951 2026-07-31 v10692_mt_early.log
+-rw-r--r-- 1 root root   151383 2026-07-31 v10692_multidir.log
+-rw-r--r-- 1 root root   214157 2026-08-03 v10703_screen.log
+-rw-r--r-- 1 root root  8936079 2026-08-01 v10707_doctrine_ab.log
+-rw-r--r-- 1 root root    20654 2026-08-03 v10708_ranker.log
+-rw-r
+
+[CRONTAB ĐẦY ĐỦ]
+16 0 * * *  /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82 >> /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82.log 2>&1
+# V10919 2026-08-01 owner duyet cho lane nghi: V10637 lane-v2 — không được ai gọi, không UI không API
+# 30 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 -m lane._v10637_lane_v2_daily --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lane_v2_daily.log 2>&1
+0 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_slice_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_health.log 2>&1
+5 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_model_progress.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/model_progress.log 2>&1
+10 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10644_shadow_scoreboard.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log 2>&1
+15 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10645_weakest_watch.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/weakest_watch.log 2>&1
+30 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10646_retrain_guard.py >> /root/Lottery_AI_Test/web/backend/logs/retrain_guard.log 2>&1
+5 * * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10647_system_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/system_health.log 2>&1
+0 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10648_weekly_guard.py >> /root/Lottery_AI_Test/web/backend/logs/weekly_guard.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 20 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10655_bachthu_strength_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10654_lo_selector_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lo_selector.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 30 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10657_total_perweekday_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log 2>&1
+35 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10658_slice_recommendation.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1
+45 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10660_no_lookahead_harness.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 14 >> /root/Lottery_AI_Test/web/backend/logs/no_lookahead.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_reduce_cadence_plan.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/reduce_cadence_plan.log 2>&1
+15 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10661_live_edge_monitor.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 21 >> /root/Lottery_AI_Test/web/backend/logs/live_edge_monitor.log 2>&1
+30 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_mb_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mb_ai_limit.log 2>&1
+
+# V10663 2026-06-01: slice_recommendation extra fires after MT/MB final_bundles are ready
+55 16 * * * cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 /root/Lottery_AI_Test/web/backend/_v10658_slice_recommendation.py >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1
+55 17 * * * cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 /root/Lottery_AI_Test/web/backend/_v10658_slice_recommendation.py >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1
+
+# V10664 2026-06-01: MT AI LIMIT planner (mirror MB; auto-excludes RECOVERING from blocked_list)
+31 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10664_mt_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mt_ai_limit.log 2>&1
+
+
+# V10666 2026-06-01 22:55: MN AI LIMIT planner moved 09:32 -> 03:50 (BEFORE MN predict starts at 04:00)
+50 4 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10665_mn_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mn_ai_limit.log 2>&1
+
+# V10677 2026-06-02 22:45: post-draw settle for experimental_preview_shadow (fix CP-66.7 evidence pipeline)
+0 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10677_postdraw_settle.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 21 >> /root/Lottery_AI_Test/web/backend/logs/postdraw_settle.log 2>&1
+# V10679 2026-06-03: FULL_POOL_D_W06 lane test for MN+MT (shadow-only, no official impact)
+# V10919 2026-08-01 owner duyet cho lane nghi: V10679 lane full-pool — không có đường lên official
+# 48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10679_full_pool_d_w06_lane.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10679_lane.log 2>&1
+# V10680 

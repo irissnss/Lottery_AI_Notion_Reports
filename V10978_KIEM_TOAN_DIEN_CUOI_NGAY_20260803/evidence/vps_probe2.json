@@ -1,0 +1,2196 @@
+{
+ "crontab_full": "16 0 * * *  /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82 >> /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82.log 2>&1\n# V10919 2026-08-01 owner duyet cho lane nghi: V10637 lane-v2 — không được ai gọi, không UI không API\n# 30 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 -m lane._v10637_lane_v2_daily --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lane_v2_daily.log 2>&1\n0 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_slice_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_health.log 2>&1\n5 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_model_progress.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/model_progress.log 2>&1\n10 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10644_shadow_scoreboard.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log 2>&1\n15 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10645_weakest_watch.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/weakest_watch.log 2>&1\n30 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10646_retrain_guard.py >> /root/Lottery_AI_Test/web/backend/logs/retrain_guard.log 2>&1\n5 * * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10647_system_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/system_health.log 2>&1\n0 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10648_weekly_guard.py >> /root/Lottery_AI_Test/web/backend/logs/weekly_guard.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 20 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10655_bachthu_strength_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10654_lo_selector_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lo_selector.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 30 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10657_total_perweekday_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log 2>&1\n35 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10658_slice_recommendation.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1\n45 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10660_no_lookahead_harness.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 14 >> /root/Lottery_AI_Test/web/backend/logs/no_lookahead.log 2>&1\n# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_reduce_cadence_plan.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/reduce_cadence_plan.log 2>&1\n15 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10661_live_edge_monitor.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 21 >> /root/Lottery_AI_Test/web/backend/logs/live_edge_monitor.log 2>&1\n30 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10662_mb_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mb_ai_limit.log 2>&1\n\n# V10663 2026-06-01: slice_recommendation extra fires after MT/MB final_bundles are ready\n55 16 * * * cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 /root/Lottery_AI_Test/web/backend/_v10658_slice_recommendation.py >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1\n55 17 * * * cd /root/Lottery_AI_Test && /root/Lottery_AI_Test/venv/bin/python3 /root/Lottery_AI_Test/web/backend/_v10658_slice_recommendation.py >> /root/Lottery_AI_Test/web/backend/logs/slice_reco.log 2>&1\n\n# V10664 2026-06-01: MT AI LIMIT planner (mirror MB; auto-excludes RECOVERING from blocked_list)\n31 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10664_mt_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mt_ai_limit.log 2>&1\n\n\n# V10666 2026-06-01 22:55: MN AI LIMIT planner moved 09:32 -> 03:50 (BEFORE MN predict starts at 04:00)\n50 4 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10665_mn_ai_limit.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/mn_ai_limit.log 2>&1\n\n# V10677 2026-06-02 22:45: post-draw settle for experimental_preview_shadow (fix CP-66.7 evidence pipeline)\n0 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10677_postdraw_settle.py --db /root/Lottery_AI_Test/data/lottery_ai.db --days 21 >> /root/Lottery_AI_Test/web/backend/logs/postdraw_settle.log 2>&1\n# V10679 2026-06-03: FULL_POOL_D_W06 lane test for MN+MT (shadow-only, no official impact)\n# V10919 2026-08-01 owner duyet cho lane nghi: V10679 lane full-pool — không có đường lên official\n# 48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10679_full_pool_d_w06_lane.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10679_lane.log 2>&1\n# V10680 2026-06-03: TOP-K strength-filtered D_w06 lane test for MN+MT (shadow-only)\n# V10919 2026-08-01 owner duyet cho lane nghi: V10680 lane top-K — không có đường lên official\n# 48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10680_topk_strength_lane.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10680_lane_topk.log 2>&1\n# V10692 2026-06-03: 3-direction (BT/Lo2/Lo3) lane test MN+MT shadow-only\n# V10919 2026-08-01 owner duyet cho lane nghi: V10692 lane 3 hướng — playbook ghi rõ không promote\n# 10 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10692_mn_mt_multidir_lane.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10692_multidir.log 2>&1\n10 18 * * * /root/Lottery_AI_Test/_mb_perpos_daily.sh >> /root/Lottery_AI_Test/web/backend/logs/mb_perpos_cron.log 2>&1  # V10701-B1: d-i 23:55 -> 18:10 pre-result LIVE (sau MB predict 17:42)\n# V10696 2026-06-04: lane V10692 ch?y S?M theo t?ng mi?n (sau predict t??ng ?ng) ? KH?NG ??i 17:10\n# V10919 2026-08-01 owner duyet cho lane nghi: V10692 lane 3 hướng — playbook ghi rõ không promote\n# 30 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10692_mn_mt_multidir_lane.py --region MN --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10692_mn_early.log 2>&1\n# V10919 2026-08-01 owner duyet cho lane nghi: V10692 lane 3 hướng — playbook ghi rõ không promote\n# 45 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10692_mn_mt_multidir_lane.py --region MT --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10692_mt_early.log 2>&1\n# V10696 2026-06-04: V10692 MB ch?y sau MB predict 17:42\n# V10919 2026-08-01 owner duyet cho lane nghi: V10692 lane 3 hướng — playbook ghi rõ không promote\n# 39 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10692_mn_mt_multidir_lane.py --region MB --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10692_mb_early.log 2>&1\n# V10701-A5 2026-06-04: MB advanced lane (engine chung + FULL_POOL + TOPK), sau MB predict 17:42\n43 17 * * * /bin/bash /root/Lottery_AI_Test/web/backend/_mb_advanced_lane_daily.sh >> /root/Lottery_AI_Test/web/backend/logs/mb_advanced_lane.log 2>&1\n# V10701-M-readiness 2026-06-05: MT advanced engine lane (sau MT predict 16:42)\n48 16 * * * /bin/bash /root/Lottery_AI_Test/web/backend/_mt_advanced_lane_daily.sh >> /root/Lottery_AI_Test/web/backend/logs/mt_advanced_lane.log 2>&1\n# V10701-M5 2026-06-05: per-position live tracking matrix (read-only)\n5 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _perpos_matrix_report.py --days 60 --min-n 6 >> /root/Lottery_AI_Test/web/backend/logs/perpos_matrix.log 2>&1  # V10701-M5: per-position live matrix (read-only)\n# V10702 CP-OT2 2026-06-07: output-total screening lane (shadow)\n44 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10703_output_total_screen.py --region ALL --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/v10703_screen.log 2>&1  # V10702 CP-OT2: output-total screening shadow (causal, post-predict pre-MB-result)\n# V10919 2026-08-01 owner duyet cho lane nghi: V10707 A/B doctrine MN/MT — hạn ~2 tuần từ 10/06, quá 7 tuần\n# 50 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10707_mnmt_doctrine_shadow.py --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10707_doctrine_ab.log 2>&1  # V10707: MN doctrine A/B shadow (sau official 04:22, truoc xo 16:35)\n# V10919 2026-08-01 owner duyet cho lane nghi: V10707 A/B doctrine MN/MT — hạn ~2 tuần từ 10/06, quá 7 tuần\n# 44 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10707_mnmt_doctrine_shadow.py --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10707_doctrine_ab.log 2>&1  # V10707: MT doctrine A/B shadow (sau official ~16:42, truoc xo ~17:35)\n40 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10708_mnmt_rule_ranker.py --region ALL >> /root/Lottery_AI_Test/web/backend/logs/v10708_ranker.log 2>&1  # V10708: MN/MT daily rule rerank (truoc doctrine A/B 05:00)\n35 20 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10708_mnmt_rule_ranker.py --region ALL >> /root/Lottery_AI_Test/web/backend/logs/v10708_ranker.log 2>&1  # V10708-EVENING: re-rank NGAY sau MRE 20:15 (du ket qua+verify+cham diem ngay) - snapshot san sang truoc moi luot AI\n# V10716: MB advanced lane chay som (card truoc xo); 5 18 la backstop\n38 17 * * * /bin/bash /root/Lottery_AI_Test/web/backend/_mb_advanced_lane_daily.sh >> /root/Lottery_AI_Test/web/backend/logs/mb_advanced_lane.log 2>&1\n25 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10725_champion_selector.py --recommend >> /root/Lottery_AI_Test/web/backend/logs/champion_recommend.log 2>&1\n30 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10730_pnl_forward_track.py >> /root/Lottery_AI_Test/web/backend/logs/pnl_forward.log 2>&1  # V10730-PB forward pnl track + EV refresh\n35 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10733_consensus_freeshadow_shadow.py --days 2 >> /root/Lottery_AI_Test/logs/v10733_consensus.log 2>&1\n40 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 3 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1\n35 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 morning MN live refresh\n55 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MB live refresh\n55 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MT live refresh\n45 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10744_rescue_candidate_monitor.py --days 3 >> /root/Lottery_AI_Test/web/backend/logs/rescue_candidate.log 2>&1\n# V10781 P5 2026-07-05: PROMPT V2 A/B shadow lane (deepseek-reasoner, 1 call/mien/ngay)\n# V10919 2026-08-01 owner duyet cho lane nghi: V10781 A/B prompt v2 — hạn trình 14/07, quá 2,5 tuần\n# 10 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10781_prompt_v2_lane.py --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10781_pv2_lane.log 2>&1\n# V10919 2026-08-01 owner duyet cho lane nghi: V10781 A/B prompt v2 — hạn trình 14/07, quá 2,5 tuần\n# 45 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10781_prompt_v2_lane.py --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10781_pv2_lane.log 2>&1\n# V10919 2026-08-01 owner duyet cho lane nghi: V10781 A/B prompt v2 — hạn trình 14/07, quá 2,5 tuần\n# 41 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10781_prompt_v2_lane.py --region MB >> /root/Lottery_AI_Test/web/backend/logs/v10781_pv2_lane.log 2>&1\n30 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10784_verify_0607.py >> /root/Lottery_AI_Test/artifacts/v10784/verify_0607.log 2>&1\n# V10789 K10/K13 selector shadow (owner ky 09/07/2026)\n39 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MN pre-draw\n46 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MT pre-draw\n40 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --region MB >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 MB pre-draw\n30 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10789_selector_shadow.py --materialize --settle >> /root/Lottery_AI_Test/web/backend/logs/v10789_selector.log 2>&1  # V10789 K10/K13 settle + catchup\n10 8 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10800_timetable_selfcheck.py >> /root/Lottery_AI_Test/web/backend/logs/timetable_selfcheck.log 2>&1  # V10800: audit dinh ky moc gio + hoc tap\n5 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10801_ml_mark_ab_shadow.py --catchup 2 >> /root/Lottery_AI_Test/web/backend/logs/v10801_ml_ab.log 2>&1  # V10801: ML mark A/B shadow (D-1 vs same-day) MT+MB\n10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10803_chase_bias_shadow.py --catchup 3 >> /root/Lottery_AI_Test/web/backend/logs/v10803_chase_bias.log 2>&1  # V10803: chase-bias shadow (duoi so vua no hom truoc) 3 mien\n# V10809 2026-07-16: shadow A/B 7 ngay (16-22/07) arm B addendum tro-mien/per-so, 5 model\n50 20 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10821_total_v2_shadow.py --catchup 3 >> /root/Lottery_AI_Test/web/backend/logs/v10821_total_v2.log 2>&1  # V10821: total-v2 shadow (coverage+rules) 3 mien\n36 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MN >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MN (truoc freeze 15:55 + cutoff /choi 16h)\n46 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MT >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MT (sau T-chot 16:54, truoc cutoff 17h)\n40 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10822_total_v2_lane.py --region MB >> /root/Lottery_AI_Test/web/backend/logs/v10822_total_v2_lane.log 2>&1  # V10822: lane TOTAL_V2_RULES_V1 MB (sau T-chot 17:54, truoc cutoff 18h)\n0 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10829_rule_cond_shadow.py --catchup 3 >> /root/Lottery_AI_Test/logs/v10829_rule_cond.log 2>&1  # V10829\n37 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10832_total_v3_cond_lane.py --region MN >> /root/Lottery_AI_Test/logs/v10832_cond_lane.log 2>&1  # V10832\n47 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10832_total_v3_cond_lane.py --region MT >> /root/Lottery_AI_Test/logs/v10832_cond_lane.log 2>&1  # V10832\n41 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10832_total_v3_cond_lane.py --region MB >> /root/Lottery_AI_Test/logs/v10832_cond_lane.log 2>&1  # V10832\n43 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10834_lock_freeze.py >> /root/Lottery_AI_Test/logs/v10834_lock_freeze.log 2>&1  # V10834 freeze-at-cutoff\n56 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10834_lock_freeze.py >> /root/Lottery_AI_Test/logs/v10834_lock_freeze.log 2>&1  # V10834 freeze-at-cutoff\n56 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10834_lock_freeze.py >> /root/Lottery_AI_Test/logs/v10834_lock_freeze.log 2>&1  # V10834 freeze-at-cutoff\n10 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10844_mb_whatif.py --catchup 2 >> /root/Lottery_AI_Test/logs/v10844_mb_whatif.log 2>&1  # V10844 whatif MB\n45 20 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10861_runtime_contract_audit.py >> /root/Lottery_AI_Test/web/backend/logs/v10861_output_contract.log 2>&1  # V10861 output contract audit\n20 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10869_cp_l6_lean_audit.py >> /root/Lottery_AI_Test/web/backend/logs/v10869_cp_l6_lean.log 2>&1  # V10869 CP-L6 lean audit\n25 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10871_model_quality_ledger.py >> /root/Lottery_AI_Test/logs/v10871_quality_ledger.log 2>&1\n38 15 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10872_deherd_selector.py --region MN >> /root/Lottery_AI_Test/logs/v10872_deherd.log 2>&1\n47 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10872_deherd_selector.py --region MT >> /root/Lottery_AI_Test/logs/v10872_deherd.log 2>&1\n42 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10872_deherd_selector.py --region MB >> /root/Lottery_AI_Test/logs/v10872_deherd.log 2>&1\n15 21 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10872_deherd_selector.py >> /root/Lottery_AI_Test/logs/v10872_deherd.log 2>&1\n5 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n44 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n38 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n10 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n10 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n15 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n42 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1\n2 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10891_deadline_guard.py >> /root/Lottery_AI_Test/logs/v10891_guard.log 2>&1\n5 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10900_consistency_guard.py >> /root/Lottery_AI_Test/logs/v10900_consistency.log 2>&1\n",
+ "cron_edge": "(KHONG CO DONG NAO)\n",
+ "cron_guard": "121:5 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10900_consistency_guard.py >> /root/Lottery_AI_Test/logs/v10900_consistency.log 2>&1\n",
+ "cron_count_active": "76",
+ "edge_hist": [
+  {
+   "date": "2026-08-01",
+   "n": 3
+  }
+ ],
+ "health_full": "{\"status\":\"running\",\"app\":\"Lottery AI Prediction\",\"version\":\"V20.3.36\",\"time\":\"2026-08-03T19:13:01.212169+07:00\",\"timezone\":\"Asia/Ho_Chi_Minh (UTC+7)\",\"expected_model_count\":15,\"expected_output_model_count\":15,\"runtime_model_count\":26,\"active_measurement_model_count\":26,\"active_shadow_model_count\":11,\"active_rerank_measurement_model_count\":1,\"active_measured_component_count\":27,\"registry_visible_model_count\":30,\"registered_non_active_model_count\":3,\"model_count_semantics\":{\"runtime_model_count\":\"active measurement roster = output_eligible + SHADOW_AUTO\",\"active_measured_component_count\":\"runtime_model_count plus 1 shadow rerank measurement component (Cohere)\",\"expected_output_model_count\":\"models allowed to affect /du-doan final output\",\"registry_visible_model_count\":\"ACTIVE + SHADOW_AUTO + REGISTERED inventory, including non-running registered assets\"}}",
+ "pred_today_by_region": [
+  {
+   "target_region": "MB",
+   "nmodel": 27,
+   "nrow": 27
+  },
+  {
+   "target_region": "MN",
+   "nmodel": 27,
+   "nrow": 27
+  },
+  {
+   "target_region": "MT",
+   "nmodel": 27,
+   "nrow": 27
+  }
+ ],
+ "pred_models_today": [
+  {
+   "target_region": "MB",
+   "ai_model": "claude-opus-4-6",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "claude-opus-5-fast",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "claude-sonnet-4-6",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "combo-no-token",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "combo-super",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "deepseek-reasoner",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "deepseek-v4-pro-real",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gemini-2.5-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gemini-2.5-pro",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gemini-3.5-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gemini-3.6-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "glm-5.1",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "glm-5.2",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gpt-5-mini",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gpt-5.4",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gpt-5.5",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gpt-5.6-sol-pro",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "gpt-oss-120b",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "grok-4.3",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "lstm",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "meta-learning",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "qwen3-max-thinking",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "qwen3.7-max",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "random-forest",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "smart-ensemble",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "smart-ml",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MB",
+   "ai_model": "xgboost",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "claude-opus-4-6",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "claude-opus-5-fast",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "claude-sonnet-4-6",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "combo-no-token",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "combo-super",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "deepseek-reasoner",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "deepseek-v4-pro-real",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gemini-2.5-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gemini-2.5-pro",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gemini-3.5-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gemini-3.6-flash",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "glm-5.1",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "glm-5.2",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gpt-5-mini",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gpt-5.4",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gpt-5.5",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gpt-5.6-sol-pro",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "gpt-oss-120b",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "grok-4.3",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "lstm",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "meta-learning",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "qwen3-max-thinking",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "qwen3.7-max",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "random-forest",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "smart-ensemble",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "smart-ml",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MN",
+   "ai_model": "xgboost",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "claude-opus-4-6",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "claude-opus-5-fast",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "claude-sonnet-4-6",
+   "n": 1,
+   "st": "WIN"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "combo-no-token",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "combo-super",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "deepseek-reasoner",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "deepseek-v4-pro-real",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gemini-2.5-flash",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gemini-2.5-pro",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gemini-3.5-flash",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gemini-3.6-flash",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "glm-5.1",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "glm-5.2",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gpt-5-mini",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gpt-5.4",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gpt-5.5",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gpt-5.6-sol-pro",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "gpt-oss-120b",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "grok-4.3",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "lstm",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "meta-learning",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "qwen3-max-thinking",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "qwen3.7-max",
+   "n": 1,
+   "st": "PARTIAL"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "random-forest",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "smart-ensemble",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "smart-ml",
+   "n": 1,
+   "st": "LOSE"
+  },
+  {
+   "target_region": "MT",
+   "ai_model": "xgboost",
+   "n": 1,
+   "st": "PARTIAL"
+  }
+ ],
+ "pred_model_cov_30d": [
+  {
+   "ai_model": "claude-opus-4-6",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "claude-opus-5-fast",
+   "dmn": 5,
+   "dmt": 5,
+   "dmb": 4,
+   "ndate": 5
+  },
+  {
+   "ai_model": "claude-sonnet-4-6",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "combo-no-token",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "combo-super",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "deepseek-reasoner",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "deepseek-v4-flash",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "deepseek-v4-pro",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "deepseek-v4-pro-real",
+   "dmn": 30,
+   "dmt": 29,
+   "dmb": 29,
+   "ndate": 30
+  },
+  {
+   "ai_model": "gemini-2.5-flash",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "gemini-2.5-pro",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "gemini-3-flash",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "gemini-3.1-pro",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "gemini-3.5-flash",
+   "dmn": 28,
+   "dmt": 28,
+   "dmb": 27,
+   "ndate": 29
+  },
+  {
+   "ai_model": "gemini-3.6-flash",
+   "dmn": 3,
+   "dmt": 3,
+   "dmb": 2,
+   "ndate": 3
+  },
+  {
+   "ai_model": "gemma-4-31b",
+   "dmn": 26,
+   "dmt": 25,
+   "dmb": 25,
+   "ndate": 26
+  },
+  {
+   "ai_model": "glm-5.1",
+   "dmn": 31,
+   "dmt": 30,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "glm-5.2",
+   "dmn": 30,
+   "dmt": 30,
+   "dmb": 29,
+   "ndate": 30
+  },
+  {
+   "ai_model": "gpt-5-mini",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "gpt-5.4",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "gpt-5.5",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 30,
+   "ndate": 31
+  },
+  {
+   "ai_model": "gpt-5.6-sol-pro",
+   "dmn": 5,
+   "dmt": 5,
+   "dmb": 4,
+   "ndate": 5
+  },
+  {
+   "ai_model": "gpt-oss-120b",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "grok-4.20-multi-agent",
+   "dmn": 26,
+   "dmt": 26,
+   "dmb": 26,
+   "ndate": 26
+  },
+  {
+   "ai_model": "grok-4.3",
+   "dmn": 17,
+   "dmt": 18,
+   "dmb": 17,
+   "ndate": 18
+  },
+  {
+   "ai_model": "kimi-k2.5",
+   "dmn": 26,
+   "dmt": 25,
+   "dmb": 24,
+   "ndate": 26
+  },
+  {
+   "ai_model": "lstm",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "meta-learning",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "qwen3-coder",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "qwen3-max-thinking",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "qwen3.6-plus",
+   "dmn": 1,
+   "dmt": 1,
+   "dmb": 1,
+   "ndate": 1
+  },
+  {
+   "ai_model": "qwen3.7-max",
+   "dmn": 30,
+   "dmt": 29,
+   "dmb": 28,
+   "ndate": 30
+  },
+  {
+   "ai_model": "random-forest",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "smart-ensemble",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "smart-ml",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  },
+  {
+   "ai_model": "xgboost",
+   "dmn": 31,
+   "dmt": 31,
+   "dmb": 31,
+   "ndate": 31
+  }
+ ],
+ "pred_ndays_30d": 31,
+ "mb_times": [
+  {
+   "date": "2026-07-04",
+   "region": "MB",
+   "hhmm": "17:37",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 12
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MB",
+   "hhmm": "17:36",
+   "model_count": 12
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 12
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MB",
+   "hhmm": "17:35",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MB",
+   "hhmm": "17:35",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MB",
+   "hhmm": "17:36",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MB",
+   "hhmm": "17:35",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MB",
+   "hhmm": "17:35",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MB",
+   "hhmm": "17:34",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MB",
+   "hhmm": "17:33",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MB",
+   "hhmm": "17:35",
+   "model_count": 13
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MB",
+   "hhmm": "17:39",
+   "model_count": 14
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MB",
+   "hhmm": "17:37",
+   "model_count": 14
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MB",
+   "hhmm": "17:44",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-04",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MN",
+   "hhmm": "04:19",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MN",
+   "hhmm": "04:19",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MN",
+   "hhmm": "04:21",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MN",
+   "hhmm": "04:19",
+   "model_count": 14
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MN",
+   "hhmm": "04:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MN",
+   "hhmm": "04:17",
+   "model_count": 15
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MN",
+   "hhmm": "05:20",
+   "model_count": 13
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MN",
+   "hhmm": "05:18",
+   "model_count": 15
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MN",
+   "hhmm": "05:20",
+   "model_count": 15
+  },
+  {
+   "date": "2026-07-04",
+   "region": "MT",
+   "hhmm": "16:41",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-05",
+   "region": "MT",
+   "hhmm": "16:38",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-06",
+   "region": "MT",
+   "hhmm": "16:42",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-07",
+   "region": "MT",
+   "hhmm": "16:39",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-08",
+   "region": "MT",
+   "hhmm": "16:38",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-09",
+   "region": "MT",
+   "hhmm": "16:40",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-10",
+   "region": "MT",
+   "hhmm": "16:43",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-11",
+   "region": "MT",
+   "hhmm": "16:41",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-12",
+   "region": "MT",
+   "hhmm": "16:38",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-13",
+   "region": "MT",
+   "hhmm": "16:43",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-14",
+   "region": "MT",
+   "hhmm": "16:38",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-15",
+   "region": "MT",
+   "hhmm": "16:39",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-16",
+   "region": "MT",
+   "hhmm": "16:44",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-17",
+   "region": "MT",
+   "hhmm": "16:43",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-18",
+   "region": "MT",
+   "hhmm": "16:43",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-19",
+   "region": "MT",
+   "hhmm": "16:38",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-20",
+   "region": "MT",
+   "hhmm": "16:41",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-21",
+   "region": "MT",
+   "hhmm": "16:39",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-22",
+   "region": "MT",
+   "hhmm": "16:37",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-23",
+   "region": "MT",
+   "hhmm": "16:42",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-24",
+   "region": "MT",
+   "hhmm": "16:43",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-25",
+   "region": "MT",
+   "hhmm": "16:40",
+   "model_count": 11
+  },
+  {
+   "date": "2026-07-26",
+   "region": "MT",
+   "hhmm": "16:39",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-27",
+   "region": "MT",
+   "hhmm": "16:42",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-28",
+   "region": "MT",
+   "hhmm": "16:37",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-29",
+   "region": "MT",
+   "hhmm": "16:41",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-30",
+   "region": "MT",
+   "hhmm": "16:39",
+   "model_count": 13
+  },
+  {
+   "date": "2026-07-31",
+   "region": "MT",
+   "hhmm": "16:46",
+   "model_count": 13
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MT",
+   "hhmm": "16:46",
+   "model_count": 13
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MT",
+   "hhmm": "16:41",
+   "model_count": 13
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MT",
+   "hhmm": "16:47",
+   "model_count": 13
+  }
+ ],
+ "sched_cols": [
+  "id",
+  "log_time",
+  "log_level",
+  "message",
+  "job_name",
+  "region",
+  "date_str"
+ ],
+ "sched_today_lvl": [
+  {
+   "log_level": "INFO",
+   "n": 1003
+  },
+  {
+   "log_level": "WARNING",
+   "n": 23
+  }
+ ],
+ "sched_today_bad": [
+  {
+   "t_vn": "2026-08-03 17:53:45",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MB",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] deepseek-v4-pro-real: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 17:52:15",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MB",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] qwen3.7-max: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 17:50:45",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MB",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.6-sol-pro: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 17:46:25",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MB",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MB] gpt-5.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 17:43:41",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MB",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] Combo Super → MB: chưa có output sau 90s; chờ mốc 300s trước khi timeout thật"
+  },
+  {
+   "t_vn": "2026-08-03 17:34:22",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MB",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] glm-5.1 → MB: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 17:30:20",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MB",
+   "msg": "🚨 [RULE_QUALITY_ALERT] MB (2026-08-03 wd=0): 0 READY_STRONG rules (total=5). AI predictions will rely more on statistical patterns. Tiers: LIMITED_WEIGHT=4, READY_WITH_CAUTION=1"
+  },
+  {
+   "t_vn": "2026-08-03 16:57:41",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] deepseek-v4-pro-real: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:56:11",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] qwen3.7-max: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:54:41",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5.6-sol-pro: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:52:08",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] glm-5.2: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:50:38",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5-mini: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:49:08",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MT",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MT] gpt-5.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:45:16",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MT",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] Combo Super → MT: chưa có output sau 90s; chờ mốc 300s trước khi timeout thật"
+  },
+  {
+   "t_vn": "2026-08-03 16:42:36",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MT",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] deepseek-reasoner → MT: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 16:42:00",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MT",
+   "msg": "🚫 [AI_ONCE_DAILY_BLOCK] MT (2026-08-03): token/provider AI already attempted today (attempt_marker=1). Owner contract: no manual refill, no DD Trước/DD Sau token rerun."
+  },
+  {
+   "t_vn": "2026-08-03 16:40:00",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MT",
+   "msg": "🚨 [RULE_QUALITY_ALERT] MT (2026-08-03 wd=0): 0 READY_STRONG rules (total=5). AI predictions will rely more on statistical patterns. Tiers: LIMITED_WEIGHT=2, READY_WITH_CAUTION=3"
+  },
+  {
+   "t_vn": "2026-08-03 05:27:16",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MN",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MN] qwen3.7-max: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 05:25:46",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MN",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MN] gpt-5.6-sol-pro: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 05:21:46",
+   "log_level": "WARNING",
+   "job_name": "shadow_eval",
+   "region": "MN",
+   "msg": "  ⏭️ [SOFT_CONTINUE_90S] [MN] gpt-5.5: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 05:19:13",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MN",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] glm-5.1 → MN: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 05:17:43",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MN",
+   "msg": "⏭️ [SOFT_CONTINUE_90S] deepseek-reasoner → MN: chưa có output sau 90s; chạy model kế tiếp, chờ tối đa 300s để nhận output muộn"
+  },
+  {
+   "t_vn": "2026-08-03 05:15:00",
+   "log_level": "WARNING",
+   "job_name": "ai_predict",
+   "region": "MN",
+   "msg": "🚨 [RULE_QUALITY_ALERT] MN (2026-08-03 wd=0): 0 READY_STRONG rules (total=5). AI predictions will rely more on statistical patterns. Tiers: LIMITED_WEIGHT=5"
+  }
+ ],
+ "sched_last": [
+  {
+   "t_vn": "2026-08-03 19:12:00",
+   "log_level": "INFO",
+   "job_name": "v80_shadow_completion",
+   "region": null,
+   "msg": "[V80_SHADOW_COMPLETION] target=2026-08-03 rows=32 version=v80_shadow_completion_v1"
+  },
+  {
+   "t_vn": "2026-08-03 19:10:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MB",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:10:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MT",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:10:00",
+   "log_level": "INFO",
+   "job_name": "v78_prompt_shadow_audit",
+   "region": null,
+   "msg": "[V78_PROMPT_SHADOW_AUDIT] target=2026-08-03 rows=74 version=v78_ai_region_specialist_shadow_v1"
+  },
+  {
+   "t_vn": "2026-08-03 19:10:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MN",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:08:00",
+   "log_level": "INFO",
+   "job_name": "v79_ai_no_token_cross_verify",
+   "region": null,
+   "msg": "[V79_AI_NO_TOKEN_CROSS_VERIFY] target=2026-08-03 rows=12 version=v79_ai_no_token_cross_verify_v1"
+  },
+  {
+   "t_vn": "2026-08-03 19:05:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MB",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:05:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MT",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:05:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MN",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:05:00",
+   "log_level": "INFO",
+   "job_name": "v77_fast_incident_monitor",
+   "region": null,
+   "msg": "[V77_FAST_INCIDENT] target=2026-08-03 alerts={'GREEN': 12, 'BUDGET_FAIL_FAST': 1, 'ORANGE_FAST': 1, 'RED_FAST': 1}"
+  },
+  {
+   "t_vn": "2026-08-03 19:00:00",
+   "log_level": "INFO",
+   "job_name": "v77_post_cascade_rerun",
+   "region": null,
+   "msg": "[V77_POST_CASCADE] target=2026-08-03 v70_agree=[4, 4, 1] v73_tier=['HIGH', 'HIGH', 'LOW']"
+  },
+  {
+   "t_vn": "2026-08-03 19:00:00",
+   "log_level": "INFO",
+   "job_name": null,
+   "region": null,
+   "msg": "🐶 [WATCHDOG_OK] mọi milestone đúng nhịp"
+  },
+  {
+   "t_vn": "2026-08-03 19:00:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MB",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MB: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:00:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MT",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MT: actual already present; no pre-result lock"
+  },
+  {
+   "t_vn": "2026-08-03 19:00:00",
+   "log_level": "INFO",
+   "job_name": "du_doan_test_auto",
+   "region": "MN",
+   "msg": "[DU-DOAN-TEST-AUTO] skip MN: actual already present; no pre-result lock"
+  }
+ ],
+ "results_today": [
+  {
+   "date": "2026-08-03",
+   "region": "MB",
+   "n": 1,
+   "last": "2026-08-03T18:31:02.182061+07:00"
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MN",
+   "n": 3,
+   "last": "2026-08-03T16:39:41.748347+07:00"
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MT",
+   "n": 2,
+   "last": "2026-08-03T17:30:01.099875+07:00"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MB",
+   "n": 1,
+   "last": "2026-08-02T18:32:03.930125+07:00"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MN",
+   "n": 3,
+   "last": "2026-08-02T16:34:35.440543+07:00"
+  },
+  {
+   "date": "2026-08-02",
+   "region": "MT",
+   "n": 3,
+   "last": "2026-08-02T17:30:00.913823+07:00"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MB",
+   "n": 1,
+   "last": "2026-08-01T18:32:03.134727+07:00"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MN",
+   "n": 4,
+   "last": "2026-08-01T16:39:40.304765+07:00"
+  },
+  {
+   "date": "2026-08-01",
+   "region": "MT",
+   "n": 3,
+   "last": "2026-08-01T17:34:35.082794+07:00"
+  }
+ ],
+ "n_tables": 241,
+ "tables_by_date": [
+  {
+   "t": "ai_primary_gate_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "ai_reasoning_contract_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "bundle_family_contribution_daily",
+   "last": "2026-08-03",
+   "n": 301
+  },
+  {
+   "t": "bundle_readiness_gate_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "bundle_replay_compare_daily",
+   "last": null,
+   "n": 0
+  },
+  {
+   "t": "bundle_universe_coverage_shadow",
+   "last": "2026-05-02",
+   "n": 96
+  },
+  {
+   "t": "candidate_drop_stage_daily",
+   "last": "2026-08-03",
+   "n": 347
+  },
+  {
+   "t": "cau_forward_shadow",
+   "last": "2026-08-03",
+   "n": 547
+  },
+  {
+   "t": "champion_selector_shadow",
+   "last": "2026-06-15",
+   "n": 108
+  },
+  {
+   "t": "cohere_effectiveness_daily",
+   "last": "2026-07-09",
+   "n": 247
+  },
+  {
+   "t": "cohere_rerank_log",
+   "last": "2026-07-09",
+   "n": 248
+  },
+  {
+   "t": "consensus_freeshadow_shadow",
+   "last": "2026-08-02",
+   "n": 1395
+  },
+  {
+   "t": "convergence_cluster_pattern_daily",
+   "last": "2026-08-03",
+   "n": 1023
+  },
+  {
+   "t": "corrected_rescue_replay_shadow",
+   "last": "2026-05-02",
+   "n": 900
+  },
+  {
+   "t": "counterfactual_decision_audit_shadow",
+   "last": "2026-08-03",
+   "n": 3017
+  },
+  {
+   "t": "cross_region_spillover_shadow",
+   "last": "2026-05-02",
+   "n": 11283
+  },
+  {
+   "t": "daily_eval_log",
+   "last": "2026-08-03",
+   "n": 392
+  },
+  {
+   "t": "daily_stats",
+   "last": "2026-08-03",
+   "n": 190
+  },
+  {
+   "t": "data_preservation_manifest_daily",
+   "last": null,
+   "n": 0
+  },
+  {
+   "t": "day_governance",
+   "last": "2026-08-03",
+   "n": 470
+  },
+  {
+   "t": "draw_availability_daily",
+   "last": "2026-08-03",
+   "n": 290
+  },
+  {
+   "t": "edge_gate_daily",
+   "last": "2026-08-01",
+   "n": 3
+  },
+  {
+   "t": "experimental_preview_shadow",
+   "last": "2026-08-03",
+   "n": 4093
+  },
+  {
+   "t": "final_bundles",
+   "last": "2026-08-03",
+   "n": 471
+  },
+  {
+   "t": "freshness_chain_daily",
+   "last": "2026-08-03",
+   "n": 2135
+  },
+  {
+   "t": "lane_test_active_challenger_scoreboard",
+   "last": "2026-05-22",
+   "n": 1557
+  },
+  {
+   "t": "live_edge_monitor",
+   "last": "2026-08-02",
+   "n": 249
+  },
+  {
+   "t": "lottery_results",
+   "last": "2026-08-03",
+   "n": 15207
+  },
+  {
+   "t": "loz_selector_shadow",
+   "last": "2026-05-06",
+   "n": 4033
+  },
+  {
+   "t": "loz_stage_trace_shadow",
+   "last": "2026-05-05",
+   "n": 6356
+  },
+  {
+   "t": "main_vs_secondary_quality_daily",
+   "last": "2026-08-03",
+   "n": 301
+  },
+  {
+   "t": "mb_experimental_preview_shadow",
+   "last": "2026-08-03",
+   "n": 779
+  },
+  {
+   "t": "mb_structural_drilldown_shadow",
+   "last": "2026-05-02",
+   "n": 62
+  },
+  {
+   "t": "mined_rule_effectiveness",
+   "last": "2026-08-02",
+   "n": 3173
+  },
+  {
+   "t": "model_cross_region_dup_shadow",
+   "last": "2026-05-02",
+   "n": 662
+  },
+  {
+   "t": "model_daily_eval",
+   "last": "2026-08-02",
+   "n": 11415
+  },
+  {
+   "t": "model_latency_cost_audit_daily",
+   "last": "2026-05-06",
+   "n": 4033
+  },
+  {
+   "t": "money_board_daily_lock",
+   "last": "2026-08-03",
+   "n": 84
+  },
+  {
+   "t": "money_board_log",
+   "last": "2026-08-03",
+   "n": 111
+  },
+  {
+   "t": "mt_model_hit_output_drop_shadow",
+   "last": "2026-05-06",
+   "n": 365
+  },
+  {
+   "t": "no_token_drift_shadow",
+   "last": "2026-08-03",
+   "n": 1219
+  },
+  {
+   "t": "output_eligible_completion_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "output_final_lab_shadow",
+   "last": "2026-08-03",
+   "n": 8949
+  },
+  {
+   "t": "output_policy_replay_daily",
+   "last": "2026-08-03",
+   "n": 2086
+  },
+  {
+   "t": "play_recommendation_shadow",
+   "last": "2026-08-03",
+   "n": 165
+  },
+  {
+   "t": "pnl_daily_bets",
+   "last": "2026-05-20",
+   "n": 28
+  },
+  {
+   "t": "pnl_daily_settlements",
+   "last": "2026-05-20",
+   "n": 76
+  },
+  {
+   "t": "pnl_daily_summary",
+   "last": "2026-05-20",
+   "n": 14
+  },
+  {
+   "t": "pnl_forward_track_shadow",
+   "last": "2026-08-02",
+   "n": 1206
+  },
+  {
+   "t": "pp1_live_watch_daily",
+   "last": "2026-08-03",
+   "n": 154
+  },
+  {
+   "t": "pre_partial_post_lose_daily",
+   "last": "2026-08-03",
+   "n": 2107
+  },
+  {
+   "t": "pre_vs_post_rerun_effect_daily",
+   "last": "2026-08-03",
+   "n": 903
+  },
+  {
+   "t": "pre_win_post_lose_daily",
+   "last": "2026-08-03",
+   "n": 2107
+  },
+  {
+   "t": "predictions",
+   "last": "2026-08-03",
+   "n": 11632
+  },
+  {
+   "t": "prompt_pressure_daily",
+   "last": "2026-08-03",
+   "n": 5592
+  },
+  {
+   "t": "prompt_section_breakdown_daily",
+   "last": "2026-08-03",
+   "n": 36733
+  },
+  {
+   "t": "public_bundle_publish_audit_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "reasoning_layer_penetration_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "rescue_candidate_shadow",
+   "last": "2026-08-02",
+   "n": 10981
+  },
+  {
+   "t": "rule_conversion_loss_stage_daily",
+   "last": "2026-08-03",
+   "n": 301
+  },
+  {
+   "t": "rule_phase_evidence_shadow",
+   "last": "2026-08-02",
+   "n": 5313
+  },
+  {
+   "t": "runtime_reliability_daily",
+   "last": "2026-08-03",
+   "n": 665
+  },
+  {
+   "t": "runtime_reliability_model_daily",
+   "last": "2026-08-03",
+   "n": 4220
+  },
+  {
+   "t": "shadow_candidates",
+   "last": "2026-08-03",
+   "n": 27306
+  },
+  {
+   "t": "shadow_daily_comparison",
+   "last": "2026-08-03",
+   "n": 423
+  },
+  {
+   "t": "shadow_feature_snapshots",
+   "last": "2026-08-03",
+   "n": 5079
+  },
+  {
+   "t": "shadow_model_promotion_scorecard_daily",
+   "last": "2026-08-03",
+   "n": 3573
+  },
+  {
+   "t": "shadow_results",
+   "last": "2026-08-03",
+   "n": 27306
+  },
+  {
+   "t": "shadow_rule_d1_comparison",
+   "last": "2026-08-02",
+   "n": 190
+  },
+  {
+   "t": "signal_governance_ledger",
+   "last": "2026-05-22",
+   "n": 10317
+  },
+  {
+   "t": "single_vote_rescue_replay_shadow",
+   "last": "2026-05-01",
+   "n": 540
+  },
+  {
+   "t": "slice_recommendation",
+   "last": "2026-08-03",
+   "n": 437
+  },
+  {
+   "t": "source_prize_effectiveness_daily",
+   "last": "2026-08-03",
+   "n": 8830
+  },
+  {
+   "t": "strength_skip_calibration_replay_shadow",
+   "last": "2026-05-02",
+   "n": 865
+  },
+  {
+   "t": "strongest_candidate_escape_daily",
+   "last": "2026-08-03",
+   "n": 298
+  },
+  {
+   "t": "strongest_vs_final_conversion_daily",
+   "last": "2026-08-03",
+   "n": 347
+  },
+  {
+   "t": "strongest_vs_final_shadow",
+   "last": "2026-08-03",
+   "n": 285
+  },
+  {
+   "t": "sync_parity_audit_daily",
+   "last": null,
+   "n": 0
+  },
+  {
+   "t": "system_alerts",
+   "last": "2026-05-11",
+   "n": 9
+  },
+  {
+   "t": "tier2_replay_shadow",
+   "last": "2026-05-02",
+   "n": 192
+  },
+  {
+   "t": "tier2_replay_v2_shadow",
+   "last": "2026-05-02",
+   "n": 558
+  },
+  {
+   "t": "trace_field_completeness_daily",
+   "last": "2026-08-03",
+   "n": 301
+  },
+  {
+   "t": "training_history",
+   "last": "2026-08-02",
+   "n": 228
+  },
+  {
+   "t": "v10789_selector_shadow",
+   "last": "2026-08-03",
+   "n": 774
+  },
+  {
+   "t": "v10801_ml_mark_ab_daily",
+   "last": "2026-08-03",
+   "n": 496
+  },
+  {
+   "t": "v10803_chase_bias_daily",
+   "last": "2026-08-03",
+   "n": 327
+  },
+  {
+   "t": "v10809_shadow_ab_daily",
+   "last": "2026-07-22",
+   "n": 105
+  },
+  {
+   "t": "v10810_station_repair_backup",
+   "last": "2026-07-07",
+   "n": 6
+  },
+  {
+   "t": "v10821_total_v2_daily",
+   "last": "2026-08-02",
+   "n": 516
+  },
+  {
+   "t": "v10829_rule_cond_daily",
+   "last": "2026-08-02",
+   "n": 99
+  },
+  {
+   "t": "v10844_mb_whatif_daily",
+   "last": "2026-08-02",
+   "n": 17
+  },
+  {
+   "t": "v10861_choi_display_output",
+   "last": "2026-08-03",
+   "n": 108
+  },
+  {
+   "t": "v10861_output_deadline_audit",
+   "last": "2026-08-02",
+   "n": 201
+  },
+  {
+   "t": "v10869_execution_order_audit",
+   "last": "2026-08-02",
+   "n": 60
+  },
+  {
+   "t": "v10869_m2_roster_ab_daily",
+   "last": "2026-08-02",
+   "n": 135
+  },
+  {
+   "t": "v10872_deherd_scoreboard",
+   "last": "2026-08-02",
+   "n": 282
+  },
+  {
+   "t": "v10879_nghiemthu_scoreboard",
+   "last": "2026-08-03",
+   "n": 147
+  },
+  {
+   "t": "v10883_connector_apply_log",
+   "last": null,
+   "n": 0
+  },
+  {
+   "t": "v10891_deadline_guard",
+   "last": "2026-08-03",
+   "n": 440
+  },
+  {
+   "t": "v10900_consistency_guard",
+   "last": "2026-08-03",
+   "n": 64
+  },
+  {
+   "t": "verdict_distribution_daily",
+   "last": "2026-08-03",
+   "n": 8209
+  },
+  {
+   "t": "weekday_rule_strength_daily",
+   "last": "2026-08-03",
+   "n": 298
+  }
+ ],
+ "j429": "Aug 03 17:42:55 lotteryai-aulb python3[645169]: 2026-08-03 17:42:55,429 - INFO - HTTP Request: POST https://api.deepseek.com/chat/completions \"HTTP/1.1 200 OK\"\n",
+ "j503": "Aug 03 16:57:45 lotteryai-aulb python3[645169]: 2026-08-03 16:57:45,880 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent \"HTTP/1.1 503 Service Unavailable\"\n",
+ "jscrape": "28",
+ "jscrape_last": "Aug 03 17:30:00 lotteryai-aulb python3[645169]: 2026-08-03 17:30:00,593 - INFO - [SCRAPE_OK] MT 03/08/2026: source=minhngoc stations=2 elapsed=0.4s (concurrent first-success)\nAug 03 18:30:00 lotteryai-aulb python3[645169]: 2026-08-03 18:30:00,711 - WARNING - [SCRAPE_FAIL] MB 03/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MB ngày 03/08/2026', 'xsdp': '[xsdp] Không có kết quả MB ngày 03/08/2026', 'minhngoc': 'no data'}\nAug 03 18:30:00 lotteryai-aulb python3[645169]: 2026-08-03 18:30:00,712 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MB error=Không thể tải dữ liệu MB ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 18:30:31 lotteryai-aulb python3[645169]: 2026-08-03 18:30:31,677 - WARNING - [SCRAPE_FAIL] MB 03/08/2026: all concurrent sources empty (0.9s) — errors: {'xsdp': '[xsdp] Không có kết quả MB ngày 03/08/2026', 'xskt': '[xskt] Không có kết quả MB ngày 03/08/2026', 'minhngoc': 'no data'}\nAug 03 18:30:31 lotteryai-aulb python3[645169]: 2026-08-03 18:30:31,678 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MB error=Không thể tải dữ liệu MB ngày 03/08/2026 (cả 3 nguồn đều thất bại)\nAug 03 18:31:01 lotteryai-aulb python3[645169]: 2026-08-03 18:31:01,991 - INFO - [SCRAPE_OK] MB 03/08/2026: source=xsdp stations=1 elapsed=0.3s (concurrent first-success)\n",
+ "logs_ls": "total 93208\ndrwxr-xr-x 2 root root     4096 2026-07-28 .\ndrwx---rwx 9 root root    32768 2026-08-01 ..\n-rw-r--r-- 1 root root     3548 2026-06-15 bachthu_strength.log\n-rw-r--r-- 1 root root    20544 2026-08-03 champion_recommend.log\n-rw-r--r-- 1 root root     7732 2026-06-05 crontab.bak_20260605_202718\n-rw-r--r-- 1 root root     8053 2026-06-07 crontab.bak_v10703_20260607_003426\n-rw-r--r-- 1 root root    32506 2026-07-31 lane_v2_daily.log\n-rw-r--r-- 1 root root     2961 2026-08-02 live_edge_monitor.log\n-rw-r--r-- 1 root root     2000 2026-06-15 lo_selector.log\n-rw-r--r-- 1 root root   138139 2026-08-03 mb_advanced_lane.log\n-rw-r--r-- 1 root root     7363 2026-08-03 mb_ai_limit.log\n-rw-r--r-- 1 root root   159042 2026-08-03 mb_perpos_cron.log\n-rw-r--r-- 1 root root     7085 2026-08-03 mn_ai_limit.log\n-rw-r--r-- 1 root root    15233 2026-08-03 model_progress.log\n-rw-r--r-- 1 root root    45999 2026-08-03 mt_advanced_lane.log\n-rw-r--r-- 1 root root     7208 2026-08-03 mt_ai_limit.log\n-rw-r--r-- 1 root root     3264 2026-08-03 no_lookahead.log\n-rw-r--r-- 1 root root 81703053 2026-08-02 optimizer_once.log\n-rw-r--r-- 1 root root   236150 2026-08-03 output_final_lab.log\n-rw-r--r-- 1 root root   227270 2026-08-02 perpos_matrix.log\n-rw-r--r-- 1 root root     3312 2026-08-02 pnl_forward.log\n-rw-r--r-- 1 root root   109843 2026-08-03 postdraw_settle.log\n-rw-r--r-- 1 root root     2562 2026-06-15 reduce_cadence_plan.log\n-rw-r--r-- 1 root root   169826 2026-08-02 rescue_candidate.log\n-rw-r--r-- 1 root root    31316 2026-08-03 retrain_guard.log\n-rw-r--r-- 1 root root     8808 2026-08-03 shadow_scoreboard.log\n-rw-r--r-- 1 root root    12875 2026-08-03 slice_health.log\n-rw-r--r-- 1 root root   162197 2026-08-03 slice_reco.log\n-rw-r--r-- 1 root root    90506 2026-08-03 system_health.log\n-rw-r--r-- 1 root root     2086 2026-08-03 timetable_selfcheck.log\n-rw-r--r-- 1 root root     5088 2026-06-15 total_perweekday.log\n-rw-r--r-- 1 root root    30641 2026-07-31 v10679_lane.log\n-rw-r--r-- 1 root root    32193 2026-07-31 v10680_lane_topk.log\n-rw-r--r-- 1 root root    50272 2026-07-31 v10692_mb_early.log\n-rw-r--r-- 1 root root    51330 2026-08-01 v10692_mn_early.log\n-rw-r--r-- 1 root root    50951 2026-07-31 v10692_mt_early.log\n-rw-r--r-- 1 root root   151383 2026-07-31 v10692_multidir.log\n-rw-r--r-- 1 root root   214157 2026-08-03 v10703_screen.log\n-rw-r--r-- 1 root root  8936079 2026-08-01 v10707_doctrine_ab.log\n-rw-r--r-- 1 root root    20654 2026-08-03 v10708_ranker.log\n-rw-r--r-- 1 root root   898761 2026-08-01 v10781_pv2_lane.log\n-rw-r--r-- 1 root root    44695 2026-08-03 v10789_selector.log\n-rw-r--r-- 1 root root     6280 2026-08-03 v10801_ml_ab.log\n-rw-r--r-- 1 root root     5660 2026-08-03 v10803_chase_bias.log\n-rw-r--r-- 1 root root  1319848 2026-07-25 v10809_shadow_ab.log\n-rw-r--r-- 1 root root     1860 2026-08-02 v10821_total_v2.log\n-rw-r--r-- 1 root root    22688 2026-08-03 v10822_total_v2_lane.log\n-rw-r--r-- 1 root root    37281 2026-08-02 v10861_output_contract.log\n-rw-r--r-- 1 root root     1174 2026-08-02 v10869_cp_l6_lean.log\n-rw-r--r-- 1 root root     6976 2026-08-03 weakest_watch.log\n-rw-r--r-- 1 root root    43826 2026-08-03 weekly_guard.log\n-rw-r--r-- 1 root root    38988 2026-08-03 weekly_miner_cron.log\n"
+}

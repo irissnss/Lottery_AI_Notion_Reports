@@ -1,0 +1,219 @@
+{
+ "phien": "V10978",
+ "thoi_diem_do_VN": "2026-08-03 19:10:29",
+ "cong_tu_kiem_exit": {
+  "_v10920_session_start": 0,
+  "_v10920_decision_ledger": 0,
+  "_v10921_report_gate": 0,
+  "_v10925_rule_sync_check": 0
+ },
+ "dich_vu": {
+  "active": "active",
+  "mainpid": "645169",
+  "since": "Sun 2026-08-02 18:13:33 +07",
+  "nrestarts": "0",
+  "health_code": "200"
+ },
+ "dia": "/dev/vda1        39G   27G   13G  69% /",
+ "db_bytes": 650698752,
+ "bang_khoa": {
+  "predictions": 11632,
+  "final_bundles": 471,
+  "lottery_results": 15207,
+  "model_daily_eval": 11415
+ },
+ "consistency_guard": {
+  "ngay": "2026-08-03",
+  "ok": 16,
+  "tong": 16,
+  "lich_su": [
+   {
+    "date": "2026-08-03",
+    "ok": 16,
+    "tot": 16
+   },
+   {
+    "date": "2026-08-02",
+    "ok": 16,
+    "tot": 16
+   },
+   {
+    "date": "2026-08-01",
+    "ok": 16,
+    "tot": 16
+   },
+   {
+    "date": "2026-07-31",
+    "ok": 16,
+    "tot": 16
+   }
+  ]
+ },
+ "chuoi_output_30_ngay": {
+  "n_cells": 90,
+  "n_missing": 0,
+  "n_late": 0,
+  "n_thin": 57,
+  "n_empty": 0
+ },
+ "phan_bo_model_count": [
+  {
+   "model_count": 11,
+   "n": 1
+  },
+  {
+   "model_count": 12,
+   "n": 3
+  },
+  {
+   "model_count": 13,
+   "n": 34
+  },
+  {
+   "model_count": 14,
+   "n": 19
+  },
+  {
+   "model_count": 15,
+   "n": 33
+  }
+ ],
+ "cong_loi_the": {
+  "nguong_pp": 3.0,
+  "nguong_z": 2.0,
+  "cua_so": {
+   "30": [
+    {
+     "region": "MB",
+     "he_pct": 22.58,
+     "bua_pct": 23.45,
+     "loi_the_pp": -0.87,
+     "z": -0.11,
+     "cong_mo": false
+    },
+    {
+     "region": "MN",
+     "he_pct": 15.31,
+     "bua_pct": 16.31,
+     "loi_the_pp": -1.0,
+     "z": -0.27,
+     "cong_mo": false
+    },
+    {
+     "region": "MT",
+     "he_pct": 11.84,
+     "bua_pct": 16.62,
+     "loi_the_pp": -4.78,
+     "z": -1.12,
+     "cong_mo": false
+    }
+   ],
+   "90": [
+    {
+     "region": "MB",
+     "he_pct": 16.48,
+     "bua_pct": 23.7,
+     "loi_the_pp": -7.22,
+     "z": -1.62,
+     "cong_mo": false
+    },
+    {
+     "region": "MN",
+     "he_pct": 16.08,
+     "bua_pct": 16.46,
+     "loi_the_pp": -0.37,
+     "z": -0.17,
+     "cong_mo": false
+    },
+    {
+     "region": "MT",
+     "he_pct": 13.57,
+     "bua_pct": 16.51,
+     "loi_the_pp": -2.94,
+     "z": -1.18,
+     "cong_mo": false
+    }
+   ]
+  }
+ },
+ "edge_gate_daily_ghi_cuoi": "2026-08-01 (1 luot duy nhat, 0 cron)",
+ "tien_that": {
+  "co_dong_nao_mo": false,
+  "co_money_board_log": [
+   {
+    "diagnostic_only": 1,
+    "shadow_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "n": 111,
+    "d0": "2026-06-28",
+    "d1": "2026-08-03"
+   }
+  ]
+ },
+ "pnl_30_ngay_mo_phong": {
+  "MB": {
+   "ngay": 31,
+   "dai": 31,
+   "trung": 7,
+   "von": 837000,
+   "thu": 686000,
+   "lai_lo": -151000
+  },
+  "MN": {
+   "ngay": 31,
+   "dai": 98,
+   "trung": 15,
+   "von": 1764000,
+   "thu": 1470000,
+   "lai_lo": -294000
+  },
+  "MT": {
+   "ngay": 31,
+   "dai": 76,
+   "trung": 9,
+   "von": 1368000,
+   "thu": 882000,
+   "lai_lo": -486000
+  }
+ },
+ "journal_hom_nay": {
+  "dong": "341",
+  "traceback": "0",
+  "error": "14",
+  "hit_429": "1",
+  "hit_503": "1"
+ },
+ "bang_chet": {
+  "pnl_daily_summary": "2026-05-20 (75 ngay)",
+  "pnl_daily_bets": "2026-05-20 (75 ngay)",
+  "pnl_daily_settlements": "2026-05-20 (75 ngay)",
+  "system_alerts": "2026-05-11 (84 ngay, 0 lan nhac trong tracker/SSOT)",
+  "cohere_rerank_log": "2026-07-09 (25 ngay)",
+  "cohere_effectiveness_daily": "2026-07-09 (25 ngay)",
+  "model_latency_cost_audit_daily": "2026-05-06 (89 ngay)",
+  "signal_governance_ledger": "2026-05-22 (73 ngay)",
+  "v10809_shadow_ab_daily": "2026-07-22 (12 ngay)",
+  "RONG_chua_bao_gio_co_dong": [
+   "sync_parity_audit_daily",
+   "data_preservation_manifest_daily",
+   "bundle_replay_compare_daily",
+   "v10883_connector_apply_log"
+  ]
+ },
+ "viec_treo": {
+  "tong_treo": 111,
+  "qua_han": 1,
+  "qua_han_ma": "FU-236 (han 02/08)",
+  "den_han_5_ngay": 13,
+  "thieu_ma_doc_58": 54
+ },
+ "hook_dau_phien": {
+  "dau_thoi_gian_file": "2026-08-03 09:00:00",
+  "phien_nay_bat_dau": "2026-08-03 19:03",
+  "ket_luan": "hook khong kich hoat, phien thu 3 lien tiep",
+  "script_chay_tay_giay": 0.49
+ },
+ "khong_doi_runtime": true,
+ "su_co_MB_nghiem_thu": "do phien V10977 xu ly, V10978 khong dao chong"
+}

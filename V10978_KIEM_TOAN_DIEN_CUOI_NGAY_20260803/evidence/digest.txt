@@ -1,0 +1,219 @@
+====================================================================================================
+  V10978 — KIỂM TOÀN DIỆN CUỐI NGÀY 03/08/2026
+====================================================================================================
+
+[ĐỒNG HỒ] {"db_localtime": "2026-08-03 19:10:29", "db_utc": "2026-08-03 12:10:29", "shell_vn": "2026-08-03 19:10:29"} | today_vn = 2026-08-03
+
+[DỊCH VỤ]
+   active      : active
+   MainPID     : 645169 (sáng 03/08 là 645169)
+   ActiveEnter : Sun 2026-08-02 18:13:33 +07
+   NRestarts   : 0
+   /api/health : 200 | {"status":"running","app":"Lottery AI Prediction","version":"V20.3.36","time":"2026-08-03T19:10:29.202474+07:00","timezone":"Asia/Ho_Chi_Minh (UTC+7)","expected_model_count":15,"expected_output_model_
+   disk        : /dev/vda1        39G   27G   13G  69% /
+   db_bytes    : 650,698,752
+
+[4 BẢNG KHOÁ]
+   predictions          rows=   11,632  sha256=1e11a655e92e3cff…
+   final_bundles        rows=      471  sha256=8d4606bc1790723d…
+   lottery_results      rows=   15,207  sha256=924fd080a0d11f65…
+   model_daily_eval     rows=   11,415  sha256=4ddf97ab6b682e77…
+
+[TZ REGISTRY]  tổng cột khai = 53 | khai UTC = 42
+    {'table_name': 'final_bundles', 'time_col': 'created_at', 'stored_tz': 'VN', 'business_date_col': 'date', 'vn_view': None}
+    {'table_name': 'final_bundles', 'time_col': 'updated_at', 'stored_tz': 'VN', 'business_date_col': 'date', 'vn_view': None}
+    {'table_name': 'lottery_results', 'time_col': 'created_at', 'stored_tz': 'VN', 'business_date_col': 'date', 'vn_view': None}
+    {'table_name': 'model_daily_eval', 'time_col': 'created_at', 'stored_tz': 'VN', 'business_date_col': 'date', 'vn_view': None}
+    {'table_name': 'predictions', 'time_col': 'created_at', 'stored_tz': 'VN', 'business_date_col': 'date', 'vn_view': None}
+    {'table_name': 'scheduler_logs', 'time_col': 'log_time', 'stored_tz': 'UTC', 'business_date_col': None, 'vn_view': 'v_scheduler_logs_vn'}
+
+[CONSISTENCY GUARD]
+   lượt gần nhất: 2026-08-03  →  16/16 OK
+   lịch sử 10 lượt:
+     2026-08-03  16/16
+     2026-08-02  16/16
+     2026-08-01  16/16
+     2026-07-31  16/16
+
+[CHUỖI OUTPUT 30 NGÀY]
+   cửa sổ final_bundles: {'from': '2026-07-05', 'to': '2026-08-03', 'n_days': 30} | ngày lịch = 30
+   tổng ô (ngày × miền) = 90
+   THIẾU HOÀN TOÀN      = 0
+   CHỐT SAU HẠN         = 0
+   THIẾU PHIẾU (<15)    = 57
+   OUTPUT RỖNG          = 0
+
+   -- danh sách THIẾU --
+
+   -- danh sách TRỄ --
+
+   -- danh sách THIẾU PHIẾU --
+      2026-07-05 MT model_count = 13
+      2026-07-05 MB model_count = 14
+      2026-07-06 MT model_count = 13
+      2026-07-06 MB model_count = 14
+      2026-07-07 MT model_count = 13
+      2026-07-07 MB model_count = 14
+      2026-07-08 MT model_count = 13
+      2026-07-08 MB model_count = 14
+      2026-07-09 MT model_count = 13
+      2026-07-09 MB model_count = 14
+      2026-07-10 MT model_count = 13
+      2026-07-10 MB model_count = 12
+      2026-07-11 MT model_count = 13
+      2026-07-11 MB model_count = 12
+      2026-07-12 MT model_count = 13
+      2026-07-12 MB model_count = 12
+      2026-07-13 MT model_count = 13
+      2026-07-13 MB model_count = 13
+      2026-07-14 MT model_count = 13
+      2026-07-15 MT model_count = 13
+      2026-07-16 MT model_count = 13
+      2026-07-17 MT model_count = 13
+      2026-07-18 MT model_count = 13
+      2026-07-19 MT model_count = 13
+      2026-07-19 MB model_count = 14
+      2026-07-20 MT model_count = 13
+      2026-07-20 MB model_count = 14
+      2026-07-21 MT model_count = 13
+      2026-07-21 MB model_count = 14
+      2026-07-22 MT model_count = 13
+      2026-07-22 MB model_count = 14
+      2026-07-23 MT model_count = 13
+      2026-07-23 MB model_count = 14
+      2026-07-24 MT model_count = 13
+      2026-07-24 MB model_count = 13
+      2026-07-25 MT model_count = 11
+      2026-07-25 MB model_count = 13
+      2026-07-26 MT model_count = 13
+      2026-07-26 MB model_count = 14
+      2026-07-27 MT model_count = 13
+      2026-07-27 MB model_count = 14
+      2026-07-28 MN model_count = 14
+      2026-07-28 MT model_count = 13
+      2026-07-28 MB model_count = 14
+      2026-07-29 MT model_count = 13
+      2026-07-29 MB model_count = 14
+      2026-07-30 MT model_count = 13
+      2026-07-30 MB model_count = 14
+      2026-07-31 MT model_count = 13
+      2026-07-31 MB model_count = 13
+      2026-08-01 MN model_count = 13
+      2026-08-01 MT model_count = 13
+      2026-08-01 MB model_count = 14
+      2026-08-02 MT model_count = 13
+      2026-08-02 MB model_count = 14
+      2026-08-03 MT model_count = 13
+      2026-08-03 MB model_count = 14
+
+   -- danh sách RỖNG --
+
+   phân bố model_count: [{'model_count': 11, 'n': 1}, {'model_count': 12, 'n': 3}, {'model_count': 13, 'n': 34}, {'model_count': 14, 'n': 19}, {'model_count': 15, 'n': 33}]
+
+   -- MA TRẬN ngày × miền (state | created | mc) --
+   ngày                                  MN                          MT                          MB
+   2026-07-05                 OK|04:17|mc15       THIEUPHIEU|16:38|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-06                 OK|04:17|mc15       THIEUPHIEU|16:42|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-07                 OK|04:18|mc15       THIEUPHIEU|16:39|mc13       THIEUPHIEU|17:34|mc14
+   2026-07-08                 OK|04:19|mc15       THIEUPHIEU|16:38|mc13       THIEUPHIEU|17:34|mc14
+   2026-07-09                 OK|04:17|mc15       THIEUPHIEU|16:40|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-10                 OK|04:17|mc15       THIEUPHIEU|16:43|mc13       THIEUPHIEU|17:33|mc12
+   2026-07-11                 OK|04:18|mc15       THIEUPHIEU|16:41|mc13       THIEUPHIEU|17:36|mc12
+   2026-07-12                 OK|04:19|mc15       THIEUPHIEU|16:38|mc13       THIEUPHIEU|17:34|mc12
+   2026-07-13                 OK|04:18|mc15       THIEUPHIEU|16:43|mc13       THIEUPHIEU|17:33|mc13
+   2026-07-14                 OK|04:21|mc15       THIEUPHIEU|16:38|mc13               OK|17:34|mc15
+   2026-07-15                 OK|04:17|mc15       THIEUPHIEU|16:39|mc13               OK|17:34|mc15
+   2026-07-16                 OK|04:18|mc15       THIEUPHIEU|16:44|mc13               OK|17:35|mc15
+   2026-07-17                 OK|04:18|mc15       THIEUPHIEU|16:43|mc13               OK|17:35|mc15
+   2026-07-18                 OK|04:18|mc15       THIEUPHIEU|16:43|mc13               OK|17:36|mc15
+   2026-07-19                 OK|04:18|mc15       THIEUPHIEU|16:38|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-20                 OK|04:18|mc15       THIEUPHIEU|16:41|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-21                 OK|04:17|mc15       THIEUPHIEU|16:39|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-22                 OK|04:18|mc15       THIEUPHIEU|16:37|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-23                 OK|04:17|mc15       THIEUPHIEU|16:42|mc13       THIEUPHIEU|17:35|mc14
+   2026-07-24                 OK|04:17|mc15       THIEUPHIEU|16:43|mc13       THIEUPHIEU|17:33|mc13
+   2026-07-25                 OK|04:17|mc15       THIEUPHIEU|16:40|mc11       THIEUPHIEU|17:35|mc13
+   2026-07-26                 OK|04:17|mc15       THIEUPHIEU|16:39|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-27                 OK|04:17|mc15       THIEUPHIEU|16:42|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-28         THIEUPHIEU|04:19|mc14       THIEUPHIEU|16:37|mc13       THIEUPHIEU|17:34|mc14
+   2026-07-29                 OK|04:18|mc15       THIEUPHIEU|16:41|mc13       THIEUPHIEU|17:34|mc14
+   2026-07-30                 OK|04:17|mc15       THIEUPHIEU|16:39|mc13       THIEUPHIEU|17:33|mc14
+   2026-07-31                 OK|04:17|mc15       THIEUPHIEU|16:46|mc13       THIEUPHIEU|17:35|mc13
+   2026-08-01         THIEUPHIEU|05:20|mc13       THIEUPHIEU|16:46|mc13       THIEUPHIEU|17:39|mc14
+   2026-08-02                 OK|05:18|mc15       THIEUPHIEU|16:41|mc13       THIEUPHIEU|17:37|mc14
+   2026-08-03                 OK|05:20|mc15       THIEUPHIEU|16:47|mc13       THIEUPHIEU|17:44|mc14
+
+[CỔNG LỢI THẾ]
+   ngưỡng owner: ≥3.0pp VÀ z ≥2.0
+   ── cửa sổ 30 ngày ──
+     MB   kỳ=  31 đài=   31 hệ=22.58% bừa=23.45% lợi thế=-0.87pp z=-0.11 hoà vốn=27.55% → CỔNG ĐÓNG
+     MN   kỳ=  31 đài=   98 hệ=15.31% bừa=16.31% lợi thế=-1.00pp z=-0.27 hoà vốn=18.37% → CỔNG ĐÓNG
+     MT   kỳ=  31 đài=   76 hệ=11.84% bừa=16.62% lợi thế=-4.78pp z=-1.12 hoà vốn=18.37% → CỔNG ĐÓNG
+   ── cửa sổ 90 ngày ──
+     MB   kỳ=  91 đài=   91 hệ=16.48% bừa=23.7% lợi thế=-7.22pp z=-1.62 hoà vốn=27.55% → CỔNG ĐÓNG
+     MN   kỳ=  91 đài=  286 hệ=16.08% bừa=16.46% lợi thế=-0.37pp z=-0.17 hoà vốn=18.37% → CỔNG ĐÓNG
+     MT   kỳ=  91 đài=  221 hệ=13.57% bừa=16.51% lợi thế=-2.94pp z=-1.18 hoà vốn=18.37% → CỔNG ĐÓNG
+   edge_gate_daily ghi gần nhất:
+     2026-08-01 MB pp=-7.19 z=-1.61 cong_mo=0
+     2026-08-01 MN pp=-0.36 z=-0.17 cong_mo=0
+     2026-08-01 MT pp=-2.92 z=-1.17 cong_mo=0
+
+[TIỀN]
+   money_board_lock rows       : 18
+   money_board_daily_lock rows : 84
+   money_board_log 8 dòng cuối (khoá cột): ['id', 'date', 'region', 'weekday', 'method', 'play_style', 'songthu', 'verdict', 'stake', 'net_long_m', 'net_older_m', 'net_recent_m', 'songthu_pct', 'n', 'stable', 'wd_net_m', 'wd_n', 'rec_nhay', 'official', 'official_nhay', 'drawn', 'diagnostic_only', 'shadow_only', 'output_eligible', 'owner_approved', 'created_at', 'scored_at']
+      {'id': 327, 'date': '2026-08-03', 'region': 'MB', 'weekday': 0, 'method': 'MB_OFFICIAL_BASELINE_CONTROL', 'play_style': 'song-thủ', 'songthu': 'null', 'verdict': 'CHƠI'}
+      {'id': 326, 'date': '2026-08-03', 'region': 'MT', 'weekday': 0, 'method': 'MT_ADAPTIVE_EXPLOIT_V1', 'play_style': 'song-thủ', 'songthu': '["96"]', 'verdict': 'NGHỈ'}
+      {'id': 325, 'date': '2026-08-03', 'region': 'MN', 'weekday': 0, 'method': 'MN_BT1_OFFICIAL_V1', 'play_style': 'bạch-thủ 1 số', 'songthu': '["64"]', 'verdict': 'CÂN NHẮC'}
+      {'id': 318, 'date': '2026-08-02', 'region': 'MB', 'weekday': 6, 'method': 'MB_STRENGTH_WEIGHTED_V52_5_2', 'play_style': 'song-thủ', 'songthu': '["52", "13"]', 'verdict': 'CHƠI'}
+      {'id': 317, 'date': '2026-08-02', 'region': 'MT', 'weekday': 6, 'method': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1 + MT_AI_CHAIN_PRESERVATION_V1', 'play_style': 'song-thủ', 'songthu': '["64", "86"]', 'verdict': 'NGHỈ'}
+      {'id': 316, 'date': '2026-08-02', 'region': 'MN', 'weekday': 6, 'method': 'MN_BT1_OFFICIAL_V1', 'play_style': 'bạch-thủ 1 số', 'songthu': '["43"]', 'verdict': 'CHƠI'}
+      {'id': 309, 'date': '2026-08-01', 'region': 'MB', 'weekday': 5, 'method': 'MB_STRENGTH_WEIGHTED_V52_5_2', 'play_style': 'song-thủ', 'songthu': '["90", "84"]', 'verdict': 'CHƠI'}
+      {'id': 308, 'date': '2026-08-01', 'region': 'MT', 'weekday': 5, 'method': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1 + MT_AI_CHAIN_PRESERVATION_V1', 'play_style': 'song-thủ', 'songthu': '["55", "15"]', 'verdict': 'NGHỈ'}
+
+[SCHEDULER LOGS hôm nay]
+   theo status: ERR no such column: status
+   dòng lỗi: 0
+
+[JOURNAL hôm nay]
+   tổng dòng : 341
+   Traceback : 0
+   ERROR     : 14
+   429       : 1
+   503       : 1
+   500       : 0
+   timeout   : 0
+   RateLimit : 0
+   Overloaded: 0
+   --- mẫu Traceback ---
+
+   --- mẫu ERROR ---
+Aug 03 16:30:00 lotteryai-aulb python3[645169]: 2026-08-03 16:30:00,797 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:30:31 lotteryai-aulb python3[645169]: 2026-08-03 16:30:31,794 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:31:05 lotteryai-aulb python3[645169]: 2026-08-03 16:31:05,253 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:31:35 lotteryai-aulb python3[645169]: 2026-08-03 16:31:35,804 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:32:06 lotteryai-aulb python3[645169]: 2026-08-03 16:32:06,341 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:32:36 lotteryai-aulb python3[645169]: 2026-08-03 16:32:36,891 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:33:37 lotteryai-aulb python3[645169]: 2026-08-03 16:33:37,731 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:34:38 lotteryai-aulb python3[645169]: 2026-08-03 16:34:38,261 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:35:38 lotteryai-aulb python3[645169]: 2026-08-03 16:35:38,834 - WARNING - SCRAPE_FAIL date=2026-08-03 region=MN error=Không thể tải dữ liệu MN ngày 03/08/2026 (cả 3 nguồn đều thất bại)
+Aug 03 16:36:39 lotteryai-aulb python3[645169
+
+[KẾT QUẢ XỔ phủ ngày]
+    2026-08-03:6, 2026-08-02:7, 2026-08-01:8, 2026-07-31:6, 2026-07-30:7, 2026-07-29:6, 2026-07-28:6, 2026-07-27:6, 2026-07-26:7, 2026-07-25:8, 2026-07-24:6, 2026-07-23:7, 2026-07-22:6, 2026-07-21:6, 2026-07-20:6, 2026-07-19:7, 2026-07-18:8, 2026-07-17:6, 2026-07-16:7, 2026-07-15:6, 2026-07-14:6, 2026-07-13:6, 2026-07-12:7, 2026-07-11:8, 2026-07-10:6, 2026-07-09:7, 2026-07-08:6, 2026-07-07:6, 2026-07-06:6, 2026-07-05:7
+
+[CRONTAB]
+16 0 * * *  /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82 >> /www/server/cron/a50afd8f7d0e95dc2fd7bbbcfdcccd82.log 2>&1
+# V10919 2026-08-01 owner duyet cho lane nghi: V10637 lane-v2 — không được ai gọi, không UI không API
+# 30 14 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 -m lane._v10637_lane_v2_daily --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lane_v2_daily.log 2>&1
+0 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_slice_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/slice_health.log 2>&1
+5 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10642_model_progress.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/model_progress.log 2>&1
+10 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10644_shadow_scoreboard.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log 2>&1
+15 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10645_weakest_watch.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/weakest_watch.log 2>&1
+30 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10646_retrain_guard.py >> /root/Lottery_AI_Test/web/backend/logs/retrain_guard.log 2>&1
+5 * * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10647_system_health.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/system_health.log 2>&1
+0 7 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10648_weekly_guard.py >> /root/Lottery_AI_Test/web/backend/logs/weekly_guard.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 20 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10655_bachthu_strength_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 25 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10654_lo_selector_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/lo_selector.log 2>&1
+# DISABLED V10724 (unconsumed research, owner tinh gon): 30 9 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10657_total_perweekday_shadow.py --db /root/Lottery_AI_Test/data/lottery_ai.db >> /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log 2>&1
+35 9 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10658_slice_recommendation.py --db /root/Lottery_AI_Test/data/lottery_ai.db >>

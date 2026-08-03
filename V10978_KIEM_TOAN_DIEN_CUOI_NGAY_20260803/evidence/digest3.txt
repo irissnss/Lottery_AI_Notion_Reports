@@ -1,0 +1,55 @@
+====================================================================================================
+  V10978 — TIỀN · P&L 30 NGÀY · BẢNG CHẾT
+====================================================================================================
+
+[CÓ ĐỒNG TIỀN THẬT NÀO ĐANG MỞ KHÔNG]
+  cờ money_board_log 30 ngày (diagnostic_only, shadow_only, output_eligible, owner_approved, n):
+     {'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0, 'n': 93}
+  cờ money_board_log TOÀN BỘ lịch sử:
+     {'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0, 'n': 111, 'd0': '2026-06-28', 'd1': '2026-08-03'}
+
+[VERDICT 30 NGÀY theo miền]
+     {'region': 'MB', 'verdict': 'CHƠI', 'n': 16, 'stake': 0.0}
+     {'region': 'MB', 'verdict': 'CÂN NHẮC', 'n': 15, 'stake': 0.0}
+     {'region': 'MN', 'verdict': 'CÂN NHẮC', 'n': 16, 'stake': 0.0}
+     {'region': 'MN', 'verdict': 'NGHỈ', 'n': 11, 'stake': 0.0}
+     {'region': 'MN', 'verdict': 'CHƠI', 'n': 4, 'stake': 0.0}
+     {'region': 'MT', 'verdict': 'CÂN NHẮC', 'n': 19, 'stake': 0.0}
+     {'region': 'MT', 'verdict': 'NGHỈ', 'n': 8, 'stake': 0.0}
+     {'region': 'MT', 'verdict': 'CHƠI', 'n': 4, 'stake': 0.0}
+
+[BẢNG P&L]
+   pnl_daily_summary          {'d0': '2026-05-07', 'd1': '2026-05-20', 'n': 14}
+   pnl_daily_bets             {'d0': '2026-05-07', 'd1': '2026-05-20', 'n': 28}
+   pnl_daily_settlements      {'d0': '2026-05-07', 'd1': '2026-05-20', 'n': 76}
+   cron có chữ 'pnl'   : 68:30 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10730_pnl_forward_track.py >> /root/Lottery_AI_Test/web/backend/logs/pnl_forward.log 2>&1  # V10730-PB forward pnl track + EV refresh
+   cron có chữ 'alert' : (KHONG CO)
+   cron gọi _v10945    : 0
+
+[P&L 30 NGÀY TỰ TÍNH — bạch thủ 1 số, giá owner chốt 26/07]
+   (MN/MT 18k/đài · MB 27k/đài · trúng thu 98k)
+   MB: ngày= 31 lượt-đài=  31 trúng=  7 vốn=     837,000đ thu=     686,000đ  LÃI/LỖ=     -151,000đ (22.58% trúng)
+   MN: ngày= 31 lượt-đài=  98 trúng= 15 vốn=   1,764,000đ thu=   1,470,000đ  LÃI/LỖ=     -294,000đ (15.31% trúng)
+   MT: ngày= 31 lượt-đài=  76 trúng=  9 vốn=   1,368,000đ thu=     882,000đ  LÃI/LỖ=     -486,000đ (11.84% trúng)
+   ── TỔNG 3 miền: vốn=3,969,000đ · LÃI/LỖ=-931,000đ · tỷ suất=-23.5%
+
+[BẢNG RỖNG / CHẾT — ai định ghi, có cron không]
+   sync_parity_audit_daily            cron=0  writer=_v10901_tz_registry.py, database.py, main.py
+   data_preservation_manifest_daily   cron=0  writer=_v10901_tz_registry.py, database.py, main.py
+   bundle_replay_compare_daily        cron=0  writer=_v10901_tz_registry.py, database.py, main.py
+   v10883_connector_apply_log         cron=0  writer=_v10883_official_connector.py
+   system_alerts                      cron=0  writer=_v10901_tz_registry.py, main.py, scheduler.py
+
+[CRON TRỎ TỚI FILE KHÔNG TỒN TẠI]
+    (không có — mọi cron đều trỏ tới file có thật)
+
+[LOG FILE ĐỨNG >7 NGÀY]
+2026-04-16      37925 /root/Lottery_AI_Test/logs/shadow_daily.log
+2026-04-17       3830 /root/Lottery_AI_Test/logs/shadow_d1.log
+2026-06-15       2000 /root/Lottery_AI_Test/web/backend/logs/lo_selector.log
+2026-06-15       2562 /root/Lottery_AI_Test/web/backend/logs/reduce_cadence_plan.log
+2026-06-15       3548 /root/Lottery_AI_Test/web/backend/logs/bachthu_strength.log
+2026-06-15       5088 /root/Lottery_AI_Test/web/backend/logs/total_perweekday.log
+2026-07-25       1177 /root/Lottery_AI_Test/logs/v10842_live_verify.log
+2026-07-25    1319848 /root/Lottery_AI_Test/web/backend/logs/v10809_shadow_ab.log
+   log mới trong 2 ngày: 44 / tổng 61
