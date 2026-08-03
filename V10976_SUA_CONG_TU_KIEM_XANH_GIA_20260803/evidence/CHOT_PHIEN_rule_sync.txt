@@ -1,0 +1,35 @@
+### CHỐT PHIÊN · web/backend/_v10925_rule_sync_check.py --check
+### MÃ THOÁT = 0
+
+============================================================================================
+  KIỂM AGENTS.md CÓ KHỚP CLAUDE.md KHÔNG
+============================================================================================
+  AGENTS.md                đã khớp CLAUDE.md, không cần ghi
+
+============================================================================================
+  KIỂM SÁU MẶT QUY TẮC
+============================================================================================
+  mặt                         kích thước  thiếu dấu hiệu
+  .Antigravityrules.md           98,876B  ✓ đủ
+  .antigravityrules               1,860B  ✓ đủ
+  .AGENT.md                      29,728B  ✓ đủ
+  .cursorrules                   20,792B  ✓ đủ
+  CLAUDE.md                      13,497B  ✓ đủ
+  AGENTS.md                      13,412B  ✓ đủ
+
+============================================================================================
+  KIỂM .cursor/rules/*.mdc — có được Cursor TỰ NẠP không
+============================================================================================
+  active-roadmap-precedence.mdc                frontmatter=có · alwaysApply=true  ✓ tự nạp
+  governance-traceability-automation.mdc       frontmatter=có · alwaysApply=true  ✓ tự nạp
+  live-data-integrity.mdc                      frontmatter=có · alwaysApply=true  ✓ tự nạp
+  playbook-first.mdc                           frontmatter=có · alwaysApply=true  ✓ tự nạp
+
+============================================================================================
+  FILE QUY TẮC CHẾT Ở GỐC REPO
+============================================================================================
+  ✓ không còn file quy tắc lạ hay rỗng ở gốc repo
+
+============================================================================================
+  ✓ SÁU MẶT ĐỒNG BỘ · MỌI .mdc ĐỀU ĐƯỢC TỰ NẠP · KHÔNG CÒN FILE CHẾT
+============================================================================================

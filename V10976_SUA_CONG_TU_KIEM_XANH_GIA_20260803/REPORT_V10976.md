@@ -219,7 +219,7 @@ gỡ tay thì chỉ xoá khối `## V10976` ở đầu ba file, **đừng** ghi 
 | Mã máy | Mã đọc | Nhãn | Hạn | Trạng thái | Ngưỡng hành động bằng số |
 |---|---|---|---|---|---|
 | **FU-250** | `KS0806` | Soát nốt cổng còn thoát 0 khi trượt | **06/08** | `MEASURED_BUT_NOT_FIXED` | `_v10861_runtime_contract_audit.py`, `_v10921_rule_a55.py`, `_v10958_fu_reader.py` **không có** `sys.exit`/`SystemExit`. Tới 06/08: script nào **có** hook/cron/script khác đọc mã thoát thì sửa ngay; không ai đọc thì ghi rõ trong docstring "chỉ để đọc bằng mắt" rồi đóng mục |
-| **FU-251** | `BC0803` | V10975 chưa có báo cáo công khai | **03/08** | `WAIT_LIVE` | Hết ngày 03/08 mà `_v10921_report_gate.py V10975` vẫn exit 1 → ghi `A55_VIOLATION_REPORT_MISSING` cho phiên V10975 và nêu ngay đầu phiên 04/08 |
+| **FU-251** | `BC0803` | V10975 chưa có báo cáo công khai | **03/08** | `CLOSED_PASS` (đóng cuối phiên — xem §10) | Ngưỡng đã ghi: hết 03/08 mà `_v10921_report_gate.py V10975` vẫn exit 1 → `A55_VIOLATION_REPORT_MISSING`. Đo lại lúc đóng phiên: **exit 0** → đóng |
 
 Quyết định owner đã ghi vào sổ: **OD-20260803-A** · `SC0803` · *"Sửa 5 lỗi xanh giả ở tầng cổng
 tự kiểm; cổng phải thoát khác 0 khi có vi phạm; báo số thật kể cả khi xấu hơn số cũ"* — 5 mệnh
@@ -228,6 +228,26 @@ tự kiểm; cổng phải thoát khác 0 khi có vi phạm; báo số thật k�
 **Hạn rà soát:** không đặt hạn cố định cho OD-20260803-A vì đây là quyết định về chất lượng cổng
 kiểm, có hiệu lực thường trực; mệnh đề `kiem_code` chạy lại mỗi phiên nên code trôi khỏi nó sẽ
 tự hiện thành TRÔI.
+
+---
+
+## 10. Cập nhật cuối phiên — FU-251 đã đóng
+
+Ghi lại đúng diễn biến, không sửa số đo cũ:
+
+| Mốc (giờ VN) | `_v10921_report_gate.py` toàn cục | Vì sao |
+|---|---|---|
+| **09:04** | **exit 1** · `V10975 ✗ KHÔNG CÓ BÁO CÁO` | Cổng vừa sửa (L4) bắt được vi phạm A55 đang tồn tại thật. Bản cũ chạy **cùng lúc, cùng trạng thái repo** vẫn exit **0** |
+| **cuối phiên** | **exit 0** · cả 8 phiên bản gần đây đạt | Agent chạy song song đã đẩy `V10975_KIEM_DAU_NGAY_20260803` (đủ 9 phần, 11 tệp evidence) |
+
+`FU-251` thoả đúng ngưỡng đã ghi (`_v10921_report_gate.py V10975` → exit 0) nên đóng
+`CLOSED_PASS` ngay trong phiên, khối đóng nằm ở `docs/FOLLOW_UP_TRACKER.md § V10976b`.
+
+**Giá trị vẫn giữ nguyên:** đây là lần đầu cổng A55 **chặn được bằng máy**. Trước V10976 vi phạm
+này vẫn hiện ✗ trên màn hình nhưng máy nhận mã thoát 0, nên hook/CI không thể chặn — và nếu
+không ai đọc kỹ màn hình thì phiên vẫn "kết thúc thành công".
+
+`FU-250` (`KS0806`, hạn 06/08) vẫn treo — xem §9.
 
 ---
 
