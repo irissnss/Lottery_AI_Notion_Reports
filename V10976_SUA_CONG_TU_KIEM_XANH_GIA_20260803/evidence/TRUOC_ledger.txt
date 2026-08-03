@@ -1,0 +1,50 @@
+### BẢN CŨ + sổ JSON CŨ · repo sạch (số nền trước khi sửa)
+### MÃ THOÁT = 0
+
+============================================================================================
+  SỔ QUYẾT ĐỊNH — code có còn khớp với những gì anh đã chốt không
+============================================================================================
+
+  OD-20260801-A      🟢 khớp 6/6             Tắt 5 lớp ghi đè bạch thủ đang làm tệ đi; giữ 
+
+  OD-20260801-B      🟢 khớp 3/3             Cho 6 lane hết hạn đo nghỉ: V10707, V10781, V1
+
+  OD-20260801-C      ⚪ không kiểm máy       Không dựng thêm luồng đo song song khi số liệu
+
+  OD-20260801-D      ⚪ không kiểm máy       Đóng băng đường ra số từ 01/08 đến 08/08 — khô
+
+  OD-20260801-E      🟢 khớp 4/4             Mọi quyết định của owner, mọi vướng vấp, mọi h
+
+  OD-20260801-H      🟢 khớp 5/5             Bộ mặt quy tắc gồm SÁU file, đồng bộ đa chiều;
+
+  OD-20260801-G      🟢 khớp 6/6             CLAUDE.md thành mặt quy tắc thứ tư; bộ đồng bộ
+
+  OD-20260801-F      🟢 khớp 6/6             Sau MỌI việc code/fix/audit phải đẩy báo cáo l
+
+  OD-20260731-A      🟢 khớp 4/4             Hạn output cuối cùng: MN 15:45 · MT 16:58 · MB
+
+  OD-20260731-B      🟢 khớp 1/1             Biên an toàn trước mốc FINAL thống nhất 2 phút
+
+  OD-20260731-C      🟢 khớp 1/1             Toàn hệ dùng giờ Việt Nam nhất quán; bảng nào 
+
+  OD-20260726-A      🟢 khớp 1/1             Cách tính tiền: vốn 18.000đ/điểm cho MN+MT, 27
+
+  QD-013             🟢 khớp 3/3             Dừng đặt tiền thật cho tới khi chứng minh được
+
+  QD-014             🟢 khớp 7/7             Đóng băng đường ra số công bố tới hết 2026-08-
+
+  QD-015             🟢 khớp 4/4             Sau khi hết đóng băng 08/08: chạy luồng bóng (
+
+  QD-016             🟢 khớp 3/3             Sau 08/08: trên luồng bóng (shadow) bỏ lệnh bắ
+
+  QD-017             🟢 khớp 3/3             Sau 08/08: chạy hai prompt song song trên CÙNG
+
+  QD-019             🟢 khớp 3/3             Áp phương án B — giữ mã máy (FU-xxx, QD-xxx, C
+
+  QD-018             🟢 khớp 3/3             Sau cửa sổ đóng băng 08/08: thực hiện ĐÚNG BA 
+
+============================================================================================
+  ✓ KHÔNG CÓ QUYẾT ĐỊNH NÀO BỊ TRÔI
+============================================================================================
+
+đã sinh bản đọc cho người: docs\OWNER_DECISION_LEDGER.md

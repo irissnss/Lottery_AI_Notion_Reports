@@ -1,0 +1,33 @@
+============================================================================================
+  Γ¢ö KH├öNG ─ÉO ─É╞»ß╗óC ΓÇö KH├öNG c├│ kß║┐t quß║ú n├áo cho lß║ºn chß║íy n├áy
+============================================================================================
+  l├╜ do          : KIß╗éM ├éM V10976 ΓÇö giß║ú lß║¡p probe VPS trß║ú thiß║┐u JSON_START
+  lß║ºn ─æo t╞░╞íi gß║ºn nhß║Ñt: 2026-08-03 09:03:54
+  docs\OWNER_DECISION_LEDGER.md GIß╗« NGUY├èN Sß╗É C┼¿ ΓÇö ─æ├ú ─æ├│ng dß║Ñu cß║únh b├ío l├¬n ─æß║ºu file.
+  ─Éß╗¬NG b├ío owner "0 TR├öI" tß╗½ lß║ºn chß║íy n├áy.
+============================================================================================
+
+>>> m├ú tho├ít h├ám trß║ú vß╗ü: 1  (c┼⌐: script chß╗ë `return` ΓåÆ 0)
+>>> 760 k├╜ tß╗▒ ─æß║ºu cß╗ºa OWNER_DECISION_LEDGER.md sau khi ─æ├│ng dß║Ñu:
+<!-- LEDGER_TRANG_THAI_START -->
+> ## Γ¢ö Lß║ªN CHß║áY Gß║ªN NHß║ñT: **KH├öNG ─ÉO ─É╞»ß╗óC**
+>
+> - Chß║íy l├║c **2026-08-03 09:04:33** (giß╗¥ VN) nh╞░ng kh├┤ng lß║Ñy ─æ╞░ß╗úc kß║┐t quß║ú: KIß╗éM ├éM V10976 ΓÇö giß║ú lß║¡p probe VPS trß║ú thiß║┐u JSON_START
+> - **Mß╗ìi con sß╗æ b├¬n d╞░ß╗¢i l├á sß╗æ C┼¿**, cß╗ºa lß║ºn ─æo t╞░╞íi gß║ºn nhß║Ñt: **2026-08-03 09:03:54**.
+> - ─Éß╗½ng b├ío owner "0 TR├öI" dß╗▒a v├áo bß║ún n├áy ΓÇö chß║íy lß║íi `python web/backend/_v10920_decision_ledger.py` cho tß╗¢i khi hß║┐t d├▓ng n├áy.
+<!-- LEDGER_TRANG_THAI_END -->
+
+# Sß╗ö QUYß║╛T ─Éß╗èNH Cß╗ªA OWNER
+
+> **Kiß╗âm t╞░╞íi l├║c 2026-08-03 09:03:54** (giß╗¥ VN) ΓÇö chß║íy thß║¡t tr├¬n VPS, kh├┤ng phß║úi sß╗æ l╞░u lß║íi.
+
+> **Bß║ún n├áy do m├íy sinh tß╗½ `docs/OWNER_DECISION_LEDGER.json`.** ─Éß╗½ng sß╗¡a tay ΓÇö sß╗¡a file JSON rß╗ôi chß║íy `python web/backend/_v10920_decision_ledger.py`.
+
+Mß╗ùi quyß║┐t ─æß╗ïnh cß╗ºa owner 
+>>> docs/_LEDGER_TRANG_THAI.json:
+{
+  "lan_chay_gan_nhat": "2026-08-03 09:04:33",
+  "lan_chay_gan_nhat_do_duoc": false,
+  "ly_do_khong_do_duoc": "KIß╗éM ├éM V10976 ΓÇö giß║ú lß║¡p probe VPS trß║ú thiß║┐u JSON_START",
+  "lan_do_duoc_gan_nhat": "2026-08-03 09:03:54"
+}

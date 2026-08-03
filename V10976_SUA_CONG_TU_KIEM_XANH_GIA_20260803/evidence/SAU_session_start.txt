@@ -1,0 +1,37 @@
+### BẢN MỚI · _v10920_session_start.py
+### MÃ THOÁT = 0
+
+==============================================================================================
+  KIỂM ĐẦU PHIÊN — 2026-08-03   (bắt buộc chạy TRƯỚC khi trả lời owner)
+==============================================================================================
+
+[1] CHECKPOINT QUÁ HẠN: 0
+
+[2] ROADMAP XONG NHƯNG CHƯA CHUYỂN VÀO archive/: 0
+
+[3] MỤC THEO DÕI CÒN TREO: 80 · trong đó QUÁ HẠN 0
+      FU-251 · BC0803 · V10975 chưa có báo cáo công khai · hạn 03/08           WAIT_LIVE                 
+      FU-250 · KS0806 · Soát nốt cổng còn thoát 0 khi trượt · hạn 06/08        MEASURED_BUT_NOT_FIXED    
+      FU-216 · XH0808-1 · Shadow MT RF đơn (QD-015) · hạn 08/08                OWNER_LOCK                
+      FU-217 · SC0808-1 · LSTM live lệch suy luận · hạn 08/08                  MEASURED_BUT_NOT_FIXED    
+      FU-215 · DB0808 · Đóng băng đường ra số (QD-014) · hạn 08/08             OWNER_LOCK                
+      FU-210 · DO0808-1 · Tháng 6 mất lợi thế MT · hạn 08/08                   MEASURED_BUT_NOT_FIXED    
+      FU-207 · DP0808 · Mốc an toàn deploy chạm đầu ra · hạn 08/08             MEASURED_BUT_NOT_FIXED    
+      FU-203 · DO0808-2 · gemini-3.5-flash hồi phong độ · hạn 08/08            WAIT_LIVE                 
+
+[4] SỔ QUYẾT ĐỊNH CỦA OWNER
+    20 quyết định đang có hiệu lực · 0 tới hạn rà soát
+    → chạy `python web/backend/_v10920_decision_ledger.py` để kiểm code có trôi không
+
+[5] PLAYBOOK
+    214 dòng · 1 dòng có ngày đã tới/qua
+      2026-07-28 | **28/07 tối — 2 mục V10870 phải đọc cùng CP-L6 (lịch sử)** | Owner ký 13:48 hoãn sửa trong ngày chốt t
+
+[6] NĂM MẶT QUY TẮC
+    lần sửa gần nhất: fd77cad 2026-08-02
+    không có thay đổi chờ
+    AGENTS.md khớp đúng bản sinh từ CLAUDE.md
+
+==============================================================================================
+  ✓ không có mục quá hạn — được phép vào việc
+==============================================================================================

@@ -1,0 +1,30 @@
+### BẢN MỚI · _v10921_report_gate.py
+### MÃ THOÁT = 1
+
+================================================================================================
+  CỔNG KIỂM BÁO CÁO CÔNG KHAI (A55) — code/fix/audit xong phải có báo cáo
+================================================================================================
+  repo: E:\Lottery_AI_Notion_Reports
+  commit chưa push: KHÔNG
+  file chưa commit : 9
+
+  V10976     ✗ KHÔNG CÓ BÁO CÁO — vi phạm A55_VIOLATION_REPORT_MISSING
+  V10975     ✓ V10975_KIEM_DAU_NGAY_20260803                đủ 9 phần, đã commit
+             evidence/: 10 tệp
+  V10974     ✓ V10974_DAO_HET_DO_VANG_SO_SOT_20260802       đủ 9 phần, đã commit
+             evidence/: 11 tệp
+  V10973     ✓ V10973_KIEM_SOAT_DOI_CHIEU_OWNER_20260802    đủ 9 phần, đã commit
+             evidence/: 4 tệp
+  V10972     ✓ V10972_BAN_GIAO_NHE_KHONG_COPY_240G_20260802 đủ 9 phần, đã commit
+             evidence/: 3 tệp
+  V10971     ✓ V10971_BAN_GIAO_MAY_MOI_20_NGAY_20260802     đủ 9 phần, đã commit
+             evidence/: 1 tệp
+  V10970     ✓ V10970_TONG_HOP_TOAN_PHIEN_DAO_BOI_20260802  đủ 9 phần, đã commit
+             evidence/: 3 tệp
+  V10969     ✓ V10969_KIEM_TONG_LUC_HET_LIVE_20260802       đủ 9 phần, đã commit
+             evidence/: 1 tệp
+
+================================================================================================
+  ✗ 1 phiên bản thiếu/không đạt
+  → A55_VIOLATION_REPORT_MISSING / A55_VIOLATION_REPORT_INCOMPLETE · mã thoát 1
+================================================================================================
