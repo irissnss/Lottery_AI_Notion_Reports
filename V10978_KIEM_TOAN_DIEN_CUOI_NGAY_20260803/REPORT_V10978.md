@@ -563,3 +563,39 @@ họ hàng gần với loại "xanh giả" mà V10976 vừa dọn sáng nay. Nó
 
 **Bốn cổng còn lại vẫn nguyên trạng lúc 19:30:** `_v10925_rule_sync_check --check` exit **0** ·
 `_v10921_report_gate.py V10978` exit **0** (đủ 9 phần, đã push). Kết luận ở mục 10 **không đổi**.
+
+### 11.1 Đính chính mục 3.2 — PID đã đổi lúc 19:23 (do V10977, không phải V10978)
+
+Mục 3.2 ghi *"MainPID 645169 — không đổi"*, đúng tại thời điểm đo 19:10. Đo lại lúc **19:33**:
+
+| | 19:10 | **19:33** |
+|---|---|---|
+| MainPID | 645169 | **738032** |
+| Lên từ | 02/08 18:13:33 | **03/08 19:23:58** |
+| Dòng cron đang bật | 76 | **81** |
+| `/api/health` | 200 | **200** |
+
+**Nguyên nhân là phiên V10977 deploy, không phải V10978.** Bằng chứng trên máy: hai file backend
+được sửa trong 2 giờ qua là `_v10900_consistency_guard.py` (19:21) và `_v10879_nghiemthu_lane.py`
+(19:23); **5 dòng cron mới** đều mang chú thích nguyên văn của họ:
+
+```
+# V10977 lượt vá: official chốt trôi tới 17:44:54 ngày 03/08
+```
+
+V10978 **không deploy, không restart, không đụng crontab** — toàn bộ probe của phiên này mở DB ở
+chế độ `file:…?mode=ro`.
+
+### 11.2 Hai phiên độc lập gặp nhau ở cùng một con số
+
+Đáng chú ý: lượt vá của V10977 ghi lý do là *"official chốt trôi tới **17:44:54** ngày 03/08"* —
+**đúng con số mà mục 3.4 của báo cáo này đo được độc lập** (MB chốt 17:44, chỉ còn 14 phút trước
+hạn 17:58, sát nhất trong 30 ngày).
+
+Hai phiên đi từ hai hướng khác nhau — một bên điều tra sự cố `/nghiệm-thu` không ra output, một
+bên soát chuỗi 30 ngày — và **gặp nhau ở cùng một nguyên nhân gốc: biên giờ chốt của MB đang co
+lại**. Đây là bằng chứng chéo mạnh cho `FU-256`, và cho thấy vấn đề không phải chuyện một ngày:
+nó đã âm ỉ suốt tháng, chỉ tới hôm nay mới đủ sát để làm hỏng một lane.
+
+`FU-256` giữ nguyên ngưỡng đã đặt (MT hoặc MB còn **< 8 phút**, hoặc **3 ngày liên tiếp < 12
+phút** → báo đỏ), và nay có thêm một ca hỏng thật để chứng minh ngưỡng đó là cần thiết.
