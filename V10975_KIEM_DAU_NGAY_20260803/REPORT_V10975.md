@@ -301,7 +301,37 @@ Phiên chỉ đọc nên không có hash "sau" để so — mốc này ghi lại
 
 ### 6.1 Kết quả cổng báo cáo
 
-Chạy `python web/backend/_v10921_report_gate.py V10975` sau khi push — kết quả ghi trong `evidence/report_gate_V10975.txt`.
+Nguyên văn hai lượt chạy lưu ở `evidence/report_gate_V10975.txt`.
+
+**Lượt soát riêng V10975 — ĐẠT, mã thoát 0:**
+
+```
+V10975  ✓ V10975_KIEM_DAU_NGAY_20260803   đủ 9 phần, đã commit
+        evidence/: 10 tệp
+commit chưa push: KHÔNG
+✓ MỌI PHIÊN BẢN ĐỀU CÓ BÁO CÁO ĐẦY ĐỦ VÀ ĐÃ PUSH
+```
+
+**Lượt soát toàn bộ — mã thoát 1, nhưng lỗi không thuộc phiên này:**
+
+```
+V10976  ✗ KHÔNG CÓ BÁO CÁO — A55_VIOLATION_REPORT_MISSING
+V10975  ✓ đủ 9 phần, đã commit
+V10974  ✓ ... V10969 ✓   (7 phiên bản trước đều đạt)
+```
+
+**V10976 là việc của một phiên khác đang chạy song song** trong cùng workspace sáng nay — phiên sửa 5 lỗi *"xanh giả"* nằm trong chính các cổng tự kiểm (do Bugbot rà ra). Phiên đó đã viết mục V10976 vào `CHANGELOG.md` nhưng chưa đẩy báo cáo công khai, nên cổng bắt đúng. Xem mục **7.7** — phiên này đã vô tình commit kèm mục CHANGELOG đó.
+
+Điều đáng ghi nhận: cổng bắt được V10976 **chính là nhờ** bản vá L4 của phiên V10976 — trước đó `_v10921_report_gate.py` in ra *"✗ thiếu"* xong vẫn **luôn thoát 0**. Nay thoát 1. Lượt chạy này là bằng chứng cổng đã thật sự chặn được.
+
+### 6.2 Commit và push
+
+| Repo | Commit | Push |
+|---|---|---|
+| Riêng `Lottery_AI_Test` | `cf7ec2d` | `ac8ef4e..cf7ec2d master -> master` ✅ |
+| Công khai `Lottery_AI_Notion_Reports` | `1ecba64` | `0692b57..1ecba64 main -> main` ✅ |
+
+Quét khoá API trước khi push: **0 khoá** trên 12 tệp (khuôn dò `sk-ant-` · `sk-proj-` · `AIza…` · `gsk_` · `xai-` · `ghp_` · `PRIVATE KEY` · `api_key=…`).
 
 ---
 
@@ -319,7 +349,19 @@ Chạy `python web/backend/_v10921_report_gate.py V10975` sau khi push — kết
 
 **7.6 — Hai lệnh đầu phiên dùng `&&` bị PowerShell từ chối.** Không phải bash. Nhỏ, nhưng mất một lượt.
 
-**7.7 — Chưa tìm ra vì sao hook `sessionStart` không chạy.** Đã kiểm: `.cursor/hooks.json` khai báo đúng, script chạy tay ra kết quả đúng. Nguyên nhân nằm ở phía Cursor có gọi hook hay không — nằm ngoài chỗ em soi được trong phiên. Đã ghi FU-245 kèm phép thử cho sáng mai thay vì sửa mò.
+**7.7 — Vô tình commit kèm việc của một phiên khác đang chạy song song.** Sáng nay có **hai phiên cùng làm trong workspace này**: phiên của em (V10975, kiểm đầu ngày) và một phiên V10976 sửa 5 lỗi *"xanh giả"* trong các cổng tự kiểm. Phiên V10976 đã ghi mục của họ vào `CHANGELOG.md`, `docs/CURRENT_TRUTH_SSOT.md` và `docs/FOLLOW_UP_TRACKER.md` nhưng **chưa commit**. Em chạy `git add CHANGELOG.md docs/CURRENT_TRUTH_SSOT.md docs/FOLLOW_UP_TRACKER.md` để đưa phần của mình vào, và **cuốn luôn phần của họ** vào commit `cf7ec2d` mang tên V10975.
+
+Kiểm lại cụ thể: `git log -S'## V10976' -- CHANGELOG.md` chỉ ra đúng `cf7ec2d` — tức mục V10976 vào lịch sử qua commit của em. `docs/CURRENT_TRUTH_SSOT.md` có 3 dòng nhắc V10976, `docs/FOLLOW_UP_TRACKER.md` có 5 dòng.
+
+*Mức hại:* thấp và **không mất gì** — nội dung của họ được commit chứ không bị đè hay bị bỏ. Các file **code** của phiên V10976 (`_v10921_report_gate.py`, `_v10920_decision_ledger.py`, `_v10920_session_start.py`, `_v10925_rule_sync_check.py`) em **không** thêm vào, vẫn nằm nguyên chưa commit trong thư mục làm việc để họ tự xử.
+
+*Hệ quả duy nhất:* mục V10976 nay nằm trong CHANGELOG đã commit mà chưa có báo cáo công khai → cổng A55 chạy toàn bộ báo `A55_VIOLATION_REPORT_MISSING` cho V10976 cho tới khi phiên đó đẩy báo cáo.
+
+*Đã cân nhắc rồi loại:* gỡ mục V10976 ra khỏi commit. Loại vì phiên kia đang chạy — đụng vào file họ đang sửa dở thì rủi ro hỏng việc của họ cao hơn hẳn cái lợi của một lịch sử commit gọn gàng.
+
+*Bài học:* trong workspace có thể có phiên khác chạy song song, `git add <file>` trên tài liệu quản trị dùng chung là **không an toàn**. Lần sau phải `git status` và `git diff` từng file trước khi add, hoặc dùng `git add -p` để chỉ lấy đúng khối của mình.
+
+**7.8 — Chưa tìm ra vì sao hook `sessionStart` không chạy.** Đã kiểm: `.cursor/hooks.json` khai báo đúng, script chạy tay ra kết quả đúng. Nguyên nhân nằm ở phía Cursor có gọi hook hay không — nằm ngoài chỗ em soi được trong phiên. Đã ghi FU-245 kèm phép thử cho sáng mai thay vì sửa mò.
 
 ---
 
@@ -358,6 +400,10 @@ Trên VPS có 2 file tạm từng được tạo trong `/tmp` (`_v10975_edge.py`
 | **FU-185** | **DD0803 → hạn 10/08** | Tinh gọn lane hết hạn vẫn chạy | **10/08** | `MEASURED_ROOT_CAUSE` | Sau 08/08: bỏ 2 dòng gọi lane trong `_mb_advanced_lane_daily.sh` + gộp 2 dòng cron trùng (`43 17` / `38 17`). Nếu 04–05/08 vẫn đúng 10 dòng/ngày thì khỏi đo thêm |
 | **FU-244** | **KS0810** | Cổng lợi thế không ghi ngày | **10/08** | `MEASURED_ROOT_CAUSE` | Sau 08/08: thêm cron `_v10945_edge_gate.py` lúc **20:30** (sau chấm điểm 20:20). Tới 10/08 vẫn không có dòng cho ngày mới → escalate |
 | **FU-215** | **DB0808** | Đóng băng đường ra số (QD-014) | 08/08 | `OWNER_LOCK` | Hết 08/08 mới mở; trước đó mọi thay đổi đường ra số đều bị chặn |
+
+### Việc của phiên khác, không thuộc V10975 nhưng đang treo
+
+- **V10976 chưa có báo cáo công khai** → cổng A55 chạy toàn bộ báo `A55_VIOLATION_REPORT_MISSING`, mã thoát 1. Mục CHANGELOG của V10976 đã nằm trong lịch sử qua commit `cf7ec2d` (xem mục 7.7), nên vi phạm này sẽ còn hiện cho tới khi phiên V10976 đẩy thư mục báo cáo của họ. **Phiên này không viết thay báo cáo đó** — không đủ ngữ cảnh về việc họ làm, viết thay là bịa.
 
 ### Việc cần canh ngay trong hôm nay
 

@@ -82,7 +82,21 @@ Sau khi chạy hook, `Get-Content` hiển thị `KI��,M �?���U PHIAS
 
 Hai lệnh đầu tiên của phiên dùng `cd ... && python ...`, PowerShell từ chối: *"The token '&&' is not a valid statement separator in this version."* Nhỏ, nhưng mất một lượt.
 
-### 4.7 Chưa giải được — vì sao hook `sessionStart` không chạy
+### 4.7 Cuốn nhầm việc của phiên chạy song song vào commit của mình
+
+Sáng nay có **hai phiên cùng làm trong workspace này**: phiên của em (V10975, kiểm đầu ngày) và một phiên **V10976** sửa 5 lỗi *"xanh giả"* nằm trong chính các cổng tự kiểm (Bugbot rà ra).
+
+Phiên V10976 đã ghi mục của họ vào `CHANGELOG.md`, `docs/CURRENT_TRUTH_SSOT.md`, `docs/FOLLOW_UP_TRACKER.md` nhưng **chưa commit**. Em chạy `git add` ba file đó để đưa phần của mình vào — và **cuốn luôn phần của họ** vào commit `cf7ec2d` mang tên V10975.
+
+Kiểm lại: `git log -S'## V10976' -- CHANGELOG.md` chỉ đúng `cf7ec2d`. SSOT có 3 dòng nhắc V10976, tracker có 5 dòng.
+
+**Không mất gì** — nội dung của họ được commit chứ không bị đè. Các file **code** của V10976 em không thêm vào, vẫn nằm nguyên chưa commit để họ tự xử. Hệ quả duy nhất: cổng A55 chạy toàn bộ nay báo `A55_VIOLATION_REPORT_MISSING` cho V10976 cho tới khi phiên đó đẩy báo cáo.
+
+Đã cân nhắc gỡ mục V10976 ra khỏi commit rồi **loại** — phiên kia đang chạy, đụng vào file họ sửa dở thì rủi ro hỏng việc của họ lớn hơn cái lợi của lịch sử commit gọn.
+
+**Bài học:** workspace có thể có phiên khác chạy song song. `git add <file>` trên tài liệu quản trị dùng chung là **không an toàn** — phải `git diff` từng file trước khi add, hoặc `git add -p` để chỉ lấy đúng khối của mình.
+
+### 4.8 Chưa giải được — vì sao hook `sessionStart` không chạy
 
 Đã kiểm: `.cursor/hooks.json` khai báo đúng (`python .cursor/hooks/session_start_briefing.py`, timeout 100), script chạy tay ra kết quả đúng, file ghi ra đúng chỗ. Nhưng dấu thời gian trong file cho thấy nó **không chạy suốt 02/08 và 03/08**. Nguyên nhân nằm ở phía Cursor có kích hoạt hook hay không — ngoài tầm soi trong phiên.
 
