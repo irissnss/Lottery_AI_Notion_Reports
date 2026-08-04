@@ -1,0 +1,41 @@
+Output THẬT của `python web/backend/_v10981_kiem_lich.py` chạy lúc 04/08/2026, NGAY SAU khi
+thêm phép K8 và TRƯỚC khi ghi khối đính chính V10981b.
+
+Đây là bằng chứng cổng bắt được lỗi thật (11 mục bị nhãn tự chế `SCHEDULED` đẩy thành mồ côi),
+chứ không phải cổng xanh sẵn.
+
+================================================================================================
+  CỔNG KIỂM LỊCH CUỐN CHIẾU V10981 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] K1 · đủ 14 mã trong sổ theo dõi
+         → đủ 14/14
+  [ĐẠT ] K2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] K3 · mỗi mã có mã đọc §58
+         → 14/14 có mã đọc
+  [ĐẠT ] K4 · hạn thật trong sổ khớp hạn đã xếp
+         → 14/14 khớp
+  [ĐẠT ] K5 · không ngày nào quá 3 mục của nhóm
+         → 04/08=3 · 05/08=1 · 06/08=1 · 07/08=1 · 08/08=3 · 09/08=3 · 10/08=2
+  [ĐẠT ] K6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] K7 · mục không kết luận nổi trước 10/08 đều ghi rõ lý do
+         → 5 mục nêu thẳng: FU-193→16/08, FU-216→15/08, FU-217→16/08, FU-231→23/08, FU-226→23/08
+  [TRƯỢT] K8 · không mục nào rơi thành MỒ CÔI (nhãn phải trong TREO_STATUSES)
+         → MỒ CÔI: ['FU-187=SCHEDULED', 'FU-191=SCHEDULED', 'FU-212=SCHEDULED',
+                    'FU-207=SCHEDULED', 'FU-210=SCHEDULED', 'FU-186=SCHEDULED',
+                    'FU-203=SCHEDULED', 'FU-216=SCHEDULED', 'FU-217=SCHEDULED',
+                    'FU-231=SCHEDULED', 'FU-226=SCHEDULED']
+================================================================================================
+  TRƯỢT 1/8 phép
+   · K8: MỒ CÔI: 11 mã
+EXIT=1
+
+------------------------------------------------------------------------------------------------
+Sau khi ghi khối đính chính V10981b (trả nhãn thật cho từng mục), chạy lại → ĐẠT 8/8,
+xem `cong_kiem_lich_8_phep.txt`.
+
+Đối chứng độc lập bằng `_v10920_session_start.py` sau khi sửa:
+  - mục mồ côi: 19 (KHÔNG tăng — trước phiên cũng 19)
+  - mục treo  : 98 (không đổi)
+  - "ĐẾN HẠN HÔM NAY: 3" → FU-187 · FU-191 · FU-212, đúng như lịch đã xếp

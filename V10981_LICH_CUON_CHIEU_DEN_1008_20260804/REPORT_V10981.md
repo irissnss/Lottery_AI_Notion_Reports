@@ -6,7 +6,7 @@
 | Ngày | **2026-08-04** (giờ Việt Nam) |
 | Loại | Lập kế hoạch + cập nhật tài liệu — **không deploy, không đụng runtime** |
 | Quyết định owner | **QD-021** |
-| Cổng kiểm | `_v10981_kiem_lich.py` **7/7 ĐẠT** · `_v10920_decision_ledger.py` **0 TRÔI** |
+| Cổng kiểm | `_v10981_kiem_lich.py` **8/8 ĐẠT** · `_v10920_decision_ledger.py` **0 TRÔI** |
 | Phiên chạy song song | **V10979** (nhịp cuốn chiếu 5 model) — không đụng vào nhau |
 
 ---
@@ -57,7 +57,7 @@ lấy khối gần đầu file nhất của mỗi mã FU làm sự thật hiện
 "sau khi hết đóng băng".
 
 Cỡ mẫu: **117 mục** đọc được
-trong sổ theo dõi (87 treo + 30
+trong sổ theo dõi (98 treo + 19
 mồ côi), lọc ra 14 mã owner nêu đích danh.
 
 ### 3.2 Số thật đo được
@@ -142,7 +142,7 @@ riêng.
 
 | File | Loại | Thay đổi |
 |---|---|---|
-| `docs/FOLLOW_UP_TRACKER.md` | sửa | `prepend()` khối V10981: 14 mục hạn mới + mã đọc §58 mới + điều kiện xong đo được bằng số. **1.018.092 → 1.034.263 ký tự (+16.171)** |
+| `docs/FOLLOW_UP_TRACKER.md` | sửa | `prepend()` khối **V10981** (14 mục hạn mới + mã đọc §58 mới + điều kiện xong đo được bằng số) rồi khối đính chính **V10981b** (trả nhãn trạng thái thật — xem §7.1). **1.018.092 → 1.034.263 → 1.051.529 ký tự (+33.437)** |
 | `docs/LICH_CUON_CHIEU_DEN_10082026.md` | **mới** | Trang lịch cho owner, 8 mục, 17.076 byte, máy sinh |
 | `docs/ACTIVE_ROADMAP_LEAN_HARVEST_20260619.md` | sửa | CP-L6 gắn ngày cụ thể (`FU-186` 08/08 · `FU-192` 09/08) + 1 dòng vào §5 |
 | `docs/OWNER_DECISION_LEDGER.json` | sửa | **QD-021** chèn đầu mảng · 5 mệnh đề máy kiểm được · theo dõi 14 mục |
@@ -152,7 +152,8 @@ riêng.
 | `docs/AUTOMATION_STATE.json` | sửa | `governance_seq` **390 → 391** + `_v10981_last_event` |
 | `docs/AUTOMATION_HISTORY.jsonl` | thêm | +1 dòng |
 | `web/backend/_v10981_lich.py` | **mới** | Nguồn sự thật duy nhất của lịch — sổ, trang, cổng, báo cáo đều sinh từ đây |
-| `web/backend/_v10981_kiem_lich.py` | **mới** | Cổng 7 phép, kiểm trên `FOLLOW_UP_TRACKER.md` THẬT |
+| `web/backend/_v10981_kiem_lich.py` | **mới** | Cổng **8 phép**, kiểm trên `FOLLOW_UP_TRACKER.md` THẬT (K8 thêm sau khi bắt được lỗi mồ côi) |
+| `web/backend/_v10981b_fix_trangthai.py` · `_v10981b_ghi_tracker.py` | **mới** | Đính chính nhãn trạng thái (§7.1) |
 | `web/backend/_v10981_ghi_tracker.py` · `_v10981_trang_lich.py` · `_v10981_ghi_so.py` · `_v10981_governance.py` · `_v10981_bao_cao.py` | **mới** | Script ghi sổ / sinh trang / prepend / báo cáo |
 | `web/backend/_v10981_doc_14.py` · `_v10981_quet_han.py` · `_v10981_ma_doc_dung.py` · `_v10981_peek_ledger.py` | **mới** | Script đào (chỉ đọc) |
 | `artifacts/v10981_lich_cuon_chieu.json` | **mới** | Bảng lịch dạng máy đọc, 17.818 byte |
@@ -192,7 +193,7 @@ phiên V10979 cùng ngày ghi nhận TRƯỚC/SAU giống hệt (`predictions` 1
 
 ## 6. Cổng kiểm
 
-### 6.1 Cổng lịch cuốn chiếu — `_v10981_kiem_lich.py`, 7 phép, kiểm trên sổ THẬT
+### 6.1 Cổng lịch cuốn chiếu — `_v10981_kiem_lich.py`, 8 phép, kiểm trên sổ THẬT
 
 | Phép | Kiểm gì | Kết quả |
 |---|---|---|
@@ -203,10 +204,20 @@ phiên V10979 cùng ngày ghi nhận TRƯỚC/SAU giống hệt (`predictions` 1
 | K5 | Không ngày nào quá 3 mục | ✅ 04/08=3 · 05/08=1 · 06/08=1 · 07/08=1 · 08/08=3 · 09/08=3 · 10/08=2 |
 | K6 | Mã đọc không đụng mã mục khác | ✅ 0 va chạm |
 | K7 | Mục không kết luận nổi trước 10/08 đều nêu lý do | ✅ 5 mục nêu thẳng |
+| K8 | Không mục nào rơi thành **mồ côi** (nhãn phải trong `TREO_STATUSES`) | ✅ 14/14 nhãn hợp lệ |
 
-Chạy **trước** khi cập nhật sổ: **trượt K4** (14 mục còn hạn 08/08) — chứng minh cổng bắt được
-lỗi thật chứ không xanh sẵn. Chạy **sau**: **7/7 ĐẠT**. Bằng chứng:
-`evidence/cong_kiem_lich_7_phep.txt`.
+Cổng bắt được **hai lỗi thật** trong phiên, không phải xanh sẵn:
+
+- Chạy **trước** khi cập nhật sổ → **trượt K4** (14 mục còn hạn 08/08).
+- Sau vòng ghi đầu → **trượt K8**, liệt đúng 11 mã bị nhãn `SCHEDULED` đẩy thành mồ côi
+  (xem §7). K8 được **thêm vào chính vì lỗi này**, để không tái phát.
+- Sau khi đính chính V10981b → **8/8 ĐẠT**.
+
+Bằng chứng: `evidence/cong_kiem_lich_8_phep.txt`.
+
+**Đối chứng độc lập** — chạy lại `_v10920_session_start.py` sau khi sửa: mục mồ côi vẫn
+**19** (không tăng), mục treo vẫn **98**, và briefing đã hiện đúng **"ĐẾN HẠN HÔM NAY: 3"**
+(`FU-187` `FU-191` `FU-212`) — lịch đã sống trong bộ đếm chứ không chỉ nằm trong báo cáo.
 
 ### 6.2 Sổ quyết định — `_v10920_decision_ledger.py`
 
@@ -241,7 +252,27 @@ Mỗi lần ghi đều **đọc lại ngay trước khi ghi** rồi kiểm lại
 | **Ngày 10/08 tổng tải 11 mục.** Nhóm 14 chỉ góp 2, còn 9 mục là hạn có sẵn từ V10974–V10980. | Nếu im lặng thì owner tưởng đã giãn xong mà ngày chót vẫn nghẽn. Đã ghi rõ trong trang lịch §1 và không tự ý dời hạn của phiên khác. |
 | **Phiên V10979 chạy song song cùng chạm `FOLLOW_UP_TRACKER.md`, `OWNER_DECISION_LEDGER.json`, `CHANGELOG.md`, `CURRENT_TRUTH_SSOT.md`.** | Ghi đè nhau là mất việc của một trong hai phiên. Đã: chỉ dùng `prepend()`/`os.replace`, đọc lại ngay trước mỗi lần ghi, `assert` khối của phiên kia còn nguyên sau khi ghi, và chỉ `git add` đúng file của mình. |
 
-**Không có vấp nào phải gỡ về.**
+### 7.1 Vấp NẶNG NHẤT — do chính agent gây ra, suýt lặp đúng lỗi vừa đi vá
+
+Vòng ghi đầu (10:45) gán nhãn **`SCHEDULED`** cho 14 mục. Nhãn đó là **tự chế** — không nằm
+trong `_v10958_fu_reader.TREO_STATUSES` cũng không nằm trong `DONG_STATUSES`. Hậu quả đo được:
+**11/14 mục lập tức rơi khỏi mọi bộ đếm và bị xếp MỒ CÔI**.
+
+| | |
+|---|---|
+| Mức nghiêm trọng | **Cao** — 11 mục biến mất khỏi briefing đầu phiên, khỏi bộ đếm quá hạn, khỏi cổng thiếu mã đọc |
+| Hậu quả nếu bỏ qua | Đến 10/08 **không ai biết chúng trượt hạn**. Cả phiên giãn lịch trở nên vô nghĩa vì lịch không ai canh |
+| Trớ trêu | Kiểm toán V10980 sáng nay vừa bêu **19 mục mồ côi**; phiên đi xử chuyện đó suýt đẻ thêm **11 mục** nữa |
+| Phát hiện nhờ đâu | Chạy `_v10981_quet_han.py` để nghiệm thu sau khi ghi, thấy 11 mã hiện ở nhóm *"mồ côi"* thay vì *"treo"* |
+| Đã sửa | `V10981b` — trả đúng nhãn cũ của từng mục (phiên này chỉ đổi **hạn**, không đổi **tiến độ việc**). Riêng `FU-193` nâng `MEASURED_BUT_NOT_FIXED` → `AWAITING_OWNER_OK` vì nay chờ owner duyệt ngưỡng; cả hai nhãn đều hợp lệ |
+| Chặn tái phát | Thêm phép **K8** vào cổng: mọi mục trong nhóm phải mang nhãn thuộc `TREO_STATUSES`. Chạy trên bản lỗi → K8 **TRƯỢT**, liệt đúng 11 mã. Cổng nay **8 phép** |
+| Đối chứng sau khi sửa | `_v10920_session_start.py`: mồ côi vẫn **19** (không tăng) · treo vẫn **98** · *"ĐẾN HẠN HÔM NAY: 3"* hiện đúng |
+
+**Bài học:** khi ghi vào sổ theo dõi, nhãn trạng thái **không phải chỗ để sáng tạo**. Phải lấy
+từ danh sách bộ đọc công nhận, nếu không mục sẽ "trông như đã ghi" mà thực chất vô hình với
+mọi cổng — đúng loại **xanh giả** owner sợ nhất.
+
+**Không có vấp nào phải gỡ về** — lỗi trên đã sửa xong trong cùng phiên, có cổng máy chặn tái phát.
 
 ---
 
@@ -348,7 +379,8 @@ Kết quả: **xem `evidence/cong_bao_cao_a55.txt`**.
 | Tệp | Nội dung |
 |---|---|
 | `evidence/v10981_lich_cuon_chieu.json` | Toàn bộ lịch dạng máy đọc: 14 mục, phân loại hai trục, tải thật mỗi ngày, mục không kết luận nổi trước hạn, mục chờ owner |
-| `evidence/cong_kiem_lich_7_phep.txt` | Output đầy đủ cổng 7 phép |
+| `evidence/cong_kiem_lich_8_phep.txt` | Output đầy đủ cổng 8 phép (gồm K8 chặn mồ côi) |
+| `evidence/cong_kiem_lich_K8_truot_truoc_khi_sua.txt` | Output lúc K8 **TRƯỢT** — bằng chứng cổng bắt được lỗi thật |
 | `evidence/so_quyet_dinh_0_troi.txt` | Output sổ quyết định — QD-021 khớp 5/5, toàn sổ 0 TRÔI |
 | `evidence/cong_bao_cao_a55.txt` | Output cổng báo cáo A55 |
 
