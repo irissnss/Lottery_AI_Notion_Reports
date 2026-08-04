@@ -1,0 +1,91 @@
+=== GIO VN ===
+2026-08-04 16:37:44
+=== SERVICE ===
+770947
+0
+Tue 2026-08-04 10:16:59 +07
+active
+=== HEALTH ===
+200
+=== CHUOI 'connection' TRONG JOURNAL 3 TIENG QUA (dem theo mau) ===
+=== 40 DONG CO 'conn' GAN NHAT ===
+=== TRACEBACK 3 TIENG QUA ===
+0
+=== 30 DONG QUANH TRACEBACK GAN NHAT ===
+=== ERROR / WARN 90 PHUT QUA ===
+Aug 04 16:30:00 lotteryai-aulb python3[770947]: 2026-08-04 16:30:00,481 - WARNING - [xsdp] No table found for MN
+Aug 04 16:30:00 lotteryai-aulb python3[770947]: 2026-08-04 16:30:00,680 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:30:00 lotteryai-aulb python3[770947]: 2026-08-04 16:30:00,681 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:30:31 lotteryai-aulb python3[770947]: 2026-08-04 16:30:31,070 - WARNING - [xsdp] No table found for MN
+Aug 04 16:30:31 lotteryai-aulb python3[770947]: 2026-08-04 16:30:31,207 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:30:31 lotteryai-aulb python3[770947]: 2026-08-04 16:30:31,207 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:31:01 lotteryai-aulb python3[770947]: 2026-08-04 16:31:01,595 - WARNING - [xsdp] No table found for MN
+Aug 04 16:31:02 lotteryai-aulb python3[770947]: 2026-08-04 16:31:02,037 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.8s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:31:02 lotteryai-aulb python3[770947]: 2026-08-04 16:31:02,037 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:31:32 lotteryai-aulb python3[770947]: 2026-08-04 16:31:32,391 - WARNING - [xsdp] No table found for MN
+Aug 04 16:31:32 lotteryai-aulb python3[770947]: 2026-08-04 16:31:32,860 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.8s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:31:32 lotteryai-aulb python3[770947]: 2026-08-04 16:31:32,861 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:32:03 lotteryai-aulb python3[770947]: 2026-08-04 16:32:03,274 - WARNING - [xsdp] No table found for MN
+Aug 04 16:32:03 lotteryai-aulb python3[770947]: 2026-08-04 16:32:03,629 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:32:03 lotteryai-aulb python3[770947]: 2026-08-04 16:32:03,630 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:32:34 lotteryai-aulb python3[770947]: 2026-08-04 16:32:34,176 - WARNING - [xsdp] No table found for MN
+Aug 04 16:32:34 lotteryai-aulb python3[770947]: 2026-08-04 16:32:34,176 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026'}
+Aug 04 16:32:34 lotteryai-aulb python3[770947]: 2026-08-04 16:32:34,177 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:33:34 lotteryai-aulb python3[770947]: 2026-08-04 16:33:34,544 - WARNING - [xsdp] No table found for MN
+Aug 04 16:33:34 lotteryai-aulb python3[770947]: 2026-08-04 16:33:34,969 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:33:34 lotteryai-aulb python3[770947]: 2026-08-04 16:33:34,970 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:34:35 lotteryai-aulb python3[770947]: 2026-08-04 16:34:35,378 - WARNING - [xsdp] No table found for MN
+Aug 04 16:34:35 lotteryai-aulb python3[770947]: 2026-08-04 16:34:35,752 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:34:35 lotteryai-aulb python3[770947]: 2026-08-04 16:34:35,752 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:35:36 lotteryai-aulb python3[770947]: 2026-08-04 16:35:36,083 - WARNING - [xsdp] No table found for MN
+Aug 04 16:35:36 lotteryai-aulb python3[770947]: 2026-08-04 16:35:36,250 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:35:36 lotteryai-aulb python3[770947]: 2026-08-04 16:35:36,250 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:36:37 lotteryai-aulb python3[770947]: [STAT] ④ Trends: 10 trending UP2026-08-04 16:36:37,040 - WARNING - [xsdp] No table found for MN
+Aug 04 16:36:37 lotteryai-aulb python3[770947]: 2026-08-04 16:36:37,044 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.8s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026'}
+Aug 04 16:36:37 lotteryai-aulb python3[770947]: 2026-08-04 16:36:37,044 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:37:37 lotteryai-aulb python3[770947]: 2026-08-04 16:37:37,437 - WARNING - [xsdp] No table found for MN
+Aug 04 16:37:37 lotteryai-aulb python3[770947]: 2026-08-04 16:37:37,563 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:37:37 lotteryai-aulb python3[770947]: 2026-08-04 16:37:37,564 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+=== NGINX ERROR LOG 60 PHUT ===
+--- /var/log/nginx/error.log
+2026/08/04 04:34:21 [crit] 138267#138267: *31672 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 15.235.118.200, server: 0.0.0.0:443
+2026/08/04 04:39:10 [crit] 138266#138266: *31698 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 15.235.118.223, server: 0.0.0.0:443
+--- /var/log/nginx/error.log
+2026/08/04 04:34:21 [crit] 138267#138267: *31672 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 15.235.118.200, server: 0.0.0.0:443
+2026/08/04 04:39:10 [crit] 138266#138266: *31698 SSL_do_handshake() failed (SSL: error:0A00006C:SSL routines::bad key share) while SSL handshaking, client: 15.235.118.223, server: 0.0.0.0:443
+=== SCRAPE / NGUON KET QUA ===
+Aug 04 16:31:32 lotteryai-aulb python3[770947]: 2026-08-04 16:31:32,860 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.8s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:31:32 lotteryai-aulb python3[770947]: 2026-08-04 16:31:32,861 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:32:03 lotteryai-aulb python3[770947]: 2026-08-04 16:32:03,629 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:32:03 lotteryai-aulb python3[770947]: 2026-08-04 16:32:03,630 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:32:34 lotteryai-aulb python3[770947]: 2026-08-04 16:32:34,176 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026'}
+Aug 04 16:32:34 lotteryai-aulb python3[770947]: 2026-08-04 16:32:34,177 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:33:34 lotteryai-aulb python3[770947]: 2026-08-04 16:33:34,969 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:33:34 lotteryai-aulb python3[770947]: 2026-08-04 16:33:34,970 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:34:35 lotteryai-aulb python3[770947]: 2026-08-04 16:34:35,752 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.7s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:34:35 lotteryai-aulb python3[770947]: 2026-08-04 16:34:35,752 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:35:36 lotteryai-aulb python3[770947]: 2026-08-04 16:35:36,250 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:35:36 lotteryai-aulb python3[770947]: 2026-08-04 16:35:36,250 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 1/30) -- waiting 30s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 2/30) -- waiting 30s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 3/30) -- waiting 30s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 4/30) -- waiting 30s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 5/30) -- waiting 30s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 6/30) -- waiting 60s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 7/30) -- waiting 60s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 8/30) -- waiting 60s...
+Aug 04 16:35:43 lotteryai-aulb python3[770947]: [SCHEDULER] [SCRAPE_WAIT] MN no data (retry 9/30) -- waiting 60s...
+Aug 04 16:36:37 lotteryai-aulb python3[770947]: 2026-08-04 16:36:37,044 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.8s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026'}
+Aug 04 16:36:37 lotteryai-aulb python3[770947]: 2026-08-04 16:36:37,044 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+Aug 04 16:37:37 lotteryai-aulb python3[770947]: 2026-08-04 16:37:37,563 - WARNING - [SCRAPE_FAIL] MN 04/08/2026: all concurrent sources empty (0.5s) — errors: {'xskt': '[xskt] Không có kết quả MN ngày 04/08/2026', 'xsdp': '[xsdp] Không có kết quả MN ngày 04/08/2026', 'minhngoc': 'no data'}
+Aug 04 16:37:37 lotteryai-aulb python3[770947]: 2026-08-04 16:37:37,564 - WARNING - SCRAPE_FAIL date=2026-08-04 region=MN error=Không thể tải dữ liệu MN ngày 04/08/2026 (cả 3 nguồn đều thất bại)
+=== TRANG THAI MT HOM NAY ===
+Error: in prepare, no such column: bt_number (1)
+=== PREDICTIONS HOM NAY THEO MIEN ===
+Error: in prepare, no such column: region (1)
+=== EARLY BLOCK HOM NAY ===
+v10979_early_block
+=== DIA / RAM ===
+/dev/vda1        39G   27G   13G  69% /
+               total        used        free      shared  buff/cache   available
+Mem:            3911         710         873          73        2327        2837

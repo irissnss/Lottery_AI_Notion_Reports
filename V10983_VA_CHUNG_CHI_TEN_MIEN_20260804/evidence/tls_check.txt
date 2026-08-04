@@ -1,0 +1,108 @@
+=== GIO VN ===
+2026-08-04 16:48:00
+================= xs.io.vn =================
+--- CHUOI CHUNG CHI TRA VE (s: subject / i: issuer) ---
+Certificate chain
+ 0 s:CN = xs.io.vn
+   i:C = US, O = Let's Encrypt, CN = YR1
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jun 25 11:13:41 2026 GMT; NotAfter: Sep 23 11:13:40 2026 GMT
+ 1 s:C = US, O = Let's Encrypt, CN = YR1
+   i:C = US, O = ISRG, CN = Root YR
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Sep  3 00:00:00 2025 GMT; NotAfter: Sep  2 23:59:59 2028 GMT
+ 2 s:C = US, O = ISRG, CN = Root YR
+   i:C = US, O = Internet Security Research Group, CN = ISRG Root X1
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May 13 00:00:00 2026 GMT; NotAfter: Sep  2 23:59:59 2032 GMT
+---
+Server certificate
+--- KET QUA XAC MINH ---
+Verify return code: 0 (ok)
+--- HAN / SAN / ISSUER ---
+subject=CN = xs.io.vn
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Jun 25 11:13:41 2026 GMT
+notAfter=Sep 23 11:13:40 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:xs.io.vn
+================= www.xs.io.vn =================
+--- CHUOI CHUNG CHI TRA VE (s: subject / i: issuer) ---
+Certificate chain
+ 0 s:CN = xs.io.vn
+   i:C = US, O = Let's Encrypt, CN = YR1
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jun 25 11:13:41 2026 GMT; NotAfter: Sep 23 11:13:40 2026 GMT
+ 1 s:C = US, O = Let's Encrypt, CN = YR1
+   i:C = US, O = ISRG, CN = Root YR
+   a:PKEY: rsaEncryption, 2048 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Sep  3 00:00:00 2025 GMT; NotAfter: Sep  2 23:59:59 2028 GMT
+ 2 s:C = US, O = ISRG, CN = Root YR
+   i:C = US, O = Internet Security Research Group, CN = ISRG Root X1
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: May 13 00:00:00 2026 GMT; NotAfter: Sep  2 23:59:59 2032 GMT
+---
+Server certificate
+--- KET QUA XAC MINH ---
+Verify return code: 0 (ok)
+    Verify return code: 0 (ok)
+    Verify return code: 0 (ok)
+--- HAN / SAN / ISSUER ---
+subject=CN = xs.io.vn
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Jun 25 11:13:41 2026 GMT
+notAfter=Sep 23 11:13:40 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:xs.io.vn
+=== SO CHUNG CHI TRONG FILE FULLCHAIN NGINX DANG DUNG ===
+conf: /etc/nginx/sites-available/lottery
+/etc/nginx/sites-enabled/lottery.bak_pre_cache_20260726
+/etc/nginx/sites-enabled/lottery
+--- /etc/nginx/sites-available/lottery ---
+listen 8080;
+server_name xs.io.vn www.xs.io.vn;
+listen 443 ssl http2;
+server_name xs.io.vn www.xs.io.vn;
+ssl_certificate /etc/letsencrypt/live/xs.io.vn/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/xs.io.vn/privkey.pem;
+--- /etc/nginx/sites-enabled/lottery.bak_pre_cache_20260726 ---
+listen 8080;
+server_name xs.io.vn www.xs.io.vn;
+listen 443 ssl http2;
+server_name xs.io.vn www.xs.io.vn;
+ssl_certificate /etc/letsencrypt/live/xs.io.vn/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/xs.io.vn/privkey.pem;
+--- /etc/nginx/sites-enabled/lottery ---
+listen 8080;
+server_name xs.io.vn www.xs.io.vn;
+listen 443 ssl http2;
+server_name xs.io.vn www.xs.io.vn;
+ssl_certificate /etc/letsencrypt/live/xs.io.vn/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/xs.io.vn/privkey.pem;
+file=/etc/letsencrypt/live/xs.io.vn/fullchain.pem  so_chung_chi=3
+subject=CN = xs.io.vn
+issuer=C = US, O = Let's Encrypt, CN = YR1
+subject=C = US, O = Let's Encrypt, CN = YR1
+issuer=C = US, O = ISRG, CN = Root YR
+subject=C = US, O = ISRG, CN = Root YR
+issuer=C = US, O = Internet Security Research Group, CN = ISRG Root X1
+=== CERTBOT / LETSENCRYPT ===
+total 16
+drwx------ 3 root root 4096 Mar 27 13:10 .
+drwxr-xr-x 9 root root 4096 Aug  4 12:26 ..
+-rw-r--r-- 1 root root  740 Mar 27 13:10 README
+drwxr-xr-x 2 root root 4096 Jun 25 19:12 xs.io.vn
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Found the following certs:
+  Certificate Name: xs.io.vn
+    Serial Number: 5928a784ac741b6cc040ce2403559965602
+    Key Type: RSA
+    Domains: xs.io.vn
+    Expiry Date: 2026-09-23 11:13:40+00:00 (VALID: 50 days)
+    Certificate Path: /etc/letsencrypt/live/xs.io.vn/fullchain.pem
+    Private Key Path: /etc/letsencrypt/live/xs.io.vn/privkey.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+=== DNS: co ban ghi CAA / www khong ===
+14.225.224.89   xs.io.vn
+14.225.224.89   www.xs.io.vn

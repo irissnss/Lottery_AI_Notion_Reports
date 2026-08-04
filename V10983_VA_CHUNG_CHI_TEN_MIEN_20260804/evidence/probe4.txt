@@ -1,0 +1,100 @@
+=== GIO VN ===
+16:42:06
+=== TOP URL 404 (3000 dong cuoi access.log) ===
+     10 /favicon.ico
+      8 /sitemap.xml
+      2 /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /vendor/phpunit/src/Util/PHP/eval-stdin.php
+      2 /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+      2 /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+      2 /vendor/phpunit/Util/PHP/eval-stdin.php
+      2 /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /public/index.php?s=/index/\x5Cthink\x5Capp/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello
+      2 /phpunit/src/Util/PHP/eval-stdin.php
+      2 /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /phpunit/phpunit/Util/PHP/eval-stdin.php
+      2 /phpunit/Util/PHP/eval-stdin.php
+      2 /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+=== TOP URL 400 ===
+      7 /
+      2 /cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/.%2e/bin/sh
+      2 /cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh
+      2 /.env.local
+      2 /.env
+      2 /..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd
+      1 www.google.com:443
+      1 @169.254.169.254/latest/meta-data/instance-id
+      1 ;@169.254.169.254/latest/meta-data/instance-id
+      1 /sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/
+      1 /manager/html
+      1 /favicon.ico
+      1 /config/.env
+      1 /backend/.env
+      1 /app/.env
+=== IP GAY 404 NHIEU NHAT (co phai bot khong) ===
+     43 47.85.8.171
+     43 110.35.80.116
+     37 213.209.159.114
+      8 216.73.216.122
+      4 118.68.123.8
+      3 66.132.172.139
+      3 167.94.146.58
+      2 66.132.224.83
+      2 45.198.224.59
+      1 85.217.149.36
+=== 20 DONG 404 GAN NHAT (day du) ===
+110.35.80.116 - - [04/Aug/2026:13:37:59 +0700] "GET /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:37:59 +0700] "GET /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:00 +0700] "GET /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:00 +0700] "GET /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:00 +0700] "GET /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:00 +0700] "GET /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:01 +0700] "GET /index.php?s=/index/\x5Cthink\x5Capp/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:01 +0700] "GET /public/index.php?s=/index/\x5Cthink\x5Capp/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:01 +0700] "GET /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5(\x22hi\x22));?>+/tmp/index1.php HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:02 +0700] "GET /index.php?lang=../../../../../../../../tmp/index1 HTTP/1.1" 404 22 "-" "libredtail-http"
+110.35.80.116 - - [04/Aug/2026:13:38:02 +0700] "GET /containers/json HTTP/1.1" 404 22 "-" "libredtail-http"
+167.94.146.58 - - [04/Aug/2026:14:15:37 +0700] "GET /favicon.ico HTTP/1.1" 404 22 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+167.94.146.58 - - [04/Aug/2026:14:16:09 +0700] "GET /favicon.ico HTTP/1.1" 404 22 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+167.94.146.58 - - [04/Aug/2026:14:16:10 +0700] "GET /epr30s7v_uo0l HTTP/1.1" 404 22 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+216.73.216.122 - - [04/Aug/2026:14:37:14 +0700] "GET /sitemap.xml HTTP/2.0" 404 22 "-" "Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; ClaudeBot/1.0; +claudebot@anthropic.com)"
+66.132.224.83 - - [04/Aug/2026:15:10:18 +0700] "GET /favicon.ico HTTP/1.1" 404 22 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+66.132.224.83 - - [04/Aug/2026:15:10:19 +0700] "GET /g_ra80baji HTTP/1.1" 404 22 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+183.134.40.82 - - [04/Aug/2026:15:54:20 +0700] "GET /favicon.ico HTTP/1.1" 404 22 "-" "Dalvik/2.1.0 (Linux; U; Android 9.0; ZTE BA520 Build/MRA58K)"
+118.68.123.8 - - [04/Aug/2026:16:36:36 +0700] "GET /api/du-doan HTTP/1.1" 404 22 "-" "curl/8.4.0"
+45.198.224.59 - - [04/Aug/2026:16:36:58 +0700] "GET /api/auth/validate-sso HTTP/1.1" 404 22 "-" "-"
+=== 404 TRONG 15 PHUT QUA THUOC /api/ ===
+      2 /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+      2 /api/auth/validate-sso
+      1 /api/du-doan
+=== VI SAO /api/status TRA 2026-06-07 ===
+max_pred_date
+-------------
+2026-08-04   
+max_result_date
+---------------
+2026-08-04     
+4373:async def scheduler_status(request: Request):
+4443:async def get_training_status_api(request: Request):
+6335:async def get_status(request: Request, date: Optional[str] = None, ai_model: Optional[str] = None):
+9324:async def get_preflight_status(request: Request):
+11378:def _du_doan_test_lo3_status(lo3_value, actual_axis_sets: dict) -> str:
+11389:def _du_doan_test_xien_status(values, actual_axis_sets: dict, required_count: int) -> str:
+11903:    def _axis_status(values, actual_set):
+11915:    def _bt_status(value, actual_set):
+13561:        def _wd_best(status_col):
+14791:    def _axis_status(values, actual_set):
+6334:@app.get("/api/status")
+6470:    """Safe wrapper for get_repredict_quality — never crashes /api/status."""
+18061:    bị TREO tại _VIEWER_FREEZE_DATE (xem viewer-freeze trong /api/status, /api/predictions).

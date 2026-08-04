@@ -1,0 +1,59 @@
+server {
+    listen 8080;
+    server_name xs.io.vn www.xs.io.vn;
+    location / {
+        add_header Cache-Control "no-store" always;
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+        proxy_connect_timeout 60s;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    server_name xs.io.vn www.xs.io.vn;
+    ssl_certificate /etc/letsencrypt/live/xs.io.vn/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/xs.io.vn/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    location / {
+        add_header Cache-Control "no-store" always;
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+        proxy_connect_timeout 60s;
+    }
+}
+=== LIST ===
+total 16
+drwxr-xr-x 2 root root 4096 Jul 26 00:57 .
+drwxr-xr-x 8 root root 4096 Jul 22 06:48 ..
+-rw-r--r-- 1 root root 1167 Jul 26 00:57 lottery
+-rw-r--r-- 1 root root 1063 Jul 26 00:57 lottery.bak_pre_cache_20260726
+=== CERTBOT RENEW CONF ===
+# renew_before_expiry = 30 days
+version = 1.21.0
+archive_dir = /etc/letsencrypt/archive/xs.io.vn
+cert = /etc/letsencrypt/live/xs.io.vn/cert.pem
+privkey = /etc/letsencrypt/live/xs.io.vn/privkey.pem
+chain = /etc/letsencrypt/live/xs.io.vn/chain.pem
+fullchain = /etc/letsencrypt/live/xs.io.vn/fullchain.pem
+
+# Options used in the renewal process
+[renewalparams]
+account = 1a1d486e1803e99e50025a30a0f4ff8d
+authenticator = webroot
+server = https://acme-v02.api.letsencrypt.org/directory
+webroot_path = /www/server/apache/htdocs,
+[[webroot_map]]
+xs.io.vn = /www/server/apache/htdocs
+=== CRON CERTBOT ===
+Wed 2026-08-05 06:59:11 +07 13h left      Tue 2026-08-04 12:26:16 +07 4h 39min ago  certbot.timer                  certbot.service

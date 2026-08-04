@@ -1,0 +1,52 @@
+=== AI NGHE PORT 80/443/8080 ===
+LISTEN 0      511          0.0.0.0:8080       0.0.0.0:*    users:(("nginx",pid=4105029,fd=6),("nginx",pid=138267,fd=6),("nginx",pid=138266,fd=6))                                                   
+LISTEN 0      511          0.0.0.0:443        0.0.0.0:*    users:(("nginx",pid=4105029,fd=7),("nginx",pid=138267,fd=7),("nginx",pid=138266,fd=7))                                                   
+LISTEN 0      511                *:80               *:*    users:(("httpd",pid=752800,fd=4),("httpd",pid=749775,fd=4),("httpd",pid=749774,fd=4),("httpd",pid=749720,fd=4),("httpd",pid=749555,fd=4))
+=== NOI DUNG TRA VE CUA HTTP PORT 80 ===
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and
+--- header ---
+HTTP/1.1 200 OK
+Date: Tue, 04 Aug 2026 10:06:14 GMT
+Server: Apache
+Upgrade: h2
+Connection: Upgrade, close
+Last-Modified: Fri, 17 Apr 2026 18:35:02 GMT
+ETag: "267-64fac34fa1394"
+Accept-Ranges: bytes
+Content-Length: 615
+Vary: Accept-Encoding
+Content-Type: text/html
+
+=== HTTP 80: /login tra gi ===
+code=404
+api_health=404
+=== APACHE CONF CO XS.IO.VN KHONG ===
+index.html
+=== NGINX -T (server_name + listen) ===
+	# server_names_hash_bucket_size 64;
+	# server_name_in_redirect off;
+#		listen     localhost:110;
+#		listen     localhost:143;
+    listen 8080;
+    server_name xs.io.vn www.xs.io.vn;
+    listen 443 ssl http2;
+    server_name xs.io.vn www.xs.io.vn;
+    listen 8080;
+    server_name xs.io.vn www.xs.io.vn;
+    listen 443 ssl http2;
+    server_name xs.io.vn www.xs.io.vn;

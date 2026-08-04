@@ -1,0 +1,105 @@
+DB=/root/Lottery_AI_Test/data/lottery_ai.db
+=== GIO VN ===
+2026-08-04 18:24:23
+=== SERVICE lottery ===
+active
+MainPID=770947
+NRestarts=0
+ActiveEnterTimestamp=Tue 2026-08-04 10:16:59 +07
+health_local=200
+=== HASH 4 BANG KHOA ===
+predictions hash=5e4dbf167cee0e82 rows=11713
+final_bundles hash=3c51731e5cfcd747 rows=474
+lottery_results hash=7305048e8b8d3c80 rows=15212
+model_daily_eval hash=89b4aa03fbf15b23 rows=11496
+=== FU-260: PRAGMA v10979_early_block ===
+0|id|INTEGER|0||1
+1|date|TEXT|1||0
+2|region|TEXT|1||0
+3|trang_thai|TEXT|1||0
+4|xong_luc|TEXT|0||0
+5|han|TEXT|0||0
+6|som_hon_giay|INTEGER|0||0
+7|model_count|INTEGER|0||0
+8|pool|INTEGER|0||0
+9|lane_da_kich_hoat|INTEGER|0|0|0
+10|lane_ket_qua|TEXT|0||0
+11|ly_do|TEXT|0||0
+12|diagnostic_only|INTEGER|0|1|0
+13|shadow_only|INTEGER|0|1|0
+14|output_eligible|INTEGER|0|0|0
+15|owner_approved|INTEGER|0|0|0
+16|computed_at_vn|TEXT|0||0
+--- du lieu 04/08 ---
+Error: in prepare, no such column: ngay (1)
+--- 3 ngay gan nhat (moi trang thai) ---
+Error: in prepare, no such column: ngay (1)
+=== FU-252: PRAGMA du_doan_test_bundles ===
+0|id|INTEGER|0||1
+1|run_id|INTEGER|1||0
+2|run_date|TEXT|1||0
+3|region|TEXT|1||0
+4|experiment_name|TEXT|1||0
+5|mode|TEXT|1||0
+6|test_bt|TEXT|0||0
+7|test_lo2_json|TEXT|0||0
+8|official_bt|TEXT|0||0
+9|official_lo2_json|TEXT|0||0
+10|diff_from_official_json|TEXT|0||0
+11|aggregation_method|TEXT|0||0
+12|candidate_count|INTEGER|0|0|0
+13|model_count|INTEGER|0|0|0
+14|confidence_score|REAL|0||0
+15|risk_flags_json|TEXT|0||0
+16|official_output|TEXT|0|'false'|0
+17|output_impact|TEXT|0|'false'|0
+18|admin_only|INTEGER|0|1|0
+19|test_only|INTEGER|0|1|0
+20|owner_approved|INTEGER|0|0|0
+21|created_at|TEXT|1||0
+22|diagnostic_only|INTEGER|0|0|0
+23|output_eligible|INTEGER|0|0|0
+24|output_lock_status|TEXT|0||0
+25|readiness_status|TEXT|0||0
+--- du lieu 04/08 ---
+Error: in prepare, no such column: date (1)
+--- dem theo ngay 10 ngay gan nhat ---
+Error: in prepare, no such column: date (1)
+=== CRON _v10979_early_block ===
+127:* 5-6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MN >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio
+128:* 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MT >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio
+129:* 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MB >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio
+=== SITES-ENABLED ===
+total 16
+drwxr-xr-x 2 root root 4096 Jul 26 00:57 .
+drwxr-xr-x 8 root root 4096 Jul 22 06:48 ..
+-rw-r--r-- 1 root root 1167 Jul 26 00:57 lottery
+-rw-r--r-- 1 root root 1063 Jul 26 00:57 lottery.bak_pre_cache_20260726
+--- nginx -t ---
+nginx: [warn] conflicting server name "xs.io.vn" on 0.0.0.0:8080, ignored
+nginx: [warn] conflicting server name "www.xs.io.vn" on 0.0.0.0:8080, ignored
+nginx: [warn] conflicting server name "xs.io.vn" on 0.0.0.0:443, ignored
+nginx: [warn] conflicting server name "www.xs.io.vn" on 0.0.0.0:443, ignored
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+=== SAN CHUNG CHI HIEN TAI ===
+--- xs.io.vn ---
+serial=069FEA4D4332631687BFA0AB431A65D83ACA
+notBefore=Aug  4 10:22:16 2026 GMT
+notAfter=Nov  2 10:22:15 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.xs.io.vn, DNS:xs.io.vn
+--- www.xs.io.vn ---
+serial=069FEA4D4332631687BFA0AB431A65D83ACA
+notBefore=Aug  4 10:22:16 2026 GMT
+notAfter=Nov  2 10:22:15 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.xs.io.vn, DNS:xs.io.vn
+=== BACKUP V10983 ===
+total 16
+drwxr-xr-x  2 root root 4096 Aug  4 18:20 .
+dr-xr-x--- 49 root root 4096 Aug  4 18:20 ..
+-rw-r--r--  1 root root  615 Apr 18 01:35 apache_index.html
+-rw-r--r--  1 root root 1063 Apr 18 02:15 nginx_lottery.conf
+=== BUNDLE 3 MIEN HOM NAY ===
+Error: in prepare, no such column: bundle_type (1)

@@ -1,0 +1,45 @@
+=== APACHE: file cau hinh chinh + vhost ===
+ -D HTTPD_ROOT="/www/server/apache"
+ -D SERVER_CONFIG_FILE="conf/httpd.conf"
+bash: line 4: apachectl: command not found
+=== VHOST DIR ===
+total 16
+drw------- 2 root root 4096 Aug  4 00:16 .
+drw------- 8 root root 4096 Apr 18 01:32 ..
+-rw------- 1 root root  379 Feb 23  2021 0.default.conf
+-rw------- 1 root root 1212 Apr 18 01:38 0.site_total_log_format.conf
+=== DOCROOT ===
+total 16
+drwxr-xr-x  3 root root 4096 Jun 25 19:10 .
+drwxr-xr-x 15 root root 4096 Apr 18 01:42 ..
+drwxr-xr-x  3 root root 4096 Jun 25 19:10 .well-known
+-rw-r--r--  1 root root  615 Apr 18 01:35 index.html
+=== CO .well-known KHONG ===
+total 12
+drwxr-xr-x 3 root root 4096 Jun 25 19:10 .
+drwxr-xr-x 3 root root 4096 Jun 25 19:10 ..
+drwxr-xr-x 2 root root 4096 Jun 25 19:12 acme-challenge
+=== APACHE CONF CHINH: dong DocumentRoot / Redirect ===
+207:# ServerName gives the name and port that the server uses to identify itself.
+213:ServerName 0.0.0.0:80
+233:# DocumentRoot: The directory out of which you will serve your
+301:    # Redirect: Allows you to tell clients about documents that used to 
+305:    # Redirect permanent /foo http://www.example.com/bar
+309:    # access content that does not live under the DocumentRoot.
+444:Include conf/extra/httpd-mpm.conf
+447:#Include conf/extra/httpd-multilang-errordoc.conf
+450:#Include conf/extra/httpd-autoindex.conf
+453:#Include conf/extra/httpd-languages.conf
+456:#Include conf/extra/httpd-userdir.conf
+459:#Include conf/extra/httpd-info.conf
+462:Include conf/extra/httpd-vhosts.conf
+465:#Include conf/extra/httpd-manual.conf
+468:#Include conf/extra/httpd-dav.conf
+471:Include conf/extra/httpd-default.conf
+475:Include conf/extra/proxy-html.conf
+479:#Include conf/extra/httpd-ssl.conf
+=== THU ACME PATH QUA WWW ===
+acme_nonwww=200
+acme_www=200
+=== CERTBOT VERSION ===
+certbot 1.21.0

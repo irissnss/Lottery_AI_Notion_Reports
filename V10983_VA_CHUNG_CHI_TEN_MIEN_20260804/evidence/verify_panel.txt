@@ -1,0 +1,119 @@
+=== TEN HAM LOADER V10979 ===
+        grid.innerHTML = html;
+      } catch (e) {
+        grid.innerHTML = `<div style="text-align:center;color:var(--red);padding:14px">❌ ${esc(e && e.message || e)}</div>`;
+      }
+    }
+
+    // ===== V10979: xong sớm thì báo "ĐÃ XONG — BLOCK", không đợi hết giờ hạn =====
+    async function loadEarlyBlock() {
+      const grid = document.getElementById('earlyBlockGrid');
+      if (!grid) return;
+      const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+      const phut = (s) => (s === null || s === undefined) ? '—'
+        : `${Math.floor(Math.abs(s) / 60)}ph${String(Math.abs(s) % 60).padStart(2, '0')}s${s < 0 ? ' TRỄ' : ''}`;
+      const NHAN = {
+        DA_XONG_BLOCK: ['ĐÃ XONG — BLOCK', '#22c55e'],
+        CHUA_CHOT: ['chưa chốt', '#94a3b8'],
+        CHUA_DU_KHO: ['chờ đủ kho model', '#f59e0b'],
+        CHUA_KIEM: ['chưa tới lượt kiểm', '#94a3b8'],
+        KHONG_DOC_DUOC: ['KHÔNG ĐỌC ĐƯỢC', '#ef4444'],
+      };
+      try {
+        const data = await apiFetch('/api/admin/early-block');
+        if (!data || data.success === false || !data.available) {
+          grid.innerHTML = `<div style="text-align:center;padding:14px;opacity:.7">${esc((data && data.error) || 'Chưa có dữ liệu — chạy _v10979_early_block.py')}</div>`;
+          return;
+        }
+        const xong = (data.today || []).filter(r => r.trang_thai === 'DA_XONG_BLOCK');
+        let html = `<div style="margin:6px 0;padding:9px 12px;border-left:4px solid ${xong.length === 3 ? '#22c55e' : '#38bdf8'};background:rgba(56,189,248,.12);border-radius:6px">`
+          + `<b>${esc(xong.length)}/3 miền đã xong</b> hôm nay${data.som_trung_binh_phut !== null && data.som_trung_binh_phut !== undefined ? ` · lịch sử xong sớm hơn hạn trung bình <b>${esc(data.som_trung_binh_phut)} phút</b>, ít nhất <b>${esc(data.som_it_nhat_phut)} phút</b>` : ''}.</div>`;
+
+        html += '<table class="data-table" style="min-width:640px"><thead><tr>'
+          + '<th>Miền</th><th>Trạng thái</th><th>Xong lúc</th><th>Hạn</th>'
+          + '<th>Sớm hơn hạn</th><th>model</th><th>Lane đã gọi</th><th>Vì sao</th>'
+          + '</tr></thead><tbody>';
+        for (const r of (data.today || [])) {
+          const [nhan, mau] = NHAN[r.trang_thai] || [r.trang_thai, '#94a3b8'];
+=== MOI setInterval TRONG FILE ===
+3077:    setInterval(updateClock, 1000);
+8087:      setInterval(() => {
+=== KHOI setInterval 8087 ===
+        loadDrilldown(), loadShadowEmit(), loadComboVsSingle(),
+        loadSystemHealthBanner(), loadStreaks(), loadSliceHealthPanel(), loadModelProgressPanel(), loadShadowScoreboardPanel(), loadSliceRecoPanel(), loadRegionBt(),
+        loadFamilyBt(), loadCohereEffectiveness(), loadMlFreshness(), loadShadowComparison(),
+        loadRuleOffset(), loadMbD1Shadow(), loadRerunDrift(), loadPromptGateCohort(), loadParallelShadowProof(),
+        loadV82MasterControl(), loadV87MasterIndex(), loadV95DataIntegrity(), loadV96MasterTracker(), loadV98CommandCenter(),
+        loadV10524Lo1Lo2Audit(), loadV10524SourcePoolFlow(), loadV10524RuntimeManifest()
+      ]);
+      hardenMonitoringLayout(document);
+      try { initPanelFilter(); } catch (e) { console.warn('panel filter', e); }
+
+      // V10773: auto-refresh 60s CHỈ nhóm trọng tâm (CHƠI/official + THỬ NGHIỆM forward
+      // + health). Nhóm đo lường/cũ nạp 1 lần lúc mở trang — giảm ~2/3 số call nền (bớt lag).
+      setInterval(() => {
+        loadPlayDecisionBoard();
+        loadThreeLayer();
+        loadRegionWeekdayStrength();
+        loadEvSongThu();
+        loadPnlForward();
+        loadConsensusFreeShadow();
+        loadOutputFinalLab();
+        loadRescueCandidateMonitor();
+        loadSignalQualitySkip();
+        loadDeployVerify();
+        loadPatternReasoning();
+        loadAggSignal();
+        loadMbRfShadow();
+        loadMlMarkAb();
+        loadChaseBias();
+        loadRuleCond();
+        loadMbWhatif();
+        loadDeadlineGuard();
+        loadEarlyBlock();
+        loadOverrideWatch();
+        loadEdgeGate();
+        loadConsistencyGuard();
+        loadConnector();
+        loadNghiemThu();
+        loadDeherd();
+        loadQualityLedger();
+        loadCpL6Lean();
+        loadOutputContract();
+=== HAM NAO GOI TAT CA SECTION ===
+3207:    async function loadMonitoring() {
+3495:    async function loadPromptGateCohort() {
+3640:    async function loadRanking() {
+3709:    async function loadTrail() {
+3771:    async function loadGap() {
+3856:    async function loadDrilldown() {
+3928:    async function loadCohereEffectiveness() {
+3974:    async function loadMlFreshness() {
+4037:    async function loadShadowEmit() {
+4084:    async function loadComboVsSingle() {
+4152:    async function loadRules() {
+4216:    async function loadExperiments() {
+4281:    async function loadStreaks() {
+4323:    async function loadSliceHealthPanel() {
+4367:    async function loadModelProgressPanel() {
+4399:    async function loadSystemHealthBanner() {
+4431:    async function loadPlayDecisionBoard() {
+4499:    async function loadRegionWeekdayStrength() {
+4545:    async function loadEvSongThu() {
+4592:    async function loadPnlForward() {
+4633:    async function loadConsensusFreeShadow() {
+4688:    async function loadOutputFinalLab() {
+4771:    async function loadRescueCandidateMonitor() {
+4820:    async function loadSourceSemantics() {
+4879:    async function loadSignalQualitySkip() {
+4952:    async function loadDeployVerify() {
+5016:    async function loadPatternReasoning() {
+5073:    async function loadAggSignal() {
+5139:    async function loadMbRfShadow() {
+5183:    async function loadMlMarkAb() {
+=== ROUTE API V10979 TRONG main.py ===
+15415:        import _v10979_early_block as _eb
+=== THU GOI ROUTE ===
+/api/admin/v10979-early-block -> 404
+/api/admin/v10979/early_block -> 404
+/api/v10979/early-block -> 404

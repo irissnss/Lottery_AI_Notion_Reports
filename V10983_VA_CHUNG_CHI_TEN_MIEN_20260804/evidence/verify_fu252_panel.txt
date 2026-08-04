@@ -1,0 +1,71 @@
+=== GIO VN ===
+2026-08-04 18:26:25
+=== FU-252 · LANE NGHIEM THU (experiment_name LIKE %NGHIEMTHU%) — 14 ngay ===
+run_date    MN  MT  MB  so_mien
+----------  --  --  --  -------
+2026-08-04  22  29  71  3      
+2026-08-03  64  64      2      
+2026-08-02  39  69  73  3      
+2026-08-01  38  55  90  3      
+2026-07-31  09  68  19  3      
+2026-07-30  86          1      
+--- CUA SO 04->10/08: dem o mien-ngay ---
+3
+--- MB_NGHIEMTHU_1908_V1: 10 lan ghi gan nhat ---
+run_date    test_bt  model_count  created_at               
+----------  -------  -----------  -------------------------
+2026-08-04  71       15           2026-08-04T17:37:01+07:00
+2026-08-02  73       15           2026-08-02T17:38:02+07:00
+2026-08-01  90       15           2026-08-01T17:42:01+07:00
+2026-07-31  19       15           2026-07-31T17:38:01+07:00
+=== FU-260 · BIEN GIAY MT/MB (official chot -> ghi block) ===
+region  xong_luc  computed_at_vn             tre_giay  som_hon_giay  lane_da_kich_hoat  co_lane_ket_qua
+------  --------  -------------------------  --------  ------------  -----------------  ---------------
+MB      17:36:51  2026-08-04T17:37:01+07:00  9         1269          1                  1              
+MN      05:19:56  2026-08-04T10:15:50+07:00  17753     37504         0                  0              
+MT      16:50:13  2026-08-04T16:51:01+07:00  47        467           1                  1              
+=== PANEL /monitoring — dang ky refresh ===
+2012:      <!-- ===== V10979 — XONG SỚM THÌ BÁO "ĐÃ XONG" VÀ CHỐT LUÔN ===== -->
+2014:        <div class="section-title">ĐÃ XONG — BLOCK · báo ngay lúc xong, không đợi hết giờ (V10979)</div>
+5871:    // ===== V10979: xong sớm thì báo "ĐÃ XONG — BLOCK", không đợi hết giờ hạn =====
+5879:        DA_XONG_BLOCK: ['ĐÃ XONG — BLOCK', '#22c55e'],
+5888:          grid.innerHTML = `<div style="text-align:center;padding:14px;opacity:.7">${esc((data && data.error) || 'Chưa có dữ liệu — chạy _v10979_early_block.py')}</div>`;
+--- co trong loadAllSections + setInterval khong ---
+3077:    setInterval(updateClock, 1000);
+8087:      setInterval(() => {
+--- API tra ve ---
+api_v10979_khong_dang_nhap=404
+15415:        import _v10979_early_block as _eb
+=== NGINX: file dang phuc vu that vs ban sao luu ===
+--- diff sites-enabled/lottery  vs  /root/_v10983_backup/nginx_lottery.conf ---
+5d4
+<         add_header Cache-Control "no-store" always;
+25d23
+<         add_header Cache-Control "no-store" always;
+--- sites-enabled/lottery co phai symlink khong ---
+-rw-r--r-- 1 root root 1167 Jul 26 00:57 /etc/nginx/sites-enabled/lottery
+/etc/nginx/sites-enabled/lottery
+--- letsencrypt archive ---
+total 64
+drwxr-xr-x 2 root root 4096 Aug  4 18:20 .
+drwx------ 3 root root 4096 Mar 27 13:10 ..
+-rw-r--r-- 1 root root 1765 Mar 27 13:10 cert1.pem
+-rw-r--r-- 1 root root 1765 Jun 25 19:12 cert2.pem
+-rw-r--r-- 1 root root 1785 Aug  4 18:20 cert3.pem
+-rw-r--r-- 1 root root 1801 Mar 27 13:10 chain1.pem
+-rw-r--r-- 1 root root 3870 Jun 25 19:12 chain2.pem
+-rw-r--r-- 1 root root 3870 Aug  4 18:20 chain3.pem
+-rw-r--r-- 1 root root 3566 Mar 27 13:10 fullchain1.pem
+-rw-r--r-- 1 root root 5635 Jun 25 19:12 fullchain2.pem
+-rw-r--r-- 1 root root 5655 Aug  4 18:20 fullchain3.pem
+-rw------- 1 root root 1704 Mar 27 13:10 privkey1.pem
+-rw------- 1 root root 1704 Jun 25 19:12 privkey2.pem
+-rw------- 1 root root 1704 Aug  4 18:20 privkey3.pem
+total 12
+drwxr-xr-x 2 root root 4096 Aug  4 18:20 .
+drwx------ 3 root root 4096 Mar 27 13:10 ..
+-rw-r--r-- 1 root root  692 Mar 27 13:10 README
+lrwxrwxrwx 1 root root   32 Aug  4 18:20 cert.pem -> ../../archive/xs.io.vn/cert3.pem
+lrwxrwxrwx 1 root root   33 Aug  4 18:20 chain.pem -> ../../archive/xs.io.vn/chain3.pem
+lrwxrwxrwx 1 root root   37 Aug  4 18:20 fullchain.pem -> ../../archive/xs.io.vn/fullchain3.pem
+lrwxrwxrwx 1 root root   35 Aug  4 18:20 privkey.pem -> ../../archive/xs.io.vn/privkey3.pem

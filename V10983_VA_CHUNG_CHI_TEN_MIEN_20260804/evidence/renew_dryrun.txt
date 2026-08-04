@@ -1,0 +1,42 @@
+=== CAU HINH GIA HAN ===
+# renew_before_expiry = 30 days
+version = 1.21.0
+archive_dir = /etc/letsencrypt/archive/xs.io.vn
+cert = /etc/letsencrypt/live/xs.io.vn/cert.pem
+privkey = /etc/letsencrypt/live/xs.io.vn/privkey.pem
+chain = /etc/letsencrypt/live/xs.io.vn/chain.pem
+fullchain = /etc/letsencrypt/live/xs.io.vn/fullchain.pem
+
+# Options used in the renewal process
+[renewalparams]
+account = 1a1d486e1803e99e50025a30a0f4ff8d
+authenticator = webroot
+server = https://acme-v02.api.letsencrypt.org/directory
+webroot_path = /www/server/apache/htdocs,
+[[webroot_map]]
+www.xs.io.vn = /www/server/apache/htdocs
+xs.io.vn = /www/server/apache/htdocs
+=== ACME CHALLENGE PATH — CA HAI TEN ===
+http://xs.io.vn/.well-known/acme-challenge/_v10983probe -> 200
+http://www.xs.io.vn/.well-known/acme-challenge/_v10983probe -> 200
+=== THU GIA HAN KHO (staging, khong doi chung chi that) ===
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/xs.io.vn.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Simulating renewal of an existing certificate for xs.io.vn and www.xs.io.vn
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations, all simulated renewals succeeded: 
+  /etc/letsencrypt/live/xs.io.vn/fullchain.pem (success)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+=== CHUNG CHI THAT SAU KHI THU KHO (phai KHONG doi) ===
+serial=069FEA4D4332631687BFA0AB431A65D83ACA
+notBefore=Aug  4 10:22:16 2026 GMT
+notAfter=Nov  2 10:22:15 2026 GMT
+X509v3 Subject Alternative Name: 
+    DNS:www.xs.io.vn, DNS:xs.io.vn
+=== CRON / TIMER GIA HAN ===
+Wed 2026-08-05 06:59:11 +07 12h left      Tue 2026-08-04 12:26:16 +07 6h ago        certbot.timer                  certbot.service
+-rw-r--r--   1 root root  775 Sep 15  2018 certbot
