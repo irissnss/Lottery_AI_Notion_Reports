@@ -1,0 +1,282 @@
+{
+  "han": {
+    "MN": "15:45",
+    "MT": "16:58",
+    "MB": "17:58"
+  },
+  "be_cuon_chieu": {
+    "env": "[\"AI_PARALLEL_ENABLE=1\", \"AI_PARALLEL_WORKERS=5\"]",
+    "log_parallel_14_ngay": [
+      {
+        "m": "[PARALLEL] 🏊 BỂ 5 chỗ BẬT: start trước 5/7 model, hàng đợi 2 (rolling — xử lý vẫn tuần tự)",
+        "n": 35
+      },
+      {
+        "m": "[PARALLEL] 🏊 BỂ 5 chỗ BẬT: start trước 5/8 model, hàng đợi 3 (rolling — xử lý vẫn tuần tự)",
+        "n": 7
+      }
+    ]
+  },
+  "thoi_gian_model_30_ngay": [
+    {
+      "ai_model": "gpt-5.5",
+      "n": 91,
+      "tb_giay": 649.4,
+      "max_giay": 846.0
+    },
+    {
+      "ai_model": "glm-5.1",
+      "n": 83,
+      "tb_giay": 487.3,
+      "max_giay": 795.7
+    },
+    {
+      "ai_model": "kimi-k2.5",
+      "n": 74,
+      "tb_giay": 448.6,
+      "max_giay": 664.5
+    },
+    {
+      "ai_model": "gpt-oss-120b",
+      "n": 83,
+      "tb_giay": 369.3,
+      "max_giay": 885.7
+    },
+    {
+      "ai_model": "qwen3.7-max",
+      "n": 89,
+      "tb_giay": 285.4,
+      "max_giay": 480.0
+    },
+    {
+      "ai_model": "glm-5.2",
+      "n": 90,
+      "tb_giay": 274.4,
+      "max_giay": 529.4
+    },
+    {
+      "ai_model": "gpt-5.6-sol-pro",
+      "n": 15,
+      "tb_giay": 253.5,
+      "max_giay": 391.7
+    },
+    {
+      "ai_model": "qwen3-max-thinking",
+      "n": 92,
+      "tb_giay": 210.3,
+      "max_giay": 900.3
+    },
+    {
+      "ai_model": "deepseek-v4-pro-real",
+      "n": 90,
+      "tb_giay": 203.7,
+      "max_giay": 390.0
+    },
+    {
+      "ai_model": "gemma-4-31b",
+      "n": 74,
+      "tb_giay": 177.7,
+      "max_giay": 823.1
+    },
+    {
+      "ai_model": "gpt-5-mini",
+      "n": 10,
+      "tb_giay": 110.9,
+      "max_giay": 589.4
+    },
+    {
+      "ai_model": "grok-4.20-multi-agent",
+      "n": 76,
+      "tb_giay": 92.2,
+      "max_giay": 1008.9
+    },
+    {
+      "ai_model": "gemini-3.5-flash",
+      "n": 84,
+      "tb_giay": 62.9,
+      "max_giay": 300.0
+    },
+    {
+      "ai_model": "grok-4.3",
+      "n": 53,
+      "tb_giay": 51.9,
+      "max_giay": 327.1
+    },
+    {
+      "ai_model": "claude-opus-5-fast",
+      "n": 15,
+      "tb_giay": 30.8,
+      "max_giay": 41.2
+    },
+    {
+      "ai_model": "gemini-3.6-flash",
+      "n": 9,
+      "tb_giay": 29.4,
+      "max_giay": 90.3
+    },
+    {
+      "ai_model": "gpt-5.4",
+      "n": 3,
+      "tb_giay": 15.1,
+      "max_giay": 20.6
+    }
+  ],
+  "bien_truoc_han": {
+    "MN": [
+      {
+        "ngay": "2026-08-04",
+        "chot": "05:19:56",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-08-03",
+        "chot": "05:20:15",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-08-02",
+        "chot": "05:18:43",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-08-01",
+        "chot": "05:20:24",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-31",
+        "chot": "04:17:57",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-07-30",
+        "chot": "04:17:36",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-07-29",
+        "chot": "04:18:51",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-07-28",
+        "chot": "04:19:04",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-27",
+        "chot": "04:17:41",
+        "so_model_bundle": 15
+      },
+      {
+        "ngay": "2026-07-26",
+        "chot": "04:17:29",
+        "so_model_bundle": 15
+      }
+    ],
+    "MT": [
+      {
+        "ngay": "2026-08-04",
+        "chot": "",
+        "so_model_bundle": null
+      },
+      {
+        "ngay": "2026-08-03",
+        "chot": "16:47:10",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-08-02",
+        "chot": "16:41:36",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-08-01",
+        "chot": "16:46:43",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-31",
+        "chot": "16:46:52",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-30",
+        "chot": "16:39:23",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-29",
+        "chot": "16:41:50",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-28",
+        "chot": "16:37:23",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-27",
+        "chot": "16:42:54",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-26",
+        "chot": "16:39:06",
+        "so_model_bundle": 13
+      }
+    ],
+    "MB": [
+      {
+        "ngay": "2026-08-04",
+        "chot": "",
+        "so_model_bundle": null
+      },
+      {
+        "ngay": "2026-08-03",
+        "chot": "17:44:54",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-08-02",
+        "chot": "17:37:53",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-08-01",
+        "chot": "17:39:55",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-31",
+        "chot": "17:35:27",
+        "so_model_bundle": 13
+      },
+      {
+        "ngay": "2026-07-30",
+        "chot": "17:33:40",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-29",
+        "chot": "17:34:26",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-28",
+        "chot": "17:34:37",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-27",
+        "chot": "17:33:53",
+        "so_model_bundle": 14
+      },
+      {
+        "ngay": "2026-07-26",
+        "chot": "17:33:44",
+        "so_model_bundle": 14
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "gio_vn": "2026-08-04T10:16:54+07:00",
+  "pid_truoc": "770722",
+  "pid_sau": "770947",
+  "backup_vps": "/root/Lottery_AI_Test/backups/v10979_pre_20260804_101654",
+  "hash_truoc": {
+    "predictions": {
+      "rows": 11673,
+      "sha256": "2c5fca4500a2f939f72501a8a3d95ca3"
+    },
+    "final_bundles": {
+      "rows": 472,
+      "sha256": "d95dc3e6a83df920c13c9ab3d4fbfcd7"
+    },
+    "lottery_results": {
+      "rows": 15207,
+      "sha256": "924fd080a0d11f650cf4e5d21dbed415"
+    },
+    "model_daily_eval": {
+      "rows": 11496,
+      "sha256": "f6e52dc71c2c091efd9c77f516184e4e"
+    }
+  },
+  "hash_sau": {
+    "predictions": {
+      "rows": 11673,
+      "sha256": "2c5fca4500a2f939f72501a8a3d95ca3"
+    },
+    "final_bundles": {
+      "rows": 472,
+      "sha256": "d95dc3e6a83df920c13c9ab3d4fbfcd7"
+    },
+    "lottery_results": {
+      "rows": 15207,
+      "sha256": "924fd080a0d11f650cf4e5d21dbed415"
+    },
+    "model_daily_eval": {
+      "rows": 11496,
+      "sha256": "f6e52dc71c2c091efd9c77f516184e4e"
+    }
+  },
+  "bang_doi": []
+}

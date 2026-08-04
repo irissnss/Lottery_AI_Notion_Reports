@@ -1,0 +1,2127 @@
+{
+  "han": {
+    "MN": "15:45",
+    "MT": "16:58",
+    "MB": "17:58"
+  },
+  "chuoi": {
+    "MN": [
+      {
+        "date": "2026-08-04",
+        "goi_dau": "05:00:08",
+        "model_xong": "05:19:56",
+        "so_model": 16,
+        "chot_bundle": "2026-08-04 05:19:56",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-08-03",
+        "goi_dau": "05:00:08",
+        "model_xong": "05:20:15",
+        "so_model": 16,
+        "chot_bundle": "2026-08-03 05:20:15",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-08-02",
+        "goi_dau": "05:00:08",
+        "model_xong": "05:18:43",
+        "so_model": 16,
+        "chot_bundle": "2026-08-02 05:18:43",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-08-01",
+        "goi_dau": "05:00:04",
+        "model_xong": "05:20:24",
+        "so_model": 15,
+        "chot_bundle": "2026-08-01 05:20:24",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-31",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:17:57",
+        "so_model": 15,
+        "chot_bundle": "2026-07-31 04:17:57",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-30",
+        "goi_dau": "04:00:09",
+        "model_xong": "04:17:36",
+        "so_model": 15,
+        "chot_bundle": "2026-07-30 04:17:36",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-29",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:18:51",
+        "so_model": 15,
+        "chot_bundle": "2026-07-29 04:18:51",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-28",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:19:04",
+        "so_model": 15,
+        "chot_bundle": "2026-07-28 04:19:04",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-27",
+        "goi_dau": "04:00:09",
+        "model_xong": "04:17:41",
+        "so_model": 15,
+        "chot_bundle": "2026-07-27 04:17:41",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-26",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:29",
+        "so_model": 15,
+        "chot_bundle": "2026-07-26 04:17:29",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-25",
+        "goi_dau": "04:00:10",
+        "model_xong": "04:17:47",
+        "so_model": 15,
+        "chot_bundle": "2026-07-25 04:17:48",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-24",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-24 04:17:23",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-23",
+        "goi_dau": "04:00:05",
+        "model_xong": "04:17:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-23 04:17:23",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-22",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:18:25",
+        "so_model": 15,
+        "chot_bundle": "2026-07-22 04:18:26",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-21",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:53",
+        "so_model": 15,
+        "chot_bundle": "2026-07-21 04:17:53",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-20",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:18:21",
+        "so_model": 15,
+        "chot_bundle": "2026-07-20 04:18:21",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-19",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:18:41",
+        "so_model": 15,
+        "chot_bundle": "2026-07-19 04:18:41",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-18",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:18:32",
+        "so_model": 15,
+        "chot_bundle": "2026-07-18 04:18:32",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-17",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:18:21",
+        "so_model": 15,
+        "chot_bundle": "2026-07-17 04:18:21",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-16",
+        "goi_dau": "04:00:07",
+        "model_xong": "04:18:40",
+        "so_model": 15,
+        "chot_bundle": "2026-07-16 04:18:40",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-15",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:17:49",
+        "so_model": 15,
+        "chot_bundle": "2026-07-15 04:17:49",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-14",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:21:45",
+        "so_model": 15,
+        "chot_bundle": "2026-07-14 04:21:46",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-13",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:18:54",
+        "so_model": 15,
+        "chot_bundle": "2026-07-13 04:18:54",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-12",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:19:06",
+        "so_model": 15,
+        "chot_bundle": "2026-07-12 04:19:06",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-11",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:18:39",
+        "so_model": 15,
+        "chot_bundle": "2026-07-11 04:18:39",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-10",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:29",
+        "so_model": 15,
+        "chot_bundle": "2026-07-10 04:17:30",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-09",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:41",
+        "so_model": 15,
+        "chot_bundle": "2026-07-09 04:17:42",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-08",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:19:31",
+        "so_model": 15,
+        "chot_bundle": "2026-07-08 04:19:33",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-07",
+        "goi_dau": "04:00:04",
+        "model_xong": "04:18:44",
+        "so_model": 15,
+        "chot_bundle": "2026-07-07 04:18:46",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-06",
+        "goi_dau": "04:00:08",
+        "model_xong": "04:17:48",
+        "so_model": 15,
+        "chot_bundle": "2026-07-06 04:17:50",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-05",
+        "goi_dau": "04:16:27",
+        "model_xong": "15:15:09",
+        "so_model": 15,
+        "chot_bundle": "2026-07-05 04:17:47",
+        "bundle_models": 15
+      }
+    ],
+    "MT": [
+      {
+        "date": "2026-08-04",
+        "goi_dau": "05:00:05",
+        "model_xong": "05:00:07",
+        "so_model": 7,
+        "chot_bundle": null,
+        "bundle_models": null
+      },
+      {
+        "date": "2026-08-03",
+        "goi_dau": "05:00:04",
+        "model_xong": "16:47:10",
+        "so_model": 16,
+        "chot_bundle": "2026-08-03 16:47:10",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-08-02",
+        "goi_dau": "05:00:04",
+        "model_xong": "16:41:36",
+        "so_model": 16,
+        "chot_bundle": "2026-08-02 16:41:36",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-08-01",
+        "goi_dau": "05:00:01",
+        "model_xong": "16:46:43",
+        "so_model": 15,
+        "chot_bundle": "2026-08-01 16:46:43",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-31",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:46:52",
+        "so_model": 15,
+        "chot_bundle": "2026-07-31 16:46:52",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-30",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:39:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-30 16:39:23",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-29",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:41:50",
+        "so_model": 15,
+        "chot_bundle": "2026-07-29 16:41:50",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-28",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:37:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-28 16:37:23",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-27",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:42:54",
+        "so_model": 15,
+        "chot_bundle": "2026-07-27 16:42:54",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-26",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:39:06",
+        "so_model": 15,
+        "chot_bundle": "2026-07-26 16:39:06",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-25",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:40:49",
+        "so_model": 15,
+        "chot_bundle": "2026-07-25 16:40:50",
+        "bundle_models": 11
+      },
+      {
+        "date": "2026-07-24",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:43:27",
+        "so_model": 15,
+        "chot_bundle": "2026-07-24 16:43:27",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-23",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:42:50",
+        "so_model": 15,
+        "chot_bundle": "2026-07-23 16:42:50",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-22",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:37:25",
+        "so_model": 15,
+        "chot_bundle": "2026-07-22 16:37:25",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-21",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:39:12",
+        "so_model": 15,
+        "chot_bundle": "2026-07-21 16:39:12",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-20",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:41:46",
+        "so_model": 15,
+        "chot_bundle": "2026-07-20 16:41:46",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-19",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:38:47",
+        "so_model": 15,
+        "chot_bundle": "2026-07-19 16:38:47",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-18",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:43:04",
+        "so_model": 15,
+        "chot_bundle": "2026-07-18 16:43:04",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-17",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:43:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-17 16:43:23",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-16",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:44:32",
+        "so_model": 15,
+        "chot_bundle": "2026-07-16 16:44:32",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-15",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:39:10",
+        "so_model": 15,
+        "chot_bundle": "2026-07-15 16:39:10",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-14",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:38:40",
+        "so_model": 15,
+        "chot_bundle": "2026-07-14 16:38:40",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-13",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:43:50",
+        "so_model": 15,
+        "chot_bundle": "2026-07-13 16:43:50",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-12",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:38:49",
+        "so_model": 15,
+        "chot_bundle": "2026-07-12 16:38:50",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-11",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:41:22",
+        "so_model": 15,
+        "chot_bundle": "2026-07-11 16:41:22",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-10",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:43:29",
+        "so_model": 15,
+        "chot_bundle": "2026-07-10 16:43:29",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-09",
+        "goi_dau": "04:00:04",
+        "model_xong": "16:40:14",
+        "so_model": 15,
+        "chot_bundle": "2026-07-09 16:40:15",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-08",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:38:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-08 16:38:25",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-07",
+        "goi_dau": "04:00:01",
+        "model_xong": "16:39:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-07 16:39:24",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-06",
+        "goi_dau": "04:00:05",
+        "model_xong": "16:42:26",
+        "so_model": 15,
+        "chot_bundle": "2026-07-06 16:42:28",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-05",
+        "goi_dau": "04:00:09",
+        "model_xong": "16:37:59",
+        "so_model": 15,
+        "chot_bundle": "2026-07-05 16:38:01",
+        "bundle_models": 13
+      }
+    ],
+    "MB": [
+      {
+        "date": "2026-08-04",
+        "goi_dau": "05:00:12",
+        "model_xong": "05:00:14",
+        "so_model": 7,
+        "chot_bundle": null,
+        "bundle_models": null
+      },
+      {
+        "date": "2026-08-03",
+        "goi_dau": "17:30:17",
+        "model_xong": "17:44:54",
+        "so_model": 16,
+        "chot_bundle": "2026-08-03 17:44:54",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-08-02",
+        "goi_dau": "17:30:20",
+        "model_xong": "17:37:53",
+        "so_model": 16,
+        "chot_bundle": "2026-08-02 17:37:53",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-08-01",
+        "goi_dau": "17:34:51",
+        "model_xong": "17:39:55",
+        "so_model": 15,
+        "chot_bundle": "2026-08-01 17:39:55",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-31",
+        "goi_dau": "17:30:19",
+        "model_xong": "17:35:26",
+        "so_model": 15,
+        "chot_bundle": "2026-07-31 17:35:27",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-30",
+        "goi_dau": "17:30:17",
+        "model_xong": "17:33:40",
+        "so_model": 15,
+        "chot_bundle": "2026-07-30 17:33:40",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-29",
+        "goi_dau": "17:30:46",
+        "model_xong": "17:34:25",
+        "so_model": 15,
+        "chot_bundle": "2026-07-29 17:34:26",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-28",
+        "goi_dau": "17:30:46",
+        "model_xong": "17:34:37",
+        "so_model": 15,
+        "chot_bundle": "2026-07-28 17:34:37",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-27",
+        "goi_dau": "17:30:16",
+        "model_xong": "17:33:53",
+        "so_model": 15,
+        "chot_bundle": "2026-07-27 17:33:53",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-26",
+        "goi_dau": "17:30:18",
+        "model_xong": "17:33:44",
+        "so_model": 15,
+        "chot_bundle": "2026-07-26 17:33:44",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-25",
+        "goi_dau": "17:32:18",
+        "model_xong": "17:35:34",
+        "so_model": 15,
+        "chot_bundle": "2026-07-25 17:35:35",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-24",
+        "goi_dau": "17:30:15",
+        "model_xong": "17:33:57",
+        "so_model": 15,
+        "chot_bundle": "2026-07-24 17:33:57",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-23",
+        "goi_dau": "17:32:17",
+        "model_xong": "17:35:41",
+        "so_model": 15,
+        "chot_bundle": "2026-07-23 17:35:41",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-22",
+        "goi_dau": "17:31:15",
+        "model_xong": "17:33:25",
+        "so_model": 15,
+        "chot_bundle": "2026-07-22 17:33:25",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-21",
+        "goi_dau": "17:31:17",
+        "model_xong": "17:33:38",
+        "so_model": 15,
+        "chot_bundle": "2026-07-21 17:33:39",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-20",
+        "goi_dau": "17:30:14",
+        "model_xong": "17:33:23",
+        "so_model": 15,
+        "chot_bundle": "2026-07-20 17:33:23",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-19",
+        "goi_dau": "17:30:14",
+        "model_xong": "17:33:00",
+        "so_model": 15,
+        "chot_bundle": "2026-07-19 17:33:00",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-18",
+        "goi_dau": "17:33:47",
+        "model_xong": "17:36:39",
+        "so_model": 15,
+        "chot_bundle": "2026-07-18 17:36:39",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-17",
+        "goi_dau": "17:31:46",
+        "model_xong": "17:35:22",
+        "so_model": 15,
+        "chot_bundle": "2026-07-17 17:35:22",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-16",
+        "goi_dau": "17:30:14",
+        "model_xong": "17:35:15",
+        "so_model": 15,
+        "chot_bundle": "2026-07-16 17:35:15",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-15",
+        "goi_dau": "17:30:44",
+        "model_xong": "17:34:44",
+        "so_model": 15,
+        "chot_bundle": "2026-07-15 17:34:44",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-14",
+        "goi_dau": "17:30:43",
+        "model_xong": "17:34:40",
+        "so_model": 15,
+        "chot_bundle": "2026-07-14 17:34:40",
+        "bundle_models": 15
+      },
+      {
+        "date": "2026-07-13",
+        "goi_dau": "17:30:13",
+        "model_xong": "17:33:51",
+        "so_model": 15,
+        "chot_bundle": "2026-07-13 17:33:52",
+        "bundle_models": 13
+      },
+      {
+        "date": "2026-07-12",
+        "goi_dau": "17:30:13",
+        "model_xong": "17:34:58",
+        "so_model": 15,
+        "chot_bundle": "2026-07-12 17:34:59",
+        "bundle_models": 12
+      },
+      {
+        "date": "2026-07-11",
+        "goi_dau": "17:32:45",
+        "model_xong": "17:36:45",
+        "so_model": 15,
+        "chot_bundle": "2026-07-11 17:36:46",
+        "bundle_models": 12
+      },
+      {
+        "date": "2026-07-10",
+        "goi_dau": "17:30:43",
+        "model_xong": "17:33:34",
+        "so_model": 15,
+        "chot_bundle": "2026-07-10 17:33:34",
+        "bundle_models": 12
+      },
+      {
+        "date": "2026-07-09",
+        "goi_dau": "17:30:12",
+        "model_xong": "17:33:19",
+        "so_model": 15,
+        "chot_bundle": "2026-07-09 17:33:19",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-08",
+        "goi_dau": "17:30:43",
+        "model_xong": "17:34:17",
+        "so_model": 15,
+        "chot_bundle": "2026-07-08 17:34:18",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-07",
+        "goi_dau": "17:31:13",
+        "model_xong": "17:34:11",
+        "so_model": 15,
+        "chot_bundle": "2026-07-07 17:34:12",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-06",
+        "goi_dau": "17:30:11",
+        "model_xong": "17:33:57",
+        "so_model": 15,
+        "chot_bundle": "2026-07-06 17:33:59",
+        "bundle_models": 14
+      },
+      {
+        "date": "2026-07-05",
+        "goi_dau": "17:30:14",
+        "model_xong": "17:33:27",
+        "so_model": 15,
+        "chot_bundle": "2026-07-05 17:33:28",
+        "bundle_models": 14
+      }
+    ]
+  },
+  "duong_gang": {
+    "MT": {
+      "2026-08-03": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "05:00:04",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "05:00:05",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "05:00:05",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "16:41:03",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "16:41:03",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "16:41:06",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "16:42:36",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "gio": "16:42:36",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "16:43:31",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "16:43:31",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "16:43:31",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "16:47:10",
+          "run_source": "ai_chain"
+        }
+      ],
+      "2026-08-02": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "05:00:04",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "05:00:05",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "05:00:05",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "05:00:06",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "05:00:07",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "16:35:52",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "16:35:53",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "16:35:58",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "16:37:10",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "16:37:11",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "16:37:11",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "gio": "16:37:11",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "16:37:11",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "16:41:36",
+          "run_source": "ai_chain"
+        }
+      ],
+      "2026-08-01": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "05:00:01",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "05:00:02",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "05:00:02",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "05:00:02",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "05:00:02",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "05:00:03",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "05:00:03",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "16:40:57",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "16:40:58",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "16:41:08",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "16:41:08",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "16:41:08",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "16:42:38",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "16:44:21",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "16:46:43",
+          "run_source": "ai_chain"
+        }
+      ]
+    },
+    "MB": {
+      "2026-08-03": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "17:30:17",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "17:30:17",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "17:30:19",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "17:30:19",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "17:30:19",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "17:30:19",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "17:30:20",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "17:31:14",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "17:31:14",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "17:31:22",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "17:32:51",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "17:32:52",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "gio": "17:32:52",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "17:35:31",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "17:41:56",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "17:44:54",
+          "run_source": "ai_chain"
+        }
+      ],
+      "2026-08-02": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "17:30:20",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "17:30:21",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "17:30:22",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "17:30:22",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "17:30:22",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "17:30:22",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "17:30:23",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "17:31:26",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "17:31:26",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "17:31:27",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "17:32:57",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-5.4",
+          "gio": "17:32:57",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "17:33:03",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "17:33:03",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "17:33:09",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "17:37:53",
+          "run_source": "ai_chain"
+        }
+      ],
+      "2026-08-01": [
+        {
+          "ai_model": "smart-ensemble",
+          "gio": "17:34:51",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "smart-ml",
+          "gio": "17:34:52",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "gio": "17:34:53",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "lstm",
+          "gio": "17:34:53",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "meta-learning",
+          "gio": "17:34:53",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "xgboost",
+          "gio": "17:34:53",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "random-forest",
+          "gio": "17:34:54",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "claude-sonnet-4-6",
+          "gio": "17:35:52",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-flash",
+          "gio": "17:35:52",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "claude-opus-4-6",
+          "gio": "17:35:58",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gemini-2.5-pro",
+          "gio": "17:37:28",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "glm-5.1",
+          "gio": "17:37:28",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "gpt-oss-120b",
+          "gio": "17:37:28",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "deepseek-reasoner",
+          "gio": "17:37:45",
+          "run_source": "ai_chain"
+        },
+        {
+          "ai_model": "combo-super",
+          "gio": "17:39:55",
+          "run_source": "ai_chain"
+        }
+      ]
+    }
+  },
+  "thoi_gian_model": [
+    {
+      "ai_model": "gpt-5.5",
+      "n": 91,
+      "tb_giay": 649.4,
+      "max_giay": 846.0
+    },
+    {
+      "ai_model": "glm-5.1",
+      "n": 83,
+      "tb_giay": 487.3,
+      "max_giay": 795.7
+    },
+    {
+      "ai_model": "kimi-k2.5",
+      "n": 74,
+      "tb_giay": 448.6,
+      "max_giay": 664.5
+    },
+    {
+      "ai_model": "gpt-oss-120b",
+      "n": 83,
+      "tb_giay": 369.3,
+      "max_giay": 885.7
+    },
+    {
+      "ai_model": "qwen3.7-max",
+      "n": 89,
+      "tb_giay": 285.4,
+      "max_giay": 480.0
+    },
+    {
+      "ai_model": "glm-5.2",
+      "n": 90,
+      "tb_giay": 274.4,
+      "max_giay": 529.4
+    },
+    {
+      "ai_model": "gpt-5.6-sol-pro",
+      "n": 15,
+      "tb_giay": 253.5,
+      "max_giay": 391.7
+    },
+    {
+      "ai_model": "qwen3-max-thinking",
+      "n": 92,
+      "tb_giay": 210.3,
+      "max_giay": 900.3
+    },
+    {
+      "ai_model": "deepseek-v4-pro-real",
+      "n": 90,
+      "tb_giay": 203.7,
+      "max_giay": 390.0
+    },
+    {
+      "ai_model": "gemma-4-31b",
+      "n": 74,
+      "tb_giay": 177.7,
+      "max_giay": 823.1
+    },
+    {
+      "ai_model": "gpt-5-mini",
+      "n": 10,
+      "tb_giay": 110.9,
+      "max_giay": 589.4
+    },
+    {
+      "ai_model": "grok-4.20-multi-agent",
+      "n": 76,
+      "tb_giay": 92.2,
+      "max_giay": 1008.9
+    },
+    {
+      "ai_model": "gemini-3.5-flash",
+      "n": 84,
+      "tb_giay": 62.9,
+      "max_giay": 300.0
+    },
+    {
+      "ai_model": "grok-4.3",
+      "n": 53,
+      "tb_giay": 51.9,
+      "max_giay": 327.1
+    },
+    {
+      "ai_model": "claude-opus-5-fast",
+      "n": 15,
+      "tb_giay": 30.8,
+      "max_giay": 41.2
+    },
+    {
+      "ai_model": "gemini-3.6-flash",
+      "n": 9,
+      "tb_giay": 29.4,
+      "max_giay": 90.3
+    },
+    {
+      "ai_model": "gpt-5.4",
+      "n": 3,
+      "tb_giay": 15.1,
+      "max_giay": 20.6
+    }
+  ],
+  "verify_to_start": {
+    "MT": [
+      {
+        "date": "2026-08-04",
+        "verify_xong": null,
+        "goi_dau_toan_bo": "05:00:05",
+        "goi_dau_chieu": null
+      },
+      {
+        "date": "2026-08-03",
+        "verify_xong": "16:39:41",
+        "goi_dau_toan_bo": "05:00:04",
+        "goi_dau_chieu": "16:41:03"
+      },
+      {
+        "date": "2026-08-02",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "05:00:04",
+        "goi_dau_chieu": "16:35:52"
+      },
+      {
+        "date": "2026-08-01",
+        "verify_xong": "16:39:40",
+        "goi_dau_toan_bo": "05:00:01",
+        "goi_dau_chieu": "16:40:57"
+      },
+      {
+        "date": "2026-07-31",
+        "verify_xong": "16:40:51",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:42:44"
+      },
+      {
+        "date": "2026-07-30",
+        "verify_xong": "16:36:36",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:38:01"
+      },
+      {
+        "date": "2026-07-29",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:36:28"
+      },
+      {
+        "date": "2026-07-28",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:35:45"
+      },
+      {
+        "date": "2026-07-27",
+        "verify_xong": "16:38:38",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:40:13"
+      },
+      {
+        "date": "2026-07-26",
+        "verify_xong": "16:35:36",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:37:26"
+      },
+      {
+        "date": "2026-07-25",
+        "verify_xong": "16:37:39",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:38:54"
+      },
+      {
+        "date": "2026-07-24",
+        "verify_xong": "16:39:41",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:41:29"
+      },
+      {
+        "date": "2026-07-23",
+        "verify_xong": "16:37:37",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:39:26"
+      },
+      {
+        "date": "2026-07-22",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:35:58"
+      },
+      {
+        "date": "2026-07-21",
+        "verify_xong": "16:35:36",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:37:23"
+      },
+      {
+        "date": "2026-07-20",
+        "verify_xong": "16:38:38",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:40:03"
+      },
+      {
+        "date": "2026-07-19",
+        "verify_xong": "16:35:36",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:37:23"
+      },
+      {
+        "date": "2026-07-18",
+        "verify_xong": "16:38:42",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:39:50"
+      },
+      {
+        "date": "2026-07-17",
+        "verify_xong": "16:38:37",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:40:20"
+      },
+      {
+        "date": "2026-07-16",
+        "verify_xong": "16:40:44",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:42:09"
+      },
+      {
+        "date": "2026-07-15",
+        "verify_xong": "16:34:36",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:36:21"
+      },
+      {
+        "date": "2026-07-14",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:35:56"
+      },
+      {
+        "date": "2026-07-13",
+        "verify_xong": "16:38:39",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:40:15"
+      },
+      {
+        "date": "2026-07-12",
+        "verify_xong": "16:34:36",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:36:08"
+      },
+      {
+        "date": "2026-07-11",
+        "verify_xong": "16:37:38",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:38:45"
+      },
+      {
+        "date": "2026-07-10",
+        "verify_xong": "16:39:42",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:41:19"
+      },
+      {
+        "date": "2026-07-09",
+        "verify_xong": "16:36:36",
+        "goi_dau_toan_bo": "04:00:04",
+        "goi_dau_chieu": "16:38:13"
+      },
+      {
+        "date": "2026-07-08",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:36:12"
+      },
+      {
+        "date": "2026-07-07",
+        "verify_xong": "16:35:36",
+        "goi_dau_toan_bo": "04:00:01",
+        "goi_dau_chieu": "16:37:09"
+      },
+      {
+        "date": "2026-07-06",
+        "verify_xong": "16:38:38",
+        "goi_dau_toan_bo": "04:00:05",
+        "goi_dau_chieu": "16:40:22"
+      },
+      {
+        "date": "2026-07-05",
+        "verify_xong": "16:34:35",
+        "goi_dau_toan_bo": "04:00:09",
+        "goi_dau_chieu": "16:35:48"
+      }
+    ],
+    "MB": [
+      {
+        "date": "2026-08-04",
+        "verify_xong": null,
+        "goi_dau_toan_bo": "05:00:12",
+        "goi_dau_chieu": null
+      },
+      {
+        "date": "2026-08-03",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:17",
+        "goi_dau_chieu": "17:30:17"
+      },
+      {
+        "date": "2026-08-02",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:20",
+        "goi_dau_chieu": "17:30:20"
+      },
+      {
+        "date": "2026-08-01",
+        "verify_xong": "17:34:35",
+        "goi_dau_toan_bo": "17:34:51",
+        "goi_dau_chieu": "17:34:51"
+      },
+      {
+        "date": "2026-07-31",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:19",
+        "goi_dau_chieu": "17:30:19"
+      },
+      {
+        "date": "2026-07-30",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:17",
+        "goi_dau_chieu": "17:30:17"
+      },
+      {
+        "date": "2026-07-29",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:46",
+        "goi_dau_chieu": "17:30:46"
+      },
+      {
+        "date": "2026-07-28",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:46",
+        "goi_dau_chieu": "17:30:46"
+      },
+      {
+        "date": "2026-07-27",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:16",
+        "goi_dau_chieu": "17:30:16"
+      },
+      {
+        "date": "2026-07-26",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:18",
+        "goi_dau_chieu": "17:30:18"
+      },
+      {
+        "date": "2026-07-25",
+        "verify_xong": "17:32:03",
+        "goi_dau_toan_bo": "17:32:18",
+        "goi_dau_chieu": "17:32:18"
+      },
+      {
+        "date": "2026-07-24",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:15",
+        "goi_dau_chieu": "17:30:15"
+      },
+      {
+        "date": "2026-07-23",
+        "verify_xong": "17:32:03",
+        "goi_dau_toan_bo": "17:32:17",
+        "goi_dau_chieu": "17:32:17"
+      },
+      {
+        "date": "2026-07-22",
+        "verify_xong": "17:31:01",
+        "goi_dau_toan_bo": "17:31:15",
+        "goi_dau_chieu": "17:31:15"
+      },
+      {
+        "date": "2026-07-21",
+        "verify_xong": "17:31:02",
+        "goi_dau_toan_bo": "17:31:17",
+        "goi_dau_chieu": "17:31:17"
+      },
+      {
+        "date": "2026-07-20",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:14",
+        "goi_dau_chieu": "17:30:14"
+      },
+      {
+        "date": "2026-07-19",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:14",
+        "goi_dau_chieu": "17:30:14"
+      },
+      {
+        "date": "2026-07-18",
+        "verify_xong": "17:33:35",
+        "goi_dau_toan_bo": "17:33:47",
+        "goi_dau_chieu": "17:33:47"
+      },
+      {
+        "date": "2026-07-17",
+        "verify_xong": "17:31:32",
+        "goi_dau_toan_bo": "17:31:46",
+        "goi_dau_chieu": "17:31:46"
+      },
+      {
+        "date": "2026-07-16",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:14",
+        "goi_dau_chieu": "17:30:14"
+      },
+      {
+        "date": "2026-07-15",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:44",
+        "goi_dau_chieu": "17:30:44"
+      },
+      {
+        "date": "2026-07-14",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:43",
+        "goi_dau_chieu": "17:30:43"
+      },
+      {
+        "date": "2026-07-13",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:13",
+        "goi_dau_chieu": "17:30:13"
+      },
+      {
+        "date": "2026-07-12",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:13",
+        "goi_dau_chieu": "17:30:13"
+      },
+      {
+        "date": "2026-07-11",
+        "verify_xong": "17:32:33",
+        "goi_dau_toan_bo": "17:32:45",
+        "goi_dau_chieu": "17:32:45"
+      },
+      {
+        "date": "2026-07-10",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:43",
+        "goi_dau_chieu": "17:30:43"
+      },
+      {
+        "date": "2026-07-09",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:12",
+        "goi_dau_chieu": "17:30:12"
+      },
+      {
+        "date": "2026-07-08",
+        "verify_xong": "17:30:31",
+        "goi_dau_toan_bo": "17:30:43",
+        "goi_dau_chieu": "17:30:43"
+      },
+      {
+        "date": "2026-07-07",
+        "verify_xong": "17:31:02",
+        "goi_dau_toan_bo": "17:31:13",
+        "goi_dau_chieu": "17:31:13"
+      },
+      {
+        "date": "2026-07-06",
+        "verify_xong": "17:30:01",
+        "goi_dau_toan_bo": "17:30:11",
+        "goi_dau_chieu": "17:30:11"
+      },
+      {
+        "date": "2026-07-05",
+        "verify_xong": "17:30:00",
+        "goi_dau_toan_bo": "17:30:14",
+        "goi_dau_chieu": "17:30:14"
+      }
+    ]
+  },
+  "env": [
+    "AI_PARALLEL_ENABLE=1",
+    "AI_PARALLEL_WORKERS=5"
+  ],
+  "main_pid": "738032",
+  "proc_env": [],
+  "proc_cwd": "/root/Lottery_AI_Test/web/backend",
+  "log_parallel": [
+    {
+      "m": "[PARALLEL] 🏊 BỂ 5 chỗ BẬT: start trước 5/7 model, hàng đợi 2 (rolling — xử lý vẫn tuần tự)",
+      "n": 35
+    },
+    {
+      "m": "[PARALLEL] 🏊 BỂ 5 chỗ BẬT: start trước 5/8 model, hàng đợi 3 (rolling — xử lý vẫn tuần tự)",
+      "n": 7
+    }
+  ],
+  "auto_ai_models_def": "(khong thay gan cap cao)",
+  "auto_ai_models_all": [],
+  "timeout_override": {
+    "glm-5.1": 840,
+    "gpt-oss-120b": 900,
+    "kimi-k2.5": 620,
+    "qwen3.7-max": 480
+  },
+  "official_dung_override": 0,
+  "_tong": {
+    "MN": [
+      [
+        625.1,
+        "2026-08-04"
+      ],
+      [
+        624.8,
+        "2026-08-03"
+      ],
+      [
+        626.3,
+        "2026-08-02"
+      ],
+      [
+        624.6,
+        "2026-08-01"
+      ],
+      [
+        687.0,
+        "2026-07-31"
+      ],
+      [
+        687.4,
+        "2026-07-30"
+      ],
+      [
+        686.1,
+        "2026-07-29"
+      ],
+      [
+        685.9,
+        "2026-07-28"
+      ],
+      [
+        687.3,
+        "2026-07-27"
+      ],
+      [
+        687.5,
+        "2026-07-26"
+      ],
+      [
+        687.2,
+        "2026-07-25"
+      ],
+      [
+        687.6,
+        "2026-07-24"
+      ],
+      [
+        687.6,
+        "2026-07-23"
+      ],
+      [
+        686.6,
+        "2026-07-22"
+      ],
+      [
+        687.1,
+        "2026-07-21"
+      ],
+      [
+        686.6,
+        "2026-07-20"
+      ],
+      [
+        686.3,
+        "2026-07-19"
+      ],
+      [
+        686.5,
+        "2026-07-18"
+      ],
+      [
+        686.6,
+        "2026-07-17"
+      ],
+      [
+        686.3,
+        "2026-07-16"
+      ],
+      [
+        687.2,
+        "2026-07-15"
+      ],
+      [
+        683.2,
+        "2026-07-14"
+      ],
+      [
+        686.1,
+        "2026-07-13"
+      ],
+      [
+        685.9,
+        "2026-07-12"
+      ],
+      [
+        686.4,
+        "2026-07-11"
+      ],
+      [
+        687.5,
+        "2026-07-10"
+      ],
+      [
+        687.3,
+        "2026-07-09"
+      ],
+      [
+        685.5,
+        "2026-07-08"
+      ],
+      [
+        686.2,
+        "2026-07-07"
+      ],
+      [
+        687.2,
+        "2026-07-06"
+      ],
+      [
+        687.2,
+        "2026-07-05"
+      ]
+    ],
+    "MT": [
+      [
+        10.8,
+        "2026-08-03"
+      ],
+      [
+        16.4,
+        "2026-08-02"
+      ],
+      [
+        11.3,
+        "2026-08-01"
+      ],
+      [
+        11.1,
+        "2026-07-31"
+      ],
+      [
+        18.6,
+        "2026-07-30"
+      ],
+      [
+        16.2,
+        "2026-07-29"
+      ],
+      [
+        20.6,
+        "2026-07-28"
+      ],
+      [
+        15.1,
+        "2026-07-27"
+      ],
+      [
+        18.9,
+        "2026-07-26"
+      ],
+      [
+        17.2,
+        "2026-07-25"
+      ],
+      [
+        14.5,
+        "2026-07-24"
+      ],
+      [
+        15.2,
+        "2026-07-23"
+      ],
+      [
+        20.6,
+        "2026-07-22"
+      ],
+      [
+        18.8,
+        "2026-07-21"
+      ],
+      [
+        16.2,
+        "2026-07-20"
+      ],
+      [
+        19.2,
+        "2026-07-19"
+      ],
+      [
+        14.9,
+        "2026-07-18"
+      ],
+      [
+        14.6,
+        "2026-07-17"
+      ],
+      [
+        13.5,
+        "2026-07-16"
+      ],
+      [
+        18.8,
+        "2026-07-15"
+      ],
+      [
+        19.3,
+        "2026-07-14"
+      ],
+      [
+        14.2,
+        "2026-07-13"
+      ],
+      [
+        19.2,
+        "2026-07-12"
+      ],
+      [
+        16.6,
+        "2026-07-11"
+      ],
+      [
+        14.5,
+        "2026-07-10"
+      ],
+      [
+        17.8,
+        "2026-07-09"
+      ],
+      [
+        19.6,
+        "2026-07-08"
+      ],
+      [
+        18.6,
+        "2026-07-07"
+      ],
+      [
+        15.5,
+        "2026-07-06"
+      ],
+      [
+        20.0,
+        "2026-07-05"
+      ]
+    ],
+    "MB": [
+      [
+        13.1,
+        "2026-08-03"
+      ],
+      [
+        20.1,
+        "2026-08-02"
+      ],
+      [
+        18.1,
+        "2026-08-01"
+      ],
+      [
+        22.5,
+        "2026-07-31"
+      ],
+      [
+        24.3,
+        "2026-07-30"
+      ],
+      [
+        23.6,
+        "2026-07-29"
+      ],
+      [
+        23.4,
+        "2026-07-28"
+      ],
+      [
+        24.1,
+        "2026-07-27"
+      ],
+      [
+        24.3,
+        "2026-07-26"
+      ],
+      [
+        22.4,
+        "2026-07-25"
+      ],
+      [
+        24.0,
+        "2026-07-24"
+      ],
+      [
+        22.3,
+        "2026-07-23"
+      ],
+      [
+        24.6,
+        "2026-07-22"
+      ],
+      [
+        24.3,
+        "2026-07-21"
+      ],
+      [
+        24.6,
+        "2026-07-20"
+      ],
+      [
+        25.0,
+        "2026-07-19"
+      ],
+      [
+        21.3,
+        "2026-07-18"
+      ],
+      [
+        22.6,
+        "2026-07-17"
+      ],
+      [
+        22.8,
+        "2026-07-16"
+      ],
+      [
+        23.3,
+        "2026-07-15"
+      ],
+      [
+        23.3,
+        "2026-07-14"
+      ],
+      [
+        24.1,
+        "2026-07-13"
+      ],
+      [
+        23.0,
+        "2026-07-12"
+      ],
+      [
+        21.2,
+        "2026-07-11"
+      ],
+      [
+        24.4,
+        "2026-07-10"
+      ],
+      [
+        24.7,
+        "2026-07-09"
+      ],
+      [
+        23.7,
+        "2026-07-08"
+      ],
+      [
+        23.8,
+        "2026-07-07"
+      ],
+      [
+        24.0,
+        "2026-07-06"
+      ],
+      [
+        24.5,
+        "2026-07-05"
+      ]
+    ]
+  }
+}

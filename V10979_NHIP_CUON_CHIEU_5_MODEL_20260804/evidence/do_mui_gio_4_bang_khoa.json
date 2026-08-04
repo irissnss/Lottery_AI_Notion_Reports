@@ -1,0 +1,333 @@
+{
+  "tz_registry": [
+    {
+      "id": 40,
+      "table_name": "final_bundles",
+      "time_col": "created_at",
+      "stored_tz": "VN",
+      "business_date_col": "date",
+      "vn_view": null,
+      "rows_total": 460,
+      "rows_off_by_one_day": 0,
+      "note": "cột này chỉ là DẤU GHI; khoá ngày nghiệp vụ là cột `date`",
+      "computed_at_vn": "2026-07-31T16:10:10+07:00"
+    },
+    {
+      "id": 41,
+      "table_name": "final_bundles",
+      "time_col": "updated_at",
+      "stored_tz": "VN",
+      "business_date_col": "date",
+      "vn_view": null,
+      "rows_total": 460,
+      "rows_off_by_one_day": 0,
+      "note": "cột này chỉ là DẤU GHI; khoá ngày nghiệp vụ là cột `date`",
+      "computed_at_vn": "2026-07-31T16:10:10+07:00"
+    },
+    {
+      "id": 39,
+      "table_name": "lottery_results",
+      "time_col": "created_at",
+      "stored_tz": "VN",
+      "business_date_col": "date",
+      "vn_view": null,
+      "rows_total": 15180,
+      "rows_off_by_one_day": 0,
+      "note": "cột này chỉ là DẤU GHI; khoá ngày nghiệp vụ là cột `date`",
+      "computed_at_vn": "2026-07-31T16:10:10+07:00"
+    },
+    {
+      "id": 42,
+      "table_name": "model_daily_eval",
+      "time_col": "created_at",
+      "stored_tz": "VN",
+      "business_date_col": "date",
+      "vn_view": null,
+      "rows_total": 11189,
+      "rows_off_by_one_day": 0,
+      "note": "cột này chỉ là DẤU GHI; khoá ngày nghiệp vụ là cột `date`",
+      "computed_at_vn": "2026-07-31T16:10:10+07:00"
+    },
+    {
+      "id": 38,
+      "table_name": "predictions",
+      "time_col": "created_at",
+      "stored_tz": "VN",
+      "business_date_col": "date",
+      "vn_view": null,
+      "rows_total": 11365,
+      "rows_off_by_one_day": 0,
+      "note": "cột này chỉ là DẤU GHI; khoá ngày nghiệp vụ là cột `date`",
+      "computed_at_vn": "2026-07-31T16:10:10+07:00"
+    }
+  ],
+  "now": {
+    "utc": "2026-08-04 02:53:36",
+    "localtime": "2026-08-04 09:53:36"
+  },
+  "mau": {
+    "MN": {
+      "predictions": [
+        {
+          "ai_model": "smart-ensemble",
+          "created_at": "2026-08-03T05:00:08.860181+07:00",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "smart-ml",
+          "created_at": "2026-08-03T05:00:09.625797+07:00",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "meta-learning",
+          "created_at": "2026-08-03T05:00:10.103127+07:00",
+          "run_source": "auto_daily"
+        }
+      ],
+      "predictions_cuoi": [
+        {
+          "ai_model": "qwen3.7-max",
+          "created_at": "2026-08-03T05:29:25.855427+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "gpt-5.6-sol-pro",
+          "created_at": "2026-08-03T05:29:25.791917+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "gpt-5.5",
+          "created_at": "2026-08-03T05:29:25.723581+07:00",
+          "run_source": "shadow_auto_eval"
+        }
+      ],
+      "final_bundles": [
+        {
+          "id": 637,
+          "created_at": "2026-08-03 05:20:15",
+          "updated_at": "2026-08-03 16:39:42",
+          "model_count": 15
+        }
+      ],
+      "lottery_results": [
+        {
+          "created_at": "2026-08-03T16:39:41.748347+07:00"
+        },
+        {
+          "created_at": "2026-08-03T16:39:41.727833+07:00"
+        }
+      ]
+    },
+    "MT": {
+      "predictions": [
+        {
+          "ai_model": "smart-ensemble",
+          "created_at": "2026-08-03T05:00:04.851468+07:00",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "smart-ml",
+          "created_at": "2026-08-03T05:00:05.634534+07:00",
+          "run_source": "auto_daily"
+        },
+        {
+          "ai_model": "meta-learning",
+          "created_at": "2026-08-03T05:00:05.796524+07:00",
+          "run_source": "auto_daily"
+        }
+      ],
+      "predictions_cuoi": [
+        {
+          "ai_model": "deepseek-v4-pro-real",
+          "created_at": "2026-08-03T16:59:08.369401+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "qwen3.7-max",
+          "created_at": "2026-08-03T16:59:08.292610+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "gpt-5.6-sol-pro",
+          "created_at": "2026-08-03T16:58:57.902259+07:00",
+          "run_source": "shadow_auto_eval"
+        }
+      ],
+      "final_bundles": [
+        {
+          "id": 639,
+          "created_at": "2026-08-03 16:47:10",
+          "updated_at": "2026-08-03 17:30:01",
+          "model_count": 13
+        }
+      ],
+      "lottery_results": [
+        {
+          "created_at": "2026-08-03T17:30:01.089440+07:00"
+        },
+        {
+          "created_at": "2026-08-03T17:30:01.099875+07:00"
+        }
+      ]
+    },
+    "MB": {
+      "predictions": [
+        {
+          "ai_model": "smart-ensemble",
+          "created_at": "2026-08-03T17:30:17.133375+07:00",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "smart-ml",
+          "created_at": "2026-08-03T17:30:17.896245+07:00",
+          "run_source": "rerun_post_mt"
+        },
+        {
+          "ai_model": "combo-no-token",
+          "created_at": "2026-08-03T17:30:19.069308+07:00",
+          "run_source": "rerun_post_mt"
+        }
+      ],
+      "predictions_cuoi": [
+        {
+          "ai_model": "deepseek-v4-pro-real",
+          "created_at": "2026-08-03T17:55:09.565272+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "qwen3.7-max",
+          "created_at": "2026-08-03T17:54:38.276215+07:00",
+          "run_source": "shadow_auto_eval"
+        },
+        {
+          "ai_model": "gpt-5.6-sol-pro",
+          "created_at": "2026-08-03T17:54:38.215842+07:00",
+          "run_source": "shadow_auto_eval"
+        }
+      ],
+      "final_bundles": [
+        {
+          "id": 641,
+          "created_at": "2026-08-03 17:44:54",
+          "updated_at": "2026-08-03 18:31:02",
+          "model_count": 14
+        }
+      ],
+      "lottery_results": [
+        {
+          "created_at": "2026-08-03T18:31:02.182061+07:00"
+        }
+      ]
+    }
+  },
+  "fb_cols": [
+    "id",
+    "date",
+    "region",
+    "bach_thu",
+    "lo2",
+    "lo3",
+    "xien2",
+    "xien3",
+    "policy_version_ref",
+    "source_predictions_json",
+    "generation_method",
+    "consensus_level",
+    "model_count",
+    "top_score",
+    "is_fallback",
+    "status",
+    "notes",
+    "created_at",
+    "updated_at",
+    "bach_thu_status",
+    "lo2_status",
+    "lo3_status",
+    "xien2_status",
+    "xien3_status",
+    "verified_at",
+    "bundle_version"
+  ],
+  "pred_cols": [
+    "id",
+    "date",
+    "target_region",
+    "source_regions",
+    "ai_model",
+    "main_numbers",
+    "analysis_text",
+    "phase_type",
+    "cluster",
+    "pivot",
+    "strength",
+    "verdict",
+    "verdict_reason",
+    "status",
+    "hit_numbers",
+    "hit_level",
+    "hit_details",
+    "created_at",
+    "verified_at",
+    "pick_count",
+    "hit_count",
+    "reasoning_json",
+    "pre_result_numbers",
+    "pre_result_strength",
+    "pre_result_status",
+    "pre_result_hit_count",
+    "repredict_verdict",
+    "run_source",
+    "convergence_flag",
+    "prediction_before",
+    "verified_station_count",
+    "policy_version_ref",
+    "week_slot",
+    "context_integrity",
+    "run_id",
+    "late",
+    "reasoning_tokens"
+  ],
+  "views_vn": [
+    "v_scheduler_logs_vn",
+    "v_prompt_section_breakdown_daily_vn",
+    "v_source_prize_effectiveness_daily_vn",
+    "v_verdict_distribution_daily_vn",
+    "v_prompt_pressure_daily_vn",
+    "v_runtime_reliability_model_daily_vn",
+    "v_mined_rule_effectiveness_vn",
+    "v_freshness_chain_daily_vn",
+    "v_pre_partial_post_lose_daily_vn",
+    "v_pre_win_post_lose_daily_vn",
+    "v_convergence_cluster_pattern_daily_vn",
+    "v_pre_vs_post_rerun_effect_daily_vn",
+    "v_runtime_reliability_daily_vn",
+    "v_daily_eval_log_vn",
+    "v_candidate_drop_stage_daily_vn",
+    "v_strongest_vs_final_conversion_daily_vn",
+    "v_bundle_family_contribution_daily_vn",
+    "v_main_vs_secondary_quality_daily_vn",
+    "v_rule_conversion_loss_stage_daily_vn",
+    "v_trace_field_completeness_daily_vn",
+    "v_ai_primary_gate_daily_vn",
+    "v_ai_reasoning_contract_daily_vn",
+    "v_bundle_readiness_gate_daily_vn",
+    "v_output_eligible_completion_daily_vn",
+    "v_public_bundle_publish_audit_daily_vn",
+    "v_reasoning_layer_penetration_daily_vn",
+    "v_strongest_candidate_escape_daily_vn",
+    "v_weekday_rule_strength_daily_vn",
+    "v_draw_availability_daily_vn",
+    "v_cohere_rerank_log_vn",
+    "v_cohere_effectiveness_daily_vn",
+    "v_training_history_vn",
+    "v_daily_stats_vn",
+    "v_system_alerts_vn",
+    "v_pp1_live_watch_daily_vn",
+    "v_bundle_replay_compare_daily_vn",
+    "v_data_preservation_manifest_daily_vn",
+    "v_sync_parity_audit_daily_vn",
+    "v_training_records_vn",
+    "v_rule_effectiveness_vn",
+    "v_pattern_rules_vn"
+  ]
+}
