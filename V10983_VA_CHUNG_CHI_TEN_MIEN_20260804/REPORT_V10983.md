@@ -1,6 +1,6 @@
 # V10983 — Không phải lỗi phần mềm: chứng chỉ chỉ khai một tên miền trong khi DNS trỏ về hai
 
-**Ngày:** 04/08/2026 · **Commit riêng:** `08ec33e` (`Lottery_AI_Test`, 28 file, +1.749 dòng) · **Commit công khai:** `<điền ở commit kế tiếp cùng phiên>` · **Trạng thái:** đã vá, đã kiểm lại, `QD-023` khớp 4/4
+**Ngày:** 04/08/2026 · **Commit riêng:** `08ec33e` (`Lottery_AI_Test`, 28 file, +1.749 dòng) · **Commit công khai:** `c5c3086` (báo cáo + 15 tệp `evidence/`) · **Trạng thái:** đã vá, đã kiểm lại, `QD-023` khớp 4/4
 
 > Báo cáo theo khung **A55.3** (owner ký 01/08/2026 11:04). Đủ 9 phần.
 
