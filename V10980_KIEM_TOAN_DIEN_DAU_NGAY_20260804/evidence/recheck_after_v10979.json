@@ -1,0 +1,149 @@
+{
+ "has_C17": true,
+ "has_C18": true,
+ "mtime": "2026-08-04 10:16:58.390577812 +0700",
+ "n": 21,
+ "ok": 21,
+ "lech": 0,
+ "loi": 0,
+ "rows": [
+  {
+   "id": "C1_money_board_output_due",
+   "st": "OK",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "id": "C2_runtime_audit_deadline",
+   "st": "OK",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "id": "C3_lane_output_freeze",
+   "st": "OK",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "id": "C4_lock_before_final",
+   "st": "OK",
+   "actual": "[\"15:43\", \"16:56\", \"17:56\"]"
+  },
+  {
+   "id": "C5_nghiemthu_lane_time",
+   "st": "OK",
+   "actual": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}"
+  },
+  {
+   "id": "C17_nghiemthu_co_output",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C18_bien_lane_du_rong",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C19_bien_han_du_rong",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C20_bien_han_khong_troi",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C21_co_thong_bao_da_xong",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C6_lane_slot",
+   "st": "OK",
+   "actual": "\"không còn dòng cron nào\""
+  },
+  {
+   "id": "C7_settings_vs_seed",
+   "st": "OK",
+   "actual": "{}"
+  },
+  {
+   "id": "C12_bien_2_phut",
+   "st": "OK",
+   "actual": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}"
+  },
+  {
+   "id": "C13_lane_bien_bang_khoa",
+   "st": "OK",
+   "actual": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}"
+  },
+  {
+   "id": "C10_freeze_equals_final",
+   "st": "OK",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "id": "C11_tchot_before_final",
+   "st": "OK",
+   "actual": "{}"
+  },
+  {
+   "id": "C8_no_new_utc_table",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C9_vn_views_present",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C14_tz_khong_chong_cheo",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C15_cot_khai_VN_dung_khuon",
+   "st": "OK",
+   "actual": "[]"
+  },
+  {
+   "id": "C16_dang_ky_du",
+   "st": "OK",
+   "actual": "true"
+  }
+ ],
+ "cron_n": 79,
+ "cron_10979": [
+  "* 5-6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MN >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio",
+  "* 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MT >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio",
+  "* 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10979_early_block.py --region MB >> /root/Lottery_AI_Test/logs/v10979_early_block.log 2>&1  # V10979 bao 'da xong' ngay khi xong, khong doi het gio"
+ ],
+ "cron_nghiemthu": [
+  "5 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lott",
+  "44 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "38 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "15 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lot",
+  "48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "42 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "52 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "54 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "46 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "50 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo",
+  "54 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lo"
+ ],
+ "counts": {
+  "predictions": 11673,
+  "final_bundles": 472,
+  "lottery_results": 15207,
+  "model_daily_eval": 11496
+ },
+ "fb_today": [
+  {
+   "region": "MN",
+   "bach_thu": "22",
+   "mc": 15,
+   "created_at": "2026-08-04 05:19:56"
+  }
+ ]
+}

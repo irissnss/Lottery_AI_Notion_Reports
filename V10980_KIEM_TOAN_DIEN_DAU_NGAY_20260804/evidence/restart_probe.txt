@@ -1,0 +1,80 @@
+=== TRANG THAI ===
+770947
+0
+Tue 2026-08-04 10:16:59 +07
+Tue 2026-08-04 10:16:59 +07
+=== is-active ===
+active
+=== health ===
+200
+=== GIO VN BAY GIO ===
+2026-08-04 10:20:23
+=== JOURNAL SYSTEMD 1 TIENG QUA (start/stop/restart) ===
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Stopping Lottery AI Prediction Service...
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: lottery.service: Deactivated successfully.
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Stopped Lottery AI Prediction Service.
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Started Lottery AI Prediction Service.
+Aug 04 10:15:17 lotteryai-aulb python3[770722]: INFO:     Started server process [770722]
+Aug 04 10:15:19 lotteryai-aulb python3[770722]: 2026-08-04 10:15:19,225 - INFO - Scheduler started
+Aug 04 10:15:19 lotteryai-aulb python3[770722]: [SCHEDULER] 🔍 V9.4: Startup catch-up thread started (30s delay)
+Aug 04 10:16:59 lotteryai-aulb systemd[1]: Stopping Lottery AI Prediction Service...
+Aug 04 10:16:59 lotteryai-aulb systemd[1]: lottery.service: Deactivated successfully.
+Aug 04 10:16:59 lotteryai-aulb systemd[1]: Stopped Lottery AI Prediction Service.
+Aug 04 10:16:59 lotteryai-aulb systemd[1]: Started Lottery AI Prediction Service.
+Aug 04 10:17:03 lotteryai-aulb python3[770947]: INFO:     Started server process [770947]
+Aug 04 10:17:04 lotteryai-aulb python3[770947]: 2026-08-04 10:17:04,597 - INFO - Scheduler started
+Aug 04 10:17:04 lotteryai-aulb python3[770947]: [SCHEDULER] 🔍 V9.4: Startup catch-up thread started (30s delay)
+=== TRACEBACK 1 TIENG QUA ===
+0
+=== ERROR 1 TIENG QUA ===
+0
+=== 25 DONG JOURNAL QUANH LUC RESTART ===
+Aug 04 09:45:00 lotteryai-aulb python3[738032]: 2026-08-04 09:45:00,003 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 09:50:00 +07)" (scheduled at 2026-08-04 09:45:00+07:00)
+Aug 04 09:45:00 lotteryai-aulb python3[738032]: 2026-08-04 09:45:00,004 - INFO - Running job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:00:00 +07)" (scheduled at 2026-08-04 09:45:00+07:00)
+Aug 04 09:45:00 lotteryai-aulb python3[738032]: 2026-08-04 09:45:00,069 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 09:50:00 +07)" executed successfully
+Aug 04 09:45:00 lotteryai-aulb python3[738032]: 2026-08-04 09:45:00,071 - INFO - Job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:00:00 +07)" executed successfully
+Aug 04 09:50:00 lotteryai-aulb python3[738032]: 2026-08-04 09:50:00,001 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 09:55:00 +07)" (scheduled at 2026-08-04 09:50:00+07:00)
+Aug 04 09:50:00 lotteryai-aulb python3[738032]: 2026-08-04 09:50:00,024 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 09:55:00 +07)" executed successfully
+Aug 04 09:55:00 lotteryai-aulb python3[738032]: 2026-08-04 09:55:00,003 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:00:00 +07)" (scheduled at 2026-08-04 09:55:00+07:00)
+Aug 04 09:55:00 lotteryai-aulb python3[738032]: 2026-08-04 09:55:00,026 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:00:00 +07)" executed successfully
+Aug 04 10:00:00 lotteryai-aulb python3[738032]: 2026-08-04 10:00:00,003 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:05:00 +07)" (scheduled at 2026-08-04 10:00:00+07:00)
+Aug 04 10:00:00 lotteryai-aulb python3[738032]: 2026-08-04 10:00:00,004 - INFO - Running job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:15:00 +07)" (scheduled at 2026-08-04 10:00:00+07:00)
+Aug 04 10:00:00 lotteryai-aulb python3[738032]: 2026-08-04 10:00:00,079 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:05:00 +07)" executed successfully
+Aug 04 10:00:00 lotteryai-aulb python3[738032]: 2026-08-04 10:00:00,082 - INFO - Job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:15:00 +07)" executed successfully
+Aug 04 10:05:00 lotteryai-aulb python3[738032]: 2026-08-04 10:05:00,000 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:10:00 +07)" (scheduled at 2026-08-04 10:05:00+07:00)
+Aug 04 10:05:00 lotteryai-aulb python3[738032]: 2026-08-04 10:05:00,023 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:10:00 +07)" executed successfully
+Aug 04 10:10:00 lotteryai-aulb python3[738032]: 2026-08-04 10:10:00,000 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:15:00 +07)" (scheduled at 2026-08-04 10:10:00+07:00)
+Aug 04 10:10:00 lotteryai-aulb python3[738032]: 2026-08-04 10:10:00,030 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:15:00 +07)" executed successfully
+Aug 04 10:15:00 lotteryai-aulb python3[738032]: 2026-08-04 10:15:00,004 - INFO - Running job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:20:00 +07)" (scheduled at 2026-08-04 10:15:00+07:00)
+Aug 04 10:15:00 lotteryai-aulb python3[738032]: 2026-08-04 10:15:00,005 - INFO - Running job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:30:00 +07)" (scheduled at 2026-08-04 10:15:00+07:00)
+Aug 04 10:15:00 lotteryai-aulb python3[738032]: 2026-08-04 10:15:00,080 - INFO - Job "🐶 V10785 Watchdog heartbeat (15m) (trigger: cron[minute='*/15'], next run at: 2026-08-04 10:30:00 +07)" executed successfully
+Aug 04 10:15:00 lotteryai-aulb python3[738032]: 2026-08-04 10:15:00,082 - INFO - Job "🧪 /du-doan-test pre-result readiness trigger (5m) (trigger: cron[minute='*/5'], next run at: 2026-08-04 10:20:00 +07)" executed successfully
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Stopping Lottery AI Prediction Service...
+Aug 04 10:15:13 lotteryai-aulb python3[738032]: INFO:     Shutting down
+Aug 04 10:15:13 lotteryai-aulb python3[738032]: INFO:     Waiting for application shutdown.
+Aug 04 10:15:13 lotteryai-aulb python3[738032]: 2026-08-04 10:15:13,663 - INFO - Scheduler has been shut down
+Aug 04 10:15:13 lotteryai-aulb python3[738032]: INFO:     Application shutdown complete.
+Aug 04 10:15:13 lotteryai-aulb python3[738032]: INFO:     Finished server process [738032]
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: lottery.service: Deactivated successfully.
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Stopped Lottery AI Prediction Service.
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: lottery.service: Consumed 3min 24.004s CPU time.
+Aug 04 10:15:13 lotteryai-aulb systemd[1]: Started Lottery AI Prediction Service.
+=== FILE BACKEND SUA TRONG 2 TIENG QUA ===
+2026-08-04 09:00  /root/Lottery_AI_Test/web/backend/logs/slice_health.log
+2026-08-04 09:05  /root/Lottery_AI_Test/web/backend/logs/model_progress.log
+2026-08-04 09:10  /root/Lottery_AI_Test/web/backend/logs/shadow_scoreboard.log
+2026-08-04 09:15  /root/Lottery_AI_Test/web/backend/logs/weakest_watch.log
+2026-08-04 09:30  /root/Lottery_AI_Test/web/backend/logs/mb_ai_limit.log
+2026-08-04 09:31  /root/Lottery_AI_Test/web/backend/logs/mt_ai_limit.log
+2026-08-04 09:35  /root/Lottery_AI_Test/web/backend/logs/slice_reco.log
+2026-08-04 10:05  /root/Lottery_AI_Test/web/backend/logs/system_health.log
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/__pycache__/_v10900_consistency_guard.cpython-310.pyc
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/__pycache__/_v10979_early_block.cpython-310.pyc
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/__pycache__/main.cpython-310.pyc
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/_v10900_consistency_guard.py
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/_v10979_early_block.py
+2026-08-04 10:16  /root/Lottery_AI_Test/web/backend/main.py
+2026-08-04 10:16  /root/Lottery_AI_Test/web/frontend/monitoring.html
+2026-08-04 10:20  /root/Lottery_AI_Test/web/backend/scraper.log
+=== CRON CO DOI KHONG (so dong) ===
+84

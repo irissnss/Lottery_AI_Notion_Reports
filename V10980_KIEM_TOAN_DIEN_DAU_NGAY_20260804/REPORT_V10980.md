@@ -477,3 +477,57 @@ FU-231 (bỏ ép RULES-FIRST) · và FU-192 đang `AWAITING_OWNER_OK`.
 
 *Báo cáo lập bởi agent vận hành, phiên V10980, 04/08/2026. Toàn bộ số liệu đo trực tiếp trên VPS
 `14.225.224.89` trong khung 09:49–10:25 giờ Việt Nam. Tệp bằng chứng thô nằm trong `evidence/`.*
+
+
+---
+
+## PHỤ LỤC (10:20) — V10979 DEPLOY GIỮA PHIÊN, ĐÍNH CHÍNH BA CON SỐ
+
+Sau khi đã dựng xong báo cáo trên, lần kiểm sống cuối cùng lúc **10:20** cho thấy **PID đã đổi
+738032 → 770947**. Đã truy ngay thay vì bỏ qua.
+
+**Không phải sự cố.** Đây là phiên **V10979** (nhịp chạy cuốn chiếu 5 model) deploy song song:
+
+| mốc | việc |
+|---|---|
+| 10:15:13 | `Stopping…` → `Deactivated successfully` → `Started` · PID **770722** |
+| 10:16:59 | restart lần hai · PID **770947** (hiện tại) |
+| 10:16:58 | sửa `main.py` · `_v10900_consistency_guard.py` · `web/frontend/monitoring.html` · thêm mới `_v10979_early_block.py` |
+
+Tắt máy **êm** (`Application shutdown complete`, `Deactivated successfully`), **không** phải
+sập. `NRestarts=0`, `/api/health` **200**, **0 Traceback · 0 ERROR** trong cả tiếng vừa rồi.
+
+### Ba con số phải đính chính
+
+| chỗ | báo cáo trên ghi | đúng ra là |
+|---|---|---|
+| PID | **738032** | **770947** (từ 10:16:59) — số 738032 đúng tại thời điểm đo 09:52–10:12 |
+| Bộ tự kiểm | **18 phép** | **21 phép** — V10979 thêm C19, C20, C21 |
+| Cron đang bật | **76 dòng** | **79 dòng** — thêm 3 dòng `_v10979_early_block.py` (MN 05–06h · MT 16h · MB 17h) |
+
+### Kiểm lại phần của phiên này sau khi V10979 deploy
+
+V10979 có sửa **đúng file `_v10900_consistency_guard.py`** mà mục 3.4 đang nói tới, nên phải
+chạy lại chứ không được suy đoán:
+
+- `C17_nghiemthu_co_output` — **còn nguyên** ✅
+- `C18_bien_lane_du_rong` — **còn nguyên** ✅
+- Gọi tươi `run_checks()`: **21 phép · OK 21 · LỆCH 0 · LỖI 0**
+- Ba phép mới của V10979 đều OK: `C19_bien_han_du_rong` · `C20_bien_han_khong_troi` ·
+  `C21_co_thong_bao_da_xong`
+- Cron lane nghiệm thu: vẫn đủ **11 dòng predraw** (MN 2 · MT 4 · MB 5) — bản vá tối qua
+  **không bị deploy mới đè**
+- **4 bảng khoá không đổi**: `predictions` 11.673 · `final_bundles` 472 · `lottery_results`
+  15.207 · `model_daily_eval` 11.496
+- MN official hôm nay vẫn nguyên: bạch thủ **22**, `model_count` **15**, chốt 05:19:56
+
+**Kết luận:** deploy của V10979 **không làm hỏng gì** trong phạm vi phiên này kiểm, và **không
+đụng** 4 bảng khoá.
+
+### Ngưỡng FU-259 đổi theo
+
+Ngưỡng cũ ghi *"18:05 hôm nay phải có đúng **18** dòng"*. Vì V10979 đã nâng lên 21 phép nên
+ngưỡng đúng là: **18:05 ngày 04/08, bảng `v10900_consistency_guard` phải có đúng 21 dòng**, và
+phải có mặt `C17_nghiemthu_co_output` + `C18_bien_lane_du_rong` + ba phép C19/C20/C21.
+
+*Bằng chứng: `evidence/restart_probe.txt` và `evidence/recheck_after_v10979.json`.*
