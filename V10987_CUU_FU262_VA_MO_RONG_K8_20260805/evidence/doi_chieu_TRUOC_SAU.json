@@ -1,0 +1,253 @@
+{
+  "phien": "V10987",
+  "moc_do": "2026-08-05",
+  "nguon_ban_truoc": "git show HEAD:docs/FOLLOW_UP_TRACKER.md (không chép tay)",
+  "truoc": {
+    "tong_ma_fu": 145,
+    "treo": 99,
+    "qua_han": 1,
+    "den_han_hom_nay": 4,
+    "den_han_hom_nay_ds": [
+      "FU-254",
+      "FU-207",
+      "FU-259",
+      "FU-243"
+    ],
+    "fu262_trong_den_han_hom_nay": false,
+    "fu262_trong_mo_coi": true,
+    "mo_coi": 18,
+    "mo_coi_ds": [
+      {
+        "id": "FU-262",
+        "status": "FIXED_PENDING_LIVE_VERIFY",
+        "due": "2026-08-05",
+        "ma_doc": "SC0805"
+      },
+      {
+        "id": "FU-250",
+        "status": "",
+        "due": "2026-08-06",
+        "ma_doc": "KS0806"
+      },
+      {
+        "id": "FU-201",
+        "status": "READY_NOT_DEPLOYED",
+        "due": "2026-08-08",
+        "ma_doc": "TDLX-201"
+      },
+      {
+        "id": "FU-205",
+        "status": "READY_NOT_DEPLOYED",
+        "due": "2026-08-15",
+        "ma_doc": "TDLX-205"
+      },
+      {
+        "id": "FU-001",
+        "status": "[One",
+        "due": null,
+        "ma_doc": "TDLX-001"
+      },
+      {
+        "id": "FU-117",
+        "status": "WAIT_CLOSEOUT",
+        "due": null,
+        "ma_doc": "TDLX-117"
+      },
+      {
+        "id": "FU-119",
+        "status": "READY_TO_BUILD_MEASUREMENT_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-119"
+      },
+      {
+        "id": "FU-121",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-121"
+      },
+      {
+        "id": "FU-122",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-122"
+      },
+      {
+        "id": "FU-129",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-129"
+      },
+      {
+        "id": "FU-150",
+        "status": "DELIVERED_AUDIT_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-150"
+      },
+      {
+        "id": "FU-151",
+        "status": "DELIVERED_INVENTORY_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-151"
+      },
+      {
+        "id": "FU-157",
+        "status": "DELIVERED_DOCS_RECONCILIATION",
+        "due": null,
+        "ma_doc": "TDLX-157"
+      },
+      {
+        "id": "FU-158",
+        "status": "DELIVERED_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-158"
+      },
+      {
+        "id": "FU-161",
+        "status": "DEPLOYED_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-161"
+      },
+      {
+        "id": "FU-171",
+        "status": "FALSE_NEGATIVE",
+        "due": null,
+        "ma_doc": "TDLX-171"
+      },
+      {
+        "id": "FU-173",
+        "status": "DEFER",
+        "due": null,
+        "ma_doc": "TDLX-173"
+      },
+      {
+        "id": "FU-256",
+        "status": "",
+        "due": null,
+        "ma_doc": "DO0806"
+      }
+    ],
+    "thieu_ma_doc": 0
+  },
+  "sau": {
+    "tong_ma_fu": 145,
+    "treo": 102,
+    "qua_han": 1,
+    "den_han_hom_nay": 5,
+    "den_han_hom_nay_ds": [
+      "FU-262",
+      "FU-254",
+      "FU-207",
+      "FU-259",
+      "FU-243"
+    ],
+    "fu262_trong_den_han_hom_nay": true,
+    "fu262_trong_mo_coi": false,
+    "mo_coi": 15,
+    "mo_coi_ds": [
+      {
+        "id": "FU-201",
+        "status": "READY_NOT_DEPLOYED",
+        "due": "2026-08-08",
+        "ma_doc": "TDLX-201"
+      },
+      {
+        "id": "FU-205",
+        "status": "READY_NOT_DEPLOYED",
+        "due": "2026-08-15",
+        "ma_doc": "TDLX-205"
+      },
+      {
+        "id": "FU-001",
+        "status": "[One",
+        "due": null,
+        "ma_doc": "TDLX-001"
+      },
+      {
+        "id": "FU-117",
+        "status": "WAIT_CLOSEOUT",
+        "due": null,
+        "ma_doc": "TDLX-117"
+      },
+      {
+        "id": "FU-119",
+        "status": "READY_TO_BUILD_MEASUREMENT_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-119"
+      },
+      {
+        "id": "FU-121",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-121"
+      },
+      {
+        "id": "FU-122",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-122"
+      },
+      {
+        "id": "FU-129",
+        "status": "READY_TO_BUILD_UI_TEST_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-129"
+      },
+      {
+        "id": "FU-150",
+        "status": "DELIVERED_AUDIT_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-150"
+      },
+      {
+        "id": "FU-151",
+        "status": "DELIVERED_INVENTORY_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-151"
+      },
+      {
+        "id": "FU-157",
+        "status": "DELIVERED_DOCS_RECONCILIATION",
+        "due": null,
+        "ma_doc": "TDLX-157"
+      },
+      {
+        "id": "FU-158",
+        "status": "DELIVERED_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-158"
+      },
+      {
+        "id": "FU-161",
+        "status": "DEPLOYED_DOCS_ONLY",
+        "due": null,
+        "ma_doc": "TDLX-161"
+      },
+      {
+        "id": "FU-171",
+        "status": "FALSE_NEGATIVE",
+        "due": null,
+        "ma_doc": "TDLX-171"
+      },
+      {
+        "id": "FU-173",
+        "status": "DEFER",
+        "due": null,
+        "ma_doc": "TDLX-173"
+      }
+    ],
+    "thieu_ma_doc": 0
+  },
+  "thay_doi": {
+    "mo_coi": "18 → 15",
+    "treo": "99 → 102",
+    "den_han_hom_nay": "4 → 5",
+    "qua_han": "1 → 1",
+    "fu262_hien_trong_den_han_hom_nay": "False → True",
+    "fu262_con_mo_coi": "True → False",
+    "da_cuu": [
+      "FU-250",
+      "FU-256",
+      "FU-262"
+    ]
+  }
+}

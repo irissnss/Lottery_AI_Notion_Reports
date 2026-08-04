@@ -1,0 +1,26 @@
+# `_v10981_kiem_lich.py --so <bản HEAD của sổ> --hom-nay 2026-08-05`
+# Bản HEAD = đúng trạng thái TRƯỚC phiên V10987, lấy bằng `git show`.
+# MÃ THOÁT = 1  (1 = TRƯỢT, đúng kỳ vọng)
+
+================================================================================================
+  CỔNG KIỂM LỊCH CUỐN CHIẾU V10981 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] K1 · đủ 14 mã trong sổ theo dõi
+         → đủ 14/14
+  [ĐẠT ] K2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] K3 · mỗi mã có mã đọc §58
+         → 14/14 có mã đọc
+  [ĐẠT ] K4 · hạn thật trong sổ khớp hạn đã xếp
+         → 14/14 khớp
+  [ĐẠT ] K5 · không ngày nào quá 3 mục của nhóm
+         → 04/08=3 · 05/08=1 · 06/08=1 · 07/08=1 · 08/08=3 · 09/08=3 · 10/08=2
+  [ĐẠT ] K6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] K7 · mục không kết luận nổi trước 10/08 đều ghi rõ lý do
+         → 5 mục nêu thẳng: FU-193→16/08, FU-216→15/08, FU-217→16/08, FU-231→23/08, FU-226→23/08
+  [TRƯỢT] K8 · 0 mồ côi trong nhóm 14 · 0 mồ côi đến hạn trong 2 ngày tới · tổng toàn sổ ≤ 15
+         → MỒ CÔI ĐẾN HẠN ≤07/08: ['FU-262(05/08=FIXED_PENDING_LIVE_VERIFY)', 'FU-250(06/08=ô status RỖNG)'] · tổng toàn sổ 18 (trần 15) · danh sách: FU-262(05/08) FU-250(06/08) FU-201(08/08) FU-205(15/08) FU-001(—) FU-117(—) FU-119(—) FU-121(—) FU-122(—) FU-129(—) FU-150(—) FU-151(—) FU-157(—) FU-158(—) FU-161(—) FU-171(—) FU-173(—) FU-256(—)
+================================================================================================
+  TRƯỢT 1/8 phép
+   · K8: MỒ CÔI ĐẾN HẠN ≤07/08: ['FU-262(05/08=FIXED_PENDING_LIVE_VERIFY)', 'FU-250(06/08=ô status RỖNG)'] · tổng toàn sổ 18 (trần 15) · danh sách: FU-262(05/08) FU-250(06/08) FU-201(08/08) FU-205(15/08) FU-001(—) FU-117(—) FU-119(—) FU-121(—) FU-122(—) FU-129(—) FU-150(—) FU-151(—) FU-157(—) FU-158(—) FU-161(—) FU-171(—) FU-173(—) FU-256(—)
