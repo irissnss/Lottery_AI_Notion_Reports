@@ -1,0 +1,69 @@
+{
+ "size": 577617,
+ "occurrences": [
+  {
+   "line": 5865,
+   "ctx": "\n        grid.innerHTML = `<div style=\"text-align:center;color:var(--red);padding:14px\">❌ ${esc(e && e.message || e)}</div>`;\n      }\n    }\n\n    async function loadGhepNghiemThu() {\n      const grid = document.getElementById('ghepNghiemThuGrid');\n      if (!grid) return;\n      const esc = (v) => String(v ?? '').replace"
+  },
+  {
+   "line": 8184,
+   "ctx": " loadMbRfShadow(), loadMlMarkAb(), loadChaseBias(), loadRuleCond(), loadMbWhatif(), loadDeadlineGuard(), loadEarlyBlock(), loadOverrideWatch(), loadEdgeGate(), loadGhepNghiemThu(), loadConsistencyGuard(), loadConnector(), loadNghiemThu(), loadDeherd(), loadQualityLedger(), loadCpL6Lean(), loadOutputContract(), loadTota"
+  },
+  {
+   "line": 8221,
+   "ctx": "    loadRuleCond();\n        loadMbWhatif();\n        loadDeadlineGuard();\n        loadEarlyBlock();\n        loadOverrideWatch();\n        loadEdgeGate();\n        loadGhepNghiemThu();\n        loadConsistencyGuard();\n        loadConnector();\n        loadNghiemThu();\n        loadDeherd();\n        loadQualityLedger();\n      "
+  }
+ ],
+ "loadAllSections": null,
+ "setIntervals": [
+  {
+   "line": 3101,
+   "chu_ky_ms": "1000",
+   "co_ghep": false,
+   "cac_ham": []
+  },
+  {
+   "line": 8199,
+   "chu_ky_ms": "60000",
+   "co_ghep": true,
+   "cac_ham": [
+    "loadAggSignal",
+    "loadCauForwardShadow",
+    "loadChaseBias",
+    "loadConnector",
+    "loadConsensusFreeShadow",
+    "loadConsistencyGuard",
+    "loadCpL6Lean",
+    "loadCycleScanShadow",
+    "loadDeadlineGuard",
+    "loadDeherd",
+    "loadDeployVerify",
+    "loadEarlyBlock",
+    "loadEdgeGate",
+    "loadEvSongThu",
+    "loadGhepNghiemThu",
+    "loadMbRfShadow",
+    "loadMbWhatif",
+    "loadMlMarkAb",
+    "loadMonitoring",
+    "loadNghiemThu",
+    "loadOutputContract",
+    "loadOutputFinalLab",
+    "loadOverrideWatch",
+    "loadPatternReasoning",
+    "loadPlayDecisionBoard",
+    "loadPnlForward",
+    "loadQualityLedger",
+    "loadRegionWeekdayStrength",
+    "loadRescueCandidateMonitor",
+    "loadRuleCond",
+    "loadSelectorShadow",
+    "loadSignalQualitySkip",
+    "loadStreaks",
+    "loadSystemHealthBanner",
+    "loadThreeLayer",
+    "loadTotalV2"
+   ]
+  }
+ ]
+}

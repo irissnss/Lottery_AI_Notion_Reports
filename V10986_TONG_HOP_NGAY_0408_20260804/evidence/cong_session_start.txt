@@ -1,0 +1,51 @@
+==============================================================================================
+  KIỂM ĐẦU PHIÊN — 2026-08-05   (bắt buộc chạy TRƯỚC khi trả lời owner)
+==============================================================================================
+
+[1] CHECKPOINT QUÁ HẠN: 0
+
+[2] ROADMAP XONG NHƯNG CHƯA CHUYỂN VÀO archive/: 0
+
+[3] MỤC THEO DÕI CÒN TREO: 98 · QUÁ HẠN 1 · ĐẾN HẠN HÔM NAY 4 · không ghi hạn 49
+    ⚠ FU-225 · UI0803 · Xác minh UI du-doan-test + filter · hạn 03/08          DEPLOYED_PENDING_OWNER_VERIFY
+    ● ĐẾN HẠN HÔM NAY: FU-254 · DD0805 · Ba bảng P&L chết 75 ngày · hạn 05/08       MEASURED_ROOT_CAUSE       
+    ● ĐẾN HẠN HÔM NAY: FU-207 · DP0805-1 · Nâng cổng an toàn deploy lên mốc FINAL / MEASURED_BUT_NOT_FIXED    
+    ● ĐẾN HẠN HÔM NAY: FU-259 · KS0805 · C17/C18 mới chỉ đúng trên giấy, chưa có lư WAIT_LIVE                 
+    ● ĐẾN HẠN HÔM NAY: FU-243 · SC0805 · Canh incomplete bundle do gate · hạn 05/08 MEASURED_ROOT_CAUSE       
+      FU-224 · UI0806 · Dọn trang frontend trùng/chết · hạn 06/08              OWNER_LOCK                
+      FU-257 · SC0806 · Cohere chết 25 ngày mà health vẫn khai đang chạy · hạn MEASURED_ROOT_CAUSE       
+      FU-210 · DO0806-1 · Đào nguyên nhân mất lợi thế MT tháng 6 · hạn 06/08   MEASURED_BUT_NOT_FIXED    
+      FU-245 · SC0804 · Hook đầu phiên im 2 ngày · hạn 04/08                   DEPLOYED_PENDING_LIVE_VERIFY
+      FU-258 · KS0806-1 · Cổng đếm việc giấu mất hạn và giấu mục mồ côi · hạn  DEPLOYED_PENDING_LIVE_VERIFY
+      FU-263 · DD0807-1 · Dọn bản sao lưu nginx lẫn trong `sites-enabled` · hạ MEASURED_ROOT_CAUSE       
+      FU-223 · HT0807 · Chéo prompt cùng model GĐ4 — thiết kế · hạn 07/08      OWNER_LOCK                
+      FU-255 · DD0807 · Bảng cảnh báo chết 84 ngày và 4 bảng rỗng không ai can MEASURED_ROOT_CAUSE       
+
+[3b] ⚠ MỤC MỒ CÔI — nhãn không tính treo cũng chưa đóng: 18
+     nhãn đang gặp: ?, DEFER, DELIVERED_AUDIT_DOCS_ONLY, DELIVERED_DOCS_ONLY, DELIVERED_DOCS_RECONCILIATION, DELIVERED_INVENTORY_DOCS_ONLY, DEPLOYED_DOCS_ONLY, FALSE_NEGATIVE, FIXED_PENDING_LIVE_VERIFY, READY_NOT_DEPLOYED
+      · FU-262   FIXED_PENDING_LIVE_VERIFY    hạn 2026-08-05  `/monitoring` từng bị cắt cụt 53,5% mà không
+      · FU-250                                hạn 2026-08-06  Soát nốt cổng còn thoát 0 khi trượt
+      · FU-201   READY_NOT_DEPLOYED           hạn 2026-08-08  Canh bộ lọc combo-super sau khi mở pool
+      · FU-205   READY_NOT_DEPLOYED           hạn 2026-08-15  Bộ lọc chấm bạch thủ có tốt hơn chấm wi…
+      · FU-001   [One                         hạn —  [Title]
+      · FU-117   WAIT_CLOSEOUT                hạn —  V54 natural live closeout proof
+      · FU-119   READY_TO_BUILD_MEASUREMENT_O hạn —  V54 per-model latency instrumentation
+      · FU-121   READY_TO_BUILD_UI_TEST_ONLY  hạn —  V54 MT correct-but-dropped UI panel
+
+[4] SỔ QUYẾT ĐỊNH CỦA OWNER
+    27 quyết định đang có hiệu lực · 0 tới hạn rà soát
+    → chạy `python web/backend/_v10920_decision_ledger.py` để kiểm code có trôi không
+
+[5] PLAYBOOK
+    224 dòng · 2 dòng có ngày đã tới/qua
+      2026-07-28 | **28/07 tối — 2 mục V10870 phải đọc cùng CP-L6 (lịch sử)** | Owner ký 13:48 hoãn sửa trong ngày chốt t
+      2026-08-04 | ~~04/08 chiều~~ | ✅ **ĐẠT — ĐÓNG 04/08 18:2x (V10983): FU-260 `CLOSED_PASS`.** MT official chốt 16:50:
+
+[6] NĂM MẶT QUY TẮC
+    lần sửa gần nhất: 5c2f2d1 2026-08-04
+    không có thay đổi chờ
+    AGENTS.md khớp đúng bản sinh từ CLAUDE.md
+
+==============================================================================================
+  ⚠ CẦN NÊU VỚI OWNER NGAY ĐẦU CÂU TRẢ LỜI: 4 mục theo dõi đến hạn hôm nay · 18 mục mồ côi (nhãn chưa phân loại) · 1 mục theo dõi quá hạn
+==============================================================================================

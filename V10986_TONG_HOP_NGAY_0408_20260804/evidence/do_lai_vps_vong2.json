@@ -1,0 +1,76 @@
+{
+ "ghep": {
+  "tong": 15,
+  "giong": 11,
+  "ty_le": 73.33
+ },
+ "ghep_ai_hon": {
+  "BANG": 11,
+  "OFFICIAL": 4
+ },
+ "ghep_lech": [
+  [
+   "2026-08-01",
+   "MN",
+   "16",
+   "38",
+   "1",
+   "0",
+   "OFFICIAL"
+  ],
+  [
+   "2026-08-02",
+   "MB",
+   "52",
+   "73",
+   "1",
+   "0",
+   "OFFICIAL"
+  ],
+  [
+   "2026-08-02",
+   "MN",
+   "43",
+   "39",
+   "1",
+   "0",
+   "OFFICIAL"
+  ],
+  [
+   "2026-08-04",
+   "MT",
+   "60",
+   "29",
+   "1",
+   "0",
+   "OFFICIAL"
+  ]
+ ],
+ "ghep_co_sai": 0,
+ "port80": {
+  "xs.io.vn/": "200 redirect=",
+  "xs.io.vn/login": "404 redirect=",
+  "www.xs.io.vn/": "200 redirect=",
+  "www.xs.io.vn/login": "404 redirect="
+ },
+ "port80_body_root": "<!DOCTYPE html>\n<html lang=\"vi\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n<meta http-equiv=\"refresh\" content=\"0; url=https://xs.io.vn/\">\n<title>Đang chuyển sang kết nối an toàn…</title>\n</head>\n<body style=\"font-family:system-ui,Aria",
+ "port80_who": "State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess\nLISTEN 0      511                *:80              *:*    users:((\"httpd\",pid=752800,fd=4),(\"httpd\",pid=749775,fd=4),(\"httpd\",pid=749774,fd=4),(\"httpd\",pid=749720,fd=4),(\"httpd\",pid=749555,fd=4))",
+ "https_login": {
+  "xs.io.vn": "200",
+  "www.xs.io.vn": "200"
+ },
+ "mon_size": 577617,
+ "mon_ghep_hits": {
+  "sectionGhepNghiemThu": 1,
+  "loadGhepNghiemThu": 3,
+  "ghep-nghiem-thu-official": 1
+ },
+ "mon_ghep_funcs": [
+  "loadGhepNghiemThu"
+ ],
+ "loadAllSections": null,
+ "setIntervals": [
+  "setInterval(updateClock, 1000);\n    updateClock();\n\n    function refreshStamp() {\n      return new Date().toLocaleTimeString('vi-VN', { hour12: false });\n    }\n\n    function metaTypeClass(type) {\n      const raw = String(type || '').toLowerCase();\n      if (raw.includes('realtime')) return 'realtime';\n      if (raw.includes('historical') || raw.includes('full actual') || raw.includes('tail_db')) return 'historical';\n      return 'hybrid';\n    }\n\n    function metaTypeLabel(type) {\n      const raw = String(type || '');\n      const normalized = raw.toLowerCase();\n      if (normalized.includes('realtime')) return 'Thời gian thực';\n      if (normalized.includes('historical')) return 'Lịch sử';\n      if (normalized.includes('hybrid')) return 'Kết hợp';\n      if (normalized.includes('measurement only')) return 'Chỉ đo lường';\n      if (normalized.includes('full actual')) return 'Full actual';\n      if (normalized.includes('tail_db')) return 'tail_db';\n      if (normalized.includes('bt scope')) return 'Phạm vi BT';\n      if (normalized.includes('canonical pair')) return 'Cặp chuẩn';\n      return raw;\n    }\n\n    function metaItem(label, value) {\n      return `<span class=\"board-meta-item\"><span>${label}</span><strong>${value}</strong></span>`;\n    }\n\n    function renderBoardMeta(containerId, meta) {\n      const el = document.getElementById(containerId);\n      if (!el || !meta) return;\n      const parts = [\n        meta.type ? `<span class=\"meta-badge ${metaTypeClass(meta.type)}\">${metaTypeLabel(meta.type)}</span>` : '',\n        meta.asOf ? metaItem('Dữ liệu tính đến', meta.asOf) : '',\n        meta.refreshed ? metaItem('Làm mới lần cuối', meta.refreshed) : '',\n        meta.trigger ? metaItem('Kích hoạt làm mới', meta.trigger) : '',\n      ];\n      if (meta.note) {\n        parts.pu",
+  "setInterval(() => {\n        loadPlayDecisionBoard();\n        loadThreeLayer();\n        loadRegionWeekdayStrength();\n        loadEvSongThu();\n        loadPnlForward();\n        loadConsensusFreeShadow();\n        loadOutputFinalLab();\n        loadRescueCandidateMonitor();\n        loadSignalQualitySkip();\n        loadDeployVerify();\n        loadPatternReasoning();\n        loadAggSignal();\n        loadMbRfShadow();\n        loadMlMarkAb();\n        loadChaseBias();\n        loadRuleCond();\n        loadMbWhatif();\n        loadDeadlineGuard();\n        loadEarlyBlock();\n        loadOverrideWatch();\n        loadEdgeGate();\n        loadGhepNghiemThu();\n        loadConsistencyGuard();\n        loadConnector();\n        loadNghiemThu();\n        loadDeherd();\n        loadQualityLedger();\n        loadCpL6Lean();\n        loadOutputContract();\n        loadTotalV2();\n        loadSelectorShadow();\n        loadCauForwardShadow();\n        loadCycleScanShadow();\n        loadMonitoring();\n        loadSystemHealthBanner();\n        loadStreaks();\n      }, 60000);\n    }\n\n    // ============================================================\n    // V105.24 LANE 5 — LO1/LO2 audit + source-pool flow + runtime manifest\n    // ============================================================\n    async function loadV10524Lo1Lo2Audit() {\n      const container = document.getElementById('v10524Lo1Lo2Content');\n      const meta = document.getElementById('metaV10524Lo1Lo2');\n      if (!container) return;\n      const esc = (v) => String(v ?? '').replace(/[&<>\"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n      try {\n        const regions = ['MN','MT','MB'];\n        const results = await Promise.all(regions.map(r => fetch('/api/admin/lo1-lo2-audit/' + r + '?days=30', { credentials: 'incl"
+ ]
+}

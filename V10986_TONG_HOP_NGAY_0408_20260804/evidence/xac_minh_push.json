@@ -1,0 +1,210 @@
+{
+ "fetch_pub": "(im lặng = OK)",
+ "fetch_priv": "(im lặng = OK)",
+ "ahead_behind_pub": "0\t0",
+ "ahead_behind_priv": "0\t0",
+ "so_tep_tren_remote": 2136,
+ "ngay_0408": {
+  "V10979": {
+   "thu_muc": [
+    "V10979_NHIP_CUON_CHIEU_5_MODEL_20260804"
+   ],
+   "so_tep": 8,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10980": {
+   "thu_muc": [
+    "V10980_KIEM_TOAN_DIEN_DAU_NGAY_20260804"
+   ],
+   "so_tep": 19,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10981": {
+   "thu_muc": [
+    "V10981_LICH_CUON_CHIEU_DEN_1008_20260804"
+   ],
+   "so_tep": 7,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10982": {
+   "thu_muc": [
+    "V10982_GIAN_NOT_9_MUC_NGAY_CHOT_20260804"
+   ],
+   "so_tep": 7,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10983": {
+   "thu_muc": [
+    "V10983_VA_CHUNG_CHI_TEN_MIEN_20260804"
+   ],
+   "so_tep": 17,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10984": {
+   "thu_muc": [
+    "V10984_KET_QUA_0408_VA_GHEP_NGHIEM_THU_OFFICIAL_20260804"
+   ],
+   "so_tep": 8,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10985": {
+   "thu_muc": [
+    "V10985_XU_BA_MUC_DEN_HAN_0408_20260804"
+   ],
+   "so_tep": 5,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  }
+ },
+ "cac_ngay_truoc": {
+  "V10969": {
+   "thu_muc": [
+    "V10969_KIEM_TONG_LUC_HET_LIVE_20260802"
+   ],
+   "so_tep": 3,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10970": {
+   "thu_muc": [
+    "V10970_TONG_HOP_TOAN_PHIEN_DAO_BOI_20260802"
+   ],
+   "so_tep": 5,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10971": {
+   "thu_muc": [
+    "V10971_BAN_GIAO_MAY_MOI_20_NGAY_20260802"
+   ],
+   "so_tep": 5,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10972": {
+   "thu_muc": [
+    "V10972_BAN_GIAO_NHE_KHONG_COPY_240G_20260802"
+   ],
+   "so_tep": 6,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10973": {
+   "thu_muc": [
+    "V10973_KIEM_SOAT_DOI_CHIEU_OWNER_20260802"
+   ],
+   "so_tep": 6,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10974": {
+   "thu_muc": [
+    "V10974_DAO_HET_DO_VANG_SO_SOT_20260802"
+   ],
+   "so_tep": 13,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10975": {
+   "thu_muc": [
+    "V10975_KIEM_DAU_NGAY_20260803"
+   ],
+   "so_tep": 13,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10976": {
+   "thu_muc": [
+    "V10976_SUA_CONG_TU_KIEM_XANH_GIA_20260803"
+   ],
+   "so_tep": 18,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10977": {
+   "thu_muc": [
+    "V10977_SU_CO_MB_KHONG_OUTPUT_20260803"
+   ],
+   "so_tep": 10,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  },
+  "V10978": {
+   "thu_muc": [
+    "V10978_KIEM_TOAN_DIEN_CUOI_NGAY_20260803"
+   ],
+   "so_tep": 12,
+   "REPORT": true,
+   "CONVERSATION_CONTEXT": true,
+   "TREN_REMOTE": true
+  }
+ },
+ "commit_moi_nhat": {
+  "V10979": "df1e2c0 2026-08-04 10:27 V10979: bao cao - xong som thi bao \"DA XONG - BLOCK\", khong doi het gio han",
+  "V10980": "0a21cea 2026-08-04 10:23 V10980b: dinh chinh - V10979 deploy song song luc 10:15-10:17 giua phien",
+  "V10981": "7ded777 2026-08-04 10:59 V10981b: cap nhat bao cao - them vap nang do chinh agent gay ra (nhan mo coi) + cong K8",
+  "V10982": "e66aa4d 2026-08-04 12:52 V10982b: bao cao - owner duyet chuyen FU-224 xuong 06/08, 09/08 con 8 muc; them muc 5.5 + siet phep J5",
+  "V10983": "f158a36 2026-08-04 18:46 V10983: dien ma commit rieng 08ec33e va cong khai c5c3086 vao dau bao cao",
+  "V10984": "c20b53d 2026-08-04 22:38 V10984b: dien ma commit rieng/cong khai vao dau bao cao + ghi lai viec phien bi gian doan va da noi lai sach se",
+  "V10985": "2414bbe 2026-08-04 23:39 V10985 bo sung: mo FU-266 (DD1208, han 12/08) - Google Drive de 5 tep desktop.ini vao .git/refs cua kho bao cao cong khai lam"
+ },
+ "commit_private_0408": [
+  "eb53295 2026-08-04 23:39 V10985 bo sung: mo FU-266 (DD1208, han 12/08) - Google Drive de 5 tep desktop.ini vao .git/refs cua kho bao cao cong khai lam git fetch chet (fatal: bad object refs/desktop.ini). Git doc MOI tep trong refs/ nhu mot con tro commit nen gap tep ini la gay.",
+  "5c2f2d1 2026-08-04 23:30 V10985: dong ca 3 muc den han 04/08 DUNG HAN - FU-187 CLOSED_PASS (so diem danh 2/2/2 ba pha, 0 luot treo stdin, briefing 13,1 gio, 6/6 muc co so), FU-191 CLOSED_PASS (luat cat model an toan thanh muc 59 / A57 o 5/5 mat quy tac, KHONG cat model nao), FU-212 CLOSED_REPORT (5/5 khoa gt1..gt5, 5/5 ket luan trong so, chenh RF->cong bo 7,59pp)",
+  "460eee6 2026-08-04 22:38 V10984c: sinh lai ban doc so quyet dinh sau vong kiem cuoi khi noi lai phien (0 TROI, QD-024 khop 5/5)",
+  "162412e 2026-08-04 22:12 V10984b: dua _sync_live_forensic_inputs.py vao git + sua loi dua ghi khi dong bo DB song",
+  "a2a7e61 2026-08-04 22:11 V10984: ghep /nghiem-thu voi official ΓÇö do bong cho thay khong cach nao hon official (QD-024, FU-264)",
+  "5f5a9bc 2026-08-04 18:48 V10983b: sinh lai ban doc cho nguoi cua so quyet dinh sau lan kiem tuoi cuoi (0 TROI, QD-023 khop 4/4)",
+  "08ec33e 2026-08-04 18:45 V10983: chung chi chi khai xs.io.vn trong khi DNS tro ca www -> Kaspersky chan dien thoai; certbot --expand phu ca hai ten (han 23/09 -> 02/11), cong 80 chuyen huong sang https; PID lottery 770947 khong doi, hash 4 bang khoa giong het, QD-014 nguyen ven",
+  "fab6e48 2026-08-04 12:53 V10982b: cap nhat ban doc so quyet dinh do may sinh (QD-022 khop 9/9, 0 TROI, moc kiem tuoi cuoi phien)",
+  "feb7169 2026-08-04 12:52 V10982b: owner duyet chuyen FU-224 tu 09/08 xuong 06/08 (QD-022 bo sung) - 09/08 9 -> 8 muc, siet phep J5 doi chieu moc tai voi so that",
+  "7f4cb2a 2026-08-04 12:36 V10982b: cap nhat ban doc so quyet dinh do may sinh (QD-022 khop 7/7, 0 TROI, moc kiem tuoi cuoi phien)",
+  "c5fe204 2026-08-04 12:35 V10982: gian not 9 muc con don ngay chot 10/08 ra 05-09/08 (QD-022) - ngay chot 11 -> 3 muc, mo coi 19 -> 18, cong J1-J8 8/8",
+  "56b5bc0 2026-08-04 11:00 V10981d: cap nhat ban doc so quyet dinh do may sinh (QD-021 khop 5/5, 0 TROI)",
+  "45dc75c 2026-08-04 10:58 V10981b: dinh chinh - nhan SCHEDULED tu che lam 11/14 muc thanh MO COI",
+  "66fc594 2026-08-04 10:51 V10981: gian 14 muc don ngay 08/08 thanh lich cuon chieu 04/08 -> 10/08 (QD-021)",
+  "665b548 2026-08-04 10:28 V10979b: kiem cuoi - chay dung dong lenh cron, soi payload API, xac nhan rao chan sau moc FINAL",
+  "8a3df81 2026-08-04 10:27 V10979: xong som thi bao \"DA XONG - BLOCK\", khong doi het gio han (owner nhac lan thu TU)",
+  "f80a66c 2026-08-04 10:23 V10980b: dinh chinh - V10979 deploy song song luc 10:15-10:17 giua phien",
+  "f202a7f 2026-08-04 10:17 V10980: kiem toan dien dau ngay 04/08 + va cong dem viec bao xanh gia"
+ ],
+ "commit_public_0408": [
+  "2414bbe 2026-08-04 23:39 V10985 bo sung: mo FU-266 (DD1208, han 12/08) - Google Drive de 5 tep desktop.ini vao .git/refs cua kho bao cao cong khai lam git fetch chet (fatal: bad object refs/desktop.ini). Git doc MOI tep trong refs/ nhu mot con tro commit nen gap tep ini la gay.",
+  "77d337a 2026-08-04 23:32 V10985 bao cao cong khai: dong ca 3 muc den han 04/08 DUNG HAN - FU-187 CLOSED_PASS, FU-191 CLOSED_PASS (luat cat model an toan thanh muc 59 / A57 o 5/5 mat quy tac), FU-212 CLOSED_REPORT (phan DO dong, hanh dong o FU-216)",
+  "255b718 2026-08-04 23:22 AUDIT IDE 01-05: nam luot kiem doc lap read-only 01/08 -> 04/08 (ban da loc an ninh)",
+  "c20b53d 2026-08-04 22:38 V10984b: dien ma commit rieng/cong khai vao dau bao cao + ghi lai viec phien bi gian doan va da noi lai sach se",
+  "4ff1651 2026-08-04 22:12 V10984: ket qua 04/08 + ghep /nghiem-thu voi official ΓÇö do bong cho thay khong cach nao hon official",
+  "f158a36 2026-08-04 18:46 V10983: dien ma commit rieng 08ec33e va cong khai c5c3086 vao dau bao cao",
+  "c5c3086 2026-08-04 18:46 V10983: bao cao - chung chi chi khai xs.io.vn trong khi DNS tro ca www nen Kaspersky chan dien thoai; da mo rong chung chi phu ca hai ten va cho cong 80 chuyen huong sang https",
+  "e66aa4d 2026-08-04 12:52 V10982b: bao cao - owner duyet chuyen FU-224 xuong 06/08, 09/08 con 8 muc; them muc 5.5 + siet phep J5",
+  "7f4fafa 2026-08-04 12:35 V10982: bao cao gian not 9 muc con don ngay chot 10/08 ra 05-09/08 (QD-022) - ngay chot 11 -> 3 muc, tran <=5 KHONG dat va noi thang vi sao",
+  "7ded777 2026-08-04 10:59 V10981b: cap nhat bao cao - them vap nang do chinh agent gay ra (nhan mo coi) + cong K8",
+  "6f77fbb 2026-08-04 10:52 V10981b: them bang chung output cong bao cao A55 (exit 0)",
+  "ac49dcd 2026-08-04 10:52 V10981: lich cuon chieu 04/08 -> 10/08 cho 14 muc don ngay 08/08 (QD-021)",
+  "df1e2c0 2026-08-04 10:27 V10979: bao cao - xong som thi bao \"DA XONG - BLOCK\", khong doi het gio han",
+  "0a21cea 2026-08-04 10:23 V10980b: dinh chinh - V10979 deploy song song luc 10:15-10:17 giua phien",
+  "d4b7c76 2026-08-04 10:18 V10980: bao cao kiem toan dien dau ngay 04/08/2026"
+ ]
+}

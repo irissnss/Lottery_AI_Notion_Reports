@@ -1,0 +1,21 @@
+================================================================================================
+  CỔNG KIỂM LỊCH CUỐN CHIẾU V10981 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] K1 · đủ 14 mã trong sổ theo dõi
+         → đủ 14/14
+  [ĐẠT ] K2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] K3 · mỗi mã có mã đọc §58
+         → 14/14 có mã đọc
+  [ĐẠT ] K4 · hạn thật trong sổ khớp hạn đã xếp
+         → 14/14 khớp
+  [ĐẠT ] K5 · không ngày nào quá 3 mục của nhóm
+         → 04/08=3 · 05/08=1 · 06/08=1 · 07/08=1 · 08/08=3 · 09/08=3 · 10/08=2
+  [ĐẠT ] K6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] K7 · mục không kết luận nổi trước 10/08 đều ghi rõ lý do
+         → 5 mục nêu thẳng: FU-193→16/08, FU-216→15/08, FU-217→16/08, FU-231→23/08, FU-226→23/08
+  [ĐẠT ] K8 · không mục nào rơi thành MỒ CÔI (nhãn phải trong TREO_STATUSES hoặc DONG_STATUSES)
+         → 14/14 nhãn hợp lệ, đều được bộ đếm nhìn thấy · đã đóng 3/14 (FU-187, FU-191, FU-212)
+================================================================================================
+  ĐẠT 8/8 phép · LICH_CUON_CHIEU_DAT

@@ -1,0 +1,21 @@
+================================================================================================
+  CỔNG KIỂM GIÃN 9 MỤC NGÀY CHỐT V10982 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] J1 · đủ 9 mã trong sổ theo dõi
+         → đủ 9/9
+  [ĐẠT ] J2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] J3 · mỗi mã có mã đọc §58
+         → 9/9 có mã đọc
+  [ĐẠT ] J4 · hạn thật trong sổ khớp hạn đã xếp
+         → 9/9 khớp
+  [ĐẠT ] J5 · ngày chốt 10/08 tổng tải ≤ 3 · mốc tải khớp sổ thật
+         → 10/08 = 3 mục (nhóm14 ['FU-226', 'FU-231'] + nhóm9 ['FU-252'] + khác []) · mốc tải phiên khác khớp sổ thật 7/7 ngày · tải mỗi ngày 04/08=3 05/08=5 06/08=6 07/08=5 08/08=5 09/08=8 10/08=3
+  [ĐẠT ] J6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] J7 · mục không kết luận nổi trong hạn đều ghi rõ lý do
+         → 1 mục nêu thẳng: FU-253→12/08
+  [ĐẠT ] J8 · 0 mục mồ côi trong nhóm · tổng mồ côi toàn sổ ≤ 19
+         → 9/9 nhãn hợp lệ · tổng mồ côi toàn sổ 18 (trước phiên 19, giảm 1)
+================================================================================================
+  ĐẠT 8/8 phép · GIAN_9_MUC_DAT
