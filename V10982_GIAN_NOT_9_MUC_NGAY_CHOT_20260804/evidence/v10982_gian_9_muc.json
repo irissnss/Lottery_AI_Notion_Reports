@@ -1,0 +1,349 @@
+{
+  "phien_ban": "V10982",
+  "owner_ky": "2026-08-04 11:0x",
+  "nguyen_van": "Giãn luôn 9 mục cũ đó ra 05-09/08 cho ngày chốt nhẹ",
+  "quyet_dinh_goc": "QD-021",
+  "quyet_dinh_nay": "QD-022",
+  "han_chot": "2026-08-10",
+  "het_dong_bang_QD014": "2026-08-08",
+  "tran_mong_muon": 5,
+  "tran_thuc_te": 6,
+  "tran_khong_dat_duoc": "Trần ≤5 mục/ngày KHÔNG đạt được và lý do không nằm ở 9 mục này. Trước khi phiên bắt đầu, tải sẵn đã là: 05/08=5 · 06/08=4 · 08/08=4 · **09/08=7**. Riêng 09/08 đã vượt trần 5 ngay từ đầu do 7 mục của các phiên khác (3 mục nhóm 14 + FU-200 · FU-202 · FU-224 · FU-261), mà phạm vi phiên này chỉ được dịch chuyển 9 mục. Chỗ trống thật ở mức trần 5 chỉ còn 6 khe (06/08=1 · 07/08=4 · 08/08=1) trong khi phải xếp 8 mục (mục thứ 9 là FU-252 buộc ở lại 10/08). Vì vậy phiên này nhận trần THỰC TẾ = 6 cho những ngày mình động vào, và để nguyên 09/08 ở mức 9 — nói thẳng thay vì ép số cho đẹp.",
+  "so_muc": 9,
+  "theo_ngay": {
+    "2026-08-05": [
+      "FU-254"
+    ],
+    "2026-08-06": [
+      "FU-257"
+    ],
+    "2026-08-07": [
+      "FU-223",
+      "FU-244",
+      "FU-255"
+    ],
+    "2026-08-08": [
+      "FU-188"
+    ],
+    "2026-08-09": [
+      "FU-185",
+      "FU-253"
+    ],
+    "2026-08-10": [
+      "FU-252"
+    ]
+  },
+  "tong_tai_moi_ngay": {
+    "2026-08-04": {
+      "nhom14": [
+        "FU-187",
+        "FU-191",
+        "FU-212"
+      ],
+      "nhom9": [],
+      "phien_khac": [],
+      "tong": 3
+    },
+    "2026-08-05": {
+      "nhom14": [
+        "FU-207"
+      ],
+      "nhom9": [
+        "FU-254"
+      ],
+      "phien_khac": [
+        "FU-243",
+        "FU-259",
+        "FU-260",
+        "FU-262"
+      ],
+      "tong": 6
+    },
+    "2026-08-06": {
+      "nhom14": [
+        "FU-210"
+      ],
+      "nhom9": [
+        "FU-257"
+      ],
+      "phien_khac": [
+        "FU-245",
+        "FU-250",
+        "FU-258"
+      ],
+      "tong": 5
+    },
+    "2026-08-07": {
+      "nhom14": [
+        "FU-193"
+      ],
+      "nhom9": [
+        "FU-223",
+        "FU-244",
+        "FU-255"
+      ],
+      "phien_khac": [],
+      "tong": 4
+    },
+    "2026-08-08": {
+      "nhom14": [
+        "FU-186",
+        "FU-203",
+        "FU-215"
+      ],
+      "nhom9": [
+        "FU-188"
+      ],
+      "phien_khac": [
+        "FU-201"
+      ],
+      "tong": 5
+    },
+    "2026-08-09": {
+      "nhom14": [
+        "FU-192",
+        "FU-216",
+        "FU-217"
+      ],
+      "nhom9": [
+        "FU-185",
+        "FU-253"
+      ],
+      "phien_khac": [
+        "FU-200",
+        "FU-202",
+        "FU-224",
+        "FU-261"
+      ],
+      "tong": 9
+    },
+    "2026-08-10": {
+      "nhom14": [
+        "FU-226",
+        "FU-231"
+      ],
+      "nhom9": [
+        "FU-252"
+      ],
+      "phien_khac": [],
+      "tong": 3
+    }
+  },
+  "muc": [
+    {
+      "fu": "FU-254",
+      "ma_doc_cu": "KS0810-2",
+      "ma_doc": "DD0805",
+      "trang_thai": "MEASURED_ROOT_CAUSE",
+      "mo_coi_truoc": false,
+      "nhan": "Ba bảng P&L chết 75 ngày",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-05",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Ba bảng `pnl_daily_summary` (14 dòng) · `pnl_daily_bets` (28) · `pnl_daily_settlements` (76) — đều dừng 2026-05-20 — được chốt MỘT trong hai: nối cron ghi lại, hoặc đánh dấu `RETIRED` trong `docs/CURRENT_TRUTH_SSOT.md` kèm câu ghi rõ nguồn P&L chính thức là `money_board_log` + `pnl_forward_track_shadow`. Đo bằng số: `grep -c RETIRED` cho đủ 3 tên bảng trong SSOT = 3, hoặc `crontab -l | grep -c pnl_daily` ≥ 1.",
+      "vi_sao_ngay_do": "Đơn giản nhất trong 9 mục và bằng chứng đã đủ từ V10978 (3 bảng, 0 cron ghi, đã xác định cron pnl duy nhất ghi bảng KHÁC). Việc còn lại là một quyết định + một dòng SSOT — thuần tài liệu, không chạm runtime, không chạm cửa sổ đo 7 ngày của FU-186. Đúng nguyên tắc owner «xác thực rõ ràng, đơn giản làm trước».",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-257",
+      "ma_doc_cu": "KS0810-4",
+      "ma_doc": "SC0806",
+      "trang_thai": "MEASURED_ROOT_CAUSE",
+      "mo_coi_truoc": false,
+      "nhan": "Cohere chết 25 ngày mà health vẫn khai đang chạy",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-06",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "`/api/health` hết nói một đằng bảng nói một nẻo: hoặc `cohere_rerank_log` có dòng mới (hiện dừng 2026-07-09, 248 dòng), hoặc `active_rerank_measurement_model_count` hạ về **0** và `active_measured_component_count` 27 → **26**, kèm dòng ghi trong SSOT. Đo bằng số: gọi `/api/health` và so đúng hai con số đó.",
+      "vi_sao_ngay_do": "Bằng chứng đủ và một chiều (248/247 dòng, cùng dừng 09/07 — 25 ngày). Sửa con đếm cấu phần ĐO trong health, không phải đường ra số — QD-014 ghi rõ «Được phép: sửa lỗi kỹ thuật rõ ràng». Xếp sau FU-254 một ngày vì phải đụng code `/api/health` chứ không chỉ tài liệu.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-223",
+      "ma_doc_cu": "HT0810",
+      "ma_doc": "HT0807",
+      "trang_thai": "OWNER_LOCK",
+      "mo_coi_truoc": false,
+      "nhan": "Chéo prompt cùng model GĐ4 — thiết kế",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-07",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "Bản thiết kế trên giấy có đủ 4 con số: (1) danh sách model chạy A/B (GĐ4 ghi ≥4 model × 2 prompt × 3 miền), (2) số ngày đo tối thiểu = 14 theo QD-017, (3) dự toán lượt gọi/ngày và USD/ngày, (4) thước chấm = tỉ lệ trúng bạch thủ. CHƯA chạy job nào.",
+      "vi_sao_ngay_do": "**Bắt buộc đứng trước `FU-226` (10/08)** — FU-226 khai đích danh «FU-223 (thiết kế trước)» là phụ thuộc. Đặt 07/08 để có 3 ngày đệm. Thiết kế thuần giấy nên làm được trong cửa sổ đóng băng. §56: KHÔNG hỏi lại owner — `QD-017` ký 02/08 đã duyệt sẵn.",
+      "phu_thuoc": [
+        "QD-017 (owner đã ký 02/08 — không hỏi lại)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-244",
+      "ma_doc_cu": "KS0810",
+      "ma_doc": "KS0807",
+      "trang_thai": "MEASURED_ROOT_CAUSE",
+      "mo_coi_truoc": true,
+      "nhan": "Cổng lợi thế không có bản ghi hằng ngày",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-07",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "`crontab -l | grep -c 10945` ≥ **1** và bảng `edge_gate_daily` có dòng mới mang ngày ≥ ngày đặt cron (hiện đúng 3 dòng, đều 2026-08-01). Cron đặt **19:00 giờ VN** — sau cả ba mốc FINAL (15:45 · 16:58 · 17:58) nên không chen vào khung ra số.",
+      "vi_sao_ngay_do": "V10978 hoãn mục này vì «thêm cron là đụng crontab production trong lúc QD-014 đóng băng». Đọc lại nguyên văn QD-014 thì phạm vi đóng băng là **đường TẠO SỐ CÔNG BỐ** và ghi rõ «Được phép: sửa lỗi kỹ thuật rõ ràng, **điều tra chỉ-đọc**, viết tài liệu». Cổng lợi thế `_v10945` chỉ ĐỌC bảng official rồi ghi vào bảng shadow của chính nó, chạy 19:00 — không thuộc 5 thứ QD-014 cấm đích danh. Rủi ro tiền = 0 (6/6 ô đang đóng, ngưỡng 3pp/z2 không ô nào chạm). Kéo lên 07/08 được thêm 3 ngày chuỗi số cho QD-013.",
+      "phu_thuoc": [
+        "QD-013 (cổng lợi thế vẫn đóng — thêm cron chỉ để GHI, không mở tiền)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-255",
+      "ma_doc_cu": "KS0810-3",
+      "ma_doc": "DD0807",
+      "trang_thai": "MEASURED_ROOT_CAUSE",
+      "mo_coi_truoc": false,
+      "nhan": "Bảng cảnh báo chết 84 ngày và 4 bảng rỗng không ai canh",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-07",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "Đủ **5/5** bảng có kết cục ghi thành chữ, không bảng nào để lửng: `system_alerts` (9 dòng, chết 84 ngày) · `sync_parity_audit_daily` · `data_preservation_manifest_daily` · `bundle_replay_compare_daily` · `v10883_connector_apply_log` (4 bảng RỖNG hoàn toàn). Mỗi bảng chọn một: nối writer + cron thật, hoặc ghi `RETIRED` trong SSOT. Đo bằng số: đếm 5 tên bảng trong SSOT = 5.",
+      "vi_sao_ngay_do": "Cùng loại «bảng ma» với FU-254 nhưng nặng gấp 5 lần (5 bảng thay vì 3, và có nhánh phải cân nhắc gỡ khai báo khỏi `database.py`) nên xếp sau FU-254 hai ngày. Không chạm đường ra số — 4 bảng chưa từng có dòng nào, không module official nào đọc.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-188",
+      "ma_doc_cu": "BC0810",
+      "ma_doc": "BC0808",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "mo_coi_truoc": false,
+      "nhan": "Tồn đọng báo cáo A55",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-08",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "`python web/backend/_v10921_report_gate.py` về **0 phiên bản thiếu/không đạt** và **0 commit chưa push**. Cụ thể: bù 4 báo cáo thiếu `V10896` `V10901` `V10905` `V10906` (đều 31/07) và commit 11 file sửa dở thuộc V10866–V10869 trong repo công khai.",
+      "vi_sao_ngay_do": "Khối lượng viết lớn nhất trong 9 mục (4 báo cáo × 9 phần) nên cần một ngày rộng. Ngày 08/08 của nhóm 14 chỉ toàn việc **ĐỌC kết quả** (FU-186 đọc bảng 7 ngày · FU-203 chạy một câu SQL · FU-215 chạy 7 phép kiểm), còn chỗ cho việc viết. FU-188 chỉ đụng repo báo cáo công khai — không runtime, không DB, không cron — nên ghi chú cũ «không xử trong cửa sổ đóng băng FU-186» không áp dụng: viết báo cáo cho V10896–V10906 không đổi một dòng dữ liệu nào của cửa sổ đo.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-185",
+      "ma_doc_cu": "DD0803",
+      "ma_doc": "DD0809",
+      "trang_thai": "MEASURED_ROOT_CAUSE",
+      "mo_coi_truoc": false,
+      "nhan": "Tinh gọn lane hết hạn vẫn chạy",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-09",
+      "cham_dong_bang": false,
+      "phai_doi_0808": true,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Hai dòng gọi lane hết hạn trong `web/backend/_mb_advanced_lane_daily.sh` (`_v10679_full_pool_d_w06_lane.py` và `_v10680_topk_strength_lane.py`) bị gỡ, và hai dòng cron trùng (`43 17` dòng 52 · `38 17` dòng 66) gộp còn **1**. Đo bằng số: số dòng lane hết hạn ghi vào `du_doan_test_*` ngày 10/08 = **0** (hiện ~10 dòng/ngày).",
+      "vi_sao_ngay_do": "**Không phải vì QD-014** — lane hết hạn ghi `output_eligible=0`, log lane ghi `official_tables_touched: 0`, không thuộc 5 thứ QD-014 cấm. Lý do thật: hai lane này chạy **17:38 và 17:43**, nằm trong khung quan sát 7 ngày của `FU-186` (kết thúc 08/08) mà chính tiêu chí 3 của FU-186 là «6 lane đã nghỉ vẫn lệch 0 ở bộ tự kiểm 18:05». Sửa giữa cửa sổ là lật tiêu chí đang đo từ TRƯỢT sang ĐẠT giữa chừng, làm bảng 7 ngày đọc không ra. Đợi 09/08 là đợi hết cửa sổ, không phải né việc. Owner đã ký `OD-20260801-B` cho 6 lane nghỉ nên không cần hỏi lại (§56).",
+      "phu_thuoc": [
+        "OD-20260801-B (owner đã ký — không hỏi lại)",
+        "FU-186 hết cửa sổ 7 ngày (08/08)",
+        "phải làm TRƯỚC FU-253 trong cùng ngày"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-253",
+      "ma_doc_cu": "SC1008",
+      "ma_doc": "SC0809-1",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "mo_coi_truoc": false,
+      "nhan": "Lane de-herd chết \"database is locked\" khung 17:40–17:43",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-09",
+      "cham_dong_bang": false,
+      "phai_doi_0808": true,
+      "ro_rang": "ro",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "TRONG HẠN: đếm `database is locked` trong `logs/v10872_deherd.log` các ngày **04→08/08** (5 ngày, đây là nền sạch TRƯỚC khi FU-185 dọn lane). ≥2 ngày dính → bật `PRAGMA busy_timeout` cho lane này hoặc giãn cron, làm ngay 09/08. 0–1 ngày dính → đóng mục kèm con số. Không hứa «đã hết lỗi» trong ngày.",
+      "vi_sao_ngay_do": "Cùng khung 17:40–17:43 với FU-185 và cùng lý do: sửa trước 08/08 sẽ làm bẩn cửa sổ 7 ngày của FU-186. Thêm một ràng buộc thật: FU-185 gỡ 2 trong 5 cron đang đè nhau ở khung đó, tức là **chính FU-185 làm đổi mẫu số của FU-253** — nên phải đếm xong nền sạch 04→08/08 rồi mới cho FU-185 chạy, và cả hai đứng cùng ngày 09/08 theo thứ tự FU-185 trước.",
+      "phu_thuoc": [
+        "FU-186 hết cửa sổ 7 ngày (08/08)",
+        "FU-185 (làm trước trong cùng ngày — gỡ 2/5 cron đè nhau)"
+      ],
+      "ket_luan_som_nhat": "2026-08-12",
+      "vi_sao_khong_som": "Sửa được trong ngày 09/08, nhưng câu hỏi thật là «sửa xong lane de-herd còn chết nữa không» — cái đó cần ít nhất 3 đêm chạy sau khi sửa (10 · 11 · 12/08) mới nói được. Trong hạn 09/08 chỉ xong phần ĐẾM + SỬA, chưa xong phần XÁC NHẬN."
+    },
+    {
+      "fu": "FU-252",
+      "ma_doc_cu": "KS1008",
+      "ma_doc": "KS0810-5",
+      "trang_thai": "DEPLOYED_PENDING_LIVE_VERIFY",
+      "mo_coi_truoc": false,
+      "nhan": "Canh lane Nghiệm Thu ra số đủ 3 miền",
+      "han_cu": "2026-08-10",
+      "han": "2026-08-10",
+      "cham_dong_bang": false,
+      "phai_doi_0808": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "**21/21 ô miền-ngày** trong 7 ngày liên tiếp 04→10/08 (đo lần đầu V10980 được 13/21 trên cửa sổ cũ). Mốc phụ: `MB_NGHIEMTHU_1908_V1` có dòng đủ 7/7 đêm — hiện ghi cuối 02/08.",
+      "vi_sao_ngay_do": "**Không kéo lên được.** Cron vá MB (17:46/17:50/17:54) chỉ có hiệu lực từ đêm 03/08, nên **tối nay 04/08 mới là đêm thử thật đầu tiên**. Cửa sổ 7 ngày sạch bắt đầu 04/08 thì ngày thứ 7 rơi đúng 10/08. Kéo lên 09/08 là cắt cửa sổ còn 6 ngày — đúng cái bẫy rút ngắn cửa sổ đo đã làm rữa V10655→V10790. Bù lại chi phí ngày 10/08 gần bằng 0: chỉ chạy một câu đếm, không sửa gì.",
+      "phu_thuoc": [
+        "đủ 7 đêm dữ liệu (kết thúc 10/08)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": "",
+      "canh_bao": "Nếu bất kỳ đêm nào trong 04→10/08 MB lại trống thì cửa sổ sạch bắt đầu lại và kết luận TRƯỢT sang sau 10/08. Đây là rủi ro thật, không giấu."
+    }
+  ],
+  "khong_ket_luan_duoc_trong_han": [
+    {
+      "fu": "FU-253",
+      "han": "2026-08-09",
+      "ket_luan_som_nhat": "2026-08-12",
+      "vi_sao": "Sửa được trong ngày 09/08, nhưng câu hỏi thật là «sửa xong lane de-herd còn chết nữa không» — cái đó cần ít nhất 3 đêm chạy sau khi sửa (10 · 11 · 12/08) mới nói được. Trong hạn 09/08 chỉ xong phần ĐẾM + SỬA, chưa xong phần XÁC NHẬN."
+    }
+  ],
+  "de_xuat_cho_owner": [
+    {
+      "fu": "FU-254",
+      "de_xuat": "Đánh dấu 3 bảng `pnl_daily_*` là RETIRED và ghi rõ nguồn P&L chính thức là `money_board_log` + `pnl_forward_track_shadow`, thay vì nối lại cron.",
+      "phan_doi_truoc": "2026-08-05",
+      "vi_sao_tu_quyet": "`QD-013` đã dừng đặt tiền thật, nên ba bảng thanh toán hằng ngày không còn nghiệp vụ nào đọc. Nối cron lại là nuôi bảng chết. §56 cấm hỏi lại thứ đã có trong sổ."
+    },
+    {
+      "fu": "FU-255",
+      "de_xuat": "Ghi RETIRED cho `system_alerts` + 4 bảng rỗng, và gỡ khai báo 3 bảng chưa từng có writer khỏi `database.py`.",
+      "phan_doi_truoc": "2026-08-07",
+      "vi_sao_tu_quyet": "Bốn bảng chưa từng có một dòng nào và 0 cron — không có gì để mất. Nếu owner muốn giữ `system_alerts` sống thì phải cấp một writer, đó mới là việc cần quyết."
+    },
+    {
+      "fu": "FU-257",
+      "de_xuat": "Hạ `active_rerank_measurement_model_count` về 0 (và `active_measured_component_count` 27→26) thay vì bật lại Cohere.",
+      "phan_doi_truoc": "2026-08-06",
+      "vi_sao_tu_quyet": "Bật lại một cấu phần đo đã ngừng 25 ngày là thêm biến số giữa lúc `QD-014` đang đòi «một tuần yên». Hạ con số cho khớp sự thật là sửa lỗi báo cáo, không phải đổi hệ."
+    }
+  ],
+  "tong_ma_fu_trong_so": 140,
+  "mo_coi_toan_so": 18
+}
