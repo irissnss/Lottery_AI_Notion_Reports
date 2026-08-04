@@ -1,0 +1,177 @@
+﻿Tß╗öNG khß╗æi FU ─æß╗ìc ─æ╞░ß╗úc: 131
+
+==========================================================================================
+  Mß╗ñC C├ÆN TREO  (82)
+==========================================================================================
+  FU-185   DD0803    hß║ín 2026-08-03  MEASURED_BUT_NOT_FIXED       ### FU-185 ┬╖ DD0803 ┬╖ Tinh gß╗ìn lane hß║┐t hß║ín vß║½n chß║íy ┬╖ hß║ín 03/08 ΓÇö Cß║¼P NHß║¼T V10975
+  FU-256   DO0806    hß║ín 2026-08-06  MEASURED_BUT_NOT_FIXED       ### FU-256 ┬╖ DO0806 ┬╖ Bi├¬n giß╗¥ chß╗æt MT/MB co lß║íi ┬╖ hß║ín 06/08
+  FU-186   KS0808-2  hß║ín 2026-08-08  WAIT_LIVE                    ### FU-186 ┬╖ KS0808-2 ┬╖ 7 ng├áy sau tß║»t ghi ─æ├¿ + lane nghß╗ë ┬╖ hß║ín 08/08
+  FU-187   KS0808    hß║ín 2026-08-08  DEPLOYED_PENDING_LIVE_VERIFY ### FU-187 ┬╖ KS0808 ┬╖ Tra cß╗⌐u tr╞░ß╗¢c khi hß╗Åi ┬╖ hß║ín 08/08
+  FU-191   XH0808-2  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-191 ┬╖ XH0808-2 ┬╖ Cß║»t model an to├án combo-super ┬╖ hß║ín 08/08
+  FU-192   XH0808-3  hß║ín 2026-08-08  AWAITING_OWNER_OK            ### FU-192 ┬╖ XH0808-3 ┬╖ Shadow 110 ng├áy 0 promote ┬╖ hß║ín 08/08
+  FU-193   XH0808-4  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-193 ┬╖ XH0808-4 ┬╖ combo-super thiß║┐u s├án chß║Ñt l╞░ß╗úng ┬╖ hß║ín 08/08
+  FU-203   DO0808-2  hß║ín 2026-08-08  WAIT_LIVE                    ### FU-203 ┬╖ DO0808-2 ┬╖ gemini-3.5-flash hß╗ôi phong ─æß╗Ö ┬╖ hß║ín 08/08
+  FU-207   DP0808    hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-207 ┬╖ DP0808 ┬╖ Mß╗æc an to├án deploy chß║ím ─æß║ºu ra ┬╖ hß║ín 08/08
+  FU-210   DO0808-1  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-210 ┬╖ DO0808-1 ┬╖ Th├íng 6 mß║Ñt lß╗úi thß║┐ MT ┬╖ hß║ín 08/08
+  FU-215   DB0808    hß║ín 2026-08-08  OWNER_LOCK                   ### FU-215 ┬╖ DB0808 ┬╖ ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ (QD-014) ┬╖ hß║ín 08/08
+  FU-216   XH0808-1  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-216 ┬╖ XH0808-1 ┬╖ Shadow MT RF ─æ╞ín (QD-015) ┬╖ hß║ín 08/08
+  FU-217   SC0808-1  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-217 ┬╖ SC0808-1 ┬╖ LSTM live lß╗çch suy luß║¡n ┬╖ hß║ín 08/08
+  FU-226   HT0808-2  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-226 ┬╖ HT0808-2 ┬╖ A/B hai prompt c├╣ng model ┬╖ hß║ín 08/08
+  FU-231   HT0808-1  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-231 ┬╖ HT0808-1 ┬╖ Bß╗Å ├⌐p RULES-FIRST shadow (QD-016) ┬╖ hß║ín 08/08
+  FU-200   DO0809-2  hß║ín 2026-08-09  WAIT_LIVE                    ### FU-200 ┬╖ DO0809-2 ┬╖ ─Éo ─æß╗òi total tr╞░ß╗¢c combo ┬╖ hß║ín 09/08
+  FU-202   DO0809-1  hß║ín 2026-08-09  WAIT_LIVE                    ### FU-202 ┬╖ DO0809-1 ┬╖ gemini lß╗ìt top-2 combo ┬╖ hß║ín 09/08
+  FU-224   UI0809    hß║ín 2026-08-09  OWNER_LOCK                   ### FU-224 ┬╖ UI0809 ┬╖ Dß╗ìn trang frontend tr├╣ng/chß║┐t ┬╖ hß║ín 09/08
+  FU-188   BC0810    hß║ín 2026-08-10  MEASURED_BUT_NOT_FIXED       ### FU-188 ┬╖ BC0810 ┬╖ Tß╗ôn ─æß╗ìng b├ío c├ío A55 ┬╖ hß║ín 10/08
+  FU-223   HT0810    hß║ín 2026-08-10  OWNER_LOCK                   ### FU-223 ┬╖ HT0810 ┬╖ Ch├⌐o prompt c├╣ng model G─É4 ┬╖ hß║ín 10/08
+  FU-252   KS1008    hß║ín 2026-08-10  DEPLOYED_PENDING_LIVE_VERIFY ### FU-252 ┬╖ KS1008 ┬╖ Canh lane Nghiß╗çm Thu ra sß╗æ ─æß╗º 3 miß╗ün ┬╖ hß║ín 10/08
+  FU-253   SC1008    hß║ín 2026-08-10  MEASURED_BUT_NOT_FIXED       ### FU-253 ┬╖ SC1008 ┬╖ Lane de-herd chß║┐t "database is locked" khung 17:40ΓÇô17:43 ┬╖ hß║ín 10/
+  FU-195   XH0815    hß║ín 2026-08-15  DEPLOYED_PENDING_LIVE_VERIFY ### FU-195 ┬╖ XH0815 ┬╖ Ng╞░ß╗íng gß╗í glm-5.1 ┬╖ hß║ín 15/08
+  FU-196   DO0815-2  hß║ín 2026-08-15  WAIT_LIVE                    ### FU-196 ┬╖ DO0815-2 ┬╖ ─Éo ho├ín ─æß╗òi model ┬╖ hß║ín 15/08
+  FU-197   DO0815-1  hß║ín 2026-08-15  DEPLOYED_PENDING_LIVE_VERIFY ### FU-197 ┬╖ DO0815-1 ┬╖ ─Éo gemini sau tho├ít 503 ┬╖ hß║ín 15/08
+  FU-204   KS0815-1  hß║ín 2026-08-15  DEPLOYED_PENDING_LIVE_VERIFY ### FU-204 ┬╖ KS0815-1 ┬╖ gpt-5.4 gß╗ìi vß╗ü ─æ├║ng ┬╖ hß║ín 15/08
+  FU-213   HT0815    hß║ín 2026-08-15  MEASURED_BUT_NOT_FIXED       ### FU-213 ┬╖ HT0815 ┬╖ Ph├⌐p so AUC lß╗çch cß╗¡a sß╗ò ┬╖ hß║ín 15/08
+  FU-228   DO0815-4  hß║ín 2026-08-15  MEASURED_BUT_NOT_FIXED       ### FU-228 ┬╖ DO0815-4 ┬╖ ─Éo hiß╗çu quß║ú c╞í chß║┐ hß╗ìc (nß╗ün) ┬╖ hß║ín 15/08
+  FU-229   SC0815-2  hß║ín 2026-08-15  MEASURED_BUT_NOT_FIXED       ### FU-229 ┬╖ SC0815-2 ┬╖ Champion selector cron kh├┤ng ghi bß║úng ┬╖ hß║ín 15/08
+  FU-230   DO0815-3  hß║ín 2026-08-15  MEASURED_BUT_NOT_FIXED       ### FU-230 ┬╖ DO0815-3 ┬╖ ─Éß╗ông bß╗Ö th╞░ß╗¢c WR vs bß║ích thß╗º ┬╖ hß║ín 15/08
+  FU-232   SC0815-3  hß║ín 2026-08-15  OWNER_LOCK                   ### FU-232 ┬╖ SC0815-3 ┬╖ V10938 nß╗¡a c├▓n: trß╗ìng sß╗æ sß╗æ c├▓n WR ┬╖ hß║ín 15/08
+  FU-237   DP0815    hß║ín 2026-08-15  DEPLOYED_PENDING_LIVE_VERIFY ### FU-237 ┬╖ DP0815 ┬╖ Canh chß╗æt giß╗¥ cß║Ñm deploy ┬╖ hß║ín 15/08
+  FU-222   HT0822    hß║ín 2026-08-22  MEASURED_BUT_NOT_FIXED       ### FU-222 ┬╖ HT0822 ┬╖ B├│c RULES-FIRST sau ─æ├│ng b─âng ┬╖ hß║ín 22/08
+  FU-233   HT0822-1  hß║ín 2026-08-22  OWNER_LOCK                   ### FU-233 ┬╖ HT0822-1 ┬╖ B1 tß║»t tß╗æi ╞░u trß╗ìng sß╗æ (sau 08/08) ┬╖ hß║ín 22/08
+  FU-183   KS0831    hß║ín 2026-08-31  DEPLOYED_PENDING_LIVE_VERIFY ### FU-183 ┬╖ KS0831 ┬╖ Lß╗¢p V10640 MN r├á ├óm th├¼ tß║»t ┬╖ hß║ín 31/08
+  FU-198   DO0901    hß║ín 2026-09-01  WAIT_LIVE                    ### FU-198 ┬╖ DO0901 ┬╖ So gemini-3.5 vs 3.6 ┬╖ hß║ín 01/09
+  FU-234   DO0905    hß║ín 2026-09-05  OWNER_LOCK                   ### FU-234 ┬╖ DO0905 ┬╖ B2 ─æo 105 luß║¡t c├│ gi├║p c├┤ng bß╗æ ┬╖ hß║ín 05/09
+  FU-235   HT0919    hß║ín 2026-09-19  OWNER_LOCK                   ### FU-235 ┬╖ HT0919 ┬╖ B3 gß╗í ├⌐p chß╗ìn tß╗½ list (sau B1+B2) ┬╖ hß║ín 19/09
+  FU-118   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-118 ┬╖ DPLX-118 ┬╖ Verify lß╗ïch sß╗¡ FU-118 ┬╖ hß║ín LX
+  FU-120   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-120 ┬╖ DPLX-120 ┬╖ Verify lß╗ïch sß╗¡ FU-120 ┬╖ hß║ín LX
+  FU-123   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-123 ┬╖ DPLX-123 ┬╖ Verify lß╗ïch sß╗¡ FU-123 ┬╖ hß║ín LX
+  FU-124   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-124 ┬╖ DPLX-124 ┬╖ Verify lß╗ïch sß╗¡ FU-124 ┬╖ hß║ín LX
+  FU-125   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-125 ┬╖ DPLX-125 ┬╖ Verify lß╗ïch sß╗¡ FU-125 ┬╖ hß║ín LX
+  FU-126   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-126 ┬╖ DPLX-126 ┬╖ Verify lß╗ïch sß╗¡ FU-126 ┬╖ hß║ín LX
+  FU-127   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-127 ┬╖ DPLX-127 ┬╖ Verify lß╗ïch sß╗¡ FU-127 ┬╖ hß║ín LX
+  FU-128   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-128 ┬╖ DPLX-128 ┬╖ Verify lß╗ïch sß╗¡ FU-128 ┬╖ hß║ín LX
+  FU-130   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-130 ┬╖ DPLX-130 ┬╖ Verify lß╗ïch sß╗¡ FU-130 ┬╖ hß║ín LX
+  FU-131   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-131 ┬╖ DPLX-131 ┬╖ Verify lß╗ïch sß╗¡ FU-131 ┬╖ hß║ín LX
+  FU-132   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-132 ┬╖ DPLX-132 ┬╖ Verify lß╗ïch sß╗¡ FU-132 ┬╖ hß║ín LX
+  FU-133   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-133 ┬╖ DPLX-133 ┬╖ Verify lß╗ïch sß╗¡ FU-133 ┬╖ hß║ín LX
+  FU-134   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-134 ┬╖ DPLX-134 ┬╖ Verify lß╗ïch sß╗¡ FU-134 ┬╖ hß║ín LX
+  FU-135   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-135 ┬╖ DPLX-135 ┬╖ Verify lß╗ïch sß╗¡ FU-135 ┬╖ hß║ín LX
+  FU-136   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-136 ┬╖ DPLX-136 ┬╖ Verify lß╗ïch sß╗¡ FU-136 ┬╖ hß║ín LX
+  FU-137   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-137 ┬╖ DPLX-137 ┬╖ Verify lß╗ïch sß╗¡ FU-137 ┬╖ hß║ín LX
+  FU-138   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-138 ┬╖ DPLX-138 ┬╖ Verify lß╗ïch sß╗¡ FU-138 ┬╖ hß║ín LX
+  FU-139   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-139 ┬╖ DPLX-139 ┬╖ Verify lß╗ïch sß╗¡ FU-139 ┬╖ hß║ín LX
+  FU-140   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-140 ┬╖ DPLX-140 ┬╖ Verify lß╗ïch sß╗¡ FU-140 ┬╖ hß║ín LX
+  FU-141   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-141 ┬╖ DPLX-141 ┬╖ Verify lß╗ïch sß╗¡ FU-141 ┬╖ hß║ín LX
+  FU-142   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-142 ┬╖ DPLX-142 ┬╖ Verify lß╗ïch sß╗¡ FU-142 ┬╖ hß║ín LX
+  FU-143   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-143 ┬╖ DPLX-143 ┬╖ Verify lß╗ïch sß╗¡ FU-143 ┬╖ hß║ín LX
+  FU-144   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-144 ┬╖ DPLX-144 ┬╖ Verify lß╗ïch sß╗¡ FU-144 ┬╖ hß║ín LX
+  FU-145   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-145 ┬╖ DPLX-145 ┬╖ Verify lß╗ïch sß╗¡ FU-145 ┬╖ hß║ín LX
+  FU-146   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-146 ┬╖ DPLX-146 ┬╖ Verify lß╗ïch sß╗¡ FU-146 ┬╖ hß║ín LX
+  FU-147   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-147 ┬╖ DPLX-147 ┬╖ Verify lß╗ïch sß╗¡ FU-147 ┬╖ hß║ín LX
+  FU-148   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-148 ┬╖ DPLX-148 ┬╖ Verify lß╗ïch sß╗¡ FU-148 ┬╖ hß║ín LX
+  FU-159   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-159 ┬╖ DPLX-159 ┬╖ Verify lß╗ïch sß╗¡ FU-159 ┬╖ hß║ín LX
+  FU-160   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-160 ┬╖ DPLX-160 ┬╖ Verify lß╗ïch sß╗¡ FU-160 ┬╖ hß║ín LX
+  FU-162   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-162 ┬╖ DPLX-162 ┬╖ Verify lß╗ïch sß╗¡ FU-162 ┬╖ hß║ín LX
+  FU-163   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-163 ┬╖ DPLX-163 ┬╖ Verify lß╗ïch sß╗¡ FU-163 ┬╖ hß║ín LX
+  FU-164   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-164 ┬╖ DPLX-164 ┬╖ Verify lß╗ïch sß╗¡ FU-164 ┬╖ hß║ín LX
+  FU-165   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-165 ┬╖ DOLX-165 ┬╖ D-2 cross-region linkage gated ┬╖ hß║ín LX
+  FU-166   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-166 ┬╖ HTLX-166 ┬╖ cluster_weighted giß║úm diversity penalty ┬╖ hß║ín LX
+  FU-167   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-167 ┬╖ QDLX-167 ┬╖ RR-16.4 Anti-Trap doctrine re-eval ┬╖ hß║ín LX
+  FU-168   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-168 ┬╖ DPLX-168 ┬╖ Verify lß╗ïch sß╗¡ FU-168 ┬╖ hß║ín LX
+  FU-174   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-174 ┬╖ SCLX-174 ┬╖ Combo-super BT-first replay ┬╖ hß║ín LX
+  FU-175   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-175 ┬╖ HTLX-175 ┬╖ Prompt context dossier theo miß╗ün ┬╖ hß║ín LX
+  FU-190   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-190 ┬╖ KSLX-190 ┬╖ Kiß╗âm s├íu mß║╖t quy tß║»c khi sß╗¡a ┬╖ hß║ín LX
+  FU-206   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-206 ┬╖ XHLX-206 ┬╖ Quy tß║»c mß╗¢i khi x├⌐t cß║»t model ┬╖ hß║ín LX
+  FU-208   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-208 ┬╖ KSLX ┬╖ Cß╗òng lß╗úi thß║┐ chß╗ë ─æß║╖t tiß╗ün khi mß╗ƒ ┬╖ hß║ín LX
+  FU-209   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-209 ┬╖ XHLX-209 ┬╖ Dß╗½ng th├¬m/cß║»t model tß╗¢i khi cß╗òng mß╗ƒ ┬╖ hß║ín LX
+  FU-218   ΓÇö         hß║ín ΓÇö  WAIT_LIVE                    ### FU-218 ┬╖ TDLX-218 ┬╖ Doc FU phai lay ban gan dau file (chanΓÇª ┬╖ hß║ín LX
+  FU-221   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-221 ┬╖ TKLX-221 ┬╖ Notion D-11 lß╗ùi thß╗¥i (chß╗ë lß╗ïch sß╗¡) ┬╖ hß║ín LX
+
+==========================================================================================
+  QU├ü Hß║áN (hß║ín < 04/08)  (1)
+==========================================================================================
+  FU-185   DD0803    hß║ín 2026-08-03  MEASURED_BUT_NOT_FIXED       ### FU-185 ┬╖ DD0803 ┬╖ Tinh gß╗ìn lane hß║┐t hß║ín vß║½n chß║íy ┬╖ hß║ín 03/08 ΓÇö Cß║¼P NHß║¼T V10975
+
+==========================================================================================
+  ─Éß║╛N Hß║áN H├öM NAY 04/08  (0)
+==========================================================================================
+
+==========================================================================================
+  Hß║áN 08/08 (mß╗ìi trß║íng th├íi)  (14)
+==========================================================================================
+  FU-186   KS0808-2  hß║ín 2026-08-08  WAIT_LIVE                    ### FU-186 ┬╖ KS0808-2 ┬╖ 7 ng├áy sau tß║»t ghi ─æ├¿ + lane nghß╗ë ┬╖ hß║ín 08/08
+  FU-187   KS0808    hß║ín 2026-08-08  DEPLOYED_PENDING_LIVE_VERIFY ### FU-187 ┬╖ KS0808 ┬╖ Tra cß╗⌐u tr╞░ß╗¢c khi hß╗Åi ┬╖ hß║ín 08/08
+  FU-191   XH0808-2  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-191 ┬╖ XH0808-2 ┬╖ Cß║»t model an to├án combo-super ┬╖ hß║ín 08/08
+  FU-192   XH0808-3  hß║ín 2026-08-08  AWAITING_OWNER_OK            ### FU-192 ┬╖ XH0808-3 ┬╖ Shadow 110 ng├áy 0 promote ┬╖ hß║ín 08/08
+  FU-193   XH0808-4  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-193 ┬╖ XH0808-4 ┬╖ combo-super thiß║┐u s├án chß║Ñt l╞░ß╗úng ┬╖ hß║ín 08/08
+  FU-203   DO0808-2  hß║ín 2026-08-08  WAIT_LIVE                    ### FU-203 ┬╖ DO0808-2 ┬╖ gemini-3.5-flash hß╗ôi phong ─æß╗Ö ┬╖ hß║ín 08/08
+  FU-207   DP0808    hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-207 ┬╖ DP0808 ┬╖ Mß╗æc an to├án deploy chß║ím ─æß║ºu ra ┬╖ hß║ín 08/08
+  FU-210   DO0808-1  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-210 ┬╖ DO0808-1 ┬╖ Th├íng 6 mß║Ñt lß╗úi thß║┐ MT ┬╖ hß║ín 08/08
+  FU-215   DB0808    hß║ín 2026-08-08  OWNER_LOCK                   ### FU-215 ┬╖ DB0808 ┬╖ ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ (QD-014) ┬╖ hß║ín 08/08
+  FU-216   XH0808-1  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-216 ┬╖ XH0808-1 ┬╖ Shadow MT RF ─æ╞ín (QD-015) ┬╖ hß║ín 08/08
+  FU-217   SC0808-1  hß║ín 2026-08-08  MEASURED_BUT_NOT_FIXED       ### FU-217 ┬╖ SC0808-1 ┬╖ LSTM live lß╗çch suy luß║¡n ┬╖ hß║ín 08/08
+  FU-226   HT0808-2  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-226 ┬╖ HT0808-2 ┬╖ A/B hai prompt c├╣ng model ┬╖ hß║ín 08/08
+  FU-227   TK0808    hß║ín 2026-08-08  CLOSED                       ### FU-227 ┬╖ TK0808 ┬╖ Quy ╞░ß╗¢c m├ú c├┤ng viß╗çc (─æ├ú chß╗ìn B) ┬╖ hß║ín 08/08
+  FU-231   HT0808-1  hß║ín 2026-08-08  OWNER_LOCK                   ### FU-231 ┬╖ HT0808-1 ┬╖ Bß╗Å ├⌐p RULES-FIRST shadow (QD-016) ┬╖ hß║ín 08/08
+
+==========================================================================================
+  TREO NH╞»NG THIß║╛U M├â ─Éß╗îC ┬º58  (44)
+==========================================================================================
+  FU-118   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-118 ┬╖ DPLX-118 ┬╖ Verify lß╗ïch sß╗¡ FU-118 ┬╖ hß║ín LX
+  FU-120   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-120 ┬╖ DPLX-120 ┬╖ Verify lß╗ïch sß╗¡ FU-120 ┬╖ hß║ín LX
+  FU-123   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-123 ┬╖ DPLX-123 ┬╖ Verify lß╗ïch sß╗¡ FU-123 ┬╖ hß║ín LX
+  FU-124   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-124 ┬╖ DPLX-124 ┬╖ Verify lß╗ïch sß╗¡ FU-124 ┬╖ hß║ín LX
+  FU-125   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-125 ┬╖ DPLX-125 ┬╖ Verify lß╗ïch sß╗¡ FU-125 ┬╖ hß║ín LX
+  FU-126   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-126 ┬╖ DPLX-126 ┬╖ Verify lß╗ïch sß╗¡ FU-126 ┬╖ hß║ín LX
+  FU-127   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-127 ┬╖ DPLX-127 ┬╖ Verify lß╗ïch sß╗¡ FU-127 ┬╖ hß║ín LX
+  FU-128   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-128 ┬╖ DPLX-128 ┬╖ Verify lß╗ïch sß╗¡ FU-128 ┬╖ hß║ín LX
+  FU-130   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-130 ┬╖ DPLX-130 ┬╖ Verify lß╗ïch sß╗¡ FU-130 ┬╖ hß║ín LX
+  FU-131   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-131 ┬╖ DPLX-131 ┬╖ Verify lß╗ïch sß╗¡ FU-131 ┬╖ hß║ín LX
+  FU-132   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-132 ┬╖ DPLX-132 ┬╖ Verify lß╗ïch sß╗¡ FU-132 ┬╖ hß║ín LX
+  FU-133   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-133 ┬╖ DPLX-133 ┬╖ Verify lß╗ïch sß╗¡ FU-133 ┬╖ hß║ín LX
+  FU-134   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-134 ┬╖ DPLX-134 ┬╖ Verify lß╗ïch sß╗¡ FU-134 ┬╖ hß║ín LX
+  FU-135   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-135 ┬╖ DPLX-135 ┬╖ Verify lß╗ïch sß╗¡ FU-135 ┬╖ hß║ín LX
+  FU-136   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-136 ┬╖ DPLX-136 ┬╖ Verify lß╗ïch sß╗¡ FU-136 ┬╖ hß║ín LX
+  FU-137   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-137 ┬╖ DPLX-137 ┬╖ Verify lß╗ïch sß╗¡ FU-137 ┬╖ hß║ín LX
+  FU-138   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-138 ┬╖ DPLX-138 ┬╖ Verify lß╗ïch sß╗¡ FU-138 ┬╖ hß║ín LX
+  FU-139   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-139 ┬╖ DPLX-139 ┬╖ Verify lß╗ïch sß╗¡ FU-139 ┬╖ hß║ín LX
+  FU-140   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-140 ┬╖ DPLX-140 ┬╖ Verify lß╗ïch sß╗¡ FU-140 ┬╖ hß║ín LX
+  FU-141   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-141 ┬╖ DPLX-141 ┬╖ Verify lß╗ïch sß╗¡ FU-141 ┬╖ hß║ín LX
+  FU-142   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-142 ┬╖ DPLX-142 ┬╖ Verify lß╗ïch sß╗¡ FU-142 ┬╖ hß║ín LX
+  FU-143   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-143 ┬╖ DPLX-143 ┬╖ Verify lß╗ïch sß╗¡ FU-143 ┬╖ hß║ín LX
+  FU-144   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-144 ┬╖ DPLX-144 ┬╖ Verify lß╗ïch sß╗¡ FU-144 ┬╖ hß║ín LX
+  FU-145   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-145 ┬╖ DPLX-145 ┬╖ Verify lß╗ïch sß╗¡ FU-145 ┬╖ hß║ín LX
+  FU-146   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-146 ┬╖ DPLX-146 ┬╖ Verify lß╗ïch sß╗¡ FU-146 ┬╖ hß║ín LX
+  FU-147   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-147 ┬╖ DPLX-147 ┬╖ Verify lß╗ïch sß╗¡ FU-147 ┬╖ hß║ín LX
+  FU-148   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-148 ┬╖ DPLX-148 ┬╖ Verify lß╗ïch sß╗¡ FU-148 ┬╖ hß║ín LX
+  FU-159   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-159 ┬╖ DPLX-159 ┬╖ Verify lß╗ïch sß╗¡ FU-159 ┬╖ hß║ín LX
+  FU-160   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-160 ┬╖ DPLX-160 ┬╖ Verify lß╗ïch sß╗¡ FU-160 ┬╖ hß║ín LX
+  FU-162   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-162 ┬╖ DPLX-162 ┬╖ Verify lß╗ïch sß╗¡ FU-162 ┬╖ hß║ín LX
+  FU-163   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-163 ┬╖ DPLX-163 ┬╖ Verify lß╗ïch sß╗¡ FU-163 ┬╖ hß║ín LX
+  FU-164   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-164 ┬╖ DPLX-164 ┬╖ Verify lß╗ïch sß╗¡ FU-164 ┬╖ hß║ín LX
+  FU-165   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-165 ┬╖ DOLX-165 ┬╖ D-2 cross-region linkage gated ┬╖ hß║ín LX
+  FU-166   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-166 ┬╖ HTLX-166 ┬╖ cluster_weighted giß║úm diversity penalty ┬╖ hß║ín LX
+  FU-167   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-167 ┬╖ QDLX-167 ┬╖ RR-16.4 Anti-Trap doctrine re-eval ┬╖ hß║ín LX
+  FU-168   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-168 ┬╖ DPLX-168 ┬╖ Verify lß╗ïch sß╗¡ FU-168 ┬╖ hß║ín LX
+  FU-174   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-174 ┬╖ SCLX-174 ┬╖ Combo-super BT-first replay ┬╖ hß║ín LX
+  FU-175   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-175 ┬╖ HTLX-175 ┬╖ Prompt context dossier theo miß╗ün ┬╖ hß║ín LX
+  FU-190   ΓÇö         hß║ín ΓÇö  DEPLOYED_PENDING_LIVE_VERIFY ### FU-190 ┬╖ KSLX-190 ┬╖ Kiß╗âm s├íu mß║╖t quy tß║»c khi sß╗¡a ┬╖ hß║ín LX
+  FU-206   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-206 ┬╖ XHLX-206 ┬╖ Quy tß║»c mß╗¢i khi x├⌐t cß║»t model ┬╖ hß║ín LX
+  FU-208   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-208 ┬╖ KSLX ┬╖ Cß╗òng lß╗úi thß║┐ chß╗ë ─æß║╖t tiß╗ün khi mß╗ƒ ┬╖ hß║ín LX
+  FU-209   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-209 ┬╖ XHLX-209 ┬╖ Dß╗½ng th├¬m/cß║»t model tß╗¢i khi cß╗òng mß╗ƒ ┬╖ hß║ín LX
+  FU-218   ΓÇö         hß║ín ΓÇö  WAIT_LIVE                    ### FU-218 ┬╖ TDLX-218 ┬╖ Doc FU phai lay ban gan dau file (chanΓÇª ┬╖ hß║ín LX
+  FU-221   ΓÇö         hß║ín ΓÇö  OWNER_LOCK                   ### FU-221 ┬╖ TKLX-221 ┬╖ Notion D-11 lß╗ùi thß╗¥i (chß╗ë lß╗ïch sß╗¡) ┬╖ hß║ín LX
+
+==========================================================================================
+  C├üC FU OWNER Hß╗ÄI ─É├ìCH DANH
+==========================================================================================
+  FU-236   DD0802    hß║ín 2026-08-02  CLOSED                                ### FU-236 ┬╖ DD0802 ┬╖ Gß╗Öp t├ái liß╗çu c╞í chß║┐ hß╗ìc ┬╖ hß║ín 02/08
+  FU-243   SC0805    hß║ín 2026-08-05  ?                                     ### FU-243 ┬╖ SC0805 ┬╖ Canh incomplete bundle do gate ┬╖ hß║ín 05/08 ΓÇö **NH├îN Rß╗ÿNG 3
+  FU-244   KS0810    hß║ín 2026-08-10  ?                                     ### FU-244 ┬╖ KS0810 ┬╖ Cß╗òng lß╗úi thß║┐ kh├┤ng c├│ bß║ún ghi hß║▒ng ng├áy ┬╖ hß║ín 10/08 ΓÇö **X├ü
+  FU-245   SC0804    hß║ín 2026-08-04  ?                            H├öM NAY  ### FU-245 ┬╖ SC0804 ┬╖ Hook ─æß║ºu phi├¬n im 2 ng├áy ┬╖ hß║ín 04/08 ΓÇö **NG╞»ß╗áNG ─É├â CHß║áM (V
+  FU-250   KS0806    hß║ín 2026-08-06  ?                                     ### FU-250 ┬╖ KS0806 ┬╖ So├ít nß╗æt cß╗òng c├▓n tho├ít 0 khi tr╞░ß╗út ┬╖ hß║ín 06/08 ΓÇö **C├ô Bß║░N
+  FU-252   KS1008    hß║ín 2026-08-10  DEPLOYED_PENDING_LIVE_VERIFY          ### FU-252 ┬╖ KS1008 ┬╖ Canh lane Nghiß╗çm Thu ra sß╗æ ─æß╗º 3 miß╗ün ┬╖ hß║ín 10/08
+  FU-253   SC1008    hß║ín 2026-08-10  MEASURED_BUT_NOT_FIXED                ### FU-253 ┬╖ SC1008 ┬╖ Lane de-herd chß║┐t "database is locked" khung 17:40ΓÇô17:43 ┬╖
+  FU-254   KS0810-2  hß║ín 2026-08-10  MEASURED_ROOT_CAUSE                   ### FU-254 ┬╖ KS0810-2 ┬╖ Ba bß║úng P&L chß║┐t 75 ng├áy ┬╖ hß║ín 10/08
+  FU-255   KS0810-3  hß║ín 2026-08-10  MEASURED_ROOT_CAUSE                   ### FU-255 ┬╖ KS0810-3 ┬╖ Bß║úng cß║únh b├ío v├á 4 bß║úng rß╗ùng kh├┤ng ai canh ┬╖ hß║ín 10/08
+  FU-256   DO0806    hß║ín 2026-08-06  MEASURED_BUT_NOT_FIXED                ### FU-256 ┬╖ DO0806 ┬╖ Bi├¬n giß╗¥ chß╗æt MT/MB co lß║íi ┬╖ hß║ín 06/08
+  FU-257   KS0810-4  hß║ín 2026-08-10  MEASURED_ROOT_CAUSE                   ### FU-257 ┬╖ KS0810-4 ┬╖ Cohere chß║┐t 25 ng├áy m├á health vß║½n khai ─æang chß║íy ┬╖ hß║ín 1

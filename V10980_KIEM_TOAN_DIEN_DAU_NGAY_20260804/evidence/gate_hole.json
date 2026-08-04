@@ -1,0 +1,247 @@
+{
+ "treo_statuses_hien_tai": [
+  "WAIT_LIVE",
+  "OWNER_LOCK",
+  "MEASURED_BUT_NOT_FIXED",
+  "DEPLOYED_PENDING_LIVE_VERIFY",
+  "AWAITING_OWNER_OK",
+  "BLOCKED"
+ ],
+ "phan_bo_trang_thai": {
+  "MEASURED_ROOT_CAUSE": 6,
+  "MEASURED_BUT_NOT_FIXED": 13,
+  "?": 2,
+  "DEPLOYED_PENDING_LIVE_VERIFY": 42,
+  "CLOSED_PASS": 7,
+  "DEPLOYED_PENDING_OWNER_VERIFY": 7,
+  "CLOSED_FAIL": 1,
+  "CLOSED_REPORT": 2,
+  "DONE": 6,
+  "CLOSED": 6,
+  "OWNER_LOCK": 19,
+  "MEASURED_ROOT_CAUSE_FOUND": 1,
+  "WAIT_LIVE": 6,
+  "READY_NOT_DEPLOYED": 2,
+  "AWAITING_OWNER_OK": 1,
+  "DEFER": 1,
+  "FALSE_NEGATIVE": 1,
+  "RESOLVED": 1,
+  "DEPLOYED_DOCS_ONLY": 1,
+  "DELIVERED_DOCS_ONLY": 1,
+  "DELIVERED_DOCS_RECONCILIATION": 1,
+  "DELIVERED_INVENTORY_DOCS_ONLY": 1,
+  "DELIVERED_AUDIT_DOCS_ONLY": 1,
+  "READY_TO_BUILD_UI_TEST_ONLY": 3,
+  "READY_TO_BUILD_MEASUREMENT_ONLY": 1,
+  "WAIT_CLOSEOUT": 1,
+  "[ONE": 1
+ },
+ "mo_coi": {
+  "FU-254": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "10/08",
+   "due_date": "None",
+   "title": "KS0810-2 · Ba bảng P&L chết 75 ngày · hạn 10/08"
+  },
+  "FU-255": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "10/08",
+   "due_date": "None",
+   "title": "KS0810-3 · Bảng cảnh báo và 4 bảng rỗng không ai canh · hạn 10/08"
+  },
+  "FU-257": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "10/08",
+   "due_date": "None",
+   "title": "KS0810-4 · Cohere chết 25 ngày mà health vẫn khai đang chạy · hạn 10/08"
+  },
+  "FU-245": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "04/08",
+   "due_date": "None",
+   "title": "SC0804 · Hook đầu phiên im 2 ngày · hạn 04/08 — **NGƯỠNG ĐÃ CHẠM (V10978)**"
+  },
+  "FU-243": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "05/08",
+   "due_date": "None",
+   "title": "SC0805 · Canh incomplete bundle do gate · hạn 05/08 — **NHÌN RỘNG 30 NGÀY (V10978)**"
+  },
+  "FU-244": {
+   "status": "",
+   "han_hien_thi": "10/08",
+   "due_date": "None",
+   "title": "KS0810 · Cổng lợi thế không có bản ghi hằng ngày · hạn 10/08 — **XÁC NHẬN LẠI (V10978)**"
+  },
+  "FU-250": {
+   "status": "",
+   "han_hien_thi": "06/08",
+   "due_date": "None",
+   "title": "KS0806 · Soát nốt cổng còn thoát 0 khi trượt · hạn 06/08 — **CÓ BẰNG CHỨNG QUYẾT (V10978)**"
+  },
+  "FU-185": {
+   "status": "MEASURED_ROOT_CAUSE",
+   "han_hien_thi": "03/08",
+   "due_date": "None",
+   "title": "DD0803 · Tinh gọn lane hết hạn vẫn chạy · hạn 03/08 — CẬP NHẬT V10975"
+  },
+  "FU-225": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "03/08",
+   "due_date": "None",
+   "title": "UI0803 · Xác minh UI du-doan-test + filter · hạn 03/08 — CẬP NHẬT V10975"
+  },
+  "FU-212": {
+   "status": "MEASURED_ROOT_CAUSE_FOUND",
+   "han_hien_thi": "LX",
+   "due_date": "2026-08-08",
+   "title": "TDLX-212 · MT con tin hieu (AUC 0,55) nhung khong… · hạn LX"
+  },
+  "FU-205": {
+   "status": "READY_NOT_DEPLOYED",
+   "han_hien_thi": "LX",
+   "due_date": "2026-08-15",
+   "title": "TDLX-205 · Bộ lọc chấm bạch thủ có tốt hơn chấm wi… · hạn LX"
+  },
+  "FU-201": {
+   "status": "READY_NOT_DEPLOYED",
+   "han_hien_thi": "LX",
+   "due_date": "2026-08-08",
+   "title": "TDLX-201 · Canh bộ lọc combo-super sau khi mở pool · hạn LX"
+  },
+  "FU-173": {
+   "status": "DEFER",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-173 · Bundle conversion replay 30d evidence · hạn LX"
+  },
+  "FU-171": {
+   "status": "FALSE_NEGATIVE",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-171 · 4 file local↔VPS md5 drift · hạn LX"
+  },
+  "FU-161": {
+   "status": "DEPLOYED_DOCS_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-161 · 3-càng status: prediction NOT implement… · hạn LX"
+  },
+  "FU-158": {
+   "status": "DELIVERED_DOCS_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-158 · ? V92 absolute SSOT reconciliation wrap… · hạn LX"
+  },
+  "FU-157": {
+   "status": "DELIVERED_DOCS_RECONCILIATION",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-157 · V91 TOTAL RECONCILIATION + STALE-FU CLO… · hạn LX"
+  },
+  "FU-156": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-156 · V90 final-cleanup: 5 more tabs (Backend… · hạn LX"
+  },
+  "FU-155": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-155 · V89 5-extension pack: Migrations + Live… · hạn LX"
+  },
+  "FU-154": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-154 · V88 TOTAL_ENCYCLOPEDIA + 6 new tabs in… · hạn LX"
+  },
+  "FU-153": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-153 · V87 Master Index in /monitoring (12-tab… · hạn LX"
+  },
+  "FU-152": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-152 · V86 TOTAL FORENSIC REGISTRY + /v82-moni… · hạn LX"
+  },
+  "FU-151": {
+   "status": "DELIVERED_INVENTORY_DOCS_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-151 · V85 DEEP MASTER CONTROL: 8 super-famili… · hạn LX"
+  },
+  "FU-150": {
+   "status": "DELIVERED_AUDIT_DOCS_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-150 · V84 Master Control Board + 60D method m… · hạn LX"
+  },
+  "FU-149": {
+   "status": "DEPLOYED_PENDING_OWNER_VERIFY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-149 · V83 admin-only V82 monitor UI panel (re… · hạn LX"
+  },
+  "FU-129": {
+   "status": "READY_TO_BUILD_UI_TEST_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-129 · V55 model strong/weak tensor advanced +… · hạn LX"
+  },
+  "FU-122": {
+   "status": "READY_TO_BUILD_UI_TEST_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-122 · V54 region/weekday/station strength chi… · hạn LX"
+  },
+  "FU-121": {
+   "status": "READY_TO_BUILD_UI_TEST_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-121 · V54 MT correct-but-dropped UI panel · hạn LX"
+  },
+  "FU-119": {
+   "status": "READY_TO_BUILD_MEASUREMENT_ONLY",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-119 · V54 per-model latency instrumentation · hạn LX"
+  },
+  "FU-117": {
+   "status": "WAIT_CLOSEOUT",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-117 · V54 natural live closeout proof · hạn LX"
+  },
+  "FU-001": {
+   "status": "[One",
+   "han_hien_thi": "LX",
+   "due_date": "None",
+   "title": "TDLX-001 · [Title] · hạn LX"
+  }
+ },
+ "mat_han_n": 24,
+ "qua_han_that_bi_giau": [
+  [
+   "FU-185",
+   "03/08",
+   "MEASURED_ROOT_CAUSE"
+  ],
+  [
+   "FU-225",
+   "03/08",
+   "DEPLOYED_PENDING_OWNER_VERIFY"
+  ]
+ ],
+ "den_han_hom_nay_bi_giau": [
+  [
+   "FU-245",
+   "04/08",
+   "MEASURED_ROOT_CAUSE"
+  ]
+ ]
+}

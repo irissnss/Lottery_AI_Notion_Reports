@@ -1,0 +1,255 @@
+{
+ "run_checks_n": 18,
+ "run_checks": [
+  {
+   "check_id": "C1_money_board_output_due",
+   "status": "OK",
+   "title": "_v10759_money_board.OUTPUT_DUE khớp mốc FINAL",
+   "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C2_runtime_audit_deadline",
+   "status": "OK",
+   "title": "_v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL",
+   "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C3_lane_output_freeze",
+   "status": "OK",
+   "title": "_v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL",
+   "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C4_lock_before_final",
+   "status": "OK",
+   "title": "khoá /choi chạy trước mốc FINAL",
+   "expected": "[\"15:43\", \"16:56\", \"17:56\"]",
+   "actual": "[\"15:43\", \"16:56\", \"17:56\"]"
+  },
+  {
+   "check_id": "C5_nghiemthu_lane_time",
+   "status": "OK",
+   "title": "giờ lane Nghiệm Thu khai báo khớp crontab",
+   "expected": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}",
+   "actual": "{\"MN\": \"06:05\", \"MT\": \"16:44\", \"MB\": \"17:38\"}"
+  },
+  {
+   "check_id": "C17_nghiemthu_co_output",
+   "status": "OK",
+   "title": "lane Nghiệm Thu ra số ở MỌI miền đã qua mốc FINAL",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C18_bien_lane_du_rong",
+   "status": "OK",
+   "title": "lượt lane cuối cách giờ official chốt ≥ 300s (7 ngày)",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C6_lane_slot",
+   "status": "OK",
+   "title": "LANE_SLOT khớp crontab lane v10692",
+   "expected": "\"lane nghỉ từ 01/08 (V10919) — không còn cron\"",
+   "actual": "\"không còn dòng cron nào\""
+  },
+  {
+   "check_id": "C7_settings_vs_seed",
+   "status": "OK",
+   "title": "cài đặt đang chạy khớp hạt giống database.py",
+   "expected": "{}",
+   "actual": "{}"
+  },
+  {
+   "check_id": "C12_bien_2_phut",
+   "status": "OK",
+   "title": "khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền",
+   "expected": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}",
+   "actual": "{\"MN\": 2, \"MT\": 2, \"MB\": 2}"
+  },
+  {
+   "check_id": "C13_lane_bien_bang_khoa",
+   "status": "OK",
+   "title": "biên lane bằng đúng giờ khoá /choi",
+   "expected": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}",
+   "actual": "{\"MN\": \"15:43:00\", \"MT\": \"16:56:00\", \"MB\": \"17:56:00\"}"
+  },
+  {
+   "check_id": "C10_freeze_equals_final",
+   "status": "OK",
+   "title": "mốc bất động (FREEZE_MARKS) khớp mốc FINAL",
+   "expected": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}",
+   "actual": "{\"MN\": \"15:45\", \"MT\": \"16:58\", \"MB\": \"17:58\"}"
+  },
+  {
+   "check_id": "C11_tchot_before_final",
+   "status": "OK",
+   "title": "job T-chốt regen bundle chạy TRƯỚC mốc FINAL",
+   "expected": "{}",
+   "actual": "{}"
+  },
+  {
+   "check_id": "C8_no_new_utc_table",
+   "status": "OK",
+   "title": "không có bảng mới nào lưu UTC ngoài đăng ký",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C9_vn_views_present",
+   "status": "OK",
+   "title": "view giờ VN của mọi cột UTC còn nguyên",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C14_tz_khong_chong_cheo",
+   "status": "OK",
+   "title": "một cột chỉ được khai MỘT múi giờ trong đăng ký",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C15_cot_khai_VN_dung_khuon",
+   "status": "OK",
+   "title": "cột khai giờ VN phải có dấu múi giờ trong dữ liệu",
+   "expected": "[]",
+   "actual": "[]"
+  },
+  {
+   "check_id": "C16_dang_ky_du",
+   "status": "OK",
+   "title": "đăng ký múi giờ có đủ dòng và không rỗng",
+   "expected": "true",
+   "actual": "true"
+  }
+ ],
+ "run_checks_ok": 18,
+ "run_checks_lech": 0,
+ "run_checks_loi": 0,
+ "guard_bien_min": 300,
+ "src_has_C17": true,
+ "src_has_C18": true,
+ "src_mtime": "2026-08-03 19:21:57.844696452 +0700",
+ "src_sha": "f779d72ceae3649e1edbf870bbf775a53830bc103160394c980776d0c6b97136",
+ "lane_mtime": "2026-08-03 19:23:58.025413026 +0700",
+ "guard_log_tail": "  OK   C4_lock_before_final           khoá /choi chạy trước mốc FINAL\n  OK   C5_nghiemthu_lane_time         giờ lane Nghiệm Thu khai báo khớp crontab\n  OK   C6_lane_slot                   LANE_SLOT khớp crontab lane v10692\n  OK   C7_settings_vs_seed            cài đặt đang chạy khớp hạt giống database.py\n  OK   C12_bien_2_phut                khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền\n  OK   C13_lane_bien_bang_khoa        biên lane bằng đúng giờ khoá /choi\n  OK   C10_freeze_equals_final        mốc bất động (FREEZE_MARKS) khớp mốc FINAL\n  OK   C11_tchot_before_final         job T-chốt regen bundle chạy TRƯỚC mốc FINAL\n  OK   C8_no_new_utc_table            không có bảng mới nào lưu UTC ngoài đăng ký\n  OK   C9_vn_views_present            view giờ VN của mọi cột UTC còn nguyên\n  OK   C14_tz_khong_chong_cheo        một cột chỉ được khai MỘT múi giờ trong đăng ký\n  OK   C15_cot_khai_VN_dung_khuon     cột khai giờ VN phải có dấu múi giờ trong dữ liệu\n  OK   C16_dang_ky_du                 đăng ký múi giờ có đủ dòng và không rỗng\nV10900_CONSISTENCY 2026-08-03: 16 phép kiểm · lệch 0\n  OK   C1_money_board_output_due      _v10759_money_board.OUTPUT_DUE khớp mốc FINAL\n  OK   C2_runtime_audit_deadline      _v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL\n  OK   C3_lane_output_freeze          _v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL\n  OK   C4_lock_before_final           khoá /choi chạy trước mốc FINAL\n  OK   C5_nghiemthu_lane_time         giờ lane Nghiệm Thu khai báo khớp crontab\n  OK   C6_lane_slot                   LANE_SLOT khớp crontab lane v10692\n  OK   C7_settings_vs_seed            cài đặt đang chạy khớp hạt giống database.py\n  OK   C12_bien_2_phut                khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền\n  OK   C13_lane_bien_bang_khoa        biên lane bằng đúng giờ khoá /choi\n  OK   C10_freeze_equals_final        mốc bất động (FREEZE_MARKS) khớp mốc FINAL\n  OK   C11_tchot_before_final         job T-chốt regen bundle chạy TRƯỚC mốc FINAL\n  OK   C8_no_new_utc_table            không có bảng mới nào lưu UTC ngoài đăng ký\n  OK   C9_vn_views_present            view giờ VN của mọi cột UTC còn nguyên\n  OK   C14_tz_khong_chong_cheo        một cột chỉ được khai MỘT múi giờ trong đăng ký\n  OK   C15_cot_khai_VN_dung_khuon     cột khai giờ VN phải có dấu múi giờ trong dữ liệu\n  OK   C16_dang_ky_du                 đăng ký múi giờ có đủ dòng và không rỗng\n",
+ "nt_log_tail": "    lá bài           NEW    official     chênh   chỉ NEW  chỉ off         p\n    bach_thu       12/48        8/48    +8.3pp         7        3    0.3438\n    lo2             4/48        1/48    +6.2pp         4        1    0.3750\n    lo3             0/48        0/48    +0.0pp         0        0         —\n    xien2           4/48        4/48    +0.0pp         2        2    1.0000\n    xien3           1/33        1/33    +0.0pp         0        0         —\n\n=== FORWARD · OFFICIAL NEW so với OFFICIAL ===\n\n  ALL  (12 miền-ngày, trùng bạch thủ 75.0%)\n    lá bài           NEW    official     chênh   chỉ NEW  chỉ off         p\n    bach_thu        3/12        6/12   -25.0pp         0        3    0.2500\n    lo2             1/12        2/12    -8.3pp         0        1    1.0000\n    lo3             0/12        0/12    +0.0pp         0        0         —\n    xien2           0/12        1/12    -8.3pp         0        1    1.0000\n    xien3            0/7         0/7    +0.0pp         0        0         —\n\n  MN  (5 miền-ngày, trùng bạch thủ 60.0%)\n    lá bài           NEW    official     chênh   chỉ NEW  chỉ off         p\n    bach_thu         1/5         3/5   -40.0pp         0        2    0.5000\n    lo2              1/5         1/5    +0.0pp         0        0         —\n    lo3              0/5         0/5    +0.0pp         0        0         —\n    xien2            0/5         0/5    +0.0pp         0        0         —\n    xien3            0/2         0/2    +0.0pp         0        0         —\n\n  MT  (4 miền-ngày, trùng bạch thủ 100.0%)\n    lá bài           NEW    official     chênh   chỉ NEW  chỉ off         p\n    bach_thu         1/4         1/4    +0.0pp         0        0         —\n    lo2              0/4         0/4    +0.0pp         0        0         —\n    lo3              0/4         0/4    +0.0pp         0        0         —\n    xien2            0/4         0/4    +0.0pp         0        0         —\n    xien3            0/3         0/3    +0.0pp         0        0         —\n\n  MB  (3 miền-ngày, trùng bạch thủ 66.7%)\n    lá bài           NEW    official     chênh   chỉ NEW  chỉ off         p\n    bach_thu         1/3         2/3   -33.3pp         0        1    1.0000\n    lo2              0/3         1/3   -33.3pp         0        1    1.0000\n    lo3              0/3         0/3    +0.0pp         0        0         —\n    xien2            0/3         1/3   -33.3pp         0        1    1.0000\n    xien3            0/2         0/2    +0.0pp         0        0         —\n",
+ "src_lohan_lane": true,
+ "grep_lohan": "/root/Lottery_AI_Test/web/backend/_v10879_nghiemthu_lane.py\n/root/Lottery_AI_Test/web/frontend/nghiem-thu.html\n",
+ "money_flags": [
+  {
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0,
+   "n": 111
+  }
+ ],
+ "money_stake_vals": [
+  {
+   "stake": "Nửa (25 điểm)",
+   "n": 59
+  },
+  {
+   "stake": "Full (50 điểm/số/đài)",
+   "n": 33
+  },
+  {
+   "stake": "Nghỉ hôm nay",
+   "n": 15
+  },
+  {
+   "stake": "Nghỉ Thứ 7 (lock tuần)",
+   "n": 4
+  }
+ ],
+ "money_today": [
+  {
+   "date": "2026-08-03",
+   "region": "MB",
+   "method": "MB_OFFICIAL_BASELINE_CONTROL",
+   "verdict": "CHƠI",
+   "stake": "Full (50 điểm/số/đài)",
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MT",
+   "method": "MT_ADAPTIVE_EXPLOIT_V1",
+   "verdict": "NGHỈ",
+   "stake": "Nghỉ hôm nay",
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0
+  },
+  {
+   "date": "2026-08-03",
+   "region": "MN",
+   "method": "MN_BT1_OFFICIAL_V1",
+   "verdict": "CÂN NHẮC",
+   "stake": "Nửa (25 điểm)",
+   "diagnostic_only": 1,
+   "shadow_only": 1,
+   "output_eligible": 0,
+   "owner_approved": 0
+  }
+ ],
+ "money_tables": [
+  "pnl_daily_bets",
+  "money_board_log",
+  "money_board_lock",
+  "money_board_daily_lock"
+ ],
+ "cnt_pnl_daily_bets": 28,
+ "cnt_money_board_log": 111,
+ "cnt_money_board_lock": 18,
+ "cnt_money_board_daily_lock": 84,
+ "sched_cols": [
+  "id",
+  "log_time",
+  "log_level",
+  "message",
+  "job_name",
+  "region",
+  "date_str"
+ ],
+ "sched_statcol": null,
+ "ep_/api/health": "200",
+ "ep_/api/nghiem-thu": "401",
+ "ep_/api/v10879/nghiem-thu": "404",
+ "ep_/nghiem-thu": "401",
+ "ep_/api/monitoring/nghiem-thu": "404",
+ "ep_nt_body": "{\"detail\":\"Not authenticated\"}",
+ "routes_nt": "12117:        # V10964: cùng kiểu nghiem-thu — nói rõ vì sao trống + giờ dự kiến\n15472:@app.get(\"/nghiem-thu\", response_class=FileResponse)\n15473:async def serve_nghiem_thu_page(request: Request):\n15476:    page = STATIC_DIR / \"nghiem-thu.html\"\n15485:@app.get(\"/api/nghiem-thu\")\n15486:async def api_nghiem_thu(request: Request):\n15487:    \"\"\"Dữ liệu cho trang `/nghiem-thu` — cùng nguồn với endpoint admin.\"\"\"\n",
+ "nt_view_fn": "compute_view",
+ "nt_view": "ERR compute_view() missing 1 required positional argument: 'con' | Traceback (most recent call last):\n  File \"/tmp/_v10980_remote_probe2.py\", line 115, in <module>\n    R[\"nt_view\"] = fn() if fn else \"KHONG_CO_HAM_VIEW\"\nTypeError: compute_view() missing 1 required positional argument: 'con'\n",
+ "j500": "Aug 04 05:22:58 lotteryai-aulb python3[738032]: 2026-08-04 05:22:58,500 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions \"HTTP/1.1 200 OK\"\n",
+ "cron_nt_times": {
+  "MN": [
+   "06:05",
+   "06:15"
+  ],
+  "MT": [
+   "16:44",
+   "16:48",
+   "16:52",
+   "16:54"
+  ],
+  "MB": [
+   "17:38",
+   "17:42",
+   "17:46",
+   "17:50",
+   "17:54"
+  ]
+ }
+}

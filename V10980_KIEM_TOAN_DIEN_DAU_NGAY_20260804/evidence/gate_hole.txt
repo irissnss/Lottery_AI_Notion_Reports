@@ -1,0 +1,105 @@
+﻿============================================================================================
+  Lß╗û 1 ΓÇö TRß║áNG TH├üI KH├öNG Nß║░M TRONG TREO_STATUSES
+============================================================================================
+  TREO_STATUSES hiß╗çn khai: ('WAIT_LIVE', 'OWNER_LOCK', 'MEASURED_BUT_NOT_FIXED', 'DEPLOYED_PENDING_LIVE_VERIFY', 'AWAITING_OWNER_OK', 'BLOCKED')
+
+  ph├ón bß╗æ trß║íng th├íi cß╗ºa Bß║óN Mß╗ÜI NHß║ñT tß╗½ng m├ú:
+    DEPLOYED_PENDING_LIVE_VERIFY       42  ─æ╞░ß╗úc ─æß║┐m
+    OWNER_LOCK                         19  ─æ╞░ß╗úc ─æß║┐m
+    MEASURED_BUT_NOT_FIXED             13  ─æ╞░ß╗úc ─æß║┐m
+    CLOSED_PASS                         7  ─æ├ú ─æ├│ng
+    DEPLOYED_PENDING_OWNER_VERIFY       7  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    MEASURED_ROOT_CAUSE                 6  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    DONE                                6  ─æ├ú ─æ├│ng
+    CLOSED                              6  ─æ├ú ─æ├│ng
+    WAIT_LIVE                           6  ─æ╞░ß╗úc ─æß║┐m
+    READY_TO_BUILD_UI_TEST_ONLY         3  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    ?                                   2  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    CLOSED_REPORT                       2  ─æ├ú ─æ├│ng
+    READY_NOT_DEPLOYED                  2  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    CLOSED_FAIL                         1  ─æ├ú ─æ├│ng
+    MEASURED_ROOT_CAUSE_FOUND           1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    AWAITING_OWNER_OK                   1  ─æ╞░ß╗úc ─æß║┐m
+    DEFER                               1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    FALSE_NEGATIVE                      1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    RESOLVED                            1  ─æ├ú ─æ├│ng
+    DEPLOYED_DOCS_ONLY                  1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    DELIVERED_DOCS_ONLY                 1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    DELIVERED_DOCS_RECONCILIATION       1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    DELIVERED_INVENTORY_DOCS_ONLY       1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    DELIVERED_AUDIT_DOCS_ONLY           1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    READY_TO_BUILD_MEASUREMENT_ONLY     1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    WAIT_CLOSEOUT                       1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+    [ONE                                1  >>> KH├öNG ─Éß║╛M, C┼¿NG KH├öNG ─É├ôNG <<<
+
+  >>> Mß╗ñC Mß╗Æ C├öI (kh├┤ng ─æß║┐m treo, c┼⌐ng ch╞░a ─æ├│ng): 31
+    FU-001   [One                     hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-001 ┬╖ [Title] ┬╖ hß║ín LX
+    FU-117   WAIT_CLOSEOUT            hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-117 ┬╖ V54 natural live closeout proof ┬╖ hß║ín LX
+    FU-119   READY_TO_BUILD_MEASUREMENT_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-119 ┬╖ V54 per-model latency instrumentation ┬╖ hß║ín LX
+    FU-121   READY_TO_BUILD_UI_TEST_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-121 ┬╖ V54 MT correct-but-dropped UI panel ┬╖ hß║ín LX
+    FU-122   READY_TO_BUILD_UI_TEST_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-122 ┬╖ V54 region/weekday/station strength chiΓÇª ┬╖ hß║ín 
+    FU-129   READY_TO_BUILD_UI_TEST_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-129 ┬╖ V55 model strong/weak tensor advanced +ΓÇª ┬╖ hß║ín 
+    FU-149   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-149 ┬╖ V83 admin-only V82 monitor UI panel (reΓÇª ┬╖ hß║ín 
+    FU-150   DELIVERED_AUDIT_DOCS_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-150 ┬╖ V84 Master Control Board + 60D method mΓÇª ┬╖ hß║ín 
+    FU-151   DELIVERED_INVENTORY_DOCS_ONLY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-151 ┬╖ V85 DEEP MASTER CONTROL: 8 super-familiΓÇª ┬╖ hß║ín 
+    FU-152   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-152 ┬╖ V86 TOTAL FORENSIC REGISTRY + /v82-moniΓÇª ┬╖ hß║ín 
+    FU-153   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-153 ┬╖ V87 Master Index in /monitoring (12-tabΓÇª ┬╖ hß║ín 
+    FU-154   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-154 ┬╖ V88 TOTAL_ENCYCLOPEDIA + 6 new tabs inΓÇª ┬╖ hß║ín L
+    FU-155   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-155 ┬╖ V89 5-extension pack: Migrations + LiveΓÇª ┬╖ hß║ín 
+    FU-156   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-156 ┬╖ V90 final-cleanup: 5 more tabs (BackendΓÇª ┬╖ hß║ín 
+    FU-157   DELIVERED_DOCS_RECONCILIATION hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-157 ┬╖ V91 TOTAL RECONCILIATION + STALE-FU CLOΓÇª ┬╖ hß║ín 
+    FU-158   DELIVERED_DOCS_ONLY      hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-158 ┬╖ ? V92 absolute SSOT reconciliation wrapΓÇª ┬╖ hß║ín 
+    FU-161   DEPLOYED_DOCS_ONLY       hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-161 ┬╖ 3-c├áng status: prediction NOT implementΓÇª ┬╖ hß║ín 
+    FU-171   FALSE_NEGATIVE           hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-171 ┬╖ 4 file localΓåöVPS md5 drift ┬╖ hß║ín LX
+    FU-173   DEFER                    hß║ín hiß╗ân thß╗ï=LX     due_date=None  TDLX-173 ┬╖ Bundle conversion replay 30d evidence ┬╖ hß║ín LX
+    FU-185   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=03/08  due_date=None  DD0803 ┬╖ Tinh gß╗ìn lane hß║┐t hß║ín vß║½n chß║íy ┬╖ hß║ín 03/08 ΓÇö Cß║¼P 
+    FU-201   READY_NOT_DEPLOYED       hß║ín hiß╗ân thß╗ï=LX     due_date=2026-08-08  TDLX-201 ┬╖ Canh bß╗Ö lß╗ìc combo-super sau khi mß╗ƒ pool ┬╖ hß║ín L
+    FU-205   READY_NOT_DEPLOYED       hß║ín hiß╗ân thß╗ï=LX     due_date=2026-08-15  TDLX-205 ┬╖ Bß╗Ö lß╗ìc chß║Ñm bß║ích thß╗º c├│ tß╗æt h╞ín chß║Ñm wiΓÇª ┬╖ hß║ín 
+    FU-212   MEASURED_ROOT_CAUSE_FOUND hß║ín hiß╗ân thß╗ï=LX     due_date=2026-08-08  TDLX-212 ┬╖ MT con tin hieu (AUC 0,55) nhung khongΓÇª ┬╖ hß║ín L
+    FU-225   DEPLOYED_PENDING_OWNER_VERIFY hß║ín hiß╗ân thß╗ï=03/08  due_date=None  UI0803 ┬╖ X├íc minh UI du-doan-test + filter ┬╖ hß║ín 03/08 ΓÇö C
+    FU-243   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=05/08  due_date=None  SC0805 ┬╖ Canh incomplete bundle do gate ┬╖ hß║ín 05/08 ΓÇö **NH
+    FU-244                            hß║ín hiß╗ân thß╗ï=10/08  due_date=None  KS0810 ┬╖ Cß╗òng lß╗úi thß║┐ kh├┤ng c├│ bß║ún ghi hß║▒ng ng├áy ┬╖ hß║ín 10/
+    FU-245   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=04/08  due_date=None  SC0804 ┬╖ Hook ─æß║ºu phi├¬n im 2 ng├áy ┬╖ hß║ín 04/08 ΓÇö **NG╞»ß╗áNG ─É
+    FU-250                            hß║ín hiß╗ân thß╗ï=06/08  due_date=None  KS0806 ┬╖ So├ít nß╗æt cß╗òng c├▓n tho├ít 0 khi tr╞░ß╗út ┬╖ hß║ín 06/08 ΓÇö
+    FU-254   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=10/08  due_date=None  KS0810-2 ┬╖ Ba bß║úng P&L chß║┐t 75 ng├áy ┬╖ hß║ín 10/08
+    FU-255   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=10/08  due_date=None  KS0810-3 ┬╖ Bß║úng cß║únh b├ío v├á 4 bß║úng rß╗ùng kh├┤ng ai canh ┬╖ hß║í
+    FU-257   MEASURED_ROOT_CAUSE      hß║ín hiß╗ân thß╗ï=10/08  due_date=None  KS0810-4 ┬╖ Cohere chß║┐t 25 ng├áy m├á health vß║½n khai ─æang chß║í
+
+============================================================================================
+  Lß╗û 2 ΓÇö C├ô 'hß║ín DD/MM' ß╗₧ TI├èU ─Éß╗Ç NH╞»NG due_date = None
+============================================================================================
+  tß╗òng sß╗æ mß╗Ñc mß║Ñt hß║ín: 24
+    FU-184   hß║ín 02/08  CLOSED_PASS                
+    FU-189   hß║ín 02/08  CLOSED_FAIL                
+    FU-241   hß║ín 02/08  CLOSED_REPORT              
+    FU-240   hß║ín 02/08  CLOSED_REPORT              
+    FU-239   hß║ín 02/08  DONE                       
+    FU-238   hß║ín 02/08  CLOSED                     
+    FU-236   hß║ín 02/08  CLOSED                     
+    FU-185   hß║ín 03/08  MEASURED_ROOT_CAUSE        >>> QU├ü Hß║áN THß║¼T
+    FU-225   hß║ín 03/08  DEPLOYED_PENDING_OWNER_VERIFY >>> QU├ü Hß║áN THß║¼T
+    FU-245   hß║ín 04/08  MEASURED_ROOT_CAUSE        >>> ─Éß║╛N Hß║áN H├öM NAY
+    FU-243   hß║ín 05/08  MEASURED_ROOT_CAUSE        
+    FU-242   hß║ín 05/08  CLOSED_PASS                
+    FU-256   hß║ín 06/08  MEASURED_BUT_NOT_FIXED     
+    FU-250   hß║ín 06/08  ?                          
+    FU-231   hß║ín 08/08  OWNER_LOCK                 
+    FU-226   hß║ín 08/08  OWNER_LOCK                 
+    FU-224   hß║ín 09/08  OWNER_LOCK                 
+    FU-254   hß║ín 10/08  MEASURED_ROOT_CAUSE        
+    FU-255   hß║ín 10/08  MEASURED_ROOT_CAUSE        
+    FU-257   hß║ín 10/08  MEASURED_ROOT_CAUSE        
+    FU-244   hß║ín 10/08  ?                          
+    FU-223   hß║ín 10/08  OWNER_LOCK                 
+    FU-237   hß║ín 15/08  DEPLOYED_PENDING_LIVE_VERIFY 
+    FU-222   hß║ín 22/08  MEASURED_BUT_NOT_FIXED     
+
+============================================================================================
+  Hß║¼U QUß║ó Cß╗ÿNG Dß╗ÆN
+============================================================================================
+  cß╗òng ─æang b├ío   : treo 81 ┬╖ qu├í hß║ín 0 ┬╖ ─æß║┐n hß║ín h├┤m nay 0
+  thß╗▒c tß║┐ bß╗Å s├│t  : 31 mß╗Ñc mß╗ô c├┤i ┬╖ 24 mß╗Ñc mß║Ñt hß║ín
+  QU├ü Hß║áN THß║¼T bß╗ï giß║Ñu    : 2 ΓåÆ [('FU-185', '03/08', 'MEASURED_ROOT_CAUSE'), ('FU-225', '03/08', 'DEPLOYED_PENDING_OWNER_VERIFY')]
+  ─Éß║╛N Hß║áN H├öM NAY bß╗ï giß║Ñu : 1 ΓåÆ [('FU-245', '04/08', 'MEASURED_ROOT_CAUSE')]
+
+─æ├ú ghi artifacts/v10980/gate_hole.json

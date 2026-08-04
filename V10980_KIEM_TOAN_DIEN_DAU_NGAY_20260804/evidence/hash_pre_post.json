@@ -1,0 +1,44 @@
+{
+ "truoc": {
+  "predictions": {
+   "rows": 11673,
+   "sha256": "2c5fca4500a2f939f72501a8a3d95ca3ea03b9b11662773d53d49fd085dc10f6"
+  },
+  "final_bundles": {
+   "rows": 472,
+   "sha256": "d95dc3e6a83df920c13c9ab3d4fbfcd7596c75d0235d82b88db5d4fe778b7305"
+  },
+  "lottery_results": {
+   "rows": 15207,
+   "sha256": "924fd080a0d11f650cf4e5d21dbed415eaf4c5baf2ae4841aa66f1817d5c0163"
+  },
+  "model_daily_eval": {
+   "rows": 11496,
+   "sha256": "f6e52dc71c2c091efd9c77f516184e4ea51559b4234051a3abee65d4a9c1b996"
+  }
+ },
+ "sau": {
+  "predictions": {
+   "rows": 11673,
+   "sha256": "2c5fca4500a2f939f72501a8a3d95ca3ea03b9b11662773d53d49fd085dc10f6"
+  },
+  "final_bundles": {
+   "rows": 472,
+   "sha256": "d95dc3e6a83df920c13c9ab3d4fbfcd7596c75d0235d82b88db5d4fe778b7305"
+  },
+  "lottery_results": {
+   "rows": 15207,
+   "sha256": "924fd080a0d11f650cf4e5d21dbed415eaf4c5baf2ae4841aa66f1817d5c0163"
+  },
+  "model_daily_eval": {
+   "rows": 11496,
+   "sha256": "f6e52dc71c2c091efd9c77f516184e4ea51559b4234051a3abee65d4a9c1b996"
+  },
+  "_service": {
+   "active": "active",
+   "pid": "738032",
+   "nrestarts": "0",
+   "health": "200"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "tong_treo": 95,
+ "qua_han": 1,
+ "den_han_hom_nay": 1,
+ "han_0808": 14,
+ "thieu_ma_doc": 0,
+ "danh_sach_0808": [
+  {
+   "id": "FU-231",
+   "ma_doc": "HT0808-1",
+   "trang_thai": "OWNER_LOCK",
+   "ten": null
+  },
+  {
+   "id": "FU-226",
+   "ma_doc": "HT0808-2",
+   "trang_thai": "OWNER_LOCK",
+   "ten": null
+  },
+  {
+   "id": "FU-216",
+   "ma_doc": "XH0808-1",
+   "trang_thai": "OWNER_LOCK",
+   "ten": null
+  },
+  {
+   "id": "FU-217",
+   "ma_doc": "SC0808-1",
+   "trang_thai": "MEASURED_BUT_NOT_FIXED",
+   "ten": null
+  },
+  {
+   "id": "FU-215",
+   "ma_doc": "DB0808",
+   "trang_thai": "OWNER_LOCK",
+   "ten": null
+  },
+  {
+   "id": "FU-212",
+   "ma_doc": "TDLX-212",
+   "trang_thai": "MEASURED_ROOT_CAUSE_FOUND",
+   "ten": null
+  },
+  {
+   "id": "FU-210",
+   "ma_doc": "DO0808-1",
+   "trang_thai": "MEASURED_BUT_NOT_FIXED",
+   "ten": null
+  },
+  {
+   "id": "FU-207",
+   "ma_doc": "DP0808",
+   "trang_thai": "MEASURED_BUT_NOT_FIXED",
+   "ten": null
+  },
+  {
+   "id": "FU-203",
+   "ma_doc": "DO0808-2",
+   "trang_thai": "WAIT_LIVE",
+   "ten": null
+  },
+  {
+   "id": "FU-191",
+   "ma_doc": "XH0808-2",
+   "trang_thai": "MEASURED_BUT_NOT_FIXED",
+   "ten": null
+  },
+  {
+   "id": "FU-192",
+   "ma_doc": "XH0808-3",
+   "trang_thai": "AWAITING_OWNER_OK",
+   "ten": null
+  },
+  {
+   "id": "FU-193",
+   "ma_doc": "XH0808-4",
+   "trang_thai": "MEASURED_BUT_NOT_FIXED",
+   "ten": null
+  },
+  {
+   "id": "FU-187",
+   "ma_doc": "KS0808",
+   "trang_thai": "DEPLOYED_PENDING_LIVE_VERIFY",
+   "ten": null
+  },
+  {
+   "id": "FU-186",
+   "ma_doc": "KS0808-2",
+   "trang_thai": "WAIT_LIVE",
+   "ten": null
+  }
+ ]
+}

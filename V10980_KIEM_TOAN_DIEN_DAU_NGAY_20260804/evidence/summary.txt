@@ -1,0 +1,394 @@
+﻿
+============================================================================================
+  0. ─Éß╗ÆNG Hß╗Æ
+============================================================================================
+  {'db_localtime': '2026-08-04 09:52:44', 'db_utc': '2026-08-04 02:52:44', 'shell_vn': '2026-08-04 09:52:44'}
+  h├┤m nay VN: 2026-08-04 ┬╖ h├┤m qua: 2026-08-03
+
+============================================================================================
+  1. Dß╗èCH Vß╗ñ
+============================================================================================
+  active         active
+  mainpid        738032
+  since          Mon 2026-08-03 19:23:58 +07
+  nrestarts      0
+  health_code    200
+  health_body    {"status":"running","app":"Lottery AI Prediction","version":"V20.3.36","time":"2026-08-04T09:52:44.219370+07:00","timezone":"Asia/Ho_Chi_Minh (UTC+7)","expected_model_count":15,"expected_output_model_
+  uptime_proc    14:28:45
+  sys_uptime     up 15 weeks, 3 days, 8 hours, 45 minutes
+
+============================================================================================
+  2. T├ÇI NGUY├èN
+============================================================================================
+  ─æ─⌐a      : /dev/vda1        39G   27G   13G  69% / ┬╖ d├╣ng 69%
+  DB bytes : 652,627,968
+  RAM      : Mem:            3911         971         748          73        2191        2575
+
+============================================================================================
+  3. Bß╗ÉN Bß║óNG KHO├ü
+============================================================================================
+  predictions        rows=11673  sha=2c5fca4500a2f939
+  final_bundles      rows=472  sha=d95dc3e6a83df920
+  lottery_results    rows=15207  sha=924fd080a0d11f65
+  model_daily_eval   rows=11496  sha=f6e52dc71c2c091e
+
+============================================================================================
+  4. Bß╗ÿ Tß╗░ KIß╗éM
+============================================================================================
+  l╞░ß╗út gß║ºn nhß║Ñt: 2026-08-03 ┬╖ 16 ph├⌐p ┬╖ OK=16 LECH=0 LOI=0
+    C10_freeze_equals_final                OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C11_tchot_before_final                 OK     {}
+    C12_bien_2_phut                        OK     {"MN": 2, "MT": 2, "MB": 2}
+    C13_lane_bien_bang_khoa                OK     {"MN": "15:43:00", "MT": "16:56:00", "MB": "17:56:00"}
+    C14_tz_khong_chong_cheo                OK     []
+    C15_cot_khai_VN_dung_khuon             OK     []
+    C16_dang_ky_du                         OK     true
+    C1_money_board_output_due              OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C2_runtime_audit_deadline              OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C3_lane_output_freeze                  OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C4_lock_before_final                   OK     ["15:43", "16:56", "17:56"]
+    C5_nghiemthu_lane_time                 OK     {"MN": "06:05", "MT": "16:44", "MB": "17:38"}
+    C6_lane_slot                           OK     "kh├┤ng c├▓n d├▓ng cron n├áo"
+    C7_settings_vs_seed                    OK     {}
+    C8_no_new_utc_table                    OK     []
+    C9_vn_views_present                    OK     []
+
+  Lß╗èCH Sß╗¼:
+    2026-08-03  OK 16/16
+    2026-08-02  OK 16/16
+    2026-08-01  OK 16/16
+    2026-07-31  OK 16/16
+
+  C17 / C18 (mß╗¢i th├¬m 03/08):
+
+============================================================================================
+  5. JOURNAL
+============================================================================================
+  journal_lines_today        349
+  journal_traceback          0
+  journal_error              0
+  journal_since_deploy_tb    0
+  journal_since_deploy_err   0
+  jhit_429                   0
+  jhit_500                   1
+  jhit_503                   0
+  jhit_CRITICAL              0
+  jhit_Overloaded            0
+  jhit_RateLimit             0
+  jhit_timeout               0
+
+============================================================================================
+  6. CRON
+============================================================================================
+  sß╗æ d├▓ng cron ─æang bß║¡t: 76
+  cron nghiß╗çm thu:
+    5 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    44 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    38 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    10 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    10 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --settle --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    15 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MN >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    48 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    42 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1
+    52 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1  # V10977 l╞░ß╗út v├í: official chß╗æt tr├┤i tß╗¢i 17:44:54 ng├áy 03/08
+    54 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MT >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1  # V10977 l╞░ß╗út v├í: official chß╗æt tr├┤i tß╗¢i 17:44:54 ng├áy 03/08
+    46 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1  # V10977 l╞░ß╗út v├í: official chß╗æt tr├┤i tß╗¢i 17:44:54 ng├áy 03/08
+    50 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1  # V10977 l╞░ß╗út v├í: official chß╗æt tr├┤i tß╗¢i 17:44:54 ng├áy 03/08
+    54 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10879_nghiemthu_lane.py --predraw --region MB >> /root/Lottery_AI_Test/logs/v10879_nghiemthu.log 2>&1  # V10977 l╞░ß╗út v├í: official chß╗æt tr├┤i tß╗¢i 17:44:54 ng├áy 03/08
+  cron tß╗▒ kiß╗âm:
+    5 18 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10900_consistency_guard.py >> /root/Lottery_AI_Test/logs/v10900_consistency.log 2>&1
+
+============================================================================================
+  7. OFFICIAL final_bundles
+============================================================================================
+
+  --- H├öM NAY 2026-08-04 ---
+    MN: bach_thu=22 mc=15 chot=2026-08-04 05:19:56 status=ACTIVE fb=0 lo2_len=12 n_dong=1
+    MT: THIß║╛U
+    MB: THIß║╛U
+
+  --- H├öM QUA 2026-08-03 ---
+    MN: bach_thu=64 mc=15 chot=2026-08-03 05:20:15 status=ACTIVE fb=0 lo2_len=12 n_dong=1
+    MT: bach_thu=64 mc=13 chot=2026-08-03 16:47:10 status=ACTIVE fb=0 lo2_len=12 n_dong=1
+    MB: bach_thu=59 mc=14 chot=2026-08-03 17:44:54 status=ACTIVE fb=0 lo2_len=12 n_dong=1
+
+============================================================================================
+  8. LANE NGHIß╗åM THU
+============================================================================================
+  cß╗Öt: ['id', 'run_id', 'run_date', 'region', 'experiment_name', 'mode', 'test_bt', 'test_lo2_json', 'official_bt', 'official_lo2_json', 'diff_from_official_json', 'aggregation_method', 'candidate_count', 'model_count', 'confidence_score', 'risk_flags_json', 'official_output', 'output_impact', 'admin_only', 'test_only', 'owner_approved', 'created_at', 'diagnostic_only', 'output_eligible', 'output_lock_status', 'readiness_status']
+  H├öM NAY: 15 d├▓ng
+      {'id': '9901', 'run_id': '9869', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9902', 'run_id': '9870', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9903', 'run_id': '9871', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9904', 'run_id': '9872', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9905', 'run_id': '9873', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9906', 'run_id': '9874', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': 'None', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9907', 'run_id': '9875', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9908', 'run_id': '9876', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9909', 'run_id': '9877', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9910', 'run_id': '9878', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9911', 'run_id': '9879', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9912', 'run_id': '9880', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9913', 'run_id': '9881', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': 'None', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9914', 'run_id': '9882', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': '22'}
+      {'id': '9915', 'run_id': 'v10879-2026-08-04-MN', 'run_date': '2026-08-04', 'region': 'MN', 'experiment_name': 'MN_NGHIEMTHU_1908_V1', 'mode': 'OFFICIAL_NEW_CANDIDATE', 'test_bt': '22', 'test_lo2_json': '["22", "72"]', 'official_bt': 'None'}
+  H├öM QUA: 66 d├▓ng
+      {'id': '9872', 'run_id': '9841', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_ADAPTIVE_EXPLOIT_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '73', 'test_lo2_json': '["73", "16"]', 'official_bt': 'None'}
+      {'id': '9873', 'run_id': '9842', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_HYBRID_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '73', 'test_lo2_json': '["73"]', 'official_bt': 'None'}
+      {'id': '9876', 'run_id': '9845', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_TOTAL_V2_RULES_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '59', 'test_lo2_json': '["59", "52"]', 'official_bt': 'None'}
+      {'id': '9877', 'run_id': '9846', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_TOTAL_V3_COND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '52', 'test_lo2_json': '["52"]', 'official_bt': 'None'}
+      {'id': '9878', 'run_id': '9847', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_FULL_POOL_D_W06_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '59', 'test_lo2_json': '["59", "79"]', 'official_bt': 'None'}
+      {'id': '9879', 'run_id': '9848', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_TOPK10_W04_V2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '59', 'test_lo2_json': '["59", "52"]', 'official_bt': 'None'}
+      {'id': '9892', 'run_id': '9861', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_CHAMPION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "47", "59"]', 'official_bt': 'None'}
+      {'id': '9893', 'run_id': '9862', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_WEIGHTED_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "59", "52"]', 'official_bt': 'None'}
+      {'id': '9894', 'run_id': '9863', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_ADAPTIVE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "59", "52"]', 'official_bt': 'None'}
+      {'id': '9895', 'run_id': '9864', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_BLEND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "59", "52"]', 'official_bt': 'None'}
+      {'id': '9896', 'run_id': '9865', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_RULEBH_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "59", "52"]', 'official_bt': 'None'}
+      {'id': '9897', 'run_id': '9866', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_SCREEN_LEAN_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '79', 'test_lo2_json': '["79", "59", "52"]', 'official_bt': 'None'}
+      {'id': '9898', 'run_id': '9867', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_HYBRID_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '73', 'test_lo2_json': '["73"]', 'official_bt': '59'}
+      {'id': '9899', 'run_id': '9868', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '59', 'test_lo2_json': '["59", "79"]', 'official_bt': '59'}
+      {'id': '9900', 'run_id': 'v10872-2026-08-03-MB', 'run_date': '2026-08-03', 'region': 'MB', 'experiment_name': 'MB_DEHERD_V1', 'mode': 'SHADOW_LANE', 'test_bt': '59', 'test_lo2_json': '["59", "52"]', 'official_bt': '59'}
+      {'id': '9833', 'run_id': '9806', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9834', 'run_id': '9807', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9835', 'run_id': '9808', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9836', 'run_id': '9809', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9837', 'run_id': '9810', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9838', 'run_id': '9811', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': 'None', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9839', 'run_id': '9812', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '25', 'test_lo2_json': '["25", "64"]', 'official_bt': '64'}
+      {'id': '9840', 'run_id': '9813', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9841', 'run_id': '9814', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9842', 'run_id': '9815', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9843', 'run_id': '9816', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9844', 'run_id': '9817', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9845', 'run_id': '9818', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': 'None', 'test_lo2_json': '["64", "25"]', 'official_bt': '64'}
+      {'id': '9846', 'run_id': '9819', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '25', 'test_lo2_json': '["25", "64"]', 'official_bt': '64'}
+      {'id': '9847', 'run_id': 'v10879-2026-08-03-MN', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_NGHIEMTHU_1908_V1', 'mode': 'OFFICIAL_NEW_CANDIDATE', 'test_bt': '64', 'test_lo2_json': '["64", "12"]', 'official_bt': 'None'}
+      {'id': '9848', 'run_id': '9820', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_TOTAL_V2_RULES_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '12', 'test_lo2_json': '["12", "91"]', 'official_bt': '64'}
+      {'id': '9849', 'run_id': '9821', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_TOTAL_V3_COND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "12"]', 'official_bt': '64'}
+      {'id': '9850', 'run_id': 'v10872-2026-08-03-MN', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_DEHERD_V1', 'mode': 'SHADOW_LANE', 'test_bt': '64', 'test_lo2_json': '["64", "12"]', 'official_bt': '64'}
+      {'id': '9880', 'run_id': '9849', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_CHAMPION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '11', 'test_lo2_json': '["11", "59", "64"]', 'official_bt': '64'}
+      {'id': '9881', 'run_id': '9850', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_WEIGHTED_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25", "12"]', 'official_bt': '64'}
+      {'id': '9882', 'run_id': '9851', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_ADAPTIVE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25", "12"]', 'official_bt': '64'}
+      {'id': '9883', 'run_id': '9852', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_BLEND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25", "12"]', 'official_bt': '64'}
+      {'id': '9884', 'run_id': '9853', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_RULEBH_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "25", "12"]', 'official_bt': '64'}
+      {'id': '9885', 'run_id': '9854', 'run_date': '2026-08-03', 'region': 'MN', 'experiment_name': 'MN_SCREEN_LEAN_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "11", "12"]', 'official_bt': '64'}
+      {'id': '9851', 'run_id': '9822', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_TOTAL_V2_RULES_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61", "91"]', 'official_bt': 'None'}
+      {'id': '9852', 'run_id': 'v10872-2026-08-03-MT', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_DEHERD_V1', 'mode': 'SHADOW_LANE', 'test_bt': '64', 'test_lo2_json': '["64", "61"]', 'official_bt': 'None'}
+      {'id': '9853', 'run_id': '9823', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_TOTAL_V3_COND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61"]', 'official_bt': 'None'}
+      {'id': '9854', 'run_id': 'v10879-2026-08-03-MT', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_NGHIEMTHU_1908_V1', 'mode': 'OFFICIAL_NEW_CANDIDATE', 'test_bt': '64', 'test_lo2_json': '["64", "61"]', 'official_bt': 'None'}
+      {'id': '9855', 'run_id': '9824', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_ADAPTIVE_EXPLOIT_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '86', 'test_lo2_json': '["86", "96"]', 'official_bt': '64'}
+      {'id': '9856', 'run_id': '9825', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_HYBRID_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '86', 'test_lo2_json': '["86"]', 'official_bt': '64'}
+      {'id': '9857', 'run_id': '9826', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9858', 'run_id': '9827', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9859', 'run_id': '9828', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9860', 'run_id': '9829', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9861', 'run_id': '9830', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61", "64"]', 'official_bt': '64'}
+      {'id': '9862', 'run_id': '9831', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9863', 'run_id': '9832', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_HYBRID_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '86', 'test_lo2_json': '["86"]', 'official_bt': '64'}
+      {'id': '9864', 'run_id': '9833', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_OFFICIAL_BASELINE_CONTROL', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9865', 'run_id': '9834', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_STRENGTH_WEIGHTED_V52_5_2', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9866', 'run_id': '9835', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_AI_CHAIN_PRESERVATION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9867', 'run_id': '9836', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SPECIALIST_ROSTER_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9868', 'run_id': '9837', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61", "64"]', 'official_bt': '64'}
+      {'id': '9869', 'run_id': '9838', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_NO_TOKEN_HERD_REDUCTION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "29"]', 'official_bt': '64'}
+      {'id': '9870', 'run_id': '9839', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_ADAPTIVE_EXPLOIT_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '96', 'test_lo2_json': '["96"]', 'official_bt': '64'}
+      {'id': '9871', 'run_id': '9840', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_ADAPTIVE_BUDGET_SELECTOR_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '29', 'test_lo2_json': '["29", "64"]', 'official_bt': '64'}
+      {'id': '9886', 'run_id': '9855', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_CHAMPION_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61", "54", "64"]', 'official_bt': '64'}
+      {'id': '9887', 'run_id': '9856', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_WEIGHTED_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "61", "29"]', 'official_bt': '64'}
+      {'id': '9888', 'run_id': '9857', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_ADAPTIVE_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64"]', 'official_bt': '64'}
+      {'id': '9889', 'run_id': '9858', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_BLEND_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "61", "29"]', 'official_bt': '64'}
+      {'id': '9890', 'run_id': '9859', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_RULEBH_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '64', 'test_lo2_json': '["64", "61", "29"]', 'official_bt': '64'}
+      {'id': '9891', 'run_id': '9860', 'run_date': '2026-08-03', 'region': 'MT', 'experiment_name': 'MT_SCREEN_LEAN_V1', 'mode': 'REALTIME_AVAILABLE_ONLY', 'test_bt': '61', 'test_lo2_json': '["61", "64", "00"]', 'official_bt': '64'}
+
+  PHß╗ª 7 NG├ÇY (FU-252 cß║ºn 21/21):
+    13 ├┤ miß╗ün-ng├áy c├│ sß╗æ
+      {'run_date': '2026-08-04', 'region': 'MN', 'n': 1}
+      {'run_date': '2026-08-03', 'region': 'MN', 'n': 1}
+      {'run_date': '2026-08-03', 'region': 'MT', 'n': 1}
+      {'run_date': '2026-08-02', 'region': 'MB', 'n': 1}
+      {'run_date': '2026-08-02', 'region': 'MN', 'n': 1}
+      {'run_date': '2026-08-02', 'region': 'MT', 'n': 1}
+      {'run_date': '2026-08-01', 'region': 'MB', 'n': 1}
+      {'run_date': '2026-08-01', 'region': 'MN', 'n': 1}
+      {'run_date': '2026-08-01', 'region': 'MT', 'n': 1}
+      {'run_date': '2026-07-31', 'region': 'MB', 'n': 1}
+      {'run_date': '2026-07-31', 'region': 'MN', 'n': 1}
+      {'run_date': '2026-07-31', 'region': 'MT', 'n': 1}
+      {'run_date': '2026-07-30', 'region': 'MN', 'n': 1}
+
+  t├¬n th├¡ nghiß╗çm 10 ng├áy:
+      {'experiment_name': 'MB_ADAPTIVE_BUDGET_SELECTOR_V1', 'n': 19, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_ADAPTIVE_EXPLOIT_V1', 'n': 12, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_AI_CHAIN_PRESERVATION_V1', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_DEHERD_V1', 'n': 6, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_DIR1_BT_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MB_DIR2_LO2_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MB_DIR3_LO3_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MB_FULL_POOL_D_W06_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_HYBRID_V1', 'n': 20, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_NGHIEMTHU_1908_V1', 'n': 3, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_NO_TOKEN_HERD_REDUCTION_V1', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_OFFICIAL_BASELINE_CONTROL', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_OUTPUT_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MB_PRIOR_REGION_CONTEXT_SAFE_V1', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_SCREEN_ADAPTIVE_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SCREEN_BLEND_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SCREEN_CHAMPION_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SCREEN_LEAN_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SCREEN_RULEBH_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SCREEN_WEIGHTED_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_SPECIALIST_ROSTER_V1', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_STRENGTH_WEIGHTED_V52_5_2', 'n': 11, 'last': '2026-08-02'}
+      {'experiment_name': 'MB_TOPK10_W04_V2', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_TOTAL_V2_RULES_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_TOTAL_V3_COND_V1', 'n': 8, 'last': '2026-08-03'}
+      {'experiment_name': 'MB_XIEN_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MN_ADAPTIVE_BUDGET_SELECTOR_V1', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_AI_CHAIN_PRESERVATION_V1', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_DEHERD_V1', 'n': 6, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_DIR1_BT_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MN_DIR2_LO2_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MN_DIR3_LO3_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MN_DOCTRINE_AB_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MN_FULL_POOL_D_W06_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MN_NGHIEMTHU_1908_V1', 'n': 6, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_NO_TOKEN_HERD_REDUCTION_V1', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_OFFICIAL_BASELINE_CONTROL', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_OUTPUT_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MN_PRIOR_REGION_CONTEXT_SAFE_V1', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_SCREEN_ADAPTIVE_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SCREEN_BLEND_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SCREEN_CHAMPION_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SCREEN_LEAN_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SCREEN_RULEBH_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SCREEN_WEIGHTED_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_SPECIALIST_ROSTER_V1', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_STRENGTH_WEIGHTED_V52_5_2', 'n': 22, 'last': '2026-08-04'}
+      {'experiment_name': 'MN_TOPK22_W04_V2', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MN_TOTAL_V2_RULES_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_TOTAL_V3_COND_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MN_XIEN_V1', 'n': 8, 'last': '2026-08-01'}
+      {'experiment_name': 'MT_ADAPTIVE_BUDGET_SELECTOR_V1', 'n': 22, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_ADAPTIVE_EXPLOIT_V1', 'n': 18, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_AI_CHAIN_PRESERVATION_V1', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_DEHERD_V1', 'n': 6, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_DIR1_BT_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_DIR2_LO2_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_DIR3_LO3_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_DOCTRINE_AB_V1', 'n': 6, 'last': '2026-07-30'}
+      {'experiment_name': 'MT_FULL_POOL_D_W06_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_HYBRID_V1', 'n': 25, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_NGHIEMTHU_1908_V1', 'n': 4, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_NO_TOKEN_HERD_REDUCTION_V1', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_OFFICIAL_BASELINE_CONTROL', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_OUTPUT_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_ADAPTIVE_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_BLEND_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_CHAMPION_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_LEAN_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_RULEBH_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SCREEN_WEIGHTED_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_SPECIALIST_ROSTER_V1', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_STRENGTH_WEIGHTED_V52_5_2', 'n': 23, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_TOPK10_W04_V2', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'MT_TOTAL_V2_RULES_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_TOTAL_V3_COND_V1', 'n': 10, 'last': '2026-08-03'}
+      {'experiment_name': 'MT_XIEN_V1', 'n': 7, 'last': '2026-07-31'}
+      {'experiment_name': 'PROMPT_V2_AB_V1', 'n': 21, 'last': '2026-08-01'}
+
+============================================================================================
+  9. Kß║╛T QUß║ó + CHß║ñM ─ÉIß╗éM
+============================================================================================
+  lottery_results h├┤m qua: [{'region': 'MB', 'n': 1}, {'region': 'MN', 'n': 3}, {'region': 'MT', 'n': 2}]
+  lottery_results h├┤m nay: []
+  phß╗º 10 ng├áy:
+      {'date': '2026-08-03', 'n': 6, 'nreg': 3}
+      {'date': '2026-08-02', 'n': 7, 'nreg': 3}
+      {'date': '2026-08-01', 'n': 8, 'nreg': 3}
+      {'date': '2026-07-31', 'n': 6, 'nreg': 3}
+      {'date': '2026-07-30', 'n': 7, 'nreg': 3}
+      {'date': '2026-07-29', 'n': 6, 'nreg': 3}
+      {'date': '2026-07-28', 'n': 6, 'nreg': 3}
+      {'date': '2026-07-27', 'n': 6, 'nreg': 3}
+      {'date': '2026-07-26', 'n': 7, 'nreg': 3}
+
+  model_daily_eval h├┤m qua: [{'region': 'MB', 'n': 27}, {'region': 'MN', 'n': 27}, {'region': 'MT', 'n': 27}]
+  model_daily_eval 10 ng├áy:
+      {'date': '2026-08-03', 'n': 81, 'nreg': 3}
+      {'date': '2026-08-02', 'n': 81, 'nreg': 3}
+      {'date': '2026-08-01', 'n': 71, 'nreg': 3}
+      {'date': '2026-07-31', 'n': 74, 'nreg': 3}
+      {'date': '2026-07-30', 'n': 78, 'nreg': 3}
+      {'date': '2026-07-29', 'n': 77, 'nreg': 3}
+      {'date': '2026-07-28', 'n': 81, 'nreg': 3}
+      {'date': '2026-07-27', 'n': 81, 'nreg': 3}
+      {'date': '2026-07-26', 'n': 80, 'nreg': 3}
+
+============================================================================================
+  10. Bß║áCH THß╗ª TR├ÜNG/TR╞»ß╗óT
+============================================================================================
+  2026-08-03 MB  bt=59 ΓåÆ TRUOT       0/1 ─æ├ái  []
+  2026-08-03 MN  bt=64 ΓåÆ TRUOT       0/3 ─æ├ái  []
+  2026-08-03 MT  bt=64 ΓåÆ TRUOT       0/2 ─æ├ái  []
+  2026-08-04 MN  bt=22 ΓåÆ CHUA_CO_KQ  0/0 ─æ├ái  []
+
+============================================================================================
+  11. Cß╗öNG Lß╗óI THß║╛
+============================================================================================
+  ng╞░ß╗íng: lß╗úi thß║┐ ΓëÑ 3.0pp V├Ç z ΓëÑ 2.0
+
+  --- cß╗¡a sß╗ò 90 ng├áy ---
+    MB  ky=  90 he= 16.67% bua= 23.72% loi_the=  -7.06pp z= -1.57 ΓåÆ Cß╗öNG=─É├ôNG
+    MN  ky=  90 he= 16.25% bua= 16.45% loi_the=  -0.19pp z= -0.09 ΓåÆ Cß╗öNG=─É├ôNG
+    MT  ky=  90 he= 13.24% bua=  16.5% loi_the=  -3.26pp z=  -1.3 ΓåÆ Cß╗öNG=─É├ôNG
+
+  --- cß╗¡a sß╗ò 30 ng├áy ---
+    MB  ky=  30 he= 23.33% bua=  23.5% loi_the=  -0.17pp z= -0.02 ΓåÆ Cß╗öNG=─É├ôNG
+    MN  ky=  30 he= 15.96% bua=  16.3% loi_the=  -0.34pp z= -0.09 ΓåÆ Cß╗öNG=─É├ôNG
+    MT  ky=  30 he= 10.96% bua= 16.62% loi_the=  -5.66pp z=  -1.3 ΓåÆ Cß╗öNG=─É├ôNG
+
+  edge_gate_daily bß║ún ghi mß╗¢i nhß║Ñt:
+      {'id': 1, 'date': '2026-08-01', 'region': 'MB', 'cua_so_ngay': 90, 'dai_dat': 91, 'dai_trung': 15, 'he_pct': 16.48, 'bua_pct': 23.67, 'loi_the_pp': -7.19, 'z': -1.61}
+      {'id': 2, 'date': '2026-08-01', 'region': 'MN', 'cua_so_ngay': 90, 'dai_dat': 286, 'dai_trung': 46, 'he_pct': 16.08, 'bua_pct': 16.45, 'loi_the_pp': -0.36, 'z': -0.17}
+      {'id': 3, 'date': '2026-08-01', 'region': 'MT', 'cua_so_ngay': 90, 'dai_dat': 221, 'dai_trung': 30, 'he_pct': 13.57, 'bua_pct': 16.49, 'loi_the_pp': -2.92, 'z': -1.17}
+
+============================================================================================
+  12. TIß╗ÇN
+============================================================================================
+  cß╗Öt money_board_log: ['id', 'date', 'region', 'weekday', 'method', 'play_style', 'songthu', 'verdict', 'stake', 'net_long_m', 'net_older_m', 'net_recent_m', 'songthu_pct', 'n', 'stable', 'wd_net_m', 'wd_n', 'rec_nhay', 'official', 'official_nhay', 'drawn', 'diagnostic_only', 'shadow_only', 'output_eligible', 'owner_approved', 'created_at', 'scored_at']
+  tß╗òng bß║ún ghi: 111
+      {'id': '327', 'date': '2026-08-03', 'region': 'MB', 'weekday': '0', 'method': 'MB_OFFICIAL_BASELINE_CONTROL', 'play_style': 'song-thß╗º', 'songthu': 'null', 'verdict': 'CH╞áI', 'stake': 'Full (50 ─æiß╗âm/sß╗æ/─æ├ái)', 'net_long_m': '50.7', 'net_older_m': '14.1'}
+      {'id': '326', 'date': '2026-08-03', 'region': 'MT', 'weekday': '0', 'method': 'MT_ADAPTIVE_EXPLOIT_V1', 'play_style': 'song-thß╗º', 'songthu': '["96"]', 'verdict': 'NGHß╗ê', 'stake': 'Nghß╗ë h├┤m nay', 'net_long_m': '38.5', 'net_older_m': '15.6'}
+      {'id': '325', 'date': '2026-08-03', 'region': 'MN', 'weekday': '0', 'method': 'MN_BT1_OFFICIAL_V1', 'play_style': 'bß║ích-thß╗º 1 sß╗æ', 'songthu': '["64"]', 'verdict': 'C├éN NHß║«C', 'stake': 'Nß╗¡a (25 ─æiß╗âm)', 'net_long_m': '11.5', 'net_older_m': '3.3'}
+      {'id': '318', 'date': '2026-08-02', 'region': 'MB', 'weekday': '6', 'method': 'MB_STRENGTH_WEIGHTED_V52_5_2', 'play_style': 'song-thß╗º', 'songthu': '["52", "13"]', 'verdict': 'CH╞áI', 'stake': 'Full (50 ─æiß╗âm/sß╗æ/─æ├ái)', 'net_long_m': '45.8', 'net_older_m': '16.8'}
+      {'id': '317', 'date': '2026-08-02', 'region': 'MT', 'weekday': '6', 'method': 'MT_PRIOR_REGION_CONTEXT_SAFE_V1 + ', 'play_style': 'song-thß╗º', 'songthu': '["64", "86"]', 'verdict': 'NGHß╗ê', 'stake': 'Nghß╗ë h├┤m nay', 'net_long_m': '-16.4', 'net_older_m': '-9.8'}
+      {'id': '316', 'date': '2026-08-02', 'region': 'MN', 'weekday': '6', 'method': 'MN_BT1_OFFICIAL_V1', 'play_style': 'bß║ích-thß╗º 1 sß╗æ', 'songthu': '["43"]', 'verdict': 'CH╞áI', 'stake': 'Full (50 ─æiß╗âm/sß╗æ/─æ├ái)', 'net_long_m': '11.5', 'net_older_m': '3.3'}
+
+============================================================================================
+  13. SCHEDULER LOGS
+============================================================================================
+  h├┤m nay theo status: ERR no such column: status
+  lß╗ùi h├┤m nay: 0
+  lß╗ùi h├┤m qua: 0
+
+============================================================================================
+  14. Hß║░NG Sß╗É Mß╗ÉC FINAL (4 module + lane)
+============================================================================================
+  lane_schedule: {'MN': {'runs': '06:05', 'last_run': '06:15', 'final': '15:45', 'draw': '~16:34'}, 'MT': {'runs': '16:44', 'last_run': '16:54', 'final': '16:58', 'draw': '~17:30'}, 'MB': {'runs': '17:38', 'last_run': '17:54', 'final': '17:58', 'draw': '~18:31'}}
+  const_FREEZE_MARKS           {'MN': '15:45', 'MT': '16:58', 'MB': '17:58'}
+  const_OUTPUT_DUE             {'MN': '15:45', 'MT': '16:58', 'MB': '17:58'}
+  const_DEADLINE               {'MN': '15:45', 'MT': '16:58', 'MB': '17:58'}
+  const_OUTPUT_FREEZE_HHMM     {'MN': '15:45', 'MT': '16:58', 'MB': '17:58'}
+
+============================================================================================
+  15. FU-243 PH├éN Bß╗É model_count 14 NG├ÇY
+============================================================================================
+      {'region': 'MB', 'model_count': 13, 'n': 3}
+      {'region': 'MB', 'model_count': 14, 'n': 10}
+      {'region': 'MN', 'model_count': 13, 'n': 1}
+      {'region': 'MN', 'model_count': 14, 'n': 1}
+      {'region': 'MN', 'model_count': 15, 'n': 12}
+      {'region': 'MT', 'model_count': 11, 'n': 1}
+      {'region': 'MT', 'model_count': 13, 'n': 12}

@@ -1,0 +1,164 @@
+﻿
+============================================================================================
+  A. Gß╗îI THß║▓NG run_checks() ΓÇö code tr├¬n ─æ─⌐a
+============================================================================================
+  code c├│ C17: True ┬╖ c├│ C18: True
+  file sß╗¡a l├║c: 2026-08-03 19:21:57.844696452 +0700
+  ng╞░ß╗íng bi├¬n lane tß╗æi thiß╗âu (gi├óy): 300
+
+  >>> chß║íy T╞»╞áI: 18 ph├⌐p ┬╖ OK=18 LECH=0 LOI=0
+    C1_money_board_output_due            OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C2_runtime_audit_deadline            OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C3_lane_output_freeze                OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C4_lock_before_final                 OK     ["15:43", "16:56", "17:56"]
+    C5_nghiemthu_lane_time               OK     {"MN": "06:05", "MT": "16:44", "MB": "17:38"}
+    C17_nghiemthu_co_output              OK     []
+    C18_bien_lane_du_rong                OK     []
+    C6_lane_slot                         OK     "kh├┤ng c├▓n d├▓ng cron n├áo"
+    C7_settings_vs_seed                  OK     {}
+    C12_bien_2_phut                      OK     {"MN": 2, "MT": 2, "MB": 2}
+    C13_lane_bien_bang_khoa              OK     {"MN": "15:43:00", "MT": "16:56:00", "MB": "17:56:00"}
+    C10_freeze_equals_final              OK     {"MN": "15:45", "MT": "16:58", "MB": "17:58"}
+    C11_tchot_before_final               OK     {}
+    C8_no_new_utc_table                  OK     []
+    C9_vn_views_present                  OK     []
+    C14_tz_khong_chong_cheo              OK     []
+    C15_cot_khai_VN_dung_khuon           OK     []
+    C16_dang_ky_du                       OK     true
+
+============================================================================================
+  A2. LOG CRON
+============================================================================================
+  --- guard log ---
+   OK   C4_lock_before_final           kho├í /choi chß║íy tr╞░ß╗¢c mß╗æc FINAL
+  OK   C5_nghiemthu_lane_time         giß╗¥ lane Nghiß╗çm Thu khai b├ío khß╗¢p crontab
+  OK   C6_lane_slot                   LANE_SLOT khß╗¢p crontab lane v10692
+  OK   C7_settings_vs_seed            c├ái ─æß║╖t ─æang chß║íy khß╗¢p hß║ít giß╗æng database.py
+  OK   C12_bien_2_phut                kho├í /choi c├ích mß╗æc FINAL ─æ├║ng 2 ph├║t, cß║ú ba miß╗ün
+  OK   C13_lane_bien_bang_khoa        bi├¬n lane bß║▒ng ─æ├║ng giß╗¥ kho├í /choi
+  OK   C10_freeze_equals_final        mß╗æc bß║Ñt ─æß╗Öng (FREEZE_MARKS) khß╗¢p mß╗æc FINAL
+  OK   C11_tchot_before_final         job T-chß╗æt regen bundle chß║íy TR╞»ß╗ÜC mß╗æc FINAL
+  OK   C8_no_new_utc_table            kh├┤ng c├│ bß║úng mß╗¢i n├áo l╞░u UTC ngo├ái ─æ─âng k├╜
+  OK   C9_vn_views_present            view giß╗¥ VN cß╗ºa mß╗ìi cß╗Öt UTC c├▓n nguy├¬n
+  OK   C14_tz_khong_chong_cheo        mß╗Öt cß╗Öt chß╗ë ─æ╞░ß╗úc khai Mß╗ÿT m├║i giß╗¥ trong ─æ─âng k├╜
+  OK   C15_cot_khai_VN_dung_khuon     cß╗Öt khai giß╗¥ VN phß║úi c├│ dß║Ñu m├║i giß╗¥ trong dß╗» liß╗çu
+  OK   C16_dang_ky_du                 ─æ─âng k├╜ m├║i giß╗¥ c├│ ─æß╗º d├▓ng v├á kh├┤ng rß╗ùng
+V10900_CONSISTENCY 2026-08-03: 16 ph├⌐p kiß╗âm ┬╖ lß╗çch 0
+  OK   C1_money_board_output_due      _v10759_money_board.OUTPUT_DUE khß╗¢p mß╗æc FINAL
+  OK   C2_runtime_au
+  --- nghiß╗çm thu log ---
+     l├í b├ái           NEW    official     ch├¬nh   chß╗ë NEW  chß╗ë off         p
+    bach_thu       12/48        8/48    +8.3pp         7        3    0.3438
+    lo2             4/48        1/48    +6.2pp         4        1    0.3750
+    lo3             0/48        0/48    +0.0pp         0        0         ΓÇö
+    xien2           4/48        4/48    +0.0pp         2        2    1.0000
+    xien3           1/33        1/33    +0.0pp         0        0         ΓÇö
+
+=== FORWARD ┬╖ OFFICIAL NEW so vß╗¢i OFFICIAL ===
+
+  ALL  (12 miß╗ün-ng├áy, tr├╣ng bß║ích thß╗º 75.0%)
+    l├í b├ái           NEW    official     ch├¬nh   chß╗ë NEW  chß╗ë off         p
+    bach_thu        3/12        6/12   -25.0pp         0        3    0.2500
+    lo2             1/12        2/12    -8.3pp         0        1    1.0000
+    lo3             0/12        0/12    +0.0pp         0        0         ΓÇö
+    xien2           0/12        1/12    -8.3pp         0        1    1.0000
+    xien3            0/7         0/7    +0.0pp         0        0         ΓÇö
+
+  MN  (5 miß╗ün-ng├áy, tr├╣ng bß║ích thß╗º 60.0%)
+    l├í b├ái           NEW    official     ch├¬nh   chß╗ë NEW  chß╗ë off         p
+    bach_thu         1/5         3/5   -40.0pp         0        2    0.5000
+    lo2              1/5         1/5    +0.0pp         0        0         ΓÇö
+    lo3              0/5         0/5    +0.0pp         0        0         ΓÇö
+    xien2            0/5         0/5    +0.0pp         0        0         ΓÇö
+    xien3            0/2         0/2    +0.0pp         0        0         ΓÇö
+
+  MT  (4 miß╗ün-ng├áy, tr├╣ng bß║ích thß╗º 100.0%)
+    l├í b├ái           NEW    official     ch├¬nh   chß╗ë NEW  chß╗ë off         p
+    bach_thu         1/4         1/4    +0.0pp         0        0         ΓÇö
+    lo2              0/4         0/4    +0.0pp         0        0         ΓÇö
+    lo3              0/4
+
+============================================================================================
+  B. NH├âN 'Lß╗á Hß║áN'
+============================================================================================
+  c├│ trong lane: True
+  file chß╗⌐a:
+ /root/Lottery_AI_Test/web/backend/_v10879_nghiemthu_lane.py
+/root/Lottery_AI_Test/web/frontend/nghiem-thu.html
+
+
+============================================================================================
+  C. TIß╗ÇN
+============================================================================================
+  cß╗¥ shadow (diagnostic_only, shadow_only, output_eligible, owner_approved, n):
+      {'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0, 'n': 111}
+
+  gi├í trß╗ï stake:
+      {'stake': 'Nß╗¡a (25 ─æiß╗âm)', 'n': 59}
+      {'stake': 'Full (50 ─æiß╗âm/sß╗æ/─æ├ái)', 'n': 33}
+      {'stake': 'Nghß╗ë h├┤m nay', 'n': 15}
+      {'stake': 'Nghß╗ë Thß╗⌐ 7 (lock tuß║ºn)', 'n': 4}
+
+  h├┤m qua + h├┤m nay:
+      {'date': '2026-08-03', 'region': 'MB', 'method': 'MB_OFFICIAL_BASELINE_CONTROL', 'verdict': 'CH╞áI', 'stake': 'Full (50 ─æiß╗âm/sß╗æ/─æ├ái)', 'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0}
+      {'date': '2026-08-03', 'region': 'MT', 'method': 'MT_ADAPTIVE_EXPLOIT_V1', 'verdict': 'NGHß╗ê', 'stake': 'Nghß╗ë h├┤m nay', 'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0}
+      {'date': '2026-08-03', 'region': 'MN', 'method': 'MN_BT1_OFFICIAL_V1', 'verdict': 'C├éN NHß║«C', 'stake': 'Nß╗¡a (25 ─æiß╗âm)', 'diagnostic_only': 1, 'shadow_only': 1, 'output_eligible': 0, 'owner_approved': 0}
+
+  bß║úng li├¬n quan tiß╗ün: ['pnl_daily_bets', 'money_board_log', 'money_board_lock', 'money_board_daily_lock']
+    cnt_money_board_daily_lock         84
+    cnt_money_board_lock               18
+    cnt_money_board_log                111
+    cnt_pnl_daily_bets                 28
+
+============================================================================================
+  D. SCHEDULER_LOGS
+============================================================================================
+  cß╗Öt: ['id', 'log_time', 'log_level', 'message', 'job_name', 'region', 'date_str']
+  cß╗Öt trß║íng th├íi d├╣ng: None
+  h├┤m nay: None
+  h├┤m qua: None
+
+============================================================================================
+  E. ENDPOINT
+============================================================================================
+  ep_/api/health                       200
+  ep_/api/monitoring/nghiem-thu        404
+  ep_/api/nghiem-thu                   401
+  ep_/api/v10879/nghiem-thu            404
+  ep_/nghiem-thu                       401
+
+  body /api/nghiem-thu:
+ {"detail":"Not authenticated"}
+
+  route trong main.py:
+ 12117:        # V10964: c├╣ng kiß╗âu nghiem-thu ΓÇö n├│i r├╡ v├¼ sao trß╗æng + giß╗¥ dß╗▒ kiß║┐n
+15472:@app.get("/nghiem-thu", response_class=FileResponse)
+15473:async def serve_nghiem_thu_page(request: Request):
+15476:    page = STATIC_DIR / "nghiem-thu.html"
+15485:@app.get("/api/nghiem-thu")
+15486:async def api_nghiem_thu(request: Request):
+15487:    """Dß╗» liß╗çu cho trang `/nghiem-thu` ΓÇö c├╣ng nguß╗ôn vß╗¢i endpoint admin."""
+
+
+============================================================================================
+  F. VIEW LANE (/monitoring ─æß╗ìc c├íi n├áy)
+============================================================================================
+  h├ám: compute_view
+  ERR compute_view() missing 1 required positional argument: 'con' | Traceback (most recent call last):
+  File "/tmp/_v10980_remote_probe2.py", line 115, in <module>
+    R["nt_view"] = fn() if fn else "KHONG_CO_HAM_VIEW"
+TypeError: compute_view() missing 1 required positional argument: 'con'
+
+
+============================================================================================
+  G. D├ÆNG JOURNAL CHß╗¿A '500'
+============================================================================================
+  Aug 04 05:22:58 lotteryai-aulb python3[738032]: 2026-08-04 05:22:58,500 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+
+
+============================================================================================
+  H. GIß╗£ CRON LANE NGHIß╗åM THU
+============================================================================================
+  MN: ['06:05', '06:15']
+  MT: ['16:44', '16:48', '16:52', '16:54']
+  MB: ['17:38', '17:42', '17:46', '17:50', '17:54']
