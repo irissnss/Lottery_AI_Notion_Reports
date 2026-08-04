@@ -23,7 +23,23 @@ Owner đọc và trả lời:
 
 > *"Giãn luôn 9 mục cũ đó ra 05-09/08 cho ngày chốt nhẹ nhé"*
 
-Đó là toàn bộ chỉ đạo của phiên này. Không có câu nào khác.
+### 1.3 Owner duyệt đề nghị mục 6 — ~12:4x ngày 04/08/2026 (V10982b)
+
+Báo cáo `V10982` mục 6 nêu một đề nghị và nói rõ *"nằm ngoài phạm vi V10982 nên không tự làm"*:
+
+> **Đề nghị owner cân nhắc:** chuyển `FU-224` *Dọn trang frontend trùng/chết* từ 09/08 xuống
+> 06/08 — mục đó chỉ đụng file HTML/JS, không chạm runtime dự đoán, kéo 09/08 từ 9 xuống 8.
+
+Owner chọn phương án, nguyên văn:
+
+> *"Chuyển xuống 06/08 - 09/08 còn 8 mục"*
+
+Kèm chỉ đạo thực thi: đổi hạn trong sổ theo dõi, cập nhật mã đọc §58 cho khớp hạn mới, **giữ
+nhãn trạng thái hợp lệ** (*"tuyệt đối không tạo nhãn lạ - nhớ lại lỗi V10981b làm 11 mục mồ
+côi"*), cập nhật trang lịch, ghi nhận vào `QD-022`, prepend `CHANGELOG` + `SSOT`, cập nhật báo
+cáo công khai mà **không xoá tiêu đề 9 phần**.
+
+Đó là toàn bộ chỉ đạo trong phiên. Không có câu nào khác.
 
 ---
 
@@ -122,7 +138,29 @@ với ba mục anh em cùng phiên V10978. Mồ côi toàn sổ **19 → 18**.
 `1008` là tháng 10. Đã đổi thành `KS0810-5` cho khớp hạn 10/08 thật, dù hạn của mục này không
 thay đổi. Không tái dùng mã `KS0810` mà `FU-244` vừa nhả ra, để lịch sử tra ngược không lẫn.
 
-### 3.7 PowerShell không nhận `&&`
+### 3.7 V10982b — bảng mốc tải ghi cứng, cổng không bắt được nếu quên cập nhật
+
+Khi chuyển `FU-224` mới thấy: bảng `TAI_PHIEN_KHAC_DO_DUOC` trong `_v10982_lich9.py` được **ghi
+cứng** làm mốc, và mọi con số tải trong `CHANGELOG`, trang lịch, báo cáo đều đọc từ đó. Nếu chỉ
+đổi hạn trong sổ theo dõi mà quên bảng này thì tất cả số in ra sẽ sai **mà cả 8 phép J1–J8 vẫn
+báo ĐẠT** — đúng loại xanh giả owner sợ nhất.
+
+Cách xử: siết phép `J5` cho đối chiếu bảng mốc với **sổ theo dõi THẬT**, trượt nếu lệch. Rồi
+**thử ngược để chứng minh cổng thật sự có tác dụng**: chạy cổng ở trạng thái mốc đã đổi nhưng
+sổ chưa đổi → `J5` TRƯỢT, in đúng tên `FU-224` ở cả hai ngày lệch (06/08 và 09/08), exit 1. Sau
+khi ghi sổ thì ĐẠT. Vẫn giữ 8 phép, không thêm phép thứ 9 để khỏi phá lời hứa "8/8".
+
+**Hậu quả nếu bỏ qua:** owner xếp việc theo một bảng số cũ mà tưởng là mới.
+
+### 3.8 V10982b — nhãn `OWNER_LOCK` phải giữ, không được nâng
+
+Có thoáng nghĩ đổi nhãn `FU-224` vì "owner đã duyệt rồi". **Sai.** Owner duyệt việc **đổi
+ngày**, chưa duyệt việc xử từng trang — `next_action` vẫn là *"Owner chọn: giữ / gộp / bỏ. Agent
+KHÔNG tự xoá trang."* Đổi nhãn sẽ biến một mục còn chờ owner thành mục đã thông, và ngày 06/08
+agent có thể tự cho phép mình xoá trang. Giữ nguyên `OWNER_LOCK`, ghi rõ ranh giới này vào cả
+sổ theo dõi, trang lịch và `QD-022`.
+
+### 3.9 PowerShell không nhận `&&`
 
 Lệnh đầu tiên dùng `cd ... && python ...` bị PowerShell từ chối (*"The token '&&' is not a
 valid statement separator"*). Chuyển sang `;`. Ghi lại vì đây là lỗi lặp trên máy Windows này.
@@ -137,7 +175,8 @@ valid statement separator"*). Chuyển sang `;`. Ghi lại vì đây là lỗi l
 | Sửa đường ra số | Không đụng 15 model official, bộ lọc combo-super, lớp ghi đè, `/du-doan`, writer `final_bundles` |
 | Đổi crontab | Không dòng cron nào bị thêm/xoá trong phiên này — các mục chỉ được **xếp ngày**, chưa thi hành |
 | Đụng lịch nhóm 14 | Ngoài phạm vi. `_v10981_kiem_lich.py` chạy lại vẫn 8/8 để chứng minh |
-| Chuyển `FU-224` khỏi 09/08 | Ngoài 9 mục được giao. Chỉ **đề nghị**, chờ owner |
+| Chuyển `FU-224` khỏi 09/08 | Ban đầu chỉ **đề nghị** vì ngoài 9 mục được giao. **Owner duyệt ~12:4x cùng ngày → đã làm ở V10982b** (§1.3) |
+| Xoá/gộp trang frontend của `FU-224` | Owner duyệt đổi ngày, **chưa** duyệt xử trang. Nhãn `OWNER_LOCK` giữ nguyên, agent không tự xoá |
 | Ghi vào Notion | §57.1 cấm mọi thao tác ghi Notion |
 
 ---

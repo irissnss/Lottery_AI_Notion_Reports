@@ -8,7 +8,7 @@
   "het_dong_bang_QD014": "2026-08-08",
   "tran_mong_muon": 5,
   "tran_thuc_te": 6,
-  "tran_khong_dat_duoc": "Trần ≤5 mục/ngày KHÔNG đạt được và lý do không nằm ở 9 mục này. Trước khi phiên bắt đầu, tải sẵn đã là: 05/08=5 · 06/08=4 · 08/08=4 · **09/08=7**. Riêng 09/08 đã vượt trần 5 ngay từ đầu do 7 mục của các phiên khác (3 mục nhóm 14 + FU-200 · FU-202 · FU-224 · FU-261), mà phạm vi phiên này chỉ được dịch chuyển 9 mục. Chỗ trống thật ở mức trần 5 chỉ còn 6 khe (06/08=1 · 07/08=4 · 08/08=1) trong khi phải xếp 8 mục (mục thứ 9 là FU-252 buộc ở lại 10/08). Vì vậy phiên này nhận trần THỰC TẾ = 6 cho những ngày mình động vào, và để nguyên 09/08 ở mức 9 — nói thẳng thay vì ép số cho đẹp.",
+  "tran_khong_dat_duoc": "Trần ≤5 mục/ngày KHÔNG đạt được và lý do không nằm ở 9 mục này. Trước khi phiên bắt đầu, tải sẵn đã là: 05/08=5 · 06/08=4 · 08/08=4 · **09/08=7**. Riêng 09/08 đã vượt trần 5 ngay từ đầu do 7 mục của các phiên khác (3 mục nhóm 14 + FU-200 · FU-202 · FU-224 · FU-261), mà phạm vi phiên này chỉ được dịch chuyển 9 mục. Chỗ trống thật ở mức trần 5 chỉ còn 6 khe (06/08=1 · 07/08=4 · 08/08=1) trong khi phải xếp 8 mục (mục thứ 9 là FU-252 buộc ở lại 10/08). Vì vậy phiên này nhận trần THỰC TẾ = 6 cho những ngày mình động vào, và để nguyên 09/08 ở mức 9 — nói thẳng thay vì ép số cho đẹp. **V10982b cùng ngày: owner duyệt đề nghị chuyển FU-224 → 06/08, nên 09/08 xuống 8 và 06/08 lên 6. Trần ≤5 vẫn không đạt, nhưng ngày nặng nhất giảm từ 9 xuống 8 và không ngày nào vượt trần thực tế 6.**",
   "so_muc": 9,
   "theo_ngay": {
     "2026-08-05": [
@@ -67,11 +67,12 @@
         "FU-257"
       ],
       "phien_khac": [
+        "FU-224",
         "FU-245",
         "FU-250",
         "FU-258"
       ],
-      "tong": 5
+      "tong": 6
     },
     "2026-08-07": {
       "nhom14": [
@@ -112,10 +113,9 @@
       "phien_khac": [
         "FU-200",
         "FU-202",
-        "FU-224",
         "FU-261"
       ],
-      "tong": 9
+      "tong": 8
     },
     "2026-08-10": {
       "nhom14": [
@@ -344,6 +344,20 @@
       "vi_sao_tu_quyet": "Bật lại một cấu phần đo đã ngừng 25 ngày là thêm biến số giữa lúc `QD-014` đang đòi «một tuần yên». Hạ con số cho khớp sự thật là sửa lỗi báo cáo, không phải đổi hệ."
     }
   ],
+  "v10982b_owner_duyet_chuyen_FU224": {
+    "ngay_ky": "2026-08-04 12:4x",
+    "nguyen_van": "Chuyển xuống 06/08 - 09/08 còn 8 mục",
+    "fu": "FU-224",
+    "nhan": "Dọn trang frontend trùng/chết",
+    "ma_doc_cu": "UI0809",
+    "ma_doc": "UI0806",
+    "trang_thai": "OWNER_LOCK",
+    "han_cu": "2026-08-09",
+    "han": "2026-08-06",
+    "vi_sao": "Mục này chỉ đụng file HTML/JS frontend (`viewer.html` chết · `v82-monitor` trùng `monitoring` · `user-view` đông · route `/nghiem-thu` mồ côi · API filter 2 số cuối chết ở FE) — KHÔNG chạm runtime dự đoán, không chạm 5 thứ QD-014 cấm đích danh, nên làm được trong cửa sổ đóng băng. Chuyển xuống 06/08 kéo ngày nặng nhất 09/08 từ 9 xuống 8, trong khi 06/08 chỉ lên 6 — bằng trần thực tế phiên này nhận.",
+    "giu_nguyen_gi": "Nhãn `OWNER_LOCK` GIỮ NGUYÊN. Owner duyệt việc ĐỔI NGÀY, chưa duyệt việc xử từng trang — `next_action` vẫn là *«Owner chọn: giữ / gộp / bỏ. Agent KHÔNG tự xoá trang.»* Ngày 06/08 agent chỉ được trình phương án, không tự merge/xoá."
+  },
+  "moc_tai_phien_khac_con_khop_so_that": true,
   "tong_ma_fu_trong_so": 140,
   "mo_coi_toan_so": 18
 }

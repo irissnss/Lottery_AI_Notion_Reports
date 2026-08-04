@@ -191,13 +191,16 @@ chạy một câu đếm, không sửa gì.
 |---|---|---|---|---|---|
 | **04/08** | 3 | 0 | 0 | **3** | Rõ ràng + đơn giản |
 | **05/08** | 1 | 1 · `FU-254` | 4 | **6** | Sửa công cụ deploy + dọn bảng P&L chết |
-| **06/08** | 1 | 1 · `FU-257` | 3 | **5** | Đào chỉ-đọc + sửa con đếm health nói sai |
+| **06/08** | 1 | 1 · `FU-257` | 4 | **6** | Đào chỉ-đọc + sửa con đếm health nói sai + dọn frontend |
 | **07/08** | 1 | 3 · `FU-223` `FU-244` `FU-255` | 0 | **4** | Thiết kế + dọn bảng ma · hạn chót owner quyết |
 | **08/08** | 3 | 1 · `FU-188` | 1 | **5** | Hết đóng băng — đọc kết quả + trả nợ báo cáo |
-| **09/08** | 3 | 2 · `FU-185` `FU-253` | 4 | **9** ⚠ | Ngày đầu động vào đường ra số + dọn cron 17:38–17:43 |
+| **09/08** | 3 | 2 · `FU-185` `FU-253` | 3 | **8** ⚠ | Ngày đầu động vào đường ra số + dọn cron 17:38–17:43 |
 | **10/08** | 2 · `FU-231` `FU-226` | 1 · `FU-252` | 0 | **3** | **Hạn chót — chỉ còn đọc số** |
 
 **Ngày chốt 10/08: 11 → 3 mục.**
+
+> Bảng trên đã tính **V10982b** — xem §5.5: owner duyệt chuyển `FU-224` từ 09/08 xuống 06/08,
+> nên 09/08 là **8** (không phải 9) và 06/08 là **6** (không phải 5).
 
 ### 5.2 Chi tiết từng mục
 
@@ -243,6 +246,46 @@ V10978. **Mồ côi toàn sổ 19 → 18.**
 
 **Backup trước khi sửa:** `backups/v10982_pre/` (7 file, chụp trước mọi thao tác ghi).
 
+### 5.5 V10982b — owner duyệt chuyển `FU-224` xuống 06/08 (cùng ngày, ~12:4x)
+
+Owner đọc mục 6 của báo cáo này và chọn phương án, nguyên văn:
+
+> *"Chuyển xuống 06/08 - 09/08 còn 8 mục"*
+
+| | |
+|---|---|
+| Mục | `FU-224` · *Dọn trang frontend trùng/chết* |
+| Hạn | 09/08 → **06/08** |
+| Mã đọc | `UI0809` → `UI0806` (MMDD khớp hạn mới) |
+| Nhãn | `OWNER_LOCK` — **giữ nguyên** |
+| Kết quả | 09/08 **9 → 8** · 06/08 **5 → 6** · ngày chốt 10/08 **không đổi** |
+
+`FU-224` **không thuộc nhóm 9** — nó ở nhóm "phiên khác", nên việc chuyển không đổi danh sách
+`theo_doi` của `QD-022` và không phá mệnh đề kiểm nào. Ghi nhận vào `QD-022` dạng **bổ sung**,
+không mở `QD-023`: đây là owner trả lời đúng đề nghị mà `QD-022` đưa ra, không phải quyết định
+độc lập. Số quyết định vẫn **24**; mệnh đề kiểm của `QD-022` **7 → 9**.
+
+**Cái gì GIỮ NGUYÊN:** owner duyệt việc **đổi ngày**, chưa duyệt việc xử từng trang.
+`next_action` vẫn là *"Owner chọn: giữ / gộp / bỏ. Agent KHÔNG tự xoá trang."* Ngày 06/08 agent
+chỉ được trình phương án.
+
+**`docs/ACTIVE_ROADMAP_*.md`: không áp dụng** — đã soát toàn bộ, không roadmap nào tham chiếu
+`FU-224`.
+
+#### Cổng kiểm được siết thêm trong cùng phiên
+
+Chính việc chuyển `FU-224` phơi ra một lỗ: bảng mốc tải `TAI_PHIEN_KHAC_DO_DUOC` trong
+`_v10982_lich9.py` được **ghi cứng**, nên nếu chỉ đổi hạn trong sổ theo dõi mà quên bảng đó thì
+mọi con số tải trong `CHANGELOG`, trang lịch và báo cáo này đều sai **mà không cổng nào bắt
+được** — đúng loại xanh giả.
+
+Đã siết phép **J5**: nay đối chiếu bảng mốc với **sổ theo dõi THẬT** (`tai_phien_khac_that()`)
+và trượt nếu lệch. **Đã thử ngược để chứng minh cổng có tác dụng:** chạy cổng khi mốc đã đổi
+nhưng sổ chưa đổi → J5 **TRƯỢT**, in đúng tên `FU-224` ở cả hai ngày lệch (06/08 và 09/08), exit
+1. Sau khi ghi sổ thì J5 ĐẠT. Vẫn giữ **8 phép**, không thêm phép thứ 9.
+
+**Backup V10982b:** `backups/v10982b_pre/` (8 file).
+
 **Deploy: KHÔNG.** Phiên này là lập kế hoạch + cập nhật tài liệu. Không sửa 15 model official,
 không sửa bộ lọc combo-super, không bật/tắt lớp ghi đè, không đổi crontab, không restart
 service. `QD-014` còn hiệu lực hết 08/08. Vì không đụng runtime nên **không cần kiểm hash 4
@@ -258,13 +301,13 @@ bảng khoá** — không có đường nào để phiên này chạm vào chún
 | **J2** | không mã nào còn hạn sau 10/08 | ✅ 0 mã vượt |
 | **J3** | mỗi mã có mã đọc §58 | ✅ 9/9 |
 | **J4** | hạn thật trong sổ khớp hạn đã xếp | ✅ 9/9 khớp |
-| **J5** | ngày chốt 10/08 tổng tải ≤ 3 | ✅ 10/08 = **3** mục |
+| **J5** | ngày chốt 10/08 tổng tải ≤ 3 · **(V10982b)** mốc tải "phiên khác" còn khớp sổ thật | ✅ 10/08 = **3** mục · mốc khớp 7/7 ngày · tải 3·6·6·4·5·8·3 |
 | **J6** | mã đọc không đụng mã của mục khác | ✅ 0 va chạm |
 | **J7** | mục không kết luận nổi trong hạn đều ghi rõ lý do | ✅ 1 mục nêu thẳng: `FU-253`→12/08 |
 | **J8** | 0 mồ côi trong nhóm · tổng mồ côi toàn sổ ≤ 19 | ✅ 9/9 nhãn hợp lệ · tổng **18** (giảm 1) |
 | | **`GIAN_9_MUC_DAT` · exit 0** | ✅ **8/8** |
 | `_v10981_kiem_lich.py` | nhóm 14 của `QD-021` KHÔNG bị phiên này phá | ✅ **8/8** · `LICH_CUON_CHIEU_DAT` |
-| `_v10920_decision_ledger.py` | code có trôi khỏi quyết định owner không | ✅ **0 TRÔI** · `QD-022` khớp **7/7** · 24 quyết định |
+| `_v10920_decision_ledger.py` | code có trôi khỏi quyết định owner không | ✅ **0 TRÔI** · `QD-022` khớp **9/9** sau V10982b · 24 quyết định |
 | `_v10920_session_start.py` | briefing hiện đúng số mục đến hạn mỗi ngày | ✅ đọc đúng hạn mới (`FU-254` 05/08 · `FU-257` 06/08 …); mồ côi in **18** |
 | Mồ côi trước/sau | không được tăng | ✅ **19 → 18** |
 | `_v10921_report_gate.py V10982` | báo cáo công khai đủ 9 phần, đã push | ✅ exit 0 |
@@ -293,6 +336,16 @@ nhìn thấy con số 9 này thì đúng ngày đó sẽ vỡ, và vỡ ở ngay
 **Đề nghị cụ thể cho owner (ngoài phạm vi, KHÔNG tự làm):** chuyển `FU-224` *Dọn trang frontend
 trùng/chết* từ 09/08 xuống 06/08 — mục đó chỉ đụng file HTML/JS, không chạm runtime dự đoán,
 kéo 09/08 từ 9 xuống 8.
+
+> ✅ **ĐÃ XỬ cùng ngày (V10982b, ~12:4x):** owner duyệt đề nghị này, nguyên văn *"Chuyển xuống
+> 06/08 - 09/08 còn 8 mục"*. **09/08 nay là 8 mục**, 06/08 lên 6. Trần ≤5 vẫn không đạt (05/08
+> và 06/08 đều 6) nhưng không ngày nào vượt trần thực tế 6. Chi tiết ở §5.5.
+
+**Vấp phụ phát hiện khi làm V10982b:** bảng mốc tải `TAI_PHIEN_KHAC_DO_DUOC` ghi cứng trong
+code — chuyển `FU-224` mà quên bảng đó thì mọi con số tải in ra đều sai mà **không cổng nào bắt
+được**. Đã siết phép `J5` cho đối chiếu với sổ thật, và thử ngược để chứng minh cổng trượt đúng
+(xem §5.5). **Hậu quả nếu bỏ qua:** báo cáo và trang lịch tự tin in ra một bảng số cũ, owner
+xếp việc theo con số sai.
 
 ### 7.2 Suýt lặp lại lỗi mồ côi của V10981b
 
@@ -396,11 +449,14 @@ Không có câu hỏi **chặn** nào phát sinh từ 9 mục này. Ba mục age
 | `FU-257` | Hạ `active_rerank_measurement_model_count` về 0 thay vì bật lại Cohere | **06/08** | Bật lại một cấu phần đo đã ngừng 25 ngày là thêm biến số giữa lúc `QD-014` đang đòi "một tuần yên". Hạ con số cho khớp sự thật là sửa lỗi báo cáo |
 | `FU-255` | Ghi RETIRED cho `system_alerts` + 4 bảng rỗng, gỡ khai báo 3 bảng chưa từng có writer khỏi `database.py` | **07/08** | Bốn bảng chưa từng có một dòng nào và 0 cron. Nếu owner muốn giữ `system_alerts` sống thì phải cấp một writer — đó mới là việc cần quyết |
 
-Một **đề nghị thật sự cần owner** (ngoài phạm vi phiên này):
+Một **đề nghị thật sự cần owner** (ngoài phạm vi phiên này) — **đã được duyệt cùng ngày**:
 
-| Việc | Quyết trước | Vì sao |
+| Việc | Trạng thái | Kết quả |
 |---|---|---|
-| Chuyển `FU-224` *Dọn trang frontend trùng/chết* từ 09/08 → 06/08 | **06/08** | 09/08 đang gánh 9 mục, trong đó 3 mục nặng của nhóm 14. `FU-224` chỉ đụng HTML/JS, không chạm runtime dự đoán — chuyển được thì 09/08 còn 8 |
+| Chuyển `FU-224` *Dọn trang frontend trùng/chết* từ 09/08 → 06/08 | ✅ **OWNER DUYỆT ~12:4x ngày 04/08** (V10982b) — *"Chuyển xuống 06/08 - 09/08 còn 8 mục"* | Đã chuyển. Mã đọc `UI0809` → `UI0806`, nhãn `OWNER_LOCK` giữ nguyên. 09/08 **9 → 8**, 06/08 **5 → 6** |
+
+Việc còn lại của `FU-224` vẫn chờ owner và **không** được coi là đã xong: ngày 06/08 owner phải
+chọn **giữ / gộp / bỏ** cho 5 hạng mục frontend. Agent chỉ trình phương án, KHÔNG tự xoá trang.
 
 Ba mục owner phải quyết của nhóm 14 vẫn nguyên: `FU-192` và `FU-193` trước **07/08**, `FU-215`
 trước **08/08** (chi tiết ở báo cáo V10981).
