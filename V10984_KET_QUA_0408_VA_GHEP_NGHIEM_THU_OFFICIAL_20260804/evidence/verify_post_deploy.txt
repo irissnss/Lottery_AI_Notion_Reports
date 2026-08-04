@@ -1,0 +1,77 @@
+=== 1. FU-244: chay cong loi the tren VPS de co ban ghi hom nay ===
+    MT: chưa đạt: cần hơn bừa ≥3.0pp (đang -2.94) và z ≥2.0 (đang -1.18)
+        cần thêm ~494 ngày mới đủ mẫu chứng minh lợi thế 3.0pp
+
+  ── cửa sổ 180 ngày ──
+    miền     kỳ    đài  trúng       hệ      bừa   lợi thế       z   hoà vốn  còn thiếu   cổng
+    MB      158    158     35   22.15%   23.75%    -1.59pp   -0.47    27.55%     +5.40pp   ĐÓNG
+    MN      158    497     82    16.5%   16.55%    -0.05pp   -0.03    18.37%     +1.87pp   ĐÓNG
+    MT      158    384     66   17.19%   16.52%    +0.67pp    0.35    18.37%     +1.18pp   ĐÓNG
+
+=== 2. edge_gate_daily — lich su ghi (FU-244 can dong moi) ===
+date        n
+----------  -
+2026-08-04  3
+2026-08-01  3
+
+=== 3. crontab: dem dong 10945 va 10984 ===
+grep -c 10945 = 1
+grep -c 10984 = 1
+
+=== 4. bang do bong: 4 co tren MOI dong ===
+n_dong  s_out  s_diag  s_appr  s_shad  tu          den       
+------  -----  ------  ------  ------  ----------  ----------
+15      0      15      0       15      2026-07-30  2026-08-04
+
+=== 5. bang do bong: tung dong ===
+date        region  official_bt  nt_bt  giong_nhau  official_dai_trung  nt_dai_trung  ai_hon  
+----------  ------  -----------  -----  ----------  ------------------  ------------  --------
+2026-07-30  MN      86           86     1           0                   0             BANG    
+2026-07-31  MB      19           19     1           0                   0             BANG    
+2026-07-31  MN      09           09     1           2                   2             BANG    
+2026-07-31  MT      68           68     1           0                   0             BANG    
+2026-08-01  MB      90           90     1           1                   1             BANG    
+2026-08-01  MN      16           38     0           1                   0             OFFICIAL
+2026-08-01  MT      55           55     1           0                   0             BANG    
+2026-08-02  MB      52           73     0           1                   0             OFFICIAL
+2026-08-02  MN      43           39     0           1                   0             OFFICIAL
+2026-08-02  MT      69           69     1           2                   2             BANG    
+2026-08-03  MN      64           64     1           0                   0             BANG    
+2026-08-03  MT      64           64     1           0                   0             BANG    
+2026-08-04  MB      71           71     1           0                   0             BANG    
+2026-08-04  MN      22           22     1           0                   0             BANG    
+2026-08-04  MT      60           29     0           1                   0             OFFICIAL
+
+=== 6. panel tren VPS: dang ky du 3 cho + trong setInterval ===
+sectionGhepNghiemThu      = 1
+loadGhepNghiemThu tong    = 3
+trong khoi setInterval60s = 1
+
+=== 7. API: 401 khi chua dang nhap (dung require_admin) ===
+/api/health -> 200
+/api/admin/ghep-nghiem-thu-official -> 401
+/api/admin/edge-gate -> 401
+Cache-Control cua endpoint admin: (khong thay header)
+
+=== 8. QD-014: duong ra so KHONG doi — 15 model official ===
+0
+OUTPUT_ELIGIBLE_MODELS = 15
+
+=== 9. bo kiem V10984 chay tren VPS ===
+  ✓ nằm trong setInterval(60s) — §52B                              
+  ✓ bảng ghep_nt_official_daily có dòng                            15 dòng
+  ✓ mọi dòng giữ đúng 4 cờ chẩn đoán                               0 dòng sai cờ
+  ✓ QD-014: vẫn đúng 15 model official                             15 model
+-------------------------------------------------------------------------------------------
+  ĐẠT 14/14 — V10984_GHEP_SHADOW_OK
+
+=== 10. journal: co Traceback/ERROR sau restart khong ===
+Traceback: 0
+ERROR    : 0
+service  : active
+
+=== 11. 4 bang khoa: so dong (phai khop truoc deploy) ===
+predictions = 11713
+final_bundles = 474
+lottery_results = 15213
+model_daily_eval = 11577

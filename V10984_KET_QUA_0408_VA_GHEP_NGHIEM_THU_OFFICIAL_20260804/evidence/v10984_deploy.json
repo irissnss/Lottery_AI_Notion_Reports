@@ -1,0 +1,47 @@
+{
+  "gio_vn": "2026-08-04T21:59:37+07:00",
+  "pid_truoc": "770947",
+  "pid_sau": "801640",
+  "backup_vps": "/root/Lottery_AI_Test/backups/v10984_pre_20260804_215937",
+  "hash_truoc": {
+    "predictions": {
+      "rows": 11713,
+      "sha256": "7b27df5056380737e6129c7cc0094c6b"
+    },
+    "final_bundles": {
+      "rows": 474,
+      "sha256": "a8f4570db97f09dcdebad48ca62ea38e"
+    },
+    "lottery_results": {
+      "rows": 15213,
+      "sha256": "92ccf706553921288f2105f96e2a399b"
+    },
+    "model_daily_eval": {
+      "rows": 11577,
+      "sha256": "c559a75ad34b78ed89ed7d265dca3e13"
+    }
+  },
+  "hash_sau": {
+    "predictions": {
+      "rows": 11713,
+      "sha256": "7b27df5056380737e6129c7cc0094c6b"
+    },
+    "final_bundles": {
+      "rows": 474,
+      "sha256": "a8f4570db97f09dcdebad48ca62ea38e"
+    },
+    "lottery_results": {
+      "rows": 15213,
+      "sha256": "92ccf706553921288f2105f96e2a399b"
+    },
+    "model_daily_eval": {
+      "rows": 11577,
+      "sha256": "c559a75ad34b78ed89ed7d265dca3e13"
+    }
+  },
+  "bang_doi": [],
+  "cron_them": [
+    "0 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10945_edge_gate.py >> /root/Lottery_AI_Test/logs/v10945_edge_gate.log 2>&1  # V10984 FU-244 cong loi the ghi hang ngay, sau moc FINAL",
+    "10 19 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10984_ghep_lane_official.py >> /root/Lottery_AI_Test/logs/v10984_ghep_lane.log 2>&1  # V10984 FU-264 do bong ghep lane nghiem thu x official"
+  ]
+}
