@@ -1,0 +1,219 @@
+# Cổng kiểm phiên V10985 — 2026-08-04 (giờ Việt Nam)
+#
+# Mỗi cổng chạy MỘT LỆNH RIÊNG. Gộp nhiều cổng vào một lệnh thì phiên trước
+# bị cắt mất kết quả.
+# Đã quét và thay thế mọi khoá API / private key trước khi ghi ra repo công khai.
+
+============================================================================================
+$ python web/backend/_v10920_decision_ledger.py
+# exit_code = 0
+============================================================================================
+============================================================================================
+  SỔ QUYẾT ĐỊNH — code có còn khớp với những gì anh đã chốt không
+============================================================================================
+
+  QD-022             🟢 khớp 9/9             9 mục còn đáo hạn 10/08 mà KHÔNG thuộc nhóm 14
+
+  QD-021             🟢 khớp 5/5             14 mục cùng đáo hạn 08/08 được GIÃN thành lịch
+
+  QD-020             🟢 khớp 8/8             Sau khi dữ liệu đầu vào ĐỦ và VERIFY đạt thì m
+
+  OD-20260803-B      🟢 khớp 5/5             Bất kỳ miền nào qua mốc FINAL của nó (MN 15:45
+
+  OD-20260803-A      🟢 khớp 5/5             Sửa 5 lỗi xanh giả ở tầng cổng tự kiểm; cổng p
+
+  OD-20260801-A      🟢 khớp 6/6             Tắt 5 lớp ghi đè bạch thủ đang làm tệ đi; giữ 
+
+  OD-20260801-B      🟢 khớp 3/3             Cho 6 lane hết hạn đo nghỉ: V10707, V10781, V1
+
+  OD-20260801-C      ⚪ không kiểm máy       Không dựng thêm luồng đo song song khi số liệu
+
+  OD-20260801-D      🟢 khớp 1/1             Đóng băng đường ra số từ 01/08 đến 08/08 — khô
+
+  OD-20260801-E      🟢 khớp 4/4             Mọi quyết định của owner, mọi vướng vấp, mọi h
+
+  OD-20260801-H      🟢 khớp 5/5             Bộ mặt quy tắc gồm SÁU file, đồng bộ đa chiều;
+
+  OD-20260801-G      🟢 khớp 6/6             CLAUDE.md thành mặt quy tắc thứ tư; bộ đồng bộ
+
+  OD-20260801-F      🟢 khớp 6/6             Sau MỌI việc code/fix/audit phải đẩy báo cáo l
+
+  OD-20260731-A      🟢 khớp 4/4             Hạn output cuối cùng: MN 15:45 · MT 16:58 · MB
+
+  OD-20260731-B      🟢 khớp 1/1             Biên an toàn trước mốc FINAL thống nhất 2 phút
+
+  OD-20260731-C      🟢 khớp 1/1             Toàn hệ dùng giờ Việt Nam nhất quán; bảng nào 
+
+  OD-20260726-A      🟢 khớp 1/1             Cách tính tiền: vốn 18.000đ/điểm cho MN+MT, 27
+
+  QD-013             🟢 khớp 3/3             Dừng đặt tiền thật cho tới khi chứng minh được
+
+  QD-014             🟢 khớp 7/7             Đóng băng đường ra số công bố tới hết 2026-08-
+
+  QD-015             🟢 khớp 4/4             Sau khi hết đóng băng 08/08: chạy luồng bóng (
+
+  QD-016             🟢 khớp 3/3             Sau 08/08: trên luồng bóng (shadow) bỏ lệnh bắ
+
+  QD-017             🟢 khớp 3/3             Sau 08/08: chạy hai prompt song song trên CÙNG
+
+  QD-019             🟢 khớp 3/3             Áp phương án B — giữ mã máy (FU-xxx, QD-xxx, C
+
+  QD-018             🟢 khớp 3/3             Sau cửa sổ đóng băng 08/08: thực hiện ĐÚNG BA 
+
+  QD-023             🟢 khớp 4/4             Chứng chỉ TLS phải phủ ĐỦ MỌI tên miền mà DNS 
+
+  QD-024             🟢 khớp 5/5             Owner yêu cầu ba việc: (A) chấm kết quả hôm na
+
+  QD-025             🟢 khớp 11/11           Khoá luật cắt model an toàn thành mục §59 (A57
+
+============================================================================================
+  ✓ KHÔNG CÓ QUYẾT ĐỊNH NÀO BỊ TRÔI
+============================================================================================
+
+đã sinh bản đọc cho người: docs\OWNER_DECISION_LEDGER.md  (kiểm tươi 2026-08-04 23:28:30)
+
+
+============================================================================================
+$ python web/backend/_v10981_kiem_lich.py
+# exit_code = 0
+============================================================================================
+================================================================================================
+  CỔNG KIỂM LỊCH CUỐN CHIẾU V10981 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] K1 · đủ 14 mã trong sổ theo dõi
+         → đủ 14/14
+  [ĐẠT ] K2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] K3 · mỗi mã có mã đọc §58
+         → 14/14 có mã đọc
+  [ĐẠT ] K4 · hạn thật trong sổ khớp hạn đã xếp
+         → 14/14 khớp
+  [ĐẠT ] K5 · không ngày nào quá 3 mục của nhóm
+         → 04/08=3 · 05/08=1 · 06/08=1 · 07/08=1 · 08/08=3 · 09/08=3 · 10/08=2
+  [ĐẠT ] K6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] K7 · mục không kết luận nổi trước 10/08 đều ghi rõ lý do
+         → 5 mục nêu thẳng: FU-193→16/08, FU-216→15/08, FU-217→16/08, FU-231→23/08, FU-226→23/08
+  [ĐẠT ] K8 · không mục nào rơi thành MỒ CÔI (nhãn phải trong TREO_STATUSES hoặc DONG_STATUSES)
+         → 14/14 nhãn hợp lệ, đều được bộ đếm nhìn thấy · đã đóng 3/14 (FU-187, FU-191, FU-212)
+================================================================================================
+  ĐẠT 8/8 phép · LICH_CUON_CHIEU_DAT
+
+
+============================================================================================
+$ python web/backend/_v10982_kiem_lich9.py
+# exit_code = 0
+============================================================================================
+================================================================================================
+  CỔNG KIỂM GIÃN 9 MỤC NGÀY CHỐT V10982 — nguồn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [ĐẠT ] J1 · đủ 9 mã trong sổ theo dõi
+         → đủ 9/9
+  [ĐẠT ] J2 · không mã nào còn hạn sau 10/08
+         → 0 mã vượt hạn chốt
+  [ĐẠT ] J3 · mỗi mã có mã đọc §58
+         → 9/9 có mã đọc
+  [ĐẠT ] J4 · hạn thật trong sổ khớp hạn đã xếp
+         → 9/9 khớp
+  [ĐẠT ] J5 · ngày chốt 10/08 tổng tải ≤ 3 · mốc tải khớp sổ thật
+         → 10/08 = 3 mục (nhóm14 ['FU-226', 'FU-231'] + nhóm9 ['FU-252'] + khác []) · mốc tải phiên khác khớp sổ thật 7/7 ngày · tải mỗi ngày 04/08=3 05/08=5 06/08=6 07/08=5 08/08=5 09/08=8 10/08=3
+  [ĐẠT ] J6 · mã đọc không đụng mã của mục khác
+         → 0 va chạm
+  [ĐẠT ] J7 · mục không kết luận nổi trong hạn đều ghi rõ lý do
+         → 1 mục nêu thẳng: FU-253→12/08
+  [ĐẠT ] J8 · 0 mục mồ côi trong nhóm · tổng mồ côi toàn sổ ≤ 19
+         → 9/9 nhãn hợp lệ · tổng mồ côi toàn sổ 18 (trước phiên 19, giảm 1)
+================================================================================================
+  ĐẠT 8/8 phép · GIAN_9_MUC_DAT
+
+
+============================================================================================
+$ python web/backend/_v10925_rule_sync_check.py --check
+# exit_code = 0
+============================================================================================
+============================================================================================
+  KIỂM AGENTS.md CÓ KHỚP CLAUDE.md KHÔNG
+============================================================================================
+  AGENTS.md                đã khớp CLAUDE.md, không cần ghi
+
+============================================================================================
+  KIỂM SÁU MẶT QUY TẮC
+============================================================================================
+  mặt                         kích thước  thiếu dấu hiệu
+  .Antigravityrules.md          101,412B  ✓ đủ
+  .antigravityrules               1,988B  ✓ đủ
+  .AGENT.md                      32,264B  ✓ đủ
+  .cursorrules                   23,328B  ✓ đủ
+  CLAUDE.md                      16,033B  ✓ đủ
+  AGENTS.md                      15,948B  ✓ đủ
+
+============================================================================================
+  KIỂM .cursor/rules/*.mdc — có được Cursor TỰ NẠP không
+============================================================================================
+  active-roadmap-precedence.mdc                frontmatter=có · alwaysApply=true  ✓ tự nạp
+  governance-traceability-automation.mdc       frontmatter=có · alwaysApply=true  ✓ tự nạp
+  live-data-integrity.mdc                      frontmatter=có · alwaysApply=true  ✓ tự nạp
+  playbook-first.mdc                           frontmatter=có · alwaysApply=true  ✓ tự nạp
+
+============================================================================================
+  FILE QUY TẮC CHẾT Ở GỐC REPO
+============================================================================================
+  ✓ không còn file quy tắc lạ hay rỗng ở gốc repo
+
+============================================================================================
+  ✓ SÁU MẶT ĐỒNG BỘ · MỌI .mdc ĐỀU ĐƯỢC TỰ NẠP · KHÔNG CÒN FILE CHẾT
+============================================================================================
+
+
+============================================================================================
+$ python web/backend/_v10920_session_start.py
+# exit_code = 0
+============================================================================================
+==============================================================================================
+  KIỂM ĐẦU PHIÊN — 2026-08-04   (bắt buộc chạy TRƯỚC khi trả lời owner)
+==============================================================================================
+
+[1] CHECKPOINT QUÁ HẠN: 0
+
+[2] ROADMAP XONG NHƯNG CHƯA CHUYỂN VÀO archive/: 0
+
+[3] MỤC THEO DÕI CÒN TREO: 97 · QUÁ HẠN 1 · ĐẾN HẠN HÔM NAY 0 · không ghi hạn 49
+    ⚠ FU-225 · UI0803 · Xác minh UI du-doan-test + filter · hạn 03/08          DEPLOYED_PENDING_OWNER_VERIFY
+      FU-254 · DD0805 · Ba bảng P&L chết 75 ngày · hạn 05/08                   MEASURED_ROOT_CAUSE       
+      FU-207 · DP0805-1 · Nâng cổng an toàn deploy lên mốc FINAL / bundle v2 · MEASURED_BUT_NOT_FIXED    
+      FU-259 · KS0805 · C17/C18 mới chỉ đúng trên giấy, chưa có lượt ghi thật  WAIT_LIVE                 
+      FU-243 · SC0805 · Canh incomplete bundle do gate · hạn 05/08             MEASURED_ROOT_CAUSE       
+      FU-224 · UI0806 · Dọn trang frontend trùng/chết · hạn 06/08              OWNER_LOCK                
+      FU-257 · SC0806 · Cohere chết 25 ngày mà health vẫn khai đang chạy · hạn MEASURED_ROOT_CAUSE       
+      FU-210 · DO0806-1 · Đào nguyên nhân mất lợi thế MT tháng 6 · hạn 06/08   MEASURED_BUT_NOT_FIXED    
+      FU-245 · SC0804 · Hook đầu phiên im 2 ngày · hạn 04/08                   DEPLOYED_PENDING_LIVE_VERIFY
+
+[3b] ⚠ MỤC MỒ CÔI — nhãn không tính treo cũng chưa đóng: 18
+     nhãn đang gặp: ?, DEFER, DELIVERED_AUDIT_DOCS_ONLY, DELIVERED_DOCS_ONLY, DELIVERED_DOCS_RECONCILIATION, DELIVERED_INVENTORY_DOCS_ONLY, DEPLOYED_DOCS_ONLY, FALSE_NEGATIVE, FIXED_PENDING_LIVE_VERIFY, READY_NOT_DEPLOYED
+      · FU-262   FIXED_PENDING_LIVE_VERIFY    hạn 2026-08-05  `/monitoring` từng bị cắt cụt 53,5% mà không
+      · FU-250                                hạn 2026-08-06  Soát nốt cổng còn thoát 0 khi trượt
+      · FU-201   READY_NOT_DEPLOYED           hạn 2026-08-08  Canh bộ lọc combo-super sau khi mở pool
+      · FU-205   READY_NOT_DEPLOYED           hạn 2026-08-15  Bộ lọc chấm bạch thủ có tốt hơn chấm wi…
+      · FU-001   [One                         hạn —  [Title]
+      · FU-117   WAIT_CLOSEOUT                hạn —  V54 natural live closeout proof
+      · FU-119   READY_TO_BUILD_MEASUREMENT_O hạn —  V54 per-model latency instrumentation
+      · FU-121   READY_TO_BUILD_UI_TEST_ONLY  hạn —  V54 MT correct-but-dropped UI panel
+
+[4] SỔ QUYẾT ĐỊNH CỦA OWNER
+    27 quyết định đang có hiệu lực · 0 tới hạn rà soát
+    → chạy `python web/backend/_v10920_decision_ledger.py` để kiểm code có trôi không
+
+[5] PLAYBOOK
+    224 dòng · 2 dòng có ngày đã tới/qua
+      2026-07-28 | **28/07 tối — 2 mục V10870 phải đọc cùng CP-L6 (lịch sử)** | Owner ký 13:48 hoãn sửa trong ngày chốt t
+      2026-08-04 | ~~04/08 chiều~~ | ✅ **ĐẠT — ĐÓNG 04/08 18:2x (V10983): FU-260 `CLOSED_PASS`.** MT official chốt 16:50:
+
+[6] NĂM MẶT QUY TẮC
+    lần sửa gần nhất: fd77cad 2026-08-02
+    đang sửa cả năm
+    AGENTS.md khớp đúng bản sinh từ CLAUDE.md
+
+==============================================================================================
+  ⚠ CẦN NÊU VỚI OWNER NGAY ĐẦU CÂU TRẢ LỜI: 18 mục mồ côi (nhãn chưa phân loại) · 1 mục theo dõi quá hạn
+==============================================================================================
+

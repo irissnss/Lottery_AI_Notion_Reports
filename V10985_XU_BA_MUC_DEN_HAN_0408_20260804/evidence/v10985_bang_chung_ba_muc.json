@@ -1,0 +1,172 @@
+{
+  "phien_ban": "V10985",
+  "chay_luc": "2026-08-04 23:11:07",
+  "muc_tieu": "Nghiệm thu ba mục đến hạn 04/08 theo QD-021 (nhóm 14)",
+  "fu187": {
+    "muc": "FU-187",
+    "nhan": "Nghiệm thu hook đầu phiên",
+    "diem_danh": {
+      "ton_tai": true,
+      "so_dong": 6,
+      "theo_pha": {
+        "VAO_HOOK": 2,
+        "DA_GHI_BRIEFING": 2,
+        "XONG": 2
+      },
+      "dong_dau": "2026-08-04 10:05:23\tVAO_HOOK",
+      "dong_cuoi": "2026-08-04 10:06:01\tXONG",
+      "moi_dong": [
+        "2026-08-04 10:05:23\tVAO_HOOK",
+        "2026-08-04 10:05:23\tDA_GHI_BRIEFING",
+        "2026-08-04 10:05:23\tXONG",
+        "2026-08-04 10:06:01\tVAO_HOOK",
+        "2026-08-04 10:06:01\tDA_GHI_BRIEFING",
+        "2026-08-04 10:06:01\tXONG"
+      ],
+      "di_het_ham": true,
+      "treo_o_stdin": false
+    },
+    "briefing": {
+      "ton_tai": true,
+      "moc_sinh": "2026-08-04 10:06:01",
+      "tuoi_gio": 13.09,
+      "trong_24_gio": true,
+      "muc_co_so": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "3b": true,
+        "4": true,
+        "5": true,
+        "6": true
+      },
+      "du_6_tren_6": true,
+      "so_ky_tu": 3360
+    },
+    "hook_dang_ky": {
+      "co_sessionStart": true,
+      "lenh": [
+        "python .cursor/hooks/session_start_briefing.py"
+      ],
+      "timeout": [
+        100
+      ]
+    },
+    "bo_kiem": {
+      "exit_code": 0,
+      "so_ky_tu_stdout": 3662
+    },
+    "dat": true
+  },
+  "fu191": {
+    "muc": "FU-191",
+    "nhan": "Khoá luật cắt model an toàn combo-super",
+    "co_che_that_trong_code": {
+      "ML_MODELS": [
+        "meta-learning",
+        "lstm",
+        "xgboost",
+        "random-forest"
+      ],
+      "so_ML": 4,
+      "AI_MODELS": [
+        "claude-sonnet-4-6",
+        "gemini-2.5-flash",
+        "claude-opus-4-6",
+        "gemini-2.5-pro",
+        "deepseek-reasoner",
+        "glm-5.1",
+        "gpt-oss-120b",
+        "gemini-3.5-flash",
+        "gemini-3.6-flash"
+      ],
+      "so_AI": 9,
+      "tong_ung_vien": 13,
+      "unified_top3": true,
+      "cau_chon_top3": true,
+      "bao_dam_1ml_1ai": true,
+      "ml_luon_chay_shadow": true,
+      "dual_pool_da_bo": true
+    },
+    "nam_mat": {
+      ".Antigravityrules.md": {
+        "ton_tai": true,
+        "thieu_dau_hieu": [],
+        "du_dau_hieu": true
+      },
+      ".AGENT.md": {
+        "ton_tai": true,
+        "thieu_dau_hieu": [],
+        "du_dau_hieu": true
+      },
+      ".cursorrules": {
+        "ton_tai": true,
+        "thieu_dau_hieu": [],
+        "du_dau_hieu": true
+      },
+      "CLAUDE.md": {
+        "ton_tai": true,
+        "thieu_dau_hieu": [],
+        "du_dau_hieu": true
+      },
+      "AGENTS.md": {
+        "ton_tai": true,
+        "thieu_dau_hieu": [],
+        "du_dau_hieu": true
+      }
+    },
+    "du_nam_mat": true,
+    "file_tro_duong": {
+      "ten": ".antigravityrules",
+      "co_dang_ky_§59": true,
+      "co_dang_ky_§58": true
+    },
+    "dat": true
+  },
+  "fu212": {
+    "muc": "FU-212",
+    "nhan": "MT tín hiệu rơi ở gộp phiếu — đóng phần đo",
+    "artifact": "artifacts/v10955_tin_hieu_roi_rung.json",
+    "ton_tai": true,
+    "gia_thuyet_co_mat": [
+      "gt1",
+      "gt2",
+      "gt3",
+      "gt4",
+      "gt5"
+    ],
+    "gia_thuyet_co_du_lieu": {
+      "gt1": true,
+      "gt2": true,
+      "gt3": true,
+      "gt4": true,
+      "gt5": true
+    },
+    "du_5_tren_5": true,
+    "chenh_7_59pp": true,
+    "ket_luan_trong_so": {
+      "gt1": true,
+      "gt2": true,
+      "gt3": true,
+      "gt4": true,
+      "gt5": true
+    },
+    "du_ket_luan": true,
+    "bao_cao_cong_khai": {
+      "duong_dan": "E:\\Lottery_AI_Notion_Reports\\V10955_TIN_HIEU_ROI_RUNG_O_DAU_20260802",
+      "ton_tai": true,
+      "so_file": 4
+    },
+    "khoa_cap_1": [
+      "auc_doi_chieu",
+      "ghi_chu",
+      "gt1",
+      "gt2",
+      "gt3",
+      "gt4",
+      "gt5"
+    ],
+    "so_ky_tu": 11309,
+    "dat": true
+  }
+}

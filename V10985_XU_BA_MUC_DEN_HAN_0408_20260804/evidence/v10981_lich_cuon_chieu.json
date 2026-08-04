@@ -1,0 +1,468 @@
+{
+  "phien_ban": "V10981",
+  "owner_ky": "2026-08-04 10:29",
+  "nguyen_van": "Giãn ra cuốn chiếu tới hết ngày 10/08 phải hoàn thành, làm lần lượt những vấn đề nào xác thực rõ ràng , đơn giản làm trước tới cuối cùng 10/08 phải xong",
+  "han_chot": "2026-08-10",
+  "het_dong_bang_QD014": "2026-08-08",
+  "tran_moi_ngay": 3,
+  "so_muc": 14,
+  "theo_ngay": {
+    "2026-08-04": [
+      "FU-187",
+      "FU-191",
+      "FU-212"
+    ],
+    "2026-08-05": [
+      "FU-207"
+    ],
+    "2026-08-06": [
+      "FU-210"
+    ],
+    "2026-08-07": [
+      "FU-193"
+    ],
+    "2026-08-08": [
+      "FU-186",
+      "FU-203",
+      "FU-215"
+    ],
+    "2026-08-09": [
+      "FU-192",
+      "FU-216",
+      "FU-217"
+    ],
+    "2026-08-10": [
+      "FU-231",
+      "FU-226"
+    ]
+  },
+  "muc": [
+    {
+      "fu": "FU-187",
+      "ma_doc_cu": "KS0808",
+      "ma_doc": "KS0804-1",
+      "trang_thai": "DEPLOYED_PENDING_LIVE_VERIFY",
+      "nhan": "Nghiệm thu hook tra cứu đầu phiên",
+      "han": "2026-08-04",
+      "dong_bang": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "`_v10920_session_start.py` chạy exit 0 và `docs/_BRIEFING_DAU_PHIEN.txt` có mốc trong vòng 24 giờ; 6/6 mục briefing in ra số (không mục nào rỗng).",
+      "phu_thuoc": [
+        "FU-245 (hook im 2 ngày, hạn 06/08)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": "",
+      "xong": {
+        "ngay_xong": "2026-08-04",
+        "phien": "V10985",
+        "bang_chung": "Sổ điểm danh `docs/_HOOK_DIEM_DANH.log` **6 dòng** = `VAO_HOOK` 2 · `DA_GHI_BRIEFING` 2 · `XONG` 2 — hook đi HẾT hàm cả hai lượt, **0 lượt treo ở `stdin`** · briefing mốc 04/08 10:06:01 (**13,1 giờ**, trong 24h) · **6/6** mục briefing in ra số · `_v10920_session_start.py` exit **0**",
+        "trang_thai_moi": "CLOSED_PASS"
+      }
+    },
+    {
+      "fu": "FU-191",
+      "ma_doc_cu": "XH0808-2",
+      "ma_doc": "XH0804",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "nhan": "Khoá luật cắt model an toàn combo-super",
+      "han": "2026-08-04",
+      "dong_bang": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Luật «bỏ `output_eligible` ≠ dừng model · pool ML phải ≥ 4 · pool AI phải ≥ 3» có mặt trong cả 5 mặt quy tắc; `_v10925_rule_sync_check.py` exit 0.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": "",
+      "xong": {
+        "ngay_xong": "2026-08-04",
+        "phien": "V10985",
+        "bang_chung": "Luật thành **§59 (A57)** có mặt **5/5** mặt quy tắc (`.Antigravityrules.md` · `.AGENT.md` · `.cursorrules` · `CLAUDE.md` · `AGENTS.md`) + bảng đánh số trong `.antigravityrules` · `_v10925_rule_sync_check.py` exit **0**, sáu mặt đồng bộ · **KHÔNG cắt model nào** — pool vẫn **4 ML + 9 AI = 13**",
+        "trang_thai_moi": "CLOSED_PASS"
+      }
+    },
+    {
+      "fu": "FU-212",
+      "ma_doc_cu": "TDLX-212",
+      "ma_doc": "DO0804",
+      "trang_thai": "MEASURED_ROOT_CAUSE_FOUND",
+      "nhan": "MT tín hiệu rơi ở gộp phiếu — đóng phần đo",
+      "han": "2026-08-04",
+      "dong_bang": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Phần ĐO đóng lại (`CLOSED_REPORT`): 5/5 giả thuyết GT-1…GT-5 đã có kết luận, chênh RF→công bố 7,59pp có trong `artifacts/v10955_tin_hieu_roi_rung.json`. Phần HÀNH ĐỘNG chuyển hẳn sang FU-216. Sửa luôn lệch nhãn: tiêu đề ghi `hạn LX` nhưng ô due ghi 2026-08-08.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": "",
+      "xong": {
+        "ngay_xong": "2026-08-04",
+        "phien": "V10985",
+        "bang_chung": "`artifacts/v10955_tin_hieu_roi_rung.json` (11.309 ký tự) có đủ **5/5** khoá `gt1`…`gt5`, khoá nào cũng có dữ liệu · **5/5** kết luận ghi trong sổ theo dõi (gt1 một phần · gt2 bác bỏ · gt3 xác nhận · gt4 xác nhận phụ · gt5 AUC 0,55 đủ hoà vốn lý thuyết) · chênh RF→công bố **7,59pp** có trong artifact · báo cáo công khai `V10955_TIN_HIEU_ROI_RUNG_O_DAU_20260802/` **4 file**",
+        "trang_thai_moi": "CLOSED_REPORT"
+      }
+    },
+    {
+      "fu": "FU-207",
+      "ma_doc_cu": "DP0808",
+      "ma_doc": "DP0805-1",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "nhan": "Nâng cổng an toàn deploy lên mốc FINAL / bundle v2",
+      "han": "2026-08-05",
+      "dong_bang": false,
+      "ro_rang": "ro",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "`_v10934_deploy.py` chặn khi giờ VN < 17:58 HOẶC bundle MB còn `bundle_version < 2`; chạy thử 2 ca (trước 17:58 → chặn, sau 17:58 + v2 → cho qua) đúng 2/2.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-210",
+      "ma_doc_cu": "DO0808-1",
+      "ma_doc": "DO0806-1",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "nhan": "Đào nguyên nhân mất lợi thế MT tháng 6",
+      "han": "2026-08-06",
+      "dong_bang": false,
+      "ro_rang": "mo_ho",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "Trả lời đủ 4 hướng đào (thay đổi code/cấu hình 01/05–15/06 · lịch retrain ML · đặc tính kết quả MT · chuyển ML→AI ở MT), mỗi hướng kèm bằng chứng hoặc ghi rõ «không tìm thấy». Kết luận một trong hai: NGUYÊN NHÂN TRONG HỆ (nêu commit/cấu hình) hoặc THỊ TRƯỜNG ĐỔI.",
+      "phu_thuoc": [],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-193",
+      "ma_doc_cu": "XH0808-4",
+      "ma_doc": "XH0807",
+      "trang_thai": "AWAITING_OWNER_OK",
+      "nhan": "Sàn chất lượng combo-super — thiết kế + ngưỡng số",
+      "han": "2026-08-07",
+      "dong_bang": true,
+      "ro_rang": "cho_owner",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "Có bản thiết kế + MỘT con số ngưỡng owner duyệt (đề xuất: cả pool ML thắng < 5% trong 7 ngày gần nhất thì combo-super bỏ nhánh ML), kèm backtest chỉ-đọc 90 ngày cho biết ngưỡng đó sẽ kích hoạt bao nhiêu ngày/miền. CHƯA sửa code.",
+      "phu_thuoc": [
+        "owner duyệt ngưỡng",
+        "QD-014 (chỉ được sửa code sau 08/08)",
+        "QD-018 B1 (không chạy song song hai thay đổi)"
+      ],
+      "ket_luan_som_nhat": "2026-08-16",
+      "vi_sao_khong_som": "Sửa bộ lọc combo-super là đổi đường ra số — QD-014 cấm tới hết 08/08, và QD-018 bắt làm TỪNG BƯỚC MỘT nên phải xếp sau B1 (tắt bộ tối ưu trọng số, khởi động 09/08, đo ≥7 ngày). Trong hạn 07/08 chỉ xong được THIẾT KẾ + NGƯỠNG, không phải triển khai."
+    },
+    {
+      "fu": "FU-186",
+      "ma_doc_cu": "KS0808-2",
+      "ma_doc": "KS0808-2",
+      "trang_thai": "WAIT_LIVE",
+      "nhan": "Đọc kết quả 7 ngày sau tắt lớp ghi đè",
+      "han": "2026-08-08",
+      "dong_bang": true,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Bảng 7 ngày 02/08→08/08: MT và MB phải có phiếu bầu == số công bố **100% số ngày**; tỉ lệ trúng gộp ba miền so với mốc 28,9% (kỳ vọng ~35%); 6 lane đã nghỉ vẫn lệch 0 ở bộ tự kiểm 18:05.",
+      "phu_thuoc": [
+        "đủ 7 ngày dữ liệu (kết thúc 08/08)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-203",
+      "ma_doc_cu": "DO0808-2",
+      "ma_doc": "DO0808-2",
+      "trang_thai": "WAIT_LIVE",
+      "nhan": "gemini-3.5-flash — chấm tuần 02→08/08",
+      "han": "2026-08-08",
+      "dong_bang": false,
+      "ro_rang": "ro",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Chạy đúng câu SQL đã ghi trong FU-203 trên `model_daily_eval` `date>='2026-08-02'`. ≥30% → đề xuất xét vào total (thi hành sau 08/08). <25% → gỡ khỏi pool combo-super. 25–30% → theo dõi tiếp.",
+      "phu_thuoc": [
+        "đủ tuần dữ liệu (kết thúc 08/08)"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-215",
+      "ma_doc_cu": "DB0808",
+      "ma_doc": "DB0808",
+      "trang_thai": "OWNER_LOCK",
+      "nhan": "Đóng băng QD-014 hết hạn — chốt hoặc gia hạn",
+      "han": "2026-08-08",
+      "dong_bang": true,
+      "ro_rang": "cho_owner",
+      "phuc_tap": "don_gian",
+      "xong_la_gi": "Hết ngày 08/08: chạy 7/7 phép `kiem_code` của QD-014 phải còn KHỚP (chứng minh trong tuần không ai lén đổi đường ra số), rồi owner chốt MỞ hay GIA HẠN. Ghi kết quả vào sổ; QD-014 chuyển `SUPERSEDED` nếu mở.",
+      "phu_thuoc": [
+        "owner quyết"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-192",
+      "ma_doc_cu": "XH0808-3",
+      "ma_doc": "XH0809",
+      "trang_thai": "AWAITING_OWNER_OK",
+      "nhan": "Promote glm-5.1 / gpt-oss-120b hay đóng lại",
+      "han": "2026-08-09",
+      "dong_bang": true,
+      "ro_rang": "cho_owner",
+      "phuc_tap": "trung_binh",
+      "xong_la_gi": "Một trong hai kết cục, không để treo tiếp: (a) promote `glm-5.1` (KEEP_STABLE, dương 4/5 kỳ, 110 ngày/309 lượt) và/hoặc `gpt-oss-120b` (+3,14pp, 3/5 kỳ) vào official — roster 15 → 16/17; hoặc (b) ghi «không promote» kèm lý do bằng số. 110 ngày / 3.778 lượt / 0 promote phải chấm dứt.",
+      "phu_thuoc": [
+        "owner quyết TRƯỚC 07/08",
+        "QD-014 hết hiệu lực (08/08)",
+        "QD-013 cổng lợi thế vẫn đóng — promote không kèm đặt tiền"
+      ],
+      "ket_luan_som_nhat": null,
+      "vi_sao_khong_som": ""
+    },
+    {
+      "fu": "FU-216",
+      "ma_doc_cu": "XH0808-1",
+      "ma_doc": "XH0809-1",
+      "trang_thai": "OWNER_LOCK",
+      "nhan": "Khởi động shadow MT bạch thủ = random-forest đơn (QD-015)",
+      "han": "2026-08-09",
+      "dong_bang": true,
+      "ro_rang": "ro",
+      "phuc_tap": "nang",
+      "xong_la_gi": "TRONG HẠN: job shadow chạy thật, bảng shadow khai đúng 4 cờ (`output_eligible=0 diagnostic_only=1 owner_approved=0 shadow_only=1`), panel `/monitoring` có đăng ký `setInterval(60s)`, và có **ngày đo đầu tiên** ghi được. KHÔNG phải kết luận lợi thế.",
+      "phu_thuoc": [
+        "QD-014 hết hiệu lực (08/08)",
+        "QD-015 (owner đã duyệt trước 02/08)"
+      ],
+      "ket_luan_som_nhat": "2026-08-15",
+      "vi_sao_khong_som": "Chốt tự cắt của chính owner là «7 ngày đầu tỉ lệ ngày live khớp tái suy luận ≥95%». Khởi động 09/08 thì ngày thứ 7 rơi vào 15/08. Không có cách rút ngắn — dưới 7 ngày thì con số không đủ để cắt hay giữ."
+    },
+    {
+      "fu": "FU-217",
+      "ma_doc_cu": "SC0808-1",
+      "ma_doc": "SC0809",
+      "trang_thai": "MEASURED_BUT_NOT_FIXED",
+      "nhan": "Sửa key `lstm_probability` combo đọc sai + đo shadow",
+      "han": "2026-08-09",
+      "dong_bang": true,
+      "ro_rang": "ro",
+      "phuc_tap": "nang",
+      "xong_la_gi": "TRONG HẠN: `combo_super` đọc đúng `lstm_probability` (kiểm bằng một lượt chạy lại có LSTM vào được phiếu), thả trên **shadow trước**, và ghi snapshot model theo ngày. KHÔNG bật vào official cùng ngày.",
+      "phu_thuoc": [
+        "QD-014 hết hiệu lực (08/08)",
+        "FU-216 (cùng chạm nhánh ML shadow)"
+      ],
+      "ket_luan_som_nhat": "2026-08-16",
+      "vi_sao_khong_som": "Sửa key là việc một buổi, nhưng câu hỏi thật là «sửa xong LSTM còn tệ −5,58pp nữa không» — cái đó cần ≥7 ngày live sau khi sửa. Khớp live↔tái suy luận đang 23%, ba ngày không đủ nói gì."
+    },
+    {
+      "fu": "FU-231",
+      "ma_doc_cu": "HT0808-1",
+      "ma_doc": "HT0810-1",
+      "trang_thai": "OWNER_LOCK",
+      "nhan": "Khởi động shadow bỏ ép RULES-FIRST (QD-016)",
+      "han": "2026-08-10",
+      "dong_bang": true,
+      "ro_rang": "ro",
+      "phuc_tap": "nang",
+      "xong_la_gi": "TRONG HẠN: nhánh shadow bỏ chữ «bắt buộc chọn từ danh sách» (vẫn đưa danh sách như gợi ý) chạy thật, có ngày đo đầu tiên ghi overlap bạch-thủ prompt↔prompt. KHÔNG đụng luồng official.",
+      "phu_thuoc": [
+        "QD-014 hết hiệu lực (08/08)",
+        "QD-016 (owner đã duyệt trước 02/08)",
+        "đứng TRƯỚC bước B3 của QD-018 (FU-235)"
+      ],
+      "ket_luan_som_nhat": "2026-08-23",
+      "vi_sao_khong_som": "Ngưỡng owner đặt là «overlap ≤10% trong ≥14 ngày đo» (từ mức ~26% hiện tại). Khởi động 10/08 thì ngày thứ 14 rơi vào 23/08."
+    },
+    {
+      "fu": "FU-226",
+      "ma_doc_cu": "HT0808-2",
+      "ma_doc": "HT0810-2",
+      "trang_thai": "OWNER_LOCK",
+      "nhan": "Khởi động A/B hai prompt trên cùng model (QD-017)",
+      "han": "2026-08-10",
+      "dong_bang": true,
+      "ro_rang": "ro",
+      "phuc_tap": "nang",
+      "xong_la_gi": "TRONG HẠN: job A/B chạy trên `claude-sonnet-4-6` + `deepseek-reasoner` + `gemini-2.5-flash`, mỗi model HAI prompt, có ngày đo đầu tiên và hoá đơn token ngày 1 nằm trong dự toán 126 lượt gọi / 15–25 USD.",
+      "phu_thuoc": [
+        "QD-014 hết hiệu lực (08/08)",
+        "QD-017 (owner đã duyệt trước 02/08)",
+        "FU-223 (thiết kế trước)"
+      ],
+      "ket_luan_som_nhat": "2026-08-23",
+      "vi_sao_khong_som": "Chính owner ký «≥14 ngày, chấm bằng tỉ lệ trúng bạch thủ». Khởi động 10/08 thì ngày thứ 14 rơi vào 23/08. Rút ngắn là quay lại đúng cái bẫy đã làm rữa V10655→V10790."
+    }
+  ],
+  "khong_ket_luan_duoc_truoc_1008": [
+    {
+      "fu": "FU-193",
+      "ket_luan_som_nhat": "2026-08-16",
+      "vi_sao": "Sửa bộ lọc combo-super là đổi đường ra số — QD-014 cấm tới hết 08/08, và QD-018 bắt làm TỪNG BƯỚC MỘT nên phải xếp sau B1 (tắt bộ tối ưu trọng số, khởi động 09/08, đo ≥7 ngày). Trong hạn 07/08 chỉ xong được THIẾT KẾ + NGƯỠNG, không phải triển khai."
+    },
+    {
+      "fu": "FU-216",
+      "ket_luan_som_nhat": "2026-08-15",
+      "vi_sao": "Chốt tự cắt của chính owner là «7 ngày đầu tỉ lệ ngày live khớp tái suy luận ≥95%». Khởi động 09/08 thì ngày thứ 7 rơi vào 15/08. Không có cách rút ngắn — dưới 7 ngày thì con số không đủ để cắt hay giữ."
+    },
+    {
+      "fu": "FU-217",
+      "ket_luan_som_nhat": "2026-08-16",
+      "vi_sao": "Sửa key là việc một buổi, nhưng câu hỏi thật là «sửa xong LSTM còn tệ −5,58pp nữa không» — cái đó cần ≥7 ngày live sau khi sửa. Khớp live↔tái suy luận đang 23%, ba ngày không đủ nói gì."
+    },
+    {
+      "fu": "FU-231",
+      "ket_luan_som_nhat": "2026-08-23",
+      "vi_sao": "Ngưỡng owner đặt là «overlap ≤10% trong ≥14 ngày đo» (từ mức ~26% hiện tại). Khởi động 10/08 thì ngày thứ 14 rơi vào 23/08."
+    },
+    {
+      "fu": "FU-226",
+      "ket_luan_som_nhat": "2026-08-23",
+      "vi_sao": "Chính owner ký «≥14 ngày, chấm bằng tỉ lệ trúng bạch thủ». Khởi động 10/08 thì ngày thứ 14 rơi vào 23/08. Rút ngắn là quay lại đúng cái bẫy đã làm rữa V10655→V10790."
+    }
+  ],
+  "cho_owner": [
+    {
+      "fu": "FU-192",
+      "can_quyet": "Promote `glm-5.1` và/hoặc `gpt-oss-120b` vào 15 model official, hay chốt «không promote»?",
+      "quyet_truoc": "2026-08-07",
+      "da_ky_truoc": null,
+      "vi_sao": "Đây là mục DUY NHẤT trong nhóm mang nhãn `AWAITING_OWNER_OK` thật. Không có câu trả lời thì 110 ngày / 3.778 lượt / 0 promote kéo dài sang tháng thứ tư."
+    },
+    {
+      "fu": "FU-215",
+      "can_quyet": "Hết 08/08: MỞ đóng băng hay GIA HẠN? Mở thì mở cả ba việc (roster · bộ lọc combo-super · lớp ghi đè) hay mở từng phần?",
+      "quyet_truoc": "2026-08-08",
+      "da_ky_truoc": null,
+      "vi_sao": "Mọi mục xếp ngày 09 và 10/08 đều đứng sau câu trả lời này."
+    },
+    {
+      "fu": "FU-193",
+      "can_quyet": "Duyệt MỘT con số ngưỡng sàn chất lượng combo-super (đề xuất: pool ML thắng <5% trong 7 ngày → bỏ nhánh ML).",
+      "quyet_truoc": "2026-08-07",
+      "da_ky_truoc": null,
+      "vi_sao": "Không có ngưỡng bằng số thì lại rơi vào «chọn tốt nhất trong đám tệ» — MN từng chọn 3 ML mà cả ba thắng 0/7."
+    },
+    {
+      "fu": "FU-216",
+      "can_quyet": "KHÔNG PHẢI HỎI LẠI — owner đã ký QD-015 ngày 02/08.",
+      "quyet_truoc": null,
+      "da_ky_truoc": "QD-015 · 2026-08-02",
+      "vi_sao": "Nguyên văn: «Có. Duyệt trước để 08/08 tự chạy, kèm chốt tự cắt nếu tỉ lệ khớp dưới 95% trong 7 ngày đầu.» §56 cấm hỏi lại thứ đã có trong sổ."
+    },
+    {
+      "fu": "FU-226",
+      "can_quyet": "KHÔNG PHẢI HỎI LẠI — owner đã ký QD-017 ngày 02/08.",
+      "quyet_truoc": null,
+      "da_ky_truoc": "QD-017 · 2026-08-02",
+      "vi_sao": "Nguyên văn: «Có, duyệt trước để 08/08 tự chạy. Chọn vài model đại diện, chạy ≥ 14 ngày, đo bằng bạch thủ.»"
+    },
+    {
+      "fu": "FU-231",
+      "can_quyet": "KHÔNG PHẢI HỎI LẠI — owner đã ký QD-016 ngày 02/08.",
+      "quyet_truoc": null,
+      "da_ky_truoc": "QD-016 · 2026-08-02",
+      "vi_sao": "Nguyên văn: «Duyệt trước: sau 08/08 bỏ lệnh 'bắt buộc chọn từ danh sách' trên luồng bóng để đo — vẫn đưa danh sách như gợi ý, chỉ bỏ chữ bắt buộc.»"
+    }
+  ],
+  "tai_that_moi_ngay": {
+    "2026-08-04": {
+      "nhom14": [
+        "FU-187",
+        "FU-191",
+        "FU-212"
+      ],
+      "nhom9": [],
+      "muc_san_phien_khac": [],
+      "tong": 3
+    },
+    "2026-08-05": {
+      "nhom14": [
+        "FU-207"
+      ],
+      "nhom9": [
+        "FU-254"
+      ],
+      "muc_san_phien_khac": [
+        "FU-243",
+        "FU-259",
+        "FU-262"
+      ],
+      "tong": 5
+    },
+    "2026-08-06": {
+      "nhom14": [
+        "FU-210"
+      ],
+      "nhom9": [
+        "FU-257"
+      ],
+      "muc_san_phien_khac": [
+        "FU-224",
+        "FU-245",
+        "FU-250",
+        "FU-258"
+      ],
+      "tong": 6
+    },
+    "2026-08-07": {
+      "nhom14": [
+        "FU-193"
+      ],
+      "nhom9": [
+        "FU-223",
+        "FU-244",
+        "FU-255"
+      ],
+      "muc_san_phien_khac": [
+        "FU-263"
+      ],
+      "tong": 5
+    },
+    "2026-08-08": {
+      "nhom14": [
+        "FU-186",
+        "FU-203",
+        "FU-215"
+      ],
+      "nhom9": [
+        "FU-188"
+      ],
+      "muc_san_phien_khac": [
+        "FU-201"
+      ],
+      "tong": 5
+    },
+    "2026-08-09": {
+      "nhom14": [
+        "FU-192",
+        "FU-216",
+        "FU-217"
+      ],
+      "nhom9": [
+        "FU-185",
+        "FU-253"
+      ],
+      "muc_san_phien_khac": [
+        "FU-200",
+        "FU-202",
+        "FU-261"
+      ],
+      "tong": 8
+    },
+    "2026-08-10": {
+      "nhom14": [
+        "FU-231",
+        "FU-226"
+      ],
+      "nhom9": [
+        "FU-252"
+      ],
+      "muc_san_phien_khac": [],
+      "tong": 3
+    }
+  },
+  "tong_ma_fu_trong_so": 142
+}
