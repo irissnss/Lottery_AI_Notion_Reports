@@ -120,7 +120,31 @@ khoá là biết.
 tay**"*. Đã dừng lại, đi sửa **nguồn** (`_v10981_lich.py` + `_v10981_trang_lich.py`) rồi sinh
 lại. Nếu sửa tay thì lần sinh sau sẽ **xoá sạch** phần vừa viết.
 
-### 3.6 Chỗ chưa hoàn hảo — nói thẳng, không che
+### 3.6 `git fetch` của repo công khai chết — và nó làm **chính cổng báo cáo** xanh giả
+
+Lúc push báo cáo:
+
+```
+fatal: bad object refs/desktop.ini
+error: github.com:irissnss/Lottery_AI_Notion_Reports.git did not send all necessary objects
+```
+
+**5 tệp `desktop.ini`** của **Google Drive** (ẩn+hệ thống, 106 byte, nội dung
+`[.ShellClassInfo] IconResource=…\GoogleDriveFS.exe,27`) nằm trong `.git/refs/`,
+`.git/refs/heads/`, `.git/refs/remotes/`, `.git/refs/remotes/origin/`, `.git/refs/tags/`. Git đọc
+**mọi tệp** trong `refs/` như con trỏ commit → gãy.
+
+**Chỗ đáng sợ:** `fetch` chết thì `origin/main` đứng đông, mà `_v10921_report_gate.py` kiểm *"đã
+push chưa"* bằng `git log origin/main..HEAD`. Con trỏ cũ ⇒ cổng có thể báo *"commit chưa push:
+KHÔNG"* trong khi báo cáo **chưa lên remote**. Thấy tận mắt: đếm ra *"remote 0 ahead"* nhưng
+`git push` bị **từ chối non-fast-forward**; con trỏ cũ ở `c20b53d` còn remote đã ở `255b718`.
+
+Xử: xoá 5 tệp ini (kiểm nội dung từng tệp trước khi xoá, còn đúng 3 ref thật) → fetch sống lại →
+`stash` 4 tệp `desktop.ini` đang sửa dở **của phiên khác** → `pull --rebase` → push `77d337a` →
+`stash pop` trả lại nguyên trạng. **Không đụng ref thật, không rewrite lịch sử, không commit hộ
+việc của người khác.** Đã mở **`FU-266`** vì Google Drive sẽ đẻ lại.
+
+### 3.7 Chỗ chưa hoàn hảo — nói thẳng, không che
 
 Sổ điểm danh của hook chỉ có **2 lượt** vì nó mới sinh sáng 04/08, và Cursor bắn `sessionStart`
 **một lần mỗi phiên** chứ không mỗi tin nhắn — V10981→V10985 nối nhau trong cùng một phiên Cursor
@@ -168,3 +192,10 @@ lệnh:
 | `FU-191` | **`CLOSED_PASS`** | **§59 (A57)** ở **5/5** mặt · sync exit **0** · pool vẫn **4 ML + 9 AI = 13** |
 | `FU-212` | **`CLOSED_REPORT`** | **5/5** khoá `gt1`…`gt5` · **5/5** kết luận trong sổ · **7,59pp** · báo cáo V10955 **4 file** |
 | `FU-265` | `MEASURED_ROOT_CAUSE_FOUND` (mới) | hạn **12/08** · ngưỡng **≥3 ô** thì sửa, **0–2 ô** thì đóng kèm số |
+| `FU-266` | `MEASURED_ROOT_CAUSE_FOUND` (mới) | hạn **12/08** · đã xoá 5 tệp `desktop.ini` khỏi `.git/refs`, fetch sống lại, push `77d337a`. Còn lại: cho cổng báo cáo **TRƯỢT khi fetch thất bại** |
+
+> **Suýt vấp lần nữa ngay ở bước này:** thoạt đầu định gán `FU-266` nhãn
+> `FIXED_PENDING_LIVE_VERIFY`. Nhãn đó **KHÔNG nằm trong** `TREO_STATUSES` — dùng là mục rơi khỏi
+> mọi bộ đếm và **tổng mồ côi 18 → 19**, đúng cái bẫy V10981b đã làm mất 11/14 mục. Tra danh sách
+> nhãn hợp lệ **trước khi ghi** nên bắt được. Đã đổi sang `MEASURED_ROOT_CAUSE_FOUND` (hợp lệ, và
+> đúng bản chất: căn nguyên đã rõ, vá bền chưa làm).

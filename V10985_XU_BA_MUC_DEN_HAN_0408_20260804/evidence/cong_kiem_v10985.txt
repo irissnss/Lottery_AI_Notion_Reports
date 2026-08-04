@@ -70,7 +70,7 @@ $ python web/backend/_v10920_decision_ledger.py
   ✓ KHÔNG CÓ QUYẾT ĐỊNH NÀO BỊ TRÔI
 ============================================================================================
 
-đã sinh bản đọc cho người: docs\OWNER_DECISION_LEDGER.md  (kiểm tươi 2026-08-04 23:28:30)
+đã sinh bản đọc cho người: docs\OWNER_DECISION_LEDGER.md  (kiểm tươi 2026-08-04 23:38:31)
 
 
 ============================================================================================
@@ -177,7 +177,7 @@ $ python web/backend/_v10920_session_start.py
 
 [2] ROADMAP XONG NHƯNG CHƯA CHUYỂN VÀO archive/: 0
 
-[3] MỤC THEO DÕI CÒN TREO: 97 · QUÁ HẠN 1 · ĐẾN HẠN HÔM NAY 0 · không ghi hạn 49
+[3] MỤC THEO DÕI CÒN TREO: 98 · QUÁ HẠN 1 · ĐẾN HẠN HÔM NAY 0 · không ghi hạn 49
     ⚠ FU-225 · UI0803 · Xác minh UI du-doan-test + filter · hạn 03/08          DEPLOYED_PENDING_OWNER_VERIFY
       FU-254 · DD0805 · Ba bảng P&L chết 75 ngày · hạn 05/08                   MEASURED_ROOT_CAUSE       
       FU-207 · DP0805-1 · Nâng cổng an toàn deploy lên mốc FINAL / bundle v2 · MEASURED_BUT_NOT_FIXED    
@@ -209,8 +209,8 @@ $ python web/backend/_v10920_session_start.py
       2026-08-04 | ~~04/08 chiều~~ | ✅ **ĐẠT — ĐÓNG 04/08 18:2x (V10983): FU-260 `CLOSED_PASS`.** MT official chốt 16:50:
 
 [6] NĂM MẶT QUY TẮC
-    lần sửa gần nhất: fd77cad 2026-08-02
-    đang sửa cả năm
+    lần sửa gần nhất: 5c2f2d1 2026-08-04
+    không có thay đổi chờ
     AGENTS.md khớp đúng bản sinh từ CLAUDE.md
 
 ==============================================================================================

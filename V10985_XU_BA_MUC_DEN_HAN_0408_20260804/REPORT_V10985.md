@@ -288,7 +288,33 @@ Tiêu đề và mã đọc của `FU-245` còn ghi `hạn 04/08` / `SC0804`, nh�
 thị. Không sửa trong phiên này vì `FU-245` có hạn riêng 06/08 và sửa tiêu đề của mục khác là lấn
 phạm vi; đã ghi lại để phiên 06/08 dọn cùng lúc.
 
-### 7.6 Việc KHÔNG làm, nêu rõ
+### 7.6 `git fetch` chết âm thầm — và nó làm **chính cổng báo cáo** xanh giả
+
+Lúc push báo cáo, `git fetch` trong `E:\Lottery_AI_Notion_Reports` chết:
+
+```
+fatal: bad object refs/desktop.ini
+error: ... did not send all necessary objects
+```
+
+Nguyên nhân: **5 tệp `desktop.ini`** của **Google Drive** (ẩn + hệ thống, 106 byte, nội dung
+`[.ShellClassInfo] IconResource=…\GoogleDriveFS.exe,27`) nằm rải trong `.git/refs/`,
+`.git/refs/heads/`, `.git/refs/remotes/`, `.git/refs/remotes/origin/`, `.git/refs/tags/`. Git đọc
+**mọi tệp** trong `refs/` như một con trỏ commit, nên gặp tệp ini là gãy.
+
+**Hậu quả nếu bỏ qua — đây mới là phần đáng sợ:** `fetch` chết thì `origin/main` **đứng đông**.
+Cổng `_v10921_report_gate.py` kiểm *"đã push chưa"* bằng `git log origin/main..HEAD` — đọc một con
+trỏ cũ thì cổng có thể báo **«commit chưa push: KHÔNG»** trong khi báo cáo **chưa hề lên remote**.
+Tức cổng dựng ra để cưỡng chế A55 lại có thể **tự báo xanh cho một phiên chưa xong**.
+
+Đo thật trong phiên: con trỏ cũ chỉ `c20b53d` còn remote đã ở `255b718`; lệnh đếm ra *"remote 0
+ahead"* nhưng `git push` **bị từ chối non-fast-forward**. Đã xoá 5 tệp ini (còn đúng 3 ref thật:
+`heads/main` · `remotes/origin/HEAD` · `remotes/origin/main`) → fetch sống lại, `pull --rebase`
+xong, push được `77d337a`. **Không đụng ref thật, không rewrite lịch sử.**
+
+Google Drive **sẽ đẻ lại** mấy tệp đó, nên đã mở **`FU-266`** thay vì coi là xong.
+
+### 7.7 Việc KHÔNG làm, nêu rõ
 
 - **Không cắt model nào** — `FU-191` là mục tài liệu, và `QD-014` cấm tới hết 08/08.
 - **Không sửa nhánh `UNIFIED TOP-3`** dù đã thấy chỗ sàn 5 lượt không được áp → mở `FU-265`.
@@ -338,6 +364,7 @@ Ba mục muốn mở lại: đổi ô `status` trong khối V10985 của `docs/F
 | Mã máy | Mã đọc | Nhãn | Hạn | Ngưỡng hành động bằng số |
 |---|---|---|---|---|
 | **`FU-265`** | `DO1208` | Sàn 5 lượt thật không áp ở nhánh chọn thật | **12/08** | Đếm trên `model_daily_eval` 30 ngày, ô (miền × ngày) có model vào top-3 unified với `n < 5`: **≥3 ô** → sửa cho nhánh unified dùng chung sàn với `_chon_top`; **0–2 ô** → đóng kèm con số |
+| **`FU-266`** | `DD1208` | `git fetch` chết vì `desktop.ini` trong `.git/refs` | **12/08** | Dựng lại tình huống fetch chết (đặt một tệp `desktop.ini` vào `.git/refs`) thì `_v10921_report_gate.py` phải **thoát ≠ 0** và in *"không fetch được"*; hiện thoát **0** ⇒ TRƯỢT. Và `desktop.ini` trong `.git/refs` phải đếm **0**. Trong lúc chờ: **mỗi phiên tự chạy `git fetch` và đọc kỹ output** trước khi tin cổng |
 | `FU-245` | `SC0804` | Hook đầu phiên im 2 ngày | 06/08 | Sổ điểm danh có **≥2 lượt ở 2 PHIÊN CURSOR KHÁC NHAU**, mỗi lượt đủ ba pha. Hiện có 2 lượt nhưng **cùng một phiên** → chưa đạt. Dọn luôn tiêu đề/mã đọc còn ghi `04/08` |
 | `FU-216` | `XH0809-1` | Shadow MT bạch thủ = random-forest đơn | 09/08 | Mang **phần hành động** của `FU-212` vừa đóng. Kết luận sớm nhất **15/08** (ngưỡng owner: 7 ngày, khớp live↔tái suy luận ≥95%) |
 | `FU-215` | `DB0808` | Đóng băng `QD-014` hết hạn | 08/08 | 7/7 phép `kiem_code` của `QD-014` còn khớp, rồi owner chốt MỞ hay GIA HẠN. **`FU-265` phụ thuộc mốc này** |
