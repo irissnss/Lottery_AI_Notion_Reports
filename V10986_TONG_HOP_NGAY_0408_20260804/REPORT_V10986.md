@@ -4,8 +4,10 @@
 > **Loại phiên:** tài liệu + xác minh. **KHÔNG deploy · KHÔNG restart `lottery` · KHÔNG đụng
 > đường ra số** — `QD-014` còn hiệu lực hết 08/08.
 >
-> **Commit riêng:** `E:/Lottery_AI_Test` · **Commit công khai:** `E:/Lottery_AI_Notion_Reports`
-> (điền ở cuối mục 5 sau khi commit)
+> **Commit riêng:** `b477f4e` (`Lottery_AI_Test`, đẩy `eb53295..b477f4e`)
+> **Commit công khai:** `6b27535` (`Lottery_AI_Notion_Reports`, đẩy `2414bbe..6b27535`)
+> Cả hai kho **0 ahead / 0 behind** sau khi đẩy; 15 tệp của phiên đã xác nhận có thật trên
+> `origin/main` bằng `git ls-tree -r origin/main`.
 
 ---
 
