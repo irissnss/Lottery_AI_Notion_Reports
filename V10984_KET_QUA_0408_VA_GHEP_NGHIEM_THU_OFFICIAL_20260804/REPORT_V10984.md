@@ -1,6 +1,14 @@
 # V10984 — Ghép `/nghiem-thu` với official: đo thẳng thì không cách nào hơn official
 
-**Ngày:** 04/08/2026 · **Giờ VN:** 21:37 → 22:1x · **Trạng thái:** ✅ deploy xong, cổng kiểm đạt hết
+**Ngày:** 04/08/2026 · **Giờ VN:** 21:37 → 22:3x · **Trạng thái:** ✅ deploy xong, cổng kiểm đạt hết
+
+**Commit riêng:** `a2a7e61` (chính) + `162412e` (sửa đồng bộ dữ liệu sống) ·
+**Commit công khai:** `4ff1651`
+
+> **Phiên bị gián đoạn giữa đường** (owner hết token API) đúng lúc đang chạy vòng kiểm cuối —
+> toàn bộ việc thực chất đã xong trước đó (deploy 21:59, hai commit đã push). Sau khi nối lại đã
+> chạy lại đủ 5 cổng kiểm và nghiệm thu lại trên VPS: **không có việc nào dở dang**. Ghi lại để
+> không ai tưởng có phần bị bỏ giữa.
 
 ---
 

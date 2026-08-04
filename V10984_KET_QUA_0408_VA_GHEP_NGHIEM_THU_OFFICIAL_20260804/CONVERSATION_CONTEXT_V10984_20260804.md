@@ -138,3 +138,25 @@ cả hai chiều thay vì chỉ chiều có lợi cho lập luận.
   Nói rõ để không trôi mất.
 - **Không** rút ngắn cửa sổ đo của `QD-015`→`QD-018` để "triển khai sớm" cho vừa lòng owner —
   đó là cái bẫy đã làm rữa V10655 → V10672 → V10677 → V10753 → V10789 → V10790.
+
+---
+
+## 6. Phiên bị gián đoạn — nối lại lúc 22:36
+
+Owner **hết token API** đúng lúc agent đang chạy vòng kiểm cuối (5 cổng gộp trong một lệnh).
+Lệnh đó bị cắt giữa, nên phải tự kiểm lại trạng thái từ đầu thay vì tin là đã xong.
+
+Kiểm lại thấy: **toàn bộ việc thực chất đã xong trước khi bị cắt** — deploy 21:59, hai commit
+riêng (`a2a7e61`, `162412e`) và một commit công khai (`4ff1651`) đều đã push (`git status -sb`
+không có `ahead`/`behind`). Không có file sửa nửa vời, không có bảng thiếu API, không có panel
+thiếu `setInterval`.
+
+Chạy lại đủ 5 cổng sau khi nối: `_v10984_kiem` **14/14** · `_v10921_report_gate V10984` **exit 0**
+· `_v10981_kiem_lich` **8/8** · `_v10982_kiem_lich9` **8/8** · `_v10920_decision_ledger`
+**0 TRÔI**. Nghiệm thu lại trên VPS: PID `lottery` còn nguyên, `active`, **0 Traceback / 0 ERROR**,
+health 200, hai endpoint admin 401, bảng bóng 15 dòng đúng 4 cờ, số dòng 4 bảng khoá y hệt trước
+deploy (`predictions` 11713 · `final_bundles` 474 · `lottery_results` 15213 ·
+`model_daily_eval` 11577).
+
+**Bài học:** gộp 5 cổng kiểm vào một lệnh dài làm mất hết kết quả khi bị cắt giữa. Lần sau chạy
+tách từng cổng để mỗi kết quả tự đứng được.
