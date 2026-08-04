@@ -1,0 +1,9 @@
+﻿stage,mien,nguon,gio_bat_dau_thuc_te,P50_s,P90_s,P95_s,P99_s,MAX_s,moc_ke_tiep,bien_hien_tai_phut,bien_can_theo_P99_phut,du_bien,ghi_chu
+AI chain official,MN,predictions ai_chain/auto_daily >04:00,05:15,1167,1390,1422,5273,39522,T-chot 15:40,624-687,88 (P99),THUA RAT NHIEU,MN co ~10h du — khong co rui ro thoi gian
+AI chain official,MT,predictions ai_chain >15:00,16:35,265,509,557,708,892,T-chot 16:55,10.8-20.6 (TB 16.6),11.8,VUA DU,P99 708s = 11.8' vs bien MIN 10.8' -> DA co ngay thieu
+AI chain official,MB,predictions ai_chain/rerun >15:00,~17:30 (theo ket qua MT),241,499,550,1317,5274,T-chot 17:55,13.1-25.0 (TB 22.9),22.0,THIEU O DUOI,P99 1317s = 22' > bien MIN 13.1' -> RUI RO THAT
+Ket qua xo ve,MN,lottery_results.created_at,-,,,,,,FINAL 15:45,+49..+56 sau FINAL,-,-,xo sau FINAL 52' (P50)
+Ket qua xo ve,MT,lottery_results.created_at,-,,,,,,FINAL 16:58,+32..+37,-,-,xo sau FINAL 32'
+Ket qua xo ve,MB,lottery_results.created_at,-,,,,,,FINAL 17:58,+32..+44,-,-,xo sau FINAL 34'
+Cascade MT->MB,MB,V10979 do,MT verify xong,18,,,,,MB chain,0.3 phut cho,-,-,"MB KHONG theo dong ho, theo DU LIEU"
+Cascade MN->MT,MT,V10979 do,MN verify xong,90,,,,,MT chain,1.5 phut cho,-,-,MT cung theo du lieu

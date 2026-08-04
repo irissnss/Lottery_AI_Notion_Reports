@@ -1,0 +1,17 @@
+﻿model,ho,trung_top1_cao_nhat_voi,ty_le_top1,ty_le_top2,doc_lap_that,trong_official,ghi_chu
+xgboost,ML-cay,combo-no-token,41.0%,84.2%,KHONG,CO,trung cao voi ca ho
+random-forest,ML-cay,combo-no-token,42.5%,82.1%,KHONG,CO,
+smart-ml,ML-gop(XGB+RF),smart-ensemble,46.2%,73.6%,KHONG,CO,tu khai la ensemble cua XGB+RF
+smart-ensemble,ML-gop,smart-ml,46.2%,73.6%,KHONG,CO,
+meta-learning,ML-meta,combo-no-token,49.8%,88.3%,KHONG,CO,trung cao nhat toan bang
+combo-no-token,ML-gop-4,meta-learning,49.8%,88.3%,KHONG,**DA RA 01/08**,dung la thua nhat — cat dung
+lstm,ML-chuoi,smart-ensemble,18.7%,37.0%,**CO**,CO,**model ML DUY NHAT doc lap that**
+combo-super,hybrid,random-forest,10.6%,23.4%,CO,CO,doc lap voi ho ML
+claude-opus-4-6,anthropic,-,-,-,CO,CO,
+claude-sonnet-4-6,anthropic,-,-,-,CO,CO,cung nha voi opus
+gemini-2.5-flash,google,-,-,-,CO,CO,
+gemini-2.5-pro,google,-,-,-,CO,CO,cung nha voi flash
+deepseek-reasoner,deepseek,-,-,-,CO,CO,
+glm-5.1,zhipu,-,-,-,CO,CO,vao 01/08
+gpt-oss-120b,openai-oss,-,-,-,CO,CO,vao 01/08 — chay FLOW_B khac 7 model kia
+gpt-5.4,openai,-,-,-,CO,CO,goi ve 01/08

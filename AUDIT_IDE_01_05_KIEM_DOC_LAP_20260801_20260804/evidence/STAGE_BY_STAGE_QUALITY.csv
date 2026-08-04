@@ -1,0 +1,12 @@
+﻿chang,mien,chi_so,gia_tri,nguon,van_de
+RAW_MODEL -> bundle,MN,phieu TB cho so top1,5.26,source_predictions_json 30d,ho ML chi 18%
+RAW_MODEL -> bundle,MT,phieu TB cho so top1,5.45,idem,**ho ML 53% — da so la ML tuong quan**
+RAW_MODEL -> bundle,MB,phieu TB cho so top1,5.84,idem,ho ML 9%
+bundle -> published,ALL,bundle_version,2 moi ngay,final_bundles,T-chot dung lai bundle — v1 KHONG luu
+published -> settled,ALL,co tai dung v1 duoc khong,KHONG,-,"UNIQUE(date,region) ghi de tai cho"
+official roster,MT,phieu vao bundle,13/15 moi ngay,v10861,max_voters_cap cat 2 phieu
+official roster,MB,phieu vao bundle,14/15,v10861,bt_gate
+official roster,MN,phieu vao bundle,15/15,v10861,du
+edge vs bua,MN,-0.36pp z=-0.17,edge_gate_daily 04/08,-,khong phan biet duoc voi ngau nhien
+edge vs bua,MT,-2.94pp z=-1.18,idem,-,idem
+edge vs bua,MB,-7.23pp z=-1.62,idem,-,idem
