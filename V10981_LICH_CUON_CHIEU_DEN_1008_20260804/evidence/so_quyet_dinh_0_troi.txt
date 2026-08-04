@@ -1,0 +1,55 @@
+﻿============================================================================================
+  Sß╗ö QUYß║╛T ─Éß╗èNH ΓÇö code c├│ c├▓n khß╗¢p vß╗¢i nhß╗»ng g├¼ anh ─æ├ú chß╗æt kh├┤ng
+============================================================================================
+
+  QD-021             ≡ƒƒó khß╗¢p 5/5             14 mß╗Ñc c├╣ng ─æ├ío hß║ín 08/08 ─æ╞░ß╗úc GI├âN th├ánh lß╗ïch
+
+  QD-020             ≡ƒƒó khß╗¢p 8/8             Sau khi dß╗» liß╗çu ─æß║ºu v├áo ─Éß╗ª v├á VERIFY ─æß║ít th├¼ m
+
+  OD-20260803-B      ≡ƒƒó khß╗¢p 5/5             Bß║Ñt kß╗│ miß╗ün n├áo qua mß╗æc FINAL cß╗ºa n├│ (MN 15:45
+
+  OD-20260803-A      ≡ƒƒó khß╗¢p 5/5             Sß╗¡a 5 lß╗ùi xanh giß║ú ß╗ƒ tß║ºng cß╗òng tß╗▒ kiß╗âm; cß╗òng p
+
+  OD-20260801-A      ≡ƒƒó khß╗¢p 6/6             Tß║»t 5 lß╗¢p ghi ─æ├¿ bß║ích thß╗º ─æang l├ám tß╗ç ─æi; giß╗» 
+
+  OD-20260801-B      ≡ƒƒó khß╗¢p 3/3             Cho 6 lane hß║┐t hß║ín ─æo nghß╗ë: V10707, V10781, V1
+
+  OD-20260801-C      ΓÜ¬ kh├┤ng kiß╗âm m├íy       Kh├┤ng dß╗▒ng th├¬m luß╗ông ─æo song song khi sß╗æ liß╗çu
+
+  OD-20260801-D      ≡ƒƒó khß╗¢p 1/1             ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ tß╗½ 01/08 ─æß║┐n 08/08 ΓÇö kh├┤
+
+  OD-20260801-E      ≡ƒƒó khß╗¢p 4/4             Mß╗ìi quyß║┐t ─æß╗ïnh cß╗ºa owner, mß╗ìi v╞░ß╗¢ng vß║Ñp, mß╗ìi h
+
+  OD-20260801-H      ≡ƒƒó khß╗¢p 5/5             Bß╗Ö mß║╖t quy tß║»c gß╗ôm S├üU file, ─æß╗ông bß╗Ö ─æa chiß╗üu;
+
+  OD-20260801-G      ≡ƒƒó khß╗¢p 6/6             CLAUDE.md th├ánh mß║╖t quy tß║»c thß╗⌐ t╞░; bß╗Ö ─æß╗ông bß╗Ö
+
+  OD-20260801-F      ≡ƒƒó khß╗¢p 6/6             Sau Mß╗îI viß╗çc code/fix/audit phß║úi ─æß║⌐y b├ío c├ío l
+
+  OD-20260731-A      ≡ƒƒó khß╗¢p 4/4             Hß║ín output cuß╗æi c├╣ng: MN 15:45 ┬╖ MT 16:58 ┬╖ MB
+
+  OD-20260731-B      ≡ƒƒó khß╗¢p 1/1             Bi├¬n an to├án tr╞░ß╗¢c mß╗æc FINAL thß╗æng nhß║Ñt 2 ph├║t
+
+  OD-20260731-C      ≡ƒƒó khß╗¢p 1/1             To├án hß╗ç d├╣ng giß╗¥ Viß╗çt Nam nhß║Ñt qu├ín; bß║úng n├áo 
+
+  OD-20260726-A      ≡ƒƒó khß╗¢p 1/1             C├ích t├¡nh tiß╗ün: vß╗æn 18.000─æ/─æiß╗âm cho MN+MT, 27
+
+  QD-013             ≡ƒƒó khß╗¢p 3/3             Dß╗½ng ─æß║╖t tiß╗ün thß║¡t cho tß╗¢i khi chß╗⌐ng minh ─æ╞░ß╗úc
+
+  QD-014             ≡ƒƒó khß╗¢p 7/7             ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ c├┤ng bß╗æ tß╗¢i hß║┐t 2026-08-
+
+  QD-015             ≡ƒƒó khß╗¢p 4/4             Sau khi hß║┐t ─æ├│ng b─âng 08/08: chß║íy luß╗ông b├│ng (
+
+  QD-016             ≡ƒƒó khß╗¢p 3/3             Sau 08/08: tr├¬n luß╗ông b├│ng (shadow) bß╗Å lß╗çnh bß║»
+
+  QD-017             ≡ƒƒó khß╗¢p 3/3             Sau 08/08: chß║íy hai prompt song song tr├¬n C├ÖNG
+
+  QD-019             ≡ƒƒó khß╗¢p 3/3             ├üp ph╞░╞íng ├ín B ΓÇö giß╗» m├ú m├íy (FU-xxx, QD-xxx, C
+
+  QD-018             ≡ƒƒó khß╗¢p 3/3             Sau cß╗¡a sß╗ò ─æ├│ng b─âng 08/08: thß╗▒c hiß╗çn ─É├ÜNG BA 
+
+============================================================================================
+  Γ£ô KH├öNG C├ô QUYß║╛T ─Éß╗èNH N├ÇO Bß╗è TR├öI
+============================================================================================
+
+─æ├ú sinh bß║ún ─æß╗ìc cho ng╞░ß╗¥i: docs\OWNER_DECISION_LEDGER.md  (kiß╗âm t╞░╞íi 2026-08-04 10:46:24)
