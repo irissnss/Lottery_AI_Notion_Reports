@@ -1,0 +1,257 @@
+{
+ "nhan": "v10991_deploy",
+ "gio_vn_bat_dau": "2026-08-05 21:25:00",
+ "pid_truoc": "873576",
+ "pid_sau": "873763",
+ "is_active": "active",
+ "http_health": "000",
+ "http_du_doan_test_mn": "000",
+ "traceback_3phut": "0",
+ "tu_kiem": {
+  "tong": 0,
+  "dat": 0,
+  "lech": 0,
+  "ma_lech": [],
+  "ma_ok": []
+ },
+ "tu_kiem_tail": "Traceback (most recent call last):\n  File \"<VPS_ROOT>/web/backend/_v10900_consistency_guard.py\", line 674, in <module>\n    main()\n  File \"<VPS_ROOT>/web/backend/_v10900_consistency_guard.py\", line 657, in main\n    write_rows(con, day, rows)\n  File \"<VPS_ROOT>/web/backend/_v10900_consistency_guard.py\", line 613, in write_rows\n    con.execute(\nsqlite3.OperationalError: database is locked",
+ "kiem_song": {
+  "truot": [
+   "thân hàm VẪN đọc du_doan_test_experiment_scoreboard 1 chỗ"
+  ],
+  "gate": {
+   "co": true,
+   "MIN_N": 12,
+   "ALPHA": 0.1,
+   "fallback": "OFFICIAL_BASELINE_CONTROL",
+   "khop_tay": 0.0081
+  },
+  "boc_duoc": true,
+  "than": {
+   "doc_bang_dung_san": 1,
+   "doc_bang_ke_ca_chu_thich": 2,
+   "dem_theo_ngay": 1,
+   "gop_max_id": 1,
+   "loc_co_so_hom_nay": 1,
+   "goi_cong_chung": 3,
+   "so_dong": 378
+  },
+  "ngay_do": "2026-08-05",
+  "co_ban_pre": true,
+  "mien": {
+   "MN": {
+    "bach_thu": {
+     "moi": {
+      "so": "25",
+      "method": "MN_OFFICIAL_BASELINE_CONTROL",
+      "pct": 40,
+      "n": 124,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": true
+    },
+    "so_phu_1": {
+     "moi": {
+      "so": "10",
+      "method": "MN_STRENGTH_WEIGHTED_V52_5_2",
+      "pct": 30,
+      "n": 61,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": true
+    },
+    "so_phu_2": {
+     "moi": null,
+     "cu_co_so": false
+    },
+    "available": true
+   },
+   "MT": {
+    "bach_thu": {
+     "moi": {
+      "so": "93",
+      "method": "MT_OFFICIAL_BASELINE_CONTROL",
+      "pct": 28,
+      "n": 122,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": false
+    },
+    "so_phu_1": {
+     "moi": {
+      "so": "67",
+      "method": "MT_STRENGTH_WEIGHTED_V52_5_2",
+      "pct": 23,
+      "n": 60,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": true
+    },
+    "so_phu_2": {
+     "moi": null,
+     "cu_co_so": false
+    },
+    "available": true
+   },
+   "MB": {
+    "bach_thu": {
+     "moi": {
+      "so": "82",
+      "method": "MB_OFFICIAL_BASELINE_CONTROL",
+      "pct": 15,
+      "n": 123,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": true
+    },
+    "so_phu_1": {
+     "moi": {
+      "so": "82",
+      "method": "MB_FULL_POOL_D_W06_V1",
+      "pct": 25,
+      "n": 61,
+      "co_nhan": true,
+      "du_bang_chung": false,
+      "nhan": "chưa đủ bằng chứng"
+     },
+     "cu_co_so": true
+    },
+    "so_phu_2": {
+     "moi": null,
+     "cu_co_so": false
+    },
+    "available": true
+   }
+  },
+  "giao_dien": {
+   "nhan_bang_chung": 1,
+   "du_bang_chung": 3,
+   "byte": 220726
+  }
+ },
+ "truoc": {
+  "hash4": {
+   "predictions": {
+    "sha256": "5667ef6e7531ec8438132bea1143d13e215fde619367a99eb8f90114a1a40eeb",
+    "so_dong": 11794
+   },
+   "final_bundles": {
+    "sha256": "31bd87d7d64b687009d38984e2810ad4dca16be75b8455b5f85c5eae5df30b7d",
+    "so_dong": 477
+   },
+   "lottery_results": {
+    "sha256": "7babae4fe5b9dea429a5bb303d79156f91208ec3012126d783b33a327150b643",
+    "so_dong": 15219
+   },
+   "model_daily_eval": {
+    "sha256": "28d280aeee74e92aa157c593be821f1ce64e8ce0720aa5df91c32ed874c8db25",
+    "so_dong": 11658
+   }
+  },
+  "hom_nay": "2026-08-05",
+  "gio_vn": "2026-08-05 21:25:03",
+  "official": [
+   {
+    "region": "MB",
+    "bach_thu": "82",
+    "model_count": 14,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 17:39:40"
+   },
+   {
+    "region": "MN",
+    "bach_thu": "25",
+    "model_count": 15,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 05:19:51"
+   },
+   {
+    "region": "MT",
+    "bach_thu": "93",
+    "model_count": 13,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 16:46:12"
+   }
+  ],
+  "pid": "873576",
+  "byte": {
+   "monitoring.html": 577617,
+   "du-doan-test.html": 220726
+  },
+  "byte_py": {
+   "main.py": 949165,
+   "_v10991_sample_gate.py": 7327
+  }
+ },
+ "sau": {
+  "hash4": {
+   "predictions": {
+    "sha256": "5667ef6e7531ec8438132bea1143d13e215fde619367a99eb8f90114a1a40eeb",
+    "so_dong": 11794
+   },
+   "final_bundles": {
+    "sha256": "31bd87d7d64b687009d38984e2810ad4dca16be75b8455b5f85c5eae5df30b7d",
+    "so_dong": 477
+   },
+   "lottery_results": {
+    "sha256": "7babae4fe5b9dea429a5bb303d79156f91208ec3012126d783b33a327150b643",
+    "so_dong": 15219
+   },
+   "model_daily_eval": {
+    "sha256": "28d280aeee74e92aa157c593be821f1ce64e8ce0720aa5df91c32ed874c8db25",
+    "so_dong": 11658
+   }
+  },
+  "hom_nay": "2026-08-05",
+  "gio_vn": "2026-08-05 21:25:32",
+  "official": [
+   {
+    "region": "MB",
+    "bach_thu": "82",
+    "model_count": 14,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 17:39:40"
+   },
+   {
+    "region": "MN",
+    "bach_thu": "25",
+    "model_count": 15,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 05:19:51"
+   },
+   {
+    "region": "MT",
+    "bach_thu": "93",
+    "model_count": 13,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 16:46:12"
+   }
+  ],
+  "pid": "873763",
+  "byte": {
+   "monitoring.html": 577617,
+   "du-doan-test.html": 220726
+  },
+  "byte_py": {
+   "main.py": 949940,
+   "_v10991_sample_gate.py": 7327
+  }
+ },
+ "truot": [
+  "thân hàm VẪN đọc du_doan_test_experiment_scoreboard 1 chỗ",
+  "/api/health=000",
+  "/api/du-doan-test/MN=000 (mong 401)",
+  "bộ tự kiểm ra 0 phép, mong 22",
+  "C22 không ĐẠT — giao diện có thể bị hụt"
+ ]
+}

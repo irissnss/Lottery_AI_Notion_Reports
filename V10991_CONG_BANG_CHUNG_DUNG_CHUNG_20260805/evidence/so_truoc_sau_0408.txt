@@ -1,0 +1,38 @@
+
+==============================================================================
+  MN  ngày 2026-08-04
+==============================================================================
+  available: cũ=False  mới=True
+  [bach_thu] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "22", "method": "MN_OFFICIAL_BASELINE_CONTROL", "verified_pct": 40, "n": 124, "window": null, "metric": "BT hit", "by_weekday": false, "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.6716, "nguong_p": 0.0125, "so_ung_vien": 8, "ti_le_nen": 0.411, "la_dang_ky_truoc": true}
+  [so_phu_1] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "72", "method": "MN_STRENGTH_WEIGHTED_V52_5_2", "verified_pct": 30, "n": 61, "window": "ALL", "by_weekday": false, "metric": "số phụ về (per-position · độc lập miền×thứ)", "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "la_dang_ky_truoc": true}
+
+==============================================================================
+  MT  ngày 2026-08-04
+==============================================================================
+  available: cũ=False  mới=True
+  [bach_thu] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "60", "method": "MT_ADAPTIVE_BUDGET_SELECTOR_V1", "verified_pct": 29, "n": 90, "window": null, "metric": "BT hit", "by_weekday": false, "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.8052, "nguong_p": 0.025, "so_ung_vien": 4, "ti_le_nen": 0.326, "la_dang_ky_truoc": true}
+
+==============================================================================
+  MB  ngày 2026-08-04
+==============================================================================
+  available: cũ=True  mới=True
+  [bach_thu] số 45 → 71   ← SỐ ĐỔI
+        method : MB_SCREEN_WEIGHTED_V1
+              -> MB_OFFICIAL_BASELINE_CONTROL   ← METHOD ĐỔI
+        pct/n  : 62% n=8  ->  15% n=122  (cửa sổ T3 -> None)
+        nhãn   : {"du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.9595, "nguong_p": 0.0053, "so_ung_vien": 19, "ti_le_nen": 0.2054, "la_dang_ky_truoc": true}
+  [so_phu_1] số 45 → 45
+        method : MB_FULL_POOL_D_W06_V1
+        pct/n  : 44% n=9  ->  26% n=61  (cửa sổ T3 -> ALL)
+        nhãn   : {"du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "la_dang_ky_truoc": true}
+
+==============================================================================
+  TỔNG: 1 chỗ SỐ THẬT bị đổi.
+  (đổi method/nhãn là CÓ CHỦ Ý; đổi SỐ cần soi kỹ vì owner đánh theo số)
+==============================================================================

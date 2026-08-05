@@ -1,0 +1,42 @@
+
+==============================================================================
+  MN  ngày 2026-08-03
+==============================================================================
+  available: cũ=True  mới=True
+  [bach_thu] số 43 → 64   ← SỐ ĐỔI
+        method : MN_SPECIALIST_ROSTER_V1
+              -> MN_OFFICIAL_BASELINE_CONTROL   ← METHOD ĐỔI
+        pct/n  : 61% n=31  ->  40% n=124  (cửa sổ CN -> None)
+        nhãn   : {"du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.6716, "nguong_p": 0.0125, "so_ung_vien": 8, "ti_le_nen": 0.411, "la_dang_ky_truoc": true}
+  [so_phu_1] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "25", "method": "MN_STRENGTH_WEIGHTED_V52_5_2", "verified_pct": 31, "n": 62, "window": "ALL", "by_weekday": false, "metric": "số phụ về (per-position · độc lập miền×thứ)", "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "la_dang_ky_truoc": true}
+
+==============================================================================
+  MT  ngày 2026-08-03
+==============================================================================
+  available: cũ=False  mới=True
+  [bach_thu] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "64", "method": "MT_OFFICIAL_BASELINE_CONTROL", "verified_pct": 28, "n": 121, "window": null, "metric": "BT hit", "by_weekday": false, "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.8366, "nguong_p": 0.0091, "so_ung_vien": 11, "ti_le_nen": 0.3184, "la_dang_ky_truoc": true}
+  [so_phu_1] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "29", "method": "MT_STRENGTH_WEIGHTED_V52_5_2", "verified_pct": 23, "n": 61, "window": "ALL", "by_weekday": false, "metric": "số phụ về (per-position · độc lập miền×thứ)", "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "la_dang_ky_truoc": true}
+
+==============================================================================
+  MB  ngày 2026-08-03
+==============================================================================
+  available: cũ=True  mới=True
+  [bach_thu] MỘT BÊN RỖNG — cũ=False mới=True
+        cũ : null
+        mới: {"value": "73", "method": "MB_HYBRID_V1", "verified_pct": 25, "n": 60, "window": 90, "metric": "BT hit", "by_weekday": false, "du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "p_value": 0.398, "nguong_p": 0.0077, "so_ung_vien": 13, "ti_le_nen": 0.2291, "la_dang_ky_truoc": true}
+  [so_phu_1] số 13 → 79   ← SỐ ĐỔI
+        method : MB_STRENGTH_WEIGHTED_V52_5_2
+              -> MB_FULL_POOL_D_W06_V1   ← METHOD ĐỔI
+        pct/n  : 60% n=10  ->  26% n=62  (cửa sổ CN -> ALL)
+        nhãn   : {"du_bang_chung": false, "nhan_bang_chung": "chưa đủ bằng chứng", "la_dang_ky_truoc": true}
+
+==============================================================================
+  TỔNG: 2 chỗ SỐ THẬT bị đổi.
+  (đổi method/nhãn là CÓ CHỦ Ý; đổi SỐ cần soi kỹ vì owner đánh theo số)
+==============================================================================
