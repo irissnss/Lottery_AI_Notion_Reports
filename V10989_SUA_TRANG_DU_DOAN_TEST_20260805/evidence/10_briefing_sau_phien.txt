@@ -1,0 +1,47 @@
+==============================================================================================
+  KIỂM ĐẦU PHIÊN — 2026-08-05   (bắt buộc chạy TRƯỚC khi trả lời owner)
+==============================================================================================
+
+[1] CHECKPOINT QUÁ HẠN: 0
+
+[2] ROADMAP XONG NHƯNG CHƯA CHUYỂN VÀO archive/: 0
+
+[3] MỤC THEO DÕI CÒN TREO: 101 · QUÁ HẠN 0 · ĐẾN HẠN HÔM NAY 0 · không ghi hạn 49
+      FU-268 · UI0806-1 · Xác minh lại /du-doan-test sau khi sửa 4 nhãn sai ·  DEPLOYED_PENDING_OWNER_VERIFY
+      FU-250 · KS0806 · Soát nốt cổng còn thoát 0 khi trượt · hạn 06/08        MEASURED_ROOT_CAUSE       
+      FU-256 · DO0806 · Biên giờ chốt MT/MB co lại · hạn 06/08                 DEPLOYED_PENDING_LIVE_VERIFY
+      FU-258 · KS0806-1 · Cổng đếm việc giấu mất hạn và giấu mục mồ côi · hạn  DEPLOYED_PENDING_LIVE_VERIFY
+      FU-224 · UI0806 · Dọn trang frontend trùng/chết · hạn 06/08              OWNER_LOCK                
+      FU-257 · SC0806 · Cohere chết 25 ngày mà health vẫn khai đang chạy · hạn MEASURED_ROOT_CAUSE       
+      FU-210 · DO0806-1 · Đào nguyên nhân mất lợi thế MT tháng 6 · hạn 06/08   MEASURED_BUT_NOT_FIXED    
+      FU-245 · SC0804 · Hook đầu phiên im 2 ngày · hạn 04/08                   DEPLOYED_PENDING_LIVE_VERIFY
+
+[3b] ⚠ MỤC MỒ CÔI — nhãn không tính treo cũng chưa đóng: 15
+     nhãn đang gặp: DEFER, DELIVERED_AUDIT_DOCS_ONLY, DELIVERED_DOCS_ONLY, DELIVERED_DOCS_RECONCILIATION, DELIVERED_INVENTORY_DOCS_ONLY, DEPLOYED_DOCS_ONLY, FALSE_NEGATIVE, READY_NOT_DEPLOYED, READY_TO_BUILD_MEASUREMENT_ONLY, READY_TO_BUILD_UI_TEST_ONLY
+      · FU-201   READY_NOT_DEPLOYED           hạn 2026-08-08  Canh bộ lọc combo-super sau khi mở pool
+      · FU-205   READY_NOT_DEPLOYED           hạn 2026-08-15  Bộ lọc chấm bạch thủ có tốt hơn chấm wi…
+      · FU-001   [One                         hạn —  [Title]
+      · FU-117   WAIT_CLOSEOUT                hạn —  V54 natural live closeout proof
+      · FU-119   READY_TO_BUILD_MEASUREMENT_O hạn —  V54 per-model latency instrumentation
+      · FU-121   READY_TO_BUILD_UI_TEST_ONLY  hạn —  V54 MT correct-but-dropped UI panel
+      · FU-122   READY_TO_BUILD_UI_TEST_ONLY  hạn —  V54 region/weekday/station strength chi…
+      · FU-129   READY_TO_BUILD_UI_TEST_ONLY  hạn —  V55 model strong/weak tensor advanced +…
+
+[4] SỔ QUYẾT ĐỊNH CỦA OWNER
+    28 quyết định đang có hiệu lực · 0 tới hạn rà soát
+    → chạy `python web/backend/_v10920_decision_ledger.py` để kiểm code có trôi không
+
+[5] PLAYBOOK
+    226 dòng · 3 dòng có ngày đã tới/qua
+      2026-07-28 | **28/07 tối — 2 mục V10870 phải đọc cùng CP-L6 (lịch sử)** | Owner ký 13:48 hoãn sửa trong ngày chốt t
+      2026-08-04 | ~~04/08 chiều~~ | ✅ **ĐẠT — ĐÓNG 04/08 18:2x (V10983): FU-260 `CLOSED_PASS`.** MT official chốt 16:50:
+      2026-08-05 | ~~05/08~~ | ✅ **ĐẠT — ĐÓNG 05/08 09:1x (V10988): FU-262 `CLOSED_PASS`.** Đã thêm **`C22_giao_dien_toan
+
+[6] NĂM MẶT QUY TẮC
+    lần sửa gần nhất: 5c2f2d1 2026-08-04
+    không có thay đổi chờ
+    AGENTS.md khớp đúng bản sinh từ CLAUDE.md
+
+==============================================================================================
+  ⚠ CẦN NÊU VỚI OWNER NGAY ĐẦU CÂU TRẢ LỜI: 15 mục mồ côi (nhãn chưa phân loại)
+==============================================================================================

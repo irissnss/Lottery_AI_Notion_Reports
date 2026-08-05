@@ -1,0 +1,8 @@
+số khối <script> nội tuyến: 2
+CÚ PHÁP: ĐẠT (0 lỗi)
+
+Đối chiếu với bản Python (probe3):
+  Cần Thơ  4/6 nền 17%: P(X>=k)=0.009 P(X<=k)=0.999 pMin=0.009  -> nhãn GIỮ NGUYÊN
+  Sóc Trăng 0/6 nền 17%: P(X>=k)=1.000 P(X<=k)=0.327 pMin=0.327  -> nhãn CHƯA RÕ (hạ)
+  Đồng Nai  1/6 nền 16%: P(X>=k)=0.649 P(X<=k)=0.753 pMin=0.649  -> nhãn CHƯA RÕ (hạ)
+  Gộp miền  4/6 nền 41%: P(X>=k)=0.193 P(X<=k)=0.954 pMin=0.193  -> nhãn CHƯA RÕ (hạ)

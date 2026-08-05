@@ -1,0 +1,87 @@
+==========================================================================================
+A. *_OUTPUT_V1 và *_XIEN_V1 — dòng CUỐI CÙNG của mỗi lane (3 miền)
+==========================================================================================
+  MN_OUTPUT_V1     tổng   90 dòng | CUỐI: run_date=2026-08-01 created=2026-08-01T05:30:01.176659+07:00 bt=38 n=19
+  MT_OUTPUT_V1     tổng   89 dòng | CUỐI: run_date=2026-07-31 created=2026-07-31T16:45:01.544784+07:00 bt=68 n=10
+  MB_OUTPUT_V1     tổng   58 dòng | CUỐI: run_date=2026-07-31 created=2026-07-31T17:39:01.378189+07:00 bt=19 n=8
+  MN_XIEN_V1       tổng   59 dòng | CUỐI: run_date=2026-08-01 created=2026-08-01T05:30:03.919455+07:00 bt=38 n=19
+  MT_XIEN_V1       tổng   58 dòng | CUỐI: run_date=2026-07-31 created=2026-07-31T16:45:01.552461+07:00 bt=68 n=10
+  MB_XIEN_V1       tổng   58 dòng | CUỐI: run_date=2026-07-31 created=2026-07-31T17:39:01.406151+07:00 bt=19 n=8
+
+==========================================================================================
+B. predictions — schema
+==========================================================================================
+   id, date, target_region, source_regions, ai_model, main_numbers, analysis_text, phase_type, cluster, pivot, strength, verdict, verdict_reason, status, hit_numbers, hit_level, hit_details, created_at, verified_at, pick_count, hit_count, reasoning_json, pre_result_numbers, pre_result_strength, pre_result_status, pre_result_hit_count, repredict_verdict, run_source, convergence_flag, prediction_before, verified_station_count, policy_version_ref, week_slot, context_integrity, run_id, late, reasoning_tokens
+
+==========================================================================================
+C. OFFICIAL MN 05/08 — chốt lúc nào
+==========================================================================================
+  2026-08-05T05:00:05.614838+07:00 | None                       | main=["73", "26"] | status=PENDING | fb=None
+  2026-08-05T05:00:06.425330+07:00 | None                       | main=["73", "26"] | status=PENDING | fb=None
+  2026-08-05T05:00:06.593805+07:00 | None                       | main=["69", "73"] | status=PENDING | fb=None
+  2026-08-05T05:00:06.828767+07:00 | None                       | main=["19", "41"] | status=PENDING | fb=None
+  2026-08-05T05:00:06.952158+07:00 | None                       | main=["26", "97"] | status=PENDING | fb=None
+  2026-08-05T05:00:07.404694+07:00 | None                       | main=["69", "26"] | status=PENDING | fb=None
+  2026-08-05T05:00:07.666262+07:00 | None                       | main=["97", "69"] | status=PENDING | fb=None
+  2026-08-05T05:00:08.993947+07:00 | None                       | main=["11", "96"] | status=PENDING | fb=None
+  2026-08-05T05:00:09.749459+07:00 | None                       | main=["36", "96"] | status=PENDING | fb=None
+  2026-08-05T05:00:09.920854+07:00 | None                       | main=["96", "76"] | status=PENDING | fb=None
+  2026-08-05T05:00:10.188269+07:00 | None                       | main=["11", "88"] | status=PENDING | fb=None
+  2026-08-05T05:00:10.328656+07:00 | None                       | main=["36", "49"] | status=PENDING | fb=None
+  2026-08-05T05:00:10.772847+07:00 | None                       | main=["96", "21"] | status=PENDING | fb=None
+  2026-08-05T05:00:11.005927+07:00 | None                       | main=["96", "11"] | status=PENDING | fb=None
+  2026-08-05T05:00:12.346969+07:00 | None                       | main=["11", "14"] | status=PENDING | fb=None
+  2026-08-05T05:00:13.074476+07:00 | None                       | main=["36", "98"] | status=PENDING | fb=None
+  2026-08-05T05:00:13.236016+07:00 | None                       | main=["11", "28"] | status=PENDING | fb=None
+  2026-08-05T05:00:13.375252+07:00 | None                       | main=["14", "33"] | status=PENDING | fb=None
+  2026-08-05T05:00:13.483497+07:00 | None                       | main=["55", "48"] | status=PENDING | fb=None
+  2026-08-05T05:00:13.914232+07:00 | None                       | main=["98", "79"] | status=PENDING | fb=None
+  2026-08-05T05:00:14.177965+07:00 | None                       | main=["07", "14"] | status=PENDING | fb=None
+  2026-08-05T05:16:07.295603+07:00 | None                       | main=["62", "25"] | status=PENDING | fb=None
+  2026-08-05T05:16:07.771368+07:00 | None                       | main=["25", "10"] | status=PENDING | fb=None
+  2026-08-05T05:16:11.843663+07:00 | None                       | main=["62", "95"] | status=PENDING | fb=None
+  2026-08-05T05:17:42.007304+07:00 | None                       | main=["62", "25"] | status=PENDING | fb=None
+  2026-08-05T05:17:42.144341+07:00 | None                       | main=["25", "82"] | status=PENDING | fb=None
+  2026-08-05T05:17:42.292369+07:00 | None                       | main=["43", "10"] | status=PENDING | fb=None
+  2026-08-05T05:17:42.435153+07:00 | None                       | main=["25", "77"] | status=PENDING | fb=None
+  2026-08-05T05:18:58.211279+07:00 | None                       | main=["62", "95"] | status=PENDING | fb=None
+  2026-08-05T05:19:51.116063+07:00 | None                       | main=["10", "82"] | status=PENDING | fb=None
+  2026-08-05T05:21:39.988098+07:00 | None                       | main=["62", "25"] | status=PENDING | fb=None
+  2026-08-05T05:22:40.423626+07:00 | None                       | main=["82", "25"] | status=PENDING | fb=None
+  2026-08-05T05:23:51.999558+07:00 | None                       | main=["43", "62"] | status=PENDING | fb=None
+  2026-08-05T05:24:12.266047+07:00 | None                       | main=["25", "10"] | status=PENDING | fb=None
+  2026-08-05T05:24:45.785136+07:00 | None                       | main=["43", "62"] | status=PENDING | fb=None
+  2026-08-05T05:30:19.141565+07:00 | None                       | main=["62", "10"] | status=PENDING | fb=None
+  2026-08-05T05:30:44.401659+07:00 | None                       | main=["62", "82"] | status=PENDING | fb=None
+  2026-08-05T05:30:44.465166+07:00 | None                       | main=["82", "25"] | status=PENDING | fb=None
+  2026-08-05T05:30:44.524794+07:00 | None                       | main=["82", "61"] | status=PENDING | fb=None
+  2026-08-05T05:30:44.585054+07:00 | None                       | main=["61", "25"] | status=PENDING | fb=None
+  2026-08-05T05:30:44.669658+07:00 | None                       | main=["43", "62"] | status=PENDING | fb=None
+
+==========================================================================================
+D. final_bundles 05/08
+==========================================================================================
+  cột: id, date, region, bach_thu, lo2, lo3, xien2, xien3, policy_version_ref, source_predictions_json, generation_method, consensus_level, model_count, top_score, is_fallback, status, notes, created_at, updated_at, bach_thu_status, lo2_status, lo3_status, xien2_status, xien3_status, verified_at, bundle_version
+   {'id': '643', 'date': '2026-08-04', 'region': 'MN', 'bach_thu': '22', 'lo2': '["22", "72"]', 'lo3': '122', 'xien2': '["22", "72"]', 'xien3': None, 'policy_version_ref': 'v1_aggregated_top1', 'source_predictions_json': '{"ranked_numbers": [{"number": "22", "score"', 'generation_method': 'weighted_voting_wr', 'consensus_level': 'strong', 'model_count': '15', 'top_score': '0.1496', 'is_fallback': '0', 'status': 'ACTIVE', 'notes': 'v10782_t10_chot', 'created_at': '2026-08-04 05:19:56', 'updated_at': '2026-08-04 16:38:38', 'bach_thu_status': 'LOSE', 'lo2_status': 'PARTIAL', 'lo3_status': 'LOSE', 'xien2_status': 'LOSE', 'xien3_status': 'N/A', 'verified_at': '2026-08-04 16:38:38', 'bundle_version': '2'}
+   {'id': '645', 'date': '2026-08-04', 'region': 'MT', 'bach_thu': '60', 'lo2': '["60", "32"]', 'lo3': '060', 'xien2': '["60", "32"]', 'xien3': '["60", "32", "29"]', 'policy_version_ref': 'v1_aggregated_top1', 'source_predictions_json': '{"ranked_numbers": [{"number": "60", "score"', 'generation_method': 'weighted_voting_wr', 'consensus_level': 'strong', 'model_count': '13', 'top_score': '0.1078', 'is_fallback': '0', 'status': 'ACTIVE', 'notes': 'v10782_t10_chot', 'created_at': '2026-08-04 16:50:13', 'updated_at': '2026-08-04 17:30:31', 'bach_thu_status': 'WIN', 'lo2_status': 'WIN', 'lo3_status': 'LOSE', 'xien2_status': 'LOSE', 'xien3_status': 'LOSE', 'verified_at': '2026-08-04 17:30:31', 'bundle_version': '2'}
+   {'id': '647', 'date': '2026-08-04', 'region': 'MB', 'bach_thu': '71', 'lo2': '["71", "63"]', 'lo3': '771', 'xien2': '["71", "63"]', 'xien3': '["71", "63", "97"]', 'policy_version_ref': 'v1_aggregated_top1', 'source_predictions_json': '{"ranked_numbers": [{"number": "71", "score"', 'generation_method': 'weighted_voting_wr', 'consensus_level': 'strong', 'model_count': '14', 'top_score': '0.156', 'is_fallback': '0', 'status': 'ACTIVE', 'notes': 'v10782_t10_chot', 'created_at': '2026-08-04 17:36:51', 'updated_at': '2026-08-04 18:31:02', 'bach_thu_status': 'LOSE', 'lo2_status': 'LOSE', 'lo3_status': 'LOSE', 'xien2_status': 'LOSE', 'xien3_status': 'LOSE', 'verified_at': '2026-08-04 18:31:02', 'bundle_version': '2'}
+   {'id': '649', 'date': '2026-08-05', 'region': 'MN', 'bach_thu': '25', 'lo2': '["25", "10"]', 'lo3': '825', 'xien2': '["25", "10"]', 'xien3': '["25", "10", "62"]', 'policy_version_ref': 'v1_aggregated_top1', 'source_predictions_json': '{"ranked_numbers": [{"number": "25", "score"', 'generation_method': 'weighted_voting_wr', 'consensus_level': 'strong', 'model_count': '15', 'top_score': '0.1495', 'is_fallback': '0', 'status': 'ACTIVE', 'notes': 'auto_auto_daily', 'created_at': '2026-08-05 05:19:51', 'updated_at': '2026-08-05 05:19:51', 'bach_thu_status': 'PENDING', 'lo2_status': 'PENDING', 'lo3_status': 'PENDING', 'xien2_status': 'PENDING', 'xien3_status': 'PENDING', 'verified_at': None, 'bundle_version': '1'}
+
+==========================================================================================
+E. du_doan_test_results cho 5 run_id MN_OUTPUT_V1 gần nhất — settle chưa
+==========================================================================================
+  2026-08-01 run_id=9673 -> *** KHÔNG CÓ DÒNG KẾT QUẢ ***
+  2026-07-31 run_id=9567 -> *** KHÔNG CÓ DÒNG KẾT QUẢ ***
+  2026-07-30 run_id=9470 -> *** KHÔNG CÓ DÒNG KẾT QUẢ ***
+  2026-07-29 run_id=9361 -> *** KHÔNG CÓ DÒNG KẾT QUẢ ***
+  2026-07-28 run_id=9250 -> {'id': 6562, 'run_id': 9250, 'run_date': '2026-07-28', 'region': 'MN', 'actual_results_json': '["00", "01", "09", "10", "11", "12", "13", "15", "17", "22", "23", "24", "30", "31", "32", "35", "39", "40", "44", "45", "48", "49", "50", "51", "52", "53", "56", "59", "62", "63", "64", "67", "71", "72", "75", "78", "85", "90", "93", "94", "97", "98"]', 'official_bt_status': 'LOSE', 'official_lo2_status': 'LOSE', 'test_bt_status': 'LOSE', 'test_lo2_status': 'LOSE', 'would_save': 0, 'would_break': 0, 'false_promotion': 0, 'net_effect': 0, 'evaluated_at': '2026-07-28T16:34:44.483331+07:00', 'official_bt': '95', 'official_lo2_json': '["95", "54"]', 'test_bt': '96', 'test_lo2_json': '["96", "95", "82"]', 'delta_bt': 0, 'delta_lo2': 0, 'correct_but_dropped': 0, 'wrong_boosted': 0, 'lo2_to_bt_promotion': 0, 'official_lo2_already_had_test_bt': 0}
+  2026-07-27 run_id=9140 -> {'id': 6475, 'run_id': 9140, 'run_date': '2026-07-27', 'region': 'MN', 'actual_results_json': '["01", "05", "08", "14", "15", "16", "17", "23", "24", "26", "31", "35", "44", "45", "47", "50", "53", "59", "62", "63", "64", "66", "67", "68", "69", "70", "71", "78", "80", "81", "85", "86", "88", "89", "90", "91", "92", "94", "99"]', 'official_bt_status': 'LOSE', 'official_lo2_status': 'LOSE', 'test_bt_status': 'LOSE', 'test_lo2_status': 'LOSE', 'would_save': 0, 'would_break': 0, 'false_promotion': 0, 'net_effect': 0, 'evaluated_at': '2026-07-27T16:38:47.675921+07:00', 'official_bt': '42', 'official_lo2_json': '["42", "32"]', 'test_bt': '42', 'test_lo2_json': '["42", "02", "32"]', 'delta_bt': 0, 'delta_lo2': 0, 'correct_but_dropped': 0, 'wrong_boosted': 1, 'lo2_to_bt_promotion': 0, 'official_lo2_already_had_test_bt': 0}
+
+==========================================================================================
+F. lottery_results MN các ngày 01-05/08
+==========================================================================================
+  2026-08-01 MN: 4 đài
+  2026-08-02 MN: 3 đài
+  2026-08-03 MN: 3 đài
+  2026-08-04 MN: 3 đài
+  2026-08-05 MN: 0 đài

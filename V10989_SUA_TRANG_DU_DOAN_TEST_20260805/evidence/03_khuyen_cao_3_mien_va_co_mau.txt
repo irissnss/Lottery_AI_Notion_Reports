@@ -1,0 +1,44 @@
+================================================================================================
+A. Khuyến cáo đầy đủ 3 miền (bản mới nhất trong play_recommendation_shadow)
+================================================================================================
+
+  MB  ngày 2026-08-05  →  CHƠI LANE
+     method        = MB_FULL_POOL_D_W06_V1
+     long_pct/n    = 25% / n=8  (scope=weekday)
+     recent_pct    = 36%
+     official_long = 11%   official_recent = 38%
+     watch         = None None%
+
+  MN  ngày 2026-08-05  →  CHƠI OFFICIAL
+     method        = MN_OFFICIAL_BASELINE_CONTROL
+     long_pct/n    = 38% / n=29  (scope=weekday)
+     recent_pct    = 36%
+     official_long = 38%   official_recent = 36%
+     watch         = MN_ADAPTIVE_EXPLOIT_V1 62%
+
+  MT  ngày 2026-08-05  →  CHƠI OFFICIAL
+     method        = MT_OFFICIAL_BASELINE_CONTROL
+     long_pct/n    = 26% / n=35  (scope=weekday)
+     recent_pct    = 31%
+     official_long = 26%   official_recent = 31%
+     watch         = MT_SCREEN_BLEND_V1 50%
+
+================================================================================================
+B. MB đang khuyến cáo chơi LANE — cỡ mẫu THẬT của lane đó là bao nhiêu?
+================================================================================================
+  lane được khuyến cáo: MB_FULL_POOL_D_W06_V1
+    cùng thứ (T4), 180 ngày    n=7    win=2   28.6%  z(vs mò 35%)=-0.36
+    nền miền, 60 ngày          n=54   win=14  25.9%  z(vs mò 35%)=-1.40
+
+================================================================================================
+C. MT quảng cáo MT_SCREEN_BLEND_V1 50% — cỡ mẫu ĐÃ CHẤM là bao nhiêu?
+================================================================================================
+  MT_SCREEN_BLEND_V1: 104 dòng bundle · 0 dòng ĐÃ CHẤM
+    → tỉ lệ 50% tính trên 0 mẫu đã chấm. n=0 nghĩa là con số 50% KHÔNG dựa trên gì.
+
+================================================================================================
+D. Bao nhiêu lane còn được đem ra so mỗi ngày (mẫu số của phép 'lấy max')
+================================================================================================
+  MN: 28 lane khác nhau có dòng trong 60 ngày
+  MT: 28 lane khác nhau có dòng trong 60 ngày
+  MB: 27 lane khác nhau có dòng trong 60 ngày

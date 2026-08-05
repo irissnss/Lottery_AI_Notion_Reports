@@ -1,0 +1,10 @@
+====================================================================================================
+  watch_n (SQL mới trong main.py)  vs  trailing_pct (hàm thật của bộ khuyến cáo)
+====================================================================================================
+  MB method  MB_FULL_POOL_D_W06_V1            SQL_mới n=8    trailing_pct n=8    pct=25%  ✓ KHỚP
+  MN watch   MN_ADAPTIVE_EXPLOIT_V1           SQL_mới n=16   trailing_pct n=16   pct=62%  ✓ KHỚP
+  MN method  MN_OFFICIAL_BASELINE_CONTROL     SQL_mới n=29   trailing_pct n=29   pct=38%  ✓ KHỚP
+  MT watch   MT_SCREEN_BLEND_V1               SQL_mới n=14   trailing_pct n=14   pct=50%  ✓ KHỚP
+  MT method  MT_OFFICIAL_BASELINE_CONTROL     SQL_mới n=35   trailing_pct n=35   pct=26%  ✓ KHỚP
+====================================================================================================
+  ✓ KHỚP HẾT — watch_n nói đúng cỡ mẫu mà khuyến cáo thật sự dùng

@@ -1,0 +1,41 @@
+SECRET_NGUON=env (giá trị ĐÃ CHE)
+
+====================================================================================================
+  NỘI DUNG THẬT API TRẢ VỀ — gọi HTTP qua đủ tầng, không đọc file
+====================================================================================================
+
+── MN ── http=200
+   lane_health      = STOPPED   (trễ 4 ngày, dòng cuối 2026-08-01)
+   tham khảo        = 2026-08-01  bạch thủ 38
+   đã xổ / đã chấm  = draw_done=True · settled=False
+   khuyến cáo       = OFFICIAL · nền 38% n=29 scope=weekday
+   lane theo dõi    = MN_ADAPTIVE_EXPLOIT_V1 62% n=16 · chạy cuối 2026-07-05
+
+── MT ── http=200
+   lane_health      = STOPPED   (trễ 5 ngày, dòng cuối 2026-07-31)
+   tham khảo        = 2026-07-31  bạch thủ 68
+   đã xổ / đã chấm  = draw_done=True · settled=False
+   khuyến cáo       = OFFICIAL · nền 26% n=35 scope=weekday
+   lane theo dõi    = MT_SCREEN_BLEND_V1 50% n=14 · chạy cuối 2026-08-04
+
+── MB ── http=200
+   lane_health      = STOPPED   (trễ 5 ngày, dòng cuối 2026-07-31)
+   tham khảo        = 2026-07-31  bạch thủ 19
+   đã xổ / đã chấm  = draw_done=True · settled=False
+   khuyến cáo       = LANE · nền 11% n=8 scope=weekday
+   lane theo dõi    = None None% n=None · chạy cuối None
+
+====================================================================================================
+  CHUỖI TRÊN TỆP ĐANG PHỤC VỤ
+====================================================================================================
+   co_da_co_ket_qua           = 0
+   co_gio_0430                = 0
+   co_lane_health             = 1
+   co_da_ngung                = 1
+   co_lo_han                  = 2
+   co_da_xo_chua_cham         = 1
+   co_chua_ro                 = 2
+
+====================================================================================================
+  ✓ ĐẠT — 3/3 miền trả đúng sự thật; 0 chuỗi sai còn sót
+====================================================================================================

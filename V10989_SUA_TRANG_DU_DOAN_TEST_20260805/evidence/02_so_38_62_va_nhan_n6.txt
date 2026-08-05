@@ -1,0 +1,45 @@
+============================================================================================
+A. play_recommendation_shadow — MN các ngày gần đây (nguồn của '38%' và '62%')
+============================================================================================
+  cột: date, region, play, method, long_pct, long_n, recent_pct, official_long, official_recent, watch_method, watch_pct, scope, created_at, updated_at
+   {'date': '2026-08-05', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 38, 'long_n': 29, 'recent_pct': 36, 'official_long': 38, 'official_recent': 36, 'watch_method': 'MN_ADAPTIVE_EXPLOIT_V1', 'watch_pct': 62, 'scope': 'weekday', 'created_at': '2026-08-05T06:25:01.788487', 'updated_at': '2026-08-05T06:25:01.788487'}
+   {'date': '2026-08-04', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 52, 'long_n': 29, 'recent_pct': 43, 'official_long': 52, 'official_recent': 43, 'watch_method': 'MN_SCREEN_BLEND_V1', 'watch_pct': 64, 'scope': 'weekday', 'created_at': '2026-08-04T06:25:01.209138', 'updated_at': '2026-08-04T06:25:01.209138'}
+   {'date': '2026-08-03', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 41, 'long_n': 29, 'recent_pct': 43, 'official_long': 41, 'official_recent': 43, 'watch_method': None, 'watch_pct': None, 'scope': 'weekday', 'created_at': '2026-08-03T06:25:01.905037', 'updated_at': '2026-08-03T06:25:01.905037'}
+   {'date': '2026-08-02', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 59, 'long_n': 29, 'recent_pct': 43, 'official_long': 59, 'official_recent': 43, 'watch_method': 'MN_SPECIALIST_ROSTER_V1', 'watch_pct': 66, 'scope': 'weekday', 'created_at': '2026-08-02T06:25:01.969318', 'updated_at': '2026-08-02T06:25:01.969318'}
+   {'date': '2026-08-01', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 29, 'long_n': 28, 'recent_pct': 43, 'official_long': 29, 'official_recent': 43, 'watch_method': 'MN_ADAPTIVE_EXPLOIT_V1', 'watch_pct': 76, 'scope': 'weekday', 'created_at': '2026-08-01T06:25:01.179047', 'updated_at': '2026-08-01T06:25:01.179047'}
+   {'date': '2026-07-31', 'region': 'MN', 'play': 'OFFICIAL', 'method': 'MN_OFFICIAL_BASELINE_CONTROL', 'long_pct': 48, 'long_n': 27, 'recent_pct': 36, 'official_long': 48, 'official_recent': 36, 'watch_method': 'MN_ADAPTIVE_EXPLOIT_V1', 'watch_pct': 75, 'scope': 'weekday', 'created_at': '2026-07-31T06:00:01.196142', 'updated_at': '2026-07-31T06:00:01.196142'}
+
+============================================================================================
+B. slice_health MN — nhãn đang hiện + kiểm định nhị thức
+============================================================================================
+  (hôm nay 05/08/2026 là THỨ TƯ -> weekday index 2)
+  ALL            STRONG  hit=67% (4/6) nền=41% lift=25.3pp | P(X>=4)=0.198  P(X<=4)=0.953
+  Cần Thơ        STRONG  hit=67% (4/6) nền=17% lift=49.9pp | P(X>=4)=0.009  P(X<=4)=0.999
+  Sóc Trăng      WEAK    hit=0% (0/6) nền=17% lift=-16.6pp | P(X>=0)=1.000  P(X<=0)=0.337
+  Đồng Nai       WATCH   hit=17% (1/6) nền=16% lift=0.3pp | P(X>=1)=0.658  P(X<=1)=0.744
+
+  --> Ý nghĩa: p càng gần 0.5 thì nhãn càng VÔ NGHĨA (giải thích được bằng may rủi).
+
+============================================================================================
+C. Lane nào còn sống để tính khuyến cáo — MN_OFFICIAL_BASELINE_CONTROL & MN_ADAPTIVE_EXPLOIT_V1
+============================================================================================
+  MN_OFFICIAL_BASELINE_CONTROL     CUỐI: 2026-08-05  (2026-08-05T05:25:02+07:00)
+  MN_ADAPTIVE_EXPLOIT_V1           CUỐI: 2026-07-05  (2026-07-05T04:25:02+07:00)
+  MT_OFFICIAL_BASELINE_CONTROL     CUỐI: 2026-08-03  (2026-08-03T16:50:03+07:00)
+  MT_ADAPTIVE_EXPLOIT_V1           CUỐI: 2026-08-04  (2026-08-04T16:55:03+07:00)
+  MB_OFFICIAL_BASELINE_CONTROL     CUỐI: 2026-08-04  (2026-08-04T17:40:03+07:00)
+  MB_ADAPTIVE_EXPLOIT_V1           CUỐI: 2026-08-04  (2026-08-04T17:40:03+07:00)
+
+============================================================================================
+D. Cỡ mẫu THẬT của khuyến cáo MN hôm nay — đếm số ngày đã chấm của 2 lane
+============================================================================================
+  MN_OFFICIAL_BASELINE_CONTROL     60 ngày (nền miền)       n=120  win=42   35.0%  z(vs mò 35%)=--
+  MN_OFFICIAL_BASELINE_CONTROL     180 ngày (cùng thứ T4)   n=29   win=9    31.0%  z(vs mò 35%)=-0.45
+  MN_ADAPTIVE_EXPLOIT_V1           60 ngày (nền miền)       n=60   win=26   43.3%  z(vs mò 35%)=1.35
+  MN_ADAPTIVE_EXPLOIT_V1           180 ngày (cùng thứ T4)   n=16   win=10   62.5%  z(vs mò 35%)=2.31
+
+============================================================================================
+E. OFFICIAL thật 7 ngày — ô ngày×miền (đối chiếu 42,86%) và trục MN
+============================================================================================
+  7 ngày, cả 3 miền: 9/21 = 42.86%
+  MN 22 ngày gần nhất: 9/22 = 40.91%
