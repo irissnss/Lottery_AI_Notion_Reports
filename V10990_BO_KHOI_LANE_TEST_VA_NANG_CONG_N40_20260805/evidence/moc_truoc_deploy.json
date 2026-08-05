@@ -1,0 +1,176 @@
+{
+ "hash4": {
+  "predictions": {
+   "sha256": "ec59cfd5ee8c9a9a59e0009b2d836e2a8b4e0c9069aa25d90442b409e653a250",
+   "so_dong": 11754
+  },
+  "final_bundles": {
+   "sha256": "6848318ee93ad48ede3c978bebd79489bb8bdaf6538f05b5260548342d362560",
+   "so_dong": 475
+  },
+  "lottery_results": {
+   "sha256": "92ccf706553921288f2105f96e2a399b89835429fbfb6d6fac1104f9841e0029",
+   "so_dong": 15213
+  },
+  "model_daily_eval": {
+   "sha256": "c559a75ad34b78ed89ed7d265dca3e13349fe54561759258a5109b87aa5fb744",
+   "so_dong": 11577
+  }
+ },
+ "lane_chet": {
+  "MN_OUTPUT_V1": {
+   "ngay_cuoi": "2026-08-01",
+   "tong_dong": 90,
+   "dong_hom_nay": 0
+  },
+  "MN_XIEN_V1": {
+   "ngay_cuoi": "2026-08-01",
+   "tong_dong": 59,
+   "dong_hom_nay": 0
+  },
+  "MT_OUTPUT_V1": {
+   "ngay_cuoi": "2026-07-31",
+   "tong_dong": 89,
+   "dong_hom_nay": 0
+  },
+  "MT_XIEN_V1": {
+   "ngay_cuoi": "2026-07-31",
+   "tong_dong": 58,
+   "dong_hom_nay": 0
+  },
+  "MB_OUTPUT_V1": {
+   "ngay_cuoi": "2026-07-31",
+   "tong_dong": 58,
+   "dong_hom_nay": 0
+  },
+  "MB_XIEN_V1": {
+   "ngay_cuoi": "2026-07-31",
+   "tong_dong": 58,
+   "dong_hom_nay": 0
+  }
+ },
+ "hom_nay_vn": "2026-08-05",
+ "official_nguon": {
+  "MB": [
+   {
+    "run_date": "2026-08-04",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   },
+   {
+    "run_date": "2026-08-03",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   },
+   {
+    "run_date": "2026-08-02",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   }
+  ],
+  "MT": [
+   {
+    "run_date": "2026-08-04",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   },
+   {
+    "run_date": "2026-08-03",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   },
+   {
+    "run_date": "2026-08-02",
+    "source": null,
+    "basis": "disabled",
+    "applied": 0
+   }
+  ]
+ },
+ "khuyen_cao_da_luu": [
+  {
+   "date": "2026-08-05",
+   "region": "MB",
+   "play": "LANE",
+   "method": "MB_FULL_POOL_D_W06_V1",
+   "long_pct": 25,
+   "long_n": 8,
+   "official_long": 11,
+   "scope": "weekday",
+   "watch_method": null
+  },
+  {
+   "date": "2026-08-05",
+   "region": "MN",
+   "play": "OFFICIAL",
+   "method": "MN_OFFICIAL_BASELINE_CONTROL",
+   "long_pct": 38,
+   "long_n": 29,
+   "official_long": 38,
+   "scope": "weekday",
+   "watch_method": "MN_ADAPTIVE_EXPLOIT_V1"
+  },
+  {
+   "date": "2026-08-05",
+   "region": "MT",
+   "play": "OFFICIAL",
+   "method": "MT_OFFICIAL_BASELINE_CONTROL",
+   "long_pct": 26,
+   "long_n": 35,
+   "official_long": 26,
+   "scope": "weekday",
+   "watch_method": "MT_SCREEN_BLEND_V1"
+  }
+ ],
+ "cron": {
+  "_v10789_mb_lane_promote.py": {
+   "so_dong_cron": 0,
+   "dong": []
+  },
+  "_v10790_mt_lane_promote.py": {
+   "so_dong_cron": 0,
+   "dong": []
+  },
+  "_v10737_output_final_lab_shadow.py": {
+   "so_dong_cron": 4,
+   "dong": [
+    "40 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 3 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1",
+    "35 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 morning MN live refresh",
+    "55 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MB live refresh",
+    "55 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MT live refresh"
+   ]
+  },
+  "_v10800_timetable_selfcheck.py": {
+   "so_dong_cron": 1,
+   "dong": [
+    "10 8 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10800_timetable_selfcheck.py >> /root/Lottery_AI_Test/web/backend/logs/timetable_selfcheck.log 2>&1  # V10800: audit dinh ky moc gio + hoc tap"
+   ]
+  },
+  "_v10773_three_layer_scoreboard.py": {
+   "so_dong_cron": 0,
+   "dong": []
+  },
+  "_v10725_champion_selector.py": {
+   "so_dong_cron": 1,
+   "dong": [
+    "25 6 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10725_champion_selector.py --recommend >> /root/Lottery_AI_Test/web/backend/logs/champion_recommend.log 2>&1"
+   ]
+  },
+  "main.py": {
+   "so_dong_cron": 0,
+   "dong": []
+  }
+ },
+ "cron_v10692": [],
+ "so_dong_grep": 20,
+ "pid": "842736",
+ "byte_giao_dien": {
+  "monitoring.html": 577617,
+  "du-doan-test.html": 225695
+ }
+}

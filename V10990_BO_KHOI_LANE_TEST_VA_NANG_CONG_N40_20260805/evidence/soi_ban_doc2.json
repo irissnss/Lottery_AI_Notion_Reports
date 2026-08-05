@@ -1,0 +1,81 @@
+{
+ "hom_nay": "2026-08-05",
+ "final_lab": {
+  "ngay_cuoi": "2026-08-05",
+  "dong_hom_nay": 19,
+  "mau_hom_nay": [
+   {
+    "region": "MN",
+    "strategy": "CARD3_CAUSAL",
+    "label": "3-card causal"
+   },
+   {
+    "region": "MN",
+    "strategy": "CONS_FREE",
+    "label": "Consensus + free-shadow"
+   },
+   {
+    "region": "MN",
+    "strategy": "CONS_GPTOSS",
+    "label": "Official + gpt-oss"
+   },
+   {
+    "region": "MN",
+    "strategy": "FINAL_REGION_PRESET",
+    "label": "Final region preset"
+   },
+   {
+    "region": "MN",
+    "strategy": "INTERNAL_LANE_CARD_CAP2",
+    "label": "Internal lane + card (max 2)"
+   },
+   {
+    "region": "MN",
+    "strategy": "INTERNAL_LANE_LO2",
+    "label": "Internal lane song-thủ (diagnostic)"
+   },
+   {
+    "region": "MN",
+    "strategy": "LANE_LO2",
+    "label": "Lane song-thủ"
+   },
+   {
+    "region": "MN",
+    "strategy": "LANE_LO2_CARD_CAP2",
+    "label": "Lane song + card (max 2)"
+   },
+   {
+    "region": "MN",
+    "strategy": "LANE_LO2_CARD_TOP3",
+    "label": "Lane song + card top3"
+   },
+   {
+    "region": "MN",
+    "strategy": "LANE_LO2_OFF_BT_CAP2",
+    "label": "Lane song + official BT (max 2)"
+   },
+   {
+    "region": "MN",
+    "strategy": "NO_PLAY",
+    "label": "No play / wait"
+   },
+   {
+    "region": "MN",
+    "strategy": "OFF_1SO",
+    "label": "Official 1 số"
+   }
+  ]
+ },
+ "cron_final_lab": [
+  "40 22 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 3 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1",
+  "35 5 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 morning MN live refresh",
+  "55 17 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MB live refresh",
+  "55 16 * * * cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10737_output_final_lab_shadow.py --days 1 >> /root/Lottery_AI_Test/web/backend/logs/output_final_lab.log 2>&1  # V10737 MT live refresh"
+ ],
+ "cron_timetable": [
+  "10 8 * * 1 cd /root/Lottery_AI_Test/web/backend && /root/Lottery_AI_Test/venv/bin/python3 _v10800_timetable_selfcheck.py >> /root/Lottery_AI_Test/web/backend/logs/timetable_selfcheck.log 2>&1  # V10800: audit dinh ky moc gio + hoc tap"
+ ],
+ "timetable_rc": 2,
+ "timetable_out": "[2026-08-05T12:24:42] V10800 TIMETABLE SELF-CHECK — 2 FAIL\n   PASS  1.ml_model_age<=8d           age=3.4d\n   PASS  2.optimizer_marker<=9d       age=3.4d\n   PASS  3.retrain_OK_in_8d           OK rows 8d=12\n   FAIL  4.rules_fresh                mined_rules=2026-08-03 mn=2026-08-01 mb=2026-08-05 mt=2026-07-30\n   PASS  5.cau_pattern_fresh          cau=2026-08-03 v10763=2026-08-04\n   PASS  6.MDE_yday>=20models         models=27\n   PASS  7.tchot_yday_3regions        regions logged=3/3\n   FAIL  8.lane_rows_yday             lanes=0/3\n   PASS  9.bundles_yday_3regions      regions=3\n   PASS  10.weekly_lock_current       week=2026-08-03 regions=3\n   PASS  11.no_shortcode_station_14d  rows=0 []\n",
+ "timetable_err": ""
+}

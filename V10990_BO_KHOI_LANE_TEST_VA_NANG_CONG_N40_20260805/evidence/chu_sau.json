@@ -1,0 +1,52 @@
+{
+ "nhan": "sau",
+ "pid_lottery": "846146",
+ "byte_html_phuc_vu": "218579",
+ "mien": {
+  "MN": {
+   "http": "200",
+   "chu_khuyen_cao": "💡 KHUYẾN CÁO: nên chơi OFFICIAL · theo miền — thứ này chưa đủ n≥40 mẫu\nNền so sánh 40% n=120 (lane đối chứng OFFICIAL BASELINE CONTROL, nền miền, cửa sổ 60 ngày — KHÔNG phải tỉ lệ trúng của số công bố) · đang THEO DÕI lane SCREEN BLEND V1 47% n=60 — CHƯA đủ cỡ mẫu để khuyến cáo, không phải lời hứa. ⛔ lane này NGỪNG chạy từ 04/08/2026\nĐo từ data thật (hit-rate bạch thủ). Cổng dữ liệu (owner nâng 05/08): n≥40 cho cả hai đường — theo THỨ (cửa sổ 180 ngày) và nền miền (60 ngày); lane phải vượt official ≥5pp. Trang còn chấm đuôi nhị thức, chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.",
+   "chu_lane_output": "🔬 Đo song song MN (shadow — KHÔNG phải số chính thức)\n⛔ Luồng MN_OUTPUT_V1 (lane V10692) đã NGỪNG chạy — số cuối cùng ngày 01/08/2026. Khối số của luồng này đã bỏ khỏi trang theo quyết định owner 05/08: nguồn đã nghỉ thì không hiển thị số cũ nữa. Bảng dữ liệu và lane vẫn còn nguyên, bật lại cron là khối tự hiện lại.\n🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)\nEXPLOIT là chuyên gia các thứ: T7 (BT về ≥40% & > control).\nEXPLOIT: --control: 25official: 25\n⚠ Hôm nay (T4) EXPLOIT KHÔNG phải chuyên gia → ưu tiên control/official\nT2\nE 25%\nc 22%\nT3\nE 25%\nc 33%\nT4\nE 50%\nc 50%\nT5\nE 25%\nc 50%\nT6\nE 50%\nc 75%\nT7 ✓\nE 80%\nc 22%\nCN\nE 40%\nc 56%\nEXPLOIT 7 ngày gần: 07-05✓07-04✓07-03✓07-02✗07-01✗06-30✗06-29✗\n🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)\nOfficial hôm nay: 25 (PENDING)\nPhương pháp · BT nay · Kết quả · Hit 30d\nCHAMPION · -- · ⏳ · 30%\nWEIGHTED · -- · ⏳ · 37%\nADAPTIVE · -- · ⏳ · 27%\nBLEND · -- · ⏳ · 43% ↑\nRULEBH · -- · ⏳ · 43% ↑\nLEAN · -- · ⏳ · 33%\nShadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official\n🧭 PHƯƠNG PHÁP MỚI MN: Rules → Prompt (so sánh cặp, shadow)\nChạy thử 2026-06-11: CÓ rules ra 92 vs KHÔNG rules 92 (1/2 model đổi pick, không tính vào đo)\nTích lũy 52 ngày: CÓ RULES 34.6% vs KHÔNG rules 42.3% (Δ -7.7pp) · BT đổi 21 ngày\n📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 8 rule):\n# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời\n#1 · MB:Quảng Ninh:D-1 [G7] · 100 · tăng↑\n#2 · MB:Quảng Ninh:D-1 [G6+G7] · 100 · mạnh\n#3 · MB:Quảng Ninh:D-1 [G1+G7] · 100 · tăng↑\n#4 · MB:Quảng Ninh:D-1 [GĐB+G7] · 100 · tăng↑\n#5 · MB:Quảng Ninh:D-1 [G1+G2] · 99 · tăng↑\nLịch tự động: xếp hạng rules 20:35 (sau chấm điểm 20:15) + lưới 04:40 + tự-vá ngay trong run · lượt đo MN 05:00 · MT 16:50\nSo sánh cặp (shadow) gộp ĐÚNG cách official MN (d_w06, gồm LLM): doctrine CÓ thể đổi số official MN. Quyết per-miền ~24/06 (GO nếu ≥ +5pp bền).\nCác panel trên là phép ĐO song song, mỗi panel có nguồn số riêng và không lấy số từ luồng đã nghỉ ở trên. KHÔNG phải số chính thức.",
+   "html_rong_lane": false,
+   "api_lane_health": "STOPPED",
+   "api_lane_last_run_date": "2026-08-01",
+   "api_rec_play": "OFFICIAL",
+   "api_rec_scope": "region",
+   "api_rec_long_n": 120,
+   "api_rec_long_pct": 40,
+   "api_rec_official_long": 40,
+   "api_rec_watch": "MN_SCREEN_BLEND_V1",
+   "api_rec_watch_n": 60
+  },
+  "MT": {
+   "http": "200",
+   "chu_khuyen_cao": "💡 KHUYẾN CÁO: nên chơi OFFICIAL · theo miền — thứ này chưa đủ n≥40 mẫu\nNền so sánh 28% n=169 (lane đối chứng OFFICIAL BASELINE CONTROL, nền miền, cửa sổ 60 ngày — KHÔNG phải tỉ lệ trúng của số công bố) · đang THEO DÕI lane SPECIALIST ROSTER V1 37% n=169 — CHƯA đủ cỡ mẫu để khuyến cáo, không phải lời hứa. ⛔ lane này NGỪNG chạy từ 03/08/2026\nĐo từ data thật (hit-rate bạch thủ). Cổng dữ liệu (owner nâng 05/08): n≥40 cho cả hai đường — theo THỨ (cửa sổ 180 ngày) và nền miền (60 ngày); lane phải vượt official ≥5pp. Trang còn chấm đuôi nhị thức, chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.",
+   "chu_lane_output": "🔬 Đo song song MT (shadow — KHÔNG phải số chính thức)\n⛔ Luồng MT_OUTPUT_V1 (lane V10692) đã NGỪNG chạy — số cuối cùng ngày 31/07/2026. Khối số của luồng này đã bỏ khỏi trang theo quyết định owner 05/08: nguồn đã nghỉ thì không hiển thị số cũ nữa. Bảng dữ liệu và lane vẫn còn nguyên, bật lại cron là khối tự hiện lại.\n🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)\nEXPLOIT là chuyên gia các thứ: T2, T4, T6 (BT về ≥40% & > control).\nEXPLOIT: --control: --official: --\n✅ Hôm nay (T4) EXPLOIT là chuyên gia\nT2 ✓\nE 46%\nc 12%\nT3\nE 35%\nc 16%\nT4 ✓\nE 71%\nc 25%\nT5\nE 39%\nc 39%\nT6 ✓\nE 57%\nc 14%\nT7\nE 46%\nc 58%\nCN\nE 13%\nc 69%\nEXPLOIT 7 ngày gần: 08-04✗08-03✗08-02✗08-01✗07-31✓07-30✗07-28✗\n🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)\nOfficial hôm nay: --\nPhương pháp · BT nay · Kết quả · Hit 30d\nCHAMPION · -- · ⏳ · 23%\nWEIGHTED · -- · ⏳ · 33% ↑\nADAPTIVE · -- · ⏳ · 33% ↑\nBLEND · -- · ⏳ · 30% ↑\nRULEBH · -- · ⏳ · 30% ↑\nLEAN · -- · ⏳ · 33% ↑\nShadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official\n🧭 PHƯƠNG PHÁP MỚI MT: Rules → Prompt (so sánh cặp, shadow)\nChạy thử 2026-06-11: CÓ rules ra 88 vs KHÔNG rules 88 (1/2 model đổi pick, không tính vào đo)\nTích lũy 50 ngày: CÓ RULES 32% vs KHÔNG rules 34% (Δ -2pp) · BT đổi 1 ngày\n📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 8 rule):\n# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời\n#1 · MB:Quảng Ninh:D-1 [G6+G7] · 88 · mạnh\n#2 · MB:Quảng Ninh:D-1 [GĐB+G2] · 85 · tăng↑\n#3 · MN:Bạc Liêu:D-1 [GĐB+G1] · 78 · tăng↑\n#4 · MN:Đồng Nai:D [GĐB+G1] · 77 · mạnh\n#5 · MN:Bạc Liêu:D-1 [G5+GĐB] · 76 · mạnh\nLịch tự động: xếp hạng rules 20:35 (sau chấm điểm 20:15) + lưới 04:40 + tự-vá ngay trong run · lượt đo MN 05:00 · MT 16:50\n⚠️ QUAN TRỌNG: official MT chốt số bằng override nt_consensus (CHỈ model no-token) → doctrine (tác động LLM) KHÔNG đổi được số official MT. Panel này chỉ cho thấy doctrine ảnh hưởng tầng LLM, chưa chuyển thành số official MT. Quyết ~24/06.\nCác panel trên là phép ĐO song song, mỗi panel có nguồn số riêng và không lấy số từ luồng đã nghỉ ở trên. KHÔNG phải số chính thức.",
+   "html_rong_lane": false,
+   "api_lane_health": "STOPPED",
+   "api_lane_last_run_date": "2026-07-31",
+   "api_rec_play": "OFFICIAL",
+   "api_rec_scope": "region",
+   "api_rec_long_n": 169,
+   "api_rec_long_pct": 28,
+   "api_rec_official_long": 28,
+   "api_rec_watch": "MT_SPECIALIST_ROSTER_V1",
+   "api_rec_watch_n": 169
+  },
+  "MB": {
+   "http": "200",
+   "chu_khuyen_cao": "💡 KHUYẾN CÁO: nên chơi LANE — PRIOR REGION CONTEXT SAFE V1 · theo miền — thứ này chưa đủ n≥40 mẫu\nLane PRIOR REGION CONTEXT SAFE V1 đạt 34% (21/62, gần đây 44%) vs official 21% — vượt nền có ý nghĩa thống kê (p=0.01). ⛔ lane này chạy cuối 04/08/2026, KHÔNG có số hôm nay\nĐo từ data thật (hit-rate bạch thủ). Cổng dữ liệu (owner nâng 05/08): n≥40 cho cả hai đường — theo THỨ (cửa sổ 180 ngày) và nền miền (60 ngày); lane phải vượt official ≥5pp. Trang còn chấm đuôi nhị thức, chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.",
+   "chu_lane_output": "🔬 Đo song song MB (shadow — KHÔNG phải số chính thức)\n⛔ Luồng MB_OUTPUT_V1 (lane V10692) đã NGỪNG chạy — số cuối cùng ngày 31/07/2026. Khối số của luồng này đã bỏ khỏi trang theo quyết định owner 05/08: nguồn đã nghỉ thì không hiển thị số cũ nữa. Bảng dữ liệu và lane vẫn còn nguyên, bật lại cron là khối tự hiện lại.\n🔬 Phương pháp riêng cho từng số (chọn theo hit-rate đã verify, độc lập miền×thứ×đài)\n📂 Tham khảo ngày 04/08/2026 — chưa có dự đoán hôm nay\n🧭 Độc lập: MB · Thứ T3 · Đài: Quảng Ninh\n🎯 Bạch Thủ: 45 ← MB_SCREEN_WEIGHTED_V1 (62% BT hit/T3, n=8) 📅 riêng thứ này\nSố phụ 1: 45 ← MB_FULL_POOL_D_W06_V1 (44% số phụ về (per-position · độc lập miền×thứ)/T3, n=9) 📅 riêng thứ này\n🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)\nĐủ data nhưng chưa có thứ nào EXPLOIT vượt control rõ — tiếp tục theo dõi.\nEXPLOIT: --control: --official: --\n⚠ Hôm nay (T4) EXPLOIT KHÔNG phải chuyên gia → ưu tiên control/official\nT2\nE 27%\nc 0%\nT3\nE 22%\nc 0%\nT4\nE 29%\nc 0%\nT5\nE 29%\nc 33%\nT6\nE 38%\nc 0%\nT7\nE 27%\nc 67%\nCN\nE 38%\nc 0%\nEXPLOIT 7 ngày gần: 08-04✗08-03✗08-02✓08-01✗07-31✗07-30✗07-29✗\n🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)\nOfficial hôm nay: --\nPhương pháp · BT nay · Kết quả · Hit 30d\nCHAMPION · -- · ⏳ · 20%\nWEIGHTED · -- · ⏳ · 30% ↑\nADAPTIVE · -- · ⏳ · 23%\nBLEND · -- · ⏳ · 23%\nRULEBH · -- · ⏳ · 23%\nLEAN · -- · ⏳ · 17%\nShadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official\n🧭 PHƯƠNG PHÁP MỚI MB: Rules → Prompt (ĐANG CHẠY OFFICIAL THẬT)\n⏳ MB chưa chốt official hôm nay.\nMB là nguồn của phương pháp — doctrine áp thẳng vào số official MB (bật 2026-06-05), KHÔNG phải A/B shadow. MN/MT đang mượn về thử ngầm.\n📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 14 rule):\n# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời\n#4 · MB:Quảng Ninh:D-1 [G6+G7] · 90 · mạnh\n#15 · MN:Vũng Tàu:D-1 [G2+G7] · 80 · tăng↑\n#16 · MN:Vũng Tàu:D-1 [G7+G8] · 80 · tăng↑\n#28 · MB:Quảng Ninh:D-1 [GĐB+G2] · 60 · giảm↓\n#29 · MN:Vũng Tàu:D-1 [G5+G7] · 60 · giảm↓\nMB là NGUỒN của phương pháp rules→prompt — doctrine áp THẲNG vào số official MB (KHÔNG phải A/B shadow như MN/MT). Số official MB hôm nay = đã có doctrine. MN/MT đang MƯỢN phương pháp về thử ngầm để đo trước khi quyết áp.\nCác panel trên là phép ĐO song song, mỗi panel có nguồn số riêng và không lấy số từ luồng đã nghỉ ở trên. KHÔNG phải số chính thức.",
+   "html_rong_lane": false,
+   "api_lane_health": "STOPPED",
+   "api_lane_last_run_date": "2026-07-31",
+   "api_rec_play": "LANE",
+   "api_rec_scope": "region",
+   "api_rec_long_n": 62,
+   "api_rec_long_pct": 34,
+   "api_rec_official_long": 21,
+   "api_rec_watch": null,
+   "api_rec_watch_n": null
+  }
+ }
+}

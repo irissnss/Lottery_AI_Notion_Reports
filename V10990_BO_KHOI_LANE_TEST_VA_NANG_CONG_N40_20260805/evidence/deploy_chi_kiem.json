@@ -1,0 +1,275 @@
+{
+ "nhan": "v10990_deploy_chi_kiem",
+ "gio_vn_bat_dau": "2026-08-05 12:55:00",
+ "pid_truoc": "846146",
+ "pid_sau": "846146",
+ "is_active": "active",
+ "http_health": "200",
+ "http_du_doan_test_mn": "401",
+ "traceback_3phut": "0",
+ "tu_kiem": {
+  "tong": 22,
+  "dat": 20,
+  "lech": 2,
+  "ma_lech": [
+   "C18_bien_lane_du_rong",
+   "C19_bien_han_du_rong"
+  ],
+  "ma_ok": [
+   "C1_money_board_output_due",
+   "C2_runtime_audit_deadline",
+   "C3_lane_output_freeze",
+   "C4_lock_before_final",
+   "C5_nghiemthu_lane_time",
+   "C17_nghiemthu_co_output",
+   "C20_bien_han_khong_troi",
+   "C21_co_thong_bao_da_xong",
+   "C22_giao_dien_toan_ven",
+   "C6_lane_slot",
+   "C7_settings_vs_seed",
+   "C12_bien_2_phut",
+   "C13_lane_bien_bang_khoa",
+   "C10_freeze_equals_final",
+   "C11_tchot_before_final",
+   "C8_no_new_utc_table",
+   "C9_vn_views_present",
+   "C14_tz_khong_chong_cheo",
+   "C15_cot_khai_VN_dung_khuon",
+   "C16_dang_ky_du"
+  ]
+ },
+ "tu_kiem_tail": "V10900_CONSISTENCY 2026-08-05: 22 phép kiểm · lệch 2\n  OK   C1_money_board_output_due      _v10759_money_board.OUTPUT_DUE khớp mốc FINAL\n  OK   C2_runtime_audit_deadline      _v10861_runtime_contract_audit.DEADLINE khớp mốc FINAL\n  OK   C3_lane_output_freeze          _v10692_mn_mt_multidir_lane.OUTPUT_FREEZE_HHMM khớp mốc FINAL\n  OK   C4_lock_before_final           khoá /choi chạy trước mốc FINAL\n  OK   C5_nghiemthu_lane_time         giờ lane Nghiệm Thu khai báo khớp crontab\n  OK   C17_nghiemthu_co_output        lane Nghiệm Thu ra số ở MỌI miền đã qua mốc FINAL\n  LỆCH C18_bien_lane_du_rong          lượt lane cuối cách giờ official chốt ≥ 300s (7 ngày)\n       mong đợi: []\n       thực tế : [\"MT 2026-08-04: official 16:50:13 · lượt cuối 16:54 · biên 227s\"]\n       hệ quả  : giờ official chốt trôi theo độ trễ nhà cung cấp; biên mỏng nghĩa là chỉ cần trôi thêm vài phút là lane mất ngày đo, đúng như 03/08\n  LỆCH C19_bien_han_du_rong           official chốt MT/MB cách HẠN CỨNG ≥ 480s (7 ngày)\n       mong đợi: []\n       thực tế : [\"MT 2026-08-04: chốt cách hạn 467s (< 480s)\"]\n       hệ quả  : qua hạn là mất output của cả miền-ngày, quy tắc đóng băng cấm sinh bù\n  OK   C20_bien_han_khong_troi        MT/MB không có 3 ngày liên tiếp biên < 12 phút\n  OK   C21_co_thong_bao_da_xong       miền đã chốt official ≥3 phút thì phải có thông báo 'đã xong'\n  OK   C22_giao_dien_toan_ven         5 file giao diện then chốt còn nguyên vẹn\n  OK   C6_lane_slot                   LANE_SLOT khớp crontab lane v10692\n  OK   C7_settings_vs_seed            cài đặt đang chạy khớp hạt giống database.py\n  OK   C12_bien_2_phut                khoá /choi cách mốc FINAL đúng 2 phút, cả ba miền\n  OK   C13_lane_bien_bang_khoa        biên lane bằng đúng giờ khoá /choi\n  OK   C10_freeze_equals_final        mốc bất động (FREEZE_MARKS) khớp mốc FINAL\n  OK   C11_tchot_before_final         job T-chốt regen bundle chạy TRƯỚC mốc FINAL\n  OK   C8_no_new_utc_table            không có bảng mới nào lưu UTC ngoài đăng ký\n  OK   C9_vn_views_present            view giờ VN của mọi cột UTC còn nguyên\n  OK   C14_tz_khong_chong_cheo        một cột chỉ được khai MỘT múi giờ trong đăng ký\n  OK   C15_cot_khai_VN_dung_khuon     cột khai giờ VN phải có dấu múi giờ trong dữ liệu\n  OK   C16_dang_ky_du                 đăng ký múi giờ có đủ dòng và không rỗng",
+ "truoc": {
+  "hash4": {
+   "predictions": {
+    "sha256": "ec59cfd5ee8c9a9a59e0009b2d836e2a8b4e0c9069aa25d90442b409e653a250",
+    "so_dong": 11754
+   },
+   "final_bundles": {
+    "sha256": "6848318ee93ad48ede3c978bebd79489bb8bdaf6538f05b5260548342d362560",
+    "so_dong": 475
+   },
+   "lottery_results": {
+    "sha256": "92ccf706553921288f2105f96e2a399b89835429fbfb6d6fac1104f9841e0029",
+    "so_dong": 15213
+   },
+   "model_daily_eval": {
+    "sha256": "c559a75ad34b78ed89ed7d265dca3e13349fe54561759258a5109b87aa5fb744",
+    "so_dong": 11577
+   }
+  },
+  "hom_nay": "2026-08-05",
+  "gio_vn": "2026-08-05 12:55:02",
+  "official_mn": [
+   {
+    "region": "MN",
+    "bach_thu": "25",
+    "model_count": 15,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 05:19:51"
+   }
+  ],
+  "khuyen_cao": [
+   {
+    "region": "MB",
+    "play": "LANE",
+    "method": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "long_pct": 34,
+    "long_n": 62,
+    "official_long": 21,
+    "scope": "region",
+    "watch_method": null,
+    "updated_at": "2026-08-05T12:52:15.707379"
+   },
+   {
+    "region": "MN",
+    "play": "OFFICIAL",
+    "method": "MN_OFFICIAL_BASELINE_CONTROL",
+    "long_pct": 40,
+    "long_n": 120,
+    "official_long": 40,
+    "scope": "region",
+    "watch_method": "MN_SCREEN_BLEND_V1",
+    "updated_at": "2026-08-05T12:52:15.707379"
+   },
+   {
+    "region": "MT",
+    "play": "OFFICIAL",
+    "method": "MT_OFFICIAL_BASELINE_CONTROL",
+    "long_pct": 28,
+    "long_n": 169,
+    "official_long": 28,
+    "scope": "region",
+    "watch_method": "MT_SPECIALIST_ROSTER_V1",
+    "updated_at": "2026-08-05T12:52:15.707379"
+   }
+  ],
+  "pid": "846146",
+  "nrestarts": "0",
+  "byte": {
+   "monitoring.html": 577617,
+   "du-doan-test.html": 218579
+  },
+  "dong_rec_wd": [
+   "REC_WD_MIN_N = REC_MIN_LONG_N   # = 40; một sàn duy nhất, không còn chỗ nghiêm chỗ lỏng",
+   "SCOPE: ưu tiên cùng-THỨ (same weekday, 180d, n>=REC_WD_MIN_N=40) để độc lập thứ; nếu mẫu",
+   "off_wd = trailing_pct(c, off_exp, region, asof, wd_sqlite=wd_sqlite, window=180, min_n=REC_WD_MIN_N) if wd_sqlite else None"
+  ],
+  "chuoi_lane": {
+   "Output Lane Test": {
+    "chu_thich": [
+     2807
+    ],
+    "render": []
+   },
+   "Dàn XIÊN": {
+    "chu_thich": [],
+    "render": []
+   },
+   "lane-num-box": {
+    "chu_thich": [],
+    "render": []
+   },
+   "TEST OUTPUT": {
+    "chu_thich": [
+     1783
+    ],
+    "render": []
+   }
+  },
+  "ham_pham_vi": {
+   "tim_thay": true,
+   "dong_bat_dau": 2817,
+   "so_dong_than": 210
+  },
+  "ham_da_bo": {
+   "numBox": [],
+   "statusPill": [],
+   "xienRow": [],
+   "previousBlock": []
+  },
+  "panel_con": {
+   "per_number_methods": 1,
+   "adaptive_exploit_watch": 1,
+   "screening_scoreboard": 1,
+   "doctrine_ab_watch": 1
+  }
+ },
+ "sau": {
+  "hash4": {
+   "predictions": {
+    "sha256": "ec59cfd5ee8c9a9a59e0009b2d836e2a8b4e0c9069aa25d90442b409e653a250",
+    "so_dong": 11754
+   },
+   "final_bundles": {
+    "sha256": "6848318ee93ad48ede3c978bebd79489bb8bdaf6538f05b5260548342d362560",
+    "so_dong": 475
+   },
+   "lottery_results": {
+    "sha256": "92ccf706553921288f2105f96e2a399b89835429fbfb6d6fac1104f9841e0029",
+    "so_dong": 15213
+   },
+   "model_daily_eval": {
+    "sha256": "c559a75ad34b78ed89ed7d265dca3e13349fe54561759258a5109b87aa5fb744",
+    "so_dong": 11577
+   }
+  },
+  "hom_nay": "2026-08-05",
+  "gio_vn": "2026-08-05 12:55:05",
+  "official_mn": [
+   {
+    "region": "MN",
+    "bach_thu": "25",
+    "model_count": 15,
+    "status": "ACTIVE",
+    "created_at": "2026-08-05 05:19:51"
+   }
+  ],
+  "khuyen_cao": [
+   {
+    "region": "MB",
+    "play": "LANE",
+    "method": "MB_PRIOR_REGION_CONTEXT_SAFE_V1",
+    "long_pct": 34,
+    "long_n": 62,
+    "official_long": 21,
+    "scope": "region",
+    "watch_method": null,
+    "updated_at": "2026-08-05T12:52:15.707379"
+   },
+   {
+    "region": "MN",
+    "play": "OFFICIAL",
+    "method": "MN_OFFICIAL_BASELINE_CONTROL",
+    "long_pct": 40,
+    "long_n": 120,
+    "official_long": 40,
+    "scope": "region",
+    "watch_method": "MN_SCREEN_BLEND_V1",
+    "updated_at": "2026-08-05T12:52:15.707379"
+   },
+   {
+    "region": "MT",
+    "play": "OFFICIAL",
+    "method": "MT_OFFICIAL_BASELINE_CONTROL",
+    "long_pct": 28,
+    "long_n": 169,
+    "official_long": 28,
+    "scope": "region",
+    "watch_method": "MT_SPECIALIST_ROSTER_V1",
+    "updated_at": "2026-08-05T12:52:15.707379"
+   }
+  ],
+  "pid": "846146",
+  "nrestarts": "0",
+  "byte": {
+   "monitoring.html": 577617,
+   "du-doan-test.html": 218579
+  },
+  "dong_rec_wd": [
+   "REC_WD_MIN_N = REC_MIN_LONG_N   # = 40; một sàn duy nhất, không còn chỗ nghiêm chỗ lỏng",
+   "SCOPE: ưu tiên cùng-THỨ (same weekday, 180d, n>=REC_WD_MIN_N=40) để độc lập thứ; nếu mẫu",
+   "off_wd = trailing_pct(c, off_exp, region, asof, wd_sqlite=wd_sqlite, window=180, min_n=REC_WD_MIN_N) if wd_sqlite else None"
+  ],
+  "chuoi_lane": {
+   "Output Lane Test": {
+    "chu_thich": [
+     2807
+    ],
+    "render": []
+   },
+   "Dàn XIÊN": {
+    "chu_thich": [],
+    "render": []
+   },
+   "lane-num-box": {
+    "chu_thich": [],
+    "render": []
+   },
+   "TEST OUTPUT": {
+    "chu_thich": [
+     1783
+    ],
+    "render": []
+   }
+  },
+  "ham_pham_vi": {
+   "tim_thay": true,
+   "dong_bat_dau": 2817,
+   "so_dong_than": 210
+  },
+  "ham_da_bo": {
+   "numBox": [],
+   "statusPill": [],
+   "xienRow": [],
+   "previousBlock": []
+  },
+  "panel_con": {
+   "per_number_methods": 1,
+   "adaptive_exploit_watch": 1,
+   "screening_scoreboard": 1,
+   "doctrine_ab_watch": 1
+  }
+ },
+ "truot": []
+}

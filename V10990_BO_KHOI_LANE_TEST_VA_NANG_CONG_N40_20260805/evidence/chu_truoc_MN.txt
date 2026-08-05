@@ -1,0 +1,66 @@
+===== MN · nhãn=truoc · pid=842736 · html 225695 byte =====
+--- KHỐI KHUYẾN CÁO ---
+💡 KHUYẾN CÁO: nên chơi OFFICIAL · 📅 độc lập THỨ này
+Nền so sánh 38% n=29 (lane đối chứng OFFICIAL BASELINE CONTROL, chỉ tính THỨ này, cửa sổ 180 ngày — KHÔNG phải tỉ lệ trúng của số công bố) · đang THEO DÕI lane ADAPTIVE EXPLOIT V1 62% n=16 — CHƯA đủ cỡ mẫu để khuyến cáo, không phải lời hứa. ⛔ lane này NGỪNG chạy từ 05/07/2026
+Đo từ data thật (hit-rate bạch thủ). Cổng dữ liệu: theo THỨ chỉ cần n≥8 (cửa sổ 180 ngày), nền miền cần n≥40 (60 ngày); lane phải vượt official ≥5pp. n≥8 là ngưỡng mỏng — nên trang chấm thêm đuôi nhị thức và chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.
+
+--- KHỐI LANE OUTPUT ---
+🧪 Output Lane Test MN — ⛔ LANE ĐÃ NGỪNG · số cuối 01/08/2026
+⛔ Luồng này đã NGỪNG sinh số 4 ngày — số cuối cùng là ngày 01/08/2026. KHÔNG có số hôm nay và sẽ không có thêm cho tới khi luồng được bật lại. Số dưới đây là bản LƯU CUỐI, không phải dự đoán cho hôm nay.
+⛔ Số lưu cuối ngày 01/08/2026 · tạo lúc 05:30
+🎯 Bạch Thủ
+38
+Số phụ 1
+16
+Số phụ 2
+59
+⚠ Ngày này ĐÃ XỔ nhưng lane CHƯA được chấm — không có win/lose để đối chiếu.
+🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)
+EXPLOIT là chuyên gia các thứ: T7 (BT về ≥40% & > control).
+EXPLOIT: --control: 25official: 25
+⚠ Hôm nay (T4) EXPLOIT KHÔNG phải chuyên gia → ưu tiên control/official
+T2
+E 25%
+c 22%
+T3
+E 25%
+c 33%
+T4
+E 50%
+c 50%
+T5
+E 25%
+c 50%
+T6
+E 50%
+c 75%
+T7 ✓
+E 80%
+c 22%
+CN
+E 40%
+c 56%
+EXPLOIT 7 ngày gần: 07-05✓07-04✓07-03✓07-02✗07-01✗06-30✗06-29✗
+🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)
+Official hôm nay: 25 (PENDING)
+Phương pháp · BT nay · Kết quả · Hit 30d
+CHAMPION · -- · ⏳ · 30%
+WEIGHTED · -- · ⏳ · 37%
+ADAPTIVE · -- · ⏳ · 27%
+BLEND · -- · ⏳ · 43% ↑
+RULEBH · -- · ⏳ · 43% ↑
+LEAN · -- · ⏳ · 33%
+Shadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official
+🧭 PHƯƠNG PHÁP MỚI MN: Rules → Prompt (so sánh cặp, shadow)
+Chạy thử 2026-06-11: CÓ rules ra 92 vs KHÔNG rules 92 (1/2 model đổi pick, không tính vào đo)
+Tích lũy 52 ngày: CÓ RULES 34.6% vs KHÔNG rules 42.3% (Δ -7.7pp) · BT đổi 21 ngày
+📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 8 rule):
+# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời
+#1 · MB:Quảng Ninh:D-1 [G7] · 100 · tăng↑
+#2 · MB:Quảng Ninh:D-1 [G6+G7] · 100 · mạnh
+#3 · MB:Quảng Ninh:D-1 [G1+G7] · 100 · tăng↑
+#4 · MB:Quảng Ninh:D-1 [GĐB+G7] · 100 · tăng↑
+#5 · MB:Quảng Ninh:D-1 [G1+G2] · 99 · tăng↑
+Lịch tự động: xếp hạng rules 20:35 (sau chấm điểm 20:15) + lưới 04:40 + tự-vá ngay trong run · lượt đo MN 05:00 · MT 16:50
+So sánh cặp (shadow) gộp ĐÚNG cách official MN (d_w06, gồm LLM): doctrine CÓ thể đổi số official MN. Quyết per-miền ~24/06 (GO nếu ≥ +5pp bền).
+Thử nghiệm (shadow) — KHÔNG phải số chính thức. Thuật toán độc lập theo miền (gom 19 model). Lane-test shadow (BT + số phụ 1 + số phụ 2). KHÔNG phải số chính thức.

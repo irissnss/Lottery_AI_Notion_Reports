@@ -1,0 +1,66 @@
+===== MT · nhãn=truoc · pid=842736 · html 225695 byte =====
+--- KHỐI KHUYẾN CÁO ---
+💡 KHUYẾN CÁO: nên chơi OFFICIAL · 📅 độc lập THỨ này
+Nền so sánh 26% n=35 (lane đối chứng OFFICIAL BASELINE CONTROL, chỉ tính THỨ này, cửa sổ 180 ngày — KHÔNG phải tỉ lệ trúng của số công bố) · đang THEO DÕI lane SCREEN BLEND V1 50% n=14 — CHƯA đủ cỡ mẫu để khuyến cáo, không phải lời hứa. ⛔ lane này NGỪNG chạy từ 04/08/2026
+Đo từ data thật (hit-rate bạch thủ). Cổng dữ liệu: theo THỨ chỉ cần n≥8 (cửa sổ 180 ngày), nền miền cần n≥40 (60 ngày); lane phải vượt official ≥5pp. n≥8 là ngưỡng mỏng — nên trang chấm thêm đuôi nhị thức và chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.
+
+--- KHỐI LANE OUTPUT ---
+🧪 Output Lane Test MT — ⛔ LANE ĐÃ NGỪNG · số cuối 31/07/2026
+⛔ Luồng này đã NGỪNG sinh số 5 ngày — số cuối cùng là ngày 31/07/2026. KHÔNG có số hôm nay và sẽ không có thêm cho tới khi luồng được bật lại. Số dưới đây là bản LƯU CUỐI, không phải dự đoán cho hôm nay.
+⛔ Số lưu cuối ngày 31/07/2026 · tạo lúc 16:45
+🎯 Bạch Thủ
+68
+Số phụ 1
+95
+Số phụ 2
+43
+⚠ Ngày này ĐÃ XỔ nhưng lane CHƯA được chấm — không có win/lose để đối chiếu.
+🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)
+EXPLOIT là chuyên gia các thứ: T2, T4, T6 (BT về ≥40% & > control).
+EXPLOIT: --control: --official: --
+✅ Hôm nay (T4) EXPLOIT là chuyên gia
+T2 ✓
+E 46%
+c 12%
+T3
+E 35%
+c 16%
+T4 ✓
+E 71%
+c 25%
+T5
+E 39%
+c 39%
+T6 ✓
+E 57%
+c 14%
+T7
+E 46%
+c 58%
+CN
+E 13%
+c 69%
+EXPLOIT 7 ngày gần: 08-04✗08-03✗08-02✗08-01✗07-31✓07-30✗07-28✗
+🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)
+Official hôm nay: --
+Phương pháp · BT nay · Kết quả · Hit 30d
+CHAMPION · -- · ⏳ · 23%
+WEIGHTED · -- · ⏳ · 33% ↑
+ADAPTIVE · -- · ⏳ · 33% ↑
+BLEND · -- · ⏳ · 30% ↑
+RULEBH · -- · ⏳ · 30% ↑
+LEAN · -- · ⏳ · 33% ↑
+Shadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official
+🧭 PHƯƠNG PHÁP MỚI MT: Rules → Prompt (so sánh cặp, shadow)
+Chạy thử 2026-06-11: CÓ rules ra 88 vs KHÔNG rules 88 (1/2 model đổi pick, không tính vào đo)
+Tích lũy 50 ngày: CÓ RULES 32% vs KHÔNG rules 34% (Δ -2pp) · BT đổi 1 ngày
+📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 8 rule):
+# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời
+#1 · MB:Quảng Ninh:D-1 [G6+G7] · 88 · mạnh
+#2 · MB:Quảng Ninh:D-1 [GĐB+G2] · 85 · tăng↑
+#3 · MN:Bạc Liêu:D-1 [GĐB+G1] · 78 · tăng↑
+#4 · MN:Đồng Nai:D [GĐB+G1] · 77 · mạnh
+#5 · MN:Bạc Liêu:D-1 [G5+GĐB] · 76 · mạnh
+Lịch tự động: xếp hạng rules 20:35 (sau chấm điểm 20:15) + lưới 04:40 + tự-vá ngay trong run · lượt đo MN 05:00 · MT 16:50
+⚠️ QUAN TRỌNG: official MT chốt số bằng override nt_consensus (CHỈ model no-token) → doctrine (tác động LLM) KHÔNG đổi được số official MT. Panel này chỉ cho thấy doctrine ảnh hưởng tầng LLM, chưa chuyển thành số official MT. Quyết ~24/06.
+Thử nghiệm (shadow) — KHÔNG phải số chính thức. Thuật toán độc lập theo miền (gom 10 model). Lane-test shadow (BT + số phụ 1 + số phụ 2). KHÔNG phải số chính thức.

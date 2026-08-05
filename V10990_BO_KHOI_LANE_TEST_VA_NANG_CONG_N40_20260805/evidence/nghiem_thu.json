@@ -1,0 +1,37 @@
+{
+ "bang": [
+  {
+   "mien": "MN",
+   "lane_last_run": "2026-08-01",
+   "rec_truoc": "OFFICIAL scope=weekday n=29 method=MN_ADAPTIVE_EXPLOIT_V1",
+   "rec_sau": "OFFICIAL scope=region n=120",
+   "panel_truoc": 3,
+   "panel_sau": 3,
+   "byte_html": null,
+   "pid": null
+  },
+  {
+   "mien": "MT",
+   "lane_last_run": "2026-07-31",
+   "rec_truoc": "OFFICIAL scope=weekday n=35 method=MT_SCREEN_BLEND_V1",
+   "rec_sau": "OFFICIAL scope=region n=169",
+   "panel_truoc": 3,
+   "panel_sau": 3,
+   "byte_html": null,
+   "pid": null
+  },
+  {
+   "mien": "MB",
+   "lane_last_run": "2026-07-31",
+   "rec_truoc": "LANE scope=weekday n=8 method=",
+   "rec_sau": "LANE scope=region n=62",
+   "panel_truoc": 4,
+   "panel_sau": 4,
+   "byte_html": null,
+   "pid": null
+  }
+ ],
+ "truot": [],
+ "pid": null,
+ "byte_html_phuc_vu": null
+}

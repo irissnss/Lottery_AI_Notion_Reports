@@ -1,0 +1,70 @@
+===== MB · nhãn=truoc · pid=842736 · html 225695 byte =====
+--- KHỐI KHUYẾN CÁO ---
+⚠ CHƯA đủ bằng chứng để khuyến cáo — lane FULL POOL D W06 V1 mới dẫn trên mẫu mỏng · 📅 độc lập THỨ này
+Lane FULL POOL D W06 V1 đạt 25% (2/8, gần đây 36%) vs official 11% — chênh này CHƯA phân biệt được với may rủi (p=0.22 > 0.1). Số thô vẫn hiện nguyên, nhưng không đủ cơ sở để đưa tiền theo. ⛔ lane này chạy cuối 04/08/2026, KHÔNG có số hôm nay
+Đo từ data thật (hit-rate bạch thủ). Cổng dữ liệu: theo THỨ chỉ cần n≥8 (cửa sổ 180 ngày), nền miền cần n≥40 (60 ngày); lane phải vượt official ≥5pp. n≥8 là ngưỡng mỏng — nên trang chấm thêm đuôi nhị thức và chỉ gọi là khuyến cáo khi p≤0.1. Cập nhật mỗi ngày. Shadow — không phải lời khuyên tài chính.
+
+--- KHỐI LANE OUTPUT ---
+🧪 Output Lane Test MB — ⛔ LANE ĐÃ NGỪNG · số cuối 31/07/2026
+⛔ Luồng này đã NGỪNG sinh số 5 ngày — số cuối cùng là ngày 31/07/2026. KHÔNG có số hôm nay và sẽ không có thêm cho tới khi luồng được bật lại. Số dưới đây là bản LƯU CUỐI, không phải dự đoán cho hôm nay.
+⛔ Số lưu cuối ngày 31/07/2026 · tạo lúc 17:39
+🎯 Bạch Thủ
+19
+Số phụ 1
+28
+Số phụ 2
+36
+⚠ Ngày này ĐÃ XỔ nhưng lane CHƯA được chấm — không có win/lose để đối chiếu.
+🔬 Phương pháp riêng cho từng số (chọn theo hit-rate đã verify, độc lập miền×thứ×đài)
+📂 Tham khảo ngày 04/08/2026 — chưa có dự đoán hôm nay
+🧭 Độc lập: MB · Thứ T3 · Đài: Quảng Ninh
+🎯 Bạch Thủ: 45 ← MB_SCREEN_WEIGHTED_V1 (62% BT hit/T3, n=8) 📅 riêng thứ này
+Số phụ 1: 45 ← MB_FULL_POOL_D_W06_V1 (44% số phụ về (per-position · độc lập miền×thứ)/T3, n=9) 📅 riêng thứ này
+🔬 Kiểm chứng Adaptive Exploit (lane test — KHÔNG đụng official)
+Đủ data nhưng chưa có thứ nào EXPLOIT vượt control rõ — tiếp tục theo dõi.
+EXPLOIT: --control: --official: --
+⚠ Hôm nay (T4) EXPLOIT KHÔNG phải chuyên gia → ưu tiên control/official
+T2
+E 27%
+c 0%
+T3
+E 22%
+c 0%
+T4
+E 29%
+c 0%
+T5
+E 29%
+c 33%
+T6
+E 38%
+c 0%
+T7
+E 27%
+c 67%
+CN
+E 38%
+c 0%
+EXPLOIT 7 ngày gần: 08-04✗08-03✗08-02✓08-01✗07-31✗07-30✗07-29✗
+🔬 Bảng kết quả Sàng lọc Output-Total (shadow — forward-prove)
+Official hôm nay: --
+Phương pháp · BT nay · Kết quả · Hit 30d
+CHAMPION · -- · ⏳ · 20%
+WEIGHTED · -- · ⏳ · 30% ↑
+ADAPTIVE · -- · ⏳ · 23%
+BLEND · -- · ⏳ · 23%
+RULEBH · -- · ⏳ · 23%
+LEAN · -- · ⏳ · 17%
+Shadow — CHƯA ảnh hưởng số chính thức. Đang forward-prove (hit% = số BT có VỀ/lô-style, 30d). · ↑ = hơn official
+🧭 PHƯƠNG PHÁP MỚI MB: Rules → Prompt (ĐANG CHẠY OFFICIAL THẬT)
+⏳ MB chưa chốt official hôm nay.
+MB là nguồn của phương pháp — doctrine áp thẳng vào số official MB (bật 2026-06-05), KHÔNG phải A/B shadow. MN/MT đang mượn về thử ngầm.
+📚 Rules đã XẾP HẠNG + vòng đời cho lượt T4 2026-08-05 (PRODUCTION top 5 · MANUAL đối chiếu: 14 rule):
+# · Nguồn (miền:đài:độ trễ) · Điểm · Vòng đời
+#4 · MB:Quảng Ninh:D-1 [G6+G7] · 90 · mạnh
+#15 · MN:Vũng Tàu:D-1 [G2+G7] · 80 · tăng↑
+#16 · MN:Vũng Tàu:D-1 [G7+G8] · 80 · tăng↑
+#28 · MB:Quảng Ninh:D-1 [GĐB+G2] · 60 · giảm↓
+#29 · MN:Vũng Tàu:D-1 [G5+G7] · 60 · giảm↓
+MB là NGUỒN của phương pháp rules→prompt — doctrine áp THẲNG vào số official MB (KHÔNG phải A/B shadow như MN/MT). Số official MB hôm nay = đã có doctrine. MN/MT đang MƯỢN phương pháp về thử ngầm để đo trước khi quyết áp.
+Thử nghiệm (shadow) — KHÔNG phải số chính thức. Thuật toán độc lập theo miền (gom 8 model). Lane-test shadow (BT + số phụ 1 + số phụ 2). KHÔNG phải số chính thức.
