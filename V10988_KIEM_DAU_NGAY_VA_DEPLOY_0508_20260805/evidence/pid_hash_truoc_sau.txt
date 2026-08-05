@@ -1,0 +1,24 @@
+﻿PID VA DICH VU — V10988 (2026-08-05)
+====================================
+TRUOC deploy : MainPID=801640  NRestarts=0  ActiveEnterTimestamp=Tue 2026-08-04 21:59:42 +07
+SAU  restart : MainPID=834969  NRestarts=0  ActiveEnterTimestamp=Wed 2026-08-05 09:21:35 +07
+  -> PID DOI 801640 -> 834969 = restart THAT SU co hieu luc (khong phai 'Unit not found' im lang)
+  -> NRestarts=0 ca truoc lan sau = tat em, khong phai crash-loop
+
+SMOKE sau restart
+  /api/health                      = 200
+  /api/admin/consistency-guard     = 401  (dung: chan khi chua dang nhap)
+  /api/admin/early-block           = 401
+  traceback/ERROR trong 2 phut sau = 0
+
+HASH 4 BANG KHOA — TRUOC va SAU deploy
+  predictions       ec59cfd5ee8c9a9a59e0009b2d836e2a8b4e0c9069aa25d90442b409e653a250  11754 dong
+  final_bundles     6848318ee93ad48ede3c978bebd79489bb8bdaf6538f05b5260548342d362560    475 dong
+  lottery_results   92ccf706553921288f2105f96e2a399b89835429fbfb6d6fac1104f9841e0029  15213 dong
+  model_daily_eval  c559a75ad34b78ed89ed7d265dca3e13349fe54561759258a5109b87aa5fb744  11577 dong
+  -> GIONG HET NHAU tung ky tu. Phien nay khong ghi mot dong nao vao 4 bang khoa.
+
+MD5 tep da deploy
+  truoc: 05466bc600a2f420aba11ae0a02d7b7d
+  sau  : b0442354f96d86af72ccf6fe11f8314e   (36.053 byte, 2 lan xuat hien 'C22_giao_dien_toan_ven')
+  ban giu tren VPS: /root/Lottery_AI_Test/backups/_v10900_consistency_guard.py.v10988_pre

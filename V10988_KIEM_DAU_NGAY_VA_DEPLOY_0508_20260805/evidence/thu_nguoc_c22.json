@@ -1,0 +1,50 @@
+{
+ "dat": true,
+ "buoc": [
+  {
+   "buoc": "1. bản lành, lượt đầu (dựng mốc)",
+   "mong_doi": "0 chỗ hỏng",
+   "thuc_te": "0 chỗ hỏng: []",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "2. bản lành, lượt hai (không báo oan)",
+   "mong_doi": "0 chỗ hỏng",
+   "thuc_te": "0 chỗ hỏng: []",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "3. bản CỤT THẬT 262.144 byte",
+   "mong_doi": "≥1 chỗ hỏng VÀ gọi đích danh monitoring.html",
+   "thuc_te": "4 chỗ hỏng, gọi đúng tên = True: ['monitoring.html: thiếu thẻ đóng </script> </body> </html>', 'monitoring.html: 262,144 byte — tụt 54.6% so với mốc 577,617', 'monitoring.html: còn 1 vòng setInterval, mốc 2', 'monitoring.html: còn 25 hàm loadXxx, mốc 67']",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "4. chạy lại lần nữa trên bản cụt (chống xanh giả hôm sau)",
+   "mong_doi": "VẪN báo hỏng — mốc không được tụt theo bản cụt",
+   "thuc_te": "4 chỗ hỏng: ['monitoring.html: thiếu thẻ đóng </script> </body> </html>', 'monitoring.html: 262,144 byte — tụt 54.6% so với mốc 577,617', 'monitoring.html: còn 1 vòng setInterval, mốc 2', 'monitoring.html: còn 25 hàm loadXxx, mốc 67']",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "5. mốc giữ nguyên sau khi gặp bản cụt",
+   "mong_doi": "mốc vẫn = 577,617",
+   "thuc_te": "mốc = 577,617",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "6. trả lại bản lành",
+   "mong_doi": "0 chỗ hỏng",
+   "thuc_te": "0 chỗ hỏng: []",
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "buoc": "7. file giao diện thật ở bản local",
+   "mong_doi": "0 chỗ hỏng",
+   "thuc_te": "0 chỗ hỏng: []",
+   "ket_qua": "ĐẠT"
+  }
+ ],
+ "ban_cut": "E:\\Lottery_AI_Test\\backups\\v10979_pre\\monitoring.html.cut_20260804_100331",
+ "co_cut": 262144,
+ "co_lanh": 577617
+}

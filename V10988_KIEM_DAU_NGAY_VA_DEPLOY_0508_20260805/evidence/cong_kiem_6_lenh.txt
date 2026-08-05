@@ -1,0 +1,239 @@
+﻿
+
+================================================================================================
+  LENH: python web/backend/_v10920_session_start   -->  exit 0
+================================================================================================
+==============================================================================================
+  KIß╗éM ─Éß║ªU PHI├èN ΓÇö 2026-08-05   (bß║»t buß╗Öc chß║íy TR╞»ß╗ÜC khi trß║ú lß╗¥i owner)
+==============================================================================================
+
+[1] CHECKPOINT QU├ü Hß║áN: 0
+
+[2] ROADMAP XONG NH╞»NG CH╞»A CHUYß╗éN V├ÇO archive/: 0
+
+[3] Mß╗ñC THEO D├òI C├ÆN TREO: 98 ┬╖ QU├ü Hß║áN 1 ┬╖ ─Éß║╛N Hß║áN H├öM NAY 0 ┬╖ kh├┤ng ghi hß║ín 49
+    ΓÜá FU-225 ┬╖ UI0803 ┬╖ X├íc minh UI du-doan-test + filter ┬╖ hß║ín 03/08          DEPLOYED_PENDING_OWNER_VERIFY
+      FU-250 ┬╖ KS0806 ┬╖ So├ít nß╗æt cß╗òng c├▓n tho├ít 0 khi tr╞░ß╗út ┬╖ hß║ín 06/08        MEASURED_ROOT_CAUSE       
+      FU-256 ┬╖ DO0806 ┬╖ Bi├¬n giß╗¥ chß╗æt MT/MB co lß║íi ┬╖ hß║ín 06/08                 DEPLOYED_PENDING_LIVE_VERIFY
+      FU-258 ┬╖ KS0806-1 ┬╖ Cß╗òng ─æß║┐m viß╗çc giß║Ñu mß║Ñt hß║ín v├á giß║Ñu mß╗Ñc mß╗ô c├┤i ┬╖ hß║ín  DEPLOYED_PENDING_LIVE_VERIFY
+      FU-224 ┬╖ UI0806 ┬╖ Dß╗ìn trang frontend tr├╣ng/chß║┐t ┬╖ hß║ín 06/08              OWNER_LOCK                
+      FU-257 ┬╖ SC0806 ┬╖ Cohere chß║┐t 25 ng├áy m├á health vß║½n khai ─æang chß║íy ┬╖ hß║ín MEASURED_ROOT_CAUSE       
+      FU-210 ┬╖ DO0806-1 ┬╖ ─É├áo nguy├¬n nh├ón mß║Ñt lß╗úi thß║┐ MT th├íng 6 ┬╖ hß║ín 06/08   MEASURED_BUT_NOT_FIXED    
+      FU-245 ┬╖ SC0804 ┬╖ Hook ─æß║ºu phi├¬n im 2 ng├áy ┬╖ hß║ín 04/08                   DEPLOYED_PENDING_LIVE_VERIFY
+      FU-263 ┬╖ DD0807-1 ┬╖ Dß╗ìn bß║ún sao l╞░u nginx lß║½n trong `sites-enabled` ┬╖ hß║í MEASURED_ROOT_CAUSE       
+
+[3b] ΓÜá Mß╗ñC Mß╗Æ C├öI ΓÇö nh├ún kh├┤ng t├¡nh treo c┼⌐ng ch╞░a ─æ├│ng: 15
+     nh├ún ─æang gß║╖p: DEFER, DELIVERED_AUDIT_DOCS_ONLY, DELIVERED_DOCS_ONLY, DELIVERED_DOCS_RECONCILIATION, DELIVERED_INVENTORY_DOCS_ONLY, DEPLOYED_DOCS_ONLY, FALSE_NEGATIVE, READY_NOT_DEPLOYED, READY_TO_BUILD_MEASUREMENT_ONLY, READY_TO_BUILD_UI_TEST_ONLY
+      ┬╖ FU-201   READY_NOT_DEPLOYED           hß║ín 2026-08-08  Canh bß╗Ö lß╗ìc combo-super sau khi mß╗ƒ pool
+      ┬╖ FU-205   READY_NOT_DEPLOYED           hß║ín 2026-08-15  Bß╗Ö lß╗ìc chß║Ñm bß║ích thß╗º c├│ tß╗æt h╞ín chß║Ñm wiΓÇª
+      ┬╖ FU-001   [One                         hß║ín ΓÇö  [Title]
+      ┬╖ FU-117   WAIT_CLOSEOUT                hß║ín ΓÇö  V54 natural live closeout proof
+      ┬╖ FU-119   READY_TO_BUILD_MEASUREMENT_O hß║ín ΓÇö  V54 per-model latency instrumentation
+      ┬╖ FU-121   READY_TO_BUILD_UI_TEST_ONLY  hß║ín ΓÇö  V54 MT correct-but-dropped UI panel
+      ┬╖ FU-122   READY_TO_BUILD_UI_TEST_ONLY  hß║ín ΓÇö  V54 region/weekday/station strength chiΓÇª
+      ┬╖ FU-129   READY_TO_BUILD_UI_TEST_ONLY  hß║ín ΓÇö  V55 model strong/weak tensor advanced +ΓÇª
+
+[4] Sß╗ö QUYß║╛T ─Éß╗èNH Cß╗ªA OWNER
+    28 quyß║┐t ─æß╗ïnh ─æang c├│ hiß╗çu lß╗▒c ┬╖ 0 tß╗¢i hß║ín r├á so├ít
+    ΓåÆ chß║íy `python web/backend/_v10920_decision_ledger.py` ─æß╗â kiß╗âm code c├│ tr├┤i kh├┤ng
+
+[5] PLAYBOOK
+    226 d├▓ng ┬╖ 3 d├▓ng c├│ ng├áy ─æ├ú tß╗¢i/qua
+      2026-07-28 | **28/07 tß╗æi ΓÇö 2 mß╗Ñc V10870 phß║úi ─æß╗ìc c├╣ng CP-L6 (lß╗ïch sß╗¡)** | Owner k├╜ 13:48 ho├ún sß╗¡a trong ng├áy chß╗æt t
+      2026-08-04 | ~~04/08 chiß╗üu~~ | Γ£à **─Éß║áT ΓÇö ─É├ôNG 04/08 18:2x (V10983): FU-260 `CLOSED_PASS`.** MT official chß╗æt 16:50:
+      2026-08-05 | ~~05/08~~ | Γ£à **─Éß║áT ΓÇö ─É├ôNG 05/08 09:1x (V10988): FU-262 `CLOSED_PASS`.** ─É├ú th├¬m **`C22_giao_dien_toan
+
+[6] N─éM Mß║╢T QUY Tß║«C
+    lß║ºn sß╗¡a gß║ºn nhß║Ñt: 5c2f2d1 2026-08-04
+    kh├┤ng c├│ thay ─æß╗òi chß╗¥
+    AGENTS.md khß╗¢p ─æ├║ng bß║ún sinh tß╗½ CLAUDE.md
+
+==============================================================================================
+  ΓÜá Cß║ªN N├èU Vß╗ÜI OWNER NGAY ─Éß║ªU C├éU TRß║ó Lß╗£I: 15 mß╗Ñc mß╗ô c├┤i (nh├ún ch╞░a ph├ón loß║íi) ┬╖ 1 mß╗Ñc theo d├╡i qu├í hß║ín
+==============================================================================================
+
+================================================================================================
+  LENH: python web/backend/_v10920_decision_ledger   -->  exit 0
+================================================================================================
+============================================================================================
+  Sß╗ö QUYß║╛T ─Éß╗èNH ΓÇö code c├│ c├▓n khß╗¢p vß╗¢i nhß╗»ng g├¼ anh ─æ├ú chß╗æt kh├┤ng
+============================================================================================
+
+  QD-022             ≡ƒƒó khß╗¢p 9/9             9 mß╗Ñc c├▓n ─æ├ío hß║ín 10/08 m├á KH├öNG thuß╗Öc nh├│m 14
+
+  QD-021             ≡ƒƒó khß╗¢p 5/5             14 mß╗Ñc c├╣ng ─æ├ío hß║ín 08/08 ─æ╞░ß╗úc GI├âN th├ánh lß╗ïch
+
+  QD-020             ≡ƒƒó khß╗¢p 8/8             Sau khi dß╗» liß╗çu ─æß║ºu v├áo ─Éß╗ª v├á VERIFY ─æß║ít th├¼ m
+
+  OD-20260803-B      ≡ƒƒó khß╗¢p 5/5             Bß║Ñt kß╗│ miß╗ün n├áo qua mß╗æc FINAL cß╗ºa n├│ (MN 15:45
+
+  OD-20260803-A      ≡ƒƒó khß╗¢p 5/5             Sß╗¡a 5 lß╗ùi xanh giß║ú ß╗ƒ tß║ºng cß╗òng tß╗▒ kiß╗âm; cß╗òng p
+
+  OD-20260801-A      ≡ƒƒó khß╗¢p 6/6             Tß║»t 5 lß╗¢p ghi ─æ├¿ bß║ích thß╗º ─æang l├ám tß╗ç ─æi; giß╗» 
+
+  OD-20260801-B      ≡ƒƒó khß╗¢p 3/3             Cho 6 lane hß║┐t hß║ín ─æo nghß╗ë: V10707, V10781, V1
+
+  OD-20260801-C      ΓÜ¬ kh├┤ng kiß╗âm m├íy       Kh├┤ng dß╗▒ng th├¬m luß╗ông ─æo song song khi sß╗æ liß╗çu
+
+  OD-20260801-D      ≡ƒƒó khß╗¢p 1/1             ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ tß╗½ 01/08 ─æß║┐n 08/08 ΓÇö kh├┤
+
+  OD-20260801-E      ≡ƒƒó khß╗¢p 4/4             Mß╗ìi quyß║┐t ─æß╗ïnh cß╗ºa owner, mß╗ìi v╞░ß╗¢ng vß║Ñp, mß╗ìi h
+
+  OD-20260801-H      ≡ƒƒó khß╗¢p 5/5             Bß╗Ö mß║╖t quy tß║»c gß╗ôm S├üU file, ─æß╗ông bß╗Ö ─æa chiß╗üu;
+
+  OD-20260801-G      ≡ƒƒó khß╗¢p 6/6             CLAUDE.md th├ánh mß║╖t quy tß║»c thß╗⌐ t╞░; bß╗Ö ─æß╗ông bß╗Ö
+
+  OD-20260801-F      ≡ƒƒó khß╗¢p 6/6             Sau Mß╗îI viß╗çc code/fix/audit phß║úi ─æß║⌐y b├ío c├ío l
+
+  OD-20260731-A      ≡ƒƒó khß╗¢p 4/4             Hß║ín output cuß╗æi c├╣ng: MN 15:45 ┬╖ MT 16:58 ┬╖ MB
+
+  OD-20260731-B      ≡ƒƒó khß╗¢p 1/1             Bi├¬n an to├án tr╞░ß╗¢c mß╗æc FINAL thß╗æng nhß║Ñt 2 ph├║t
+
+  OD-20260731-C      ≡ƒƒó khß╗¢p 1/1             To├án hß╗ç d├╣ng giß╗¥ Viß╗çt Nam nhß║Ñt qu├ín; bß║úng n├áo 
+
+  OD-20260726-A      ≡ƒƒó khß╗¢p 1/1             C├ích t├¡nh tiß╗ün: vß╗æn 18.000─æ/─æiß╗âm cho MN+MT, 27
+
+  QD-013             ≡ƒƒó khß╗¢p 3/3             Dß╗½ng ─æß║╖t tiß╗ün thß║¡t cho tß╗¢i khi chß╗⌐ng minh ─æ╞░ß╗úc
+
+  QD-014             ≡ƒƒó khß╗¢p 7/7             ─É├│ng b─âng ─æ╞░ß╗¥ng ra sß╗æ c├┤ng bß╗æ tß╗¢i hß║┐t 2026-08-
+
+  QD-015             ≡ƒƒó khß╗¢p 4/4             Sau khi hß║┐t ─æ├│ng b─âng 08/08: chß║íy luß╗ông b├│ng (
+
+  QD-016             ≡ƒƒó khß╗¢p 3/3             Sau 08/08: tr├¬n luß╗ông b├│ng (shadow) bß╗Å lß╗çnh bß║»
+
+  QD-017             ≡ƒƒó khß╗¢p 3/3             Sau 08/08: chß║íy hai prompt song song tr├¬n C├ÖNG
+
+  QD-019             ≡ƒƒó khß╗¢p 3/3             ├üp ph╞░╞íng ├ín B ΓÇö giß╗» m├ú m├íy (FU-xxx, QD-xxx, C
+
+  QD-018             ≡ƒƒó khß╗¢p 3/3             Sau cß╗¡a sß╗ò ─æ├│ng b─âng 08/08: thß╗▒c hiß╗çn ─É├ÜNG BA 
+
+  QD-023             ≡ƒƒó khß╗¢p 4/4             Chß╗⌐ng chß╗ë TLS phß║úi phß╗º ─Éß╗ª Mß╗îI t├¬n miß╗ün m├á DNS 
+
+  QD-024             ≡ƒƒó khß╗¢p 5/5             Owner y├¬u cß║ºu ba viß╗çc: (A) chß║Ñm kß║┐t quß║ú h├┤m na
+
+  QD-025             ≡ƒƒó khß╗¢p 11/11           Kho├í luß║¡t cß║»t model an to├án th├ánh mß╗Ñc ┬º59 (A57
+
+  QD-026             ≡ƒƒó khß╗¢p 14/14           Kiß╗âm tß╗òng lß╗▒c ─æß║ºu ng├áy V├Ç deploy phß║ºn ─æang chß╗¥
+
+============================================================================================
+  Γ£ô KH├öNG C├ô QUYß║╛T ─Éß╗èNH N├ÇO Bß╗è TR├öI
+============================================================================================
+
+─æ├ú sinh bß║ún ─æß╗ìc cho ng╞░ß╗¥i: docs\OWNER_DECISION_LEDGER.md  (kiß╗âm t╞░╞íi 2026-08-05 09:22:40)
+
+================================================================================================
+  LENH: python web/backend/_v10921_report_gate (ban quet toan bo)   -->  exit 1
+================================================================================================
+================================================================================================
+  Cß╗öNG KIß╗éM B├üO C├üO C├öNG KHAI (A55) ΓÇö code/fix/audit xong phß║úi c├│ b├ío c├ío
+================================================================================================
+  repo: E:\Lottery_AI_Notion_Reports
+  commit ch╞░a push: KH├öNG
+  file ch╞░a commit : 4
+
+  V10988     Γ£ù KH├öNG C├ô B├üO C├üO ΓÇö vi phß║ím A55_VIOLATION_REPORT_MISSING
+  V10987     Γ£ô V10987_CUU_FU262_VA_MO_RONG_K8_20260805      ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 10 tß╗çp
+  V10986     Γ£ô V10986_TONG_HOP_NGAY_0408_20260804           ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 10 tß╗çp
+  V10985     Γ£ô V10985_XU_BA_MUC_DEN_HAN_0408_20260804       ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 3 tß╗çp
+  V10984     Γ£ô V10984_KET_QUA_0408_VA_GHEP_NGHIEM_THU_OFFIC ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 6 tß╗çp
+  V10983     Γ£ô V10983_VA_CHUNG_CHI_TEN_MIEN_20260804        ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 15 tß╗çp
+  V10982B    Γ£ô V10982_GIAN_NOT_9_MUC_NGAY_CHOT_20260804     ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 5 tß╗çp
+  V10982     Γ£ô V10982_GIAN_NOT_9_MUC_NGAY_CHOT_20260804     ─æß╗º 9 phß║ºn, ─æ├ú commit
+             evidence/: 5 tß╗çp
+
+================================================================================================
+  Γ£ù 1 phi├¬n bß║ún thiß║┐u/kh├┤ng ─æß║ít
+  ΓåÆ A55_VIOLATION_REPORT_MISSING / A55_VIOLATION_REPORT_INCOMPLETE ┬╖ m├ú tho├ít 1
+================================================================================================
+
+================================================================================================
+  LENH: python web/backend/_v10925_rule_sync_check --check   -->  exit 0
+================================================================================================
+============================================================================================
+  KIß╗éM AGENTS.md C├ô KHß╗ÜP CLAUDE.md KH├öNG
+============================================================================================
+  AGENTS.md                ─æ├ú khß╗¢p CLAUDE.md, kh├┤ng cß║ºn ghi
+
+============================================================================================
+  KIß╗éM S├üU Mß║╢T QUY Tß║«C
+============================================================================================
+  mß║╖t                         k├¡ch th╞░ß╗¢c  thiß║┐u dß║Ñu hiß╗çu
+  .Antigravityrules.md          101,412B  Γ£ô ─æß╗º
+  .antigravityrules               1,988B  Γ£ô ─æß╗º
+  .AGENT.md                      32,264B  Γ£ô ─æß╗º
+  .cursorrules                   23,328B  Γ£ô ─æß╗º
+  CLAUDE.md                      16,033B  Γ£ô ─æß╗º
+  AGENTS.md                      15,948B  Γ£ô ─æß╗º
+
+============================================================================================
+  KIß╗éM .cursor/rules/*.mdc ΓÇö c├│ ─æ╞░ß╗úc Cursor Tß╗░ Nß║áP kh├┤ng
+============================================================================================
+  active-roadmap-precedence.mdc                frontmatter=c├│ ┬╖ alwaysApply=true  Γ£ô tß╗▒ nß║íp
+  governance-traceability-automation.mdc       frontmatter=c├│ ┬╖ alwaysApply=true  Γ£ô tß╗▒ nß║íp
+  live-data-integrity.mdc                      frontmatter=c├│ ┬╖ alwaysApply=true  Γ£ô tß╗▒ nß║íp
+  playbook-first.mdc                           frontmatter=c├│ ┬╖ alwaysApply=true  Γ£ô tß╗▒ nß║íp
+
+============================================================================================
+  FILE QUY Tß║«C CHß║╛T ß╗₧ Gß╗ÉC REPO
+============================================================================================
+  Γ£ô kh├┤ng c├▓n file quy tß║»c lß║í hay rß╗ùng ß╗ƒ gß╗æc repo
+
+============================================================================================
+  Γ£ô S├üU Mß║╢T ─Éß╗ÆNG Bß╗ÿ ┬╖ Mß╗îI .mdc ─Éß╗ÇU ─É╞»ß╗óC Tß╗░ Nß║áP ┬╖ KH├öNG C├ÆN FILE CHß║╛T
+============================================================================================
+
+================================================================================================
+  LENH: python web/backend/_v10981_kiem_lich   -->  exit 0
+================================================================================================
+================================================================================================
+  Cß╗öNG KIß╗éM Lß╗èCH CUß╗ÉN CHIß║╛U V10981 ΓÇö nguß╗ôn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [─Éß║áT ] K1 ┬╖ ─æß╗º 14 m├ú trong sß╗ò theo d├╡i
+         ΓåÆ ─æß╗º 14/14
+  [─Éß║áT ] K2 ┬╖ kh├┤ng m├ú n├áo c├▓n hß║ín sau 10/08
+         ΓåÆ 0 m├ú v╞░ß╗út hß║ín chß╗æt
+  [─Éß║áT ] K3 ┬╖ mß╗ùi m├ú c├│ m├ú ─æß╗ìc ┬º58
+         ΓåÆ 14/14 c├│ m├ú ─æß╗ìc
+  [─Éß║áT ] K4 ┬╖ hß║ín thß║¡t trong sß╗ò khß╗¢p hß║ín ─æ├ú xß║┐p
+         ΓåÆ 14/14 khß╗¢p
+  [─Éß║áT ] K5 ┬╖ kh├┤ng ng├áy n├áo qu├í 3 mß╗Ñc cß╗ºa nh├│m
+         ΓåÆ 04/08=3 ┬╖ 05/08=1 ┬╖ 06/08=1 ┬╖ 07/08=1 ┬╖ 08/08=3 ┬╖ 09/08=3 ┬╖ 10/08=2
+  [─Éß║áT ] K6 ┬╖ m├ú ─æß╗ìc kh├┤ng ─æß╗Ñng m├ú cß╗ºa mß╗Ñc kh├íc
+         ΓåÆ 0 va chß║ím
+  [─Éß║áT ] K7 ┬╖ mß╗Ñc kh├┤ng kß║┐t luß║¡n nß╗òi tr╞░ß╗¢c 10/08 ─æß╗üu ghi r├╡ l├╜ do
+         ΓåÆ 5 mß╗Ñc n├¬u thß║│ng: FU-193ΓåÆ16/08, FU-216ΓåÆ15/08, FU-217ΓåÆ16/08, FU-231ΓåÆ23/08, FU-226ΓåÆ23/08
+  [─Éß║áT ] K8 ┬╖ 0 mß╗ô c├┤i trong nh├│m 14 ┬╖ 0 mß╗ô c├┤i ─æß║┐n hß║ín trong 2 ng├áy tß╗¢i ┬╖ tß╗òng to├án sß╗ò Γëñ 15
+         ΓåÆ 14/14 nh├ún hß╗úp lß╗ç ┬╖ ─æ├ú ─æ├│ng 4/14 (FU-187, FU-191, FU-207, FU-212) ┬╖ to├án sß╗ò mß╗ô c├┤i 15/15, 0 mß╗Ñc ─æß║┐n hß║ín tr╞░ß╗¢c 07/08 ┬╖ c├▓n treo ph├ón loß║íi: FU-201(08/08) FU-205(15/08) FU-001(ΓÇö) FU-117(ΓÇö) FU-119(ΓÇö) FU-121(ΓÇö) FU-122(ΓÇö) FU-129(ΓÇö) FU-150(ΓÇö) FU-151(ΓÇö) FU-157(ΓÇö) FU-158(ΓÇö) FU-161(ΓÇö) FU-171(ΓÇö) FU-173(ΓÇö)
+================================================================================================
+  ─Éß║áT 8/8 ph├⌐p ┬╖ LICH_CUON_CHIEU_DAT
+
+================================================================================================
+  LENH: python web/backend/_v10982_kiem_lich9   -->  exit 0
+================================================================================================
+================================================================================================
+  Cß╗öNG KIß╗éM GI├âN 9 Mß╗ñC NG├ÇY CHß╗ÉT V10982 ΓÇö nguß╗ôn: docs/FOLLOW_UP_TRACKER.md
+================================================================================================
+  [─Éß║áT ] J1 ┬╖ ─æß╗º 9 m├ú trong sß╗ò theo d├╡i
+         ΓåÆ ─æß╗º 9/9
+  [─Éß║áT ] J2 ┬╖ kh├┤ng m├ú n├áo c├▓n hß║ín sau 10/08
+         ΓåÆ 0 m├ú v╞░ß╗út hß║ín chß╗æt
+  [─Éß║áT ] J3 ┬╖ mß╗ùi m├ú c├│ m├ú ─æß╗ìc ┬º58
+         ΓåÆ 9/9 c├│ m├ú ─æß╗ìc
+  [─Éß║áT ] J4 ┬╖ hß║ín thß║¡t trong sß╗ò khß╗¢p hß║ín ─æ├ú xß║┐p
+         ΓåÆ 9/9 khß╗¢p
+  [─Éß║áT ] J5 ┬╖ ng├áy chß╗æt 10/08 tß╗òng tß║úi Γëñ 3 ┬╖ mß╗æc tß║úi khß╗¢p sß╗ò thß║¡t
+         ΓåÆ 10/08 = 3 mß╗Ñc (nh├│m14 ['FU-226', 'FU-231'] + nh├│m9 ['FU-252'] + kh├íc []) ┬╖ mß╗æc tß║úi phi├¬n kh├íc khß╗¢p sß╗ò thß║¡t 7/7 ng├áy ┬╖ tß║úi mß╗ùi ng├áy 04/08=3 05/08=2 06/08=7 07/08=5 08/08=6 09/08=9 10/08=3
+  [─Éß║áT ] J6 ┬╖ m├ú ─æß╗ìc kh├┤ng ─æß╗Ñng m├ú cß╗ºa mß╗Ñc kh├íc
+         ΓåÆ 0 va chß║ím
+  [─Éß║áT ] J7 ┬╖ mß╗Ñc kh├┤ng kß║┐t luß║¡n nß╗òi trong hß║ín ─æß╗üu ghi r├╡ l├╜ do
+         ΓåÆ 1 mß╗Ñc n├¬u thß║│ng: FU-253ΓåÆ12/08
+  [─Éß║áT ] J8 ┬╖ 0 mß╗Ñc mß╗ô c├┤i trong nh├│m ┬╖ tß╗òng mß╗ô c├┤i to├án sß╗ò Γëñ 19
+         ΓåÆ 9/9 nh├ún hß╗úp lß╗ç ┬╖ tß╗òng mß╗ô c├┤i to├án sß╗ò 15 (tr╞░ß╗¢c phi├¬n 19, giß║úm 4)
+================================================================================================
+  ─Éß║áT 8/8 ph├⌐p ┬╖ GIAN_9_MUC_DAT

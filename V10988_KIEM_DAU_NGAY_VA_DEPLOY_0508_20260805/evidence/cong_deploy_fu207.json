@@ -1,0 +1,80 @@
+{
+ "dat": true,
+ "hai_ca_bat_buoc": "2/2",
+ "ca": [
+  {
+   "ca": "A. trước 17:58 · bundle v1 → PHẢI CHẶN",
+   "gio": "17:45",
+   "hang": [
+    "17:39:00",
+    15,
+    1
+   ],
+   "ra": "da chot luc 17:39:00 voi 15 model, ban v1 | CHUA_QUA_T_CHOT — con lat dung lai bundle luc 17:55, doi qua 17:58",
+   "cho_qua_mong_doi": false,
+   "cho_qua_that": false,
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "ca": "B. sau 17:58 · bundle v2 → PHẢI CHO QUA",
+   "gio": "18:05",
+   "hang": [
+    "17:56:00",
+    14,
+    2
+   ],
+   "ra": "da chot luc 17:56:00 voi 14 model, ban v2 | AN_TOAN (da qua moc bat dong 17:58)",
+   "cho_qua_mong_doi": true,
+   "cho_qua_that": true,
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "ca": "C. trước 17:58 · bundle v2 (T-chốt xong) → cho qua",
+   "gio": "17:56",
+   "hang": [
+    "17:55:10",
+    14,
+    2
+   ],
+   "ra": "da chot luc 17:55:10 voi 14 model, ban v2 | AN_TOAN (bundle da len v2, T-chot da chay)",
+   "cho_qua_mong_doi": true,
+   "cho_qua_that": true,
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "ca": "D. sau 17:58 · bundle v1 → cho qua (đã qua mốc bất động)",
+   "gio": "18:01",
+   "hang": [
+    "17:39:00",
+    15,
+    1
+   ],
+   "ra": "da chot luc 17:39:00 voi 15 model, ban v1 | AN_TOAN (da qua moc bat dong 17:58)",
+   "cho_qua_mong_doi": true,
+   "cho_qua_that": true,
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "ca": "E. chưa có bundle MB → PHẢI CHẶN",
+   "gio": "17:45",
+   "hang": null,
+   "ra": "CHUA_CHOT",
+   "cho_qua_mong_doi": false,
+   "cho_qua_that": false,
+   "ket_qua": "ĐẠT"
+  },
+  {
+   "ca": "F. trước 17:58 · bundle_version NULL → PHẢI CHẶN",
+   "gio": "17:50",
+   "hang": [
+    "17:40:00",
+    15,
+    null
+   ],
+   "ra": "da chot luc 17:40:00 voi 15 model, ban v1 | CHUA_QUA_T_CHOT — con lat dung lai bundle luc 17:55, doi qua 17:58",
+   "cho_qua_mong_doi": false,
+   "cho_qua_that": false,
+   "ket_qua": "ĐẠT"
+  }
+ ]
+}
