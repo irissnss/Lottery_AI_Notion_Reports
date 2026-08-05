@@ -1,0 +1,25 @@
+﻿== play_recommendation_shadow: dong moi nhat moi mien ==
+  MN: date=2026-08-05 play=OFFICIAL method=MN_OFFICIAL_BASELINE_CONTROL long=38% n=29 official_long=38%
+  MT: date=2026-08-05 play=OFFICIAL method=MT_OFFICIAL_BASELINE_CONTROL long=26% n=35 official_long=26%
+  MB: date=2026-08-05 play=LANE method=MB_FULL_POOL_D_W06_V1 long=25% n=8 official_long=11%
+
+== LANE DUOC KHUYEN CAO con ghi so den bao gio ==
+  MN: play=OFFICIAL method=MN_OFFICIAL_BASELINE_CONTROL -> chay cuoi=2026-08-05 tong dong=212
+  MT: play=OFFICIAL method=MT_OFFICIAL_BASELINE_CONTROL -> chay cuoi=2026-08-03 tong dong=257
+  MB: play=LANE method=MB_FULL_POOL_D_W06_V1 -> chay cuoi=2026-08-04 tong dong=62
+
+== CO CON LANE NAO CUA du_doan_test_bundles GHI HOM NAY khong ==
+  2026-08-05: 8 lane, 15 dong
+  2026-08-04: 50 lane, 68 dong
+  2026-08-03: 50 lane, 66 dong
+  2026-08-02: 56 lane, 75 dong
+  2026-08-01: 64 lane, 80 dong
+  2026-07-31: 77 lane, 103 dong
+  2026-07-30: 77 lane, 92 dong
+  2026-07-29: 75 lane, 103 dong
+
+== CO MAU MONG TOI DAU (kiem dinh nhi thuc mot phia so voi nen official) ==
+  MN: 38% = 11/29 vs nen 38%  ->  p = 0.573 (KHONG y nghia)
+  MT: 26% = 9/35 vs nen 26%  ->  p = 0.580 (KHONG y nghia)
+  MB: 25% = 2/8 vs nen 11%  ->  p = 0.217 (KHONG y nghia)
+

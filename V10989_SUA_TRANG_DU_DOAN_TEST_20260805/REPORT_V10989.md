@@ -464,3 +464,116 @@ hệt trước/sau. Gỡ về chỉ đưa trang trở lại trạng thái **nói
 
 **Việc owner nên đọc trước tiên:** `FU-269` — vì `MB` đang khuyến cáo **chơi LANE** trên cỡ mẫu
 8, mà lane đó đo trên 54 mẫu chỉ đạt **25,9%**, **dưới mức mò 35%**.
+
+
+---
+
+## Phụ lục V10989b — vòng sửa thứ hai cùng ngày: khối khuyến cáo còn hứa hẹn trên 2/8 lượt
+
+> Vòng đầu (sáng 05/08) mới chữa nhánh *"đang THEO DÕI"*. Hậu kiểm ngay sau đó phát hiện
+> **nhánh KHUYẾN CÁO CHÍNH còn nguyên bệnh** — cùng loại lỗi owner mắng, chỉ khác chỗ đứng.
+> Không đợi owner bắt lần hai.
+
+### Vì sao phải soi tiếp
+
+Owner yêu cầu *"tự gọi API đọc nội dung THẬT cho cả 3 miền"*. Làm đúng thế thì lòi ra dòng MB:
+
+```
+── MB ── http=200
+   khuyến cáo = LANE · nền 11% n=8 scope=weekday
+```
+
+Trang bảo người đọc **chơi theo lane** `MB_FULL_POOL_D_W06_V1`. Soi nguyên khối
+`play_recommendation` của cả ba miền rồi chấm đuôi nhị thức một phía:
+
+| Miền | Trang bảo | Cơ sở thật | p | Kết luận |
+|---|---|---|---|---|
+| MN | nên chơi OFFICIAL | 11/29 vs nền 38% | 0,573 | không có ý nghĩa |
+| MT | nên chơi OFFICIAL | 9/35 vs nền 26% | 0,580 | không có ý nghĩa |
+| **MB** | **nên chơi LANE** | **2/8** vs nền 11% | **0,217** | **không có ý nghĩa** |
+
+**MB đang được khuyên đưa tiền theo một lane trên đúng 2 lượt trúng.**
+
+### Ba lỗi tìm thêm được
+
+1. **Chuỗi ghi cứng `"— vượt rõ + bền."`** — nhánh `isLane` in ra **bất kể cỡ mẫu**, không hề
+   chấm ý nghĩa thống kê. Đúng họ với `62% (hứa hẹn)` owner vừa bắt, nhưng nằm ở **dòng khuyến
+   cáo chính** — dòng người đọc tin nhất.
+2. **Chân khối mô tả SAI cổng của chính nó.** Trang ghi *"cửa sổ dài n≥40"*. Đọc
+   `_v10725_champion_selector`: `REC_MIN_LONG_N = 40` chỉ áp cho nền **miền** (60 ngày); đường
+   theo **thứ** mà MB đang đi chỉ cần `REC_WD_MIN_N = 8` — MB qua cổng đúng ở **mức sàn 8**.
+   Trang mô tả một cổng nghiêm hơn cổng thật, khiến 25% trông đáng tin hơn thực tế.
+3. **Lane được KHUYẾN CÁO không bị soi độ trễ.** Vòng đầu chỉ thêm `watch_last_run_date` cho
+   lane *theo dõi*. Lane *được khuyến cáo* thì không có trường nào — trang không có cách nào
+   nói nó còn chạy hay không.
+
+### Đã sửa gì thêm
+
+| File | Thay đổi |
+|---|---|
+| `web/backend/main.py` | `_build_play_recommendation` trả thêm **`method_last_run_date`** |
+| `web/frontend/du-doan-test.html` | Nhánh LANE chấm **đuôi nhị thức tại trang**; `p > 0,10` thì đầu khối đổi *"nên chơi LANE"* → *"CHƯA đủ bằng chứng để khuyến cáo"*, viền xanh → hổ phách · in **`k/n`** thay vì chỉ `n=` · cảnh báo nếu lane khuyến cáo **không có số hôm nay** · chân khối ghi ĐÚNG hai cổng `n≥8` (thứ) và `n≥40` (miền), kèm câu *"n≥8 là ngưỡng mỏng"* |
+| `web/backend/_v10982_lich9.py` | `TAI_PHIEN_KHAC_DO_DUOC[08/08] += FU-272` |
+
+**§54 giữ nguyên:** số thô `25%`, `2/8`, `gần đây 36%` vẫn hiện đủ. Chỉ hạ **lời khẳng định**,
+không giấu dữ liệu.
+
+### Chữ THẬT trang dựng ra sau khi sửa
+
+Không nghiệm thu bằng *"API trả đúng trường"* — vì chữ người đọc thấy do **hàm JS** dựng, không
+phải do trường JSON. Bộ `_v10989b_render_check.js` bốc đúng hàm `renderPlayRecommendation` khỏi
+tệp **đang phục vụ**, đổ payload THẬT lấy từ VPS vào, rồi in chữ đã bỏ thẻ HTML:
+
+```
+── MB ──
+⚠ CHƯA đủ bằng chứng để khuyến cáo — lane FULL POOL D W06 V1 mới dẫn trên mẫu mỏng
+Lane FULL POOL D W06 V1 đạt 25% (2/8, gần đây 36%) vs official 11% — chênh này CHƯA
+phân biệt được với may rủi (p=0.22 > 0.1). Số thô vẫn hiện nguyên, nhưng không đủ cơ
+sở để đưa tiền theo. ⛔ lane này chạy cuối 04/08/2026, KHÔNG có số hôm nay
+   [chấm] 2/8 vs nền 11% → p=0.217
+   ✓ đã hạ về cảnh báo, không khẳng định
+```
+
+Bằng chứng: `evidence/15_chu_that_khoi_khuyen_cao_SAU_sua.txt` (đủ 3 miền, exit 0).
+
+### Cổng kiểm vòng hai
+
+| Mục | Kết quả |
+|---|---|
+| Deploy | 11:49:37, ngoài khung cấm · PID **839095 → 842736** |
+| Hash 4 bảng khoá | **giống hệt** trước/sau (`predictions` 11.754 · `final_bundles` 475 · `lottery_results` 15.213 · `model_daily_eval` 11.577) |
+| Smoke | `/api/health`=**200** · admin=**401** |
+| `model_count` official MN hôm nay | **15** — không đụng `QD-014` |
+| cron `v10692` | **0 dòng bật** trước và sau — không lén lật quyết định owner |
+| Bộ tự kiểm VPS | **22 phép** · `C22_giao_dien_toan_ven` **OK** · `monitoring.html` **577.617 B** không tụt |
+| `C18`/`C19` lệch | Có — nhưng **lệch từ 04/08** (biên MT hẹp), đã có `FU-259`/`FU-260` trước phiên này. **Không phải hệ quả V10989** |
+| Chữ thật 3 miền | **3/3 đạt**, 0 lỗi |
+| Cổng lịch nhóm 14 / nhóm 9 | **8/8** và **8/8** |
+| Sổ quyết định | **0 TRÔI**, 28 quyết định |
+| Sáu mặt quy tắc | đồng bộ |
+
+### Vướng vấp vòng hai
+
+- **Bộ deploy đếm chữ `"hứa hẹn"` ra 2 và tự gắn cờ.** Soi lại: cả 2 nằm trong **chú thích JS**
+  tôi vừa viết để giải thích chỗ sửa, **không phải chữ người đọc thấy**. Phép đếm thô theo chuỗi
+  không phân biệt được mã với chú thích. Ghi lại đây để lần sau không ai hoảng — và để thấy
+  **phép đếm chuỗi thô không đủ làm cổng nghiệm thu**, phải dựng chữ thật như `render_check`.
+- **Bộ hậu kiểm lần đầu báo TRƯỢT vì tôi gõ nhầm đường dẫn endpoint admin** (`/api/admin/v10642/
+  slice-health` không tồn tại → 404 chứ không phải 401). Lỗi của bộ đo, không phải của hệ. Đã
+  đổi sang `/api/admin/play-recommendation` → 401 đúng như kỳ vọng. **Hậu quả nếu bỏ qua:** một
+  cổng luôn đỏ vì lý do sai sẽ bị người sau tắt đi, rồi mất luôn phép canh thật.
+
+### Theo dõi thêm
+
+`FU-272 · QD0808 · Cổng khuyến cáo REC_WD_MIN_N=8 quá mỏng · hạn 08/08 · AWAITING_OWNER_OK`
+
+- **Đã vá ở tầng hiển thị**; **chưa đụng gốc** `_v10725_champion_selector.py` vì đổi
+  `REC_WD_MIN_N` là đổi **nội dung bảng** `play_recommendation_shadow`, mà bảng đó còn nơi khác
+  đọc. Đó là quyết định của owner, không phải của agent.
+- **Đề xuất:** nâng `REC_WD_MIN_N` **8 → 20**, và đưa điều kiện `p ≤ 0,10` vào thẳng
+  materializer thay vì chỉ chặn ở trang. Với nền 11%, n=8 thì **2 lượt trúng đã thành 25%** —
+  một lượt may là đủ lật nhãn.
+- **Cái giá phải nói thẳng:** nâng lên 20 thì MB sẽ ra `OFFICIAL` gần như suốt một thời gian
+  dài, khối khuyến cáo trông nhàm. Nhưng thà nhàm còn hơn chỉ tiền theo 2 lượt trúng.
+- **Xong nghĩa là gì:** `SELECT long_n FROM play_recommendation_shadow WHERE play='LANE'` phải
+  **≥ 20** ở mọi dòng mới.

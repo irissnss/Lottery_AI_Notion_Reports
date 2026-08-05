@@ -155,3 +155,35 @@ Và có một chi tiết đáng nói hơn con số: lỗ hổng gây ra chuyện
 định từ 01/08**, bằng chính lời owner chất vấn hôm đó. Ghi vào sổ nhưng không biến thành phép
 kiểm thì nó chỉ là chữ. Vì vậy `FU-268` lần này định nghĩa "xong" bằng **nội dung API thật đọc
 được**, không bằng "file giống nhau".
+
+
+---
+
+## Vòng hai cùng ngày (V10989b) — agent tự bắt thêm, owner chưa phải nhắc
+
+**Owner không nói thêm câu nào ở vòng này.** Đây là hệ quả của đúng một câu owner đã ra lệnh ở
+vòng đầu:
+
+> *"Tự gọi API đọc nội dung THẬT cho cả 3 miền sau khi sửa, dán số vào báo cáo. Đừng kết luận
+> 'đã đạt' chỉ vì file giống nhau hay header đúng — đó đúng là cái sai hôm qua."*
+
+Làm đúng lệnh đó thì lòi ra dòng MB: `khuyến cáo = LANE · nền 11% n=8`. Soi tiếp thì thấy trang
+đang bảo người đọc **chơi theo lane trên đúng 2 lượt trúng** (p=0,217), kèm chuỗi ghi cứng
+*"vượt rõ + bền"* in ra bất kể cỡ mẫu, và chân khối mô tả cổng `n≥40` trong khi cổng thật của
+đường đang đi là `n≥8`.
+
+**Agent vấp ở đâu trong vòng này:**
+
+1. **Vòng đầu chữa chưa hết.** Tôi chỉ soi nhánh *"đang THEO DÕI"* vì đó là chỗ owner chỉ mặt
+   (`62% hứa hẹn`), mà **không soi nhánh khuyến cáo chính** — dù nó cùng một khối, cùng một hàm,
+   cùng một bệnh. Nếu owner không ra lệnh "tự gọi API đọc chữ thật", lỗi này đã trôi qua và
+   owner lại là người phát hiện lần thứ hai.
+2. **Bộ hậu kiểm tôi tự viết báo TRƯỢT vì chính nó gõ nhầm đường dẫn** (`/api/admin/v10642/
+   slice-health` → 404). Mất một lượt chạy để nhận ra lỗi nằm ở bộ đo chứ không ở hệ.
+3. **Bộ deploy đếm chữ `"hứa hẹn"` ra 2 và gắn cờ**, hoá ra là 2 dòng **chú thích JS** tôi vừa
+   viết. Phép đếm chuỗi thô không phân biệt mã với chú thích — thêm một bằng chứng nữa rằng
+   nghiệm thu bằng đếm chuỗi là **không đủ**, phải dựng chữ thật rồi đọc.
+
+**Cái được:** từ vòng này trở đi việc nghiệm thu trang không còn dựa vào "API trả đúng trường"
+nữa. `_v10989b_render_check.js` **bốc đúng hàm dựng khối ra khỏi tệp đang phục vụ**, đổ dữ liệu
+thật vào, rồi đọc chữ sau khi bỏ thẻ HTML — đúng thứ người đọc nhìn thấy.
