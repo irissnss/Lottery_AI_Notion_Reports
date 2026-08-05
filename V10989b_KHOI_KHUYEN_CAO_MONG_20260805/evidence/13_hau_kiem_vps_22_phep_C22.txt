@@ -1,0 +1,45 @@
+﻿{
+ "dich_vu": {
+  "ten": "lottery",
+  "pid": "842736",
+  "trang_thai": "active"
+ },
+ "smoke": {
+  "health": "200",
+  "admin_khong_dang_nhap": "401"
+ },
+ "kich_thuoc_giao_dien": [
+  "monitoring.html 577617",
+  "du-doan-test.html 225695"
+ ],
+ "bo_tu_kiem": {
+  "so_phep": 22,
+  "so_khong_OK": 2,
+  "khong_OK": [
+   {
+    "id": "C18_bien_lane_du_rong",
+    "status": "LECH",
+    "thuc_te": "[\"MT 2026-08-04: official 16:50:13 ┬╖ l╞░ß╗út cuß╗æi 16:54 ┬╖ bi├¬n 227s\"]"
+   },
+   {
+    "id": "C19_bien_han_du_rong",
+    "status": "LECH",
+    "thuc_te": "[\"MT 2026-08-04: chß╗æt c├ích hß║ín 467s (< 480s)\"]"
+   }
+  ],
+  "C22": [
+   {
+    "id": "C22_giao_dien_toan_ven",
+    "status": "OK",
+    "thuc_te": "[]"
+   }
+  ]
+ },
+ "cron_v10692_con_bat": "0"
+}
+
+====================================================================================
+  Hß║¼U KIß╗éM V10989: ─Éß║áT
+  dß╗ïch vß╗Ñ=active pid=842736 ┬╖ health=200 ┬╖ admin=401
+  bß╗Ö tß╗▒ kiß╗âm=22 ph├⌐p ┬╖ kh├┤ng OK=2 ┬╖ C22=['OK']
+====================================================================================
