@@ -1,0 +1,51 @@
+tổng 11577 dòng chấm · 57 model · 2026-01-29 → 2026-08-04
+
+============================================================================================
+  TỪNG MODEL — tỉ lệ trúng bạch thủ so với NỀN CỦA CHÍNH NGÀY ĐÓ
+  38 model đủ mẫu (n≥30) · ngưỡng |z| sau Bonferroni (α=0.10/38) = 3.01
+============================================================================================
+  model                        n      trúng    nền      z        kết luận
+  ----------------------------------------------------------------------------------------
+  AI gemini-2.5-pro            460    37.6     34.0     +1.68    không khác chọn bừa
+  ML smart-ensemble            523    36.3     34.0     +1.14    không khác chọn bừa
+  AI gpt-oss-120b              313    35.8     33.9     +0.71    không khác chọn bừa
+  AI gemini-3.5-flash          86     37.2     34.0     +0.65    không khác chọn bừa
+  ML combo-no-token            527    35.3     34.0     +0.63    không khác chọn bừa
+  AI deepseek-reasoner         435    34.9     33.9     +0.47    không khác chọn bừa
+  ML smart-ml                  521    34.9     34.0     +0.45    không khác chọn bừa
+  ML xgboost                   519    34.9     34.0     +0.42    không khác chọn bừa
+  AI claude-opus-4-20250514    303    35.0     34.0     +0.36    không khác chọn bừa
+  AI qwen3.7-max               90     35.6     34.2     +0.28    không khác chọn bừa
+  AI gpt-5.5                   295    34.6     33.8     +0.28    không khác chọn bừa
+  AI glm-5.1                   324    34.3     33.9     +0.14    không khác chọn bừa
+  AI gemini-2.5-flash          490    34.3     34.0     +0.13    không khác chọn bừa
+  ML meta-learning             523    34.2     34.0     +0.10    không khác chọn bừa
+  AI gemini-3.1-pro            179    34.1     33.8     +0.07    không khác chọn bừa
+  AI grok-4.20-multi-agent     321    34.0     33.8     +0.06    không khác chọn bừa
+  AI deepseek-chat             41     34.1     34.1     +0.01    không khác chọn bừa
+  AI o4-mini                   47     34.0     34.7     -0.10    không khác chọn bừa
+  AI minimax-m2.7              35     34.3     35.1     -0.11    không khác chọn bừa
+  AI claude-sonnet-4-6         480    33.8     34.0     -0.13    không khác chọn bừa
+  ML combo-super               539    33.8     34.1     -0.14    không khác chọn bừa
+  AI gpt-5.4                   399    33.6     34.0     -0.16    không khác chọn bừa
+  AI claude-opus-4-6           147    33.3     34.0     -0.17    không khác chọn bừa
+  AI claude-haiku-4-5-20251001 84     33.3     34.2     -0.17    không khác chọn bừa
+  AI qwen3.6-plus              213    32.9     33.6     -0.22    không khác chọn bừa
+  AI deepseek-v4-flash         203    32.0     33.7     -0.53    không khác chọn bừa
+  AI gpt-5-mini                506    32.8     34.0     -0.56    không khác chọn bừa
+  ML random-forest             519    32.6     34.0     -0.72    không khác chọn bừa
+  AI deepseek-v4-pro           202    31.2     33.7     -0.77    không khác chọn bừa
+  AI deepseek-v4-pro-real      91     29.7     34.1     -0.90    không khác chọn bừa
+  AI qwen3-max-thinking        329    31.3     33.9     -1.03    không khác chọn bừa
+  AI grok-4.3                  55     27.3     33.8     -1.05    không khác chọn bừa
+  AI glm-5.2                   92     28.3     34.0     -1.19    không khác chọn bừa
+  ML lstm                      521    31.5     34.0     -1.23    không khác chọn bừa
+  AI gemini-3-flash            180    28.3     33.8     -1.57    không khác chọn bừa
+  AI kimi-k2.5                 275    28.7     34.2     -1.96    không khác chọn bừa
+  AI qwen3-coder               246    27.2     33.8     -2.21    không khác chọn bừa
+  AI gemma-4-31b               244    25.4     34.0     -2.88    không khác chọn bừa
+
+  → HƠN chọn bừa: 0/38 model    KÉM: 0/38
+
+  Kỳ vọng nếu TẤT CẢ đều chỉ là ngẫu nhiên: 0.10 model lọt ngưỡng do may rủi.
+  (Bonferroni giữ tổng xác suất báo nhầm ở mức 10% cho CẢ 38 phép cộng lại.)
