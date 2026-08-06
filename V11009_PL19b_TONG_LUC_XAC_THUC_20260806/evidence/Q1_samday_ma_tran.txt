@@ -1,0 +1,48 @@
+============================================================================================
+Q1(b) — CÙNG NGÀY, CÙNG MODEL: lần 04:00 và lần rerun 17:30 có ra SỐ KHÁC nhau không?
+============================================================================================
+  miền  lần A (sớm)      lần B (rerun)       cặp   ĐỔI SỐ       %
+  --------------------------------------------------------------------
+  MB    ai_chain         rerun_post_mt         0   (không có cặp nào)
+  MB    auto_daily       rerun_post_mt         0   (không có cặp nào)
+  MT    auto_daily       rerun_post_mn         0   (không có cặp nào)
+  MT    ai_chain         rerun_post_mn         0   (không có cặp nào)
+
+============================================================================================
+Q1(c) — MA TRẬN 3 MIỀN × 3 LỚP: lớp nào THẬT SỰ nhận dữ liệu cùng ngày?
+============================================================================================
+
+  Đọc từ code, KHÔNG đọc báo cáo cũ:
+    · meta_data_collector._ADJACENT_REGIONS = {MN:[MT], MT:[MN,MB], MB:[MT]}
+    · meta_data_collector._get_cross_region_momentum: cổng V10667 DRAW-ORDER GUARD
+      _DRAW_ORDER = {MN:1, MT:2, MB:3}; chỉ miền xổ TRƯỚC mới được date <= target
+    · scheduler._rerun_free_models_after_scrape_inner truyền include_same_day_cross=True
+      (dòng 5969 · 5994 · 6019 · 6054) — ĐANG CHẠY THẬT trong production
+
+  miền  ML — đặc trưng                     AI — ngữ cảnh prompt       Rules         
+  ------------------------------------------------------------------------------------
+  MN    KHÔNG — không miền nào xổ trước MN KHÔNG (mốc 04:00)          KHÔNG         
+  MT    CÓ — MN(D) qua cross-momentum      phụ thuộc mốc gọi          CÓ (offset 0 từ MN)
+  MB    CÓ — MT(D); THIẾU MN(D)            phụ thuộc mốc gọi          CÓ (offset 0 MT+MN)
+
+  ĐỐI CHIẾU SPEC OWNER:
+    MN D = (MN+MB+MT) D-1                    → khớp (không cần samday)
+    MT D = … + MN(D)                          → KHỚP: _ADJACENT_REGIONS[MT] có MN
+    MB D = … + MN(D) + MT(D)                  → LỆCH: _ADJACENT_REGIONS[MB] = ['MT']
+                                                 MB KHÔNG lấy MN(D) qua đường ML
+
+============================================================================================
+Q1 — RULES có dùng offset 0 (cùng ngày) không?
+============================================================================================
+    MB ← MN  offset=D       6 luật  ← CÙNG NGÀY
+    MB ← MT  offset=D       8 luật  ← CÙNG NGÀY
+    MB ← MB  offset=D-1    10 luật
+    MB ← MN  offset=D-1     6 luật
+    MB ← MT  offset=D-1     5 luật
+    MN ← MB  offset=D-1    28 luật
+    MN ← MN  offset=D-1     2 luật
+    MN ← MT  offset=D-1     5 luật
+    MT ← MN  offset=D       6 luật  ← CÙNG NGÀY
+    MT ← MB  offset=D-1    24 luật
+    MT ← MN  offset=D-1     4 luật
+    MT ← MT  offset=D-1     1 luật

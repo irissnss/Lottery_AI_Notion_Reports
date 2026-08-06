@@ -1,0 +1,44 @@
+============================================================================================
+Q3 — SAMDAY MT: bảng A/B có đủ 28 ngày forward cho mốc chốt 12/08 chưa?
+============================================================================================
+  bảng v10801_ml_mark_ab_daily: 504 dòng · 63 ngày · 2026-06-03 → 2026-08-04
+     ngày forward từ 15/07: 21 / cần 28
+     cột: id, date, region, model, src_region, picks_a, picks_b, hit_a_top1, hit_b_top1, hit_a_top2, hit_b_top2, row_source, output_eligible, diagnostic_only
+
+============================================================================================
+Q6 — ĐO TIẾN cho FU-286: mẫu tích luỹ được bao nhiêu, tốc độ nào?
+============================================================================================
+  CHAM_NGUOC    1695 dòng · 113 ngày · 105 luật · 2026-04-13 → 2026-08-03
+  DO_TIEN         15 dòng ·   1 ngày ·  15 luật · 2026-08-04 → 2026-08-04
+  MO_COI        1493 dòng · 106 ngày · 1027 luật · 2025-12-20 → 2026-04-11
+
+  tốc độ tích luỹ đo tiến: 15.0 dòng/ngày
+    để đạt    20 dòng: cần thêm     5 dòng ≈      0 ngày
+    để đạt    50 dòng: cần thêm    35 dòng ≈      2 ngày
+    để đạt  2100 dòng: cần thêm  2085 dòng ≈    139 ngày
+
+  số luật có ≥N dòng đo tiến:
+    ≥ 1 dòng:  15/105 luật
+    ≥ 5 dòng:   0/105 luật
+    ≥10 dòng:   0/105 luật
+    ≥20 dòng:   0/105 luật
+
+============================================================================================
+Q7 — sau cổng đo tiến, còn luật nào đủ tư cách vào prompt?
+============================================================================================
+  luật CÓ ÍT NHẤT 1 dòng đo tiến: 15/105
+    #2316  MN/thu1 Hà Nội         G1+G7        đo tiến 1/1
+    #2317  MN/thu1 Hà Nội         G6+G7        đo tiến 1/1
+    #2318  MN/thu1 Hà Nội         GĐB+G7       đo tiến 1/1
+    #2319  MN/thu1 Cà Mau         GĐB+G1       đo tiến 1/1
+    #2320  MN/thu1 Phú Yên        G5+G7        đo tiến 1/1
+    #2351  MT/thu1 Hà Nội         G6+G7        đo tiến 1/1
+    #2352  MT/thu1 Vũng Tàu       GĐB+G1       đo tiến 1/1
+    #2354  MT/thu1 Thừa Thiên Huế G1+G7        đo tiến 1/1
+    #2353  MT/thu1 Vũng Tàu       GĐB+G7       đo tiến 0/1
+    #2355  MT/thu1 Vũng Tàu       GĐB          đo tiến 0/1
+    #2386  MB/thu1 Hà Nội         GĐB+G7       đo tiến 0/1
+    #2387  MB/thu1 Quảng Nam      G1+G2        đo tiến 0/1
+
+  luật đạt cổng V11003 (n≥20 đo tiến VÀ vượt cả hai đối chứng): 0/105
+  → chưa luật nào đủ tư cách. Nhưng lý do là THIẾU MẪU, không phải ĐÃ BÁC BỎ.

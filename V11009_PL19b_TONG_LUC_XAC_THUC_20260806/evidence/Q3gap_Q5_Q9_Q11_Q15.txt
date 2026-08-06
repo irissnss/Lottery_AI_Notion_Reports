@@ -1,0 +1,87 @@
+==============================================================================================
+Q3(gap) — bảng A/B MT có còn được ghi không? (max date 04/08, hôm nay 06/08)
+==============================================================================================
+    2026-07-25    8 dòng
+    2026-07-26    8 dòng
+    2026-07-27    8 dòng
+    2026-07-28    8 dòng
+    2026-07-29    8 dòng
+    2026-07-30    8 dòng
+    2026-07-31    8 dòng
+    2026-08-01    8 dòng
+    2026-08-02    8 dòng
+    2026-08-03    8 dòng
+    2026-08-04    8 dòng
+
+    ngày forward từ 15/07 hiện có: 21. Cần 28.
+    Nếu job chạy đều mỗi ngày → đạt 28 vào khoảng 2026-08-17
+
+==============================================================================================
+Q5 — nhãn BUNDLE_SKEW: phân bố hiện tại + bảng nào còn dùng nhãn này
+==============================================================================================
+    MB BUNDLE_SKEW                71
+    MB NO_GAP                     16
+    MB SECONDARY_ONLY_SIGNAL       5
+    MB CANDIDATE_SPLIT             4
+    MN BUNDLE_SKEW                55
+    MN NO_GAP                     39
+    MN CANDIDATE_SPLIT             2
+    MT BUNDLE_SKEW                62
+    MT NO_GAP                     32
+    MT CANDIDATE_SPLIT             2
+
+    tổng 288 dòng · BUNDLE_SKEW 188 = 65.3%
+    → con số '65%' trong REPORT_V11002 thực ra là 65% trên bảng shadow này.
+
+==============================================================================================
+Q9 — §5g: căn cứ của ≥4 → ≥3 có phép đo không?
+==============================================================================================
+    ### 5g. MULTI-SOURCE CONVERGENCE (QUAN TRỌNG):
+    Khi chốt số, hãy đếm "nguồn evidence" cho mỗi candidate:
+    - Nguồn 1: Xuất hiện trong cluster/pha analysis
+    - Nguồn 2: Top Score thống kê 30 ngày
+    - Nguồn 3: KB ĐÀI pattern (top tails / ĐB hay ra / G8 hay ra)
+    - Nguồn 4: KB THỨ pattern (DOW top tails)
+    - Nguồn 5: Cặp đôi tương quan
+    
+    ✅ Số có ≥3 nguồn → CHỐT MẠNH (boost +1đ strength)
+    ✅ Số có 2 nguồn → ƯU TIÊN chọn
+    ⚠️ Số chỉ 1 nguồn → cẩn thận, cần evidence khác
+
+    Tìm dấu vết phép đo cho ngưỡng này trong code/comment:
+      'convergence_score': 0 chỗ trong gpt_analyzer.py
+      'conv_count': 0 chỗ trong gpt_analyzer.py
+      '≥3 nguồn': 2 chỗ trong gpt_analyzer.py
+      'AUC 0.48': 0 chỗ trong gpt_analyzer.py
+      '0,4878': 0 chỗ trong gpt_analyzer.py
+
+==============================================================================================
+Q11 — P&L: có dòng nào là TIỀN THẬT không?
+==============================================================================================
+    money_board_log                114 dòng · cột cờ: ['diagnostic_only', 'shadow_only', 'output_eligible']
+        diagnostic_only = {'1': 114}
+        shadow_only = {'1': 114}
+        output_eligible = {'0': 114}
+    pnl_forward_track_shadow      1242 dòng · cột cờ: ['diagnostic_only', 'shadow_only', 'output_eligible']
+        diagnostic_only = {'1': 1242}
+        shadow_only = {'1': 1242}
+        output_eligible = {'0': 1242}
+    pnl_daily_summary               14 dòng · cột cờ: (không có cột cờ)
+
+==============================================================================================
+Q15 — mined_rules đi vào những đâu? (đếm tham chiếu theo tầng)
+==============================================================================================
+
+  ML — huấn luyện / đặc trưng
+    ml_train.py                (không đọc được)
+    meta_train.py              (không đọc được)
+    meta_data_collector.py     'mined_rule' xuất hiện   0 lần   ← KHÔNG
+    ml_predict.py              'mined_rule' xuất hiện   0 lần   ← KHÔNG
+    meta_predict.py            'mined_rule' xuất hiện   0 lần   ← KHÔNG
+    lstm_predict.py            'mined_rule' xuất hiện   0 lần   ← KHÔNG
+
+  LLM — prompt
+    gpt_analyzer.py            'mined_rule' xuất hiện  31 lần   ← CÓ
+
+  Chấm điểm / boost
+    rule_engine.py             'mined_rule' xuất hiện   8 lần   ← CÓ
