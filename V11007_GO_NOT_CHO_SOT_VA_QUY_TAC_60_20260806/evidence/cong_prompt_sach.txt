@@ -1,0 +1,4 @@
+  dong nhac gan/nong/lanh trong chuoi gui di: 1
+     GIU  - GAN cao KHÔNG có nghĩa "sắp ra" — chỉ là thông tin tham khảo
+  OK — chi con cau G3, va ba phien ban da tang
+[cong] PROMPT_SACH=DAT
