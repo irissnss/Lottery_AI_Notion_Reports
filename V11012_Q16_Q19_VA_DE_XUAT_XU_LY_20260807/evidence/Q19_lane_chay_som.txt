@@ -1,0 +1,28 @@
+LANE CHAY LUC MAY GIO vs OFFICIAL CHOT LUC MAY GIO
+
+MN:
+  2026-08-06  lane 05:21:02 model= 27 | official 27 model, dong cuoi 05:31:52
+  2026-08-05  lane 05:20:01 model= 27 | official 27 model, dong cuoi 05:30:44
+  2026-08-04  lane 05:20:06 model= 27 | official 27 model, dong cuoi 05:32:03
+  2026-08-03  lane 05:25:06 model= 27 | official 27 model, dong cuoi 05:29:25
+  2026-08-02  lane 05:20:06 model= 27 | official 27 model, dong cuoi 05:27:26
+  2026-08-01  lane 05:25:06 model= 26 | official 26 model, dong cuoi 05:30:44
+  2026-07-31  lane 04:20:06 model= 26 | official 26 model, dong cuoi 04:34:10
+
+MT:
+  2026-08-06  lane 16:44:02 model= 27 | official 27 model, dong cuoi 16:53:37
+  2026-08-05  lane 16:46:01 model= 27 | official 27 model, dong cuoi 16:57:34
+  2026-08-04  lane 16:46:01 model= 27 | official 27 model, dong cuoi 17:02:06
+  2026-08-03  lane 16:46:01 model= 27 | official 27 model, dong cuoi 16:59:08
+  2026-08-02  lane 16:44:01 model= 27 | official 27 model, dong cuoi 16:52:48
+  2026-08-01  lane 16:46:01 model= 27 | official 27 model, dong cuoi 16:59:12
+  2026-07-31  lane 16:45:01 model= 23 | official 23 model, dong cuoi 16:58:10
+
+MB:
+  2026-08-06  lane 17:38:05 model= 18 | official 27 model, dong cuoi 17:58:15
+  2026-08-05  lane 17:38:04 model= 20 | official 27 model, dong cuoi 17:51:04
+  2026-08-04  lane 17:37:01 model= 20 | official 27 model, dong cuoi 17:47:51
+  2026-08-03  lane 17:38:04 model= 18 | official 27 model, dong cuoi 17:55:09
+  2026-08-02  lane 17:38:02 model= 21 | official 27 model, dong cuoi 17:48:29
+  2026-08-01  lane 17:38:04 model= 18 | official 18 model, dong cuoi 17:43:06
+  2026-07-31  lane 17:38:01 model= 19 | official 25 model, dong cuoi 17:47:44

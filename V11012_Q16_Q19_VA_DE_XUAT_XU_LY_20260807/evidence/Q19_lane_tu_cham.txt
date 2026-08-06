@@ -1,0 +1,39 @@
+[cong] DU_LIEU_TUOI cu=0.3 gio
+
+================================================================================================
+Q19-a — CẤU TRÚC: bảng nào giữ SỐ CÔNG BỐ, bảng nào giữ SỐ ĐEM CHẤM?
+================================================================================================
+
+  du_doan_test_bundles: 8890 dòng · mới nhất 2026-08-06
+    cột: id, run_id, run_date, region, experiment_name, mode, test_bt, test_lo2_json, official_bt, official_lo2_json, diff_from_official_json, aggregation_method, candidate_count, model_count, confidence_score, risk_flags_json, official_output, output_impact, admin_only, test_only, owner_approved, created_at, diagnostic_only, output_eligible, output_lock_status, readiness_status
+
+  du_doan_test_results: 6988 dòng · mới nhất 2026-08-06
+    cột: id, run_id, run_date, region, actual_results_json, official_bt_status, official_lo2_status, test_bt_status, test_lo2_status, would_save, would_break, false_promotion, net_effect, evaluated_at, official_bt, official_lo2_json, test_bt, test_lo2_json, delta_bt, delta_lo2, correct_but_dropped, wrong_boosted, lo2_to_bt_promotion, official_lo2_already_had_test_bt
+
+================================================================================================
+Q19-b — CÒN CA NÀO 'CÔNG BỐ MỘT ĐẰNG, CHẤM MỘT NẺO' KHÔNG? (30 ngày)
+================================================================================================
+  cột số CÔNG BỐ (bundles): test_bt
+  cột số ĐEM CHẤM (results): test_bt
+
+  đối chiếu 2112 cặp (run_id khớp) · **LỆCH 0**
+  ✓ KHÔNG ca nào lệch — vá gốc V10884 đang giữ được
+
+================================================================================================
+Q19-c — CỔNG CHẶN V10884 CÓ THẬT SỰ CHẠY KHÔNG? (luồng có chờ official không)
+================================================================================================
+  miền   ngày          model_count lane   model official
+  MN     2026-08-06                  27               27
+  MN     2026-08-05                  27               27
+  MN     2026-08-04                  27               27
+  MT     2026-08-06                  27               27
+  MT     2026-08-05                  27               27
+  MT     2026-08-04                  27               27
+  MB     2026-08-06                  18               27
+  MB     2026-08-05                  20               27
+  MB     2026-08-04                  20               27
+
+================================================================================================
+Q19-d — PHÉP KIỂM 'số publish == số chấm' có chạy hằng ngày không?
+================================================================================================
+  script liên quan V10884: ['_v10884_commit.py', '_v10884_deploy.py', '_v10884_drift_probe.py', '_v10884_full_audit.py', '_v10884_govsync.py', '_v10884_mb_probe.py', '_v10884_verify.py']
