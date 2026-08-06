@@ -1,0 +1,36 @@
+{
+ "gio": "2026-08-06 22:02:04",
+ "khung_gio": "NGÀY CODE/FIX do owner chỉ định (2026-08-06) — khung giờ không áp.\n  Owner: «Anh xác nhận riêng ngày hôm nay danh riêng cho việc code , fix , chỉnh sửa hay cho thực hiện đi em, các ngày khác vẫn như củ ngày nào cũng Block thì anh không thời gian để code, fix điều khiển, block »",
+ "pid_truoc": "937241",
+ "pid_sau": "939052",
+ "hash_doi": [],
+ "quet": {
+  "trong_prompt": [
+   [
+    316,
+    "- GAN cao KHÔNG có nghĩa \"sắp ra\" — chỉ là thông tin tham khảo"
+   ]
+  ],
+  "ghi_vao": [],
+  "phien_ban": {
+   "system_prompt": "SP-4.3",
+   "reasoning_rulebook": "RR-16.5",
+   "context_pack": "CTX-16.7",
+   "prompt_bundle": "PB-18.4"
+  },
+  "con_core_policy": 0,
+  "co_rr26": true,
+  "phan_giai": 42,
+  "thu_lam_dong": [
+   "Đà Lạt",
+   "Đắk Nông",
+   "Lâm Đồng"
+  ]
+ },
+ "tep": [
+  "web/backend/gpt_analyzer.py",
+  "web/backend/prompt_registry.py",
+  "web/backend/_v87_master_board.py",
+  "web/backend/station_identity.py"
+ ]
+}

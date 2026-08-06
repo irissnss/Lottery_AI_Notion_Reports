@@ -1,0 +1,36 @@
+==================================================================================================
+CP-7.9 (CORE_POLICY) — DECLARED_BUT_INACTIVE, chua bao gio toi model
+==================================================================================================
+  do dai CP-7.9        : 0 ky tu
+  SP-4.3 dang chay     : 7,177 ky tu
+  RR-16.4 dang chay    : 15,465 ky tu
+
+==================================================================================================
+mã   khối                             có trong prompt đang chạy?     kết luận
+--------------------------------------------------------------------------------------------------
+C1   Nguyên tắc Confidence            ≥3 nguồn, 3 nguồn              TRÙNG — bỏ được
+C2   Anti-Overclaim                   chắc chắn, chưa kiểm chứng     TRÙNG — bỏ được
+C3   Convergence — contrarian         CONVERGENCE TRAP, herding      TRÙNG — bỏ được
+C4   Rule-Aware Reasoning             rule                           TRÙNG — bỏ được
+C5   CONFIDENCE DISCIPLINE v7.7       Strength, cảnh báo             TRÙNG — bỏ được
+C6   ENSEMBLE DIVERSITY v7.9          ANTI-HERDING, KHÔNG BAO GIỜ tă TRÙNG — bỏ được
+C7   MB SPECIFIC DISCIPLINE v7.9      MB, thận trọng                 TRÙNG — bỏ được
+C8   WIDTH DISCIPLINE v7.9.1          TOP1-FIRST, Width              TRÙNG — bỏ được
+
+==================================================================================================
+CHỖ CHỎI NHAU — nếu bật CP-7.9 lên thì mâu thuẫn ngay
+==================================================================================================
+  C1: CP-7.9 đòi **≥4 nguồn** mới CAO, nhưng prompt đang chạy (V11001, 05/08) đã HẠ xuống **≥3 nguồn → CHỐT MẠNH**. Bật CP-7.9 là quay ngược V11001.
+  C4: CP-7.9 nói trùng rule thì **tăng nhẹ confidence**; prompt đang chạy cũng nói **tăng nhẹ** sau khi V11001 hạ từ 'TĂNG MẠNH'. Hai bên nay KHỚP — nhưng CP-7.9 viết trước, nếu bật mà không rà thì dễ lệch lại.
+
+==================================================================================================
+CÓ ĐO LƯỜNG NÀO CHO CP-7.9 KHÔNG?
+==================================================================================================
+  bảng prompt_layer_audit       không có
+  bảng prompt_version_log       không có
+  bảng model_prompt_trace       không có
+  predictions có policy_version_ref chứa 'CP-7.9': 0
+  predictions có policy_version_ref bất kỳ       : 0
+
+  => CP-7.9 CHƯA BAO GIỜ được bơm vào model, nên KHÔNG THỂ có phép đo hiệu quả của nó.
+     Nó chỉ xuất hiện ở BẢNG KHAI BÁO phiên bản và trace `declared_but_inactive_layers`.

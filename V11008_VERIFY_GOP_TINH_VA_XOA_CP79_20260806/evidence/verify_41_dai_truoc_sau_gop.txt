@@ -1,0 +1,151 @@
+====================================================================================================
+VERIFY TUNG DAI — TRUOC (2025-07-01 tro ve truoc) vs SAU (tu 2025-07-01)
+====================================================================================================
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+MB — 6 đài
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  đài                tỉnh MỚI sau gộp THỨ trước      THỨ sau        lượt trước  lượt sau  kết luận
+  Bắc Ninh           Bắc Ninh         T4             T4                     77        56  GIỮ NGUYÊN
+  Hà Nội             Hà Nội           T2,T5          T2,T5                 155       112  GIỮ NGUYÊN
+  Hải Phòng          Hải Phòng        T6             T6                     76        57  GIỮ NGUYÊN
+  Nam Định           Ninh Bình        T7             T7                     77        57  GIỮ NGUYÊN
+  Quảng Ninh         Quảng Ninh       T3             T3                     77        57  GIỮ NGUYÊN
+  Thái Bình          Hưng Yên         CN             CN                     77        57  GIỮ NGUYÊN
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+MT — 14 đài
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  đài                tỉnh MỚI sau gộp THỨ trước      THỨ sau        lượt trước  lượt sau  kết luận
+  Bình Định          Gia Lai          T5             T5                     78        57  GIỮ NGUYÊN
+  Gia Lai            Gia Lai          T6             T6                     78        57  GIỮ NGUYÊN
+  Khánh Hòa          Khánh Hòa        T4,CN          T4,CN                 156       114  GIỮ NGUYÊN
+  Kon Tum            Quảng Ngãi       CN             CN                     78        57  GIỮ NGUYÊN
+  Ninh Thuận         Khánh Hòa        T6             T6                     78        57  GIỮ NGUYÊN
+  Phú Yên            Đắk Lắk          T2             T2                     79        57  GIỮ NGUYÊN
+  Quảng Bình         Quảng Trị        T5             T5                     78        57  GIỮ NGUYÊN
+  Quảng Nam          Đà Nẵng          T3             T3                     78        58  GIỮ NGUYÊN
+  Quảng Ngãi         Quảng Ngãi       T7             T7                     78        57  GIỮ NGUYÊN
+  Quảng Trị          Quảng Trị        T5             T5                     78        57  GIỮ NGUYÊN
+  Thừa Thiên Huế     Huế              T2             T2,CN                  79        98  ⚠ ĐỔI THỨ
+  Đà Nẵng            Đà Nẵng          T4,T7          T4,T7                 156       114  GIỮ NGUYÊN
+  Đắk Lắk            Đắk Lắk          T3             T3                     78        58  GIỮ NGUYÊN
+  Đắk Nông           Lâm Đồng         T7             T7                     78        57  GIỮ NGUYÊN
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+MN — 21 đài
+────────────────────────────────────────────────────────────────────────────────────────────────────
+  đài                tỉnh MỚI sau gộp THỨ trước      THỨ sau        lượt trước  lượt sau  kết luận
+  An Giang           An Giang         T5             T5                     78        57  GIỮ NGUYÊN
+  Bình Dương         TP. HCM          T6             T6                     78        57  GIỮ NGUYÊN
+  Bình Phước         Đồng Nai         T7             T7                     78        57  GIỮ NGUYÊN
+  Bình Thuận         Lâm Đồng         T5             T5                     78        57  GIỮ NGUYÊN
+  Bạc Liêu           Cà Mau           T3             T3                     78        58  GIỮ NGUYÊN
+  Bến Tre            Vĩnh Long        T3             T3                     78        58  GIỮ NGUYÊN
+  Cà Mau             Cà Mau           T2             T2                     79        57  GIỮ NGUYÊN
+  Cần Thơ            Cần Thơ          T4             T4                     78        57  GIỮ NGUYÊN
+  Hậu Giang          Cần Thơ          T7             T7                     78        57  GIỮ NGUYÊN
+  Kiên Giang         An Giang         CN             CN                     78        57  GIỮ NGUYÊN
+  Long An            Tây Ninh         T7             T7                     78        57  GIỮ NGUYÊN
+  Sóc Trăng          Cần Thơ          T4             T4                     78        57  GIỮ NGUYÊN
+  TP. HCM            TP. HCM          T2,T7          T2,T7                 157       114  GIỮ NGUYÊN
+  Tiền Giang         Đồng Tháp        CN             CN                     78        57  GIỮ NGUYÊN
+  Trà Vinh           Vĩnh Long        T6             T6                     78        57  GIỮ NGUYÊN
+  Tây Ninh           Tây Ninh         T5             T5                     78        57  GIỮ NGUYÊN
+  Vĩnh Long          Vĩnh Long        T6             T6                     78        57  GIỮ NGUYÊN
+  Vũng Tàu           TP. HCM          T3             T3                     78        58  GIỮ NGUYÊN
+  Đà Lạt             Lâm Đồng         CN             CN                     78        57  GIỮ NGUYÊN
+  Đồng Nai           Đồng Nai         T4             T4                     78        57  GIỮ NGUYÊN
+  Đồng Tháp          Đồng Tháp        T2             T2                     79        57  GIỮ NGUYÊN
+
+====================================================================================================
+PHÁN XỬ 1 — có đài nào đổi gì sau khi gộp tỉnh không?
+====================================================================================================
+  ⚠ 1 đài có thay đổi:
+      MT Thừa Thiên Huế: ⚠ ĐỔI THỨ
+
+====================================================================================================
+PHÁN XỬ 2 — tên MƠ HỒ có phân biệt được bằng THỨ không?
+====================================================================================================
+
+  'An Giang' gộp từ 2 đài: An Giang, Kiên Giang
+      An Giang           MN  xổ T5
+      Kiên Giang         MN  xổ CN
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'An Giang' + THỨ là ĐỦ để xác định đúng đài
+
+  'Cà Mau' gộp từ 2 đài: Bạc Liêu, Cà Mau
+      Bạc Liêu           MN  xổ T3
+      Cà Mau             MN  xổ T2
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Cà Mau' + THỨ là ĐỦ để xác định đúng đài
+
+  'Cần Thơ' gộp từ 3 đài: Cần Thơ, Hậu Giang, Sóc Trăng
+      Cần Thơ            MN  xổ T4
+      Hậu Giang          MN  xổ T7
+      Sóc Trăng          MN  xổ T4
+      ⚠ TRÙNG THỨ — KHÔNG phân biệt được bằng thứ:
+          Cần Thơ và Sóc Trăng cùng xổ T4
+
+  'Gia Lai' gộp từ 2 đài: Bình Định, Gia Lai
+      Bình Định          MT  xổ T5
+      Gia Lai            MT  xổ T6
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Gia Lai' + THỨ là ĐỦ để xác định đúng đài
+
+  'Khánh Hòa' gộp từ 2 đài: Khánh Hòa, Ninh Thuận
+      Khánh Hòa          MT  xổ T4,CN
+      Ninh Thuận         MT  xổ T6
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Khánh Hòa' + THỨ là ĐỦ để xác định đúng đài
+
+  'Lâm Đồng' gộp từ 3 đài: Đắk Nông, Bình Thuận, Đà Lạt
+      Đắk Nông           MT  xổ T7
+      Bình Thuận         MN  xổ T5
+      Đà Lạt             MN  xổ CN
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Lâm Đồng' + THỨ là ĐỦ để xác định đúng đài
+
+  'Quảng Ngãi' gộp từ 2 đài: Kon Tum, Quảng Ngãi
+      Kon Tum            MT  xổ CN
+      Quảng Ngãi         MT  xổ T7
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Quảng Ngãi' + THỨ là ĐỦ để xác định đúng đài
+
+  'Quảng Trị' gộp từ 2 đài: Quảng Bình, Quảng Trị
+      Quảng Bình         MT  xổ T5
+      Quảng Trị          MT  xổ T5
+      ⚠ TRÙNG THỨ — KHÔNG phân biệt được bằng thứ:
+          Quảng Bình và Quảng Trị cùng xổ T5
+
+  'TP. HCM' gộp từ 3 đài: TP. HCM, Bình Dương, Vũng Tàu
+      TP. HCM            MN  xổ T2,T7
+      Bình Dương         MN  xổ T6
+      Vũng Tàu           MN  xổ T3
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'TP. HCM' + THỨ là ĐỦ để xác định đúng đài
+
+  'Tây Ninh' gộp từ 2 đài: Long An, Tây Ninh
+      Long An            MN  xổ T7
+      Tây Ninh           MN  xổ T5
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Tây Ninh' + THỨ là ĐỦ để xác định đúng đài
+
+  'Vĩnh Long' gộp từ 3 đài: Bến Tre, Trà Vinh, Vĩnh Long
+      Bến Tre            MN  xổ T3
+      Trà Vinh           MN  xổ T6
+      Vĩnh Long          MN  xổ T6
+      ⚠ TRÙNG THỨ — KHÔNG phân biệt được bằng thứ:
+          Trà Vinh và Vĩnh Long cùng xổ T6
+
+  'Đà Nẵng' gộp từ 2 đài: Quảng Nam, Đà Nẵng
+      Quảng Nam          MT  xổ T3
+      Đà Nẵng            MT  xổ T4,T7
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Đà Nẵng' + THỨ là ĐỦ để xác định đúng đài
+
+  'Đắk Lắk' gộp từ 2 đài: Phú Yên, Đắk Lắk
+      Phú Yên            MT  xổ T2
+      Đắk Lắk            MT  xổ T3
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Đắk Lắk' + THỨ là ĐỦ để xác định đúng đài
+
+  'Đồng Nai' gộp từ 2 đài: Bình Phước, Đồng Nai
+      Bình Phước         MN  xổ T7
+      Đồng Nai           MN  xổ T4
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Đồng Nai' + THỨ là ĐỦ để xác định đúng đài
+
+  'Đồng Tháp' gộp từ 2 đài: Tiền Giang, Đồng Tháp
+      Tiền Giang         MN  xổ CN
+      Đồng Tháp          MN  xổ T2
+      ✓ MỖI ĐÀI MỘT THỨ RIÊNG → tên 'Đồng Tháp' + THỨ là ĐỦ để xác định đúng đài
