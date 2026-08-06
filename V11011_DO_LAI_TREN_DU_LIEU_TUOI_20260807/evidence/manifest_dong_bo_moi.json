@@ -1,0 +1,77 @@
+{
+  "sync_started_at": "2026-08-07T00:31:01.613728+07:00",
+  "vps": {
+    "ip": "14.225.224.89",
+    "user": "root"
+  },
+  "files": [
+    {
+      "label": "production_db",
+      "remote_path": "/root/Lottery_AI_Test/data/lottery_ai.db",
+      "local_path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+      "local_before": {
+        "path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+        "exists": true,
+        "backup_path": "E:\\Lottery_AI_Test\\artifacts\\live_sync\\20260807_003101\\before_local\\lottery_ai.db",
+        "size": 658239488,
+        "sha256": "149d6b25cea46d7b6a307aaea4ad63e443bf2c4f06135263089ba4dd0d02a06e"
+      },
+      "remote_live": {
+        "size": 666112000,
+        "mtime": 1786037400
+      },
+      "remote": {
+        "frozen_path": "/tmp/_live_sync_20260807_003101_lottery_ai.db",
+        "freeze_mode": "sqlite",
+        "size": 666112000,
+        "mtime": 1786037476,
+        "sha256": "99521d993be03bcb280495a2dd69b0eab69f1589542a94815a776582a303ea0f"
+      },
+      "pulled_snapshot": {
+        "path": "E:\\Lottery_AI_Test\\artifacts\\live_sync\\20260807_003101\\from_vps\\lottery_ai.db",
+        "size": 666112000,
+        "sha256": "99521d993be03bcb280495a2dd69b0eab69f1589542a94815a776582a303ea0f"
+      },
+      "local_after": {
+        "path": "E:\\Lottery_AI_Test\\data\\lottery_ai.db",
+        "size": 666112000,
+        "sha256": "99521d993be03bcb280495a2dd69b0eab69f1589542a94815a776582a303ea0f"
+      }
+    },
+    {
+      "label": "prediction_trace",
+      "remote_path": "/root/Lottery_AI_Test/web/backend/prediction_trace.jsonl",
+      "local_path": "E:\\Lottery_AI_Test\\web\\backend\\prediction_trace.jsonl",
+      "local_before": {
+        "path": "E:\\Lottery_AI_Test\\web\\backend\\prediction_trace.jsonl",
+        "exists": true,
+        "backup_path": "E:\\Lottery_AI_Test\\artifacts\\live_sync\\20260807_003101\\before_local\\prediction_trace.jsonl",
+        "size": 22769097,
+        "sha256": "10e4fd525f4f1db6a4c3fdd534cb4e2d2f87771fae08834d55f7ba48573aba0a"
+      },
+      "remote_live": {
+        "size": 23287622,
+        "mtime": 1786013895
+      },
+      "remote": {
+        "frozen_path": "/tmp/_live_sync_20260807_003101_prediction_trace.jsonl",
+        "freeze_mode": "copy",
+        "size": 23287622,
+        "mtime": 1786013895,
+        "sha256": "dca0f2ef730ff9261bfe8603ea8ad51a9ec1b0c18fdbaae49aab35776fe3af6a"
+      },
+      "pulled_snapshot": {
+        "path": "E:\\Lottery_AI_Test\\artifacts\\live_sync\\20260807_003101\\from_vps\\prediction_trace.jsonl",
+        "size": 23287622,
+        "sha256": "dca0f2ef730ff9261bfe8603ea8ad51a9ec1b0c18fdbaae49aab35776fe3af6a"
+      },
+      "local_after": {
+        "path": "E:\\Lottery_AI_Test\\web\\backend\\prediction_trace.jsonl",
+        "size": 23287622,
+        "sha256": "dca0f2ef730ff9261bfe8603ea8ad51a9ec1b0c18fdbaae49aab35776fe3af6a"
+      }
+    }
+  ],
+  "sync_completed_at": "2026-08-07T00:31:55.752041+07:00",
+  "status": "ok"
+}

@@ -1,0 +1,80 @@
+==================================================================================================
+Q17 — SWEEP 'CHẾT NHƯNG TƯỞNG SỐNG': bảng nào có dữ liệu cũ hơn 14 ngày?
+==================================================================================================
+  tổng 244 bảng · có cột ngày 159 · SỐNG (≤14 ngày) 115 · **CŨ/RỖNG 44**
+
+  bảng                                              dòng     mới nhất  cũ (ngày)
+  bundle_replay_compare_daily                          0         RỖNG       RỖNG
+  data_preservation_manifest_daily                     0         RỖNG       RỖNG
+  du_doan_test_ai_predictions                          0         RỖNG       RỖNG
+  du_doan_test_latency_daily                           0         RỖNG       RỖNG
+  mb_t3_prereg_daily                                   0         RỖNG       RỖNG
+  sync_parity_audit_daily                              0         RỖNG       RỖNG
+  v10883_connector_apply_log                           0         RỖNG       RỖNG
+  users                                                2   2026-02-09        179
+  pattern_rules                                      160   2026-02-26        162
+  prediction_policies                                  6   2026-03-30        130
+  shadow_activation_registry                          18   2026-04-30         99
+  single_vote_rescue_replay_shadow                   540   2026-05-01         98
+  bundle_universe_coverage_shadow                     96   2026-05-02         97
+  corrected_rescue_replay_shadow                     900   2026-05-02         97
+  cross_region_spillover_shadow                    11283   2026-05-02         97
+  mb_structural_drilldown_shadow                      62   2026-05-02         97
+  model_cross_region_dup_shadow                      662   2026-05-02         97
+  strength_skip_calibration_replay_shadow            865   2026-05-02         97
+  tier2_replay_shadow                                192   2026-05-02         97
+  tier2_replay_v2_shadow                             558   2026-05-02         97
+  loz_stage_trace_shadow                            6356   2026-05-05         94
+  weekday_blackspot_shadow                            42   2026-05-05         94
+  loz_selector_shadow                               4033   2026-05-06         93
+  model_latency_cost_audit_daily                    4033   2026-05-06         93
+  mt_model_hit_output_drop_shadow                    365   2026-05-06         93
+  v105_ai_shadow_decision_independent                 93   2026-05-10         89
+  v105_context_completeness_audit                   7219   2026-05-10         89
+  v105_no_token_independent_shadow                  7126   2026-05-10         89
+  … còn 16 bảng nữa
+
+==================================================================================================
+Q18 — BUNDLE THIẾU PHIẾU: bao nhiêu, và có liên quan bầy đàn không?
+==================================================================================================
+  cột số chính của final_bundles: bach_thu
+  30 ngày · 93 bundle · số chốt CÓ trong phiếu model: 92 (99%) · **KHÔNG có phiếu nào: 1 (1%)**
+
+==================================================================================================
+Q20 — MB CHẠY THEO CƠ CHẾ NÀO THẬT SỰ? (14 ngày gần nhất)
+==================================================================================================
+  ngày         run_source có mặt cho MB                              số model
+  2026-08-06   shadow_auto_eval×11, ai_chain×9, rerun_post_mt×7            27
+  2026-08-05   shadow_auto_eval×11, ai_chain×9, rerun_post_mt×7            27
+  2026-08-04   shadow_auto_eval×11, ai_chain×9, rerun_post_mt×7            27
+  2026-08-03   shadow_auto_eval×11, ai_chain×9, rerun_post_mt×7            27
+  2026-08-02   shadow_auto_eval×11, ai_chain×9, rerun_post_mt×7            27
+  2026-08-01   ai_chain×8, rerun_post_mt×7, shadow_auto_eval×3             18
+  2026-07-31   shadow_auto_eval×10, ai_chain×8, rerun_post_mt×7            25
+  2026-07-30   shadow_auto_eval×11, ai_chain×8, rerun_post_mt×7            26
+  2026-07-29   shadow_auto_eval×10, ai_chain×8, rerun_post_mt×7            25
+  2026-07-28   shadow_auto_eval×12, ai_chain×8, rerun_post_mt×7            27
+  2026-07-27   shadow_auto_eval×12, ai_chain×8, rerun_post_mt×7            27
+  2026-07-26   shadow_auto_eval×12, ai_chain×8, rerun_post_mt×7            27
+  2026-07-25   shadow_auto_eval×12, ai_chain×8, rerun_post_mt×7            27
+  2026-07-24   shadow_auto_eval×12, ai_chain×8, rerun_post_mt×7            27
+
+  ⇒ nếu MỌI ngày đều có rerun_post_mt → cơ chế V10895 (luôn rerun) đang chạy,
+     V10770 (đầu tháng samday / cuối tháng D-1) đã bị THAY THẾ.
+
+==================================================================================================
+D2 — HERD CÓ KIỂM SOÁT: khoá tập model AI chạy CẢ TRƯỚC lẫn SAU 29/03
+==================================================================================================
+  model AI chạy TRƯỚC 29/03: 20 · SAU: 36 · **CHUNG cả hai phía: 7**
+  tập chung: claude-opus-4-20250514, claude-sonnet-4-6, deepseek-reasoner, gemini-2.5-flash, gemini-2.5-pro, gpt-5-mini, gpt-5.4
+
+  giai đoạn        ngày  model/ngày  số khác nhau    hệ số
+  TRƯỚC 29/03       107         4.8           2.9    1.66×
+  SAU 29/03         392         6.6           3.6    1.84×
+
+==================================================================================================
+E5 — pnl_daily_summary: 14 dòng tổng hợp từ đâu, có cột cờ chưa?
+==================================================================================================
+  cột: date, mn_cost, mn_payout, mt_cost, mt_payout, total_cost, total_payout, net, wallet_balance_after, settled_at
+  14 dòng · 2026-05-07 → 2026-05-20
+  có cột cờ shadow/real: ❌ KHÔNG
