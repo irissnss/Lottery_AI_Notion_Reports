@@ -1,0 +1,15 @@
+====================================================================================
+THU BO QUY CHUAN TEN DAI — nguon viet kieu khac thi co nhan ra dung dai khong?
+====================================================================================
+dai chuan (DB)     nguon viet                 quy chuan ra       ket qua
+------------------------------------------------------------------------------------
+Bình Thuận         Lâm Đồng                   Lâm Đồng           ⚠ KHONG NHAN RA
+Đà Lạt             Lâm Đồng                   Lâm Đồng           ⚠ KHONG NHAN RA
+Bình Dương         BD                         BD                 ⚠ KHONG NHAN RA
+Đồng Nai           ĐN                         ĐN                 ⚠ KHONG NHAN RA
+Quảng Ninh         QN                         QN                 ⚠ KHONG NHAN RA
+------------------------------------------------------------------------------------
+  nhan dung 111/116 · KHONG nhan ra 5 · nhan NHAM dai khac 0
+
+  ⚠ Khong nhan ra: he se tra ve RONG, luat tro vao do im lang khong bao loi.
+     Dung nhu vu GL/NT/DLK/QNA hoi 03-07/07 (V10810) — im lang mat du lieu.

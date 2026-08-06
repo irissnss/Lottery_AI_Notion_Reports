@@ -1,0 +1,31 @@
+==============================================================================
+TEN DAI SAU KHI GOP TINH — kiem toan bo
+==============================================================================
+
+[1] Dai dang song (400 ngay gan nhat): 41
+    MB (6): Bắc Ninh, Hà Nội, Hải Phòng, Nam Định, Quảng Ninh, Thái Bình
+    MT (14): Bình Định, Gia Lai, Khánh Hòa, Kon Tum, Ninh Thuận, Phú Yên, Quảng Bình, Quảng Nam, Quảng Ngãi, Quảng Trị, Thừa Thiên Huế, Đà Nẵng, Đắk Lắk, Đắk Nông
+    MN (21): An Giang, Bình Dương, Bình Phước, Bình Thuận, Bạc Liêu, Bến Tre, Cà Mau, Cần Thơ, Hậu Giang, Kiên Giang, Long An, Sóc Trăng, TP. HCM, Tiền Giang, Trà Vinh, Tây Ninh, Vĩnh Long, Vũng Tàu, Đà Lạt, Đồng Nai, Đồng Tháp
+
+[2] Bang bi danh sinh ra: 360 cach viet -> 41 dai
+
+[3] Ten MO HO — CAM anh xa, phai hoi owner:
+    'Lâm Đồng' co the la: Đà Lạt hay Bình Thuận hay Đắk Nông  → tu choi doan
+
+[4] Ma hai chu BI LOAI vi mo ho:
+    'BT' = Bến Tre hay Bình Thuận
+    'BD' = Bình Dương hay Bình Định
+    'ĐN' = Đồng Nai hay Đà Nẵng
+    'DN' = Đồng Nai hay Đà Nẵng
+    'QN' = Quảng Ninh hay Quảng Nam
+    'NĐ' = Nam Định (nhung de lan voi Đà Nẵng)
+    'ĐT' = Đồng Tháp (dau tieng Viet hay bi mat)
+
+[5] Canh gac — ten la trong 30 ngay gan nhat
+    ✓ khong co ten la nao
+
+[6] Thu lai: bang MOI nhan duoc bao nhieu cach viet?
+    115/115 cach viet nhan ra dung dai
+
+[cong] TEN_DAI=DAT DAI_SONG=41 BI_DANH=360 VA_CHAM=0
+[cong] DIEN_TAP_OK ten_dai_kiem_duoc

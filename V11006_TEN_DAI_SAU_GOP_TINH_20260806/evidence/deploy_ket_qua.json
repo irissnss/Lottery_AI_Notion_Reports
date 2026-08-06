@@ -1,0 +1,27 @@
+{
+ "gio": "2026-08-06 21:15:49",
+ "khung_gio": "NGÀY CODE/FIX do owner chỉ định (2026-08-06) — khung giờ không áp.\n  Owner: «Anh xác nhận riêng ngày hôm nay danh riêng cho việc code , fix , chỉnh sửa hay cho thực hiện đi em, các ngày khác vẫn như củ ngày nào cũng Block thì anh không thời gian để code, fix điều khiển, block »",
+ "pid_truoc": "930315",
+ "pid_sau": "936322",
+ "hash_doi": [],
+ "thu_ten": {
+  "Khanh Hoa": "Khánh Hòa",
+  "KH": "Khánh Hòa",
+  "TP HCM": "TP. HCM",
+  "Thành phố Hồ Chí Minh": "TP. HCM",
+  "Da Lat": "Đà Lạt",
+  "Dak Lak": "Đắk Lắk",
+  "Hưng Yên": "Thái Bình",
+  "Cần Thơ (Hậu Giang)": "Hậu Giang",
+  "Lâm Đồng": "Lâm Đồng",
+  "BD": "BD",
+  "QN": "QN"
+ },
+ "tep": [
+  "web/backend/station_identity.py",
+  "web/backend/_v11003_m4_doi_chung_luat.py",
+  "web/backend/_v11004_chong_quen.py",
+  "web/backend/_v11004_dien_tap_dao_luat.py",
+  "web/backend/_v11006_ten_dai.py"
+ ]
+}
