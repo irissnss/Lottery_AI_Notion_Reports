@@ -15,36 +15,30 @@ FU-207 cũ cấm **05:00–18:15**, tức chỉ còn ban đêm để làm việc
 *"ngày nào cũng Block thì anh không thời gian để code, fix điều khiển"*. Đúng — khung đó
 biến mọi việc sửa chữa thành việc phải làm lúc nửa đêm.
 
-KHUNG MỚI — theo ý owner, CHỈNH THEO SỐ ĐO
-==========================================
-Owner đề xuất: chặn từ mốc MN 15:45. Đo 60 ngày thì thấy đề xuất đó **thiếu một cửa sổ**:
+KHUNG MỚI — MỘT CỬA SỔ DUY NHẤT (V10998)
+========================================
+Owner ban đầu đề xuất chặn từ mốc MN 15:45. Đo 60 ngày thấy đề xuất đó thiếu một cửa sổ:
+MN bundle sinh **04:16–05:20**, tức số MN làm từ 4 giờ sáng; mốc 15:45 chỉ là lúc ĐÓNG
+BĂNG hiển thị.
 
-    MN  bundle sinh 04:16 – 05:20   ← số MN LÀM TỪ 4 GIỜ SÁNG
-    MT  bundle sinh 16:37 – 16:50
-    MB  bundle sinh 17:32 – 17:44
+Owner giải quyết gọn hơn cách agent đề xuất: **dời hẳn lịch sinh số MN sang 15:00**. Khi
+đó chỉ còn MỘT cửa sổ cấm, và thời gian làm việc liền một dải:
 
-Mốc 15:45 chỉ là lúc ĐÓNG BĂNG hiển thị, không phải lúc sinh số. Chặn từ 15:45 thì
-khoảng 04:00–05:30 — lúc MN thật sự đang gọi model và ghi bundle — vẫn hở.
+    CẤM       15:00 → 18:45    MN sinh số → chốt → MT → MB → kết quả về
 
-Nên hai cửa sổ cấm:
+    CHO PHÉP  18:45 → 15:00    MỘT dải liền, 20,25 giờ/ngày
 
-    CẤM 1   03:45 → 06:00    MN sinh số (04:16–05:20 + biên hai đầu)
-    CẤM 2   15:30 → 18:15    từ trước mốc MN 15:45, qua MT 16:58, tới sau MB 17:58
+So với khung cũ (05:00–18:15, chỉ chừa ~11 giờ ban đêm) thì gần gấp đôi thời gian làm việc,
+và quan trọng hơn: **liền một dải**, không phải chia hai mảnh vụn.
 
-    CHO PHÉP  06:00 → 15:30   (9,5 giờ ban ngày)
-              18:15 → 03:45   (9,75 giờ đêm)
+PHỤ THUỘC: khung này chỉ ĐÚNG khi lịch MN đã dời sang 15:00
+===========================================================
+Chừng nào MN còn sinh số lúc 04:16–05:20 thì khung 15:00–18:45 **để hở** đúng lúc MN
+đang gọi model. Hai việc phải đi cùng nhau, không được làm một nửa.
 
-Tổng thời gian làm việc: ~19 giờ/ngày, so với ~11 giờ của khung cũ.
-
-Mốc 15:30 không phải số mới: `_v10990_deploy.py` đã dùng đúng mốc này từ 05/08
-(`HAN_CHOT = (15, 30)`, chú thích *"khung cấm 15:30–18:15"*).
-
-RỦI RO CÒN LẠI — nói rõ, không giấu
-===================================
-Bảng `predictions` có hai cụm gọi model nữa: **09h–10h** (627 lượt/14 ngày) và
-**21h–22h** (507 lượt). Hai cụm này nằm TRONG khung cho phép. Restart lúc đó có thể
-làm mất vài dòng `predictions` của lane đo, **nhưng không mất bundle official** — MN đã
-xong từ sáng sớm, MT/MB chưa tới lượt. Đây là đánh đổi có ý thức để owner có giờ làm việc.
+Trạng thái: khung đã đổi; **lịch MN CHƯA dời** — còn chờ soi xong 17 job buổi sáng đang
+ngầm ăn theo việc MN chạy sớm (xem FU-282). Trong lúc chờ, `docs/NGAY_CODE_FIX.json`
+là cách duy nhất được deploy trong khung cấm.
 
 NGÀY CODE/FIX DO OWNER CHỈ ĐỊNH
 ===============================
@@ -66,9 +60,19 @@ _REPO = os.path.dirname(os.path.dirname(_HERE))
 TEP_NGAY = os.path.join(_REPO, "docs", "NGAY_CODE_FIX.json")
 
 # (bắt đầu, kết thúc, vì sao) — giờ VN
+# V10998 (owner ký 06/08 ~15:5x): dời lịch sinh số MN từ sáng sớm sang 15:00, nên khung
+# cấm 03:45–06:00 KHÔNG còn lý do tồn tại — gộp về MỘT cửa sổ duy nhất.
+#
+#   Owner: "vậy theo em 15h đi em" — sau khi agent chỉ ra 15:15 sẽ làm hỏng 5 job xếp ở
+#   15:36–15:43 (chuỗi MN chậm nhất 21,7 phút → số ra 15:36,7, tức SAU khi job 15:36 nổ).
+#   Bắt đầu 15:00 thì số ra 15:18–15:22, năm job kia giữ nguyên, dư 14 phút tới mốc chốt.
+#
+#   Owner: "bắt đầu block từ 15h15 đến hết 18h45 khoảng thời gian này phục vụ live để kết
+#   quả trung thực ổn định" — giữ nguyên ý, chỉ dời mốc đầu về 15:00 cho khớp giờ MN chạy.
 KHUNG_CAM = [
-    (time(3, 45), time(6, 0), "MN sinh số (đo 60 ngày: bundle ra 04:16–05:20)"),
-    (time(15, 30), time(18, 15), "MN chốt 15:45 → MT 16:58 → MB 17:58, để live chạy cho xong"),
+    (time(15, 0), time(18, 45),
+     "MN sinh số 15:00–15:22 → chốt 15:45 → MT 16:58 → MB 17:58 → kết quả về 18:15, "
+     "để live chạy cho xong"),
 ]
 
 
@@ -94,7 +98,7 @@ def duoc_deploy(luc: datetime | None = None) -> tuple[bool, str]:
     for tu, den, vi_sao in KHUNG_CAM:
         if tu <= t < den:
             return False, ("%s giờ VN nằm trong khung CẤM %s–%s — %s.\n"
-                           "  Khung cho phép: 06:00–15:30 và 18:15–03:45."
+                           "  Khung cho phép: 18:45 → 15:00 hôm sau."
                            % (luc.strftime("%H:%M"), tu.strftime("%H:%M"),
                               den.strftime("%H:%M"), vi_sao))
     return True, "%s giờ VN — ngoài mọi khung cấm" % luc.strftime("%H:%M")
@@ -104,7 +108,7 @@ def mo_ta() -> str:
     d = ["Khung CẤM deploy (giờ VN):"]
     for tu, den, vs in KHUNG_CAM:
         d.append("  %s–%s  %s" % (tu.strftime("%H:%M"), den.strftime("%H:%M"), vs))
-    d.append("Cho phép: 06:00–15:30 · 18:15–03:45")
+    d.append("Cho phép: 18:45 → 15:00 hôm sau (một dải liền, 20,25 giờ)")
     return "\n".join(d)
 
 

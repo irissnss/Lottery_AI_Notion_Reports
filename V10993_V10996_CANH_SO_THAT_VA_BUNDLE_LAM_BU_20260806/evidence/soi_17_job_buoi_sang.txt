@@ -1,0 +1,35 @@
+====================================================================================================
+  FU-282 · 17 job buổi sáng — cái nào ăn theo MN chạy sớm?
+====================================================================================================
+  giờ     job                                    bảng off  có MN   ngày nay  kết luận
+  ------------------------------------------------------------------------------------------------
+  04:50   _v10665_mn_ai_limit.py                 -         có      có        KHÔNG — không đọc bảng official
+  05:35   _v10737_output_final_lab_shadow.py     final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  05:40   _v10708_mnmt_rule_ranker.py            -         có      có        KHÔNG — không đọc bảng official
+  06:05   _v10879_nghiemthu_lane.py              final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  06:15   _v10879_nghiemthu_lane.py              final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  06:25   _v10725_champion_selector.py           final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  06:30   _v10646_retrain_guard.py               -         có      -         KHÔNG — không đọc bảng official
+  07:00   _v10648_weekly_guard.py                -         -       -         KHÔNG — không đọc bảng official
+  07:30   _v10784_verify_0607.py                 predic,model_ có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  08:10   _v10800_timetable_selfcheck.py         final_,model_ có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  09:00   _v10642_slice_health.py                final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  09:05   _v10642_model_progress.py              predic    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+  09:10   _v10644_shadow_scoreboard.py           -         -       có        KHÔNG — không đọc bảng official
+  09:15   _v10645_weakest_watch.py               -         -       có        KHÔNG — không đọc bảng official
+  09:30   _v10662_mb_ai_limit.py                 -         -       có        KHÔNG — không đọc bảng official
+  09:31   _v10664_mt_ai_limit.py                 -         có      có        KHÔNG — không đọc bảng official
+  09:35   _v10658_slice_recommendation.py        final_    có      có        ⚠ CÓ THỂ PHỤ THUỘC — phải đọc tay
+
+  → 9/17 job cần ĐỌC TAY. Số còn lại: dời MN không ảnh hưởng.
+
+  Danh sách phải đọc tay:
+     05:35  _v10737_output_final_lab_shadow.py
+     06:05  _v10879_nghiemthu_lane.py
+     06:15  _v10879_nghiemthu_lane.py
+     06:25  _v10725_champion_selector.py
+     07:30  _v10784_verify_0607.py
+     08:10  _v10800_timetable_selfcheck.py
+     09:00  _v10642_slice_health.py
+     09:05  _v10642_model_progress.py
+     09:35  _v10658_slice_recommendation.py
