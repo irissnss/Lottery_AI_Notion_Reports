@@ -1,0 +1,11 @@
+================================================================================
+DANH SACH EP TRONG PROMPT  vs  SO MODEL THUC SU CHON   (60 ngay)
+================================================================================
+Mien   ngay  so trong DS ep  so model chon   % pick NAM TRONG DS
+--------------------------------------------------------------------------------
+MN       60            10.6           10.1                 41.1%
+MT       60            10.8           10.8                 37.9%
+MB       60            11.3           10.1                 37.1%
+--------------------------------------------------------------------------------
+Neu % pick nam trong DS ~ cao: model KHONG tu chon so — no chi xep hang
+mot danh sach co hoc dung san. Bay dan la do PROMPT tao ra, khong phai do model.

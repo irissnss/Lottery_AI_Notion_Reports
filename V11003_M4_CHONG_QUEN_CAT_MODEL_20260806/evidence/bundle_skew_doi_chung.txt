@@ -1,0 +1,12 @@
+================================================================================
+BUNDLE_SKEW — nhan nay do duoc gi?  (180 ngay gan nhat)
+================================================================================
+
+Mien    Ngay  Model/ngay │  THAT: >=1 trung  BOC BUA: >=1 trung  chenh
+--------------------------------------------------------------------------------
+MN       179        21.6 │            98.3%               99.4%    -1.1 diem
+MT       179        21.6 │            96.6%              100.0%    -3.4 diem
+MB       175        21.5 │            88.0%               98.3%   -10.3 diem
+--------------------------------------------------------------------------------
+Ket luan: hai cot xap xi nhau => nhan BUNDLE_SKEW chi noi 'co nhieu model',
+KHONG noi 'bo tong hop chon sai'. Bo tong hop khong he vut mat tin hieu that.

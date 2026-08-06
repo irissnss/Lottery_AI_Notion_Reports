@@ -1,0 +1,38 @@
+==============================================================================
+CHONG QUEN LANG — hai kieu quen
+==============================================================================
+
+[KIEU 1] Muc treo khong ghi han => vo hinh vinh vien
+   tong muc treo 122 · co han 66 · KHONG GHI HAN 56 · qua han 15
+     ○ FU-208     Cổng lợi thế chỉ đặt tiền khi mở
+     ○ FU-209     Dừng thêm/cắt model tới khi cổng mở
+     ○ FU-206     Quy tắc mới khi xét cắt model
+     ○ FU-190     Kiểm sáu mặt quy tắc khi sửa
+     ○ FU-188b    Cổng A55 trước khi kết phiên
+     ○ FU-175     Prompt context dossier theo miền
+     ○ FU-174     Combo-super BT-first replay
+     ○ FU-173     Bundle conversion replay 30d evidence
+     … con 48 muc nua
+   => 56 muc nay khong bao gio bi bao qua han vi khong co han
+      de so voi hom nay. Phai gan han hoac dong lai — de nguyen la
+      de quen co he thong, dung y owner noi.
+
+[KIEU 2] Viec chu ky dai — dien tap hang ngay
+   khai bao 5 viec chu ky dai
+
+  ✓ DT-01 Dao luat hang tuan         CHAY_THAT    0.7s
+  ✓ DT-02 Nang luat du dieu kien     CHAY_THAT    0.2s
+  ✓ DT-03 Huan luyen lai ML          KHOI_DONG    0.2s
+  ✓ DT-04 Toi uu trong so            BIEN_DICH    0.2s
+  ✓ DT-05 Doi chung luat (M4)        KHOI_DONG    0.1s
+
+   dien tap dat 5/5 — trong do CHAY_THAT 2, con lai chi la kiem khoi dong
+   CHAY_THAT  = chay dung duong tinh toan that, bat duoc logic sai
+   KHOI_DONG  = chi nap duoc module / doc duoc trang thai
+   BIEN_DICH  = chi kiem cu phap, KHONG bat duoc logic sai
+   => 3 viec moi co dien tap yeu. Nang len CHAY_THAT thi
+      moi that su chong duoc quen — xem FU-288.
+   so dien tap : docs\DIEN_TAP_CHU_KY_DAI.json
+   nhat ky     : docs\DIEN_TAP_NHAT_KY.jsonl
+
+[cong] CHONG_QUEN=CO_VIEC_HO THIEU_HAN=56 DIEN_TAP=5/5

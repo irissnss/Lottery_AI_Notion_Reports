@@ -1,0 +1,34 @@
+==============================================================================
+M4 — NOI DOI CHUNG GIA VAO BO DAO LUAT
+==============================================================================
+
+[1/4] them cot phan loai …
+      giai_doan: da co
+
+[2/4] phan loai cham nguoc / do tien …
+      CHAM_NGUOC     1695 dong
+      DO_TIEN          15 dong
+      MO_COI         1493 dong
+
+[3/4] dung bang doi chung …
+      mined_rule_doi_chung
+      co 1710 dong that (da bo dong mo coi) can dung doi chung
+      dung duoc 2412 dong gia: gia_dai=702, gia_ngay=1710
+      bo: khong_co_dai_khac=1008
+
+[4/4] phan xu — so THEO CAP (cung luat, cung ngay), phep thu McNemar
+      giai doan   doi chung     cap  duoi/luot    THAT     GIA        z
+      --------------------------------------------------------------------
+      CHAM_NGUOC  gia_dai       692    2.0/2.0   73.7%   47.3%    +9.77
+      CHAM_NGUOC  gia_ngay     1695    3.8/3.8   85.0%   74.2%    +8.47
+      DO_TIEN     gia_dai        10    1.9/1.8   40.0%   70.0%    -1.34
+      DO_TIEN     gia_ngay       15    3.2/3.1   53.3%   66.7%    -0.82
+      --------------------------------------------------------------------
+      cot 'duoi/luot' la THAT/GIA — hai so phai xap xi thi phep so moi cong bang.
+
+      luat qua duoc cong do tien: 0/105
+      (cong: >=20 luot DO TIEN, vuot CA HAI doi chung z>=2.0)
+      => hien tai KHONG luat nao du bang chung do tien. Ca 105 luat dang
+         gan HIGH_CONF_CURRENT deu chi dua tren diem cham nguoc.
+
+[cong] M4_DOI_CHUNG=DAT DONG_GIA=2412 LUAT_DAT=0/105 Z_DAI=-1.34 Z_NGAY=-0.82
