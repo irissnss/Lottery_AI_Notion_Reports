@@ -1,0 +1,48 @@
+06/08 23:30  71f7b9e  V11009 / PL19b: audit READ-ONLY 15 cau — BA DINH CHINH bao cao cu + HAI phat hien moi
+06/08 22:12  bf910d6  V11008: verify 41 dai truoc/sau gop tinh, XOA HAN CP-7.9, dong bo trang thai toan trang
+06/08 21:44  38fe600  V11007: go NOT 10 cho sot cua V11001 + ky §60 "cam bo nua chung"
+06/08 21:25  66df148  V11006: ten dai sau khi gop tinh - va lo hong IM LANG (chu D khong tach dau)
+06/08 20:57  2977213  V11003-V11005: M4 xong, co che chong quen, bang quyet dinh cat model
+06/08 20:13  78ea122  V11002b: them FU-287 vao bang moc tai 07/08 — J5 DAT
+06/08 20:09  f719b45  V11002: lam ro M1, do bo dao luat 2.908 to hop, va bai toan TOC DO PHAN HOI
+06/08 19:52  381d9da  V11001: go HET gan/nong/lanh khoi prompt (owner ky) — THAY DOI DAU TIEN dung vao thu SINH RA SO
+06/08 18:53  74d7466  V11000: 38 model khong con nao hon chon bua, ke ca combo-super. Bang chi phi rong 0/4033. Bay dan: 25,8 model -> 9,8 so rieng biet. Mo FU-283.
+06/08 18:38  856919d  V10999: DINH CHINH — doc sai mui gio, rui ro neu o V10997 KHONG co that
+06/08 15:54  dc24289  V10998: khung chan ve MOT cua so 15:00-18:45 + soi 17 job truoc khi doi lich MN
+06/08 15:26  59e5909  V10997: khung gio deploy moi (owner ky) + V10996 DA DAY
+06/08 14:50  1be1328  V10996b: cua mien tru khung gio CO GHI LY DO (chua dung duoc — bi lop kiem duyet chan)
+06/08 14:43  f3d86bc  V10996: doi cho tinh thanh tich mien x thu sang view sach (FU-280) — DA SUA, CHUA DAY
+06/08 14:10  83eb43d  V10995: tach bundle lam bu bang VIEW TU SUY RA (huong b) — final_bundles khong bi ghi mot byte
+06/08 13:56  e279de9  V10994: A2/A3 samday + FU-277 do muc lan + cong canh bundle lam bu
+06/08 13:38  0700a4c  V10993: nguoi canh gio nay canh SO THAT — va no bat ngay hai loi trong bao cao cua chinh minh
+05/08 22:32  2dcf7bc  V10992: bo doi chung gia dung chung — khong phep do nao duoc ket luan neu thieu no
+05/08 21:44  d0b39a9  V10991b: xu 5 phep TROI do chinh minh gay ra khi ghi ba quyet dinh moi
+05/08 21:36  0b9bbba  V10991: mot cong bang chung dung chung cho /du-doan-test (owner ky ~20:5x, phuong an A)
+05/08 13:28  d7b0775  V10990b: ban doc so quyet dinh sinh lai sau khi chay cong kiem
+05/08 13:26  d47c558  V10990: bo khoi lane da nghi khoi /du-doan-test + nang cong khuyen cao len n>=40 (hai lua chon owner ~12:05 ngay 05/08)
+05/08 12:00  51de72c  V10989b: script dung thu muc bao cao cong khai rieng cho V10989b - cong quet toan bo bat ngay khi CHANGELOG co muc V10989b ma chua co thu muc V10989B_*, dung cai da lam cong TRUOT 13,5 gio hom 04/08.
+05/08 11:55  ac28015  V10989b: khoi khuyen cao con hua hen tren 2/8 luot - MB duoc khuyen choi LANE tren dung 2 luot trung (p=0,217) vi nhanh isLane in chuoi ghi cung 'vuot ro + ben' bat ke co mau; chan khoi con mo ta cong n>=40 trong khi cong that cua duong theo THU la REC_WD_MIN_N=8. Them method_last_run_date cho lane DUOC khuyen cao (truoc chi lane theo doi moi bi soi do tre). Trang nay cham duoi nhi thuc tai cho: p>0,10 thi ha 'nen choi LANE' xuong 'CHUA du bang chung de khuyen cao', vien xanh sang ho phach, in k/n. So tho van hien du theo muc 54. Nghiem thu bang cach BOC dung ham renderPlayRecommendation khoi tep dang phuc vu roi do payload THAT vao doc chu - 3/3 mien dat. PID 839095 sang 842736, hash 4 bang khoa giu nguyen, 22 phep C22 OK, monitoring.html khong tut. FU-272 QD0808 han 08/08 cho owner quyet nang REC_WD_MIN_N 8 len 20.
+05/08 10:43  b526884  V10989: trang /du-doan-test noi sai 4 cho; lane nguon chet 4 ngay
+05/08 09:32  eff78a3  V10988b: them script commit public repo vao repo rieng
+05/08 09:30  6618394  V10988: kiem tong luc dau ngay 05/08 + DEPLOY phep C22 toan ven giao dien
+05/08 00:59  2678225  V10987 bo sung: cap nhat moc kiem tuoi cua ban doc so quyet dinh (chay lai _v10920_decision_ledger.py sau khi prepend CHANGELOG va SSOT - van 0 TROI, 27 quyet dinh khop kiem_code)
+05/08 00:57  b0cc859  V10987: mo rong phep K8 soi TOAN SO + cuu 3 muc mo coi den han 05-07/08 - K8 cu chi soi 14 ma nhom lich nen FU-262 (den han 05/08, nhan tu che FIXED_PENDING_LIVE_VERIFY) roi khoi moi bo dem va briefing khong hien no, cong van xanh. K8 nay 3 phan: nhom 14 sach, 0 mo coi den han trong 2 ngay toi, tong toan so trong tran bac thang MO_COI_TRAN=15 va luon in ten. THU NGUOC 3/3 ca DAT qua co --so tren ban sao so. FU-256 duoc tra lai han 06/08 bi khoi V10979 lam mat nen phai cong vao TAI_PHIEN_KHAC_DO_DUOC neu khong J5 truot. Mo coi 18 xuong 15, treo 99 len 102, den han hom nay 4 len 5. KHONG deploy.
+05/08 00:28  b477f4e  V10986: tong hop toan ngay 04/08 + xac minh push THAT (17/17 thu muc bao cao co that tren origin/main sau khi fetch thanh cong; ca hai kho 0 ahead / 0 behind) - KHONG co bao cao nao bao xanh ma chua push, FU-266 chua gay mat mat nao
+04/08 23:39  eb53295  V10985 bo sung: mo FU-266 (DD1208, han 12/08) - Google Drive de 5 tep desktop.ini vao .git/refs cua kho bao cao cong khai lam git fetch chet (fatal: bad object refs/desktop.ini). Git doc MOI tep trong refs/ nhu mot con tro commit nen gap tep ini la gay.
+04/08 23:30  5c2f2d1  V10985: dong ca 3 muc den han 04/08 DUNG HAN - FU-187 CLOSED_PASS (so diem danh 2/2/2 ba pha, 0 luot treo stdin, briefing 13,1 gio, 6/6 muc co so), FU-191 CLOSED_PASS (luat cat model an toan thanh muc 59 / A57 o 5/5 mat quy tac, KHONG cat model nao), FU-212 CLOSED_REPORT (5/5 khoa gt1..gt5, 5/5 ket luan trong so, chenh RF->cong bo 7,59pp)
+04/08 22:38  460eee6  V10984c: sinh lai ban doc so quyet dinh sau vong kiem cuoi khi noi lai phien (0 TROI, QD-024 khop 5/5)
+04/08 22:12  162412e  V10984b: dua _sync_live_forensic_inputs.py vao git + sua loi dua ghi khi dong bo DB song
+04/08 22:11  a2a7e61  V10984: ghep /nghiem-thu voi official ΓÇö do bong cho thay khong cach nao hon official (QD-024, FU-264)
+04/08 18:48  5f5a9bc  V10983b: sinh lai ban doc cho nguoi cua so quyet dinh sau lan kiem tuoi cuoi (0 TROI, QD-023 khop 4/4)
+04/08 18:45  08ec33e  V10983: chung chi chi khai xs.io.vn trong khi DNS tro ca www -> Kaspersky chan dien thoai; certbot --expand phu ca hai ten (han 23/09 -> 02/11), cong 80 chuyen huong sang https; PID lottery 770947 khong doi, hash 4 bang khoa giong het, QD-014 nguyen ven
+04/08 12:53  fab6e48  V10982b: cap nhat ban doc so quyet dinh do may sinh (QD-022 khop 9/9, 0 TROI, moc kiem tuoi cuoi phien)
+04/08 12:52  feb7169  V10982b: owner duyet chuyen FU-224 tu 09/08 xuong 06/08 (QD-022 bo sung) - 09/08 9 -> 8 muc, siet phep J5 doi chieu moc tai voi so that
+04/08 12:36  7f4cb2a  V10982b: cap nhat ban doc so quyet dinh do may sinh (QD-022 khop 7/7, 0 TROI, moc kiem tuoi cuoi phien)
+04/08 12:35  c5fe204  V10982: gian not 9 muc con don ngay chot 10/08 ra 05-09/08 (QD-022) - ngay chot 11 -> 3 muc, mo coi 19 -> 18, cong J1-J8 8/8
+04/08 11:00  56b5bc0  V10981d: cap nhat ban doc so quyet dinh do may sinh (QD-021 khop 5/5, 0 TROI)
+04/08 10:58  45dc75c  V10981b: dinh chinh - nhan SCHEDULED tu che lam 11/14 muc thanh MO COI
+04/08 10:51  66fc594  V10981: gian 14 muc don ngay 08/08 thanh lich cuon chieu 04/08 -> 10/08 (QD-021)
+04/08 10:28  665b548  V10979b: kiem cuoi - chay dung dong lenh cron, soi payload API, xac nhan rao chan sau moc FINAL
+04/08 10:27  8a3df81  V10979: xong som thi bao "DA XONG - BLOCK", khong doi het gio han (owner nhac lan thu TU)
+04/08 10:23  f80a66c  V10980b: dinh chinh - V10979 deploy song song luc 10:15-10:17 giua phien
+04/08 10:17  f202a7f  V10980: kiem toan dien dau ngay 04/08 + va cong dem viec bao xanh gia

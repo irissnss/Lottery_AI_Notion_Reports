@@ -1,0 +1,75 @@
+================================================================================================
+B4-a — HAI TỆP PL19b BÁO 'KHÔNG ĐỌC ĐƯỢC': tồn tại không?
+================================================================================================
+  web/backend/ml_train.py            ❌ KHÔNG TỒN TẠI
+  web/backend/meta_train.py          ❌ KHÔNG TỒN TẠI
+
+  ⇒ 'không đọc được' = KHÔNG CÓ TỆP, không phải thiếu quyền.
+     PL19b dùng danh sách tệp ĐOÁN, không phải danh sách tệp THẬT.
+
+================================================================================================
+B4-b — ĐƯỜNG TRAIN THẬT: tệp nào chứa hàm huấn luyện?
+================================================================================================
+  main.py                                   939,591 byte   rules=115  ← CÓ RULES
+  database.py                               206,545 byte   rules= 42  ← CÓ RULES
+  scheduler.py                              453,871 byte   rules= 35  ← CÓ RULES
+  _v10646_retrain_guard.py                    7,100 byte   rules=  0
+  _v10793_k14_sandbox.py                      8,732 byte   rules=  0
+  lstm_model.py                              16,572 byte   rules=  0
+  meta_data_collector.py                     23,638 byte   rules=  0
+  meta_learner.py                            17,297 byte   rules=  0
+  ml_models.py                               16,457 byte   rules=  0
+  optuna_tune.py                             10,633 byte   rules=  0
+  run_backfill_training.py                   12,872 byte   rules=  0
+  training_lock.py                            2,604 byte   rules=  0
+
+================================================================================================
+B4-c — QUÉT TOÀN web/backend: tệp nào chạm mined_rules, phân theo VAI TRÒ
+================================================================================================
+
+  ── PRODUCTION — sinh số ──
+    gpt_analyzer.py                    39 lần   ← CÓ
+    ml_predict.py                       0 lần   ← KHÔNG
+    meta_predict.py                     0 lần   ← KHÔNG
+    lstm_predict.py                     0 lần   ← KHÔNG
+    scheduler.py                       35 lần   ← CÓ
+    main.py                           115 lần   ← CÓ
+    meta_data_collector.py              0 lần   ← KHÔNG
+    rule_engine.py                     32 lần   ← CÓ
+    combo_super.py                     14 lần   ← CÓ
+    cross_region.py                     7 lần   ← CÓ
+
+  ── PRODUCTION — huấn luyện ──
+    _retrain_all.py                     0 lần   ← KHÔNG
+    run_full_training.py                0 lần   ← KHÔNG
+    run_backfill_training.py            0 lần   ← KHÔNG
+    _v10646_retrain_guard.py            0 lần   ← KHÔNG
+    weekly_rule_miner.py               27 lần   ← CÓ
+    _seed_rules.py                      5 lần   ← CÓ
+    mined_rule_eval.py                 26 lần   ← CÓ
+
+================================================================================================
+B4-d — CÓ TỆP PRODUCTION NÀO KHÁC chạm rules mà PL19b bỏ sót?
+================================================================================================
+    database.py                                42 lần
+    filter_2_so_cuoi.py                        29 lần
+    mb_rule_ranker.py                          13 lần
+    _v87_master_board.py                        7 lần
+    pattern_tracker.py                          6 lần
+    sandbox_replay_lab.py                       6 lần
+    _backtest_rules.py                          5 lần
+    _check_rules_vps.py                         3 lần
+    knowledge_weights.py                        3 lần
+    _eod_audit.py                               2 lần
+    station_identity.py                         2 lần
+    _analyze_recent.py                          1 lần
+    split_policy.py                             1 lần
+    trace_extractor.py                          1 lần
+
+    tổng 14 tệp production khác có chạm rules
+
+================================================================================================
+B4-e — PHÁN XỬ: đường TRAIN có đọc mined_rules không?
+================================================================================================
+  ⚠ CÓ 3 tệp train chạm rules: database.py, main.py, scheduler.py
+  ⇒ PHẢI đính chính Q15 theo §60.

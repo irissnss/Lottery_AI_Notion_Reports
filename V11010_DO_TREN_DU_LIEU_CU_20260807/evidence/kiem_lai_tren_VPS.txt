@@ -1,0 +1,31 @@
+### 1. V11000/V11005 — CO MODEL NAO HON NEN KHONG? (quyet dinh FU-290 han 08/08)
+  so model >=60 luot: 34 · HON NEN sau Bonferroni (|z|>=3,01): 0
+  top 3: gemini-2.5-pro z=+1.61, smart-ensemble z=+1.01, gemini-3.5-flash z=+0.97
+  bet 2: kimi-k2.5 z=-1.88, qwen3-coder z=-2.08
+
+### 2. V11000 — BAY DAN
+  MN: 21.7 model/ngay -> 9.2 so khac nhau (he so 2.36x)
+  MT: 21.6 model/ngay -> 9.4 so khac nhau (he so 2.29x)
+  MB: 21.3 model/ngay -> 9.3 so khac nhau (he so 2.30x)
+
+### 3. V11006 — TEN DAI: co ten la moi khong?
+  so dai dang song: 41
+  dai XUAT HIEN LAN DAU tu 05/08: khong co
+
+### 4. V11003 — DO TIEN that su bao nhieu?
+  DO_TIEN: 45 dong · 3 ngay · 45 luat  (local bao: 15 dong / 1 ngay / 15 luat)
+
+### 5. V10993/V10994 — bundle lam bu + shadow
+  bundle LAM BU (date(created_at)>date): 90  (local bao: 90)
+  shadow output_eligible=0: 8890  (local bao: 512)
+
+### 6. V11000 — bang chi phi con rong khong?
+  model_latency_cost_audit_daily: 4033 dong · cost khong rong 0 · latency khong rong 0  (local bao 0/4033)
+
+### 7. moc du lieu hien tai tren VPS
+  lottery_results               15226 dong · moi nhat 2026-08-06
+  predictions                   11875 dong · moi nhat 2026-08-06
+  final_bundles                   480 dong · moi nhat 2026-08-06
+  model_daily_eval              11739 dong · moi nhat 2026-08-06
+  mined_rule_effectiveness       3233 dong · moi nhat 2026-08-06
+
