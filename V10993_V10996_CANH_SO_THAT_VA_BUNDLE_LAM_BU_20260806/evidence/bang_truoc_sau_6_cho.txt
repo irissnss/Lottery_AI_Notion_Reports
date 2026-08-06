@@ -1,0 +1,46 @@
+================================================================================================
+  FU-280 · BẢNG TRƯỚC/SAU — 6 chỗ tính thành tích từ final_bundles
+  ngày mới nhất trong bảng: 2026-08-05
+================================================================================================
+
+[1] main.py:1662  _materialize_wave1_control_surfaces_daily
+    miền × THỨ · TOÀN LỊCH SỬ · không có bộ lọc ngày
+    miền thứ  TRƯỚC            SAU              chênh
+    MB   CN    5/23 =  21.7%    2/18 =  11.1%   +10.6  ←
+    MB   T6    5/22 =  22.7%    3/18 =  16.7%    +6.1  ←
+    MB   T2    5/23 =  21.7%    3/19 =  15.8%    +5.9  ←
+    MB   T3    6/23 =  26.1%    4/19 =  21.1%    +5.0  ←
+    MN   T3   11/23 =  47.8%   10/19 =  52.6%    -4.8
+    MT   CN   10/23 =  43.5%    7/18 =  38.9%    +4.6
+    MT   T7   10/23 =  43.5%    7/18 =  38.9%    +4.6
+    MT   T2    8/23 =  34.8%    6/19 =  31.6%    +3.2
+    MT   T3    8/23 =  34.8%    6/19 =  31.6%    +3.2
+    MN   T7    7/23 =  30.4%    6/18 =  33.3%    -2.9
+    MT   T6    3/22 =  13.6%    2/18 =  11.1%    +2.5
+    MB   T4    3/22 =  13.6%    2/18 =  11.1%    +2.5
+    MT   T4    8/22 =  36.4%    7/18 =  38.9%    -2.5
+    MT   T5   14/22 =  63.6%   11/18 =  61.1%    +2.5
+    MN   T5    9/22 =  40.9%    7/18 =  38.9%    +2.0
+    MB   T7    6/23 =  26.1%    5/18 =  27.8%    -1.7
+    MN   T2   10/23 =  43.5%    8/19 =  42.1%    +1.4
+    MN   T4    7/23 =  30.4%    6/19 =  31.6%    -1.1
+    MN   T6   10/22 =  45.5%    8/18 =  44.4%    +1.0
+    MB   T5    5/22 =  22.7%    4/18 =  22.2%    +0.5
+    MN   CN   14/23 =  60.9%   11/18 =  61.1%    -0.2
+    → 21/21 ô đổi · 4 ô lệch ≥5 điểm
+
+[3] main.py:12625  _build_region_weekday_strength(days=90)
+    miền × THỨ · cửa sổ 90 ngày trailing
+    → 3/3 miền KHÔNG đổi (cửa sổ 90 ngày bắt đầu 2026-05-07, sau vùng nhiễm 29/03)
+
+[4] main.py:19485  get_experiments
+    TRƯỚC 21/119 · SAU 21/119 → KHÔNG ĐỔI
+
+[5] main.py:20233  get_model_bt_by_region(days=30)
+    → 3/3 miền KHÔNG đổi (30 ngày gần nhất, xa vùng nhiễm)
+
+[6] main.py:20317  get_region_streaks
+    → 3/3 miền KHÔNG đổi (7 ngày gần nhất)
+
+[2] main.py:12496  _wr — đọc `champion_selector_shadow`, KHÔNG đọc final_bundles
+    → không liên quan

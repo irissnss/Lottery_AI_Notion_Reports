@@ -1,0 +1,30 @@
+============================================================================================
+  A2/A3 — SAMDAY (B) so voi D-1 (A)   ·   nguon: v10801_ml_mark_ab_daily
+============================================================================================
+  512 dong · 64 ngay (2026-06-03 → 2026-08-05) · 4 model · src_region: ['MN', 'MT']
+  co dong nao duoc dung cho OUTPUT chinh thuc khong: output_eligible=[0] · shadow_only=[1]
+
+--------------------------------------------------------------------------------------------
+  BACH THU (top-1)
+--------------------------------------------------------------------------------------------
+  mien   n      A(D-1)   B(samday) A>B     B>A     z        KTC 95% cua chenh
+  MN     (khong co du lieu)
+  MT     256    32.0%    37.9%    25      40      +1.86    [-0.3%; +12.0%]  khong khac nhau
+  MB     256    19.9%    20.3%    24      25      +0.14    [-5.0%; +5.7%]  khong khac nhau
+  GOP    512    26.0%    29.1%    49      65      +1.50    [-1.0%; +7.2%]  khong khac nhau
+
+--------------------------------------------------------------------------------------------
+  TOP-2
+--------------------------------------------------------------------------------------------
+  mien   n      A(D-1)   B(samday) A>B     B>A     z        KTC 95% cua chenh
+  MN     (khong co du lieu)
+  MT     256    57.0%    57.8%    30      32      +0.25    [-5.2%; +6.8%]  khong khac nhau
+  MB     256    39.5%    40.2%    31      33      +0.25    [-5.3%; +6.9%]  khong khac nhau
+  GOP    512    48.2%    49.0%    61      65      +0.36    [-3.5%; +5.1%]  khong khac nhau
+
+============================================================================================
+  DU MAU CHUA? — so cap BAT DONG moi la co mau that cua phep McNemar
+   top1  MT    cap bat dong = 65    DU de ket luan
+   top1  MB    cap bat dong = 49    DU de ket luan
+   top2  MT    cap bat dong = 62    DU de ket luan
+   top2  MB    cap bat dong = 64    DU de ket luan

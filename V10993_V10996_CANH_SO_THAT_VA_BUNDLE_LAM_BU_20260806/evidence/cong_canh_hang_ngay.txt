@@ -1,0 +1,30 @@
+     ! HINDSIGHT   experimental_preview_shadow MT 2026-08-03 ghi lúc 2026-08-03T17:30:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MN 2026-08-03 ghi lúc 2026-08-03T23:45:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MT 2026-08-03 ghi lúc 2026-08-03T23:45:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MN 2026-08-03 ghi lúc 2026-08-03T23:48:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MT 2026-08-03 ghi lúc 2026-08-03T23:48:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MB 2026-08-03 ghi lúc 2026-08-03T23:48:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MT 2026-08-04 ghi lúc 2026-08-04T17:30:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MB 2026-08-04 ghi lúc 2026-08-04T18:30:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MN 2026-08-04 ghi lúc 2026-08-04T23:45:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MB 2026-08-04 ghi lúc 2026-08-04T23:45:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MN 2026-08-04 ghi lúc 2026-08-04T23:48:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MT 2026-08-04 ghi lúc 2026-08-04T23:48:00+07:00
+     ! HINDSIGHT   experimental_preview_shadow MB 2026-08-04 ghi lúc 2026-08-04T23:48:00+07:00
+
+── SỐ CÓ BỊ SỬA SAU KHI XỔ KHÔNG ── 0 chỗ lệch
+
+── BUNDLE LÀM BÙ nằm lẫn trong final_bundles ── 90 bản
+     MB: 30 bản (2026-02-28 → 2026-03-29) · trúng 12/30 = 40.0%
+     MN: 30 bản (2026-02-28 → 2026-03-29) · trúng 12/30 = 40.0%
+     MT: 30 bản (2026-02-28 → 2026-03-29) · trúng 15/30 = 50.0%
+     → Phép đo thành tích PHẢI đọc `v_final_bundles_that` thay cho `final_bundles` (V10995), nếu không là cộng bài-làm-sau-khi-có-đáp-án vào thành tích.
+
+  final_bundles 475 dòng = thật 385 + làm bù 90
+  tính lại từ quy tắc gốc: thật 385 · làm bù 90 — KHỚP
+  ✓ 6/6 phép đạt — không mất dòng, không đếm hai lần, tính lại vẫn khớp
+[cong] LOC_LAM_BU=DAT
+
+[no_lookahead] 1570 bản ghi. SỔ THẬT: {'EX_ANTE': 1082, 'LATE_FREEZE': 27} | sổ nháp: {'EX_ANTE': 368, 'HINDSIGHT': 93} | số bị sửa: 0
+[cong] SO_THAT_HINDSIGHT=0 SO_BI_SUA=0 LATE_FREEZE=27 BUNDLE_LAM_BU=90
+  ⚠ Sổ thật không có bản nào sau giờ xổ, nhưng 27 bản ghi SAU HẠN CHỐT owner.
