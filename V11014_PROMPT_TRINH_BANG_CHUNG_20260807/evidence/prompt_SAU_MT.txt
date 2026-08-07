@@ -1,0 +1,66 @@
+====================================================================================================
+MỔ PROMPT THẬT — MT ngày 2026-08-07 (gọi thẳng hàm production)
+====================================================================================================
+
+  Gói ngữ cảnh: **8,895 ký tự**
+
+   # khối                                           ký tự  số 2cs  mệnh lệnh  đánh giá
+  ------------------------------------------------------------------------------------------------
+   1 (đầu gói)                                         98       0          0  
+   2 🏆 Model Performance 14 ngày:                     469      21          2  nhiều số
+   3 🎯 BT MODEL RANKING (30d):                        354      24          0  nhiều số
+   4 📅 Riêng Thứ Sáu (30d):                           197       3          1  
+   5 📜 MINED RULES MT/Thứ Sáu (⚠️ FALLBACK — khôn     585      15          0  
+   6 📊 EVIDENCE TABLE — MT/Thứ Sáu (V9.5 — 6W)      2,371      56          8  ★ NHỒI SỐ + RA LỆNH
+   7 📋 NGUYÊN TẮC:                                    135       1          0  
+   8 🔀 Đa dạng model:                                  47       0          0  
+   9 📅 WEEK-SLOT: WS8 (ISO Week 32)                   177       4          0  
+  10 🎯 DIRECT-HIT PRIORITY (DH-1.0)                   367       7          1  
+  11 🔍 WEEKDAY SCAN — Thứ Sáu × 8 TUẦN (SP-4.0)       138       0          0  
+  12 OWNER ANTI-TRAP CHECK (same-day prior-region   1,440      19          3  ★ NHỒI SỐ + RA LỆNH
+  13 Block 1 — Phase Verdict                          291       4          0  
+  14 Block 2 — Source-Prize Direction                 222       0          0  
+  15 Block 3 — Candidate Convergence                   60       3          3  ra lệnh
+  16 Block 4 — Override Discipline                     94       0          0  
+  17 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn    1,177      48          0  nhiều số
+  ------------------------------------------------------------------------------------------------
+     TỔNG                                           8,895     205         18
+
+====================================================================================================
+TRÙNG LẶP — khối nào trình LẠI cùng một bộ luật / cùng một tập số?
+====================================================================================================
+  🏆 Model Performance 14 ngày:             ↔ 📊 EVIDENCE TABLE — MT/Thứ Sáu (V9.5 — 6W trùng  80% (4/5 số)
+  🏆 Model Performance 14 ngày:             ↔ OWNER ANTI-TRAP CHECK (same-day prior-re trùng  60% (3/5 số)
+  📜 MINED RULES MT/Thứ Sáu (⚠️ FALLBACK —  ↔ 📊 EVIDENCE TABLE — MT/Thứ Sáu (V9.5 — 6W trùng  60% (6/10 số)
+
+====================================================================================================
+BỐN KHỐI NẶNG NHẤT — trích nguyên văn 5 dòng đầu để owner nhìn tận mắt
+====================================================================================================
+
+  ── 📊 EVIDENCE TABLE — MT/Thứ Sáu (V9.5 — 6W) (2,371 ký tự · 56 số · 8 mệnh lệnh) ★ NHỒI SỐ + RA LỆNH
+       Windows: 1W(7d):30/35=86% | 2W(14d):64/70=91% | 3W(21d):98/105=93% | 4W(28d):129/140=92% | 5W(35d):163
+       Source×Prize ranking (6W/42d, n≥3):
+         🔥[TOP] MB(D-1/CN) · Thái Bình G6: 6/6=100.0%
+         🔥[TOP] MB(D-1/CN) · Thái Bình G6+G7: 6/6=100.0%
+         🔥[TOP] MB(D-1/CN) · Thái Bình GĐB+G6: 6/6=100.0%
+
+  ── OWNER ANTI-TRAP CHECK (same-day prior-region spend test + doctrine support count) (1,440 ký tự · 19 số · 3 mệnh lệnh) ★ NHỒI SỐ + RA LỆNH
+     - target_region: MT
+     - prior_same_day_regions: MN
+     - owner_doctrine_sources: MN(D-1), MT(D-1), MB(D-1), MN(D)
+     - MN(D) tails already spent: none
+     - D-1 cross-region tail pool: 01, 03, 04, 05, 06, 08, 11, 13, 14, 16, 17, 18 ...
+
+  ── 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn tự cân, không có mệnh lệnh) (1,177 ký tự · 48 số · 0 mệnh lệnh) nhiều số
+     Các luật của bucket MT/Thứ Sáu hôm nay trỏ tới 11 đuôi: 13 29 35 60 67 69 83 84 88 89 95
+       • Hà Nội GĐB+G7 (D-1): 35 67 69 89 95
+       • Hà Nội G6+G7 (D-1): 13 35 69 84 88 89 95
+       • Hà Nội G7 (D-1): 35 69 89 95
+       • Hà Nội G1+G7 (D-1): 35 60 69 89 95
+
+  ── 📜 MINED RULES MT/Thứ Sáu (⚠️ FALLBACK — không có READY_STRONG): (585 ký tự · 15 số · 0 mệnh lệnh) 
+       ⚠️ Bucket hôm nay CHƯA CÓ rules đủ mạnh. Đang dùng READY_WITH_CAUTION của đúng bucket này.
+       ⚠️ Cần thận trọng — tín hiệu yếu hơn bình thường.
+       ⚠️ MB(D-1/T5) · Hà Nội: rank=118.60 | legacy=57.00 | 12W=100.0%(L1) | 16W=93.8%(L2) | 4W=100.0%(L3) | 
+       ⚠️ MN(D-1/T5) · Bình Thuận: rank=108.30 | legacy=64.00 | 12W=83.3%(L1) | 16W=81.2%(L2) | 4W=100.0%(L3)
+     (Ghi chú: các mốc HR 4W/12W/16W ở trên đều đo TRONG cửa sổ đã đào ra chính các luật đó, nên là điểm tự c

@@ -1,0 +1,64 @@
+====================================================================================================
+MỔ PROMPT THẬT — MN ngày 2026-08-07 (gọi thẳng hàm production)
+====================================================================================================
+
+  Gói ngữ cảnh: **8,362 ký tự**
+
+   # khối                                           ký tự  số 2cs  mệnh lệnh  đánh giá
+  ------------------------------------------------------------------------------------------------
+   1 (đầu gói)                                         98       0          0  
+   2 🏆 Model Performance 14 ngày:                     477      24          2  nhiều số
+   3 🎯 BT MODEL RANKING (30d):                        353      24          0  nhiều số
+   4 📅 Riêng Thứ Sáu (30d):                           197       5          1  
+   5 📜 MINED RULES: không có rules đủ mạnh cho MN     191       2          0  
+   6 📊 EVIDENCE TABLE — MN/Thứ Sáu (V9.5 — 6W)      2,377      54          7  ★ NHỒI SỐ + RA LỆNH
+   7 📋 NGUYÊN TẮC:                                    135       1          0  
+   8 🔀 Đa dạng model:                                  92       0          0  
+   9 📅 WEEK-SLOT: WS8 (ISO Week 32)                   110       4          0  
+  10 🎯 DIRECT-HIT PRIORITY (DH-1.0)                   368       8          1  
+  11 🔍 WEEKDAY SCAN — Thứ Sáu × 8 TUẦN (SP-4.0)       138       0          0  
+  12 OWNER ANTI-TRAP CHECK (same-day prior-region   1,369      17          1  
+  13 Block 1 — Phase Verdict                          287       4          0  
+  14 Block 2 — Source-Prize Direction                 218       0          0  
+  15 Block 3 — Candidate Convergence                   24       1          1  
+  16 Block 4 — Override Discipline                     94       0          0  
+  17 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn    1,172      47          0  nhiều số
+  ------------------------------------------------------------------------------------------------
+     TỔNG                                           8,362     191         13
+
+====================================================================================================
+TRÙNG LẶP — khối nào trình LẠI cùng một bộ luật / cùng một tập số?
+====================================================================================================
+  🏆 Model Performance 14 ngày:             ↔ 📊 EVIDENCE TABLE — MN/Thứ Sáu (V9.5 — 6W trùng  80% (4/5 số)
+
+====================================================================================================
+BỐN KHỐI NẶNG NHẤT — trích nguyên văn 5 dòng đầu để owner nhìn tận mắt
+====================================================================================================
+
+  ── 📊 EVIDENCE TABLE — MN/Thứ Sáu (V9.5 — 6W) (2,377 ký tự · 54 số · 7 mệnh lệnh) ★ NHỒI SỐ + RA LỆNH
+       Windows: 1W(7d):33/35=94% | 2W(14d):66/70=94% | 3W(21d):101/105=96% | 4W(28d):135/140=96% | 5W(35d):16
+       Source×Prize ranking (6W/42d, n≥3):
+         🔥[TOP] MB(D-1/CN) · Thái Bình G1+G7: 6/6=100.0%
+         🔥[TOP] MB(D-1/CN) · Thái Bình GĐB+G6: 6/6=100.0%
+         🔥[TOP] MB(D-1/T2) · Hà Nội G1+G7: 6/6=100.0%
+
+  ── OWNER ANTI-TRAP CHECK (same-day prior-region spend test + doctrine support count) (1,369 ký tự · 17 số · 1 mệnh lệnh) 
+     - target_region: MN
+     - prior_same_day_regions: none (target=MN)
+     - owner_doctrine_sources: MN(D-1), MT(D-1), MB(D-1)
+     - same-day prior-region trap check: not applicable for MN; use D-1 support only
+     - D-1 cross-region tail pool: 01, 03, 04, 05, 06, 08, 11, 13, 14, 16, 17, 18 ...
+
+  ── 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn tự cân, không có mệnh lệnh) (1,172 ký tự · 47 số · 0 mệnh lệnh) nhiều số
+     Các luật của bucket MN/Thứ Sáu hôm nay trỏ tới 9 đuôi: 13 35 60 67 69 84 88 89 95
+       • Hà Nội G7 (D-1): 35 69 89 95
+       • Hà Nội G1+G7 (D-1): 35 60 69 89 95
+       • Hà Nội GĐB+G7 (D-1): 35 67 69 89 95
+       • Hà Nội G6+G7 (D-1): 13 35 69 84 88 89 95
+
+  ── 🏆 Model Performance 14 ngày: (477 ký tự · 24 số · 2 mệnh lệnh) nhiều số
+       ⛔ deepseek-v4-pro-real [Ens]: 28.6% (4/14)
+       ⛔ combo-no-token [Ens]: 28.6% (4/14)
+       ⛔ xgboost [ML]: 21.4% (3/14)
+       ⛔ smart-ml [Ens]: 21.4% (3/14)
+       ⛔ smart-ensemble [Ens]: 21.4% (3/14)

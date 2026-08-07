@@ -1,0 +1,68 @@
+====================================================================================================
+MỔ PROMPT THẬT — MB ngày 2026-08-07 (gọi thẳng hàm production)
+====================================================================================================
+
+  Gói ngữ cảnh: **10,387 ký tự**
+
+   # khối                                           ký tự  số 2cs  mệnh lệnh  đánh giá
+  ------------------------------------------------------------------------------------------------
+   1 (đầu gói)                                         98       0          0  
+   2 🏆 Model Performance 14 ngày:                     481      16          0  
+   3 🎯 BT MODEL RANKING (30d):                        356      17          0  
+   4 📅 Riêng Thứ Sáu (30d):                           174       3          1  
+   5 📜 MINED RULES MB/Thứ Sáu (READY_STRONG | 3-L     503      18          0  
+   6 📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W)      1,549      60          7  ★ NHỒI SỐ + RA LỆNH
+   7 📋 NGUYÊN TẮC:                                    135       1          0  
+   8 🔀 Đa dạng model:                                  47       0          0  
+   9 📉 MB Ceiling:                                    171       2          0  
+  10 📅 WEEK-SLOT: WS8 (ISO Week 32)                   176       3          0  
+  11 🎯 DIRECT-HIT PRIORITY (DH-1.0)                   368       6          1  
+  12 🔴 MB HARD MODE                                 2,139      51          1  nhiều số
+  13 🔍 WEEKDAY SCAN — Thứ Sáu × 8 TUẦN (SP-4.0)       138       0          0  
+  14 OWNER ANTI-TRAP CHECK (same-day prior-region   1,558      20          4  ★ NHỒI SỐ + RA LỆNH
+  15 Block 1 — Phase Verdict                          291       4          0  
+  16 Block 2 — Source-Prize Direction                 220       3          0  
+  17 Block 3 — Candidate Convergence                   85       4          4  ra lệnh
+  18 Block 4 — Override Discipline                     94       0          0  
+  19 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn    1,099      39          0  nhiều số
+  ------------------------------------------------------------------------------------------------
+     TỔNG                                          10,387     247         18
+
+====================================================================================================
+TRÙNG LẶP — khối nào trình LẠI cùng một bộ luật / cùng một tập số?
+====================================================================================================
+  🎯 BT MODEL RANKING (30d):                ↔ 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu —  trùng  62% (5/8 số)
+  📜 MINED RULES MB/Thứ Sáu (READY_STRONG | ↔ 📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W trùng  73% (8/11 số)
+  📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W ↔ 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu —  trùng  62% (13/21 số)
+
+====================================================================================================
+BỐN KHỐI NẶNG NHẤT — trích nguyên văn 5 dòng đầu để owner nhìn tận mắt
+====================================================================================================
+
+  ── 🔴 MB HARD MODE (2,139 ký tự · 51 số · 1 mệnh lệnh) nhiều số
+       AI token models 14d: 8.2% WR (8/98)
+       ML/ensemble models 14d: 3.8% WR (10/266)
+       🏆 Best MB model: gpt-5-mini (14.3%)
+       📊 MB Thứ Sáu gần đây: 07-31:4% | 07-24:0% | 07-17:4% | 07-10:4%
+       📊 MB MODEL RANKING — Thứ Sáu (all-time, n≥3):
+
+  ── OWNER ANTI-TRAP CHECK (same-day prior-region spend test + doctrine support count) (1,558 ký tự · 20 số · 4 mệnh lệnh) ★ NHỒI SỐ + RA LỆNH
+     - target_region: MB
+     - prior_same_day_regions: MN, MT
+     - owner_doctrine_sources: MN(D-1), MT(D-1), MB(D-1), MN(D), MT(D)
+     - MN(D) tails already spent: none
+     - MT(D) tails already spent: none
+
+  ── 📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W) (1,549 ký tự · 60 số · 7 mệnh lệnh) ★ NHỒI SỐ + RA LỆNH
+       Windows: 1W(7d):19/35=54% | 2W(14d):46/70=66% | 3W(21d):77/105=73% | 4W(28d):104/140=74% | 5W(35d):132
+       Source×Prize ranking (6W/42d, n≥3):
+         🔥[TOP] MB(D-1/T3) · Quảng Ninh G6+G7: 6/6=100.0%
+         🔥[TOP] MB(D-1/T5) · Hà Nội G6+G7: 6/6=100.0%
+         🔥[TOP] MB(D-1/T2) · Hà Nội GĐB+G7: 5/6=83.3%
+
+  ── 📐 BẰNG CHỨNG TỪ LUẬT SOI CẦU (dữ liệu — bạn tự cân, không có mệnh lệnh) (1,099 ký tự · 39 số · 0 mệnh lệnh) nhiều số
+     Các luật của bucket MB/Thứ Sáu hôm nay trỏ tới 10 đuôi: 13 31 32 35 60 69 84 88 89 95
+       • Hà Nội G6+G7 (D-1): 13 35 69 84 88 89 95
+       • Hà Nội G1+G7 (D-1): 35 60 69 89 95
+       • Hà Nội G1+G2 (D-1): 31 32 60
+     MỨC BẰNG CHỨNG CỦA CHÍNH CÁC LUẬT NÀY (đo 07/08/2026, nói thật):
