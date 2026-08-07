@@ -1,0 +1,14 @@
+============================================================================================
+  CANH MODEL RA THIẾU SỐ — ngày 2026-08-07   [✗ DO]
+============================================================================================
+  miền    model  đủ 2 số   1 số   rỗng   mức
+  MN         16       16      0      0   ✓ XANH
+  MT         16       11      4      1   ✗ DO
+  MB         16       12      4      0   ✗ DO
+
+  ✗ MT: 1 model ra RỖNG — deepseek-reasoner
+  ✗ MT: 4 model chỉ ra 1 số — claude-opus-4-6, claude-sonnet-4-6, glm-5.1, gpt-5.4
+  ✗ MB: 4 model chỉ ra 1 số — claude-opus-4-6, claude-sonnet-4-6, deepseek-reasoner, gpt-5.4
+
+  Ngưỡng: ≥1 model RỖNG hoặc ≥3 model ra 1 số ⇒ ĐỎ.
+  Ca 07/08: deepseek-reasoner ra rỗng ở MT mà KHÔNG cổng nào báo — sinh ra cổng này.
