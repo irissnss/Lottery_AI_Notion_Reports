@@ -1,0 +1,793 @@
+====================================================================================================
+R3 — VERIFY NGU NGHIA NGUON (SOURCE SEMANTICS) TREN DU LIEU THAT — 20 LUAT
+====================================================================================================
+Chay luc      : 2026-08-07 20:52:45 (gio may local)
+DB            : E:\Lottery_AI_Test\data\lottery_ai.db  (mo mode=ro)
+lottery_results: 15232 dong, 2020-01-01 -> 2026-08-07
+mined_rules   : 105 luat active / 105 tong
+Script        : artifacts/v11024_audit/scripts/R3_source_semantics_20luat.py
+
+####################################################################################################
+# PHAN 1 — TAI LIEU NGUON (buoc 1 cua viec)
+####################################################################################################
+  CO   : V10670_SOURCE_SEMANTICS_LEGEND.md  ->  E:\Lottery_AI_Notion_Reports\V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE\V10670_SOURCE_SEMANTICS_LEGEND.md  (7145 bytes)
+  CO   : V10667_RULES_MB_TARGET.md  ->  E:\Lottery_AI_Notion_Reports\V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE\V10667_RULES_MB_TARGET.md  (94349 bytes)
+  CO   : V10667_RULES_MN_TARGET.md  ->  E:\Lottery_AI_Notion_Reports\V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE\V10667_RULES_MN_TARGET.md  (86547 bytes)
+  CO   : V10667_RULES_MT_TARGET.md  ->  E:\Lottery_AI_Notion_Reports\V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE\V10667_RULES_MT_TARGET.md  (91668 bytes)
+  CO   : V10667_BO_NUMBERING_LEGEND.md  ->  E:\Lottery_AI_Notion_Reports\V10667_RULES_PER_REGION_DETAILED_PUBLIC_SAFE\V10667_BO_NUMBERING_LEGEND.md  (9736 bytes)
+
+  Trich yeu V10670 (quy uoc tai lieu tuyen bo):
+    (a) Ky hieu rule tai lieu: [Mien nguon]:[Giai]#[Bo]:[Lag] -> (Mien dich, Thu)
+    (b) '#Bo' = VI TRI bo so trong 1 giai (MB G4 co 4 bo: 1=top-left ... 4=bottom-right)
+    (c) 'Rule GOM (union) gia tri cua TAT CA dai mien nguon xo ngay do'
+    (d) 'Baseline da tinh theo so gia tri gom (avg_src_size)'
+    (e) MB doi dai theo thu: T2 Ha Noi/T3 Quang Ninh/T4 Bac Ninh/T5 Ha Noi/T6 Hai Phong/T7 Nam Dinh/CN Thai Binh
+
+####################################################################################################
+# PHAN 2 — CACH *CODE* RESOLVE (doc tu ma nguon that, khong doan ten)
+####################################################################################################
+  web/backend/mined_rule_eval.py
+    dong  68: def _get_source_date(target_date_str, source_offset) -> str
+              if source_offset == 'D-1': return target - 1 ngay
+              return target_date_str            # MOI GIA TRI KHAC -> TRA VE CHINH NGAY DICH
+    dong  76: def _extract_tails_from_prizes(prizes, prize_keys_str) -> List[str]
+              tach prize_keys_str theo '+', tra ve LAST2 cua *TAT CA* phan tu trong
+              mang cua giai do. KHONG co tham so vi tri bo (#Bo).
+    dong 225: SELECT prizes_json FROM lottery_results WHERE date=? AND region=? AND station=?
+              -> lay DUNG MOT dai (mined_rules.source_station), KHONG union.
+    dong  20: def _slot_label(source_region, source_station, source_offset, target_weekday)
+              source_weekday = (target_weekday + shift) % 7   # shift do 'D-N' -> int
+  web/backend/rule_engine.py
+    dong 417-428: parser offset RIENG, ho tro 'D-N' bat ky (int(offset_str.replace('D','')))
+    dong 433-443: station IN (station_lookup_candidates(...))  # CO alias
+    dong 171: _get_prize_tails() — cung lay TAT CA phan tu, khong co #Bo
+  web/backend/gpt_analyzer.py
+    dong 4375: from mined_rule_eval import _extract_tails_from_prizes, _get_source_date
+    dong 4406: WHERE date=? AND region=? AND station=?   # duong LIVE PROMPT, KHONG alias
+  web/backend/_seed_rules.py (khai mo luat)
+    dong  99: def eval_rule(...): sd = target + off ngay; chi lay dai `st` (if s == st)
+    dong 251: def build_rule(...): ans=avg #duoi nguon; bl = 1-(1-ps)**ans; lift = hr/bl
+    dong  94: src_cfgs(): CHI sinh offset 0 va -1
+
+  PRIZE_KEY_MAP (mined_rule_eval) = {'GĐB': 'Giải ĐB', 'G1': 'Giải nhất', 'G2': 'Giải nhì', 'G3': 'Giải ba', 'G4': 'Giải tư', 'G5': 'Giải năm', 'G6': 'Giải sáu', 'G7': 'Giải bảy', 'G8': 'Giải tám'}
+  PRIZE_KEY_ALIASES['GĐB']        = ('Giải ĐB', 'Giải Đặc Biệt', 'Giải Đặc biệt', 'GĐB')
+  Ten khoa giai THAT dem duoc trong lottery_results:
+      'Giải Đặc Biệt'        n=15232
+      'Giải nhất'            n=15232
+      'Giải nhì'             n=15232
+      'Giải ba'              n=15232
+      'Giải tư'              n=15232
+      'Giải năm'             n=15232
+      'Giải sáu'             n=15232
+      'Giải bảy'             n=15232
+      'Giải tám'             n=12871
+
+####################################################################################################
+# PHAN 3 — 20 LUAT: RESOLVE THU CONG  vs  RESOLVE CUA CODE
+####################################################################################################
+  Cach lam moi luat:
+    B1 THU CONG: tu source_offset (D / D-1) + ngay dich -> ngay nguon -> thu ->
+                 tra lottery_results xem NGAY DO mien nguon co nhung dai nao thuc su xo,
+                 va dai source_station co mat khong.
+    B2 CODE    : goi thang mined_rule_eval._get_source_date + _extract_tails_from_prizes
+    B3 DOI CHIEU tren 52 ngay dich gan nhat khop thu (1 nam).
+  Do phu cua 20 luat: 20/21 o (mien x thu) · offset ['D', 'D-1'] · mien nguon ['MB', 'MN', 'MT'] · 16 to hop giai
+
+----------------------------------------------------------------------------------------------------
+[01/20] rule_id=2384  PASS
+  LUAT      : dich MB/T2  <-  nguon MB:GĐB+G2:D-1 @ dai 'Thái Bình'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (0-1) mod 7 = 6 = CN
+              Dai MB thuc su xo ngay CN (dem tren 52 ngay nguon vua resolve):
+                 'Thái Bình'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=6 vs thu cong=6  -> khop
+              source_station_slot DB = 'MB(D-1/CN) · Thái Bình'
+              _slot_label() tinh lai = 'MB(D-1/CN) · Thái Bình'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-03 (T2) <- nguon 2026-08-02 (CN) dai 'Thái Bình'
+              gia tri THO tai giai GĐB+G2: {'Giải Đặc Biệt': '11909', 'Giải nhì': ['86638', '28428']}
+              -> duoi code  : ['09', '28', '38']
+              -> duoi thu cong: ['09', '28', '38']
+              duoi mien dich MB ngay 2026-08-03: 23 duoi
+  #DUOI     : trung binh 2.98 duoi/lan (DB avg_src_tails=3.0)
+----------------------------------------------------------------------------------------------------
+[02/20] rule_id=2387  PASS
+  LUAT      : dich MB/T3  <-  nguon MT:G1+G2:D @ dai 'Quảng Nam'   tier=READY_STRONG  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (1+0) mod 7 = 1 = T3
+              Dai MT thuc su xo ngay T3 (dem tren 52 ngay nguon vua resolve):
+                 'Đắk Lắk'                n= 52
+                 'Quảng Nam'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=1 vs thu cong=1  -> khop
+              source_station_slot DB = 'MT(D/T3) · Quảng Nam'
+              _slot_label() tinh lai = 'MT(D/T3) · Quảng Nam'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-04 (T3) <- nguon 2026-08-04 (T3) dai 'Quảng Nam'
+              gia tri THO tai giai G1+G2: {'Giải nhất': '08071', 'Giải nhì': '12179'}
+              -> duoi code  : ['71', '79']
+              -> duoi thu cong: ['71', '79']
+              duoi mien dich MB ngay 2026-08-04: 23 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[03/20] rule_id=2397  PASS
+  LUAT      : dich MB/T5  <-  nguon MT:G7+G8:D @ dai 'Bình Định'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (3+0) mod 7 = 3 = T5
+              Dai MT thuc su xo ngay T5 (dem tren 52 ngay nguon vua resolve):
+                 'Bình Định'              n= 52  <== source_station cua luat
+                 'Quảng Bình'             n= 52
+                 'Quảng Trị'              n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=3 vs thu cong=3  -> khop
+              source_station_slot DB = 'MT(D/T5) · Bình Định'
+              _slot_label() tinh lai = 'MT(D/T5) · Bình Định'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-06 (T5) <- nguon 2026-08-06 (T5) dai 'Bình Định'
+              gia tri THO tai giai G7+G8: {'Giải bảy': '124', 'Giải tám': '65'}
+              -> duoi code  : ['24', '65']
+              -> duoi thu cong: ['24', '65']
+              duoi mien dich MB ngay 2026-08-06: 21 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[04/20] rule_id=2404  PASS
+  LUAT      : dich MB/T6  <-  nguon MN:G1+G8:D @ dai 'Bình Dương'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (4+0) mod 7 = 4 = T6
+              Dai MN thuc su xo ngay T6 (dem tren 52 ngay nguon vua resolve):
+                 'Bình Dương'             n= 52  <== source_station cua luat
+                 'Vĩnh Long'              n= 52
+                 'Trà Vinh'               n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=4 vs thu cong=4  -> khop
+              source_station_slot DB = 'MN(D/T6) · Bình Dương'
+              _slot_label() tinh lai = 'MN(D/T6) · Bình Dương'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-07 (T6) <- nguon 2026-08-07 (T6) dai 'Bình Dương'
+              gia tri THO tai giai G1+G8: {'Giải nhất': '31434', 'Giải tám': '39'}
+              -> duoi code  : ['34', '39']
+              -> duoi thu cong: ['34', '39']
+              duoi mien dich MB ngay 2026-08-07: 23 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[05/20] rule_id=2410  PASS
+  LUAT      : dich MB/T7  <-  nguon MT:G2+G5:D @ dai 'Đà Nẵng'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (5+0) mod 7 = 5 = T7
+              Dai MT thuc su xo ngay T7 (dem tren 52 ngay nguon vua resolve):
+                 'Quảng Ngãi'             n= 52
+                 'Đà Nẵng'                n= 52  <== source_station cua luat
+                 'Đắk Nông'               n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=5 vs thu cong=5  -> khop
+              source_station_slot DB = 'MT(D/T7) · Đà Nẵng'
+              _slot_label() tinh lai = 'MT(D/T7) · Đà Nẵng'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-01 (T7) <- nguon 2026-08-01 (T7) dai 'Đà Nẵng'
+              gia tri THO tai giai G2+G5: {'Giải nhì': '53147', 'Giải năm': '2257'}
+              -> duoi code  : ['47', '57']
+              -> duoi thu cong: ['47', '57']
+              duoi mien dich MB ngay 2026-08-01: 25 duoi
+  #DUOI     : trung binh 1.98 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[06/20] rule_id=2414  PASS
+  LUAT      : dich MB/CN  <-  nguon MN:GĐB+G7:D @ dai 'Kiên Giang'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (6+0) mod 7 = 6 = CN
+              Dai MN thuc su xo ngay CN (dem tren 52 ngay nguon vua resolve):
+                 'Đà Lạt'                 n= 52
+                 'Tiền Giang'             n= 52
+                 'Kiên Giang'             n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=6 vs thu cong=6  -> khop
+              source_station_slot DB = 'MN(D/CN) · Kiên Giang'
+              _slot_label() tinh lai = 'MN(D/CN) · Kiên Giang'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-02 (CN) <- nguon 2026-08-02 (CN) dai 'Kiên Giang'
+              gia tri THO tai giai GĐB+G7: {'Giải Đặc Biệt': '853883', 'Giải bảy': '713'}
+              -> duoi code  : ['13', '83']
+              -> duoi thu cong: ['13', '83']
+              duoi mien dich MB ngay 2026-08-02: 26 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[07/20] rule_id=2311  PASS
+  LUAT      : dich MN/T2  <-  nguon MB:GĐB+G6:D-1 @ dai 'Thái Bình'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (0-1) mod 7 = 6 = CN
+              Dai MB thuc su xo ngay CN (dem tren 52 ngay nguon vua resolve):
+                 'Thái Bình'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=6 vs thu cong=6  -> khop
+              source_station_slot DB = 'MB(D-1/CN) · Thái Bình'
+              _slot_label() tinh lai = 'MB(D-1/CN) · Thái Bình'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-03 (T2) <- nguon 2026-08-02 (CN) dai 'Thái Bình'
+              gia tri THO tai giai GĐB+G6: {'Giải Đặc Biệt': '11909', 'Giải sáu': ['012', '764', '261']}
+              -> duoi code  : ['09', '12', '61', '64']
+              -> duoi thu cong: ['09', '12', '61', '64']
+              duoi mien dich MN ngay 2026-08-03: 39 duoi
+  #DUOI     : trung binh 3.90 duoi/lan (DB avg_src_tails=3.9)
+----------------------------------------------------------------------------------------------------
+[08/20] rule_id=2319  PASS
+  LUAT      : dich MN/T3  <-  nguon MN:GĐB+G1:D-1 @ dai 'Cà Mau'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (1-1) mod 7 = 0 = T2
+              Dai MN thuc su xo ngay T2 (dem tren 52 ngay nguon vua resolve):
+                 'Cà Mau'                 n= 52  <== source_station cua luat
+                 'TP. HCM'                n= 52
+                 'Đồng Tháp'              n= 52
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=0 vs thu cong=0  -> khop
+              source_station_slot DB = 'MN(D-1/T2) · Cà Mau'
+              _slot_label() tinh lai = 'MN(D-1/T2) · Cà Mau'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-04 (T3) <- nguon 2026-08-03 (T2) dai 'Cà Mau'
+              gia tri THO tai giai GĐB+G1: {'Giải Đặc Biệt': '427004', 'Giải nhất': '41903'}
+              -> duoi code  : ['03', '04']
+              -> duoi thu cong: ['03', '04']
+              duoi mien dich MN ngay 2026-08-04: 44 duoi
+  #DUOI     : trung binh 1.98 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[09/20] rule_id=2321  PASS
+  LUAT      : dich MN/T4  <-  nguon MB:G6+G7:D-1 @ dai 'Quảng Ninh'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (2-1) mod 7 = 1 = T3
+              Dai MB thuc su xo ngay T3 (dem tren 52 ngay nguon vua resolve):
+                 'Quảng Ninh'             n= 51  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=1 vs thu cong=1  -> khop
+              source_station_slot DB = 'MB(D-1/T3) · Quảng Ninh'
+              _slot_label() tinh lai = 'MB(D-1/T3) · Quảng Ninh'  -> khop
+  DU LIEU   : co ket qua dai nguon 51/52 ngay (98.1%)
+  DUOI SO   : doi chieu 51 ngay — trich thu cong == trich code: 51/51
+  VI DU     : dich 2026-08-05 (T4) <- nguon 2026-08-04 (T3) dai 'Quảng Ninh'
+              gia tri THO tai giai G6+G7: {'Giải sáu': ['095', '943', '601'], 'Giải bảy': ['78', '84', '44', '82']}
+              -> duoi code  : ['01', '43', '44', '78', '82', '84', '95']
+              -> duoi thu cong: ['01', '43', '44', '78', '82', '84', '95']
+              duoi mien dich MN ngay 2026-08-05: 38 duoi
+  #DUOI     : trung binh 6.88 duoi/lan (DB avg_src_tails=6.9)
+----------------------------------------------------------------------------------------------------
+[10/20] rule_id=2330  PASS
+  LUAT      : dich MN/T5  <-  nguon MT:G1+G7:D-1 @ dai 'Khánh Hòa'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (3-1) mod 7 = 2 = T4
+              Dai MT thuc su xo ngay T4 (dem tren 52 ngay nguon vua resolve):
+                 'Đà Nẵng'                n= 52
+                 'Khánh Hòa'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=2 vs thu cong=2  -> khop
+              source_station_slot DB = 'MT(D-1/T4) · Khánh Hòa'
+              _slot_label() tinh lai = 'MT(D-1/T4) · Khánh Hòa'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-06 (T5) <- nguon 2026-08-05 (T4) dai 'Khánh Hòa'
+              gia tri THO tai giai G1+G7: {'Giải nhất': '27674', 'Giải bảy': '266'}
+              -> duoi code  : ['66', '74']
+              -> duoi thu cong: ['66', '74']
+              duoi mien dich MN ngay 2026-08-06: 40 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[11/20] rule_id=2331  PASS
+  LUAT      : dich MN/T6  <-  nguon MB:G7:D-1 @ dai 'Hà Nội'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (4-1) mod 7 = 3 = T5
+              Dai MB thuc su xo ngay T5 (dem tren 52 ngay nguon vua resolve):
+                 'Hà Nội'                 n= 51  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=3 vs thu cong=3  -> khop
+              source_station_slot DB = 'MB(D-1/T5) · Hà Nội'
+              _slot_label() tinh lai = 'MB(D-1/T5) · Hà Nội'  -> khop
+  DU LIEU   : co ket qua dai nguon 51/52 ngay (98.1%)
+  DUOI SO   : doi chieu 51 ngay — trich thu cong == trich code: 51/51
+  VI DU     : dich 2026-08-07 (T6) <- nguon 2026-08-06 (T5) dai 'Hà Nội'
+              gia tri THO tai giai G7: {'Giải bảy': ['35', '69', '95', '89']}
+              -> duoi code  : ['35', '69', '89', '95']
+              -> duoi thu cong: ['35', '69', '89', '95']
+              duoi mien dich MN ngay 2026-08-07: 43 duoi
+  #DUOI     : trung binh 4.00 duoi/lan (DB avg_src_tails=4.0)
+----------------------------------------------------------------------------------------------------
+[12/20] rule_id=2339  PASS
+  LUAT      : dich MN/T7  <-  nguon MT:G5+G7:D-1 @ dai 'Gia Lai'   tier=READY_STRONG  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (5-1) mod 7 = 4 = T6
+              Dai MT thuc su xo ngay T6 (dem tren 52 ngay nguon vua resolve):
+                 'Ninh Thuận'             n= 52
+                 'Gia Lai'                n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=4 vs thu cong=4  -> khop
+              source_station_slot DB = 'MT(D-1/T6) · Gia Lai'
+              _slot_label() tinh lai = 'MT(D-1/T6) · Gia Lai'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-01 (T7) <- nguon 2026-07-31 (T6) dai 'Gia Lai'
+              gia tri THO tai giai G5+G7: {'Giải năm': '3116', 'Giải bảy': '613'}
+              -> duoi code  : ['13', '16']
+              -> duoi thu cong: ['13', '16']
+              duoi mien dich MN ngay 2026-08-01: 50 duoi
+  #DUOI     : trung binh 1.96 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[13/20] rule_id=2341  PASS
+  LUAT      : dich MN/CN  <-  nguon MB:GĐB+G7:D-1 @ dai 'Nam Định'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (6-1) mod 7 = 5 = T7
+              Dai MB thuc su xo ngay T7 (dem tren 52 ngay nguon vua resolve):
+                 'Nam Định'               n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=5 vs thu cong=5  -> khop
+              source_station_slot DB = 'MB(D-1/T7) · Nam Định'
+              _slot_label() tinh lai = 'MB(D-1/T7) · Nam Định'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-02 (CN) <- nguon 2026-08-01 (T7) dai 'Nam Định'
+              gia tri THO tai giai GĐB+G7: {'Giải Đặc Biệt': '44823', 'Giải bảy': ['56', '80', '52', '90']}
+              -> duoi code  : ['23', '52', '56', '80', '90']
+              -> duoi thu cong: ['23', '52', '56', '80', '90']
+              duoi mien dich MN ngay 2026-08-02: 46 duoi
+  #DUOI     : trung binh 4.96 duoi/lan (DB avg_src_tails=5.0)
+----------------------------------------------------------------------------------------------------
+[14/20] rule_id=2350  PASS
+  LUAT      : dich MT/T2  <-  nguon MB:G6:D-1 @ dai 'Thái Bình'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (0-1) mod 7 = 6 = CN
+              Dai MB thuc su xo ngay CN (dem tren 52 ngay nguon vua resolve):
+                 'Thái Bình'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=6 vs thu cong=6  -> khop
+              source_station_slot DB = 'MB(D-1/CN) · Thái Bình'
+              _slot_label() tinh lai = 'MB(D-1/CN) · Thái Bình'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-03 (T2) <- nguon 2026-08-02 (CN) dai 'Thái Bình'
+              gia tri THO tai giai G6: {'Giải sáu': ['012', '764', '261']}
+              -> duoi code  : ['12', '61', '64']
+              -> duoi thu cong: ['12', '61', '64']
+              duoi mien dich MT ngay 2026-08-03: 30 duoi
+  #DUOI     : trung binh 2.98 duoi/lan (DB avg_src_tails=3.0)
+----------------------------------------------------------------------------------------------------
+[15/20] rule_id=2353  PASS
+  LUAT      : dich MT/T3  <-  nguon MN:GĐB+G7:D @ dai 'Vũng Tàu'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (1+0) mod 7 = 1 = T3
+              Dai MN thuc su xo ngay T3 (dem tren 52 ngay nguon vua resolve):
+                 'Bến Tre'                n= 52
+                 'Vũng Tàu'               n= 52  <== source_station cua luat
+                 'Bạc Liêu'               n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=1 vs thu cong=1  -> khop
+              source_station_slot DB = 'MN(D/T3) · Vũng Tàu'
+              _slot_label() tinh lai = 'MN(D/T3) · Vũng Tàu'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-04 (T3) <- nguon 2026-08-04 (T3) dai 'Vũng Tàu'
+              gia tri THO tai giai GĐB+G7: {'Giải Đặc Biệt': '384788', 'Giải bảy': '398'}
+              -> duoi code  : ['88', '98']
+              -> duoi thu cong: ['88', '98']
+              duoi mien dich MT ngay 2026-08-04: 30 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[16/20] rule_id=2359  PASS
+  LUAT      : dich MT/T4  <-  nguon MN:G5+GĐB:D-1 @ dai 'Bạc Liêu'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (2-1) mod 7 = 1 = T3
+              Dai MN thuc su xo ngay T3 (dem tren 52 ngay nguon vua resolve):
+                 'Bến Tre'                n= 52
+                 'Vũng Tàu'               n= 52
+                 'Bạc Liêu'               n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=1 vs thu cong=1  -> khop
+              source_station_slot DB = 'MN(D-1/T3) · Bạc Liêu'
+              _slot_label() tinh lai = 'MN(D-1/T3) · Bạc Liêu'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-05 (T4) <- nguon 2026-08-04 (T3) dai 'Bạc Liêu'
+              gia tri THO tai giai G5+GĐB: {'Giải năm': '3167', 'Giải Đặc Biệt': '268193'}
+              -> duoi code  : ['67', '93']
+              -> duoi thu cong: ['67', '93']
+              duoi mien dich MT ngay 2026-08-05: 32 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[17/20] rule_id=2365  PASS
+  LUAT      : dich MT/T5  <-  nguon MN:GĐB+G8:D @ dai 'An Giang'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (3+0) mod 7 = 3 = T5
+              Dai MN thuc su xo ngay T5 (dem tren 52 ngay nguon vua resolve):
+                 'Bình Thuận'             n= 52
+                 'An Giang'               n= 52  <== source_station cua luat
+                 'Tây Ninh'               n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=3 vs thu cong=3  -> khop
+              source_station_slot DB = 'MN(D/T5) · An Giang'
+              _slot_label() tinh lai = 'MN(D/T5) · An Giang'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-06 (T5) <- nguon 2026-08-06 (T5) dai 'An Giang'
+              gia tri THO tai giai GĐB+G8: {'Giải Đặc Biệt': '245836', 'Giải tám': '54'}
+              -> duoi code  : ['36', '54']
+              -> duoi thu cong: ['36', '54']
+              duoi mien dich MT ngay 2026-08-06: 41 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[18/20] rule_id=2370  PASS
+  LUAT      : dich MT/T6  <-  nguon MN:GĐB+G7:D-1 @ dai 'Bình Thuận'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (4-1) mod 7 = 3 = T5
+              Dai MN thuc su xo ngay T5 (dem tren 52 ngay nguon vua resolve):
+                 'Bình Thuận'             n= 52  <== source_station cua luat
+                 'An Giang'               n= 52
+                 'Tây Ninh'               n= 52
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=3 vs thu cong=3  -> khop
+              source_station_slot DB = 'MN(D-1/T5) · Bình Thuận'
+              _slot_label() tinh lai = 'MN(D-1/T5) · Bình Thuận'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-07 (T6) <- nguon 2026-08-06 (T5) dai 'Bình Thuận'
+              gia tri THO tai giai GĐB+G7: {'Giải Đặc Biệt': '457729', 'Giải bảy': '883'}
+              -> duoi code  : ['29', '83']
+              -> duoi thu cong: ['29', '83']
+              duoi mien dich MT ngay 2026-08-07: 30 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+[19/20] rule_id=2371  PASS
+  LUAT      : dich MT/T7  <-  nguon MB:GĐB+G6:D-1 @ dai 'Hải Phòng'   tier=READY_WITH_CAUTION  mined_at=2026-08-03
+  THU CONG  : shift=-1 ngay -> thu nguon = (5-1) mod 7 = 4 = T6
+              Dai MB thuc su xo ngay T6 (dem tren 52 ngay nguon vua resolve):
+                 'Hải Phòng'              n= 52  <== source_station cua luat
+  CODE      : _get_source_date(target, 'D-1') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=4 vs thu cong=4  -> khop
+              source_station_slot DB = 'MB(D-1/T6) · Hải Phòng'
+              _slot_label() tinh lai = 'MB(D-1/T6) · Hải Phòng'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-01 (T7) <- nguon 2026-07-31 (T6) dai 'Hải Phòng'
+              gia tri THO tai giai GĐB+G6: {'Giải Đặc Biệt': '41710', 'Giải sáu': ['515', '155', '117']}
+              -> duoi code  : ['10', '15', '17', '55']
+              -> duoi thu cong: ['10', '15', '17', '55']
+              duoi mien dich MT ngay 2026-08-01: 42 duoi
+  #DUOI     : trung binh 3.90 duoi/lan (DB avg_src_tails=3.9)
+----------------------------------------------------------------------------------------------------
+[20/20] rule_id=2380  PASS
+  LUAT      : dich MT/CN  <-  nguon MN:G2+G7:D @ dai 'Tiền Giang'   tier=LIMITED_WEIGHT  mined_at=2026-08-03
+  THU CONG  : shift=+0 ngay -> thu nguon = (6+0) mod 7 = 6 = CN
+              Dai MN thuc su xo ngay CN (dem tren 52 ngay nguon vua resolve):
+                 'Đà Lạt'                 n= 52
+                 'Tiền Giang'             n= 52  <== source_station cua luat
+                 'Kiên Giang'             n= 52
+  CODE      : _get_source_date(target, 'D') khop thu cong 52/52 ngay
+              mined_rules.source_weekday=6 vs thu cong=6  -> khop
+              source_station_slot DB = 'MN(D/CN) · Tiền Giang'
+              _slot_label() tinh lai = 'MN(D/CN) · Tiền Giang'  -> khop
+  DU LIEU   : co ket qua dai nguon 52/52 ngay (100.0%)
+  DUOI SO   : doi chieu 52 ngay — trich thu cong == trich code: 52/52
+  VI DU     : dich 2026-08-02 (CN) <- nguon 2026-08-02 (CN) dai 'Tiền Giang'
+              gia tri THO tai giai G2+G7: {'Giải nhì': '12949', 'Giải bảy': '110'}
+              -> duoi code  : ['10', '49']
+              -> duoi thu cong: ['10', '49']
+              duoi mien dich MT ngay 2026-08-02: 43 duoi
+  #DUOI     : trung binh 2.00 duoi/lan (DB avg_src_tails=2.0)
+----------------------------------------------------------------------------------------------------
+  TONG: PASS 20/20 · FAIL 0/20
+
+  BANG GON:
+   rule dich     nguon                      giai       ngay  co-nguon  duoi-khop    kq
+   2384 MB/T2    MB:D-1 Thái Bình           GĐB+G2       52     52/52      52/52  PASS
+   2387 MB/T3    MT:D Quảng Nam             G1+G2        52     52/52      52/52  PASS
+   2397 MB/T5    MT:D Bình Định             G7+G8        52     52/52      52/52  PASS
+   2404 MB/T6    MN:D Bình Dương            G1+G8        52     52/52      52/52  PASS
+   2410 MB/T7    MT:D Đà Nẵng               G2+G5        52     52/52      52/52  PASS
+   2414 MB/CN    MN:D Kiên Giang            GĐB+G7       52     52/52      52/52  PASS
+   2311 MN/T2    MB:D-1 Thái Bình           GĐB+G6       52     52/52      52/52  PASS
+   2319 MN/T3    MN:D-1 Cà Mau              GĐB+G1       52     52/52      52/52  PASS
+   2321 MN/T4    MB:D-1 Quảng Ninh          G6+G7        52     51/52      51/51  PASS
+   2330 MN/T5    MT:D-1 Khánh Hòa           G1+G7        52     52/52      52/52  PASS
+   2331 MN/T6    MB:D-1 Hà Nội              G7           52     51/52      51/51  PASS
+   2339 MN/T7    MT:D-1 Gia Lai             G5+G7        52     52/52      52/52  PASS
+   2341 MN/CN    MB:D-1 Nam Định            GĐB+G7       52     52/52      52/52  PASS
+   2350 MT/T2    MB:D-1 Thái Bình           G6           52     52/52      52/52  PASS
+   2353 MT/T3    MN:D Vũng Tàu              GĐB+G7       52     52/52      52/52  PASS
+   2359 MT/T4    MN:D-1 Bạc Liêu            G5+GĐB       52     52/52      52/52  PASS
+   2365 MT/T5    MN:D An Giang              GĐB+G8       52     52/52      52/52  PASS
+   2370 MT/T6    MN:D-1 Bình Thuận          GĐB+G7       52     52/52      52/52  PASS
+   2371 MT/T7    MB:D-1 Hải Phòng           GĐB+G6       52     52/52      52/52  PASS
+   2380 MT/CN    MN:D Tiền Giang            G2+G7        52     52/52      52/52  PASS
+
+####################################################################################################
+# PHAN 4 — BA CHO DE SAI (kiem rieng)
+####################################################################################################
+## 4.1 — MB doi dai theo thu
+  T2: DB 365 ngay -> [('Hà Nội', 51)] | tai lieu V10670 -> 'Hà Nội'
+  T3: DB 365 ngay -> [('Quảng Ninh', 51)] | tai lieu V10670 -> 'Quảng Ninh'
+  T4: DB 365 ngay -> [('Bắc Ninh', 51)] | tai lieu V10670 -> 'Bắc Ninh'
+  T5: DB 365 ngay -> [('Hà Nội', 52)] | tai lieu V10670 -> 'Hà Nội'
+  T6: DB 365 ngay -> [('Hải Phòng', 53)] | tai lieu V10670 -> 'Hải Phòng'
+  T7: DB 365 ngay -> [('Nam Định', 52)] | tai lieu V10670 -> 'Nam Định'
+  CN: DB 365 ngay -> [('Thái Bình', 52)] | tai lieu V10670 -> 'Thái Bình'
+  => KHOP: MB moi thu dung 1 dai, khop bang V10670 muc 4.
+  Kiem 105 luat active co source_region='MB': source_station co dung dai cua thu nguon khong?
+      62/62 luat MB-nguon tro DUNG dai cua thu nguon.
+
+## 4.2 — Thua Thien Hue them Chu Nhat tu 26/10/2025
+  Tong dong 'Thừa Thiên Huế': 396  (mien: ['MN', 'MT'])
+  Ngay Chu Nhat: n=41  dau tien=2025-10-26  cuoi=2026-08-02
+  Ngay Thu Hai : n=355  dau tien=2020-01-06  cuoi=2026-08-03
+  Truoc 2025-10-26 co CN nao khong: KHONG
+  T2 co bi mat sau moc do khong: T2 sau 2025-10-26 = 41 lan
+  CN tu 2025-10-26 tro di: 41 lan, lien tuc tuan? tuan mong doi = 41
+  MT/CN co nhung dai nao (365 ngay): [('Kon Tum', 52), ('Khánh Hòa', 52), ('Thừa Thiên Huế', 41)]
+  => Moc 26/10/2025 DUNG
+  Anh huong resolve: luat nao co source_region=MT + thu nguon=CN + station='Thừa Thiên Huế'?
+      [(2354, 'MT', 'T3', 'D-1'), (2385, 'MB', 'T2', 'D-1')]
+
+## 4.3 — 'Đà Lạt' / 'Da Lat' tach dau (station_identity.py)
+  canonical_station('Đà Lạt')      = 'Đà Lạt'
+  canonical_station('Da Lat')      = 'Đà Lạt'
+  canonical_station('DL')          = 'Đà Lạt'
+  canonical_station('Lâm Đồng')    = 'Lâm Đồng'  (co y KHONG doan — mo ho)
+  canonical_station_by_context('Lâm Đồng','MN',6) = 'Đà Lạt'
+  canonical_station_by_context('Lâm Đồng','MN',3) = 'Bình Thuận'
+  canonical_station_by_context('Lâm Đồng','MT',5) = 'Đắk Nông'
+  station_lookup_candidates('Đà Lạt') = ['Đà Lạt', 'DL']
+  Cac cach viet THAT trong lottery_results khop ho 'Da/Dà ... Lat':
+      'Đà Lạt'         MN n=325 2020-01-05..2026-08-02
+  Bien the ten dai TOAN LICH SU khong phai ten chuan (canonical) — nguy co tra cuu hut:
+      [('MT', 'Đắc Nông', 'Đắk Nông')]
+      ten KHONG nam trong CANONICAL_STATIONS: [('MT', 'Đắc Nông')]
+  DIEM QUAN TRONG — hai duong tra cuu KHAC NHAU:
+      rule_engine.py:442      station IN (station_lookup_candidates(...))  -> CO alias
+      mined_rule_eval.py:228  station = ?                                   -> KHONG alias
+      gpt_analyzer.py:4406    station = ?                                   -> KHONG alias (duong LIVE)
+  Thu nghiem: neu nguon ghi 'Da Lat' (khong dau) thi hai duong sau tra RONG.
+      So dong lottery_results.station == 'Da Lat' (dung khong dau): 0
+      So dong station == 'Đà Lạt': 325
+
+####################################################################################################
+# PHAN 5 — #BO: code lay dung vi tri bo hay lay sai thu tu?
+####################################################################################################
+  Cot cua mined_rules (39): ['id', 'target_region', 'target_weekday', 'source_station', 'source_region', 'source_offset', 'prize_keys', 'lift_365', 'lift_180', 'delta_lift', 'n_365', 'hit_rate_365', 'avg_src_tails', 'streak', 'gap', 'stability', 'score', 'sample_quality', 'production_tier', 'prediction_use', 'risk_note', 'split_policy', 'mined_at', 'is_active', 'rule_version', 'source_run_id', 'bucket_mode', 'sub_bucket_key', 'activation_status', 'owner_approved_at', 'hr_4w', 'hr_8w', 'hr_12w', 'hr_16w', 'composite_score', 'window_verdict', 'source_weekday', 'source_station_slot', 'cumulative_rank_score']
+  Co cot nao mang nghia 'bo'/'position'/'index'/'slot_no' khong: ['composite_score', 'source_station_slot']
+  Gia tri prize_keys THAT dang co (active):
+      'GĐB+G7'     n=19
+      'G6+G7'      n=17
+      'G1+G7'      n=17
+      'GĐB+G6'     n=7
+      'G7'         n=7
+      'GĐB+G1'     n=6
+      'G5+GĐB'     n=5
+      'G1+G2'      n=5
+      'GĐB+G2'     n=3
+      'G7+G8'      n=3
+      'G5+G7'      n=3
+      'G2+G7'      n=3
+      'G2+G5'      n=3
+      'G1+G8'      n=3
+      'GĐB+G8'     n=2
+      'GĐB'        n=1
+      'G6'         n=1
+  => KHONG co ky hieu '#Bo' nao trong du lieu san xuat. Rule luu 'GĐB+G7', khong phai 'G7#2'.
+
+  Chung minh code lay TAT CA bo (khong chon vi tri) — vi du MB that:
+  MB 2026-08-07 dai Hải Phòng:
+      'Giải Đặc Biệt'  = 16479  (1 bo)
+      'Giải nhất'      = 32689  (1 bo)
+      'Giải nhì'       = ['34894', '72643']  (2 bo)
+      'Giải tư'        = ['3018', '8277', '6586', '6556']  (4 bo)
+      'Giải sáu'       = ['111', '742', '932']  (3 bo)
+      'Giải bảy'       = ['47', '81', '44', '80']  (4 bo)
+      _extract_tails_from_prizes(.., 'GĐB') = ['79']   (n=1, unique=1)
+      _extract_tails_from_prizes(.., 'G7') = ['47', '81', '44', '80']   (n=4, unique=4)
+      _extract_tails_from_prizes(.., 'G6') = ['11', '42', '32']   (n=3, unique=3)
+      _extract_tails_from_prizes(.., 'GĐB+G7') = ['79', '47', '81', '44', '80']   (n=5, unique=5)
+      _extract_tails_from_prizes(.., 'G6+G7') = ['11', '42', '32', '47', '81', '44', '80']   (n=7, unique=7)
+      _extract_tails_from_prizes(.., 'G1+G7') = ['89', '47', '81', '44', '80']   (n=5, unique=5)
+  Doi chieu avg_src_tails trong DB voi so bo that:
+      prize_keys='GĐB'     ky vong 1 bo -> 1      | avg_src_tails MB thuc te = []
+      prize_keys='G7'      ky vong MB 4 bo -> 4   | avg_src_tails MB thuc te = [4.0]
+      prize_keys='GĐB+G7'  ky vong 1+4 -> 5       | avg_src_tails MB thuc te = [4.9, 5.0]
+      prize_keys='G6+G7'   ky vong 3+4 -> 7       | avg_src_tails MB thuc te = [6.8, 6.9]
+      prize_keys='G1+G7'   ky vong 1+4 -> 5       | avg_src_tails MB thuc te = [4.9, 5.0]
+      prize_keys='GĐB+G6'  ky vong 1+3 -> 4       | avg_src_tails MB thuc te = [3.9, 4.0]
+  => Khop: avg_src_tails ~= TONG SO BO cua cac giai (tru trung lap), tuc code GOM HET CAC BO.
+     Neu tai lieu V10667 hieu 'G7#2' la MOT bo thi code dang lay GAP 4 LAN so gia tri o MB G7.
+
+  Thu tu bo co dung khong (bo Y = phan tu thu Y-1 trong mang JSON)?
+     Code khong doc theo vi tri nen 'sai thu tu' KHONG the xay ra — nhung cung khong the
+     phan biet bo. Kiem thu tu mang JSON co on dinh khong (so phan tu tung giai, MB, 365 ngay):
+      MB 'Giải ba'          so bo -> so ngay: {6: 362}
+      MB 'Giải bảy'         so bo -> so ngay: {4: 362}
+      MB 'Giải nhì'         so bo -> so ngay: {2: 362}
+      MB 'Giải nhất'        so bo -> so ngay: {1: 362}
+      MB 'Giải năm'         so bo -> so ngay: {6: 362}
+      MB 'Giải sáu'         so bo -> so ngay: {3: 362}
+      MB 'Giải tư'          so bo -> so ngay: {4: 362}
+      MB 'Giải Đặc Biệt'    so bo -> so ngay: {1: 362}
+
+####################################################################################################
+# PHAN 5B — HO LUAT THU HAI: '#Bo' CO THAT, va no DI THANG VAO PROMPT MB OFFICIAL
+####################################################################################################
+  Phan 5 ket luan '#Bo khong ton tai' — dung voi bang `mined_rules`. Nhung soi tiep
+  thi thay MOT ho luat KHAC dang chay song song, va o day '#Bo' co that:
+
+      bang `mb_rule_context` / `mn_rule_context` / `mt_rule_context`, tier TIER2_CONFIRM
+      sinh boi web/backend/mb_rule_ranker.py (nap tu artifact V10667/V10636/V10687)
+
+  mb_rule_context    snapshot=2026-08-07  86 luat  ·  co '#Bo': 86  ·  lag: {'D': 4, 'D-1': 37, 'D-2': 15, 'D-3': 22, 'D-4': 3, 'D-5': 1, 'D-6': 1, 'D-7': 3}  ·  lag NGOAI D/D-1: 45
+  mn_rule_context    snapshot=2026-08-01  60 luat  ·  co '#Bo': 60  ·  lag: {'D-1': 21, 'D-2': 19, 'D-3': 20}  ·  lag NGOAI D/D-1: 39
+  mt_rule_context    snapshot=2026-07-30  64 luat  ·  co '#Bo': 64  ·  lag: {'D': 5, 'D-1': 19, 'D-2': 18, 'D-3': 22}  ·  lag NGOAI D/D-1: 40
+
+  NGUYEN VAN dong prompt (dung f-string cua gpt_analyzer.py:4167-4170) — MB, thu hom nay:
+    (thu hom nay = T6, co 13 luat TIER2 cho thu nay)
+      • MB:G4#3:D-1 [FIRST2] lift=5.97pp hr=29.75%  [ổn định] (V10667)
+      • MB:G4#1:D-2 [FIRST2] lift=5.14pp hr=28.92%  [yếu] (V10667)
+      • MN:G7#1:D-2 [LAST2] lift=5.63pp hr=60.62%  [yếu] (V10667)
+      • MT:G1#1:D-3 [LAST2] lift=5.21pp hr=46.93%  [yếu] (V10667)
+      • MB:G7#3:D-1 [LAST2] lift=4.44pp hr=28.22%  [yếu] (V10667)
+      • MB:G6#1:D-1 [TAIL_HEAD] lift=4.44pp hr=28.22%  [yếu] (V10667)
+      • MB:G7#3:D-1 [FIRST2] lift=4.44pp hr=28.22%  [yếu] (V10667)
+      • MB:G7#3:D-1 [HEAD_TAIL] lift=4.44pp hr=28.22%  [yếu] (V10667)
+
+  BA DIEU PHAI NOI RO:
+   (1) Chuoi nay CHI LA CHU. gpt_analyzer.py:4167-4170 noi thang chuoi vao prompt, KHONG goi
+       ham nao resolve ra duoi so. Model phai TU hieu '#4' la bo nao, 'HEAD_TAIL' la phep gi,
+       'D-3' la ngay nao, va voi nguon MN/MT (3-4 dai/ngay) thi lay dai nao.
+   (2) Prompt KHONG co cho nao giai nghia. Dem tren gpt_analyzer.py: 'FIRST2'=0 lan · 'HEAD_TAIL'=0 lan · 'LAST2'=0 lan · 'vị trí bộ'=0 lan.
+       Ban giai nghia duy nhat nam o E:\Lottery_AI_Notion_Reports (V10667_BO_NUMBERING_LEGEND.md,
+       V10670_SOURCE_SEMANTICS_LEGEND.md) — model KHONG DOC DUOC cho do.
+   (3) Cong bat: `MB_PROMPT_DOCTRINE_ENABLE=1` co THAT trong /root/Lottery_AI_Test/.env (dong 16,
+       kiem 07/08 20:50 tren VPS) -> khoi nay DANG vao prompt MB OFFICIAL, khong phai shadow.
+       (MN/MT: gate MNMT_DOCTRINE_SHADOW_RUNNER chi bat trong process cron rieng -> shadow that.)
+
+  KIEM TINH HOP LE cua '#Bo' (bo so co vuot so bo THAT cua giai khong):
+      so bo THAT MB: {'DB': 1, 'G1': 1, 'G2': 2, 'G3': 6, 'G4': 4, 'G5': 6, 'G6': 3, 'G7': 4, 'G8': 0}
+      so bo THAT MN: {'DB': 1, 'G1': 1, 'G2': 1, 'G3': 2, 'G4': 7, 'G5': 1, 'G6': 3, 'G7': 1, 'G8': 1}
+      so bo THAT MT: {'DB': 1, 'G1': 1, 'G2': 1, 'G3': 2, 'G4': 7, 'G5': 1, 'G6': 3, 'G7': 1, 'G8': 1}
+      chuoi tro toi bo KHONG TON TAI: 0  []
+      => Ky hieu #Bo hop le ve mat cau truc. Van de KHONG phai sai bo, ma la KHONG AI RESOLVE.
+
+  LAST2 == FIRST2 == HEAD_TAIL o mot so dong — co phai loi khong? KHONG.
+      7 cap (thu, nguon) co >1 phep bien doi; 6 cap co so Y HET nhau.
+      Trong do 6 cap la MB G7 — ma MB G7 la so 2 CHU SO (vd ['47', '81', '44', '80']),
+      nen LAST2/FIRST2/HEAD_TAIL cho ra CUNG MOT gia tri. Trung so la DUNG, khong phai loi.
+      Nhung prompt van in ba dong rieng cho cung mot tin hieu -> model de dem 3 lan mot bang chung.
+
+####################################################################################################
+# PHAN 6 — GOM (union nhieu dai) + NEN (baseline) co tinh theo avg_src_tails khong?
+####################################################################################################
+  Tai lieu V10670 muc 3: 'Rule GOM (union) gia tri cua TAT CA dai mien nguon xo ngay do'.
+  Code that:
+     _seed_rules.eval_rule dong 109-112:  for s,p in data[sd].get(sr,[]):  if s == st: ... break
+     mined_rule_eval dong 225-228      :  WHERE date=? AND region=? AND station=?
+     rule_engine dong 440-443          :  station IN (<alias cua DUNG 1 dai>)
+  => CA BA duong deu lay DUNG MOT dai. KHONG union.
+
+  Do luong tac dong: hit-rate 1 dai (code) vs GOM tat ca dai cung mien cung ngay (tai lieu),
+  tren cung 52 ngay dich, cho 20 luat da chon:
+   rule nguon                      giai         n  HR-1dai  #duoi-1dai  HR-GOM  #duoi-GOM  #dai
+   2384 MB:D-1 Thái Bình           GĐB+G2      52    57.7%        2.98   57.7%       2.98   1.0
+   2387 MT:D Quảng Nam             G1+G2       52    55.8%        2.00   73.1%       3.98   2.0
+   2397 MT:D Bình Định             G7+G8       52    46.2%        2.00   84.6%       5.83   3.0
+   2404 MN:D Bình Dương            G1+G8       52    53.8%        2.00   86.5%       5.90   3.0
+   2410 MT:D Đà Nẵng               G2+G5       52    61.5%        1.98   86.5%       5.92   3.0
+   2414 MN:D Kiên Giang            GĐB+G7      52    48.1%        2.00   71.2%       5.79   3.0
+   2311 MB:D-1 Thái Bình           GĐB+G6      52    90.4%        3.90   90.4%       3.90   1.0
+   2319 MN:D-1 Cà Mau              GĐB+G1      52    73.1%        1.98   98.1%       5.73   3.0
+   2321 MB:D-1 Quảng Ninh          G6+G7       51   100.0%        6.88  100.0%       6.88   1.0
+   2330 MT:D-1 Khánh Hòa           G1+G7       52    75.0%        2.00   88.5%       3.94   2.0
+   2331 MB:D-1 Hà Nội              G7          51    92.2%        4.00   92.2%       4.00   1.0
+   2339 MT:D-1 Gia Lai             G5+G7       52    88.5%        1.96   96.2%       3.92   2.0
+   2341 MB:D-1 Nam Định            GĐB+G7      52    96.2%        4.96   96.2%       4.96   1.0
+   2350 MB:D-1 Thái Bình           G6          52    78.8%        2.98   78.8%       2.98   1.0
+   2353 MN:D Vũng Tàu              GĐB+G7      52    63.5%        2.00   92.3%       5.79   3.0
+   2359 MN:D-1 Bạc Liêu            G5+GĐB      52    61.5%        2.00   92.3%       5.92   3.0
+   2365 MN:D An Giang              GĐB+G8      52    65.4%        2.00   96.2%       5.87   3.0
+   2370 MN:D-1 Bình Thuận          GĐB+G7      52    69.2%        2.00   92.3%       5.88   3.0
+   2371 MB:D-1 Hải Phòng           GĐB+G6      52    90.4%        3.90   90.4%       3.90   1.0
+   2380 MN:D Tiền Giang            G2+G7       52    63.5%        2.00   90.4%       5.87   3.0
+  TRUNG BINH 20 luat: HR 1-dai 71.5% (#duoi 2.78) vs HR GOM 87.7% (#duoi 5.00)  -> chenh +16.2 diem
+  (GOM cao hon la duong nhien vi nhieu co hoi hon — do la ly do NEN phai tinh theo #duoi.)
+
+## 6.2 — NEN (baseline) co tinh theo so duoi nguon khong?
+  Cong thuc THAT trong _seed_rules.build_rule dong 253-254:
+       ans = trung binh so DUOI DUY NHAT cua nguon moi lan   (-> luu vao cot avg_src_tails)
+       ps  = (trung binh so duoi cua MIEN DICH moi ngay) / 100
+       bl  = 1 - (1-ps)**ans          # nen: xac suat it nhat 1 trong `ans` duoi trung
+       lift= hr365 / bl
+  => CO, nen tinh theo avg_src_tails. Kiem lai bang so tren du lieu that:
+      MB: trung binh 23.80 duoi/ngay  -> ps = 0.2380
+      MN: trung binh 43.16 duoi/ngay  -> ps = 0.4316
+      MT: trung binh 34.87 duoi/ngay  -> ps = 0.3487
+
+   rule dich     DB hr365  do lai hr  DB avg_src   do lai  DB lift  do lai lift
+   2384 MB/T2      0.5882     0.5769         3.0     2.98   1.0592       1.0392
+   2387 MB/T3      0.5686     0.5686         2.0     2.00   1.3555       1.3562
+   2397 MB/T5      0.4706     0.4706         2.0     2.00   1.1218       1.1223
+   2404 MB/T6      0.5385     0.5385         2.0     2.00   1.2836       1.2842
+   2410 MB/T7      0.6038     0.6154         2.0     1.98   1.4496       1.4784
+   2414 MB/CN      0.4906     0.4906         2.0     2.00   1.1694       1.1700
+   2311 MN/T2      0.9038     0.9057         3.9     3.91   1.0153       1.0177
+   2319 MN/T3      0.7115     0.7115         2.0     1.98   1.0556       1.0567
+   2321 MN/T4         1.0     1.0000         6.9     6.86    1.021       1.0212
+   2330 MN/T5      0.7692     0.7692         2.0     2.00   1.1352       1.1364
+   2331 MN/T6      0.9216     0.9216         4.0     4.00   1.0285       1.0290
+   2339 MN/T7      0.8868     0.8846         2.0     1.96   1.3223       1.3208
+   2341 MN/CN      0.9623     0.9623         5.0     4.96    1.024       1.0244
+   2350 MT/T2      0.7692     0.7736         3.0     2.98   1.0661       1.0722
+   2353 MT/T3      0.6538     0.6538         2.0     2.00   1.1353       1.1355
+   2359 MT/T4      0.6154     0.6154         2.0     2.00   1.0685       1.0687
+   2365 MT/T5      0.6346     0.6346         2.0     2.00   1.1019       1.1021
+   2370 MT/T6      0.6923     0.6923         2.0     2.00   1.2021       1.2023
+   2371 MT/T7      0.9057     0.9038         3.9     3.90   1.1143       1.1124
+   2380 MT/CN      0.6415     0.6415         2.0     2.00   1.1139       1.1141
+  (Lech nho la binh thuong: neo cua so cua toi la mined_at, ban goc neo vao ngay max cua DB
+   luc dao. Lech LON hoac dau nguoc thi moi la bao dong.)
+
+####################################################################################################
+# PHAN 7 — RUI RO NGAM: offset ngoai {D, D-1}
+####################################################################################################
+  Du lieu HIEN TAI chi co: ['D', 'D-1']
+      _get_source_date('2026-08-07', 'D'   ) = 2026-08-07   dung phai la 2026-08-07   -> OK
+      _get_source_date('2026-08-07', 'D-1' ) = 2026-08-06   dung phai la 2026-08-06   -> OK
+      _get_source_date('2026-08-07', 'D-2' ) = 2026-08-07   dung phai la 2026-08-05   -> *** SAI: tra ve chinh ngay dich ***
+      _get_source_date('2026-08-07', 'D-3' ) = 2026-08-07   dung phai la 2026-08-04   -> *** SAI: tra ve chinh ngay dich ***
+      _get_source_date('2026-08-07', 'D-7' ) = 2026-08-07   dung phai la 2026-07-31   -> *** SAI: tra ve chinh ngay dich ***
+  rule_engine.py:417-426 xu ly D-N DUNG (int(offset_str.replace('D',''))).
+  => Hai bo giai ma offset KHAC NHAU. Hom nay chua no vi _seed_rules chi sinh 0/-1,
+     nhung ai them offset D-2 vao mined_rules thi mined_rule_eval + prompt live se
+     LANG LE lay ngay dich lam ngay nguon (nhin ket qua cua chinh hom do).
+
+####################################################################################################
+# PHAN 8 — KIEM TREN VPS (su that runtime nam o do, khong duoc suy tu ban local)
+####################################################################################################
+  [R3_probe3_vps.txt] md5 + ma nguon that tren VPS — CO (7233 bytes)
+  [R3_probe3b_vps_diff.txt] diff rule_engine.py + truy van DB tren VPS — CO (2829 bytes)
+  [R3_probe2_dosau.txt] 105 luat: do phu nguon + nhan qua + doi chieu mined_rule_effectiveness — CO (18033 bytes)
+
+  Trich ket qua (chay script cung thu muc de tai lap):
+    -- R3_probe3_vps.txt --
+        web/backend/mined_rule_eval.py     6f5d080a9a01ca18cd75e9c8ed5cdadb   6f5d080a9a01ca18cd75e9c8ed5cdadb   KHOP
+        web/backend/rule_engine.py         3729ef00f8730d6acbc56a583bcf2484   a2eaea4722ae8f4b55110130022d99c9   *** LECH ***
+        web/backend/station_identity.py    9b80dcec0a8821401f87f0489b8a50c6   9b80dcec0a8821401f87f0489b8a50c6   KHOP
+        web/backend/gpt_analyzer.py        6b28f0baa7aeceac0e9fd2b75a741a81   6b28f0baa7aeceac0e9fd2b75a741a81   KHOP
+        web/backend/_seed_rules.py         98e3fe902163b2ce0b40313be53a0bb2   98e3fe902163b2ce0b40313be53a0bb2   KHOP
+        service lottery: ['active', '993241']
+    -- R3_probe3b_vps_diff.txt --
+        so dong diff: 0
+            parser offset D-N          VPS dong [424] · LOCAL dong [424] · noi dung GIONG
+            tra cuu dai co alias       VPS dong [209, 211, 433] · LOCAL dong [209, 211, 433] · noi dung GIONG
+            active_rules   : 105
+            offsets        : [('D', 20), ('D-1', 85)]
+            mined_at_days  : [('2026-08-03',)]
+            lottery_max    : ('2026-08-07', 15232)
+            TTH_sunday     : ('2025-10-26', '2026-08-02', 41)
+            rule2385       : (2385, 'MB', 0, 'MT', 'Thừa Thiên Huế', 'D-1', 'G5+GĐB', 39, 0.5128, 2.0, 1.2344)
+            active_rules   : 105
+            offsets        : [('D', 20), ('D-1', 85)]
+            lottery_max    : ('2026-08-07', 15232)
+            rule2385       : (2385, 'MB', 0, 'MT', 'Thừa Thiên Huế', 'D-1', 'G5+GĐB', 39, 0.5128, 2.0, 1.2344)
+
+  GIAI THICH md5 rule_engine.py LECH: ban local 34673 byte, 811 dong ket CRLF / 811 dong ket LF -> local dung CRLF, VPS dung LF.
+  Diff theo DONG = 0/811. Bon vung quyet dinh ngu nghia nguon (parser offset D-N, station_lookup_candidates,
+  tinh source_date, _get_prize_tails) GIONG HET nhau. => KHONG phai lech ngu nghia, chi lech ky tu xuong dong.
+
+####################################################################################################
+# PHAN 9 — TONG KET
+####################################################################################################
+  1. Resolve ngay nguon (D/D-1) : PASS 20/20 luat
+  2. MB doi dai theo thu        : KHOP tai lieu · 62/62 luat MB-nguon tro dung dai
+  3. Thua Thien Hue CN          : CN dau tien = 2025-10-26 (tai lieu noi 26/10/2025)
+  4. Da Lat/Đà Lạt              : bo dau khop qua _identity_key; nhung mined_rule_eval va gpt_analyzer tra cuu station=? KHONG dung alias
+  5. #Bo                        : KHONG ton tai trong `mined_rules` (code gom TAT CA bo cua giai);
+                                  NHUNG CO THAT trong `mb/mn/mt_rule_context` TIER2 — va tier2 di
+                                  THANG vao prompt MB OFFICIAL duoi dang CHU, khong ai resolve.
+  6. GOM                        : KHONG union — ca ba duong deu lay 1 dai; nen tinh theo avg_src_tails (DUNG)
+  7. Offset ngoai D/D-1         : _get_source_date TRA VE NGAY DICH (sai im lang) — hom nay chua no
+  8. VPS                        : ma nguon giong local (diff dong = 0); DB 105 luat, offsets giong
+
+  LECH GIUA TAI LIEU CONG KHAI (V10667/V10670) VA CODE SAN XUAT — ba diem:
+     (i)  '#Bo' : tai lieu dinh nghia luat theo VI TRI bo (vd MB G7#2). San xuat KHONG co khai
+                  niem nay — 'G7' lay CA 4 bo cua MB G7. Sai lech quy mo nguon toi 4 lan.
+     (ii) 'GOM' : tai lieu noi union TAT CA dai mien nguon. San xuat lay DUNG MOT dai.
+                  Do tren 20 luat: HR 1-dai 71.5% vs HR GOM 87.7% (+16.2 diem) — hai vat khac nhau.
+     (iii)'nen' : tai lieu noi nen tinh theo so gia tri GOM. San xuat tinh nen theo avg_src_tails
+                  cua MOT dai — nhat quan voi cach do cua chinh no, NHUNG khong the doi chieu
+                  truc tiep voi so lift trong tai lieu V10667.
+  => Ai doc V10667/V10670 roi di kiem code se tuong code SAI. Thuc te la HAI HO LUAT KHAC NHAU
+     cung mang ten 'rule':
+        HO 1 — `mined_rules` (105 luat): <mien>:<dai>:<lag D/D-1> + prize_keys gom HET bo.
+               Duoc CODE resolve day du (mined_rule_eval / rule_engine / _rules_first_live_block),
+               ra so that, cham diem that (mined_rule_effectiveness 3.233 dong).
+        HO 2 — `mb/mn/mt_rule_context` TIER2 (86/60/64 muc): <mien>:<giai>#<bo>:<lag D..D-7>
+               + transform, dung ky hieu V10667. KHONG code nao resolve — chi noi CHU vao prompt.
+     Tai lieu V10670 mo ta HO 2. Doc no roi di kiem HO 1 se ket luan sai o ca ba diem tren.
+
+====================================================================================================

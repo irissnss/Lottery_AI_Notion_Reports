@@ -1,0 +1,369 @@
+==============================================================================
+R5 — DOCTRINE RR-16.5 §1..§26  vs  CODE  (do ngay 2026-08-07 20:48)
+==============================================================================
+
+### PHAN 0 — LIET KE §  (parse tu chuoi REASONING_RULEBOOK trong gpt_analyzer.py)
+  vi tri: gpt_analyzer.py dong 482..780   (do dai 15465 ky tu)
+  TONG SO MUC: 28
+    §1    KỶ LUẬT THEO VÙNG (Region Discipline)
+    §2    KỶ LUẬT ĐỘ RỘNG (Width Discipline)
+    §3    CÁCH HIỂU RULE SUPPORT
+    §4    SUY LUẬN HỘI TỤ / ĐA DẠNG (Convergence Reasoning)
+    §5    KỶ LUẬT CONFIDENCE
+    §6    LOGIC THU HẸP (Narrowing Logic)
+    §7    XỬ LÝ BIẾN ĐỘNG / THẬN TRỌNG (Volatility Rules)
+    §8    GIẢI QUYẾT MÂU THUẪN (Conflict Resolution)
+    §9    CROSS-REGION LINKAGE (Liên kết chéo vùng)
+    §10   PRIZE-SOURCE REASONING (Suy luận theo giải nguồn)
+    §10A  OWNER SOURCE-PRIZE / 12W-16W FIRST (BẮT BUỘC)
+    §10B  OWNER ANTI-TRAP DOCTRINE (BẮT BUỘC — owner intuition)
+    §11   RULE TAILS UTILIZATION (Cách dùng Rule Tails)
+    §12   WEAK-RULE SUPPRESSION
+    §13   STRONG-RULE PROMOTION
+    §14   DUPLICATE-FAMILY SUPPRESSION
+    §15   SHORT-TERM SPIKE vs MULTI-WEEK STABLE
+    §16   MODEL-ONLY CANDIDATE VETO
+    §17   KHI NÀO GIẢM TỪ 2 SỐ XUỐNG 1
+    §18   KHI NÀO KHÔNG TỰ "TẠO" SỐ
+    §19   WINDOW SCAN — 1W / 2W / 3W / 4W / 5W / 6W / 7W / 8W (V15.0 SP-4.0)
+    §20   PRIMARY / SECONDARY / NOISE SOURCE (V9.0)
+    §21   RULE ELEVATION PROTOCOL (V9.0)
+    §22   ANTI-HERDING — PHÒNG NGỪA BẦY ĐÀN ML (V9.0)
+    §23   AI-LEVEL ANTI-HERDING — PHÒNG NGỪA BẦY ĐÀN AI (V10.2)
+    §24   BẠCH THỦ NORTH STAR (V16.4 — TUYỆT ĐỐI)
+    §25   MAIN-NUMBER OUTPUT CONTRACT (V20.3.1 — BẮT BUỘC)
+    §26   KHÔNG NÓI QUÁ (V11008 — cứu từ CP-7.9 trước khi xoá lớp chết)
+  PROMPT_VERSIONS['reasoning_rulebook'] = RR-16.5
+
+### PHAN 1 — DAU VET CODE (grep ten that, da doc nguon truoc)
+  §1  region discipline / WR theo mien       KHONG THAY dau vet code
+  §2  width <= 2 so                          CO  -> gpt_analyzer.py:6346 | main.py:7378,7450,7513,7567,7850,8057...
+  §3  rule support STRONG/MODERATE/WEAK theo eff CO  -> gpt_analyzer.py:4368,4672,4679,4725,4732,4733... | rule_engine.py:52,53,54,55,56,57... | filter_2_so_cuoi.py:738,740,741 | main.py:4694,4819
+  §4  convergence reasoning                  CO  -> gpt_analyzer.py:283,434,1950,1963,2002,2010... | rule_engine.py:81,82,308,328,334,582... | filter_2_so_cuoi.py:729 | main.py:5530,5630,5643,7832,7833,8039...
+  §5  confidence discipline                  CO  -> gpt_analyzer.py:1136,1309,1473,5555 | main.py:8654
+  §6  narrowing logic                        KHONG THAY dau vet code
+  §7  volatility / chuoi thua                CO  -> gpt_analyzer.py:5263,5266,5274,5275,5278
+  §8  conflict resolution                    KHONG THAY dau vet code
+  §9  cross-region source-set                CO  -> gpt_analyzer.py:5711,5755,5817,6018 | main.py:1010,1038
+  §10 prize-source reasoning                 CO  -> gpt_analyzer.py:1752,1755,1757,1813,1838,1875... | rule_engine.py:458,498,504,527,556,783 | filter_2_so_cuoi.py:319,321,410,450,458,461... | main.py:3654,3689,3769,3787,4661,4723...
+  §10A 12W/16W first                         CO  -> gpt_analyzer.py:4115,4133,4134,4261,4379,4381... | rule_engine.py:276 | filter_2_so_cuoi.py:415,416 | main.py:3675,3676,4664,4679,4680,4798...
+  §10B anti-trap                             CO  -> gpt_analyzer.py:5749,5773,5775,5785,5813,5814... | main.py:1029,1052,1054,10171,10177,10179...
+  §11 rule tails                             CO  -> gpt_analyzer.py:4797,4800,4824,5387 | main.py:3770,3788,3824,3829,19912
+  §12 weak-rule suppression                  CO  -> rule_engine.py:116,344,347,353,372,375 | filter_2_so_cuoi.py:738,741,749
+  §13 strong-rule promotion                  CO  -> gpt_analyzer.py:4368,4672,4679,4732,4805 | rule_engine.py:52,53,54,62,63,64... | filter_2_so_cuoi.py:740,741 | main.py:4694,4819
+  §14 duplicate-family suppression           CO  -> rule_engine.py:624
+  §15 spike vs stable                        CO  -> gpt_analyzer.py:4669,4722 | rule_engine.py:539,540,545,712,732 | main.py:4671
+  §16 model-only veto                        KHONG THAY dau vet code
+  §17 giam 2 -> 1 so                         KHONG THAY dau vet code
+  §18 khong tu tao so                        CO  -> gpt_analyzer.py:210,6518 | main.py:14302,18228,18236
+  §19 window scan 1W..8W + livingness        CO  -> gpt_analyzer.py:4843,4850,4864,5088,5257,5357... | rule_engine.py:493,506,529
+  §20 primary/secondary/noise source         CO  -> gpt_analyzer.py:969,974,975,4518,4750,4759... | rule_engine.py:716,717,723,724,743,746... | main.py:280,661,794,798,805,834...
+  §21 rule elevation protocol                KHONG THAY dau vet code
+  §22 anti-herding ML                        CO  -> rule_engine.py:80,84,608 | filter_2_so_cuoi.py:735
+  §23 anti-herding AI CONV x3                CO  -> gpt_analyzer.py:3010,4528,4969,4979,5553
+  §24 BT north star numbers\[0\]             CO  -> gpt_analyzer.py:237,4631,5997,6718 | main.py:779,807,1143,1164,1195,1202...
+  §25 main-number output contract            CO  -> gpt_analyzer.py:962,963,964,975,1121,1122... | main.py:1571,1572,1573,1913,1952,1956...
+  §26 khong noi qua / tran confidence MB     CO  -> main.py:15927
+
+### PHAN 2 — §10A: THU TU KHOI TRONG build_context_pack (theo so dong append)
+  dong 4679   MINED RULES (12W/16W 3-layer)
+  dong 4781   EVIDENCE TABLE (Source x Prize 6W)
+  dong 5357   WEEKDAY SCAN 8 tuan + SOURCE LIVINGNESS
+  dong 5468   OWNER ANTI-TRAP CHECK
+  dong 5482   SHADOW CONTEXT 4-block
+  dong 5505   PHASE-FIRST REASONING GATE (chi shadow_mode)
+  dong 5569   RULES-FIRST / BOI CANH SOI CAU
+
+  KET LUAN §10A:
+   - Khoi 12W/16W (MINED RULES) DUNG LA dat TRUOC anti-trap trong van ban prompt.
+   - NHUNG khoi RULES-FIRST 'BOI CANH SOI CAU' (nguon-giai ke lai su kien) nam SAU anti-trap.
+   - Trinh tu 8 buoc ep §10A (12W -> 16W -> source-prize -> hoi tu -> chon -> anti-herding)
+     nam trong PHASE-FIRST REASONING GATE, CHI bom khi shadow_mode=True.
+   - SHADOW_GATE_MODELS = ['gpt-oss-120b', 'gpt-5.5', 'deepseek-v4-pro', 'deepseek-v4-flash', 'qwen3.6-plus', 'gemini-3.1-pro', 'gemini-3-flash', 'gemma-4-31b']
+   - PHASE_FIRST_CONTRACT_MODELS = set()   <-- cong kiem hop dong §25
+
+### PHAN 3 — §10B ANTI-TRAP: thu tu xo va do phu
+  _PRIOR_REGIONS trong code (gpt_analyzer.py):
+    "MN": [],
+    "MT": ["MN"],
+    "MB": ["MN", "MT"],
+
+  (a) GIO GHI KET QUA THUC TE (lottery_results.created_at, 14 ngay gan nhat):
+    MB  n=15   gio ghi som nhat=18:31  muon nhat=18:32
+    MN  n=47   gio ghi som nhat=16:34  muon nhat=16:40
+    MT  n=36   gio ghi som nhat=17:30  muon nhat=17:34
+    -> thu tu ghi ket qua thuc te khop doctrine: MN truoc MT truoc MB.
+    -> han output (§55): MN 15:45 · MT 16:58 · MB 17:58
+
+  (b) DO PHU KHONG GIAN 100 DUOI cua cac muc anti-trap (60 ngay gan nhat)
+    so ngay du ca MN va MT: 61
+    trung binh so duoi khac nhau MN(D) = 42.7 / 100   (MT(D) = 35.3 / 100)
+    MT: FULL_SPENT trung binh = 42.7 / 100 duoi  (43% khong gian so)
+    MB: FULL_SPENT       = 14.8 / 100  (15%)
+    MB: PARTIAL_SPENT    = 48.3 / 100  (48%)
+    MB: FRESH            = 36.9 / 100  (37%)
+    ngay MB co 0 duoi FRESH: 0/61
+    ngay MT co >=50 duoi FULL_SPENT: 6/61
+
+  (b2) PHAN LOAI TREN CHINH TAP UNG VIEN (khong phai tren 100 duoi):
+       tap ung vien = union duoi cua cac rule is_active cua bucket (dung y het
+       _rules_first_live_block: mined_rule_eval._get_source_date + _extract_tails_from_prizes)
+       MT: 61 ngay, tap ung vien trung binh 10.8 duoi/ngay
+         FULL_SPENT       331  (50.5% ung vien)
+         PARTIAL_SPENT      0  (0.0% ung vien)
+         FRESH            325  (49.5% ung vien)
+       MB: 61 ngay, tap ung vien trung binh 11.3 duoi/ngay
+         FULL_SPENT       130  (18.9% ung vien)
+         PARTIAL_SPENT    361  (52.5% ung vien)
+         FRESH            196  (28.5% ung vien)
+       LUU Y: voi MT prior chi co {MN} nen total_prior=1 => nhanh PARTIAL_SPENT trong
+       _compute_prior_region_spend_map KHONG BAO GIO chay duoc (count>=1 da la FULL).
+       Thang 3 bac cua §10B thu lai con 2 bac o MT — dung nhu doctrine mo ta, khong phai loi.
+
+  (c) HAM _get_region_full_tails lay DUOI CUA MOI SO trong prizes_json (tat ca 8 giai,
+      tat ca dai cua mien) — KHONG loc theo bo giai doctrine (§10 MN/MT: G1,G2,G5,G7,G8,DB;
+      MB: G1,G2,G6,G7,DB). Bang chung: gpt_analyzer.py L5671-5708 (_extract_two_digit_tails
+      duyet de quy moi gia tri, lay n[-2:]).
+
+  (d) DU LIEU MIEN RA TRUOC CO KIP KHONG? (gio thuc te, 30 ngay)
+      ket qua ghi vao lottery_results.created_at co +07:00 -> gio VN.
+      MT — luot chay TRUOC khi co ket qua MN(D) (lo 04:00-05:32):
+        combo-no-token     auto_daily     n=31
+        lstm               auto_daily     n=31
+        meta-learning      auto_daily     n=31
+        random-forest      auto_daily     n=31
+        smart-ensemble     auto_daily     n=31
+        smart-ml           auto_daily     n=31
+        xgboost            auto_daily     n=31
+      => toan bo la ML/no-token (run_source=auto_daily). Nhom nay KHONG goi
+         build_context_pack nen khong co khoi anti-trap — khong phai lo hong.
+      MT (chi model AI) chay TRUOC khi MN(D) co ket qua: 0/603 luot
+      MB (chi model AI) chay TRUOC khi MN(D) co ket qua: 0/597 luot
+      MB (chi model AI) chay TRUOC khi MT(D) co ket qua: 0/597 luot
+      => 0/… : moi luot AI cua MT va MB deu chay SAU khi mien ra truoc da co ket qua.
+         §10B co DU LIEU that de tinh. Day la diem DAT, khong phai loi.
+
+### PHAN 4 — §14 DUPLICATE-FAMILY: co dem trung ho khong?
+
+  (a) rule_engine.extract_rule_candidates_v2 — convergence_map:
+      tail_sources[tail].append(rule_desc)  (rule_engine.py L~556 + L~590)
+      rule_desc = f"{source_station} {prize_keys} ({source_region} {offset})"
+      convergence = {tail: len(sources) for ... if len(sources) >= 2}   <-- len(list), KHONG set()
+      => hai rule TRUNG (station, prize, region, offset) se dem 2 lan.
+      mined_rules is_active=1 tong: 105
+      so nhom (region,weekday,station,region_src,offset,prize) BI TRUNG: 0
+
+  (b) DEM THEO HO (station) — §14: '3 rules cung source_station + cung prize -> dem 1 lan'
+      so bucket-station co >1 rule (cung dai, khac giai): 15
+        MN wd=2 dai=Quảng Ninh -> 5 rule / 5 bo giai khac nhau
+        MN wd=4 dai=Hà Nội -> 5 rule / 5 bo giai khac nhau
+        MN wd=6 dai=Nam Định -> 5 rule / 5 bo giai khac nhau
+        MT wd=0 dai=Thái Bình -> 5 rule / 5 bo giai khac nhau
+        MT wd=5 dai=Hải Phòng -> 5 rule / 5 bo giai khac nhau
+        MN wd=0 dai=Thái Bình -> 4 rule / 4 bo giai khac nhau
+        MT wd=3 dai=Bắc Ninh -> 4 rule / 4 bo giai khac nhau
+        MT wd=4 dai=Hà Nội -> 4 rule / 4 bo giai khac nhau
+        MB wd=2 dai=Vũng Tàu -> 3 rule / 3 bo giai khac nhau
+        MB wd=3 dai=Bình Định -> 3 rule / 3 bo giai khac nhau
+      => code coi moi (dai, bo-giai) la MOT nguon rieng. Cung mot dai ra o 3 bo giai
+         khac nhau se cong convergence = 3, du §14 goi day la CUNG MOT HO.
+
+  (b2) SET() DEDUP CO SAN — nhung dung sai cho: rule_engine.py L624
+       result['rules_triggered'] = len(set(c['rule_desc'] for c in candidates))   <- CO set()
+       convergence = {tail: len(sources) ...}  (L619-622)                          <- KHONG set()
+       Hai dong cach nhau 3 dong. Bo dem hien thi thi da dedup, bo dem QUYET DINH thi khong.
+
+  (b3) DO THAT: hoi tu tren tap ung vien co bao nhieu la TRUNG HO (cung dai nguon)?
+       phan bo so luat cung tro vao mot duoi (61 ngay x 3 mien):
+         1 luat: 1173 duoi
+         2 luat: 402 duoi
+         3 luat: 196 duoi
+         4 luat: 211 duoi
+         5 luat: 10 duoi
+       trong so duoi co hoi tu >=2 luat (819 duoi):
+         co >=2 luat CUNG MOT DAI NGUON : 797  (97.3%)
+         TOAN BO luat deu cung MOT DAI  : 781  (95.4%)
+       => §14 ('nhieu rule cung ho = 1 opinion') bi vi pham THAT, khong phai gia dinh:
+          95.4% cac duoi 'hoi tu' thuc chat la MOT DAI NGUON noi lai nhieu lan.
+       => con so nay chay thang vao convergence_map -> CONV×N -> canh bao herding §23
+          va vao xep hang top-10 cua khoi OWNER ANTI-TRAP CHECK.
+
+  (c) khoi 'RULE TAILS (48h)' trong context pack (gpt_analyzer.py L4797-4831):
+      _tf[_t] += 1 cho MOI DONG mined_rule_effectiveness trong 2 ngay, KHONG gom theo rule_id.
+      Nhan hien thi: '{_f} rules' voi 🔥STRONG khi _f >= 3.
+      so dong / so rule that (14 ngay gan nhat, mau):
+        MB 2026-08-06: 5 dong / 5 rule
+        MN 2026-08-06: 5 dong / 5 rule
+        MT 2026-08-06: 5 dong / 5 rule
+        MB 2026-08-05: 5 dong / 5 rule
+        MN 2026-08-05: 5 dong / 5 rule
+        MT 2026-08-05: 5 dong / 5 rule
+        MB 2026-08-04: 5 dong / 5 rule
+        MN 2026-08-04: 5 dong / 5 rule
+        MT 2026-08-04: 5 dong / 5 rule
+        MB 2026-08-03: 5 dong / 5 rule
+        MN 2026-08-03: 5 dong / 5 rule
+        MT 2026-08-03: 5 dong / 5 rule
+
+      MO PHONG dung SQL cua khoi RULE TAILS (cua so 2 ngay) — do he so thoi phong:
+        MN: 0 dong trong cua so 2 ngay (khoi RULE TAILS im lang)
+        MT: 0 dong trong cua so 2 ngay (khoi RULE TAILS im lang)
+        MB: 0 dong trong cua so 2 ngay (khoi RULE TAILS im lang)
+
+  (d) KHOI 'RULE TAILS (48h)' CO BAO GIO CHAY RA DU LIEU KHONG?
+      mined_rule_effectiveness chi co dong cho rule co target_weekday == thu cua chinh ngay do
+      (kiem 10 ngay: 30/30 nhom KHOP). Cron ghi: scheduler.mined_rule_eval_time = '20:15' (VN).
+        date=2026-08-06 created_at=2026-08-06 13:15:00  (khong co hau to mui gio -> UTC; 13:15 UTC = 20:15 VN)
+        date=2026-08-05 created_at=2026-08-05 13:15:00  (khong co hau to mui gio -> UTC; 13:15 UTC = 20:15 VN)
+        date=2026-08-04 created_at=2026-08-04 13:15:00  (khong co hau to mui gio -> UTC; 13:15 UTC = 20:15 VN)
+        date=2026-08-03 created_at=2026-08-03 13:15:00  (khong co hau to mui gio -> UTC; 13:15 UTC = 20:15 VN)
+      => o thoi diem dung prompt (MT 16:xx · MB 17:xx VN) dong cua NGAY D CHUA TON TAI.
+         Cua so 'e.date >= date(now,-2 days)' thuc te chi cham toi D-2 va D-1,
+         ma rule cua D-1/D-2 co target_weekday KHAC thu cua D => JOIN ra RONG.
+      MO PHONG 60 ngay x 3 mien: khoi RULE TAILS co du lieu 0/180 = 0.0%
+      => §11 (va nhan 🔥STRONG/⚡MED/💡LIGHT cua no) la DOAN CHET trong san xuat.
+
+  (e) §2 KY LUAT DO RONG — do tren du lieu that (predictions, 30 ngay):
+        0 so: 43 luot (1.7%)
+        1 so: 65 luot (2.6%)
+        2 so: 2350 luot (95.6%)
+      => tran 2 so KHONG BI PHA (0 luot >=3): dung vi ham dung so chi doc hai khoa
+         'main_number' va 'secondary_number' (gpt_analyzer L6533-6552) — chan bang CAU TRUC.
+      => nhung ve huong 'mot so manh hon hai so yeu' (§2, §17, §24): chi 2.6% luot ra 1 so.
+
+### PHAN 5 — MAU THUAN SO / CAU CHU
+
+  (a) TRAN CONFIDENCE MB — ba con so khac nhau cung bom vao mot prompt:
+      dong 776    RR §26                                 - Trần confidence cho MB: **52%** với model AI · **60%** với nhóm no-t
+      dong 5239   CONTEXT PACK 'MB POLICY'               sections.append(f"     • Confidence ceiling: 60% (không được quá tự ti
+      dong 5344   CONTEXT PACK 'V10.3 MB CALIBRATION'    sections.append(f"     • Base confidence ceiling: 55% (MN/MT = 70%)")
+
+  (b) SO LUONG AI trong canh bao herding:
+      dong 715    TRONG_PROMPT(RR)     1. Số CONV×3+ là SỐ MÀ 6/7 AI KHÁC CŨNG SẼ CHỌN — herding risk cao nhất
+      dong 4981   GHI_VAO_PROMPT(ctx)  sections.append(f"  Nếu bạn chọn số này, 6/7 AI khác CŨNG SẼ CHỌN → herding risk CỰC CAO
+      combo_super.AI_MODELS thuc te = 9 model | ML_MODELS = 4
+
+  (c) §1 WR theo mien (RR ghi cung: MN~57% · MT~61% · MB~47%) — do lai 28 ngay:
+      MB  n=762   WIN=36    WR=4.7%
+      MN  n=772   WIN=126   WR=16.3%
+      MT  n=768   WIN=70    WR=9.1%
+      (dinh nghia 1: moi luot du doan cua moi model, status='WIN')
+      MB  dinh nghia 2 (ngay co >=1 model WIN): 18/29 ngay = 62.1%
+      MN  dinh nghia 2 (ngay co >=1 model WIN): 23/29 ngay = 79.3%
+      MT  dinh nghia 2 (ngay co >=1 model WIN): 22/29 ngay = 75.9%
+      MB  dinh nghia 3 (rieng combo-super): 2/29 = 6.9%
+      MN  dinh nghia 3 (rieng combo-super): 6/29 = 20.7%
+      MT  dinh nghia 3 (rieng combo-super): 3/29 = 10.3%
+      => KHONG dinh nghia nao trong ba cai tren cho ra 57/61/47. RR khong ghi tap do,
+         khong ghi ngay do, khong co script tai lap => §1 la SO MO COI, khong kiem duoc.
+      => Them mot mau thuan NOI TAI: §1 goi MN 'on dinh nhat' nhung lai ghi MT (61%) > MN (57%).
+
+  (d) HAI KHOI LIVINGNESS voi HAI cua so + HAI nguong khac nhau cung bom mot luot:
+      dong 4864   ctx: WEEKLY LIVINGNESS 12W     sections.append(f"\n### \U0001f504 WEEKLY LIVINGNESS ({target_region}/
+      dong 5420   ctx: SOURCE LIVINGNESS 8W      sections.append(f"\n  📊 SOURCE LIVINGNESS ({dow_vn}, 8 tuần):")
+      dong 660    ctx: nguong 6/8 tuan           - Source hit ≥9/12 tuần → SỐNG MẠNH → trọng số CAO, ưu tiên tuyệt đối
+      RR §19 ghi nguong 12 tuan: >=9/12 SONG MANH · 6-8/12 SONG YEU · 3-5/12 SUY GIAM · 0-2/12 CHET
+      ctx SOURCE LIVINGNESS ghi nguong 8 tuan: >=6/8 · 4-5/8 · 2-3/8 · 0-1/8
+      => hai thang do khac nhau, cung goi la 'SONG MANH/CHET'.
+
+  (e) §5g cua SYSTEM_PROMPT (do 07/08: hoi tu 3 nguon z=-2.54, TE HON nen) vs
+      RR §13/§21 ('rule + model cung chon -> TANG MANH confidence') va §11
+      ('STRONG >=3 rules -> nen co trong top-2'): mot ben cam cong diem hoi tu,
+      mot ben van day cong diem hoi tu.
+      dong 352    SP §5g: khong co diem thuong       📊 Đếm số nguồn chỉ để BẠN THAM KHẢO độ dày bằng chứng — KHÔNG có đ
+      dong 356    SP §5g: z=-2.54                    · số có **3 nguồn**: trúng **26,5%** · nền 33,4% · z = **−2,54** ←
+
+  (f) §25 hop dong output: co PARSER (gpt_analyzer L1287-1300) nhung CONG KIEM
+      _phase_first_contract_missing_fields chi chay khi gate_contract_mode=True,
+      ma PHASE_FIRST_CONTRACT_MODELS = set() => cong kiem KHONG BAO GIO chay.
+      NHUNG co BANG THEO DOI chay hang ngay (do luong, khong chan):
+      trace_field_completeness_daily (ngay | mien | tong | justification | near_miss | secondary):
+        2026-08-07 MB   20 |  20 |  16 |  19
+        2026-08-07 MN   20 |  20 |  17 |  20
+        2026-08-07 MT   19 |  19 |  17 |  19
+        2026-08-06 MB   21 |  21 |  17 |  21
+        2026-08-06 MN   20 |  20 |  16 |  20
+        2026-08-06 MT   20 |  20 |  16 |  20
+      ai_reasoning_contract_daily (ngay | mien | tong | strongest_candidate | pass | warn):
+        2026-08-07 MB   20 |   0 |   0 |  20
+        2026-08-07 MN   20 |  12 |  10 |  10
+        2026-08-07 MT   19 |  11 |  11 |   8
+        2026-08-06 MB   21 |   0 |   0 |  21
+        2026-08-06 MN   20 |  12 |   9 |  11
+        2026-08-06 MT   20 |  10 |   8 |  12
+      => §25 duoc DO nhung khong duoc CHAN. Va truong strongest_candidate_seen (do
+         PHASE-FIRST GATE sinh ra) o MB = 0/20 vi GATE khong bom cho model official.
+
+### PHAN 6 — MA TRAN §  <->  DUONG CODE  <->  CO/KHONG THUC THI
+
+  ky hieu:  CODE = co duong thuc thi lam thay doi con so/bo loc
+            NUA  = code chi DUNG DU LIEU vao prompt roi de model tu lam
+            CHU  = chi la cau chu trong prompt, khong co gi kiem
+
+  §     MUC    DUONG CODE / MAU THUAN
+  --------------------------------------------------------------------------
+  §1    CHU    khong co ham nao doc WR-theo-mien tu §1; so 57/61/47 vien cung trong chuoi
+               mau thuan: so mo coi, MT>MN nhung van goi MN 'on dinh nhat'
+  §2    CODE   chan bang CAU TRUC: chi doc 2 khoa main_number/secondary_number (L6533-6552)
+               mau thuan: 0 luot >=3 so, nhung chi 2.6% ra 1 so — huong 'it ma chac' khong ai thi hanh
+  §3    CODE   production_tier READY_STRONG/READY_WITH_CAUTION/LIMITED_WEIGHT (rule_engine L370-386)
+               mau thuan: nguong tier != nguong eff 60/45 ma §3 ghi
+  §4    CODE   convergence_map (rule_engine L619-622) + CONV_BOOST_CAP (L80-84,608)
+               mau thuan: dem theo rule_desc, khong theo HO -> choi §14
+  §5    CHU    khong co ham nao chan confidence HIGH khi thieu 2 loai evidence
+               mau thuan: §26 dat tran 52% MB; ctx dat 60% va 55% — ba so
+  §6    CHU    khong co ham narrowing
+               mau thuan: -
+  §7    NUA    ctx MB streak block (gpt_analyzer L5265-5281) chi IN ra chuoi thua
+               mau thuan: khong ha confidence bang code
+  §8    CHU    khong co bo giai quyet mau thuan
+               mau thuan: thu tu uu tien Width>Rules>... khong ai thi hanh
+  §9    CODE   _PRIOR_REGIONS (gpt_analyzer L5711) + scheduler include_same_day_cross
+               mau thuan: tap nguon §9 rong hon _PRIOR_REGIONS
+  §10   NUA    prize_keys duoc doc va in ra; khong co bo loc giai theo mien
+               mau thuan: MB doctrine G1/G2/G6/G7/DB khong duoc code ep
+  §10A  NUA    hr_12w/hr_16w co trong DB va duoc IN; thu tu ep chi o PHASE-FIRST GATE
+               mau thuan: GATE chi bom cho shadow model -> official khong co
+  §10B  CODE   _compute_prior_region_spend_map + _build_owner_antitrap_block (L5748-5925)
+               mau thuan: quet TOAN BO giai, khong theo bo giai doctrine
+  §11   KHONG  khoi RULE TAILS 48h (L4797-4831) — do 60 ngay x 3 mien: RA RONG 180/180
+               mau thuan: nhan 🔥STRONG/⚡MED/💡LIGHT khong bao gio hien; §14/§18 deu tro vao khoi chet nay
+  §12   CODE   BUCKET_SUPPRESS_THRESHOLD + effective_min_tier (rule_engine L342-352)
+               mau thuan: loc theo tier, KHONG theo eff<45% hay n<5 nhu §12 ghi
+  §13   CODE   min_tier READY_STRONG (rule_engine L370)
+               mau thuan: nguong eff>=60% & n>=10 cua §13 khong o dau trong code
+  §14   KHONG  KHONG gom rule cung ho truoc khi dem (rule_engine L619-622 dung list, khong set)
+               mau thuan: do that: 95.4% duoi 'hoi tu' la MOT dai nguon noi lai — §4/§22/§23 deu an so sai nay
+  §15   CODE   SPIKE_RISK/STABLE16W (rule_engine L521-541) + window_verdict
+               mau thuan: nguong code 12W>=50%&16W<30% != nguong chu cua §15
+  §16   CHU    khong co veto model-only
+               mau thuan: -
+  §17   CHU    khong co ham ha 2->1
+               mau thuan: -
+  §18   NUA    cam phu bien-the ghi trong PHASE-FIRST GATE (chi shadow)
+               mau thuan: official model khong nhan dieu kien nay
+  §19   NUA    WEEKDAY SCAN 8W + WEEKLY LIVINGNESS 12W in ra prompt
+               mau thuan: nguong 8W trong ctx choi nguong 12W trong §19
+  §20   NUA    PHASE-STATE CLASSIFICATION PB-18.0 (L4759-4776)
+               mau thuan: PRIMARY/SECONDARY o day la trang thai RULE, §20 noi ve SOURCE
+  §21   KHONG  RULE_PREMIUM / RULE_CROSS khong ton tai trong code
+               mau thuan: -
+  §22   CODE   CONV_BOOST_CAP (rule_engine L80-84, ap tai L604-615) — van dinh XEP HANG top-10
+               mau thuan: an CONV dem sai cua §14; con so boost da bi go khoi chu prompt tu V11016
+  §23   NUA    CONVERGENCE TRAP ALERT (L4979-4991), nguong CONV>=3
+               mau thuan: ghi '6/7 AI' trong khi combo_super.AI_MODELS = 9; CONV lay tu bo dem trung ho
+  §24   CODE   numbers[0] = bach thu, dung khap main.py/eval
+               mau thuan: -
+  §25   NUA    parser doc du 3 field (L1287-1300); co bang do hang ngay
+               mau thuan: cong CHAN khong bao gio chay (PHASE_FIRST_CONTRACT_MODELS rong) — chi DO, khong CHAN
+  §26   CHU    khong co code chan tu ngu hay chan tran 52% (main.py:15927 la duong tinh gia — 0.52 trong chu thich p-value)
+               mau thuan: tran 52% choi voi 60% (ctx L5239) va 55% (ctx L5344)
+
+  DEM: tong 28 muc §
+    CODE  (co duong thuc thi that)         : 10
+    NUA   (chi bom du lieu, model tu lam)   : 8
+    CHU   (chi la chu trong prompt)         : 7
+    KHONG (khai nhung code khong he lam)    : 3
+
+  => co duong thuc thi thuc su (CODE): 10/28
+  => khong co gi kiem duoc (CHU + KHONG): 10/28

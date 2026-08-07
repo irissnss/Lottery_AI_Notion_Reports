@@ -1,0 +1,292 @@
+====================================================================================================
+R2 (V11024) — TINH LAI THONG KE TUNG LUAT TREN DU LIEU TUOI
+====================================================================================================
+chay luc      : 2026-08-07 20:45:16  (gio may local)
+DB            : E:\Lottery_AI_Test\data\lottery_ai.db  (670027776 byte)
+sha256[:16]   : 42ebf97e0f0e88a4
+script        : E:\Lottery_AI_Test\artifacts\v11024_audit\scripts\R2_recompute.py
+che do        : CHI DOC (mode=ro)
+
+----------------------------------------------------------------------------------------------------
+[0] BANG DOI CHUNG mined_rule_doi_chung (V11003/V11011) — CO THAT KHONG?
+----------------------------------------------------------------------------------------------------
+  bang mined_rule_doi_chung        : KHONG CO
+  cot mined_rule_effectiveness.giai_doan : KHONG CO
+  => V11003 chi moi chay che do CHI DOC. Buoc `--dung` (tao cot + tao bang +
+     nap luat gia) CHUA TUNG CHAY tren ban local. Nen KHONG co cach phan loai
+     giai_doan nao san de doi chieu — R2 tu phan loai lai tu mined_at.
+
+----------------------------------------------------------------------------------------------------
+[1] DU LIEU GOC
+----------------------------------------------------------------------------------------------------
+  lottery_results : 15232 dong, 2020-01-01 .. 2026-08-07   (prizes_json hong: 0)
+  cap (mien,ngay) co ket qua : 7125
+
+  KICH THUOC TAP DUOI DICH |T| — day la ly do moi so hit rate cu vo nghia:
+    mien    so ngay   |T| tb  |T| min  |T| max  nen 1 duoi  nen 4 duoi
+    MB         2361     23.8       18       27      23.8%      66.3%
+    MN         2382     42.8       14       58      42.8%      89.3%
+    MT         2382     33.8       14       50      33.8%      80.8%
+    'nen 4 duoi' = xac suat TRUNG NGAU NHIEN neu gom 4 duoi bat ky.
+
+----------------------------------------------------------------------------------------------------
+[2] LUAT ACTIVE
+----------------------------------------------------------------------------------------------------
+  so luat active : 105
+  ngay dao (date(mined_at)) : ['2026-08-03']
+  => TAT CA 105 luat dao cung mot ngay 2026-08-03. Moi luat co CUNG
+     mot bien gioi cham-nguoc/do-tien, nen so luot do tien bi chan cung boi
+     so ngay tu 2026-08-03 den 2026-08-07.
+
+----------------------------------------------------------------------------------------------------
+[4] DOI CHIEU CACH DO CUA R2 VOI BANG THAT mined_rule_effectiveness
+----------------------------------------------------------------------------------------------------
+  so luot trung nhau : 1740
+  khop hit_any       : 1740  (100.00%)
+  lech               : 0
+  => cach chiet duoi + cach tinh trung cua R2 TAI LAP DUOC bang that 100%.
+     Nen cac so moi duoi day khong phai cach do khac, chi la CUNG cach do
+     tren nhieu du lieu hon va co them NEN de so sanh.
+  bang that co 3233 dong, trong do 1493 dong MO COI (46.2%) — rule_id khong con trong mined_rules.
+
+----------------------------------------------------------------------------------------------------
+[6] BANG TUNG LUAT — CHAM NGUOC (date < mined_at) vs DO TIEN (date >= mined_at)
+----------------------------------------------------------------------------------------------------
+  'nen' = xac suat trung ngau nhien tinh RIENG TUNG LUOT theo so duoi that su gom
+          hom do (sieu boi), roi lay trung binh. lift = hr/nen. lift ~ 1.00 = KHONG CO GI.
+  q = BH-FDR alpha=0.05 tren p nhi thuc mot phia tren. '*' = bac bo duoc H0.
+
+                                                        || --------- CHAM NGUOC ---------------------- || ------ DO TIEN --------         ||   da luu
+     id mien thu nguon                        giai      ||    n     hr    nen  lift        p        q ||   n     hr    nen  lift       p || lift_luu
+  --------------------------------------------------------------------------------------------------------------------------------------------------------
+   2381 MB   T2  MT/Kon Tum D-1               GĐB+G7    ||  333  38.7%  42.0%  0.92   0.8942  0.9135  ||   1 100.0%  40.9%  2.45  0.4089 ||    1.122
+   2382 MB   T2  MB/Thái Bình D-1             GĐB+G7    ||  334  75.1%  74.8%  1.00   0.4763  0.7474  ||   1   0.0%  73.8%  0.00  1.0000 ||    1.055
+   2383 MB   T2  MN/Tiền Giang D-1            G2+G5     ||  319  39.2%  41.8%  0.94   0.8435  0.8946  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.130
+   2384 MB   T2  MB/Thái Bình D-1             GĐB+G2    ||  334  56.3%  55.7%  1.01   0.4305  0.7474  ||   1   0.0%  54.8%  0.00  1.0000 ||    1.059
+   2385 MB   T2  MT/Thừa Thiên Huế D-1        G5+GĐB    ||   39  51.3%  41.8%  1.23   0.1489  0.5261  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.234
+   2386 MB   T3  MB/Hà Nội D-1                GĐB+G7    ||  334  80.2%  74.9%  1.07   0.0123  0.4939  ||   1   0.0%  73.8%  0.00  1.0000 ||    0.976
+   2387 MB   T3  MT/Quảng Nam D               G1+G2     ||  336  42.3%  42.1%  1.00   0.4934  0.7474  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.355
+   2388 MB   T3  MT/Quảng Nam D               G2+G5     ||  336  47.0%  42.0%  1.12   0.0361  0.4939  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.224
+   2389 MB   T3  MN/TP. HCM D-1               GĐB+G7    ||  320  45.6%  41.9%  1.09   0.1004  0.5153  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.309
+   2390 MB   T3  MN/TP. HCM D-1               G1+G7     ||  320  46.6%  42.1%  1.10   0.0619  0.4939  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.262
+   2391 MB   T4  MB/Quảng Ninh D-1            G6+G7     ||  335  82.7%  85.4%  0.97   0.9262  0.9351  ||   1 100.0%  87.6%  1.14  0.8760 ||    0.974
+   2392 MB   T4  MN/Vũng Tàu D-1              G2+G7     ||  320  41.9%  41.9%  1.00   0.5262  0.7474  ||   1 100.0%  43.9%  2.28  0.4394 ||    1.215
+   2393 MB   T4  MN/Vũng Tàu D-1              G7+G8     ||  320  40.6%  42.0%  0.97   0.7130  0.8458  ||   1 100.0%  43.9%  2.28  0.4394 ||    1.215
+   2394 MB   T4  MB/Quảng Ninh D-1            GĐB+G2    ||  335  55.8%  55.7%  1.00   0.5095  0.7474  ||   1 100.0%  58.2%  1.72  0.5824 ||    1.282
+   2395 MB   T4  MN/Vũng Tàu D-1              G5+G7     ||  320  45.9%  42.0%  1.09   0.0876  0.5153  ||   1 100.0%  43.9%  2.28  0.4394 ||    1.224
+   2396 MB   T5  MT/Đà Nẵng D-1               G5+GĐB    ||  333  42.0%  41.8%  1.00   0.4921  0.7474  ||   1 100.0%  37.8%  2.65  0.3776 ||    1.177
+   2397 MB   T5  MT/Bình Định D               G7+G8     ||  336  39.9%  41.7%  0.96   0.7629  0.8495  ||   1   0.0%  37.8%  0.00  1.0000 ||    1.122
+   2398 MB   T5  MT/Bình Định D               G1+G2     ||  336  44.6%  41.8%  1.07   0.1553  0.5261  ||   1   0.0%  37.8%  0.00  1.0000 ||    1.449
+   2399 MB   T5  MB/Bắc Ninh D-1              G7        ||  336  66.7%  66.7%  1.00   0.5339  0.7474  ||   1 100.0%  61.7%  1.62  0.6168 ||    1.006
+   2400 MB   T5  MT/Bình Định D               G1+G7     ||  336  44.3%  41.8%  1.06   0.1879  0.5637  ||   1   0.0%  37.8%  0.00  1.0000 ||    1.262
+   2401 MB   T6  MB/Hà Nội D-1                G6+G7     ||  335  86.3%  85.0%  1.02   0.2832  0.7127  ||   1 100.0%  85.0%  1.18  0.8498 ||    1.067
+   2402 MB   T6  MB/Hà Nội D-1                G1+G7     ||  335  78.5%  74.4%  1.05   0.0479  0.4939  ||   1 100.0%  73.8%  1.36  0.7376 ||    1.061
+   2403 MB   T6  MB/Hà Nội D-1                G1+G2     ||  335  58.2%  55.5%  1.05   0.1687  0.5366  ||   1 100.0%  54.8%  1.83  0.5476 ||    1.206
+   2404 MB   T6  MN/Bình Dương D              G1+G8     ||  321  44.2%  41.9%  1.06   0.2117  0.6007  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.284
+   2405 MB   T6  MN/Bình Dương D              G1+G2     ||  321  39.9%  41.8%  0.95   0.7767  0.8495  ||   1   0.0%  40.9%  0.00  1.0000 ||    1.054
+   2406 MB   T7  MN/Hậu Giang D               G1+G8     ||  321  43.3%  41.6%  1.04   0.2858  0.7127  ||   —                             ||    1.359
+   2407 MB   T7  MT/Ninh Thuận D-1            G1+G8     ||  336  42.9%  41.8%  1.02   0.3692  0.7454  ||   —                             ||    1.349
+   2408 MB   T7  MN/TP. HCM D                 G2+G7     ||  321  41.4%  41.7%  0.99   0.5626  0.7573  ||   —                             ||    1.359
+   2409 MB   T7  MT/Ninh Thuận D-1            G1+G7     ||  336  44.6%  41.9%  1.07   0.1649  0.5366  ||   —                             ||    1.404
+   2410 MB   T7  MT/Đà Nẵng D                 G2+G5     ||  334  45.5%  41.8%  1.09   0.0944  0.5153  ||   —                             ||    1.450
+   2411 MB   CN  MB/Nam Định D-1              G6+G7     ||  337  88.7%  85.3%  1.04   0.0400  0.4939  ||   —                             ||    1.048
+   2412 MB   CN  MT/Khánh Hòa D               GĐB+G7    ||  335  42.1%  42.0%  1.00   0.5107  0.7474  ||   —                             ||    1.304
+   2413 MB   CN  MT/Khánh Hòa D               GĐB+G8    ||  335  40.9%  41.9%  0.98   0.6592  0.8048  ||   —                             ||    1.323
+   2414 MB   CN  MN/Kiên Giang D              GĐB+G7    ||  321  45.8%  42.2%  1.09   0.1058  0.5153  ||   —                             ||    1.169
+   2415 MB   CN  MN/Kiên Giang D              GĐB+G1    ||  321  42.4%  41.9%  1.01   0.4545  0.7474  ||   —                             ||    1.223
+   2311 MN   T2  MB/Thái Bình D-1             GĐB+G6    ||  335  88.7%  87.9%  1.01   0.3780  0.7454  ||   1 100.0%  86.7%  1.15  0.8669 ||    1.015
+   2312 MN   T2  MB/Thái Bình D-1             G1+G7     ||  335  94.9%  93.0%  1.02   0.1006  0.5153  ||   1 100.0%  92.1%  1.09  0.9210 ||    1.046
+   2313 MN   T2  MB/Thái Bình D-1             G6+G7     ||  335  97.6%  97.5%  1.00   0.5339  0.7474  ||   1 100.0%  97.3%  1.03  0.9727 ||    1.003
+   2314 MN   T2  MB/Thái Bình D-1             GĐB+G7    ||  335  92.5%  93.2%  0.99   0.7218  0.8458  ||   1 100.0%  92.1%  1.09  0.9210 ||    0.981
+   2315 MN   T2  MT/Kon Tum D-1               G7+G8     ||  338  69.2%  65.6%  1.06   0.0892  0.5153  ||   1 100.0%  63.0%  1.59  0.6303 ||    1.107
+   2316 MN   T3  MB/Hà Nội D-1                G1+G7     ||  335  93.4%  92.8%  1.01   0.3887  0.7454  ||   1 100.0%  94.9%  1.05  0.9493 ||    1.023
+   2317 MN   T3  MB/Hà Nội D-1                G6+G7     ||  335  97.3%  97.3%  1.00   0.5816  0.7671  ||   1 100.0%  98.6%  1.01  0.9855 ||    1.001
+   2318 MN   T3  MB/Hà Nội D-1                GĐB+G7    ||  335  92.5%  92.8%  1.00   0.6275  0.7844  ||   1 100.0%  94.9%  1.05  0.9493 ||    1.021
+   2319 MN   T3  MN/Cà Mau D-1                GĐB+G1    ||  324  65.4%  65.6%  1.00   0.5579  0.7573  ||   1 100.0%  68.9%  1.45  0.6889 ||    1.056
+   2320 MN   T3  MT/Phú Yên D-1               G5+G7     ||  339  68.4%  65.3%  1.05   0.1233  0.5180  ||   1 100.0%  68.9%  1.45  0.6889 ||    1.135
+   2321 MN   T4  MB/Quảng Ninh D-1            G6+G7     ||  333  97.9%  97.5%  1.00   0.4183  0.7474  ||   1 100.0%  96.9%  1.03  0.9693 ||    1.021
+   2322 MN   T4  MB/Quảng Ninh D-1            G7        ||  333  90.7%  88.4%  1.03   0.1121  0.5153  ||   1 100.0%  85.8%  1.17  0.8577 ||    1.028
+   2323 MN   T4  MB/Quảng Ninh D-1            GĐB+G7    ||  333  93.4%  93.1%  1.00   0.4578  0.7474  ||   1 100.0%  91.4%  1.09  0.9140 ||    1.002
+   2324 MN   T4  MB/Quảng Ninh D-1            G1+G7     ||  333  94.9%  93.1%  1.02   0.1132  0.5153  ||   1 100.0%  91.4%  1.09  0.9140 ||    1.022
+   2325 MN   T4  MB/Quảng Ninh D-1            G1+G2     ||  333  80.8%  79.8%  1.01   0.3599  0.7454  ||   1 100.0%  76.6%  1.31  0.7661 ||    1.110
+   2326 MN   T5  MB/Bắc Ninh D-1              G6+G7     ||  337  97.9%  97.8%  1.00   0.5229  0.7474  ||   1 100.0%  95.8%  1.04  0.9580 ||    1.001
+   2327 MN   T5  MB/Bắc Ninh D-1              GĐB+G6    ||  337  89.3%  88.2%  1.01   0.2881  0.7127  ||   1 100.0%  87.6%  1.14  0.8756 ||    0.968
+   2328 MN   T5  MN/Sóc Trăng D-1             G5+GĐB    ||  325  67.1%  66.1%  1.01   0.3857  0.7454  ||   1   0.0%  64.2%  0.00  1.0000 ||    1.135
+   2329 MN   T5  MB/Bắc Ninh D-1              G1+G7     ||  337  95.5%  93.4%  1.02   0.0659  0.4939  ||   1 100.0%  92.7%  1.08  0.9275 ||    0.981
+   2330 MN   T5  MT/Khánh Hòa D-1             G1+G7     ||  338  66.9%  66.2%  1.01   0.4297  0.7474  ||   1   0.0%  64.2%  0.00  1.0000 ||    1.135
+   2331 MN   T6  MB/Hà Nội D-1                G7        ||  337  89.3%  88.5%  1.01   0.3543  0.7454  ||   1 100.0%  89.9%  1.11  0.8993 ||    1.028
+   2332 MN   T6  MB/Hà Nội D-1                G1+G7     ||  337  94.1%  93.1%  1.01   0.2849  0.7127  ||   1 100.0%  94.4%  1.06  0.9444 ||    1.002
+   2333 MN   T6  MB/Hà Nội D-1                GĐB+G7    ||  337  91.7%  93.2%  0.98   0.8856  0.9135  ||   1 100.0%  94.4%  1.06  0.9444 ||    1.002
+   2334 MN   T6  MB/Hà Nội D-1                G6+G7     ||  337  97.6%  97.5%  1.00   0.5233  0.7474  ||   1 100.0%  98.3%  1.02  0.9835 ||    0.961
+   2335 MN   T6  MB/Hà Nội D-1                GĐB+G6    ||  337  87.5%  87.9%  1.00   0.6252  0.7844  ||   1 100.0%  89.9%  1.11  0.8993 ||    0.968
+   2336 MN   T7  MB/Hải Phòng D-1             GĐB+G7    ||  335  97.9%  97.2%  1.01   0.2808  0.7127  ||   —                             ||    1.064
+   2337 MN   T7  MB/Hải Phòng D-1             G6+G7     ||  335  99.1%  99.3%  1.00   0.7667  0.8495  ||   —                             ||    1.021
+   2338 MN   T7  MB/Hải Phòng D-1             GĐB+G6    ||  335  96.4%  93.9%  1.03   0.0285  0.4939  ||   —                             ||    1.102
+   2339 MN   T7  MT/Gia Lai D-1               G5+G7     ||  339  77.0%  76.1%  1.01   0.3727  0.7454  ||   —                             ||    1.322
+   2340 MN   T7  MT/Gia Lai D-1               GĐB+G1    ||  339  77.3%  76.0%  1.02   0.3138  0.7428  ||   —                             ||    1.197
+   2341 MN   CN  MB/Nam Định D-1              GĐB+G7    ||  335  93.1%  93.2%  1.00   0.5844  0.7671  ||   —                             ||    1.024
+   2342 MN   CN  MB/Nam Định D-1              G7        ||  335  87.2%  88.6%  0.98   0.8266  0.8857  ||   —                             ||    0.990
+   2343 MN   CN  MB/Nam Định D-1              GĐB+G6    ||  335  92.8%  88.2%  1.05   0.0036  0.3744  ||   —                             ||    1.013
+   2344 MN   CN  MB/Nam Định D-1              G1+G7     ||  335  91.6%  93.2%  0.98   0.8961  0.9135  ||   —                             ||    0.963
+   2345 MN   CN  MB/Nam Định D-1              G6+G7     ||  335  97.6%  97.6%  1.00   0.5932  0.7690  ||   —                             ||    0.982
+   2346 MT   T2  MB/Thái Bình D-1             GĐB+G6    ||  335  80.3%  76.3%  1.05   0.0479  0.4939  ||   1 100.0%  76.6%  1.31  0.7662 ||    1.089
+   2347 MT   T2  MB/Thái Bình D-1             GĐB+G7    ||  335  87.2%  84.0%  1.04   0.0626  0.4939  ||   1 100.0%  83.9%  1.19  0.8392 ||    1.067
+   2348 MT   T2  MB/Thái Bình D-1             G6+G7     ||  335  92.8%  92.0%  1.01   0.3299  0.7454  ||   1 100.0%  92.5%  1.08  0.9251 ||    1.018
+   2349 MT   T2  MB/Thái Bình D-1             G1+G7     ||  335  83.9%  83.8%  1.00   0.5124  0.7474  ||   1 100.0%  83.9%  1.19  0.8392 ||    0.986
+   2350 MT   T2  MB/Thái Bình D-1             G6        ||  335  66.6%  66.2%  1.01   0.4617  0.7474  ||   1 100.0%  66.1%  1.51  0.6615 ||    1.066
+   2351 MT   T3  MB/Hà Nội D-1                G6+G7     ||  335  93.7%  92.0%  1.02   0.1467  0.5261  ||   1 100.0%  92.5%  1.08  0.9251 ||    1.034
+   2352 MT   T3  MN/Vũng Tàu D                GĐB+G1    ||  324  53.1%  51.4%  1.03   0.2919  0.7127  ||   1 100.0%  51.2%  1.95  0.5121 ||    1.235
+   2353 MT   T3  MN/Vũng Tàu D                GĐB+G7    ||  324  51.5%  51.6%  1.00   0.5310  0.7474  ||   1   0.0%  51.2%  0.00  1.0000 ||    1.135
+   2354 MT   T3  MT/Thừa Thiên Huế D-1        G1+G7     ||  339  56.6%  51.3%  1.10   0.0269  0.4939  ||   1 100.0%  51.2%  1.95  0.5121 ||    1.042
+   2355 MT   T3  MN/Vũng Tàu D                GĐB       ||  324  29.0%  30.4%  0.95   0.7249  0.8458  ||   1   0.0%  30.0%  0.00  1.0000 ||    1.158
+   2356 MT   T4  MB/Quảng Ninh D-1            G6+G7     ||  333  88.6%  92.2%  0.96   0.9918  0.9918  ||   1 100.0%  93.9%  1.06  0.9394 ||    0.952
+   2357 MT   T4  MN/Đồng Nai D                GĐB+G1    ||  325  49.5%  51.5%  0.96   0.7742  0.8495  ||   1 100.0%  54.0%  1.85  0.5398 ||    1.176
+   2358 MT   T4  MB/Quảng Ninh D-1            GĐB+G2    ||  333  66.1%  66.1%  1.00   0.5266  0.7474  ||   1   0.0%  69.0%  0.00  1.0000 ||    1.040
+   2359 MT   T4  MN/Bạc Liêu D-1              G5+GĐB    ||  323  55.1%  51.4%  1.07   0.1037  0.5153  ||   1   0.0%  54.0%  0.00  1.0000 ||    1.069
+   2360 MT   T4  MN/Bạc Liêu D-1              GĐB+G1    ||  323  56.7%  51.4%  1.10   0.0330  0.4939  ||   1   0.0%  32.0%  0.00  1.0000 ||    1.075
+   2361 MT   T5  MB/Bắc Ninh D-1              G7        ||  337  90.5%  88.8%  1.02   0.1871  0.5637  ||   1 100.0%  88.4%  1.13  0.8839 ||    1.124
+   2362 MT   T5  MB/Bắc Ninh D-1              GĐB+G7    ||  337  95.5%  93.4%  1.02   0.0631  0.4939  ||   1 100.0%  93.4%  1.07  0.9335 ||    1.095
+   2363 MT   T5  MB/Bắc Ninh D-1              G1+G7     ||  337  95.0%  93.4%  1.02   0.1500  0.5261  ||   1 100.0%  93.4%  1.07  0.9335 ||    1.068
+   2364 MT   T5  MB/Bắc Ninh D-1              G6+G7     ||  337  97.3%  97.8%  1.00   0.7756  0.8495  ||   1 100.0%  96.2%  1.04  0.9622 ||    1.036
+   2365 MT   T5  MN/An Giang D                GĐB+G8    ||  325  65.2%  65.9%  0.99   0.6199  0.7844  ||   1 100.0%  65.4%  1.53  0.6543 ||    1.102
+   2366 MT   T6  MB/Hà Nội D-1                GĐB+G7    ||  337  84.6%  84.0%  1.01   0.4199  0.7474  ||   1 100.0%  83.9%  1.19  0.8392 ||    1.046
+   2367 MT   T6  MB/Hà Nội D-1                G6+G7     ||  337  91.4%  92.0%  0.99   0.7062  0.8458  ||   1 100.0%  92.5%  1.08  0.9251 ||    0.994
+   2368 MT   T6  MB/Hà Nội D-1                G7        ||  337  76.3%  76.9%  0.99   0.6416  0.7926  ||   1 100.0%  76.6%  1.31  0.7662 ||    1.052
+   2369 MT   T6  MB/Hà Nội D-1                G1+G7     ||  337  81.6%  83.8%  0.97   0.8782  0.9135  ||   1 100.0%  83.9%  1.19  0.8392 ||    1.047
+   2370 MT   T6  MN/Bình Thuận D-1            GĐB+G7    ||  325  51.4%  51.7%  0.99   0.5617  0.7573  ||   1 100.0%  51.2%  1.95  0.5121 ||    1.202
+   2371 MT   T7  MB/Hải Phòng D-1             GĐB+G6    ||  335  89.9%  88.2%  1.02   0.2013  0.5872  ||   —                             ||    1.114
+   2372 MT   T7  MB/Hải Phòng D-1             G6+G7     ||  335  98.8%  97.8%  1.01   0.1283  0.5182  ||   —                             ||    1.015
+   2373 MT   T7  MB/Hải Phòng D-1             G7        ||  335  89.9%  89.0%  1.01   0.3430  0.7454  ||   —                             ||    1.104
+   2374 MT   T7  MB/Hải Phòng D-1             GĐB+G7    ||  335  94.3%  93.5%  1.01   0.3183  0.7428  ||   —                             ||    1.092
+   2375 MT   T7  MB/Hải Phòng D-1             G1+G7     ||  335  94.0%  93.5%  1.01   0.3905  0.7454  ||   —                             ||    1.071
+   2376 MT   CN  MN/TP. HCM D-1               G5+GĐB    ||  325  58.5%  53.3%  1.10   0.0350  0.4939  ||   —                             ||    1.417
+   2377 MT   CN  MB/Nam Định D-1              G6+G7     ||  335  94.6%  92.8%  1.02   0.1178  0.5153  ||   —                             ||    1.035
+   2378 MT   CN  MB/Nam Định D-1              GĐB+G7    ||  335  87.2%  85.0%  1.03   0.1540  0.5261  ||   —                             ||    1.071
+   2379 MT   CN  MB/Nam Định D-1              G1+G7     ||  335  83.6%  85.0%  0.98   0.7964  0.8621  ||   —                             ||    1.027
+   2380 MT   CN  MN/Tiền Giang D              G2+G7     ||  325  51.7%  53.4%  0.97   0.7545  0.8495  ||   —                             ||    1.114
+
+----------------------------------------------------------------------------------------------------
+[7] DU MAU DO TIEN? (nguong n >= 20 luot/luat)
+----------------------------------------------------------------------------------------------------
+  DU MAU    : 0/105 luat
+  CHUA DU   : 105/105 luat
+  phan bo so luot do tien/luat : n=0 co 30 luat, n=1 co 75 luat
+  Ly do cung: tu ngay dao 2026-08-03 den het du lieu 2026-08-07 moi co 5 ngay lich.
+  Moi luat chi ban MOT thu trong tuan => toi da 1 luot do tien. Can >= 20 luot
+  => phai cho them 133 ngay lich (19 tuan) NUA moi du, neu khong dao lai luat.
+
+----------------------------------------------------------------------------------------------------
+[8] Z TONG HOP HAI NHOM + SUC MANH THONG KE
+----------------------------------------------------------------------------------------------------
+  nhom            so luat   n luot   trung      hr     nen E   lift    z gop  z cum-ngay   ngay
+  ----------------------------------------------------------------------------------------------------
+  CHAM NGUOC          105    34618   25191  72.77%   24857.6  1.013    +4.55       +3.70   2382
+    ├ trong CS        105     5413    4215  77.87%    3888.2  1.084   +11.31       +8.84    365
+    └ truoc CS        104    29205   20976  71.82%   20969.4  1.000    +0.10       +0.34   2017
+  DO TIEN              75       75      54  72.00%      52.5  1.028    +0.42       +0.49      5
+  ----------------------------------------------------------------------------------------------------
+  'z gop'      : coi moi luot doc lap. PHONG TO — nhieu luat cung ngay dung CHUNG
+                 tap duoi dich nen chung trung/truot cung nhau.
+  'z cum-ngay' : gom theo NGAY (moi ngay 1 don vi). Trung thuc hon. DUNG SO NAY.
+  'trong CS'   : cua so 365 ngay ma _seed_rules DUNG DE CHON top-5 => co thien vi chon.
+  'truoc CS'   : truoc cua so do => luat CHUA TUNG nhin thay luc chon. Van la cham
+                 nguoc ve thoi gian nhung SACH thien vi chon. Day la phep thu that su.
+
+  DOC HAI DONG 'trong CS' va 'truoc CS' CANH NHAU:
+    trong cua so chon : lift 1.084  z cum-ngay +8.84  (n=5413)
+    truoc cua so chon : lift 1.000  z cum-ngay +0.34  (n=29205)
+    chenh lift        : +0.084
+    => Loi the CHI TON TAI trong dung cua so ma luat duoc chon ra. Ra khoi cua so
+       do thi lift ve ~1.00. Day la dau van tay cua THIEN VI CHON, khong phai
+       cau truc that. Cung mot luat, cung mot dai, chi khac doan thoi gian.
+
+  TACH THEO MIEN (z cum-ngay):
+    mien  nhom                 n      hr     nen   lift  z cum-ngay
+    MB    trong CS          1790  59.39%  50.38%  1.179       +6.29
+    MB    truoc CS          9466  50.50%  50.71%  0.996       -0.38
+    MB    DO TIEN             25  44.00%  50.97%  0.863       -0.44
+    MN    trong CS          1809  91.04%  88.22%  1.032       +3.37
+    MN    truoc CS          9919  88.31%  87.92%  1.004       +0.95
+    MN    DO TIEN             25  92.00%  86.85%  1.059       +0.77
+    MT    trong CS          1814  82.97%  76.65%  1.082       +5.85
+    MT    truoc CS          9820  75.73%  75.84%  0.999       -0.10
+    MT    DO TIEN             25  80.00%  72.28%  1.107       +1.00
+
+  SUC MANH THONG KE — can bao nhieu luot de phat hien chenh 5 diem so voi nen?
+  (hai phia, alpha=0.05, luc=0.80, mot mau so voi ti le nen da biet)
+      nen p0    n can   ghi chu
+       50.7%      782   mien MB (nen trung binh that)
+       88.0%      291   mien MN (nen trung binh that)
+       76.0%      546   mien MT (nen trung binh that)
+
+    QUY RA THOI GIAN CHO: moi luat chi ban MOT thu trong tuan => 1 luot/tuan.
+    mien     n can  tuan cho  nam cho
+    MB         782       782     15.0
+    MN         291       291      5.6
+    MT         546       546     10.5
+    => Do TUNG LUAT RIENG LE bang do tien la khong kha thi trong doi nguoi.
+       Muon ket luan trong vai thang thi phai gop luat lai thanh MOT phep do
+       chung (nhu dong 'DO TIEN' o bang tren), va phai doi thuoc do.
+
+    Vi sao nen cao lai lam n can NHO di ma van vo dung: khi nen da 95% thi tran
+    con lai chi 5 diem — 'chenh 5 diem' nghia la phai TRUNG 100%, khong the sai lan nao.
+    Muon do that su thi phai doi thuoc do (vi du: so duoi TRUNG tren so duoi GOM,
+    hoac bach thu), chu khong phai 'co it nhat mot duoi trung'.
+
+----------------------------------------------------------------------------------------------------
+[9] BIEN PHAN LOAI: R2 (date >= mined_at) vs V11003 (date > date(mined_at))
+----------------------------------------------------------------------------------------------------
+  R2      DO_TIEN (>=) : 75 luot tren 75 luat
+  V11003  DO_TIEN (> ) : 60 luot tren 60 luat
+  chenh                : 15 luot — dung la cac luot roi vao chinh ngay dao 2026-08-03
+  R2 dung '>=' theo dung viec owner giao. Luat dao luc 00:30 nen ket qua trong
+  ngay do CHUA xay ra khi dao => xep vao do tien la dung. V11003 dung '>' la
+  chat hon; ca hai deu khong doi ket luan vi so luot qua nho.
+
+----------------------------------------------------------------------------------------------------
+[10] SO DA LUU TRONG mined_rules CO DUNG KHONG? (doi chieu cua so 365 ngay truoc khi dao)
+----------------------------------------------------------------------------------------------------
+     id  n_luu   n_do  hr_luu   hr_do lift_luu lift_dung ans_luu  ans_do
+  --------------------------------------------------------------------------------
+   2311     52     52   90.4%   90.4%    1.015     1.025     3.9     3.9
+   2312     52     52   98.1%   98.1%    1.046     1.051     4.9     4.9
+   2313     52     52   98.1%   98.1%    1.003     1.004     6.8     6.8
+   2314     52     52   92.3%   92.3%    0.981     0.984     5.0     5.0
+   2315     52     52   75.0%   75.0%    1.107     1.129     2.0     2.0
+   2316     51     51   96.1%   96.1%    1.023     1.031     4.9     4.9
+   2317     51     51   98.0%   98.0%    1.001     1.003     6.9     6.9
+   2318     51     51   96.1%   96.1%    1.021     1.028     5.0     5.0
+   2319     52     52   71.2%   71.2%    1.056     1.090     2.0     2.0
+   2320     52     52   76.9%   76.9%    1.135     1.169     2.0     2.0
+   2321     51     51  100.0%  100.0%    1.021     1.023     6.9     6.9
+   2322     51     51   92.2%   92.2%    1.028     1.038     4.0     4.0
+  (in 12 luat dau; toan bo trong R2_recompute.json)
+
+  lift_365 DA LUU   : tb 1.112  min 0.952  max 1.450
+  lift TINH LAI DUNG: tb 1.117  min 0.959  max 1.462
+
+----------------------------------------------------------------------------------------------------
+[11] KET LUAN DO DUOC
+----------------------------------------------------------------------------------------------------
+  1. BH-FDR alpha=0.05 tren CHAM NGUOC : bac bo duoc 0/105 luat (p nhi thuc) · 0/105 (p Poisson-nhi-thuc)
+  2. BH-FDR alpha=0.05 tren DO TIEN    : bac bo duoc 0/105 luat (p nhi thuc) · 0/105 (p Poisson-nhi-thuc)
+  3. so luat co lift > 1.00 o cham nguoc : 72/105
+
+     BANG BH-FDR BON GIAI DOAN — cot 'p<0.05 tho' so voi 'ky vong ngau nhien'
+     la phep thu de doc nhat: neu luat khong co gi thi hai so phai bang nhau.
+     giai doan              so luat  p<0.05  ky vong  BH bac bo  lift>1  p nho nhat
+     ------------------------------------------------------------------------------
+     TRONG cua so chon          105      20      5.2          0      91    0.002538
+     TRUOC cua so chon          104       4      5.2          0      55    0.003110
+     CHAM NGUOC (ca hai)        105      10      5.2          0      72    0.003565
+     DO TIEN                     75       0      3.8          0      54    0.377576
+     ------------------------------------------------------------------------------
+     Doc dong TRUOC cua so chon: 4 luat co p<0.05, ngau nhien thuan tuy da
+     cho ra 5.2 luat. 55/104 luat co lift>1 — tung dong xu
+     cho ra 52. KHONG CO GI VUOT NGAU NHIEN o ngoai cua so chon.
+  4. so luat DU MAU do tien (n>=20) : 0/105
+  5. CHAM NGUOC gop : hr 72.77% vs nen 71.81% => lift 1.013, z cum-ngay +3.70
+  6. DO TIEN gop    : hr 72.00% vs nen 70.03% => lift 1.028, z cum-ngay +0.49
+  7. THIEN VI CHON  : lift trong cua so chon 1.084 vs ngoai cua so 1.000 (chenh +0.084)
+  8. TONG SO LUOT DO TIEN TREN CA 105 LUAT : 75 luot. Khong luat nao co qua 1 luot.
+

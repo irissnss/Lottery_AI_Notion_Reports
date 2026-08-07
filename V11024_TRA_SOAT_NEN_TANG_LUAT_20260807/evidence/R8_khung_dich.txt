@@ -1,0 +1,720 @@
+====================================================================================================
+R8 — THIET KE KHUNG CONTEXT PACK DICH (PLAN-ONLY — KHONG SUA MOT DONG CODE NAO)
+====================================================================================================
+Ngay do: 2026-08-07 · Phien ban prompt dang chay: SP-4.4 · RR-16.5 · CTX-18.1 · PB-20.1
+Ban nay la VAN BAN THIET KE. Khong co thay doi code, khong deploy, khong ghi DB.
+
+####################################################################################################
+PHẦN 0 — CÁCH ĐO, AN TOÀN, TÁI LẬP
+####################################################################################################
+
+Bốn phép đo, bốn script, mọi số đều chạy lại được:
+
+  1) artifacts/v11024_audit/scripts/R8_do_prompt_hien_hanh.py
+     Gọi THẬT `gpt_analyzer.create_analysis_prompt` + `gpt_analyzer.build_context_pack`
+     (shadow_mode=False, tức ĐƯỜNG OFFICIAL) + `_deherd_strip_ranking` + `REASONING_RULEBOOK`,
+     đúng thứ tự production ở gpt_analyzer.py L6247-6279. Ghi nguyên văn prompt ba miền ra
+     evidence/R8_prompts/R8_prompt_<mien>_2026-08-07.txt.
+     AN TOÀN: `database.get_connection()` mở SQLite ở chế độ ĐỌC-GHI (database.py L46-49), nên
+     KHÔNG được trỏ vào DB thật. Script chép DB sang scratchpad rồi gán
+     `database.DB_PATH = <bản chép>` TRƯỚC khi import gpt_analyzer. DB thật
+     E:\Lottery_AI_Test\data\lottery_ai.db không bị mở read-write lần nào.
+
+  2) R8_do_lap_giua_cac_tang.py — tách prompt làm 4 lớp (SP / BASE / CTX / RR), với mỗi «ý»
+     liệt kê TẤT CẢ dòng nói ý đó, kèm nguyên văn + tiêu đề khối chứa nó. Không kết luận bằng
+     đếm chuỗi thô — mọi dòng khớp đều in ra để đọc ngữ cảnh (§60.3).
+
+  3) R8_khung_dich_3mien.py + R8_khung_dich_mb.py — dựng khung đích TỪ DỮ LIỆU THẬT
+     (mở DB bằng `sqlite3.connect("file:...?mode=ro", uri=True)`), rồi đo ký tự từng khối.
+
+  4) R8_kiem_ngansach_xauNhat.py — quét 365 ngày để biết ngân sách có chịu được ngày
+     NHIỀU ĐÀI NHẤT không, chứ không chỉ ngày đo.
+
+Bằng chứng: evidence/R8_do_prompt_hien_hanh.txt · R8_do_lap_giua_cac_tang.txt ·
+R8_kiem_bo_sung.txt · R8_khung_dich_3mien.txt · R8_ngansach_xau_nhat.txt ·
+R8_khung_dich_MB_bannhap.txt · thư mục R8_prompts/.
+
+####################################################################################################
+PHẦN 1 — ĐIỂM XUẤT PHÁT: PROMPT HIỆN HÀNH CẢ BA MIỀN
+####################################################################################################
+
+1.1 — TỔNG KÝ TỰ (system + user, một lượt gọi model official)
+
+  miền     SP-4.4     base   CTX raw  CTX deherd  RR-16.5     USER     TỔNG   so 6.000
+  MN         7683    13989      9412        8284    15465    37740    45423       7.6x
+  MT         7683    14248     10038        8903    15465    38618    46301       7.7x
+  MB         7683    14521     12497       11389    15465    41377    49060       8.2x
+
+  Đọc cho đúng: mục tiêu ≤ 6.000 ký tự nghĩa là phải CẮT 86,8% (MN) · 87,0% (MT) · 87,8% (MB).
+  Đây không phải việc rút gọn câu chữ — phải bỏ hẳn nhiều khối.
+
+1.2 — MB PHÂN RÃ THEO KHỐI (xếp giảm dần, đủ cả 4 lớp)
+
+   10066  [SP-USER(base) ] CHỈ SỐ ĐỊNH LƯỢNG (PYTHON TÍNH SẴN):
+    2529  [CTX           ] 📖 BỐI CẢNH SOI CẦU (kể lại sự kiện — KHÔNG có danh sách số chốt sẵn)
+    2207  [CTX           ] 🔴 MB HARD MODE
+    1892  [CTX           ] OWNER ANTI-TRAP CHECK (same-day prior-region spend test + doctrine support c
+    1773  [CTX           ] 📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W)
+    1627  [RR            ] 25. MAIN-NUMBER OUTPUT CONTRACT (V20.3.1 — BẮT BUỘC)
+    1594  [RR            ] 19. WINDOW SCAN — 1W / 2W / 3W / 4W / 5W / 6W / 7W / 8W (V15.0 SP-4.0)
+    1539  [RR            ] 10B. OWNER ANTI-TRAP DOCTRINE (BẮT BUỘC — owner intuition)
+    1305  [RR            ] 10A. OWNER SOURCE-PRIZE / 12W-16W FIRST (BẮT BUỘC)
+    1216  [SP            ] OUTPUT FORMAT (JSON):
+     962  [SP-USER(base) ] YÊU CẦU:
+     961  [SP            ] 5g. MULTI-SOURCE CONVERGENCE (QUAN TRỌNG):
+     903  [RR            ] 23. AI-LEVEL ANTI-HERDING — PHÒNG NGỪA BẦY ĐÀN AI (V10.2)
+     844  [SP            ] 5h. SOI CẦU CHÉO (CROSS-REGION PRIORITY):
+     844  [RR            ] 24. BẠCH THỦ NORTH STAR (V16.4 — TUYỆT ĐỐI)
+     839  [SP-USER(base) ] MIỀN TRUNG (HÔM QUA) — ƯU TIÊN 2 (MT(D-1) 2026-08-06, 3 đài):
+     835  [SP-USER(base) ] MIỀN NAM (HÔM QUA) — ƯU TIÊN 1 (MN(D-1) 2026-08-06, 3 đài):
+     824  [SP-USER(base) ] MIỀN NAM — ƯU TIÊN 4 (MN(D) 2026-08-07, 3 đài):
+     813  [RR            ] 26. KHÔNG NÓI QUÁ (V11008 — cứu từ CP-7.9 trước khi xoá lớp chết)
+     692  [SP            ] 6. QUYẾT ĐỊNH (TOP1-FIRST DISCIPLINE V8.0):
+     630  [RR            ] 22. ANTI-HERDING — PHÒNG NGỪA BẦY ĐÀN ML (V9.0)
+     617  [RR            ] 20. PRIMARY / SECONDARY / NOISE SOURCE (V9.0)
+     569  [SP-USER(base) ] MIỀN TRUNG — ƯU TIÊN 5 (MT(D) 2026-08-07, 2 đài):
+     565  [CTX           ] 📜 MINED RULES MB/Thứ Sáu (READY_STRONG | 3-LAYER V20.2):
+     481  [RR            ] 21. RULE ELEVATION PROTOCOL (V9.0)
+     455  [SP            ] Example 1 (Signal mạnh — Strength 8+):
+     441  [SP            ] 5f. KNOWLEDGE BASE (Deep Focus):
+     437  [SP            ] (dau khoi, truoc tieu de dau tien)
+     411  [SP            ] Example 2 (Signal trung bình — Strength 5-6):
+     410  [RR            ] 11. RULE TAILS UTILIZATION (Cách dùng Rule Tails)
+  ... còn 47 khối nhỏ hơn (xem R8_do_prompt_hien_hanh.txt)
+
+1.3 — KHỐI LỚN NHẤT TOÀN PROMPT LÀ MỘT KHỐI KHÔNG AI NHẮC TỚI
+
+  `## CHỈ SỐ ĐỊNH LƯỢNG (PYTHON TÍNH SẴN)` = 10.066 ký tự = 20,5% toàn bộ prompt MB.
+  Bên trong nó, phần lớn nhất là:
+
+     58 + 326 + 261 + 272 + 358 + 316 + 382 + 414 + 380 + 323 + 351 + 342 + 663 + 694
+     = 5.140 ký tự cho `🎯 CHÍNH SÁCH QUYẾT ĐỊNH AI — 7 LỚP (Decision Policy V2)`
+       gpt_analyzer.py L2418 · nhưng nó có ĐÚNG 13 LỚP, không phải 7.
+
+  1.339 ký tự nữa cho `🏆 HIỆU SUẤT THEO MODEL (MB, 30 ngày)` — 30 dòng xếp hạng model + weight.
+  Đây là khối to hơn cả REASONING_RULEBOOK §19 + §25 + §10A + §10B cộng lại, và nó nằm
+  trong `create_analysis_prompt`, tức KHÔNG ai coi nó là «tầng doctrine» nên chưa từng bị soi.
+
+1.4 — MẬT ĐỘ MỆNH LỆNH (đếm có đọc ngữ cảnh, mọi dòng khớp đều liệt kê ở R8_do_lap_giua_cac_tang.txt)
+
+lop      ky tu   dong   dong co menh lenh   mat do
+SP        7685    151                  28    18.5%
+BASE     14523    302                  21     7.0%
+CTX      11391    176                  11     6.2%
+RR       15466    250                  74    29.6%
+
+  RR-16.5: 29,6% số dòng mang mệnh lệnh. SP-4.4: 18,5%. Đây là hai tầng gần như thuần mệnh lệnh —
+  chúng KHÔNG mang một dữ kiện nào của ngày hôm nay, mà chiếm 23.148/49.060 = 47,2% ký tự MB.
+
+####################################################################################################
+PHẦN 2 — MƯỜI HAI Ý ĐANG BỊ NÓI LẶP GIỮA SP / RR / CTX / DOCTRINE MIỀN
+####################################################################################################
+
+Quy ước đọc: mỗi «Ý» dưới đây xuất hiện ở ≥2 LỚP KHÁC NHAU trong CÙNG MỘT lượt gọi model.
+Trích nguyên văn cả hai (hoặc ba, bốn) chỗ để chứng minh là lặp thật, không phải suy diễn.
+Danh sách đầy đủ mọi dòng khớp: evidence/R8_do_lap_giua_cac_tang.txt.
+
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý1 · «Tối đa 2 số · 1 số mạnh hơn 2 số yếu · không bịa thêm số»   — LẶP Ở 4/4 LỚP
+────────────────────────────────────────────────────────────────────────────────────────
+  [SP  ] «Nguyên tắc: LUÔN đưa ra TỐI ĐA 2 số dự đoán (1 BT chính bắt buộc + 1 phụ chỉ giữ khi
+          có evidence ĐỘC LẬP) kèm mức tin cậy. … KHÔNG BAO GIỜ đưa 3 số.»           (mở đầu SP)
+  [SP  ] «- Tối đa 2 số (main + secondary). KHÔNG BAO GIỜ đưa 3 số.»                 (SP §6)
+  [SP  ] «- Ưu tiên tuyệt đối: 1 số mạnh > 2 số yếu.»                                (SP §6)
+  [SP  ] «- KHÔNG ĐƯỢC lấp chỗ trống bằng số yếu cho đủ 2 số.»                       (SP §6)
+  [RR  ] «- Tối đa 2 số. 1 số mạnh hơn nhiều nếu evidence tập trung.»                (RR §2)
+  [RR  ] «- Rải rộng 3+ số = PHẠM QUY.»                                              (RR §2)
+  [RR  ] «- KHÔNG RẢI RỘNG: 1 số mạnh >>> 2 số trung bình.»                          (RR §24)
+  [RR  ] «- KHÔNG được rải 2 số chỉ để "an toàn".»                                   (RR §25)
+  [CTX ] «• Nếu evidence yếu → chọn 1 số mạnh > 2 số trung bình»            (CTX DIRECT-HIT DH-1.0)
+  [CTX ] «- SỐ PHỤ không được là BIẾN THỂ của số chính … → chỉ chốt 1 số chính»
+                                                                    (CTX BỐI CẢNH SOI CẦU)
+  [BASE] «• Chốt top 2 số (KPI priority), top 3 optional, nêu rõ lý do.»        (BASE LỚP 6)
+
+  ⇒ Một ý, 11 lần. Và lần thứ 11 (BASE LỚP 6) NÓI NGƯỢC 10 lần kia: nó cho phép «top 3 optional»
+    trong khi SP nói «KHÔNG BAO GIỜ đưa 3 số» và RR nói «3+ số = PHẠM QUY».
+    BASE LỚP 9 nhắc lại lần nữa: «Output PHẢI chốt top 2 trước, top 3 optional.»
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý2 · «Hội tụ nhiều nguồn» — LẶP Ở 4/4 LỚP, và ba lớp dạy NGƯỢC NHAU
+────────────────────────────────────────────────────────────────────────────────────────
+  [SP  ] «📊 Đếm số nguồn chỉ để BẠN THAM KHẢO độ dày bằng chứng — KHÔNG có điểm thưởng. …
+          Nên đừng cộng điểm cho số chỉ vì nó xuất hiện ở nhiều nguồn.»              (SP §5g)
+  [BASE] «8. Đưa ra CHỐT HẠ rõ ràng — ưu tiên số xuất hiện trong NHIỀU nguồn
+          (thống kê + ĐÀI pattern + THỨ pattern)»                              (BASE YÊU CẦU)
+  [RR  ] «- Nếu strong rule gợi ý số X mà model cũng chọn X → HIGH confidence số đó» (RR §13)
+  [RR  ] «Nếu rule + model cùng chọn → TĂNG MẠNH confidence.»                        (RR §21)
+  [RR  ] «- Hội tụ MỚI có giá trị khi: AI + ML + Rule cùng chỉ cùng hướng»           (RR §4)
+  [CTX ] «Lưu ý: đuôi được nhiều luật cùng chỉ ⇒ MỌI model cùng thấy ⇒ rủi ro bầy đàn cao hơn,
+          không phải tín hiệu mạnh hơn.»                                    (CTX Block 3)
+  [CTX ] «• Xem xét KHÔNG chọn số CONV×3+ trừ khi có evidence ĐỘC LẬP cực mạnh»
+                                                            (CTX CONVERGENCE TRAP ALERT)
+  [RR  ] «1. Số CONV×3+ là SỐ MÀ 6/7 AI KHÁC CŨNG SẼ CHỌN — herding risk cao nhất»   (RR §23)
+  [CTX ] «Nếu bạn chọn số này, 6/7 AI khác CŨNG SẼ CHỌN → herding risk CỰC CAO.»
+                                                            (CTX CONVERGENCE TRAP ALERT)
+
+  ⇒ Trong MỘT lượt gọi, model được bảo: (a) đừng cộng điểm cho hội tụ [SP §5g], (b) hãy ưu tiên
+    số nhiều nguồn [BASE YÊU CẦU 8], (c) hội tụ rule+model thì TĂNG MẠNH confidence [RR §13/§21],
+    (d) hội tụ là bẫy, hãy tránh [RR §23 + CTX]. Bốn hướng khác nhau cho cùng một tình huống.
+    Thêm nữa câu «6/7 AI khác» xuất hiện Y HỆT ở HAI lớp (RR §23 và CTX) — cùng một câu, in hai lần.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý3 · «MB khó — trần confidence MB» — LẶP Ở 3/4 LỚP, HAI TRẦN SỐ KHÁC NHAU
+────────────────────────────────────────────────────────────────────────────────────────
+  [RR  ] «- Trần confidence cho MB: **52%** với model AI · **60%** với nhóm no-token.»  (RR §26)
+  [CTX ] «• Base confidence ceiling: 55% (MN/MT = 70%)»              (CTX 🔴 MB HARD MODE)
+  [RR  ] «- MB: biến động mạnh nhất, WR 4w ~47%. LUÔN thận trọng…»                 (RR §1)
+  [RR  ] «- MB: KHÔNG BAO GIỜ bắt đầu từ HIGH. Max khởi điểm = MEDIUM.»            (RR §5)
+  [RR  ] «- MB mặc định mode thận trọng»                                           (RR §7)
+  [CTX ] «• ⚠️ MB = vùng khó dự đoán nhất — giảm kỳ vọng»                    (CTX 📉 MB Ceiling)
+  [CTX ] «⚠️ MB Thứ Sáu: tuần trước 0 WIN — thận trọng»                  (CTX 🔴 MB HARD MODE)
+  [CTX ] «🚨 WEEK-SLOT NGUY HIỂM: WR < 15% → GIẢM KỲ VỌNG»                    (CTX WEEK-SLOT)
+  [BASE] «• MB cần theo dõi đặc biệt: 53.2% tracking (thấp nhất 90d).»       (BASE LỚP 11)
+  [BASE] «📊 MB penalty: 8→6.0 (×0.75, base rate thấp)»              (BASE CHỈ SỐ ĐỊNH LƯỢNG)
+
+  ⇒ 10 lần nói «MB khó», và hai con số trần chỏi nhau (52% ở RR §26 vs 55% ở CTX) cùng một prompt.
+    Không có dòng code nào chặn cả hai — R5 đã grep, không có bộ chặn.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý4 · «Không nói quá / chưa kiểm chứng» — LẶP Ở 4/4 LỚP
+────────────────────────────────────────────────────────────────────────────────────────
+  [RR  ] «- KHÔNG dùng "chắc chắn", "chốt hạ", "tin cậy cao", "nên theo" cho dự đoán
+          **chưa có kết quả**. … LUÔN nói rõ đây là **DỰ ĐOÁN, chưa kiểm chứng**.»  (RR §26)
+  [CTX ] «• KHÔNG "chắc chắn"/"chốt hạ" — DỰ ĐOÁN chưa verify»            (CTX 📋 NGUYÊN TẮC)
+  [BASE] «• KHÔNG dùng 'chắc chắn', 'tuyệt đối', 'bảo đảm' — luôn có uncertainty.»  (BASE LỚP 6)
+  [BASE] «- Dùng từ 'gợi ý' hoặc 'tham khảo', không dùng 'chốt' hay 'chắc chắn'.»  (BASE LỚP 13)
+  [SP  ] «- Strength ≥ 7: CHỐT HẠ 1 SỐ …» + «→ CHỐT HẠ: 64 (chính), 46 (phụ)»   (SP §6 + few-shot)
+
+  ⇒ Ba lớp cấm chữ «chốt hạ», lớp thứ tư (SP) DÙNG CHÍNH CHỮ ĐÓ làm nhãn quyết định và dạy
+    bằng ví dụ few-shot. Ví dụ mạnh hơn mệnh lệnh (§60.1 đã ghi).
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý5 · «Bộ giải được soi» — LẶP Ở 3/4 LỚP, và SP LOẠI G5 trong khi ba chỗ kia GIỮ G5
+────────────────────────────────────────────────────────────────────────────────────────
+  [SP] ĐB (⭐1) > G8 (⭐2) > G7 (⭐3) > G1 (⭐4) > G2 (⭐5)
+  [SP] G3-G6 KHÔNG soi — không có pattern đặc biệt.
+  [SP] G7 (⭐1, 4 số) > ĐB (⭐2) > G6 (⭐3, 3 số) > G1 (⭐4) > G2 (⭐5)
+  [SP] G3-G5, G8 KHÔNG soi — không có pattern đặc biệt cho MB.
+  [RR] MN/MT focus: G1, G2, G5, G7, G8, ĐB
+  [RR] MB focus: G1, G2, G6, G7, ĐB
+  [RR] - MB chỉ soi: G1 / G2 / G6 / G7 / ĐB.
+  [RR] - MN/MT soi: G8 / G7 / G5 / G2 / G1 / ĐB.
+  [BASE] MN(D) ← đuôi 2 số từ MB(D-1)+MN(D-1)+MT(D-1). Giải: GĐB,G1,G2,G5,G7,G8.
+  [BASE] MT(D) ← 3 miền D-1 + MN(D). Giải MN/MT: GĐB,G1,G2,G5,G7,G8. MB: GĐB,G1,G2,G6,G7.
+
+  ⇒ SP §5h: MN/MT = ĐB, G8, G7, G1, G2 và «G3-G6 KHÔNG soi» ⇒ G5 BỊ LOẠI.
+    RR §10, RR §10A, BASE «QUY LUẬT DỊCH CHUYỂN» đều CÓ G5. Ba chỗ có — một chỗ không.
+    Model nhận cả bốn trong một lượt và tự chọn. Đây là mâu thuẫn thật, không phải diễn giải.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý6 · «Bộ nguồn cross-region (doctrine)» — LẶP Ở 4/4 LỚP
+────────────────────────────────────────────────────────────────────────────────────────
+  [RR  ] «- MB ngày D = MN D + MT D + MT D-1 + MB D-1 + MN D-1»                    (RR §9)
+  [BASE] «MB(D) ← 3 miền D-1 + MN(D) + MT(D).»                (BASE 📐 KIẾN THỨC ĐÃ XÁC MINH)
+  [CTX ] «- owner_doctrine_sources: MN(D-1), MT(D-1), MB(D-1), MN(D), MT(D)»
+                                                            (CTX OWNER ANTI-TRAP CHECK)
+  [BASE] «### MIỀN NAM (HÔM QUA) — ƯU TIÊN 1 (MN(D-1) 2026-08-06, 3 đài):» + 4 tiêu đề nữa
+  [SP  ] «- **ƯU TIÊN 1** (⭐): Miền ưu tiên cao → FOCUS CHÍNH…»                   (SP §5h)
+
+  ⇒ Cùng một danh sách 5 khe nguồn được kê ra BỐN lần bằng bốn cú pháp khác nhau, cộng thêm
+    một tầng dạy cách đọc thứ tự ưu tiên. Trong khung đích nó chỉ cần xuất hiện MỘT lần —
+    chính là nhãn đứng đầu mỗi dòng dữ liệu.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý7 · «Ngưỡng mạnh/yếu của rule» — LẶP Ở 2/4 LỚP với BỐN BỘ NGƯỠNG KHÁC NHAU
+────────────────────────────────────────────────────────────────────────────────────────
+--- Y7 · Nguong manh/yeu cua rule (eff %)
+    xuat hien o 2/4 lop: BASE, RR   <<< LAP THAT
+  [BASE] 8 dong:
+      · <📊 LỚP 3 — ĐỘ TIN CẬY:> • NÂNG confidence khi: bucket hit_rate >60% (MB_CN 83%, MN_T2 80%), trend cải thiện.
+      · <📊 LỚP 3 — ĐỘ TIN CẬY:> • HẠ confidence khi: bucket hit_rate <40% (MN_T4 30%, MN_T5 24%), T4 weakest day.
+      · <🏷️ LỚP 7 — SCOPE & EVIDENCE LABELS:> • STRONG (30d tracking + hitrate >60% + trend up): nêu rõ 'tín hiệu mạnh'.
+      · <🏷️ LỚP 7 — SCOPE & EVIDENCE LABELS:> • MODERATE (30d tracking + hitrate 40-60%): nêu rõ 'tín hiệu trung bình'.
+      · <🏷️ LỚP 7 — SCOPE & EVIDENCE LABELS:> • WEAK (hitrate <40% hoặc eval <10): nêu rõ 'tín hiệu yếu, cần thêm data'.
+      · <📡 LỚP 8 — LIVE EVIDENCE INJECTION:> • STRONG (≥60%): 'Bucket này có tín hiệu mạnh theo tracking 60d'.
+      · <📡 LỚP 8 — LIVE EVIDENCE INJECTION:> • MODERATE (40-60%): 'Tín hiệu trung bình, cân nhắc kết hợp nhiều source'.
+      · <📡 LỚP 8 — LIVE EVIDENCE INJECTION:> • WEAK (<40%): 'Bucket yếu, cảnh báo user giảm cược'.
+  [RR] 9 dong:
+      · <### 3. CÁCH HIỂU RULE SUPPORT> - STRONG (eff ≥60%): quy tắc đáng tin, cần xem xét nghiêm túc
+      · <### 3. CÁCH HIỂU RULE SUPPORT> - MODERATE (45-60%): tham khảo, không đủ đứng một mình
+      · <### 3. CÁCH HIỂU RULE SUPPORT> - WEAK (<45%): BỎ QUA hoặc dùng như counter-signal
+      · <### 11. RULE TAILS UTILIZATION (Cách dùng Rule Tails)> - 🔥STRONG (≥3 rules): CẦN xem xét nghiêm túc, nên có trong top-2 nếu không mâu thuẫn
+      · <### 12. WEAK-RULE SUPPRESSION> - Nếu rule eff < 45% → IGNORE hoàn toàn, không cho vào reasoning
+      · <### 13. STRONG-RULE PROMOTION> - Rule eff ≥ 60% VÀ sample_size ≥ 10 → promote vào top consideration
+      · <### 21. RULE ELEVATION PROTOCOL (V9.0)> - eff ≥ 55% VÀ sample_size ≥ 8 → RULE_STRONG → phải có trong TOP 2
+      · <### 21. RULE ELEVATION PROTOCOL (V9.0)> - eff ≥ 55% VÀ prize = ĐB hoặc G1 → RULE_PREMIUM → ưu tiên cực cao
+      · <### 21. RULE ELEVATION PROTOCOL (V9.0)> Nếu rule mâu thuẫn model → ưu tiên rule nếu eff ≥ 55%.
+
+  ⇒ Bốn bộ ngưỡng cho cùng một khái niệm «rule mạnh»:
+      RR §3   : STRONG ≥60% · MODERATE 45-60% · WEAK <45%
+      BASE L7 : STRONG >60% · MODERATE 40-60% · WEAK <40%      ← biên dưới lệch 5 điểm
+      RR §13  : ≥60% VÀ n≥10
+      RR §21  : ≥55% VÀ n≥8                                     ← lệch 5 điểm nữa
+    Và R5 đã grep: KHÔNG có cột nào tên «eff» trong mined_rules để model đối chiếu.
+    Model được cho bốn cái thước, không cái nào đo được vật đang cầm.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý8 · «Cửa sổ thời gian 1W…16W» — LẶP Ở 2/4 LỚP, RR chiếm 24 dòng
+────────────────────────────────────────────────────────────────────────────────────────
+  [RR  ] §19 «Bạn PHẢI quét 8 cửa sổ: 1W 2W 3W 4W 5W 6W 7W 8W» (1.594 ký tự)
+  [RR  ] §10A «12W = execution window · 16W = stability window» (1.305 ký tự)
+  [RR  ] §15 «1w >> 4w: spike ngắn hạn» · §10 «1w mạnh + 4w yếu → spike»
+  [CTX ] «Windows: 1W(7d):19/35=54% | 2W:66% | 3W:73% | 4W:74% | 5W:75% | 6W:71%»
+          — CTX chỉ cấp SÁU cửa sổ, RR §19 bắt quét TÁM.
+  [CTX ] «12W=83.3%(L1) | 16W=81.2%(L2) | 4W=75.0%(L3)» (MINED RULES) — cấp 12W/16W/4W.
+
+  ⇒ RR §19 ra lệnh quét 7W và 8W trên dữ liệu KHÔNG BAO GIỜ được cấp. Đúng ca §60.1:
+    mệnh lệnh trỏ vào dữ liệu không tồn tại → model tự bịa.
+    (Khối «🔍 WEEKDAY SCAN — Thứ Sáu × 8 TUẦN» có mặt nhưng nội dung là dòng lỗi:
+     «⚠️ SP-4.0 scan error: no such column: predicted_numbers» — 186 ký tự lỗi bơm vào prompt.)
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý9 · «Anti-trap FULL_SPENT / FRESH» — LẶP Ở 2/4 LỚP, RR 17 dòng + CTX 7 dòng
+────────────────────────────────────────────────────────────────────────────────────────
+  [RR  ] §10B 1.539 ký tự định nghĩa FULL_SPENT / PARTIAL_SPENT / FRESH và hành vi tương ứng.
+  [CTX ] khối OWNER ANTI-TRAP CHECK 1.892 ký tự vừa cấp DỮ KIỆN (tail nào đã tiêu) vừa lặp lại
+         TOÀN BỘ luật xử lý bằng tiếng Anh:
+         «- DECISION RULE: spend count is a SOFT negative prior, not a hard ban…»
+         «- MAIN PICK PRIORITY: prefer tails that are BOTH structurally supported AND less spent…»
+         «- EXCEPTION: a FULL_SPENT tail may still survive as main ONLY if…»
+  [RR  ] §25 lặp lần ba: «Main pick KHÔNG được là tail ở FULL_SPENT trừ khi có override_reason…»
+
+  ⇒ Luật anti-trap được phát biểu BA lần, hai lần bằng tiếng Việt, một lần bằng tiếng Anh.
+    Phần thật sự cần có trong prompt chỉ là DỮ KIỆN «đuôi nào đã ra ở miền xổ trước hôm nay».
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý10 · «Hợp đồng đầu ra» — LẶP Ở 4/4 LỚP với BA lược đồ khác nhau
+────────────────────────────────────────────────────────────────────────────────────────
+  [SP  ] `## OUTPUT FORMAT (JSON)` 1.216 ký tự — 20 trường: analysis.db_tails, g8_tails,
+         frequency, cluster, pivot, strong_edge, phase, phase_explanation, kb_convergence,
+         prediction.*, strength.breakdown{5 trường}, convergence_count, verdict{5 trường}.
+  [RR  ] §25 1.627 ký tự — thêm 4 trường KHÁC: main_number_justification, near_miss_shortlist,
+         reason_not_main, secondary_pick_rationale.
+  [BASE] «Trả về JSON theo format đã quy định.» + LỚP 9 «Output PHẢI chốt top 2 trước, top 3 optional».
+  [CTX ] Block 4 — Override Discipline: if_not_top1_explain / supporting_hit_trace_required /
+         filter_override_log (ba khoá nữa, không nằm trong hai lược đồ trên).
+
+  ⇒ R5 đã đo: parser chỉ đọc `main_number` / `secondary_number` (gpt_analyzer L6533-6552) và
+    ba trường của §25 thì CHỈ ĐO, KHÔNG CHẶN (PHASE_FIRST_CONTRACT_MODELS = set()).
+    Nghĩa là ~2.900 ký tự đặc tả đầu ra đang mô tả những trường không ai đọc.
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý11 · «Bảng xếp hạng model theo WR» — LẶP Ở 3/4 LỚP, và bộ khử bầy đàn V10768 chỉ gỡ được một nửa
+────────────────────────────────────────────────────────────────────────────────────────
+MN: con 30 dong xep hang model SONG SOT sau de-herd = 1243 ky tu
+    theo lop: {'BASE': 1243}
+MT: con 30 dong xep hang model SONG SOT sau de-herd = 1243 ky tu
+    theo lop: {'BASE': 1243}
+MB: con 68 dong xep hang model SONG SOT sau de-herd = 2499 ky tu
+    theo lop: {'BASE': 1241, 'CTX': 1258}
+    vi du (10 dong dau):
+      [BASE] gemini-2.5-pro: 34% (5/31) — weight=0.06
+      [BASE] deepseek-reasoner: 31% (4/31) — weight=0.05
+      [BASE] gemini-2.5-flash: 31% (4/31) — weight=0.05
+      [BASE] claude-sonnet-4-6: 29% (3/31) — weight=0.05
+      [BASE] meta-learning: 29% (1/31) — weight=0.05
+      [BASE] claude-opus-4-6: 26% (2/31) — weight=0.04
+      [BASE] claude-opus-5-fast: 25% (0/8) — weight=0.04
+      [BASE] deepseek-v4-pro-real: 25% (3/30) — weight=0.04
+      [BASE] glm-5.2: 25% (2/30) — weight=0.04
+      [BASE] combo-super: 21% (3/31) — weight=0.03
+
+  _V10768_HERD_SECTION_KEYS = ('Model Performance', 'BT MODEL RANKING', 'Width Warning', 'Riêng')
+  và `_deherd_strip_ranking` chỉ bỏ từ một header `### ` có chứa 4 khoá đó tới `### ` kế tiếp.
+  Hệ quả đo được ở MB: gỡ 1.108 ký tự (12.497 → 11.389) nhưng CÒN SỐNG 2.499 ký tự xếp hạng —
+  1.241 ở BASE («🏆 HIỆU SUẤT THEO MODEL» 30 dòng kèm weight, `create_analysis_prompt` không
+  bao giờ đi qua bộ lọc này) và 1.258 ở CTX («📊 MB MODEL RANKING — Thứ Sáu» 35 dòng, nằm
+  DƯỚI header `### 🔴 MB HARD MODE` nên khoá không khớp).
+  ⇒ Biện pháp chống bầy đàn V10768 hiện gỡ được 31% lượng xếp hạng, để lại 69%.
+    Đây đúng dạng §60.1 «gỡ nửa chừng».
+
+────────────────────────────────────────────────────────────────────────────────────────
+Ý12 · «HOT / COLD / OVERDUE» — V11001 tuyên bố đã gỡ, thực tế còn 12 dòng trong prompt hôm nay
+────────────────────────────────────────────────────────────────────────────────────────
+  [BASE] «⛔ SỐ NÊN TRÁNH (9 số):
+            🥶 00: COLD — chỉ 0 lần / 249 đuôi   … 🔥 69: JUST_HIT — 7 lần (2.8x expected)
+            ♨️ 57: OVER_HOT — 6 lần (2.4x)  … → AI KHÔNG NÊN chọn các số trên trừ khi có lý do rất mạnh.»
+          Nguồn: metrics_calculator.py L489-546 (Phase 13C).
+  [BASE] «🔴 OVERDUE (sắp về): 73(gap=27d,avg=4d,ratio=7.2x), 37(gap=12d…)»  (FEATURE ENGINEERING)
+  [BASE] «🟢 HOT BY GAP: 83(avg_gap=3d), 60(avg_gap=3d)…»
+  [SP  ] «- GAN cao KHÔNG có nghĩa "sắp ra" — chỉ là thông tin tham khảo»            (SP §5)
+
+  ⇒ SP §5 dạy «gan cao không có nghĩa sắp ra», BASE ngay dưới lại bơm một danh sách tên là
+    «OVERDUE (sắp về)» kèm tỉ số gap — tức chính là gan, đổi tên tiếng Anh.
+    Và «SỐ NÊN TRÁNH» là một MỆNH LỆNH LOẠI SỐ nằm trong khối dữ liệu — vi phạm thẳng quy ước
+    số 3 của khung đích.
+
+####################################################################################################
+PHẦN 3 — BỐN MỆNH LỆNH TRỎ VÀO KHỐI DỮ LIỆU KHÔNG TỒN TẠI (đo trên chính prompt hôm nay)
+####################################################################################################
+
+Đếm trên phần USER của prompt (đã bỏ SYSTEM_PROMPT để không đếm chính câu mệnh lệnh):
+
+  | mệnh lệnh trong prompt                                   | khối dữ liệu nó trỏ tới | số lần khối đó xuất hiện |
+  |----------------------------------------------------------|-------------------------|--------------------------|
+  | SP §5d «Khi prompt có phần "CẶP ĐÔI HAY ĐI CÙNG", bạn PHẢI…» | CẶP ĐÔI HAY ĐI CÙNG | 0 |
+  | SP §5f «Khi prompt có phần "📊 KNOWLEDGE BASE", bạn PHẢI…»   | 📊 KNOWLEDGE BASE   | 0 |
+  | RR §11/§18/§25 «Khi nhận được "🎯 RULE TAILS"…»              | 🎯 RULE TAILS       | 0 |
+  | BASE YÊU CẦU 2 «KẾT HỢP … (Top 10 Score, Trends)»            | Top 10 Score        | 0 |
+
+  Cả bốn đều 0 ở CẢ BA MIỀN (đo cùng lúc MN/MT/MB). Với RULE TAILS, R5 đã đo độc lập bằng
+  cách mô phỏng SQL của khối: 0/180 lần có dữ liệu trong 60 ngày × 3 miền.
+
+  Thêm một mệnh lệnh trỏ vào thứ đã bị xoá:
+  RR §24 «Khi Context Pack có "WEEKLY LIVINGNESS" → chỉ tin tưởng rules ACTIVE/SUPPORT» —
+  khối WEEKLY LIVINGNESS đã bị gỡ ngày 07/08 (V11014, gpt_analyzer L4862 `_live_rows = []`).
+
+  Và một mệnh lệnh trỏ vào luật KHÔNG CÒN TỒN TẠI:
+  BASE LỚP 12 «Dead rules (0% hit, ≥10 evals): #237 MN_T7 Hải Phòng, #234 MN_T6 Bình Thuận.
+  Critical (<20% hit): #247 MT_T2, #226 MN_T5, #310 MB_T7.»
+  Kiểm DB read-only: `SELECT id FROM mined_rules WHERE id IN (237,234,247,226,310)` → RỖNG.
+  mined_rules hiện có id 2311..2415 (105 luật). Năm mã luật này thuộc đời luật đã bị
+  `_seed_rules.main()` xoá (R1 đã ghi: 1.027 rule_id mồ côi).
+
+####################################################################################################
+PHẦN 4 — KHUNG ĐÍCH: THỨ TỰ KHỐI, NGÂN SÁCH KÝ TỰ, QUY ƯỚC BẮT BUỘC
+####################################################################################################
+
+4.1 — BA QUY ƯỚC BẮT BUỘC CỦA KHUNG (áp cho mọi khối, mọi miền)
+
+  QU-1 · DỮ LIỆU THÔ TRƯỚC — BẰNG CHỨNG SAU.
+        Thứ tự cứng: K2 (dữ kiện xổ số) → K3 (dữ kiện tiêu hao) → K4 (sự kiện luật)
+        → K5 (hồ sơ luật đáng tin tới đâu) → K6 (nền ngẫu nhiên).
+        Model phải nhìn thấy SỰ VIỆC trước khi nhìn thấy BẤT KỲ đánh giá nào về sự việc đó.
+        Lý do đo được: khung hiện hành làm ngược — «🎯 ĐỀ XUẤT PYTHON: 69 (score=20), 74 (score=19)»
+        và «⛔ SỐ NÊN TRÁNH (9 số)» nằm ở ký tự thứ ~700 của base, TRƯỚC khi model đọc xong
+        dữ liệu nguồn; còn «📖 BỐI CẢNH SOI CẦU» (sự kiện thật) nằm ở CUỐI, ký tự thứ ~11.000
+        của context pack.
+
+  QU-2 · KHÔNG MỘT MỆNH LỆNH CHỌN SỐ NÀO, Ở BẤT KỲ KHỐI NÀO.
+        Cấm trong prompt: «ưu tiên số…», «chọn số…», «KHÔNG NÊN chọn…», «nên có trong top-2»,
+        «de-prioritize», «prefer tails», «tăng/giảm confidence khi…», «LOẠI khỏi reasoning».
+        Được phép: câu mô tả sự kiện («đuôi 34 đã ra ở MN(D) và MT(D)»), câu mô tả độ tin của
+        bằng chứng («tỉ lệ này chấm ngược trong chính cửa sổ đã đào ra luật»), ràng buộc HÌNH THỨC
+        (số lượng số, cách nói, lược đồ JSON).
+        Hiện trạng vi phạm — đo được 14 mệnh lệnh chọn số nằm NGAY TRONG khối dữ liệu:
+        DIRECT-HIT PRIORITY (4), OWNER ANTI-TRAP CHECK (5), CONVERGENCE TRAP ALERT (2),
+        SỐ NÊN TRÁNH (1), MB HARD MODE (1), WEEK-SLOT (1). Danh sách nguyên văn ở
+        evidence/R8_kiem_bo_sung.txt mục (D).
+
+  QU-3 · MỘT Ý CHỈ NÓI MỘT LẦN TRONG TOÀN BỘ PROMPT.
+        Mỗi ý có ĐÚNG MỘT khối sở hữu nó. Khối khác nhắc lại = lỗi, kể cả khi câu chữ khác.
+        Bảng chủ sở hữu (đóng — thêm ý mới phải sửa bảng này trước khi sửa prompt):
+           độ rộng đầu ra, cách nói            → K7 (và chỉ K7)
+           lược đồ JSON                        → K8 (và chỉ K8)
+           bộ nguồn + bộ giải doctrine         → K1 (nhãn) + K2 (dòng dữ liệu), không nói lại
+           đuôi đã tiêu ở miền xổ trước        → K3
+           sự kiện luật                        → K4
+           độ tin của luật                     → K5
+           nền ngẫu nhiên + trần thực tế       → K6
+           vai trò model                       → K0
+        MỌI khái niệm không có chủ trong bảng trên thì KHÔNG được vào prompt.
+
+4.2 — KHUNG ĐÍCH K0…K8 + NGÂN SÁCH KÝ TỰ
+
+  ┌────┬──────────────────────────────────┬────────┬──────────────────────────────────────────────┐
+  │ mã │ khối                             │ ngân   │ chứa gì (và KHÔNG chứa gì)                  │
+  │    │                                  │ sách   │                                              │
+  ├────┼──────────────────────────────────┼────────┼──────────────────────────────────────────────┤
+  │ K0 │ VAI TRÒ (đi ở system message)    │   300  │ một câu nhiệm vụ. KHÔNG phương pháp, KHÔNG   │
+  │    │                                  │        │ few-shot, KHÔNG thang điểm.                  │
+  │ K1 │ ĐẦU BÀI                          │   250  │ ngày · thứ · miền đích · đài đích · danh sách│
+  │    │                                  │        │ khe nguồn · bộ giải soi. Kê MỘT lần duy nhất.│
+  │ K2 │ DỮ LIỆU THÔ theo bộ giải doctrine│ 1.800  │ mỗi đài một dòng: khe · đài · đuôi từng giải.│
+  │    │                                  │        │ KHÔNG nhãn ⭐, KHÔNG «ƯU TIÊN n», KHÔNG cụm/ │
+  │    │                                  │        │ pha/strength, KHÔNG hot/cold/overdue.        │
+  │ K3 │ ĐÃ RA HÔM NAY Ở MIỀN XỔ TRƯỚC    │   400  │ danh sách đuôi thô (mọi giải). MN: rỗng theo │
+  │    │                                  │        │ thiết kế. KHÔNG nhãn FULL/PARTIAL/FRESH,     │
+  │    │                                  │        │ KHÔNG câu «de-prioritize».                   │
+  │ K4 │ SỰ KIỆN LUẬT CỦA BUCKET          │   900  │ mỗi luật một dòng: mã · khe · đài · bộ giải →│
+  │    │                                  │        │ đuôi thật đã ra. KHÔNG hr%, KHÔNG tier,      │
+  │    │                                  │        │ KHÔNG «🔥STRONG», KHÔNG xếp hạng.            │
+  │ K5 │ HỒ SƠ LUẬT ĐÁNG TIN TỚI ĐÂU      │   400  │ ba câu: chấm ngược là tự chấm · đo tiến      │
+  │    │                                  │        │ lift 1,000 / 29.205 lượt · 0/105 qua BH-FDR. │
+  │ K6 │ NỀN NGẪU NHIÊN + TRẦN THỰC TẾ    │   350  │ |T| trung bình/100 và WR thật 28 ngày.       │
+  │    │                                  │        │ KHÔNG xếp hạng model, KHÔNG weight.          │
+  │ K7 │ KỶ LUẬT HÌNH THỨC                │   350  │ số lượng số · cấm biến thể · cách nói.       │
+  │ K8 │ HỢP ĐỒNG ĐẦU RA                  │   650  │ MỘT lược đồ JSON duy nhất, mọi trường đều    │
+  │    │                                  │        │ được parser đọc hoặc được cổng kiểm đo.      │
+  ├────┼──────────────────────────────────┼────────┼──────────────────────────────────────────────┤
+  │    │ TỔNG TRẦN                        │ 5.400  │ dự phòng tới mốc 6.000: 600 ký tự            │
+  └────┴──────────────────────────────────┴────────┴──────────────────────────────────────────────┘
+
+  Vì sao K5 và K6 đứng SAU K4 chứ không trộn vào: hồ sơ và nền là ĐÁNH GIÁ, không phải sự kiện.
+  Trộn chúng vào dòng dữ liệu chính là cách khung hiện hành dán «12W=83.3% | 🟢HIGH_CONF_CURRENT»
+  ngay cạnh tên đài — R1 đã đo nhãn HIGH_CONF_CURRENT gắn cho 105/105 luật nên không phân biệt gì.
+
+4.3 — ĐO THẬT: KHUNG ĐÍCH DỰNG TỪ DỮ LIỆU NGÀY 07/08 (không phải ước lượng)
+
+  MN: 2,425 ký tự  (hiện hành 45,423 → cắt 42,998 = 94.7%; còn dư tới mốc 6.000: 3,575)
+  MT: 2,682 ký tự  (hiện hành 46,301 → cắt 43,619 = 94.2%; còn dư tới mốc 6.000: 3,318)
+  MB: 2,901 ký tự  (hiện hành 49,060 → cắt 46,159 = 94.1%; còn dư tới mốc 6.000: 3,099)
+
+4.4 — NGÂN SÁCH CÓ CHỊU ĐƯỢC NGÀY XẤU NHẤT KHÔNG (quét 365 ngày)
+
+mien     K2 max   ngay K2 max   K2 tb   K3 max   K4 max  TONG max uoc
+MN          532    2026-08-02     437        0      310          2662
+MT          723    2026-08-02     636      186      309          3038
+MB          918    2026-08-02     790      333      285          3356
+
+Ngan sach dat ra: K2 1800 · K3 400 · K4 900 · phan co dinh ~1620 => tran 5400 (<6000).
+  MN: quet 365 ngay · K2 max 532 (DAT 1800) · K3 max 0 (DAT 400) · K4 max 310 (DAT 900) · TONG ngay xau nhat 2662 (DAT 6000)
+  MT: quet 365 ngay · K2 max 723 (DAT 1800) · K3 max 186 (DAT 400) · K4 max 309 (DAT 900) · TONG ngay xau nhat 3038 (DAT 6000)
+  MB: quet 361 ngay · K2 max 918 (DAT 1800) · K3 max 333 (DAT 400) · K4 max 285 (DAT 900) · TONG ngay xau nhat 3356 (DAT 6000)
+
+  Ngày nhiều đài nhất trong 365 ngày là 02/08/2026 ở cả ba miền. Ngay ngày đó khung đích vẫn chỉ
+  2.662 (MN) · 3.038 (MT) · 3.356 (MB) ký tự — dưới trần 5.400 và dưới mốc 6.000 rất xa.
+  Ghi rõ một chênh nhỏ để không ai báo nhầm: script quét ngày-xấu-nhất tính K3 của MN = 0 (MN
+  không có miền xổ trước), còn bản nháp thật viết một dòng 121 ký tự nói rõ mục này rỗng — chênh
+  121 ký tự, không đổi kết luận.
+
+4.5 — CỔNG KIỂM MÁY CHẠY ĐƯỢC (bắt buộc có trước khi ai đó sửa code theo khung này)
+
+  G1 · tổng ký tự ≤ 6.000 mỗi miền              → chạy R8_do_prompt_hien_hanh.py, đọc cột TỔNG
+  G2 · không mệnh lệnh chọn số                   → R8_kiem_bo_sung.py mục (D) phải RỖNG
+  G3 · không ý nào xuất hiện ở ≥2 lớp            → R8_do_lap_giua_cac_tang.py: mọi Y phải ≤1 lớp
+  G4 · không mệnh lệnh trỏ vào khối không tồn tại→ với mỗi tên khối được nhắc, đếm số lần khối đó
+                                                   thật sự xuất hiện; phải ≥1
+  G5 · mọi trường trong K8 đều có người đọc      → grep parser (gpt_analyzer L1287-1300, L6533-6552)
+  Chưa đạt cả 5 cổng thì CHƯA ĐƯỢC nói là xong (§60.2 câu 3).
+
+####################################################################################################
+PHẦN 5 — BẢNG CHUYỂN ĐỔI: TỪNG KHỐI HIỆN HÀNH ĐI ĐÂU (TRƯỚC / SAU / VÌ SAO)
+####################################################################################################
+
+Ghi theo đúng §60.4: TRƯỚC (khối và số ký tự thật hôm nay) → SAU (đi vào khối nào của khung đích,
+hoặc xoá hẳn) → VÌ SAO. Cột «ký tự» là số đo trên prompt MB ngày 07/08.
+
+── LỚP SP-4.4 (7.683 ký tự) ────────────────────────────────────────────────────────────────
+  437  mở đầu «Bạn là CHUYÊN GIA…» + nguyên tắc 2 số   → GỘP: vai trò vào K0, «2 số» vào K7
+   27+95+159+209+229 = 719  PHƯƠNG PHÁP 1-4 (thu thập, cụm, pha, thang STRENGTH)
+                                                        → GỠ. Là mệnh lệnh phương pháp; và điểm
+                                                          STRENGTH đã được Python tính rồi bơm lại
+                                                          ở base («💪 STRENGTH: 6.0/10») nên nói hai lần.
+  222  §5 KẾT HỢP THỐNG KÊ                              → GỠ (mệnh lệnh; câu «GAN cao KHÔNG có nghĩa
+                                                          sắp ra» hết đối tượng khi K2 bỏ hot/cold)
+  392  §5b ưu tiên chỉ số Python                        → GỠ (mệnh lệnh xếp hạng nguồn bằng chứng)
+  257  §5d CẶP ĐÔI TƯƠNG QUAN                           → GỠ (trỏ vào khối xuất hiện 0 lần)
+  274  §5e BỐI CẢNH KẾT QUẢ GẦN NHẤT                    → GỠ (mệnh lệnh; dữ kiện tương ứng đã nằm ở K2)
+  441  §5f KNOWLEDGE BASE                               → GỠ (trỏ vào khối xuất hiện 0 lần)
+  961  §5g MULTI-SOURCE CONVERGENCE                     → GỠ khỏi prompt. Kết luận của nó («đừng cộng
+                                                          điểm cho hội tụ») được thi hành bằng CÁCH
+                                                          DỰNG K4 — không kê số nguồn, không kê CONV×n
+                                                          — chứ không bằng một đoạn văn dạy model.
+  844  §5h SOI CẦU CHÉO (⭐ priority + bộ giải)          → GỘP vào K1 một dòng; bỏ nhãn ⭐ và bỏ bảng
+                                                          bộ giải thứ hai (đang chỏi RR về G5)
+  692  §6 QUYẾT ĐỊNH TOP1-FIRST                         → GỘP vào K7 (giữ ràng buộc số lượng, bỏ thang
+                                                          Strength vì K2 không còn cấp Strength)
+   23+455+411+339 = 1.228  FEW-SHOT 3 ví dụ             → GỠ HẲN. Ví dụ dạy mạnh hơn mệnh lệnh (§60.1):
+                                                          cả ba ví dụ đều đếm «→ n nguồn» và đều dùng
+                                                          chữ «CHỐT HẠ» mà RR §26 cấm.
+ 1.216  OUTPUT FORMAT (JSON) 20 trường                  → THAY bằng K8 (6 trường, mọi trường có người đọc)
+
+── LỚP BASE / create_analysis_prompt (14.521 ký tự) ────────────────────────────────────────
+   30+25+35+19 = 109  bốn dòng tiêu đề                  → GIỮ, gộp vào K1
+  835+839+317+824+569 = 3.384  năm khối dữ liệu nguồn   → THAY bằng K2 (833 ký tự). Cắt 75,4%:
+                                                          bỏ tiêu đề dài, bỏ nhãn «ƯU TIÊN n», bỏ nhãn
+                                                          ⭐, bỏ các giải ngoài bộ doctrine.
+   178  📐 CỤM DAO ĐỘNG                                  → GỠ (kết quả của phương pháp đã gỡ)
+   178  🔄 PHA DAO_GUONG                                 → GỠ (nt)
+   132  💪 STRENGTH 6.0/10                               → GỠ (nt)
+    71  🎯 ĐỀ XUẤT PYTHON: 69, 74                        → GỠ. Đây là DANH SÁCH SỐ CHỐT SẴN đặt ngay đầu
+                                                          prompt — đúng thứ khung đích cấm.
+   415  ⛔ SỐ NÊN TRÁNH (COLD/JUST_HIT/OVER_HOT)         → GỠ. Vừa là mệnh lệnh loại số, vừa là hot/cold
+                                                          mà V11001 tuyên bố đã gỡ.
+    98  ⚠️ Lưu ý «AI nên ưu tiên [số Python]»            → GỠ
+   732  📊 LỊCH SỬ DỰ ĐOÁN CỦA BẠN (7 ngày) + lời khuyên → GỠ. Chứa mệnh lệnh «Nếu WR thấp hãy thay đổi
+                                                          chiến lược» và «Tránh lặp lại số đã LOSE» —
+                                                          hai mệnh lệnh chọn số dựa trên chuỗi thua.
+   755  📐 KIẾN THỨC ĐÃ XÁC MINH (Phase 0, 1001 ngày)    → GỠ trừ một dòng bộ nguồn/bộ giải đã có ở K1.
+                                                          Phần còn lại là số cứng không tái lập được
+                                                          («MB 23%», «MN_T6», «rank 4-5 có score≥65»).
+ 5.140  🎯 CHÍNH SÁCH QUYẾT ĐỊNH AI — «7 LỚP» (thật ra 13) → GỠ HẲN. Khối lớn nhất prompt. Lý do:
+                                                          (a) tên sai số lượng lớp; (b) LỚP 10 mô tả
+                                                          sự kiện tháng 3 («V6.7 12-16/03», «17-18/03
+                                                          INVALID») không còn nghĩa; (c) LỚP 12 nêu
+                                                          đích danh 5 mã luật KHÔNG CÒN TỒN TẠI trong
+                                                          mined_rules; (d) LỚP 6/9 cho phép «top 3
+                                                          optional» chỏi SP và RR; (e) LỚP 3/7/8 dựng
+                                                          bộ ngưỡng thứ hai chỏi RR §3.
+   599  📊 FEATURE ENGINEERING (OVERDUE/HOT BY GAP/…)    → GỠ (hot/cold đổi tên; không có phép đo nào
+                                                          trong kho chứng minh gap dự báo được)
+    59  📅 KẾT QUẢ NGÀY TRƯỚC                            → GỘP vào K2 (đã nằm trong khe D-1)
+    65  📊 HIỆU SUẤT GẦN ĐÂY (MB) WR 23.6%               → GỘP vào K6 (một con số duy nhất, đo lại)
+ 1.339  🏆 HIỆU SUẤT THEO MODEL 30 dòng + weight        → GỠ HẲN. Đây là nguồn bầy đàn mà V10768 định
+                                                          gỡ nhưng không chạm tới được.
+   237  🏛️ LỊCH SỬ ĐÀI XỔ HÔM NAY (3 kỳ gần nhất)       → GIỮ ĐƯỢC nếu muốn, nằm trong dự phòng K2
+                                                          (237 ký tự, còn dư 967). Là dữ liệu thô thật.
+   962  ## YÊU CẦU (8 gạch đầu dòng)                     → THAY bằng K8. Riêng gạch 8 («ưu tiên số xuất
+                                                          hiện trong NHIỀU nguồn») phải xoá — nó chỏi
+                                                          thẳng SP §5g trong cùng một prompt.
+
+── LỚP CTX-18.1 sau deherd (11.389 ký tự) ──────────────────────────────────────────────────
+    98  tiêu đề CONTEXT PACK                             → GỠ (khung đích không cần tên tầng)
+   565  📜 MINED RULES (rank/legacy/12W/16W/4W/comp/verdict) → GỘP: mã luật + khe + đài + bộ giải vào K4;
+                                                          bỏ toàn bộ điểm số và nhãn verdict (R1: nhãn
+                                                          HIGH_CONF_CURRENT gắn 105/105 luật)
+ 1.773  📊 EVIDENCE TABLE (6 cửa sổ + top source×prize + CONVERGENCE TRAP)
+                                                        → GỠ. Sáu cửa sổ là tự chấm trong mẫu (R2);
+                                                          bảng top source×prize là xếp hạng; khối
+                                                          CONVERGENCE TRAP là mệnh lệnh chọn số.
+   154  📋 NGUYÊN TẮC (4 gạch)                           → GỘP vào K7 (trùng RR §26)
+    69  🔀 Đa dạng model                                 → GỠ (xếp hạng)
+   190  📉 MB Ceiling (Best AI / Best No-token)          → GỠ (xếp hạng)
+   212  📅 WEEK-SLOT WS8                                 → GỠ (mệnh lệnh «GIẢM KỲ VỌNG» + số WR slot)
+   404  🎯 DIRECT-HIT PRIORITY DH-1.0                    → GỠ (4 mệnh lệnh chọn số)
+ 2.207  🔴 MB HARD MODE (35 dòng ranking + V10.3 CALIBRATION) → GỠ. Chứa trần 55% chỏi RR §26 (52%)
+                                                          và 1.258 ký tự xếp hạng model.
+   186  🔍 WEEKDAY SCAN                                  → GỠ. Nội dung thật hôm nay là một dòng lỗi:
+                                                          «SP-4.0 scan error: no such column: predicted_numbers»
+ 1.892  OWNER ANTI-TRAP CHECK                            → TÁCH: phần dữ kiện («MN(D) tails already
+                                                          spent…») thành K3 (299 ký tự); toàn bộ
+                                                          DECISION RULE / MAIN PICK PRIORITY / EXCEPTION
+                                                          bằng tiếng Anh → GỠ (mệnh lệnh, và đã lặp
+                                                          RR §10B lần thứ ba)
+   129+320+258+273+129 = 1.109  SHADOW CONTEXT Block 1-4 → GỠ. Block 2 lặp EVIDENCE TABLE; Block 3 lặp
+                                                          convergence; Block 4 là lược đồ đầu ra thứ ba.
+ 2.529  📖 BỐI CẢNH SOI CẦU                              → GIỮ TINH THẦN, viết lại thành K4 (322) + K5 (260).
+                                                          Đây là khối ĐÚNG HƯỚNG nhất của prompt hiện
+                                                          hành — kể sự kiện, không chốt số — nhưng đang
+                                                          dài gấp 4,4 lần cần thiết vì lặp lại hồ sơ
+                                                          12W/16W cho từng luật (5 lần cùng một cảnh báo)
+                                                          và nhét cả kỷ luật hình thức vào cuối (thuộc K7).
+
+── LỚP RR-16.5 (15.465 ký tự) ──────────────────────────────────────────────────────────────
+  GỠ HẲN CẢ TẦNG. Không một mục nào trong 28 mục mang dữ kiện của ngày hôm nay.
+  Ba mục có nội dung còn giá trị được chuyển đi:
+     §2 + §24 + §25 (độ rộng, một-số-chính, cấm biến thể)     → K7
+     §26 (cách nói, không nói quá)                             → K7
+     §10B (dữ kiện tiêu hao — chỉ phần dữ kiện)                → K3
+  25 mục còn lại: xem PHẦN 2 (lặp) và PHẦN 3 (trỏ vào khối không tồn tại).
+  Riêng §19 (1.594 ký tự, quét 8 cửa sổ) và §1 (số WR 57/61/47 không tái lập được — R5 đã đo
+  ba định nghĩa đều lệch) là hai mục phải gỡ trước tiên nếu làm từng bước.
+
+####################################################################################################
+PHẦN 6 — BẢN NHÁP NGUYÊN VĂN KHUNG ĐÍCH CHO MB (chỉ là văn bản trong báo cáo)
+####################################################################################################
+
+Bản dưới đây dựng bằng script R8_khung_dich_3mien.py từ DỮ LIỆU THẬT ngày 2026-08-07
+(DB mở read-only). Mọi con số trong đó là số thật của ngày đó, không bịa.
+Tổng: 2,901 ký tự (system + user) — bằng 5.9% prompt MB hiện hành.
+KHÔNG có dòng code nào bị sửa để sinh ra bản này.
+
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv BẮT ĐẦU BẢN NHÁP (nguyên văn, không cắt dòng) vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+### K0 · VAI TRÒ (system)
+Bạn đọc dữ liệu xổ số thô và trả về MỘT số bạch thủ 2 chữ số cho miền đích, kèm lý do bám vào dữ liệu trong prompt này. Không có số nào được chọn sẵn cho bạn.
+
+### K1 · ĐẦU BÀI
+NGÀY 2026-08-07 (Thứ Sáu) · ĐÍCH: MB · ĐÀI MB HÔM NAY: Hải Phòng
+Khe nguồn: MN(D-1) · MT(D-1) · MB(D-1) · MN(D) · MT(D)
+Bộ giải soi — nguồn MN: GĐB/G1/G2/G5/G7/G8 · nguồn MT: GĐB/G1/G2/G5/G7/G8 · nguồn MB: GĐB/G1/G2/G6/G7
+
+### K2 · DỮ LIỆU THÔ (theo bộ giải doctrine)
+MN(D-1) An Giang: GĐB 36 | G1 55 | G2 33 | G5 59 | G7 03 | G8 54
+MN(D-1) Bình Thuận: GĐB 29 | G1 11 | G2 54 | G5 08 | G7 83 | G8 83
+MN(D-1) Tây Ninh: GĐB 57 | G1 37 | G2 20 | G5 17 | G7 05 | G8 41
+MT(D-1) Bình Định: GĐB 21 | G1 52 | G2 43 | G5 88 | G7 24 | G8 65
+MT(D-1) Quảng Bình: GĐB 16 | G1 55 | G2 13 | G5 69 | G7 24 | G8 61
+MT(D-1) Quảng Trị: GĐB 05 | G1 44 | G2 17 | G5 77 | G7 58 | G8 03
+MB(D-1) Hà Nội: GĐB 67 | G1 60 | G2 32 31 | G6 13 84 88 | G7 35 69 95 89
+MN(D) Bình Dương: GĐB 74 | G1 34 | G2 95 | G5 96 | G7 85 | G8 39
+MN(D) Trà Vinh: GĐB 82 | G1 55 | G2 97 | G5 01 | G7 39 | G8 21
+MN(D) Vĩnh Long: GĐB 40 | G1 19 | G2 13 | G5 45 | G7 78 | G8 99
+MT(D) Gia Lai: GĐB 42 | G1 19 | G2 29 | G5 69 | G7 74 | G8 98
+MT(D) Ninh Thuận: GĐB 69 | G1 93 | G2 03 | G5 07 | G7 14 | G8 34
+
+### K3 · ĐÃ RA HÔM NAY Ở MIỀN XỔ TRƯỚC (mọi giải)
+MN(D) 43 đuôi: 01 12 13 17 19 21 22 23 24 26 27 33 34 39 40 44 45 46 47 52 54 55 57 61 63 68 69 70 71 72 73 74 76 78 82 83 84 85 86 95 96 97 99
+MT(D) 30 đuôi: 03 04 05 07 09 14 19 20 23 25 28 29 33 34 35 39 42 47 50 57 59 69 71 74 77 86 92 93 96 98
+
+### K4 · SỰ KIỆN LUẬT CỦA BUCKET
+5 luật đang hoạt động nối nguồn với hôm nay. Đuôi phía nguồn đã ra:
+L2401 MB(D-1/T5) Hà Nội G6+G7 → 13 84 88 35 69 95 89
+L2402 MB(D-1/T5) Hà Nội G1+G7 → 60 35 69 95 89
+L2403 MB(D-1/T5) Hà Nội G1+G2 → 60 32 31
+L2404 MN(D/T6) Bình Dương G1+G8 → 34 39
+L2405 MN(D/T6) Bình Dương G1+G2 → 34 95
+
+### K5 · HỒ SƠ CỦA LUẬT ĐÁNG TIN TỚI ĐÂU
+Tỉ lệ 12W/16W của các luật trên chấm ngược trong chính cửa sổ đã đào ra chúng (điểm tự chấm). Đo tiến ngoài cửa sổ: lift 1,000 trên 29.205 lượt, 0/105 luật qua hiệu chỉnh BH-FDR. Coi K4 là sự kiện, không phải xác suất.
+
+### K6 · NỀN NGẪU NHIÊN + TRẦN THỰC TẾ
+MB mỗi kỳ ra trung bình 23.8/100 đuôi khác nhau (đo 361 ngày) ⇒ một số bạch thủ bất kỳ trúng 23.8% do ngẫu nhiên. Mọi model MB 28 ngày qua: WIN 4.9% (36/735).
+
+### K7 · KỶ LUẬT HÌNH THỨC
+1 số chính bắt buộc. Số phụ chỉ khi có bằng chứng riêng, và không được là biến thể (đảo vị trí hoặc ±1 một chữ số) của số chính. Không quá 2 số. Không dùng «chắc chắn/chốt hạ»; đây là dự đoán chưa kiểm chứng.
+
+### K8 · HỢP ĐỒNG ĐẦU RA
+Trả về JSON: {"main_number":"XX","secondary_number":"YY hoặc null","main_reason":"≤200 ký tự, phải nêu đích danh dòng dữ liệu trong K2/K3/K4 mà bạn dùng","secondary_reason":"bằng chứng riêng, khác dòng đã dùng cho main, hoặc null","da_bo_qua":"khối nào bạn bỏ không dùng và vì sao","confidence":0.0-1.0}
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ HẾT BẢN NHÁP ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+GHI CHÚ VỀ BẢN NHÁP (đọc trước khi ai đó đem đi dùng):
+
+  · K3 in đủ 43 đuôi của MN(D) và 30 đuôi của MT(D) dưới dạng DỮ KIỆN THÔ, không dán nhãn
+    FULL_SPENT/PARTIAL_SPENT/FRESH. Model tự đối chiếu với K2/K4. Lý do: nhãn là kết luận,
+    và R5 đã đo hàm dán nhãn quét TOÀN BỘ giải chứ không theo bộ giải doctrine, khiến 42,7/100
+    đuôi bị gắn FULL_SPENT cho MT mỗi ngày.
+
+  · K4 in mã luật (L2401…L2405) để model trích dẫn được trong `main_reason`, nhưng KHÔNG in
+    hr 12W/16W của từng luật — con số đó đã bị K5 nói một lần cho cả nhóm, không lặp 5 lần.
+
+  · K5 dùng ba con số đã đo được và tái lập được: lift 1,000 trên 29.205 lượt ngoài cửa sổ chọn
+    (R2), 0/105 luật qua BH-FDR (R2). KHÔNG dùng z = −0,33/+0,26 như prompt hiện hành, vì R6 đã
+    chỉ ra hai số đó tính từ 9 và 15 cặp lệch và bảng sinh ra chúng không còn tồn tại.
+
+  · K6 đo lại tại chỗ, không trích báo cáo cũ: MB 23,8/100 đuôi (361 ngày) và WR thật 28 ngày.
+
+  · Còn dư 3,099 ký tự tới mốc 6.000. Dự phòng này CỐ Ý để trống, dành cho: ngày nhiều đài hơn,
+    lịch sử đài đích cùng thứ (237 ký tự nếu owner muốn), và biên an toàn khi thêm khe nguồn.
+    KHÔNG được lấp bằng doctrine.
+
+####################################################################################################
+PHẦN 7 — CHƯA ĐO ĐƯỢC · RỦI RO · VIỆC PHẢI LÀM TRƯỚC KHI ĐỘNG VÀO CODE
+####################################################################################################
+
+7.1 — CHƯA ĐO ĐƯỢC (ghi rõ, cấm suy diễn)
+
+  a) Khung đích này CHƯA được đo về độ chính xác. R8 chỉ đo KÝ TỰ và ĐỘ LẶP. Không có một
+     bằng chứng nào trong phiên này nói prompt 2.900 ký tự trúng nhiều hơn hay ít hơn prompt
+     49.060 ký tự. Muốn biết phải chạy A/B thật. Cỡ mẫu cần: R6 đo nền MB ~23,8% và WR thật
+     28 ngày là 4,9% (36/735) — để phát hiện chênh 5 điểm ở mức α=0,05 lực 0,80 cần khoảng
+     784 lượt mỗi nhánh (số của R4 cho MB), tức ~26 ngày × 30 lượt/ngày mỗi nhánh nếu chạy
+     song song. Dưới ngưỡng đó thì KHÔNG được kết luận theo hướng nào.
+
+  b) Chưa đo được model có THẬT SỰ đọc khối nào: prediction_trace.jsonl không lưu nguyên văn
+     prompt (R3 đã kiểm, 4.876 dòng, chỉ có output). Muốn quy trách nhiệm cho từng khối thì
+     phải bật lưu hash + snapshot prompt trước đã.
+
+  c) Chưa đo nhánh no-token / ML: chúng không gọi build_context_pack nên khung này không áp.
+     Cũng chưa đo nhánh shadow (shadow_mode=True) — nó còn thêm PHASE-FIRST GATE mà R5 đo là
+     chỉ bơm cho 8 model shadow.
+
+  d) Chưa đo MB_PROMPT_DOCTRINE_ENABLE: R3 xác nhận cổng này BẬT trên VPS (nạp qua
+     env_loader.load_project_env, KHÔNG hiện trong /proc/PID/environ) và nó bơm thêm khối
+     tier2 «#Bộ» vào prompt MB official. Khối đó KHÔNG có trong bản đo R8 vì bản đo chạy ở
+     local không nạp .env của VPS. Nghĩa là prompt MB THẬT trên VPS còn DÀI HƠN 49.060 ký tự.
+     Phải đo lại trên VPS trước khi chốt con số 8,2x.
+
+7.2 — RỦI RO CỦA CHÍNH KHUNG ĐÍCH
+
+  · Cắt 94% có thể cắt mất thứ đang có tác dụng mà chưa ai đo. Cách giảm rủi ro: đi từng bước,
+    mỗi bước một khối, mỗi bước đo tiến tối thiểu theo cỡ mẫu ở 7.1a, và bước nào cũng phải
+    có lệnh gỡ về (đổi một hằng số, không sửa nhiều chỗ).
+  · Thứ tự đề nghị (rủi ro thấp → cao), mỗi bước gỡ được độc lập:
+      B1  gỡ khối «🏆 HIỆU SUẤT THEO MODEL» (1.339) + «📊 MB MODEL RANKING» (1.258)
+          — đây chỉ là mở rộng V10768 cho đúng ý ban đầu của nó, không đụng doctrine.
+      B2  gỡ «🎯 CHÍNH SÁCH QUYẾT ĐỊNH AI 13 LỚP» (5.140) — có mã luật không tồn tại, gỡ là sửa lỗi.
+      B3  gỡ 4 mệnh lệnh trỏ vào khối 0 lần (SP §5d, §5f, RR §11, YÊU CẦU-2) — không mất dữ liệu nào.
+      B4  gỡ few-shot SP (1.228) + OUTPUT FORMAT cũ, thay bằng K8.
+      B5  gỡ RR-16.5, chuyển §2/§24/§25/§26 vào K7.
+      B6  viết lại base thành K1+K2, viết lại CTX thành K3+K4+K5+K6.
+    B1→B4 đã cắt được 8.965 ký tự (18,3% prompt MB) mà không đụng một dữ kiện nào.
+
+7.3 — HAI VIỆC PHẢI LÀM TRƯỚC KHI SỬA MỘT DÒNG CODE
+
+  V1 · Chốt bảng CHỦ SỞ HỮU Ý ở mục 4.1/QU-3. Nếu bảng này không được chốt trước, việc viết lại
+       sẽ lại sinh chồng tầng mới — đúng cách bốn tầng hiện nay ra đời.
+  V2 · Dựng cổng kiểm G1..G5 ở mục 4.5 và cho chúng chạy TRÊN PROMPT HIỆN HÀNH trước. Cổng phải
+       BÁO ĐỎ với prompt hôm nay (nó đang vi phạm cả 5) thì mới tin được là cổng có tác dụng.
+

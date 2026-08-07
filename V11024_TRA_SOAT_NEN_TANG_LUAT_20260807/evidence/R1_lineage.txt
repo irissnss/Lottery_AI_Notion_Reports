@@ -1,0 +1,288 @@
+==============================================================================
+R1 — KIEM CHUNG PIPELINE DAO LUAT (lineage 105 luat)
+Do luc: 2026-08-07T20:43:05 | DB: E:\Lottery_AI_Test\data\lottery_ai.db | size: 670027776
+==============================================================================
+
+------------------------------------------------------------------------------
+PHAN A — DEM THAT: mined_rules is_active=1
+------------------------------------------------------------------------------
+  mined_rules tong dong                : 105
+  is_active = 1                        : 105   <== SO THAT
+  is_active = 0                        : 0
+  activation_status = 'active'         : 105
+  activation_status = 'shadow'         : 0
+  KET LUAN: tai lieu ghi 105 -> DB dem duoc 105. KHOP
+
+  mined_at                             : 2026-08-03T00:30:01.015043 .. 2026-08-03T00:30:11.253418
+  so source_run_id phan biet           : 1
+  rule_version                         : v2026W32
+  source_run_id                        : ['run-20260803-003000-d35eb5']
+
+  cau truc bucket (21 bucket x top-5):
+     so bucket phan biet = 21 ; moi bucket n = [5]
+
+  mining_log (nhip dao lai):
+     2026-08-03  buckets=21 rules=105 strong=10 caution=36 ver=v2026W32 slot=auto SUCCESS
+     2026-08-03  buckets=21 rules=105 strong=10 caution=36 ver= slot= SUCCESS
+     2026-07-27  buckets=21 rules=105 strong=9 caution=32 ver=v2026W31 slot=auto SUCCESS
+     2026-07-27  buckets=21 rules=105 strong=9 caution=32 ver= slot= SUCCESS
+     2026-07-20  buckets=21 rules=105 strong=8 caution=32 ver=v2026W30 slot=manual SUCCESS
+     2026-07-20  buckets=21 rules=105 strong=8 caution=32 ver= slot= SUCCESS
+     2026-07-15  buckets=21 rules=105 strong=12 caution=31 ver=v2026W29 slot=guard SUCCESS
+     2026-07-15  buckets=21 rules=105 strong=12 caution=31 ver= slot= SUCCESS
+     2026-07-06  buckets=21 rules=105 strong=11 caution=35 ver=v2026W28 slot=auto SUCCESS
+     2026-07-06  buckets=21 rules=105 strong=11 caution=35 ver= slot= SUCCESS
+     2026-06-29  buckets=21 rules=105 strong=13 caution=28 ver=v2026W27 slot=auto SUCCESS
+     2026-06-29  buckets=21 rules=105 strong=13 caution=28 ver= slot= SUCCESS
+     2026-06-27  buckets=21 rules=105 strong=12 caution=29 ver=v2026W26 slot=guard SUCCESS
+     2026-06-27  buckets=21 rules=105 strong=12 caution=29 ver= slot= SUCCESS
+     2026-06-17  buckets=21 rules=105 strong=9 caution=37 ver=v2026W25 slot=guard SUCCESS
+     tong dong mining_log = 42
+
+------------------------------------------------------------------------------
+PHAN B — TAI LAP CHUOI: 2387 + 784 + 1260 -> 3696 -> 268 -> 232 -> 28 -> 105
+------------------------------------------------------------------------------
+
+  [KHOP] V10636-CROSS cells
+      tai lieu ghi : 2387
+      do lai duoc  : 2387
+      nguon do     : len(all_combinations) trong V10636_CROSS_FULL_GRID.json
+      ghi chu      : header total_combinations=2387
+
+  [KHOP] V10636-DIG cells
+      tai lieu ghi : 784
+      do lai duoc  : 784
+      nguon do     : len(all_combinations) trong V10636_DIG_FULL_GRID.json
+      ghi chu      : header total_combinations=784 ; count_bh_pass=0 (KHONG cell nao BH-pass)
+
+  [KHOP] V10636-LAGS cells (flat)
+      tai lieu ghi : 1260
+      do lai duoc  : 1260
+      nguon do     : banh phang all_combinations(180 grid) x per_weekday(7) trong V10636_LAGS_FULL_GRID.json
+      ghi chu      : header total_grid_combinations=180 total_flat_cells=1260
+
+  >>> Thu tai lap con so 'dedup 3.696':
+      cong tho 3 nguon           : 2387 + 784 + 1260 = 4431
+      dedup theo khoa tu nhien   : 4011
+      dedup bo 'transform'       : 2387
+
+  [KHONG TAI LAP DUOC] Tong dedup
+      tai lieu ghi : 3696
+      do lai duoc  : (khong tai lap duoc)
+      nguon do     : cong/dedup tu 3 tep FULL_GRID
+      ghi chu      : khong cong thuc nao ra 3696. Da thu: {"cong_tho": 4431, "dedup_khoa_tu_nhien": 4011, "dedup_bo_transform": 2387}. Tep sinh ra so 3696 (script V10667) KHONG con trong kho.
+
+  [KHOP] BH-pass (FDR a=0.05) tu CROSS
+      tai lieu ghi : 268
+      do lai duoc  : 268
+      nguon do     : dem cell co bh_pass=true trong V10636_CROSS_FULL_GRID.all_combinations
+      ghi chu      : header count_bh_pass_05=268 ; DIG count_bh_pass=0 ; LAGS khong co truong bh_pass
+
+  [KHOP] Cell vi pham temporal trong CROSS
+      tai lieu ghi : 266
+      do lai duoc  : 266
+      nguon do     : tinh lai bang luat: lag_days==0 va DRAW_ORDER[src]>DRAW_ORDER[tgt], DRAW_ORDER=MN1<MT2<MB3
+
+  [KHOP] BH-pass vi pham temporal
+      tai lieu ghi : 36
+      do lai duoc  : 36
+      nguon do     : loc bh_pass=true trong tap vi pham vua tinh
+
+  [KHOP] BH-pass hop le sau va V10668
+      tai lieu ghi : 232
+      do lai duoc  : 232
+      nguon do     : 268 BH-pass tru cac cell vi pham temporal
+
+      doi chieu co 'temporal_violation' da ghi san trong tep : 266 (tinh lai duoc 266 -> KHOP)
+      phan ra theo huong: {'MB(D)->MN(D)': 105, 'MB(D)->MT(D)': 105, 'MT(D)->MN(D)': 56}
+
+  [KHOP] Forward audit registry FIXED
+      tai lieu ghi : 28
+      do lai duoc  : 28
+      nguon do     : len(rules) trong V10668_FORWARD_AUDIT_REGISTRY_FIXED.json
+      ghi chu      : header total_rules_registered=28 original_rules_count=35 invalid_dropped_count=7
+
+      kiem temporal 28 rule: vi pham = 0
+      direction_distribution GHI TRONG TEP : {'MB->MN': 5, 'MT->MT': 12, 'MB->MT': 14, 'MN->MT': 4} (tong 35)
+      direction_distribution DEM LAI THAT  : {'MT->MT': 12, 'MB->MT': 9, 'MN->MT': 4, 'MB->MN': 3} (tong 28)
+      -> LECH: metadata direction_distribution CHUA duoc cap nhat sau va temporal
+      status 28 rule    : {'PRE_REGISTER_FORWARD_AUDIT': 28}
+      live_eligible     : {'False': 28}
+      target_region     : {'MT': 25, 'MN': 3}  (KHONG co rule target MB)
+
+  >>> MAT XICH CUOI: '28 rule forward audit -> 105 luat production'
+      Kiem xem 105 luat trong mined_rules co dan xuat tu 28 rule kia khong.
+      khoa (tgt_region, tgt_wd, src_region, offset) — production : 47 khoa
+      khoa tuong tu — registry 28 rule                            : 18 khoa
+      giao nhau                                                   : 4 khoa
+      Ma luat: registry dung rule_id dang 'V10668_FA01_...' (chuoi);
+               mined_rules dung id INTEGER tu AUTOINCREMENT. KHONG co cot nao
+               trong mined_rules tro nguoc ve rule_id cua registry.
+      cot cua mined_rules: ['id', 'target_region', 'target_weekday', 'source_station', 'source_region', 'source_offset', 'prize_keys', 'lift_365', 'lift_180', 'delta_lift', 'n_365', 'hit_rate_365', 'avg_src_tails', 'streak', 'gap', 'stability', 'score', 'sample_quality', 'production_tier', 'prediction_use', 'risk_note', 'split_policy', 'mined_at', 'is_active', 'rule_version', 'source_run_id', 'bucket_mode', 'sub_bucket_key', 'activation_status', 'owner_approved_at', 'hr_4w', 'hr_8w', 'hr_12w', 'hr_16w', 'composite_score', 'window_verdict', 'source_weekday', 'source_station_slot', 'cumulative_rank_score']
+      -> KHONG co cot lineage/parent/source_report/bh_rank/p_value.
+
+  [KHONG TAI LAP DUOC] 28 rule forward audit -> 105 luat production
+      tai lieu ghi : 105
+      do lai duoc  : (khong tai lap duoc)
+      nguon do     : khong co bang/cot nao noi 2 tap
+      ghi chu      : KHONG TAI LAP DUOC. Ly do: _seed_rules.main() chay 'DELETE FROM mined_rules' roi dao lai tu dau tu lottery_results (21 bucket x top-5 = 105). 105 luat hien tai co rule_version=v2026W32, mined_at=2026-08-03T00:30:01.015043, source_run_id=['run-20260803-003000-d35eb5'] — tuc la san pham cua mot lan dao lai ngay 03/08/2026, KHONG phai hau due cua chuoi V10636 (02/06/2026).
+
+------------------------------------------------------------------------------
+PHAN C — TEMPORAL CAUSALITY TREN 105 LUAT PRODUCTION
+  Luat: thu tu xo MN(1) -> MT(2) -> MB(3). Vi pham khi offset=D (cung ngay)
+        va DRAW_ORDER[source] > DRAW_ORDER[target]. Offset duong (tuong lai) cung vi pham.
+------------------------------------------------------------------------------
+
+  so luat kiem            : 105
+  VI PHAM temporal        : 0
+  offset duong (tuong lai): 0
+  source_weekday sai cong thuc (tw+off)%7 : 0
+
+  phan ra (target <- source, offset):
+     MB  <- MB  D-1    n=10   hop le
+     MB  <- MN  D      n=6    hop le
+     MB  <- MN  D-1    n=6    hop le
+     MB  <- MT  D      n=8    hop le
+     MB  <- MT  D-1    n=5    hop le
+     MN  <- MB  D-1    n=28   hop le
+     MN  <- MN  D-1    n=2    hop le
+     MN  <- MT  D-1    n=5    hop le
+     MT  <- MB  D-1    n=24   hop le
+     MT  <- MN  D      n=6    hop le
+     MT  <- MN  D-1    n=4    hop le
+     MT  <- MT  D-1    n=1    hop le
+
+  Kiem cheo: source_station co that thuoc source_region khong (doi chieu lottery_results)?
+     so luat co source_station lech mien: 0
+
+------------------------------------------------------------------------------
+PHAN D — BANG LINEAGE DAY DU 105 LUAT
+------------------------------------------------------------------------------
+
+rule  | mie thu | nguon (dai · giai · offset) | prize_keys             | production_tier    | window_verdict    | hr_12w hr_16w | MRE   luot trung% | temporal
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+2381  | MB  T2  | MT(D-1) Kon Tum            | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  70.6% | HOP LE
+2382  | MB  T2  | MB(D-1) Thái Bình          | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  70.6% | HOP LE
+2383  | MB  T2  | MN(D-1) Tiền Giang         | G2+G5                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      17  70.6% | HOP LE
+2384  | MB  T2  | MB(D-1) Thái Bình          | GĐB+G2                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      17  64.7% | HOP LE
+2385  | MB  T2  | MT(D-1) Thừa Thiên Huế     | G5+GĐB                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  56.2% | CO      17  52.9% | HOP LE
+2386  | MB  T3  | MB(D-1) Hà Nội             | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  81.2% | CO      17  76.5% | HOP LE
+2387  | MB  T3  | MT(D) Quảng Nam            | G1+G2                  | READY_STRONG       | HIGH_CONF_CURRENT |  66.7%  62.5% | CO      17  58.8% | HOP LE
+2388  | MB  T3  | MT(D) Quảng Nam            | G2+G5                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  58.3%  56.2% | CO      17  52.9% | HOP LE
+2389  | MB  T3  | MN(D-1) TP. HCM            | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  58.3%  56.2% | CO      17  52.9% | HOP LE
+2390  | MB  T3  | MN(D-1) TP. HCM            | G1+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  58.3%  56.2% | CO      17  52.9% | HOP LE
+2391  | MB  T4  | MB(D-1) Quảng Ninh         | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2392  | MB  T4  | MN(D-1) Vũng Tàu           | G2+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  70.6% | HOP LE
+2393  | MB  T4  | MN(D-1) Vũng Tàu           | G7+G8                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  70.6% | HOP LE
+2394  | MB  T4  | MB(D-1) Quảng Ninh         | GĐB+G2                 | READY_STRONG       | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      17  76.5% | HOP LE
+2395  | MB  T4  | MN(D-1) Vũng Tàu           | G5+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      17  76.5% | HOP LE
+2396  | MB  T5  | MT(D-1) Đà Nẵng            | G5+GĐB                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  83.3%  81.2% | CO      17  82.4% | HOP LE
+2397  | MB  T5  | MT(D) Bình Định            | G7+G8                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  64.7% | HOP LE
+2398  | MB  T5  | MT(D) Bình Định            | G1+G2                  | READY_STRONG       | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  64.7% | HOP LE
+2399  | MB  T5  | MB(D-1) Bắc Ninh           | G7                     | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  70.6% | HOP LE
+2400  | MB  T5  | MT(D) Bình Định            | G1+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      17  64.7% | HOP LE
+2401  | MB  T6  | MB(D-1) Hà Nội             | G6+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  83.3%  87.5% | CO      16  87.5% | HOP LE
+2402  | MB  T6  | MB(D-1) Hà Nội             | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  83.3%  81.2% | CO      16  81.2% | HOP LE
+2403  | MB  T6  | MB(D-1) Hà Nội             | G1+G2                  | READY_STRONG       | HIGH_CONF_CURRENT |  83.3%  81.2% | CO      16  81.2% | HOP LE
+2404  | MB  T6  | MN(D) Bình Dương           | G1+G8                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      16  68.8% | HOP LE
+2405  | MB  T6  | MN(D) Bình Dương           | G1+G2                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  62.5% | CO      16  62.5% | HOP LE
+2406  | MB  T7  | MN(D) Hậu Giang            | G1+G8                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  83.3%  75.0% | CO      16  75.0% | HOP LE
+2407  | MB  T7  | MT(D-1) Ninh Thuận         | G1+G8                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      16  75.0% | HOP LE
+2408  | MB  T7  | MN(D) TP. HCM              | G2+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      16  68.8% | HOP LE
+2409  | MB  T7  | MT(D-1) Ninh Thuận         | G1+G7                  | READY_STRONG       | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      16  75.0% | HOP LE
+2410  | MB  T7  | MT(D) Đà Nẵng              | G2+G5                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  62.5% | CO      16  62.5% | HOP LE
+2411  | MB  CN  | MB(D-1) Nam Định           | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2412  | MB  CN  | MT(D) Khánh Hòa            | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      16  68.8% | HOP LE
+2413  | MB  CN  | MT(D) Khánh Hòa            | GĐB+G8                 | READY_STRONG       | HIGH_CONF_CURRENT |  75.0%  62.5% | CO      16  62.5% | HOP LE
+2414  | MB  CN  | MN(D) Kiên Giang           | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  62.5% | CO      16  62.5% | HOP LE
+2415  | MB  CN  | MN(D) Kiên Giang           | GĐB+G1                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  66.7%  75.0% | CO      16  75.0% | HOP LE
+2311  | MN  T2  | MB(D-1) Thái Bình          | GĐB+G6                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2312  | MN  T2  | MB(D-1) Thái Bình          | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2313  | MN  T2  | MB(D-1) Thái Bình          | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2314  | MN  T2  | MB(D-1) Thái Bình          | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2315  | MN  T2  | MT(D-1) Kon Tum            | G7+G8                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  81.2% | CO      17  82.4% | HOP LE
+2316  | MN  T3  | MB(D-1) Hà Nội             | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2317  | MN  T3  | MB(D-1) Hà Nội             | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2318  | MN  T3  | MB(D-1) Hà Nội             | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2319  | MN  T3  | MN(D-1) Cà Mau             | GĐB+G1                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2320  | MN  T3  | MT(D-1) Phú Yên            | G5+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2321  | MN  T4  | MB(D-1) Quảng Ninh         | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2322  | MN  T4  | MB(D-1) Quảng Ninh         | G7                     | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2323  | MN  T4  | MB(D-1) Quảng Ninh         | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2324  | MN  T4  | MB(D-1) Quảng Ninh         | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2325  | MN  T4  | MB(D-1) Quảng Ninh         | G1+G2                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2326  | MN  T5  | MB(D-1) Bắc Ninh           | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2327  | MN  T5  | MB(D-1) Bắc Ninh           | GĐB+G6                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2328  | MN  T5  | MN(D-1) Sóc Trăng          | G5+GĐB                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  82.4% | HOP LE
+2329  | MN  T5  | MB(D-1) Bắc Ninh           | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2330  | MN  T5  | MT(D-1) Khánh Hòa          | G1+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  82.4% | HOP LE
+2331  | MN  T6  | MB(D-1) Hà Nội             | G7                     | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2332  | MN  T6  | MB(D-1) Hà Nội             | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2333  | MN  T6  | MB(D-1) Hà Nội             | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2334  | MN  T6  | MB(D-1) Hà Nội             | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2335  | MN  T6  | MB(D-1) Hà Nội             | GĐB+G6                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2336  | MN  T7  | MB(D-1) Hải Phòng          | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2337  | MN  T7  | MB(D-1) Hải Phòng          | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2338  | MN  T7  | MB(D-1) Hải Phòng          | GĐB+G6                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2339  | MN  T7  | MT(D-1) Gia Lai            | G5+G7                  | READY_STRONG       | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2340  | MN  T7  | MT(D-1) Gia Lai            | GĐB+G1                 | READY_STRONG       | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2341  | MN  CN  | MB(D-1) Nam Định           | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2342  | MN  CN  | MB(D-1) Nam Định           | G7                     | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2343  | MN  CN  | MB(D-1) Nam Định           | GĐB+G6                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2344  | MN  CN  | MB(D-1) Nam Định           | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2345  | MN  CN  | MB(D-1) Nam Định           | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2346  | MT  T2  | MB(D-1) Thái Bình          | GĐB+G6                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2347  | MT  T2  | MB(D-1) Thái Bình          | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2348  | MT  T2  | MB(D-1) Thái Bình          | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      17 100.0% | HOP LE
+2349  | MT  T2  | MB(D-1) Thái Bình          | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2350  | MT  T2  | MB(D-1) Thái Bình          | G6                     | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  83.3%  87.5% | CO      17  88.2% | HOP LE
+2351  | MT  T3  | MB(D-1) Hà Nội             | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2352  | MT  T3  | MN(D) Vũng Tàu             | GĐB+G1                 | READY_STRONG       | HIGH_CONF_CURRENT |  75.0%  81.2% | CO      17  82.4% | HOP LE
+2353  | MT  T3  | MN(D) Vũng Tàu             | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  70.6% | HOP LE
+2354  | MT  T3  | MT(D-1) Thừa Thiên Huế     | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  76.5% | HOP LE
+2355  | MT  T3  | MN(D) Vũng Tàu             | GĐB                    | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  66.7%  68.8% | CO      17  64.7% | HOP LE
+2356  | MT  T4  | MB(D-1) Quảng Ninh         | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2357  | MT  T4  | MN(D) Đồng Nai             | GĐB+G1                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  76.5% | HOP LE
+2358  | MT  T4  | MB(D-1) Quảng Ninh         | GĐB+G2                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  70.6% | HOP LE
+2359  | MT  T4  | MN(D-1) Bạc Liêu           | G5+GĐB                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  75.0%  75.0% | CO      17  70.6% | HOP LE
+2360  | MT  T4  | MN(D-1) Bạc Liêu           | GĐB+G1                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  75.0%  68.8% | CO      17  64.7% | HOP LE
+2361  | MT  T5  | MB(D-1) Bắc Ninh           | G7                     | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2362  | MT  T5  | MB(D-1) Bắc Ninh           | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2363  | MT  T5  | MB(D-1) Bắc Ninh           | G1+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2364  | MT  T5  | MB(D-1) Bắc Ninh           | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      17  94.1% | HOP LE
+2365  | MT  T5  | MN(D) An Giang             | GĐB+G8                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  87.5% | CO      17  88.2% | HOP LE
+2366  | MT  T6  | MB(D-1) Hà Nội             | GĐB+G7                 | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2367  | MT  T6  | MB(D-1) Hà Nội             | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2368  | MT  T6  | MB(D-1) Hà Nội             | G7                     | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2369  | MT  T6  | MB(D-1) Hà Nội             | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2370  | MT  T6  | MN(D-1) Bình Thuận         | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  83.3%  81.2% | CO      16  81.2% | HOP LE
+2371  | MT  T7  | MB(D-1) Hải Phòng          | GĐB+G6                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2372  | MT  T7  | MB(D-1) Hải Phòng          | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2373  | MT  T7  | MB(D-1) Hải Phòng          | G7                     | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2374  | MT  T7  | MB(D-1) Hải Phòng          | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2375  | MT  T7  | MB(D-1) Hải Phòng          | G1+G7                  | READY_WITH_CAUTION | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2376  | MT  CN  | MN(D-1) TP. HCM            | G5+GĐB                 | READY_STRONG       | HIGH_CONF_CURRENT | 100.0%  93.8% | CO      16  93.8% | HOP LE
+2377  | MT  CN  | MB(D-1) Nam Định           | G6+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT | 100.0% 100.0% | CO      16 100.0% | HOP LE
+2378  | MT  CN  | MB(D-1) Nam Định           | GĐB+G7                 | READY_WITH_CAUTION | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2379  | MT  CN  | MB(D-1) Nam Định           | G1+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  91.7%  93.8% | CO      16  93.8% | HOP LE
+2380  | MT  CN  | MN(D) Tiền Giang           | G2+G7                  | LIMITED_WEIGHT     | HIGH_CONF_CURRENT |  83.3%  81.2% | CO      16  81.2% | HOP LE
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+TONG: 105 luat | co dong trong mined_rule_effectiveness: 105 | KHONG co: 0 | tong luot cham: 1740
+
+  Thong ke bo sung:
+    so luot cham / luat: min=16 max=17 trung binh=16.6
+    owner_approved_at khong NULL: 105 / 105
+    window_verdict phan bo: {'HIGH_CONF_CURRENT': 105}
+    production_tier phan bo: {'LIMITED_WEIGHT': 59, 'READY_WITH_CAUTION': 36, 'READY_STRONG': 10}
+    prediction_use phan bo: {'SUPPORT_RERANK': 28, 'COMBO_ONLY': 56, 'DIRECT_TOP2': 19, 'REFERENCE_ONLY': 2}
+    sample_quality phan bo: {'A': 105}
+    hit_rate_365 0.4038..1.0000 | lift_365 0.952..1.450 | n_365 39..53
+
+    mined_rule_effectiveness: 3233 dong / 1132 rule_id phan biet
+    trong do MO COI (rule_id khong con trong mined_rules): 1027 rule_id / 1493 dong
+
+    verified_bucket_rules: 105 dong, promoted_version=['v6.2-seed'], khop source_rule_id voi mined_rules: 0
+
+==============================================================================
+HET R1
+==============================================================================

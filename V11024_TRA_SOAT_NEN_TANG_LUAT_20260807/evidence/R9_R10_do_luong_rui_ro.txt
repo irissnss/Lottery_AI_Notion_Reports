@@ -1,0 +1,865 @@
+================================================================================
+R9 + R10 — KE HOACH DO LUONG + RUI RO / GO VE          (PLAN-ONLY)
+V11024 · 2026-08-07 · KHONG DEPLOY · KHONG SUA CODE PRODUCTION · KHONG GHI DB
+================================================================================
+
+Moi so trong tep nay deu tai lap duoc bang:
+    artifacts/v11024_audit/scripts/r9_01_suc_manh_cua_so.py
+    -> artifacts/v11024_audit/evidence/R9_suc_manh_cua_so.txt
+va bang cac tep bang chung R1..R6 da co trong cung thu muc evidence/.
+Khong con so nao trong tep nay duoc trich lai tu bao cao cu ma khong do lai.
+
+
+================================================================================
+PHAN 0 — BA VIEC PHAI DOC TRUOC KHI DOC KE HOACH
+================================================================================
+
+0.1 — R7/R8 CHUA CO ARTIFACT. Viec giao noi "moi thay doi se de xuat o R7/R8",
+      nhung trong artifacts/v11024_audit/ khong co tep R7* hay R8* nao (da quet
+      toan kho, chi co V10638R7/R8 tu 2026-06, viec khac han). Vi vay R9/R10
+      DUNG DANH SACH THAY DOI TU SUY RA TU R1..R6, ghi ro nguon tung muc.
+      Neu R7/R8 sau nay de xuat them muc moi thi phai bo sung dong tuong ung —
+      khung do luong o PHAN 2 dung duoc cho muc moi ma khong phai viet lai.
+
+0.2 — KHONG PHAI BA THAY DOI PROMPT. LA SAU.
+      Viec giao ghi "FU-284 dang do GOP (go gan + thoi ep chon + so thanh loi
+      ke)". Doc CHANGELOG.md dong 84-86 va PROMPT_VERSIONS (gpt_analyzer.py
+      L841-846) thi so that la SAU lan doi gpt_analyzer.py trong bay ngay:
+
+          06/08 19:52  V11001 — go gan/nong/lanh
+          06/08 21:44  V11007 — go not 10 cho sot
+          06/08 22:12  V11008 — xoa CP-7.9
+          07/08 11:01  V11014 — thoi ep chon
+          07/08 13:41  V11016 — so thanh loi ke
+          07/08 19:41  V11022 — GO NGUONG TU QUYET (L-B)
+
+      V11022 (19:41 toi 07/08) KHONG nam trong mo ta "gop ba bien" cua FU-284.
+      No go lai chinh mot phan cua V11016 (nguong tu quyet) va doi
+      PB-20.1 = "luon ra du so — bo moi cau khuyen model ra it".
+      HE QUA THUC TE: ngay 07/08 KHONG PHAI ngay do sach. Cac luot 07/08 chay
+      duoi it nhat hai cau hinh prompt khac nhau (MN chot 05:00 = prompt cu).
+      => Ngay SACH DAU TIEN cua bo prompt hien hanh la 08/08.
+      => Dem 08/08..21/08 = DUNG 14 ngay. Han 21/08 cua FU-284 VAN GIU DUOC,
+         nhung chi khi (a) loai han ngay 07/08 nhu luot HON_HOP, va (b) tu gio
+         den 21/08 khong doi prompt lan thu bay.
+
+0.3 — CUA SO 14 NGAY KHONG DU SUC CHO NGUONG 5 DIEM CUA CHINH NO.
+      Do lai tu dau (r9_01, 90 ngay, chi duong official, nen tinh rieng tung
+      ngay tung mien):
+
+          nhip that       : 15,2 luot/mien/ngay = 45,5 luot/ngay ca ba mien
+          nen theo ngay   : MN 42,8% · MT 35,3% · MB 23,7% (gop 33,94%)
+          he so phong dai phuong sai (VIF) = 2,92x
+              do lech THUC TE giua cum ngay-mien : 20,51 diem
+              do lech NEU CAC LUOT DOC LAP       : 12,00 diem
+          [doi chieu: R6 do duoc 2,91x tren duong official — tai lap khop]
+
+          14 ngay cho 637 luot THO = 218 luot HIEU DUNG (chia VIF)
+          => chenh NHO NHAT phat hien duoc trong 14 ngay = 8,76 diem
+
+          De phat hien dung 5 diem can 2.004 luot hieu-dung-da-nhan-VIF
+          = 44,1 ngay. Khong phai 14.
+
+      NGHIA LA: cau "tut >=5 diem ben ⇒ go ve" trong FU-284/FU-321 la mot
+      nguong KHONG DO DUOC bang cua so no tu dat. Neu ket qua that su tut 5
+      diem, phep do 14 ngay se bao "khong ket luan duoc" chu khong bao "tut".
+
+      NHUNG — va cho nay quan trong — cua so 14 ngay VAN CO GIA TRI:
+      no du suc bat mot su co LON (>=8,76 diem). Tuc no la CAI PHANH AN TOAN,
+      khong phai cai can xac nhan cai tien. Hai vai tro nay phai duoc ghi tach
+      bach, vi ca ke hoach o PHAN 1 dung tren dung mot dieu do.
+
+      Do rieng tung mien con yeu hon ba lan (213 luot tho / 73 hieu dung mot
+      mien trong 14 ngay). => MOI PHEP DO TIEN DUOI DAY DEU PHAI GOP BA MIEN.
+      Tach mien chi de MO TA, cam dung de KET LUAN.
+
+
+================================================================================
+PHAN 1 — BAI TOAN CHONG BIEN (viec so 2). CHON: TACH THEO BE MAT
+================================================================================
+
+CAU HOI: xep ke hoach R7-R8 SAU 21/08, hay neu cach khong chong bien?
+CHON:    TACH THEO BE MAT. Khong xep tat ca sau 21/08.
+         Nhom A di duoc ngay. Nhom B cho 21/08 hoac di lane shadow.
+
+1.1 — BIEN PHU THUOC CUA FU-284 LA GI
+      FU-284 do: ti le trung cua SO CHINH tren duong official, 3 mien.
+      Thu duy nhat lam lech no la thu lam doi NOI DUNG PROMPT gui cho model
+      official, hoac lam doi CON SO chay vao prompt do.
+      Thu KHONG lam lech no: bang do luong rieng, cron do luong, tai lieu,
+      cong kiem, va moi thay doi chung minh duoc la KHONG doi mot byte prompt.
+
+1.2 — QUY TAC TACH (may kiem duoc, khong phai loi hua)
+      Mot thay doi thuoc NHOM A khi va chi khi no qua duoc CONG BYTE-PROMPT:
+
+          dung build_context_pack(target_region, date_str, shadow_mode=False)
+          (gpt_analyzer.py L4533) sinh prompt cho ca ba mien TRUOC va SAU thay
+          doi, tren cung mot ngay va cung mot ban DB, roi so sha256.
+          3/3 mien GIONG HET  => NHOM A, di duoc ngay.
+          Bat ky mien nao lech => NHOM B, cho 21/08.
+
+      Cong nay la phep do CO CHE cua chinh nhom A (xem 2.1). No khong phai
+      suy luan — no la mot lenh chay duoc, va no PHAI chay truoc khi deploy,
+      khong phai sau.
+
+      LUU Y KY THUAT phai xu truoc khi dung cong nay: rule_engine.py mo DB
+      bang database.get_connection() o che do doc-ghi (R5 da vap dung cho nay).
+      Vi vay cong byte-prompt phai chay tren BAN SAO DB, khong chay tren
+      data/lottery_ai.db that. Ghi ro trong script, neu khong se vi pham chinh
+      rang buoc read-only.
+
+1.3 — VI SAO KHONG XEP TAT CA SAU 21/08: CHO LA DANG PHA
+      Day la ly do manh nhat, va no do duoc:
+
+          weekly_rule_miner.py:170  DELETE FROM mined_rule_effectiveness
+                                    WHERE date >= date('now','-112 days')
+          scheduler.py:8010         CronTrigger(day_of_week='mon',
+                                    hour=0, minute=30, timezone=VN_TZ)
+
+      Trong cua so 08/08 -> 21/08 co DUNG HAI thu Hai: 10/08 va 17/08.
+      Moi lan la bo dem do tien bi xoa sach va dung lai bang chinh bo luat vua
+      dao (in-sample). Tuc: cho toi 21/08 = chiu them HAI lan xoa dong ho do
+      tien, de roi 21/08 van khong co mot luot do tien nao tich duoc.
+
+      R4 da goi day la phat hien quan trong nhat cua ca dot audit: tran cung
+      35 luot/mien, trong khi cong FU-313 can 784/578/392. Khong phai "chua du
+      ngay" — la "dem nguoc ve 0 moi bay ngay". Hoan A den 21/08 khong bao ve
+      duoc FU-284 (A khong dung prompt), ma lai tra gia bang hai lan xoa.
+
+      Nguoc lai, cai gia cua viec HOAN NHOM B den 21/08 la thap: cac muc B la
+      loi noi dung prompt da ton tai nhieu ngay/tuan, them 14 ngay khong lam
+      chung nang them, va so R5/R3 da do duoc muc do anh huong.
+
+1.4 — DUONG THU BA CHO NHOM B: LANE SHADOW (co san, khong phai dung moi)
+      gpt_analyzer.py L6263-6265 da co san co chuyen mach:
+          _shadow_mode = lane_test_shadow_pack or (selected_model in SHADOW_GATE_MODELS)
+          _ctx_pack = build_context_pack(target_region, date_str, shadow_mode=_shadow_mode)
+      Tuc mot prompt BIEN THE da chay duoc cho nhom shadow ma KHONG dung prompt
+      official. R5 da xac nhan SHADOW_GATE_MODELS = 8 model shadow va khoi
+      PHASE-FIRST GATE chi bom cho nhom nay.
+
+      => Nhom B co the dung va do NGAY trong lane shadow (prompt B), trong khi
+      official giu nguyen prompt A den 21/08. Het 21/08 thi doi B len official
+      voi bang chung co che da co san 14 ngay.
+      DIEU KIEN: sua phai nam trong nhanh shadow_mode=True. Neu mot sua doi
+      nam o doan dung chung ca hai nhanh thi no ROI VE NHOM B-cho, khong duoc
+      goi la "chi dung shadow". Cong byte-prompt o 1.2 chinh la thu phan xu
+      dieu nay — cham no cho ca hai nhanh.
+
+1.5 — BANG XEP LICH
+      +--------+-------------------------------+------------------------------+
+      | nhom   | dieu kien                     | lich                         |
+      +--------+-------------------------------+------------------------------+
+      | A      | cong byte-prompt 3/3 GIONG HET| di ngay, truoc thu Hai 10/08 |
+      | B-lane | sua trong nhanh shadow_mode   | dung ngay, do trong shadow   |
+      | B      | doi prompt official           | CHO 21/08, sau khi FU-284 chot|
+      | C      | can owner ky                  | trinh owner, khong tu quyet  |
+      +--------+-------------------------------+------------------------------+
+
+      VA MOT DIEU KIEN CUNG cho ca ba: tu 08/08 den 21/08 KHONG duoc doi
+      prompt official lan thu bay. Neu owner van chot doi, thi phai ghi ro
+      FU-284 dat lai moc lan thu tu, va noi thang la cua so do lai ve 0 —
+      dung nhu FU-316 da ghi "cam chong bien lan thu tu".
+
+
+================================================================================
+PHAN 2 — R9: KHUNG DO LUONG CHUNG (dung cho moi de xuat)
+================================================================================
+
+2.1 — PHEP DO CO CHE (FU-287): BIET TRONG CUNG NGAY
+      Owner: "1 thang moi biet roi fix roi doi 1 thang nua thi qua te".
+      Phep do co che khong hoi "co trung hon khong" — no hoi "hanh vi co doi
+      khong". Tra loi duoc trong 1 ngay.
+
+      Ba bai hoc bat buoc ke thua tu V11017 (dung sai lai lan nua la lap loi):
+        (1) MOC GIO, khong phai moc NGAY. V11017 suyt bao thang lon vi gan
+            nhan SAU_ cho ba luot chay 05:00 trong khi deploy luc 13:35:48.
+        (2) Luot nao co ca ban ghi truoc lan sau moc => HON_HOP, LOAI khoi ca
+            hai trung binh. Khong duoc gop vao ben nao.
+        (3) NGUONG CHOT TRUOC khi nhin so.
+
+      HAI LOAI phep do co che — khac nhau ve chieu PASS:
+        loai N (nhom A): PASS khi KHONG CO GI DOI.
+            = cong byte-prompt 1.2: sha256 prompt 3/3 mien giong het.
+            Day la phep do co che day du cho nhom A: neu prompt khong doi mot
+            byte thi model khong the doi hanh vi vi ly do nay.
+        loai D (nhom B): PASS khi HANH VI DOI DUNG HUONG DA KHAI.
+            do tren dau ra that, khong do tren y dinh.
+
+2.2 — PHEP DO TIEN (FU-313): BON THANH PHAN, THIEU MOT LA CAM GHI "THANG"
+      (a) NEN THEO NGAY — |tap duoi ve| / 100, tinh rieng tung ngay tung mien.
+          Cam dung nen trung binh. (R2 da vap dung cho nay o o minh hoa.)
+      (b) z VS NEN CHO CA HAI CUA SO — ca truoc lan sau. Chi bao cua so sau la
+          dung cong thuc tao ket qua dep ma FU-313 sinh ra de chan.
+          Do la chenh-cua-chenh: (hr_sau - nen_sau) - (hr_truoc - nen_truoc).
+      (c) SUC MANH — n can, tinh voi VIF 2,92x. Da do o 0.3.
+      (d) DANG KY TRUOC — nguong va ngay chot ghi vao so TRUOC khi mo so lieu.
+
+2.3 — NGUONG DANG KY TRUOC CHO CUA SO 08/08 -> 21/08 (ghi truoc, chua nhin so)
+      Bien do   : ti le SO CHINH trung, GOP BA MIEN, chi official
+                  (loai run_source='shadow_auto_eval')
+      Cua so sau: 08/08 .. 21/08 (14 ngay sach; 07/08 loai vi HON_HOP)
+      Cua so truoc: 25/07 .. 07/08 — nhung PHAI ghi ro cua so nay BAN THAN
+                  no chua sau lan doi prompt, nen no la nen BAN, khong sach.
+                  Day la han che khong go duoc, phai khai ra chu khong giau.
+      Thuoc do  : D = (hr_sau - nen_sau) - (hr_truoc - nen_truoc), don vi diem
+
+          D <= -8,76 diem  => TUT THAT. Go ve v11016_pre. (canh bao do duoc)
+          D >= +8,76 diem  => LEN THAT. Giu.
+          -8,76 < D < 8,76 => KHONG KET LUAN DUOC. Cam ghi "thang", cam ghi
+                              "tut". Giu nguyen prompt, keo dai den 20/09
+                              (44 ngay) moi du suc cho nguong 5 diem.
+
+      Ngay chot dang ky truoc: 21/08 (chot tam) va 20/09 (chot du suc).
+
+      LUU Y THANG THAN: nguong +-8,76 diem la rat rong. Rat co kha nang ket qua
+      21/08 se roi vao o giua va khong ket luan duoc gi. Do la SU THAT ve suc
+      manh cua phep do, khong phai that bai cua nguoi do — va biet truoc dieu
+      do ngay hom nay tot hon la phat hien ra no vao 21/08.
+
+2.4 — CONG CHONG TAI PHAM (ap cho moi de xuat)
+      - Cam ket luan tu dem chuoi tho; phai phan loai TRONG_PROMPT /
+        GHI_VAO_PROMPT / CODE / CHU_THICH (§60.3).
+      - Sau moi sua: QUET NGUOC toan tep tim moi dau vet cua thu vua doi.
+      - Moi muc phai co TRUOC / SAU / PHIEN BAN / KIEM (§60.4).
+      - Bang gop nhieu nguon: nguon nao 0 dong thi CAM phat ket luan (FU-327).
+
+
+================================================================================
+PHAN 3 — R9 + R10 THEO TUNG DE XUAT
+================================================================================
+Moi muc co: nguon · dung gi · R9-CO CHE · R9-TIEN · R10 rui ro · R10 go ve ·
+            R10 cong PASS/FAIL · phan loai.
+
+--------------------------------------------------------------------------------
+NHOM A — KHONG DUNG PROMPT OFFICIAL, DI DUOC NGAY (truoc thu Hai 10/08)
+--------------------------------------------------------------------------------
+
+A1. NGUNG XOA BO DEM DO TIEN — dung bang RIENG, khong sua dong DELETE
+    nguon  : R4 phat hien NANG #1 (quan trong nhat ca dot) · R2 · R1
+    van de : weekly_rule_miner.py:170 xoa 112 ngay mined_rule_effectiveness moi
+             thu Hai 00:30 roi dung lai bang chinh bo luat vua dao. Tran cung
+             35 luot/mien. Cong FU-313 can 784/578/392 => BAT KHA THI ve cau
+             truc, khong phai "chua du ngay".
+    CACH LAM AN TOAN (quan trong): KHONG sua dong :170. Thay vao do dung bang
+             MOI mined_rule_do_tien_shadow, ghi cac dong co date >= mined_at
+             cua bo luat sinh ra chung, va KHONG cho miner dung vao.
+             Ly do chon cach nay thay vi sua :170: sua :170 lam bang
+             mined_rule_effectiveness phinh ra, ma bang do CO duong chay vao
+             prompt (gpt_analyzer.py L4799-4807, khoi §11) va vao cong promote.
+             Dung bang rieng => chung minh duoc khong dung prompt.
+    R9-CO CHE (loai N, biet trong 1 ngay):
+             (1) cong byte-prompt 1.2: sha256 prompt 3/3 mien GIONG HET.
+             (2) dem dong bang moi sau lan chay dau: phai > 0 va moi dong phai
+                 co date >= mined_at cua rule do (0 dong vi pham).
+             (3) mined_rule_effectiveness giu NGUYEN so dong (bang moi khong
+                 duoc dung vao bang cu).
+    R9-TIEN : day la HA TANG do, khong phai thay doi hanh vi => khong co phep
+             do tien cho chinh no. Cai no mo ra: sau 20 tuan (1 luot/luat/tuan)
+             moi luat moi du n>=20. Ghi dung nhu vay, khong hua som hon.
+             Moc doc so dau tien co nghia: 05/10/2026 (8 tuan, n>=8/luat).
+    R10 rui ro:
+             - Bang moi phinh: ~105 dong/tuan, khong dang ke.
+             - RUI RO THAT: neu viet nham vao mined_rule_effectiveness thi dung
+               vao duong prompt §11 va cong promote. Cong (3) o tren chan dung
+               cho nay.
+             - Khong co rui ro cho /du-doan: khong ai doc bang moi.
+    R10 go ve:
+             DROP TABLE mined_rule_do_tien_shadow + go dong goi trong
+             mined_rule_eval. Khong can backup gpt_analyzer.
+             Backup truoc khi sua: web/backend/mined_rule_eval.py
+             md5 hien tai = 6f5d080a9a01ca18cd75e9c8ed5cdadb
+             (luu vao backups/v11024_pre/mined_rule_eval.py.pre)
+    R10 cong PASS/FAIL:
+             PASS = sha256 prompt 3/3 giong het VA mined_rule_effectiveness
+                    so dong khong doi VA bang moi co dong hop le.
+             FAIL = bat ky dieu nao sai => go ve ngay, khong deploy.
+    PHAN LOAI: DEPLOYABLE_SOON  (uu tien 1 — phai xong TRUOC 00:30 thu Hai
+               10/08, neu khong mat them mot tuan)
+
+A2. DEPLOY M4 DOI CHUNG LUAT GIA + NOI CRON
+    nguon  : R6 phat hien NANG #2 va #3 · R2
+    van de : _v11003_m4_doi_chung_luat.py CO tren VPS (06/08 21:15) nhung nhanh
+             --dung CHUA BAO GIO chay o dau. Bang mined_rule_doi_chung va cot
+             giai_doan KHONG ton tai ca local lan VPS. Bang chung goc chi con
+             trong hai ban artifacts/live_sync/*/before_local cua 07/08.
+    RANH GIOI PHAI GIU: gpt_analyzer.py L4481-4483 dang BOM VAO PROMPT chinh
+             hai con so cua M4:
+                L4481-4482: "Do TIEN ... z = -0,33 / +0,26 — tuc NGANG BANG
+                             luat gia sinh ngau nhien."
+                L4483:      "0/105 luat du mau qua cong do tien (can >=20
+                             luot/luat, hien toi da 3)."
+             Deploy M4 KHONG dung ba dong nay => van la nhom A.
+             Nhung phai biet: hai dong do dang sai (xem B5b). Sua chung la
+             nhom B. Tach ro hai viec nay ra, dung lam mot lan.
+    R9-CO CHE (loai N): cong byte-prompt 3/3 giong het (M4 ghi bang rieng,
+             khong ai doc vao prompt). Cong "nguon chet" FU-327: ca ba nhanh
+             (luat that, doi chung doi dai, doi chung dich 28 ngay) phai ra
+             >0 dong, nguon nao 0 dong => cam phat ket luan.
+    R9-TIEN : McNemar theo cap, tach giai_doan CHAM_NGUOC vs DO_TIEN.
+             Suc manh do duoc hien nay: DO_TIEN moi co b+c = 9 va 15 cap lech
+             (R6). Doi mot cap la z nhay ~0,3 don vi.
+             n can de z=1,96 on dinh: >=50 cap lech moi nhom.
+             Nhip: ~5 cap lech/tuan => moc doc so co nghia: 10 tuan = 16/10/2026.
+             TRUOC MOC DO: ghi "tin hieu so bo", CAM ghi "luat that ngang luat
+             gia" nhu mot ket luan.
+    R10 rui ro:
+             - --dung GHI DB: ALTER TABLE them cot giai_doan +
+               CREATE TABLE mined_rule_doi_chung + nap ~2.400 dong.
+               ALTER TABLE tren mined_rule_effectiveness la thao tac ghi len
+               bang co duong chay vao prompt => phai backup DB truoc.
+             - Khong dung 4 bang khoa.
+    R10 go ve:
+             (1) Backup DB truoc: copy data/lottery_ai.db (670.027.776 byte)
+                 sang backups/v11024_pre/lottery_ai.db.pre + ghi sha256.
+             (2) Go: DROP TABLE mined_rule_doi_chung. Cot giai_doan khong xoa
+                 duoc bang ALTER (SQLite) — de lai, no la cot NULL vo hai;
+                 ghi ro dieu nay TRUOC khi chay, dung de owner phat hien sau.
+             (3) Go cron: crontab -l > /tmp/cron.bak truoc khi sua.
+    R10 cong PASS/FAIL:
+             PASS = 4 bang khoa so dong y het · sha256 prompt 3/3 giong het ·
+                    ba nhanh doi chung deu >0 dong · chay lai lan hai ra cung so.
+             FAIL = bat ky nhanh nao 0 dong (nguon chet) => khong phat ket luan.
+    PHAN LOAI: DEPLOYABLE_SOON
+
+A3. VA _get_source_date CHO OFFSET D-N
+    nguon  : R3 phat hien VUA
+    van de : mined_rule_eval.py L68-73 chi hieu D va D-1; D-2/D-3/D-7 TRA VE
+             CHINH NGAY DICH, im lang. Da goi that de xac nhan:
+             _get_source_date('2026-08-07','D-2') = '2026-08-07' (dung phai
+             la 2026-08-05). rule_engine.py L417-426 xu ly D-N DUNG => hai
+             chuan trong cung mot he.
+    tai sao chua no : mined_rules hien chi co D(20) va D-1(85) — da do lai
+             hom nay: [('D',20), ('D-1',85)]. Nhung ho luat tier2 DA co lag
+             D-2..D-7 (MB 45/86, MN 39/60, MT 40/64).
+    R9-CO CHE (loai N): (1) dem luat co offset ngoai {D, D-1} trong mined_rules
+             = 0 => sua nay doi 0 dong hom nay. (2) cong byte-prompt 3/3 giong
+             het. (3) test truc tiep: goi ham voi D-2/D-3/D-7 va so voi ngay
+             tinh tay — 3/3 dung sau khi sua, 3/3 sai truoc khi sua.
+    R9-TIEN : khong co — sua nay doi 0 dong du lieu hom nay. Gia tri cua no la
+             GO BAY, khong phai cai thien so. Cam ghi vao bat ky bang "truoc/
+             sau" nao nhu mot cai tien.
+    R10 rui ro:
+             - Rat thap hom nay (0 dong bi anh huong).
+             - Rui ro NGUOC lai neu KHONG sua: ai them mot luat D-2 vao
+               mined_rules, hoac noi tier2 vao duong tinh so, thi he se lang le
+               lay ket qua CHINH NGAY DICH lam nguon = nhin truoc ket qua
+               (data leakage), hit-rate vot len gia tao, khong canh bao nao.
+    R10 go ve:
+             backups/v11024_pre/mined_rule_eval.py.pre
+             md5 hien tai = 6f5d080a9a01ca18cd75e9c8ed5cdadb
+             (neu lam chung phien voi A1 thi backup MOT lan truoc ca hai)
+    R10 cong PASS/FAIL:
+             PASS = 3/3 phep goi D-2/D-3/D-7 ra ngay dung · so dong
+                    mined_rule_effectiveness khong doi · prompt 3/3 giong het.
+             FAIL = bat ky phep goi nao con tra ve ngay dich.
+    PHAN LOAI: DEPLOYABLE_SOON
+
+A4. THONG NHAT TRA CUU DAI NGUON (alias) O HAI CHO CON THIEU
+    nguon  : R3 phat hien VUA · R3 kiem chung cheo (rui ro lech MIEN)
+    van de : rule_engine.py L433-443 dung station_lookup_candidates() CO alias.
+             mined_rule_eval.py:228 va gpt_analyzer.py:4406 (duong LIVE PROMPT
+             _rules_first_live_block, L4365) dung "WHERE date=? AND region=?
+             AND station=?" KHONG alias. Ba duong, hai chuan.
+    CANH BAO PHAN LOAI: gpt_analyzer.py:4406 NAM TREN DUONG PROMPT. Muc nay
+             chi thuoc nhom A khi cong byte-prompt cham 3/3 GIONG HET — R3 da
+             do 41/41 ten dai trong 180 ngay gan nhat deu chuan, nen ky vong
+             la 0 dong doi. NHUNG PHAI CHAY CONG, khong duoc gia dinh.
+             Neu cong bao lech => muc nay ROI VE NHOM B, cho 21/08.
+    R9-CO CHE (loai N): (1) cong byte-prompt 3/3. (2) dem so dong tra ve cua
+             truy van cu vs moi tren 180 ngay: phai bang nhau (0 dong chenh).
+             (3) them phep dem "dai nguon tra ve rong" — hien 0, phai giu 0.
+    R9-TIEN : khong co. Day la sua phong ngua. Gia tri do bang so lan cong
+             "dai nguon tra ve rong" bat duoc trong tuong lai, khong bang do
+             trung.
+    R10 rui ro:
+             - Neu alias mo rong qua tay, mot luat co the bat them dai KHAC =>
+               doi so vao prompt. Cong byte-prompt chan dung cho nay.
+             - R3 kiem chung cheo con phat hien rui ro LECH MIEN (14 dai MT
+               tung bi gan region='MN' giai doan 2020-04..2021-10). Trong cua
+               so dao 365 ngay hien tai co 0 dong lech mien => khong anh huong
+               105 luat dang chay. Ghi lai de phien sau dung du lieu truoc
+               2021-10 thi phai chuan hoa mien truoc.
+    R10 go ve:
+             backups/v11024_pre/mined_rule_eval.py.pre  (md5 6f5d080a9a01ca18cd75e9c8ed5cdadb)
+             backups/v11024_pre/gpt_analyzer.py.pre     (md5 6b28f0baa7aeceac0e9fd2b75a741a81)
+    R10 cong PASS/FAIL:
+             PASS = prompt 3/3 giong het VA 0 dong chenh tren 180 ngay.
+             FAIL = bat ky lech nao => chuyen muc nay sang NHOM B, cho 21/08.
+    PHAN LOAI: DEPLOYABLE_SOON (co dieu kien — tut xuong CHO_DO neu cong lech)
+
+A5. HAI CONG KIEM: XUAT XU DB va NGUON CHET
+    nguon  : R6 phat hien NANG #5 (sha256 DB khong khop manifest) · FU-327
+    van de : (1) data/lottery_ai.db co mtime 2026-08-07 20:03:23, SAU lan dong
+             bo 18:51:18; kich thuoc y het manifest nhung sha256 khac han
+             (hien 42ebf97e0f0e88a416f27a5d52dedaf60542600646e76fa56398814316726f3b
+             vs manifest df7a0b183de741778500417b639ab5198111259000524f750f69e1fdbf3f762b).
+             Quy tac CLAUDE.md bat trich latest_manifest.json khi dung ban
+             local lam bang chung — trich dan do DANG SAI cho moi phep do local.
+             (2) V11018 tung chay tron tru voi mot trong ba nguon ra 0 dong.
+    R9-CO CHE (loai N): cong chay duoc, in ra ngay: sha256 that vs manifest,
+             KHOP / LECH. Chay duoc ngay hom nay, biet ket qua trong 1 phut.
+    R9-TIEN : khong co. Day la cong kiem, gia tri = so lan bat duoc.
+             Chi so theo doi: so phien co canh bao xuat xu (ky vong ve 0 sau
+             khi tim ra tien trinh ghi luc 20:03).
+    R10 rui ro:
+             - Cong qua chat lam moi phien dung => phai co che canh bao truoc,
+               chan sau (2 tuan canh bao, roi moi chan).
+             - Khong dung runtime, khong dung prompt.
+    R10 go ve: xoa script cong. Khong co trang thai gi de go.
+    R10 cong PASS/FAIL:
+             PASS = cong chay ra dung ket qua tren ca hai chieu (co lech thi
+                    bao lech, khong lech thi im).
+             FAIL = cong bao im khi da co lech that (thu bang cach sua 1 byte
+                    tren BAN SAO).
+    PHAN LOAI: DEPLOYABLE_SOON
+
+A6. DINH CHINH TAI LIEU (khong dung code, khong dung prompt)
+    nguon  : R1, R3, R4, R6
+    danh sach cu the va so dung:
+      (1) "dedup 3.696" — KHONG tai lap duoc. Cong tho 4.719 (BON tep, ban goc
+          bo sot V10636_EXT_FULL_GRID.json). Ghi ro "khong kiem duoc", KHONG
+          ghi "sai". README V10667 dong 62 · RULES_INDEX dong 36.
+      (2) "~66k luot" cua R4 -> so dung 60.412 (cong cot n trong chinh bang B1).
+      (3) "84/84 khoang tin cay chua 0,50" — KHONG CO NGUON. Do lai tren ban
+          CSV tuoi cua VPS: 80/84. Bootstrap cum-ngay: 79/84 (5 truong hop).
+          Chi ton tai o hai cho van xuoi: docs/FOLLOW_UP_TRACKER.md:529 va
+          CONVERSATION_CONTEXT_V11014_20260807.md:95.
+      (4) V10667/V10670 mo ta HO LUAT KHAC (tier2 TIER2_CONFIRM), khong phai
+          bang mined_rules. Phai ghi cau canh bao o dau hai tai lieu.
+          So dai dien dung: GOM vs 1-dai = +10,9 diem tren toan bo 105 luat
+          (KHONG phai +16,2 diem — do la so cua mau 20 luat chon theo do da
+          dang, khong dai dien quan the).
+      (5) V10668_FORWARD_AUDIT_REGISTRY_FIXED.json: direction_distribution con
+          ghi tong 35 trong khi mang rules co 28. Dem lai:
+          {MT->MT:12, MB->MT:9, MN->MT:4, MB->MN:3} = 28.
+      (6) Bang "mined_rule_doi_chung" trong tai lieu boi canh kho KHONG ton tai
+          trong schema that. Bang doi chung that dang dung: ma_doi_chung_shadow.
+      (7) "0/105 luat qua cong do tien" -> so dung: nhom DO_TIEN chi co 45 dong
+          / 45 luat / 3 ngay. 105 la tong so luat, khong phai so luat da qua
+          cong. Va con nhom thu BA khong bao cao nao nhac: MO_COI 1.493 dong.
+    R9-CO CHE : grep lai tung chuoi sau khi sua — 0 lan xuat hien o dang khang
+             dinh. PHAN LOAI theo §60.3, khong dem chuoi tho: dong chu thich
+             ghi lai lich su thi GIU (do la bang chung da lam).
+    R9-TIEN : khong co.
+    R10 rui ro: rat thap. Rui ro that la sua nua voi — sua README ma khong sua
+             RULES_INDEX thi phien sau van doc trung so cu (dung loi §60.1).
+    R10 go ve: git revert commit tai lieu. Khong dung runtime.
+    R10 cong PASS/FAIL:
+             PASS = quet nguoc toan kho, moi chuoi con lai deu thuoc loai
+                    CHU_THICH hoac da kem cau dinh chinh.
+             FAIL = con mot cho ghi so cu o dang khang dinh.
+    PHAN LOAI: DEPLOYABLE_SOON
+
+--------------------------------------------------------------------------------
+NHOM B — DUNG PROMPT OFFICIAL. CHO 21/08, HOAC DUNG+DO TRONG LANE SHADOW
+--------------------------------------------------------------------------------
+Chung cho ca nhom B:
+  R9-CO CHE (loai D) do trong 1 ngay, tren dau ra that, moc GIO, loai HON_HOP.
+  R9-TIEN   dung khung 2.3: gop ba mien, nen tung ngay, z ca hai cua so,
+            nguong +-8,76 diem, chot 21/08 (tam) va 20/09 (du suc).
+  R10 go ve chung: backups/v11016_pre/gpt_analyzer.py.pre
+            md5 f8b428ece9d90181642806e095ced195   (ban truoc V11016)
+            backups/v11014_pre/gpt_analyzer.py.pre
+            md5 a20dbb167668561ab400ae9c198ec937   (ban truoc V11014)
+            Truoc khi sua phai tao backups/v11024_pre/gpt_analyzer.py.pre
+            md5 hien tai = 6b28f0baa7aeceac0e9fd2b75a741a81
+  R10 cong chung: PID truoc/sau phai KHAC (dich vu ten `lottery`, KHONG phai
+            `lottery-ai`) · /api/health = 200 · endpoint admin = 401 ·
+            4 bang khoa hash y het · /du-doan official 15/15 · lane test 20/20.
+
+B1. §24 GO CAU TRO VAO KHOI DA GO  [uu tien cao nhat trong nhom B]
+    nguon  : R5 kiem chung cheo (ban goc R5 BO SOT muc nay)
+    van de : gpt_analyzer.py L737 van ra lenh:
+             "Khi Context Pack co 'WEEKLY LIVINGNESS' -> chi tin tuong rules
+              ACTIVE/SUPPORT, bo qua SHADOW/DROP"
+             Trong khi khoi do DA BI GO: L4862 gan `_live_rows = []` ngay truoc
+             `if _live_rows:` (V11014, 07/08). Da xac nhan tren VPS.
+             Day la DUNG ca §60.1: "go du lieu ma de lai cau lenh tro vao no".
+             (L736 tro 'BT MODEL RANKING' thi VAN SONG — L4630. Cho nay dung,
+              khong duoc go nham.)
+    R9-CO CHE (loai D, 1 ngay):
+             dem so luot model nhac "ACTIVE/SUPPORT/SHADOW/DROP" hoac
+             "livingness" trong truong ly do chon so (top1_reason / analysis)
+             cua prediction_trace. TRUOC: >0 ky vong. SAU: phai ve 0.
+             Neu TRUOC da la 0 thi phep do co che nay VO NGHIA — phai khai ra
+             va chuyen sang do "do dai prompt + so menh lenh" thay the.
+    R9-TIEN : theo 2.3. Ky vong that: thay doi nho, gan nhu chac chan roi vao
+             o "khong ket luan duoc". Ghi truoc dieu do.
+    R10 rui ro: rat thap — go mot cau tro vao thu khong ton tai. Rui ro nguoc
+             lai (giu nguyen) cao hon: model duoc bao dung mot thu khong co,
+             no se TU BIA hoac tu suy lai luat cu.
+    R10 go ve: backups/v11024_pre/gpt_analyzer.py.pre (md5 6b28f0baa7aeceac0e9fd2b75a741a81)
+    R10 cong PASS/FAIL:
+             PASS = grep "WEEKLY LIVINGNESS" trong vung chuoi RR = 0 (chu thich
+                    lich su duoc giu) · cong chung nhom B dat.
+             FAIL = con cau lenh tro vao khoi da go.
+    PHAN LOAI: CHO_DO (cho 21/08) — nhung xem GHI CHU CUOI PHAN 3.
+
+B2. §11 RULE TAILS LA DOAN CHET 100%, MA §14/§18/§25 DEU TRO VAO
+    nguon  : R5 phat hien NANG
+    van de : SQL khoi (L4799-4807): WHERE ... AND e.date >= date('now','-2 days').
+             Dong cua ngay D chi duoc ghi luc 20:15 VN (cron mined_rule_eval_time),
+             trong khi prompt dung luc MT 16:xx / MB 17:xx => dong ngay D CHUA
+             ton tai. Luat cua D-1/D-2 co target_weekday khac thu cua D => JOIN
+             rong. Mo phong 60 ngay x 3 mien: 0/180 = 0,0%.
+             Nhan STRONG/MED/LIGHT cua §11 CHUA BAO GIO hien ra trong prompt.
+             Ma §14 day "gop rule cung ho trong Rule Tails", §18 day "neu Rule
+             Tails co STRONG thi dung no", §25 doi near_miss phai la so "da
+             xuat hien trong Rule Tails" — ba muc tro vao khoi khong ton tai.
+    R9-CO CHE: dem so lan khoi §11 thuc su co du lieu (hien 0/180). Sau khi sua
+             (hoac doi cua so, hoac go han ba cau tro vao no): phai >0 neu chon
+             sua, hoac = 0 va KHONG con cau nao tro vao neu chon go.
+    R9-TIEN : theo 2.3.
+    R10 rui ro: NEU chon "sua cua so cho §11 song lai" thi day la THEM du lieu
+             vao prompt — rui ro cao hon go, va phai do rieng. Khuyen: GO cac
+             cau tro vao truoc (re-versible, an toan), ban viec hoi sinh khoi
+             sau, dung lam mot lan.
+    R10 go ve: nhu B1.
+    R10 cong PASS/FAIL: PASS = 0 cau lenh tro vao khoi co 0/180 lan co du lieu.
+    PHAN LOAI: CHO_DO
+
+B3. KHOI TIER2 "#Bo" DI THANG VAO PROMPT MB OFFICIAL MA KHONG AI GIAI NGHIA
+    nguon  : R3 phat hien NANG · R3 kiem chung cheo (sua duong bang chung cong)
+    van de : gpt_analyzer.py L4167-4170 noi thang chuoi vao prompt:
+             "• {source} [{transform}] lift={lift_pp}pp hr={hit_rate_pct}%"
+             Dong that cho MB thu Sau 07/08:
+             "• MB:G4#3:D-1 [FIRST2] lift=5.97pp hr=29.75% [on dinh] (V10667)"
+             Prompt KHONG dinh nghia ky hieu o dau: 'FIRST2'=0 lan, 'HEAD_TAIL'
+             =0 lan, 'LAST2'=0 lan, 'vi tri bo'=0 lan trong gpt_analyzer.py.
+             Ban giai nghia duy nhat nam o E:\Lottery_AI_Notion_Reports —
+             model khong doc duoc.
+             Quy mo: mb 86 luat (45 co lag ngoai D/D-1), mn 60 (39), mt 64 (40).
+    CONG BAT DUNG DUONG (sua so voi ban R3 goc): cong MB_PROMPT_DOCTRINE_ENABLE
+             BAT that, nhung KHONG kiem duoc bang `systemctl cat lottery` hay
+             /proc/PID/environ (ca hai deu KHONG co bien nay — ban R3 goc neu
+             sai duong, doc dung se ra ket luan NGUOC). Duong dung:
+             env_loader.load_project_env() goi tai gpt_analyzer.py:85 va
+             main.py:106/177, nap /root/Lottery_AI_Test/.env vao os.environ luc
+             import; load_dotenv() KHONG hien trong /proc/PID/environ.
+             PHIEN SAU PHAI KIEM BANG DUONG NAY.
+    R9-CO CHE: dem so luot model nhac ky hieu tier2 (chuoi dang "G4#3", "FIRST2",
+             "RULE STACK") trong ly do chon so. Da co it nhat 1 dong that:
+             "Uu tien tuyet doi theo MB RULE STACK".
+             Ba lua chon, moi cai mot phep do khac:
+               (i)  viet ban giai nghia VAO prompt  -> co che: model nhac ky
+                    hieu KEM giai nghia dung, dem >0.
+               (ii) resolve tier2 ra SO THAT        -> co che: khoi co so, khong
+                    con chuoi ky hieu tho.
+               (iii) GO khoi khoi official          -> co che: 0 lan nhac.
+    R9-TIEN : theo 2.3. RIENG muc nay chi anh huong MB => do rieng MB thi CHI
+             CO 213 luot tho / 73 hieu dung trong 14 ngay => KHONG DU SUC ket
+             luan. Phai khai thang: muc nay khong the co ket luan do tien trong
+             14 ngay; chi co phep do co che la tra loi duoc.
+    R10 rui ro: CAO NHAT trong nhom B. Day la khoi dang thuc su neo model MB.
+             Go no ra la doi hanh vi MB dang ke. Neu lam, phai lam RIENG MOT
+             LAN, khong gop voi B1/B2/B4.
+    R10 go ve: nhu B1. Kem: co the tat bang bien moi truong
+             MB_PROMPT_DOCTRINE_ENABLE=0 trong /root/Lottery_AI_Test/.env dong
+             16 — day la duong go NHANH NHAT, khong can deploy lai ma.
+             (Kiem lai bang env_loader, khong bang systemctl cat.)
+    R10 cong PASS/FAIL:
+             PASS = cong chung nhom B dat VA phep do co che tuong ung dat.
+             FAIL = MB ra so lech han (vd so luot trung tut > 8,76 diem trong
+                    7 ngay dau) => go bang .env ngay.
+    PHAN LOAI: CAN_OWNER_KY (khong tu quyet — doi hanh vi MB official)
+
+B4. BA (THUC TE HAI) TRAN CONFIDENCE MB MAU THUAN
+    nguon  : R5 phat hien VUA · R5 kiem chung cheo (sua so 3 -> 2)
+    van de : L776  (RR §26): "Tran confidence cho MB: 52% voi model AI · 60%
+                    voi nhom no-token."
+             L5239 (ctx MB POLICY): "Confidence ceiling: 60%"
+             L5344 (ctx V10.3):     "Base confidence ceiling: 55% (MN/MT = 70%)"
+             DINH CHINH so voi ban R5 goc: chi HAI tran cung bom mot luot
+             (52% + 55%). Dong 60% nam trong nhanh `if ai_wr < 5:` (L5236);
+             do ai_wr 30 ngay lien tiep: thap nhat 6,7% — 0/30 ngay duoi 5%,
+             nen khoi 60% khong duoc bom ngay nao.
+             Khong co code nao CHAN theo tran — ca hai chi la chu.
+    R9-CO CHE: phan bo confidence model MB tu khai, truoc/sau. Neu tran that su
+             co tac dung thi phan bo phai bam tran moi. Neu khong doi gi =>
+             bang chung la tran chi la chu, va viec thong nhat no la don chu
+             chu khong phai sua hanh vi — phai ghi dung nhu vay.
+    R9-TIEN : theo 2.3. Ky vong: khong doi. Muc dich la het mau thuan, khong
+             phai tang so trung.
+    R10 rui ro: thap. Rui ro that: chon nham tran (52 hay 55) ma khong hoi
+             owner => tu quyet mot tham so san pham.
+    R10 go ve: nhu B1.
+    R10 cong PASS/FAIL: PASS = con DUNG MOT tran MB trong toan bo prompt (dem
+             bang cach dung prompt that, khong grep tho).
+    PHAN LOAI: CAN_OWNER_KY (chon con so nao la quyet dinh san pham)
+
+B5. BON CON SO SAI/MO COI DANG NAM TRONG PROMPT
+    nguon  : R5 phat hien VUA (a,b) · R5 kiem chung cheo · R6 (c)
+    (a) §1 L~: "MN WR 4w ~57% · MT ~61% · MB ~47%" — KHONG tai lap duoc bang
+        bat ky dinh nghia nao. Do 28 ngay, ba dinh nghia:
+          moi luot WIN     : MN 16,3% · MT 9,1% · MB 4,7%
+          ngay co >=1 WIN  : MN 79,3% · MT 75,9% · MB 62,1%
+          rieng combo-super: MN 20,7% · MT 10,3% · MB 6,9%
+        Khong cai nao ra 57/61/47. Va §1 TU MAU THUAN: goi MN "on dinh nhat"
+        nhung cho MT so cao hon. Moi dinh nghia do lai deu cho MN > MT — tuc
+        con so dang bom con DAO NGUOC thu hang that.
+    (b) §23 L715 + L4981: "6/7 AI KHAC CUNG SE CHON" — pool AI that la 9
+        (combo_super.AI_MODELS), ML 4. Va co che la UNIFIED TOP-3 (§59), chi
+        nhom duoc chon moi bo phieu => khong phai "6/7 AI khac" nao cung chon.
+    (c) L4481-4483: "Do TIEN ... z = -0,33 / +0,26" va "0/105 luat du mau qua
+        cong do tien (can >=20 luot/luat, hien toi da 3)".
+        Hai loi: (1) so -0,33/+0,26 tinh tu 9 va 15 cap lech, va nguon sinh ra
+        no (bang mined_rule_doi_chung) KHONG CON TON TAI o dau — prompt dang
+        trich mot con so he thong khong dung lai duoc. (2) "hien toi da 3" —
+        do lai max luot ngoai mau tren mot luat = 1, lech 3 lan.
+    R9-CO CHE: dem so luot model trich lai cac con so nay trong ly do chon so.
+    R9-TIEN : theo 2.3.
+    R10 rui ro: thap ve ky thuat, nhung (c) la rui ro UY TIN: prompt dang day
+             model bang mot con so khong tai lap duoc.
+    R10 go ve: nhu B1.
+    R10 cong PASS/FAIL: PASS = moi con so con lai trong prompt deu co script
+             tai lap duoc, hoac da bi go. Cong nay nen thanh cong kiem lau dai.
+    PHAN LOAI: CAN_OWNER_KY cho (a) — go hay gan nguon la quyet dinh;
+               CHO_DO cho (b) va (c) — sua so cho dung la viec ro rang.
+
+B6. §14 DEM HOI TU KHONG GOM RULE CUNG HO — 95,4% "hoi tu" la MOT dai
+    nguon  : R5 phat hien NANG · R5 kiem chung cheo (sua ty le)
+    van de : rule_engine.py L583-586:
+             convergence = {tail: len(sources) for tail, sources in
+                            tail_sources.items() if len(sources) >= 2}
+             `sources` la list .append() KHONG dedup, KHONG gom theo dai.
+             Ngay duoi, L624 co dung set() de dedup — nhung CHI cho bo dem
+             HIEN THI, khong cho bo dem QUYET DINH.
+             Do 61 ngay x 3 mien: 819 duoi co hoi tu >=2 luat, trong do 781
+             (95,4%) co TOAN BO luat cung MOT dai nguon.
+             §14 noi thang "nhieu rules cung family = chi 1 opinion" — code lam
+             nguoc dung 95,4% so lan.
+             DINH CHINH so voi ban R5 goc: ty le CONV×3+ la 16,4% (282/1.724),
+             KHONG phai 21% (417/1.992) — ban goc dung mined_rules is_active=1
+             ma bo qua bo loc production_tier + BUCKET_QUALITY cua
+             rule_engine.extract_rule_candidates_v2(runtime_mode='soft'), ma
+             chinh ham do moi sinh ra convergence_map nuoi §23.
+    R9-CO CHE: phan bo conv_count truoc/sau khi gom theo dai. Ky vong: so duoi
+             dat nguong CONV×3+ giam manh (tu 16,4% xuong bao nhieu — do truoc,
+             dang ky truoc).
+    R9-TIEN : theo 2.3.
+    R10 rui ro: TRUNG BINH-CAO. conv_count chay vao BA cho: (1) CONVERGENCE
+             TRAP ALERT §23, (2) CONV_BOOST_CAP §22 chon tran 0,50/0,40,
+             (3) xep hang top-10 cua khoi OWNER ANTI-TRAP CHECK. Doi no la doi
+             so vao prompt o ba cho cung luc.
+    R10 go ve: backups/v11024_pre/rule_engine.py.pre
+             md5 LOCAL hien tai = a2eaea4722ae8f4b55110130022d99c9
+             CANH BAO: md5 tren VPS KHAC (3729ef00f8730d6acbc56a583bcf2484) va
+             day KHONG phai lech ma — chi la CRLF (local) vs LF (VPS);
+             difflib 0/811 dong khac. Phien sau dung bao dong gia.
+             => So sanh bang NOI DUNG (difflib), khong bang md5, cho tep nay.
+    R10 cong PASS/FAIL:
+             PASS = cong chung nhom B dat VA phan bo conv_count doi dung huong
+                    da dang ky truoc.
+             FAIL = so duoi CONV×3+ khong giam (chung to gom khong chay).
+    PHAN LOAI: CAN_OWNER_KY (doi so vao prompt o ba cho cung luc)
+
+B7. §5g CHOI THANG §11/§13/§21 VE CONG DIEM HOI TU
+    nguon  : R5 phat hien NHE · R6 (d) · FU-298 · FU-317
+    van de : SYSTEM_PROMPT §5g (L347-360) day: "dem so nguon chi de BAN THAM
+             KHAO — KHONG co diem thuong ... dung cong diem cho so chi vi no
+             xuat hien o nhieu nguon".
+             Cung prompt: §13 "rule + model cung chon -> HIGH confidence";
+             §21 "TANG MANH confidence"; §11 "STRONG (>=3 rules): nen co trong
+             top-2". Model doc ca hai trong mot luot.
+    BANG CHUNG HAI CHIEU (phai trinh du, khong duoc chi trinh chieu thuan):
+             thuan: §5g z=-2,54 (do lai -2,46, cua so 90 ngay);
+                    FU-317 ma_doi_chung_shadow: 3 nguon 33,33% (n=24), z=-1,01.
+             nguoc: o "3 nguon" RAT NHAY CUA SO — 60n -1,81 · 90n -2,46 ·
+                    120n -2,00 · 150n -1,80 · 180n -1,39. Chi cua so 90 ngay
+                    vuot nguong da cong bo |z|>=2,39. Khong tep nao giai thich
+                    vi sao chon 90 ngay.
+                    Va o ">=4 nguon" KHONG he xau di: -0,96 (90n) -> +0,10
+                    (180n) -> +1,69 (official 180n).
+             => Bang chung chi do duoc menh de HEP: "o dung 3 nguon la o kem
+                trong cua so 90 ngay". KHONG do duoc menh de chung "cang nhieu
+                nguon cang te". Phai viet dung menh de hep do.
+    R9-CO CHE: dem so luot model vien dan "nhieu nguon" lam ly do chon so.
+    R9-TIEN : can chot cua so TRUOC roi do TIEN. Uoc luong: voi chenh 6,9 diem
+             tren nen 33,4% o muc |z|>=2,39 can ~267 luot o "3 nguon"; cua so
+             90 ngay hien cho ~305 luot => can them ~90 ngay do tien de co mot
+             lan xac nhan doc lap, KHONG dung lai cung du lieu.
+    R10 rui ro: neu bo cong diem hoi tu dua tren menh de rong thi co the bo
+             nham mot co che that. Nguoc lai giu mau thuan thi model tu chon.
+    R10 go ve: nhu B1.
+    R10 cong PASS/FAIL: PASS = trong prompt khong con hai cau day nguoc chieu
+             nhau ve cung mot viec (kiem bang doc prompt that, khong grep tho).
+    PHAN LOAI: CAN_OWNER_KY
+
+GHI CHU CUOI PHAN 3 — MOT CANG THANG PHAI TRINH OWNER, KHONG TU QUYET:
+    B1 va B2 la loi §60.1 DANG SONG: prompt ra lenh cho model dung nhung khoi
+    du lieu DA BI GO. Theo dung chu §60.1 thi "bo nua chung con te hon khong
+    lam" va phai xu ngay. Theo dung chu FU-316/§52 thi "cam chong bien lan thu
+    tu" va phai cho 21/08.
+    HAI QUY TAC NAY DANG DA NHAU. Agent KHONG tu chon.
+    Trinh owner hai duong, kem cai gia do duoc cua moi duong:
+      duong 1 — sua B1+B2 ngay: FU-284 dat lai moc lan thu tu, cua so do ve 0,
+                han 21/08 truot sang ~04/09. Doi lai: het hai cau tro vao khoi
+                khong ton tai.
+      duong 2 — cho 21/08: giu duoc cua so do (van la cai phanh an toan
+                >=8,76 diem), doi lai model tiep tuc doc hai cau tro vao khoi
+                da go them 14 ngay.
+    Agent nghieng ve DUONG 2, vi: (i) hai cau nay da ton tai san tu 07/08 va
+    cua so do hien tai DA bao gom chung — tuc chung la mot phan cua "ban dang
+    do", go giua chung lam hong chinh phep do; (ii) tac hai cua chung la model
+    "tu bia", ma phep do co che 1 ngay (B1) co the do duoc NGAY MA KHONG CAN
+    SUA — chay phep dem truoc, neu con so cao bat thuong thi day la du can cu
+    de xin owner sua som.
+    => De xuat: CHAY PHEP DO CO CHE CUA B1 NGAY (chi doc, khong sua), lay so
+       roi moi trinh owner quyet. Do la cach bien mot the luong nan thanh mot
+       cau hoi co so lieu.
+
+--------------------------------------------------------------------------------
+NHOM C — CAN OWNER KY (khong phai viec sua code, la viec chon huong)
+--------------------------------------------------------------------------------
+
+C1. FU-284 DANG DAT MOT NGUONG KHONG DO DUOC — sua nguong hay keo dai cua so?
+    su that do duoc: 14 ngay chi phat hien duoc >=8,76 diem; 5 diem can 44 ngay.
+    ba duong:
+      (a) giu 14 ngay, doi nguong tu "5 diem" thanh "8,76 diem" va ghi ro no
+          chi la CAI PHANH, khong xac nhan duoc cai tien.
+      (b) keo den 20/09 (44 ngay) de du suc cho 5 diem — voi dieu kien khong
+          doi prompt suot 44 ngay (chua tung xay ra: 6 lan doi trong 7 ngay).
+      (c) doi bien do sang thu co nen thap hon (bach thu) de chenh de thay hon.
+    Agent nghieng ve (a)+(b) song song: 21/08 doc nhu cai phanh, 20/09 doc nhu
+    ket luan. Nhung day la quyet dinh cua owner vi no doi mot cam ket da ky.
+
+C2. DONG BANG BO LUAT hay TIEP TUC DAO LAI HANG TUAN?
+    su that do duoc: dao lai moi thu Hai xoa sach mined_rules va dung lai
+    mined_rule_effectiveness 112 ngay => dong ho do tien VINH VIEN ve 0.
+    A1 vong qua duoc bang bang rieng, nhung cau hoi goc van con: mot bo luat bi
+    thay moi tuan thi khong bao gio tich du bang chung de danh gia chinh no.
+    Can owner chot: dong bang bo luat N tuan de do, hay gan khoa dinh danh ben
+    (hash cua target_region+target_weekday+source_region+source_offset+
+    source_station+prize_keys) de luat song xuyen tuan?
+    Hien KHONG co bang/cot nao luu lich su phien ban luat => khong tra loi duoc
+    "luat X song bao lau" vi DU LIEU KHONG TON TAI, khong phai vi thieu mau.
+
+C3. FORWARD AUDIT 28 RULE — con 24 ngay toi han chot 31/08, dang co 0 ngay du lieu
+    su that: V10636_FORWARD_AUDIT_STATE.json mtime 2026-06-02T10:44,
+    days_since_anchor = -1, classification_summary {PENDING: 28}, tong
+    observed_days = 0. Da troi 66 ngay. Harness nam o
+    artifacts/v105_55_safe_quality/.../scripts/ (KHONG o web/backend/) nen
+    scheduler khong import duoc; crontab VPS khong co dong nao goi no.
+    hai duong: (a) chay bu 66 ngay da qua roi chot muon — uoc chi thu hoi duoc
+    ~9-10 luot/rule so voi expected_days_in_window: 13 ma registry dat ra;
+    (b) dat lai anchor moi va chot ngay moi.
+    Can owner chon. Khong tu quyet vi day la cam ket co ngay chot.
+
+C4. CONG PROMOTE 55% NAM DUOI MUC NGAU NHIEN — sua nguong hay bo cong?
+    su that: weekly_rule_miner.py:243 HAVING eval_count >= 8 AND hit_rate >= 55.0.
+    Nen do duoc: MN 86,8% · MT 77,1% · MB 51,1% (muc combo).
+    => cong 55% THAP HON nen MN 31,8 diem va nen MT 22,1 diem: luat te hon
+    ngau nhien van qua cong. Cong demote 25% con thap hon nen ca 105 luat nen
+    khong luat nao co the bi ha.
+    THEM: cong nay hien la MA CHET — no chi xet WHERE activation_status='shadow'
+    ma 105/105 luat da o 'active' (luat do _seed_rules sinh ra vao thang
+    'active', khong di qua shadow). Nen sua nguong khong thoi KHONG du.
+    Can owner chot huong: luat moi sinh ra o 'shadow' va chi len 'active' sau
+    do tien (nhung do tien lai dang bi xoa — khoa nhau thanh vong kin voi A1),
+    hay bo han co che lifecycle nay.
+
+C5. THUOC DO hit_any DA BAO HOA — co doi thuoc khong?
+    su that: hit_any = "co it nhat 1 duoi nguon xuat hien bat ky dau trong ket
+    qua mien dich". Nen: MB 51,1% · MT 77,1% · MN 86,8%.
+    Mot luat MN sinh 7 duoi co 86,8% co hoi "trung" ma khong can biet gi.
+    => moi bang xep hang luat/giai theo hit_any tho dang xep hang theo DO PHU
+    chu khong theo tin hieu.
+    Can owner chot doi sang: ti le duoi trung / duoi gom, hoac bach thu.
+    LUU Y: R4 do tren hit_any vi do la thu pipeline that dang ghi. Ket luan cua
+    R4 KHONG suy ra duoc sang truc bach thu — cam suy dien sang truc do.
+
+
+================================================================================
+PHAN 4 — TONG HOP PHAN LOAI
+================================================================================
+  DEPLOYABLE_SOON (7 muc — khong dung prompt official, di truoc 10/08):
+      A1 bang do tien rieng        [uu tien 1 — truoc 00:30 thu Hai 10/08]
+      A2 deploy M4 + cron
+      A3 va _get_source_date D-N
+      A4 thong nhat alias dai      [co dieu kien: tut xuong CHO_DO neu cong lech]
+      A5 hai cong kiem (xuat xu DB, nguon chet)
+      A6 dinh chinh tai lieu (7 con so)
+
+  CHO_DO (cho 21/08 — dung prompt official):
+      B1 §24 go cau tro vao khoi da go   [chay phep do CO CHE ngay, chi doc]
+      B2 §11 doan chet + ba cho tro vao
+      B5b §23 "6/7 AI" -> 9
+      B5c L4481-4483 hai con so sai
+
+  CAN_OWNER_KY (7 muc):
+      B3  khoi tier2 "#Bo" trong prompt MB official
+      B4  chon MOT tran confidence MB
+      B5a §1 so 57/61/47 — go hay gan nguon
+      B6  §14 gom rule cung ho truoc khi dem hoi tu
+      B7  §5g vs §11/§13/§21
+      C1  FU-284 nguong khong do duoc — sua nguong hay keo cua so
+      C2  dong bang bo luat hay gan khoa dinh danh ben
+      C3  forward audit 28 rule — chay bu hay dat lai anchor
+      C4  cong promote 55% duoi nen + la ma chet
+      C5  doi thuoc do hit_any
+
+  DIEU KIEN CUNG CHO CA BA NHOM:
+      Tu 08/08 den 21/08 KHONG doi prompt official lan thu bay.
+      Neu owner van chot doi => ghi ro FU-284 dat lai moc lan thu tu.
+
+
+================================================================================
+PHAN 5 — THIEU DU LIEU / KHONG KET LUAN DUOC (ghi ro, cam suy dien)
+================================================================================
+1. Cong byte-prompt (1.2) CHUA CHAY duoc trong phien nay: rule_engine.py mo DB
+   qua database.get_connection() o che do doc-ghi, vi pham rang buoc read-only.
+   Phai chay tren BAN SAO DB. Vi vay moi phan loai "nhom A" o tren la DU KIEN
+   dua tren doc ma, CHUA co bang chung may chay. A4 la muc rui ro nhat trong so
+   do (no cham gpt_analyzer.py:4406 tren duong prompt).
+   => TRUOC KHI DEPLOY BAT KY MUC NHOM A NAO: phai chay cong nay tren ban sao.
+
+2. Khong do duoc tier2 (#Bo) anh huong bao nhieu toi do chinh xac dau ra:
+   prediction_trace.jsonl (23,5 MB, 4.876 dong tren VPS) chi luu OUTPUT cua
+   model, KHONG luu nguyen van prompt. Muon do phai bat luu nguyen van khoi
+   prompt (hoac hash + snapshot) roi chay toi thieu 14 ngay MB.
+   => Moi phep do co che cua nhom B deu phu thuoc dieu nay. Neu khong bat luu
+      prompt thi phep do co che chi do duoc DAU RA, khong doi chieu duoc voi
+      DAU VAO.
+
+3. Khong tai lap duoc cac so lift_pp / hit_rate_pct cua tier2 (86 luat MB, 60
+   MN, 64 MT): chung nap tu artifact ngoai (V10667_RULES_PER_REGION_RAW.json,
+   V10636_DIG_TOP_CELLS.json, V10636_LAGS_TOP_NEW_CELLS.json) qua
+   mb_rule_ranker.py; trong kho KHONG co script sinh ra cac artifact do.
+   Chua kiem duoc chung do tren GOM hay tren 1 dai, do tren bo nao, co nhin
+   truoc ket qua khong. Can dung mot thu: script da sinh
+   V10667_RULES_PER_REGION_RAW.json.
+
+4. Chua do duoc CONV_BOOST_CAP (§22) co thuc su cham tran hay chi la tran
+   trang tri: phai goi rule_engine.extract_rule_candidates_v2 ma ham nay mo DB
+   doc-ghi. So hoc cho thay tran CO THE cham (soft mode: boost toi da moi luat
+   0,15 x cac he so 1,15/1,05/1,15 ~ 0,208; 3 luat ~ 0,62 > tran 0,40) nhung
+   day la chan tren ly thuyet, CHUA phai so do. Can chay tren ban sao DB.
+
+5. Chua xac dinh duoc tien trinh nao ghi vao data/lottery_ai.db luc
+   2026-08-07 20:03:23 (sau lan dong bo 18:51). Truoc khi tim ra, moi trich dan
+   latest_manifest.json lam xuat xu cho bang chung local DEU DANG SAI.
+   A5 dung cong bat cho nay nhung khong tra loi duoc "ai ghi".
+
+6. Ban CSV huan luyen ML tren local lech ban VPS ~6 thang (local 8.000 dong/
+   mien het 2026-02-14; VPS 12.000 dong/mien het 2026-08-01).
+   web/_sync_live_forensic_inputs.py chi keo lottery_ai.db va
+   prediction_trace.jsonl. Moi phep do ML tren ban local dang chay tren du lieu
+   het thang 2 ma khong co canh bao nao.
+   => Truoc khi dung so ML nao lam can cu, phai keo CSV ve hoac do thang tren VPS.
+
+7. Nguong FU-325 khong can xung voi suc manh cua chinh no (do lai r9_01 muc 4):
+   nen phan tan 0,4739 ± 0,0869 (n=64).
+   9 luot (3 ngay x 3 mien) chi du phat hien chenh >= 0,081.
+     - nhanh GO VE "<=0,35" = chenh -0,124  => DU SUC. Nhanh nay dung duoc.
+     - nhanh GIU ">=0,50 va hon nen >=0,05" = chenh +0,026..+0,05 => KHONG DU
+       SUC. Can 23,7 luot = 7,9 ngay cho chenh 0,05.
+   => FU-325 co the KET LUAN GO VE sau 3 ngay, nhung KHONG the ket luan GIU
+      sau 3 ngay. Phai sua mo ta cua FU-325 hoac keo nhanh GIU den ~8 ngay
+      (tuc 16/08 thay vi 10/08). Day la loi cung ho voi C1.
+
+================================================================================
+HET — R9 + R10. PLAN-ONLY: khong sua code, khong deploy, khong ghi DB.
+Tep do: artifacts/v11024_audit/scripts/r9_01_suc_manh_cua_so.py
+Ket qua: artifacts/v11024_audit/evidence/R9_suc_manh_cua_so.txt
+================================================================================

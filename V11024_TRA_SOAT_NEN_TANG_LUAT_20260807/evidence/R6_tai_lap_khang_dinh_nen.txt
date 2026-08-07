@@ -1,0 +1,269 @@
+====================================================================================================
+R6 — KIEM CHUNG LAI NAM KHANG DINH NEN
+Do lai TU DAU tren du lieu tuoi. Khong chep so tu bao cao cu.
+====================================================================================================
+
+NGUON DU LIEU DUNG CHO MOI PHEP DO
+  data/lottery_ai.db      dong bo tu VPS 2026-08-07T18:51:18 (+07)
+                          sha256 = df7a0b183de741778500417b639ab5198111259000524f750f69e1fdbf3f762b
+                          670.027.776 byte · manifest artifacts/live_sync/latest_manifest.json
+  ngay du doan moi nhat   2026-08-07
+  bo sung tren VPS        /root/Lottery_AI_Test/data/meta_training_<mien>.csv  (ban tuoi, 01/08)
+                          /root/Lottery_AI_Test/data/lottery_ai.db             (kiem truc tiep)
+  moi phep do mo DB bang mode=ro. KHONG ghi DB, KHONG sua ma production.
+
+  *** CANH BAO XUAT XU (phat hien khi kiem toan ven — evidence/r6_99_toan_ven.txt) ***
+  Tep data/lottery_ai.db co mtime 2026-08-07 20:03:23, tuc SAU lan dong bo 18:51.
+  sha256 hien tai 42ebf97e0f0e88a416f27a5d52dedaf60542600646e76fa56398814316726f3b
+  KHAC sha256 ghi trong latest_manifest (df7a0b18...), du kich thuoc y het (670.027.776 byte).
+  => Trich dan `artifacts/live_sync/latest_manifest.json` lam xuat xu cho ban local HIEN DANG SAI.
+     Khong phai do phien R6 gay ra (moi ket noi deu mode=ro; lan doc dau tien cua R6 luc ~20:15
+     da thay mtime 20:03 san). Bon bang khoa van GIU NGUYEN so dong so voi hash_pre.json:
+     predictions 11.956 · final_bundles 483 · lottery_results 15.232 · model_daily_eval 11.739.
+     Can tim ai da ghi vao DB luc 20:03 truoc khi dung manifest lam bang chung tiep.
+
+SCRIPT TAI LAP (chay lai la ra dung so)
+  artifacts/v11024_audit/scripts/r6_00_vps_probe.py        -> evidence/r6_00_vps_probe.txt
+  artifacts/v11024_audit/scripts/r6_10_do_lai_a_c_d.py     -> evidence/r6_10_do_lai_a_c_d.txt
+  artifacts/v11024_audit/scripts/r6_20_b_auc_dactrung.py   -> evidence/r6_20_b_auc_dactrung.txt
+  artifacts/v11024_audit/scripts/r6_30_e_m4_do_tien.py     -> evidence/r6_30_e_m4_do_tien.txt
+
+
+====================================================================================================
+BANG TONG — TRUOC / SAU / KHOP?
+====================================================================================================
+  ma   khang dinh                          TRUOC (bao cao cu)      SAU (do lai 07/08)       KHOP?
+  ---------------------------------------------------------------------------------------------
+  (a)  model hon nen sau Bonferroni        0/34                    0/35  (official 0/17)    CO
+  (b)  84/84 KTC dac trung chua 0,50       84/84                   80/84 tren ban TUOI      KHONG
+                                                                   75/84 tren ban local cu
+  (c)  he so bay dan 3,8x                  3,80x (SD 20,56/10,55)  3,91x (20,75/10,50)      CO*
+  (d)  o 3 nguon cua §5g z = -2,54         n=302 z=-2,54           n=305 z=-2,46 (90 ngay)  CO*
+  (e)  M4 do tien z = -0,33 / +0,26        n=23 -0,33 / n=45 +0,26 tai lap DUNG NGUYEN SO   CO**
+  ---------------------------------------------------------------------------------------------
+  *  khop nhung co canh bao nang — doc muc chi tiet
+  ** chi tai lap duoc tren BAN SAO LUU; bang du lieu goc DA BIEN MAT — doc muc (e)
+
+
+====================================================================================================
+(a) "0/34 model hon nen sau hieu chinh Bonferroni |z| >= 3,01"
+====================================================================================================
+TRUOC — trich nguyen tu bao cao cu
+  E:\Lottery_AI_Notion_Reports\V11003_M4_CHONG_QUEN_CAT_MODEL_20260806\evidence\bang_cat_model.txt:41
+      "model hon nen sau hieu chinh Bonferroni (|z|>=3.01): 0/34"
+  V11010 .../evidence/kiem_lai_tren_VPS.txt:2   "so model >=60 luot: 34 · HON NEN ...: 0"
+  V11011 REPORT dong 65                          "0/34 -> 0/34 · GIU"
+  Nguong 3,01 sinh o V11000: alpha = 0,10 / 38 model, hai phia.
+
+SAU — do lai 07/08, cua so 180 ngay (2026-02-08 -> 2026-08-07)
+  Dinh nghia viet lai tu dau: 1 luot = 1 model chot 1 SO CHINH cho (ngay, mien);
+  trung = so chinh nam trong tap 2-so-cuoi ve hom do; nen = |tap duoi|/100 tinh RIENG tung ngay;
+  z = (k - SUM p0) / sqrt(SUM p0(1-p0)); san mau n >= 60 luot.
+
+  bien the "gop ca shadow" (dung nhu script V11011 da lam):
+      35 model >= 60 luot · 12.196 luot · |z|>=3,01 : 0/35
+      nguong Bonferroni DUNG cho m=35 la 2,98 -> van 0/35
+      cao nhat  gemini-2.5-pro  n=472  37,5% vs nen 34,0%  z=+1,64
+      thap nhat qwen3-coder     n=244  27,5% vs nen 33,8%  z=-2,12
+  bien the "chi duong official" (loai run_source=shadow_auto_eval / phase_type=shadow_eval):
+      17 model >= 60 luot · 7.618 luot · |z|>=3,01 : 0/17
+      nguong Bonferroni DUNG cho m=17 la 2,75 -> van 0/17
+
+KHOP?  CO. Ket luan giu nguyen. Mau so doi 34 -> 35 vi mot model vua du 60 luot.
+
+CANH BAO PHAI GHI
+  1. Hai chuan alpha dang lan lon trong cung bo bang chung: (a) dung alpha=0,10, (d) dung
+     alpha=0,05. Phai chot MOT chuan roi ghi vao tai lieu.
+  2. Nguong 3,01 tinh cho m=38 nhung dem tren m=34/35 -> nguong dung la 2,98. Khong doi ket
+     luan lan nay, nhung la sai sot phuong phap.
+  3. "0/35" KHONG chung minh "khong model nao hon nen". No chi noi CHUA DU MAU de thay chenh nho:
+     de bac bo gia thuyet "hon nen +3 diem" o |z|>=2,98 can ~2214 luot moi model
+     (hien nhieu nhat 539) — tuc ~4.1 lan mau hien co.
+     Muon thay chenh +2 diem thi can ~4982 luot.
+
+====================================================================================================
+(b) "84/84 khoang tin cay dac trung ML deu chua 0,50"
+====================================================================================================
+TRUOC — trich nguyen
+  docs/FOLLOW_UP_TRACKER.md:529   "khac lop 28 dac trung (84/84 KTC chua 0,50)"
+  E:\Lottery_AI_Notion_Reports\V11014_PROMPT_TRINH_BANG_CHUNG_20260807\
+      CONVERSATION_CONTEXT_V11014_20260807.md:95  "(84/84 khoang tin cay deu chua 0,50)"
+  *** KHONG TIM THAY script hay tep bang chung nao sinh ra con so nay ***
+      da quet toan bo E:\Lottery_AI_Notion_Reports va E:\Lottery_AI_Test.
+      => khong biet no do tren cua so ngay nao, ban CSV nao, cong thuc KTC nao.
+
+SAU — do lai
+  84 = 28 dac trung x 3 mien. Xac nhan bang ma nguon: meta_data_collector.FEATURE_COLUMNS
+  co 32 muc = 3 khoa (date/region/tail) + 28 dac trung + 1 nhan `hit`.
+  Thuoc: AUC mot-dac-trung (Mann-Whitney, hoa xu ly 0,5); KTC 95% Hanley-McNeil.
+
+  BAN TUOI (tren VPS — ban ma bo hoc lai that su dung):
+      /root/Lottery_AI_Test/data/meta_training_<mien>.csv · 12.000 dong/mien · 300 ngay
+      2025-10-02 -> 2026-08-01
+      KET QUA: 80/84 KTC chua 0,50 · 4 KHONG chua
+         MT dow_sin            AUC 0,4677  KTC [0,4569 ; 0,4784]
+         MT dow_cos            AUC 0,4791  KTC [0,4683 ; 0,4899]
+         MN dow_sin            AUC 0,4819  KTC [0,4715 ; 0,4923]
+         MN convergence_score  AUC 0,4878  KTC [0,4774 ; 0,4982]
+  BAN LOCAL (data/meta_training_*.csv trong kho — DA CU, 200 ngay, het 2026-02-14):
+      KET QUA: 75/84 chua 0,50 · 9 KHONG chua
+
+KHOP?  KHONG. Khang dinh "84/84" SAI tren ca ban tuoi lan ban cu.
+
+DOC SO CHO DUNG — dung dao nguoc thai qua
+  - 3 trong 4 truong hop la ma hoa THU (dow_sin / dow_cos) va chi o MN/MT. MN/MT xoay dai theo
+    thu nen so luong duoi ve moi thu khac nhau => nen thay doi theo thu. Do la hieu ung CAU TRUC
+    cua lich xo, khong phai "dac trung biet truoc so".
+  - Truong hop thu tu dang chu y that: MN `convergence_score` AUC 0,4878 — DUOI 0,50, tuc hoi tu
+    cang cao thi cang IT trung. Cung huong voi phat hien (d).
+  - Sau Bonferroni cho 84 phep (alpha=0,05 => |z|>=3,48): chi MT dow_sin (z=5,87) va MT dow_cos
+    (z=3,80) song sot; MN dow_sin (3,42) va MN convergence_score (2,30) khong. Tuc ban chat nhat
+    cung la 82/84, KHONG phai 84/84.
+  - KTC Hanley-McNeil gia dinh cac dong DOC LAP. Thuc te 40 duoi cua cung mot ngay dung chung
+    mot ket qua xo so => KTC dang HEP HON su that. Con so dung phai rong hon.
+
+====================================================================================================
+(c) "herding 3,8x" — va doi chieu bay_dan_daily_shadow (nen 0,474)
+====================================================================================================
+TRUOC — trich nguyen
+  E:\Lottery_AI_Notion_Reports\V10993_V10996_CANH_SO_THAT_VA_BUNDLE_LAM_BU_20260806\
+      REPORT_V11001_V11002.md:114-115
+      "do lech thuc te 20,56 so voi 10,55 neu doc lap -> he so 3,8x.
+       25,8 model chi de ra 9,8 con so rieng biet."
+      REPORT_V11002.md:89  "Tung model | 114, bay dan an 3,8x -> ~30 hieu dung | ~12 ngay"
+  evidence/tin_hieu_tu_dau.txt:10  "527 luot ... do lech 20.56 · sai so chuan 0.90"
+
+SAU — do lai, 180 ngay, luot = (ngay, mien) co >= 5 model
+  C1 HE SO PHONG DAI PHUONG SAI  (dung la thuoc sinh ra con so 3,8x)
+     gop ca shadow      : 537 luot · 21,8 model/luot
+                          do lech THUC TE 20,75 · NEU DOC LAP 10,50 -> (20,75/10,50)^2 = 3,91x
+     chi duong official : 537 luot · 14,6 model/luot
+                          do lech THUC TE 20,88 · NEU DOC LAP 12,23 -> 2,91x
+     phan du trung binh +0,22 diem (z=+0,24) — van KHONG co tin hieu, dung nhu bao cao cu.
+
+  C2 TI LE PHAN TAN = so SO CHINH khac nhau / so model  (thuoc cua bay_dan_daily_shadow)
+     bang tren VPS : NEN n=64 trung binh 0,4739  -> nghich dao 2,11x
+                     (HON_HOP n=1 0,6667 · SAU_V11016 n=1 0,6875 — chua du ket luan)
+     do lai truc tiep tu predictions, chi official, san 8 model:
+                     21 ngay gan nhat  n=66  0,4801 -> 2,08x
+                     180 ngay          n=539 0,5334 -> 1,87x
+
+  C3 THUOC CUA SCRIPT V11011 §2 = (tong luot model) / (tong so khac nhau)
+     gop ca shadow      : MN 2,36x · MT 2,29x · MB 2,30x
+     chi duong official : MN 1,88x · MT 1,88x · MB 1,90x
+
+KHOP?  CO — nhung chi khi doc dung dinh nghia va dung bo du lieu.
+  3,80x -> 3,91x tren cung dinh nghia C1 va cung bien the "gop ca shadow". Tai lap duoc.
+
+CANH BAO PHAI GHI — day la cho de sai nhat trong ca nam khang dinh
+  1. BA con so KHAC NHAU dang cung mang ten "he so bay dan": 3,91x (C1) · 2,11x (C2) · 2,30x (C3).
+     Chung KHONG so sanh duoc voi nhau. C1 la he so phong dai PHUONG SAI (khong thu nguyen,
+     bang binh phuong ti so do lech); C2 va C3 la ti so DEM (model / so khac nhau).
+     Cau "he so 3,8x. 25,8 model chi de ra 9,8 con so rieng biet" trong REPORT_V11001_V11002
+     GHEP C1 voi C3 lam mot — 25,8/9,8 = 2,63x, khong phai 3,8x.
+  2. Con so nen 0,474 cua bay_dan_daily_shadow = C2 => 2,11x. Dem no ra so voi "3,8x" la so
+     hai thu khac loai.
+  3. Bang toc do phan hoi ghi "114 mau/ngay". Do lai: 81,5 luot chot/ngay (gop ca shadow, 90
+     ngay) hoac 45,1 luot/ngay (chi official). Khong co cua so nao ra 114.
+     Va voi he so 3,91x thi mau HIEU DUNG la ~21/ngay (gop) chu khong phai "~30".
+     => ket luan "~12 ngay thay chenh 5 diem" dang lac quan hon su that.
+
+====================================================================================================
+(d) "o 3 nguon cua §5g co z = -2,54"
+====================================================================================================
+TRUOC — trich nguyen
+  V11009 REPORT dong 86-92: 90 ngay · o "3 nguon" n=294 trung 78 = 26,5% vs nen 33,4% -> z=-2,51
+                            "Bonferroni 3 phep => nguong |z|>=2,39. z=-2,51 vuot nguong."
+  V11010 REPORT dong 70:    n=302 z=-2,54 "GIU, vung hon"
+  V11011 REPORT dong 56:    n=302 z=-2,54
+  V11011 script do_lai_tuoi.py dung moc CUNG `d >= '2026-05-08'` (khong phai cua so tron).
+
+SAU — do lai 07/08, dinh nghia viet lai tu dau
+  (trong moi (ngay, mien) dem so model cung chot MOT so; xep o 1-2 / dung 3 / >=4)
+
+  bien the "gop ca shadow", moc cung 08/05  : o 3  n=306  z=-2,49   (1-2: -0,21 · >=4: -1,07)
+  bien the "gop ca shadow", cua so tron 90n : o 3  n=305  z=-2,46   (1-2: -0,02 · >=4: -0,96)
+  bien the "chi duong official", tu 08/05   : o 3  n=246  z=-2,85   (1-2: -1,50 · >=4: +0,14)
+
+  DO NHAY CUA SO (gop ca shadow, tinh nguoc tu 07/08):
+       60 ngay   o3 n=203  z=-1,81
+       90 ngay   o3 n=305  z=-2,46   <- cua so da cong bo
+      120 ngay   o3 n=394  z=-2,00
+      150 ngay   o3 n=479  z=-1,80
+      180 ngay   o3 n=551  z=-1,39
+
+KHOP?  CO ve dau va do lon (-2,46 den -2,85, quanh -2,5).
+
+CANH BAO PHAI GHI
+  1. Ket luan CHI DUNG O CUA SO 90 NGAY. Nguong da cong bo la 2,39; cua so 120/150/180 ngay
+     deu KHONG vuot. Khong tep nao giai thich vi sao chon 90 ngay. Day la cho de bi trach
+     "chon cua so cho dep so" — phai chot cua so TRUOC roi moi do.
+  2. Bang chung chi danh vao dung o "=3 nguon". O ">=4 nguon" khong he xau dan:
+     -0,96 (90 ngay) -> +0,10 (180 ngay) -> +1,69 (official, 180 ngay).
+     Vay CHUA co bang chung cho menh de "cang nhieu nguon cang te". Chi co bang chung cho
+     "dung 3 nguon la o kem" — mot phat bieu hep hon nhieu so voi cach FU-298 dang viet.
+  3. Neu chot cua so 90 ngay lam chuan thi phai do TIEN (chot cua so truoc, do sau) — hien
+     tai dang do nguoc. Voi chenh 6,9 diem tren nen 33,4%, can ~267 luot o "3 nguon" o muc
+     |z|>=2,39; cua so 90 ngay dang co 305 luot, tuc vua du NEU hieu ung that su la 6,9 diem.
+
+====================================================================================================
+(e) "M4 do tien z = -0,33 / +0,26"
+====================================================================================================
+TRUOC — trich nguyen
+  V11011 REPORT dong 45-46
+      DO_TIEN doi dai      n=23  43,5% vs 47,8%  z cu -1,34 -> MOI -0,33
+      DO_TIEN dich 28 ngay n=45  66,7% vs 64,4%  z cu -0,82 -> MOI +0,26
+  V11003 truoc do: "[cong] M4_DOI_CHUNG=DAT DONG_GIA=2412 LUAT_DAT=0/105 Z_DAI=-1.34 Z_NGAY=-0.82"
+
+SAU — do lai (McNemar viet lai tu dinh nghia, khong import _v11003)
+  BANG GOC DA BIEN MAT KHOI DU LIEU HIEN HANH:
+      data/lottery_ai.db (dong bo tu VPS 07/08 18:51)
+          bang `mined_rule_doi_chung`                      : KHONG TON TAI
+          cot `giai_doan` trong mined_rule_effectiveness   : KHONG TON TAI
+      /root/Lottery_AI_Test/data/lottery_ai.db (VPS that)
+          bang `mined_rule_doi_chung`                      : KHONG TON TAI
+          cot `giai_doan`                                  : KHONG TON TAI
+          tep ma _v11003_m4_doi_chung_luat.py              : CO (06/08 21:15) nhung
+          crontab                                          : KHONG co dong nao goi no
+      => M4 CHUA BAO GIO CHAY TREN MAY CHU. No chi tung ton tai trong ban DB LOCAL, va lan
+         dong bo 07/08 18:51 (keo ban VPS de len local) DA XOA SACH bang chung do.
+      Quet 25 ban DB trong artifacts/live_sync: chi 2 ban `before_local` cua ngay 07/08 con giu.
+
+  Tai lap tren ban con giu — RA DUNG NGUYEN CON SO DA CONG BO:
+      artifacts/live_sync/20260807_003101/before_local/lottery_ai.db  (2.412 dong doi chung)
+          CHAM_NGUOC gia_dai   692 cap  73,7% vs 47,3%  b=267 c= 84  z=+9,77
+          CHAM_NGUOC gia_ngay 1695 cap  85,0% vs 74,2%  b=328 c=144  z=+8,47
+          DO_TIEN    gia_dai    10 cap  40,0% vs 70,0%  b=  1 c=  4  z=-1,34
+          DO_TIEN    gia_ngay   15 cap  53,3% vs 66,7%  b=  2 c=  4  z=-0,82
+      artifacts/live_sync/20260807_185025/before_local/lottery_ai.db  (2.455 dong doi chung)
+          DO_TIEN    gia_dai    23 cap  43,5% vs 47,8%  b=  4 c=  5  z=-0,33
+          DO_TIEN    gia_ngay   45 cap  66,7% vs 64,4%  b=  8 c=  7  z=+0,26
+
+KHOP?  CO ve con so — nhung KHONG tai lap duoc tren du lieu hien hanh, va bang chung goc da mat.
+
+CANH BAO PHAI GHI
+  1. z McNemar tinh tu CAP LECH: z=(b-c)/sqrt(b+c). Voi DO_TIEN, b+c = 9 va 15.
+     Ca hai ket luan "M4 do tien ~ ngang doi chung" dang dua tren 9 va 15 quan sat co ich.
+     Doi mot cap la z nhay ~0,3 don vi. Day KHONG phai bang chung, day la tin hieu so bo.
+  2. z di tu -1,34/-0,82 (10 va 15 cap) sang -0,33/+0,26 (23 va 45 cap) chi sau 18 gio.
+     Chinh su nhay do la bang chung mau con qua nho, dung nhu V11011 da tu nhan.
+  3. Con so nay dang duoc trich trong prompt V11014 ("do tien chi -0,33 sigma / +0,26 sigma")
+     de bom cho model. Prompt dang trich mot con so ma he thong KHONG CON tai lap duoc.
+
+====================================================================================================
+THIEU DU LIEU / KHONG LAM DUOC TRONG PHIEN NAY
+====================================================================================================
+  1. (b) Khong co script goc cho "84/84" => khong doi chieu duoc dung cua so/dinh nghia cu.
+         Phai coi con so 84/84 la KHONG CO NGUON cho den khi ai do trinh ra phep do.
+  2. (e) Muon do lai M4 tren du lieu hien hanh phai chay `_v11003_m4_doi_chung_luat.py --dung`
+         — lenh do GHI vao DB (them cot + tao bang), vuot pham vi read-only cua phien nay.
+         Va muon co so LAP LAI DUOC thi phai deploy M4 len VPS + noi cron; hien chua co.
+  3. (d) Muon ket luan chac ve o "3 nguon" phai chot cua so TRUOC roi do TIEN. Uoc luong:
+         voi chenh 6,9 diem tren nen 33,4%, can ~267 luot o "3 nguon" o muc |z|>=2,39.
+         Cua so 90 ngay hien cho ~305 luot => can them ~90 ngay do tien nua de co mot lan
+         xac nhan doc lap.
+  4. (a) De bac bo "co model hon nen +3 diem" can ~2214 luot moi model (hien cao nhat 539).
+         Voi nhip ~3 luot/ngay/model thi can ~558 ngay nua. Truoc do, "0/35" chi la
+         "chua thay", khong phai "khong co".
+  5. bay_dan_daily_shadow chi co 1 luot SAU_V11016 va 1 luot HON_HOP — chua the noi gi ve
+     tac dung cua V11016. Nguong da chot: can 9 luot (3 ngay x 3 mien).

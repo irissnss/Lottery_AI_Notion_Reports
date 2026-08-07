@@ -1,0 +1,561 @@
+======================================================================================================================
+R7 — BẢNG CHUYỂN ĐỔI TỪNG KHỐI CONTEXT PACK   (PLAN-ONLY · KHÔNG SỬA CODE · CHỈ ĐỌC)
+======================================================================================================================
+Ngày đo      : 2026-08-07 (Thứ Sáu) · prompt lấy lúc 21:22 giờ VN
+Nguồn prompt : gọi THẬT gpt_analyzer.build_context_pack + create_analysis_prompt TRÊN VPS
+               14.225.224.89, /root/Lottery_AI_Test/venv/bin/python3, DB mở mode=ro.
+               Bản local KHÔNG dùng được làm căn cứ: máy local thiếu numpy (mất khối THỐNG KÊ
+               gan/hot và khối CẶP ĐÔI) và thiếu _knowledge_base.json.
+Chứng cứ RO  : script thử CREATE TABLE trên kết nối trước khi chạy, bắt buộc nhận lỗi
+               'attempt to write a readonly database' rồi mới tiếp tục. 79 lần mở kết nối,
+               tất cả mode=ro. Không câu lệnh ghi nào chạy.
+Dump nguyên văn: artifacts/v11024_audit/evidence/R7_prompt_dump_vps/<MIEN>_{base,raw,
+               official_pack,shadow_pack,FULL_official}.txt
+Script       : r7_01_dump_prompt.py · r7_02_vps_dump.py · r7_03_do_tung_khoi.py ·
+               r7_04_bocsan_vs_tho.py · r7_05_ruletails_thoidiem.py · r7_06_so_thay_the.py ·
+               r7_07_khoi_con.py · r7_08_capdoi_nen.py · r7_09_bang_chuyen_doi.py
+
+Cách đo mỗi khối:
+  · ký tự  = len() của khối, tách theo dòng bắt đầu '### ' / '## ' và header emoji cột 0
+  · đuôi   = số đuôi 2 chữ số KHÁC NHAU, sau khi bỏ ngày/giờ/thập phân/phần trăm/phân số/
+             V<số>/<số>W/n=<số> để không đếm nhầm
+  · mệnh lệnh = số lần xuất hiện của 26 từ khoá ra lệnh (BẮT BUỘC, PHẢI, KHÔNG ĐƯỢC, CẤM,
+             TUYỆT ĐỐI, ƯU TIÊN, ĐỪNG, CHỈ ĐƯỢC, HÃY, NÊN, TRÁNH, GIẢM, TĂNG, LOẠI BỎ,
+             KHÔNG CHỌN, GIỮ, CHỌN, MANDATORY, MUST, DO NOT, REQUIRED, SKIP, KHÔNG LẤY,
+             KHÔNG THAY THẾ, THẬN TRỌNG, XEM XÉT)
+
+======================================================================================================================
+PHẦN 1 — BA MIỀN, MỘT BỨC TRANH
+======================================================================================================================
+                                MB          MT          MN
+tổng prompt (ký tự)          46512       41125       40232
+kết quả xổ thô               3.417       2.876       2.077
+  = tỉ lệ                     7,3%        7,0%        5,2%
+bóc sẵn + mệnh lệnh         43.095      38.249      38.155
+  = tỉ lệ                    92,7%       93,0%       94,8%
+số khối                         72          67          65
+mệnh lệnh (đếm)                233         215         212
+đuôi trong KQ xổ thô        55/100      50/100      37/100
+đuôi CẢ prompt nêu          88/100      90/100      89/100
+
+Đọc bảng này: prompt nêu tên 88-90 trên 100 đuôi có thể có. Mọi model đọc cùng prompt đều
+thấy đúng tập đó, xếp đúng thứ tự đó. Đây là mặt cắt vật lý của bầy đàn — R6 đo hệ số phóng
+đại phương sai 3,91×, tức 21,8 model chỉ đáng giá ~5,6 model độc lập.
+
+======================================================================================================================
+PHẦN 2 — SÁU CHỖ PHẢI XỬ TRƯỚC KHI BÀN CHUYỂN ĐỔI (đều đo được, đều trên VPS)
+======================================================================================================================
+B1. WEEKDAY SCAN chết hẳn — gpt_analyzer.py:5372 SELECT cột `predicted_numbers`, bảng
+    predictions không có cột đó (cột thật `main_numbers`). Cả 3 miền chỉ in dòng lỗi.
+B2. RULE TAILS (48h) rỗng đúng lúc cần — mô phỏng SQL thật tại 17:55 VN: 0 dòng cho cả 3
+    miền. Bản dump 21:22 thấy có dữ liệu chỉ vì cron chấm 20:15 đã chạy xong.
+B3. CẶP ĐÔI in sai định dạng — gpt_analyzer.py:2696-2700 duyệt dict bao ngoài, prompt in ra
+    'total_pairs_analyzed: 4938 lần' + repr Python của cả danh sách. Và không có tín hiệu:
+    cặp mạnh nhất của MN 13/30 ngày còn THẤP HƠN trung vị ngẫu nhiên 14 (p=0,938).
+B4. Gan/HOT/WARM/COOL VẪN TRONG PROMPT SẢN XUẤT — 564 ký tự (MB), 21 đuôi xếp hạng sẵn,
+    do statistical_analyzer.py:866-887 sinh, gpt_analyzer.py:2223-2231 bơm. §60.1 ghi V11001
+    đã gỡ nguồn này. Chỉ thấy được khi kiểm trên VPS (local thiếu numpy).
+B5. De-herding làm nửa chừng — cắt 1.108 ký tự xếp hạng model khỏi context pack rồi để
+    nguyên 1.338 ký tự cùng loại ở base prompt và 1.428 ký tự lồng trong MB HARD MODE.
+    Tổng còn lại 2.766 ký tự xếp hạng model, gấp 2,5 lần phần đã cắt.
+B6. Context pack SẬP cho 8 model shadow ở MB — gpt_analyzer.py:4761 giải nén 10 tên từ
+    truy vấn trả 11 cột (dòng 4662-4666). Khi bucket có READY_STRONG (MB/Thứ Sáu hôm nay)
+    thì cả pack trả về đúng 64 ký tự '## CONTEXT PACK — Lỗi: too many values to unpack
+    (expected 10)'. analyze_and_predict:6270 kiểm `len>50` nên vẫn bơm chuỗi lỗi đó
+    kèm REASONING_RULEBOOK. Xác nhận y hệt trên VPS.
+
+======================================================================================================================
+PHẦN 3 — BẢNG CHUYỂN ĐỔI TỪNG KHỐI
+======================================================================================================================
+Hướng chuyển (owner chốt): từ «danh sách bóc sẵn + mệnh lệnh» sang «mô tả ĐIỀU KIỆN +
+mức tin NÓI THẬT». Số trong bản viết lại lấy từ R2/R4/R6 và từ phép đo riêng của R7
+(r7_06_so_thay_the.py đo nền siêu bội từng lượt cho ĐÚNG 15 luật đang bật hôm nay).
+
+----------------------------------------------------------------------------------------------------------------------
+[01] ### MIỀN NAM/TRUNG/BẮC (HÔM QUA) — ƯU TIÊN 1..3 + MIỀN NAM/TRUNG — ƯU TIÊN 4..5
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GIU
+     KÝ TỰ      : 3417 → 3417   (chênh +0)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        ĐÂY LÀ dữ liệu thô. Không suy ra từ đâu được vì nó chính là gốc.
+     VÌ SAO:
+        Kết quả xổ nguyên bản của 5 khối nguồn theo doctrine. Chiếm 3.417/46.512 ký tự = 7,3% prompt MB (MT 7,0% · MN 5,2%). Đây là thứ duy nhất model bắt buộc phải được cho.
+     GHI CHÚ:
+        Giữ nguyên cả 5 khối. Ký tự trước→sau là tổng 5 khối + 4 dòng tiêu đề.
+
+----------------------------------------------------------------------------------------------------------------------
+[02] ### 🔍 WEEKDAY SCAN — Thứ Sáu × 8 TUẦN (SP-4.0)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 185 → 0   (chênh -185)
+     ĐO ĐƯỢC    : 0 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        KHÔNG CHO GÌ CẢ. Nội dung thật của khối là một dòng lỗi.
+     VÌ SAO:
+        gpt_analyzer.py:5372 SELECT cột `predicted_numbers` — bảng predictions KHÔNG có cột đó (cột thật là `main_numbers`). Cả ba miền, mọi ngày, khối chỉ in '⚠️ SP-4.0 scan error: no such column: predicted_numbers'. 185 ký tự mô tả một phép quét chưa từng chạy.
+     GHI CHÚ:
+        Gỡ hẳn hoặc sửa tên cột rồi đo lại từ đầu. Không được để nguyên.
+
+----------------------------------------------------------------------------------------------------------------------
+[03] ### 🎯 RULE TAILS (48h)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 280 → 0   (chênh -280)
+     ĐO ĐƯỢC    : 9 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Lúc dựng prompt thật: KHÔNG CHO GÌ (0 dòng). Bản dump 21:22 có 9 đuôi là ảo giác.
+     VÌ SAO:
+        SQL (gpt_analyzer.py:4799-4807) lọc e.date >= date('now','-2 days') VÀ r.target_weekday = thứ hôm nay. Nhưng mined_rule_effectiveness chỉ có dòng cho rule có target_weekday == thứ của chính ngày đó, và dòng của ngày D được ghi lúc 20:15 VN (created_at UTC 13:15). Mô phỏng đúng SQL đó tại 17:55 VN (giờ dựng prompt MB): 0 dòng cho cả MB, MT, MN. Tại 21:22 (sau cron 20:15): 5 dòng — nên bản dump của R7 thấy có dữ liệu, còn prompt sản xuất thì không.
+     GHI CHÚ:
+        R5 báo 0/180 lần có dữ liệu; R7 đo lại bằng mốc giờ và xác nhận. §11/§18/§25 của REASONING_RULEBOOK đều trỏ vào khối này ⇒ gỡ khối thì phải sửa cả ba mục cùng phiên.
+
+----------------------------------------------------------------------------------------------------------------------
+[04] 🔗 CẶP ĐÔI HAY ĐI CÙNG (30 ngày)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 1213 → 0   (chênh -1213)
+     ĐO ĐƯỢC    : 17 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 17 đuôi (MB) / 18 (MT) / 23 (MN), trong đó 8-14 đuôi KHÔNG có trong kết quả thô. Nhưng thông tin đó là NHIỄU đã đo được.
+     VÌ SAO:
+        Hai lỗi cộng lại. (1) ĐỊNH DẠNG HỎNG: gpt_analyzer.py:2696-2700 duyệt `list(pairs.items())[:5]` trên DICT BAO NGOÀI, nên prompt in ra 3 dòng khoá 'total_pairs_analyzed: 4938 lần', 'significant_pairs: [{...}] lần', 'total_days: 30 lần' — một dòng là repr Python của cả danh sách 20 cặp. (2) KHÔNG CÓ TÍN HIỆU: đếm lại đúng cách của analyze_pairs rồi so với nền (2000 lần rút ngẫu nhiên đúng số đuôi thật mỗi ngày): cặp mạnh nhất thật của MB 8/30 vs nền trung vị 7 (p=0,440) · MT 12/30 vs nền 11 (p=0,443) · MN 13/30 vs nền 14 — tức DƯỚI trung vị ngẫu nhiên (p=0,938).
+     GHI CHÚ:
+        MN đáng chú ý nhất: cặp '27-65 xuất hiện 43,3%' nghe rất mạnh nhưng còn thấp hơn cặp mạnh nhất mà thuần ngẫu nhiên sinh ra.
+
+----------------------------------------------------------------------------------------------------------------------
+[05] 📅 KẾT QUẢ NGÀY TRƯỚC (2026-08-06)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 58 → 0   (chênh -58)
+     ĐO ĐƯỢC    : 2 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        KHÔNG CHO GÌ MỚI. 2/2 đuôi (MB), 6/6 (MT), 6/6 (MN) đều đã có trong khối '### MIỀN ... (HÔM QUA)' ở ngay đầu prompt.
+     VÌ SAO:
+        Khối này in lại ĐB và G8 của ngày hôm trước — là tập con thật sự của khối dữ liệu thô. Đo: số đuôi MỚI so với dữ liệu thô = 0 ở cả ba miền.
+     GHI CHÚ:
+        Trùng lặp thuần tuý. Xoá không mất gì.
+
+----------------------------------------------------------------------------------------------------------------------
+[06] ### 🏆 Model Performance 14 ngày · ### 🎯 BT MODEL RANKING (30d) · ### 📅 Riêng <thứ> (30d)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 1108 → 0   (chênh -1108)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Đã bị gỡ khỏi prompt official từ V10768 — không còn cho model gì.
+     VÌ SAO:
+        _deherd_strip_ranking (gpt_analyzer.py:4328) cắt 3 mục này khỏi context pack: MB 1.108 ký tự (515+391+202), MT 1.135, MN 1.128. Đo bằng cách chạy lại chính hàm đó trên bản pack chưa cắt lấy từ VPS.
+     GHI CHÚ:
+        QUYẾT ĐỊNH CŨ ĐÚNG NHƯNG LÀM NỬA CHỪNG — xem hai dòng ngay dưới đây.
+
+----------------------------------------------------------------------------------------------------------------------
+[07] 🏆 HIỆU SUẤT THEO MODEL (<miền>, 30 ngày) — trong BASE PROMPT
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 1338 → 0   (chênh -1338)
+     ĐO ĐƯỢC    : 1 đuôi · 2 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho tên + thứ hạng của 30 model. Model không suy ra được, nhưng đây đúng là thứ V10768 đã quyết định phải bỏ.
+     VÌ SAO:
+        1.338 ký tự (MB), 1.340 (MT/MN), 32 dòng, xếp hạng 30 model kèm weight. Nằm trong create_analysis_prompt (Phase 14A), KHÔNG nằm trong context pack, nên _deherd_strip_ranking không bao giờ chạm tới. De-herding cắt 1.108 ký tự ở pack rồi để nguyên 1.338 ký tự cùng loại ở base prompt.
+     GHI CHÚ:
+        A58_VIOLATION_HALF_DONE. Cắt chỗ này mà để chỗ kia thì phép đo hiệu quả de-herding đang đo một thay đổi làm nửa vời.
+
+----------------------------------------------------------------------------------------------------------------------
+[08] 📊 MB MODEL RANKING — Thứ Sáu (all-time, n≥3) — lồng trong MB HARD MODE
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 1428 → 0   (chênh -1428)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho bảng xếp hạng 35 model. Cùng loại thông tin V10768 đã bỏ.
+     VÌ SAO:
+        1.428 ký tự, 39 dòng, liệt kê 35 model kèm win-rate. Nằm LỒNG trong '### 🔴 MB HARD MODE' nên không có header '### ' riêng ⇒ _deherd_strip_ranking (chỉ dò header) bỏ sót hoàn toàn. Đây là bảng xếp hạng model LỚN NHẤT còn lại trong prompt.
+     GHI CHÚ:
+        Kèm theo dòng ra lệnh '→ Output giống models yếu → giảm confidence' — vừa nêu tên model vừa ra lệnh theo tên model.
+
+----------------------------------------------------------------------------------------------------------------------
+[09] 🎯 TOP 5 GỢI Ý (Score/Zone/Trend/Gan) + ⏳ GAN CAO + 🔥 HOT + 📈 TĂNG
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 564 → 0   (chênh -564)
+     ĐO ĐƯỢC    : 19 đuôi · 1 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 19-23 đuôi đã xếp hạng sẵn kèm nhãn Gan/HOT/WARM/COOL. Model không suy ra được từ kết quả thô (cần 30 ngày lịch sử) — nhưng đây chính là nguồn V11001 đã quyết định gỡ.
+     VÌ SAO:
+        statistical_analyzer.py:866-887 sinh khối, gpt_analyzer.py:2223-2231 bơm vào prompt ở chế độ HYBRID. Trong prompt THẬT trên VPS 07/08 vẫn còn nguyên: 'TOP 5 GỢI Ý (Score/Zone/Trend/Gan)' 407 ký tự/21 đuôi · '⏳ GAN CAO' 97 ký tự/16 đuôi · '🔥 HOT' 60 ký tự/11 đuôi. Máy local KHÔNG thấy khối này vì thiếu numpy — phải kiểm trên VPS mới thấy.
+     GHI CHÚ:
+        A58_VIOLATION_HALF_DONE nặng nhất tìm được trong R7: §60.1 ghi V11001 gỡ gan/nóng/lạnh khỏi prompt và V11007 quét lại còn 10 chỗ; chỗ này là chỗ thứ 11 và nó bơm CẢ DỮ LIỆU chứ không chỉ câu chữ.
+
+----------------------------------------------------------------------------------------------------------------------
+[10] ### 📊 EVIDENCE TABLE — MB/Thứ Sáu (V9.5 — 6W)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 1772 → 1164   (chênh -608)
+     ĐO ĐƯỢC    : 1 đuôi · 9 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho tỉ lệ trúng của từng cặp nguồn×giải trên 6 tuần — model không tự tính được vì lịch sử 42 ngày không có trong prompt. NHƯNG cái nó KHÔNG cho là NỀN, mà thiếu nền thì '7/7 = 100%' đọc thành bằng chứng trong khi nền của chính ô đó đã là 86,3%.
+     VÌ SAO:
+        1.772 ký tự (MB) / 1.951 (MT) / 1.956 (MN), 9 mệnh lệnh. Phần 'Source×Prize ranking' 529-551 ký tự xếp hạng 10 ô theo tỉ lệ thô. R4: quét 60.412 lượt không qua bộ chọn thì 0/21 ô giải×miền sống sót sau Bonferroni, và 8 ô đẹp nhất khi chấm ngược (MB·G1 +14,3 điểm z=3,79) tụt về +0,1 điểm z=0,15 khi quét vũ trụ.
+     GHI CHÚ:
+        Viết lại theo hướng: nêu NỀN của ngày trước, rồi mới nêu điều kiện, bỏ bảng xếp hạng.
+
+----------------------------------------------------------------------------------------------------------------------
+[11]   🚨 CONVERGENCE TRAP ALERT (V10.2) — lồng trong EVIDENCE TABLE
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 629 → 534   (chênh -95)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho biết đuôi nào được nhiều luật cùng chỉ tới. Model không tự biết được. Nhưng con số CONV×N đang SAI về chất và câu cảnh báo đang SAI về số.
+     VÌ SAO:
+        629 ký tự (MB) / 819 (MT/MN). Hai lỗi: (1) rule_engine.py:583-586 đếm convergence bằng len(sources) trên list KHÔNG dedup theo đài — R5 đo 61 ngày × 3 miền: 95,4% đuôi 'hội tụ ≥2 luật' thực chất chỉ MỘT đài nguồn nói lại; (2) câu '6/7 AI khác CŨNG SẼ CHỌN' dùng số model đã cũ — pool thật là 9 AI + 4 ML (§59).
+     GHI CHÚ:
+        Giữ ý cảnh báo bầy đàn (R6 đo hệ số phóng đại phương sai 3,91×) nhưng phải nói đúng: đếm theo ĐÀI chứ không theo LUẬT, và ghi rõ bằng chứng z=−2,46 chỉ đứng ở cửa sổ 90 ngày.
+
+----------------------------------------------------------------------------------------------------------------------
+[12] ### OWNER ANTI-TRAP CHECK (same-day prior-region spend test + doctrine support count)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 1891 → 649   (chênh -1242)
+     ĐO ĐƯỢC    : 33 đuôi · 1 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 33 đuôi (MB) / 24 (MT) / 13 (MN), trong đó 11/9/5 đuôi KHÔNG có trong dữ liệu thô. Phần MỚI đó đến từ đâu thì khối không nói.
+     VÌ SAO:
+        1.891 ký tự (MB) — khối nêu tên nhiều đuôi nhất trong cả prompt. Xếp sẵn ứng viên thành FULL_SPENT / PARTIAL_SPENT / FRESH kèm 4 dòng DECISION RULE. R5: hàm _get_region_full_tails (gpt_analyzer.py:5688) quét MỌI giải của MỌI đài chứ không theo bộ giải mà §10/§10A quy định, làm 42,7/100 đuôi bị gắn FULL_SPENT cho MT mỗi ngày. Và chưa có phép đo tiến nào so tỉ lệ trúng của nhóm đã-ra với nhóm chưa-ra.
+     GHI CHÚ:
+        Giữ DỮ KIỆN (miền trước đã ra đuôi nào — đây là sự thật kiểm được), bỏ XẾP HẠNG và MỆNH LỆNH cho tới khi có số đo.
+
+----------------------------------------------------------------------------------------------------------------------
+[13] ### 🔴 MB HARD MODE (gồm 📊 MB MODEL RANKING + 📐 V10.3 MB CALIBRATION)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 2206 → 575   (chênh -1631)
+     ĐO ĐƯỢC    : 1 đuôi · 7 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho biết MB khó hơn MN/MT — đúng và hữu ích. Phần còn lại (2 bảng xếp hạng model) chỉ gây bầy đàn.
+     VÌ SAO:
+        2.206 ký tự, 7 mệnh lệnh. Trong đó 1.428 ký tự là bảng xếp hạng 35 model và 520 ký tự là khối V10.3 MB CALIBRATION. Trần tự tin MB xuất hiện 2 lần khác nhau trong cùng prompt: 52% ở RR §26 và 55% ở khối này (R5 báo 3 con số, kiểm chứng chéo R5 rút còn 2 vì dòng 60% nằm trong nhánh `if ai_wr < 5` chưa chạy ngày nào trong 30 ngày).
+     GHI CHÚ:
+        Viết lại thành MỘT câu bối cảnh độ khó theo nền của ngày, không nêu tên model nào. Chốt một con số trần duy nhất cho MB rồi sửa cả RR §26 lẫn khối này cùng phiên.
+
+----------------------------------------------------------------------------------------------------------------------
+[14] ### 📖 BỐI CẢNH SOI CẦU (kể lại sự kiện — KHÔNG có danh sách số chốt sẵn)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 2531 → 2194   (chênh -337)
+     ĐO ĐƯỢC    : 13 đuôi · 7 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Kể lại 13 đuôi — và 13/13 đều ĐÃ CÓ trong dữ liệu thô (0 đuôi mới). Cái nó cho thêm là ĐIỀU KIỆN nối nguồn với đích, thứ model không đọc ra được từ bảng kết quả.
+     VÌ SAO:
+        2.531 ký tự, 7 mệnh lệnh. Đây là khối DUY NHẤT đã đi đúng hướng owner muốn (V11014): kể sự kiện + tự nói mức tin thật. Ba chỗ cần siết: (a) hồ sơ '12 tuần trúng 10/12' nêu trần mà không kèm NỀN của chính luật đó (85,2% cho luật 2401) nên vẫn đọc thành 83%; (b) 'z = −0,33 / +0,26' tính từ 9 và 15 cặp lệch (R6) — quá mỏng để in như kết luận; (c) bảng sinh ra con số đó (mined_rule_doi_chung) KHÔNG tồn tại trên VPS, tức prompt đang trích một số hệ thống không dựng lại được.
+     GHI CHÚ:
+        Đây là BẢN MẪU cho toàn bộ hướng chuyển đổi. Bản viết lại thêm nền từng luật (đo lại được bằng r7_06_so_thay_the.py) và hạ giọng con số đo tiến.
+
+----------------------------------------------------------------------------------------------------------------------
+[15] ## 🔬 SHADOW CONTEXT + ### Block 1 · Block 2 · Block 3 · Block 4
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GOP
+     KÝ TỰ      : 1104 → 0   (chênh -1104)
+     ĐO ĐƯỢC    : 1 đuôi · 1 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Block 1 cho tier+hr của 4 luật — đã có nguyên trong MINED RULES. Block 2 cho tỉ lệ nguồn→giải — đã có nguyên trong EVIDENCE TABLE. Block 3 tự nói 'danh sách KHÔNG lặp lại ở đây'. Block 4 là 3 cờ boolean. Tổng cộng: KHÔNG CHO GÌ MỚI.
+     VÌ SAO:
+        128 + 319 + 257 + 272 + 128 = 1.104 ký tự (MB), 1.106 (MT), 1.098 (MN). Block 2 in lại đúng 5 cặp nguồn×giải mà EVIDENCE TABLE vừa in ở trên với tỉ lệ tính trên n=5 thay vì n=7. Cùng một sự thật, hai con số khác nhau, cách nhau 150 dòng.
+     GHI CHÚ:
+        Gộp: chuyển ý duy nhất còn giá trị của Block 3 (cảnh báo hội tụ ⇒ bầy đàn) vào khối CONVERGENCE viết lại, chuyển 3 cờ của Block 4 vào RR §25, bỏ Block 1 và Block 2.
+
+----------------------------------------------------------------------------------------------------------------------
+[16] ### 📜 MINED RULES <miền>/<thứ> + ghi chú V11014
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GOP
+     KÝ TỰ      : 564 → 0   (chênh -564)
+     ĐO ĐƯỢC    : 2 đuôi · 1 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho rank/12W/16W/4W/composite/verdict của các luật. Model không tự tính được. Nhưng verdict không phân biệt được gì: 105/105 luật đều HIGH_CONF_CURRENT, 105/105 sample_quality 'A'.
+     VÌ SAO:
+        564 ký tự (MB, 1 luật READY_STRONG) / 653 (MT, nhánh FALLBACK) / 248 (MN, 'không có rules đủ mạnh'). Ba miền ba dạng khác nhau cho cùng một khối. Ghi chú V11014 ('điểm tự chấm') đã đúng hướng nhưng nằm tách rời khỏi số nó đang cảnh báo.
+     GHI CHÚ:
+        Gộp vào BỐI CẢNH SOI CẦU: mỗi luật một dòng ĐIỀU KIỆN + số kèm nền, thay vì một bảng số ở đây và một đoạn kể ở kia mô tả cùng 5 luật.
+
+----------------------------------------------------------------------------------------------------------------------
+[17] ### 🔵 MB RULE STACK (PRODUCTION + MANUAL, ...) + ### 🧭 MB EXPERT DOCTRINE
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 2837 → 674   (chênh -2163)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        MB RULE STACK cho khối MANUAL 13 dòng dạng 'MB:G4#3:D-1 [FIRST2] lift=5.97pp hr=29.75%'. Model KHÔNG giải mã được: prompt không định nghĩa '#3' là bộ nào, 'FIRST2' là phép gì, 'D-3' là ngày nào, và với nguồn MN/MT nhiều đài thì lấy đài nào.
+     VÌ SAO:
+        1.742 + 1.095 = 2.837 ký tự. R3: đếm trên gpt_analyzer.py — 'FIRST2'=0 lần, 'HEAD_TAIL'=0, 'LAST2'=0 xuất hiện ngoài chính chuỗi này ⇒ không chỗ nào giải nghĩa. Cổng MB_PROMPT_DOCTRINE_ENABLE=1 kiểm lại trên VPS 07/08 (qua env_loader.load_project_env, KHÔNG qua systemctl/environ) ⇒ khối này đang vào prompt OFFICIAL. Không mã nào resolve tier2 ra số thật. Hai khối còn mô tả cùng một việc cross-verify bằng hai đoạn văn khác nhau.
+     GHI CHÚ:
+        Hoặc viết bản giải nghĩa ký hiệu vào chính prompt, hoặc resolve ra số thật, hoặc gỡ khỏi official. Ba lựa chọn, không được để nguyên.
+
+----------------------------------------------------------------------------------------------------------------------
+[18] 🎯 CHÍNH SÁCH QUYẾT ĐỊNH AI — 7 LỚP (Decision Policy V2)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 5139 → 5139   (chênh +0)
+     ĐO ĐƯỢC    : 10 đuôi · 22 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Không cho dữ liệu — cho 22 mệnh lệnh. Đây là khối RA LỆNH lớn nhất trong base prompt.
+     VÌ SAO:
+        5.139 ký tự, 22 mệnh lệnh, GIỐNG HỆT nhau ở cả ba miền. Cộng với REASONING_RULEBOOK (15.465 ký tự, 28 mục, 233 mệnh lệnh đo được ở MB) thì riêng phần ra lệnh đã là 20.604 ký tự = 44,3% prompt MB, gấp 6,0 lần khối dữ liệu thô (3.417).
+     GHI CHÚ:
+        Hợp nhất với REASONING_RULEBOOK — hai bộ luật song song trong cùng một lượt gọi thì khi chúng đá nhau (R5 đã tìm được §5g vs §21, ba thang livingness, hai trần MB) không có gì phân xử.
+        R7 CHƯA SOẠN bản thay thế cho khối này — nó là việc hợp nhất doctrine, không phải việc chuyển đổi khối dữ liệu. Ghi TRƯỚC = SAU để không bịa một con số giảm.
+
+----------------------------------------------------------------------------------------------------------------------
+[19] ## CHỈ SỐ ĐỊNH LƯỢNG (PYTHON TÍNH SẴN) + ⛔ SỐ NÊN TRÁNH
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 1139 → 556   (chênh -583)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 23 đuôi (15 đã có trong thô, 8 mới) + 9 đuôi 'nên tránh' (4 đã có, 5 mới) + 'ĐỀ XUẤT PYTHON: 69 (score=20), 74 (score=19)'. Chốt sẵn số mà không kèm nền.
+     VÌ SAO:
+        627 + 512 = 1.139 ký tự, 7 mệnh lệnh. Có câu 'AI nên ưu tiên' cho một điểm số không kèm bất kỳ phép đo nào chứng minh score cao thì trúng nhiều hơn. Khối 'SỐ NÊN TRÁNH' có 6 mệnh lệnh trên 512 ký tự.
+     GHI CHÚ:
+        Nếu giữ thì phải kèm: điểm số này đo trên bao nhiêu lượt, trúng bao nhiêu, nền bao nhiêu. Chưa có số đó ⇒ chuyển sang mô tả điều kiện, bỏ 'ĐỀ XUẤT' và 'NÊN TRÁNH'.
+
+----------------------------------------------------------------------------------------------------------------------
+[20] 📊 KNOWLEDGE BASE (Deep Focus Analysis — 59 đài)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 458 → 392   (chênh -66)
+     ĐO ĐƯỢC    : 20 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 20 đuôi (MB) / 35 (MT) / 44 (MN), một nửa là đuôi MỚI. Nguồn: _knowledge_base.json trên VPS (máy local không có tệp này).
+     VÌ SAO:
+        458 (MB) / 658 (MT) / 861 (MN) ký tự. MN nêu 44/100 đuôi trong một khối 861 ký tự — gần một nửa không gian số. Không kèm nền, không kèm ngày đo, không kèm số lượt.
+     GHI CHÚ:
+        Cùng bệnh với mọi khối bóc sẵn: nêu số mà không nêu nền. Phải gắn nguồn đo hoặc gỡ.
+
+----------------------------------------------------------------------------------------------------------------------
+[21] 📊 FEATURE ENGINEERING (Python pre-computed)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GO
+     KÝ TỰ      : 597 → 0   (chênh -597)
+     ĐO ĐƯỢC    : 17 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho 17-21 đuôi, 8-11 trong đó là đuôi mới. 0 mệnh lệnh.
+     VÌ SAO:
+        597 ký tự. R6 đo AUC một-đặc-trưng trên bản CSV tươi của VPS: 80/84 khoảng tin cậy chứa 0,50 (tức không phân biệt được trúng/trượt); 4 trường hợp còn lại có AUC DƯỚI 0,50, trong đó MN convergence_score = 0,4878.
+     GHI CHÚ:
+        Đặc trưng ML không tách được trúng/trượt thì bơm giá trị của chúng cho model AI đọc là chuyển nhiễu sang một tầng khác.
+
+----------------------------------------------------------------------------------------------------------------------
+[22] 📊 LỊCH SỬ DỰ ĐOÁN CỦA BẠN (model=..., <miền>, 7 ngày)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GIU
+     KÝ TỰ      : 706 → 706   (chênh +0)
+     ĐO ĐƯỢC    : 13 đuôi · 2 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho model biết chính nó đã chốt số nào 7 ngày qua và trúng/trượt ra sao. Model KHÔNG có cách nào tự biết. Đây là một trong ít khối cho thông tin thật sự mới và thật sự riêng.
+     VÌ SAO:
+        706 (MB) / 746 (MT) / 903 (MN) ký tự, 2 mệnh lệnh. Khác hẳn bảng xếp hạng model: không nêu model KHÁC nên không tạo bầy đàn.
+     GHI CHÚ:
+        Giữ. Nên thêm nền để model tự so: 'bạn trúng 1/7; chọn bừa 1 số ở MB trúng ~24%/lượt'.
+
+----------------------------------------------------------------------------------------------------------------------
+[23] 🏛️ LỊCH SỬ ĐÀI XỔ HÔM NAY (<miền>, <thứ>)
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GIU
+     KÝ TỰ      : 235 → 235   (chênh +0)
+     ĐO ĐƯỢC    : 9 đuôi · 0 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Cho kết quả các thứ cùng loại trước đó của đúng đài hôm nay. 3 (MB) / 12 (MT) / 19 (MN) đuôi mới. Đúng trục đo chuẩn 'miền + thứ + bộ đài'. 0 mệnh lệnh.
+     VÌ SAO:
+        235 (MB) / 428 (MT) / 623 (MN) ký tự. Là dữ liệu thô mở rộng theo đúng trục mà CLAUDE.md quy định, không xếp hạng, không ra lệnh.
+     GHI CHÚ:
+        Giữ. Đây là dạng khối nên nhân rộng: dữ liệu thô + trục đúng + không mệnh lệnh.
+
+----------------------------------------------------------------------------------------------------------------------
+[24] ### 📋 NGUYÊN TẮC · ### 🔀 Đa dạng model · ### 📉 MB Ceiling · ### 📅 WEEK-SLOT · ### 🎯 DIRECT-HIT PRIORITY
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : GOP
+     KÝ TỰ      : 1024 → 0   (chênh -1024)
+     ĐO ĐƯỢC    : 0 đuôi · 2 mệnh lệnh  (đo trên bản MB)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Gần như không cho dữ liệu: 0-1 đuôi mỗi khối. Cho 11 mệnh lệnh rải trên 5 khối rời.
+     VÌ SAO:
+        153 + 68 + 189 + 211 + 403 = 1.024 ký tự (MB). 'MB Ceiling' nêu tên 2 model dẫn đầu (gpt-5-mini, combo-super) ⇒ cùng loại herding mà V10768 đã bỏ. 'WEEK-SLOT' và 'DIRECT-HIT PRIORITY' đều là mệnh lệnh dựa trên win-rate lịch sử chưa trừ nền.
+     GHI CHÚ:
+        Gộp năm khối thành MỘT đoạn bối cảnh độ khó của ngày/miền (đã soạn ở mục MB HARD MODE), bỏ tên model.
+
+----------------------------------------------------------------------------------------------------------------------
+[25] REASONING_RULEBOOK RR-16.5 — 28 mục §1..§26 + §10A + §10B
+----------------------------------------------------------------------------------------------------------------------
+     QUYẾT ĐỊNH : VIET_LAI
+     KÝ TỰ      : 15465 → 15465   (chênh +0)
+     MODEL KHÔNG TỰ SUY RA ĐƯỢC GÌ:
+        Không cho dữ liệu. Cho 233 mệnh lệnh đo được (MB).
+     VÌ SAO:
+        15.465 ký tự, giống hệt ở cả ba miền. R5 đối chiếu từng mục với đường thực thi: chỉ 7-10/28 mục có code thật; §11 §14 §21 khai có cơ chế mà code không làm. Sau R7 phải cộng thêm: §11 trỏ vào RULE TAILS (khối rỗng lúc dựng prompt), §24 dòng L737 vẫn ra lệnh 'Khi Context Pack có WEEKLY LIVINGNESS...' trong khi khối đó bị gán _live_rows=[] ngày 07/08, §19 mô tả WINDOW SCAN 1W..8W trong khi WEEKDAY SCAN chết vì lỗi tên cột.
+     GHI CHÚ:
+        Việc riêng, không thuộc phạm vi R7 — nhưng KHÔNG được gỡ khối nào ở bảng trên mà không sửa mục § trỏ vào nó trong cùng phiên (§60.1).
+
+======================================================================================================================
+PHẦN 4 — NGUYÊN VĂN CÁC ĐOẠN VIẾT LẠI (để đối chiếu TRƯỚC/SAU, chưa áp vào code)
+======================================================================================================================
+
+┌─ BỐI CẢNH SOI CẦU — bản viết lại (2194 ký tự) ────────────────────────────────────────────
+│ ### BỐI CẢNH SOI CẦU (sự kiện + mức tin đã đo)
+│ Bucket MB/Thứ Sáu có 5 luật đang hoạt động. Mỗi luật là một ĐIỀU KIỆN, không phải một
+│ lời chốt. Dưới đây là điều kiện đó, sự kiện đã xảy ra, và mức tin đo được của nó:
+│ 
+│   1) ĐIỀU KIỆN: «đuôi ra ở G6+G7 của Hà Nội (MB) ngày Thứ Năm quay lại ở MB Thứ Sáu».
+│      ĐÃ XẢY RA: Thứ Năm 06/08 Hà Nội ra ở G6+G7 các đuôi 13 35 69 84 88 89 95.
+│      MỨC TIN: chấm ngược 51 lượt trong đúng cửa sổ đã dùng để CHỌN luật này — trúng 90,2%.
+│      Nhưng luật gom trung bình 6,9 đuôi trên 100, nên trúng do ngẫu nhiên đã là 85,2%.
+│      Lợi thế thực trong cửa sổ đó: +5,0 điểm. Ngoài cửa sổ chọn, cùng cách đo trên 29.205
+│      lượt của cả bộ luật: lợi thế 0,0 điểm (lift 1,000). Đo tiến riêng luật này: 1 lượt.
+│      ⇒ Chưa chứng minh được. Bạn tự đánh giá.
+│ 
+│   2) ĐIỀU KIỆN: «G1+G7 của Hà Nội Thứ Năm → MB Thứ Sáu». ĐÃ XẢY RA: 35 60 69 89 95.
+│      MỨC TIN: 51 lượt, trúng 78,4% · nền ngẫu nhiên 74,4% (gom 4,9 đuôi) · +4,0 điểm, trong mẫu.
+│ 
+│   3) ĐIỀU KIỆN: «G1+G2 của Hà Nội Thứ Năm → MB Thứ Sáu». ĐÃ XẢY RA: 31 32 60.
+│      MỨC TIN: 51 lượt, trúng 66,7% · nền 55,4% (gom 3,0 đuôi) · +11,3 điểm, trong mẫu.
+│ 
+│   4) ĐIỀU KIỆN: «G1+G8 của Bình Dương (MN) cùng ngày → MB». ĐÃ XẢY RA: 34 39.
+│      MỨC TIN: 52 lượt, trúng 53,8% · nền 42,0% (gom 2,0 đuôi) · +11,8 điểm, trong mẫu.
+│ 
+│   5) ĐIỀU KIỆN: «G1+G2 của Bình Dương (MN) cùng ngày → MB». ĐÃ XẢY RA: 34 95.
+│      MỨC TIN: 52 lượt, trúng 44,2% · nền 42,0% · +2,2 điểm, trong mẫu.
+│ 
+│ CÁCH ĐỌC MỨC TIN (đo 07/08/2026, tái lập được bằng script đã lưu):
+│   · Mọi tỉ lệ ở trên đo TRONG chính cửa sổ đã dùng để chọn ra các luật này ⇒ là điểm tự chấm.
+│   · Cùng phép đo trên 29.205 lượt NGOÀI cửa sổ chọn: lift 1,000 · z +0,34 — bằng ngẫu nhiên.
+│   · Quét toàn bộ 60.412 lượt (không qua bộ chọn): 0/21 ô giải×miền vượt ngưỡng đa so sánh.
+│   · Hiệu chỉnh đa phép thử BH-FDR α=0,05: 0/105 luật bác bỏ được giả thuyết «không có tín hiệu».
+│   · Đo tiến: cả 105 luật cộng lại mới có 75 lượt; 0/105 luật đủ mẫu.
+│   ⇒ Nói thẳng: các con số trên KHÔNG dự báo được gì cho hôm nay. Chúng là bối cảnh.
+│ 
+│ Không có danh sách số chốt sẵn ở tầng này. Bạn tự rút số nếu thấy có lý, hoặc bỏ qua hẳn
+│ tầng này. Ghi vào analysis bạn đã dùng hay đã bỏ, và vì sao.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ EVIDENCE TABLE — bản viết lại (1164 ký tự) ──────────────────────────────────────────────
+│ ### ĐỘ KHÓ HÔM NAY VÀ ĐIỀU KIỆN ĐANG BẬT — MB/Thứ Sáu
+│ Nền của ngày này: MB Thứ Sáu ra trung bình 23,8 đuôi khác nhau trên 100 (đo 52 Thứ Sáu gần
+│ nhất). Nghĩa là chọn bừa 1 số thì trúng 24,0%; gộp 3 số trúng 56,5%; gộp 5 số trúng 75,5%.
+│ Mọi tỉ lệ «trúng» bạn đọc ở dưới phải trừ đi mức nền này trước khi coi là tín hiệu.
+│ 
+│ Điều kiện đang bật hôm nay (6 tuần gần nhất, chỉ ghi ô có n≥3):
+│   · «G6+G7 Hà Nội(D-1) → MB»: 7/7 lượt trúng. Nhưng luật này gom ~6,9 đuôi nên nền là 86,3%
+│     ⇒ 7/7 nằm trong khoảng ngẫu nhiên thường gặp, không phải bằng chứng.
+│   · «G1+G2 Hà Nội(D-1) → MB» và «G1+G7 Hà Nội(D-1) → MB»: 6/7. Nền tương ứng 55-75%.
+│   · Ô cao nhất toàn bảng 6 tuần cũng không vượt được nền sau khi hiệu chỉnh số phép thử.
+│ 
+│ Cửa sổ dài (để bạn thấy độ ổn định, KHÔNG phải để xếp hạng):
+│   1W 55% · 2W 65% · 3W 73% · 4W 74% · 5W 75% · 6W 71% — đây là tỉ lệ THÔ chưa trừ nền.
+│ 
+│ Không có bảng xếp hạng nguồn×giải ở đây. Lý do: đo lại toàn bộ 21 ô giải×miền trên 60.412
+│ lượt không qua bộ chọn thì 0/21 ô sống sót sau hiệu chỉnh đa so sánh, và 8 ô trông mạnh nhất
+│ khi chấm ngược (tới +17,7 điểm) tụt về đúng 0 khi quét không thiên vị. Xếp hạng các ô đó
+│ là xếp hạng nhiễu.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ OWNER ANTI-TRAP CHECK — bản viết lại (649 ký tự) ───────────────────────────────────────
+│ ### DỮ KIỆN MIỀN RA TRƯỚC (sự kiện, không phải khuyến nghị)
+│ Hôm nay MN và MT đã xổ trước MB. Đây là các đuôi đã ra, để bạn biết chứ không phải để trừ điểm:
+│   · MN(D) đã ra: 01 12 13 17 19 21 22 23 24 26 27 33 ... (xem đủ ở khối DỮ LIỆU NGUỒN)
+│   · MT(D) đã ra: 03 04 05 07 09 14 19 20 23 25 28 29 ...
+│ 
+│ CHƯA ĐO ĐƯỢC: giả thuyết «đuôi đã ra ở miền trước thì ít về ở miền sau» hiện KHÔNG có phép
+│ đo tiến nào. Không có bảng nào trong hệ thống so tỉ lệ trúng của nhóm đã-ra với nhóm chưa-ra.
+│ Vì vậy ở đây không xếp hạng FRESH / PARTIAL_SPENT / FULL_SPENT, và không có mệnh lệnh
+│ «de-prioritize». Bạn tự quyết định dùng dữ kiện này thế nào và ghi lại lý do.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ MB HARD MODE — bản viết lại (575 ký tự) ────────────────────────────────────────────────
+│ ### ĐỘ KHÓ CỦA MIỀN VÀ NGÀY (không nêu tên model)
+│ MB chỉ có 1 đài/ngày nên bằng chứng mỏng hơn MN/MT khoảng 3-4 lần.
+│ Nền hôm nay: 23,8 đuôi khác nhau trên 100 (52 Thứ Sáu gần nhất) — chọn bừa 1 số trúng 24,0%.
+│ Đây là ngày khó nhất trong ba miền: MT nền 35,8 đuôi/ngày, MN nền 42,6 đuôi/ngày.
+│ Trần tự tin cho MB: 55%. Thà ghi SKIP còn hơn chốt ép khi bằng chứng yếu.
+│ Không có bảng xếp hạng model ở đây: đo 180 ngày, 0/35 model vượt được nền sau hiệu chỉnh đa
+│ so sánh, và biết model nào đang dẫn đầu chỉ làm mọi model chọn giống nhau (hệ số phóng đại
+│ phương sai đo được 3,91×).
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ CONVERGENCE TRAP — bản viết lại (534 ký tự) ────────────────────────────────────────────
+│   Lưu ý về đuôi được nhiều luật cùng chỉ tới:
+│   Đuôi 95 được 3 luật cùng chỉ tới, nhưng 3 luật đó đến từ 2 đài nguồn — không phải 3 bằng
+│   chứng độc lập. Trên 61 ngày × 3 miền, 95,4% các đuôi «hội tụ ≥2 luật» thực chất chỉ do MỘT
+│   đài nguồn nói lại nhiều lần ở các bộ giải khác nhau.
+│   Đo riêng: nhóm số được đúng 3 nguồn cùng chọn trúng 26,5% so với nền 33,4% (z=−2,46, cửa sổ
+│   90 ngày; nới ra 180 ngày thì z=−1,39 nên bằng chứng này hẹp). Hội tụ KHÔNG phải tín hiệu
+│   mạnh hơn — nó chỉ có nghĩa là mọi model đều thấy cùng một thứ.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ MB RULE STACK + EXPERT DOCTRINE — bản viết lại (674 ký tự) ─────────────────────────────
+│ ### ĐIỀU KIỆN CỦA MB — thứ tự xổ và bề dày bằng chứng
+│ Thứ tự xổ: MN 16:10 → MT 17:10 → MB 18:15. MB xổ cuối nên được phép dùng nguồn MN(D) và
+│ MT(D) cùng ngày mà không vi phạm nhân quả; mọi nguồn lag ≥ 1 ngày cũng hợp lệ.
+│ MB chỉ 1 đài/ngày ⇒ bằng chứng mỏng hơn MN/MT khoảng 3-4 lần. Nền MB Thứ Sáu: 23,8 đuôi
+│ khác nhau trên 100.
+│ Khối luật MANUAL dạng «MB:G4#3:D-1 [FIRST2] lift=5.97pp» đã gỡ khỏi prompt. Lý do: prompt
+│ không có chỗ nào định nghĩa "#3" là bộ số nào, "FIRST2" là phép biến đổi gì, "D-3" là ngày
+│ nào, và với nguồn MN/MT nhiều đài thì lấy đài nào; không mã nào trong hệ thống chuyển ký
+│ hiệu đó thành số. Bơm ký hiệu không giải nghĩa thì model buộc phải tự đoán.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ CHỈ SỐ ĐỊNH LƯỢNG — bản viết lại (556 ký tự) ───────────────────────────────────────────
+│ ## CHỈ SỐ ĐỊNH LƯỢNG (Python tính sẵn — kèm mức tin)
+│ Cụm dao động: 1-3-4-5-6-7-8-9 · Pha: DAO_GUONG · Strength 6,0/10.
+│ Ba con số này là đầu ra của bộ quy tắc Python. Chưa có phép đo nào chứng minh
+│ "confidence 90%" tương ứng với 90% khả năng đúng, nên đọc chúng như một cách PHÂN LOẠI
+│ ngày, không phải như xác suất.
+│ Ở đây không có "ĐỀ XUẤT PYTHON" và không có "SỐ NÊN TRÁNH": chưa có phép đo nào so tỉ lệ
+│ trúng của nhóm được đề xuất (hay bị tránh) với nền của chính ngày đó — nền MB Thứ Sáu là
+│ 24,0% cho một số. Khi nào đo được, con số sẽ ghi thẳng vào đây.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+┌─ KNOWLEDGE BASE — bản viết lại (392 ký tự) ──────────────────────────────────────────────
+│ 📐 KIẾN THỨC ĐÃ XÁC MINH — điều kiện, không phải danh sách số
+│ Kho Deep Focus có ghi mẫu hình theo đài × thứ, nhưng chưa có phép đo nào so tỉ lệ trúng của
+│ các mẫu hình đó với nền của chính ngày đó. Vì vậy ở đây không liệt kê đuôi nào.
+│ Cần dữ liệu lịch sử của đúng đài xổ hôm nay thì xem khối «LỊCH SỬ ĐÀI XỔ HÔM NAY» — đó là
+│ kết quả thô theo đúng trục miền + thứ + bộ đài, chưa qua bộ chọn nào.
+└────────────────────────────────────────────────────────────────────────────────────────────────────
+
+======================================================================================================================
+PHẦN 5 — TỔNG KÝ TỰ TRƯỚC → SAU
+======================================================================================================================
+  Ba dòng KHÔNG cộng vào tổng để tránh đếm trùng:
+    · [06] 1.108 ký tự đã bị V10768 gỡ khỏi prompt official từ trước — không còn trong 46.512.
+    · [08] 1.428 ký tự nằm LỒNG trong [13] MB HARD MODE (2.206) — đã tính ở đó.
+    · [11]   629 ký tự nằm LỒNG trong [10] EVIDENCE TABLE (1.772) — đã tính ở đó.
+      (bản viết lại 534 ký tự của [11] VẪN cộng vào cột SAU vì nó là đoạn văn mới.)
+
+  Tổng các khối trong bảng (bản MB): 44723 → 31166 ký tự   (giảm 13557 = 30.3%)
+  Prompt MB hiện nay                : 46.512 ký tự
+  (bảng phủ 44723/46.512 = 96.2% prompt; phần chưa lập bảng là các dòng tiêu
+   đề ngắn: ## NGÀY, ## DỰ ĐOÁN CHO, ## ĐÀI XỔ HÔM NAY, ## DỮ LIỆU NGUỒN, ## YÊU CẦU,
+   ## CONTEXT PACK, 📊 HIỆU SUẤT GẦN ĐÂY — tổng khoảng 1.8k ký tự)
+  Prompt MB sau chuyển đổi (ước từ bảng): 32955 ký tự
+  Trong đó phần KẾT QUẢ XỔ THÔ giữ nguyên 3.417 ký tự, nhưng tỉ trọng tăng từ 7,3% lên 10.4%.
+
+  Lưu ý cách đọc: con số 'sau' của các dòng VIẾT_LẠI là len() của chính đoạn văn in ở
+  PHẦN 4, nên đếm lại được. Con số 'sau' của các dòng GO là 0 vì khối bị bỏ hẳn.
+
+======================================================================================================================
+PHẦN 6 — THIẾU DỮ LIỆU / CHƯA ĐO ĐƯỢC
+======================================================================================================================
+T1. Chưa đo được hiệu quả THẬT của việc chuyển đổi. Muốn biết prompt mới có tốt hơn không
+    phải chạy A/B tối thiểu 14 ngày × 3 miền. Hiện prediction_trace.jsonl (4.876 dòng trên
+    VPS) KHÔNG lưu nguyên văn prompt — chỉ lưu prompt_total_chars — nên không đối chiếu
+    được prompt nào sinh ra số nào. Cần bật lưu hash + snapshot khối trước khi bắt đầu đo.
+T2. Chưa đo được «FULL_SPENT có trúng ít hơn FRESH không». Không bảng nào trong hệ thống
+    ghi phân loại này kèm kết quả. Cần dựng bảng shadow rồi chờ ≥20 lượt/ô.
+T3. Không tái lập được lift_pp/hit_rate_pct của 13 dòng MANUAL trong MB RULE STACK: chúng
+    nạp từ V10667_RULES_PER_REGION_RAW.json qua mb_rule_ranker.py, mà script sinh ra tệp đó
+    không còn trong kho (R3 đã ghi). Nên chưa biết chúng đo trên GOM hay trên 1 đài.
+T4. Con số 'z = −0,33 / +0,26' đang in trong BỐI CẢNH SOI CẦU tính từ 9 và 15 cặp lệch, và
+    bảng sinh ra nó (mined_rule_doi_chung) KHÔNG tồn tại trên VPS. Muốn giữ số này trong
+    prompt thì phải deploy _v11003_m4_doi_chung_luat.py --dung lên VPS + nối cron; muốn bỏ
+    thì sửa đoạn văn. Không được để nguyên trạng.
+T5. Bảng này đo trên MỘT ngày (07/08, Thứ Sáu). Các khối phụ thuộc bucket (MINED RULES,
+    EVIDENCE TABLE, RULE TAILS) đổi kích thước theo thứ: MB Thứ Sáu có READY_STRONG nên
+    nhánh chính chạy; MT rơi nhánh FALLBACK; MN rơi nhánh 'không có rules đủ mạnh'. Muốn
+    số ký tự đại diện cho cả tuần phải chạy lại 7 ngày × 3 miền (~2 phút/lượt).
+T6. Chưa kiểm 8 model shadow có thật sự nhận chuỗi lỗi 64 ký tự ở MB hằng ngày không —
+    mới chứng minh được hàm trả về chuỗi đó. Cần đọc journal của lượt shadow_auto_eval MB.
+
