@@ -1,0 +1,66 @@
+================================================================================================
+  MB — PROMPT MOI toan bo (17:30-17:35)  ·  ket qua 23 duoi
+================================================================================================
+  model                    gio    so             CHINH   PHU     status
+  combo-no-token           17:30  ['07', '69']   truot   truot   LOSE
+  lstm                     17:30  ['69', '42']   truot   TRUNG   PARTIAL
+  meta-learning            17:30  ['07', '72']   truot   truot   LOSE
+  random-forest            17:30  ['80', '07']   TRUNG   truot   PARTIAL
+  smart-ensemble           17:30  ['56', '07']   TRUNG   truot   PARTIAL
+  smart-ml                 17:30  ['94', '61']   TRUNG   truot   PARTIAL
+  xgboost                  17:30  ['25', '94']   truot   TRUNG   PARTIAL
+  claude-opus-4-6          17:31  ['60']         truot   (bo)    LOSE
+  claude-sonnet-4-6        17:31  ['60']         truot   (bo)    LOSE
+  gemini-2.5-flash         17:31  ['69', '13']   truot   truot   LOSE
+  gemini-2.5-pro           17:32  ['24', '60']   truot   truot   LOSE
+  gpt-5.4                  17:32  ['36']         truot   (bo)    LOSE
+  glm-5.1                  17:33  ['60', '24']   truot   truot   LOSE
+  gpt-oss-120b             17:33  ['24', '13']   truot   truot   LOSE
+  deepseek-reasoner        17:34  ['31']         truot   (bo)    LOSE
+  combo-super              17:35  ['72', '95']   truot   truot   LOSE
+  => chinh trung 3 · phu trung 2 · TONG 5
+
+================================================================================================
+  MT — HON HOP  ·  ket qua 30 duoi
+================================================================================================
+  model                    gio    so             CHINH   PHU     status
+  combo-no-token           05:00  ['76', '06']   truot   truot   LOSE
+  lstm                     05:00  ['19', '41']   TRUNG   truot   PARTIAL
+  meta-learning            05:00  ['06', '15']   truot   truot   LOSE
+  random-forest            05:00  ['76', '06']   truot   truot   LOSE
+  smart-ensemble           05:00  ['63', '60']   truot   truot   LOSE
+  smart-ml                 05:00  ['63', '60']   truot   truot   LOSE
+  xgboost                  05:00  ['76', '26']   truot   truot   LOSE
+  claude-opus-4-6          16:39  ['58']         truot   (bo)    LOSE
+  claude-sonnet-4-6        16:39  ['29']         TRUNG   (bo)    WIN
+  gemini-2.5-flash         16:39  ['54', '21']   truot   truot   LOSE
+  gemini-2.5-pro           16:40  ['29', '16']   TRUNG   truot   PARTIAL
+  glm-5.1                  16:40  ['58']         truot   (bo)    LOSE
+  gpt-5.4                  16:40  ['11']         truot   (bo)    LOSE
+  gpt-oss-120b             16:40  ['21', '54']   truot   truot   LOSE
+  deepseek-reasoner        16:42  []             -       (bo)    LOSE
+  combo-super              16:45  ['67', '83']   truot   truot   LOSE
+  => chinh trung 3 · phu trung 0 · TONG 3
+
+================================================================================================
+  MN — PROMPT CU toan bo  ·  ket qua 43 duoi
+================================================================================================
+  model                    gio    so             CHINH   PHU     status
+  combo-no-token           05:00  ['13', '89']   TRUNG   truot   PARTIAL
+  lstm                     05:00  ['52', '11']   TRUNG   truot   PARTIAL
+  meta-learning            05:00  ['89', '66']   truot   truot   LOSE
+  random-forest            05:00  ['93', '13']   truot   TRUNG   PARTIAL
+  smart-ensemble           05:00  ['93', '52']   truot   TRUNG   PARTIAL
+  smart-ml                 05:00  ['93', '51']   truot   truot   LOSE
+  xgboost                  05:00  ['13', '93']   TRUNG   truot   PARTIAL
+  claude-opus-4-6          05:16  ['84', '60']   TRUNG   truot   PARTIAL
+  claude-sonnet-4-6        05:16  ['84', '16']   TRUNG   truot   PARTIAL
+  gemini-2.5-flash         05:16  ['69', '13']   TRUNG   TRUNG   WIN
+  gemini-2.5-pro           05:17  ['60', '69']   truot   TRUNG   PARTIAL
+  gpt-5.4                  05:17  ['16', '21']   truot   TRUNG   PARTIAL
+  deepseek-reasoner        05:18  ['69', '16']   TRUNG   truot   PARTIAL
+  glm-5.1                  05:18  ['60', '84']   truot   TRUNG   PARTIAL
+  gpt-oss-120b             05:18  ['13', '84']   TRUNG   TRUNG   WIN
+  combo-super              05:20  ['11', '69']   truot   TRUNG   PARTIAL
+  => chinh trung 8 · phu trung 8 · TONG 16
+
