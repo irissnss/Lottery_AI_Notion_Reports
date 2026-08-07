@@ -1,0 +1,58 @@
+================================================================================================
+PHẦN 1 — ML: bộ đặc trưng thật
+================================================================================================
+  Tổng: 32 đặc trưng
+
+  gan / nóng / lạnh (owner nói 'chả tích sự gì')
+     7 đặc trưng: gan_score_w, recency_score, gan_days, gan_vs_avg, zone_encoded, freq_x_gan, trend_x_zone
+  tần suất thuần
+     5 đặc trưng: freq_count, freq_z_score, freq_deviation, rolling_freq_7d, rolling_freq_14d
+  xu hướng
+     3 đặc trưng: trend_score, trend_encoded, trend_momentum
+  hội tụ (§5g đo z=−2,54)
+     1 đặc trưng: convergence_score
+  xếp hạng thống kê
+     5 đặc trưng: total_score, stat_rank, in_top10, in_top20, dow_rank
+  thứ trong tuần
+     2 đặc trưng: dow_sin, dow_cos
+  lịch sử trúng gần đây
+     5 đặc trưng: lag_1_hit, lag_3_hits, lag_7_hits, consecutive_hits, hit
+  chéo miền
+     1 đặc trưng: cross_region_momentum
+
+  ⚠ ĐỐI CHIẾU VỚI PROMPT:
+     LLM prompt: gan/nóng/lạnh **đã gỡ hết** (V11001+V11007, còn 1 câu cảnh báo)
+     ML đặc trưng: **vẫn còn 6** — gan_score_w, gan_days, gan_vs_avg, zone_encoded, freq_x_gan, trend_x_zone
+
+================================================================================================
+PHẦN 2 — ML có đối chứng với RULES / BỘ LỌC không?
+================================================================================================
+  meta_data_collector.py     rules=0   bộ_lọc=0
+  ml_predict.py              rules=0   bộ_lọc=0
+  meta_predict.py            rules=0   bộ_lọc=0
+  lstm_predict.py            rules=0   bộ_lọc=0
+  ml_models.py               rules=0   bộ_lọc=0
+  meta_learner.py            rules=0   bộ_lọc=0
+  lstm_model.py              rules=0   bộ_lọc=0
+
+  ⇒ ML KHÔNG đối chứng với rules, KHÔNG qua bộ lọc. Nó chỉ là hồi quy trên 39 đặc trưng.
+
+================================================================================================
+PHẦN 3 — ML có phân biệt SỐ CHÍNH và SỐ PHỤ không?
+================================================================================================
+  'main_number': 2 lần trong ml_predict.py
+  'secondary': 0 lần trong ml_predict.py
+  'top1': 0 lần trong ml_predict.py
+  'top2': 0 lần trong ml_predict.py
+  'so_chinh': 0 lần trong ml_predict.py
+  'so_phu': 0 lần trong ml_predict.py
+
+  ⇒ ML trả về DANH SÁCH XẾP HẠNG, không tự phân biệt chính/phụ.
+     Việc chọn chính/phụ do tầng gộp (bundle) làm sau.
+
+================================================================================================
+PHẦN 4 — NHỊP HUẤN LUYỆN LẠI và cách kiểm soát
+================================================================================================
+  lịch trong scheduler : get_setting('system', 'retrain_day') or 'sun' · get_setting('system', 'retrain_time') or '02:00'
+  chốt chặn (guard)    : ép huấn luyện nếu model cũ quá 8 ngày
+  training_history: no such column: model_name
