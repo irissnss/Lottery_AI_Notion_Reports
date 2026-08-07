@@ -1,0 +1,53 @@
+  KET QUA DOI CHUNG BA NGUON — V11018
+
+   so nguon      n   trung     ti le
+          1   2658    1159    43.60%
+          2    516     245    47.48%
+          3     24       8    33.33%
+
+  z(3 vs 1) = -1.01
+  phu song: ML=279 LUAT=490 LOC=3026 / 3231
+
+  ==> KHONG_CO_LOI_THE: 3 nguồn 33.3% vs 1 nguồn 43.6% · z=-1.01 — CHƯA vượt 1,96. Không có căn cứ tách số chính/phụ theo số nguồn.
+
+  40 dong gan nhat:
+    2026-08-07 MB  07 ML=0 LUAT=0 LOC=1 nguon=1 trung=None
+    2026-08-07 MB  13 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  31 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  32 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  35 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  60 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  69 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  84 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  88 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  89 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MB  95 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  07 ML=0 LUAT=0 LOC=1 nguon=1 trung=None
+    2026-08-07 MN  13 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  35 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  60 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  67 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  69 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  84 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  88 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  89 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MN  95 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  07 ML=0 LUAT=0 LOC=1 nguon=1 trung=None
+    2026-08-07 MT  13 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  29 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  35 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  60 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  67 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  69 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  83 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  84 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  88 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  89 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-07 MT  95 ML=0 LUAT=1 LOC=0 nguon=1 trung=None
+    2026-08-06 MB  13 ML=1 LUAT=0 LOC=1 nguon=2 trung=1
+    2026-08-06 MB  16 ML=1 LUAT=0 LOC=1 nguon=2 trung=0
+    2026-08-06 MB  18 ML=0 LUAT=1 LOC=1 nguon=2 trung=1
+    2026-08-06 MB  21 ML=1 LUAT=0 LOC=1 nguon=2 trung=0
+    2026-08-06 MB  24 ML=0 LUAT=1 LOC=1 nguon=2 trung=0
+    2026-08-06 MB  32 ML=0 LUAT=1 LOC=1 nguon=2 trung=1
+    2026-08-06 MB  36 ML=1 LUAT=0 LOC=1 nguon=2 trung=0
