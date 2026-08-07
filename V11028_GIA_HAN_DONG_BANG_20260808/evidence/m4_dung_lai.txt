@@ -1,0 +1,12 @@
+================================================================================================
+  V11028 (A6) — M4 ĐỐI CHỨNG LUẬT GIẢ, dựng lại cho TÁI LẬP ĐƯỢC
+================================================================================================
+  đã ghi 3,229 dòng vào `m4_doi_chung_v11028`
+
+  giai đoạn                   n  b(thật hơn)  c(giả hơn)  cặp lệch       z  kết luận
+  KHONG_RO_LUAT             792          199         125       324    4.11  THAT_HON
+  KHONG_XAC_MINH_DUOC      2437          471         201       672   10.41  THAT_HON
+
+  Ngưỡng chốt trước: cần ≥25 cặp lệch mới kết luận · |z|≥1,96 mới nói hơn/kém.
+  Luật giả TẤT ĐỊNH ⇒ chạy lại bao nhiêu lần cũng ra y hệt. Đây là thứ bản M4 cũ
+  KHÔNG có, và là lý do hai con số −0,33/+0,26 không tái lập được.

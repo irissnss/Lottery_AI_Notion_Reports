@@ -1,0 +1,139 @@
+====================================================================================================
+  KIỂM CHÉO SÁU MẶT QUẢN TRỊ
+====================================================================================================
+  mặt                            ký tự   mục ##
+  CLAUDE.md                     25,209       17
+  AGENTS.md                     22,897       16
+  GEMINI.md                     22,738       16
+  .cursorrules                  32,658       20
+  .Antigravityrules.md         110,858       65
+  .AGENT.md                     41,594       28
+
+====================================================================================================
+  BẢNG CÓ / THIẾU — mỗi mục × sáu mặt
+====================================================================================================
+  mục                                                   CLA  AGT  GEM  CUR  ANT  AGE
+  §36 CANONICAL TIMELINE RULE — V3 (Owner-Confirmed 20    ·    ·    ·    ·    ✓    ·
+  §37 — DIVERSITY-EMPTY-GUARD (2026-04-04)                ·    ·    ·    ·    ✓    ·
+  §38 — PARTIAL-SIGNAL SURVIVAL + MAIN-SELECTION TRACE    ·    ·    ·    ·    ✓    ·
+  §39 — ANTI-WEEKDAY-CONFUSION (2026-04-12)               ·    ·    ·    ·    ✓    ·
+  §40 — SUPERSEDED-FIRST (2026-04-12)                     ·    ·    ·    ·    ✓    ·
+  §41 — NO-STALE-CODE-DECISION (2026-04-12)               ·    ·    ·    ·    ✓    ·
+  §42 — CLEAN-VS-CONTAMINATED-EVIDENCE (2026-04-12)       ·    ·    ·    ·    ✓    ·
+  §43 — CURRENT-TRUTH-LEDGER-REQUIRED (2026-04-12)        ·    ·    ·    ·    ✓    ·
+  §44 — LIVE-CHECKPOINT-REMINDER-REQUIRED (2026-04-12)    ·    ·    ·    ·    ✓    ·
+  §45 — CHANGELOG-HISTORY-MANDATORY (2026-04-12)          ·    ·    ·    ·    ✓    ·
+  §46 — NO-CLEANUP-WITHOUT-MANIFEST (2026-04-12)          ·    ·    ·    ·    ✓    ·
+  §47 — NO-OVERCLAIM-CLOSURE (2026-04-12)                 ·    ·    ·    ·    ✓    ·
+  §48 — TIME-ANCHOR-SHADOW-OBSERVE (2026-04-12)           ·    ·    ·    ·    ✓    ·
+  §49 — MANUAL-CONTROL-DISCIPLINE (2026-04-12)            ·    ·    ·    ·    ✓    ·
+  §50 — SINGLE-SOURCE-TIME-ANCHOR (2026-04-12)            ·    ·    ·    ·    ✓    ·
+  §51 — DOCUMENTATION & FOLLOW-UP HARDLOCK (2026-04-20    ·    ·    ·    ·    ✓    ·
+  §53 — PLAYBOOK-FIRST HARDLOCK (2026-07-15, V10802, o    ·    ·    ·    ·    ✓    ·
+  `/choi` Output/Capital + Deadline Rule (§54, owner 2    ·    ·    ·    ✓    ✓    ✓
+  §55 (A53) — MÚI GIỜ VÀ BIÊN CHỐT                        ✓    ✓    ✓    ·    ✓    ·
+  0. Ba lệnh phải chạy — không được bỏ                    ✓    ✓    ✓    ·    ·    ✓
+  1. Documentation Sync Contract                          ·    ·    ·    ·    ·    ✓
+  10. Quick Checklist — End of Session                    ·    ·    ·    ·    ·    ✓
+  2. Follow-Up Tracker Contract                           ·    ·    ·    ·    ·    ✓
+  3. Required Issue Fields                                ·    ·    ·    ·    ·    ✓
+  4. Allowed Status Labels                                ·    ·    ·    ·    ·    ✓
+  5. Status Update Contract                               ·    ·    ·    ·    ·    ✓
+  6. Mandatory End-of-Session Update Order                ·    ·    ·    ·    ·    ✓
+  7. SSOT Surface Registry                                ·    ·    ·    ·    ·    ✓
+  8. Anti-Repetition Contract                             ·    ·    ·    ·    ·    ✓
+  9. Sync Rule with `.Antigravityrules.md` and `.curso    ·    ·    ·    ·    ·    ✓
+  0A. Live Data Preservation Obligation                   ·    ·    ·    ·    ·    ✓
+  0A. TIMEZONE — LUÔN LÀ GIỜ VIỆT NAM (owner ký 31/07/    ·    ·    ·    ·    ·    ✓
+  0B. BIÊN CHỐT 2 PHÚT (owner ký 31/07/2026 17:09)        ·    ·    ·    ·    ·    ✓
+  0B. V105.19 Runtime / Report Completion Gate            ·    ·    ·    ·    ·    ✓
+  9A. Bucket-First Measurement Contract                   ·    ·    ·    ·    ·    ✓
+  9B. Automated Traceability Hook Contract                ·    ·    ·    ·    ·    ✓
+  9C. Notion AI Report Export & Synthesis Contract        ·    ·    ·    ·    ·    ✓
+  9C2. Playbook-First Contract (owner standing order 2    ·    ·    ·    ·    ·    ✓
+  ANTI-CANDIDATE GOVERNANCE                               ·    ·    ·    ·    ✓    ·
+  ANTI-HERDING CONDITIONAL GOVERNANCE                     ·    ·    ·    ·    ✓    ·
+  APP SINGLE-PICK LOCK RULE                               ·    ·    ·    ·    ✓    ·
+  AUTO RANKING RULE                                       ·    ·    ·    ·    ✓    ·
+  Automation Surfaces                                     ·    ·    ·    ✓    ·    ·
+  Biên Chốt 2 Phút (owner ký 31/07/2026 17:09)            ·    ·    ·    ✓    ·    ·
+  BT CANONICAL SOURCE DEFINITION                          ·    ·    ·    ·    ✓    ·
+  Bucket-First Measurement Rule                           ·    ·    ·    ✓    ·    ·
+  BẠCH THỦ NORTH STAR RULE                                ·    ·    ·    ·    ✓    ·
+  BẢNG QUY HOẠCH SÁU MẶT QUẢN TRỊ — đọc trước khi sửa     ✓    ·    ·    ✓    ✓    ✓
+  Bề mặt tự động hoá                                      ✓    ✓    ✓    ·    ·    ·
+  Chuỗi hoàn tất mỗi việc code / fix / audit              ✓    ✓    ✓    ·    ·    ·
+  DB-SOURCE REPORTING RULE                                ·    ·    ·    ·    ✓    ·
+  DUAL-TABLE EVALUATION RULE                              ·    ·    ·    ·    ✓    ·
+  EXPERIMENT GOVERNANCE STANDARD                          ·    ·    ·    ·    ✓    ·
+  FORENSIC ROOT-CAUSE AUDIT STANDARD                      ·    ·    ·    ·    ✓    ·
+  GAP-HUNT RULE                                           ·    ·    ·    ·    ✓    ·
+  HARD PRE-FLIGHT                                         ·    ·    ·    ·    ✓    ·
+  HARD PROMPT STANDARD                                    ·    ·    ·    ·    ✓    ·
+  INTER-REGION DATA RULE                                  ·    ·    ·    ·    ✓    ·
+  LIVE DATA PRESERVATION & ARTIFACT SAFETY RULE           ·    ·    ·    ·    ✓    ·
+  Locked Live Data Integrity Rules                        ·    ·    ·    ✓    ·    ·
+  LONG-TERM IMPROVEMENT RULE                              ·    ·    ·    ·    ✓    ·
+  MANDATORY EXECUTION GOVERNANCE                          ·    ·    ·    ·    ✓    ·
+  METHOD/PATTERN MEASUREMENT STANDARD                     ·    ·    ·    ·    ✓    ·
+  MODEL ABSORPTION AUDIT STANDARD                         ·    ·    ·    ·    ✓    ·
+  Mẹo vận hành đã học được (đừng lặp lại lỗi cũ)          ✓    ✓    ✓    ·    ·    ·
+  NAVIGATION BOUNDARY RULE                                ·    ·    ·    ·    ✓    ·
+  NO PARTIAL FIX RULE                                     ·    ·    ·    ·    ✓    ·
+  NO-STALE-DB EVALUATION RULE                             ·    ·    ·    ·    ✓    ·
+  Notion AI Report Export Rule                            ·    ·    ·    ✓    ·    ·
+  NO-TOKEN RULE STANDARD                                  ·    ·    ·    ·    ✓    ·
+  Playbook-first                                          ✓    ✓    ✓    ·    ·    ·
+  Playbook-First Rule (owner standing order 2026-07-15    ·    ·    ·    ✓    ·    ·
+  PREVIEW-DAY GOVERNANCE                                  ·    ·    ·    ·    ✓    ·
+  PRIZE-SOURCE LOCK RULE                                  ·    ·    ·    ·    ✓    ·
+  PRODUCT SEMANTICS LOCK                                  ·    ·    ·    ·    ✓    ·
+  PROHIBITIONS REGISTRY                                   ·    ·    ·    ·    ✓    ·
+  PROMPT SOFT POLICY RULE                                 ·    ·    ·    ·    ✓    ·
+  REPORTING REQUIREMENT                                   ·    ·    ·    ·    ✓    ·
+  RUNTIME CHANGE = DEPLOY + VERIFY REQUIRED               ·    ·    ·    ·    ✓    ·
+  SEMANTICS RULE                                          ·    ·    ·    ·    ✓    ·
+  SOFT PROMPT STANDARD                                    ·    ·    ·    ·    ✓    ·
+  Sync                                                    ✓    ✓    ✓    ·    ·    ·
+  Sync Rule                                               ·    ·    ·    ✓    ·    ·
+  Timezone Rule — LUÔN LÀ GIỜ VIỆT NAM (owner ký 31/07    ·    ·    ·    ✓    ·    ·
+  Toàn vẹn dữ liệu sống                                   ✓    ✓    ✓    ·    ·    ·
+  TRACEABILITY RULE                                       ·    ·    ·    ·    ✓    ·
+  Trục đo chuẩn                                           ✓    ✓    ✓    ·    ·    ·
+  UI CONTINUITY RULE                                      ·    ·    ·    ·    ✓    ·
+  V105.19 Runtime / Report Completion Gate                ·    ·    ·    ✓    ✓    ·
+  VERIFIED VS PREVIEW SEPARATION                          ·    ·    ·    ·    ✓    ·
+  WEEKLY LIVINGNESS RULE                                  ·    ·    ·    ·    ✓    ·
+
+====================================================================================================
+  KẾT LUẬN
+====================================================================================================
+  mục có ĐỦ cả sáu mặt : 7/98
+
+  ✗ LỖI THẬT — mặt SINH TỰ ĐỘNG lệch với CLAUDE.md (2 chỗ):
+      AGENTS.md    BẢNG QUY HOẠCH SÁU MẶT QUẢN TRỊ — đọc trước khi sửa bất kỳ mặt nào
+      GEMINI.md    BẢNG QUY HOẠCH SÁU MẶT QUẢN TRỊ — đọc trước khi sửa bất kỳ mặt nào
+      ⇒ chạy `python web/backend/_v10925_rule_sync_check.py` để sinh lại
+
+  ⚠ MỤC CHỈ CÓ Ở MỘT MẶT — dễ mất nếu ai đó sinh lại đè lên (79):
+      chỉ ở .Antigravityrules.md     §36 CANONICAL TIMELINE RULE — V3 (Owner-Confirmed 2026-04-12, 
+      chỉ ở .Antigravityrules.md     §37 — DIVERSITY-EMPTY-GUARD (2026-04-04)
+      chỉ ở .Antigravityrules.md     §38 — PARTIAL-SIGNAL SURVIVAL + MAIN-SELECTION TRACE LOCK (202
+      chỉ ở .Antigravityrules.md     §39 — ANTI-WEEKDAY-CONFUSION (2026-04-12)
+      chỉ ở .Antigravityrules.md     §40 — SUPERSEDED-FIRST (2026-04-12)
+      chỉ ở .Antigravityrules.md     §41 — NO-STALE-CODE-DECISION (2026-04-12)
+      chỉ ở .Antigravityrules.md     §42 — CLEAN-VS-CONTAMINATED-EVIDENCE (2026-04-12)
+      chỉ ở .Antigravityrules.md     §43 — CURRENT-TRUTH-LEDGER-REQUIRED (2026-04-12)
+      chỉ ở .Antigravityrules.md     §44 — LIVE-CHECKPOINT-REMINDER-REQUIRED (2026-04-12)
+      chỉ ở .Antigravityrules.md     §45 — CHANGELOG-HISTORY-MANDATORY (2026-04-12)
+      chỉ ở .Antigravityrules.md     §46 — NO-CLEANUP-WITHOUT-MANIFEST (2026-04-12)
+      chỉ ở .Antigravityrules.md     §47 — NO-OVERCLAIM-CLOSURE (2026-04-12)
+      chỉ ở .Antigravityrules.md     §48 — TIME-ANCHOR-SHADOW-OBSERVE (2026-04-12)
+      chỉ ở .Antigravityrules.md     §49 — MANUAL-CONTROL-DISCIPLINE (2026-04-12)
+      chỉ ở .Antigravityrules.md     §50 — SINGLE-SOURCE-TIME-ANCHOR (2026-04-12)
+      chỉ ở .Antigravityrules.md     §51 — DOCUMENTATION & FOLLOW-UP HARDLOCK (2026-04-20)
+      chỉ ở .Antigravityrules.md     §53 — PLAYBOOK-FIRST HARDLOCK (2026-07-15, V10802, owner stand
+      chỉ ở .AGENT.md                1. Documentation Sync Contract
+      chỉ ở .AGENT.md                10. Quick Checklist — End of Session
+      chỉ ở .AGENT.md                2. Follow-Up Tracker Contract
+      … còn 59
