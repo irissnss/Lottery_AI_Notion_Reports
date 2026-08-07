@@ -1,0 +1,23 @@
+TRANG THAI VPS SAU V11025
+======================================================================
+
+-- giai doan bang chung --
+giai_doan            dong  khoa
+-------------------  ----  ----
+DO_TIEN              15    15  
+KHONG_RO_LUAT        796   275 
+KHONG_XAC_MINH_DUOC  2437  105
+
+-- so khoa luat --
+nguon_lan_dau  n    som         muon      
+-------------  ---  ----------  ----------
+SEED_TU_MRE    105  2026-01-05  2026-04-19
+
+-- 4 bang khoa --
+  predictions          11956
+  final_bundles        483
+  lottery_results      15232
+  model_daily_eval     11820
+
+-- tien trinh --
+  PID: 1004216 · health: 200
