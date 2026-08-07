@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Temp\claude\e--Lottery-AI-Test\d2a0e7e5-44ac-4cc3-b945-7e47bdfc4f69\scratchpad\do_v11016.py", line 9, in <module>
+    os.chdir("web/backend")
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'web/backend'

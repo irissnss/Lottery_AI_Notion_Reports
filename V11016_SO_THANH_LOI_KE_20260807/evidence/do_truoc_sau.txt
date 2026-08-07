@@ -1,0 +1,56 @@
+[WARNING] statistical_analyzer not available. Predictions will run without statistical data.
+[WARNING] Anthropic package not installed. Install with: pip install anthropic
+[WARNING] Google GenAI package not installed. Install with: pip install google-genai
+[WARNING] statistical_analyzer not available. Predictions will run without statistical data.
+[WARNING] Anthropic package not installed. Install with: pip install anthropic
+[WARNING] Google GenAI package not installed. Install with: pip install google-genai
+====================================================================================================
+  CÙNG MỘT THƯỚC, HAI BẢN — trước V11016 (PB-19.0) vs sau V11016 (PB-20.0)
+====================================================================================================
+
+  ── MB ────────────────────────────────────────────────────────────────────────────────────────
+     chỉ số                         TRƯỚC       SAU       đổi
+     ký tự                         10,379    11,393    +1,014
+     khối                              18        18        +0
+     số hai chữ số                    252       235       -17
+     mệnh lệnh                          0         0        +0
+     cặp khối trùng ≥60%               10         4        -6
+     dòng ≥6 số một dòng                9        10        +1
+
+  ── MT ────────────────────────────────────────────────────────────────────────────────────────
+     chỉ số                         TRƯỚC       SAU       đổi
+     ký tự                          8,895    10,290    +1,395
+     khối                              16        16        +0
+     số hai chữ số                    209       206        -3
+     mệnh lệnh                          1         1        +0
+     cặp khối trùng ≥60%                7         3        -4
+     dòng ≥6 số một dòng               11        15        +4
+
+  ── MN ────────────────────────────────────────────────────────────────────────────────────────
+     chỉ số                         TRƯỚC       SAU       đổi
+     ký tự                          8,354     9,802    +1,448
+     khối                              16        16        +0
+     số hai chữ số                    195       198        +3
+     mệnh lệnh                          1         1        +0
+     cặp khối trùng ≥60%                1         1        +0
+     dòng ≥6 số một dòng                9        14        +5
+
+  ================================================================================================
+  RỔ SỐ DỌN SẴN — dòng đưa ≥6 đuôi cùng lúc (thứ owner gọi là «bộ số định sẵn»)
+  ================================================================================================
+
+  TRƯỚC — MB có 9 dòng:
+     ✔ MB(D-1/T5) · Hà Nội: rank=105.00 | legacy=68.00 | 12W=83.3%(L1) | 16W=81.2%(L2) | 4W=75.0%(L3) | comp=
+     Windows: 1W(7d):19/35=54% | 2W(14d):46/70=66% | 3W(21d):77/105=73% | 4W(28d):104/140=74% | 5W(35d):132/1
+     ← ✅ Hà Nội G6+G7 (MB D-1) → tails=[13,35,69,84,88,89,95] tier=READY_WITH_CAUTION puc=COMBO_ONLY boost=0.
+     ← ✅ Hà Nội G1+G7 (MB D-1) → tails=[35,60,69,89,95] tier=LIMITED_WEIGHT puc=COMBO_ONLY boost=0.0000 lift=
+     📊 MB Thứ Sáu gần đây: 07-31:4% | 07-24:0% | 07-17:4% | 07-10:4%
+     - D-1 cross-region tail pool: 01, 03, 04, 05, 06, 08, 11, 13, 14, 16, 17, 18 ...
+
+  SAU   — MB có 10 dòng:
+     ✔ MB(D-1/T5) · Hà Nội: rank=105.00 | legacy=68.00 | 12W=83.3%(L1) | 16W=81.2%(L2) | 4W=75.0%(L3) | comp=
+     Windows: 1W(7d):19/35=54% | 2W(14d):46/70=66% | 3W(21d):77/105=73% | 4W(28d):104/140=74% | 5W(35d):132/1
+     📊 MB Thứ Sáu gần đây: 07-31:4% | 07-24:0% | 07-17:4% | 07-10:4%
+     - D-1 cross-region tail pool: 01, 03, 04, 05, 06, 08, 11, 13, 14, 16, 17, 18 ...
+     1) thứ Năm 06/08, đài Hà Nội (MB) ra ở G6+G7 các đuôi: 13 35 69 84 88 89 95.
+     Luật nối chỗ này với hôm nay có hồ sơ: 12 tuần gần nhất trúng 10/12 · 16 tuần trúng 14/16 — đọc mục CÁCH
