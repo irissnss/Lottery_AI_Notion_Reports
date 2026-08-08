@@ -1,6 +1,6 @@
 # V11037 — Đo tiến một mẫu hình owner phát hiện, và bịt cái bẫy suýt làm agent kết luận sai
 
-**Ngày:** 08/08/2026 · **Commit riêng:** `<điền sau>` · **Commit công khai:** `<điền sau>` ·
+**Ngày:** 08/08/2026 · **Commit riêng:** `207404c` · **Commit công khai:** `ef8cbc1` ·
 **Trạng thái:** `DEPLOYED` (VPS, PID 1089328 → 1092764, health 200)
 
 ---
