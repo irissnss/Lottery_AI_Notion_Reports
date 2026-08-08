@@ -158,6 +158,33 @@ ai_model=?` **không lọc `run_source`**. Kiểm 30 ngày: **0 khoá trùng** �
 
 ---
 
+## 5b. Đã làm gì
+
+**TRƯỚC:** lượt model không trả lời bị ghi `status='LOSE'`; `combo_super._ti_le_bach_thu()` dùng
+`SUM(bt_hit)/COUNT(*)` nên đếm cả lượt rỗng vào **mẫu số**; **138 dòng** lịch sử mang nhãn sai.
+**SAU:** `scheduler.py` ghi `NO_ANSWER`; `combo_super` loại lượt rỗng khỏi mẫu số và trả thêm
+khoá `rong`; **138 dòng** đổi nhãn — **chỉ cột `status`**, mọi cột khác đối chiếu y hệt.
+**PHIÊN BẢN:** V11036 · 08/08/2026 · `combo_super.py` md5 `b58d62b5…` →
+**`1c477876ec77ef7163d0f18b442f195e`** · `scheduler.py` → **`7e795560222e4d5461e4b1e2aab587c2`**.
+**KIỂM:** `python web/backend/_v11036_kiem_no_answer.py` → `NO_ANSWER_V11036=DAT`
+
+| việc | kết quả |
+|---|---|
+| Vá `scheduler.py` | ghi `NO_ANSWER` khi `main_nums` rỗng |
+| Vá `combo_super.py` | loại lượt rỗng khỏi mẫu số, thêm khoá `rong` làm chỉ số độ tin cậy vận hành |
+| Backfill **local** | 138 dòng, đối chiếu **từng cột** — chỉ `status` đổi |
+| Backfill **VPS (DB thật)** | `còn LOSE rỗng: 0 · đã NO_ANSWER: 138` |
+| Deploy + restart | PID `1053968 → 1089328` · health **200** |
+| Dựng cổng nghiệm thu | `_v11036_kiem_no_answer.py` — 4 phép, đạt cả 4 |
+| Ghi sổ quyết định | **QD-046** kèm phạm vi `duoc` / `khong_duoc` và đường gỡ về |
+| Đo hai câu owner hỏi | 12 agent + phản biện đối kháng — cả hai ra **(b) chưa được phép kết luận** |
+
+**KHÔNG làm:** không đụng roster 15 model · không đổi hằng số bộ lọc combo-super ngoài phép lọc
+này · không đổi `bt_hit`/`hit_count`/`pick_count` · không sửa `_v10879_nghiemthu_lane.py`
+(FU-357 để phiên sau, làm ngay từ đầu là gộp bốn biến trong một ngày).
+
+---
+
 ## 6. Cổng kiểm
 
 | cổng | kết quả |
