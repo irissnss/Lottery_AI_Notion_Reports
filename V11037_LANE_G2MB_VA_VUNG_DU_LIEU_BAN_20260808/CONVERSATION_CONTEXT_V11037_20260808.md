@@ -76,6 +76,22 @@ NO_ANSWER, QD-046). Kiểm trước khi đụng VPS:
 
 Deploy đạt: PID 1089328 → 1092764, health 200, endpoint admin 401, 24 phép, C23/C24 xanh.
 
+## Lượt 6 — owner yêu cầu ghi nhận và cập nhật
+
+> *"ghi nhận và cập nhật báo cáo đây đủ chi tiết nha em"*
+
+**Agent phát hiện ngay đầu lượt:** `_v11037_deploy.py` của phiên này **đã bị phiên song song
+ghi đè** bằng script deploy cho việc khác. Soi tiếp thì thấy **cả bốn mã FU** (355–358) cũng
+trùng.
+
+**Xử:** khôi phục script từ commit `207404c` thành `_v11037_deploy_g2mb.py` · đổi bốn mã FU
+sang 365–368 (nhận diện khối của mình bằng **mã đọc**, không bằng số FU — vì số FU chính là
+thứ đang trùng) · kiểm lại từng mã chỉ còn trỏ tới một việc · cập nhật CHANGELOG · SSOT ·
+FOLLOW_UP · báo cáo công khai.
+
+**Agent đề nghị thành quy tắc (FU-369):** cấp số hiệu và mã FU phải quét **ba nơi** —
+`CHANGELOG` + `web/backend/_v*.py` + kho báo cáo công khai — chứ không chỉ CHANGELOG.
+
 ---
 
 ## Những chỗ agent làm SAI trong phiên và đã sửa
@@ -91,3 +107,4 @@ Deploy đạt: PID 1089328 → 1092764, health 200, endpoint admin 401, 24 phép
 | 7 | Ghi nhãn `DEPLOYED_LOCAL` khi code mới ở local (RM-12) | Sửa thành `LOCAL_CHUA_COMMIT` |
 | 8 | Lấy số hiệu V11035 rồi V11036 — cả hai đã có chủ (§58) | Đổi sang V11037 |
 | 9 | Báo "hash 4 bảng giữ nguyên" khi `model_daily_eval` đã đổi | Truy bằng bản chụp VPS, xác định là việc của phiên song song |
+| 10 | Bốn mã FU và một tệp deploy bị phiên song song chiếm mất | Đổi sang FU-365..368, tách tên `_v11037_deploy_g2mb.py`, đề nghị FU-369 |

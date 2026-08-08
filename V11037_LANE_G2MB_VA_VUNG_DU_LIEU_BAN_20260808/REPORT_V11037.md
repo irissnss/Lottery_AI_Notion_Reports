@@ -184,10 +184,78 @@ ssh root@14.225.224.89 "sqlite3 /root/Lottery_AI_Test/data/lottery_ai.db \
 
 | Mã | Nhãn | Hạn | Việc |
 |---|---|---|---|
-| **FU-357** · DO0710 | `WAIT_LIVE` | 07/10 | Chấm lane sau đủ 60 ngày. **Cấm** chấm sớm · sửa ngưỡng giữa chừng · dùng phần nhìn lại · dùng M7–M9 để quyết |
-| **FU-356** · KS1208 | `DEPLOYED_PENDING_LIVE_VERIFY` | 12/08 | Xác nhận C23/C24 chạy thật lúc 18:05 và lane chạy 19:35 trên VPS |
-| **FU-355** · DD1508 | `AWAITING_OWNER_OK` | 15/08 | Có sửa hẳn 229 dòng không (phương án B). Chỉ mở bàn nếu **C24 báo LỆCH** |
-| **FU-358** · SC1308 | `MEASURED_BUT_NOT_FIXED` | 13/08 | `_v10900_consistency_guard.py` **local ≠ VPS**: local có khối V11023 chưa deploy. Drift này **có TRƯỚC** phiên này |
+| **FU-367** · DO0710 | `WAIT_LIVE` | 07/10 | Chấm lane sau đủ 60 ngày. **Cấm** chấm sớm · sửa ngưỡng giữa chừng · dùng phần nhìn lại · dùng M7–M9 để quyết |
+| **FU-366** · KS1208 | `DEPLOYED_PENDING_LIVE_VERIFY` | 12/08 | Xác nhận C23/C24 chạy thật lúc 18:05 và lane chạy 19:35 trên VPS |
+| **FU-365** · DD1508 | `AWAITING_OWNER_OK` | 15/08 | Có sửa hẳn 229 dòng không (phương án B). Chỉ mở bàn nếu **C24 báo LỆCH** |
+| **FU-368** · SC1308 | `MEASURED_BUT_NOT_FIXED` | 13/08 | `_v10900_consistency_guard.py` **local ≠ VPS**: local có khối V11023 chưa deploy. Drift này **có TRƯỚC** phiên này |
 
 **Ngoài phạm vi, ghi nhận:** cổng quyết định còn **3 phép TRÔI** (QD-021, QD-022) do mục mồ côi
 chờ owner quyết — `FU-354` (09/08) và bốn mục `OWNER_DECISION_NEEDED` khác. Không tự gỡ được.
+
+---
+
+# PHỤ LỤC A — VA CHẠM HAI PHIÊN SONG SONG (cập nhật 08/08 đêm)
+
+Hai phiên agent làm việc **cùng lúc trên cùng kho, cùng VPS**. Phiên kia làm chuỗi
+`glm-5.2 rỗng` → `NO_ANSWER` → `decide() nói dối` → `/nghiem-thu`. Phiên này làm lane G2-MB +
+vùng dữ liệu bẩn. **Sáu lần va chạm** trong một tối — ghi đủ để phiên sau tránh:
+
+| # | Va chạm | Phát hiện nhờ | Xử lý |
+|---|---|---|---|
+| 1 | Số hiệu **V11035** | `_v10921_report_gate.py` báo đã có `V11035_GLM52_VA_DOI_LICH` | đổi V11036 |
+| 2 | Số hiệu **V11036** | thấy `_v11036_deploy.py` của họ (19:46:54) | đổi **V11037** |
+| 3 | `model_daily_eval` **đổi hash** | đo hash hai lần, lệch | so bản chụp VPS ⇒ **138 dòng `LOSE`→`NO_ANSWER`**, việc của họ |
+| 4 | `CHANGELOG`/`SSOT` **bị cuốn vào commit của họ** | `git status` báo *không có thay đổi* dù vừa ghi | kiểm lại: mục V11037 **còn nguyên** trong `dab632b` — không mất gì |
+| 5 | **`_v11037_deploy.py` bị ghi đè** | tệp đổi nội dung sang deploy `/nghiem-thu` | khôi phục từ `207404c` thành **`_v11037_deploy_g2mb.py`** |
+| 6 | **CẢ BỐN mã FU trùng** | soi tiêu đề theo **mã đọc**, không theo số | đổi mã của phiên này sang **365–368** |
+
+## Bảng đổi mã FU (§58 cấm hai việc dùng chung số)
+
+| Cũ | **Mới** | Việc của phiên này | Phiên kia giữ số cũ cho |
+|---|---|---|---|
+| FU-355 | **FU-365** · DD1508 | quyết có sửa hẳn 229 dòng · hạn 15/08 | SC2108-2 · lượt rỗng chấm LOSE |
+| FU-356 | **FU-366** · KS1208 | xác minh C23/C24 chạy 18:05 · hạn 12/08 | KS0909 · `glm-5.2` rỗng ở MB |
+| FU-357 | **FU-367** · DO0710 | chấm lane G2-MB sau 60 ngày · hạn 07/10 | KS1908 · `decide()` nói dối owner |
+| FU-358 | **FU-368** · SC1308 | guard local ≠ VPS · hạn 13/08 | DO2209 · `/nghiem-thu` cửa sổ TRƯỚC |
+
+Chừa khoảng **361–364** vì phiên kia cấp số liên tục (355→360 trong ít phút). Đó là **chữa
+cháy, không phải cách xử** — cách xử ghi ở **FU-369**.
+
+## Hai chỗ suýt hỏng nhờ kiểm trước khi đẩy
+
+**A.1 — Suýt deploy hộ việc chưa xong của người khác.** Kéo bản VPS về so từng dòng thì
+`_v10900_consistency_guard.py` bản local có thêm **khối V11023** (39 dòng) mà VPS không có —
+việc của phiên khác, **chưa deploy**. Xử: dựng **bản ghép = bản đang chạy trên VPS + đúng khối
+C23/C24 của phiên này**. Drift theo dõi ở **FU-368**.
+
+**A.2 — Suýt restart chồng lên deploy của họ.** Kiểm trước: backfill của họ **đã chạy xong**
+(`NO_ANSWER = 138` trên VPS), và bộ tệp họ đẩy **không chồng** bộ tệp của phiên này.
+
+## Ba thứ đã cứu phiên này
+
+1. **Cổng báo cáo A55 bắt trùng số hiệu** — không có nó thì V11035 đã trùng im lặng.
+2. **So từng dòng với bản VPS trước khi đẩy**, thay vì tin bản local là đúng.
+3. **Truy hash bằng bản chụp nguyên vẹn** thay vì đoán *"chắc không sao"*.
+
+---
+
+# PHỤ LỤC B — NGHIỆM THU CUỐI TRÊN VPS
+
+| | |
+|---|---|
+| service `lottery` | **active** · PID `1089328` → **`1092764`** · ổn định từ 20:10:01 |
+| `/api/health` | **200** |
+| `/api/admin/v11037-g2mb-lane` | **401** (có chốt admin) |
+| `/monitoring` | 401 (cần đăng nhập — đúng) |
+| bộ tự kiểm trên VPS | **24 phép** · `C23 OK 229→229` · `C24 OK 0→0` |
+| quét ngược trên VPS | **SẠCH**, 0 chỗ chưa phân loại |
+| thử cổng trên VPS | **CỔNG QUA THỬ** |
+| cron | `35 19 * * *` · crontab 88 → **89 dòng** · lưu `/tmp/cron_v11037.bak` |
+| bảng shadow | `v11037_g2mb_lane` · **549 dòng / 61 ngày** · cờ `(0,1,0,1)` |
+
+**Hash 4 bảng khoá cuối phiên:** `predictions e793ff9f` · `lottery_results 167c3670` ·
+`final_bundles c91e4b4f` — **giữ nguyên**. `model_daily_eval b2551b30` — đổi do phiên song
+song vá `NO_ANSWER`, **đã truy tận nơi**, không phải phiên này.
+
+**Đường lùi đã dựng sẵn và KHÔNG phải dùng:** `/root/Lottery_AI_Test/backups/v11037_pre/`
+(5 tệp) · `/tmp/cron_v11037.bak`.
