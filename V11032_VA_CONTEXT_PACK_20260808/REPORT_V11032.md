@@ -221,6 +221,60 @@ Bản trước vá: md5 `6b28f0baa7aeceac0e9fd2b75a741a81` (CTX-18.1). Có bản
 | **FU-343 · QD0811** | đóng `QD-029` + `OD-20260801-D` · thêm trường `thay_boi` | 11/08 | `OWNER_DECISION_NEEDED` |
 | **FU-344 · DO2108-2** | đọc verdict `python _v11033_verdict_fu284.py 2026-08-21` | 21/08 | `WAIT_LIVE` |
 
+---
+
+## PHỤ LỤC — V11032b: CỔNG ĐÓNG BĂNG TỪNG MÙ HOÀN TOÀN
+
+Ngay sau khi commit bản vá, chạy lại cổng đóng băng thì nó **vẫn** in *"✓ không commit nào đụng
+`gpt_analyzer.py`"* — trong khi commit `cec5ce5` vừa sửa tệp đó **31 dòng**.
+
+### Gốc — `git log --since=<ngày trần>` trả về RỖNG trên kho này
+
+| lệnh | kết quả |
+|---|---|
+| `git log --since=2026-08-08 -- web/backend/gpt_analyzer.py` | **0 dòng** |
+| `git log --since=2026-08-08` *(bỏ lọc đường dẫn)* | **0 dòng** |
+| `git log -5 --date=iso` | 5 commit, **đều đề `2026-08-08`** |
+| `git log --after="2026-08-08 00:00" -- …` | **1 dòng** ✓ |
+
+**Cổng LUÔN báo xanh kể từ lúc dựng** — kể cả sáng nay khi nó nói *"cửa sổ còn nguyên"*.
+Đó là **xanh giả**, **đúng họ lỗi với `len > 50`** vừa vá vài giờ trước.
+**RM-07 lần thứ hai trong cùng một ngày.**
+
+### Đã sửa
+
+Bỏ lọc ngày của git, liệt kê hết rồi tự lọc bằng Python. Thêm **phép 0 — cổng có nhìn thấy gì
+không**: `git log` trả **0 commit** cho tệp ⇒ **cổng hỏng**, không phải kho sạch.
+
+```
+✓ cổng đọc được lịch sử (53 commit đụng tệp, 1 trong cửa sổ)
+✓ chỉ 1 commit đụng `gpt_analyzer.py`, đều thuộc QD-042 (V11032):
+    cec5ce5 2026-08-08 V11032: va loi cam 67 ngay…
+```
+
+### FU-342 xong — hai cổng đã cắm vào hook `git commit`
+
+`_v11028_cong_dong_bang.py` và `_v11034_kiem_cheo_quyet_dinh.py` nay nằm trong
+`.cursor/hooks/code_quality_guard.py`. **Chứng minh chặn được, không chỉ nói:**
+
+| thử | kết quả |
+|---|---|
+| trạng thái sạch | `{"permission": "allow"}` |
+| giả lập đổi `MD5_KHOA` | `{"permission": "deny", … "phá cửa sổ đóng băng QD-041"}` |
+
+*(khôi phục nguyên trạng ngay sau phép thử)*
+
+### Danh sách «ĐÃ KHAI» — vì sao cần
+
+`_v11034` đang thoát 1 (mâu thuẫn FU-343 chờ owner). Cắm thẳng là **chặn mọi commit** ⇒ cổng
+thành barie kẹt rồi sẽ bị gỡ. Nên mâu thuẫn **đã báo cáo và đang chờ chữ ký** ghi vào `DA_KHAI`
+kèm **mã theo dõi bắt buộc**; mâu thuẫn **MỚI vẫn chặn ngay**.
+Đây là **khai báo**, không phải **miễn trừ** — xoá dòng đó là việc bắt buộc khi owner quyết xong.
+
+**Commit:** `8675e4a`
+
+---
+
 ### Hai câu cần owner ký
 
 1. **FU-345** — *"A4 cùng họ lỗi với cái vừa vá, nhưng chạm **cả 15 model official** chứ không
