@@ -1,0 +1,91 @@
+====================================================================================================
+  V11041 — PHÂN LOẠI 57 MỤC TREO KHÔNG HẠN (GĐ-2) · CHỈ ĐỀ XUẤT, KHÔNG SỬA SỔ
+====================================================================================================
+
+  NỀN — thứ 57 mục đang chờ, đo trên nguồn thật:
+    weekday_blackspot_shadow                         dòng mới nhất 2026-05-05
+    loz_stage_trace_shadow                           dòng mới nhất 2026-05-05
+    mt_model_hit_output_drop_shadow                  dòng mới nhất 2026-05-06
+    model_latency_cost_audit_daily                   dòng mới nhất 2026-05-06
+    verdict_weight_recalibration_shadow              KHÔNG CÓ BẢNG
+    partial_spent_outcome_audit_shadow               KHÔNG CÓ BẢNG
+    v94_cross_region_spillover_aware_shadow          dòng mới nhất ?
+    model_strength_by_region_weekday_station_daily   dòng mới nhất 2026-05-05
+
+====================================================================================================
+  NHÓM A — ĐỀ NGHỊ ĐÓNG (cơ chế đo đã chết / mốc đã trôi qua)  —  43 mục
+====================================================================================================
+    FU-117    chờ cron đã bị cắt: 23:50
+    FU-119    chờ bảng đã ngừng nhận dòng: model_latency_cost_audit_daily
+    FU-120    chờ bảng đã ngừng nhận dòng: loz_stage_trace_shadow
+    FU-121    chờ bảng đã ngừng nhận dòng: loz_stage_trace_shadow, mt_model_hit_output_drop_shadow
+    FU-122    chờ bảng đã ngừng nhận dòng: model_strength_by_region_weekday_station_daily
+    FU-123    chờ bảng đã ngừng nhận dòng: weekday_blackspot_shadow
+    FU-124    neo vào mốc đã trôi qua (2026-05-06) — mốc gần nhất cách nay >2 tháng
+    FU-125    neo vào mốc đã trôi qua (2026-05-05) — mốc gần nhất cách nay >2 tháng
+    FU-126    neo vào mốc đã trôi qua (2026-05-19) — mốc gần nhất cách nay >2 tháng
+    FU-127    chờ bảng đã ngừng nhận dòng: loz_stage_trace_shadow
+    FU-128    chờ bảng đã ngừng nhận dòng: model_latency_cost_audit_daily
+    FU-129    chờ bảng đã ngừng nhận dòng: model_strength_by_region_weekday_station_daily
+    FU-130    neo vào mốc đã trôi qua (2026-05-06) — mốc gần nhất cách nay >2 tháng
+    FU-132    neo vào mốc đã trôi qua (2026-05-05) — mốc gần nhất cách nay >2 tháng
+    FU-133    chờ cron đã bị cắt: 23:35
+    FU-134    chờ cron đã bị cắt: 23:40
+    FU-135    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-136    chờ cron đã bị cắt: 23:45
+    FU-137    chờ cron đã bị cắt: 23:48
+    FU-138    chờ cron đã bị cắt: 23:35
+    FU-139    chờ cron đã bị cắt: 23:48
+    FU-140    chờ cron đã bị cắt: 23:35, 23:48
+    FU-141    neo vào mốc đã trôi qua (2026-05-07) — mốc gần nhất cách nay >2 tháng
+    FU-142    chờ cron đã bị cắt: 23:35, 23:50
+    FU-143    chờ cron đã bị cắt: 23:45, 23:48
+    FU-144    neo vào mốc đã trôi qua (2026-05-08) — mốc gần nhất cách nay >2 tháng
+    FU-145    chờ cron đã bị cắt: 19:08
+    FU-146    chờ cron đã bị cắt: 19:08, 19:12
+    FU-147    chờ cron đã bị cắt: 19:14
+    FU-148    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-159    chờ cron đã bị cắt: 23:40, 19:14
+    FU-160    chờ bảng đã ngừng nhận dòng: verdict_weight_recalibration_shadow
+    FU-162    chờ bảng đã ngừng nhận dòng: verdict_weight_recalibration_shadow
+    FU-163    chờ cron đã bị cắt: 23:35, 23:55
+    FU-164    chờ bảng đã ngừng nhận dòng: v94_cross_region_spillover_aware_shadow
+    FU-165    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-166    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-167    chờ bảng đã ngừng nhận dòng: partial_spent_outcome_audit_shadow
+    FU-168    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-171    tự khai đã giải quyết — `next_decision: None`
+    FU-173    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-174    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+    FU-175    cửa sổ chờ 14/30 ngày mở từ 05/2026 — trôi qua 3 tháng, chưa ai chấm
+
+====================================================================================================
+  NHÓM B — LÀM ĐƯỢC HÔM NAY, xin owner cho hạn thật  —  9 mục
+====================================================================================================
+    FU-118    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-131    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-149    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-152    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-153    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-154    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-155    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-156    owner mở trang còn sống, việc không neo mốc cũ — làm được hôm nay
+    FU-300    quyết định owner còn treo, không neo mốc cũ
+
+====================================================================================================
+  NHÓM C — LUẬT ĐỨNG, KHÔNG ĐẶT HẠN (đặt hạn là sai loại việc)  —  5 mục
+====================================================================================================
+    FU-188b   luật đứng (`due: liên tục`) — đặt hạn là sai loại việc
+    FU-190    luật đứng (`due: liên tục`) — đặt hạn là sai loại việc
+    FU-206    luật đứng (`due: liên tục`) — đặt hạn là sai loại việc
+    FU-208    luật đứng (`due: liên tục`) — đặt hạn là sai loại việc
+    FU-209    luật đứng (`due: liên tục`) — đặt hạn là sai loại việc
+
+====================================================================================================
+  NHÓM D — CHƯA XÁC ĐỊNH, xin owner chỉ  —  0 mục
+====================================================================================================
+
+====================================================================================================
+  A=43 · B=9 · C=5 · D=0 · tổng=57  ✓ khớp 57
+  ⓘ Script này KHÔNG sửa sổ, KHÔNG đóng mục, KHÔNG đặt hạn. Chờ owner ký (RM-06).
+====================================================================================================
