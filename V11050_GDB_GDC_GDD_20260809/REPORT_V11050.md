@@ -339,6 +339,107 @@ thành «K1 xong».
 lên **5.813 dòng** trong khi nội dung chỉ đổi **29 dòng**. Đã trả về `indent=1` như gốc (V11050b).
 Đối chiếu ở mức JSON: **56 mục trước, 56 mục sau, 0 mục mất, chỉ QD-047 đổi nội dung**.
 
+## GĐ-A' — 30 TỆP TRƯỚC 15:30: **DỪNG 25, ĐẨY 3**, VÌ TIỀN ĐỀ CỦA Q2 SAI
+
+**Q2 owner ký 13:58:** *«28+2 tệp: DUYỆT một lượt deploy có ký»* — ký trên hiểu biết rằng đây là
+**drift tồn đọng vô hại**. Em thi hành đúng trình tự A'1, và **bước (b) làm sập tiền đề đó**.
+
+### Cái mà 28 tệp thật sự chứa
+
+Đọc diff từng tệp (VPS ↔ git HEAD, đã chuẩn hoá CRLF): **tổng 83 dòng thêm / 34 dòng bớt**, và
+**25/28 tệp chỉ đổi ĐÚNG MỘT DÒNG**. Cả 25 dòng đó là **cùng một việc**:
+
+```
++ "claude-opus-4-6", ...                          ← thêm model vào danh sách
++ 'claude-opus-4-6': 0.75,   # WR=73% best AI     ← thêm trọng số hiệu chỉnh
++ {"model": "claude-opus-4-6", "provider": "anthropic"}   ← thêm vào runner (sinh lượt gọi API)
+```
+
+Đây **không phải drift bảo trì**. Đây là **MỘT lần thêm roster `claude-opus-4-6`**, đã commit vào
+git từ trước và **chưa bao giờ đẩy lên máy chủ**. Gọi nó là «drift» — kể cả em ở GĐ-B — là **mô tả
+sai bản chất**: 28 tệp lệch nghe như 28 việc rời rạc, thật ra là **một việc duy nhất**.
+
+### Vì sao đẩy = phạm QD-041, chứng minh bằng mã
+
+`strength_calibrator.py` thêm `'claude-opus-4-6': 0.75`. Hàm nó xuất ra —
+`calibrate_strength(model, region, raw_strength)` — được gọi ở **bảy chỗ trên đường đang chạy**:
+
+| tệp | dòng |
+|---|---|
+| `main.py` | `7451` · `7913` · `8118` |
+| `scheduler.py` | `2986` · `3310` · `4401` · `5730` |
+
+Strength nuôi verdict, verdict nuôi chọn số. ⇒ **Đẩy tệp này là đổi đường chọn số** — đúng thứ
+QD-041 cấm tới 21/08, và đúng thứ sẽ **cắt cửa sổ đo FU-284** mà cả phiên này dựng ra để giữ.
+
+### Một phản biện em tự đặt ra, và câu trả lời
+
+*«Model `claude-opus-4-6` đã chạy sẵn rồi, vậy 25 tệp này chỉ là bắt kịp, đâu có kích hoạt gì mới?»*
+
+Đo trên production: đúng — `claude-opus-4-6` **đã có** trong `predictions`, **đã có** trong
+`model_registry.py` trên VPS, và **17 tệp** trên VPS đã nhắc tên nó. Nên 25 tệp này là các bề mặt
+**bị bỏ quên**, không phải công tắc bật model.
+
+**Nhưng kết luận vẫn không đổi.** *Model đã chạy* không suy ra *đẩy thì vô hại*: thêm một trọng số
+hiệu chỉnh cho model **đang sinh dự đoán chính thức** làm **đổi số ngay lượt kế tiếp**. Cái đổi là
+**hiệu chỉnh**, không phải **sự tồn tại** của model.
+
+### Phân loại 25 tệp giữ lại — để owner ký chính xác, không ký gộp
+
+| nhóm | số | tệp | vì sao xếp vào đây |
+|---|---|---|---|
+| **C · chạm đường chính thức** | **2** | `strength_calibrator.py` · `_v104_phase_b_runner.py` | 7 điểm gọi trên đường sống · `scheduler.py:8932` nạp và nó **sinh thêm lượt gọi API** |
+| **B · lane test** | **3** | `_du_doan_test_engine` · `_du_doan_test_mb_engine` · `_du_doan_test_schema` | `output_eligible=0` nhưng đổi giữa cửa sổ đo |
+| **A · shadow / chẩn đoán** | **20** | 13 `_materialize_*` · `_compute_model_strength_tensor` · `_forensic_7d_pack` · `_v10707_mnmt_doctrine_shadow` · `sandbox_replay_lab` · `trace_extractor` | `diagnostic_only=1` |
+
+### Đã thi hành: 3 tệp KHÔNG dính roster
+
+| tệp | là gì | `main.py` nạp? | md5 khớp git | `py_compile` |
+|---|---|---|---|---|
+| `_test_vps_upload.py` | lớp ghi an toàn `.tmp→fsync→replace` (V11021) | không | ✓ | OK |
+| `_v11033_verdict_fu284.py` | ngưỡng + cửa sổ SAU | không | ✓ | OK |
+| `_v11034_kiem_cheo_quyet_dinh.py` | cổng chéo sổ quyết định | không | ✓ | OK |
+
+**Không tệp nào trong tập `main.py` nạp ⇒ KHÔNG restart** — PID giữ nguyên **1172701**, không đá
+phiên nào. Drift **28 → 25**.
+
+### Trình tự A'1 đã chạy tới đâu
+
+| bước | trạng thái |
+|---|---|
+| **(a)** snapshot gỡ về | ✅ `backups/snapshot_20260809_1400_pre_v11051/` — `web_backend_py.tgz` + `md5_truoc.txt` + `pid_truoc.txt` |
+| **(b)** phân nhóm backend / không-backend | ✅ **đồ thị import truyền tiếp từ `main.py`** bằng `ast` (bắt cả `import`, `from`, `importlib.import_module`, `__import__`), hợp local ∪ VPS = **134 module đến được** ⇒ 9 backend / 19 không-backend. **Chính bước này lộ ra roster** |
+| **(c)** md5 khớp git sau chuẩn hoá CRLF | ✅ **3/3** cho phần đã đẩy |
+| **(d)** restart có kiểm soát | ⏸ **không cần** cho 3 tệp đã đẩy · **HOÃN** cho nhóm B/C chờ owner |
+| **(e)** health 200 · so PID | ✅ health 200 · PID **1172701 → 1172701** (không restart) |
+| **(f)** drift K3 = 0 | ⛔ **chưa** — còn **25** tệp đang chờ owner quyết |
+
+### Ba lựa chọn xin owner ký (ghi vào `FU-393`)
+
+| | phương án | hệ quả |
+|---|---|---|
+| **(a)** ⭐ | giữ cả **25** tới **21/08**, đẩy một lượt cùng gói mở khoá | cửa sổ FU-284 **nguyên vẹn**; K3 = 0 đạt ngày 21/08 thay vì hôm nay |
+| **(b)** | đẩy ngay **20 tệp nhóm A** (shadow), giữ **B+C** tới 21/08 | K3 còn 5; bề mặt shadow đổi giữa cửa sổ ⇒ số shadow trước/sau **không so được** |
+| **(c)** | owner ký đè QD-041, đẩy cả 25 ngay | K3 = 0 hôm nay, **nhưng ngày đẩy thành ĐIỂM GÃY của FU-284**: cửa sổ SAU phải tính lại từ ngày đó và ngưỡng phải tính lại theo n mới (RM-03) |
+
+Em **không tự chọn** — Q2 ký trên tiền đề khác với sự thật, nên đây là quyết định mới của owner,
+không phải chi tiết thi hành.
+
+---
+
+## ⚠ MỘT MÂU THUẪN SỐ PHẢI GỠ TRƯỚC 20/08 — NGƯỠNG FU-284
+
+| nguồn | ngưỡng |
+|---|---|
+| `docs/NGUONG_FU284_N12_20260809.md` + `_v11033_verdict_fu284.py` (V11049, owner ký 11:47) | **9,53** điểm |
+| PROMPT LẦN 9, phần cổng (13:58) | **12,00** điểm |
+
+Hai con số **không thể cùng đúng**. 9,53 có dẫn xuất viết sẵn *(√((1/14+1/12)/(1/14+1/13)) × 9,33)*
+và **đã commit trước khi nhìn bất kỳ số đo nào** (RM-03). 12,00 chưa có dẫn xuất kèm theo.
+
+Không chặn việc gì hôm nay vì **cấm đọc sớm** — nhưng phải chốt **trước 20/08**, và **chốt bằng dẫn
+xuất, không bằng số tròn**. Sửa ngưỡng sau khi nhìn số là vô hiệu hoá toàn bộ phép đo.
+
 ---
 
 ## LOCK-IN / OPEN / NEXT ACTION
