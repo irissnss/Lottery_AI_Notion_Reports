@@ -88,3 +88,80 @@ thay vì được chép thẳng vào báo cáo.
 
 Và việc đáng giá thứ hai của GĐ-B là **không làm B2** — trong khi làm nó thì dễ, có số để khoe, và
 gần như chắc chắn không ai phát hiện nguồn sai.
+
+
+---
+
+# PHẦN NỐI — V11051 · V11052 (chiều 09/08, sau PROMPT LẦN 9)
+
+## Owner nói gì (NGUYÊN VĂN, bốn quyết định đã ký 13:58)
+
+> **Q1.** *v93: ĐƯA VÀO danh sách mở khoá 21/08. ĐƯỢC thẩm định dẫn xuất READ-ONLY … CẤM dùng kết
+> quả làm căn cứ đổi số trước 21/08.*
+> **Q2.** *28+2 tệp: DUYỆT một lượt deploy có ký — theo đúng trình tự A'1.*
+> **Q3.** *FU-360 phương án ③ — ĐÃ DUYỆT … nếu chạm đường ghi production → để sáng mai 10/08.*
+> **Q4.** *FU-391 ĐÓNG · FU-388 ĐÓNG · FU-390 CẤM đóng hàng loạt, rà THEO NHÃN.*
+>
+> *«Bốn mục dưới đây là quyết định đã ký — thi hành, không hỏi lại.»*
+
+## Chỗ agent KHÔNG thi hành nguyên văn, và vì sao
+
+Owner ghi rõ *«thi hành, không hỏi lại»*. Agent vẫn dừng **một** mục — và đây là lý do.
+
+**Q2 ký trên một tiền đề, sự thật là thứ khác.** Lệnh duyệt đẩy 28+2 tệp được ký khi cả owner lẫn
+agent tin đó là **drift tồn đọng vô hại** — chính agent mô tả như vậy ở GĐ-B. Bước (b) của trình
+tự A'1 (phân nhóm backend) buộc phải đọc diff, và diff cho thấy: **25/28 tệp đổi đúng MỘT dòng, và
+cả 25 là cùng một việc — thêm `claude-opus-4-6`**.
+
+`strength_calibrator.py` thêm `'claude-opus-4-6': 0.75`, mà `calibrate_strength(...)` được gọi ở
+**bảy chỗ** trong `main.py` và `scheduler.py` đang chạy. Đẩy nó **là đổi đường chọn số** — thứ
+`QD-041` cấm tới 21/08, và cũng chính là thứ **cắt cửa sổ đo FU-284** mà cả phiên này dựng ra để
+giữ. Trong cùng prompt lần 9, owner vẫn ghi *«20/08 chốt mọi phép đo … 21/08 mở khoá»*.
+
+Nên đây **không phải agent cãi lệnh**: đây là **hai lệnh của owner mâu thuẫn nhau khi tiền đề của
+lệnh sau hoá ra sai**. Agent thi hành phần không mâu thuẫn (3 tệp không dính roster), dừng phần
+mâu thuẫn, và trình **ba phương án** để owner ký lại trên sự thật đúng.
+
+Agent cũng tự phản biện: *«model đã chạy sẵn rồi, đâu kích hoạt gì mới?»* — đúng, `claude-opus-4-6`
+đã có trong `predictions` và `model_registry` trên VPS. Nhưng cái đổi là **hiệu chỉnh**, không phải
+**sự tồn tại**. Kết luận không đổi.
+
+## Việc đáng kể thứ hai: agent tự bác bỏ phát hiện lớn nhất của chính mình
+
+Ở GĐ-B agent nêu bảng `v93_verdict_weight_recalibration_shadow` là phát hiện lớn nhất: **65,6%**
+dòng đề xuất trọng số lệch so bản đang chạy, kèm những con số nghe rất mạnh (`SKIP` 0,40 ↔ 1,19).
+
+Owner ký Q1 cho thẩm định. Kết quả: dẫn xuất là
+`proposed = clip(0.5 + any_hit_pct/100, 0.4, 1.5)` — **hai hằng số không có nguồn gốc**, và chú
+thích của chính tác giả ghi *«For now just store …»*. Tách theo trọng số hiện tại thì
+`any_hit_pct` ba nhóm là **54,2% · 61,2% · 51,3%** — gần như nhau — trong khi «chênh» là
+**+0,64 · +0,11 · −0,49**. ⇒ **Chênh do trọng số đang dùng, không do hiệu năng.**
+
+Agent **rút lại** hai câu của chính mình. Agent có kèm ba câu cảnh báo ở B4 nên **không con số nào
+bị dùng làm căn cứ**, nhưng tiêu đề *«phát hiện lớn nhất»* đã đi trước phần thẩm định — đó là lỗi
+trình bày, ghi lại theo RM-17.
+
+## Ba chỗ cổng tự quay lại cắn người dựng ra nó
+
+**① Cổng `THI_HANH_57` đòi đóng đúng thứ vừa được chứng minh là còn sống.** Nó đòi đóng
+`FU-160/162/164` (ba mã GĐ-B vừa chứng minh có 6 bảng sống 122 ngày), rồi sau đó đòi đóng cả
+`FU-390` — thứ owner **vừa cấm đóng hàng loạt trong chính prompt này**. Nguyên nhân: cổng **tính
+lại danh sách mỗi lần chạy** thay vì ghim tập đã được ký lúc 00:33.
+
+**② Một ô `kiem_code` rỗng làm sập cả bộ kiểm sổ quyết định**, và sập **trong im lặng** — in
+«3 phép trôi» rồi chết giữa chừng, nên chính con số 3 đó cũng là của một lượt chạy chưa hết sổ.
+
+**③ Bộ sinh sáu mặt chỉ ghi một mặt.** Thêm RM-20 vào `CLAUDE.md` thì `AGENTS.md` có,
+`GEMINI.md` **không** — mà script vẫn in *«SÁU MẶT ĐỒNG BỘ»*. `_v10925_rule_sync_check.py` **chưa
+bao giờ** sinh `GEMINI.md`, dù `CLAUDE.md` khai cả hai là mặt sinh và cấm sửa tay cả hai.
+
+Cả ba đều là **cổng báo xanh cho thứ nó chưa kiểm** — đúng họ với cổng đóng băng QD-041 từng luôn
+báo xanh (RM-15). Đã vá cả ba.
+
+## Chỗ agent nói thẳng
+
+Prompt lần 9 viết *«thi hành, không hỏi lại»*, và agent hiểu vì sao owner viết vậy: phiên trước có
+quá nhiều câu hỏi. Nhưng **dừng 25 tệp roster không phải là hỏi lại** — nó là báo rằng **lệnh và
+tiền đề của lệnh đã tách nhau**. Nếu agent cứ đẩy cho đúng chữ, thì đến 20/08 phép đo FU-284 sẽ
+vô giá trị và **không ai biết vì sao**, vì thay đổi được giấu trong một dòng của 25 tệp mang nhãn
+«drift».
