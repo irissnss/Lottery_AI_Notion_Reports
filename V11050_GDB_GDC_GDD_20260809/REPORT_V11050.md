@@ -440,6 +440,120 @@ và **đã commit trước khi nhìn bất kỳ số đo nào** (RM-03). 12,00 c
 Không chặn việc gì hôm nay vì **cấm đọc sớm** — nhưng phải chốt **trước 20/08**, và **chốt bằng dẫn
 xuất, không bằng số tròn**. Sửa ngưỡng sau khi nhìn số là vô hiệu hoá toàn bộ phép đo.
 
+## Q1 — THẨM ĐỊNH DẪN XUẤT v93: **ĐÍNH CHÍNH CHÍNH PHÁT HIỆN LỚN NHẤT CỦA GĐ-B**
+
+Ở GĐ-B em nêu `v93_verdict_weight_recalibration_shadow` như phát hiện lớn nhất: **65,6%** số dòng
+đề xuất trọng số lệch ≥0,05 so bản đang chạy. Em có kèm ba câu cảnh báo, trong đó câu đầu là
+*«chưa kiểm dẫn xuất»*. Owner ký Q1 cho thẩm định. **Thẩm định xong: con số đó là TẠO TÁC CỦA
+CÔNG THỨC, không phải tín hiệu từ dữ liệu.**
+
+### Dẫn xuất thật, trích nguyên văn từ mã
+
+```python
+# Proposed weight: simple linear scale of any_hit_pct anchored at CHOT_HA's any_hit_pct.
+# We compute relative-to-CHOT_HA later if available. For now just store any_hit_pct/100 baseline.
+proposed = max(0.4, min(1.5, round(0.5 + 1.0 * (any_pct / 100.0), 3))) if n >= 5 else cur_w
+```
+
+Tức `proposed = clip(0.5 + any_hit_pct/100, 0.4, 1.5)`. **Hai hằng số `0.5` và `1.0` không có
+nguồn gốc nào** — không dẫn xuất, không hiệu chuẩn. Và chú thích của **chính tác giả** ghi
+*«**For now** just store …»* · *«We compute relative-to-CHOT_HA **later if available**»*: đây là
+**bản tạm chưa làm xong**, và «for now» đã chạy **122 ngày**.
+
+### Kiểm định danh trên production (30 ngày)
+
+| | |
+|---|---|
+| tổng dòng | **957** |
+| khớp **đúng** công thức (sai số < 0,0015) | **687** = **71,8%** |
+| còn lại `n_total < 5` ⇒ `proposed = current`, lệch **bằng 0 theo cấu tạo** | **299** |
+
+### Chứng minh là tạo tác — đọc cột cuối trước
+
+| trọng số hiện tại | n | đề xuất TB | **chênh TB** | `any_hit_pct` TB |
+|---|---|---|---|---|
+| **0,40** | 182 | 1,042 | **+0,642** | **54,2%** |
+| **1,00** | 206 | 1,112 | **+0,112** | **61,2%** |
+| **1,50** | 270 | 1,013 | **−0,487** | **51,3%** |
+
+Tỉ lệ trúng thực tế ba nhóm là **54,2% · 61,2% · 51,3%** — **gần như nhau**. Nhưng «chênh» là
+**+0,64 · +0,11 · −0,49**. ⇒ **Chênh được quyết định gần như hoàn toàn bởi TRỌNG SỐ ĐANG DÙNG,
+không phải bởi hiệu năng.** `any_hit_pct` trung bình 55,2% nên công thức ép mọi thứ về **~1,05**,
+trong khi ma trận hiện tại lấy hai đầu **0,4** và **1,5**. Nhóm đang mang 0,4 buộc phải «lệch dương
+lớn»; nhóm đang mang 1,5 buộc phải «lệch âm lớn». Đó là **hồi quy về trung bình do công thức**.
+
+### Bốn thứ bắt buộc mà bảng KHÔNG có
+
+`baseline/nền` ❌ · `vif` ❌ · `ci/z/p_value` ❌ · `n_days` ❌. Sàn mẫu duy nhất là **`n ≥ 5`**, và
+đó là **số lượt**, không phải **số ngày**.
+
+### Em rút lại hai câu của chính em
+
+| B4 viết (GĐ-B) | sau thẩm định |
+|---|---|
+| *«hệ đang hạ giá `SKIP` xuống 0,40 trong khi dữ liệu 30 ngày nói nó đáng ~1,1»* | **RÚT LẠI** — dữ liệu không nói vậy, `0.5 + any/100` nói vậy |
+| *«đang tin `CHOT_HA` NO_TOKEN ở 1,50 trong khi dữ liệu nói ~0,82»* | **RÚT LẠI**, cùng lý do |
+| *«628/957 = 65,6% lệch ≥0,05»* | **số đúng**, nhưng **vô giá trị làm bằng chứng** (RM-17) |
+
+Không con số nào bị dùng làm căn cứ — ba câu cảnh báo ở B4 đã chặn. **Nhưng cách trình bày B4
+nghiêng về phía «có phát hiện lớn» hơn mức bằng chứng cho phép.** Đó là lỗi trình bày của em, ghi
+lại đây, không giấu.
+
+### Giá trị còn lại — KHÔNG bằng không
+
+Các cột **thô** (`n_total` · `n_main_hit` · `n_secondary_hit` · `any_hit_pct` theo
+`miền × verdict × họ model`, **122 ngày liên tục, đo tiến, không backfill**) vẫn là dữ liệu quý.
+**Chỉ mỗi cột `proposed_weight_30d` là vô dụng.** Đề nghị: **GIỮ bảng · BỎ QUA cột đề xuất · viết
+lại dẫn xuất trong gói 21/08.**
+
+Khung ngưỡng đăng ký trước (owner đề xuất ≥3pp · z≥1,96 · ≥30 ngày · shadow trước) đã soạn đủ ở
+`docs/B1_THAM_DINH_DAN_XUAT_V93_20260809.md` §8, kèm điều kiện **phải thêm 4 cột** mới kiểm được.
+
+---
+
+## Q3 — FU-360 ③: VÁ XONG, THỬ CHẶN **5/5**, NHƯNG **KHÔNG DEPLOY HÔM NAY**
+
+Owner ký: *«Deploy sớm nhất sau 18:15 hôm nay, CHỈ KHI thử chặn thật đạt **và không chạm đường ghi
+đang chạy**; nếu chạm đường ghi production → **để sáng mai 10/08, kèm canh 24h**.»*
+
+Bản vá nằm trong `save_prediction()` của `database.py` — **chạm thẳng đường ghi production**.
+⇒ Theo đúng điều kiện owner đặt: **sáng mai 10/08 + canh 24h**.
+
+### Một tinh chỉnh so với câu chữ — và vì sao bắt buộc
+
+Câu ký là *«chặn ở tầng GHI khi `run_source` khác»*. Làm đúng chữ đó sẽ **hỏng production ngay**:
+đường chính thức vốn đi qua **nhiều nhãn nối tiếp** — `auto_daily` → `rerun_post_mn` /
+`rerun_post_mt` → `rerun_after_verify` (đo trên DB: 9 giá trị `run_source`, 6 thuộc đường chính
+thức). Chặn mọi nhãn khác nhau là **chặn luôn luồng hợp lệ**.
+
+Cái cần chặn là **bắc cầu GIỮA HAI LANE**, không phải mọi đổi nhãn. Nên phép so là **lane**:
+`TEST` = nhãn chứa `shadow`/`du_doan_test`/`test`/`sandbox` · `OFFICIAL` = còn lại · **rỗng ⇒
+không chặn** (thà cho qua còn hơn chặn nhầm dòng lịch sử chưa gắn nhãn).
+
+### Thử chặn thật — trên BẢN SAO, gọi HÀM THẬT
+
+`_v11052_thu_chan_cheo_lane.py` dựng DB tạm từ **387/387 câu lược đồ thật** đọc từ `sqlite_master`
+production (**không chép một dòng dữ liệu nào**), rồi gọi **chính `save_prediction` thật** — không
+dựng bản mô phỏng rồi kiểm bản mô phỏng (RM-10).
+
+| # | tình huống | mong đợi | kết quả |
+|---|---|---|---|
+| 1 | ghi mới lane OFFICIAL | QUA | ✅ QUA |
+| 2 | ghi đè **cùng lane** (`auto_daily` → `rerun_post_mt`) | QUA | ✅ QUA — **luồng chính thức không gãy** |
+| 3 | ghi đè **chéo lane** OFFICIAL→TEST | CHẶN | ✅ CHẶN, số cũ giữ nguyên |
+| 4 | ghi đè **chéo lane** TEST→OFFICIAL | CHẶN | ✅ CHẶN |
+| 5 | `run_source` cũ **rỗng** | QUA | ✅ QUA — không chặn nhầm |
+
+`CHAN_CHEO_LANE_V11052=DAT` — **5/5**.
+
+**Vấp khi thử:** lần đầu chỉ chép lược đồ `predictions` ⇒ chết ở `get_setting()` vì thiếu
+`app_settings`. Đoán tiếp xem hàm còn chạm bảng nào là đúng thứ **RM-10** cấm ⇒ chép **cả lược
+đồ**, không đoán.
+
+**Canh 24h sau khi deploy mai:** đếm dòng `[CHAN CHEO LANE]` trong journal. **> 0 nghĩa là đã từng
+có va chạm thật** — và vì khoá duy nhất thiếu `run_source`, đó là bằng chứng duy nhất có thể thu
+được về một loại mất dữ liệu trước nay **không để lại dấu vết nào**.
+
 ---
 
 ## LOCK-IN / OPEN / NEXT ACTION
