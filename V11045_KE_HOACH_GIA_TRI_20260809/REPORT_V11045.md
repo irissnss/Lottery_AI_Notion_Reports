@@ -135,6 +135,17 @@ app.add_middleware(SessionMiddleware,
 ```
 `systemctl cat lottery | grep -cE 'SESSION_SECRET|EnvironmentFile'` ⇒ **0**.
 
+> ## ⛔ ĐÍNH CHÍNH V11049 (09/08 12:30) — MỤC P0 NÀY **SAI**
+>
+> Câu bên dưới **không đúng**. Đo lại: `main.py:106` và `:177` gọi `load_project_env()` **TRƯỚC**
+> dòng 206; `env_loader` nạp `.env` gốc dự án (quyền **600**) có `SESSION_SECRET` thật **86 ký
+> tự**. Nên dòng 206 dùng **secret thật**, KHÔNG phải chuỗi mặc định. **KHÔNG có lỗ hổng P0.**
+>
+> Phép đo cũ sai vì đọc `/proc/PID/environ` — đó là môi trường **lúc exec**, không phải
+> `os.environ` runtime mà `load_dotenv` ghi vào. Chi tiết + chứng minh: báo cáo **V11049**.
+>
+> *(Vẫn đã làm cứng: gỡ hẳn chuỗi mặc định khỏi mã nguồn + fail-fast nếu thiếu biến.)*
+
 **Production đang ký session cookie bằng secret mặc định hardcode trong mã nguồn.** Ai biết chuỗi
 đó **giả mạo được cookie admin** — và có toàn quyền lên mọi thứ agent vừa bỏ công bảo vệ hôm qua.
 
