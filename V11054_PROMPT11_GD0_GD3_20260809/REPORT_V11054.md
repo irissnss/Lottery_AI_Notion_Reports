@@ -959,6 +959,31 @@ tên mã vào tiêu đề/thư mục LÀ cấp mã**.
 
 ---
 
+## 7bis. Vướng vấp
+
+**7bis.1 — Sáu lần kết luận sai trong một phiên, cùng một khuôn.** Chi tiết ở §5bis②. Khuôn chung:
+**đề xuất trước, đọc sau**. Bốn trong sáu là đề xuất lại thứ **đã có sẵn** hoặc **đã bị bác bỏ có
+bằng chứng** — trong đó một thứ owner **ký bỏ vài giờ trước** khi em đề xuất lại.
+
+**7bis.2 — Nguồn hạng hai bị tưởng là nguồn gốc.** Sáu tệp phiên Claude 36,6 MB hoá ra là **một
+bản nhân bản sáu lần** (`md5` sau khi bỏ dòng 1 giống hệt: `4bf972f744c050770946a1288801f783`), và
+**không chứa lời owner gốc nào** — 11 khối tưởng là lời owner thật ra là 6 bản tóm tắt tự động +
+1 caveat + 4 dòng lệnh `/model`. Tệp còn **cắt cụt giữa câu ở dòng 1457**. Ghi ra để không ai
+(kể cả agent sau) trích nó như lời owner gốc — **RM-13**.
+
+**7bis.3 — Bộ đọc Notion lượt đầu báo xong nhưng thiếu 6/14 hub.** Chỉ lộ ra vì có agent phản biện
+**tự đếm lại số trang con**. Nếu tin lượt đầu thì đã bỏ mất `17_RULES_INVENTORY` (nơi giữ vòng đời
+`MINED_RULES_MODE`), `HARD LOCKS OFFICIAL`, `SP-4.1`, hai trang trong kho nghĩa địa, và
+`FU-222`/`FU-223`. **Một bộ đọc không có phép đếm lại thì luôn trông như đã đọc đủ.**
+
+**7bis.4 — Em đo sai nền hai lần trong một phiên.** Lần một: drift băm thô trên kho CRLF ra
+«465 tệp lệch», số thật **30**. Lần hai: gan đo với nền 43% thay vì **6,09%**. Cả hai đều là
+**RM-18/RM-09**, và cả hai đều cho ra kết luận nghe rất chắc chắn trước khi bị bác.
+
+**7bis.5 — Việc đáng giá nhất của phiên không phải thứ em làm.** Là việc owner **chặn lại và bắt
+đi đọc**. Nếu không có lệnh đó, sáu kết luận sai ở trên đã thành sáu đề xuất, và ít nhất hai trong
+số đó sẽ chạm production.
+
 ## 8. Gỡ về
 
 Phiên này tới thời điểm viết **chưa đụng production** ngoài V11053 (đã ghi ở báo cáo đó).
