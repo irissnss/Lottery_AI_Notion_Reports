@@ -296,11 +296,54 @@ B4/B5/B6/B7 **không đụng runtime** — không có gì để gỡ. Mục `kie
 | B2 | chạy lại `loz_stage_trace` **sau khi** hết drift | sau K3 |
 | GĐ-C | **18:05** bộ 25 phép (C23/C24/**C25** lần đầu hợp lệ) · **19:35** lane · bầy đàn · trace | **tối nay** |
 
+### B6 (tiếp) — BA LỖI LỘ RA NGAY KHI ĐEM `kiem_code` MỚI ĐI CHẠY THẬT
+
+Viết `kiem_code` xong mà không chạy sổ quyết định thì coi như chưa viết. Chạy `_v10920` thì cả ba
+lỗi dưới đây lộ trong một lượt — và **lỗi đầu tiên nguy hơn hai lỗi kia cộng lại**.
+
+**① Một ô `kiem_code` RỖNG làm SẬP CẢ BỘ KIỂM — và sập trong im lặng.**
+`CLAUDE.md` cho phép *"không kiểm được thì để rỗng + nêu lý do"*, và K2 dùng đúng quyền đó. Nhưng
+`_v10920_decision_ledger.chay_bo_kiem` đọc thẳng `k['chay_lenh'][0]` ở dòng cuối hàm ⇒ **`IndexError`**
+⇒ **bộ kiểm dừng giữa chừng**, phần còn lại của sổ **không được đọc mà không ai biết**. Trước khi
+vá, nó in *«3 PHÉP TRÔI»* rồi chết; sau khi vá, số thật là **2**. Tức con số «3» kia cũng không đáng
+tin — nó là con số của một lượt chạy **chưa hết sổ**.
+Vá: `chay_lenh` rỗng ⇒ trả `None` = *«chưa có phép máy»* kèm lý do — khác hẳn `TRÔI` (đã kiểm và
+lệch). Rỗng mà **không nêu lý do** thì in thẳng `KHÔNG NÊU LÝ DO (phải nêu)`.
+
+**② Cổng `THI_HANH_57` đòi đóng đúng ba mã vừa được chứng minh là còn sống.**
+QD-054 ký **một bảng 57 mục cụ thể**, nhưng cổng gọi `phan_loai()` **tính lại từ đầu mỗi lần chạy**
+⇒ mọi mã mới hợp mẫu đều bị hút vào nhóm A. Ngày 09/08 nó đòi đóng **`FU-392`** (sinh cùng ngày),
+**`FU-387`/`FU-388`** (sinh ở GĐ-A) và **`FU-160/162/164`** — tức **đóng lại chính ba mã mà GĐ-B
+vừa chứng minh có 6 bảng sống 122 ngày**. Nghe theo là **đóng hàng loạt mù**, đúng thứ owner cấm.
+Cùng họ với cổng đóng băng QD-041 từng **luôn báo xanh** (RM-15): **cổng đo một tập trôi theo thời
+gian thì không còn đo cái nó được ký để đo**. Vá: ghim `NGOAI_PHAM_VI_KY_0033` **có nêu lý do từng
+mã**, và cổng **bêu tên** những mã bị bỏ ra — cắt phạm vi trong im lặng đọc y như «đã phủ hết».
+
+**③ `chay_lenh` của K1 viết sai lược đồ, và cách sửa hiển nhiên thì treo 300 giây.**
+Bản đầu nhét **8 đường dẫn** vào `chay_lenh`, nhưng trường đó là **MỘT lệnh + tham số** ⇒ nó chạy
+script đầu với 7 script kia làm `argv`. Sửa hiển nhiên là gọi thẳng hook `code_quality_guard.py`
+(hook vốn gọi đủ 8) — thử thật thì **treo tới hết giờ**: hook đọc `sys.stdin.read()`, mà
+`subprocess.run(capture_output=True)` **không đóng stdin**. Vá: `_v11050_kiem_cong.py` **đọc danh
+sách `SOI` từ chính hook** (không chép tay — RM-10) rồi chạy từng cổng với `stdin=DEVNULL`.
+Kết quả: **8/8 cổng thoát 0** ⇒ `CONG_K1_V11050=DAT`.
+
+**Sổ quyết định sau ba vá: `KHÔNG CÓ QUYẾT ĐỊNH NÀO BỊ TRÔI`** (từ «3», mà «3» còn là số của lượt
+chạy chưa hết sổ).
+
+**Nói thẳng về K1:** dấu ✓ đó là **nửa K1**. Nó chứng minh cổng **chạy được**, không chứng minh cổng
+**chặn được**. Nửa còn lại đòi mỗi cổng có bằng chứng RM-15 được **ghi lại**, và sổ đăng ký đó
+**chưa tồn tại** ⇒ **K1 chưa đạt đủ**. Câu này in thẳng trong output của cổng để không ai đọc dấu ✓
+thành «K1 xong».
+
+**Phụ chú định dạng:** commit V11050 ghi `OWNER_DECISION_LEDGER.json` bằng `indent=2` làm diff phình
+lên **5.813 dòng** trong khi nội dung chỉ đổi **29 dòng**. Đã trả về `indent=1` như gốc (V11050b).
+Đối chiếu ở mức JSON: **56 mục trước, 56 mục sau, 0 mục mất, chỉ QD-047 đổi nội dung**.
+
 ---
 
 ## LOCK-IN / OPEN / NEXT ACTION
 
-**LOCK-IN:** biên `anchor_date` đã chặn ở **cả 2 chỗ** thuộc tensor + cổng thử chặn thật, deploy
+**LOCK-IN:** sổ quyết định **0 phép trôi** (từ «3», và «3» là số của lượt chạy chưa hết sổ) · biên `anchor_date` đã chặn ở **cả 2 chỗ** thuộc tensor + cổng thử chặn thật, deploy
 PID 1172701 · drift K3 có **phép máy đầu tiên** và con số thật là **30**, **0 tệp bị sửa thẳng trên
 VPS** · QD-047 có `kiem_code` cho K3 (thật), K1 (một nửa, khai rõ), K2 (rỗng, có lý do) · 6 bảng
 FU-160/162/164 **đều sống**, không gỡ gì · FU-360 có ba phương án dựa trên mã thật.
