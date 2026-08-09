@@ -169,3 +169,21 @@ lịch sử vào git (7.521 dòng) · cổng §61 ô status chặn được · t
 ---
 
 *Báo cáo này đẩy **cùng phiên** với commit (A55 · §57.2).*
+
+---
+
+## PHỤ LỤC — V11044b: FU-385 tab «Cursor Rules» (cùng phiên)
+
+**Tầng 1 (trùng khoá):** hai nút cùng `data-v87tab="rules"` ⇒ nhánh `else if (tab==='rules')` lặp
+2 lần; nhánh đọc `d.cursor_rules` (`monitoring.html:8180`) là **mã chết**. Sửa: nút + nhánh
+«Cursor Rules» đổi khoá `rules` → **`cursorrules`**.
+
+**Tầng 2 (nguồn rỗng VPS):** `.cursor/rules/*.mdc` chỉ có ở local (deploy loại `.cursor/`). Đẩy
+**4 tệp .mdc** lên VPS; block báo rõ khi thiếu thay vì rỗng câm (RM-13). Sau deploy
+`build_payload().cursor_rules = 4 mục`.
+
+**GĐ-3.1 sửa nhãn (§60, làm bất kể owner):** «12 tabs» → **29 tab** (đếm nút thật) ·
+«Load + 60s auto-refresh» → **Load 1 lần** (V10773 đã cắt — lời hứa cũ nay SAI).
+
+**Deploy:** `monitoring.html` + `_v87_master_board.py` + 4 `.mdc` → VPS · PID 1118902 → 1141956 ·
+health 200. Commit riêng `525fb83`.
