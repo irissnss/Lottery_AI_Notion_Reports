@@ -20,7 +20,8 @@ Hai thứ đáng kể hơn cả hai việc trên:
    khi chưa chứng minh gì, rồi báo `2/5` vu oan cho bản vá đúng. Gốc: **phán quyết phụ thuộc giờ
    treo tường**.
 2. **P4 lộ ra một cơ chế đang sống trên đường chọn số làm NGƯỢC HẲN thiết kế owner**:
-   `_apply_hot_cold_post_filter` **dìm số gan cao xuống ×0,3** trước khi vào top-10.
+   `_apply_hot_cold_post_filter` **dìm số gan cao xuống ×0,3** ở tầng **output từng model**
+   *(đính chính V11057 — bản gốc ghi «trước khi vào top-10» là **sai tầng**, xem banner §3.4)*.
 
 **Không đụng:** prompt · đường chọn số · roster · `/du-doan` · 4 bảng khoá.
 
@@ -91,6 +92,29 @@ khi hiệu ứng chỉ 3–6pp — **thiết kế đo yếu hơn hiệu ứng kh
 
 **Dấu đảo chiều giữa các thước trong cùng một miền** (MT pool −2,6pp nhưng bạch thủ +14,6pp;
 MB pool −3,6pp nhưng luật C +9,1pp) — đúng RM-04: n nhỏ **không ổn định**, không phải «yếu».
+
+> ## ⚠ ĐÍNH CHÍNH V11057 (10/08 tối) — MỤC 3.4 NGAY DƯỚI ĐÂY GHI **SAI TẦNG**
+>
+> **TRƯỚC:** *«`combo_super._apply_hot_cold_post_filter` **đang sống trên đường chọn số**»* và
+> *«số gan cao đang bị **dìm tới ×0,3** trước khi vào top-10 — pool mà phép đo đang soi đã bị
+> trừng phạt vì có gan»*.
+>
+> **SAU:** bốn điểm gọi đều nằm trong **`run_combo_super()`** (`combo_super.py:2029`) và
+> **`_make_prediction()`** (`main.py:7892 · 8099 · 8352`) — tầng **OUTPUT TỪNG MODEL**.
+> Bảng xếp hạng `ranked_numbers` của bundle do **`generate_final_bundle()`** (`main.py:9405`)
+> ráp — **HÀM KHÁC**, và hàm đó **không gọi** bộ nhân nóng/lạnh.
+>
+> **Hệ quả:** caveat *«pool đã bị trừng phạt vì có gan»* **vẫn còn hiệu lực nhưng chỉ GIÁN TIẾP**
+> — bộ nhân định hình cái mà **từng model xuất ra**, rồi những output đó mới thành phiếu vào pool.
+> Nó **không** trực tiếp xếp lại top-10 của bundle như câu chữ gốc nói.
+>
+> **Con số P4 KHÔNG đổi:** gộp 3 miền phân tầng vẫn **−0,94pp · CI95 [−5,5 … +3,6] · MDE 4,62pp**.
+> Chỉ **mô tả cơ chế** sai tầng.
+>
+> **PHIÊN BẢN:** phát hiện bởi tầng phản biện đối kháng V11057 (10/08 tối) · `REPORT_V11057 §7.1`
+> · `QD-057`.
+> **KIỂM:** `grep -n "_apply_hot_cold_post_filter" web/backend/*.py` rồi đối chiếu mỗi số dòng với
+> hàm bao ngoài · `grep -n "def generate_final_bundle" web/backend/main.py` → `9405`.
 
 ### 3.4 · Phát hiện nặng nhất — và nó lật ngược cách đọc chính con số ở 3.3
 
