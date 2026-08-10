@@ -941,6 +941,159 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 
 ---
 
+## 6ter. SỔ ĐĂNG KÝ VẤN ĐỀ — TRÙNG LẶP · MÂU THUẪN · CHƯA RÕ · CẦN XÁC NHẬN · CẦN LIVE
+
+> Bản đầy đủ kèm bản máy đọc được: `artifacts/v11054/SO_DANG_KY_VAN_DE_V11054.md` và
+> `artifacts/v11054/dang_ky_v11054.json`.
+
+## A. TRÙNG LẶP — cùng một việc làm ở nhiều nơi
+
+| # | trùng cái gì | các bản đang tồn tại | hại | xử |
+|---|---|---|---|---|
+| **T1** | **Thang trạng thái luật** — 4 thang cho cùng một việc | ① `RR §20` primary/secondary/**noise** · ② Rule Scan Spec primary/secondary/**shadow/stale** · ③ thang sức mạnh ⭐STRONG/STRONG/MODERATE/MARGINAL/WEAK (`KL §5.5`) · ④ `window_verdict` HIGH_CONF_CURRENT/MONITOR_ONLY/STABLE_BUT_STALE/SPIKE_DETECTED | model đọc 4 thang khác nhau cho cùng một luật ⇒ mâu thuẫn nội tại | **gộp còn 1** — gói 21/08 |
+| **T2** | **Cửa sổ tuần** — 3 cách nói | ① `RR §19` quét 1W→8W · ② Prompt Spec "Current-Week 1-8" · ③ `KL §6` doctrine **12W/16W FIRST** | prompt vừa bảo quét 8 tuần vừa bảo soi 12–16 tuần | **chốt một chuẩn** — 21/08 |
+| **T3** | **Hàm phân họ model** | `_du_doan_test_engine.py:84` và `_du_doan_test_schema.py:805` — **hai bản `_family()` riêng** | đẩy lệch một bản ⇒ `leakage_audit.source_families` lệch `model_scoreboard.model_family` | **đẩy cùng lô** (đã ghi trong tiêu chí clear GĐ-2) |
+| **T4** | **Ba cron shadow liền nhau** | **19:16** V93.1 (3 bảng) · **19:18** V94.1 (3 bảng) · **19:20** V95 (2 bảng) → **8 bảng**, 3 endpoint đọc chồng nhau | 3 job, 8 bảng, panel trùng | **gộp** — đề xuất, chưa làm |
+| **T5** | **Đo trôi (drift)** | `_materialize_drift_monitor.py` **ĐANG CHẠY** (23:50, 1.128 dòng) · `_v11033_canh_troi_dac_trung.py` **KHÔNG CÓ trên VPS** | hai bộ cùng tên "drift", một sống một chết, sổ ghi nhầm cái chết là "đã deploy" | xem **M5** |
+| **T6** | **Gan** | `_v100_gan_calculator.py` + `gan_signal_shadow_v100` (**246.000 dòng, chết 09/05**) · ngưỡng gan khai ở `V105.19 §8.1` · 6 đặc trưng gan/hot/cold **vẫn còn trong ML** dù đã gỡ khỏi prompt | khái niệm nằm 3 nơi, 1 nơi chết, 1 nơi vẫn chạy ngầm trong ML | xem **A3/A4** |
+
+---
+
+## B. MÂU THUẪN — hai nguồn nói ngược nhau
+
+| # | mâu thuẫn | bên A | bên B | ai đúng | nguồn |
+|---|---|---|---|---|---|
+| **M1** ⭐ | **Prompt tự chống lại chính nó** | `RR §4`: *"nhiều model cùng chọn 1 số KHÔNG có nghĩa số đó đúng… đồng thuận giả"* | `RR §11`+`§18`: *"KHÔNG tự tạo số mới nếu Rule Tails đã có gợi ý mạnh"* | **§4 đúng** — §11/§18 **ép** hội tụ rồi §4 gọi là giả | `gpt_analyzer.py:482+` |
+| **M2** | **Công thức nguồn MN** | `V105.19 §7` (owner khoá): `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) **D-2**` | `RR §9`: `MN ngày D = MT D-1 + MB D-1 + MN D-1` — **thiếu D-2** | **owner đúng** — mã thiếu | Notion V105.19 · `gpt_analyzer.py` §9 |
+| **M3** | **Bộ luật có được cộng điểm không** | `KL §8`: **0/105 luật qua cổng**, đo tiến **−0,33σ/+0,26σ** · `CI-14` **P0**: `rules_union` **phồng +12pp** | `main.py:124`: **`MINED_RULES_MODE='soft'`** đang cộng **+0,15** cho `all` | **tài liệu đúng** — mã đang cộng điểm cho bộ luật chưa qua cổng | `main.py:124` (giống hệt VPS) |
+| **M4** | **Ngưỡng gan** | `V105.19 §8.1`: MB 30/ĐB 15 · MN 15/G8+ĐB 7 · MT 15/G8+ĐB 7 | `V11001`: **đã gỡ gan khỏi prompt** | owner **đã duyệt gỡ**, nhưng vì gan làm **+điểm**; ý owner là **đối chiếu hội tụ** | owner nói 09/08 |
+| **M5** | **`FU-318` xanh giả** | sổ ghi *"DEPLOYED_PENDING_LIVE_VERIFY · kết quả 08/08 ba miền TRONG NGƯỠNG"* | tệp kết quả: `"CHUA_DU_MAU"`, `"dac_trung": []`, `"No module named 'numpy'"`; **script không có trên VPS, 0 dòng cron** | **tệp đúng** — sổ sai | `artifacts/v11033_canh_troi/troi_2026-08-08.json` |
+| **M6** | **Nút thắt ở đâu** | em (09/08): *"85% chưa ai sinh ⇒ nút ở SINH"* | Notion `CI-05`: *"40/61 ngày miss khi số đúng đã ở pool ⇒ nút ở CHỌN"* | **CẢ HAI** — hai nút nối tiếp | em đo lại: 244/360 mất ở CHỌN |
+| **M7** | **Ngưỡng FU-284** | `9,53` — có dẫn xuất, commit trước khi nhìn số | `12,00` — prompt lần 9 | **9,53** — owner ký 18:37, 12,00 là lỗi TanPhatAI | `_v11033_verdict_fu284.py:63` |
+| **M8** | **Số model official** | `V105.19 §5`: **exact 15/15** | thực tế **16 model** đường chính thức (đo 09/08) | cần owner xác nhận con số đúng | đo `predictions` |
+| **M9** | **Phiên bản prompt** | `V105.19` khoá **SP-4.1** | mã hiện tại **SP-4.4** | mã đi trước — nhưng **chưa ai ghi SP-4.1→4.4 đổi gì** | `gpt_analyzer.py:842` |
+
+---
+
+## C. CHƯA RÕ — cần đào thêm, chưa đủ bằng chứng
+
+| # | chưa rõ | vì sao quan trọng | cách làm rõ |
+|---|---|---|---|
+| **C1** | **`combo-super` thật sự chọn model nào** | `KE_HOACH_THAY_MODEL §5.1`: *"bảng `prediction_reasoning` KHÔNG có dòng `combo-super` nào trong 60 ngày"* ⇒ mọi hiểu biết về pool là **suy từ hằng số**, chưa thấy chạy thật | bật ghi lý do chọn cho `combo-super`, đọc sau 7 ngày |
+| **C2** | **Ai tắt writer gan, vì sao** | `gan_signal_shadow_v100` chết đúng **09/05**, 246.000 dòng rồi ngừng. Không có mục theo dõi nào ghi lý do | quét commit + cron quanh 09/05 |
+| **C3** | **`gan_signal_shadow_v100` không chặn biên** | `_v104_shadow_prompt_injection.py:297` dùng `anchor_date <= ?` **không trừ 1 ngày** — cùng mẫu bẫy `FU-392`, nhưng **bảng khác** ⇒ chưa được suy ra là cũng sai | phép kiểm nhân quả riêng cho bảng đó — **sau 21/08** (vùng đóng băng) |
+| **C4** | **1 khối `FALSE_NEGATIVE` trong 97 mục archive** | owner ký 4 nhãn (64+18+9+5=**96**), cổng đếm **97** | `FU-V10864-FOUR-CARD` — xin owner xếp nhóm |
+| **C5** | **SP-4.1 → SP-4.4 đổi gì** | đây là lớp prompt owner **đã khoá**; không ai ghi lịch sử thay đổi | `git log -L` trên khối `SYSTEM_PROMPT` |
+| **C6** | **6 đặc trưng gan/hot/cold trong ML** | đã gỡ khỏi prompt (V11001) nhưng **vẫn còn trong 28 đặc trưng ML** | `FU-320` — đang treo |
+
+---
+
+## D. CẦN OWNER XÁC NHẬN — không tự làm
+
+| # | việc | trạng thái mới nhất | em đề xuất |
+|---|---|---|---|
+| **D1** | **25 tệp Opus** (`FU-393`) | owner ký giữ tới 21/08 **trên tiền đề "thêm roster"** — nay biết là **ĐỔI TÊN**, và bản VPS đang áp nhầm `0.70` | xin ký lại trên sự thật đúng |
+| **D2** | `MINED_RULES_MODE` **`soft` → `shadow`** | đang cộng +0,15 cho bộ luật 0/105 qua cổng | **một dòng, đường lui ngay** |
+| **D3** | **Gỡ `RR §11` + `§18`** | hai câu cấm model sinh số ngoài Rule Tails | không thêm gì, chỉ gỡ |
+| **D4** | **Ngưỡng gan mới** MN>15 · MT>15 · MB>60 | ngưỡng cũ 7/7/15 nằm dưới trung vị (11/14/59) | bảng shadow, 0 đồng |
+| **D5** | **Thêm `D-2` cho MN vào `RR §9`** | đúng công thức owner khoá `V105.19 §7` | 1 dòng |
+| **D6** | **Nhãn thứ 5 của `FU-390`** | `FU-V10864-FOUR-CARD` | xin xếp nhóm |
+| **D7** | **Số model official đúng là bao nhiêu** | tài liệu 15/15, thực tế 16 | xác nhận |
+
+---
+
+## E. CẦN ĐO LIVE — có hạn, không rút ngắn được
+
+| # | phép đo | ngưỡng đã đăng ký | hạn | trạng thái |
+|---|---|---|---|---|
+| **L1** | **FU-284** — 3 thay đổi prompt | `\|chênh\| ≥ **9,53** điểm` · `\|z\| ≥ 1,96` sau chia VIF · `n ≥ 150`/miền | **20/08** | cửa sổ SAU **09/08→20/08**, đang chạy, **cấm đọc sớm** |
+| **L2** | **`DEHERD_V1`** | **≥21 ngày** · phải **dẫn official** · **không thua miền nào** | **19/08** | mới **1/21 ngày** |
+| **L3** | **Bầy đàn sau V11016** | cần **3 ngày × 3 miền = 9** lượt | ~10/08 | **7/9** — job tự khai *"CHƯA KẾT LUẬN ĐƯỢC"* |
+| **L4** | **C25** bộ 18:05 | 0 cặp mất trace | mỗi ngày | lượt **sạch đầu tiên** là 18:05 hôm nay |
+| **L5** | **FU-360** chặn chéo lane | thử chặn 5/5 đã đạt | deploy **10/08 trước 15:30** + **canh 24h** | chưa deploy |
+| **L6** | **A/B `PROMPT_V2`** | cần **~246 cặp** để `\|z\|≥1,96` | — | có **79 cặp**, cron **tắt 01/08** |
+| **L7** | **`loi_the(k)`** — lợi thế đồng thuận | chưa đăng ký | — | đo được ngay, chưa đăng ký ngưỡng |
+
+---
+
+## F. KẾ HOẠCH CODE-FIX NÂNG CHẤT LƯỢNG DỰ ĐOÁN
+
+### Nền tảng — hai nút thắt, đo được
+
+| tầng | mất bao nhiêu | n |
+|---|---|---|
+| **SINH** | **82,5–85,7%** đuôi trúng không model nào sinh · 27 model gộp chỉ ra **~16 số/ngày** vs **24–43 đuôi ra/ngày** | 30 ngày |
+| **CHỌN** | **360** ngày-miền pool ĐÃ có số trúng → chọn đúng **116 (32,2%)** ⇒ **mất 244 ngày**. **MB 17,6% < nền 23,7%** | 120 ngày |
+
+### Bảng kế hoạch
+
+| # | việc | tầng | chạm gì | rủi ro | **đo bằng gì** | thấy sau |
+|---|---|---|---|---|---|---|
+| **P1** | **Gỡ `RR §11`+`§18`** | SINH | prompt (QD-041) | thấp — chỉ **gỡ**, không thêm | **ĐỘ PHỦ** = % đuôi trúng có model nào sinh. Hiện **17,5/16,1/14,3%** | **ngay ngày đầu** |
+| **P2** | **`MINED_RULES_MODE` `soft`→`shadow`** | CHỌN | `main.py:124` | thấp — 1 dòng, đường lui | bạch thủ 3 miền so nền, cửa sổ **30 ngày gộp 3 miền** (MDE ~5pp) | ~30 ngày |
+| **P3** ⭐ | **Sửa khâu CHỌN cho MB** | CHỌN | selector | trung bình | tỉ lệ chọn đúng khi pool có số trúng: **17,6% → mục tiêu ≥ nền 23,7%** | ~30 ngày |
+| **P4** | **Gan làm điểm hội tụ** (ngưỡng mới) | CHỌN | bảng shadow trước | **0 đồng** | `P(trúng \| model đề xuất VÀ gan>N)` vs `P(trúng \| model đề xuất)` | ~30 ngày |
+| **P5** | **Thêm `D-2` cho MN** vào `RR §9` | SINH | prompt (QD-041) | thấp — khớp lệnh owner | độ phủ MN + bạch thủ MN | ~30 ngày |
+| **P6** | **Bật lại cron A/B** `PROMPT_V2` | đo | shadow | thấp · `~$0,134/ngày` | McNemar, cần **~246 cặp** | ~82 ngày |
+| **P7** | **Lưới A/B owner ký 01/08** (GĐ4) | đo | shadow | trung bình · 24 lượt/ngày | ghép cặp `shadow_mode` False/True | **~13 ngày** |
+
+### Nguyên tắc đo — chốt trước, không sửa sau
+
+| tầng đo | n | **thấy được lợi thế nhỏ nhất** |
+|---|---|---|
+| sản phẩm · bạch thủ 1 miền · 121 ngày | 121 | **15,1 pp** |
+| đơn model · 12 ngày *(cửa sổ FU-284)* | 192 | **8,0 pp** |
+| đơn model · 30 ngày | 480 | **5,1 pp** |
+| **đơn model · gộp 3 miền · 91 ngày** | 4.368 | **2,0 pp** |
+
+⇒ **Mọi phép đo mới phải gộp 3 miền và ≥30 ngày**, nếu không thì thước không đọc nổi cải tiến thật.
+Cải tiến **+5pp** trên bạch thủ 1 miền cần **~3 năm** mới hiện — đó là lý do 6 lần "hứa rồi rữa"
+trong `CLAUDE.md` **có thể không giả, chỉ nhỏ hơn độ phân giải**.
+
+⇒ **`ĐỘ PHỦ` là thước duy nhất không có nhiễu lấy mẫu** — đếm là ra, thấy ngay ngày đầu. Nên dùng
+nó làm **cổng sơ tuyển** cho mọi thay đổi tầng SINH, trước khi tốn thời gian đo tỉ lệ trúng.
+
+### Thứ tự đề nghị
+
+1. **P4** *(0 đồng, bảng shadow, không đụng đường ra số)* — làm được ngay
+2. **P1** *(gỡ 2 câu, đo bằng độ phủ, thấy ngay)* — cần owner ký vì chạm prompt
+3. **P2** *(1 dòng, đường lui ngay)*
+4. **P5** + **D1** — gộp vào lượt deploy **21/08**
+5. **P3** — việc lớn nhất, dư địa lớn nhất, cần thiết kế riêng
+6. **P6/P7** — sau 21/08
+
+---
+
+## G. NHỮNG THỨ ĐÃ BỊ BÁC BỎ — CẤM ĐỀ XUẤT LẠI
+
+| thứ | bằng chứng bác bỏ | nguồn |
+|---|---|---|
+| **phase-first / 6 bước cứng** | đo **70 ngày: 34,0% vs 34,2% = 0** + phình token + chậm | V10750 (25/06) · owner ký lại **3 lần**, gần nhất **00:33 09/08** |
+| **`proposed_weight_30d`** của v93 làm căn cứ đổi trọng số | công thức `clip(0.5+any_hit/100)`; chú thích gốc *"for now"*; chênh do **trọng số cũ** không do hiệu năng | `docs/B1_THAM_DINH_DAN_XUAT_V93_20260809.md` |
+| **gan +điểm** | ngưỡng dưới trung vị ⇒ bật thường trực ⇒ cộng cho gần như mọi số | owner 09/08 + đo trung vị 11/14/59 |
+| **đổi roster để cứu chất lượng** | *"roster bão hoà, **selector là nút thắt**"* · `D-04`: *"giá không xếp hạng chất lượng"* | Notion V10871–V10873 · Owner Decision Ledger |
+| **§5g đa nguồn ≥3 cộng điểm** | ô "3 nguồn" **z = −2,54** (tệ nhất) | `KL §8` |
+| **`rules_union` hậu-xổ làm nền backtest** | **phồng ~+12pp** ⇒ mọi claim M2s/Total V3 bị hạ cấp | Notion `CI-14` **P0 BLOCKER** |
+
+---
+
+## H. TRẠNG THÁI HỆ — 10/08/2026 09:37
+
+| | |
+|---|---|
+| PID `lottery` | **1207732** · health **200** |
+| drift `web/backend/*.py` | **26** (trần 30) · **0** tệp bị sửa thẳng trên VPS |
+| cổng | `CONG_K1=DAT` 8/8 · `O_STATUS=DAT` · `DRIFT_K3=DAT` · `DONG_BANG_QD041=CON_NGUYEN` · sổ quyết định **0 trôi** |
+| số hiệu | V cao nhất **V11054** · FU cao nhất **FU-393** · trần sinh mã **3/5** |
+| bộ 18:05 | **26 phép** (thêm C26) |
+| production | **KHÔNG đụng** trong V11054 |
+
+---
+
+*Artifact này là bản đăng ký vấn đề, không phải bản thi hành. Mọi mục ở D và F chờ owner ký.*
+
+---
+
 ## 7. Cổng kiểm
 
 **Cổng cấp số hiệu FU-369 (chạy trước khi cấp mã):**
