@@ -432,10 +432,12 @@ không phải chi tiết thi hành.
 | nguồn | ngưỡng |
 |---|---|
 | `docs/NGUONG_FU284_N12_20260809.md` + `_v11033_verdict_fu284.py` (V11049, owner ký 11:47) | **9,53** điểm |
-| PROMPT LẦN 9, phần cổng (13:58) | **12,00** điểm |
+| PROMPT LẦN 9, phần cổng (13:58) | ~~12,00~~ điểm — **ĐÃ HUỶ**, lỗi của TanPhatAI |
 
 Hai con số **không thể cùng đúng**. 9,53 có dẫn xuất viết sẵn *(√((1/14+1/12)/(1/14+1/13)) × 9,33)*
 và **đã commit trước khi nhìn bất kỳ số đo nào** (RM-03). 12,00 chưa có dẫn xuất kèm theo.
+
+**ĐÃ CHỐT (owner ký 18:37 09/08): ngưỡng FU-284 = 9,53 điểm** — dẫn xuất √((1/14+1/12)/(1/14+1/13)) × 9,33. Con số **12,00 là lỗi của TanPhatAI**, không có dẫn xuất, **đã huỷ**. Mọi chỗ ghi 12,00 chỉ còn giá trị lịch sử.
 
 Không chặn việc gì hôm nay vì **cấm đọc sớm** — nhưng phải chốt **trước 20/08**, và **chốt bằng dẫn
 xuất, không bằng số tròn**. Sửa ngưỡng sau khi nhìn số là vô hiệu hoá toàn bộ phép đo.

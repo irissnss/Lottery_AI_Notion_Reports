@@ -135,6 +135,6 @@ git revert <commit V11052>
 | `FU-360` | **deploy sáng 10/08** + so PID + health + **canh 24h** đếm dòng `[CHAN CHEO LANE]` | mai |
 | `QD-047` / v93 | viết lại `proposed_weight_30d` + thêm 4 cột (`baseline_pct` · `vif` · `z` · `n_days`) | **gói 21/08** |
 | ngưỡng đăng ký trước | khung ở dossier §8 — **owner ký trước 20/08** | trước 20/08 |
-| ngưỡng FU-284 | **9,53** vs **12,00** — chốt bằng dẫn xuất | trước 20/08 |
+| ngưỡng FU-284 | ✅ **ĐÃ CHỐT 9,53** (owner ký 18:37 09/08) — 12,00 đã huỷ | *xong* |
 
 *Đẩy cùng commit (A55 · §57.2).*

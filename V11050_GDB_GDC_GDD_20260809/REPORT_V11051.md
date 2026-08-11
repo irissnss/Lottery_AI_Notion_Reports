@@ -111,7 +111,7 @@ Snapshot kèm `md5_truoc.txt` + `pid_truoc.txt` để đối chiếu.
 |---|---|---|
 | `FU-393` | 25 tệp roster — ba phương án **(a)** giữ tới 21/08 *(đề xuất)* · **(b)** đẩy 20 tệp shadow · **(c)** ký đè QD-041 | **owner** |
 | `FU-390` | rà theo nhãn 64/18/9/5 · **⚠ cổng đếm 97 nhưng bảng owner gộp 96** — còn 1 khối `FALSE_NEGATIVE` (`FU-V10864-FOUR-CARD`) chờ owner xếp nhóm | **owner** |
-| ngưỡng FU-284 | **9,53** (có dẫn xuất) vs **12,00** (prompt lần 9) — chốt **trước 20/08**, bằng dẫn xuất | **owner** |
+| ngưỡng FU-284 | ✅ **ĐÃ CHỐT 9,53** (owner ký 18:37 09/08) — 12,00 là lỗi TanPhatAI, đã huỷ | *xong* |
 | GĐ-C | **18:05** bộ 26 phép · **19:35** lane · bầy đàn · trace | tối nay |
 
 *Đẩy cùng commit (A55 · §57.2).*
