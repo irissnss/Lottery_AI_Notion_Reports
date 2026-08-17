@@ -2,13 +2,12 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-17 20:38:30 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-17 21:44:55 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
-| `FU-348` | `KS1708-2` | CỔNG K8 ĐANG XANH GIẢ — `MO_COI_TRAN` chưa hạ | **17/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-306` | `TK1708` | Vẽ lại sơ đồ đường đi của một luật | **17/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-301` | `SC1708` | Chuẩn hoá múi giờ toàn hệ | **17/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-292` | `KS1708` | Cảnh gác tên đài lạ chạy hằng ngày | **17/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
@@ -47,6 +46,8 @@
 | `FU-365` | `DD2208` | Quyết có sửa hẳn 229 dòng sai nhãn miền không | **22/08** | `AWAITING_OWNER_OK` |
 | `FU-233` | `HT0822-1` | B1 tắt tối ưu trọng số (sau 08/08) | **22/08** | `OWNER_LOCK` |
 | `FU-222` | `HT0822` | Bóc RULES-FIRST sau đóng băng | **22/08** | `MEASURED_BUT_NOT_FIXED` |
+| `FU-405` | `DO2308` | MN chốt sớm hơn hạn **10h25m** — chưa rõ mất gì | **23/08** | `MEASURED_BUT_NOT_FIXED` |
+| `FU-406` | `HT2508` | Cổng máy cho hai luật `PRJ` còn lại — **CHƯA TỚI NGƯỠNG §61** | **25/08** | `DEFER` |
 | `FU-286` | `DO2708` | DỜI HẠN: đo tiến cần ~140 ngày, không thể chốt 13/08 | **27/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-183` | `KS0831` | Lớp V10640 MN rà âm thì tắt | **31/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-198` | `DO0901` | So gemini-3.5 vs 3.6 | **01/09** | `WAIT_LIVE` |
@@ -76,7 +77,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11084` — KIEM HET LIVE 1708 (2026-08-17)
+**Báo cáo mới nhất:** `V11085` — HAI QD 2116 VA CONG RUT LAI (2026-08-17)
 
 ---
 
