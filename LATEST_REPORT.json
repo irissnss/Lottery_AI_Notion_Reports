@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-17 14:38:39",
- "tong_thu_muc": 363,
- "latest_version": "V11082",
+ "_sinh_luc_vn": "2026-08-17 14:51:58",
+ "tong_thu_muc": 364,
+ "latest_version": "V11083",
  "latest": {
-  "version": "V11082",
+  "version": "V11083",
   "ngay": "2026-08-17",
-  "chu_de": "GD0 GD1 K1 HET MU",
-  "thu_muc": "V11082_GD0_GD1_K1_HET_MU_20260817",
+  "chu_de": "GD1 GD5 HET GIO DIEU HUONG BA LUAT",
+  "thu_muc": "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817",
   "bao_cao": [
-   "V11082_GD0_GD1_K1_HET_MU_20260817/REPORT_V11082.md"
+   "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md"
   ],
   "ngu_canh": [
-   "V11082_GD0_GD1_K1_HET_MU_20260817/CONVERSATION_CONTEXT_V11082_20260817.md"
+   "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/CONVERSATION_CONTEXT_V11083_20260817.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11083",
+   "ngay": "2026-08-17",
+   "chu_de": "GD1 GD5 HET GIO DIEU HUONG BA LUAT",
+   "thu_muc": "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817",
+   "bao_cao": [
+    "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md"
+   ],
+   "ngu_canh": [
+    "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/CONVERSATION_CONTEXT_V11083_20260817.md"
+   ]
+  },
   {
    "version": "V11082",
    "ngay": "2026-08-17",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11069b_PHEP_TROI_DO_DU_LIEU_CU_20260814/CONVERSATION_CONTEXT_V11069b_20260814.md"
-   ]
-  },
-  {
-   "version": "V11069",
-   "ngay": "2026-08-14",
-   "chu_de": "NOI TIMEOUT LANE",
-   "thu_muc": "V11069_NOI_TIMEOUT_LANE_20260814",
-   "bao_cao": [
-    "V11069_NOI_TIMEOUT_LANE_20260814/REPORT_V11069.md"
-   ],
-   "ngu_canh": [
-    "V11069_NOI_TIMEOUT_LANE_20260814/CONVERSATION_CONTEXT_V11069_20260814.md"
    ]
   }
  ]
