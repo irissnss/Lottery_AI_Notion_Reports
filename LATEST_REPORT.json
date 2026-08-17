@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-17 14:51:58",
- "tong_thu_muc": 364,
- "latest_version": "V11083",
+ "_sinh_luc_vn": "2026-08-17 20:38:30",
+ "tong_thu_muc": 365,
+ "latest_version": "V11084",
  "latest": {
-  "version": "V11083",
+  "version": "V11084",
   "ngay": "2026-08-17",
-  "chu_de": "GD1 GD5 HET GIO DIEU HUONG BA LUAT",
-  "thu_muc": "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817",
+  "chu_de": "KIEM HET LIVE 1708",
+  "thu_muc": "V11084_KIEM_HET_LIVE_1708_20260817",
   "bao_cao": [
-   "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md"
+   "V11084_KIEM_HET_LIVE_1708_20260817/REPORT_V11084.md"
   ],
   "ngu_canh": [
-   "V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/CONVERSATION_CONTEXT_V11083_20260817.md"
+   "V11084_KIEM_HET_LIVE_1708_20260817/CONVERSATION_CONTEXT_V11084_20260817.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11084",
+   "ngay": "2026-08-17",
+   "chu_de": "KIEM HET LIVE 1708",
+   "thu_muc": "V11084_KIEM_HET_LIVE_1708_20260817",
+   "bao_cao": [
+    "V11084_KIEM_HET_LIVE_1708_20260817/REPORT_V11084.md"
+   ],
+   "ngu_canh": [
+    "V11084_KIEM_HET_LIVE_1708_20260817/CONVERSATION_CONTEXT_V11084_20260817.md"
+   ]
+  },
   {
    "version": "V11083",
    "ngay": "2026-08-17",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11070_KIEM_TONG_LUC_1408_20260814/CONVERSATION_CONTEXT_V11070_20260814.md"
-   ]
-  },
-  {
-   "version": "V11069b",
-   "ngay": "2026-08-14",
-   "chu_de": "PHEP TROI DO DU LIEU CU",
-   "thu_muc": "V11069b_PHEP_TROI_DO_DU_LIEU_CU_20260814",
-   "bao_cao": [
-    "V11069b_PHEP_TROI_DO_DU_LIEU_CU_20260814/REPORT_V11069b.md"
-   ],
-   "ngu_canh": [
-    "V11069b_PHEP_TROI_DO_DU_LIEU_CU_20260814/CONVERSATION_CONTEXT_V11069b_20260814.md"
    ]
   }
  ]

@@ -2,12 +2,12 @@
 
 # MỤC LỤC BÁO CÁO — sinh từ thư mục thật
 
-**Sinh lúc:** 2026-08-17 14:51:58 (giờ VN) · **364 thư mục báo cáo**
+**Sinh lúc:** 2026-08-17 20:38:30 (giờ VN) · **365 thư mục báo cáo**
 
-**Mới nhất: `V11083`** — GD1 GD5 HET GIO DIEU HUONG BA LUAT · 2026-08-17
+**Mới nhất: `V11084`** — KIEM HET LIVE 1708 · 2026-08-17
 
-- [REPORT_V11083.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md)
-- [CONVERSATION_CONTEXT_V11083_20260817.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/CONVERSATION_CONTEXT_V11083_20260817.md)
+- [REPORT_V11084.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/REPORT_V11084.md)
+- [CONVERSATION_CONTEXT_V11084_20260817.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/CONVERSATION_CONTEXT_V11084_20260817.md)
 
 ---
 
@@ -15,6 +15,7 @@
 
 | version | ngày | chủ đề | báo cáo | ngữ cảnh | evidence |
 |---|---|---|---|---|---|
+| `V11084` | 2026-08-17 | KIEM HET LIVE 1708 | [REPORT_V11084.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/REPORT_V11084.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/CONVERSATION_CONTEXT_V11084_20260817.md) | — |
 | `V11083` | 2026-08-17 | GD1 GD5 HET GIO DIEU HUONG BA LUAT | [REPORT_V11083.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/CONVERSATION_CONTEXT_V11083_20260817.md) | — |
 | `V11082` | 2026-08-17 | GD0 GD1 K1 HET MU | [REPORT_V11082.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11082_GD0_GD1_K1_HET_MU_20260817/REPORT_V11082.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11082_GD0_GD1_K1_HET_MU_20260817/CONVERSATION_CONTEXT_V11082_20260817.md) | — |
 | `V11081` | 2026-08-17 | DU NAM CONG I1 I5 | [REPORT_V11081.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11081_DU_NAM_CONG_I1_I5_20260817/REPORT_V11081.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11081_DU_NAM_CONG_I1_I5_20260817/CONVERSATION_CONTEXT_V11081_20260817.md) | — |

@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-17 14:51:58 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-17 20:38:30 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -76,7 +76,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11083` — GD1 GD5 HET GIO DIEU HUONG BA LUAT (2026-08-17)
+**Báo cáo mới nhất:** `V11084` — KIEM HET LIVE 1708 (2026-08-17)
 
 ---
 
