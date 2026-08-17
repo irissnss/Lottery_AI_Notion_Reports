@@ -1,3 +1,30 @@
+<!-- BANNER RÚT LẠI do _v11083_sinh_dieu_huong.py đặt — phần dưới giữ nguyên làm lịch sử -->
+
+# ⛔ DELTA_INDEX — ĐÃ RÚT LẠI (17/08/2026)
+
+**Tệp này dừng cập nhật ở `V91 → V92` ngày 08/05/2026** — im **101 ngày** trong khi kho đã có
+**365 thư mục báo cáo**.
+
+**Vì sao rút lại chứ không sinh tiếp:** nội dung *«V(n−1) → V(n)»* là **nhận định của người
+viết**, không suy ra được từ dữ kiện trong kho. Sinh giả bằng cách chép tiêu đề commit là **chế
+dữ liệu** — `RM-17` cấm.
+
+**Vì sao không xoá:** đường dẫn tệp này đã nằm trong `docs/AUTOMATION_STATE.json` và các gói công
+khai cũ. Xoá đi thì các đường dẫn ấy hỏng câm.
+
+**Đọc thay ở đâu:**
+
+| muốn biết | đọc |
+|---|---|
+| bản mới nhất + toàn bộ mục lục | `REPORT_INDEX.md` (máy sinh) |
+| bản mới nhất, dạng máy đọc | `LATEST_REPORT.json` (máy sinh) |
+| việc kế tiếp | `NEXT_ACTION.md` (máy sinh) |
+| thay đổi từng bản | `CHANGELOG_PUBLIC.md`, và `CHANGELOG.md` ở kho chính |
+
+---
+
+*(phần dưới là nội dung cũ, giữ nguyên làm lịch sử — **đã hết hiệu lực**)*
+
 ## V91 → V92
 
 - V92 absolute SSOT wrapper over verified V91 reconciliation.
