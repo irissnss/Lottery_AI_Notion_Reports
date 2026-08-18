@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-18 22:15:19 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-18 22:44:14 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -76,7 +76,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11088` — CANH CHUNG NGAY KHOA CONG WINDOW BANDO 2108 (2026-08-18)
+**Báo cáo mới nhất:** `V11089` — BO CHAM TB VA HAI NGUONG (2026-08-18)
 
 ---
 

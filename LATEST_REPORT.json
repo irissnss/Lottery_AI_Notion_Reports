@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-18 22:15:19",
- "tong_thu_muc": 369,
- "latest_version": "V11088",
+ "_sinh_luc_vn": "2026-08-18 22:44:14",
+ "tong_thu_muc": 370,
+ "latest_version": "V11089",
  "latest": {
-  "version": "V11088",
+  "version": "V11089",
   "ngay": "2026-08-18",
-  "chu_de": "CANH CHUNG NGAY KHOA CONG WINDOW BANDO 2108",
-  "thu_muc": "V11088_CANH_CHUNG_NGAY_KHOA_CONG_WINDOW_BANDO_2108_20260818",
+  "chu_de": "BO CHAM TB VA HAI NGUONG",
+  "thu_muc": "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818",
   "bao_cao": [
-   "V11088_CANH_CHUNG_NGAY_KHOA_CONG_WINDOW_BANDO_2108_20260818/REPORT_V11088.md"
+   "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/REPORT_V11089.md"
   ],
   "ngu_canh": [
-   "V11088_CANH_CHUNG_NGAY_KHOA_CONG_WINDOW_BANDO_2108_20260818/CONVERSATION_CONTEXT_V11088_20260818.md"
+   "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/CONVERSATION_CONTEXT_V11089_20260818.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11089",
+   "ngay": "2026-08-18",
+   "chu_de": "BO CHAM TB VA HAI NGUONG",
+   "thu_muc": "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818",
+   "bao_cao": [
+    "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/REPORT_V11089.md"
+   ],
+   "ngu_canh": [
+    "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/CONVERSATION_CONTEXT_V11089_20260818.md"
+   ]
+  },
   {
    "version": "V11088",
    "ngay": "2026-08-18",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11074_SOI_CAU_CHEO_MIEN_20260815/CONVERSATION_CONTEXT_V11074_20260815.md"
-   ]
-  },
-  {
-   "version": "V11073",
-   "ngay": "2026-08-15",
-   "chu_de": "DINH CHINH 0 TREN 105",
-   "thu_muc": "V11073_DINH_CHINH_0_TREN_105_20260815",
-   "bao_cao": [
-    "V11073_DINH_CHINH_0_TREN_105_20260815/REPORT_V11073.md"
-   ],
-   "ngu_canh": [
-    "V11073_DINH_CHINH_0_TREN_105_20260815/CONVERSATION_CONTEXT_V11073_20260815.md"
    ]
   }
  ]
