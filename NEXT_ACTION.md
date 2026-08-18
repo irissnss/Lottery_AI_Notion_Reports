@@ -2,15 +2,12 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-17 21:44:55 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-18 18:43:18 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
-| `FU-306` | `TK1708` | Vẽ lại sơ đồ đường đi của một luật | **17/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-301` | `SC1708` | Chuẩn hoá múi giờ toàn hệ | **17/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-292` | `KS1708` | Cảnh gác tên đài lạ chạy hằng ngày | **17/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-360` | `CL1008` | Chặn ghi đè CHÉO LANE | **18/08** | `DEPLOYED_LIVE_VERIFIED` |
 | `FU-373` | `KS1808-3` | `C23`/`C24` CHƯA BAO GIỜ chạy trong cron thật | **18/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-366` | `KS1808-2` | Xác minh C23/C24 chạy thật trên VPS lúc 18:05 | **18/08** | `READY_NOT_DEPLOYED` |
@@ -47,6 +44,7 @@
 | `FU-233` | `HT0822-1` | B1 tắt tối ưu trọng số (sau 08/08) | **22/08** | `OWNER_LOCK` |
 | `FU-222` | `HT0822` | Bóc RULES-FIRST sau đóng băng | **22/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-405` | `DO2308` | MN chốt sớm hơn hạn **10h25m** — chưa rõ mất gì | **23/08** | `MEASURED_BUT_NOT_FIXED` |
+| `FU-407` | `DO2508` | Bó số rộng ra **không tạo lợi thế** — kiểm `lo3`/`xien` có cùng tính c | **25/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-406` | `HT2508` | Cổng máy cho hai luật `PRJ` còn lại — **CHƯA TỚI NGƯỠNG §61** | **25/08** | `DEFER` |
 | `FU-286` | `DO2708` | DỜI HẠN: đo tiến cần ~140 ngày, không thể chốt 13/08 | **27/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-183` | `KS0831` | Lớp V10640 MN rà âm thì tắt | **31/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
@@ -56,7 +54,7 @@
 
 ## ⚠ QUÁ HẠN — còn treo
 
-**81 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
+**84 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
@@ -77,7 +75,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11085` — HAI QD 2116 VA CONG RUT LAI (2026-08-17)
+**Báo cáo mới nhất:** `V11086` — KIEM HET LIVE 1808 (2026-08-18)
 
 ---
 
