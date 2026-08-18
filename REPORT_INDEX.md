@@ -2,7 +2,7 @@
 
 # MỤC LỤC BÁO CÁO — sinh từ thư mục thật
 
-**Sinh lúc:** 2026-08-18 19:42:04 (giờ VN) · **368 thư mục báo cáo**
+**Sinh lúc:** 2026-08-18 20:14:03 (giờ VN) · **368 thư mục báo cáo**
 
 **Mới nhất: `V11087`** — BA QD 1918 VA RUT LAI V11080B · 2026-08-18
 

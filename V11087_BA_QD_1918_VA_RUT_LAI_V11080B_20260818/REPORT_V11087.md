@@ -264,6 +264,58 @@ Gỡ `acd3084` sẽ làm cổng **đỏ giả trở lại** — nếu gỡ, ph�
 **283 mã** · **164 còn treo** · **21 mục chờ owner ký**. Mốc **22/08**: miễn trừ K8 tự hết ⇒
 **K8 đỏ lại là CỐ Ý**.
 
+## 10. BỔ SUNG ④ — CỨU 48 BẢN VÁ *(owner ký 19:57, làm ngay trong phiên · `V11087b`)*
+
+Owner ký tiếp lúc **19:57** sau khi đọc đề xuất ở mục 9: *«LẬP MỤC LỤC 48 BẢN VÁ — LÀM NGAY
+TRONG PHIÊN NÀY (trước khi thư mục tạm bị dọn)… READ-ONLY tuyệt đối… Bản vá nào không truy ra
+tệp đích hoặc đoạn TRƯỚC → ghi `KHÔNG_KIỂM_ĐƯỢC` kèm lý do, CẤM đoán.»*
+
+**Đã làm — commit `c817efa`.** Kết xuất `artifacts/v11087_ban_va/` · **242 tệp · 1,2 MB**:
+`MUC_LUC.md` (người đọc, có cột ảnh chụp) · `muc_luc.json` (máy đọc) · `nguon/` (**chép nguyên
+nội dung** script) · `truoc/` (**đoạn TRƯỚC nguyên văn** theo từng mã `BV-xxx`).
+
+| số liệu | |
+|---|---|
+| tệp `.py` quét trong thư mục tạm | **1.146** |
+| mục vào mục lục | **157** |
+| **đủ đối chiếu** (có tệp đích **và** đoạn TRƯỚC) | **49** |
+| `KHÔNG_KIỂM_ĐƯỢC` | **108** — 74 thiếu đoạn TRƯỚC · 34 thiếu tệp đích |
+| bản sao đã vá 0,5–1 MB (chỉ siêu dữ liệu) | **52** |
+
+**Nhận dạng, và vì sao không đoán:** một script tính là bản vá khi có **CẢ HAI** — tệp đích trỏ
+vào kho thật **và** ít nhất một đoạn TRƯỚC. Thiếu một ⇒ `KHÔNG_KIỂM_ĐƯỢC` **kèm lý do**.
+Đoạn TRƯỚC rút bằng **`ast`**, không cắt bằng regex — nó gần như luôn là chuỗi ba nháy nhiều
+dòng **có nháy bên trong**.
+
+**Ảnh chụp 18/08 — DỮ KIỆN, KHÔNG phán quyết: 49/49 đoạn TRƯỚC VẪN CÒN KHỚP** ⇒ **30 tệp phiên
+khác sửa KHÔNG chạm** các neo này. Chụp ngay thay vì đợi, vì sau 21/08 mà thấy *«không khớp»* thì
+phải trả lời được *«không khớp từ bao giờ»* — không có ảnh chụp thì **không phân biệt được**
+*phiên khác đã sửa* với *bản vá vốn sai từ đầu*.
+
+**Đã THỬ phép so có phân biệt được không** — vì vừa dính đúng cú *«xanh vì thôi nhìn»* ở mục 7:
+
+```
+đoạn CÓ THẬT → CÒN_KHỚP        một thật một bịa  → KHỚP_MỘT_PHẦN
+đoạn BỊA ĐẶT → KHÔNG_CÒN_KHỚP  tệp đích không có → KHÔNG_KIỂM_ĐƯỢC
+```
+
+Đủ **bốn** trạng thái ⇒ `49/49` là kết quả **thật**.
+
+**KIỂM READ-ONLY bằng BĂM, không bằng lời hứa:** `main.py` · `scheduler.py` ·
+`_v11059_lane_ab_3tang.py` — băm **trước = sau**, **không đổi một byte**.
+
+> ⚠️ **Phần CHƯA cứu được:** **52 bản sao đã vá** (0,5–1 MB mỗi tệp) **vẫn ở thư mục tạm, vẫn có
+> thể mất** — chép vào kho là nhét cả `main.py` vào Git nhiều lần. Chỉ ghi siêu dữ liệu.
+>
+> **`.gitignore`:** `artifacts/` bị ignore (`:126`), nhưng có **tiền lệ** 7 tệp `v11054`…`v11057`
+> được force-add làm chứng cứ. Bộ cứu này đúng loại đó ⇒ force-add **có ghi lý do trong commit**,
+> không làm lặng lẽ. Để trong `artifacts/` mà không track thì **vẫn mất khi đổi máy**.
+
+**`FU-409`:** đối tượng **ĐÃ ĐƯỢC CỨU**. **Rà lại và áp vẫn giữ hạn sau 21/08** đúng như owner
+ký 19:18.
+
+---
+
 **Verdict tách hai dòng:**
 - **`CODE_PUSHED`** = `acd3084` (vá K1 + `RL-007`) · `e3a61b2` (ghi ② + ③)
 - **`REPORT_PUBLISHED`** = bản này
