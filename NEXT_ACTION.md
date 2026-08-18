@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-18 18:43:18 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-18 19:42:04 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -40,6 +40,7 @@
 | `FU-284` | `DO2008` | ĐẾM LẠI LẦN BA — nay đo BA thay đổi prompt | **21/08** | `WAIT_LIVE` |
 | `FU-313` | `KS2108` | Cổng chặn kết luận "trước vs sau" thiếu nền | **21/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-295` | `QD2108` | Owner quyết số phận `rule_custom_prompt` | **21/08** | `AWAITING_OWNER_OK` |
+| `FU-409` | `DD2208` | **48 bản vá cũ — HOÃN sau 21/08** *(owner ký 19:18 ngày 18/08)* | **22/08** | `DEFER` |
 | `FU-365` | `DD2208` | Quyết có sửa hẳn 229 dòng sai nhãn miền không | **22/08** | `AWAITING_OWNER_OK` |
 | `FU-233` | `HT0822-1` | B1 tắt tối ưu trọng số (sau 08/08) | **22/08** | `OWNER_LOCK` |
 | `FU-222` | `HT0822` | Bóc RULES-FIRST sau đóng băng | **22/08** | `MEASURED_BUT_NOT_FIXED` |
@@ -75,7 +76,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11086` — KIEM HET LIVE 1808 (2026-08-18)
+**Báo cáo mới nhất:** `V11087` — BA QD 1918 VA RUT LAI V11080B (2026-08-18)
 
 ---
 

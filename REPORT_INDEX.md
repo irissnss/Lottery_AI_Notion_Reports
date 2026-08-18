@@ -2,12 +2,12 @@
 
 # MỤC LỤC BÁO CÁO — sinh từ thư mục thật
 
-**Sinh lúc:** 2026-08-18 18:43:18 (giờ VN) · **367 thư mục báo cáo**
+**Sinh lúc:** 2026-08-18 19:42:04 (giờ VN) · **368 thư mục báo cáo**
 
-**Mới nhất: `V11086`** — KIEM HET LIVE 1808 · 2026-08-18
+**Mới nhất: `V11087`** — BA QD 1918 VA RUT LAI V11080B · 2026-08-18
 
-- [REPORT_V11086.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11086_KIEM_HET_LIVE_1808_20260818/REPORT_V11086.md)
-- [CONVERSATION_CONTEXT_V11086_20260818.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11086_KIEM_HET_LIVE_1808_20260818/CONVERSATION_CONTEXT_V11086_20260818.md)
+- [REPORT_V11087.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11087_BA_QD_1918_VA_RUT_LAI_V11080B_20260818/REPORT_V11087.md)
+- [CONVERSATION_CONTEXT_V11087_20260818.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11087_BA_QD_1918_VA_RUT_LAI_V11080B_20260818/CONVERSATION_CONTEXT_V11087_20260818.md)
 
 ---
 
@@ -15,6 +15,7 @@
 
 | version | ngày | chủ đề | báo cáo | ngữ cảnh | evidence |
 |---|---|---|---|---|---|
+| `V11087` | 2026-08-18 | BA QD 1918 VA RUT LAI V11080B | [REPORT_V11087.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11087_BA_QD_1918_VA_RUT_LAI_V11080B_20260818/REPORT_V11087.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11087_BA_QD_1918_VA_RUT_LAI_V11080B_20260818/CONVERSATION_CONTEXT_V11087_20260818.md) | — |
 | `V11086` | 2026-08-18 | KIEM HET LIVE 1808 | [REPORT_V11086.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11086_KIEM_HET_LIVE_1808_20260818/REPORT_V11086.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11086_KIEM_HET_LIVE_1808_20260818/CONVERSATION_CONTEXT_V11086_20260818.md) | — |
 | `V11085` | 2026-08-17 | HAI QD 2116 VA CONG RUT LAI | [REPORT_V11085.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11085_HAI_QD_2116_VA_CONG_RUT_LAI_20260817/REPORT_V11085.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11085_HAI_QD_2116_VA_CONG_RUT_LAI_20260817/CONVERSATION_CONTEXT_V11085_20260817.md) | — |
 | `V11084` | 2026-08-17 | KIEM HET LIVE 1708 | [REPORT_V11084.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/REPORT_V11084.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11084_KIEM_HET_LIVE_1708_20260817/CONVERSATION_CONTEXT_V11084_20260817.md) | — |
