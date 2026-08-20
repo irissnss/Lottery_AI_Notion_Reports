@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-20 18:50:52",
- "tong_thu_muc": 371,
- "latest_version": "V11090",
+ "_sinh_luc_vn": "2026-08-20 19:45:21",
+ "tong_thu_muc": 372,
+ "latest_version": "V11091",
  "latest": {
-  "version": "V11090",
+  "version": "V11091",
   "ngay": "2026-08-20",
-  "chu_de": "NGAY KHOA 2008 DOC HAI THUOC",
-  "thu_muc": "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820",
+  "chu_de": "RA TONG LUC TRUOC 2108",
+  "thu_muc": "V11091_RA_TONG_LUC_TRUOC_2108_20260820",
   "bao_cao": [
-   "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/REPORT_V11090.md"
+   "V11091_RA_TONG_LUC_TRUOC_2108_20260820/REPORT_V11091.md"
   ],
   "ngu_canh": [
-   "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11090_20260820.md"
+   "V11091_RA_TONG_LUC_TRUOC_2108_20260820/CONVERSATION_CONTEXT_V11091_20260820.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11091",
+   "ngay": "2026-08-20",
+   "chu_de": "RA TONG LUC TRUOC 2108",
+   "thu_muc": "V11091_RA_TONG_LUC_TRUOC_2108_20260820",
+   "bao_cao": [
+    "V11091_RA_TONG_LUC_TRUOC_2108_20260820/REPORT_V11091.md"
+   ],
+   "ngu_canh": [
+    "V11091_RA_TONG_LUC_TRUOC_2108_20260820/CONVERSATION_CONTEXT_V11091_20260820.md"
+   ]
+  },
   {
    "version": "V11090",
    "ngay": "2026-08-20",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11076_DAO_49_TAC_NHAN_CAM_CONG_20260816/CONVERSATION_CONTEXT_V11076_20260816.md"
-   ]
-  },
-  {
-   "version": "V11075",
-   "ngay": "2026-08-16",
-   "chu_de": "NHAN HR12W NOI QUA",
-   "thu_muc": "V11075_NHAN_HR12W_NOI_QUA_20260816",
-   "bao_cao": [
-    "V11075_NHAN_HR12W_NOI_QUA_20260816/REPORT_V11075.md"
-   ],
-   "ngu_canh": [
-    "V11075_NHAN_HR12W_NOI_QUA_20260816/CONVERSATION_CONTEXT_V11075_20260816.md"
    ]
   }
  ]

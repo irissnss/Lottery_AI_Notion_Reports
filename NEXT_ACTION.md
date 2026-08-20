@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-20 18:50:52 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-20 19:45:21 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -14,6 +14,7 @@
 | `FU-232` | `SC2008-3` | V10938 nửa còn: trọng số số còn WR | **20/08** | `OWNER_LOCK` |
 | `FU-229` | `SC2008-2` | Champion selector cron không ghi bảng | **20/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-230` | `DO2008-2` | Đồng bộ thước WR vs bạch thủ | **20/08** | `MEASURED_BUT_NOT_FIXED` |
+| `FU-410` | `KS2108-2` | **BỐN MỤC GÓI 21/08 KHÔNG CÓ MÃ THEO DÕI** — rà tổng lực 20/08 | **21/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-380` | `SC0908-6` | CHỜ 21/08 — hai danh sách cứng dự phòng trôi khỏi registry | **21/08** | `BLOCKED` |
 | `FU-355` | `SC2108-2` | Lượt rỗng bị chấm LOSE — ĐÃ VÁ | **21/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-359` | `DO2108-3` | Model có tiến triển sau đổi prompt không — CHƯA ĐO ĐƯỢC | **21/08** | `WAIT_LIVE` |
@@ -64,7 +65,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11090` — NGAY KHOA 2008 DOC HAI THUOC (2026-08-20)
+**Báo cáo mới nhất:** `V11091` — RA TONG LUC TRUOC 2108 (2026-08-20)
 
 ---
 
