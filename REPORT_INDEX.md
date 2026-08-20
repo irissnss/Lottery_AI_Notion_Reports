@@ -2,12 +2,12 @@
 
 # MỤC LỤC BÁO CÁO — sinh từ thư mục thật
 
-**Sinh lúc:** 2026-08-20 19:45:21 (giờ VN) · **372 thư mục báo cáo**
+**Sinh lúc:** 2026-08-20 20:20:59 (giờ VN) · **373 thư mục báo cáo**
 
-**Mới nhất: `V11091`** — RA TONG LUC TRUOC 2108 · 2026-08-20
+**Mới nhất: `V11092`** — HAI NGUONG ACTIVE DOC NOT HAI THUOC · 2026-08-20
 
-- [REPORT_V11091.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11091_RA_TONG_LUC_TRUOC_2108_20260820/REPORT_V11091.md)
-- [CONVERSATION_CONTEXT_V11091_20260820.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11091_RA_TONG_LUC_TRUOC_2108_20260820/CONVERSATION_CONTEXT_V11091_20260820.md)
+- [REPORT_V11092.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/REPORT_V11092.md)
+- [CONVERSATION_CONTEXT_V11092_20260820.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11092_20260820.md)
 
 ---
 
@@ -15,6 +15,7 @@
 
 | version | ngày | chủ đề | báo cáo | ngữ cảnh | evidence |
 |---|---|---|---|---|---|
+| `V11092` | 2026-08-20 | HAI NGUONG ACTIVE DOC NOT HAI THUOC | [REPORT_V11092.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/REPORT_V11092.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11092_20260820.md) | — |
 | `V11091` | 2026-08-20 | RA TONG LUC TRUOC 2108 | [REPORT_V11091.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11091_RA_TONG_LUC_TRUOC_2108_20260820/REPORT_V11091.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11091_RA_TONG_LUC_TRUOC_2108_20260820/CONVERSATION_CONTEXT_V11091_20260820.md) | — |
 | `V11090` | 2026-08-20 | NGAY KHOA 2008 DOC HAI THUOC | [REPORT_V11090.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/REPORT_V11090.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11090_20260820.md) | — |
 | `V11089` | 2026-08-18 | BO CHAM TB VA HAI NGUONG | [REPORT_V11089.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/REPORT_V11089.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/CONVERSATION_CONTEXT_V11089_20260818.md) | — |

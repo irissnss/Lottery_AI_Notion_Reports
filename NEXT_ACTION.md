@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-20 19:45:21 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-20 20:20:59 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -26,7 +26,6 @@
 | `FU-338` | `DO2108` | Đọc M4 nhóm DO_TIEN khi đủ mẫu | **21/08** | `WAIT_LIVE` |
 | `FU-290` | `QD0808` | ĐỔI HƯỚNG — không cắt, thay bằng thử model mạnh | **21/08** | `OWNER_LOCK` |
 | `FU-317` | `DO1008` | ĐÃ LÀM — M-A tầng đối chứng ML × luật × bộ lọc | **21/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-284` | `DO2008` | ĐẾM LẠI LẦN BA — nay đo BA thay đổi prompt | **21/08** | `WAIT_LIVE` |
 | `FU-313` | `KS2108` | Cổng chặn kết luận "trước vs sau" thiếu nền | **21/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-295` | `QD2108` | Owner quyết số phận `rule_custom_prompt` | **21/08** | `AWAITING_OWNER_OK` |
 | `FU-409` | `DD2208` | **48 bản vá cũ — HOÃN sau 21/08** *(owner ký 19:18 ngày 18/08)* | **22/08** | `DEFER` |
@@ -34,6 +33,7 @@
 | `FU-233` | `HT0822-1` | B1 tắt tối ưu trọng số (sau 08/08) | **22/08** | `OWNER_LOCK` |
 | `FU-222` | `HT0822` | Bóc RULES-FIRST sau đóng băng | **22/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-405` | `DO2308` | MN chốt sớm hơn hạn **10h25m** — chưa rõ mất gì | **23/08** | `MEASURED_BUT_NOT_FIXED` |
+| `FU-411` | `HT2508-2` | **`D3` HOÃN — tách thành việc riêng** *(owner ký 19:58 ngày 20/08, lối | **25/08** | `DEFER` |
 | `FU-407` | `DO2508` | Bó số rộng ra **không tạo lợi thế** — kiểm `lo3`/`xien` có cùng tính c | **25/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-406` | `HT2508` | Cổng máy cho hai luật `PRJ` còn lại — **CHƯA TỚI NGƯỠNG §61** | **25/08** | `DEFER` |
 | `FU-286` | `DO2708` | DỜI HẠN: đo tiến cần ~140 ngày, không thể chốt 13/08 | **27/08** | `MEASURED_ROOT_CAUSE` |
@@ -65,7 +65,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11091` — RA TONG LUC TRUOC 2108 (2026-08-20)
+**Báo cáo mới nhất:** `V11092` — HAI NGUONG ACTIVE DOC NOT HAI THUOC (2026-08-20)
 
 ---
 
