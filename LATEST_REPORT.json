@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-18 22:44:14",
- "tong_thu_muc": 370,
- "latest_version": "V11089",
+ "_sinh_luc_vn": "2026-08-20 18:50:52",
+ "tong_thu_muc": 371,
+ "latest_version": "V11090",
  "latest": {
-  "version": "V11089",
-  "ngay": "2026-08-18",
-  "chu_de": "BO CHAM TB VA HAI NGUONG",
-  "thu_muc": "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818",
+  "version": "V11090",
+  "ngay": "2026-08-20",
+  "chu_de": "NGAY KHOA 2008 DOC HAI THUOC",
+  "thu_muc": "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820",
   "bao_cao": [
-   "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/REPORT_V11089.md"
+   "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/REPORT_V11090.md"
   ],
   "ngu_canh": [
-   "V11089_BO_CHAM_TB_VA_HAI_NGUONG_20260818/CONVERSATION_CONTEXT_V11089_20260818.md"
+   "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11090_20260820.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11090",
+   "ngay": "2026-08-20",
+   "chu_de": "NGAY KHOA 2008 DOC HAI THUOC",
+   "thu_muc": "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820",
+   "bao_cao": [
+    "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/REPORT_V11090.md"
+   ],
+   "ngu_canh": [
+    "V11090_NGAY_KHOA_2008_DOC_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11090_20260820.md"
+   ]
+  },
   {
    "version": "V11089",
    "ngay": "2026-08-18",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11075_NHAN_HR12W_NOI_QUA_20260816/CONVERSATION_CONTEXT_V11075_20260816.md"
-   ]
-  },
-  {
-   "version": "V11074",
-   "ngay": "2026-08-15",
-   "chu_de": "SOI CAU CHEO MIEN",
-   "thu_muc": "V11074_SOI_CAU_CHEO_MIEN_20260815",
-   "bao_cao": [
-    "V11074_SOI_CAU_CHEO_MIEN_20260815/REPORT_V11074.md"
-   ],
-   "ngu_canh": [
-    "V11074_SOI_CAU_CHEO_MIEN_20260815/CONVERSATION_CONTEXT_V11074_20260815.md"
    ]
   }
  ]

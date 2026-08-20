@@ -2,24 +2,12 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-18 22:44:14 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-20 18:50:52 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
-| `FU-360` | `CL1008` | Chặn ghi đè CHÉO LANE | **18/08** | `DEPLOYED_LIVE_VERIFIED` |
-| `FU-373` | `KS1808-3` | `C23`/`C24` CHƯA BAO GIỜ chạy trong cron thật | **18/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-366` | `KS1808-2` | Xác minh C23/C24 chạy thật trên VPS lúc 18:05 | **18/08** | `READY_NOT_DEPLOYED` |
-| `FU-327` | `KS1808` | Cổng chặn kết luận khi nguồn 0 dòng — ĐÃ DỰNG | **18/08** | `READY_NOT_DEPLOYED` |
-| `FU-335` | `TK1808` | Ghi rõ VAI TRÒ từng mặt vào chính CLAUDE.md | **18/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-221` | `TKLX-221` | Notion D-11 lỗi thời (chỉ lịch sử) | **18/08** | `OWNER_LOCK` |
-| `FU-357` | `KS1908` | `decide()` có thể nói dối owner — ĐÃ VÁ | **19/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-309` | `DD1908` | Hơn 40 bảng cũ hơn 14 ngày | **19/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-277` | `KS1908` | MỞ RỘNG 3 nhánh dữ liệu nhiễm | **19/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-302` | `TK1908` | Ký hiệu P&L_mô_phỏng | **19/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-276` | `DO1908` | Đo tiến 14 ngày cổng bằng chứng V10991 | **19/08** | `WAIT_LIVE` |
-| `FU-228` | `DO1908-2` | Đo hiệu quả cơ chế học (nền) | **19/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-298` | `QD2008` | §5g thưởng đúng ô tệ nhất — gộp cùng FU-291 | **20/08** | `AWAITING_OWNER_OK` |
 | `FU-299` | `SC2008` | MB thiếu MN(D) ở tầng ML | **20/08** | `AWAITING_OWNER_OK` |
 | `FU-237` | `DP2008` | Canh chốt giờ cấm deploy | **20/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
@@ -55,7 +43,7 @@
 
 ## ⚠ QUÁ HẠN — còn treo
 
-**84 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
+**96 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
@@ -76,7 +64,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11089` — BO CHAM TB VA HAI NGUONG (2026-08-18)
+**Báo cáo mới nhất:** `V11090` — NGAY KHOA 2008 DOC HAI THUOC (2026-08-20)
 
 ---
 
