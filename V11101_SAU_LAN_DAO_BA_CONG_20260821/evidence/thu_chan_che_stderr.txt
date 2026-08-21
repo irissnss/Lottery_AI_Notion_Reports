@@ -1,0 +1,83 @@
+============================================================================================
+  THỬ CHẶN (RM-15) — cổng che stderr
+============================================================================================
+  Bài thử tái dựng ĐÚNG ca 11/08: journalctl bị che stderr rồi đếm dòng ⇒ 0 ⇒ «SẠCH».
+
+[1] hiện tại ⇒ mong đợi THOÁT 0
+============================================================================================
+  CỔNG CHE STDERR (V11101/GĐ-5c) — «che tiếng kêu rồi đọc số 0 thành SẠCH»
+============================================================================================
+  quét: web · .claude · .cursor  (bỏ backups · archive · artifacts · .git · venv)
+  tổng chỗ che stderr: 457  ⇒  NGUY_HIEM 6 · CẦN_XEM 29 · AN_TOÀN 405 · CHÚ_THÍCH 17
+--------------------------------------------------------------------------------------------
+
+  ✓ không chỗ nguy hiểm nào trong tệp đang canh
+
+  · NGUY HIỂM trong tệp MỘT-LẦN đã chạy xong — 6 chỗ (chỉ báo, không chặn):
+      web/backend/_v10784_tmp_run5.py:11  — o, _ = run("ps aux | grep -c '[_]v10784_p1_smoke'; md5sum /root/Lottery_AI_Test/web/fronte
+      web/backend/_v10980_restart_probe.py:21  — journalctl -u lottery --since '1 hour ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_conn_probe.py:29  — journalctl -u lottery --since '3 hours ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_probe3.py:21  — journalctl -u lottery --since '10 min ago' --no-pager 2>/dev/null | grep -c 'SCRAPE_FAIL'
+      web/backend/_v10984_verify.py:68  — echo -n "Traceback: "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c Trace
+      web/backend/_v10984_verify.py:69  — echo -n "ERROR    : "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c ERROR
+
+============================================================================================
+  ✓ [cổng] CHE_STDERR_V11101=SẠCH
+============================================================================================
+    thoát = 0 · ĐẠT
+
+[2] gieo vi phạm vào tệp ĐANG CANH (_v11101_thu_chan_tam_kiem.py) ⇒ mong đợi THOÁT 1
+============================================================================================
+  CỔNG CHE STDERR (V11101/GĐ-5c) — «che tiếng kêu rồi đọc số 0 thành SẠCH»
+============================================================================================
+  quét: web · .claude · .cursor  (bỏ backups · archive · artifacts · .git · venv)
+  tổng chỗ che stderr: 458  ⇒  NGUY_HIEM 7 · CẦN_XEM 29 · AN_TOÀN 405 · CHÚ_THÍCH 17
+--------------------------------------------------------------------------------------------
+
+  ✗ NGUY HIỂM trong TỆP ĐANG CANH — 1 chỗ (CHẶN):
+      web/backend/_v11101_thu_chan_tam_kiem.py:5
+        n = subprocess.getoutput('journalctl -u lottery --since "today 00:00" 2>/dev/null | wc -l')
+        ⇒ công cụ BẰNG CHỨNG bị che stderr, và đếm ngay trong lệnh (`wc -l` / `grep -c`)
+
+  · NGUY HIỂM trong tệp MỘT-LẦN đã chạy xong — 6 chỗ (chỉ báo, không chặn):
+      web/backend/_v10784_tmp_run5.py:11  — o, _ = run("ps aux | grep -c '[_]v10784_p1_smoke'; md5sum /root/Lottery_AI_Test/web/fronte
+      web/backend/_v10980_restart_probe.py:21  — journalctl -u lottery --since '1 hour ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_conn_probe.py:29  — journalctl -u lottery --since '3 hours ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_probe3.py:21  — journalctl -u lottery --since '10 min ago' --no-pager 2>/dev/null | grep -c 'SCRAPE_FAIL'
+      web/backend/_v10984_verify.py:68  — echo -n "Traceback: "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c Trace
+      web/backend/_v10984_verify.py:69  — echo -n "ERROR    : "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c ERROR
+
+============================================================================================
+  ✗ [cổng] CHE_STDERR_V11101=TRƯỢT — 1 chỗ đang canh
+      Vá: BỎ `2>/dev/null` và ĐỌC stderr; lỗi phải KÊU, không được thành số 0 im lặng.
+      Nếu vắng mặt thật sự là hợp lệ ⇒ bắt riêng trường hợp đó, đừng che cả stderr.
+============================================================================================
+    thoát = 1 · ĐẠT
+
+[3] đã gỡ vi phạm ⇒ mong đợi THOÁT 0
+============================================================================================
+  CỔNG CHE STDERR (V11101/GĐ-5c) — «che tiếng kêu rồi đọc số 0 thành SẠCH»
+============================================================================================
+  quét: web · .claude · .cursor  (bỏ backups · archive · artifacts · .git · venv)
+  tổng chỗ che stderr: 457  ⇒  NGUY_HIEM 6 · CẦN_XEM 29 · AN_TOÀN 405 · CHÚ_THÍCH 17
+--------------------------------------------------------------------------------------------
+
+  ✓ không chỗ nguy hiểm nào trong tệp đang canh
+
+  · NGUY HIỂM trong tệp MỘT-LẦN đã chạy xong — 6 chỗ (chỉ báo, không chặn):
+      web/backend/_v10784_tmp_run5.py:11  — o, _ = run("ps aux | grep -c '[_]v10784_p1_smoke'; md5sum /root/Lottery_AI_Test/web/fronte
+      web/backend/_v10980_restart_probe.py:21  — journalctl -u lottery --since '1 hour ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_conn_probe.py:29  — journalctl -u lottery --since '3 hours ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_probe3.py:21  — journalctl -u lottery --since '10 min ago' --no-pager 2>/dev/null | grep -c 'SCRAPE_FAIL'
+      web/backend/_v10984_verify.py:68  — echo -n "Traceback: "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c Trace
+      web/backend/_v10984_verify.py:69  — echo -n "ERROR    : "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c ERROR
+
+============================================================================================
+  ✓ [cổng] CHE_STDERR_V11101=SẠCH
+============================================================================================
+    thoát = 0 · ĐẠT
+
+  nguyên trạng: ✓ tệp tạm đã xoá
+============================================================================================
+  ✓ THU_CHAN_V11101=ĐẠT
+============================================================================================

@@ -1,0 +1,13 @@
+============================================================================================
+  CỔNG §63 — CƠ CHẾ NÂNG VERSION
+============================================================================================
+    CHANGELOG        :  402 mục · mới nhất V11101
+    HISTORY          :  143 mục có `version` · mới nhất theo ngày 2026-08-21 (0 ngày trước)
+    git log          :  250 nhãn version · chỉ-có-ở-git 12 (trong đó THIẾU HISTORY: 0)
+    STATE            : seq=431 · last_version=V11101
+    GAP_MARKER       : 1 dòng · khai báo 2 khoảng trống
+    thi hành từ      : V11062 (trước đó không truy cứu — xem chú thích trong tệp)
+--------------------------------------------------------------------------------------------
+  ✓ [cổng] NANG_VERSION_V11062=ĐẠT — bốn mặt đi cùng nhau
+  ghi chú: 286 bản TRƯỚC mốc thiếu trong HISTORY — CỐ Ý không bù (RM-17), xem chú thích trong tệp
+============================================================================================

@@ -1,0 +1,27 @@
+================================================================================================
+  KIỂM CHÉO QUYẾT ĐỊNH × QUYẾT ĐỊNH   (72 mục · hôm nay 2026-08-21)
+================================================================================================
+  ✓ lược đồ có trường 'thay_boi'   (53 trường)
+
+  chủ đề «đóng băng đường ra số» — 2 mục còn hiệu lực: 2 chiều ĐÓNG · 0 chiều MỞ
+      2026-08-08  QD-041           [ĐÓNG]  «FU215 anh nghĩ nên gia hạn thêm để đo đạt kỹ hơn đi em, dù gì cũ»
+      2026-08-12  QD-066           [ĐÓNG]  «Tam thoi de nguyen toi 21/08 luon em, dau anh huong gi den du do»
+      ✓ không mâu thuẫn
+
+  trục «xử ngay ↔ để lâu» — 4 mục còn hiệu lực: 3 chiều CÓ HẠN CHÓT · 1 chiều ĐỂ LÂU
+      ✗ VA CHẠM CẮT NGANG CHỦ ĐỀ:
+          2026-08-04 QD-021       [CÓ HẠN CHÓT] «Giãn ra cuốn chiếu tới hết ngày 10/08 phải hoàn thành, làm lần lượt nh»
+          2026-08-12 QD-066       [ĐỂ LÂU] «Tam thoi de nguyen toi 21/08 luon em, dau anh huong gi den du doan ma »
+          ⇒ QD-066 ra sau ⇒ QD-021 đáng lẽ phải mang 'thay_boi': 'QD-066', hoặc phải nêu rõ phạm vi để hai mục không phủ nhau
+      ✗ VA CHẠM CẮT NGANG CHỦ ĐỀ:
+          2026-08-05 QD-027       [CÓ HẠN CHÓT] «~12:05 — hai lựa chọn sau khi đọc báo cáo V10989/V10989b: (1) FU-269: »
+          2026-08-12 QD-066       [ĐỂ LÂU] «Tam thoi de nguyen toi 21/08 luon em, dau anh huong gi den du doan ma »
+          ⇒ QD-066 ra sau ⇒ QD-027 đáng lẽ phải mang 'thay_boi': 'QD-066', hoặc phải nêu rõ phạm vi để hai mục không phủ nhau
+      ✗ VA CHẠM CẮT NGANG CHỦ ĐỀ:
+          2026-08-12 QD-065       [CÓ HẠN CHÓT] «Da het chu ky live em tien hanh phan tich toan luc, danh gia nhan xet »
+          2026-08-12 QD-066       [ĐỂ LÂU] «Tam thoi de nguyen toi 21/08 luon em, dau anh huong gi den du doan ma »
+          ⇒ QD-066 ra sau ⇒ QD-065 đáng lẽ phải mang 'thay_boi': 'QD-066', hoặc phải nêu rõ phạm vi để hai mục không phủ nhau
+      ⓘ ĐÃ KHAI: FU-420 — trình owner 22/08: QD-066 có thay QD-021/027/065 không — không chặn commit, nhưng CHƯA XONG
+
+================================================================================================
+  ✓ [cong] KIEM_CHEO_QD=SACH

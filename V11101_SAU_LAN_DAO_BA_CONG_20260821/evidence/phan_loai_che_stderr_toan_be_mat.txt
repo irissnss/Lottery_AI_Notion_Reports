@@ -1,0 +1,51 @@
+============================================================================================
+  CỔNG CHE STDERR (V11101/GĐ-5c) — «che tiếng kêu rồi đọc số 0 thành SẠCH»
+============================================================================================
+  quét: web · .claude · .cursor  (bỏ backups · archive · artifacts · .git · venv)
+  tổng chỗ che stderr: 457  ⇒  NGUY_HIEM 6 · CẦN_XEM 29 · AN_TOÀN 405 · CHÚ_THÍCH 17
+--------------------------------------------------------------------------------------------
+
+  ✓ không chỗ nguy hiểm nào trong tệp đang canh
+
+  · NGUY HIỂM trong tệp MỘT-LẦN đã chạy xong — 6 chỗ (chỉ báo, không chặn):
+      web/backend/_v10784_tmp_run5.py:11  — o, _ = run("ps aux | grep -c '[_]v10784_p1_smoke'; md5sum /root/Lottery_AI_Test/web/fronte
+      web/backend/_v10980_restart_probe.py:21  — journalctl -u lottery --since '1 hour ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_conn_probe.py:29  — journalctl -u lottery --since '3 hours ago' --no-pager 2>/dev/null | grep -c 'Traceback'
+      web/backend/_v10983_probe3.py:21  — journalctl -u lottery --since '10 min ago' --no-pager 2>/dev/null | grep -c 'SCRAPE_FAIL'
+      web/backend/_v10984_verify.py:68  — echo -n "Traceback: "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c Trace
+      web/backend/_v10984_verify.py:69  — echo -n "ERROR    : "; journalctl -u lottery --since '-12 min' 2>/dev/null | grep -c ERROR
+
+  · CẦN XEM — 29 chỗ:
+      web/_diagnose_vps2.py:35  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/_v10730_deploy_phaseB.py:62  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/_v10731_cost_audit.py:48  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/_v10733_cron.py:30  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/_v10744_deploy_api_ui_tmp.py:20  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10694_install_cron.py:40  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10784_tmp_run6.py:18  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10784_tmp_smoke_check.py:6  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10808_check_progress.py:15  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10824_retrain_cpl6.py:26  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10830_deploy.py:51  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10830_deploy.py:52  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10843_deploy.py:43  — vắng mặt là hợp lệ, nhưng `exists` bị đem phán quyết ở dòng 44
+      web/backend/_v10848_finish_teal.py:73  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10849_fix_header.py:82  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10850_deploy.py:39  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10978_probe3.py:48  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10978_probe3.py:54  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10978_probe3.py:103  — không rõ công cụ, và đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10978_probe3.py:105  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v10979_probe2.py:26  — vắng mặt là hợp lệ, nhưng `r` bị đem phán quyết ở dòng 28
+      web/backend/_v10984_verify.py:59  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11002_kiem_dong_bang.py:29  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11002_kiem_dong_bang.py:31  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11017_deploy.py:114  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11017_deploy.py:117  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11018_deploy.py:113  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11018_deploy.py:116  — vắng mặt là hợp lệ, nhưng đếm ngay trong lệnh (`wc -l` / `grep -c`)
+      web/backend/_v11101_cong_che_stderr.py:310  — không rõ công cụ, và đếm ngay trong lệnh (`wc -l` / `grep -c`)
+
+============================================================================================
+  ✓ [cổng] CHE_STDERR_V11101=SẠCH
+============================================================================================
