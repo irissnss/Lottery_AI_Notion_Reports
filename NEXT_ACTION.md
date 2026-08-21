@@ -2,7 +2,7 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-21 10:08:59 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-21 20:07:31 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
@@ -60,7 +60,7 @@
 
 ---
 
-**Báo cáo mới nhất:** `V11095` — GO 21 08 THUC THI GOI (2026-08-21)
+**Báo cáo mới nhất:** `V11097` — DEPLOY GOI 21 08 (2026-08-21)
 
 ---
 
