@@ -2,12 +2,12 @@
 
 # MỤC LỤC BÁO CÁO — sinh từ thư mục thật
 
-**Sinh lúc:** 2026-08-21 20:07:31 (giờ VN) · **375 thư mục báo cáo**
+**Sinh lúc:** 2026-08-21 20:57:22 (giờ VN) · **376 thư mục báo cáo**
 
-**Mới nhất: `V11097`** — DEPLOY GOI 21 08 · 2026-08-21
+**Mới nhất: `V11098`** — FU416 KIEM KE DUYET GOP · 2026-08-21
 
-- [REPORT_V11097.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11097_DEPLOY_GOI_21_08_20260821/REPORT_V11097.md)
-- [CONVERSATION_CONTEXT_V11097_20260821.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11097_DEPLOY_GOI_21_08_20260821/CONVERSATION_CONTEXT_V11097_20260821.md)
+- [REPORT_V11098.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11098_FU416_KIEM_KE_DUYET_GOP_20260821/REPORT_V11098.md)
+- [CONVERSATION_CONTEXT_V11098_20260821.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11098_FU416_KIEM_KE_DUYET_GOP_20260821/CONVERSATION_CONTEXT_V11098_20260821.md)
 
 ---
 
@@ -15,6 +15,7 @@
 
 | version | ngày | chủ đề | báo cáo | ngữ cảnh | evidence |
 |---|---|---|---|---|---|
+| `V11098` | 2026-08-21 | FU416 KIEM KE DUYET GOP | [REPORT_V11098.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11098_FU416_KIEM_KE_DUYET_GOP_20260821/REPORT_V11098.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11098_FU416_KIEM_KE_DUYET_GOP_20260821/CONVERSATION_CONTEXT_V11098_20260821.md) | — |
 | `V11097` | 2026-08-21 | DEPLOY GOI 21 08 | [REPORT_V11097.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11097_DEPLOY_GOI_21_08_20260821/REPORT_V11097.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11097_DEPLOY_GOI_21_08_20260821/CONVERSATION_CONTEXT_V11097_20260821.md) | — |
 | `V11095` | 2026-08-21 | GO 21 08 THUC THI GOI | [REPORT_V11095.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11095_GO_21_08_THUC_THI_GOI_20260821/REPORT_V11095.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11095_GO_21_08_THUC_THI_GOI_20260821/CONVERSATION_CONTEXT_V11095_20260821.md) | — |
 | `V11092` | 2026-08-20 | HAI NGUONG ACTIVE DOC NOT HAI THUOC | [REPORT_V11092.md](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/REPORT_V11092.md) | [ngữ cảnh](https://raw.githubusercontent.com/irissnss/Lottery_AI_Notion_Reports/main/V11092_HAI_NGUONG_ACTIVE_DOC_NOT_HAI_THUOC_20260820/CONVERSATION_CONTEXT_V11092_20260820.md) | — |

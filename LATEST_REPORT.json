@@ -1,21 +1,33 @@
 {
  "_sinh_boi": "web/backend/_v11083_sinh_dieu_huong.py — CẤM sửa tay",
- "_sinh_luc_vn": "2026-08-21 20:07:31",
- "tong_thu_muc": 375,
- "latest_version": "V11097",
+ "_sinh_luc_vn": "2026-08-21 20:57:22",
+ "tong_thu_muc": 376,
+ "latest_version": "V11098",
  "latest": {
-  "version": "V11097",
+  "version": "V11098",
   "ngay": "2026-08-21",
-  "chu_de": "DEPLOY GOI 21 08",
-  "thu_muc": "V11097_DEPLOY_GOI_21_08_20260821",
+  "chu_de": "FU416 KIEM KE DUYET GOP",
+  "thu_muc": "V11098_FU416_KIEM_KE_DUYET_GOP_20260821",
   "bao_cao": [
-   "V11097_DEPLOY_GOI_21_08_20260821/REPORT_V11097.md"
+   "V11098_FU416_KIEM_KE_DUYET_GOP_20260821/REPORT_V11098.md"
   ],
   "ngu_canh": [
-   "V11097_DEPLOY_GOI_21_08_20260821/CONVERSATION_CONTEXT_V11097_20260821.md"
+   "V11098_FU416_KIEM_KE_DUYET_GOP_20260821/CONVERSATION_CONTEXT_V11098_20260821.md"
   ]
  },
  "gan_day": [
+  {
+   "version": "V11098",
+   "ngay": "2026-08-21",
+   "chu_de": "FU416 KIEM KE DUYET GOP",
+   "thu_muc": "V11098_FU416_KIEM_KE_DUYET_GOP_20260821",
+   "bao_cao": [
+    "V11098_FU416_KIEM_KE_DUYET_GOP_20260821/REPORT_V11098.md"
+   ],
+   "ngu_canh": [
+    "V11098_FU416_KIEM_KE_DUYET_GOP_20260821/CONVERSATION_CONTEXT_V11098_20260821.md"
+   ]
+  },
   {
    "version": "V11097",
    "ngay": "2026-08-21",
@@ -182,18 +194,6 @@
    ],
    "ngu_canh": [
     "V11081_DU_NAM_CONG_I1_I5_20260817/CONVERSATION_CONTEXT_V11081_20260817.md"
-   ]
-  },
-  {
-   "version": "V11080",
-   "ngay": "2026-08-16",
-   "chu_de": "LUATCHUNG KHAIDANHTINH CONGI1",
-   "thu_muc": "V11080_LUATCHUNG_KHAIDANHTINH_CONGI1_20260816",
-   "bao_cao": [
-    "V11080_LUATCHUNG_KHAIDANHTINH_CONGI1_20260816/REPORT_V11080.md"
-   ],
-   "ngu_canh": [
-    "V11080_LUATCHUNG_KHAIDANHTINH_CONGI1_20260816/CONVERSATION_CONTEXT_V11080_20260816.md"
    ]
   }
  ]
