@@ -2,20 +2,13 @@
 
 # VIỆC KẾ TIẾP — sinh từ `docs/FOLLOW_UP_TRACKER.md`
 
-**Sinh lúc:** 2026-08-20 20:20:59 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
+**Sinh lúc:** 2026-08-21 10:08:59 (giờ VN) · chỉ mục **còn treo** (bỏ mục đã đóng và luật đứng), cửa sổ **[−14, +21] ngày**
 
 ## ⏭ SẮP TỚI — từ hôm nay trở đi
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
-| `FU-298` | `QD2008` | §5g thưởng đúng ô tệ nhất — gộp cùng FU-291 | **20/08** | `AWAITING_OWNER_OK` |
-| `FU-299` | `SC2008` | MB thiếu MN(D) ở tầng ML | **20/08** | `AWAITING_OWNER_OK` |
-| `FU-237` | `DP2008` | Canh chốt giờ cấm deploy | **20/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-232` | `SC2008-3` | V10938 nửa còn: trọng số số còn WR | **20/08** | `OWNER_LOCK` |
-| `FU-229` | `SC2008-2` | Champion selector cron không ghi bảng | **20/08** | `MEASURED_BUT_NOT_FIXED` |
-| `FU-230` | `DO2008-2` | Đồng bộ thước WR vs bạch thủ | **20/08** | `MEASURED_BUT_NOT_FIXED` |
 | `FU-410` | `KS2108-2` | **BỐN MỤC GÓI 21/08 KHÔNG CÓ MÃ THEO DÕI** — rà tổng lực 20/08 | **21/08** | `MEASURED_ROOT_CAUSE` |
-| `FU-380` | `SC0908-6` | CHỜ 21/08 — hai danh sách cứng dự phòng trôi khỏi registry | **21/08** | `BLOCKED` |
 | `FU-355` | `SC2108-2` | Lượt rỗng bị chấm LOSE — ĐÃ VÁ | **21/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-359` | `DO2108-3` | Model có tiến triển sau đổi prompt không — CHƯA ĐO ĐƯỢC | **21/08** | `WAIT_LIVE` |
 | `FU-341` | `SC2108` | `build_context_pack(shadow_mode=True)` VỠ — ĐÃ VÁ | **21/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
@@ -28,6 +21,8 @@
 | `FU-317` | `DO1008` | ĐÃ LÀM — M-A tầng đối chứng ML × luật × bộ lọc | **21/08** | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-313` | `KS2108` | Cổng chặn kết luận "trước vs sau" thiếu nền | **21/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-295` | `QD2108` | Owner quyết số phận `rule_custom_prompt` | **21/08** | `AWAITING_OWNER_OK` |
+| `FU-416` | `DO2108` | **PROMPT PRODUCTION KHÔNG ỔN ĐỊNH — đổi nội dung theo hạt băm từng tiế | **22/08** | `MEASURED_ROOT_CAUSE` |
+| `FU-415` | `SC2108` | **Hook cổng `git commit` dùng ĐƯỜNG DẪN TƯƠNG ĐỐI — vỡ khi chạy từ thư | **22/08** | `MEASURED_ROOT_CAUSE` |
 | `FU-409` | `DD2208` | **48 bản vá cũ — HOÃN sau 21/08** *(owner ký 19:18 ngày 18/08)* | **22/08** | `DEFER` |
 | `FU-365` | `DD2208` | Quyết có sửa hẳn 229 dòng sai nhãn miền không | **22/08** | `AWAITING_OWNER_OK` |
 | `FU-233` | `HT0822-1` | B1 tắt tối ưu trọng số (sau 08/08) | **22/08** | `OWNER_LOCK` |
@@ -44,28 +39,28 @@
 
 ## ⚠ QUÁ HẠN — còn treo
 
-**96 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
+**94 mục** quá hạn còn treo trong cửa sổ; in 14 mục cũ nhất.
 
 | mã | mã đọc | việc | hạn | trạng thái |
 |---|---|---|---|---|
-| `FU-268` | `UI0806-1` | Xác minh lại /du-doan-test sau khi sửa 4 nhãn sai | **QUÁ HẠN** 06/08 | `DEPLOYED_PENDING_OWNER_VERIFY` |
-| `FU-250` | `KS0806` | Soát nốt cổng còn thoát 0 khi trượt | **QUÁ HẠN** 06/08 | `MEASURED_ROOT_CAUSE` |
-| `FU-256` | `DO0806` | Biên giờ chốt MT/MB co lại | **QUÁ HẠN** 06/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-258` | `KS0806-1` | Cổng đếm việc giấu mất hạn và giấu mục mồ côi | **QUÁ HẠN** 06/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
-| `FU-224` | `UI0806` | Dọn trang frontend trùng/chết | **QUÁ HẠN** 06/08 | `OWNER_LOCK` |
-| `FU-257` | `SC0806` | Cohere chết 25 ngày mà health vẫn khai đang chạy | **QUÁ HẠN** 06/08 | `MEASURED_ROOT_CAUSE` |
-| `FU-210` | `DO0806-1` | Đào nguyên nhân mất lợi thế MT tháng 6 | **QUÁ HẠN** 06/08 | `MEASURED_BUT_NOT_FIXED` |
-| `FU-245` | `SC0804` | Hook đầu phiên im 2 ngày | **QUÁ HẠN** 06/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-330` | `` | ĐÃ LÀM — thôi xoá bộ đếm đo tiến mỗi thứ Hai · hạn 07/08 | **QUÁ HẠN** 07/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-287` | `KS0708` | ĐÃ LÀM — phép đo CƠ CHẾ cho V11016 | **QUÁ HẠN** 07/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-321` | `` | + FU-322 · ĐÃ LÀM — số thành lời kể + ngưỡng tự quyết · hạn 07/08 | **QUÁ HẠN** 07/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-291` | `QD0808-1` | ĐÃ LÀM — prompt thôi ép chọn | **QUÁ HẠN** 07/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 | `FU-282` | `SC0708` | Xếp lại 4 job phụ thuộc rồi mới dời lịch MN | **QUÁ HẠN** 07/08 | `MEASURED_ROOT_CAUSE` |
 | `FU-273` | `KS0807-1` | Ba nơi CÒN CHẠY vẫn đọc bảng lane đã nghỉ | **QUÁ HẠN** 07/08 | `MEASURED_ROOT_CAUSE` |
+| `FU-270` | `SC0807` | Bộ chấm lane test không có cron — du_doan_test_results dừng từ 28/07 | **QUÁ HẠN** 07/08 | `MEASURED_ROOT_CAUSE` |
+| `FU-263` | `DD0807-1` | Dọn bản sao lưu nginx lẫn trong `sites-enabled` | **QUÁ HẠN** 07/08 | `MEASURED_ROOT_CAUSE` |
+| `FU-223` | `HT0807` | Chéo prompt cùng model GĐ4 — thiết kế | **QUÁ HẠN** 07/08 | `OWNER_LOCK` |
+| `FU-255` | `DD0807` | Bảng cảnh báo chết 84 ngày và 4 bảng rỗng không ai canh | **QUÁ HẠN** 07/08 | `MEASURED_ROOT_CAUSE` |
+| `FU-193` | `XH0807` | Sàn chất lượng combo-super — thiết kế + ngưỡng số | **QUÁ HẠN** 07/08 | `AWAITING_OWNER_OK` |
+| `FU-352` | `TK0808-4` | BA MODEL KHÔNG PHẢI PHÉP THỬ ĐỘC LẬP | **QUÁ HẠN** 08/08 | `MEASURED_BUT_NOT_FIXED` |
+| `FU-303` | `KS0808` | Cổng tuổi dữ liệu — ĐÃ DỰNG THẬT | **QUÁ HẠN** 08/08 | `READY_NOT_DEPLOYED` |
+| `FU-345` | `SC0808` | A4 — chuỗi lỗi bơm vào prompt cả 15 model — ĐÃ VÁ | **QUÁ HẠN** 08/08 | `DEPLOYED_PENDING_LIVE_VERIFY` |
 
 ---
 
-**Báo cáo mới nhất:** `V11092` — HAI NGUONG ACTIVE DOC NOT HAI THUOC (2026-08-20)
+**Báo cáo mới nhất:** `V11095` — GO 21 08 THUC THI GOI (2026-08-21)
 
 ---
 
