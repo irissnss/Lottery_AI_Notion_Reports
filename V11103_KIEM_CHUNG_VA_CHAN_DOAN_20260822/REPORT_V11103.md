@@ -36,7 +36,7 @@ Ba việc, và **cả ba đều cho kết quả ngược với điều đang đ�
 
 ---
 
-## 3. GĐ-1 — KIỂM CHỨNG LƯỢT 05:00 NGÀY 22/08
+## 3. Đào bới / phát hiện — GĐ-1: kiểm chứng lượt 05:00 ngày 22/08
 
 ### 3.1 · Ba điều kiện, hai xanh, một chưa kiểm được
 
@@ -88,7 +88,7 @@ phép so «trước/sau deploy» đều lấy mốc đó.
 
 ---
 
-## 4. GĐ-2 — `glm-5.1` TRẢ LỜI RỖNG: hai lượt, hai nguyên nhân khác hẳn nhau
+## 4. Hướng xử lý và vì sao chọn — GĐ-2: `glm-5.1` rỗng, hai nguyên nhân khác hẳn nhau
 
 ### 4.1 · RÚT LẠI (theo `PRJ-RETRACTION-001` — đủ bốn phần)
 
@@ -169,7 +169,7 @@ biết 2,3% kia có làm hỏng gì không.
 
 ---
 
-## 5. GĐ-3 — `FU-421`: ĐO ba chỗ thiếu khoá phá hoà
+## 5. Đã làm gì — GĐ-3: đo `FU-421`, ba chỗ thiếu khoá phá hoà
 
 Ba chỗ `main.py:7894` (Smart Ensemble) · `:8101` (Smart ML) · `:8354` (Combo No Token), cùng khuôn:
 
