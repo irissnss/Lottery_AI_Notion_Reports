@@ -1,0 +1,16 @@
+============================================================================================
+  K1 — MỌI CỔNG GÁC `git commit` PHẢI CHẠY ĐƯỢC VÀ THOÁT 0
+============================================================================================
+  ✓ ghi tệp không đóng tay             thoát 0 · _v11019_cong_ghi_an_toan.py
+  ✓ đoán tên không tồn tại             thoát 0 · _v11020_cong_doan_ten.py
+  ✓ mất mục quản trị                   thoát 0 · _v11027_so_muc_quan_tri.py
+  ✓ phá cửa sổ đóng băng QD-041        thoát 0 · _v11028_cong_dong_bang.py
+  ✓ quyết định mâu thuẫn nhau          thoát 0 · _v11034_kiem_cheo_quyet_dinh.py
+  ✓ khối FU thiếu ô status             thoát 0 · _v11044_cong_o_status.py
+  ✓ mục treo bị đẩy vào archive        thoát 0 · _v11048_kiem_legacy_treo.py
+  ✓ chấm ngày D bằng tensor ngày D     thoát 0 · _v11050_kiem_bien_anchor.py
+============================================================================================
+  ✓ [cong] CONG_K1_V11050=DAT — 8/8 cổng chạy được và thoát 0
+    ⓘ Đây là NỬA của K1. Nửa còn lại — mỗi cổng phải có bằng chứng RM-15 «giả lập
+      vi phạm ⇒ chặn» — CHƯA có sổ đăng ký, nên K1 CHƯA ĐẠT ĐỦ.
+============================================================================================

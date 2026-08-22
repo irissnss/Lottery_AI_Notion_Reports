@@ -1,0 +1,15 @@
+=== MN ===
+133c133
+< - D-1 cross-region tail pool: 00, 01, 03, 04, 05, 06, 07, 09, 10, 11, 12, 13 ...
+---
+> - D-1 cross-region tail pool: 77 distinct tails
+=== MT ===
+126c126
+< - D-1 cross-region tail pool: 00, 01, 03, 04, 05, 06, 07, 09, 10, 11, 12, 13 ...
+---
+> - D-1 cross-region tail pool: 77 distinct tails
+=== MB ===
+239c239
+< - D-1 cross-region tail pool: 00, 01, 03, 04, 05, 06, 07, 09, 10, 11, 12, 13 ...
+---
+> - D-1 cross-region tail pool: 77 distinct tails
