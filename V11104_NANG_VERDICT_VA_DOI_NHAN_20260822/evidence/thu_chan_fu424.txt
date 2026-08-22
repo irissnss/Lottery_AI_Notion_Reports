@@ -1,0 +1,23 @@
+============================================================================================
+  THỬ CHẶN (RM-15) — FU-424: dữ liệu cũ thì ĐỔI NHÃN, không TẮT
+============================================================================================
+
+[1] manifest MỚI (1 giờ trước) ⇒ mong đợi KHÔNG có khối cảnh báo,
+    và phép lệch trên DB local được đếm là TRÔI
+    khối cảnh báo: False · nhãn mới: False · ĐẠT
+
+[2] manifest CŨ (48 giờ trước) ⇒ mong đợi CÓ khối cảnh báo IN TRƯỚC,
+    và phép lệch trên DB local đổi nhãn KHÔNG_KẾT_LUẬN_ĐƯỢC
+    khối cảnh báo: True · nhãn mới: True · in TRƯỚC bảng: True · ĐẠT
+
+[3] KHÔNG được TẮT phép nào — phép lệch vẫn phải HIỆN đầy đủ
+    lượt [1] thấy 1 phép lệch · lượt [2] thấy 2 · BIẾN MẤT: 0 · ĐẠT
+
+  nguyên trạng manifest: ✓ KHỚP TỪNG BYTE
+
+============================================================================================
+    ✓ [1] dữ liệu mới ⇒ không đổi nhãn
+    ✓ [2] dữ liệu cũ ⇒ đổi nhãn + in trước
+    ✓ [3] không phép nào bị nuốt mất
+  ✓ THU_CHAN_V11104=ĐẠT
+============================================================================================

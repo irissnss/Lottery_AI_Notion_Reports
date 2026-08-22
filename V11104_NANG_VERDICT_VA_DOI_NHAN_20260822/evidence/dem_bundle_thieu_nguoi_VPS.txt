@@ -1,0 +1,73 @@
+================================================================================================
+  ĐẾM NGÀY BUNDLE THIẾU NGƯỜI ĐÓNG GÓP (V11104/GĐ-2②)
+================================================================================================
+  cửa sổ 60 ngày · 183 ngày-miền · sĩ số kỳ vọng suy ĐỘNG (cao nhất trong ±7 ngày)
+  ngày-miền THIẾU ít nhất một người: **30/183** = 16.4%
+------------------------------------------------------------------------------------------------
+
+  MN: 10/61 ngày thiếu
+     2026-07-28  có 12/15  thiếu: ['deepseek-reasoner', 'glm-5.1', 'gpt-oss-120b']
+     2026-07-29  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-30  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-31  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-08-01  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-08-15  có 13/15  thiếu: ['deepseek-reasoner', 'glm-5.1']
+     2026-08-18  có 14/15  thiếu: ['glm-5.1']
+     2026-08-22  có 14/15  thiếu: ['deepseek-reasoner']
+     … còn 2 ngày trước đó
+
+  MT: 12/61 ngày thiếu
+     2026-07-29  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-30  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-31  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-08-01  có 14/15  thiếu: ['gpt-5.4']
+     2026-08-07  có 14/15  thiếu: ['deepseek-reasoner']
+     2026-08-08  có 14/15  thiếu: ['deepseek-reasoner']
+     2026-08-13  có 14/15  thiếu: ['glm-5.1']
+     2026-08-15  có 14/15  thiếu: ['gpt-oss-120b']
+     … còn 4 ngày trước đó
+
+  MB: 8/61 ngày thiếu
+     2026-07-25  có 13/14  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-26  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-27  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-28  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-29  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-30  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-07-31  có 13/15  thiếu: ['glm-5.1', 'gpt-oss-120b']
+     2026-08-01  có 14/15  thiếu: ['gpt-5.4']
+
+  AI VẮNG NHIỀU NHẤT:
+     glm-5.1                vắng  24 ngày-miền
+     gpt-oss-120b           vắng  22 ngày-miền
+     deepseek-reasoner      vắng   5 ngày-miền
+     gpt-5.4                vắng   3 ngày-miền
+
+================================================================================================
+  ⓘ ĐẾM VÀ CHỈ ĐẾM — bảng này KHÔNG nói vắng người thì bundle tệ hơn. Muốn nói điều đó
+    phải so tỉ lệ trúng ngày đủ người với ngày thiếu người, có nền và có z.
+================================================================================================
+=== THU CHAN ===
+================================================================================================
+  THỬ CHẶN (RM-15) — phép đếm bundle thiếu người
+================================================================================================
+
+[1] dữ liệu thật ⇒ phép đếm chạy được
+    183 ngày-miền · ĐẠT
+
+[2] GỠ một model khỏi MỘT ngày ⇒ ngày đó phải bị đếm là THIẾU
+    gỡ `claude-opus-4-6` khỏi 2026-06-23/MB ⇒ thiếu=1 · có tên trong danh sách vắng: True · ĐẠT
+
+[3] dữ liệu gốc lại ⇒ kết quả y như lượt [1]
+    ĐẠT
+
+[4] lượt tạo SAU mốc chốt KHÔNG được tính là có mặt
+    có 0 lượt tạo sau mốc · tất cả đều KHÔNG tính có mặt: True · ĐẠT
+
+================================================================================================
+    ✓ [1] chạy được trên dữ liệu thật
+    ✓ [2] gỡ một model ⇒ bị đếm thiếu
+    ✓ [3] khôi phục ⇒ y hệt
+    ✓ [4] lượt sau mốc chốt không tính
+  ✓ THU_CHAN_DEM_THIEU_V11104=ĐẠT
+================================================================================================
