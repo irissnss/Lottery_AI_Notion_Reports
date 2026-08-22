@@ -1,0 +1,27 @@
+[INIT] Loaded .env from: E:\Lottery_AI_Test\.env
+[INIT] Loading .env file...
+[INIT] OpenAI API Key loaded: True
+[INIT] Anthropic API Key loaded: True
+[INIT] AI Model: gpt-4o-mini
+[WARNING] Anthropic package not installed. Install with: pip install anthropic
+[WARNING] Google GenAI package not installed. Install with: pip install google-genai
+[INIT] Deploy API registered: /api/_system/deploy
+[INIT] P&L tracker API registered: /api/admin/pnl/*
+[INIT] OpenAI API Key configured: True
+[INIT] Anthropic API Key configured: True
+[INIT] Gemini API Key configured: True
+[INIT] Selected AI Model: gpt-4o-mini
+  📊 Dynamic WR (7d×2 + 30d×1): {'combo-no-token': 41.9, 'claude-sonnet-4-6': 35.2, 'gpt-5.6-sol-pro': 43.1, 'qwen3-max-thinking': 45.6, 'glm-5.1': 31.8, 'deepseek-reasoner': 36.0, 'gemma-4-31b': 38.1, 'random-forest': 48.3, 'smart-ml': 41.9, 'lstm': 33.5, 'claude-opus-5-fast': 43.1, 'meta-learning': 54.2, 'kimi-k2.5': 45.2, 'qwen3.7-max': 52.5, 'grok-4.20-multi-agent': 42.9, 'claude-opus-4-6': 48.3, 'gpt-5.5': 38.6, 'combo-super': 46.1, 'gpt-oss-120b': 26.5, 'gemini-2.5-pro': 30.2, 'smart-ensemble': 43.0, 'gemini-2.5-flash': 35.5, 'gemini-3.6-flash': 42.1, 'deepseek-v4-pro-real': 37.1, 'gpt-5.4': 25.4, 'glm-5.2': 48.9, 'xgboost': 43.6, 'grok-4.3': 39.2, 'gpt-5-mini': 29.6, 'gemini-3.5-flash': 51.9}
+  📊 Dynamic WR (7d×2 + 30d×1): {'combo-no-token': 34.4, 'claude-sonnet-4-6': 25.9, 'gpt-5.6-sol-pro': 37.6, 'qwen3-max-thinking': 37.1, 'glm-5.1': 38.1, 'deepseek-reasoner': 35.2, 'gemma-4-31b': 44.4, 'random-forest': 30.2, 'smart-ml': 36.6, 'lstm': 24.3, 'claude-opus-5-fast': 31.4, 'meta-learning': 28.0, 'kimi-k2.5': 38.9, 'qwen3.7-max': 37.6, 'grok-4.20-multi-agent': 45.2, 'claude-opus-4-6': 34.9, 'gpt-5.5': 44.2, 'combo-super': 31.8, 'gpt-oss-120b': 32.4, 'gemini-2.5-pro': 44.2, 'smart-ensemble': 34.4, 'gemini-2.5-flash': 39.4, 'gemini-3.6-flash': 28.6, 'deepseek-v4-pro-real': 30.0, 'gpt-5.4': 37.1, 'glm-5.2': 16.4, 'xgboost': 47.2, 'grok-4.3': 27.0, 'gpt-5-mini': 28.2, 'gemini-3.5-flash': 26.9}
+  📊 Dynamic WR (7d×2 + 30d×1): {'combo-no-token': 35.8, 'claude-sonnet-4-6': 15.6, 'gpt-5.6-sol-pro': 21.1, 'qwen3-max-thinking': 3.9, 'glm-5.1': 33.2, 'deepseek-reasoner': 23.2, 'gemma-4-31b': 33.3, 'random-forest': 20.9, 'smart-ml': 16.2, 'lstm': 42.2, 'claude-opus-5-fast': 15.6, 'meta-learning': 22.0, 'kimi-k2.5': 36.1, 'qwen3.7-max': 18.9, 'grok-4.20-multi-agent': 35.7, 'claude-opus-4-6': 30.5, 'gpt-5.5': 14.1, 'combo-super': 28.0, 'gpt-oss-120b': 18.2, 'gemini-2.5-pro': 12.5, 'smart-ensemble': 37.5, 'gemini-2.5-flash': 12.0, 'gemini-3.6-flash': 29.6, 'deepseek-v4-pro-real': 14.7, 'gpt-5.4': 15.6, 'glm-5.2': 16.4, 'xgboost': 9.7, 'grok-4.3': 26.5, 'gpt-5-mini': 3.9, 'gemini-3.5-flash': 25.0}
+  TỈ LỆ THẮNG THẬT đang dùng (từ `_get_dynamic_win_rates`):
+    MN: {'random-forest': 48.3, 'lstm': 33.5, 'meta-learning': 54.2, 'xgboost': 43.6}
+    MT: {'random-forest': 30.2, 'lstm': 24.3, 'meta-learning': 28.0, 'xgboost': 47.2}
+    MB: {'random-forest': 20.9, 'lstm': 42.2, 'meta-learning': 22.0, 'xgboost': 9.7}
+
+============================================================================================
+  Smart Ensemble (:7894)  2 model
+     xét 111 ngày-miền · có hoà ở đâu đó 0 (0%) · hoà ĐÚNG BIÊN hạng 0/1: 0 · biên hạng 2/3: 0
+  Smart ML / Combo (:8101, :8354)  4 model
+     xét 111 ngày-miền · có hoà ở đâu đó 0 (0%) · hoà ĐÚNG BIÊN hạng 0/1: 0 · biên hạng 2/3: 0
+============================================================================================

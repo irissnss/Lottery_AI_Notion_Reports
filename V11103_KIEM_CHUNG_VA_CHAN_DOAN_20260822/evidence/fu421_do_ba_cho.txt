@@ -1,0 +1,11 @@
+============================================================================================
+  FU-421/GĐ-3 — ĐO ba chỗ thiếu khoá phá hoà (CHỈ ĐO, KHÔNG VÁ)
+============================================================================================
+  dữ liệu: 111 cặp ngày-miền có đủ số của model ML (60 ngày)
+
+  A. THỬ ĐỐI CHỨNG — `set` thật qua 3 seed cho 3 thứ tự khác nhau ⇒ dụng cụ đo CÓ tác dụng
+  B. Smart Ensemble (:7894): xét 111 ngày-miền · số ngày thứ tự ĐỔI theo seed: 0
+  B. Smart ML / Combo (:8101, :8354): xét 111 ngày-miền · số ngày thứ tự ĐỔI theo seed: 0
+  C. Smart Ensemble (:7894): 111 ngày-miền · có hoà ở đâu đó 108 · hoà ĐÚNG BIÊN hạng 0/1 107 · biên top-3 107 · biên top-10 0
+  C. Smart ML / Combo (:8101, :8354): 111 ngày-miền · có hoà ở đâu đó 104 · hoà ĐÚNG BIÊN hạng 0/1 12 · biên top-3 60 · biên top-10 0
+============================================================================================
