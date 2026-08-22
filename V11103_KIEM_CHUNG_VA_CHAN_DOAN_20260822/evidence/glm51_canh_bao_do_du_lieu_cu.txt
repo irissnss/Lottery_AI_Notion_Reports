@@ -1,0 +1,18 @@
+BANG CHUNG: canh bao 'glm-5.1 rot san' sinh tu DU LIEU LOCAL CU, khong phai tu hanh vi model
+====================================================================================
+DB LOCAL CU (truoc dong bo)
+   glm-5.1/MN 7 ngay : 6 luot · rong 2 · KHONG rong = 4
+   model_daily_eval  : 12872 dong
+DB LOCAL MOI (sau dong bo 22/08 09:59)
+   glm-5.1/MN 7 ngay : 7 luot · rong 2 · KHONG rong = 5
+   model_daily_eval  : 12953 dong
+====================================================================================
+san MIN_MAU_DU_TUYEN = 5
+CU : 4 < 5  => BAO DO
+MOI: 5 >= 5 => KHONG DO
+
+=> glm-5.1 CHUA BAO GIO that su rot san. Canh bao do ban local thieu 81 dong
+   (dung luot cron 20:20 ngay 21/08) sinh ra.
+
+VA: cong RM-01 (QD-056) DANG DO cung luc, bao dung cai nguyen nhan do —
+   hai cong cung do, mot cai la LOI GIAI THICH cho cai kia. => FU-424.

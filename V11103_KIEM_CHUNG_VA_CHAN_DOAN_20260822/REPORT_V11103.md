@@ -16,7 +16,9 @@ Ba việc, và **cả ba đều cho kết quả ngược với điều đang đ�
 | `glm-5.1` rỗng | *«lỗi của MN»* · *«model này kém»* | **cả ba miền đều có** · tỉ lệ **ngang `deepseek-reasoner`** |
 | `FU-421` ba chỗ hoà | *«thứ tự ngẫu nhiên có thể đổi số»* | **0/111 — không đổi**; nhưng lộ ra **một đường lùi câm** nguy hiểm hơn |
 
-**Hai con số phải rút lại**, cả hai là của chính báo cáo hôm qua: **§4.1** và **§5.1**.
+**BA con số phải rút lại**, tất cả là của chính agent: **§4.1** (*«rỗng chỉ ở MN»*) · **§5.1**
+(*«107/111»* là trường hợp giả định) · và **§5b.2** — nặng nhất: **cảnh báo `glm-5.1` rớt sàn
+CHƯA BAO GIỜ có thật**, nó sinh ra từ một bản dữ liệu local thiếu 81 dòng.
 
 ---
 
@@ -243,6 +245,57 @@ cái đau**.
 
 ---
 
+## 5b. PHÁT HIỆN SAU CÙNG — cảnh báo `glm-5.1` CHƯA BAO GIỜ có thật
+
+Sau khi đóng phần trên, em chạy đồng bộ dữ liệu sống để xử phép trôi `QD-056` (`RM-01`: dữ liệu
+local cũ hơn 6 giờ). **Hai** phép trôi tự hết cùng lúc — và đó là manh mối.
+
+### 5b.1 · Cơ chế, đo được từng con số
+
+| bản DB | `glm-5.1`/MN cửa sổ 7 ngày | **KHÔNG rỗng** | sàn `MIN_MAU_DU_TUYEN = 5` |
+|---|---|---:|---|
+| **cũ** (local, trước đồng bộ) | 6 lượt · rỗng 2 | **4** | 4 < 5 ⇒ **BÁO ĐỎ** |
+| **mới** (sau đồng bộ) | 7 lượt · rỗng 2 | **5** | 5 ≥ 5 ⇒ **không đỏ** |
+
+Bản local **thiếu 81 dòng** — `model_daily_eval` **12.872 → 12.953** sau đồng bộ, đúng lượt cron
+**20:20 ngày 21/08**. Cổng `_v11036` nay báo `NO_ANSWER_V11036=DAT`, `0` model rớt sàn.
+
+⇒ **`glm-5.1` chưa bao giờ thật sự rớt sàn.**
+
+### 5b.2 · RÚT LẠI lần thứ ba trong phiên — và lần này rút chính TIỀN ĐỀ
+
+| phần | nội dung |
+|---|---|
+| **chỗ gốc** | `docs/FOLLOW_UP_TRACKER.md` mục `FU-423` bản đầu + `REPORT_V11102` §6.2, rạng sáng 22/08 |
+| **nguyên văn câu sai** | *«`glm-5.1` … rớt sàn ứng viên ĐÚNG NGÀY vừa vào danh sách output»* |
+| **điều đúng** | **Không có lần rớt sàn nào trên dữ liệu thật.** Tái lập: chạy cùng truy vấn trên `scratchpad/lottery_ai.db.pre_v11102_backfill` và `data/lottery_ai.db` |
+| **đã dựa vào đâu** | Đó là **toàn bộ lý do** `FU-423` được mở, và là căn cứ để cân nhắc **rút `glm-5.1` khỏi output MN**. Không đồng bộ rồi đo lại thì phiên 25/08 đã bàn chuyện cắt một model **dựa trên một cảnh báo không có thật** |
+
+**Điều VẪN ĐÚNG, không rút:** hai lượt rỗng có thật với hai nguyên nhân khác hẳn nhau · 15/08 là sự
+kiện diện rộng · 18/08 là cầu dao ngắt mạch · nhãn `EMPTY_PROVIDER_OUTPUT` **vẫn ghi sai sự thật**
+và vẫn đáng vá · tỉ lệ 2,26% ≈ 2,22% của `deepseek-reasoner`. **Cả năm điều này đo trên VPS**, nguồn
+production, nên không bị ảnh hưởng.
+
+⇒ Đề xuất **(a) GIỮ** nay **mạnh hơn**, không yếu đi.
+
+### 5b.3 · Lỗi thật của phiên này: HAI CỔNG CÙNG ĐỎ, MỘT CÁI GIẢI THÍCH CÁI KIA
+
+```
+QD-056  🔴  RM-01: dữ liệu local CŨ HƠN 6 GIỜ      ← lời giải thích
+QD-046  🔴  glm-5.1 rớt sàn ứng viên trên MN       ← hậu quả
+```
+
+Em truy từng phép trôi rồi kết luận chúng **độc lập**. Sai. `RM-01` **đã có sẵn và đang chạy đúng**
+— nó kêu to đúng lúc. Cái thiếu là **không ai bắt phải đọc nó TRƯỚC**. Một cổng báo *«dữ liệu cũ»*
+nằm **ngang hàng** với các cổng đo trên chính dữ liệu đó thì người đọc sẽ xử theo thứ tự xuất hiện,
+và **tin những con số vốn đã hỏng**.
+
+→ **`FU-424`, hạn 23/08:** khi `RM-01` đỏ, các phép đo dựa trên DB local phải đổi nhãn thành
+`KHÔNG_KẾT_LUẬN_ĐƯỢC` chứ không phải `TRÔI`, và **in ra trước**.
+**Cấm** biến nó thành *«bỏ qua các phép khác khi dữ liệu cũ»* — phải **ĐỔI NHÃN**, không phải **TẮT**.
+
+---
+
 ## 6. Cổng kiểm
 
 | cổng | kết quả |
@@ -288,7 +341,8 @@ tài liệu. Gỡ bằng `git revert <sha>`.
 |---|---|---|
 | `FU-404` | **chiều tối nay**: job đo phải sinh **cả hai họ** cho 22/08 ⇒ đủ ba điều kiện thì mới nâng `V11102` lên `RUNTIME_PROVEN` | **22/08 tối** |
 | `FU-421` | vá **cả ba** chỗ + **làm đường lùi kêu lên** + đo lại | 24/08 |
-| `FU-423` | owner chọn lối (a)/(b)/(c) cho `glm-5.1`; **đề xuất (a) GIỮ** | 25/08 |
+| `FU-423` | **không còn là «cắt hay giữ»** — cảnh báo gốc đã rút; còn lại hai việc vá: nhãn sai + đếm ngày bundle thiếu người | 25/08 |
+| **`FU-424`** · `KS2308` | khi `RM-01` đỏ, các phép đo trên DB local phải đổi nhãn `KHÔNG_KẾT_LUẬN_ĐƯỢC` chứ không phải `TRÔI`, và in ra TRƯỚC | **23/08** |
 | *(mới, chưa cấp số)* | vá **nhãn sai** `EMPTY_PROVIDER_OUTPUT` cho đường cầu dao | chờ owner |
 | *(mới, chưa cấp số)* | **đếm số ngày bundle thiếu người** — hôm nay không ai đếm | chờ owner |
 | — | 24/08 đủ 14 ngày ⇒ **được phép đọc** lane T-B | 24/08 |
@@ -331,4 +385,4 @@ tài liệu. Gỡ bằng `git revert <sha>`.
 
 ---
 
-**TanPhatAI cần làm:** cập nhật `docs/FOLLOW_UP_TRACKER.md` — `FU-421` chuyển sang **đã đo, KHÔNG CHỨNG cả ba chỗ** (vá 24/08 kèm việc thứ tư: làm đường lùi `model_rates = {}` kêu lên), và `FU-423` chuyển sang **đã chẩn đoán, đề xuất GIỮ `glm-5.1`** (rỗng có ở cả ba miền, tỉ lệ 2,26% ngang `deepseek-reasoner` 2,22%); theo dõi ba việc: ① **chiều tối nay** job đo phải sinh cả hai họ cho 22/08 — đủ thì mới nâng `V11102` lên `RUNTIME_PROVEN`, chưa đủ thì **cấm nâng**, ② owner chọn lối cho `FU-423` trước 25/08 (đề xuất **giữ**, **cấm hạ sàn**), ③ hai việc mới chưa cấp số cần owner duyệt: vá nhãn sai của đường cầu dao, và đếm số ngày bundle thiếu người — hôm nay **không ai đang đếm**.
+**TanPhatAI cần làm:** cập nhật `docs/FOLLOW_UP_TRACKER.md` — **`FU-424` mới (hạn 23/08)**: khi cổng `RM-01` báo dữ liệu local cũ thì mọi phép đo dựa trên DB đó phải đổi nhãn `KHÔNG_KẾT_LUẬN_ĐƯỢC`, không phải `TRÔI`; **`FU-423` đã RÚT LẠI cảnh báo gốc** — `glm-5.1` chưa bao giờ thật sự rớt sàn, cảnh báo sinh từ bản local thiếu 81 dòng, nên **không còn chuyện cân nhắc cắt**; `FU-421` chuyển sang **đã đo, KHÔNG CHỨNG cả ba chỗ** (vá 24/08 kèm việc thứ tư: làm đường lùi `model_rates = {}` kêu lên), và `FU-423` chuyển sang **đã chẩn đoán, đề xuất GIỮ `glm-5.1`** (rỗng có ở cả ba miền, tỉ lệ 2,26% ngang `deepseek-reasoner` 2,22%); theo dõi ba việc: ① **chiều tối nay** job đo phải sinh cả hai họ cho 22/08 — đủ thì mới nâng `V11102` lên `RUNTIME_PROVEN`, chưa đủ thì **cấm nâng**, ② owner chọn lối cho `FU-423` trước 25/08 (đề xuất **giữ**, **cấm hạ sàn**), ③ hai việc mới chưa cấp số cần owner duyệt: vá nhãn sai của đường cầu dao, và đếm số ngày bundle thiếu người — hôm nay **không ai đang đếm**.
