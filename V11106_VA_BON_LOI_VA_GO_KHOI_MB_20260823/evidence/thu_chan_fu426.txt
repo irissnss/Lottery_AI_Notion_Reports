@@ -1,0 +1,33 @@
+============================================================================================
+  THỬ CHẶN (RM-15) — FU-426: đường rỗng giữ bằng chứng
+============================================================================================
+
+[1] payload CÓ `_native_reasoning_json` (3.000 kt) ⇒ phải GIỮ, ghi đúng độ dài
+    giữ=True · độ dài=3000 · ĐẠT
+
+[2] payload có `raw_response` ⇒ phải giữ TỐI ĐA 2000 kt, không hơn
+    độ dài giữ=2000 · ĐẠT
+
+[3] payload KHÔNG có gì ⇒ phải ghi RÕ là không có, KHÔNG bịa
+    giữ=False · reasoning_len=0 · có khoá raw? False · ĐẠT
+
+[4] payload HỎNG (get ném lỗi) ⇒ phải GHI LÝ DO, KHÔNG nuốt im
+    lý do ghi lại = payload hỏng cố ý · ĐẠT
+    (đây là phép quan trọng nhất: bản vá FU-425 từng nuốt im đúng kiểu này
+     và bài thử của nó đã bắt được — nên phép này KHÔNG được bỏ)
+
+[5] `reasoning` không phải chuỗi (dict) ⇒ phải tuần tự hoá, không nổ
+    giữ=True · độ dài=21 · ĐẠT
+
+[6] `result_payload` là None ⇒ không thêm khoá nào, không nổ
+    khoá fu426_* thêm vào: [] · ĐẠT
+
+============================================================================================
+    ✓ [1] có reasoning ⇒ giữ
+    ✓ [2] raw cắt đúng 2000 kt
+    ✓ [3] không có ⇒ ghi rõ không có
+    ✓ [4] payload hỏng ⇒ ghi lý do, không nuốt im
+    ✓ [5] reasoning dạng dict ⇒ tuần tự hoá được
+    ✓ [6] payload None ⇒ im lặng đúng nghĩa
+  ✓ THU_CHAN_FU426_V11106=ĐẠT
+============================================================================================

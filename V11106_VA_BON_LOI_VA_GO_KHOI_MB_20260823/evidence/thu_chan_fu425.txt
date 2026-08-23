@@ -1,0 +1,35 @@
+============================================================================================
+  THỬ CHẶN (RM-15) — FU-425: hai đồng hồ + cờ chéo LECH_DONG_HO
+============================================================================================
+
+[1] trace ghi 79,36 s · bảng sắp ghi 9 ms ⇒ mong đợi CỜ ĐỎ
+    cờ = LECH_DONG_HO ghi=9ms trace=79360ms lech=100% · ĐẠT
+
+[2] trace 79,36 s · bảng ghi 79.360 ms (đã vá đúng) ⇒ mong đợi IM
+    cờ = None · ĐẠT
+
+[3] lệch 19% (dưới ngưỡng 20%) ⇒ mong đợi IM — chống cờ kêu suốt ngày
+    cờ = None · ĐẠT
+
+[4] lệch 21% (trên ngưỡng) ⇒ mong đợi ĐỎ — biên trên
+    cờ = LECH_DONG_HO ghi=96025ms trace=79360ms lech=21% · ĐẠT
+
+[5] KHÔNG đối chiếu được (trace không có lượt đó) ⇒ mong đợi None, KHÔNG phải «khớp»
+    cờ = None · ĐẠT
+    (ghi rõ: None ở đây nghĩa là CHƯA ĐỐI CHIẾU ĐƯỢC, không phải ĐÃ KHỚP —
+     nên `notes` sẽ không mang cờ, và đó là hành vi đúng: cấm bịa một kết luận)
+
+[6] không có tệp trace ⇒ mong đợi None, không nổ
+    cờ = None · ĐẠT
+
+  nguyên trạng prediction_trace.jsonl: ✓ đã khôi phục
+
+============================================================================================
+    ✓ [1] lệch mạnh ⇒ ĐỎ
+    ✓ [2] khớp ⇒ IM
+    ✓ [3] lệch 19% ⇒ IM (biên dưới)
+    ✓ [4] lệch 21% ⇒ ĐỎ (biên trên)
+    ✓ [5] không đối chiếu được ⇒ None
+    ✓ [6] thiếu tệp trace ⇒ None, không nổ
+  ✓ THU_CHAN_FU425_V11106=ĐẠT
+============================================================================================
