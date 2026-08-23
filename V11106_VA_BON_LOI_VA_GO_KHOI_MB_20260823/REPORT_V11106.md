@@ -13,7 +13,7 @@ một phán quyết sắp công bố trên nửa số mẫu.
 
 | việc | trạng thái |
 |---|---|
-| **GĐ-0** đánh giá 23/08 | 1 trúng / 3 miền — **đúng bằng nền**, `n=3` chưa được kết luận |
+| **GĐ-0** đánh giá 23/08 | 1 trúng / 3 miền — **đúng bằng nền**, `n=3` chưa được kết luận. **ĐÍNH CHÍNH §3.1b: MN là LỖI KHÂU CHỌN** — engine xếp `46` (TRÚNG) hạng #1, công bố `73` |
 | **GĐ-1** deploy `FU-419` | ✅ 9 bước · `CTX-18.5` |
 | **GĐ-2** vá 4 lỗi | ✅ 3 commit riêng · thử chặn **6/6 + 6/6** |
 | **GĐ-3** đọc lane T-B | ⛔ **DỪNG Ở BƯỚC 2** — `b+c = 46` so với ngưỡng **96** |
@@ -58,6 +58,70 @@ Kỳ vọng theo nền `0,41 + 0,42 + 0,24 = **1,07**`. Thực tế **1**. **Đ�
   nửa nền**. Không cách chọn nào cứu được từ một tập ứng viên như thế ⇒ **lỗi khâu SINH SỐ**.
 - **MN cũng dưới nền** (33% vs 41%) nhưng nhẹ hơn.
 - **MT trên nền** (47% vs 42%) và bundle chọn trúng.
+
+### 3.1b · ĐÍNH CHÍNH NGAY TRONG BẢN NÀY — MN là **LỖI KHÂU CHỌN**, không phải khâu sinh số
+
+> Phần §3.1 phía trên viết MN *«5/15 = 33% — dưới nền»* và xếp nó cùng nhóm với MB như một vấn đề
+> **sinh số**. **SAI.** Sáu làn đào xong sau khi bản đầu đã đẩy lên kho công khai, và bằng chứng
+> lấy từ **chính blob chẩn đoán của hệ thống** lật ngược kết luận đó. Em đã **tự kiểm chứng lại
+> trên VPS** trước khi ghi vào đây.
+
+**MN 23/08 — engine chọn ĐÚNG số trúng, số công bố lại là số khác:**
+
+```
+ranked_numbers[0]  =  46   score 0,1397   4 phiếu   ← 46 TRÚNG
+top1_reason        =  "selected 46 because score=0.1397, voters=4, lane_votes={'auto_daily': 4}"
+bach_thu CÔNG BỐ   =  73   score 0,1256   7 phiếu   ← 73 TRƯỢT
+cột top_score      =  0,1256              ← khớp 73, KHÔNG khớp 46
+```
+
+Nghĩa là **nguyên liệu ĐỦ và engine đã xếp đúng** — số trúng nằm ở **hạng #1**. Thứ đổi số nằm ở
+**sau khâu xếp hạng**.
+
+**Không phải ca lẻ — đo 30 ngày trên VPS:**
+
+```
+93 bundle đối chiếu được · LỆCH (bach_thu ≠ ranked_numbers[0]): 13 = 14,0%
+   06/08 MN: engine 60 → công bố 95 (WIN)     07/08 MN: engine 60 → công bố 13 (WIN)
+   09/08 MN: engine 22 → công bố 54 (LOSE)    14/08 MN: engine 14 → công bố 41 (WIN)
+   16/08 MN: engine 32 → công bố 71 (LOSE)    17/08 MN: engine 96 → công bố 89 (WIN)
+   19/08 MN: engine 02 → công bố 56 (LOSE)    23/08 MN: engine 46 → công bố 73 (LOSE)
+```
+
+**Tám ca hiện ra đều là MN**, và kết cục **4 WIN / 4 LOSE** — nên **KHÔNG được đọc thành «lớp ghi
+đè làm hỏng»**. Chưa đo được nó tốt hay xấu; `n` quá nhỏ và chưa có nền cho từng vế.
+
+**Điều CHẮC CHẮN sai, và đó mới là mục phải vá:**
+
+| | |
+|---|---|
+| `top1_reason` ghi *«selected 46»* | trong khi **46 không được công bố** — **câu này sai sự thật 14% số lần** |
+| lớp ghi đè | **không được ghi lại ở đâu** trong blob — không trường nào nói «đã bị đổi bởi X» |
+| blob MN 23/08 **tự mâu thuẫn** | `near_miss_anti_trap` liệt kê `73` là *«near miss»* trong khi `73` **chính là bạch thủ đã công bố** |
+
+> Đây là **cùng một họ** với hai lỗi đã vá trong phiên này: `latency_ms = 9 ms` cho một lượt gọi
+> 79 giây, và `EMPTY_PROVIDER_OUTPUT` nói *«provider response parsed»* khi lượt gọi chưa rời máy.
+> **Ba lần trong một tuần, ba chỗ khác nhau, cùng một khuôn: bản ghi chẩn đoán mô tả một chuyện
+> khác với chuyện đã xảy ra.**
+
+→ **`FU-429`** (chờ owner ký).
+
+**Sửa lại kết luận từng miền:**
+
+| miền | bản đầu viết | ĐÚNG là |
+|---|---|---|
+| **MN** | *«dưới nền — khâu sinh số»* | **LỖI KHÂU CHỌN** — số trúng `46` ở **hạng #1**, công bố `73` |
+| MT | cả hai khâu đạt | **giữ nguyên** — `ranked[0] = 15 = bạch thủ = TRÚNG` |
+| MB | khâu sinh số hỏng | **giữ nguyên, và nặng hơn**: số trúng đầu tiên ở **hạng #4**, top-3 trượt sạch; và **1 trong 2** model có số đầu trúng (`claude-sonnet-4-6`, số `09`) **đã bị cổng `bt_gate` loại khỏi phiếu** |
+
+**Thêm hai con số bản đầu chưa nêu:**
+
+- `model_count` thật trong bundle: **MN 15 · MT 13 · MB 12** — thấp hơn 15 vì cổng chặn, không
+  phải vì thiếu dòng. `incomplete_bundle`: MN **false** · MT **true** (2 model chạm
+  `max_voters_cap`) · MB **true** (3 model bị `bt_gate`, ngưỡng `bt<12`).
+- `diagnostic_empty_models = []` ở **cả 9 bundle** 21–23/08 ⇒ không lượt rỗng nào trong ba ngày này.
+
+---
 
 ### 3.2 · GĐ-3 — lane T-B: **CHƯA ĐỦ MẪU**, và suýt đọc sớm bằng thước sai
 
