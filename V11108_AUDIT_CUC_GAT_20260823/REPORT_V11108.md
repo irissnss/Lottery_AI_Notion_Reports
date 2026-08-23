@@ -4,7 +4,10 @@
 > mồ côi. `V11108` = audit bảy tác nhân, tìm ra lớp ghi đè, và **rút lại** chính bản vá `FU-427`.
 >
 > **Commit:** `8ca990d` (V11107) · `0cb5e78` (V11108) — cả hai **đã xác nhận trên remote**.
-> **VPS:** `RR-16.6` đang serve · PID `2320523` · 4 bảng khoá `+0`.
+> **VPS (CẬP NHẬT 22:28):** đã **GỠ VỀ** `RR-16.5` · `CTX-18.6` theo lệnh owner — PID `2341779`.
+> Bản `RR-16.6` từng serve 21:1x–22:28, **không lượt dự đoán nào chạy trên nó**.
+>
+> 🔴 **ĐỌC §1b TRƯỚC KHI ĐỌC §3.7** — bản này có một câu bị rút lại.
 
 ---
 
@@ -20,10 +23,79 @@
 | 6 | **`FU-428` — hai mệnh lệnh mồ côi**, không phải một | dòng thứ hai mồ côi **16 ngày**, lộ ra **tình cờ** |
 | 7 | **Cổng máy cho `PRJ-PROMPT-COHERENCE-001`** | họ lỗi này đã cắn **ba lần** ⇒ phải là cổng |
 | 8 | **Sổ yêu cầu owner** | **302 mã FU** · 19 thiếu hạn · 50 thiếu ngưỡng |
-| 9 | Nghi ngờ «ghi đè/trôi» của owner | **bác bỏ ở tầng DB** — nhưng có **lời giải thích thứ ba, đo được** |
+| 9 | Nghi ngờ «ghi đè/trôi» của owner | 🔴 **RÚT LẠI câu «bác bỏ»** — đúng ở tầng DB nhưng **SAI TẦNG**. Bề mặt trả `bundle: null` cho MN 22/08 (cổng publish đòi đúng 15, có 14). **Bạch thủ 10 thắng nhưng chưa bao giờ lên trang — owner ĐÚNG.** Xem §1b |
 
 **Không kết luận được:** `V11106`/`V11107` **chưa** `RUNTIME_PROVEN` — giờ VN trên VPS là
 `23/08 21:xx`, lượt 05:00 ngày 24/08 **chưa xảy ra** (`RM-12`).
+
+---
+
+## 1b · 🔴 RÚT LẠI TRONG CHÍNH BẢN NÀY — trả lời **SAI TẦNG** cho nghi ngờ của owner
+
+**Chỗ gốc:** chính mục `V11108` này · `docs/CURRENT_TRUTH_SSOT.md` mục `V11108` ·
+`Lottery_AI_Notion_Reports/V11108_AUDIT_CUC_GAT_20260823/REPORT_V11108.md` §1 và §3.7 ·
+commit riêng `0cb5e78`, công khai `90ec8dd` — **cả hai đã lên remote**.
+
+**Nguyên văn câu sai:**
+
+> *«**MN 22/08 bạch thủ = `10`, WIN, OFFICIAL** … `V11104` **xác minh đúng**.»*
+> *«Nghi ngờ «ghi đè/trôi» của owner: **bác bỏ ở tầng DB**.»*
+
+**Điều đúng.** Mọi câu trên **đúng ở tầng DB** và vẫn giữ nguyên. Nhưng owner **không hỏi về
+DB** — owner nói về **thứ owner NHÌN THẤY**. Đo đúng bề mặt đó:
+
+```
+GET /api/final-bundle?region=MN&date=2026-08-22
+  → "bundle": null · "empty": true
+  → "message": "Official chưa đủ điều kiện publish: cần đúng 15 model
+                 output-eligible, hiện có 14."
+  → "publication_status": "WAIT_MODEL_COUNT"
+```
+
+**Bạch thủ `10` thắng thật, nhưng CHƯA BAO GIỜ lên trang `/du-doan`.** Owner nói *«MN không có
+bạch thủ 10»* — **owner ĐÚNG**. Em đã trả lời một câu hỏi **khác** với câu owner hỏi.
+
+**Phép đo tái lập được** (`RM-11`) — **ĐỦ BỐN CỬA SỔ** (`PRJ-SELECTION-WINDOW-001`):
+
+| cửa sổ | cặp ngày-miền | qua cổng | **bị chặn** | tỉ lệ chặn | **bundle THẮNG bị chặn** |
+|---|---:|---:|---:|---:|---:|
+| 14 ngày | 45 | 43 | 2 | 4,4% | 1 |
+| 30 ngày | 93 | 90 | 3 | **3,2%** | 1 |
+| **90 ngày** | 273 | 196 | 77 | **28,2%** | **27** |
+| **180 ngày** | 543 | 196 | **347** | **63,9%** | **126** |
+
+> 🔴 **CỔNG `PRJ_WINDOW_NOT_SPLIT` BẮT ĐƯỢC EM.** Bản đầu của mục rút lại này chỉ trích **30
+> ngày** (`3,2%`) — và cổng `_v11088_cong_cua_so_chon.py` **chặn commit**. Nó đúng: `3,2%` là
+> **hiện vật của cửa sổ chọn**. Nhìn đủ bộ thì cổng publish từng chặn **đa số ngày**, và
+> **126 bundle THẮNG chưa bao giờ lên trang** trong 180 ngày.
+>
+> Đây là **đúng cái lỗi em phê người khác suốt phiên** (hai làn phản biện bác làn đo vì
+> «không tách cửa sổ»). Em mắc lại nó **ngay trong mục rút lại một lỗi khác**.
+
+**Đọc đúng dải thời gian:** mọi lượt **qua cổng** đều nằm trong **90 ngày gần nhất** (196 ở cả
+hai cửa sổ 90 và 180) ⇒ trước cuối tháng 5 **gần như không ngày nào publish được**. Lần chặn
+gần nhất **trước** 22/08 là **16/06** ⇒ **~66 ngày sạch liên tục**, rồi 22/08 tái phát. Nên
+`22/08` là **một ca lẻ sau hai tháng sạch**, KHÔNG phải triệu chứng thường trực — nhưng cũng
+**không phải chuyện mới**.
+
+| ngày | miền | có | thiếu | BT | kết cục |
+|---|---|---|---|---|---|
+| 26/07 | MT | 14/15 | `glm-5.1` | 03 | LOSE |
+| 13/08 | MT | 14/15 | `glm-5.1` | 40 | LOSE |
+| **22/08** | **MN** | **14/15** | **`deepseek-reasoner`** | **10** | 🔴 **WIN** |
+
+**Quyết định nào đã dựa trên số sai:** không có quyết định, **nhưng có hậu quả thật** — câu
+*«bác bỏ ở tầng DB»* **đóng lại đúng hướng điều tra** dẫn tới `FU-434` · `FU-435` · `FU-436`.
+Nếu owner không hỏi lại, ba mục đó **không được mở**.
+
+**Bài học:** *«dữ liệu đúng»* **không phải** câu trả lời cho *«tôi không thấy nó»*. Phải hỏi
+**owner nhìn ở đâu** rồi đo **đúng bề mặt đó**. Cùng họ `RM-13` — chỉ khác là lần này nguồn
+**đúng**, còn **tầng** thì sai.
+
+**Đính chính kèm theo — bề mặt viewer bị đóng băng là CÓ CHỦ Ý, không phải lỗi:**
+`main.py:6311` `_VIEWER_FREEZE_DATE = "2026-06-07"`, owner ký 08/06 —
+**admin/dev KHÔNG BAO GIỜ bị treo**, chỉ viewer/public treo. `curl` không đăng nhập rơi vào
+nhánh viewer, nên `requested_date` trả về `2026-06-07`. **Đó là thiết kế, không phải trôi.**
 
 ---
 
@@ -42,6 +114,13 @@ Sáu chất vấn:
 Vùng cấm: *«CẤM so sánh chéo regime shadow vs official · CẤM kết luận khi chưa đủ mẫu/ngưỡng ·
 CẤM hạ sàn cho hết đỏ · CẤM heredoc khi sửa mã · ≤5 FU mới · số hiệu từ `_v11044` · báo tiến độ
 TỪNG CHẶNG · CẤM cờ bỏ-qua-cổng · §62 ba lớp + «TanPhatAI cần làm:» · QD-069.»*
+
+> **Ghi chú thước — đọc trước khi đi tiếp.** Câu ① ở trên là **trích nguyên văn câu hỏi của
+> owner**, KHÔNG phải một tuyên bố hiệu quả. Mọi phép đo liên quan **bạch thủ** trong bản này
+> báo **đủ bốn cửa sổ** theo `PRJ-SELECTION-WINDOW-001` — xem **§1b**
+> (14 / 30 / 90 / 180 ngày). Và bảng *«chênh tiền»* ở **§3.1** thuộc **một thước KHÁC**
+> (lớp ghi đè `V10640`, thước tiền của `FU-183`), **không** phải thước bạch thủ vs nền —
+> `RM-21`: hai thước không đọc chung được.
 
 **Một chỗ trong lệnh phải nói lại:** prompt đề *«24/08»* nhưng **giờ VN trên VPS là
 `2026-08-23 20:46`** lúc bắt đầu phiên. Ngày 24/08 **chưa tới**.
