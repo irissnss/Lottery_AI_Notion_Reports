@@ -201,6 +201,12 @@ hạng-1 chính là con số đã công bố.
 
 ### 4.9 · KIỂM KÊ ĐẦY ĐỦ MỌI VIỆC ĐÀO BỚI / TRA SOÁT — kể cả việc ra kết quả ÂM
 
+> **Hai bảng, hai góc — không phải hai bản sao.** Bảng dưới đây là **17 việc theo dòng chảy
+> của phiên** (gồm cả việc tra soát *kho* ở cuối phiên, mục 15–17, không có ở bảng kia).
+> **`9.2`** là **danh sách 41 phép đo đầy đủ** theo từng phép. Ai cần **đếm phép** thì đọc
+> `9.2`; ai cần **hiểu phiên đã đi đường nào** thì đọc bảng này. Sửa số liệu thì **sửa cả
+> hai**, đừng để chúng trôi khỏi nhau.
+
 > `§57.3` mục 3 bản 25/08: *«mục 3 phải LIỆT KÊ ĐỦ mọi việc đào bới / tra soát đã làm, **kể cả
 > việc đo ra kết quả âm hoặc không kết luận được**»*. Rút gọn mục này làm người đọc sau tưởng
 > phiên làm ít hơn thực tế, và **làm mất dấu những phép đo đã tốn công nhưng chưa ra kết luận**.
@@ -330,6 +336,9 @@ tài liệu + công cụ đo độc lập.
 | deliverable | report + conversation context công khai | 🟢 **DONE** |
 
 ### 9.2 · Đã ĐÀO BỚI / TRA SOÁT gì — kể cả thứ ra kết quả âm
+
+> Bảng **đầy đủ theo từng phép đo**. Góc nhìn theo **dòng chảy phiên** (kèm phần tra soát
+> kho ở cuối phiên) nằm ở **`4.9`**.
 
 | # | đã đo gì | kết quả |
 |---|---|---|
