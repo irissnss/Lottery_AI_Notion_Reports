@@ -24,6 +24,10 @@ bề mặt khai báo dùng chung + hai cổng canh, để phiên sau không sậ
 
 ## 2. Owner yêu cầu gì (nguyên văn)
 
+> **Danh sách ĐẦY ĐỦ mọi yêu cầu trực tiếp trong phiên — xem `PHỤ LỤC C`.** Mục này chỉ
+> trích các prompt lớn; owner làm việc theo dòng liên tục nên phần lớn yêu cầu nằm giữa phiên.
+
+
 > *"Em hãy dựa vào DB mới nhất xem dùm anh mỗi ngày có hiện tượng này không nhé em… Trong tuần
 > này có hiện tượng này liên tục không em?"* (08/08)
 
@@ -44,6 +48,9 @@ bề mặt khai báo dùng chung + hai cổng canh, để phiên sau không sậ
 **Owner chọn qua bảng hỏi:** deploy **gộp một lần sau Việc 1** · phạm vi đo **đủ 9 mức**.
 
 ## 3. Đào bới / phát hiện
+
+> **Danh sách ĐẦY ĐỦ 41 phép đào bới/tra soát — kể cả 9 phép ra kết quả âm — xem `PHỤ LỤC D.1`.**
+
 
 **3.1 — Hai ví dụ của owner khớp chính xác.** 07/08: MN Bình Dương G6 `1869`, MT Gia Lai G5
 `4869`, MB Hải Phòng G1 `32689`. 06/08: MN Tây Ninh G5 `3617`, MT Quảng Trị G2 `93617`, MB Hà
@@ -182,6 +189,9 @@ ssh root@14.225.224.89 "sqlite3 /root/Lottery_AI_Test/data/lottery_ai.db \
 
 ## 9. Theo dõi tiếp
 
+> **Danh sách ĐẦY ĐỦ kèm ai chặn / chặn ở đâu — xem `PHỤ LỤC D.2`.**
+
+
 | Mã | Nhãn | Hạn | Việc |
 |---|---|---|---|
 | **FU-367** · DO0710 | `WAIT_LIVE` | 07/10 | Chấm lane sau đủ 60 ngày. **Cấm** chấm sớm · sửa ngưỡng giữa chừng · dùng phần nhìn lại · dùng M7–M9 để quyết |
@@ -259,3 +269,109 @@ song vá `NO_ANSWER`, **đã truy tận nơi**, không phải phiên này.
 
 **Đường lùi đã dựng sẵn và KHÔNG phải dùng:** `/root/Lottery_AI_Test/backups/v11037_pre/`
 (5 tệp) · `/tmp/cron_v11037.bak`.
+
+---
+
+# PHỤ LỤC C — MỤC `OWNER YÊU CẦU` ĐẦY ĐỦ (theo `PRJ-INTERACTION-LEDGER-001`)
+
+> Owner làm việc theo dòng liên tục trong IDE, nên **phần lớn yêu cầu KHÔNG nằm trong prompt
+> lớn**. Bảng này liệt kê **mọi** yêu cầu trực tiếp trong phiên, nguyên văn. Nguồn:
+> `docs/SO_TUONG_TAC_OWNER.md` mục `2026-08-08`.
+>
+> **Về cột giờ:** phiên này chỉ có hai mốc **chứng minh được** — hook đầu phiên `19:21:34` và
+> service khởi động lại xong `20:10:01`. Còn lại ghi `—`, **không suy giờ để điền cho đẹp**.
+
+| # | giờ | NGUYÊN VĂN | loại | agent làm gì | trạng thái |
+|---|---|---|---|---|---|
+| 1 | ~19:20 | *«…mỗi ngày có hiện tượng này không nhé em… Thứ 6 07/08 MN có bộ số đuôi 869 - MT có cũng Bộ Số 869 --> MB có bộ số 689… Trong tuần này có hiện tượng này liên tục không em?»* | `YÊU_CẦU` | kiểm 2 ví dụ (khớp 100%), quét 2.354 ngày, phép thử ngẫu nhiên | `ĐÃ_LÀM` |
+| 2 | — | *«ngày trước 3 hôm ổn hơn ah em?… em thử hết các phép thử chưa em?»* | `HỎI` | **thừa nhận chưa thử hết**; chạy 450 phép; lòi ra vùng dữ liệu bẩn | `ĐÃ_LÀM` |
+| 3 | — | *«…đuôi giải 2 của MB ngày hôm trước hay về lại MN và MT ngày hôm sau… đồng thời kiểm tra dữ liệu sai có ai đang dùng không có ảnh hưởng gì không nha em? phương án xử lý thế nào em»* | `YÊU_CẦU` | đo 9 mức trên 1.973 ngày; tra sổ §56; trình 3 phương án | `ĐÃ_LÀM` |
+| 4 | — | *«ok đồng ý các đề xuất cho việc 1 và 2 nha em»* | `XÁC_NHẬN` | bắt tay cả hai việc | `ĐÃ_LÀM` |
+| 5 | — | *(bảng hỏi)* **«Gộp, deploy 1 lần sau Việc 1»** · **«Đo đủ 9 mức như bảng em đã trình»** | `XÁC_NHẬN` | gộp deploy; đo 9 mức **kèm ngưỡng họ** vì 9 phép ⇒ 37% ăn may | `ĐÃ_LÀM` |
+| 6 | ≤20:10 | *«Cách nào an toàn nhất , nhanh nhất , hợp lý nhất thì làm nha em… Tiến hành kiểm tra , dự đoán trước các tình huống nha em. Báo cáo chi tiết đầy đủ nha em»* | `YÊU_CẦU` | bảng 7 tình huống + đường lùi; so từng dòng local vs VPS; deploy đạt | `ĐÃ_LÀM` |
+| 7 | — | *«ghi nhận và cập nhật báo cáo đây đủ chi tiết nha em»* | `YÊU_CẦU` | phát hiện tệp bị ghi đè + 4 mã FU trùng; đổi 365–368; ghi 6 va chạm | `ĐÃ_LÀM` |
+| 8 | — | *«Đã push báo cáo hết chưa em?… Các vấn đề anh tương tác trực tiếp đã push thành 1 bảng ghi nhận yêu cầu của owner chưa ?… cần ghi nhận trong báo cáo có chuyên mục onwern yêu cầu… Các vấn đề đào bới, tra soát, theo dõi cần liệt kê đầy đủ.»* | `YÊU_CẦU` | kiểm hai kho đã push hết; luật **đã có sẵn** ⇒ tuân thủ chứ không thêm; ghi sổ + phụ lục C/D | `ĐÃ_LÀM` |
+
+**Chỗ code đi trước tài liệu trong phiên này:** lane + vùng dữ liệu bẩn **deploy lúc 20:10**,
+tài liệu (CHANGELOG · SSOT · FOLLOW_UP · báo cáo công khai) ghi **sau đó**. Owner đã cho phép
+tường minh cách làm này; ghi nhận tại `docs/SO_TUONG_TAC_OWNER.md` mục *«CHỖ CODE ĐI TRƯỚC
+TÀI LIỆU»*.
+
+---
+
+# PHỤ LỤC D — LIỆT KÊ ĐỦ: ĐÀO BỚI · TRA SOÁT · THEO DÕI
+
+> §57.3 mục 3 và 9 buộc **liệt kê đủ, không tóm lược** — kể cả phép đo ra kết quả **âm** hoặc
+> **không kết luận được**. Rút gọn hai mục này làm người đọc sau tưởng phiên làm ít hơn thực tế.
+
+## D.1 — Đào bới / tra soát: 41 phép, kể cả phép ra kết quả âm
+
+| # | Phép | Kết quả |
+|---|---|---|
+| 1 | Kiểm 2 ví dụ owner (`869`, `617`) | **khớp 100%** |
+| 2 | Quét bộ 3 số MN∩MT → MB, 2.354 ngày | 582 ngày có ≥1 cụ (24,7%) |
+| 3 | Phép thử ngẫu nhiên 1 trục (dời MB, 7 lag) | thật 20,0% vs giả 17–21% ⇒ **không tín hiệu** |
+| 4 | Soi chi tiết ngày 08/08 | MN∩MT = `184`, `507`; MB không có hoán vị nào |
+| 5 | Biến thể lỏng (MN/MT chỉ cần hoán vị của nhau) | 3 cụ ngày 08/08 — nhưng đã là luật khác |
+| 6 | Lưới 225 tổ hợp × toàn lịch sử | lộ **đường chéo**, ô cao nhất **+5,59σ** |
+| 7 | Lưới 225 tổ hợp × 365 ngày | tổ hợp thật hạng **155/225** ⇒ không tín hiệu |
+| 8 | Quy mô mỗi miền theo thứ | MN 49–65 bộ · MT 33–50 · MB ~23 |
+| 9 | MN∩MT cùng ngày vs **khác ngày cùng thứ** | chênh +1,57 (**+10,2σ**) — khử bẫy số lượng đài |
+| 10 | Quét đài xuất hiện ở **cả hai** miền | **14 đài** MT có bản ghi mang nhãn MN |
+| 11 | Đếm ngày MN/MT trùng y hệt số ≥5 chữ số | **114/2.354** ngày, cụm 04/2020 |
+| 12 | Tách MN∩MT **theo năm** | **2021 = 11,71** vs kỳ vọng 1,86; năm khác ~2,0 |
+| 13 | Soi 2021 chi tiết (12 ngày mẫu) | 30/09/2021 MN = 3 đài **MT** ⇒ giao nhau 49 |
+| 14 | Đếm bản ghi sai nhãn theo tháng | **229** — 04/2020: 11 · 07–10/2021: 218 |
+| 15 | Lưới 225 tổ hợp trên **dữ liệu sạch** | tất cả ~20,2%; sd 0,89% = SE 0,90% ⇒ **nhiễu thuần** |
+| 16 | Kiểm ví dụ G2-MB của owner (`94`/`43`) | MN Bình Phước ĐB `828343` — **bạch thủ**, owner đúng |
+| 17 | Đo 9 mức trên 1.973 ngày, nền chính xác từng ngày | z ∈ **[−1,67 ; +1,84]** ⇒ không mức nào vượt |
+| 18 | Lưới lag −3…+7 cho G2-MB | **lag 1 THẤP NHẤT** (9,5% vs nền 10,4%) |
+| 19 | Số lần trúng trung bình mỗi ngày | thật 1,977 vs kỳ vọng 1,953 ⇒ **+0,024**, không «nhiều hit» |
+| 20 | Riêng 60 ngày gần nhất | MN bạch thủ **13,3%** vs 6,1% (z = +2,33) |
+| 21 | Chi tiết 14 ngày gần nhất | **6 lần bạch thủ** — owner nhìn đúng |
+| 22 | Cửa sổ trượt 60 ngày qua 6,5 năm | 8 lần = **1/1914 cửa sổ**, kỷ lục |
+| 23 | Poisson + hiệu chỉnh tìm-ở-đâu-cũng-thấy | P(có ≥1 cửa sổ như vậy) = **67,8%** |
+| 24 | Tách MN bạch thủ theo năm | **5/6 năm DƯỚI kỳ vọng**; chỉ 2026 +1,37σ |
+| 25 | Tính ngưỡng đo tiến 30/60/90/120 ngày | 60 ngày ⇒ **≥8** (95%) · **≥10** (99%) |
+| 26 | Grep toàn bộ nơi đọc `lottery_results` | **46 tệp** |
+| 27 | Đọc cửa sổ từng consumer production | sâu nhất **500 ngày** |
+| 28 | Tra `CHANGELOG` + chú thích code (§56) | việc **đã biết từ 05/07/2026**, con số 229 có sẵn |
+| 29 | Tính **live** ngày xa nhất từng cửa sổ | 500 ngày → `2025-03-27` ⇒ **không chạm** vùng bẩn |
+| 30 | Chứng minh `api_so_gan()` không bị ảnh hưởng | MN/MT/MB đều **0/100** đuôi có `last_seen` trong vùng bẩn |
+| 31 | Quét ngược phân loại nơi đọc | **1.346 chỗ**, 0 chưa phân loại — phải **sửa bộ quét 3 lần** |
+| 32 | Tính ngưỡng 9 mức trên 2.211 ngày sạch | bảng ngưỡng lẻ/họ, **đóng băng trong code** |
+| 33 | Nạp 61 ngày nhìn lại vào chính lane | M1 **z = +2,28** — chưa chạm ngưỡng họ 2,539 |
+| 34 | Thử cổng C23/C24 (RM-15) | sạch ⇒ im · vi phạm ⇒ **bắt đúng dòng** |
+| 35 | Hash 4 bảng khoá (đo 2 lần) | `model_daily_eval` **đổi** |
+| 36 | Truy nguyên hash bằng bản chụp VPS | **138 dòng** `LOSE`→`NO_ANSWER` — việc phiên song song |
+| 37 | So local vs VPS **từng dòng**, 5 tệp | 4 tệp **chỉ thêm** · guard **có khối V11023 lạ** |
+| 38 | Kiểm phiên song song trước khi deploy | md5 + `NO_ANSWER=138` ⇒ deploy của họ **đã xong** |
+| 39 | RM-01 tuổi dữ liệu | manifest `18:39:55`, **dưới 1 giờ** ⇒ đạt |
+| 40 | Kiểm số hiệu còn trống (**3 lần**) | V11035 ✗ · V11036 ✗ · **V11037** ✓ |
+| 41 | Kiểm mã FU trùng | **cả 4 mã** trùng ⇒ đổi sang 365–368 |
+
+**Phép ra kết quả ÂM hoặc KHÔNG kết luận được — vẫn phải ghi:** #3 · #5 · #7 · #17 · #18 ·
+#19 · #23 · #24 · #33. Chín phép này tốn công nhất và **không** cho ra «phát hiện» nào — nhưng
+chính chúng là lý do phiên này **không** báo owner một quy luật không tồn tại.
+
+## D.2 — Theo dõi còn treo: đủ, kèm ai chặn và chặn ở đâu
+
+| Mã | Nhãn | Hạn | Việc | Ai/cái gì chặn |
+|---|---|---|---|---|
+| **FU-367** · DO0710 | `WAIT_LIVE` | 07/10 | Chấm lane G2-MB sau đủ **60 ngày** đo tiến | **thời gian** — cấm chấm sớm, cấm sửa ngưỡng giữa chừng |
+| **FU-366** · KS1208 | `DEPLOYED_PENDING_LIVE_VERIFY` | 12/08 | Xác nhận C23/C24 chạy thật **18:05** và lane chạy **19:35** trên VPS | chờ cron chạy lần đầu |
+| **FU-368** · SC1308 | `MEASURED_BUT_NOT_FIXED` | 13/08 | `_v10900_consistency_guard.py` **local ≠ VPS** (khối V11023) | cần biết V11023 có được duyệt deploy không — **drift có TRƯỚC V11037** |
+| **FU-365** · DD1508 | `AWAITING_OWNER_OK` | 15/08 | Có sửa hẳn **229 dòng** sai nhãn không (phương án B) | **owner** — đụng bảng khoá, đổi hash |
+| **FU-369** · HT1108 | `MEASURED_BUT_NOT_FIXED` | 11/08 | Cổng cấp số hiệu/mã FU quét **ba nơi** | chưa dựng |
+
+**Ngoài phạm vi phiên này nhưng đang chặn cổng quyết định:** 3 phép **TRÔI** (`QD-021`,
+`QD-022`) — nguồn là mục mồ côi chờ owner quyết: **`FU-354`** (hạn 09/08) cùng **`FU-315`** ·
+**`FU-319`** · **`FU-320`** · **`FU-346`** mang nhãn `OWNER_DECISION_NEEDED`. Agent **không tự
+gỡ được** — cần owner quyết.
+
+---
+
+**TanPhatAI cần làm:** đọc `docs/SO_TUONG_TAC_OWNER.md` mục **`2026-08-08`** trước khi phản
+biện bất cứ điều gì về V11037 — phiên này **code đi trước tài liệu** (deploy `20:10`, tài liệu
+ghi sau), và owner đã cho phép tường minh. Cập nhật theo dõi **FU-365 · FU-366 · FU-367 ·
+FU-368 · FU-369** (mã đã đổi khỏi 355–358 vì trùng với phiên song song).
