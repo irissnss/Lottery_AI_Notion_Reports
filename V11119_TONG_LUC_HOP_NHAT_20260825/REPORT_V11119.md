@@ -1,7 +1,53 @@
 # V11119 — ĐỌC LẠI TOÀN BỘ VẾT LÀM VIỆC, GOM VỀ MỘT SỔ: **BỐN CON SỐ ĐÃ CÔNG BỐ PHẢI RÚT LẠI**
 
-**Ngày:** 25/08/2026 · **Commit riêng:** `<điền sau>` · **Commit công khai:** `<điền sau>` ·
+**Ngày:** 25/08/2026 · **Commit riêng:** `de35b10` · **Commit công khai:** `62bc74f` ·
 **Trạng thái:** `READ-ONLY` — không deploy, không restart, không sửa mã production, không ghi DB
+
+---
+
+> # 🔴 RÚT LẠI — HAI CÂU TRONG CHÍNH BẢN NÀY SAI
+>
+> *Thêm `25/08/2026 21:0x` bởi `V11121`, theo `PRJ-RETRACTION-001` (*«rút lại đúng chỗ đã công
+> bố»*). **Không sửa câu gốc bên dưới** — giữ nguyên để người đọc thấy điều đã lưu hành.*
+>
+> ### R6 — *«**26** nhãn version chỉ có ở `git log`»* (§3.3) — **KHÔNG TÁI LẬP ĐƯỢC**
+>
+> **Nguyên văn câu sai:** *«Và chiều ngược lại — **26 nhãn version chỉ có ở `git log`**, không có
+> mục CHANGELOG, trong đó `V11077` và `V11079`.»*
+>
+> **Điều đúng:** không một phạm vi theo **số hiệu** nào ra `26` — cổng ra **12**, thô `≥V11062` ra
+> **21**, gộp hậu tố toàn lịch sử **54**, thô toàn lịch sử **135**. Con số `26` **chỉ tái lập được**
+> khi cắt theo **NGÀY COMMIT `≥ 2026-08-10`** — và mốc đó **không được khai** ở bất kỳ đâu trong
+> bản này. Đây là `RM-11`: số không tái lập được thì không dùng làm căn cứ.
+> *Tái lập:* `_v11062_nang_version.muc_git_log()` ∖ `muc_changelog()` → **12** nhãn.
+>
+> **Quyết định đã dựa vào số sai:** mục `P0-4` của plan — *«bù mục CHANGELOG cho 26 bản chỉ có ở
+> git»*. Khối lượng việc đó sai; và **12/12** nhãn git-only trong phạm vi cổng **ĐỀU CÓ** báo cáo
+> công khai, `V11070`–`V11075` đã được ghi bù **GỘP** trong khối `CHANGELOG V11076` — cách ghi hợp
+> lệ. ⇒ **Không có việc bù nào ở đây.**
+>
+> ### R7 — *«đây chính là chỗ làm cổng `_v11062 K1` mù»* (§3.3) — **SAI TỪ `V11082`**
+>
+> **Nguyên văn câu sai:** *«Đây chính là chỗ làm cổng `_v11062 K1` mù: nó lấy worklist từ
+> `muc_changelog()`, nên bản **không có mục CHANGELOG** thì cổng **không thể** báo thiếu.»*
+>
+> **Điều đúng:** worklist của `K1` **đã là** `CHANGELOG ∪ git log` **từ `V11082`**
+> (`web/backend/_v11062_nang_version.py:207-212`), và chính mã ghi rõ `chi_git` là **GHI CHÚ**,
+> không phải lỗi (`:249-258`, kèm lý do *«cổng đỏ 100% mất sạch giá trị cảnh báo»*).
+> *Tái lập:* `python web/backend/_v11062_nang_version.py --kiem` →
+> `chỉ-có-ở-git 12 (trong đó THIẾU HISTORY: 0)` · `✓ NANG_VERSION_V11062=ĐẠT`.
+>
+> **Quyết định đã dựa vào số sai:** mục `P3-2` của plan — *«vá `_v11062 K1`»*. **Việc đó không tồn
+> tại**; nó đã được vá 8 ngày trước bản này.
+>
+> ### Điều **KHÔNG** rút — vẫn đúng nguyên
+>
+> `R1` (`V11077`/`V11079` **có đủ** báo cáo) · `R2` (**10** bản thiếu báo cáo, đã xác minh lại
+> `10/10` và **cả 10 đều có nguồn để bù**) · `R3` (**0** quyết định trôi) · `R4` (Algorithm Card
+> đã có — nay đo được **4 thẻ**, ma trận `4 sản phẩm × 14 bước`: **43 ô đủ · 4 một phần · 6 thiếu ·
+> 3 không áp dụng**) · `R5` (cổng A55 nói quá — **xác nhận**, và thật ra có **BA** lỗ hổng chứ
+> không phải hai; xem `REPORT_V11121`) · `FU-438` (**xác nhận**, và bề mặt rò thật là **~678 KB**
+> chứ không phải 39,7 KB; xem `REPORT_V11120`).
 
 ---
 
