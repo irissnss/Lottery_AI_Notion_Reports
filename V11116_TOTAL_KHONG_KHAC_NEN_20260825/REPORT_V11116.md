@@ -171,9 +171,34 @@ hạng-1 chính là con số đã công bố.
 Theo tiền đăng ký, đây là **LỐI `C`**: *«giữ `M0` tạm thời · vẫn đóng hợp đồng `TOTAL_V2` ·
 tiếp tục shadow · **cấm đổi chỉ để có phương pháp mới**»*.
 
+**Vì sao chọn lối này chứ không bật một phương pháp mới:** ứng viên tốt nhất trượt **năm** ngưỡng
+đã đăng ký trước (`T1` `T2` `T5` `T6` `T7`). Bật nó lên sẽ là **đổi mù để có vẻ đã tạo phương
+pháp mới** — đúng điều owner cấm. Và hạ sàn `96` xuống cho vừa `46` chính là lỗi dự án **đã phạm
+ngày 23/08**.
+
 Ba khuyết tật đo được của `M0` — **cả ba chờ owner ký, không tự vá**: không chuẩn hoá (biên độ
 điểm 15 lần) · không shrinkage/cap/floor, và hai thang đo khác nhau bị dùng lẫn nhau · không
 dedupe family/alias.
+
+---
+
+## 5b · ĐÃ LÀM GÌ
+
+| # | việc | trạng thái |
+|---|---|---|
+| 1 | **`GĐ-0` bảo toàn** — chụp trạng thái máy chủ trước khi chạm gì: băm 10 tệp runtime hai phía (**khớp toàn bộ**), lược đồ, bundle hiện tại, roster/config, cron | 🟢 thử chặn **10/10** |
+| 2 | **Trả lời câu CHẶN** của owner — roster lịch sử **tái lập được**, nên **không phải dừng** | 🟢 |
+| 3 | **TIỀN ĐĂNG KÝ ngưỡng** `T1…T8` + `R1…R6` **trước khi có một con số nào** (`13:06:08`, khi `0/7` làn đã trả kết quả) | 🟢 |
+| 4 | **Bảy làn đo + bảy làn phản biện** đọc-only — 2,09 triệu token, 458 lượt gọi, 0 lỗi, 41 phút | 🟢 |
+| 5 | **Tái lập `M0`** từ lá phiếu thô để qua cổng `T8` | 🟢 **423/423 = 100,00%** |
+| 6 | **Benchmark 7 phương pháp** trên cùng snapshot / cùng roster lịch sử / cùng scorer / **không lookahead**, đủ 5 cửa sổ, hiệu chỉnh Holm | 🟢 |
+| 7 | **Saturation curve + leave-one-out + add-one + walk-forward** cho câu «bao nhiêu model là đủ» | 🟢 |
+| 8 | **Sửa ba kết luận sai** của làn đo và **một tiền đề sai của chính báo cáo**, trước khi công bố | 🟢 |
+| 9 | Bốn tài liệu: tiền đăng ký · benchmark · saturation · hợp đồng `TOTAL_V2` | 🟢 |
+| 10 | Bốn mặt version + đẩy hai kho | 🟢 |
+
+**KHÔNG làm** (và không được nói là đã làm): không deploy · không restart · không sửa một dòng mã
+production nào · không dừng model nào · không đổi phương pháp `TOTAL`.
 
 ---
 
