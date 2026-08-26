@@ -10,7 +10,10 @@ TIMEZONE                    : Asia/Ho_Chi_Minh / UTC+07:00
 OWNER_DECISION              : D-22 INVENTORY_ONLY + D-23 REPORT_ONLY_PUSH
 AUTHORIZED_SCOPE            : REPORT_ONLY_PUBLIC_SAFE
 PREVIOUS_PUBLIC_HEAD        : 28c6891b74096faee8cc332b11204585375bf092
-CURRENT_PUBLIC_HEAD_AFTER_PUSH : xem mục bàn giao (điền sau khi push)
+CURRENT_PUBLIC_HEAD_AFTER_PUSH : ebfdf188eac1c709e58cc950499ec7b4d2ab3329
+                              ↑ commit PHÁT HÀNH báo cáo này (26/08 10:11:40 +0700).
+                                Trường này được điền bằng một commit metadata ngay sau đó —
+                                một báo cáo không thể chứa SHA của chính commit chứa nó.
 INVENTORY_SOURCE_HEAD       : a4d66364a6ef3127152eae1b1ae6957250f3c8e6  (kho riêng — KHÔNG push)
 ACTOR_RUNTIME               : CURSOR_AGENT_AND_CLAUDE_CODE
 LABELS                      : SECURITY_INVENTORY · INVENTORY_ONLY · REPORT_ONLY_PUSH ·
