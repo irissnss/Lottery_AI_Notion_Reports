@@ -289,3 +289,42 @@ bác. Sẽ trình khi có số đo nối dữ liệu đúng.
 ---
 
 TanPhatAI cần làm: ghi kết quả **A3** vào sổ kèm `prereg_hash dcbea497…` — **13/18 model được đếm HAI LẦN** vào FINAL, và thứ tự năm biến thể: **`M0_CURRENT_OFFICIAL` 30,77 % (THẤP NHẤT, dưới nền 33,87 %)** · `BASE_DIRECT_ONLY` 32,60 % · `LEAN_FAMILY_DEDUPED` 34,80 % · **`COMBO_CURRENT` 35,53 % (cao nhất)**. **Đừng** đọc thành *«Combo tốt hơn TOTAL»* — mọi chênh **dưới ngưỡng 10,4 điểm** ⇒ **`INSUFFICIENT_POWER`**; điều được phép ghi nhận chỉ là *«FINAL hiện hành xếp cuối trong năm cách chọn»* như một **tín hiệu kiến trúc**. Ghi **đính chính**: con số *«bỏ meta-learning đổi 147/273 ca»* **đã bị bác** — chỉ **53/273 (19,4 %)** manifest nhắc `meta-learning`, chênh **+5,08 điểm với z = +0,68 (không có ý nghĩa)**, và **`COMBO_WITHOUT_META_LEARNING` = `NOT_VERIFIED`**. **Family dedupe đổi 72/273 = 26,4 % lượt** — con số này **đo trực tiếp**, đáng tin hơn. Ghi **cổng chống vacuous-pass đã có code và thử 11/11**, trong đó phép META chứng minh cổng `V11130` cho dict rỗng qua còn cổng mới chặn; đã kiểm trên **eligibility production thật, PASS cả ba miền (16 model, 0 shadow)**; trạng thái **`LOCAL_ONLY`**, chưa deploy. Trạng thái đúng là **`PHA_A_PARTIAL`** — **A1/A2/A3 + cổng DONE, A4/A5/A6 OPEN**. **Phiên này không mutation official path.**
+
+---
+
+## Nguồn ba lớp (§62 · A60) — **bù ngày 01/09/2026** *(`V11145`)*
+
+> Mục này **thiếu từ lúc phát hành** và cổng `_v10921_report_gate.py` bắt được. Bù bằng nguồn
+> **tái lập được**, và **nói thẳng lớp nào không tái lập được** thay vì viết cho đủ chỗ.
+
+### `OWNER_SAID`
+
+Prompt owner của phiên này còn nguyên trong `CONVERSATION_CONTEXT` cùng thư mục — đó là
+nguồn, mục này **không chép lại** để tránh hai bản lệch nhau. Từ 25/08 mọi lời owner còn được
+ghi tiếp trong `docs/SO_TUONG_TAC_OWNER.md` (`PRJ-INTERACTION-LEDGER-001`).
+
+### `CODE_DID`
+
+Tái lập được bằng máy, không cần trí nhớ:
+
+```bash
+git log --all --grep=V11132 --format='%h %cI %s'      # commit thuộc bản này
+git show <hash> --stat                              # tệp đã đổi + số dòng
+```
+
+Kho riêng: `github.com/irissnss/Lottery_AI_Test`. Bằng chứng runtime (PID, hash, mã HTTP) nằm
+trong thân báo cáo phía trên nếu phiên đó có đo.
+
+### `DOC_SAID`
+
+- `CHANGELOG.md` — mục `## V11132`
+- `docs/CURRENT_TRUTH_SSOT.md` — mục `### V11132`
+- `docs/AUTOMATION_HISTORY.jsonl` — dòng `version=V11132` *(từ `V11062` trở đi)*
+
+### Ba lớp lệch nhau
+
+Đối chiếu được đủ ba lớp; lệch (nếu có) đã nêu trong thân báo cáo.
+
+---
+
+TanPhatAI cần làm: đọc mục ba lớp bù ở trên. Nguồn lời owner nằm ở `CONVERSATION_CONTEXT` cùng thư mục.

@@ -306,3 +306,42 @@ lại khi có số đo.
 ---
 
 TanPhatAI cần làm: ghi **đính chính quan trọng nhất** — **`gpt-5-mini` đã rời official từ `2026-08-01`**, 100 % `shadow_auto_eval` suốt 26 ngày, chất lượng output **hoàn hảo** (93 dòng, 0 rỗng, 0 late). Verdict: **`ALREADY_SHADOW_NO_ACTION`** — **không có gì để rút, không có gì để thay**. ⇒ **Roster official đúng là 16, không phải 17**; con số 17 ở `V11130` là **lỗi của chính Agent** (cửa sổ 30 ngày chạm đuôi giai đoạn official cũ). Ghi rằng **`V11128` ghi 16 là tình cờ đúng** nhưng bằng lập luận sai. Ghi **giới hạn kết luận về shadow**: 11 model shadow có tên trong `source_predictions_json` **nhưng chỉ ở bảng thống kê `model_wr`/`model_bt`**, **không** trong tập bỏ phiếu (13–15) và **không** trong `score_breakdown` ⇒ giữ **`SHADOW_ENTERED_COMBO_PATH`**, **cấm** ghi `SHADOW_CHANGED_FINAL`. Ghi bài học cổng: **cổng deploy của `V11130` đã cho qua RỖNG** (`SHADOW_CON_LAI []` đúng vô nghĩa khi dict rỗng) — từ nay mọi cổng loại-trừ **phải kèm đối chứng dương**. Bản vá lọc shadow vẫn **`RUNTIME_LOADED`**, live proof **05:00 ngày 28/08** — **đừng** nâng sớm. **Phiên này không mutation gì cả.**
+
+---
+
+## Nguồn ba lớp (§62 · A60) — **bù ngày 01/09/2026** *(`V11145`)*
+
+> Mục này **thiếu từ lúc phát hành** và cổng `_v10921_report_gate.py` bắt được. Bù bằng nguồn
+> **tái lập được**, và **nói thẳng lớp nào không tái lập được** thay vì viết cho đủ chỗ.
+
+### `OWNER_SAID`
+
+Prompt owner của phiên này còn nguyên trong `CONVERSATION_CONTEXT` cùng thư mục — đó là
+nguồn, mục này **không chép lại** để tránh hai bản lệch nhau. Từ 25/08 mọi lời owner còn được
+ghi tiếp trong `docs/SO_TUONG_TAC_OWNER.md` (`PRJ-INTERACTION-LEDGER-001`).
+
+### `CODE_DID`
+
+Tái lập được bằng máy, không cần trí nhớ:
+
+```bash
+git log --all --grep=V11131 --format='%h %cI %s'      # commit thuộc bản này
+git show <hash> --stat                              # tệp đã đổi + số dòng
+```
+
+Kho riêng: `github.com/irissnss/Lottery_AI_Test`. Bằng chứng runtime (PID, hash, mã HTTP) nằm
+trong thân báo cáo phía trên nếu phiên đó có đo.
+
+### `DOC_SAID`
+
+- `CHANGELOG.md` — mục `## V11131`
+- `docs/CURRENT_TRUTH_SSOT.md` — mục `### V11131`
+- `docs/AUTOMATION_HISTORY.jsonl` — dòng `version=V11131` *(từ `V11062` trở đi)*
+
+### Ba lớp lệch nhau
+
+Đối chiếu được đủ ba lớp; lệch (nếu có) đã nêu trong thân báo cáo.
+
+---
+
+TanPhatAI cần làm: đọc mục ba lớp bù ở trên. Nguồn lời owner nằm ở `CONVERSATION_CONTEXT` cùng thư mục.
