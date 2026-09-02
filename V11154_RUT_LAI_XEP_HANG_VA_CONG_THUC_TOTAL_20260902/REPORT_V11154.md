@@ -118,17 +118,49 @@ gốc**.
 | `kimi-k2.5` | — | — | −8/48 | −14/74 | 🔴 âm nhất quán |
 | `qwen3-coder` | — | — | −10/34 | −12/68 | 🔴 âm nhất quán |
 
-**6/30 nguồn đổi dấu giữa các cửa sổ.** Ba trong số đó (`gpt-5-mini` · `grok-4.3` ·
-`qwen3-max-thinking`) **dương ở 14 ngày và âm ở 180 ngày** — tức nếu chọn cửa sổ ngắn thì sẽ
-kết luận ngược hẳn.
+**6/30 nguồn đổi dấu giữa các cửa sổ.**
+
+> ### 🔧 SỬA HAI MÂU THUẪN CỦA CHÍNH BẢN NÀY — owner phát hiện, ghi 02/09/2026
+>
+> Hai câu tường thuật dưới đây **mâu thuẫn với chính bảng ngay phía trên chúng**. Sửa tại đúng
+> chỗ công bố, nêu cả câu cũ lẫn câu đúng, **không viết lại lịch sử âm thầm**.
+>
+> **① `V11154_UNIQUE_SOURCE_CLAIM_CONFLICT`**
+>
+> | | |
+> |---|---|
+> | **câu cũ** | *«Nguồn **duy nhất** dương ở cả bốn cửa sổ với mẫu thật là `gpt-5.5`»* |
+> | **câu đúng** | **HAI** nguồn dương ở cả bốn cửa sổ: `gpt-5.5` (`+3/13 · +1/27 · +5/83 · +14/110`) **và** `qwen3.7-max` (`+5/17 · +7/35 · +7/63 · +7/63`) |
+> | **nguyên nhân** | agent viết câu tường thuật **không đối chiếu lại bảng** — chính bảng đã dán nhãn *«dương cả bốn»* cho **cả hai** dòng. Không có luật loại trừ nào được đăng ký trước, nên chữ **«duy nhất» không dùng được** |
+>
+> Đáng chú ý: `qwen3.7-max` có **N lệch lớn hơn ở 14 và 30 ngày** (17 và 35 so với 13 và 27),
+> tức nếu phải chọn *«ứng viên đáng theo dõi nhất»* thì **không hiển nhiên là `gpt-5.5`**.
+>
+> **② `V11154_SIGN_SWITCH_COUNT_TEXT_TABLE_CONFLICT`**
+>
+> | | |
+> |---|---|
+> | **câu cũ** | *«**Ba** trong số đó (`gpt-5-mini` · `grok-4.3` · `qwen3-max-thinking`) dương ở 14 ngày và âm ở 180 ngày»* |
+> | **câu đúng** | **BỐN** nguồn: `claude-opus-5-fast` (`+3/11 → −5/33`) · `gpt-5-mini` (`+4/14 → −1/33`) · `grok-4.3` (`+4/16 → −1/49`) · `qwen3-max-thinking` (`+5/15 → −3/115`) |
+> | **nguyên nhân** | agent đếm bằng mắt trên bảng đã rút gọn, **bỏ sót** `claude-opus-5-fast` — dòng đó đã có nhãn 🔁 **ĐỔI DẤU** ngay trong bảng |
+>
+> **Cả hai sửa này KHÔNG đổi phán quyết.** `POOL_VERDICT = HOLD` giữ nguyên — và thực ra
+> **`claude-opus-5-fast` là ca đổi dấu MẠNH NHẤT** (`+3 → −5`), nên sửa xong thì bằng chứng
+> *«bảng xếp hạng không ổn định»* **mạnh hơn**, không yếu đi.
+>
+> **Tái lập:** so `SUM(would_flip_win) − SUM(would_flip_lose)` với
+> `reliability_status <> 'MISSING_SHADOW_ROW'` trên bốn cửa sổ `14 / 30 / 90 / 180` ngày.
+
+**Bốn nguồn dương ở 14 ngày và âm ở 180 ngày** — chọn cửa sổ ngắn thì kết luận **ngược hẳn**.
 
 Đây **không** phải chi tiết phụ: nó nói rằng **ngay cả sau khi làm sạch**, bảng xếp hạng vẫn
 **không ổn định**. `RM-04` gọi đúng tên hiện tượng này — *n nhỏ không chỉ yếu mà **không ổn
 định**; z đổi dấu khi thêm hai ngày*. ⇒ `HOLD` được **củng cố**, không phải nới ra.
 
-**Nguồn duy nhất dương ở cả bốn cửa sổ với mẫu thật là `gpt-5.5`** (`+3 / +1 / +5 / +14`) — và
-nó **vẫn đang chạy**. Đó là ứng viên đáng theo dõi nhất, nhưng `z` ở 180 ngày vẫn chỉ
-`14/√110 = 1,33` — **chưa qua ngưỡng `1,96`**.
+**Hai nguồn dương ở cả bốn cửa sổ** — `gpt-5.5` và `qwen3.7-max`, cả hai **vẫn đang chạy**.
+Nhưng `z` ở 180 ngày là `14/√110 = 1,33` và `7/√63 = 0,88` — **cả hai chưa qua ngưỡng `1,96`**,
+và đó là **trước** khi hiệu chỉnh đa phép kiểm (mục E của prompt hiện hành). Sau hiệu chỉnh thì
+khoảng cách còn xa hơn.
 
 ### 3.2 🟢 Tìm được CÔNG THỨC CHẤM ĐIỂM THẬT của TOTAL
 
@@ -386,4 +418,4 @@ không».
 
 ---
 
-TanPhatAI cần làm: ghi **`V11154`** — riêng + công khai bản này, **không deploy**. Ghi **RÚT LẠI `V11152` mục 3.2** (đã dán tại chỗ gốc, `bbda484`): `would_flip_lose` **đếm cả 493 lượt thua ẢO** từ dòng `MISSING_SHADOW_ROW`; `gpt-oss-120b`/`glm-5.1` **toàn bộ** ảo; `qwen3.7-max`/`gemini-3.5-flash` **ĐỔI DẤU**. Ghi **kết luận đúng: 0 nguồn tốt có ý nghĩa · 0 xấu có ý nghĩa ⇒ cả pool shadow `HOLD`**; **HUỶ** kế hoạch retire/promote của `V11153`. Ghi **tìm được công thức TOTAL** `main.py:9955-10007` và **counterfactual tính ngược được** (205/205 khớp, **15,2%** đổi `ranked[0]`) — nhưng **có trần `MT:13`**, thêm một nguồn là **đá một nguồn ra** (92% ngày MT), và **hạng TOTAL ≠ bạch thủ** (51/205 do override `V10640`). Ghi **gốc `MISSING_SHADOW_ROW`**: 2.352 backfill-trước-tồn-tại · **869 LỖI PHÂN LOẠI** · 67 trống thật; **99,3% sinh trong một lượt backfill 22/08**. Ghi **đóng 2 `NOT_VERIFIED`**: `IV.14` **không** double-count · `combo-no-token` là `output_eligible=False` **cố ý**. Ghi **`grok` bị cắt vì chi phí** (`model_registry.py:223`) — lý do hết hiệu lực nhưng `z=1,31` **chưa đủ**, và đảo quyết định đã ký cần `thay_thế` (`RM-19`). Ghi **deploy bị lớp phân quyền công cụ chặn**, mọi cổng dự án ĐẠT. Mọi con số hiệu quả trong bản này đo trên **đủ bộ cửa sổ 14 ngày · 30 ngày · 90 ngày · 180 ngày** (mục 3.1b), và **6/30 nguồn ĐỔI DẤU** giữa các cửa sổ. **Không mở FU mới** — umbrella `FU-449`/`FU-450`. **Không mở Prompt 44.**
+TanPhatAI cần làm: ghi **`V11154`** — riêng + công khai bản này, **không deploy**. Ghi **RÚT LẠI `V11152` mục 3.2** (đã dán tại chỗ gốc, `bbda484`): `would_flip_lose` **đếm cả 493 lượt thua ẢO** từ dòng `MISSING_SHADOW_ROW`; `gpt-oss-120b`/`glm-5.1` **toàn bộ** ảo; `qwen3.7-max`/`gemini-3.5-flash` **ĐỔI DẤU**. Ghi **kết luận đúng: 0 nguồn tốt có ý nghĩa · 0 xấu có ý nghĩa ⇒ cả pool shadow `HOLD`**; **HUỶ** kế hoạch retire/promote của `V11153`. Ghi **tìm được công thức TOTAL** `main.py:9955-10007` và **counterfactual tính ngược được** (205/205 khớp, **15,2%** đổi `ranked[0]`) — nhưng **có trần `MT:13`**, thêm một nguồn là **đá một nguồn ra** (92% ngày MT), và **hạng TOTAL ≠ bạch thủ** (51/205 do override `V10640`). Ghi **gốc `MISSING_SHADOW_ROW`**: 2.352 backfill-trước-tồn-tại · **869 LỖI PHÂN LOẠI** · 67 trống thật; **99,3% sinh trong một lượt backfill 22/08**. Ghi **đóng 2 `NOT_VERIFIED`**: `IV.14` **không** double-count · `combo-no-token` là `output_eligible=False` **cố ý**. Ghi **`grok` bị cắt vì chi phí** (`model_registry.py:223`) — lý do hết hiệu lực nhưng `z=1,31` **chưa đủ**, và đảo quyết định đã ký cần `thay_thế` (`RM-19`). Ghi **deploy bị lớp phân quyền công cụ chặn**, mọi cổng dự án ĐẠT. Mọi con số hiệu quả trong bản này đo trên **đủ bộ cửa sổ 14 ngày · 30 ngày · 90 ngày · 180 ngày** (mục 3.1b), và **6/30 nguồn ĐỔI DẤU** giữa các cửa sổ, trong đó **BỐN** nguồn dương ở 14 ngày mà âm ở 180 ngày (bản đầu ghi «ba» — **SAI**, bỏ sót `claude-opus-5-fast`, đã sửa tại chỗ: `V11154_SIGN_SWITCH_COUNT_TEXT_TABLE_CONFLICT`). **Không mở FU mới** — umbrella `FU-449`/`FU-450`. **Không mở Prompt 44.**
