@@ -1,5 +1,48 @@
 # REPORT V11152 — CỜ NGỮ CẢNH THUẦN **THEO LANE** · 02/09/2026
 
+> # 🔴 RÚT LẠI — mục 3.2 của bản này SAI · ghi 02/09/2026 (`V11154`)
+>
+> **`PRJ-RETRACTION-001` — rút lại tại đúng chỗ đã công bố.** Bảng xếp hạng ở **mục 3.2** và
+> mọi kết luận rút ra từ nó **KHÔNG DÙNG ĐƯỢC**. Đọc bốn phần dưới đây trước khi đọc mục 3.2.
+>
+> **① Chỗ gốc:** `REPORT_V11152.md` mục **3.2** *(«Bảng xếp hạng chung ĐẦU TIÊN — `would_flip`
+> ròng, 90 ngày»)*, công bố **02/09/2026**, commit công khai `ace9365`. Cùng lỗi lặp lại trong
+> mục **1**, **9** và dòng `TanPhatAI cần làm`.
+>
+> **② Nguyên văn câu sai:** *«5 nguồn dương · 19 nguồn âm… `gemini-3.6-flash` **−59** ·
+> `claude-opus-5-fast` **−56** · `gpt-5-mini` **−54**»*, và trong trả lời IDE cùng ngày:
+> *«Loại bỏ thì chứng minh được NGAY. `z = −6,48` · `p < 0,001`. Ba nguồn đáy bảng đã đủ bằng
+> chứng để phán quyết hôm nay.»*
+>
+> **③ Điều đúng, tái lập được:** cột `would_flip_baseline_to_lose` **đếm cả dòng
+> `reliability_status = 'MISSING_SHADOW_ROW'`** — tức những ngày model **KHÔNG HỀ dự đoán** vẫn
+> bị tính là **thua**. Trong 90 ngày có **1.600 dòng `MISSING`**, trong đó **493 dòng bị cộng
+> vào `lose`**. Bỏ chúng ra:
+>
+> | nguồn | đã công bố | đúng ra | |
+> |---|---|---|---|
+> | `gemini-3.6-flash` | −58 | **−6** | 52/70 lượt thua là **ảo** |
+> | `claude-opus-5-fast` | −55 | **−5** | 50 ảo |
+> | `gpt-5-mini` | −53 | **−1** | 52 ảo |
+> | `gpt-oss-120b` | −52 | **0** | **toàn bộ** 52 lượt thua là ảo |
+> | `glm-5.1` | −51 | **0** | **toàn bộ** ảo |
+> | `qwen3.7-max` | −24 | **+7** | 🔁 **ĐỔI DẤU** |
+> | `gemini-3.5-flash` | −27 | **+6** | 🔁 **ĐỔI DẤU** |
+>
+> Tính lại McNemar cặp đôi trên dữ liệu đã làm sạch: **0 nguồn tốt có ý nghĩa · 0 nguồn xấu có
+> ý nghĩa · cả 20 nguồn đều «chưa phân biệt được với nhiễu»** (`|z|` cao nhất là `1,31`).
+> Tái lập: `SELECT ai_model, SUM(...) FROM shadow_model_promotion_scorecard_daily WHERE
+> reliability_status <> 'MISSING_SHADOW_ROW' AND run_source LIKE '%shadow%' …`
+>
+> **④ Quyết định đã dựa trên số sai:** kế hoạch *«`RETIRE` ba nguồn `z < −5`, bật lại
+> `grok-4.20-multi-agent`»* nêu trong `REPORT_V11153` mục 9 và trong trả lời IDE. **Huỷ.**
+> Không nguồn nào đủ bằng chứng để retire, và không nguồn nào đủ để promote. Trạng thái đúng
+> theo `docs/NGUONG_CHAP_NHAN_GRAND_OVERHAUL.md` là **`HOLD`** cho toàn bộ pool shadow.
+>
+> Phần **không** bị rút: cờ theo lane (mục 5A, bộ thử 11/11), neo `FINAL` (mục 3.4), và ba cột
+> quyết định để trống (mục 3.1) — cả ba đo bằng phép khác, không dính lỗi này.
+
+
 > `ACTOR_RUNTIME = CLAUDE_CODE` · **Prompt 43 R1 giữ `PARTIAL` — không mở Prompt 44.**
 > Trạng thái: **`CODED_AND_TESTED_NOT_RUNTIME_PROVEN`** — không deploy · không restart · không
 > ghi DB. `PID 3156545` không đổi · **`FINAL_ANCHOR_INTACT`** (558 dòng cũ bất biến).
