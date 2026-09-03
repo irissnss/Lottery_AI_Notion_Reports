@@ -27,7 +27,31 @@ xếp hạng theo kết quả đã biết. Bốn cổng nặng đã đóng đư�
 
 ---
 
-## 2 · 🔴 RÚT LẠI — `PRJ-RETRACTION-001`, đủ bốn phần
+## 2 · Owner yêu cầu gì — NGUYÊN VĂN
+
+> `PRJ-INTERACTION-LEDGER-001`: **prompt chính VÀ mọi yêu cầu trực tiếp trong phiên**, nguyên văn + giờ.
+
+| giờ (VN) | NGUYÊN VĂN | loại |
+|---|---|---|
+| 03/09 ~22:05 | *«Tiếp theo là gì em? phân tích đánh giá dự đoán hôm nay, việc xử lý prompt thuần ngữ cảnh và các vấn đề đơn model và total xử lý tới đâu rồi đo được gì rồi? Hôm nay vẫn tệ như mọi ngày»* | `HỎI` + `CHIA_SẺ` |
+| 03/09 ~22:15 | `PROMPT 43 R1 · CONTINUATION AFTER V11158 · COUNTERFACTUAL RANK REPAIR OFFLINE-FIRST` — 19 mục `I`–`XIX` | `YÊU_CẦU` |
+| 03/09 ~23:5x | *«làm xong chả báo cáo gì là sao em?»* | **`BÁC_BỎ`** |
+| 04/09 ~00:0x | *«ok vậy đợi soi xong tổng hợp đề xuất báo cáo tổng hợp 1 lần luôn em»* | `ĐỔI_ƯU_TIÊN` |
+
+**Owner sửa một đề xuất SAI của agent.** Bản cũ: *«đổ đầy `output_counterfactual_rank` cho 180
+ngày, xếp hạng 27 model **theo kết quả thật**»* — đó là **oracle hindsight**. Owner tuyên phải
+sửa thành: *«dựng từ **đúng selector/TOTAL và dữ liệu có trước region lock**; sau đó mới dùng kết
+quả thật để chấm rank **đã đóng băng**»*. Toàn bộ mục `X` (hai pha + năm META test) sinh từ đây.
+
+**Câu owner cho phép dùng, nguyên văn:** *«Chưa đo được lợi thế so với baseline ngẫu nhiên ở mẫu
+hiện tại; cũng chưa đủ bằng chứng kết luận hệ thống thật sự kém hơn baseline.»*
+**Owner CẤM ghi:** «hệ thống chắc chắn bằng bốc bừa» · «một ngày 0/3 chứng minh regression» ·
+«có ít nhất một model trúng chứng minh pool tốt» · «một model hôm nay trúng chứng minh model đó
+nên được chọn».
+
+---
+
+## 3 · 🔴 RÚT LẠI — `PRJ-RETRACTION-001`, đủ bốn phần
 
 | phần | nội dung |
 |---|---|
@@ -61,7 +85,7 @@ thứ năm trong ngày** mắc đúng họ *«dụng cụ đo đứng sai chỗ�
 
 ---
 
-## 3 · Đào bới / phát hiện — liệt kê ĐỦ
+## 4 · Đào bới / phát hiện — liệt kê ĐỦ
 
 ### 3.1 · Pre-flight (mục IV)
 
@@ -291,7 +315,7 @@ Kết quả lô3 thua cả ba miền hôm nay **KHÔNG** tạo verdict và **KH�
 
 ---
 
-## 4 · Hướng xử lý và vì sao chọn
+## 5 · Hướng xử lý và vì sao chọn
 
 **Vì sao dừng cửa sổ ở `02/08` chứ không lấy 180 ngày.** Registry đổi **22 lần/180 ngày**, lần
 cuối `01/08`. Chỉ từ `02/08` trở đi mới chứng minh được eligibility-at-time **mà không cần** git
@@ -310,7 +334,7 @@ offline. Bản vá này **chạm đường official** ⇒ phải là một packe
 
 ---
 
-## 5 · Đã làm gì — TRƯỚC / SAU / PHIÊN BẢN / KIỂM
+## 6 · Đã làm gì — TRƯỚC / SAU / PHIÊN BẢN / KIỂM
 
 | việc | TRƯỚC | SAU | KIỂM |
 |---|---|---|---|
@@ -324,7 +348,7 @@ offline. Bản vá này **chạm đường official** ⇒ phải là một packe
 
 ---
 
-## 6 · Cổng kiểm
+## 7 · Cổng kiểm
 
 | cổng | kết quả |
 |---|---|
@@ -338,7 +362,7 @@ offline. Bản vá này **chạm đường official** ⇒ phải là một packe
 
 ---
 
-## 7 · Vướng vấp — năm lần, ghi đủ
+## 8 · Vướng vấp — năm lần, ghi đủ
 
 **🔴 ① Cổng bất biến của agent KHÔNG THỂ bắt lỗi rò prompt** — vì nó lấy mẫu một model không nằm
 trong `SHADOW_GATE_MODELS`. Lần **thứ năm** trong ngày mắc họ «dụng cụ đo đứng sai chỗ».
@@ -353,14 +377,14 @@ trong `SHADOW_GATE_MODELS`. Lần **thứ năm** trong ngày mắc họ «dụng
 
 ---
 
-## 8 · Gỡ về
+## 9 · Gỡ về
 
 **Không áp dụng** — work package này **không ghi production, không deploy, không đổi code
 production**. Mọi phép tính trên `artifacts/v11159_phan_tich.db` (clone). Xoá clone là gỡ hết.
 
 ---
 
-## 9 · Theo dõi tiếp — liệt kê ĐỦ
+## 10 · Theo dõi tiếp — liệt kê ĐỦ
 
 | việc | trạng thái | ai chặn |
 |---|---|---|
@@ -378,7 +402,7 @@ production**. Mọi phép tính trên `artifacts/v11159_phan_tich.db` (clone). X
 
 ---
 
-## 10 · Đối chiếu hoàn tất
+## 11 · Đối chiếu hoàn tất
 
 | hạng mục | tầng |
 |---|---|
@@ -413,6 +437,22 @@ production**. Mọi phép tính trên `artifacts/v11159_phan_tich.db` (clone). X
   liệu hiện có (không có hash prompt runtime)
 - mức ảnh hưởng định lượng của phiếu `gpt-oss-120b` — chưa tính lại bundle, `n=1` ngày
 - vì sao journal giờ 17 có 0 dòng
+
+### `DOC_SAID`
+
+- `docs/CURRENT_TRUTH_SSOT.md` §V11157/§V11158 ghi *«official không đổi một ký tự prompt»* —
+  **`DOC_SAID` ≠ `CODE_DID`**. Đã rút lại ở mục 3 và ghi bản sửa vào `SSOT` §V11159 cùng phiên.
+- `docs/CURRENT_TRUTH_SSOT.md` §V11116 (25/08) ghi *«`M0` vs nền: KHÔNG KHÁC — ba làn độc lập»*
+  và *«bước xếp hạng không mang thông tin»* — **`DOC_SAID` = `CODE_DID`**: phép đo 90 ngày × 3
+  miền của phiên này ra cùng kết luận, nên đây là **tái xác nhận**, không phải phát hiện mới.
+- `main.py:12306-12307` chú thích *«For lo3 we clone official»* — **`DOC_SAID` ≠ `CODE_DID`**:
+  code cách đó 110 dòng (`:12438`) ghi `lo3_cloned_from_official: False`. Chú thích chết.
+- `artifacts/phase_checkpoints/SHADOW_MODEL_PROMOTION_MEASUREMENT_ROADMAP_20260427.md:50` —
+  spec gốc của `output_counterfactual_rank` **CÒN NGUYÊN trong kho làm việc** nhưng **không có
+  trên VPS** vì `artifacts/` bị gitignore. Vòng đầu agent kết luận «spec đã mất» — **SAI**, phản
+  biện độc lập đã sửa.
+- `CLAUDE.md` `RM-21` *«hằng số đo được chỉ đúng cho thước đã đo nó»* — phiên này là ca áp dụng
+  trực tiếp: **mốc đóng băng** là hằng số **có thời hạn**, đã đổi ba lần.
 
 ---
 
