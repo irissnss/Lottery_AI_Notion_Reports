@@ -86,8 +86,39 @@ Vì bảng xếp hạng bị vứt đi nên chưa ai đo được **lựa chọn
 | lựa chọn **MONG MANH** (hạng 1 hơn hạng 2 **≤ 2** lần xuất hiện) | **121/207 = 58,5%** |
 | độ tin **THẤP** (`substring_count < 3`) | **0/207 = 0,0%** |
 
-Hơn **một nửa** số 3-càng công bố đứng trên khoảng cách ≤ 2 lần xuất hiện. **Đây là quan sát,
-chưa phải verdict** — chưa nối với kết quả trúng/trượt, và `RM-04` cấm kết luận từ đây.
+Hơn **một nửa** số 3-càng công bố đứng trên khoảng cách ≤ 2 lần xuất hiện.
+
+**BỔ SUNG cùng phiên — đã nối với kết quả thật.** Khoảng cách tính từ dữ liệu **trước** kết quả
+(cửa sổ 180 ngày, `date < D`); kết quả nối vào **sau** ⇒ không oracle.
+
+| nhóm theo khoảng cách hạng 1–2 | trúng | tổng | tỉ lệ |
+|---|---|---|---|
+| **MONG MANH** (≤ 2) | 9 | 121 | **7,4%** |
+| VỪA (3–5) | 2 | 61 | **3,3%** |
+| DỨT KHOÁT (> 5) | 4 | 25 | **16,0%** |
+| **TẤT CẢ** | **15** | **207** | **7,2%** |
+
+**① Khoảng cách KHÔNG dự báo được trúng.** So nhóm mong manh với nhóm dứt khoát: `7,4%` vs
+`16,0%`, **Fisher hai phía `p = 0,1825`** ⇒ **không khác**. Và nhóm GIỮA lại thấp nhất (`3,3%`) —
+không có quan hệ đơn điệu. ⇒ Giả thuyết *«prefix mong manh thì trúng kém hơn»* **không đứng được**
+ở mẫu này. Ghi đúng như thế, không uốn.
+
+**② Nhưng phép đo lộ ra một điều nặng hơn — 3-càng cũng KHÔNG tách được khỏi nền.**
+
+| | tỉ lệ | nền bốc bừa | z |
+|---|---|---|---|
+| 3-càng (207 ô) | **7,2%** | **9,7%** | **−1,19** |
+
+Nền `9,7%` = trung bình **97 số 3-càng thực/ngày** trên 1.000 khả năng (định nghĩa `V10753`:
+ba chữ số ở **bất kỳ vị trí nào** trong giải). Với `n = 207`, kỳ vọng `20,1` mà thực tế `15`.
+
+Câu owner cho phép dùng áp nguyên vào đây: *«Chưa đo được lợi thế so với baseline ngẫu nhiên ở
+mẫu hiện tại; cũng chưa đủ bằng chứng kết luận hệ thống thật sự kém hơn baseline.»*
+
+Đây là **chỉ số thứ tư** cho cùng một hình ảnh, sau bạch thủ · lô 2 · top-3 ở `V11159`. **Không**
+được đọc thành «3-càng hỏng» — kiến trúc 3-càng vẫn `SUBSTANTIALLY_VALID` theo khoá owner
+`V11157`; điều đo được là **cửa sổ 180 ngày + đếm chuỗi con chưa mang lợi thế đo được**, và đó là
+câu hỏi về **bộ chọn prefix**, không phải về kiến trúc.
 
 ### 3.4 · «Journal giờ 17 có 0 dòng» — câu hỏi đặt SAI
 
