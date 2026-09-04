@@ -1,0 +1,628 @@
+{
+ "nhom": {
+  "A": {
+   "chay": 7,
+   "dat": 7,
+   "truot": 0,
+   "khong_chay": 1
+  },
+  "B": {
+   "chay": 5,
+   "dat": 5,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "C": {
+   "chay": 5,
+   "dat": 5,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "D": {
+   "chay": 2,
+   "dat": 2,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "E": {
+   "chay": 9,
+   "dat": 9,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "F": {
+   "chay": 9,
+   "dat": 9,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "G": {
+   "chay": 11,
+   "dat": 11,
+   "truot": 0,
+   "khong_chay": 1
+  },
+  "I": {
+   "chay": 7,
+   "dat": 7,
+   "truot": 0,
+   "khong_chay": 0
+  },
+  "H": {
+   "chay": 13,
+   "dat": 13,
+   "truot": 0,
+   "khong_chay": 0
+  }
+ },
+ "moi_phep": [
+  {
+   "nhom": "A",
+   "ten": "3 mien x 7 thu = 21 o, render duoc het",
+   "trang_thai": "DAT",
+   "chi_tiet": "thu phu: [0, 1, 2, 3, 4, 5, 6]"
+  },
+  {
+   "nhom": "A",
+   "ten": "truoc-va-sau khi mien truoc co ket qua => payload DOI",
+   "trang_thai": "DAT",
+   "chi_tiet": "2/2 mien doi payload theo cutoff"
+  },
+  {
+   "nhom": "A",
+   "ten": "renderer KHONG co tham so model (bat bien theo provider)",
+   "trang_thai": "DAT",
+   "chi_tiet": "tham so: ['db_path', 'ngay_dich', 'mien_dich', 'cutoff_iso', 'so_ngay_su_kien', 'so_tuan_nen', 'so_tuan_lich']"
+  },
+  {
+   "nhom": "A",
+   "ten": "bucket RULE RONG (dung lap tren DB tam) van render duoc",
+   "trang_thai": "DAT",
+   "chi_tiet": "xoa 5 luat -> 0 dieu kien · payload 15065 ky tu"
+  },
+  {
+   "nhom": "A",
+   "ten": "bucket NHIEU RULE nhat",
+   "trang_thai": "DAT",
+   "chi_tiet": "('MT', 6, 5)"
+  },
+  {
+   "nhom": "A",
+   "ten": "cutoff BIEN: created_at == cutoff thi DUOC lay (<=)",
+   "trang_thai": "DAT",
+   "chi_tiet": "n(cutoff=created_at)=1 · n(cutoff nho hon 1)=0"
+  },
+  {
+   "nhom": "A",
+   "ten": "co payload OFFICIAL that de doi chieu",
+   "trang_thai": "DAT",
+   "chi_tiet": "57 payload that"
+  },
+  {
+   "nhom": "A",
+   "ten": "co payload CONTROL that de doi chieu",
+   "trang_thai": "KHONG_CHAY_DUOC",
+   "chi_tiet": "bang prompt_3tang_ab_shadow_v11059 chi luu SO KY TU (control_prompt_ky_tu), KHONG luu van ban control => khong doi chieu duoc"
+  },
+  {
+   "nhom": "B",
+   "ten": "moi moc thoi gian nguon < cutoff (6 to hop)",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 vi pham"
+  },
+  {
+   "nhom": "B",
+   "ten": "same-day mien ra truoc: cutoff som => CHUA CO, cutoff muon => CO",
+   "trang_thai": "DAT",
+   "chi_tiet": "som=0 · muon=5"
+  },
+  {
+   "nhom": "B",
+   "ten": "XOA ket qua ngay dich cua MIEN DICH (MN) => CUNG payload",
+   "trang_thai": "DAT",
+   "chi_tiet": "xoa {'MN': 3, 'MT': 2, 'MB': 1} dong; MN giong=True MT giong=False MB giong=False"
+  },
+  {
+   "nhom": "B",
+   "ten": "xoa ca 3 mien thi MT/MB DOI (dung — vi mat F3 mien ra truoc)",
+   "trang_thai": "DAT",
+   "chi_tiet": "day la hanh vi DUNG, khong phai loi: F3 la dau vao hop le"
+  },
+  {
+   "nhom": "B",
+   "ten": "DOI ket qua ngay dich cua MIEN DICH => CUNG payload",
+   "trang_thai": "DAT",
+   "chi_tiet": "doi 3 dong; byte giong"
+  },
+  {
+   "nhom": "C",
+   "ten": "100% payload cuoi duoc bam (dau vao bam == payload gui)",
+   "trang_thai": "DAT",
+   "chi_tiet": "18682 ky tu · sha a05fafdd2161a2dc"
+  },
+  {
+   "nhom": "C",
+   "ten": "section noi lai == payload goc (khong mat byte)",
+   "trang_thai": "DAT",
+   "chi_tiet": "19 section · 18682 vs 18682 ky tu"
+  },
+  {
+   "nhom": "C",
+   "ten": "section hash cong lai tai lap duoc payload cuoi",
+   "trang_thai": "DAT",
+   "chi_tiet": "root=29f9375db4af98b9"
+  },
+  {
+   "nhom": "C",
+   "ten": "khong co duong NOI THEM sau khi bam trong renderer",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 duong noi them"
+  },
+  {
+   "nhom": "C",
+   "ten": "do phu van tay cua UNG VIEN = 100% (runtime hien tai 39,8-48,1%)",
+   "trang_thai": "DAT",
+   "chi_tiet": "ung vien bam TOAN BO chuoi tra ve; khong co ctx_pack noi sau"
+  },
+  {
+   "nhom": "D",
+   "ten": "21 o matrix deu sach theo CONTAMINATION_GATE_V2",
+   "trang_thai": "DAT",
+   "chi_tiet": "21/21 o nhiem=0"
+  },
+  {
+   "nhom": "D",
+   "ten": "57 payload OFFICIAL/SHADOW that => cong phai TRUOT het",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT 57 · DAT 0"
+  },
+  {
+   "nhom": "E",
+   "ten": "TIEN DE: ban sach DAT (trang thai sach => allow)",
+   "trang_thai": "DAT",
+   "chi_tiet": "o nhiem=0"
+  },
+  {
+   "nhom": "E",
+   "ten": "E1 chen bang xep hang model",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT=True · nhom bat: ['BOOST_PREFER_AVOID', 'MODEL_RANKING', 'WR_WEIGHT']"
+  },
+  {
+   "nhom": "E",
+   "ten": "E2 chen top-10 candidate",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT=True · nhom bat: ['BASKET', 'PRESELECTED_TOPK']"
+  },
+  {
+   "nhom": "E",
+   "ten": "E3 noi ctx_pack SAU diem bam",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT=True · nhom bat: ['BOOST_PREFER_AVOID', 'HIDDEN_ADDITION', 'TOTAL_FINAL', 'WR_WEIGHT']"
+  },
+  {
+   "nhom": "E",
+   "ten": "E5 dung ket qua ngay dich (ro tuong lai)",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT=True · nhom bat: ['PRESELECTED_TOPK']"
+  },
+  {
+   "nhom": "E",
+   "ten": "E6 menh lenh tro vao khoi da xoa",
+   "trang_thai": "DAT",
+   "chi_tiet": "TRUOT=True · nhom bat: ['MODEL_META_KHAC', 'ORPHAN_INSTRUCTION']"
+  },
+  {
+   "nhom": "E",
+   "ten": "E4 renderer BAT BIEN voi selected_model (khong route)",
+   "trang_thai": "DAT",
+   "chi_tiet": "byte giong"
+  },
+  {
+   "nhom": "E",
+   "ten": "E4b payload co route theo model => cong TRUOT",
+   "trang_thai": "DAT",
+   "chi_tiet": "nhom: ['MODEL_RANKING']"
+  },
+  {
+   "nhom": "E",
+   "ten": "khoi phuc nguyen trang sau thu chan",
+   "trang_thai": "DAT",
+   "chi_tiet": "moi phep E chi doi chuoi trong bo nho; khong ghi tep, khong ghi DB"
+  },
+  {
+   "nhom": "F",
+   "ten": "section overlap DONG DU LIEU (herding that)",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 dong du lieu trung"
+  },
+  {
+   "nhom": "F",
+   "ten": "dong khuon mau lap lai la CO Y, khong tinh la herding",
+   "trang_thai": "DAT",
+   "chi_tiet": "38 cap dong khuon mau lap (vd cau 'ĐÂY LÀ DỮ KIỆN...') — bao de minh bach"
+  },
+  {
+   "nhom": "F",
+   "ten": "van tay bo ung vien KHONG lap",
+   "trang_thai": "DAT",
+   "chi_tiet": "5 bo · 0 lap"
+  },
+  {
+   "nhom": "F",
+   "ten": "cung mot bo so duoi HAI TEN khac nhau",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 truong hop"
+  },
+  {
+   "nhom": "F",
+   "ten": "lineage trung (cung dai nguon + giai)",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 truong hop"
+  },
+  {
+   "nhom": "F",
+   "ten": "do phu khong gian so cua TANG 2 (cang cao cang it phan biet)",
+   "trang_thai": "DAT",
+   "chi_tiet": "10/100 duoi · da CONG BO trong payload"
+  },
+  {
+   "nhom": "F",
+   "ten": "do phu duoc CONG BO trong payload (khong giau)",
+   "trang_thai": "DAT",
+   "chi_tiet": "tim chuoi do phu trong payload"
+  },
+  {
+   "nhom": "F",
+   "ten": "order anchoring: bang 00->99 dung thu tu tang dan, du 100",
+   "trang_thai": "DAT",
+   "chi_tiet": "100 muc"
+  },
+  {
+   "nhom": "F",
+   "ten": "dieu kien in theo ID tang dan (KHONG xep hang theo suc manh)",
+   "trang_thai": "DAT",
+   "chi_tiet": "ids=[2751, 2752, 2753, 2754, 2755] · ty le=[0.97, 1.0, 1.0, 1.0, 0.895]"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: hop le day du",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong True, duoc True"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: JSON hong",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · JSON khong hop le: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: thieu main_number",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · main_number thieu hoac sai dang"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: nhieu main_number",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · nhieu hon MOT main_number"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: co truong 3 cang bat buoc",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · co truong 3 cang — hop dong KHONG co truong nay"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: condition_ref bia ra",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · reasoning: condition_ref 'C99_KHONG_CO' KHONG co trong tai lieu"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: secondary KHONG doc lap",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · secondary_reasoning KHONG doc lap (tap con cua reasoning)"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: arithmetic sai",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · arithmetic: 2+2 != 5"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: khong co secondary (hop le)",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong True, duoc True"
+  },
+  {
+   "nhom": "G",
+   "ten": "validator: muc_chac_chan sai",
+   "trang_thai": "DAT",
+   "chi_tiet": "mong False, duoc False · muc_chac_chan sai gia tri"
+  },
+  {
+   "nhom": "G",
+   "ten": "hop dong CAM 3 cang bat buoc (khong co truong trong schema)",
+   "trang_thai": "DAT",
+   "chi_tiet": "payload chi nhac 3 cang trong cau CAM"
+  },
+  {
+   "nhom": "G",
+   "ten": "KHONG goi provider that de sinh cau tra loi",
+   "trang_thai": "KHONG_CHAY_DUOC",
+   "chi_tiet": "LUAT CUNG cam goi provider — nhom G kiem VALIDATOR, KHONG kiem hanh vi model that"
+  },
+  {
+   "nhom": "I",
+   "ten": "cung facts => cung BYTES (5 lan trong mot tien trinh)",
+   "trang_thai": "DAT",
+   "chi_tiet": "a05fafdd2161a2dc"
+  },
+  {
+   "nhom": "I",
+   "ten": "xao tron thu tu khoa cua FACTS => cung BYTES",
+   "trang_thai": "DAT",
+   "chi_tiet": "19 khoa"
+  },
+  {
+   "nhom": "I",
+   "ten": "FACTS qua JSON canonical => cung BYTES",
+   "trang_thai": "DAT",
+   "chi_tiet": ""
+  },
+  {
+   "nhom": "I",
+   "ten": "ma tran PYTHONHASHSEED x TZ x LOCALE (20 to hop) => MOT bam",
+   "trang_thai": "DAT",
+   "chi_tiet": "1 bam khac nhau · a05fafdd2161a2dc"
+  },
+  {
+   "nhom": "I",
+   "ten": "khong co ky tu CR trong payload",
+   "trang_thai": "DAT",
+   "chi_tiet": "so CR = 0"
+  },
+  {
+   "nhom": "I",
+   "ten": "ghi/doc voi newline='' vong lai nguyen ven",
+   "trang_thai": "DAT",
+   "chi_tiet": "18682 vs 18682 ky tu"
+  },
+  {
+   "nhom": "I",
+   "ten": "ghi voi newline='\\r\\n' LAM DOI byte (bang chung phai dung newline='')",
+   "trang_thai": "DAT",
+   "chi_tiet": "19045 vs 18682 ky tu — nen bat buoc newline=''"
+  },
+  {
+   "nhom": "H",
+   "ten": "bang production KHONG DOI: predictions",
+   "trang_thai": "DAT",
+   "chi_tiet": "14201 -> 14201"
+  },
+  {
+   "nhom": "H",
+   "ten": "bang production KHONG DOI: final_bundles",
+   "trang_thai": "DAT",
+   "chi_tiet": "567 -> 567"
+  },
+  {
+   "nhom": "H",
+   "ten": "bang production KHONG DOI: lottery_results",
+   "trang_thai": "DAT",
+   "chi_tiet": "15416 -> 15416"
+  },
+  {
+   "nhom": "H",
+   "ten": "bang production KHONG DOI: model_daily_eval",
+   "trang_thai": "DAT",
+   "chi_tiet": "14065 -> 14065"
+  },
+  {
+   "nhom": "H",
+   "ten": "final_bundles sha256 KHONG DOI",
+   "trang_thai": "DAT",
+   "chi_tiet": "5a16247a978a1567"
+  },
+  {
+   "nhom": "H",
+   "ten": "ma dang serve KHONG DOI: gpt_analyzer.py",
+   "trang_thai": "DAT",
+   "chi_tiet": "758c29c13185763f -> 758c29c13185763f"
+  },
+  {
+   "nhom": "H",
+   "ten": "ma dang serve KHONG DOI: main.py",
+   "trang_thai": "DAT",
+   "chi_tiet": "4ed5fd7ebaee8d23 -> 4ed5fd7ebaee8d23"
+  },
+  {
+   "nhom": "H",
+   "ten": "PID KHONG DOI",
+   "trang_thai": "DAT",
+   "chi_tiet": "3370750 -> 3370750"
+  },
+  {
+   "nhom": "H",
+   "ten": "NRestarts KHONG DOI",
+   "trang_thai": "DAT",
+   "chi_tiet": "0 -> 0"
+  },
+  {
+   "nhom": "H",
+   "ten": "clone bat bien KHONG DOI",
+   "trang_thai": "DAT",
+   "chi_tiet": "c3c2f5688f0abbfc"
+  },
+  {
+   "nhom": "H",
+   "ten": "khong co IMPORT thu vien mang trong ba tep K9 (quet AST)",
+   "trang_thai": "DAT",
+   "chi_tiet": "[]"
+  },
+  {
+   "nhom": "H",
+   "ten": "moi tep tam nam trong artifacts/ (khong ghi ra ngoai)",
+   "trang_thai": "DAT",
+   "chi_tiet": "[]"
+  },
+  {
+   "nhom": "H",
+   "ten": "DB tam khac DB production",
+   "trang_thai": "DAT",
+   "chi_tiet": "/root/Lottery_AI_Test/artifacts/_k9_tmp"
+  }
+ ],
+ "tong": {
+  "chay": 68,
+  "dat": 68,
+  "truot": 0,
+  "khong_chay": 2
+ },
+ "chup_truoc": {
+  "predictions": 14201,
+  "final_bundles": 567,
+  "lottery_results": 15416,
+  "model_daily_eval": 14065,
+  "final_bundles_sha256": "5a16247a978a15670436f332099d5e9eb56b3c00757a5d6f1e27309ae8f16cbe",
+  "gpt_analyzer.py": "758c29c13185763f",
+  "main.py": "4ed5fd7ebaee8d23",
+  "PID": "3370750",
+  "NRestarts": "0",
+  "clone_sha256": "c3c2f5688f0abbfc34b6fcdf9a0ef689cc509b0d4f9839b19e00ceb6efebb6e2"
+ },
+ "hieu_chuan": {
+  "ung_vien": {
+   "MN": {
+    "ky_tu": 18682,
+    "byte": 22119,
+    "sha256_prompt": "a9184f6c5efd3a7aa74b822d4dbf085c396027eee415c653bdd5bc123f93f0e3",
+    "sha256_facts": "e7a39d505e5c735c7e45d8af750f23d5c0ba2de93a0c188c32a1cdc5d48484ec",
+    "n_dieu_kien": 5,
+    "n_dieu_kien_ap_dung": 5,
+    "do_phu_duoi": "10/100",
+    "nen_b_phan_nghin": 423,
+    "n_ngay_do_nen": 26,
+    "quy_uoc_thu": "strftime('%w')=5 (0=CN) cho hien thi · mined_rules.weekday=4 (0=T2, Python) cho tra luat",
+    "o_nhiem": 0,
+    "bo_qua_phu_dinh": 3,
+    "bo_qua_su_kien_goc": 52,
+    "producer_vi_pham": [],
+    "dat": true
+   },
+   "MT": {
+    "ky_tu": 20147,
+    "byte": 23779,
+    "sha256_prompt": "2b39b2880811041a9507a25f01d2c091ae4b255632c57898e8ce68f1774481c9",
+    "sha256_facts": "ad64b4d06ae489570823c8cfb0ac68bf1ca7aa654e6466fb6bca07c549fb901f",
+    "n_dieu_kien": 5,
+    "n_dieu_kien_ap_dung": 5,
+    "do_phu_duoi": "11/100",
+    "nen_b_phan_nghin": 301,
+    "n_ngay_do_nen": 26,
+    "quy_uoc_thu": "strftime('%w')=5 (0=CN) cho hien thi · mined_rules.weekday=4 (0=T2, Python) cho tra luat",
+    "o_nhiem": 0,
+    "bo_qua_phu_dinh": 3,
+    "bo_qua_su_kien_goc": 57,
+    "producer_vi_pham": [],
+    "dat": true
+   },
+   "MB": {
+    "ky_tu": 21090,
+    "byte": 24868,
+    "sha256_prompt": "473ecc5bde920f1954c9692b0460ec42b43abf9d4603387d79fdeb5e1d76d452",
+    "sha256_facts": "ef71d5e93d55be8d65fa51997a1b2a1da46f9b6e68ba16ff0e1de7cd16a41d56",
+    "n_dieu_kien": 5,
+    "n_dieu_kien_ap_dung": 5,
+    "do_phu_duoi": "10/100",
+    "nen_b_phan_nghin": 237,
+    "n_ngay_do_nen": 26,
+    "quy_uoc_thu": "strftime('%w')=5 (0=CN) cho hien thi · mined_rules.weekday=4 (0=T2, Python) cho tra luat",
+    "o_nhiem": 0,
+    "bo_qua_phu_dinh": 3,
+    "bo_qua_su_kien_goc": 60,
+    "producer_vi_pham": [],
+    "dat": true
+   }
+  },
+  "that": {
+   "DAT": 0,
+   "TRUOT": 57,
+   "o_nhiem_tb": 220,
+   "theo_nhom": {
+    "BASKET": 57,
+    "BOOST_PREFER_AVOID": 57,
+    "CONTRADICTION": 57,
+    "MODEL_META_KHAC": 57,
+    "MODEL_RANKING": 35,
+    "ORPHAN_INSTRUCTION": 57,
+    "PRESELECTED_TOPK": 57,
+    "RECENT_WINNING_OUTPUT": 57,
+    "WR_WEIGHT": 57
+   },
+   "n_payload": 57
+  }
+ },
+ "bang_chung": {
+  "clone_bat_bien": {
+   "duong": "/root/Lottery_AI_Test/artifacts/v11165_immutable.db",
+   "sha256": "c3c2f5688f0abbfc34b6fcdf9a0ef689cc509b0d4f9839b19e00ceb6efebb6e2"
+  },
+  "quy_uoc_thu_PRODUCTION_SACH": {
+   "ket_luan": "PRODUCTION KHONG dinh loi nay",
+   "bang_chung": [
+    "gpt_analyzer.py:4862  weekday = _dt.strptime(date_str,'%Y-%m-%d').weekday()",
+    "gpt_analyzer.py:4863  dow_py = weekday  # 0=Mon",
+    "gpt_analyzer.py:4866  dow_sql = str((weekday + 1) % 7)",
+    "moi truy van mined_rules deu truyen dow_py: :4660 :4975 :5030 :5132 :5966"
+   ],
+   "nghia_la": "production giu CA HAI quy uoc va dung dung tung cho; loi lech bucket la loi cua BAN UNG VIEN K9, da sua trong chinh phien nay"
+  },
+  "quy_uoc_thu_UNG_VIEN_DA_SUA": {
+   "trieu_chung_ban_dau": "5/5 dieu kien ra RONG (do phu 0/100) — hong AM, khong bao loi",
+   "goc": "renderer tra mined_rules bang strftime('%w') (0=CN) trong khi bang luu Python weekday() (0=T2) => lay nham bucket lech mot ngay",
+   "bang_chung_quy_uoc": "luat id=2835: target_weekday=6, source_weekday=5, source_station_slot='MT(D-1/T7) · Da Nang' => 5 = THU BAY = Python; va mined_rule_effectiveness cua nhom target_weekday=5 roi vao THU BAY",
+   "da_sua": "wd_py = (wd + 6) % 7 + tu kiem source_weekday cua tung luat"
+  },
+  "tep_k9": {
+   "v11165_k9_renderer.py": {
+    "byte": 30993,
+    "sha256": "b07899efee30749c3eb4bd5679e0d9cf7956e3c486108c2e78e2c712e2036d9d"
+   },
+   "v11165_k9_contam_v2.py": {
+    "byte": 23053,
+    "sha256": "60f74c12bb2ddd3c290a8af1af49411a5ce481c952ffe6e398d50668106a23e4"
+   },
+   "v11165_k9_tests.py": {
+    "byte": 38291,
+    "sha256": "61e8eda8c09a572f41059efed8e39ba7555390bfbe128b5bc4a16bc813ec4d8f"
+   },
+   "v11165_k9_mau_MN.txt": {
+    "byte": 22119,
+    "sha256": "a9184f6c5efd3a7aa74b822d4dbf085c396027eee415c653bdd5bc123f93f0e3"
+   },
+   "v11165_k9_mau_MT.txt": {
+    "byte": 23779,
+    "sha256": "2b39b2880811041a9507a25f01d2c091ae4b255632c57898e8ce68f1774481c9"
+   },
+   "v11165_k9_mau_MB.txt": {
+    "byte": 24868,
+    "sha256": "473ecc5bde920f1954c9692b0460ec42b43abf9d4603387d79fdeb5e1d76d452"
+   }
+  }
+ },
+ "tran_verdict": {
+  "tang": "CODED_AND_TESTED_NOT_RUNTIME_PROVEN",
+  "cam_doc_thanh": [
+   "DEPLOYED",
+   "RUNTIME_PROVEN",
+   "OFFICIAL_CLEAN",
+   "PREDICTIVE_IMPROVEMENT_PROVEN"
+  ],
+  "vi_sao": "Ba tep la TEP MOI trong artifacts/, chua deploy, chua chay tren duong serve, chua goi provider that, va CHUA co phep do tien nao chung minh prompt nay lam tang do trung (muc tieu owner #9 doi DO TIEN)."
+ }
+}

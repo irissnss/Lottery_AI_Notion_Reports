@@ -1,0 +1,73 @@
+{
+ "gate": "V11165_GATE_0B",
+ "bang_la_con_sot": [],
+ "so_bang": 254,
+ "integrity": "ok",
+ "dem_dong": {
+  "predictions": 14201,
+  "final_bundles": 567,
+  "lottery_results": 15416,
+  "model_daily_eval": 14065,
+  "shadow_model_promotion_scorecard_daily": 17121,
+  "runtime_reliability_model_daily": 5276
+ },
+ "neo558": "a82c508d3569abda47041ad625cca93fdec2227fbe389c395dc7f139893a0e5f",
+ "giay_dung": 11.0,
+ "bytes": 813821952,
+ "sha256_toan_tep": "c3c2f5688f0abbfc34b6fcdf9a0ef689cc509b0d4f9839b19e00ceb6efebb6e2",
+ "chattr_rc": 0,
+ "chattr_out": "",
+ "lsattr": "----i---------e------- /root/Lottery_AI_Test/artifacts/v11165_immutable.db",
+ "production_neo558": "a82c508d3569abda47041ad625cca93fdec2227fbe389c395dc7f139893a0e5f",
+ "production_dem": {
+  "predictions": 14201,
+  "final_bundles": 567,
+  "lottery_results": 15416,
+  "model_daily_eval": 14065,
+  "shadow_model_promotion_scorecard_daily": 17121,
+  "runtime_reliability_model_daily": 5276
+ },
+ "thu_chan": {
+  "1_select_hop_le": {
+   "mong": "QUA",
+   "thuc": "QUA (n=14201)",
+   "dat": true
+  },
+  "2_insert_qua_mode_ro": {
+   "mong": "CHAN",
+   "thuc": "CHAN: OperationalError",
+   "dat": true
+  },
+  "2b_create_ghi_truc_tiep_ROOT": {
+   "mong": "CHAN",
+   "thuc": "CHAN: OperationalError",
+   "loi": "attempt to write a readonly database",
+   "dat": true
+  },
+  "2c_update_ROOT": {
+   "mong": "CHAN",
+   "thuc": "CHAN: OperationalError",
+   "loi": "attempt to write a readonly database",
+   "dat": true
+  },
+  "2d_ghi_byte_tho_ROOT": {
+   "mong": "CHAN",
+   "thuc": "CHAN: PermissionError",
+   "loi": "[Errno 1] Operation not permitted: '/root/Lottery_AI_Test/artifacts/v11165_immutable.db'",
+   "dat": true
+  },
+  "3_ghi_ngoai_artifacts": {
+   "mong": "CHAN",
+   "thuc": "CHAN: bay chan duong ghi: /root/Lottery_AI_Test/web/backend/_thu_ghi_v11165.txt ngoai artifacts/",
+   "dat": true
+  },
+  "3b_ghi_trong_artifacts": {
+   "mong": "QUA",
+   "thuc": "QUA",
+   "dat": true
+  }
+ },
+ "thu_chan_dat": true,
+ "clone_sach": true,
+ "manifest_sha256": "835bfd317b245c76087f5e661d724424fdd863d1d0d2ff43cd00ff6c9f73747a"
+}

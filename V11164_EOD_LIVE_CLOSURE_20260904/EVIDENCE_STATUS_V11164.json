@@ -1,0 +1,271 @@
+{
+ "_doc": "EVIDENCE_STATUS_V11164 — chinh lop bang chung cua V11164. Sinh boi V11165 GATE 1 (lan song 1). KHONG sua noi dung raw artifact; chi DAN NHAN va DOI CHIEU.",
+ "_luat": ["PRJ-RETRACTION-001", "RM-11", "RM-12", "RM-10", "RM-09", "RM-18", "RM-21", "A58/§60.4"],
+ "ban": "V11165",
+ "ngay": "2026-09-04",
+ "pham_vi": "E:/Lottery_AI_Notion_Reports/V11164_EOD_LIVE_CLOSURE_20260904",
+ "nguon_do_lai": {
+  "clone_bat_bien": "/root/Lottery_AI_Test/artifacts/v11165_immutable.db",
+  "clone_sha256": "c3c2f5688f0abbfc34b6fcdf9a0ef689cc509b0d4f9839b19e00ceb6efebb6e2",
+  "mo_bang": "sqlite3.connect(\"file:/root/Lottery_AI_Test/artifacts/v11165_immutable.db?mode=ro\", uri=True)",
+  "code_dang_serve": {
+   "gpt_analyzer.py": "758c29c13185763f",
+   "main.py": "4ed5fd7ebaee8d23",
+   "scheduler.py": "2961987d8c3a6e27",
+   "database.py": "fd3d2349ab917c6f",
+   "model_registry.py": "4c84ae9a0d87fa4d",
+   "combo_super.py": "47047b1dc0b7e0b9"
+  },
+  "ghi_chu": "6/6 hash code KHOP GATE 0 cua V11165 => khong co drift ma giua luc chup va luc do lai."
+ },
+
+ "trang_thai_raw_artifact": {
+  "nhan": "RAW_PRE_REVIEW_ARTIFACT",
+  "he_qua": "NOT_CANONICAL_IN_ISOLATION",
+  "superseded_by": ["REPORT_V11164.md", "evidence/PHAN_BIEN_32_SUA_LAI.md", "EVIDENCE_STATUS_V11164.md"],
+  "cam": "TUYET DOI KHONG sua noi dung cac tep duoi day. Chung la ban ghi TRUOC phan bien, gia tri cua chung nam o cho chung CHUA duoc sua.",
+  "cach_doc_dung": "Doc raw artifact CHI de truy vet cach mot ket luan hinh thanh. Moi con so dua ra ngoai phai lay tu REPORT_V11164.md sau khi doi chieu bang bang claim correction duoi day.",
+  "tep": [
+   {"ten": "evidence/GATE_g1-region-ledger.md", "sha256": "651813d3669ba773d3a3c37e49a5cf5f730e55a409b1c6f65ccbaeed536275f9", "bytes": 8701, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "g1-region-ledger", "khop_report_11": true},
+   {"ten": "evidence/GATE_g2-prompt-routing.md", "sha256": "d6ccccd5f3e63614ad9d1072c3247a2bcd95c90e4de842a12e2e8a5917fe4efc", "bytes": 10943, "tu_khai_tang": "PARTIAL", "tu_khai_ten": "gate2", "khop_report_11": true},
+   {"ten": "evidence/GATE_g3-model-universe.md", "sha256": "81fae9dc4f7bc2902556e98136083660bd860818345520f27d5e0488dd736eeb", "bytes": 9362, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "gate4", "khop_report_11": true, "canh_bao": "TU KHAI TEN LECH: tep ten g3 nhung dong 1 ghi 'gate4'."},
+   {"ten": "evidence/GATE_g4-total-final.md", "sha256": "920f471ec07d24654e2f9bb0685d9b9ee8ca05bc617d9c0812b246e90886a12d", "bytes": 11957, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "gate6", "khop_report_11": true, "canh_bao": "TU KHAI TEN LECH NGUY HIEM: tep ten g4 nhung dong 1 ghi 'gate6 · tang=EVIDENCE_COMPLETE', trong khi REPORT muc 11 ghi 'GATE 6 debt = PARTIAL'. Doc luot se thay hai cau nguoc nhau."},
+   {"ten": "evidence/GATE_g5-anomaly.md", "sha256": "5ee2e4c278e889ce8c06cd9e23a27adf3e6ace3a49450e709ad15a25dca4531f", "bytes": 8749, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "g5-anomaly", "khop_report_11": true, "canh_bao": "Chua con so TIEN phan bien: 88/88 · 50.670 — da bi thay o REPORT. Xem CC-05."},
+   {"ten": "evidence/GATE_g6-debt.md", "sha256": "c60315a4bf7886e67840d91e29260430be8780ad8cc8cae3e8e10a729d916790", "bytes": 12461, "tu_khai_tang": "PARTIAL", "tu_khai_ten": "g6-debt", "khop_report_11": true, "canh_bao": "Dong 35 mang MENH DE DA BI RUT LAI (RL-010). Xem CC-07."},
+   {"ten": "evidence/GATE_g7-stdio.md", "sha256": "da81cb5168d62ce78ca6edce88802af8b479bef3e5acefd24b9296f48908477b", "bytes": 7685, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "g7-stdio", "khop_report_11": true, "canh_bao": "Dong 5 noi QUA pham vi socket. Xem CC-06 va RL-013."},
+   {"ten": "evidence/GATE_g8-abc.md", "sha256": "201ffdcb1cae4855c6a6481f1c99ff4c41ecd96b58fabed19f613889d9aef85f", "bytes": 11972, "tu_khai_tang": "EVIDENCE_COMPLETE", "tu_khai_ten": "gate8", "khop_report_11": true, "canh_bao": "Ghi 'NULL sau migration mang IT NHAT BA nghia' trong khi REPORT muc 4.1 ghi 'BON lop NULL'. Hai cach dem, hai moc thoi gian. Xem CC-10."}
+  ],
+  "tep_khong_phai_raw": [
+   {"ten": "evidence/PHAN_BIEN_32_SUA_LAI.md", "sha256": "e37813a3bff4e92fe2520167c83bfc7a2821e416b9fe26578855a86f74355f1a", "nhan": "REVIEW_CORRECTION_LAYER", "vai_tro": "Lop sua — la MOT TRONG HAI nguon canonical."},
+   {"ten": "evidence/v11164_index.json", "sha256": "7a0dc6e0719319df3edcf3d023b7567a3e2c07406bab6d3e652dd9e2a65b50c8", "nhan": "IMMUTABLE_INDEX"},
+   {"ten": "evidence/v11164_gate0_manifest.json", "sha256": "e11069274a7d9da8249d746274a4f375fa410b6460f99414e6fa0024e8f4636f", "nhan": "IMMUTABLE_MANIFEST"},
+   {"ten": "REPORT_V11164.md", "sha256": "d0a279328e8f24c1aaa70141026f483be4b73f5215813388a655766000a02816", "nhan": "CANONICAL"},
+   {"ten": "CONVERSATION_CONTEXT_V11164_20260904.md", "sha256": "4fbc0dd919b0896965eefae85c6e71adfdd0fb7539288a903e7a0ceba8a531f4", "nhan": "CANONICAL"}
+  ]
+ },
+
+ "claim_correction": [
+  {
+   "ma": "CC-01",
+   "chu_de": "8 cong",
+   "cho_goc": "REPORT_V11164.md dong 5 (bang-ron dau bao cao) · CONVERSATION_CONTEXT dong 12, 14, 33, 94",
+   "nguyen_van": "8 cong · 40 agent · 32 phan bien doc lap · 84 phat hien · 196 artifact · 821,8 MB",
+   "doc_dung": "8/8 cong DA CHAY den cung, 40/40 agent hoan tat.",
+   "doc_SAI": "8/8 cong deu DAT / deu PASS.",
+   "thuc_te": "6 EVIDENCE_COMPLETE (g1 · g3 · g4 · g5 · g7 · g8) + 2 PARTIAL (g2 prompt-routing · g6 debt). GRAND_OVERHAUL_CHAIN = PARTIAL.",
+   "bang_chung": "dong 1 cua 8 tep evidence/GATE_g*.md: grep -n 'tang=' GATE_g*.md -> 6 EVIDENCE_COMPLETE, 2 PARTIAL; doi chieu REPORT_V11164.md muc 11.",
+   "phan_loai": "EXPECTED_BEHAVIOR",
+   "trang_thai": "BAO CAO GOC DA DUNG o muc 11; rui ro nam o cach DOC bang-ron dau bao cao."
+  },
+  {
+   "ma": "CC-02",
+   "chu_de": "Nam tang raw -> UI",
+   "cho_goc": "REPORT_V11164.md muc 1, hang bang 'Nam tang raw -> UI'",
+   "nguyen_van": "Nam tang raw -> UI | tang 1 = 2 = 3 = 4, khong co diem lech",
+   "doc_dung": "Tang 1 (raw tai lap) = tang 2 (persisted TOTAL) = tang 3 (published FINAL) = tang 4 (override-adjusted). BON tang, khong lech.",
+   "doc_SAI": "Nam tang deu khong lech.",
+   "thuc_te": "TANG 5 (UI) KHONG DO DUOC — be mat cong khai bi viewer-freeze kep o 2026-06-07, /api/final-bundle sau FU-438 la admin-only fail-closed. Phai ghi 'khong do duoc', CAM ghi 'khong lech'.",
+   "bang_chung": "REPORT_V11164.md muc 3.6 doan 'Tang 5 KHONG DO DUOC'; GATE_g4-total-final.md muc TOM TAT.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "NHAN HANG BANG o muc 1 ghi 'Nam tang' nhung noi dung chi chung minh BON. Sua nhan hang thanh 'Bon tang raw -> override (tang 5 UI: KHONG DO DUOC)'."
+  },
+  {
+   "ma": "CC-03",
+   "chu_de": "TOTAL trung thuc tuyet doi",
+   "cho_goc": "REPORT_V11164.md muc 1 'Ba dieu dang doc nhat' muc 1",
+   "nguyen_van": "Bo chon TOTAL trung thuc tuyet doi.",
+   "doc_dung": "FIDELITY (trung thuc so hoc giua raw model output va so cong bo) duoc chung minh cho DUNG BA bundle ngay 04/09: MN 825 · MT 827 · MB 829 — 30/30 hang top-10, 81/81 hang trong so BT, lo-3 3/3.",
+   "doc_SAI": "TOTAL dung / TOTAL tot / TOTAL co gia tri du bao.",
+   "thuc_te": "KHONG chung minh predictive validity (60 ngay: khong model nao vuot nen co y nghia; V11086: 30/90/180 ngay deu AM). KHONG chung minh cho toan lich su (45/45 bundle tai lap la phep TAT DINH tren dau vao da luu, KHAC voi tai lap tu raw model output chi lam cho 3 bundle).",
+   "bang_chung": "REPORT_V11164.md muc 3.6 va 3.8; GATE_g4-total-final.md muc 1.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "Cum tu 'trung thuc tuyet doi' phai doi thanh 'FIDELITY duoc chung minh cho ba bundle 04/09'."
+  },
+  {
+   "ma": "CC-04",
+   "chu_de": "Prompt",
+   "cho_goc": "REPORT_V11164.md muc 3.4; gpt_analyzer.py dang serve sha 758c29c13185763f",
+   "nguyen_van": "PROMPT_LANE_REGIME_FIXED nhung PROMPT_CLEAN_NOT_PROVEN",
+   "doc_dung": "REGIME ROUTING = PASS (60/60 luot: 27/27 official -> LEGACY_PROMPT, 33/33 shadow -> CONTEXT_ONLY_V2). FULL PAYLOAD CLEAN = NOT PROVEN.",
+   "doc_SAI": "Prompt da sach / V11160 da dong.",
+   "thuc_te": "Do lai truc tiep tren tep dang serve (RM-14, doc tep chu khong doc tai lieu): (a) :6683 `_ctx_only_lane = regime_prompt_cho_luot(lane_test_shadow_pack, selected_model)` -> :6698 `create_analysis_prompt(..., context_only=_ctx_only_lane)` = ban va V11160, dinh tuyen THEO LUOT, DUNG. (b) :6738 `_shadow_mode = lane_test_shadow_pack or (selected_model in SHADOW_GATE_MODELS)` -> :6740 `build_context_pack(..., shadow_mode=_shadow_mode)` -> :6755 `prompt += _ctx_pack` = ro CON LAI, dinh tuyen THEO MODEL. (c) :6680 `_la_shadow` cung theo model NHUNG chi dung cho dong print chan doan :6686-6690 — KHONG phai duong ro thu hai. => DUNG MOT cho ro, dung nhu bao cao noi.",
+   "co_che_chinh_xac": "Co ROUTING (context_only) DUNG; NOI DUNG ctx_pack duoc dung o bien the shadow_mode=True roi noi vao mot prompt LEGACY. Hai thu khac nhau — do la ly do 'regime PASS' va 'payload NOT PROVEN' cung dung mot luc.",
+   "van_tay": ":6723 `_chuoi_that = (system_prompt or '') + '\\n<<<USER>>>\\n' + (prompt or '')` bam TRUOC khi noi ctx_pack (:6755) va REASONING_RULEBOOK (:6760) => van tay chi phu phan tien-ctx.",
+   "bang_chung": "doc truc tiep gpt_analyzer.py dong 6680, 6683, 6698, 6723, 6738, 6740, 6755, 6760 tren VPS; hash tep khop GATE 0.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "BAO CAO GOC DUNG. Da tai lap doc lap, khong chep."
+  },
+  {
+   "ma": "CC-05",
+   "chu_de": "Ba con so prompt",
+   "cho_goc": "evidence/GATE_g5-anomaly.md dong 5 (raw, TIEN phan bien)",
+   "nguyen_van": "lech 88/88 (ngay,mien) trong 30 ngay ... runtime_prompt_chars=24.435 trong khi chuoi that >=50.670 ky tu",
+   "doc_dung": "86/86 cap (ngay, mien) DO DUOC deu lech; 3 cap khong du du lieu doi chieu; mo sang 31 ngay: 89/89; 7 model official khac 0/86. Chuoi that = 50.658 ky tu; thieu 26.223 ky tu = 51,8%.",
+   "doc_SAI": "88/88 · 50.670 · 26.235 — ba con so nay DA BI THAY, cam trich lai.",
+   "thuc_te": "Sua do phan bien so 9 va so 10 (PHAN_BIEN_32_SUA_LAI.md dong 17, 19). Nguyen nhan lech 12 ky tu: `len('\\n<<<USER>>>\\n')` = 12, nam trong runtime_prompt_chars nhung KHONG thuoc chuoi gui di — bi dem hai lan o ban raw.",
+   "bang_chung": "PHAN_BIEN_32_SUA_LAI.md muc 9 va 10; xac nhan co che bang doc gpt_analyzer.py:6723 (chuoi noi bang dai phan cach 12 ky tu).",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "REPORT_V11164.md DA dung so moi (dong 191, 194-195). Raw g5 giu so cu — day la ly do g5 mang nhan NOT_CANONICAL_IN_ISOLATION."
+  },
+  {
+   "ma": "CC-06",
+   "chu_de": "stdio — pham vi probe mu",
+   "cho_goc": "evidence/GATE_g7-stdio.md dong 5 (raw) va loi noi truc tiep voi owner ~21:5x",
+   "nguyen_van": "probe `stream.write(\"\")+flush()` khong day byte nao xuong fd nen KHONG phat hien duoc hong o tang fd (EPIPE / EBADF / AF_UNIX peer chet) — dung hinh dang fd1=fd2=socket:[76184038] cua service",
+   "doc_dung": "Probe mu voi PIPE MAT DAU DOC (kernel `pipe_write` thoat som o duong 'Null write succeeds' TRUOC ca khi kiem `pipe->readers`).",
+   "doc_SAI": "Probe mu voi socket journald cua production.",
+   "thuc_te": "Ban phan bien KHONG chung minh duoc probe mu voi socket journald — tuc dung hinh dang fd that cua service. Muc nghiem trong THAP HON cau raw. Da vao so rut lai RL-013.",
+   "bang_chung": "docs/SO_RUT_LAI.json muc RL-013 (du bon phan); artifacts v11164_pb_g7f1_shapes.json + _ketluan.json + _taidien.json, harness co lap tai lap 4/4.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "REPORT_V11164.md muc 3.12 DA thu hep dung ('KHONG mu voi socket journald cua production'). Raw g7 dong 5 giu cau rong."
+  },
+  {
+   "ma": "CC-07",
+   "chu_de": "Gate 6 — nhanh _safe_stdio_ctx",
+   "cho_goc": "evidence/GATE_g6-debt.md dong 35",
+   "nguyen_van": "Latent `_safe_stdio_ctx` concern — 28 vi tri trong `scheduler.py`, 0 dong loi I/O do duoc nen nhanh nguy hiem chua tung chay. Giu nguyen quyet dinh chu dong khong sua cua V11163, xep P3.",
+   "doc_dung": "Nhanh DA CHAY THAT 270 lan. `scheduler_logs` co 270 dong 'ValueError: I/O operation on closed file.' tu 2026-05-10 12:01:21 den 2026-07-19 17:30:00 (log_time naive = UTC), traceback tro thang scheduler.py:1851 print(...).",
+   "doc_SAI": "Nhanh do chua tung chay / 0 dong loi I/O.",
+   "thuc_te": "CAU NAY DA BI RUT LAI (RL-010). Nhanh im tu 2026-08-01 la nho V10800 (15/07) va V10826 tach job sang subprocess co stdout rieng — tuc va bang CACH LY TIEN TRINH, HOAN TOAN KHONG nho `_safe_stdio_ctx`. Loi do luong goc: quet journal (chi con luu tu 29/08) roi ket luan cho CA DOI nhanh ma — cua so bang chung hep hon cua so ket luan. Quyet dinh 'chu dong khong sua' GIU NGUYEN, nhung LY DO doi han.",
+   "bang_chung": "SELECT COUNT(*) FROM scheduler_logs WHERE message LIKE '%closed file%' -> 270; MIN=2026-05-10 12:01:21 MAX=2026-07-19 17:30:00. docs/SO_RUT_LAI.json RL-010.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "MAU THUAN NOI BO CON SONG trong bo evidence: g6 dong 35 va g7 dong 22 noi nguoc nhau ve cung mot su viec. Day la ly do bat buoc phai dan nhan raw."
+  },
+  {
+   "ma": "CC-08",
+   "chu_de": "combo-super goi lai model",
+   "cho_goc": "REPORT_V11164.md muc 3.6 · GATE_g4-total-final.md",
+   "nguyen_van": "combo-super GOI LAI chinh model da bo phieu (trace bat duoc 3 luot goi lai dung giay tao bundle)",
+   "doc_dung": "Viec goi lai la EXPECTED_BEHAVIOR — thiet ke da thanh van (combo_super.py:1374 -> :1134, docstring :1238, CLAUDE.md §59 UNIFIED TOP-3 V6.0).",
+   "doc_SAI": "combo-super goi lai model = loi.",
+   "thuc_te": "DEFECT THAT nam o cho khac: so dem voter THO (khong de-dup huyet thong) di thang vao `consensus_level` (main.py:10339-10345, >=4 -> 'strong') => nhan dong thuan bi thoi tu 'moderate' len 'strong'. Ngay 04/09 KHONG doi bach thu. MT bach thu 28 co 4 voter nhung chi 3 danh tinh model; MN so 73 co 3 phieu nhung chi 2 nguon.",
+   "bang_chung": "REPORT_V11164.md muc 3.6 hai bang 'Hai co che nhan doi anh huong'; combo_super.py sha 47047b1dc0b7e0b9 khop GATE 0.",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "Phai tach hai menh de. Gan nhan 'loi' cho co che goi lai la A57/§59 doc sai thiet ke."
+  },
+  {
+   "ma": "CC-09",
+   "chu_de": "MT bi loai khoi do luong chinh — DO LAI DOC LAP TREN CLONE",
+   "cho_goc": "REPORT_V11164.md dong 47 (muc 1) va dong 581 (muc 9) · PHAN_BIEN_32_SUA_LAI.md muc 3 (SUA TIEU DE)",
+   "nguyen_van": "MT bi loai khoi do luong chinh 71 ngay lien tiep vi mot loi KE TOAN, khong phai loi chay.",
+   "doc_dung": "'71 ngay lien tiep' TAI LAP DUOC — nhung CHI voi dinh nghia `evaluation_policy != 'INCLUDE'`, tu 2026-06-26 den 2026-09-04, pha o 2026-06-25 (INCLUDE · VALID_LIVE_DAY).",
+   "doc_SAI": "MT bi EXCLUDE_PRIMARY 71 ngay lien tiep. — SAI. Chuoi EXCLUDE_PRIMARY LIEN TIEP dai nhat tinh nguoc tu 04/09 chi la 7 NGAY (2026-08-29 -> 2026-09-04), pha o 2026-08-28 boi EXCLUDE_ALL.",
+   "thuc_te": {
+    "chuoi_71": "71 dong = 70 EXCLUDE_PRIMARY + 1 EXCLUDE_ALL (2026-08-28, 'Nghiem trong: chi 6/15 model (40%)').",
+    "chuoi_exclude_primary_lien_tiep": "7 ngay (2026-08-29 -> 2026-09-04).",
+    "quy_cho_cap": "65/71 mang dau hieu cap 'Thieu 2 model (13/15)'. 6/71 KHONG phai cap: 2026-07-25 (11/15) · 2026-08-07, 08-08, 08-15, 09-02 (12/15) · 2026-08-28 (6/15, EXCLUDE_ALL).",
+    "2026_08_28_la_hong_that": "MT ngay 28/08 KHONG co mot dong `ai_chain` nao, chi 7 dong `auto_daily` => day la loi CHAY that, khong phai loi ke toan. Cau 'vi mot loi KE TOAN' KHONG dung cho ca 71 ngay.",
+    "cua_so_90": "EXCLUDE_PRIMARY = 72/90 (80,0%) — KHOP bao cao. Trong do 65 mang dau hieu cap, 7 mang dau hieu khac (12/15 x4, 14/15 x2, 11/15 x1).",
+    "con_so_46_khong_tai_lap": "Bao cao ghi 'it nhat 46/72 quy truc tiep cho ke toan cap V10752'. Dan xuat cua 46 KHONG duoc ghi trong bat ky tep evidence nao => KHONG TAI LAP DUOC tu artifact da cong bo (RM-11). Dem theo dau hieu cho 65/72. Toi thu mot dinh nghia chat hon (cap + du 15 model chay that) nhung bo loc run_source cua toi SAI (bo sot `auto_daily` va `rerun_post_mn`) nen ket qua do VO GIA TRI — ghi INDETERMINATE, khong dung."
+   },
+   "bang_chung": "clone c3c2f568...: SELECT date,evaluation_policy,degradation_reason FROM day_governance WHERE region='MT' ORDER BY date. Artifact: /root/Lottery_AI_Test/artifacts/v11165_h1_mt_streak.json · v11165_h1_mt_streak2.json · v11165_h1_mt_attr.json",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "Headline TAI LAP DUOC nhung PHAI kem dinh nghia. Cam viet 'EXCLUDE_PRIMARY 71 ngay lien tiep'. Cam quy ca 71 ngay cho loi ke toan."
+  },
+  {
+   "ma": "CC-10",
+   "chu_de": "NULL — STATE_SPACE = 4, phai noi TRUOC/SAU migration",
+   "cho_goc": "REPORT_V11164.md muc 4.1 va muc 4.3 R2 · evidence/GATE_g8-abc.md muc TOM TAT · docs/SO_RUT_LAI.json RL-009",
+   "nguyen_van_report": "Bon lop NULL do duoc (khong phai hai nhu da cong bo): COMPUTED_IN_TOP10 2.094 · COMPUTED_OUTSIDE_TOP10 444 · NOT_COMPUTABLE_NO_NUMBER 135 · NOT_COMPUTED_OUT_OF_WINDOW 14.448.",
+   "nguyen_van_g8": "NULL sau migration mang IT NHAT BA nghia chu khong phai hai nhu da cong bo (thieu lop 135 dong parse_ok=0).",
+   "doc_dung": "STATE_SPACE = 4. Con TRUOC hay SAU migration quyet dinh bao nhieu trong so 4 state con la NULL.",
+   "TRUOC_migration": "Cot `output_counterfactual_rank` rong cho CA BON state: 17.121/17.121 dong NULL, 0 gia tri phan biet. NULL gop DU BON nghia. Day la trang thai HIEN TAI (owner khoa Option B => giu nguyen).",
+   "SAU_phuong_an_A": "Chi COMPUTED_IN_TOP10 (2.094) co rank. Phan NULL con lai = 444 + 135 + 14.448 = 15.027 dong, mang IT NHAT BA nghia lan nhau, khong phan biet duoc bang truy van.",
+   "doc_SAI": "Viet 'NULL hai lop' hoac 'NULL bon lop' ma khong noi TRUOC/SAU migration. Hai cach dem deu dung o dung moc cua no; tron lai la A60_VIOLATION_LAYER_CONFLATED.",
+   "bang_chung": "clone: SELECT COUNT(*), SUM(output_counterfactual_rank IS NULL), COUNT(DISTINCT output_counterfactual_rank) FROM shadow_model_promotion_scorecard_daily -> 17121 · 17121 · 0. Kiem tra so: 2094+444+135+14448 = 17121 = tong bang. Artifact v11164_g8_abc.json khoa `so_do_kich_thuoc_thuc_te_neu_do_bang_artifact_hien_co`. Artifact moi: v11165_h1_null.json",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "Hai tep evidence (REPORT muc 4.1 = 'bon lop' · g8 = 'ba nghia sau migration') noi hai con so khac nhau ma khong tep nao neu moc thoi gian => phai bo sung nhan TRUOC/SAU."
+  },
+  {
+   "ma": "CC-11",
+   "chu_de": "Dem so ca rut lai",
+   "cho_goc": "REPORT_V11164.md dong 11 ('RUT LAI nam ket luan da cong bo') va muc 4.3 tieu de ('Hai trong nam ca') vs muc 5 bang ('rut lai: 0 -> 6 ca') va dong TanPhatAI ('SAU CA RUT LAI')",
+   "nguyen_van": "Ban nay RUT LAI nam ket luan da cong bo (muc 4.3) ... | rut lai | 0 | 6 ca, du bon phan |",
+   "doc_dung": "6 ca = 5 claim DA CONG BO (R1..R5 = RL-008..RL-012) + 1 cau noi SAI trong chinh phien, truc tiep voi owner trong IDE ~21:5x (R6 = RL-013).",
+   "cach_dem": "'nam ket luan DA CONG BO' dem theo thuoc CONG BO (co mat trong tai lieu/bao cao dang luu hanh). '6 ca rut lai' dem theo thuoc SO RUT LAI (moi phat ngon sai da den tai owner hoac nguoi doc). Hai thuoc khac nhau — khong duoc tru hai so (RM-21).",
+   "thuc_te": "docs/SO_RUT_LAI.json: 13 muc RL-001..RL-013. V11164 them 6 (RL-008..RL-013). Ca 6 muc deu du BON PHAN bat buoc cua PRJ-RETRACTION-001: cho_goc · nguyen_van_cau_sai · dieu_dung (+ phep_do_tai_lap) · quyet_dinh_da_dua_tren.",
+   "bang_chung": "python doc docs/SO_RUT_LAI.json -> n=13, RL-008..RL-013 moi muc du 4 truong bat buoc + phep_do_tai_lap + dau_hieu + bao_cao_rut.",
+   "phan_loai": "EXPECTED_BEHAVIOR",
+   "trang_thai": "Khong sai, nhung hai con so 5 va 6 dung canh nhau ma khong noi ro thuoc => phai ghi cach dem."
+  },
+  {
+   "ma": "CC-12",
+   "chu_de": "PHAT HIEN MOI — so sanh MT chon loc, bo quen MB",
+   "cho_goc": "evidence/GATE_g1-region-ledger.md dong 5 · REPORT_V11164.md muc 1 va muc 4.2",
+   "nguyen_van": "90 ngay qua MT bi loai 72/90 luot (80,0%) so voi MN 10/91 (11,0%)",
+   "doc_SAI": "Doc thanh: viec bi loai khoi do luong chinh la van de RIENG cua MT.",
+   "thuc_te": "MB bi EXCLUDE_PRIMARY 74/91 = 81,3% — CAO HON MT (80,0%). Bao cao chi so MT voi MN (11,0%) va KHONG NHAC MB o bat ky cho nao trong so sanh nay. Chon ve so sanh nhu vay lam cho van de trong nhu dac thu MT.",
+   "khac_biet_that_giua_MT_va_MB": "MT bi loai LIEN TUC (71 ngay lien tiep, 65/71 do dau hieu cap 13/15). MB bi loai NGAT QUANG va do nguyen nhan KHAC HAN: 43 'Thieu 1 model (14/15)' + 21 'Thieu 2 model (13/15)' + 10 'Thieu 3 model (12/15)'; MB ngay 04/09 la INCLUDE nen chuoi lien tiep cua MB = 0. Tuc: MT = loi ke toan he thong; MB = ro ri model lat vat, KHONG phai tran MT-13.",
+   "he_qua_cho_MT_PREREGISTRATION": "CUNG CO ket luan NOT_READY_FOR_OWNER_LOCK — nhung ly do phai rong hon: khong chi thuoc cua MT hong, ma HAI TRONG BA mien dang bi loai ~80% so ngay. Bat ky nen so sanh lien-mien nao dung rolling WR/TOP1 hien tai deu dang so MN (mau 80/90) voi MT (17/90) va MB (17/90).",
+   "bang_chung": "clone: SELECT region, evaluation_policy, COUNT(*) FROM day_governance GROUP BY ... 90 dong gan nhat moi mien -> MN {INCLUDE 80, EXCLUDE_PRIMARY 10} · MT {INCLUDE 17, EXCLUDE_PRIMARY 72, EXCLUDE_ALL 1} · MB {INCLUDE 17, EXCLUDE_PRIMARY 73}. Artifact v11165_h1_mt_streak2.json",
+   "phan_loai": "PROVEN_DEFECT",
+   "trang_thai": "MOI — chua co trong V11164 va chua co trong 32 phan bien."
+  },
+  {
+   "ma": "CC-13",
+   "chu_de": "PHAT HIEN MOI — tep evidence tu khai SO HIEU CONG lech voi ten tep va voi muc 11",
+   "cho_goc": "evidence/GATE_g3-model-universe.md dong 1 · evidence/GATE_g4-total-final.md dong 1 · REPORT_V11164.md muc 11",
+   "nguyen_van_g4": "# gate6 · tang=EVIDENCE_COMPLETE · 16 phat hien",
+   "nguyen_van_report_11": "GATE 2 prompt routing · GATE 6 debt | PARTIAL (2)",
+   "thuc_te": "GATE_g3-model-universe.md tu khai 'gate4'; GATE_g4-total-final.md tu khai 'gate6'. Muc 11 cua REPORT anh xa theo TEN TEP (g1 g3 g4 g5 g7 g8 = EVIDENCE_COMPLETE; g2 g6 = PARTIAL) va anh xa do DUNG. Nhung nguoi mo GATE_g4-total-final.md se doc 'gate6 · EVIDENCE_COMPLETE' ngay dong dau, trong khi REPORT muc 11 ghi 'GATE 6 = PARTIAL' => hai cau nguoc nhau tren be mat, khac nhau chi vi 'gate6' trong tep la SO HIEU TU KHAI SAI.",
+   "vi_sao_nguy_hiem": "Day la lop bang chung. Mot doc gia sau nay (TanPhatAI hoac agent khac) doi chieu 'GATE 6' se lay nham tep va ket luan nguoc.",
+   "bang_chung": "grep -n 'tang=' evidence/GATE_g*.md; doi chieu ten tep. sha256 tung tep ghi o khoi trang_thai_raw_artifact.",
+   "phan_loai": "OPERATIONAL_IMPROVEMENT",
+   "trang_thai": "MOI. KHONG duoc sua tep raw. Xu bang bang anh xa trong tep nay."
+  }
+ ],
+
+ "do_lai_doc_lap_MT": {
+  "_luat": "De bai V11165 GATE 1 muc 9 buoc ban thu do lai, khong duoc chep bao cao.",
+  "nguon": "clone bat bien c3c2f5688f0abbfc34b6fcdf9a0ef689cc509b0d4f9839b19e00ceb6efebb6e2, bang day_governance (566 dong, 3 mien, 2026-02-28 -> 2026-09-04)",
+  "bao_nhieu_ngay_lien_tiep": {
+   "dinh_nghia_A_policy_khac_INCLUDE": {"MT": 71, "tu": "2026-06-26", "den": "2026-09-04", "pha_o": "2026-06-25 INCLUDE VALID_LIVE_DAY", "MN": 0, "MB": 0},
+   "dinh_nghia_B_EXCLUDE_PRIMARY_lien_tiep": {"MT": 7, "tu": "2026-08-29", "den": "2026-09-04", "pha_o": "2026-08-28 EXCLUDE_ALL 'Nghiem trong: chi 6/15 model (40%)'"},
+   "ket_luan": "'71 ngay lien tiep' CHI dung voi dinh nghia A. Voi dinh nghia B (dung chu EXCLUDE_PRIMARY) thi la 7."
+  },
+  "bao_nhieu_do_cap": {
+   "trong_chuoi_71": {"dau_hieu_cap_13_tren_15": 65, "khong_phai_cap": 6},
+   "trong_cua_so_90_dong": {"exclude_primary": 72, "dau_hieu_cap": 65, "dau_hieu_khac": 7},
+   "canh_bao_RM_10": "Dau hieu 'Thieu 2 model (13/15)' KHONG phai bang chung ban than no la tran V10752: dau hieu nay da xuat hien 7 lan TRUOC 2026-06 (thang 3: 5 · thang 4: 1 · thang 5: 1), tuc TRUOC ngay owner duyet tran (25/06). Suy 'dau hieu 13/15 => tran V10752' la ket luan theo HINH DANG, can them bang chung gate_diagnostics moi thanh nhan qua."
+  },
+  "bao_nhieu_do_nguyen_nhan_khac": {
+   "so": 6,
+   "chi_tiet": [
+    {"date": "2026-07-25", "policy": "EXCLUDE_PRIMARY", "ly_do": "Thieu 4 model (11/15)"},
+    {"date": "2026-08-07", "policy": "EXCLUDE_PRIMARY", "ly_do": "Thieu 3 model (12/15)"},
+    {"date": "2026-08-08", "policy": "EXCLUDE_PRIMARY", "ly_do": "Thieu 3 model (12/15)"},
+    {"date": "2026-08-15", "policy": "EXCLUDE_PRIMARY", "ly_do": "Thieu 3 model (12/15)"},
+    {"date": "2026-08-28", "policy": "EXCLUDE_ALL", "ly_do": "Nghiem trong: chi 6/15 model (40%)", "ghi_chu": "HONG CHAY THAT — 0 dong ai_chain, chi 7 dong auto_daily"},
+    {"date": "2026-09-02", "policy": "EXCLUDE_PRIMARY", "ly_do": "Thieu 3 model (12/15)"}
+   ]
+  },
+  "khong_tai_lap_duoc": {
+   "con_so": "46/72",
+   "ly_do": "Dan xuat khong duoc ghi o bat ky tep evidence nao cua V11164. GATE_g1 dong 49 chi neu ket qua '46/72 ngay MT bi loai la do cap chu khong do hong' ma khong kem truy van. Dem theo dau hieu degradation_reason cho 65/72.",
+   "thu_nghiem_that_bai_cua_toi": "Toi thu dinh nghia chat (cap 13/15 VA >=15 model chay that trong ngay) va duoc 0/65 — nhung bo loc run_source cua toi SAI: toi chi lay ('ai_chain','free_predict') trong khi luot official MT thuc te la ai_chain + auto_daily (04/09: 9+7=16 dong) hoac ai_chain + rerun_post_mn (01/07: 8+7=15). Ket qua 0/65 la SAI, KHONG duoc dung. Ghi INDETERMINATE.",
+   "phan_loai": "INDETERMINATE"
+  }
+ },
+
+ "verdict_tang": "EVIDENCE_COMPLETE",
+ "tran_cao_nhat_duoc_phep": "Gate nay chi DAN NHAN va DOI CHIEU lop bang chung. Khong nang tang cho bat ky ket luan nao cua V11164.",
+ "mutation_ledger": {
+  "production_db_row_mutation": 0,
+  "production_code_thay_doi": 0,
+  "deploy": 0,
+  "restart": 0,
+  "git_commit_push": 0,
+  "notion_ghi": 0,
+  "tep_ghi_tren_VPS": ["artifacts/v11165_h1_mt_streak.json", "artifacts/v11165_h1_mt_streak2.json", "artifacts/v11165_h1_mt_attr.json", "artifacts/v11165_h1_mt_attr2.json", "artifacts/v11165_h1_null.json", "artifacts/v11165_h1_code.json", "artifacts/v11165_h1_evidence_status.json", "artifacts/_run__h1*.py"],
+  "tep_ghi_local": ["E:/Lottery_AI_Notion_Reports/V11164_EOD_LIVE_CLOSURE_20260904/EVIDENCE_STATUS_V11164.md", "E:/Lottery_AI_Notion_Reports/V11164_EOD_LIVE_CLOSURE_20260904/EVIDENCE_STATUS_V11164.json"],
+  "tep_raw_bi_sua": "KHONG — 8 tep evidence/GATE_g*.md giu nguyen sha256 nhu ghi o tren."
+ },
+
+ "dau_vao_cho_lan_song_2": [
+  "CC-09 + CC-12: truoc khi bat ky ai dung rolling WR/TOP1 lam nen so sanh lien-mien, phai biet mau that la MN 80/90 · MT 17/90 · MB 17/90. Day la dieu kien chan cho MT_PREREGISTRATION va cho moi phep do 'model nao tot hon'.",
+  "CC-09: con so '46/72' KHONG tai lap duoc tu artifact da cong bo (RM-11). Lan song 2 hoac ghi ro dan xuat, hoac rut lai con so.",
+  "CC-10: owner da khoa Option B => KHONG co migration => cot output_counterfactual_rank giu nguyen 17.121/17.121 NULL, gop DU BON state. Moi tai lieu sau phai noi 'bon state, chua migration', KHONG duoc muon cach dem 'ba nghia sau migration' cua g8.",
+  "CC-04: duong ro con lai la DUY NHAT mot cho — gpt_analyzer.py:6738. Va no cham NOI DUNG ctx_pack chu khong cham co regime. Bat ky de xuat va nao cung phai noi ro no sua NOI DUNG hay sua CO.",
+  "CC-13: khi trich 'GATE 6' phai noi ro la ten tep hay so hieu tu khai — hai he dang lech."
+ ]
+}
