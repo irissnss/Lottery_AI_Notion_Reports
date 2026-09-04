@@ -556,6 +556,7 @@ G7-F1 thu hẹp khỏi socket journald.
 | 4 | **Đọc `journal.jsonl` bằng đường dẫn `/c/...` trong Python** → `FileNotFoundError`, suýt kết luận «không có journal» | dùng đường dẫn Windows |
 | 5 | 🔴 **Cửa sổ bằng chứng hẹp hơn cửa sổ kết luận** (R3) — quét journal (từ 29/08) rồi kết luận cho **cả đời** nhánh mã | phải quét `scheduler_logs` (từ 27/03). **Bài học chung: trước khi nói «chưa từng xảy ra», phải nói rõ NGUỒN đó phủ tới đâu** |
 | 6 | Tôi báo owner *«đang chạy»* trong khi tiến trình đã chết | kiểm journal thật trước khi báo tiến độ |
+| 7 | **Cổng `PRJ-SELECTION-WINDOW-001` CHẶN commit bản nháp đầu** — bảng sổ ngày có dòng `lô2 / 3-càng` nằm gần chữ *«30 ngày»* của mục khác, cổng đọc thành **tuyên bố hiệu quả chỉ trích một cửa sổ** | **không đi vòng bằng `BO_QUA_CONG_COMMIT`** — viết rõ bảng đó là **sổ ghi kết quả một ngày, không so nền**, và dẫn bộ cửa sổ đầy đủ của V11086 (30/90/180 ngày, nền `1−(1−b)^k`). Cổng chạy lại: `PRJ_WINDOW=SACH` |
 
 ---
 
@@ -720,9 +721,18 @@ Nói ngắn: **hôm nay máy chạy tốt hơn hẳn, còn chất lượng dự 
 |---|---|
 | private HEAD **trước** | `6243211b0d8615eca7d77f2785304ec41fa3c190` (branch `fu438/admin-only-p0a`) |
 | public HEAD **trước** | `a430a720796bde27bd2a7900ebda38f335980545` |
-| private commit V11164 | *(ghi ở `CONVERSATION_CONTEXT`, cập nhật ngay sau khi push)* |
-| public commit V11164 | *(nt)* |
+| **private commit V11164** | **`a68384fb235b548515e022131aa3e76932d0c3f9`** — *«bốn mặt quản trị + sổ rút lại 6 ca»*, 8 tệp, `6243211..a68384f` |
+| **public commit V11164** | **`af4597a38c5f3b80a76ae2b4a9fb8aa46de65a09`** — *«EOD live closure 04/09»*, 13 tệp, `a430a72..af4597a` |
 | `governance_seq` | 479 → **480** |
+| cổng `_v11062 --kiem` | ✅ **ĐẠT** — bốn mặt đi cùng nhau, `HISTORY` mới nhất 2026-09-04 (0 ngày trước) |
+| cổng `PRJ-SELECTION-WINDOW-001` | ✅ **`PRJ_WINDOW=SACH`** *(đã chặn bản nháp đầu — xem mục 7 vấp #7)* |
+
+**Tệp trong repo công khai:** `REPORT_V11164.md` · `CONVERSATION_CONTEXT_V11164_20260904.md` ·
+`evidence/` 11 tệp (`v11164_gate0_manifest.json` · `v11164_index.json` · 8 bản tóm tắt cổng ·
+`PHAN_BIEN_32_SUA_LAI.md`).
+**Tệp trong repo riêng:** `CHANGELOG.md` · `docs/CURRENT_TRUTH_SSOT.md` ·
+`docs/AUTOMATION_STATE.json` · `docs/AUTOMATION_HISTORY.jsonl` · `docs/FOLLOW_UP_TRACKER.md` ·
+`docs/SO_RUT_LAI.json` (**7 → 13 mục**) · `docs/SO_TUONG_TAC_OWNER.md` · `docs/_I2_DA_CHAY.json`.
 
 ---
 
