@@ -420,6 +420,8 @@ không dùng trường `hang_cua_no_trong_A`; sinh **trước** kết quả; **k
 | 8 | **Phép đo SC-08 đầu tiên kết luận sai** do regex bỏ sót cách viết `2W(14d)` | kiểm lại bằng 8 cách viết; kết luận CHẶN vẫn đứng nhưng **lý do khác hẳn** |
 | 9 | **Hai con số tự suy ra SAI** ở Gate 5 (`P(≥6/8)=0,98` → đúng **0,8845**; nền k=4 trộn nhầm cột) | tính lại, buộc mọi giá trị lấy thẳng từ JSON đo được |
 | 10 | Backtick trong template literal JS làm hỏng workflow (**lần thứ hai**) | thay bằng nháy đơn — cần nhớ dài hạn |
+| 11 | **Hai cổng chặn commit** — `PRJ-RETRACTION-001` (trích lại `RL-002` «0/105 qua cổng» không kèm nhãn) và `PRJ-SELECTION-WINDOW-001` (**12 chỗ** trích một cửa sổ) | **KHÔNG dùng `BO_QUA_CONG_COMMIT`.** Thêm nhãn đính chính cho `RL-002`; chèn ghi chú *«cố ý trích một cửa sổ»* vào đúng 12 chỗ, dẫn bộ đủ ở V11073 / V11030 / V11084 / V11086. Chạy lại: cả hai **SACH** |
+| 12 | **Viết tệp thông điệp commit trong CHÍNH lệnh bị hook chặn** ⇒ hook chặn cả lệnh, tệp không bao giờ được tạo, `git commit -F` báo *No such file* | tách thành hai lệnh. **Đây là lần thứ HAI trong ngày** vấp đúng cái này |
 
 ---
 
@@ -643,8 +645,11 @@ và `POOL_VERDICT = HOLD`.**
 | `V11164_BASE` | `af4597a38c5f3b80a76ae2b4a9fb8aa46de65a09` |
 | `governance_seq` | 480 → **481** |
 | `QD` mới | **`QD-073`** (bộ cấp canonical `_v11044`, QD-072 là cao nhất trước đó) |
-| private commit V11165 | *(mục cuối, cập nhật sau push)* |
-| public commit V11165 | *(nt)* |
+| **private commit V11165** | **`b2a0ab0439ce7820268d8e5e866a299154264a6c`** — `a68384f..b2a0ab0`, 11 tệp |
+| **public commit V11165** | **`fe5e53f2a189412c4f0503d4f19164cb1ffbd3e4`** — `53074cf..fe5e53f` |
+| cổng `_v11062 --kiem` | ✅ **ĐẠT** — bốn mặt đi cùng nhau |
+| cổng `PRJ-RETRACTION-001` | ✅ **`PRJ_RETRACTION=SACH`** *(đã chặn bản đầu — xem mục 7)* |
+| cổng `PRJ-SELECTION-WINDOW-001` | ✅ **`PRJ_WINDOW=SACH`** *(đã chặn bản đầu ở 12 chỗ — xem mục 7)* |
 
 ---
 
