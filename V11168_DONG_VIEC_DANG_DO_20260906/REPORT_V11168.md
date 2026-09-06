@@ -198,7 +198,7 @@ hồi sinh `system_alerts`.
 | | |
 |---|---|
 | `governance_seq` | → **484** *(cùng lượt với V11169)* |
-| commit | *(ghi ở V11169 — hai bản cùng một lượt push)* |
+| commit | riêng `101e239` (`fu438/admin-only-p0a`) · công khai `2b61987` (`main`) — hai bản cùng một lượt push |
 
 ---
 

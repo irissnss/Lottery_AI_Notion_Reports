@@ -303,8 +303,8 @@ Gói owner **chỉ là văn bản**, chưa lệnh nào được chạy.
 | private HEAD trước | `ad2bfd51362f2d84c65afba1e3d20e46376ec06f` |
 | public HEAD trước | `ce2bde6a457c21585fef9c514579148a78e22b19` |
 | `governance_seq` | 483 → **484** |
-| private commit | *(điền sau push)* |
-| public commit | *(nt)* |
+| private commit | `101e239` · `fu438/admin-only-p0a` |
+| public commit | `2b61987` · `main` |
 
 ---
 
