@@ -344,8 +344,11 @@ Tệp sau khi sửa đều **DÀI HƠN** bản cũ.
 | private HEAD trước | `6c9001e2dcb10c1adaf7cecd5c545ad791911f8f` |
 | public HEAD trước | `0429ffdc4fddc2992fe0fdf25c995a3ff6c0d5e1` |
 | `governance_seq` | 482 → **483** |
-| private commit V11167 | *(điền sau push)* |
-| public commit V11167 | *(nt)* |
+| **private commit V11167** | **`ad2bfd51362f2d84c65afba1e3d20e46376ec06f`** — `6c9001e..ad2bfd5`, 12 tệp |
+| **public commit V11167** | **`d41c4c3932c1100514d517560f9a36e1d6b5506e`** — `0429ffd..d41c4c3` |
+| cổng `_v11062 --kiem` | ✅ **ĐẠT** |
+| cổng `PRJ-RETRACTION-001` | ✅ **`SACH`** |
+| cổng `PRJ-SELECTION-WINDOW-001` | ✅ **`SACH`** *(đã chặn 23 chỗ trong V11054 — sửa nội dung, không bỏ qua)* |
 
 ---
 
