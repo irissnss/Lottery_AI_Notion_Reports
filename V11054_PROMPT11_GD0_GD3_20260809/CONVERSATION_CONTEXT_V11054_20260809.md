@@ -90,8 +90,20 @@ MINED_RULES_APPLY_TO = 'all'
 ```
 
 Ghép với hai thứ khác trong tài liệu:
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
 - `KNOWLEDGE LOCK §8`: **0/105 luật qua cổng**; chấm ngược +9,77σ nhưng **đo tiến −0,33σ/+0,26σ**
 - Notion `CI-14` (**P0 BLOCKER**): `rules_union` hậu-xổ **phồng backtest ~+12pp**
+
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: «0/105 luật qua cổng» ở trên (và ở câu ⇒ ngay dưới) là SAI —
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
+thực tế 8/105 luật đạt `READY_STRONG`. Câu đúng phải là «0/105 kiểm NGOÀI MẪU». Xem
+docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
 
 ⇒ Hệ **đang cộng điểm cho mọi luồng bằng bộ luật mà chính tài liệu ghi là 0/105 qua cổng**, trên
 một nền đã bị phồng. Đây đúng loại «+điểm» owner đã bực với gan — nhưng quy mô lớn hơn nhiều, và
@@ -105,6 +117,11 @@ một nền đã bị phồng. Đây đúng loại «+điểm» owner đã bực
 `PROMPT_V2_AB_V1`: **79 cặp**, cùng `deepseek-reasoner`, cùng ngày, cùng miền. Chạy 05/07, cron bị
 tắt 01/08 khi mới **26 ngày**. Không ai chấm.
 
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 Bạch thủ: **V2 36,7% vs V1 31,6% = +5,1 pp**, McNemar trên 32 cặp lệch **z = +0,71** ⇒ **chưa đủ
 để kết luận** (cần ~246 cặp ≈ 82 ngày). MT nghiêng rõ về V2 (8 vs 3), MB nghiêng ngược (4 vs 7).
 

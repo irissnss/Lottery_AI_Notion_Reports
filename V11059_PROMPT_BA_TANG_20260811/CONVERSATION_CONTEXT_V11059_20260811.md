@@ -27,6 +27,11 @@ Và câu đó đúng. Chính agent, trong ba phiên liền trước, đã ghi v�
 - de-herding làm nửa chừng
 - `SP-4.3`/`SP-4.4` không có chữ ký owner
 
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: gạch đầu dòng thứ hai ở trên («0/105 qua cổng») là SAI —
+thực tế 8/105 luật đạt `READY_STRONG`. Câu đúng phải là «0/105 kiểm NGOÀI MẪU». Không đổi kết
+luận của mục này (prompt vẫn nhiều lỗi khác), chỉ đính chính đúng con số. Xem
+docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
+
 Rồi vẫn đem cụm AI **chạy trên chính prompt đó** ra so với ML và kết luận «AI không hơn». Đó là
 phép so **AI-cộng-prompt-hỏng** vs ML — và agent đã dùng nó làm căn cứ để khuyên cắt.
 

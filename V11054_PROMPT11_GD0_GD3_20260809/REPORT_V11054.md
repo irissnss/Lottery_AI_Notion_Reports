@@ -375,10 +375,20 @@ chuyện bầy đàn.
 
 Không đo model nữa, đo **thứ anh thật sự chơi**: `final_bundles` (bundle `ACTIVE`).
 Nền đúng tính **riêng từng ngày** theo số đuôi khác nhau ra hôm đó (`N`):
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 bạch thủ `N/100` · xiên 2 `N/100 × (N−1)/99` · xiên 3 thêm `× (N−2)/98`.
 
 | miền | loại | thực | nền | chênh | z ÷ √VIF |
 |---|---|---|---|---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | **MN** | bạch thủ | 44,6% (54/121) | 42,9% | +1,7 pp | +0,22 |
 | **MT** | bạch thủ | 33,9% (41/121) | 35,4% | −1,5 pp | −0,20 |
 | **MB** | bạch thủ | **17,4%** (21/121) | **23,7%** | **−6,4 pp** | −0,96 |
@@ -389,6 +399,11 @@ bạch thủ `N/100` · xiên 2 `N/100 × (N−1)/99` · xiên 3 thêm `× (N−
 | MT | xiên 3 | 8,3% | 4,6% | +3,8 pp | +0,97 |
 | MB | xiên 3 | 1,8% | 1,2% | +0,6 pp | +0,32 |
 
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 **Chín phép đo, không phép nào chạm |z| = 1,96.** Lệch lớn nhất là **MB bạch thủ −6,4 pp** —
 **dưới** nền, và trùng chiều với việc số MB do model chọn cũng dưới nền −1,5 pp ở mục 4bis.
 
@@ -401,6 +416,11 @@ Phải hỏi ngược: **với ngần này dữ liệu, ta CÓ THỂ thấy đư
 
 | tầng đo | n | nền | **MDE** *(lợi thế nhỏ nhất thấy được)* |
 |---|---|---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | sản phẩm · bạch thủ **1 miền** · 121 ngày | 121 | 42,9% | **15,1 pp** |
 | sản phẩm · bạch thủ MB · 121 ngày | 121 | 23,7% | **12,9 pp** |
 | sản phẩm · **gộp 3 miền** · 363 lượt | 363 | 34,0% | **8,3 pp** |
@@ -421,6 +441,11 @@ này.»* **Không được rút gọn thành «hệ ngang chọn bừa».**
 V10789 → V10790 đều rữa.»* Sáu lần.
 
 Số ở trên cho một cách đọc khác về sáu lần đó: **có thể chúng không hề giả — chúng chỉ nhỏ hơn
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 độ phân giải của thước đo.** Một cải tiến thật **+5 điểm** trên bạch thủ MN cần **~1.099 ngày ≈ 3
 năm** mới hiện lên rõ; **+3 điểm** cần **~3.053 ngày ≈ 8,4 năm**. Ta đã và đang đo những thứ mà
 **thước không bao giờ đọc nổi**, rồi kết luận «không có tác dụng».
@@ -519,6 +544,11 @@ hơn hẳn** so với so hai nhóm rời. Đo rời thì tốn tiền hơn **và
 
 | vì sao MB | |
 |---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | tệ nhất | bạch thủ **17,4%** so nền **23,7%** = **−6,4 pp** (mục 4ter) — chỗ dễ thấy cải thiện nhất |
 | rẻ nhất | **1 đài** ⇒ ngữ cảnh ngắn nhất |
 | nhanh nhất | kết quả về **18:30**, sớm hơn chốt sổ |
@@ -816,6 +846,10 @@ tức **chọn tệ hơn bốc ngẫu nhiên từ chính pool của nó**.
 cho 16 model ⇒ **trần độ phủ được viết thẳng vào prompt dưới dạng mệnh lệnh**, mâu thuẫn với §4
 ngay trong cùng bộ luật.
 
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
 ### ④ CÔNG TẮC KHÔNG AI NHẮC — `MINED_RULES_MODE`
 
 `main.py:124`, **giống hệt trên VPS**:
@@ -830,9 +864,21 @@ Ghép ba mảnh lại:
 
 | | |
 |---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
 | `KNOWLEDGE LOCK §8` | **0/105 luật qua cổng** · chấm ngược **+9,77σ** nhưng đo tiến **−0,33σ/+0,26σ** |
 | Notion `CI-14` **P0 BLOCKER** | `rules_union` hậu-xổ **phồng backtest ~+12pp** ⇒ mọi claim bị hạ cấp |
 | `main.py:124` | **vẫn đang cộng +0,15 cho `all`** |
+
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: câu «0/105 luật qua cổng» ở bảng trên (và câu ⇒ ngay dưới)
+là SAI — thực tế 8/105 luật đạt `READY_STRONG`. Câu đúng phải là «0/105 kiểm NGOÀI MẪU». Xem
+docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
 
 ⇒ Hệ **đang cộng điểm bằng bộ luật mà chính tài liệu ghi là 0/105 qua cổng**, trên một nền đã bị
 phồng +12pp. Đây đúng loại «+điểm» owner đã bực với gan, nhưng **quy mô lớn hơn và chưa ai tắt**.
@@ -868,6 +914,14 @@ giải. Nền đúng: **6,09% / 4,68% / 1,00%**, không phải 43/35/24%.
 Ghép cặp sạch: cùng `deepseek-reasoner`, cùng ngày, cùng miền. `test_bt` = prompt V2 ·
 `official_bt` = prompt V1.
 
+> ⚠️ **Cố ý trích MỘT cửa sổ cho bộ k số** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn
+> số đã công bố; **không** tuyên bố hiệu quả mới. Bộ đủ ở **V11086**, nền đúng `1 − (1−b)^k`
+> (**không** phải nền 1 số): **30 ngày −3,96pp · 90 ngày −5,15pp · 180 ngày −0,35pp** — cả ba **âm**.
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | | bạch thủ | lo2 |
 |---|---|---|
 | prompt **V2** | **36,7%** | 60,8% |
@@ -888,6 +942,11 @@ ngày**. Nhưng nó chứng minh **thiết kế ghép cặp chạy được và 
 
 | tầng đo | n | **thấy được lợi thế nhỏ nhất** |
 |---|---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | sản phẩm · bạch thủ 1 miền · 121 ngày | 121 | **15,1 pp** |
 | đơn model · 12 ngày (cửa sổ FU-284) | 192 | **8,0 pp** |
 | đơn model · **gộp 3 miền · 91 ngày** | 4.368 | **2,0 pp** |
@@ -915,10 +974,20 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 
 | # | việc | thiết kế | thấy kết quả |
 |---|---|---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | **B1** ⭐ | **Sửa khâu CHỌN cho MB** | pool có số trúng **119/120 ngày** mà bạch thủ đúng **17,6% < nền 23,7%**. Không cần thêm model, không cần thêm token | dư địa lớn nhất toàn hệ |
 | **B2** | **Phân tích tiếp 79 dòng A/B** + bật lại cron `PROMPT_V2_AB_V1` | dữ liệu đã có, thiết kế đã đúng, chỉ thiếu mẫu | ~82 ngày để đủ z |
 | **B3** | **Gỡ `RR §11` + `§18`** | **không thêm gì**, chỉ gỡ hai câu cấm model sinh số ngoài Rule Tails — hai câu này mâu thuẫn với `§4` cùng bộ luật | đo bằng **độ phủ**, thấy **ngay ngày đầu** |
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
 | **B4** | **Đổi `MINED_RULES_MODE` `soft` → `shadow`** | một dòng, có đường lui ngay. Biến bộ luật 0/105-qua-cổng từ «cộng điểm» thành «chỉ quan sát» — đúng nguyên tắc owner đã áp cho gan | gỡ nguồn nhiễu lớn nhất khỏi đường chọn số |
+| ⚠️ | **ĐÍNH CHÍNH RL-002** | «0/105-qua-cổng» ở hàng B4 là **SAI** — thực tế 8/105 đạt `READY_STRONG`, câu đúng là «0/105 kiểm NGOÀI MẪU» | đề xuất B4 không đổi, chỉ lý do nêu phải sửa — xem `docs/SO_RUT_LAI.json` |
 | **B5** | **Chạy lưới A/B owner ký 01/08** (GĐ4) | `shadow_mode=False/True`, cùng model cùng ngày cùng miền | ~13 ngày |
 
 ### Nhóm C — KHÔNG LÀM, đã có bằng chứng bác bỏ
@@ -966,12 +1035,18 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 | **M1** ⭐ | **Prompt tự chống lại chính nó** | `RR §4`: *"nhiều model cùng chọn 1 số KHÔNG có nghĩa số đó đúng… đồng thuận giả"* | `RR §11`+`§18`: *"KHÔNG tự tạo số mới nếu Rule Tails đã có gợi ý mạnh"* | **§4 đúng** — §11/§18 **ép** hội tụ rồi §4 gọi là giả | `gpt_analyzer.py:482+` |
 | **M2** | **Công thức nguồn MN** | `V105.19 §7` (owner khoá): `MN_D = (MN+MT+MB) D-1 + (MN+MT+MB) **D-2**` | `RR §9`: `MN ngày D = MT D-1 + MB D-1 + MN D-1` — **thiếu D-2** | **owner đúng** — mã thiếu | Notion V105.19 · `gpt_analyzer.py` §9 |
 | **M3** | **Bộ luật có được cộng điểm không** | `KL §8`: **0/105 luật qua cổng**, đo tiến **−0,33σ/+0,26σ** · `CI-14` **P0**: `rules_union` **phồng +12pp** | `main.py:124`: **`MINED_RULES_MODE='soft'`** đang cộng **+0,15** cho `all` | **tài liệu đúng** — mã đang cộng điểm cho bộ luật chưa qua cổng | `main.py:124` (giống hệt VPS) |
+| ⚠️ | **ĐÍNH CHÍNH RL-002** | vế «0/105 luật qua cổng» ở hàng M3 là **SAI** | thực tế **8/105 đạt `READY_STRONG`**, câu đúng là «0/105 kiểm NGOÀI MẪU» | cột "ai đúng" của M3 cần đọc lại theo câu đúng | `docs/SO_RUT_LAI.json` |
 | **M4** | **Ngưỡng gan** | `V105.19 §8.1`: MB 30/ĐB 15 · MN 15/G8+ĐB 7 · MT 15/G8+ĐB 7 | `V11001`: **đã gỡ gan khỏi prompt** | owner **đã duyệt gỡ**, nhưng vì gan làm **+điểm**; ý owner là **đối chiếu hội tụ** | owner nói 09/08 |
 | **M5** | **`FU-318` xanh giả** | sổ ghi *"DEPLOYED_PENDING_LIVE_VERIFY · kết quả 08/08 ba miền TRONG NGƯỠNG"* | tệp kết quả: `"CHUA_DU_MAU"`, `"dac_trung": []`, `"No module named 'numpy'"`; **script không có trên VPS, 0 dòng cron** | **tệp đúng** — sổ sai | `artifacts/v11033_canh_troi/troi_2026-08-08.json` |
 | **M6** | **Nút thắt ở đâu** | em (09/08): *"85% chưa ai sinh ⇒ nút ở SINH"* | Notion `CI-05`: *"40/61 ngày miss khi số đúng đã ở pool ⇒ nút ở CHỌN"* | **CẢ HAI** — hai nút nối tiếp | em đo lại: 244/360 mất ở CHỌN |
 | **M7** | **Ngưỡng FU-284** | `9,53` — có dẫn xuất, commit trước khi nhìn số | `12,00` — prompt lần 9 | **9,53** — owner ký 18:37, 12,00 là lỗi TanPhatAI | `_v11033_verdict_fu284.py:63` |
 | **M8** | **Số model official** | `V105.19 §5`: **exact 15/15** | thực tế **16 model** đường chính thức (đo 09/08) | cần owner xác nhận con số đúng | đo `predictions` |
 | **M9** | **Phiên bản prompt** | `V105.19` khoá **SP-4.1** | mã hiện tại **SP-4.4** | mã đi trước — nhưng **chưa ai ghi SP-4.1→4.4 đổi gì** | `gpt_analyzer.py:842` |
+
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: vế «0/105 luật qua cổng» trong hàng **M3** ở trên là SAI —
+thực tế 8/105 luật đạt `READY_STRONG`. Câu đúng phải là «0/105 kiểm NGOÀI MẪU». Cột "ai đúng" của
+M3 ("tài liệu đúng") do đó cũng cần đọc lại theo câu đúng, không theo câu sai. Xem
+docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
 
 ---
 
@@ -994,11 +1069,17 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 |---|---|---|---|
 | **D1** | **25 tệp Opus** (`FU-393`) | owner ký giữ tới 21/08 **trên tiền đề "thêm roster"** — nay biết là **ĐỔI TÊN**, và bản VPS đang áp nhầm `0.70` | xin ký lại trên sự thật đúng |
 | **D2** | `MINED_RULES_MODE` **`soft` → `shadow`** | đang cộng +0,15 cho bộ luật 0/105 qua cổng | **một dòng, đường lui ngay** |
+| ⚠️ | **ĐÍNH CHÍNH RL-002** | vế «0/105 qua cổng» ở hàng D2 là **SAI** — thực tế 8/105 đạt `READY_STRONG`, câu đúng là «0/105 kiểm NGOÀI MẪU» | đề xuất D2 tự nó không đổi (bộ luật vẫn chưa qua cổng NGOÀI MẪU), chỉ lý do nêu phải sửa — xem `docs/SO_RUT_LAI.json` |
 | **D3** | **Gỡ `RR §11` + `§18`** | hai câu cấm model sinh số ngoài Rule Tails | không thêm gì, chỉ gỡ |
 | **D4** | **Ngưỡng gan mới** MN>15 · MT>15 · MB>60 | ngưỡng cũ 7/7/15 nằm dưới trung vị (11/14/59) | bảng shadow, 0 đồng |
 | **D5** | **Thêm `D-2` cho MN vào `RR §9`** | đúng công thức owner khoá `V105.19 §7` | 1 dòng |
 | **D6** | **Nhãn thứ 5 của `FU-390`** | `FU-V10864-FOUR-CARD` | xin xếp nhóm |
 | **D7** | **Số model official đúng là bao nhiêu** | tài liệu 15/15, thực tế 16 | xác nhận |
+
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: vế «0/105 qua cổng» trong hàng **D2** ở trên là SAI — thực tế
+8/105 luật đạt `READY_STRONG` (câu đúng là «0/105 kiểm NGOÀI MẪU»). Việc dời `MINED_RULES_MODE`
+sang `shadow` tự nó không đổi vì bộ luật vẫn chưa qua cổng NGOÀI MẪU, nhưng lý do nêu ở đây phải
+sửa. Xem docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
 
 ---
 
@@ -1030,9 +1111,23 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 | # | việc | tầng | chạm gì | rủi ro | **đo bằng gì** | thấy sau |
 |---|---|---|---|---|---|---|
 | **P1** | **Gỡ `RR §11`+`§18`** | SINH | prompt (QD-041) | thấp — chỉ **gỡ**, không thêm | **ĐỘ PHỦ** = % đuôi trúng có model nào sinh. Hiện **17,5/16,1/14,3%** | **ngay ngày đầu** |
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18). Giữ nguyên văn số đã công bố;
+> **không** tuyên bố hiệu quả mới cho luật khai mỏ. Bộ đủ bốn vế — **trong cửa sổ chọn · ngoài cửa
+> sổ chọn · trong mẫu · ngoài mẫu** — nằm ở **RM-18/V11030** (**+7,5 / +13,8 / +20,7 điểm TRONG
+> cửa sổ chọn, ĐÚNG BẰNG 0 ngoài**) và **V11073** (**+9,9% trong mẫu → −1,6% ngoài mẫu**).
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | **P2** | **`MINED_RULES_MODE` `soft`→`shadow`** | CHỌN | `main.py:124` | thấp — 1 dòng, đường lui | bạch thủ 3 miền so nền, cửa sổ **30 ngày gộp 3 miền** (MDE ~5pp) | ~30 ngày |
 | **P3** ⭐ | **Sửa khâu CHỌN cho MB** | CHỌN | selector | trung bình | tỉ lệ chọn đúng khi pool có số trúng: **17,6% → mục tiêu ≥ nền 23,7%** | ~30 ngày |
 | **P4** | **Gan làm điểm hội tụ** (ngưỡng mới) | CHỌN | bảng shadow trước | **0 đồng** | `P(trúng \| model đề xuất VÀ gan>N)` vs `P(trúng \| model đề xuất)` | ~30 ngày |
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | **P5** | **Thêm `D-2` cho MN** vào `RR §9` | SINH | prompt (QD-041) | thấp — khớp lệnh owner | độ phủ MN + bạch thủ MN | ~30 ngày |
 | **P6** | **Bật lại cron A/B** `PROMPT_V2` | đo | shadow | thấp · `~$0,134/ngày` | McNemar, cần **~246 cặp** | ~82 ngày |
 | **P7** | **Lưới A/B owner ký 01/08** (GĐ4) | đo | shadow | trung bình · 24 lượt/ngày | ghép cặp `shadow_mode` False/True | **~13 ngày** |
@@ -1041,12 +1136,22 @@ Cải tiến thật **+5pp** trên bạch thủ MN cần **~3 năm** mới hiệ
 
 | tầng đo | n | **thấy được lợi thế nhỏ nhất** |
 |---|---|---|
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 | sản phẩm · bạch thủ 1 miền · 121 ngày | 121 | **15,1 pp** |
 | đơn model · 12 ngày *(cửa sổ FU-284)* | 192 | **8,0 pp** |
 | đơn model · 30 ngày | 480 | **5,1 pp** |
 | **đơn model · gộp 3 miền · 91 ngày** | 4.368 | **2,0 pp** |
 
 ⇒ **Mọi phép đo mới phải gộp 3 miền và ≥30 ngày**, nếu không thì thước không đọc nổi cải tiến thật.
+> ⚠️ **Cố ý trích MỘT cửa sổ** (`PRJ-SELECTION-WINDOW-001` · RM-18 · RM-21). Con số ngay dưới là
+> **số ĐÃ CÔNG BỐ tại thời điểm bản này ra**, giữ nguyên văn để truy vết — **không** phải một
+> tuyên bố hiệu quả mới. Bộ đủ **14 / 30 / 90 / 180 ngày** nằm ở **V11084 + V11086**, và ở đó
+> **dấu ĐỔI**: 30 ngày **+4,07pp** · 90 ngày **−3,18pp** · 180 ngày **+0,91pp** (CI95 [−3,2 ; +5,0]).
+> Đo lại toàn cục ở **V11166**: 479 bundle LIVE, bạch thủ **31,7%** vs ngẫu nhiên **34,0%**.
 Cải tiến **+5pp** trên bạch thủ 1 miền cần **~3 năm** mới hiện — đó là lý do 6 lần "hứa rồi rữa"
 trong `CLAUDE.md` **có thể không giả, chỉ nhỏ hơn độ phân giải**.
 

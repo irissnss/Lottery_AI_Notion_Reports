@@ -64,6 +64,12 @@ lại đúng bẫy đó**, ở một cột khác.
 `None`** ở vị trí **17/34**, **vô điều kiện** (không nằm trong nhánh nào), và job
 `measurement_materialize` chạy **`16:00 · 17:00 · 18:00 · 20:00`**.
 
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-008: câu «chạy `16:00 · 17:00 · 18:00 · 20:00`» ở trên là SAI —
+đo lại trên `scheduler_logs` ngày 04/09 cho **3 LẦN CHẠY THẬT**, theo KẾT QUẢ TỪNG MIỀN chứ không
+theo giờ chẵn: 16:39:55 (MN) · 17:30:18 (MT) · 18:31:48 (MB), caller thật `scheduler.py:665`.
+Tần suất chính xác chung: **INDETERMINATE**. Kết luận «writer ghi đè trong <1 giờ» ở dòng dưới
+KHÔNG đổi. Xem docs/SO_RUT_LAI.json, bản rút V11164_EOD_LIVE_CLOSURE_20260904.]
+
 ⇒ Đổ mà **không sửa writer trước** là đổ vào một cột bị ghi đè trong **chưa tới một giờ**.
 
 ### 3.4 · Và đổ vào KHÔNG mở khoá được việc gì

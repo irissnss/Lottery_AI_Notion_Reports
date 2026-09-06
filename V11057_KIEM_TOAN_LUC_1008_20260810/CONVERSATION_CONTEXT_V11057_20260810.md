@@ -159,6 +159,10 @@ Thứ nên làm là **sửa thiết kế đo trước, không sửa hệ**: mọ
 chênh giống hệt ở hai miền nền khác nhau là dấu hiệu cơ chế thật) thay vì thứ có **SỐ ĐẸP**
 (105 luật khai mỏ: **0/105 qua cổng**).
 
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: «0/105 qua cổng» ở trên là SAI — thực tế 8/105 luật đạt
+`READY_STRONG`. Câu đúng phải là «0/105 kiểm NGOÀI MẪU». Xem docs/SO_RUT_LAI.json, bản rút
+V11073_DINH_CHINH_0_TREN_105_20260815.]
+
 ---
 
 ## Cảnh báo cho việc chốt FU-360 sáng mai

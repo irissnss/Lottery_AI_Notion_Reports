@@ -221,6 +221,11 @@ Thứ **NÊN** làm, theo thứ tự:
 2. **Ưu tiên thứ có CƠ CHẾ rõ, không phải thứ có SỐ ĐẸP.** Anti-trap có cơ chế (số đã ra ở miền trước) và cho chênh **giống hệt −12,7pp ở hai miền nền khác nhau** — đó là dấu hiệu cơ chế thật, đáng đo tiến. Ngược lại, mọi «luật» khai mỏ đều **0/105 qua cổng**.
 3. **Cắt bớt thứ không có căn cứ** — nhưng **chỉ sau 21/08 và chỉ khi đo tiến xác nhận**.
 
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-002: vế «0/105 qua cổng» ở mục 2 trên là SAI — thực tế 8/105 luật
+đạt `READY_STRONG` (đúng số cũng đã có ngay ở dòng 126 phía trên: "cả 8 luật rơi vào
+T3/T4/T5/T7/CN"). Câu đúng phải là «0/105 kiểm NGOÀI MẪU» — hai mệnh đề khác nhau. Xem
+docs/SO_RUT_LAI.json, bản rút V11073_DINH_CHINH_0_TREN_105_20260815.]
+
 ---
 
 ## 5. Đã làm gì

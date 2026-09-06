@@ -175,6 +175,12 @@ phải gỡ trên VPS.
 | **QD-021** | `K8: MỒ CÔI ĐẾN HẠN ≤18/08` — trôi thật | treo |
 | **mới** | `_v10920_decision_ledger` cho verdict **không ổn định** (3 rồi 2 phép trôi trong hai lần chạy liên tiếp) vì phép con hết giờ **bị đếm thành "trôi"** — phải tách `KHÔNG_KIỂM_ĐƯỢC` khỏi `TRÔI` (`RM-12`) | treo |
 
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-003: câu «verdict `_v10920` không ổn định» ở hàng trên là SAI ở
+phần TRIỆU CHỨNG — chạy lại hai lần liên tiếp cho **cùng một kết quả** (diff rỗng), không tái
+hiện "3 rồi 2". CƠ CHẾ nêu ở cột giữa (hết giờ bị đếm thành TRÔI, RM-12) vẫn ĐÚNG và vẫn cần vá —
+chỉ vế "verdict không ổn định" là sai, không phải toàn bộ dòng. Xem docs/SO_RUT_LAI.json, bản rút
+V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md.]
+
 **Chưa sinh mã FU mới** — trần 5 mã/phiên chưa dùng; để phiên thi hành đặt mã cùng lúc với việc.
 
 ---
@@ -240,3 +246,9 @@ báo cáo. Đó là **kết quả đúng**, không che.
 ---
 
 TanPhatAI cần làm: ghi vào sổ theo dõi năm việc — (a) **V11077 · V11079 đã push nhưng thiếu CHANGELOG/SSOT/HISTORY/báo cáo**, cần session đã làm chúng viết bù, **không được tự soạn** (`RM-17`); (b) **V11078 không tồn tại**, không phải bản bị mất; (c) `_v11062` **K1 vẫn mù** — lấy worklist từ `muc_changelog()`, cùng lỗi vừa vá ở `_v10921`; (d) `_v10920_decision_ledger` cho **verdict không ổn định** vì đếm *"không kiểm được"* thành *"trôi"*, phải tách theo `RM-12`; (e) `GĐ-3 · GĐ-4 · GĐ-5` chưa làm, GĐ-3 chỉ làm được **sau 21/08** vì vùng đóng băng `QD-041`. Đồng thời cập nhật SSOT Notion §13.8: Lottery_AI_Test đã nhận **bản phát hành chính thức** `LUAT_CHUNG.md` Doc `V1.0.1` (thay bản agent tự soạn ở V11080).
+
+⚠️ [ĐÍNH CHÍNH · ĐÃ RÚT LẠI RL-003: mục (d) ở trên — «verdict không ổn định» — sai ở phần TRIỆU
+CHỨNG, chạy lại hai lần liên tiếp cho cùng một kết quả (diff rỗng), không tái hiện. Việc tách
+`KHÔNG_KIỂM_ĐƯỢC` khỏi `TRÔI` theo `RM-12` vẫn nên làm vì CƠ CHẾ sai là thật, nhưng lý do vá là
+vì cơ chế sai, KHÔNG phải vì verdict đang thật sự trôi. Xem docs/SO_RUT_LAI.json, bản rút
+V11083_GD1_GD5_HET_GIO_DIEU_HUONG_BA_LUAT_20260817/REPORT_V11083.md.]
