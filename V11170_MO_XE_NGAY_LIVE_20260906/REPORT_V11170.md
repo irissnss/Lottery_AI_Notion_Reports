@@ -287,6 +287,67 @@ không đọc `model_daily_eval`):
 - `t10_chot` ba miền đúng mốc 15:40 / 16:55 / 17:55; biên so với `OUTPUT_DUE` là 5/3/3 phút —
   đây là **hằng số thiết kế**, không phải biên đo riêng hôm nay.
 
+### 3.12 · Những phát hiện còn lại của lớp phản biện
+
+Mục này gom các kết quả **không đủ lớn để đứng riêng một mục** nhưng **có số đo thật** và đã bị bản
+nháp đầu bỏ ngoài. Ghi đủ ở đây để không mất dấu (§57.3: mục 3 phải **liệt kê đủ**, kể cả phép đo
+ra kết quả âm hoặc không kết luận được).
+
+**① Học thuyết chống bẫy đi NGƯỢC hướng người ta tưởng.** Nếu lane AI (lane **duy nhất** đọc prompt
+có kết quả miền trước) bám vào số miền trước, thì ứng viên do `ai_chain` bầu phải có tỉ lệ "đã tiêu"
+**CAO HƠN** lane ML. Đo trên **154 ngày MB**: lane AI chọn số "đã tiêu" **ÍT HƠN lane ML 11,8–14,9
+điểm** (`t = −4,6` ở cả hai cửa sổ) — **ngược hẳn**. ⇒ Giả thuyết «model AI copy số vừa ra ở miền
+trước» **bị bác bỏ bằng dữ liệu**, không phải bằng suy luận.
+
+**② Hệ số cụm (`design_effect`) KHÔNG lớn hơn 1 một cách ổn định.** Đo gộp 3 miền theo sáu cửa sổ:
+**0,876** (14 ngày) · **1,287** (30) · **1,120** (60) · **1,027** (90) · **0,907** (180) · **0,907**
+(365). Nó **xuống dưới 1 ở cả hai đầu dải** ⇒ **hướng không được thiết lập**. Cổng đo ghi
+«1,03–1,29» là chỉ trích hai cửa sổ giữa. Hệ quả: **không được phồng khoảng tin cậy** bằng một hệ số
+cụm chưa chứng minh được — đúng bài học `RM-21` (VIF 2,92 vs 0,889).
+
+**③ `mt_ai_chain_downweight = 0.95` — đo được tác động thật.** Cổng đo ghi «không kết luận được»;
+phản biện làm được: hệ số này **đổi bạch thủ ở 23/152 bundle**, trong đó **7 tốt / 3 xấu / 13 hoà**,
+net **+4**, `z = +1,26` ⇒ **vẫn chưa được phép kết luận** (RM-04), nhưng đã có số thay vì bỏ trống.
+
+**④ Hai bảng bị gọi nhầm là "0 điểm đọc".** `shadow_candidates` **được đọc SỐNG** tại
+`main.py:19916` trong route đang phục vụ `GET /api/admin/parallel-shadow-proof` — phép quét của cổng
+đo chỉ bắt `FROM`, **không bắt `LEFT JOIN`**. `shadow_model_promotion_scorecard_daily` được đọc qua
+**f-string `FROM {BANG}`** trong ba script `_v11102_*` — grep chuỗi trần **không thể** thấy nội suy.
+⇒ Bài học `RM-20`: quét điểm đọc phải bắt **cả `JOIN` và cả tên bảng dựng động**.
+
+**⑤ Kết luận «không bảng nào ngừng ghi bất thường» được THỰC NGHIỆM xác nhận.**
+`rescue_candidate_shadow` lúc cổng đo quét là **0 dòng**; đến **23:05** đã có **324 dòng** — đúng như
+nó dự đoán. Bảng không chết, chỉ là **quét sớm trước giờ cron**.
+
+**⑥ Đếm lane hôm nay sai một đơn vị.** MN không phải «15 auto_daily + 12 shadow» mà là **16
+`auto_daily` + 11 `shadow_auto_eval`**. `combo-no-token` chạy `auto_daily` lúc 05:00:07 nhưng
+**không nằm trong `_CANONICAL_OUTPUT_MODELS`** (`main.py:9693`, đúng 15 tên — V11093/FU-380 bỏ
+`gpt-5-mini` + `combo-no-token`, thêm `glm-5.1` + `gpt-oss-120b`). ⇒ `model_count=15` **không phải**
+«mọi dòng `auto_daily`» mà là **tập con output-eligible**.
+
+**⑦ Lợi thế của một model shadow bị thổi lên vì lấy nhóm official làm nền.** `qwen3.6-plus`/MN được
+báo **+16,1pp**; đo lại với nền ngẫu nhiên đúng thì chỉ **+10,35pp**. Nguyên nhân: nhóm official
+**vốn đã ở hoặc dưới nền**, dùng nó làm "baseline" thì mọi thứ đều trông tốt hơn thực tế. Đây là
+cùng một lỗi với mục 3.2 — **so với cái mình vừa thay thế, không so với ngẫu nhiên**.
+
+**⑧ Hai cột được xác nhận là hằng số, không phải phép đo.** `false_promotion_risk` = đúng
+`1 − main_hit` trên **12.532/12.532 dòng** (100,000%) ⇒ nó **không mang thông tin mới**.
+`output_counterfactual_rank` **NULL 17.283/17.283 dòng** ⇒ **phương án B owner khoá vẫn được tôn
+trọng tuyệt đối**, không có dòng nào bị đổ dữ liệu.
+
+**⑨ Lane `rerun_post_mn` của MT — tắt CÓ CHỦ ĐÍCH, không phải chết âm thầm.**
+`scheduler.py:6077-6082` có cờ `_V10766_SKIP_MT_REPREDICT = True` kèm lý do đo được và kèm lệnh gỡ
+về, áp từ **02/07** — khớp đúng ngày dòng cuối 01/07. Đã ghi ở **năm chỗ** trong `CHANGELOG.md`.
+Phần **còn sống**: nhánh `lane_weight = 1.15` ở `main.py:9977-9979` nay là **code không bao giờ chạm
+tới** cho MT, và `lane_fusion_policy` (`main.py:10514-10517`) là **dict hằng số** in vào mọi bundle.
+Rác `§60` (`A58_VIOLATION_HALF_DONE`) — **tác động số học = 0**, mức **P3**.
+
+**⑩ Cảnh báo phương pháp cho ai đọc `run_source` sau này.** Bảng `predictions` có
+`UNIQUE(date, target_region, ai_model)` và `save_prediction()` dùng `INSERT OR REPLACE` ⇒ cột
+`run_source` **chỉ giữ lượt CUỐI CÙNG**. Bằng chứng: MB **có** chạy `rerun_post_mn` mỗi ngày ~16:35
+nhưng DB chỉ còn **7 dòng**, cả 7 vào **một ngày** 10/05. **Đếm `run_source` KHÔNG chứng minh được
+một lane có chạy hay không.**
+
 ---
 
 ## 4 · HƯỚNG XỬ LÝ VÀ VÌ SAO CHỌN
