@@ -1,0 +1,127 @@
+{
+ "ngay": "2026-09-05T21:04:46.011622",
+ "dot": 1,
+ "da_xoa": [
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11159_phan_tich.db",
+   "bytes": 808935424,
+   "ly_do": "clone V11159 03/09 — bao cao c7d1a32 da push, artifact JSON con giu",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11164_audit.db",
+   "bytes": 813428736,
+   "ly_do": "clone V11164 04/09 — bao cao af4597a/53074cf da push",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11159_phan_tich.db-wal",
+   "bytes": 0,
+   "ly_do": "wal/shm cua clone da xoa",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11159_phan_tich.db-shm",
+   "bytes": 32768,
+   "ly_do": "wal/shm cua clone da xoa",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11164_audit.db-wal",
+   "bytes": 0,
+   "ly_do": "wal/shm cua clone da xoa",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11164_audit.db-shm",
+   "bytes": 32768,
+   "ly_do": "wal/shm cua clone da xoa",
+   "ok": true
+  },
+  {
+   "p": "/root/sandbox_v10785/sandbox.db",
+   "bytes": 506970112,
+   "ly_do": "sandbox V10785 thang 7, thi nghiem da ket luan",
+   "ok": true
+  },
+  {
+   "p": "/root/sandbox_v10785/sandbox_b3.db",
+   "bytes": 507600896,
+   "ly_do": "sandbox V10785 thang 7, thi nghiem da ket luan",
+   "ok": true
+  },
+  {
+   "p": "/root/sandbox_v10785/sandbox_board.db",
+   "bytes": 507555840,
+   "ly_do": "sandbox V10785 thang 7, thi nghiem da ket luan",
+   "ok": true
+  },
+  {
+   "p": "/root/lottery_ai.db.pre_wal_20260814",
+   "bytes": 707284992,
+   "ly_do": "pre-WAL 14/08; ban 03/09 moi hon trong backups/V11154",
+   "ok": true
+  },
+  {
+   "p": "/var/log/btmp.1",
+   "bytes": 151477632,
+   "ly_do": "log dang nhap that bai — truncate",
+   "ok": true
+  },
+  {
+   "p": "/var/log/btmp",
+   "bytes": 20156928,
+   "ly_do": "log dang nhap that bai — truncate",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/web/backend/logs/optimizer_once.log",
+   "bytes": 124454530,
+   "ly_do": "log optimizer 124MB, khong ai mo — truncate giu tep",
+   "ok": true
+  },
+  {
+   "p": "/root/vps_backups/vps_backup_20260417_232701.tar.gz",
+   "bytes": 2152930998,
+   "ly_do": "backup toan may 17/04 (141 ngay), ban som cung dem",
+   "ok": true
+  },
+  {
+   "p": "/root/vps_backups/vps_backup_20260417_232903.tar.gz",
+   "bytes": 3228880212,
+   "ly_do": "backup toan may 17/04 (141 ngay), ban som cung dem",
+   "ok": true
+  },
+  {
+   "p": "/root/vps_restore_incoming/vps_backup_20260417_233529.tar.gz",
+   "bytes": 6456663503,
+   "ly_do": "backup toan may 17/04 (141 ngay), ban day du cung dem",
+   "ok": true
+  }
+ ],
+ "tu_choi": [
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11165_immutable.db",
+   "vi": "GIU toi khi workflow V11166 xong (dot 2)"
+  }
+ ],
+ "bytes": 15986405339,
+ "muc_luc_tarball": "etc/\netc/protocols\netc/kernel/\netc/kernel/postinst.d/\netc/kernel/postinst.d/initramfs-tools\netc/kernel/postinst.d/xx-update-initrd-links\netc/kernel/postinst.d/update-notifier\netc/kernel/postinst.d/unattended-upgrades",
+ "neo_truoc": [
+  "a82c508d3569abda",
+  14282,
+  818462720
+ ],
+ "neo_sau": [
+  "a82c508d3569abda",
+  14282,
+  818462720
+ ],
+ "free_truoc_G": 8.0,
+ "free_sau_G": 23.0,
+ "production_nguyen": true,
+ "service": {
+  "pid": "3370750",
+  "health": "200"
+ }
+}

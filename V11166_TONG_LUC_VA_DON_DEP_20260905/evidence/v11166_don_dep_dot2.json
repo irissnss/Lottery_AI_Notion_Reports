@@ -1,0 +1,110 @@
+{
+ "ngay": "2026-09-06T08:26:08.079981",
+ "dot": 2,
+ "da_xoa": [
+  {
+   "p": "PID 3338582 (_run__s5_mat2_ast.py)",
+   "bytes": 0,
+   "ly_do": "tien trinh mo coi phien V11164, 46h an 99,7% CPU tren may 2 vCPU",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/v11165_immutable.db",
+   "bytes": 813821952,
+   "ly_do": "clone V11165, bao cao 9910070 da push, artifact JSON con giu",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/_run_*.py",
+   "bytes": 4642995,
+   "ly_do": "1581 script tam da chay xong",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/_lane_thu",
+   "bytes": 798287,
+   "ly_do": "thu muc thu tam cua phien V11165",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/_fp_thu",
+   "bytes": 976046,
+   "ly_do": "thu muc thu tam cua phien V11165",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts/_dang_thu",
+   "bytes": 969730,
+   "ly_do": "thu muc thu tam cua phien V11165",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/artifacts (>90 ngay)",
+   "bytes": 147727585,
+   "ly_do": "191 tep thi nghiem cu 04-05/2026",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/backups/bt_override_predeploy_20260531_195232",
+   "bytes": 346696150,
+   "ly_do": "ban sao DB truoc-deploy cu, giu ban 03/09",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/backups/phase_b_predeploy_20260530_160545.db",
+   "bytes": 337248256,
+   "ly_do": "ban sao DB truoc-deploy cu, giu ban 03/09",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/backups/shadow_cleanup_20260531_124923",
+   "bytes": 343375983,
+   "ly_do": "ban sao DB truoc-deploy cu, giu ban 03/09",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/backups/slice_arch_predeploy_20260531_105620",
+   "bytes": 345124399,
+   "ly_do": "ban sao DB truoc-deploy cu, giu ban 03/09",
+   "ok": true
+  },
+  {
+   "p": "/root/Lottery_AI_Test/backups/",
+   "bytes": 1333474517,
+   "ly_do": "ban sao DB truoc-deploy cu, giu ban 03/09",
+   "ok": true
+  },
+  {
+   "p": "__pycache__",
+   "bytes": 156682501,
+   "ly_do": "cache bytecode, tu sinh lai",
+   "ok": true
+  }
+ ],
+ "tu_choi": [],
+ "bytes": 3831538401,
+ "tien_trinh_mo_coi": {
+  "pid": "3338582",
+  "truoc": "3338582  2-09:57:27 99.8 18892 /root/Lottery_AI_Test/venv/bin/python3 -u /root/Lottery_AI_Test/artifacts/_run__s5_mat2_ast.py",
+  "la_service": false,
+  "ppid": "1",
+  "sau": "DA CHET"
+ },
+ "neo_truoc": [
+  "a82c508d3569abda",
+  14323
+ ],
+ "neo_sau": [
+  "a82c508d3569abda",
+  14323
+ ],
+ "free_truoc_G": 23.0,
+ "free_sau_G": 27.0,
+ "production_nguyen": true,
+ "service": {
+  "pid": "3370750",
+  "health": "200",
+  "nrestarts": "0"
+ },
+ "load_sau": "08:26:14 up 141 days,  7:19,  0 users,  load average: 1.15, 1.05, 1.01"
+}
