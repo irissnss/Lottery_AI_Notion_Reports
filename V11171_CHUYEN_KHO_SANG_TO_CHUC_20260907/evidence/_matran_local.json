@@ -1,0 +1,143 @@
+{
+ "chay_luc": "2026-09-07 01:05:22",
+ "dat": 12,
+ "tong": 16,
+ "muc": [
+  {
+   "nhom": "A",
+   "ten": "doc duong MOI  (ls-remote)",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "a4d66364a6ef3127152eae1b1ae6957250f3c8e6\tHEAD"
+  },
+  {
+   "nhom": "A",
+   "ten": "doc duong CU   (ls-remote, qua chuyen huong)",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "a4d66364a6ef3127152eae1b1ae6957250f3c8e6\tHEAD"
+  },
+  {
+   "nhom": "A",
+   "ten": "GHI thu (push --dry-run) tu thu muc lam viec",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "Everything up-to-date"
+  },
+  {
+   "nhom": "A",
+   "ten": "remote dang cau hinh tro dung to chuc moi",
+   "mong": "phai dung",
+   "dat": true,
+   "rc": 0,
+   "ra": "git@github.com:BaoBiTanPhat/Lottery_AI_Test.git"
+  },
+  {
+   "nhom": "B",
+   "ten": "doc duong MOI  (ls-remote)",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "0720dfbc4a4031f4948eb45b43375a91a83ae753\tHEAD"
+  },
+  {
+   "nhom": "B",
+   "ten": "doc duong CU   (ls-remote, qua chuyen huong)",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "0720dfbc4a4031f4948eb45b43375a91a83ae753\tHEAD"
+  },
+  {
+   "nhom": "B",
+   "ten": "GHI thu (push --dry-run) tu thu muc lam viec",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "Everything up-to-date"
+  },
+  {
+   "nhom": "B",
+   "ten": "remote dang cau hinh tro dung to chuc moi",
+   "mong": "phai dung",
+   "dat": true,
+   "rc": 0,
+   "ra": "git@github.com:BaoBiTanPhat/Lottery_AI_Notion_Reports.git"
+  },
+  {
+   "nhom": "C",
+   "ten": "HTTPS an danh, duong MOI",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "0720dfbc4a4031f4948eb45b43375a91a83ae753\tHEAD"
+  },
+  {
+   "nhom": "C",
+   "ten": "HTTPS an danh, duong CU",
+   "mong": "phai duoc",
+   "dat": true,
+   "rc": 0,
+   "ra": "0720dfbc4a4031f4948eb45b43375a91a83ae753\tHEAD"
+  },
+  {
+   "nhom": "C",
+   "ten": "raw.githubusercontent duong MOI",
+   "mong": "phai 200",
+   "dat": false,
+   "rc": 23,
+   "ra": "%{http_code}"
+  },
+  {
+   "nhom": "C",
+   "ten": "raw.githubusercontent duong CU",
+   "mong": "phai 200",
+   "dat": false,
+   "rc": 23,
+   "ra": "%{http_code}"
+  },
+  {
+   "nhom": "C",
+   "ten": "trang web duong CU chuyen huong sang to chuc",
+   "mong": "phai 301",
+   "dat": true,
+   "rc": 23,
+   "ra": "301|https://github.com/BaoBiTanPhat/Lottery_AI_Notion_Reports"
+  },
+  {
+   "nhom": "D",
+   "ten": "HTTPS an danh doc kho RIENG duong MOI",
+   "mong": "phai BI TU CHOI",
+   "dat": false,
+   "rc": 0,
+   "ra": "a4d66364a6ef3127152eae1b1ae6957250f3c8e6\tHEAD"
+  },
+  {
+   "nhom": "D",
+   "ten": "HTTPS an danh doc kho RIENG duong CU",
+   "mong": "phai BI TU CHOI",
+   "dat": false,
+   "rc": 0,
+   "ra": "a4d66364a6ef3127152eae1b1ae6957250f3c8e6\tHEAD"
+  },
+  {
+   "nhom": "D",
+   "ten": "raw kho RIENG (an danh)",
+   "mong": "phai KHAC 200",
+   "dat": true,
+   "rc": 23,
+   "ra": "%{http_code}"
+  },
+  {
+   "nhom": "E",
+   "ten": "danh tinh SSH local",
+   "mong": "-",
+   "dat": true,
+   "rc": 1,
+   "ra": "Hi irissnss! You've successfully authenticated, but GitHub does not provide shell access."
+  }
+ ]
+}
