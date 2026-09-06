@@ -1,0 +1,122 @@
+{
+ "MN": {
+  "TRUOC_gop_khong_loc_ca_lich_su": {
+   "n_bundle": 190,
+   "bach_thu_pct_luu": 42.11,
+   "bach_thu_pct_tinh_lai": 42.11,
+   "bach_thu_nen_pct": 43.07,
+   "lo3_n": 190,
+   "lo3_pct_nhan_luu": 12.11,
+   "lo3_pct_that": 6.84,
+   "lo2_pct_luu_WIN": 15.26,
+   "lo2_pct_tinh_lai_WIN": 15.26,
+   "top10_o": 1810,
+   "top10_hit": 791,
+   "top10_pct": 43.7
+  },
+  "SAU_loai_91_backfill_chi_live": {
+   "n_bundle": 160,
+   "bach_thu_pct_luu": 42.5,
+   "bach_thu_pct_tinh_lai": 42.5,
+   "bach_thu_nen_pct": 43.09,
+   "lo3_n": 160,
+   "lo3_pct_nhan_luu": 6.88,
+   "lo3_pct_that": 6.88,
+   "lo2_pct_luu_WIN": 13.75,
+   "lo2_pct_tinh_lai_WIN": 13.75,
+   "top10_o": 1530,
+   "top10_hit": 680,
+   "top10_pct": 44.44
+  }
+ },
+ "MT": {
+  "TRUOC_gop_khong_loc_ca_lich_su": {
+   "n_bundle": 190,
+   "bach_thu_pct_luu": 37.37,
+   "bach_thu_pct_tinh_lai": 37.37,
+   "bach_thu_nen_pct": 35.17,
+   "lo3_n": 190,
+   "lo3_pct_nhan_luu": 10.0,
+   "lo3_pct_that": 3.68,
+   "lo2_pct_luu_WIN": 14.74,
+   "lo2_pct_tinh_lai_WIN": 14.74,
+   "top10_o": 1760,
+   "top10_hit": 643,
+   "top10_pct": 36.53
+  },
+  "SAU_loai_91_backfill_chi_live": {
+   "n_bundle": 159,
+   "bach_thu_pct_luu": 34.59,
+   "bach_thu_pct_tinh_lai": 34.59,
+   "bach_thu_nen_pct": 35.13,
+   "lo3_n": 159,
+   "lo3_pct_nhan_luu": 2.52,
+   "lo3_pct_that": 2.52,
+   "lo2_pct_luu_WIN": 14.47,
+   "lo2_pct_tinh_lai_WIN": 14.47,
+   "top10_o": 1450,
+   "top10_hit": 524,
+   "top10_pct": 36.14
+  }
+ },
+ "MB": {
+  "TRUOC_gop_khong_loc_ca_lich_su": {
+   "n_bundle": 190,
+   "bach_thu_pct_luu": 21.58,
+   "bach_thu_pct_tinh_lai": 21.58,
+   "bach_thu_nen_pct": 23.76,
+   "lo3_n": 190,
+   "lo3_pct_nhan_luu": 7.89,
+   "lo3_pct_that": 2.63,
+   "lo2_pct_luu_WIN": 4.21,
+   "lo2_pct_tinh_lai_WIN": 4.21,
+   "top10_o": 1820,
+   "top10_hit": 423,
+   "top10_pct": 23.24
+  },
+  "SAU_loai_91_backfill_chi_live": {
+   "n_bundle": 160,
+   "bach_thu_pct_luu": 18.12,
+   "bach_thu_pct_tinh_lai": 18.12,
+   "bach_thu_nen_pct": 23.71,
+   "lo3_n": 160,
+   "lo3_pct_nhan_luu": 1.88,
+   "lo3_pct_that": 1.88,
+   "lo2_pct_luu_WIN": 5.0,
+   "lo2_pct_tinh_lai_WIN": 5.0,
+   "top10_o": 1540,
+   "top10_hit": 356,
+   "top10_pct": 23.12
+  }
+ },
+ "GOP_3_MIEN": {
+  "TRUOC_gop_khong_loc_ca_lich_su": {
+   "n_bundle": 570,
+   "bach_thu_pct_luu": 33.68,
+   "bach_thu_pct_tinh_lai": 33.68,
+   "bach_thu_nen_pct": 34.0,
+   "lo3_n": 570,
+   "lo3_pct_nhan_luu": 10.0,
+   "lo3_pct_that": 4.39,
+   "lo2_pct_luu_WIN": 11.4,
+   "lo2_pct_tinh_lai_WIN": 11.4,
+   "top10_o": 5390,
+   "top10_hit": 1857,
+   "top10_pct": 34.45
+  },
+  "SAU_loai_91_backfill_chi_live": {
+   "n_bundle": 479,
+   "bach_thu_pct_luu": 31.73,
+   "bach_thu_pct_tinh_lai": 31.73,
+   "bach_thu_nen_pct": 33.97,
+   "lo3_n": 479,
+   "lo3_pct_nhan_luu": 3.76,
+   "lo3_pct_that": 3.76,
+   "lo2_pct_luu_WIN": 11.06,
+   "lo2_pct_tinh_lai_WIN": 11.06,
+   "top10_o": 4520,
+   "top10_hit": 1560,
+   "top10_pct": 34.51
+  }
+ }
+}
