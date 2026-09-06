@@ -589,8 +589,11 @@ Và con số «152/194» owner đang đọc **không bao gồm FU-449/FU-450** v
 | private HEAD trước | `b2a0ab0439ce7820268d8e5e866a299154264a6c` |
 | public HEAD trước | `991007074df99e0f627b7c1d065cbbbff2284c5a` |
 | `governance_seq` | 481 → **482** |
-| private commit V11166 | *(mục cuối, điền sau push)* |
-| public commit V11166 | *(nt)* |
+| **private commit V11166** | **`6c9001e2dcb10c1adaf7cecd5c545ad791911f8f`** — `b2a0ab0..6c9001e`, 8 tệp |
+| **public commit V11166** | **`b6aa6ae400e7f6f2cfb114f780f2bd17b19eecc4`** — `9910070..b6aa6ae` |
+| cổng `_v11062 --kiem` | ✅ **ĐẠT** |
+| cổng `PRJ-RETRACTION-001` | ✅ **`SACH`** *(đã chặn bản đầu ở `GATE_s4-no.md:37`)* |
+| cổng `PRJ-SELECTION-WINDOW-001` | ✅ **`SACH`** *(đã chặn bản đầu ở 7 chỗ)* |
 
 ---
 
