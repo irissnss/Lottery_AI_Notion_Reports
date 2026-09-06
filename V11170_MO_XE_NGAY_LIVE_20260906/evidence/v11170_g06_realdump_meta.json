@@ -1,0 +1,144 @@
+{
+ "bang_chung": {
+  "neo_truoc": [
+   200,
+   "c33c378c4cd5b48e8af7a494ca30a0c99c89a790a592dd510db566cdb5296d47"
+  ],
+  "thu_chan": {
+   "select": "QUA",
+   "insert": "BI CHAN",
+   "ghi_tep": "BI CHAN",
+   "socket": "BI CHAN"
+  },
+  "neo_sau": [
+   200,
+   "c33c378c4cd5b48e8af7a494ca30a0c99c89a790a592dd510db566cdb5296d47"
+  ],
+  "neo_khop": true
+ },
+ "env_nap": {
+  "LLM_CONTEXT_ONLY_V2_LANE": "shadow"
+ },
+ "ket": [
+  {
+   "region": "MN",
+   "model": "gpt-5.4",
+   "lane_shadow_pack": false,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    42746
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 42746,
+   "real_runtime_prompt_chars_today": 24719,
+   "real_prompt_total_chars_today": 50456,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": "from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[V10768-DEHERD] MN 2026-09-06: ctx 11566→10446 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 10446 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MN_gpt-5.4_official.txt"
+  },
+  {
+   "region": "MN",
+   "model": "gpt-5.5",
+   "lane_shadow_pack": true,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    46118
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 46118,
+   "real_runtime_prompt_chars_today": 23475,
+   "real_prompt_total_chars_today": 53838,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": "INE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[V10768-DEHERD] MN 2026-09-06: ctx 14547→13427 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 13427 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MN_gpt-5.5_shadow.txt"
+  },
+  {
+   "region": "MT",
+   "model": "gpt-5.4",
+   "lane_shadow_pack": false,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    44421
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 44421,
+   "real_runtime_prompt_chars_today": 25589,
+   "real_prompt_total_chars_today": 51915,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": "ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[RULE_ENGINE-fix11] 🔒 WEAK MT_CN (score=49<60) → READY_STRONG only\n[RULE_ENGINE] 🎯 DH: rule 2797 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2798 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[V10768-DEHERD] MT 2026-09-06: ctx 12430→11302 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 11302 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MT_gpt-5.4_official.txt"
+  },
+  {
+   "region": "MT",
+   "model": "gpt-5.5",
+   "lane_shadow_pack": true,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    47919
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 47919,
+   "real_runtime_prompt_chars_today": 24180,
+   "real_prompt_total_chars_today": 55375,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": "0 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[RULE_ENGINE-fix11] 🔒 WEAK MT_CN (score=49<60) → READY_STRONG only\n[RULE_ENGINE] 🎯 DH: rule 2797 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2798 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[V10768-DEHERD] MT 2026-09-06: ctx 15797→14669 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 14669 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MT_gpt-5.5_shadow.txt"
+  },
+  {
+   "region": "MB",
+   "model": "gpt-5.4",
+   "lane_shadow_pack": false,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    47691
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 47691,
+   "real_runtime_prompt_chars_today": 25291,
+   "real_prompt_total_chars_today": 55436,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": " → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[RULE_ENGINE] 🎯 DH: rule 2832 mult=1.01 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2833 mult=1.06 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2834 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[V10768-DEHERD] MB 2026-09-06: ctx 15914→14810 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 14810 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MB_gpt-5.4_official.txt"
+  },
+  {
+   "region": "MB",
+   "model": "gpt-5.5",
+   "lane_shadow_pack": true,
+   "result_has_error": true,
+   "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+   "n_captured_calls": 1,
+   "captured_call": true,
+   "all_call_user_chars": [
+    51082
+   ],
+   "sys_chars_captured": 7683,
+   "user_chars_captured": 51082,
+   "real_runtime_prompt_chars_today": 24068,
+   "real_prompt_total_chars_today": 58852,
+   "trace_captured_n": 0,
+   "trace_kwargs_sample": null,
+   "print_log_tail": "E_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[RULE_ENGINE] 🎯 DH: rule 2832 mult=1.01 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2833 mult=1.06 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2834 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[V10768-DEHERD] MB 2026-09-06: ctx 19079→17975 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 17975 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+   "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MB_gpt-5.5_shadow.txt"
+  }
+ ]
+}

@@ -1,0 +1,448 @@
+{
+  "generated_at_note": "V11170 Cong 3 - co che lat bach thu MN 2026-09-06",
+  "region": "MN",
+  "co_che_xac_nhan": {
+    "file": "_v10640_official_perslice_override.py:get_override_bt() (chooser='specialist'), goi tu main.py:10233-10237, dung TRUOC khi Card1 bach_thu duoc chot",
+    "OVERRIDE_CONFIG_hien_tai": {
+      "MN": {
+        "enabled": true,
+        "chooser": "specialist"
+      },
+      "MT": {
+        "enabled": false,
+        "chooser": "nt_consensus"
+      },
+      "MB": {
+        "enabled": false,
+        "chooser": "prior_region"
+      }
+    },
+    "bundle_id": 837,
+    "official_top1_ranked0": {
+      "number": "04",
+      "score": 0.1127,
+      "voters": [
+        "gpt-oss-120b",
+        "gpt-5.4",
+        "gemini-2.5-flash"
+      ]
+    },
+    "bach_thu_da_cong_bo": "73",
+    "specialists_set_n": 21,
+    "specialists_set": [
+      "claude-opus-4-6",
+      "claude-sonnet-4-6",
+      "combo-no-token",
+      "deepseek-v4-pro-real",
+      "gemini-2.5-flash",
+      "gemini-2.5-pro",
+      "gemini-3.5-flash",
+      "glm-5.2",
+      "gpt-5.5",
+      "gpt-5.6-sol-pro",
+      "gpt-oss-120b",
+      "grok-4.20-multi-agent",
+      "grok-4.3",
+      "kimi-k2.5",
+      "lstm",
+      "meta-learning",
+      "qwen3-max-thinking",
+      "qwen3.7-max",
+      "random-forest",
+      "smart-ensemble",
+      "xgboost"
+    ],
+    "candidates_va_spec_votes": [
+      {
+        "rank": 1,
+        "number": "04",
+        "score": 0.1127,
+        "voters": [
+          "gpt-oss-120b",
+          "gpt-5.4",
+          "gemini-2.5-flash"
+        ],
+        "spec_votes": 2
+      },
+      {
+        "rank": 2,
+        "number": "73",
+        "score": 0.0999,
+        "voters": [
+          "combo-super",
+          "deepseek-reasoner",
+          "glm-5.1",
+          "gemini-2.5-pro",
+          "claude-opus-4-6",
+          "claude-sonnet-4-6"
+        ],
+        "spec_votes": 3
+      },
+      {
+        "rank": 3,
+        "number": "78",
+        "score": 0.0848,
+        "voters": [
+          "random-forest",
+          "xgboost",
+          "smart-ml",
+          "smart-ensemble"
+        ],
+        "spec_votes": 3
+      },
+      {
+        "rank": 4,
+        "number": "95",
+        "score": 0.0583,
+        "voters": [
+          "gpt-oss-120b",
+          "gpt-5.4"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 5,
+        "number": "09",
+        "score": 0.0518,
+        "voters": [
+          "xgboost",
+          "smart-ml"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 6,
+        "number": "40",
+        "score": 0.0455,
+        "voters": [
+          "claude-opus-4-6"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 7,
+        "number": "46",
+        "score": 0.0322,
+        "voters": [
+          "meta-learning"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 8,
+        "number": "71",
+        "score": 0.0319,
+        "voters": [
+          "gemini-2.5-flash"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 9,
+        "number": "96",
+        "score": 0.0257,
+        "voters": [
+          "meta-learning"
+        ],
+        "spec_votes": 1
+      },
+      {
+        "rank": 10,
+        "number": "98",
+        "score": 0.025,
+        "voters": [
+          "lstm"
+        ],
+        "spec_votes": 1
+      }
+    ],
+    "_choose_specialist_result": {
+      "pick": "73",
+      "basis": "specialist_votes=3;rank=2;specialists=['claude-opus-4-6', 'claude-sonnet-4-6', 'combo-no-token', 'deepseek-v4-pro-real', 'gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-3.5-flash', 'glm-5.2']..."
+    },
+    "get_override_bt_full_call_result": {
+      "override_bt": "73",
+      "basis": "specialist|specialist_votes=3;rank=2;specialists=['claude-opus-4-6', 'claude-sonnet-4-6', 'combo-no-token', 'deepseek-v4-pro-real', 'gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-3.5-flash', 'glm-5.2']..."
+    },
+    "khop_voi_cong_bo": true,
+    "dieu_kien_kich_hoat": "Flip xay ra khi TON TAI mot ung vien trong top-12 ranked_numbers co so phieu 'specialist' (model dat >=35% bach-thu hit-rate tren 60 ngay truoc do, n>=5, STRICT date<today) CAO HON candidate dang la official top1. Hoa so phieu specialist thi phan thang bang score cao hon (roi -rank). KHONG lien quan anti-trap/prior-region.",
+    "loai_tru_gia_thuyet_anti_trap": "main_number_anti_trap/near_miss_anti_trap duoc tinh o main.py:10437-10451, SAU khi bach_thu da chot, va code tu ghi chu 'Pure read-only. Does NOT change voting, position_weight, or lane fusion' (dong 10434-10435). PRIOR_REGION_MAP['MN']=() (_materialize_experimental_preview_shadow.py:54) => prior_regions cua MN LUON RONG, ke ca so voi ngay hom truoc — co che nay khong bao gio co du lieu de kich hoat cho MN."
+  },
+  "lich_su_co_che_specialist_lien_tuc": {
+    "ghi_chu_dieu_kien": "git log xac nhan MN chooser da la 'specialist' LIEN TUC tu commit 2d6724d (V10753, 2026-06-26) den nay, khong doi lai lan nao (commit 67ec1a3 V10917 01/08 chi TAI XAC NHAN giu nguyen, khong doi chooser). Truoc 06-26 MN dung 'd_w06' (co che KHAC) — khong dua vao cua so nay de tranh tron lan hai co che.",
+    "khung_thoi_gian": "2026-06-26 .. 2026-09-06 (73 ngay co du bundle + ket qua xo so)",
+    "so_ngay_flip": 23,
+    "danh_sach_flip": [
+      {
+        "date": "2026-06-27",
+        "bundle_id": 437,
+        "official_top1": "55",
+        "official_win": false,
+        "published_bt": "23",
+        "actual_win": false,
+        "notes": "auto_auto_daily"
+      },
+      {
+        "date": "2026-06-28",
+        "bundle_id": 440,
+        "official_top1": "21",
+        "official_win": false,
+        "published_bt": "65",
+        "actual_win": true,
+        "notes": "auto_auto_daily"
+      },
+      {
+        "date": "2026-07-02",
+        "bundle_id": 452,
+        "official_top1": "45",
+        "official_win": false,
+        "published_bt": "43",
+        "actual_win": true,
+        "notes": "auto_auto_daily"
+      },
+      {
+        "date": "2026-07-04",
+        "bundle_id": 458,
+        "official_top1": "56",
+        "official_win": false,
+        "published_bt": "68",
+        "actual_win": false,
+        "notes": "auto_auto_daily"
+      },
+      {
+        "date": "2026-07-05",
+        "bundle_id": 461,
+        "official_top1": "96",
+        "official_win": true,
+        "published_bt": "71",
+        "actual_win": true,
+        "notes": "v10782_p0_owner_repredict"
+      },
+      {
+        "date": "2026-07-09",
+        "bundle_id": 486,
+        "official_top1": "02",
+        "official_win": false,
+        "published_bt": "13",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-10",
+        "bundle_id": 492,
+        "official_top1": "36",
+        "official_win": false,
+        "published_bt": "69",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-14",
+        "bundle_id": 516,
+        "official_top1": "04",
+        "official_win": true,
+        "published_bt": "12",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-16",
+        "bundle_id": 528,
+        "official_top1": "96",
+        "official_win": true,
+        "published_bt": "72",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-19",
+        "bundle_id": 546,
+        "official_top1": "50",
+        "official_win": false,
+        "published_bt": "90",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-23",
+        "bundle_id": 570,
+        "official_top1": "12",
+        "official_win": false,
+        "published_bt": "07",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-07-27",
+        "bundle_id": 594,
+        "official_top1": "32",
+        "official_win": false,
+        "published_bt": "42",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-06",
+        "bundle_id": 655,
+        "official_top1": "60",
+        "official_win": false,
+        "published_bt": "95",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-07",
+        "bundle_id": 661,
+        "official_top1": "60",
+        "official_win": false,
+        "published_bt": "13",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-09",
+        "bundle_id": 673,
+        "official_top1": "22",
+        "official_win": false,
+        "published_bt": "54",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-14",
+        "bundle_id": 700,
+        "official_top1": "14",
+        "official_win": false,
+        "published_bt": "41",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-16",
+        "bundle_id": 712,
+        "official_top1": "32",
+        "official_win": false,
+        "published_bt": "71",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-17",
+        "bundle_id": 718,
+        "official_top1": "96",
+        "official_win": false,
+        "published_bt": "89",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-19",
+        "bundle_id": 730,
+        "official_top1": "02",
+        "official_win": false,
+        "published_bt": "56",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-23",
+        "bundle_id": 754,
+        "official_top1": "46",
+        "official_win": true,
+        "published_bt": "73",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-08-24",
+        "bundle_id": 760,
+        "official_top1": "50",
+        "official_win": false,
+        "published_bt": "45",
+        "actual_win": false,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-09-02",
+        "bundle_id": 813,
+        "official_top1": "92",
+        "official_win": false,
+        "published_bt": "39",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      },
+      {
+        "date": "2026-09-06",
+        "bundle_id": 837,
+        "official_top1": "04",
+        "official_win": false,
+        "published_bt": "73",
+        "actual_win": true,
+        "notes": "v10782_t10_chot"
+      }
+    ],
+    "phan_loai_flip": {
+      "cuu_override_thang_rieng": 10,
+      "pha_override_thua_rieng": 2,
+      "hoa_ca_hai_trung": 2,
+      "hoa_ca_hai_truot": 9
+    },
+    "ty_le_trung_bach_thu": {
+      "neu_KHONG_co_override (luon lay ranked[0])": "20/73 = 0.2740",
+      "thuc_te_CO_override": "28/73 = 0.3836",
+      "chenh_lech_diem_ty_le": 0.1096
+    },
+    "McNemar_dau_tren_73_ngay_GOP (KHONG tach cua so, chi tham khao)": {
+      "b_cuu": 10,
+      "c_pha": 2,
+      "p_value": 0.03857421875
+    },
+    "n_can_power80_alpha05_cho_hieu_ung_gop": 288,
+    "canh_bao_RM04": "n=73 < n_can=288 => CHUA DUOC PHEP KET LUAN co che nay 'thang' hay 'thua' bang thong ke, chi co the noi CO XU HUONG duong, chua chac chan."
+  },
+  "tach_trong_ngoai_cua_so_chon": {
+    "TRONG_cua_so_chon": {
+      "label": "2026-06-26..2026-07-31 (du lieu dung de V10917 GIU MN)",
+      "n_ngay": 36,
+      "official_only_win_rate": "10/36=0.2778",
+      "actual_override_win_rate": "13/36=0.3611",
+      "chenh_lech": 0.0833,
+      "so_flip": 12,
+      "cuu": 4,
+      "pha": 1,
+      "McNemar_p": 0.375,
+      "n_can_power80": 491
+    },
+    "NGOAI_cua_so_chon": {
+      "label": "2026-08-01..2026-09-06 (forward that, chua tung dung de chon)",
+      "n_ngay": 37,
+      "official_only_win_rate": "10/37=0.2703",
+      "actual_override_win_rate": "15/37=0.4054",
+      "chenh_lech": 0.1351,
+      "so_flip": 11,
+      "cuu": 6,
+      "pha": 1,
+      "McNemar_p": 0.125,
+      "n_can_power80": 192
+    },
+    "ket_luan_RM18_PRJ_WINDOW": "Hieu ung DUONG o CA HAI cua so (trong=+8.33pp p=0.375; ngoai=+13.51pp p=0.125) — khong bi 'rua' khi ra ngoai mau da dung de chon, nhung CA HAI deu chua dat nguong thong ke (n qua nho, xem n_can). RM-04: phai noi 'chua du bang chung', KHONG duoc noi 'that bai' hay 'thanh cong'."
+  },
+  "doi_chieu_79_bundle_V11167_V11168": {
+    "phep_do": "COUNT(*) tren TOAN BO final_bundles hop le, moi mien, moi thoi diem, dieu kien bach_thu != ranked_numbers[0] doc tu source_predictions_json — CHINH LA dinh nghia V11167 dung cho con so 79.",
+    "tong_do_lai_BAY_GIO": 79,
+    "bundle_837_hom_nay_co_trong_danh_sach": true,
+    "phan_bo_theo_thang": {
+      "2026-06": 31,
+      "2026-07": 37,
+      "2026-08": 9,
+      "2026-09": 2
+    },
+    "phan_bo_theo_mien": {
+      "MT": 22,
+      "MN": 32,
+      "MB": 25
+    },
+    "so_sanh_voi_bao_cao_cu": "V11167 bao '29/79 tap trung thang 6/2026'. Do lai BAY GIO ra thang 6/2026 = 31 (lech +2 so voi 29 — CHUA giai thich duoc, co the do dinh nghia zfill/parse khac nhau o mot vai dong bien; KHONG anh huong toi tong 79). Tong do lai = 79, TRUNG KHOP voi con so 79 da cong bo, VA bundle 837 (hom nay) DA CO trong 79 nay — TUC HOM NAY KHONG PHAI la ca thu 80, ma la mot trong 79 ca da duoc dem tu truoc.",
+    "ket_luan": "KHONG can cap nhat con so 79 — no da bao gom bundle 837. Muc chenh thang 6 (31 vs 29) la mot phat hien PHU can ghi nhan (P3), khong lam sai tong so."
+  }
+}

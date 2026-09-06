@@ -1,0 +1,307 @@
+{
+ "meta": {
+  "phien": "V11170",
+  "ngay": "2026-09-06",
+  "gio_snapshot_dau_bai": "22:08 VN",
+  "gio_thuc_hien_cong_8": "~22:30-23:00 VN (query read-only tiep tuc sau moc snapshot, KHONG ghi gi vao production DB)",
+  "nguon": "sqlite3 file:...lottery_ai.db?mode=ro tren VPS qua SSH (production that, theo RM-13) + doc source code tai E:/Lottery_AI_Test/web/backend (repo local, chi doc) + crontab -l tren VPS",
+  "so_bang_co_dong_moi_hom_nay": "124/253 bang co it nhat 1 dong voi time_col nhan dien duoc trong 'hom nay' theo dung quy uoc gio tung bang (xem RM-21/§55)"
+ },
+ "cau1_top20_bang_ghi_nhieu_nhat": [
+  {
+   "bang": "model_latency_shadow_v11063",
+   "dong_hom_nay": 5484,
+   "total": 5484,
+   "writer": "cron root 50 21 * * * -> _materialize_do_tre_shadow.py --that (FU-283); ghi_chu: script kt file khong doi tu 11/08 nhung 'Access' luc 21:50:01.572 hom nay = da CHAY",
+   "reader": "main.py:18796 api_admin_do_tre_model() -> GET /api/admin/do-tre-model (3 SELECT: :18840 :18862 :18869)",
+   "song_chet": "SONG - co cron ghi + co API doc"
+  },
+  {
+   "bang": "no_lookahead_audit",
+   "dong_hom_nay": 1512,
+   "total": 8227,
+   "writer": "cron root 45 14 * * * -> _v10660_no_lookahead_harness.py --days 14 (UPSERT ON CONFLICT)",
+   "reader": "CHI _v10663_evidence_pack_scaffold.py va _v10923_experiment_impact.py doc qua ham _count(cur,'no_lookahead_audit',...) - CA HAI deu KHONG co trong crontab, KHONG co trong main.py (0 route)",
+   "song_chet": "GHI SONG, DOC CHET - khong endpoint/cron nao dang dung doc bang nay"
+  },
+  {
+   "bang": "scheduler_logs",
+   "dong_hom_nay": 1195,
+   "total": 283209,
+   "writer": "chinh APScheduler noi bo (moi job _add_log) + logging framework; ghi lien tuc ca ngay",
+   "reader": "main.py 6 diem SELECT (vd get_runtime_monitoring_center /api/admin/runtime-monitoring-center va cac endpoint debug/health)",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "shadow_method_scoreboard",
+   "dong_hom_nay": 1080,
+   "total": 140892,
+   "writer": "scheduler.py:684-697 goi _materialize_multi_lane_shadow_p0.materialize_for() sau moi vong model_daily_eval tung mien (P0 multi-lane shadow backbone)",
+   "reader": "main.py:19842,19894 -> GET /api/admin/parallel-shadow-proof",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "du_doan_test_candidates",
+   "dong_hom_nay": 944,
+   "total": 118975,
+   "writer": "lane du_doan_test (test-lane noi bo, chay song song voi official)",
+   "reader": "chi thay _du_doan_test_schema.py (dinh nghia schema); KHONG thay SELECT FROM truc tiep trong main.py - co the duoc doc qua ham dung chung voi du_doan_test_bundles",
+   "song_chet": "CHUA XAC MINH DUOC READER RIENG - can quet sau hon, ghi INDETERMINATE"
+  },
+  {
+   "bang": "pnl_forward_track_shadow",
+   "dong_hom_nay": 396,
+   "total": 1836,
+   "writer": "cron root 30 22 * * * -> _v10730_pnl_forward_track.py",
+   "reader": "main.py:13192 _build_pnl_forward_track() -> GET /api/admin/pnl-forward-track",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "prompt_section_breakdown_daily",
+   "dong_hom_nay": 297,
+   "total": 46754,
+   "writer": "scheduler.py:474 (trong nhom 3 bang do luong sau MDE, INSERT-only vao bang cua chinh no) qua _materialize_prompt_section_breakdown.py",
+   "reader": "0 ket qua grep 'FROM prompt_section_breakdown_daily' tren toan bo web/backend",
+   "song_chet": "GHI SONG, DOC CHET - xac nhan: KHONG mot dong code nao doc bang nay"
+  },
+  {
+   "bang": "shadow_candidates",
+   "dong_hom_nay": 283,
+   "total": 36987,
+   "writer": "_materialize_multi_lane_shadow_p0.py (cung ho voi shadow_results/shadow_method_scoreboard)",
+   "reader": "chi tu-doc trong chinh writer (vong lap noi bo); 0 route main.py",
+   "song_chet": "GHI SONG, DOC CHET tu ben ngoai (shadow_results/scoreboard cung ho THI song qua API)"
+  },
+  {
+   "bang": "shadow_results",
+   "dong_hom_nay": 283,
+   "total": 36987,
+   "writer": "_materialize_multi_lane_shadow_p0.py",
+   "reader": "main.py:19879,19915 -> GET /api/admin/parallel-shadow-proof",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "ma_doi_chung_shadow",
+   "dong_hom_nay": 246,
+   "total": 10379,
+   "writer": "cron root 25 19 * * * -> _v11018_ma_doi_chung.py",
+   "reader": "0 ket qua grep FROM ma_doi_chung_shadow trong toan bo .py - can kiem tra them bien the ten cot/alias",
+   "song_chet": "GHI SONG, DOC CHUA THAY - can xac minh them (INDETERMINATE, khong khang dinh chet)"
+  },
+  {
+   "bang": "model_progress",
+   "dong_hom_nay": 150,
+   "total": 150,
+   "writer": "cron root 5 9 * * * -> _v10642_model_progress.py (bang RẤT nho, co the la upsert 1 dong/model/ngay)",
+   "reader": "chua kiem (ngoai pham vi uu tien)",
+   "song_chet": "GHI SONG, DOC chua xac minh"
+  },
+  {
+   "bang": "source_prize_effectiveness_daily",
+   "dong_hom_nay": 115,
+   "total": 12022,
+   "writer": "scheduler.py post-MDE pipeline",
+   "reader": "main.py:19674 get_runtime_monitoring_center() -> GET /api/admin/runtime-monitoring-center",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "output_final_lab_shadow",
+   "dong_hom_nay": 114,
+   "total": 10887,
+   "writer": "cron root 3 lan/ngay (05:35 --days1, 16:55 --days1, 17:55 --days1) + 22:40 --days3 -> _v10737_output_final_lab_shadow.py",
+   "reader": "main.py:13481,13594 _build_output_final_lab() -> GET /api/admin/consensus-freeshadow (khu vuc)",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "ghep_nt_official_daily",
+   "dong_hom_nay": 113,
+   "total": 113,
+   "writer": "cron root 10 19 * * * -> _v10984_ghep_lane_official.py",
+   "reader": "chi _v10984_kiem.py/_v10984_verify.py/_v10986_xac_minh*.py/_v10988_probe.py - CA 5 deu KHONG trong crontab hien tai, KHONG trong main.py (kiem tra: 0 ket qua)",
+   "song_chet": "GHI SONG, DOC CHET - cac script doc la cong cu xac minh mot-lan tu dot trien khai V10984-88 (dau thang 08), khong con chay lai"
+  },
+  {
+   "bang": "shadow_scoreboard",
+   "dong_hom_nay": 87,
+   "total": 87,
+   "writer": "cron root 10 9 * * * -> _v10644_shadow_scoreboard.py",
+   "reader": "chua kiem sau (bang rat nho, co the la snapshot 1 dong/model)",
+   "song_chet": "GHI SONG, DOC chua xac minh"
+  },
+  {
+   "bang": "du_doan_test_selected_voters",
+   "dong_hom_nay": 84,
+   "total": 9381,
+   "writer": "lane du_doan_test",
+   "reader": "main.py:11883 _build_du_doan_test_model_budget_summary()",
+   "song_chet": "SONG"
+  },
+  {
+   "bang": "du_doan_test_bundles",
+   "dong_hom_nay": 83,
+   "total": 11013,
+   "writer": "lane du_doan_test (52 experiment_name khac nhau hom nay, xem Q5)",
+   "reader": "main.py: 23 diem SELECT FROM - duoc dung rong khap (panel lane-test, so sanh official)",
+   "song_chet": "SONG - RAT SONG"
+  },
+  {
+   "bang": "model_daily_eval",
+   "dong_hom_nay": 81,
+   "total": 14227,
+   "writer": "pipeline cham diem chinh, chay sau moi vong official/shadow tung mien",
+   "reader": "main.py 2 diem SELECT (mot trong so do la nguon cham bach_thu hien thi UI)",
+   "song_chet": "SONG - BANG KHOA (mot trong 4 bang khoa §57)"
+  },
+  {
+   "bang": "predictions",
+   "dong_hom_nay": 81,
+   "total": 14363,
+   "writer": "pipeline du doan chinh (27 model x 3 mien)",
+   "reader": "main.py 54 diem SELECT - BANG SAN XUAT CHINH",
+   "song_chet": "SONG - BANG KHOA (mot trong 4 bang khoa §57), LON NHAT theo dung luong dia (158.8 MB)"
+  },
+  {
+   "bang": "shadow_model_promotion_scorecard_daily",
+   "dong_hom_nay": 81,
+   "total": 17283,
+   "writer": "scheduler.py:661-665 _materialize_shadow_promotion_scorecard.materialize_for()",
+   "reader": "0 ket qua grep FROM trong toan bo .py",
+   "song_chet": "GHI SONG, DOC CHET - xac nhan chua co noi nao doc bang nay"
+  },
+  {
+   "bang": "verdict_distribution_daily",
+   "dong_hom_nay": 81,
+   "total": 10940,
+   "writer": "scheduler.py post-MDE pipeline (cung nhom voi prompt_section_breakdown_daily)",
+   "reader": "chi _audit_phase3_cont.py va _audit_total.py - hai script audit mot-lan, KHONG trong crontab",
+   "song_chet": "GHI SONG, DOC CHET tu code dang chay; chi con script audit lich su doc"
+  }
+ ],
+ "cau2_model_latency_shadow_v11063": {
+  "cau_hoi": "model_latency_shadow_v11063 ghi 5484 dong hom nay - ghi that hay la snapshot tinh (V11169)?",
+  "tra_loi": "CA HAI DUNG DONG THOI, khong mau thuan - nhung cach dung V11169 de lai an tuong SAI.",
+  "bang_chung": [
+   "Schema: created_at TEXT DEFAULT (datetime('now','localtime')); UNIQUE(date,region,ai_model); writer dung 'INSERT OR REPLACE INTO' (web/backend/_materialize_do_tre_shadow.py:180)",
+   "REPLACE = DELETE + INSERT lai dong trung khoa -> MOI dong duoc cap created_at MOI = gio chay script.",
+   "Script (mac dinh --so-ngay=None) xu LY TOAN BO lich su co trong prediction_trace.jsonl moi lan chay, khong chi ngay moi -> TOAN BO bang bi 'cham' lai created_at trong MOT lan chay.",
+   "Truy van thuc te: distinct created_at hom nay = 1 gia tri duy nhat '2026-09-06 21:50:02', ap dung cho CA 5484 dong (98 ngay du lieu, tu ~2026-06 den 2026-09-06).",
+   "crontab -l dong: '50 21 * * * ... _materialize_do_tre_shadow.py --that ... # V11063 FU-283'.",
+   "stat script tren VPS: Modify=2026-08-11 22:04 (khong doi code), Access=2026-09-06 21:50:01.572 (DA CHAY dung gio cron) - khop chinh xac voi created_at ghi duoc.",
+   "So sanh 30 ngay truoc: MAX(date) trai rong 98 ngay khac nhau, so dong/ngay dao dong 38-57 (vd 2026-08-28=38, cac ngay khac 54-57) - cho thay day la BANG LICH SU duoc TAI TAO MOI DEM, khong phai chi ghi 'hom nay' theo nghia thong thuong."
+  ],
+  "ket_luan": "V11169 mo ta cau truc DUNG (mot snapshot, tat ca cung created_at) nhung neu V11169 dung tu 'TINH' theo nghia 'da ngung/khong con duoc ghi lai' thi do la KET LUAN SAI can RUT LAI: bang nay duoc CRON GHI LAI TOAN BO moi dem luc 21:50 (V11063/FU-283), la mot tien trinh SONG, dang hoat dong, khong phai mot lan chup roi bo quen. So dong tang tu 5427 (luc V11169 do) len 5484 hom nay (+57, dung bang 1 ngay moi x ~57 to hop mien-model) chi vi co THEM 1 NGAY du lieu trace duoc dua vao, KHONG phai vi co 5484 phep do do tre THAT xay ra hom nay.",
+  "rut_lai_theo_PRJ_RETRACTION_001": {
+   "cho_goc": "V11169 (bao cao truoc, dan chieu trong context dau phien nay)",
+   "nguyen_van_cau_sai_duoc_dan": "\"snapshot TĨNH, 5.427 dòng cùng created_at\"",
+   "dieu_dung_kem_phep_do_tai_lap": "Bang la snapshot-toan-bo-lich-su duoc CRON TAI TAO MOI NGAY luc 21:50 (khong phai 'tinh'/bat dong). Tai lap: SELECT COUNT(DISTINCT created_at) FROM model_latency_shadow_v11063; -> ket qua =1 MOI LAN DO (dung), nhung gia tri do THAY DOI moi ngay luc 21:50 - kiem lai vao ngay khac se ra timestamp khac.",
+   "quyet_dinh_da_dua_tren_so_sai": "Khong xac dinh duoc trong pham vi cong 8 rang V11169 co dung cau chu 'tinh' de tu choi mot hanh dong nao khong - can nguoi giu bao cao V11169 xac nhan y dinh cau chu do truoc khi ghi day du 4 phan PRJ-RETRACTION-001."
+  }
+ },
+ "cau3_bang_phinh_nhanh": {
+  "phuong_phap": "dbstat virtual table (co san tren VPS) -> SUM(pgsize) GROUP BY name cho kich thuoc THAT tung bang; per_day_30 = so dong 30 ngay gan nhat / 30.",
+  "tong_kich_thuoc_du_lieu_bang_dbstat": "674,816,000 bytes = 0.67 GB (chi tinh du lieu bang, chua tinh index rieng/free page - file DB that co the lon hon)",
+  "top_bang_theo_dung_luong": [
+   {
+    "bang": "predictions",
+    "MB": 158.8,
+    "ghi_chu": "LON NHAT toan CSDL du chi 14.363 dong - 11.057 byte/dong vi luu full JSON reasoning cua model; day la BANG KHOA, tang co kiem soat (80/ngay)"
+   },
+   {
+    "bang": "du_doan_test_candidates",
+    "MB": 54.3,
+    "toc_do": "622 dong/ngay -> ~284 KB/ngay -> ~104 MB/nam"
+   },
+   {
+    "bang": "shadow_method_scoreboard",
+    "MB": 53.8,
+    "toc_do": "1080 dong/ngay -> ~413 KB/ngay -> ~150 MB/nam"
+   },
+   {
+    "bang": "gan_signal_shadow_v100",
+    "MB": 43.5,
+    "ghi_chu": "246.000 dong nhung DA DUNG GHI tu 2026-05-10 (xem Q4) - khong con phinh, chi la kich thuoc lich su con lai"
+   },
+   {
+    "bang": "scheduler_logs",
+    "MB": 32.0,
+    "toc_do": "1330 dong/ngay (CAO NHAT) -> ~150 KB/ngay -> ~55 MB/nam"
+   },
+   {
+    "bang": "shadow_results",
+    "MB": 28.1,
+    "toc_do": "283 dong/ngay -> ~215 KB/ngay -> ~78 MB/nam"
+   },
+   {
+    "bang": "shadow_candidates",
+    "MB": 23.2,
+    "toc_do": "283 dong/ngay -> ~178 KB/ngay -> ~65 MB/nam"
+   },
+   {
+    "bang": "lag1_adaptive_exploit_signal_shadow",
+    "MB": 22.7,
+    "toc_do": "511 dong/ngay -> ~182 KB/ngay -> ~67 MB/nam"
+   }
+  ],
+  "uoc_tinh_tong_toc_do_phinh_cac_bang_shadow_dang_song": "cong don ~6 bang shadow lon nhat dang ghi (scheduler_logs+shadow_method_scoreboard+du_doan_test_candidates+shadow_results+shadow_candidates+lag1_adaptive) ~ 1,3 MB/ngay ~ 475 MB/nam NEU khong co retention/vacuum - so voi dia con trong 27 GB, KHONG cap bach trong vai thang toi nhung KHONG THAY co co che xoa/nen du lieu cu nao trong code da doc (RM/CLAUDE.md cung khong nhac chinh sach retention cho cac bang nay).",
+  "khong_ket_luan_duoc": "Chua doc duoc kich thuoc THAT cua file .db tren dia (chi co tong dbstat cua du lieu bang, chua cong index+overhead+WAL) - can 'ls -la data/lottery_ai.db' + 'du -sh' de doi chieu voi con so '33% dia, con 27G' trong bao cao dau phien."
+ },
+ "cau4_bang_ngung_ghi_bat_thuong": {
+  "phuong_phap": "Loc bang co days_active_30 >= 25/30 (ghi gan nhu moi ngay) NHUNG rows_today=0 -> chi co 3 UNG VIEN trong toan bo 253 bang.",
+  "ket_qua": "CA BA deu KHONG phai bang chet - deu la chua-toi-gio-chay-hom-nay (thoi diem do la ~22:30 VN):",
+  "chi_tiet": [
+   {
+    "bang": "lag1_adaptive_exploit_signal_shadow",
+    "MAX_ghi_gan_nhat": "2026-09-05T23:35:05+07:00",
+    "giai_thich": "Job noi bo chay ~23:35 hang dem (sau thoi diem quet 22:30) - CHUA TOI GIO, khong phai ngung"
+   },
+   {
+    "bang": "rescue_candidate_shadow",
+    "MAX_ghi_gan_nhat": "2026-09-05T22:45:01+07:00",
+    "giai_thich": "cron root '45 22 * * * _v10744_rescue_candidate_monitor.py --days 3' - chay 22:45, CHUA TOI GIO luc quet (22:30)"
+   },
+   {
+    "bang": "test_lane_signal_drift_monitor",
+    "MAX_ghi_gan_nhat": "2026-09-05T23:50:00+07:00",
+    "giai_thich": "job chay ~23:50 hang dem - CHUA TOI GIO"
+   }
+  ],
+  "phat_hien_phu_dang_chu_y": "4 bang khac (gan_signal_shadow_v100, v103_candidate_supply_shadow, v104_shadow_prompt_candidate_injection, v101_region_source_pool_shadow, v105_no_token_independent_shadow/scoreboard) NGUNG GHI THAT SU tu thang 05/2026 - NHUNG day la NGUNG CO CHU DICH, ghi ro trong scheduler_logs hom nay chinh no: job van CHAY moi ngay (vd v101_shadow_pilot chay 12:23 hom nay) nhung tu-log '⏸ [V101_SHADOW_PILOT_DISABLED_V10659] post-draw writer OFF; history kept read-only' - tuc la CODE con do nhung DA TU TAT GHI theo quyet dinh V10644/V10659, khong phai loi.",
+  "ket_luan": "KHONG PHAT HIEN bang nao 'le ra phai ghi hom nay ma im lang bat thuong' trong pham vi da do. Tat ca truong hop im lang deu giai thich duoc bang (a) chua toi gio trong lich chay con lai cua ngay, hoac (b) da duoc tat CO CHU DICH tu nhieu thang truoc va tu-bao trong log."
+ },
+ "cau5_lane_test_du_doan_test": {
+  "tong_quan": "83 dong du_doan_test_bundles hom nay = 52 experiment_name khac nhau, chia MN=11, MT=26, MB=46 (khong deu vi moi mien co bo 'phuong an' rieng dang thu nghiem - MB nhieu nhat vi co them nhom SCREEN_* rieng: ADAPTIVE/BLEND/CHAMPION/LEAN/RULEBH/WEIGHTED, FULL_POOL_D_W06, TOPK10_W04)",
+  "so_sanh_voi_official": {
+   "bt_changed_true": 20,
+   "bt_changed_false": 56,
+   "official_bt_None": 5,
+   "owner_approved_1": 2,
+   "ghi_chu": "5 dong co official_bt=None la loai OFFICIAL_NEW_CANDIDATE/DEHERD chay som (05:27-05:38 MN, 16:47-16:48 MT) TRUOC KHI bundle official duoc chot cho ngay do, nen chua co gi de so sanh tai thoi diem ghi - day la HANH VI DUNG THIET KE cua PRJ-SELECTION-WINDOW-001 (khong ro ri tuong lai vao qua khu), khong phai loi."
+  },
+  "vi_du_kich_ban_MN": {
+   "official": "BT=73 (dung, thang)",
+   "MN_ADAPTIVE_BUDGET_SELECTOR_V1": "test_bt=73, bt_changed=false (khop official)",
+   "MN_TOTAL_V2_RULES_V1": "test_bt=13, bt_changed=true (SAI khac official, va official cung SAI so voi ket qua thuc te 04 vs 73 - nhung so voi BUNDLE thi la 'khac')",
+   "MN_TOTAL_V3_COND_V1": "test_bt=73, bt_changed=false, owner_approved=1 (day la 1 trong 2 dong duoc owner_approved hom nay), candidate_count=0 vi risk_flags ghi 'fallback_m1_a_empty'",
+   "MN_DEHERD_V1": "khop hoan toan voi official (differs:false)"
+  },
+  "ket_luan": "Lane test la mot he thong THU NGHIEM SONG SONG voi 52 'phuong an' luat/mo hinh khac nhau moi ngay, chay hoan toan tach biet khoi /du-doan chinh thuc (test_only=1, admin_only=1, output_eligible=0 toan bo 83 dong), dung de xem 'neu dung luat khac thi ket qua co doi khong' - hom nay 24% (20/83) so phuong an cho ra bach_thu KHAC voi official."
+ },
+ "cau6_counterfactual_audit": {
+  "counterfactual_decision_audit_shadow": {
+   "ghi_gi": "Moi dong = 1 PHEP SO SANH giua 1 phuong phap thay the (method_key, vd 'anti_herding_shadow_v1', 'meta_ranker_ltr_dataset_shadow_v1', 'phase_first_decision_shadow_v1', 'rule_aware_adaptive_notoken_shadow_v1', 'context_specialist_policy_shadow_v1', 'strongest_to_final_preservation_v1') VOI baseline (bundle official that su chon) cho 1 mien-ngay-loai-output (BT/lo2/...). Co cac co would_save/would_break/false_promotion va evidence_json (top3 ung vien cua phuong phap do).",
+   "writer": "web/backend/_materialize_multi_lane_shadow_p0.py (CHI 1 file dinh nghia/ghi bang nay trong toan bo repo), run_label hom nay = 'closeout_multi_lane_shadow_p0_v1_2026-09-06', ghi luc 16:36:54 cho MN (ngay sau khi co ket qua xo so MN 16:36:36)",
+   "reader": "0 ket qua grep FROM counterfactual_decision_audit_shadow trong toan bo .py - GHI SONG, DOC CHET (khong co API/route nao doc bang nay)",
+   "30_dong_hom_nay": "khop voi ~10 method_key rieng x 3 mien = 30 - moi mien-ngay duoc cham boi ~10 phuong phap gia dinh khac nhau ngay sau khi co ket qua that"
+  },
+  "quan_he_voi_output_counterfactual_rank": {
+   "phat_hien_quan_trong": "output_counterfactual_rank KHONG PHAI mot bang rieng - no la MOT COT trong bang 'shadow_model_promotion_scorecard_daily' (tong 17.283 dong hom nay, tang tu con so 17.202 da neu trong brief dau phien - dung +81 dong = dung 1 ngay moi kieu 81 dong/mien-model).",
+   "gia_tri_cot_do": "SELECT COUNT(*) WHERE output_counterfactual_rank IS NOT NULL = 0 tren toan bo 17.283 dong - XAC NHAN dung con so '0/17.202' (nay la 0/17.283) da neu trong brief.",
+   "quan_he_voi_bang_cau_hoi_6": "HAI thu HOAN TOAN KHAC NHAU, KHONG lien quan truc tiep ve co che: counterfactual_decision_audit_shadow (bang, co du lieu, dang ghi song) so sanh PHUONG PHAP thay the vs baseline; output_counterfactual_rank (cot, luon NULL) nam trong mot bang KHAC (shadow_model_promotion_scorecard_daily) va la placeholder CHUA BAO GIO duoc dien - khop voi boi canh da biet 'owner khoa phuong an B, KHONG do day'. Ten giong nhau (deu co chu 'counterfactual') co the la nguon gay nham lan giua hai co che khac nhau nay.",
+   "chi_bao_cao_khong_de_xuat": "Dung theo yeu cau, day CHI la ghi nhan hien trang - khong de xuat dien cot hay doi co che."
+  }
+ },
+ "phuong_phap_luan_quan_trong": {
+  "quy_uoc_gio_da_xac_minh_thuc_nghiem": "Da xac nhan bang datetime.now() tren VPS = gio VN (VPS OS TZ = Asia/Ho_Chi_Minh). Moi cot naive TRONG DU AN NAY la VN THAT (khop final_bundles, model_daily_eval, cron mtime), TRU DUY NHAT scheduler_logs.log_time la naive-UTC (can +7h) - xac nhan boi so sanh MAX(log_time)=15:30:00 UTC dung bang datetime.utcnow() VPS luc do (15:30:58). Con so scheduler_logs hom nay bao cao dau bai (871) va con so tinh lai o day (1195, dung quy uoc +7h dung) LECH NHAU - can luu y neu 871 tung duoc dung lam can cu, no co the da dung SAI quy uoc (khong +7h) hoac do o thoi diem som hon (van con dang ghi lien tuc: 1330 dong/ngay).",
+  "gioi_han_cua_cong_cu_do_writer_reader": "Viec xac dinh 'writer/reader' dua tren grep ma nguon (INSERT/SELECT + ten bang) tren repo local (E:/Lottery_AI_Test) va crontab that tren VPS - KHONG bao trum duoc reader o tang frontend JS goi API (chi suy ra qua endpoint main.py). Mot so bang ghi 'DOC CHUA XAC MINH' hoac 'INDETERMINATE' vi khong du thoi gian quet toan bo cac bien the ten cot/alias."
+ }
+}

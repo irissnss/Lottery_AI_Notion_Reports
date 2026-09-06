@@ -1,0 +1,647 @@
+{
+ "meta": {
+  "generated_at_vn": "2026-09-06T22:46:03.174537",
+  "today": "2026-09-06",
+  "db": "production lottery_ai.db, read-only",
+  "note": "Cong 11 - boi canh V11170"
+ },
+ "Q1_phan_bo_TOTAL_30ngay": {
+  "so_ngay_trong_cua_so": 30,
+  "phan_bo_wins_tren_3": {
+   "1/3": 14,
+   "3/3": 3,
+   "0/3": 11,
+   "2/3": 2
+  },
+  "hom_nay": {
+   "wins": 1,
+   "n_regions_present": 3,
+   "detail": {
+    "MB": "LOSE",
+    "MN": "WIN",
+    "MT": "LOSE"
+   }
+  },
+  "chi_tiet_30_ngay": {
+   "2026-08-08": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-09": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-10": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-11": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-12": {
+    "wins": 3,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "WIN",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-13": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-14": {
+    "wins": 3,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "WIN",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-15": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-16": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-17": {
+    "wins": 3,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "WIN",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-18": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-19": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-20": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-21": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-22": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-23": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-24": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-25": {
+    "wins": 2,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-26": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-27": {
+    "wins": 2,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-08-28": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-29": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-30": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-08-31": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-09-01": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-09-02": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   },
+   "2026-09-03": {
+    "wins": 0,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-09-04": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "LOSE",
+     "MT": "WIN"
+    }
+   },
+   "2026-09-05": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "WIN",
+     "MN": "LOSE",
+     "MT": "LOSE"
+    }
+   },
+   "2026-09-06": {
+    "wins": 1,
+    "n_regions_present": 3,
+    "detail": {
+     "MB": "LOSE",
+     "MN": "WIN",
+     "MT": "LOSE"
+    }
+   }
+  }
+ },
+ "Q2_model_count_30ngay": {
+  "MN": {
+   "phan_bo_30ngay": {
+    "13": 1,
+    "14": 5,
+    "15": 24
+   },
+   "n_ngay": 30,
+   "hom_nay_model_count": 15
+  },
+  "MT": {
+   "phan_bo_30ngay": {
+    "6": 1,
+    "12": 3,
+    "13": 26
+   },
+   "n_ngay": 30,
+   "hom_nay_model_count": 13
+  },
+  "MB": {
+   "phan_bo_30ngay": {
+    "12": 7,
+    "13": 12,
+    "14": 4,
+    "15": 7
+   },
+   "n_ngay": 30,
+   "hom_nay_model_count": 15
+  }
+ },
+ "Q3_day_governance": {
+  "30ngay": {
+   "MN": {
+    "DEGRADED_LIVE_DAY": 6,
+    "VALID_LIVE_DAY": 24
+   },
+   "MT": {
+    "DEGRADED_LIVE_DAY": 29,
+    "INVALID_FOR_PRIMARY_EVAL": 1
+   },
+   "MB": {
+    "DEGRADED_LIVE_DAY": 23,
+    "VALID_LIVE_DAY": 7
+   }
+  },
+  "streak_hien_tai": {
+   "MN": {
+    "status": "VALID_LIVE_DAY",
+    "so_ngay_lien_tiep": 3
+   },
+   "MT": {
+    "status": "DEGRADED_LIVE_DAY",
+    "so_ngay_lien_tiep": 9
+   },
+   "MB": {
+    "status": "VALID_LIVE_DAY",
+    "so_ngay_lien_tiep": 4
+   }
+  },
+  "streak_dai_nhat_90ngay": {
+   "MN": 1,
+   "MT": 63,
+   "MB": 42
+  }
+ },
+ "Q4_chuoi_thang_thua": {
+  "bang_chinh_thuc_hom_nay": [
+   {
+    "id": 247,
+    "target_date": "2026-09-06",
+    "region": "MN",
+    "official_miss_streak": 0,
+    "v73_miss_streak": 0,
+    "all_methods_cold": 0,
+    "classification": "GREEN",
+    "diagnostic_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "created_at": "2026-09-06T19:10:00+07:00"
+   },
+   {
+    "id": 248,
+    "target_date": "2026-09-06",
+    "region": "MB",
+    "official_miss_streak": 1,
+    "v73_miss_streak": 0,
+    "all_methods_cold": 0,
+    "classification": "GREEN",
+    "diagnostic_only": 1,
+    "output_eligible": 0,
+    "owner_approved": 0,
+    "created_at": "2026-09-06T19:10:00+07:00"
+   }
+  ],
+  "tu_tinh_doc_lap": {
+   "MN": {
+    "chuoi_hien_tai": {
+     "trang_thai": "WIN",
+     "so_ngay": 1
+    },
+    "chuoi_LOSE_dai_nhat_90ngay": 5,
+    "chuoi_WIN_dai_nhat_90ngay": 4,
+    "n_ngay_90cuaso": 90,
+    "nen_binh_quan_90ngay_pct": 43.04,
+    "xac_suat_LOSE_streak_toi_thieu_duoi_ngau_nhien_doc_lap": 5.9935,
+    "xac_suat_CO_HIEU_CHINH_look_elsewhere_pct": 92.94,
+    "ghi_chu": "xac_suat_LOSE_streak_toi_thieu... (p^L don thuan) ĐÁNH GIÁ THẤP vì không tính N-1 vi tri bat dau khac co the sinh chuoi dai; dung cot look_elsewhere o tren."
+   },
+   "MT": {
+    "chuoi_hien_tai": {
+     "trang_thai": "LOSE",
+     "so_ngay": 2
+    },
+    "chuoi_LOSE_dai_nhat_90ngay": 9,
+    "chuoi_WIN_dai_nhat_90ngay": 3,
+    "n_ngay_90cuaso": 90,
+    "nen_binh_quan_90ngay_pct": 35.2,
+    "xac_suat_LOSE_streak_toi_thieu_duoi_ngau_nhien_doc_lap": 2.0145,
+    "xac_suat_CO_HIEU_CHINH_look_elsewhere_pct": 47.09,
+    "ghi_chu": "xac_suat_LOSE_streak_toi_thieu... (p^L don thuan) ĐÁNH GIÁ THẤP vì không tính N-1 vi tri bat dau khac co the sinh chuoi dai; dung cot look_elsewhere o tren."
+   },
+   "MB": {
+    "chuoi_hien_tai": {
+     "trang_thai": "LOSE",
+     "so_ngay": 1
+    },
+    "chuoi_LOSE_dai_nhat_90ngay": 18,
+    "chuoi_WIN_dai_nhat_90ngay": 2,
+    "n_ngay_90cuaso": 90,
+    "nen_binh_quan_90ngay_pct": 23.73,
+    "xac_suat_LOSE_streak_toi_thieu_duoi_ngau_nhien_doc_lap": 0.7621,
+    "xac_suat_CO_HIEU_CHINH_look_elsewhere_pct": 13.26,
+    "ghi_chu": "xac_suat_LOSE_streak_toi_thieu... (p^L don thuan) ĐÁNH GIÁ THẤP vì không tính N-1 vi tri bat dau khac co the sinh chuoi dai; dung cot look_elsewhere o tren."
+   }
+  }
+ },
+ "Q5_so_sanh_3_mien": {
+  "dinh_nghia": "LIVE = final_bundles loai notes chua 'backfill' (90 dong). Nen = so duoi PHAN BIET thuc te ve ngay do/mien do / 100 (giong _v11057).",
+  "theo_mien_90ngay": {
+   "MN": {
+    "n": 90,
+    "w": 37,
+    "p_pct": 41.11,
+    "nen_pct": 43.04,
+    "loi_the_pp": -1.93,
+    "z": -0.368,
+    "CI95_pp": [
+     -12.22,
+     8.35
+    ]
+   },
+   "MT": {
+    "n": 90,
+    "w": 26,
+    "p_pct": 28.89,
+    "nen_pct": 35.2,
+    "loi_the_pp": -6.31,
+    "z": -1.247,
+    "CI95_pp": [
+     -16.23,
+     3.61
+    ]
+   },
+   "MB": {
+    "n": 90,
+    "w": 16,
+    "p_pct": 17.78,
+    "nen_pct": 23.73,
+    "loi_the_pp": -5.96,
+    "z": -1.321,
+    "CI95_pp": [
+     -14.8,
+     2.88
+    ]
+   }
+  },
+  "theo_mien_TOAN_BO": {
+   "MN": {
+    "n": 161,
+    "w": 69,
+    "p_pct": 42.86,
+    "nen_pct": 43.07,
+    "loi_the_pp": -0.22,
+    "z": -0.058,
+    "CI95_pp": [
+     -7.51,
+     7.08
+    ]
+   },
+   "MT": {
+    "n": 161,
+    "w": 56,
+    "p_pct": 34.78,
+    "nen_pct": 35.13,
+    "loi_the_pp": -0.35,
+    "z": -0.097,
+    "CI95_pp": [
+     -7.38,
+     6.69
+    ]
+   },
+   "MB": {
+    "n": 161,
+    "w": 29,
+    "p_pct": 18.01,
+    "nen_pct": 23.71,
+    "loi_the_pp": -5.7,
+    "z": -1.783,
+    "CI95_pp": [
+     -11.97,
+     0.56
+    ]
+   }
+  },
+  "VIF_thuc_nghiem_90ngay": 1.011,
+  "VIF_thuc_nghiem_toan_bo": 0.91
+ },
+ "Q6_he_thong_vs_ngau_nhien": {
+  "90ngay_LIVE_tat_ca_mien": {
+   "n": 270,
+   "w": 79,
+   "p_pct": 29.26,
+   "nen_pct": 33.99,
+   "loi_the_pp": -4.73,
+   "z": -1.633,
+   "CI95_pp": [
+    -10.42,
+    0.95
+   ]
+  },
+  "ket_luan_90ngay": "KHONG tach duoc khoi nen (|z|<1.96) — CHUA DU BANG CHUNG de noi he thong hon ngau nhien",
+  "moi_cua_so": {
+   "30": {
+    "n": 90,
+    "w": 27,
+    "p_pct": 30.0,
+    "nen_pct": 34.18,
+    "loi_the_pp": -4.18,
+    "z": -0.712,
+    "CI95_pp": [
+     -15.67,
+     7.31
+    ]
+   },
+   "60": {
+    "n": 180,
+    "w": 53,
+    "p_pct": 29.44,
+    "nen_pct": 34.08,
+    "loi_the_pp": -4.64,
+    "z": -1.24,
+    "CI95_pp": [
+     -11.97,
+     2.7
+    ]
+   },
+   "90": {
+    "n": 270,
+    "w": 79,
+    "p_pct": 29.26,
+    "nen_pct": 33.99,
+    "loi_the_pp": -4.73,
+    "z": -1.633,
+    "CI95_pp": [
+     -10.42,
+     0.95
+    ]
+   },
+   "120": {
+    "n": 360,
+    "w": 107,
+    "p_pct": 29.72,
+    "nen_pct": 33.93,
+    "loi_the_pp": -4.21,
+    "z": -1.687,
+    "CI95_pp": [
+     -9.1,
+     0.68
+    ]
+   },
+   "TAT_CA": {
+    "n": 483,
+    "w": 154,
+    "p_pct": 31.88,
+    "nen_pct": 33.97,
+    "loi_the_pp": -2.09,
+    "z": -0.969,
+    "CI95_pp": [
+     -6.31,
+     2.13
+    ]
+   }
+  },
+  "tai_lap_479_31_7pct": {
+   "2026-08-24": {
+    "n": 444,
+    "w": 144,
+    "pct": 32.43
+   },
+   "2026-08-25": {
+    "n": 447,
+    "w": 146,
+    "pct": 32.66
+   },
+   "2026-08-26": {
+    "n": 450,
+    "w": 146,
+    "pct": 32.44
+   },
+   "KET_LUAN": "KHONG khop chinh xac 479/31.7% bang loc don gian 'notes NOT LIKE backfill' o bat ky cutoff 24-26/08 nao (ra 444-450 dong, 32.4-32.7%). Chua tim duoc dinh nghia loc CHINH XAC da sinh ra con so goc trong mot script don le nao trong kho (RM-11: khong tai lap duoc bang loc hien co). KET LUAN DINH TINH van giong nhau: bach thu KHONG vuot nen ro rang (dao dong quanh 31-33% vs nen ~33-34%) o moi cutoff thu duoc."
+  },
+  "tai_lap_TOP10_4520o_KTC95": {
+   "trang_thai": "NOT_INDEPENDENTLY_REPRODUCED_IN_THIS_GATE",
+   "ly_do": "So nay do tren phuong phap TOTAL (rank 0..9 cua mo hinh TOTAL, 4520 o = tich mien x ngay x 10 bac), can script/du lieu rank rieng (vd nguon docs/TOTAL_METHOD_BENCHMARK_20260825.md) khong nam trong pham vi mot cong boi-canh nay tai lap trong thoi gian cho phep. KHONG khang dinh dung hay sai — de INDETERMINATE theo dung luat cua phien."
+  },
+  "n_can_90ngay_VIF": {
+   "+10pp": {
+    "mien_ngay": 87,
+    "ngay": 29.1
+   },
+   "+8pp": {
+    "mien_ngay": 136,
+    "ngay": 45.4
+   },
+   "+5pp": {
+    "mien_ngay": 349,
+    "ngay": 116.2
+   },
+   "+3pp": {
+    "mien_ngay": 969,
+    "ngay": 322.9
+   }
+  }
+ },
+ "TOM_TAT_KET_LUAN": {
+  "cau_hoi_chinh": "Hom nay (2026-09-06) la ngay BINH THUONG hay ngay LA?",
+  "verdict": "BINH THUONG tren moi thuoc do da kiem — khong co dau hieu bat thuong thong ke nao.",
+  "chi_tiet": [
+   "Q1: TOTAL 1/3 mien trung hom nay = ket qua PHO BIEN NHAT trong 30 ngay (14/30 ngay = 46,7%). Phan bo day du: 0/3=11 · 1/3=14 · 2/3=2 · 3/3=3.",
+   "Q2: model_count hom nay MN=15 (mode, 24/30 ngay) BINH THUONG · MT=13 (mode, 26/30 ngay) BINH THUONG — day la trang thai PHO BIEN NHAT cua MT, KHONG phai su co · MB=15 (7/30 ngay, cao hon mode=13) HOI TREN MUC THUONG THEO HUONG TOT.",
+   "Q3: MT DEGRADED_LIVE_DAY hom nay la CHUAN, khong phai bat thuong — 29/30 ngay gan day DEGRADED (96,7%), chuoi hien tai 9 ngay lien tiep, chuoi dai nhat trong 90 ngay = 63 ngay. MB dao dong (23/30 ngay DEGRADED = 76,7%), hom nay VALID (chuoi 4 ngay). MN on dinh nhat (chi 6/30 ngay DEGRADED, khong co chuoi lien tiep > 1 ngay trong 90 ngay).",
+   "Q4: KHONG co chuoi thua nao vuot nguong ngau nhien 95%. Da dung DP Markov (khong phai p^L don gian) de hieu chinh look-elsewhere (N co hoi bat dau chuoi trong cua so). Xac suat chuoi dai nhat da quan sat xay ra DUOI gia thiet thuan tuy ngau nhien trong 90 phep thu: MN (L=5) = 92,9% · MT (L=9) = 47,1% · MB (L=18) = 13,3% — ca ba deu > 5%, KHONG bac bo duoc gia thiet ngau nhien cho bat ky mien nao, ke ca MB la mien gan nguong nhat.",
+   "Q5: So sanh 3 mien 90 ngay LIVE (loai 90 bundle backfill), nen rieng tung mien (_v11057 style tu prizes_json+tail_db+tail_g8, KHONG dung 1/100): MN 41,1% vs nen 43,0% (z=-0,37) · MT 28,9% vs nen 35,2% (z=-1,25) · MB 17,8% vs nen 23,7% (z=-1,32). Ca 3 mien: KHONG mien nao khac nen o muc 95%; ca 3 déu am (thap hon nen), MB gan nguong nhat nhung van chua qua nguong.",
+   "Q6: 90 ngay LIVE toan he thong: 79/270 = 29,26% vs nen 33,99% · loi the -4,73pp · CI95 [-10,42pp; +0,95pp] · z=-1,63 => KHONG tach duoc khoi nen o muc 95%, va CI hep den muc LOAI TRU moi loi the > +0,95pp. TAT CA 5 cua so kiem (30/60/90/120/TOAN BO deu >=30 ngay du lieu) déu cho loi_the AM (-2,09pp den -4,73pp). KET LUAN PHAI NOI THANG: TRONG 90 NGAY GAN NHAT, HE THONG KHONG HON NGAU NHIEN — va xu huong nghieng ve DUOI nen chu khong phai bang nen, du chua du manh de noi 'te hon ngau nhien' o muc y nghia 95%.",
+   "RM-11 kiem lai so cu: '479 bundle LIVE 31,7%' (25/08) KHONG tai lap chinh xac bang loc don gian notes NOT LIKE backfill (ra 444-450 dong, 32,4-32,7% o cac cutoff 24-26/08) — chua tim duoc dinh nghia loc chinh xac trong mot script don le nao. Dinh tinh van giong: khong vuot nen. So 'TOP-10 TOTAL 4.520 o KTC95' KHONG duoc tai lap doc lap trong cong nay (ngoai pham vi — can du lieu rank rieng cua phuong phap TOTAL) => INDETERMINATE, khong khang dinh dung/sai.",
+   "Phat hien phu: dem lai 'Phase 1.5 backfill' = 90 dong (KHONG phai 91 nhu context truoc da neu) — can luu y neu dung con so 91 o noi khac."
+  ],
+  "canh_bao_khong_thuoc_pham_vi_cong_nay": "Bundle MN hom nay TRUNG (73) qua co che dao #1(04) xuong lay #2(73) da duoc ghi nhan o V11169/context truoc — co che nay la CAU HOI RIENG (co dung khong, co he thong khong), KHONG thuoc pham vi 'boi canh ngay thuong/la' cua Cong 11. Cong 11 CHI xac nhan: 1/3 la ket qua pho bien, khong phai la ket qua hiem."
+ }
+}

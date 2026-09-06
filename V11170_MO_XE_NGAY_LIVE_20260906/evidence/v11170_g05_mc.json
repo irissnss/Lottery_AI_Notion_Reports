@@ -1,0 +1,81 @@
+{
+  "cong": "V11170 Cong 5 - kiem chung ket luan V11169 (bundle 837 MN model_count 14 vs 15)",
+  "gio_ghi_VN": "2026-09-06 22:xx (phien mo xe)",
+  "verdict_dut_khoat": "(a) BUNDLE BI GHI LAI VA MODEL_COUNT DA DOI THAT (14->15), NHUNG bach_thu KHONG doi (73 ca hai lan) va co che ghi lai la THIET KE CO CHU DICH (t10_chot), khong phai loi ngoai y. V11169 KHONG can PRJ-RETRACTION-001 vi so '14' va co che '3 giay' no neu la DUNG tai thoi diem doc; can BO SUNG (khong phai rut lai) rang do la gia tri DRAFT truoc t10_chot, khong phai gia tri cuoi cung.",
+  "cau_1_bi_ghi_lai_khong": {
+    "tra_loi": "CO. Bundle 837 duoc GHI 2 LAN trong ngay, khong phai 1 lan.",
+    "lan_1": {
+      "luc": "2026-09-06 05:26:02 VN (= 2026-09-05 22:26:02 UTC)",
+      "boi_ham": "scheduler.py (khoi sau _run_ai_models_predict, run_source=auto_daily) -> main.generate_final_bundle(today,'MN',notes='auto_auto_daily') -> database.save_final_bundle() INSERT (bundle_version=1)",
+      "bang_chung_log": "scheduler_logs id=282259 log_time=2026-09-05 22:26:02 UTC: '📦 Auto final bundle generated: MN BT=73 (v1)'",
+      "gia_tri": "bach_thu=73, bundle_version=1, model_count suy ra =14 (xem cau 3)"
+    },
+    "lan_2": {
+      "luc": "2026-09-06 15:40:00 VN (= 2026-09-06 08:40:00 UTC) -- dung moc T_CHOT_MARKS['MN']='15:40' trong _v10782_freeze.py",
+      "boi_ham": "scheduler.py:7091 _run_t10_chot_job('MN') -> main.generate_final_bundle(today,'MN',notes='v10782_t10_chot') (scheduler.py:7112) -> database.save_final_bundle() UPSERT ON CONFLICT DO UPDATE (bundle_version 1->2)",
+      "bang_chung_log": "scheduler_logs id=282462 log_time=2026-09-06 08:40:00 UTC: '🔒 [T10_CHOT] MN 2026-09-06: bundle chốt BT=73 (v2) — mốc FINAL 15:45 sẽ khoá'",
+      "cot_bi_ghi_de_theo_ma_nguon": "database.py dong 4658-4679 (ON CONFLICT DO UPDATE SET): bach_thu, lo2, lo3, xien2, xien3, policy_version_ref, source_predictions_json, generation_method, consensus_level, model_count, top_score, status, notes, bundle_version, bach_thu_status(->PENDING), lo2_status(->PENDING), lo3_status, xien2_status, xien3_status, verified_at(->NULL), updated_at",
+      "gia_tri": "bach_thu=73 (KHONG DOI so voi lan 1), model_count=15 (DA DOI so voi lan 1: 14->15)"
+    },
+    "su_kien_thu_3_KHONG_phai_ghi_lai_noi_dung": {
+      "ham": "database.verify_final_bundle() dong 4812, cau UPDATE that su o dong 4932-4943",
+      "luc": "2026-09-06 16:36:37 VN",
+      "cac_cot_bi_dong": "CHI: bach_thu_status, lo2_status, lo3_status, xien2_status, xien3_status, verified_at, updated_at -- DOC TRUC TIEP tu code, KHONG dong bach_thu/model_count/lo2/lo3/source_predictions_json.",
+      "y_nghia": "updated_at=verified_at=16:36:37 hien tai trong final_bundles KHONG chung minh noi dung doi luc 16:36 -- no chi la lan cuoi cung cot updated_at bi cham vao, boi buoc verify, KHONG phai buoc doi so lieu."
+    }
+  },
+  "cau_2_neu_doi_khi_verify": {
+    "tra_loi": "TIEN DE SAI. model_count KHONG doi luc verify (16:36:37). No doi luc t10_chot (15:40:00 VN), TRUOC verify gan 1 tieng. Verify chi dong 7 cot trang thai + verified_at + updated_at, khong dong model_count.",
+    "danh_gia_muc_do_du_da_sua_tien_de": "Van la mot phat hien P1 that: /du-doan va moi API cong khai tra ve bat ky ban ACTIVE nao dang co trong final_bundles, KHONG phan biet 'ban nhap truoc t10_chot' voi 'ban chot sau t10_chot'. Trong ~10 gio 14 phut (05:26:02->15:40:00) hom nay, bat ky ai xem /du-doan MN deu thay model_count=14 (va toan bo source_predictions_json phien ban 1, gom ranked_numbers/voters/score_breakdown tinh TU 14 model, KHONG co combo-super). Sau 15:40 con so nay doi thanh 15 MA KHONG CO DAU VET nao trong final_bundles rang no da tung la 14 -- chi tim lai duoc nho doc predictions.created_at + scheduler_logs (2 nguon phu, khong phai thiet ke cho muc dich audit nay)."
+  },
+  "cau_3_model_count_co_tung_la_14_that_khong": {
+    "tra_loi": "CO, GAN NHU CHAC CHAN LA 14 that, KHONG phai agent doc sai sang nay.",
+    "bang_chung_doc_lap_1_predictions_timestamp": "predictions WHERE date=2026-09-06 AND target_region=MN: 15 model 'canonical output' (danh sach _CANONICAL_OUTPUT_MODELS trong main.py dong 9693-9699) co created_at, sap xep: 14 model dau tien deu <= 2026-09-06T05:26:02 (moc created_at cua bundle 837), CHI DUY NHAT combo-super co created_at=2026-09-06T05:26:05.288027+07:00 -- SAU moc bundle 3.288 giay.",
+    "bang_chung_doc_lap_2_scheduler_logs": "id=282254 va id=282258 (log_time=2026-09-05 22:26:02 UTC = 05:26:02 VN, DUNG GIAY VOI bundle created_at): '⏱️ Combo Super → MN: TIMEOUT >300s; continue without blocking bundle' va '🚨 FAILED MODELS MN: combo-super(TIMEOUT>300s)'. Dong ngay sau id=282259 ghi 'Auto final bundle generated: MN BT=73 (v1)' -- tuc bundle v1 duoc tao NGAY SAU KHI he thong da coi combo-super la 'FAILED/timeout', truoc khi ban ghi predictions cua no thuc su duoc commit 3.288s sau do.",
+    "ket_luan": "Ca hai nguon doc lap deu khop voi claim cua V11169 (khoang cach ~3 giay giua luc combo-super ghi predictions va luc bundle chup snapshot). V11169 KHONG sai o cho nay."
+  },
+  "cau_4_do_30_ngay_bundle_bi_ghi_lai": {
+    "pham_vi": "final_bundles WHERE date >= 2026-08-07 (30 ngay, toi 2026-09-06), 93 dong (3 mien x 31 ngay - 0 thieu)",
+    "so_lieu": {
+      "tong_dong": 93,
+      "so_dong_updated_at_khac_created_at": 93,
+      "so_dong_bundle_version_ge_2": 89,
+      "ty_le_version_ge_2": "89/93 = 95.7%"
+    },
+    "giai_thich_93_93_updated_khac_created": "KHONG PHAI 93/93 deu bi 'ghi de noi dung' -- verify_final_bundle() tu no cung luon cham updated_at (khong dong model_count/bach_thu) nen moi dong (ke ca 4 dong con version=1) deu co updated_at != created_at. Chi so dung de do 'noi dung bi ghi de it nhat 1 lan' la bundle_version>=2, tuc 89/93 (95.7%).",
+    "vi_du_bach_thu_KHONG_doi_giua_lan_dau_va_lan_chot_hom_nay": "MN hom nay: log v1 (05:26:02) da ghi BT=73; log v2/t10_chot (15:40:00) van BT=73 -- CHUNG MINH TRUC TIEP rang o NGAY 2026-09-06 con so du doan cong bo cho nguoi dung (bach_thu) KHONG doi giua 2 lan ghi, chi co model_count/top_score/danh sach voter (noi dung source_predictions_json) doi.",
+    "gioi_han_khong_chung_minh_duoc": "KHONG co bang du lieu luu snapshot cua source_predictions_json / lo2 / lo3 / xien2 / xien3 tai moi bundle_version cho 92 dong con lai trong 30 ngay -- scheduler_logs chi tinh co ghi 'BT=' (bach_thu) cho tung lan generate_final_bundle, KHONG ghi model_count/lo2/lo3/xien2/xien3/top_score. Vi vay: 'bach_thu co bao gio doi giua v1 va v2 o NGAY KHAC hay khong' la NOT PROVEN / INDETERMINATE cho 92 dong con lai -- can quet toan bo scheduler_logs message LIKE 'Auto final bundle generated%' VA 'T10_CHOT%' cho tung ngay/mien roi so sanh BT giua 2 dong log, viec nay chua lam trong cong nay vi ngoai pham vi cau hoi duoc giao (chi hoi ve bundle 837 MN hom nay)."
+  },
+  "cau_5_bundle_version_nghia_la_gi": {
+    "dinh_nghia_code": "database.py save_final_bundle(): next_version = (existing['bundle_version'] or 1) + 1 if existing else 1. Tuc bundle_version dem SO LAN save_final_bundle() THANH CONG (khong bi FREEZE GUARD hay FREEZE-55 chan) cho 1 cap (date,region), bat dau tu 1.",
+    "co_bundle_nao_version_ge_3_khong": "CO nhung RAT HIEM va NGOAI 30 ngay gan day: toan bo final_bundles (573 dong tu truoc den nay) chi co DUNG 2 dong bundle_version=3: id=461 (2026-07-05 MN, bach_thu=71, model_count=15) va id=612 (2026-07-30 MN, bach_thu=86, model_count=15). Phan bo day du: version=1: 306 dong, version=2: 265 dong, version=3: 2 dong. Trong 30 ngay gan day (2026-08-07..2026-09-06) KHONG co dong nao version>=3."
+  },
+  "cau_6_verdict": {
+    "chon": "(a)",
+    "ly_do_khong_chon_b": "Khong the noi 'agent sang nay doc sai' -- hai nguon bang chung doc lap (predictions.created_at va scheduler_logs id=282254/282258/282259) deu xac nhan model_count=14 la GIA TRI THAT cua bundle o thoi diem ~10:04 sang nay (truoc t10_chot 15:40).",
+    "ly_do_khong_chon_c": "Co du bang chung tai lap duoc (2 nguon doc lap + timestamp chinh xac toi mili-giay) de ket luan dut khoat, khong can ghi INDETERMINATE.",
+    "ly_do_chon_a_co_dieu_chinh": "Bundle 837 THAT SU bi ghi lai (2 lan, co bang chung log ro rang) va model_count THAT SU doi 14->15. Nhung day LA CO CHE THIET KE CO CHU DICH (t10_chot = 'regen bundle 1 lan cuoi truoc moc freeze', docstring scheduler.py:7091-7096), KHONG PHAI mot loi ngoai y hay mot vu ghi de am tham ngoai thiet ke. Muc do nghiem trong THAP HON 'P0 du lieu da cong bo bi sua sai' vi: (i) bach_thu -- con so du doan THAT SU hien thi cho nguoi dung -- KHONG doi (73 ca 2 lan, co bang chung log truc tiep); (ii) co che nay chay o TRUOC moc t10_chot/freeze, dung dung muc dich thiet ke, khong phai sau khi da 'chot' chinh thuc. Nhung VAN LA MOT P1 THAT SU can bao cao: khong co bang lich su/audit trail cho final_bundles, nen BAT KY ai doc final_bundles TRUOC moc t10_chot cua mot ngay se thay so lieu (model_count, danh sach voter, top_score, toan bo source_predictions_json) SE BI GHI DE VO HINH va KHONG THE TRUY VET duoc sau nay tru phi lam dung viec to hop predictions.created_at + scheduler_logs nhu cong nay vua lam. Day la mau hinh XAY RA HANG NGAY (89/93 = 95.7% bundle trong 30 ngay co it nhat 1 lan ghi de noi dung)."
+  },
+  "danh_gia_ve_V11169": {
+    "co_can_PRJ_RETRACTION_001_khong": "KHONG can rut lai theo dung nghia PRJ-RETRACTION-001 (do la co che cho SO SAI, va so 14 + co che '3 giay' cua V11169 da duoc CHUNG MINH DUNG boi 2 nguon doc lap trong cong nay).",
+    "can_bo_sung_gi": "Bo sung 1 cau vao V11169 (khong phai rut lai): 'model_count=14 la gia tri DRAFT/pre-t10_chot cua bundle 837, ton tai tu 05:26:02 den 15:40:00 VN (~10h14p). Sau 15:40:00 VN, job t10_chot da REGEN bundle (bundle_version 1->2) va model_count chinh thuc la 15 (bach_thu KHONG doi, van la 73). Doc lai bundle sau 15:40 VN se luon thay 15, khong phai 14 -- day KHONG phai mau thuan voi quan sat luc 10:04, ma la 2 thoi diem doc khac nhau tren cung 1 bundle da duoc thiet ke de ghi de truoc moc chot.'"
+  },
+  "phat_hien_them_ngoai_pham_vi_cau_hoi__can_bao_rieng": [
+    {
+      "muc": "P1",
+      "tom_tat": "final_bundles KHONG co bang lich su/audit cho tung bundle_version -- khi t10_chot ghi de, toan bo noi dung ban truoc (source_predictions_json, model_count, top_score, danh sach voters) bien mat vinh vien, chi con lai 'bach_thu' (neu co) trong scheduler_logs neu dong log do con ton tai va khop tu khoa.",
+      "bang_chung": "database.py dong 4647-4686 (UPSERT khong luu ban cu); khong tim thay bang final_bundles_history/audit trong PRAGMA table_info.",
+      "neu_khong_xu_thi_sao": "Moi audit/forensic doi voi bundle CUA NGAY DA QUA se KHONG THE biet duoc gia tri truoc-t10_chot la gi, tru phi con predictions.created_at (co the bi don don rac/archival sau nay) va scheduler_logs (khong day du cot, chi co bach_thu khong co model_count/lo2/lo3)."
+    },
+    {
+      "muc": "P2",
+      "tom_tat": "/du-doan va API cong khai khong phan biet 'bundle nhap truoc t10_chot' voi 'bundle chot sau t10_chot' -- ca hai deu tra ve nhu nhau (status='ACTIVE'), khong co co/nhan hien thi 'DU LIEU CHUA CHOT, se doi luc 15:40'.",
+      "bang_chung": "database.get_final_bundle() dong 4711-4729 chi loc WHERE status='ACTIVE', khong loc theo notes/bundle da qua t10_chot hay chua.",
+      "neu_khong_xu_thi_sao": "Nguoi dung xem /du-doan truoc gio chot co the thay mot bo model_count/top_score/danh sach voters se bi thay doi vai gio sau ma khong co canh bao nao."
+    }
+  ],
+  "gioi_han_cong_nay__khong_ket_luan_duoc": [
+    "KHONG kiem tra duoc bach_thu co tung doi giua v1/v2 o CAC NGAY KHAC ngoai hom nay (2026-09-06) trong pham vi 30 ngay -- can quet toan bo scheduler_logs '%Auto final bundle generated%' va '%T10_CHOT%' cho tung ngay/mien roi so sanh, chua lam vi ngoai pham vi cau hoi duoc giao.",
+    "KHONG the xac nhan model_count that su la 14 trong CHINH ban ghi final_bundles version=1 (vi ban ghi do da bi UPSERT ghi de, khong con luu duoc) -- ket luan '14' dua tren suy luan tu 2 nguon doc lap (predictions.created_at + scheduler_logs), khong phai doc truc tiep tu 1 cot con luu 'model_count=14' o dau do. Day la suy luan GAN NHU CHAC CHAN (2 bang chung doc lap khop khit toi mili-giay) nhung KHONG PHAI bang chung truc tiep 100%."
+  ]
+}

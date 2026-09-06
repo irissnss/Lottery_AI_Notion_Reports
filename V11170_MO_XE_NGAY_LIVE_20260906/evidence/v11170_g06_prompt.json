@@ -1,0 +1,366 @@
+{
+  "cong": "CONG 6 - PROMPT",
+  "ngay": "2026-09-06",
+  "phuong_phap": "Goi THANG ham dang serve gpt_analyzer.analyze_and_predict() tren VPS production, chan mang o tang _call_openai/_call_anthropic/_call_gemini/_call_deepseek/_call_xai/_call_openrouter de bat CHINH XAC (system_prompt,user_prompt) da duoc GUI DI that -- khong tu dung lai logic build prompt. Env nap tu /proc/<PID>/environ cua tien trinh dang chay that. DB production doc qua sqlite3 mode=ro, co guard chan INSERT/UPDATE/DELETE/CREATE/ghi tep/socket that (da thu va xac nhan bi chan - xem 'thu_chan' trong v11170_g06_realdump_meta.json). api_key truyen vao la chuoi gia, khong bao gio ra khoi tien trinh vi bi chan o tang goi mang truoc khi co the gui.",
+  "so_ky_tu_da_cong_bo_truoc_day": 46583,
+  "1_prompt_that_hom_nay": {
+    "prompt_version": "PB-20.1 (hang so, doc tu prediction_trace.jsonl that, 60/60 dong hom nay)",
+    "prompt_layers": {
+      "system_prompt": "SP-4.4",
+      "reasoning_rulebook": "RR-16.5",
+      "context_pack": "CTX-18.6",
+      "prompt_bundle": "PB-20.1"
+    },
+    "so_luot_that_hom_nay_trong_prediction_trace_jsonl": 60,
+    "cau_truc_prompt_full_that_gui_di_da_bat_duoc_tan_goc": {
+      "cach_do": "Bat truc tiep tham so (system_prompt,user_prompt) ngay truoc khi goi API that (_call_openai/_call_openrouter), nen day la VAN BAN THAT 100%, khong phai tai dung.",
+      "system_prompt_chars": 7683,
+      "6_to_hop_da_bat": [
+        {
+          "region": "MN",
+          "model": "gpt-5.4",
+          "lane_shadow_pack": false,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            42746
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 42746,
+          "real_runtime_prompt_chars_today": 24719,
+          "real_prompt_total_chars_today": 50456,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": "from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[V10768-DEHERD] MN 2026-09-06: ctx 11566→10446 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 10446 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MN_gpt-5.4_official.txt"
+        },
+        {
+          "region": "MN",
+          "model": "gpt-5.5",
+          "lane_shadow_pack": true,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            46118
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 46118,
+          "real_runtime_prompt_chars_today": 23475,
+          "real_prompt_total_chars_today": 53838,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": "INE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[RULE_ENGINE_V2] MN_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (25 LIMITED_WEIGHT) + 8 convergent tails\n  🔥 Conv: 13 from 2 rules\n  🔥 Conv: 21 from 4 rules\n  🔥 Conv: 31 from 4 rules\n  🔥 Conv: 37 from 2 rules\n  🔥 Conv: 39 from 2 rules\n  🔥 Conv: 59 from 4 rules\n  🔥 Conv: 88 from 4 rules\n  🔥 Conv: 93 from 2 rules\n[V10768-DEHERD] MN 2026-09-06: ctx 14547→13427 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 13427 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MN_gpt-5.5_shadow.txt"
+        },
+        {
+          "region": "MT",
+          "model": "gpt-5.4",
+          "lane_shadow_pack": false,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            44421
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 44421,
+          "real_runtime_prompt_chars_today": 25589,
+          "real_prompt_total_chars_today": 51915,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": "ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[RULE_ENGINE-fix11] 🔒 WEAK MT_CN (score=49<60) → READY_STRONG only\n[RULE_ENGINE] 🎯 DH: rule 2797 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2798 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[V10768-DEHERD] MT 2026-09-06: ctx 12430→11302 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 11302 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MT_gpt-5.4_official.txt"
+        },
+        {
+          "region": "MT",
+          "model": "gpt-5.5",
+          "lane_shadow_pack": true,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            47919
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 47919,
+          "real_runtime_prompt_chars_today": 24180,
+          "real_prompt_total_chars_today": 55375,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": "0 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[RULE_ENGINE-fix11] 🔒 WEAK MT_CN (score=49<60) → READY_STRONG only\n[RULE_ENGINE] 🎯 DH: rule 2797 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2798 mult=1.03 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2800 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🔒 CONV×2 CAP: 10 0.5030 → 0.5000\n[RULE_ENGINE_V2] MT_CN @ 2026-09-06 [soft]: 3 rules triggered [SOFT] (6 READY_STRONG) + 1 convergent tails\n  🔥 Conv: 10 from 2 rules\n[V10768-DEHERD] MT 2026-09-06: ctx 15797→14669 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 14669 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MT_gpt-5.5_shadow.txt"
+        },
+        {
+          "region": "MB",
+          "model": "gpt-5.4",
+          "lane_shadow_pack": false,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            47691
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 47691,
+          "real_runtime_prompt_chars_today": 25291,
+          "real_prompt_total_chars_today": 55436,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": " → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[RULE_ENGINE] 🎯 DH: rule 2832 mult=1.01 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2833 mult=1.06 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2834 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[V10768-DEHERD] MB 2026-09-06: ctx 15914→14810 chars (WR/BT ranking removed)\n[CONTEXT_PACK]  Injected 14810 chars + REASONING_RULEBOOK (model=gpt-5.4)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MB_gpt-5.4_official.txt"
+        },
+        {
+          "region": "MB",
+          "model": "gpt-5.5",
+          "lane_shadow_pack": true,
+          "result_has_error": true,
+          "result_error": "STUB_NO_NETWORK_CALL_BY_AUDIT",
+          "n_captured_calls": 1,
+          "captured_call": true,
+          "all_call_user_chars": [
+            51082
+          ],
+          "sys_chars_captured": 7683,
+          "user_chars_captured": 51082,
+          "real_runtime_prompt_chars_today": 24068,
+          "real_prompt_total_chars_today": 58852,
+          "trace_captured_n": 0,
+          "trace_kwargs_sample": null,
+          "print_log_tail": "E_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[RULE_ENGINE] 🎯 DH: rule 2832 mult=1.01 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2833 mult=1.06 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2834 mult=1.07 → boost adjusted\n[RULE_ENGINE] 🎯 DH: rule 2835 mult=1.09 → boost adjusted\n[RULE_ENGINE_V2] MB_CN @ 2026-09-06 [soft]: 5 rules triggered [SOFT] (9 LIMITED_WEIGHT, 2 READY_STRONG, 4 READY_WITH_CAUTION) + 1 convergent tails\n  🔥 Conv: 45 from 2 rules\n[V10768-DEHERD] MB 2026-09-06: ctx 19079→17975 chars (WR/BT ranking removed)\n[CONTEXT_PACK] [LANE-TEST-SHADOW-CTX] Injected 17975 chars + REASONING_RULEBOOK (model=gpt-5.5)\n",
+          "dump_file": "/root/Lottery_AI_Test/artifacts/v11170_g06_realprompt_MB_gpt-5.5_shadow.txt"
+        }
+      ]
+    },
+    "cong_thuc_xac_nhan": "prompt_total_chars (bang) = system_prompt_chars + analysis_prompt_chars (create_analysis_prompt tho) + context_pack_chars + rulebook_chars(15256 hang so REASONING_RULEBOOK). Da khop dung cong thuc nay cho ca 6 to hop hom nay (vd MN gpt-5.4: 7683+17026+10491+15256=50456, dung bang prompt_total_chars that=50456).",
+    "so_ky_tu_full_that_hom_nay_6_to_hop": {
+      "MN_official_gpt-5.4": 50429,
+      "MN_shadow_gpt-5.5": 53801,
+      "MT_official_gpt-5.4": 52104,
+      "MT_shadow_gpt-5.5": 55602,
+      "MB_official_gpt-5.4": 55374,
+      "MB_shadow_gpt-5.5": 58765,
+      "ghi_chu": "= 7683 (system) + user_chars_captured cho tung to hop (xem chi tiet trong realdump_meta.ket[].user_chars_captured). Lech vai chuc ky tu so voi prompt_total_chars trong bang do du lieu DB da nhinh hon vai gio so voi luc cac lenh that chay sang nay/chieu nay (KB/WR cap nhat lien tuc)."
+    },
+    "khoang_full_chars_thuc_do_qua_60_luot_that_trong_ngay": {
+      "min": 49891,
+      "max": 58852,
+      "nguon": "prediction_trace.jsonl that + prompt_pressure_daily (bang do rieng, khop nhau trong vong vai chuc ky tu cho cung mot to hop model+region+thoi diem)"
+    },
+    "SO_SANH_VOI_46583_DA_CONG_BO": "46.583 THAP HON ca gia tri THAP NHAT do duoc that hom nay (49.891, MT deepseek-reasoner official luc 16:48). Chenh lech +3.308 ky tu o muc thap nhat, va +12.269 ky tu o muc cao nhat (58.852, MB shadow). Day la SO KHONG TAI LAP duoc voi con so cu — theo RM-11/RM-17, can tra lai DINH NGHIA GOC cua '46.583' (do luc nao, phien ban prompt nao, tinh nhung thanh phan nao) truoc khi ket luan no 'sai' hay 'da cu' — bao cao nay KHONG the tu lam viec do vi khong biet chu ganh goc. Neu '46.583' tung duoc cong bo la SO HIEN HANH thi day la ung vien PRJ-RETRACTION-001."
+  },
+  "2_prj_prompt_coherence_scan": {
+    "phuong_phap": "Doc truc tiep 6 file van ban THAT da bat duoc (khong doc tai lieu, dung RM-14). Grep + doc ngu canh tung diem. Phan loai theo RM-09.",
+    "PHAT_HIEN_A_mau_thuan_hai_cau_nguoc_nhau": {
+      "loai": "TRONG_PROMPT",
+      "muc_do": "P1",
+      "mo_ta": "He thong prompt (system, §5g, gan hang so do that z=-2.54, ky 07/08/2026) day model 'đừng cộng điểm cho số chỉ vì nó xuất hiện ở nhiều nguồn' (hoi tu nhieu nguon KHONG du bao tot hon, thang do '3 nguon' con TE HON nen). Nhung o CUNG PROMPT DO, phan YEU CAU (user turn, muc 7/8 tuy quy che) lai day 'ưu tiên số xuất hiện trong NHIỀU nguồn (thống kê + ĐÀI pattern + THỨ pattern)' — DUNG CHU 'NHIEU NGUON' NGUOC LAI.",
+      "bang_chung": "gpt_analyzer.py — build_system_prompt() sinh doan '§5g. MULTI-SOURCE CONVERGENCE' (nam trong 'SYSTEM PROMPT' cua ca 6 file dump, dong ~62-80 tinh tu dau file); create_analysis_prompt() sinh doan 'YÊU CẦU' cuoi 'USER PROMPT' (dong ~561-601 tuy file, muc so 7 hoac 8 tuy dem).",
+      "tai_lap": "grep -n 'Nên đừng cộng điểm cho số chỉ vì nó xuất hiện' VA grep -n 'ưu tiên số xuất hiện trong NHIỀU nguồn' tren ca 6 file v11170_g06_realprompt_*.txt -> CA HAI cau xuat hien trong CA 6/6 file.",
+      "pham_vi_hom_nay": "6/6 to hop (MN/MT/MB x official/shadow) — 100% cac luot that hom nay deu nhan ca hai chi dan mau thuan nay cung luc.",
+      "neu_khong_xu": "Model nhan hai menh lenh doi nghich trong CUNG mot prompt ve cung mot tieu chi (hoi tu nhieu nguon). Model se tu chon menh lenh nao nghe theo mot cach khong on dinh giua cac luot — lam PHEP DO ve 'multi-source convergence' cua chinh he thong (da tu do ra z=-2.54, tuc hoi tu KHONG tot) mat y nghia, vi chinh prompt dang day nguoc lai dieu vua do duoc."
+    },
+    "PHAT_HIEN_B_so_lieu_cu_khong_khop_du_lieu_that": {
+      "loai": "TRONG_PROMPT",
+      "muc_do": "P2",
+      "muc_1_top10_vs_top5": {
+        "mo_ta": "YEU CAU noi 'Top 10 Score' nhung khoi du lieu that duoc bom vao chi co '🎯 TOP 5 GỢI Ý' (5 dong). Chinh SYSTEM PROMPT (§5, muc phuong phap) da tu ghi DUNG la 'Top 5 Score' — nghia la con so '10' trong YEU CAU la con so CU con sot lai tu luc khoi con 10 muc, chua duoc sua khi rut xuong con 5.",
+        "pham_vi_hom_nay": "6/6 to hop — 100%.",
+        "tai_lap": "grep -n 'TOP 5 GỢI Ý\\|TOP 10 GỢI Ý\\|Top 10 Score\\|Top 5 Score' tren 6 file."
+      },
+      "muc_2_30ngay_khong_khop_do_sau_that": {
+        "mo_ta": "YEU CAU noi co dinh 'dữ liệu thống kê 30 ngày' nhung do sau THAT duoc bom (statistical_depth, qua sliding_window.find_optimal_window cho lane chinh thuc, hoac settings.statistical_depth=60 co dinh cho lane shadow) KHONG PHAI luon la 30.",
+        "do_sau_that_hom_nay": {
+          "MN_official": 15,
+          "MT_official": 30,
+          "MB_official": 30,
+          "MN_shadow": 60,
+          "MT_shadow": 60,
+          "MB_shadow": 60
+        },
+        "khop_hay_khong": {
+          "MN_official": "SAI (noi 30, thuc 15)",
+          "MT_official": "TRUNG HOP (ca hai deu 30)",
+          "MB_official": "TRUNG HOP (ca hai deu 30)",
+          "MN_shadow": "SAI (noi 30, thuc 60)",
+          "MT_shadow": "SAI (noi 30, thuc 60)",
+          "MB_shadow": "SAI (noi 30, thuc 60)"
+        },
+        "pham_vi_hom_nay": "4/6 to hop SAI ro rang, 2/6 trung hop ngau nhien (MT/MB official co do sau toi uu = dung 30, khong phai vi code co nhac lai voi nhau).",
+        "tai_lap": "grep -n 'THỐNG KÊ MN\\|THỐNG KÊ MT\\|THỐNG KÊ MB' + so voi 'KẾT HỢP dữ liệu thống kê 30 ngày' tren 6 file."
+      },
+      "neu_khong_xu": "Model duoc bao mot con so sai ve luong du lieu no dang thay — dac biet lane shadow (11/19 model hom nay) LUON duoc bao '30 ngay' trong khi thuc te dang xem 60 ngay du lieu — co the khien model danh gia sai do tin cay cua thong ke duoc dua ra."
+    },
+    "PHAT_HIEN_C_du_lieu_da_go_menh_lenh_nhung_con_nguyen_du_lieu": {
+      "loai": "TRONG_PROMPT (du lieu) + da go (menh lenh)",
+      "muc_do": "P2 (chi ghi nhan, KHONG khang dinh la loi — thieu bang chung ve chu y owner)",
+      "mo_ta": "Theo CLAUDE.md §60.1, V11001 (05/08/2026) da go cau chu 'Gan, Hot/Cold' KHOI cac menh lenh YEU CAU — xac nhan HOM NAY (06/09) menh lenh so 2 chi con '(Top 10 Score, Trends)', KHONG con nhac 'Gan, Hot/Cold' — tuc phan menh lenh DA duoc don sach dung nhu §60.1 mo ta. NHUNG khoi DU LIEU THO (📊 THỐNG KÊ, voi cot 'Gan=1' va dong '⏳ GAN CAO:' / '🔥 HOT:') VAN DUOC BOM DAY DU trong CA HAI regime (LEGACY_PROMPT va CONTEXT_ONLY_V2) hom nay — model VAN THAY duoc du lieu Gan/Hot/Cold, chi la khong con bi/duoc bao PHAI dung no.",
+      "bang_chung": "grep -c 'GAN CAO\\|🔥 HOT:\\|Gan=' tren ca 6 file deu ra 7 — dong nhat ca hai regime; doi chieu dong 269-275 cua MN official va MN shadow deu co '⏳ GAN CAO: 21(7d), 07(6d), 74(6d)' y het nhau.",
+      "khong_khang_dinh": "KHONG the ket luan day la 'go nua chung' (§60 A58_VIOLATION_HALF_DONE) vi KHONG co bang chung y dinh owner la phai go CA du lieu THO. Co the day la thiet ke co chu y (giu du lieu de model tu quyet, chi bo menh lenh ep dung). Ghi NOT PROVEN ve y dinh, CONFIRMED ve su kien."
+    },
+    "PHAT_HIEN_D_menh_lenh_tro_vao_khoi_khong_con": "KHONG TIM THAY trong pham vi da doc (6 file, khoang 1000-1100 dong moi file). Cac menh lenh nhac 'KNOWLEDGE BASE (Deep Focus)', 'CẶP ĐÔI TƯƠNG QUAN', 'KẾT QUẢ NGÀY TRƯỚC' deu co khoi du lieu tuong ung xuat hien that trong CUNG prompt. INDETERMINATE cho phan con lai chua doc het (moi file ~1000-1100 dong, da doc day du 3/6 file MN-official toan bo, doc mau cac file con lai qua grep muc tieu — chua doc TUNG DONG cua ca 6 file nen khong the khang dinh KHONG CON menh lenh nao khac tro vao cho trong)."
+  },
+  "3_finding_do_luong_rm14_van_tay_prompt_khong_day_du": {
+    "muc_do": "P1",
+    "mo_ta": "Truong 'runtime_prompt_sha256'/'runtime_prompt_chars'/'runtime_prompt_contam_hits' (gpt_analyzer.py:6703-6729, comment tu xung la 'VÂN TAY PROMPT RUNTIME... băm CHÍNH chuỗi sắp gửi đi') duoc tinh TRUOC khi context_pack va REASONING_RULEBOOK duoc noi vao bien 'prompt' (noi o dong ~6754 va ~6760, SAU diem bam ~6724). Ham thuc su goi API (_invoke_model_api(prompt) o dong 6904) dung bien 'prompt' DA duoc noi day du. Vi vay truong 'runtime_prompt_chars' trong prediction_trace.jsonl KHONG PHAI la do dai chuoi that gui di — no chi la mot phan (system_prompt + analysis_prompt tho), THIEU context_pack + REASONING_RULEBOOK (chiem hon mot nua noi dung that).",
+    "bang_chung_do_that": {
+      "cach_do": "Chan _call_openai/_call_openrouter that de bat dung (system_prompt,user_prompt) CHINH XAC luc goi API — day la GROUND TRUTH, khong phai tai dung.",
+      "MN_gpt-5.4_official": {
+        "runtime_prompt_chars_ghi_trong_trace": 24719,
+        "user_chars_THAT_da_bat_duoc": 42746,
+        "ty_le_bi_thieu": "42%"
+      },
+      "MN_gpt-5.5_shadow": {
+        "runtime_prompt_chars_ghi_trong_trace": 23475,
+        "user_chars_THAT_da_bat_duoc": 46118,
+        "ty_le_bi_thieu": "49%"
+      },
+      "MT_gpt-5.4_official": {
+        "runtime_prompt_chars_ghi_trong_trace": 25589,
+        "user_chars_THAT_da_bat_duoc": 44421,
+        "ty_le_bi_thieu": "42%"
+      },
+      "MT_gpt-5.5_shadow": {
+        "runtime_prompt_chars_ghi_trong_trace": 24180,
+        "user_chars_THAT_da_bat_duoc": 47919,
+        "ty_le_bi_thieu": "50%"
+      },
+      "MB_gpt-5.4_official": {
+        "runtime_prompt_chars_ghi_trong_trace": 25291,
+        "user_chars_THAT_da_bat_duoc": 47691,
+        "ty_le_bi_thieu": "47%"
+      },
+      "MB_gpt-5.5_shadow": {
+        "runtime_prompt_chars_ghi_trong_trace": 24068,
+        "user_chars_THAT_da_bat_duoc": 51082,
+        "ty_le_bi_thieu": "53%"
+      }
+    },
+    "kiem_tra_rieng_5_dau_o_nhiem_co_bi_lot_khong": {
+      "ket_qua": "KHONG bi lot hom nay — ca 5 dau ('HIỆU SUẤT THEO MODEL','win_rate','SỐ ĐÃ TRÚNG GẦN ĐÂY','ưu tiên patterns từ models','THAM KHẢO hiệu suất gần đây') deu nam TRONG phan da duoc bam (system+analysis tho), KHONG nam trong context_pack/rulebook. Da xac minh bang cach dem chuoi tren VAN BAN DAY DU that (chi tiet o v11170_g06_contam_check.json) — so lan xuat hien khop CHINH XAC voi runtime_prompt_contam_hits that trong trace (4 cho LEGACY_PROMPT, 0 cho CONTEXT_ONLY_V2).",
+      "nhung_van_la_lo_hong_co_che": "Co che nay CHI dung vi 5 dau hien tai TINH CO nam trong phan duoc bam. Neu sau nay them dau o nhiem moi ma no nam trong context_pack hoac REASONING_RULEBOOK (phan KHONG duoc bam), co che se BAO SACH (0 hit) trong khi thuc te co o nhiem — day la LO HONG CO CHE, khong phai loi da xay ra."
+    },
+    "he_qua": "Comment code tu nhan 'băm CHÍNH chuỗi sắp gửi đi' la SAI so voi hanh vi that — day la mot truong hop DOC_SAID(comment) khac CODE_DID theo tinh than §62. Moi ket luan truoc day dung sha256/chars nay de noi 'prompt sach' hoac 'prompt on dinh giua hai luot' (vi du dung de dong FU/investigation 'SCHEDULED_SHADOW_PROMPT_CLEAN_PROVEN' theo chinh comment cua V11160) chi kiem chung duoc ~44-53% noi dung that."
+  },
+  "4_prompt_section_breakdown_daily": {
+    "hom_nay_ghi_gi": {
+      "so_dong_hom_nay": 297,
+      "cac_nhan_section": [
+        "CONTEXT_PACK",
+        "PFG_STATUS:CURRENT",
+        "PFG_STATUS:FORMER_MEMBER",
+        "PFG_STATUS:NEVER_MEMBER",
+        "PHASE_FIRST_CONTRACT_REQUIRED",
+        "PHASE_FIRST_GATE_APPLIED",
+        "PROMPT_BUNDLE",
+        "REASONING_RULEBOOK",
+        "SYSTEM_PROMPT"
+      ],
+      "so_model": 19,
+      "cac_mien": [
+        "MB",
+        "MN",
+        "MT"
+      ],
+      "y_nghia": "Voi moi (ngay,mien,model): ghi CO_MAT/KHONG_CO_MAT tung khoi trong prompt that cua luot do (CONTEXT_PACK, PHASE_FIRST_*, PFG_STATUS:*, PROMPT_BUNDLE, REASONING_RULEBOOK, SYSTEM_PROMPT) — writer la _materialize_prompt_section_breakdown.py, GOI TU DONG boi scheduler.py (job 'measurement_materialize', chay SAU MOI lan mot mien dong so/verify — KHONG PHAI chi 'on-demand' nhu docstring tu mo ta o dau file)."
+    },
+    "co_ai_doc_khong": {
+      "ket_qua": "KHONG. Quet TOAN BO web/backend that tren VPS (512 file .py, tim chuoi ten bang 'prompt_section_breakdown_daily') — 0 diem doc (0 cau SELECT). Cac cho con lai chi la CREATE TABLE, INSERT, CREATE INDEX, mot dong trong tz-registry, va hai dong comment/docstring.",
+      "khop_voi_phat_hien_cu": "Trung khop V11168 (46.160 dong / 4,5 thang / 0 SELECT) — hom nay van CHUA CO diem doc nao moi.",
+      "luu_y_RM20": "Day la truong hop NGUOC voi canh bao RM-20 (RM-20 canh bao '0 dong moi KHONG phai khong ai doc'). O day bang VAN DANG GHI DEU DAN (297 dong/ngay, cron that), nhung XAC MINH BANG QUET DIEM DOC (dung theo tinh than RM-20: quet diem DOC chu khong chi dua vao ten bang) van cho ra 0 — nen ket luan 'khong ai doc' o day la CO CAN CU (khac voi truong hop mt_model_hit_output_drop_shadow ma RM-20 canh bao, noi CO 4 diem doc song ma tuong nham la chet)."
+    }
+  },
+  "5_prompt_pressure_daily_va_ab_3tang": {
+    "prompt_pressure_daily": {
+      "so_dong_hom_nay": 57,
+      "do_gi": "Do rieng 4 thanh phan (system_prompt_chars, analysis_prompt_chars, context_pack_chars, rulebook_chars) + custom_prompt_original/applied_chars + prompt_total_chars cho TUNG model x TUNG mien, chay theo mot job do rieng (khong phai byproduct cua du doan that — 'notes'='measurement_safe_prompt_pressure').",
+      "co_ai_doc_khong": "CO — 1 diem doc that: _materialize_v95_data_integrity_audit.py:343 (mot script audit, khong phai dashboard/API song).",
+      "phat_hien_them": "custom_prompt_applied_chars = 0 O CA 57/57 DONG hom nay (custom_prompt_original_chars=2700 co dinh nhung KHONG BAO GIO duoc ap dung). Da xac minh day la HANH VI DA BIET/CO CHU Y qua chinh log code that khi redump: '[RULES] Custom prompt archived only: 2700 chars ... — not injected at runtime' — KHONG phai loi moi, la trang thai da duoc code tu khai bao.",
+      "so_lieu_hom_nay_xac_nhan_lai_46583": "prompt_total_chars trong bang nay hom nay dao dong 49891-58852, KHOP voi tracefile that va voi phep bat mang truc tiep — CA BA NGUON DOC LAP deu cho ra cung khoang so, cung KHONG khop voi 46.583."
+    },
+    "prompt_3tang_ab_shadow_v11059": {
+      "so_dong_hom_nay": 14,
+      "do_gi": "Thi nghiem A/B THAT (PROMPT_3TANG_TB_V1): CONTROL = prompt day du hien hanh; TB (treatment) = ban rut gon 3-tang voi 3 module bi go (m1/m2/m3_da_go=1 ca 3 o toan bo 14 dong hom nay). Quan trong: DUOC QUARANTINE DUNG CHUAN §52 — shadow_only=1, diagnostic_only=1, output_eligible=0, owner_approved=0 tren CA 14 dong — khong anh huong output that.",
+      "co_ai_doc_khong": "CO — main.py:18473-18503, mot API '[V11059 — CHỈ ĐỌC lane A/B]' that.",
+      "so_lieu_hom_nay_KHONG_DU_KET_LUAN": "MN hom nay (5 model): control_bt dung BT that (73) o 4/5 model; tb_bt dung BT that chi o 1/5 model. KHONG DUOC dung con so nay de ket luan 'control tot hon treatment' — day la n=1 NGAY, dung RM-04: 'n nho la CHUA DUOC PHEP KET LUAN'. Ghi lai nhu mot quan sat tho, chua phai bang chung."
+    }
+  },
+  "6_khac_biet_prompt_giua_3_mien_va_MT_an_ket_qua_MN_cung_ngay": {
+    "co_khac_nhau_khong": "CO, xac nhan qua ma nguon that (scheduler.py) VA qua du lieu that hom nay.",
+    "MT_co_duoc_bom_ket_qua_MN_cung_ngay_khong": {
+      "tra_loi": "CO — XAC NHAN qua CA HAI duong code that: (1) scheduler.py _run_ai_models_predict (nhanh official/ai_chain, comment 'P2-PE3 PILOT: MT D = MT D-1 + MB D-1 + MN D-1 + MN D (Owner SSOT)'); (2) scheduler.py _run_shadow_auto_eval (nhanh shadow, comment '§INTER-REGION: MN=D-1 only, MT=D-1+MN(D), MB=D-1+MN(D)+MT(D)'). CA HAI duong deu lay MN(D)=hom nay lam nguon.",
+      "day_co_phai_thong_tin_that_va_hop_le_khong": "CO — day la CHU Y va DA DUOC OWNER PHE DUYET (nhan 'Owner SSOT' trong code that, khong phai gia dinh). VA no dung DUNG cach: MT chi goi vao luc 16:37-16:58 hom nay, tuc SAU KHI MN da chot va co ket qua that luc 16:36:36 — nen du lieu MN(D) MT nhan duoc la KET QUA THAT da xo, khong phai du doan/roi ri tu tien trinh khac. Day KHONG lien quan den 'ro ngu canh shadow' ma cac phien truoc da canh bao (do la mot van de KHAC: loạn ngu canh giua lane shadow/official CUNG mot luot, khong phai viec MT doc ket qua that cua MN cung ngay).",
+      "MB_cung_the": "MB nhan CA MN(D) va MT(D) hom nay — xac nhan tuong tu qua ca hai nhanh code."
+    },
+    "khac_biet_cau_truc_giua_hai_regime_LEGACY_va_CONTEXT_ONLY_V2": {
+      "chi_co_o_LEGACY_PROMPT": [
+        "📊 HIỆU SUẤT GẦN ĐÂY (MN)",
+        "🏆 HIỆU SUẤT THEO MODEL (MN, 30 ngày)"
+      ],
+      "chi_co_o_CONTEXT_ONLY_V2": [
+        "⛔ OUTPUT KHÔNG HỢP LỆ NẾU:",
+        "## 🔬 LANE-TEST SHADOW DOCTRINE (V105.17 — chỉ thực nghiệm, độc lập official)"
+      ],
+      "y_nghia": "CONTEXT_ONLY_V2 (11/19 model hom nay) chu dong BO khoi xep hang WR theo model (nguon herding, dung voi thiet ke 'de-herding' da ghi trong code) va them khoi doctrine rieng cho lane thi nghiem. Day la THIET KE CO CHU Y, khop code, khong phai loi."
+    }
+  },
+  "7_reasoning_tokens_hom_nay": {
+    "thong_ke": {
+      "n_total_rows": 81,
+      "n_non_null": 45,
+      "n_null": 36,
+      "min": 0,
+      "max": 42545,
+      "sum": 371766
+    },
+    "model_null_reasoning_tokens": [
+      "claude-opus-4-6",
+      "claude-sonnet-4-6",
+      "gpt-5.4",
+      "gpt-5-mini",
+      "(+ 8 model ML khong goi LLM: combo-no-token, combo-super, lstm, meta-learning, random-forest, smart-ensemble, smart-ml, xgboost)"
+    ],
+    "model_co_reasoning_tokens": [
+      "claude-opus-5-fast",
+      "deepseek-reasoner",
+      "deepseek-v4-pro-real",
+      "gemini-2.5-flash",
+      "gemini-2.5-pro",
+      "gemini-3.5-flash",
+      "gemini-3.6-flash",
+      "glm-5.1",
+      "glm-5.2",
+      "gpt-5.5",
+      "gpt-5.6-sol-pro",
+      "gpt-oss-120b",
+      "grok-4.3",
+      "qwen3-max-thinking",
+      "qwen3.7-max"
+    ],
+    "quan_sat_le": "claude-opus-5-fast CO bao reasoning_tokens nhung claude-opus-4-6/claude-sonnet-4-6 (cung ho Claude) KHONG — INDETERMINATE ve nguyen nhan (co the do cach provider/API-path tra ve khac nhau, chua dao sau).",
+    "dot_nhieu_reasoning_ma_khong_hon": {
+      "vi_du_ro_nhat": "deepseek-reasoner la model DUY NHAT dot >25.000 token reasoning o CA BA mien cung ngay (MN=42.545, MT=37.797, MB=25.119) — cao vuot troi so voi moi model khac (model cao thu nhi la glm-5.2 MN=33.025). Ket qua: MN verdict=SKIP (bi loai khoi consensus, cho du neu tinh thi trung), MT verdict=CHOT_HA nhung TRUOT (hit=0), MB verdict=CHON_CAN_THAN va TRUNG (hit=2). Tuc 3/3 mien dot reasoning nhieu nhat he thong nhung KET QUA LAN LON (1 loai, 1 truot, 1 trung) — KHONG co bang chung dot nhieu reasoning hon giup trung nhieu hon trong ngay hom nay.",
+      "tuong_quan_tho_trong_ngay(KHONG_DU_KET_LUAN)": {
+        "r_MN": -0.018,
+        "r_MT": -0.256,
+        "r_MB": 0.652,
+        "n_moi_mien": 15,
+        "canh_bao_RM04": "Ba he so tuong quan DAO DAU giua ba mien TRONG CUNG MOT NGAY (am o MN va MT, duong kha manh o MB) — day CHINH LA dau hieu RM-04 canh bao: n=1 ngay KHONG DU DE KET LUAN co hay khong quan he reasoning-tokens vs hit. Ghi nhan so nhung TU CHOI ket luan xu huong."
+      }
+    }
+  },
+  "ghi_chu_phuong_phap_va_gioi_han": [
+    "RM-14: moi so ve prompt trong bao cao nay do tren DUMP TU HAM DANG SERVE that (khong doc tai lieu) — cach do manh nhat la chan tang goi mang (_call_*), khong phai tai dung logic.",
+    "RM-13: nguon do la VPS production DB that (mode=ro) + prediction_trace.jsonl that + moi truong that cua PID dang chay — khong dung ban local/ban chup.",
+    "RM-09: khong dem chuoi tho — moi phat hien co doc ngu canh truoc khi ket luan (vi du contam check da doc tung vi tri xuat hien, khong chi dem so lan).",
+    "PRJ-PROMPT-COHERENCE-001: da quet 4 muc, 2 muc CO phat hien (mau thuan + so lieu cu), 1 muc quan sat duoc nhung KHONG khang dinh y dinh (du lieu Gan/Hot con), 1 muc KHONG TIM THAY trong pham vi da doc (chua doc het TUNG DONG ca 6 file — xem gioi han ben duoi).",
+    "Chua doc HET tung dong cua ca 6 file dump (moi file ~1000-1100 dong) — da doc toan bo 1 file mau (MN official, 653/1023 dong dau) va grep muc tieu tren 5 file con lai. Khong loai tru con phat hien khac ngoai pham vi da grep.",
+    "Correlation reasoning_tokens vs hit_count CHI la mo ta cho DUNG MOT NGAY (n=45 dong nhung thuc chat n=3 mien-ngay doc lap) — KHONG duoc trich dan nhu bang chung xu huong dai han."
+  ]
+}
